@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.storyboard">
+    <Files>
+      <File FileName="iOS/Main.storyboard" />
+      <File FileName="iOS/ViewControllers/EmpresaMiembroController.cs" Line="26" Column="55" />
+      <File FileName="iOS/ViewControllers/EmpresaMiembroController.designer.cs" Line="1" Column="1" />
+      <File FileName="iOS/ViewControllers/PerfilController.cs" Line="18" Column="89" />
+      <File FileName="WorklabsMx/Helpers/DataBase.cs" Line="333" Column="92" />
+      <File FileName="iOS/ViewControllers/RegistroInvitadosController.cs" Line="15" Column="23" />
+      <File FileName="iOS/ViewControllers/AboutMeController.cs" Line="15" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.362DED79-20E6-4F78-B3C8-30858522B37E" />
+  <MultiItemStartupConfigurations />
+</Properties>
