@@ -3,7 +3,7 @@ using System;
 using UIKit;
 using WorklabsMx.Models;
 using System.Collections.Generic;
-using WorklabsMx.iOS.Helpers;
+using WorklabsMx.iOS.Styles;
 
 namespace WorklabsMx.iOS
 {
@@ -21,9 +21,10 @@ namespace WorklabsMx.iOS
 			table = new UITableView(View.Bounds);
 			List<ItemsMenu> tableItems = new List<ItemsMenu>();
 			tableItems.Add(new ItemsMenu { Image = "ic_label", Label = "Mis Datos", Controller = "PerfilController"  });
-			tableItems.Add(new ItemsMenu { Image = "ic_label", Label = "Registro de Invitados", Controller = "RegistroInvitadosController" });
+            tableItems.Add(new ItemsMenu { Image = "ic_label", Label = "Datos de Facturación" });
+            tableItems.Add(new ItemsMenu { Image = "ic_label", Label = "Equipo de Trabajo", Controller = "MisColaboradoresController" });
 
-			table.Source = new TableSource(tableItems, this);
+			table.Source = new STLTableViewSource(tableItems, this);
 			Add(table);
 		}
 

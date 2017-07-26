@@ -20,8 +20,6 @@ namespace WorklabsMx.iOS
         {
             App.Initialize();
 
-
-
             // Select first UIViewController.
             var storage = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
             if (storage.Get("Miembro_Id") != null || storage.Get("Miembro_Id") != "")

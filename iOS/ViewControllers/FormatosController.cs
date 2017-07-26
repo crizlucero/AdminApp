@@ -3,7 +3,7 @@ using System;
 using UIKit;
 using System.Collections.Generic;
 using WorklabsMx.Models;
-using WorklabsMx.iOS.Helpers;
+using WorklabsMx.iOS.Styles;
 
 namespace WorklabsMx.iOS
 {
@@ -23,7 +23,7 @@ namespace WorklabsMx.iOS
 			tableItems.Add(new ItemsMenu { Image = "ic_label", Label = "Reservar Sala de Juntas" });
             tableItems.Add(new ItemsMenu { Image = "ic_label", Label = "Registro de Invitados", Controller="RegistroInvitadosController" });
 
-			table.Source = new TableSource(tableItems, this);
+			table.Source = new STLTableViewSource(tableItems, this);
 			Add(table);
 		}
     }

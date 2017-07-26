@@ -30,14 +30,29 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ItemsMenu.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\DataBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Emails.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\PassSecurity.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Configuraciones.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Miembro.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Empresa.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ConfiguracionesModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\MiembroModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\EmpresaModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GeneroViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ColaboradorModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Images.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DataBaseModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\LoginController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\ConfigurationsController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\InvitadosController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\MiembrosController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\ColaboradoresController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\EmpresaController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\EscritorioController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PostModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ComentarioModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Controllers\" />
   </ItemGroup>
 </Project>

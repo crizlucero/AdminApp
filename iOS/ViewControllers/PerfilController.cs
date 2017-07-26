@@ -2,12 +2,14 @@ using Foundation;
 using System;
 using UIKit;
 using WorklabsMx.Models;
+using WorklabsMx.iOS.Helpers;
+using WorklabsMx.Controllers;
 
 namespace WorklabsMx.iOS
 {
     public partial class PerfilController : UIViewController
     {
-        Miembro miembro;
+        MiembroModel miembro;
         public PerfilController (IntPtr handle) : base (handle)
         {
             
@@ -16,7 +18,7 @@ namespace WorklabsMx.iOS
 		{
             base.ViewDidLoad();
             var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
-            miembro = new DataBase().GetMemberData(storageLocal.Get("Miembro_Id"));
+            miembro = new MiembrosController().GetMemberData(storageLocal.Get("Miembro_Id"));
             this.FillData();
 		}
 
@@ -27,6 +29,7 @@ namespace WorklabsMx.iOS
             lblCorreo.Text = miembro.Miembro_Correo_Electronico;
             lblGenero.Text = miembro.Genero_Descripcion;
             lblFechaNacimiento.Text = miembro.Miembro_Fecha_Nacimiento;
+            imgMiembro.Image = ImageGallery.LoadImage(miembro.Miembro_Fotografia);
             #endregion
 
         }

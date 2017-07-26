@@ -16,6 +16,10 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnEditar { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblCelular { get; set; }
 
         [Outlet]
@@ -36,6 +40,11 @@ namespace WorklabsMx.iOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnEditar != null) {
+                btnEditar.Dispose ();
+                btnEditar = null;
+            }
+
             if (lblCelular != null) {
                 lblCelular.Dispose ();
                 lblCelular = null;

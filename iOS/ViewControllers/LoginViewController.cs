@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Net;
 using PerpetualEngine.Storage;
+using WorklabsMx.Controllers;
 
 namespace WorklabsMx.iOS
 {
@@ -12,7 +13,6 @@ namespace WorklabsMx.iOS
     {
         public LoginViewModel ViewModel;
 
-        DataBase db;
         public LoginViewController(IntPtr handle) : base(handle)
         {
             ViewModel = new LoginViewModel();
@@ -21,7 +21,6 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            db = new DataBase();
             NavigationItem.Title = ViewModel.Title;
         }
 
@@ -46,7 +45,7 @@ namespace WorklabsMx.iOS
 
         partial void BtnIniciarSesion_TouchUpInside(UIButton sender)
         {
-            int MiembrosId = db.Login(this.txtEmail.Text, new PassSecurity().EncodePassword(this.txtPassword.Text));
+            int MiembrosId = new LoginController().MemberLogin(this.txtEmail.Text, new PassSecurity().EncodePassword(this.txtPassword.Text));
             var localStorage = SimpleStorage.EditGroup("Login");
             localStorage.Put("Miembro_Id", MiembrosId.ToString());
             if (MiembrosId > 0)
@@ -66,7 +65,7 @@ namespace WorklabsMx.iOS
 
         partial void BtnRestaurar_TouchUpInside(UIButton sender)
         {
-            string miembro = db.ValidateMember(txtEmailRecuperar.Text);
+            string miembro = new LoginController().ValidateMember(txtEmailRecuperar.Text);
             if (miembro.Length > 0)
                 new Emails().SendMail(txtEmailRecuperar.Text, miembro, new PassSecurity().GeneraIdentifier());
         }

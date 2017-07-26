@@ -2,12 +2,13 @@ using Foundation;
 using System;
 using UIKit;
 using WorklabsMx.Models;
+using WorklabsMx.Controllers;
 
 namespace WorklabsMx.iOS
 {
     public partial class AboutMeController : UIViewController
     {
-        Miembro miembro;
+        MiembroModel miembro;
         public AboutMeController (IntPtr handle) : base (handle)
         {
         }
@@ -16,9 +17,11 @@ namespace WorklabsMx.iOS
 		{
 			base.ViewDidLoad();
 			var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
-			DataBase db = new DataBase();
-			miembro = db.GetMemberData(storageLocal.Get("Miembro_Id"));
+			miembro = new MiembrosController().GetMemberData(storageLocal.Get("Miembro_Id"));
 			this.FillData();
+            btnEditar.BackgroundColor = UIColor.FromRGB(101, 216, 250);
+            btnEditar.SetTitleColor(UIColor.Black, UIControlState.Normal);
+            btnEditar.Layer.CornerRadius = 10;
 		}
 
 		private void FillData()

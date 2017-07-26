@@ -118,6 +118,15 @@
     <Reference Include="PerpetualEngine.SimpleStorage.iOS-Unified">
       <HintPath>..\packages\SimpleStorage.1.4.2\lib\Xamarin.iOS10\PerpetualEngine.SimpleStorage.iOS-Unified.dll</HintPath>
     </Reference>
+    <Reference Include="BouncyCastle">
+      <HintPath>..\packages\MimeKit.1.16.2\lib\Xamarin.iOS10\BouncyCastle.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit">
+      <HintPath>..\packages\MimeKit.1.16.2\lib\Xamarin.iOS10\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit">
+      <HintPath>..\packages\MailKit.1.16.2\lib\Xamarin.iOS10\MailKit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -284,6 +293,21 @@
     <ImageAsset Include="Assets.xcassets\ic_domain.imageset\ic_domain.png" />
     <ImageAsset Include="Assets.xcassets\ic_domain.imageset\ic_domain_2x.png" />
     <ImageAsset Include="Assets.xcassets\ic_domain.imageset\ic_domain_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook_box_black_24dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook_box_black_36dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook_box_black_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter_box_black_24dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter_box_black_36dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter_box_black_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram_black_24dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram_black_36dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram_black_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\ic_qrcode_black_36dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\ic_qrcode_black_24dp.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -303,7 +327,6 @@
     <Compile Include="ViewControllers\SplitViewController.designer.cs">
       <DependentUpon>SplitViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\TableSource.cs" />
     <Compile Include="ViewControllers\TableViewController.cs" />
     <Compile Include="ViewControllers\TableViewController.designer.cs">
       <DependentUpon>TableViewController.cs</DependentUpon>
@@ -336,6 +359,37 @@
     <Compile Include="ViewControllers\EmpresaMiembroController.designer.cs">
       <DependentUpon>EmpresaMiembroController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControllers\EmpresaMiembroModificaController.cs" />
+    <Compile Include="ViewControllers\EmpresaMiembroModificaController.designer.cs">
+      <DependentUpon>EmpresaMiembroModificaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\AboutMeModificaController.cs" />
+    <Compile Include="ViewControllers\AboutMeModificaController.designer.cs">
+      <DependentUpon>AboutMeModificaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MisColaboradoresController.cs" />
+    <Compile Include="ViewControllers\MisColaboradoresController.designer.cs">
+      <DependentUpon>MisColaboradoresController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MisColaboradoresCambiosController.cs" />
+    <Compile Include="ViewControllers\MisColaboradoresCambiosController.designer.cs">
+      <DependentUpon>MisColaboradoresCambiosController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\EscritorioController.cs" />
+    <Compile Include="ViewControllers\EscritorioController.designer.cs">
+      <DependentUpon>EscritorioController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ImageGallery.cs" />
+    <Compile Include="ViewControllers\AccesoController.cs" />
+    <Compile Include="ViewControllers\AccesoController.designer.cs">
+      <DependentUpon>AccesoController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\STLButton.cs" />
+    <Compile Include="Styles\STLTextField.cs" />
+    <Compile Include="Styles\STLTableViewSource.cs" />
+    <Compile Include="Styles\STLLabel.cs" />
+    <Compile Include="Styles\STLImageLabel.cs" />
+    <Compile Include="Styles\STLImageView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -345,6 +399,13 @@
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\ic_facebook.imageset\" />
+    <Folder Include="Assets.xcassets\ic_instagram.imageset\" />
+    <Folder Include="Assets.xcassets\ic_twitter.imageset\" />
+    <Folder Include="Assets.xcassets\ic_qr.imageset\" />
+    <Folder Include="Styles\" />
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

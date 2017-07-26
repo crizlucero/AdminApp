@@ -1,10 +1,11 @@
 using Foundation;
 using System;
 using UIKit;
-using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Models;
 using System.Collections.Generic;
 using PerpetualEngine.Storage;
+using WorklabsMx.Controllers;
+using WorklabsMx.iOS.Styles;
 
 namespace WorklabsMx.iOS
 {
@@ -21,9 +22,9 @@ namespace WorklabsMx.iOS
             table = new UITableView(View.Bounds);
             List<ItemsMenu> tableItems = new List<ItemsMenu>();
             var localStorage = SimpleStorage.EditGroup("Login");
-            Dictionary<string, string> data = new DataBase().GetMemberName(localStorage.Get("Miembro_Id"));
+            Dictionary<string, string> data = new MiembrosController().GetMemberName(localStorage.Get("Miembro_Id"));
             tableItems.Add(new ItemsMenu { Image = "http://desarrolloworklabs.com/Dashboard_Client/" + data["Fotografia"], Label = data["Nombre"], Principal = true });
-            tableItems.Add(new ItemsMenu { Image = "ic_dashboard", Label = "Escritorio", Principal = false });
+            tableItems.Add(new ItemsMenu { Image = "ic_dashboard", Label = "Escritorio", Principal = false, Controller = "EscritorioController" });
             tableItems.Add(new ItemsMenu { Image = "ic_call", Label = "Telefonía", Principal = false });
             tableItems.Add(new ItemsMenu { Image = "ic_cloud", Label = "Cloud", Principal = false });
             tableItems.Add(new ItemsMenu { Image = "ic_description", Label = "Facturación", Principal = false });
@@ -33,7 +34,7 @@ namespace WorklabsMx.iOS
             tableItems.Add(new ItemsMenu { Image = "ic_person", Label = "Mi Perfil", Principal = false, Controller = "MiPerfilController" });
             tableItems.Add(new ItemsMenu { Image = "ic_book", Label = "Directorio", Principal = false, Controller = "DirectorioController" });
 
-            table.Source = new TableSource(tableItems, this);
+            table.Source = new STLTableViewSource(tableItems, this);
             Add(table);
         }
 

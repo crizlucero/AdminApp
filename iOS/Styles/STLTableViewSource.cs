@@ -1,0 +1,60 @@
+﻿using System;
+using System.Collections.Generic;
+using Foundation;
+using UIKit;
+using WorklabsMx.Models;
+
+namespace WorklabsMx.iOS.Styles
+{
+    public partial class STLTableViewSource : UITableViewSource
+    {
+
+        internal List<ItemsMenu> TableItems;
+        string CellIdentifier = "TableCell";
+        UITableViewController owner;
+        public STLTableViewSource(List<ItemsMenu> items, UITableViewController owner) :base()
+        {
+            this.TableItems = items;
+            this.owner = owner;
+        }
+
+        public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
+        {
+            tableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
+            UITableViewCell cell = tableView.DequeueReusableCell(CellIdentifier);
+            string item = TableItems[indexPath.Row].Label;
+            if (cell == null)
+                cell = new UITableViewCell(UITableViewCellStyle.Default, CellIdentifier);
+            cell.TextLabel.Text = item;
+            if (!TableItems[indexPath.Row].Principal)
+                cell.ImageView.Image = UIImage.FromBundle(TableItems[indexPath.Row].Image);
+            else
+            {
+                using (var url = new NSUrl(TableItems[indexPath.Row].Image))
+                {
+                    using (var data = NSData.FromUrl(url))
+                    {
+                        if (data != null)
+                            cell.ImageView.Image = UIImage.LoadFromData(data);
+                    }
+                }
+            }
+            return cell;
+        }
+
+        public override nint RowsInSection(UITableView tableview, nint section)
+        {
+            return TableItems.Count;
+        }
+
+        public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+        {
+            if (TableItems[indexPath.Row].Controller != null)
+            {
+                UIViewController controller = owner.Storyboard.InstantiateViewController(TableItems[indexPath.Row].Controller);
+                controller.Title = TableItems[indexPath.Row].Label;
+                owner.NavigationController.PushViewController(controller, true);
+            }
+        }
+    }
+}

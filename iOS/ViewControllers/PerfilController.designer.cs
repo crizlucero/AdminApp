@@ -16,15 +16,11 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView imgMiembro { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblCorreo { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblDireccion { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblEmailEmpresa { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -36,43 +32,18 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblGiroComercial { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblNombre { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblNombreEmpresa { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblPaginaWeb { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblRedesSociales { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblTelefonoEmpresa { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (imgMiembro != null) {
+                imgMiembro.Dispose ();
+                imgMiembro = null;
+            }
+
             if (lblCorreo != null) {
                 lblCorreo.Dispose ();
                 lblCorreo = null;
-            }
-
-            if (lblDireccion != null) {
-                lblDireccion.Dispose ();
-                lblDireccion = null;
-            }
-
-            if (lblEmailEmpresa != null) {
-                lblEmailEmpresa.Dispose ();
-                lblEmailEmpresa = null;
             }
 
             if (lblFechaNacimiento != null) {
@@ -85,34 +56,9 @@ namespace WorklabsMx.iOS
                 lblGenero = null;
             }
 
-            if (lblGiroComercial != null) {
-                lblGiroComercial.Dispose ();
-                lblGiroComercial = null;
-            }
-
             if (lblNombre != null) {
                 lblNombre.Dispose ();
                 lblNombre = null;
-            }
-
-            if (lblNombreEmpresa != null) {
-                lblNombreEmpresa.Dispose ();
-                lblNombreEmpresa = null;
-            }
-
-            if (lblPaginaWeb != null) {
-                lblPaginaWeb.Dispose ();
-                lblPaginaWeb = null;
-            }
-
-            if (lblRedesSociales != null) {
-                lblRedesSociales.Dispose ();
-                lblRedesSociales = null;
-            }
-
-            if (lblTelefonoEmpresa != null) {
-                lblTelefonoEmpresa.Dispose ();
-                lblTelefonoEmpresa = null;
             }
         }
     }

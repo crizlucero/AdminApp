@@ -44,5 +44,16 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Se necesitan permisos para usar su galería fotográfica</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Se necesitan permisos para usar su camara fotográfica</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Se necesitan permisos para usar su galería fotográfica</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
