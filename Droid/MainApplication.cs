@@ -21,7 +21,7 @@ namespace WorklabsMx.Droid
         {
             base.OnCreate();
             RegisterActivityLifecycleCallbacks(this);
-            App.Initialize();
+            //App.Initialize();
         }
 
         public override void OnTerminate()

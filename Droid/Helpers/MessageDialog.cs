@@ -14,7 +14,7 @@ using Plugin.CurrentActivity;
 
 namespace WorklabsMx.Droid
 {
-    public class MessageDialog : IMessageDialog
+    public class MessageDialog //: IMessageDialog
     {
         public void SendMessage(string message, string title = null)
         {

@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Android.Support.Design.Widget;
 using Android.Support.V4.App;
+using WorklabsMX.Droid;
 
 namespace WorklabsMx.Droid
 {
@@ -23,7 +24,7 @@ namespace WorklabsMx.Droid
         /// </summary>
         protected override int LayoutResource => Resource.Layout.activity_item_details;
 
-        ItemDetailViewModel viewModel;
+        //ItemDetailViewModel viewModel;
         Spinner spinner;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -31,12 +32,12 @@ namespace WorklabsMx.Droid
 
             var data = Intent.GetStringExtra("data");
 
-            var item = Newtonsoft.Json.JsonConvert.DeserializeObject<Item>(data);
-            viewModel = new ItemDetailViewModel(item);
+            //var item = Newtonsoft.Json.JsonConvert.DeserializeObject<Item>(data);
+            //viewModel = new ItemDetailViewModel(item);
 
-            FindViewById<TextView>(Resource.Id.description).Text = item.Description;
+            //FindViewById<TextView>(Resource.Id.description).Text = item.Description;
 
-            SupportActionBar.Title = item.Text;
+            //SupportActionBar.Title = item.Text;
         }
 
         protected override void OnStart()

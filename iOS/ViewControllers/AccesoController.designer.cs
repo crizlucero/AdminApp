@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("AccesoController")]
     partial class AccesoController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

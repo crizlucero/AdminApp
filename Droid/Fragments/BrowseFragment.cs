@@ -6,6 +6,7 @@ using Android.Widget;
 using Android.Support.V4.Widget;
 using Android.App;
 using Android.Content;
+using WorklabsMX.Droid;
 
 namespace WorklabsMx.Droid
 {
@@ -18,11 +19,11 @@ namespace WorklabsMx.Droid
         SwipeRefreshLayout refresher;
 
         ProgressBar progress;
-        public ItemsViewModel ViewModel
+        /*public ItemsViewModel ViewModel
         {
             get;
             set;
-        }
+        }*/
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -33,16 +34,16 @@ namespace WorklabsMx.Droid
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            ViewModel = new ItemsViewModel();
+            //ViewModel = new ItemsViewModel();
 
-            ServiceLocator.Instance.Register<MockDataStore, MockDataStore>();
+            //ServiceLocator.Instance.Register<MockDataStore, MockDataStore>();
 
             View view = inflater.Inflate(Resource.Layout.fragment_browse, container, false);
             var recyclerView =
                 view.FindViewById<RecyclerView>(Resource.Id.recyclerView);
 
             recyclerView.HasFixedSize = true;
-            recyclerView.SetAdapter(adapter = new BrowseItemsAdapter(Activity, ViewModel));
+            //  recyclerView.SetAdapter(adapter = new BrowseItemsAdapter(Activity, ViewModel));
 
             refresher = view.FindViewById<SwipeRefreshLayout>(Resource.Id.refresher);
 
@@ -62,8 +63,8 @@ namespace WorklabsMx.Droid
             //ViewModel.PropertyChanged += ViewModel_PropertyChanged;
             adapter.ItemClick += Adapter_ItemClick;
 
-            if (ViewModel.Items.Count == 0)
-                ViewModel.LoadItemsCommand.Execute(null);
+            //if (ViewModel.Items.Count == 0)
+            //    ViewModel.LoadItemsCommand.Execute(null);
         }
 
         public override void OnStop()
@@ -76,10 +77,10 @@ namespace WorklabsMx.Droid
 
         private void Adapter_ItemClick(object sender, RecyclerClickEventArgs e)
         {
-            var item = ViewModel.Items[e.Position];
+            //var item = ViewModel.Items[e.Position];
             var intent = new Intent(Activity, typeof(BrowseItemDetailActivity));
 
-            intent.PutExtra("data", Newtonsoft.Json.JsonConvert.SerializeObject(item));
+            //intent.PutExtra("data", Newtonsoft.Json.JsonConvert.SerializeObject(item));
             Activity.StartActivity(intent);
         }
 
@@ -89,7 +90,7 @@ namespace WorklabsMx.Droid
 
         private void Refresher_Refresh(object sender, EventArgs e)
         {
-            ViewModel.LoadItemsCommand.Execute(null);
+            //ViewModel.LoadItemsCommand.Execute(null);
         }
 
         public void BecameVisible()
@@ -100,10 +101,10 @@ namespace WorklabsMx.Droid
 
     class BrowseItemsAdapter : BaseRecycleViewAdapter
     {
-        ItemsViewModel viewModel;
+        //ItemsViewModel viewModel;
         Activity activity;
 
-        public BrowseItemsAdapter(Activity activity, ItemsViewModel viewModel)
+        /*public BrowseItemsAdapter(Activity activity, ItemsViewModel viewModel)
         {
             this.viewModel = viewModel;
             this.activity = activity;
@@ -112,7 +113,7 @@ namespace WorklabsMx.Droid
             {
                 this.activity.RunOnUiThread(NotifyDataSetChanged);
             };
-        }
+        }*/
 
         // Create new views (invoked by the layout manager)
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
@@ -129,15 +130,15 @@ namespace WorklabsMx.Droid
         // Replace the contents of a view (invoked by the layout manager)
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
-            var item = viewModel.Items[position];
+            //var item = viewModel.Items[position];
 
             // Replace the contents of the view with that element
             var myHolder = holder as MyViewHolder;
-            myHolder.TextView.Text = item.Text;
-            myHolder.DetailTextView.Text = item.Description;
+            //myHolder.TextView.Text = item.Text;
+            //myHolder.DetailTextView.Text = item.Description;
         }
 
-        public override int ItemCount => viewModel.Items.Count;
+        //public override int ItemCount => viewModel.Items.Count;
     }
 
     public class MyViewHolder : RecyclerView.ViewHolder

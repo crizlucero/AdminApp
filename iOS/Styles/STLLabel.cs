@@ -9,8 +9,9 @@ namespace WorklabsMx.iOS.Styles
         public STLLabel(string text, int posY, int fontSize = 16):base()
         {
             Text = text;
-            Frame = new CGRect(40, posY, UIScreen.MainScreen.Bounds.Width, 30);
+            Frame = new CGRect(40, posY, UIScreen.MainScreen.Bounds.Width-40, 30);
             Font = UIFont.BoldSystemFontOfSize(fontSize);
+            LineBreakMode = UILineBreakMode.WordWrap;
         }
     }
 }

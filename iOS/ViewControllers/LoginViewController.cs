@@ -22,6 +22,8 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             NavigationItem.Title = ViewModel.Title;
+            var localStorage = SimpleStorage.EditGroup("Login");
+            localStorage.Delete("Miembro_Id");
         }
 
         //partial void NotNowButton_TouchUpInside(UIButton sender) => NavigateToTabbed();

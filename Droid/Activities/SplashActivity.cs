@@ -13,9 +13,9 @@ namespace WorklabsMx.Droid
             base.OnCreate(savedInstanceState);
 
             Intent newIntent;
-            if (Settings.IsLoggedIn)
-                newIntent = new Intent(this, typeof(MainActivity));
-            else
+            //if (Settings.IsLoggedIn)
+            //    newIntent = new Intent(this, typeof(MainActivity));
+            //else
                 newIntent = new Intent(this, typeof(LoginActivity));
 
             newIntent.AddFlags(ActivityFlags.ClearTop);

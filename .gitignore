@@ -6,3 +6,7 @@ iOS/obj/iPhoneSimulator/Debug/
 iOS/bin/iPhoneSimulator/Debug/device-builds/iphone9\.1-10\.3\.1/WorklabsMx\.iOS\.app/
 
 iOS/bin/iPhoneSimulator/Debug/
+
+Droid/bin/Debug/
+
+Droid/obj/\.cache/

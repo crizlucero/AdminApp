@@ -4,6 +4,7 @@ using UIKit;
 using WorklabsMx.Models;
 using System.Collections.Generic;
 using WorklabsMx.iOS.Styles;
+using PerpetualEngine.Storage;
 
 namespace WorklabsMx.iOS
 {
@@ -20,9 +21,12 @@ namespace WorklabsMx.iOS
 			base.ViewDidLoad();
 			table = new UITableView(View.Bounds);
 			List<ItemsMenu> tableItems = new List<ItemsMenu>();
-			tableItems.Add(new ItemsMenu { Image = "ic_label", Label = "Mis Datos", Controller = "PerfilController"  });
-            tableItems.Add(new ItemsMenu { Image = "ic_label", Label = "Datos de Facturación" });
-            tableItems.Add(new ItemsMenu { Image = "ic_label", Label = "Equipo de Trabajo", Controller = "MisColaboradoresController" });
+            var localStorage = SimpleStorage.EditGroup("Menu");
+            foreach (ItemsMenu menu in new WorklabsMx.Controllers.EscritorioController().GetMenu(localStorage.Get("Menu_Id")))
+			{
+				tableItems.Add(menu);
+			}
+			
 
 			table.Source = new STLTableViewSource(tableItems, this);
 			Add(table);

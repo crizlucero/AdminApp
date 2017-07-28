@@ -10,6 +10,7 @@ using Android.Support.V7.App;
 using Android.Support.V4.App;
 using Android.Support.V4.View;
 using Android.Support.Design.Widget;
+using WorklabsMX.Droid;
 
 namespace WorklabsMx.Droid
 {
@@ -44,8 +45,8 @@ namespace WorklabsMx.Droid
 
             Toolbar.MenuItemClick += (sender, e) =>
             {
-                var intent = new Intent(this, typeof(AddItemActivity)); ;
-                StartActivity(intent);
+                //var intent = new Intent(this, typeof(AddItemActivity)); ;
+                //StartActivity(intent);
             };
 
             SupportActionBar.SetDisplayHomeAsUpEnabled(false);

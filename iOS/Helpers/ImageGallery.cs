@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Foundation;
 using UIKit;
 using WorklabsMx.iOS.Styles;
@@ -67,10 +68,10 @@ namespace WorklabsMx.iOS.Helpers
             imagePicker.DismissViewController(true, () => { });
         }
 
-        public static UIImage LoadImage(string imagen)
+        public static  UIImage LoadImage(string imagen)
         {
             if (imagen != null)
-                using (var url = new NSUrl("http://desarrolloworklabs.com/Dashboard_Client/" + imagen.Replace(@"\", "/")))
+               using (var url = new NSUrl("http://desarrolloworklabs.com/Dashboard_Client/" + imagen.Replace(@"\", "/")))
 
                 {
                     using (var data = NSData.FromUrl(url))
@@ -82,28 +83,37 @@ namespace WorklabsMx.iOS.Helpers
             return UIImage.FromBundle("ProfileImage");
         }
 
-        public static UIImage LoadImageUrl(string llave){
-			if (llave != null || llave != "")
-				using (var url = new NSUrl("https://api.qrserver.com/v1/create-qr-code/?data=" + llave))
-
-				{
-					using (var data = NSData.FromUrl(url))
-					{
-						if (data != null)
-							return UIImage.LoadFromData(data);
-					}
-				}
-			return UIImage.FromBundle("ProfileImage");
+        public static UIImage LoadImageUrl(string llave)
+        {
+            if (llave != null || llave != "")
+            {
+                int loop = 0;
+                while (true)
+                {
+                    using (var url = new NSUrl("https://api.qrserver.com/v1/create-qr-code/?data=" + llave))
+                    {
+                        using (var data = NSData.FromUrl(url))
+                        {
+                            if (data != null)
+                                return UIImage.LoadFromData(data);
+                        }
+                    }
+                    Console.WriteLine(loop);
+                    ++loop;
+                }
+            }
+            return UIImage.FromBundle("ProfileImage");
         }
 
-        public static UIButton SelectPhoto(UIViewController owner, UIImageView imagen, ImageGallery selectImage){
-			UIButton btnPhoto = new STLButton("Seleccionar imagen");
-			btnPhoto.TouchUpInside += (s, e) =>
-			{
-				UIImagePickerController imagePicker = new UIImagePickerController();
-				selectImage = new ImageGallery(imagePicker, imagen);
-				owner.PresentViewController(imagePicker, true, () => { });
-			};
+        public static UIButton SelectPhoto(UIViewController owner, UIImageView imagen, ImageGallery selectImage)
+        {
+            UIButton btnPhoto = new STLButton("Seleccionar imagen");
+            btnPhoto.TouchUpInside += (s, e) =>
+            {
+                UIImagePickerController imagePicker = new UIImagePickerController();
+                selectImage = new ImageGallery(imagePicker, imagen);
+                owner.PresentViewController(imagePicker, true, () => { });
+            };
 
             return btnPhoto;
         }

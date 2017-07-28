@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Foundation;
+using PerpetualEngine.Storage;
 using UIKit;
 using WorklabsMx.Models;
 
@@ -12,7 +13,7 @@ namespace WorklabsMx.iOS.Styles
         internal List<ItemsMenu> TableItems;
         string CellIdentifier = "TableCell";
         UITableViewController owner;
-        public STLTableViewSource(List<ItemsMenu> items, UITableViewController owner) :base()
+        public STLTableViewSource(List<ItemsMenu> items, UITableViewController owner) : base()
         {
             this.TableItems = items;
             this.owner = owner;
@@ -51,6 +52,9 @@ namespace WorklabsMx.iOS.Styles
         {
             if (TableItems[indexPath.Row].Controller != null)
             {
+
+                var localStorage = SimpleStorage.EditGroup("Menu");
+                localStorage.Put("Menu_Id", TableItems[indexPath.Row].Menu_Id);
                 UIViewController controller = owner.Storyboard.InstantiateViewController(TableItems[indexPath.Row].Controller);
                 controller.Title = TableItems[indexPath.Row].Label;
                 owner.NavigationController.PushViewController(controller, true);

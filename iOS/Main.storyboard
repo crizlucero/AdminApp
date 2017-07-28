@@ -37,7 +37,7 @@
         <!--Root View Controller-->
         <scene sceneID="2047">
             <objects>
-                <viewController id="2044" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController id="2044" customClass="LoginViewController" sceneMemberID="viewController" storyboardIdentifier="LoginViewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2039"/>
                         <viewControllerLayoutGuide type="bottom" id="2040"/>
@@ -70,17 +70,17 @@
                                     <action selector="LoginButton_TouchUpInside:" destination="2044" eventType="touchUpInside" id="2151"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2454" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Correo electrónico" fixedFrame="YES">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2454" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Correo electrónico" misplaced="YES">
                                 <rect key="frame" x="16" y="227" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2455" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Constraseña" fixedFrame="YES">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2455" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Constraseña" misplaced="YES">
                                 <rect key="frame" x="16" y="298" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2460" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2460" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="16" y="359" width="568" height="30"/>
                                 <state key="normal" title="Iniciar Sesión">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -89,7 +89,7 @@
                                     <action selector="BtnIniciarSesion_TouchUpInside:" destination="2044" id="2466" eventType="touchUpInside"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2462" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2462" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="16" y="421" width="568" height="30"/>
                                 <state key="normal" title="Restaurar contraseña">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -98,18 +98,39 @@
                                     <segue id="3395" destination="2530" kind="show"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2464" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2464" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="16" y="491" width="568" height="30"/>
                                 <state key="normal" title="Registrarse">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5838" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES" image="ic_logo_worklabs">
+                                <rect key="frame" x="180" y="121" width="240" height="50"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2136" firstAttribute="leading" secondItem="2135" secondAttribute="trailing" constant="30" id="2138"/>
                             <constraint firstAttribute="centerX" secondItem="2135" secondAttribute="centerX" constant="47" id="2140"/>
                             <constraint firstItem="2136" firstAttribute="centerX" secondItem="2049" secondAttribute="centerX" constant="43" id="2141"/>
+                            <constraint id="5839" firstItem="2049" firstAttribute="trailingMargin" secondItem="5838" secondAttribute="trailing" constant="164"/>
+                            <constraint id="5840" firstItem="5838" firstAttribute="leading" secondItem="2049" secondAttribute="leadingMargin" constant="164"/>
+                            <constraint id="5841" firstItem="5838" firstAttribute="top" secondItem="2039" secondAttribute="bottom" constant="15"/>
+                            <constraint id="5842" firstItem="2454" firstAttribute="trailing" secondItem="2049" secondAttribute="trailingMargin"/>
+                            <constraint id="5843" firstItem="2454" firstAttribute="leading" secondItem="2049" secondAttribute="leadingMargin"/>
+                            <constraint id="5844" firstItem="2454" firstAttribute="top" secondItem="5838" secondAttribute="bottom" constant="20"/>
+                            <constraint id="5845" firstItem="2455" firstAttribute="top" secondItem="2454" secondAttribute="bottom" constant="41"/>
+                            <constraint id="5846" firstItem="2455" firstAttribute="leading" secondItem="2049" secondAttribute="leadingMargin"/>
+                            <constraint id="5847" firstItem="2455" firstAttribute="trailing" secondItem="2049" secondAttribute="trailingMargin"/>
+                            <constraint id="5848" firstItem="2460" firstAttribute="top" secondItem="2455" secondAttribute="bottom" constant="31"/>
+                            <constraint id="5849" firstItem="2460" firstAttribute="leading" secondItem="2049" secondAttribute="leadingMargin"/>
+                            <constraint id="5850" firstItem="2460" firstAttribute="trailing" secondItem="2049" secondAttribute="trailingMargin"/>
+                            <constraint id="5851" firstItem="2462" firstAttribute="leading" secondItem="2049" secondAttribute="leadingMargin"/>
+                            <constraint id="5852" firstItem="2462" firstAttribute="top" secondItem="2460" secondAttribute="bottom" constant="32"/>
+                            <constraint id="5853" firstItem="2462" firstAttribute="trailing" secondItem="2049" secondAttribute="trailingMargin"/>
+                            <constraint id="5854" firstItem="2464" firstAttribute="top" secondItem="2462" secondAttribute="bottom" constant="40"/>
+                            <constraint id="5855" firstItem="2464" firstAttribute="leading" secondItem="2049" secondAttribute="leadingMargin"/>
+                            <constraint id="5856" firstItem="2464" firstAttribute="trailing" secondItem="2049" secondAttribute="trailingMargin"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -1243,11 +1264,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews/>
                     </view>
+                    <connections/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5780" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2323" y="1008"/>
+        </scene>
+        <scene sceneID="5808">
+            <objects>
+                <viewController id="5809" sceneMemberID="viewController" title="Datos de Facturación" storyboardIdentifier="DatosFacturacionController" customClass="DatosFacturacionController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5806"/>
+                        <viewControllerLayoutGuide type="bottom" id="5807"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5810">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5811" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3888" y="-184"/>
         </scene>
     </scenes>
     <resources>
@@ -1281,6 +1321,11 @@
         <image name="ic_twitter" width="36" height="36"/>
         <image name="ic_instagram" width="36" height="36"/>
         <image name="ic_qr" width="54" height="54"/>
+        <image name="ic_refresh" width="25" height="25"/>
+        <image name="ic_thumb_up" width="24" height="24"/>
+        <image name="ic_power_settings_new" width="24" height="24"/>
+        <image name="ic_send" width="24" height="24"/>
+        <image name="ic_logo_worklabs" width="300" height="46"/>
     </resources>
     <color key="tintColor" colorSpace="calibratedRGB" red="0.10980392156862745" green="0.52941176470588236" blue="0.9882352941176471" alpha="1"/>
 </document>

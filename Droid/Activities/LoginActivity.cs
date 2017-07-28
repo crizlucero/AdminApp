@@ -6,6 +6,7 @@ using Android.Widget;
 using Android.Content.PM;
 using Android.Support.V4.Content;
 using Android.Graphics;
+using WorklabsMX.Droid;
 
 namespace WorklabsMx.Droid
 {
@@ -22,13 +23,13 @@ namespace WorklabsMx.Droid
         Button signInButton, notNowButton;
         LinearLayout signingInPanel;
         ProgressBar progressBar;
-        LoginViewModel viewModel;
+        //LoginViewModel viewModel;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             //Layout gets inflated here
             base.OnCreate(savedInstanceState);
 
-            viewModel = new LoginViewModel();
+            //viewModel = new LoginViewModel();
 
             signInButton = FindViewById<Button>(Resource.Id.button_signin);
             notNowButton = FindViewById<Button>(Resource.Id.button_not_now);
@@ -70,7 +71,7 @@ namespace WorklabsMx.Droid
 
         async void SignInButton_Click(object sender, System.EventArgs e)
         {
-            await viewModel.SignIn();
+            /*await viewModel.SignIn();
 
             if (Settings.IsLoggedIn)
             {
@@ -78,7 +79,7 @@ namespace WorklabsMx.Droid
                 intent.AddFlags(ActivityFlags.ClearTop);
                 StartActivity(intent);
                 Finish();
-            }
+            }*/
         }
     }
 }

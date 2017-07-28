@@ -308,6 +308,32 @@
     <ImageAsset Include="Assets.xcassets\ic_qr.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_qr.imageset\ic_qrcode_black_36dp.png" />
     <ImageAsset Include="Assets.xcassets\ic_qr.imageset\ic_qrcode_black_24dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\sync_2.png" />
+    <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\sync_2%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\sync_2%402x~ipad.png" />
+    <ImageAsset Include="Assets.xcassets\ic_thumb_up.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_thumb_up.imageset\ic_thumb_up.png" />
+    <ImageAsset Include="Assets.xcassets\ic_thumb_up.imageset\ic_thumb_up_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_thumb_up.imageset\ic_thumb_up_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_power_settings_new.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_power_settings_new.imageset\ic_power_settings_new.png" />
+    <ImageAsset Include="Assets.xcassets\ic_power_settings_new.imageset\ic_power_settings_new_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_power_settings_new.imageset\ic_power_settings_new_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_send.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_send.imageset\ic_send.png" />
+    <ImageAsset Include="Assets.xcassets\ic_send.imageset\ic_send_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_send.imageset\ic_send_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_logo_worklabs.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_logo_worklabs.imageset\itemContent.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ic_attach_file.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ic_attach_file.imageset\ic_attach_file.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ic_attach_file.imageset\ic_attach_file_2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ic_attach_file.imageset\ic_attach_file_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\ic_attach_file.png" />
+    <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\ic_attach_file_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\ic_attach_file_3x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -390,6 +416,11 @@
     <Compile Include="Styles\STLLabel.cs" />
     <Compile Include="Styles\STLImageLabel.cs" />
     <Compile Include="Styles\STLImageView.cs" />
+    <Compile Include="ViewControllers\DatosFacturacionController.cs" />
+    <Compile Include="ViewControllers\DatosFacturacionController.designer.cs">
+      <DependentUpon>DatosFacturacionController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\LoadingView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -406,6 +437,9 @@
     <Folder Include="Assets.xcassets\ic_twitter.imageset\" />
     <Folder Include="Assets.xcassets\ic_qr.imageset\" />
     <Folder Include="Styles\" />
+    <Folder Include="Assets.xcassets\ic_refresh.imageset\" />
+    <Folder Include="Assets.xcassets\ic_logo_worklabs.imageset\" />
+    <Folder Include="Assets.xcassets\ic_attach_file.imageset\" />
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
