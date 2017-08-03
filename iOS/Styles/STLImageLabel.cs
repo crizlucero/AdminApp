@@ -11,11 +11,11 @@ namespace WorklabsMx.iOS.Styles
 			view.Add(new UIImageView
 			{
 				Image = UIImage.FromBundle(image),
-                Frame = new CGRect(40, posY, 30, 30)
+                Frame = new CGRect(20, posY, 30, 30)
 			});
 
             UILabel lblSocial = new STLLabel(text, 960);
-            lblSocial.Frame = new CGRect(80, posY, UIScreen.MainScreen.Bounds.Width, 30);
+            lblSocial.Frame = new CGRect(60, posY, UIScreen.MainScreen.Bounds.Width, 30);
             view.Add(lblSocial);
         }
     }

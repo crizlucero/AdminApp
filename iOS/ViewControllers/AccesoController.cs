@@ -7,20 +7,23 @@ using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
 using CoreGraphics;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace WorklabsMx.iOS
 {
     public partial class AccesoController : UIViewController
     {
+        UIImageView imgQr;
         public AccesoController(IntPtr handle) : base(handle)
         {
+            ThreadPool.QueueUserWorkItem((x) => this.RunRefreshAccess());
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
             var storageLocal = SimpleStorage.EditGroup("Login");
-            UIImageView imgQr = new UIImageView
+            imgQr = new UIImageView
             {
                 Image = ImageGallery.LoadImageUrl(new MiembrosController().GetLlaveAcceso(storageLocal.Get("Miembro_Id"))),
                 Frame = new CGRect(UIScreen.MainScreen.Bounds.Width / 5,
@@ -42,10 +45,29 @@ namespace WorklabsMx.iOS
            {
                LoadingView loadPop = new LoadingView(UIScreen.MainScreen.Bounds);
                View.Add(loadPop);
-               imgQr.Image = ImageGallery.LoadImageUrl(new MiembrosController().GetLlaveAcceso(storageLocal.Get("Miembro_Id")));
+               RefreshAccess();
                loadPop.Hide();
            };
             View.Add(btnRefresh);
+        }
+
+        private void RefreshAccess()
+        {
+            var storageLocal = SimpleStorage.EditGroup("Login");
+            imgQr.Image = ImageGallery.LoadImageUrl(new MiembrosController().GetLlaveAcceso(storageLocal.Get("Miembro_Id")));
+        }
+
+        private void RunRefreshAccess()
+        {
+            EventWaitHandle handle = new EventWaitHandle(false, EventResetMode.ManualReset, "GoodMutexName");
+
+            while (true)
+            {
+                handle.WaitOne(2000);
+                this.RefreshAccess();
+                handle.Reset();
+                return;
+            }
         }
     }
 }

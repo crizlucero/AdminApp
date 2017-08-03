@@ -68,10 +68,10 @@ namespace WorklabsMx.iOS.Helpers
             imagePicker.DismissViewController(true, () => { });
         }
 
-        public static  UIImage LoadImage(string imagen)
+        public static UIImage LoadImage(string imagen)
         {
             if (imagen != null)
-               using (var url = new NSUrl("http://desarrolloworklabs.com/Dashboard_Client/" + imagen.Replace(@"\", "/")))
+                using (var url = new NSUrl("http://desarrolloworklabs.com/Dashboard_Client/" + imagen.Replace(@"\", "/")))
 
                 {
                     using (var data = NSData.FromUrl(url))
@@ -82,6 +82,21 @@ namespace WorklabsMx.iOS.Helpers
                 }
             return UIImage.FromBundle("ProfileImage");
         }
+
+		public static async Task<UIImage> LoadImageAsync(string imagen)
+		{
+			if (imagen != null)
+				using (var url = new NSUrl("http://desarrolloworklabs.com/Dashboard_Client/" + imagen.Replace(@"\", "/")))
+
+				{
+					using (var data = NSData.FromUrl(url))
+					{
+						if (data != null)
+							return UIImage.LoadFromData(data);
+					}
+				}
+			return UIImage.FromBundle("ProfileImage");
+		}
 
         public static UIImage LoadImageUrl(string llave)
         {
@@ -105,13 +120,13 @@ namespace WorklabsMx.iOS.Helpers
             return UIImage.FromBundle("ProfileImage");
         }
 
-        public static UIButton SelectPhoto(UIViewController owner, UIImageView imagen, ImageGallery selectImage)
+        public static UIButton SelectPhoto(UIViewController owner, UIImageView imagen)
         {
             UIButton btnPhoto = new STLButton("Seleccionar imagen");
             btnPhoto.TouchUpInside += (s, e) =>
             {
                 UIImagePickerController imagePicker = new UIImagePickerController();
-                selectImage = new ImageGallery(imagePicker, imagen);
+                new ImageGallery(imagePicker, imagen);
                 owner.PresentViewController(imagePicker, true, () => { });
             };
 

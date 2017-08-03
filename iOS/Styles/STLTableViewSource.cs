@@ -12,7 +12,7 @@ namespace WorklabsMx.iOS.Styles
 
         internal List<ItemsMenu> TableItems;
         string CellIdentifier = "TableCell";
-        UITableViewController owner;
+        readonly UITableViewController owner;
         public STLTableViewSource(List<ItemsMenu> items, UITableViewController owner) : base()
         {
             this.TableItems = items;
@@ -36,7 +36,11 @@ namespace WorklabsMx.iOS.Styles
                     using (var data = NSData.FromUrl(url))
                     {
                         if (data != null)
+                        {
                             cell.ImageView.Image = UIImage.LoadFromData(data);
+                            cell.ImageView.Layer.MasksToBounds = true;
+                            cell.ImageView.Layer.CornerRadius = 25;
+                        }
                     }
                 }
             }

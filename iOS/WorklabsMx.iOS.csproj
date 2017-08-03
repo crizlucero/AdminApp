@@ -102,12 +102,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.Connectivity.Abstractions">
-      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.1\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Connectivity">
-      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.1\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
-    </Reference>
     <Reference Include="Plugin.Settings.Abstractions">
       <HintPath>..\packages\Xam.Plugins.Settings.3.0.1\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
     </Reference>
@@ -121,11 +115,53 @@
     <Reference Include="BouncyCastle">
       <HintPath>..\packages\MimeKit.1.16.2\lib\Xamarin.iOS10\BouncyCastle.dll</HintPath>
     </Reference>
-    <Reference Include="MimeKit">
-      <HintPath>..\packages\MimeKit.1.16.2\lib\Xamarin.iOS10\MimeKit.dll</HintPath>
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.2\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="MailKit">
-      <HintPath>..\packages\MailKit.1.16.2\lib\Xamarin.iOS10\MailKit.dll</HintPath>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.2\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoTouch.Dialog-1" />
+    <Reference Include="MonoTouch.NUnitLite" />
+    <Reference Include="Mono.Security" />
+    <Reference Include="Mono.Data.Tds" />
+    <Reference Include="Mono.Data.Sqlite" />
+    <Reference Include="Mono.CSharp" />
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.iOS">
+      <HintPath>..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_2_721_2_Trial\Binaries\iOS\Telerik.Xamarin.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Chart">
+      <HintPath>..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_2_721_2_Trial\Binaries\iOS\Telerik.XamarinForms.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Common">
+      <HintPath>..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_2_721_2_Trial\Binaries\iOS\Telerik.XamarinForms.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataControls">
+      <HintPath>..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_2_721_2_Trial\Binaries\iOS\Telerik.XamarinForms.DataControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataVisualization">
+      <HintPath>..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_2_721_2_Trial\Binaries\iOS\Telerik.XamarinForms.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.SkiaSharp">
+      <HintPath>..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_2_721_2_Trial\Binaries\iOS\Telerik.XamarinForms.SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Primitives">
+      <HintPath>..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_2_721_2_Trial\Binaries\iOS\Telerik.XamarinForms.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Input">
+      <HintPath>..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_2_721_2_Trial\Binaries\iOS\Telerik.XamarinForms.Input.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -298,10 +334,6 @@
     <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook_box_black_36dp.png" />
     <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook_box_black_48dp.png" />
     <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter_box_black_24dp.png" />
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter_box_black_36dp.png" />
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter_box_black_48dp.png" />
     <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram_black_24dp.png" />
     <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram_black_36dp.png" />
     <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram_black_48dp.png" />
@@ -326,14 +358,59 @@
     <ImageAsset Include="Assets.xcassets\ic_send.imageset\ic_send_3x.png" />
     <ImageAsset Include="Assets.xcassets\ic_logo_worklabs.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_logo_worklabs.imageset\itemContent.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ic_attach_file.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ic_attach_file.imageset\ic_attach_file.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ic_attach_file.imageset\ic_attach_file_2x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ic_attach_file.imageset\ic_attach_file_3x.png" />
     <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\ic_attach_file.png" />
     <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\ic_attach_file_2x.png" />
     <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\ic_attach_file_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\ic_search.png" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\ic_search_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\ic_search_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_group.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_group.imageset\ic_group.png" />
+    <ImageAsset Include="Assets.xcassets\ic_group.imageset\ic_group_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_group.imageset\ic_group_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete.png" />
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_black_18dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_black_24dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_black_36dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_black_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_grey600_18dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_grey600_24dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_grey600_36dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_grey600_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_white_18dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_white_24dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_white_36dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_white_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter_box_black_24dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter_box_black_36dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter_box_black_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\ic_remove.png" />
+    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\ic_remove_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\ic_remove_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_people_outline.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_people_outline.imageset\ic_people_outline.png" />
+    <ImageAsset Include="Assets.xcassets\ic_people_outline.imageset\ic_people_outline_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_people_outline.imageset\ic_people_outline_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\ic_person_add.png" />
+    <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\ic_person_add_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\ic_person_add_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\ic_add.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_add.imageset\ic_add.png" />
+    <ImageAsset Include="Assets.xcassets\ic_add.imageset\ic_add_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_add.imageset\ic_add_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_clear.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_clear.imageset\ic_clear.png" />
+    <ImageAsset Include="Assets.xcassets\ic_clear.imageset\ic_clear_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_clear.imageset\ic_clear_3x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -365,17 +442,9 @@
     <Compile Include="ViewControllers\RegistroInvitadosController.designer.cs">
       <DependentUpon>RegistroInvitadosController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\FormatosController.cs" />
-    <Compile Include="ViewControllers\FormatosController.designer.cs">
-      <DependentUpon>FormatosController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewControllers\PerfilController.cs" />
     <Compile Include="ViewControllers\PerfilController.designer.cs">
       <DependentUpon>PerfilController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\MiPerfilController.cs" />
-    <Compile Include="ViewControllers\MiPerfilController.designer.cs">
-      <DependentUpon>MiPerfilController.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewControllers\AboutMeController.cs" />
     <Compile Include="ViewControllers\AboutMeController.designer.cs">
@@ -421,6 +490,42 @@
       <DependentUpon>DatosFacturacionController.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\LoadingView.cs" />
+    <Compile Include="Models\PickerModel.cs" />
+    <Compile Include="Helpers\DatePickerHelper.cs" />
+    <Compile Include="ViewControllers\ReservaController.cs" />
+    <Compile Include="ViewControllers\ReservaController.designer.cs">
+      <DependentUpon>ReservaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Calendario.cs" />
+    <Compile Include="ViewControllers\SubMenuController.cs" />
+    <Compile Include="ViewControllers\SubMenuController.designer.cs">
+      <DependentUpon>SubMenuController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MisColaboradoresBajaController.cs" />
+    <Compile Include="ViewControllers\MisColaboradoresBajaController.designer.cs">
+      <DependentUpon>MisColaboradoresBajaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\TabBarColaboradorController.cs" />
+    <Compile Include="ViewControllers\TabBarColaboradorController.designer.cs">
+      <DependentUpon>TabBarColaboradorController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\DirectorioUsuarioController.cs" />
+    <Compile Include="ViewControllers\DirectorioUsuarioController.designer.cs">
+      <DependentUpon>DirectorioUsuarioController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewElements\InfoPersonaCard.cs" />
+    <Compile Include="ViewElements\InfoEmpresaCard.cs" />
+    <Compile Include="ViewControllers\DirectorioEmpresasController.cs" />
+    <Compile Include="ViewControllers\DirectorioEmpresasController.designer.cs">
+      <DependentUpon>DirectorioEmpresasController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\PickerDataModel.cs" />
+    <Compile Include="ViewControllers\BusquedasController.cs" />
+    <Compile Include="ViewControllers\BusquedasController.designer.cs">
+      <DependentUpon>BusquedasController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DropDownListSource.cs" />
+    <Compile Include="Styles\STLDropDownList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -440,8 +545,13 @@
     <Folder Include="Assets.xcassets\ic_refresh.imageset\" />
     <Folder Include="Assets.xcassets\ic_logo_worklabs.imageset\" />
     <Folder Include="Assets.xcassets\ic_attach_file.imageset\" />
+    <Folder Include="Models\" />
+    <Folder Include="Assets.xcassets\ic_search.imageset\" />
+    <Folder Include="Assets.xcassets\ic_twitter.imageset\" />
+    <Folder Include="ViewElements\" />
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
 </Project>

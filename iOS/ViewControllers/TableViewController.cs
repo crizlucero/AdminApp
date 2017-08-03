@@ -32,11 +32,6 @@ namespace WorklabsMx.iOS
             Add(table);
         }
 
-        public static explicit operator TableViewController(FormatosController v)
-        {
-            throw new NotImplementedException();
-        }
-
         public override void DidReceiveMemoryWarning()
         {
             base.DidReceiveMemoryWarning();
