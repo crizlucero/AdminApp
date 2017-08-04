@@ -4,14 +4,16 @@ using UIKit;
 using CoreGraphics;
 using TelerikUI;
 using System.Collections.Generic;
+using WorklabsMx.iOS.ViewElements;
 
 namespace WorklabsMx.iOS
 {
     public partial class ReservaController : UIViewController
     {
-
+        readonly UIScrollView eventView;
         public ReservaController(IntPtr handle) : base(handle)
         {
+            eventView = new HorarioEventos();
         }
         CalendarDelegate calendarDelegate;
         public List<TKCalendarEvent> events;
@@ -31,12 +33,16 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            // >> getting-started-calendar-cs
-            TKCalendar calendarView = new TKCalendar(this.View.Bounds);
-            calendarView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
+            NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Salas", UIBarButtonItemStyle.Plain, (sender, e) =>
+            {
+
+            }), true);
+            TKCalendar calendarView = new TKCalendar(this.View.Bounds)
+            {
+                AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+            };
             this.View.AddSubview(calendarView);
-            // << getting-started-calendar-cs
-            calendarDelegate = new CalendarDelegate();
+            calendarDelegate = new CalendarDelegate(eventView);
 
             events = new List<TKCalendarEvent>();
             NSCalendar calendar = new NSCalendar(NSCalendarType.Gregorian);
@@ -59,18 +65,13 @@ namespace WorklabsMx.iOS
                 events.Add(ev);
             }
 
-            calendarView.MinDate = TKCalendar.DateWithYear(2017, 7, 1, calendar);
-            calendarView.MaxDate = TKCalendar.DateWithYear(2017, 7, 31, calendar);
+            calendarView.MinDate = NSDate.Now;
+            calendarView.MaxDate = TKCalendar.DateWithYear(DateTime.Now.Year, DateTime.Now.Month, new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).AddMonths(1).AddDays(-1).Day, calendar);
             calendarView.Delegate = calendarDelegate;
             calendarView.DataSource = new CalendarDataSource(this);
-            NSDateComponents newComponents = new NSDateComponents();
-            newComponents.Year = 2017;
-            newComponents.Month = 7;
-            newComponents.Day = 1;
-            NSDate newDate = calendarView.Calendar.DateFromComponents(newComponents);
-            calendarView.NavigateToDate(newDate, true);
-
+            calendarView.NavigateToDate(NSDate.Now, true);
             calendarView.ReloadData();
+            Add(eventView);
         }
     }
     class CalendarDataSource : TKCalendarDataSource
@@ -106,9 +107,15 @@ namespace WorklabsMx.iOS
 
     class CalendarDelegate : TKCalendarDelegate
     {
+        readonly UIScrollView scrollView;
+        public CalendarDelegate(UIScrollView scrollView)
+        {
+            this.scrollView = scrollView;
+        }
         public override void DidSelectDate(TKCalendar calendar, NSDate date)
         {
-            Console.WriteLine("{0}", date);
+            scrollView.Hidden = false;
+
         }
     }
 }

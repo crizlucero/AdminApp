@@ -30,11 +30,11 @@ namespace WorklabsMx.iOS
             }), true);
         }
 
-        void FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "")
+        void FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "", bool disponibilidad = true)
         {
             using (UIScrollView scrollView = new UIScrollView(new CGRect(0, position, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)))
             {
-                foreach (MiembroModel usuario in new MiembrosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades))
+                foreach (MiembroModel usuario in new MiembrosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad))
                 {
                     new InfoPersonaCard(usuario, scrollView, position);
                     position += 400;
@@ -53,12 +53,14 @@ namespace WorklabsMx.iOS
             UITextField txtPuesto = new STLTextField("Puesto", 250);
             UITextField txtProfesion = new STLTextField("Profesión", 310);
             UITextField txtHabilidades = new STLTextField("Habilidades", 370);
+            UICheckBox cbDisponibilidad = new UICheckBox("Disponibilidad", 20, 410);
 
-            UIButton btnBuscar = new STLButton("Buscar") { Frame = new CGRect(20, 400, 100, 30) };
+
+            UIButton btnBuscar = new STLButton("Buscar") { Frame = new CGRect(20, 450, 100, 30) };
             btnBuscar.TouchUpInside += (sender, e) =>
             {
                 position = 32;
-                FillData(txtNombre.Text, txtApellidos.Text, txtPuesto.Text, txtProfesion.Text, txtHabilidades.Text);
+                FillData(txtNombre.Text, txtApellidos.Text, txtPuesto.Text, txtProfesion.Text, txtHabilidades.Text, cbDisponibilidad.IsChecked);
                 searchView.RemoveFromSuperview();
             };
 
@@ -85,6 +87,9 @@ namespace WorklabsMx.iOS
 
                 new STLLabel("Habilidades", 340),
                 txtHabilidades,
+
+                new STLLabel("Disponibiliudad", 400){ Frame = new CGRect(50, 405, UIScreen.MainScreen.Bounds.Width,30)},
+                cbDisponibilidad,
 
                 btnBuscar
             };

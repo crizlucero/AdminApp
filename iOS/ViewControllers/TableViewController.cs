@@ -23,7 +23,7 @@ namespace WorklabsMx.iOS
             List<ItemsMenu> tableItems = new List<ItemsMenu>();
             var localStorage = SimpleStorage.EditGroup("Login");
             Dictionary<string, string> data = new MiembrosController().GetMemberName(localStorage.Get("Miembro_Id"));
-            tableItems.Add(new ItemsMenu { Image = "http://desarrolloworklabs.com/Dashboard_Client/" + data["Fotografia"], Label = data["Nombre"], Principal = true });
+            tableItems.Add(new ItemsMenu { Image = "http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + data["Fotografia"], Label = data["Nombre"], Principal = true });
             foreach (ItemsMenu menu in new WorklabsMx.Controllers.EscritorioController().GetMenu())
             {
                 tableItems.Add(menu);

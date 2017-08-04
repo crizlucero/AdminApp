@@ -71,7 +71,7 @@ namespace WorklabsMx.iOS.Helpers
         public static UIImage LoadImage(string imagen)
         {
             if (imagen != null)
-                using (var url = new NSUrl("http://desarrolloworklabs.com/Dashboard_Client/" + imagen.Replace(@"\", "/")))
+                using (var url = new NSUrl("http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + imagen.Replace(@"\", "/")))
 
                 {
                     using (var data = NSData.FromUrl(url))
@@ -83,20 +83,6 @@ namespace WorklabsMx.iOS.Helpers
             return UIImage.FromBundle("ProfileImage");
         }
 
-		public static async Task<UIImage> LoadImageAsync(string imagen)
-		{
-			if (imagen != null)
-				using (var url = new NSUrl("http://desarrolloworklabs.com/Dashboard_Client/" + imagen.Replace(@"\", "/")))
-
-				{
-					using (var data = NSData.FromUrl(url))
-					{
-						if (data != null)
-							return UIImage.LoadFromData(data);
-					}
-				}
-			return UIImage.FromBundle("ProfileImage");
-		}
 
         public static UIImage LoadImageUrl(string llave)
         {

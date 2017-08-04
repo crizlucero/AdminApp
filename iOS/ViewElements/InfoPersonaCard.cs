@@ -61,10 +61,10 @@ namespace WorklabsMx.iOS.ViewElements
                 scrollView.AddSubview(new STLLabel(miembro.Miembro_Habilidades, 520) { Frame = new CGRect(30, 520, UIScreen.MainScreen.Bounds.Width, 30) });
 
                 scrollView.AddSubview(new STLImageLabel(scrollView, "Teléfono", 550, "ic_call"));
-                scrollView.AddSubview(new STLLabel(miembro.Genero_Descripcion, 580) { Frame = new CGRect(30, 580, UIScreen.MainScreen.Bounds.Width, 30) });
+                scrollView.AddSubview(new STLLabel(miembro.Miembro_Telefono, 580) { Frame = new CGRect(30, 580, UIScreen.MainScreen.Bounds.Width, 30) });
 
                 scrollView.AddSubview(new STLImageLabel(scrollView, "Celular", 610, "ic_stay_current_portrait"));
-                scrollView.AddSubview(new STLLabel(miembro.Genero_Descripcion, 640) { Frame = new CGRect(30, 640, UIScreen.MainScreen.Bounds.Width, 30) });
+                scrollView.AddSubview(new STLLabel(miembro.Miembro_Celular, 640) { Frame = new CGRect(30, 640, UIScreen.MainScreen.Bounds.Width, 30) });
 
                 scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 1010);
 
