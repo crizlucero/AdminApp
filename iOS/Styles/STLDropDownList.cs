@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CoreGraphics;
 using UIKit;
 using WorklabsMx.iOS.Helpers;

@@ -1,4 +1,3 @@
-using Foundation;
 using System;
 using UIKit;
 using CoreGraphics;
@@ -30,7 +29,7 @@ namespace WorklabsMx.iOS
                 colaborador = new ColaboradoresController().GetColaborador(storageLocal.Get("Colaborador_Id"));
                 rightButton = "Actualizar";
             }
-            this.Title = colaborador.Colaborador_Nombre + " " + colaborador.Colaborador_Apellidos;
+            Title = colaborador.Colaborador_Nombre + " " + colaborador.Colaborador_Apellidos;
             using (var scrollView = new UIScrollView(new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)))
             {
                 scrollView.Add(new STLLabel("Fotografía", 40));
@@ -89,7 +88,7 @@ namespace WorklabsMx.iOS
                 scrollView.Add(txtCelular);
 
 
-                this.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(rightButton, UIBarButtonItemStyle.Plain, (sender, e) =>
+                NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(rightButton, UIBarButtonItemStyle.Plain, (sender, e) =>
                 {
                     new ColaboradoresController().AddChangeColaborador(colaborador.Miembro_Empresa_Id, txtNombre.Text, txtApellidos.Text,
                                                                        txtEmail.Text, txtTelefono.Text, txtCelular.Text, txtProfesion.Text,

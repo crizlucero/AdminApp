@@ -47,19 +47,16 @@ namespace WorklabsMx.iOS.Styles
             return cell;
         }
 
-        public override nint RowsInSection(UITableView tableview, nint section)
-        {
-            return TableItems.Count;
-        }
+        public override nint RowsInSection(UITableView tableview, nint section) => TableItems.Count;
 
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
             if (TableItems[indexPath.Row].Controller != null)
             {
-
                 var localStorage = SimpleStorage.EditGroup("Menu");
                 localStorage.Put("Menu_Id", TableItems[indexPath.Row].Menu_Id);
                 UIViewController controller = owner.Storyboard.InstantiateViewController(TableItems[indexPath.Row].Controller);
+
                 controller.Title = TableItems[indexPath.Row].Label;
                 owner.NavigationController.PushViewController(controller, true);
             }

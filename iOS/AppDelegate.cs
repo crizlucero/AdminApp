@@ -22,7 +22,7 @@ namespace WorklabsMx.iOS
 
             // Select first UIViewController.
             var storage = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
-            if (storage.Get("Miembro_Id") != null || storage.Get("Miembro_Id") != "")
+            if (!string.IsNullOrEmpty(storage.Get("Usuario_Id")) && !string.IsNullOrEmpty(storage.Get("Usuario_Tipo")))
                 Window.RootViewController = UIStoryboard.FromName("Main", null)
                                                  .InstantiateViewController("splitViewController");
             else

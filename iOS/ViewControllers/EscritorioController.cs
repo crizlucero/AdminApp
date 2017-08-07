@@ -1,4 +1,3 @@
-using Foundation;
 using System;
 using UIKit;
 using CoreGraphics;
@@ -56,7 +55,6 @@ namespace WorklabsMx.iOS
             View.AddSubview(viewView);
             #endregion
             #region Acceso
-            //var accesoView = new UIView(new CGRect(UIScreen.MainScreen.Bounds.Width - 75, UIScreen.MainScreen.Bounds.Height - 75, 200, 200));
 
             this.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_qr"), UIBarButtonItemStyle.Plain, (sender, e) =>
             {
@@ -71,7 +69,6 @@ namespace WorklabsMx.iOS
             }), true);
 
             #endregion
-            //View.AddSubview(accesoView);
             #region Posts
             scrollView = new UIScrollView(new CGRect(0, 100, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height));
             await this.AddPostsAsync();
@@ -84,7 +81,7 @@ namespace WorklabsMx.iOS
         /// </summary>
         private async Task AddPostsAsync()
         {
-            List<PostModel> posts = new WorklabsMx.Controllers.EscritorioController().GetMuroPosts(currentPage);
+            List<PostModel> posts = new Controllers.EscritorioController().GetMuroPosts(currentPage);
             if (posts.Count > 0)
             {
                 endLine = (posts.Count < 5);
@@ -112,7 +109,7 @@ namespace WorklabsMx.iOS
                     scrollView.Add(lblfecha);
 
                     //Likes
-                    UIButton btnLike = new STLButton(new WorklabsMx.Controllers.EscritorioController().GetLikes(post.POST_ID) + " Like(s)",UIImage.FromBundle("ic_thumb_up"))
+                    UIButton btnLike = new STLButton(new Controllers.EscritorioController().GetLikes(post.POST_ID) + " Like(s)", UIImage.FromBundle("ic_thumb_up"))
                     {
                         Frame = new CGRect(10, 75 + totalSize, UIScreen.MainScreen.Bounds.Width - 100, 20),
                         Font = UIFont.SystemFontOfSize(10),
@@ -122,8 +119,8 @@ namespace WorklabsMx.iOS
                     btnLike.TouchUpInside += (sender, e) =>
                     {
                         btnLike.BackgroundColor = UIColor.White;
-                        if (new WorklabsMx.Controllers.EscritorioController().PostLike(post.POST_ID, SimpleStorage.EditGroup("Login").Get("Miembro_Id")))
-                            btnLike.SetTitle(new WorklabsMx.Controllers.EscritorioController().GetLikes(post.POST_ID) + " Like(s)", UIControlState.Normal);
+                        if (new Controllers.EscritorioController().PostLike(post.POST_ID, SimpleStorage.EditGroup("Login").Get("Miembro_Id")))
+                            btnLike.SetTitle(new Controllers.EscritorioController().GetLikes(post.POST_ID) + " Like(s)", UIControlState.Normal);
                     };
                     btnLike.TouchDown += (sender, e) =>
                     {
@@ -169,7 +166,7 @@ namespace WorklabsMx.iOS
                     btnComentar.Layer.CornerRadius = 15;
                     btnComentar.TouchUpInside += async (sender, e) =>
                     {
-                        if (new WorklabsMx.Controllers.EscritorioController().CommentPost(post.POST_ID, storageLocal.Get("Miembro_Id"), txtComentario.Text))
+                        if (new Controllers.EscritorioController().CommentPost(post.POST_ID, storageLocal.Get("Miembro_Id"), txtComentario.Text))
                         {
                             nfloat scrollPosition = scrollView.ContentOffset.Y;
                             txtComentario.Text = "";
@@ -273,11 +270,7 @@ namespace WorklabsMx.iOS
             {
                 currentPage += 5;
                 await this.AddPostsAsync();
-                //scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 100 + totalSize);
             }
-
         }
     }
-
-
 }

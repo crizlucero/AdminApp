@@ -1,12 +1,11 @@
-﻿using System;
-using CoreGraphics;
+﻿using CoreGraphics;
 using UIKit;
 
 namespace WorklabsMx.iOS.Styles
 {
     public class STLImageLabel : UIView
     {
-        public STLImageLabel(UIView view, string text, int posY, string image, int fontSize = 16) : base()
+        public STLImageLabel(UIView view, string text, int posY, string image, int fontSize = 16)
         {
 			view.Add(new UIImageView
 			{
@@ -14,8 +13,10 @@ namespace WorklabsMx.iOS.Styles
                 Frame = new CGRect(20, posY, 30, 30)
 			});
 
-            UILabel lblSocial = new STLLabel(text, 960);
-            lblSocial.Frame = new CGRect(60, posY, UIScreen.MainScreen.Bounds.Width, 30);
+            UILabel lblSocial = new STLLabel(text, 960, fontSize)
+            {
+                Frame = new CGRect(60, posY, UIScreen.MainScreen.Bounds.Width, 30)
+            };
             view.Add(lblSocial);
         }
     }

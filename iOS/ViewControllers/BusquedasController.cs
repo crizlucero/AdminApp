@@ -1,4 +1,3 @@
-using Foundation;
 using System;
 using UIKit;
 using PerpetualEngine.Storage;
@@ -22,13 +21,11 @@ namespace WorklabsMx.iOS
                 case "DirectorioUsuarios": break;
                 case "MisColaboradores": break;
                 case "DirectorioEmpresas": break;
-
             }
         }
 
-        private void CreateUserFilter()
+        void CreateUserFilter()
         {
-
             using (UIScrollView scrollView = new UIScrollView(new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)))
             {
                 scrollView.Add(new STLLabel("Nombre", 170));

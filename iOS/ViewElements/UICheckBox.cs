@@ -1,5 +1,4 @@
-﻿using System;
-using CoreGraphics;
+﻿using CoreGraphics;
 using UIKit;
 
 namespace WorklabsMx.iOS.ViewElements
@@ -26,14 +25,6 @@ namespace WorklabsMx.iOS.ViewElements
             if (touches.AnyObject is UITouch touch)
             {
                 IsChecked = !IsChecked;
-                /*if (IsChecked)
-                {
-                    IsChecked = false;
-                }
-                else
-                {
-                    IsChecked = true;
-                }*/
                 Image.Hidden = !IsChecked;
             }
         }

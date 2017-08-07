@@ -1,4 +1,3 @@
-using Foundation;
 using System;
 using UIKit;
 using WorklabsMx.Models;
@@ -22,9 +21,9 @@ namespace WorklabsMx.iOS
             table = new UITableView(View.Bounds);
             List<ItemsMenu> tableItems = new List<ItemsMenu>();
             var localStorage = SimpleStorage.EditGroup("Login");
-            Dictionary<string, string> data = new MiembrosController().GetMemberName(localStorage.Get("Miembro_Id"));
+            Dictionary<string, string> data = new MiembrosController().GetMemberName(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
             tableItems.Add(new ItemsMenu { Image = "http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + data["Fotografia"], Label = data["Nombre"], Principal = true });
-            foreach (ItemsMenu menu in new WorklabsMx.Controllers.EscritorioController().GetMenu())
+            foreach (ItemsMenu menu in new Controllers.EscritorioController().GetMenu(Convert.ToInt32(localStorage.Get("Usuario_Tipo"))))
             {
                 tableItems.Add(menu);
             }

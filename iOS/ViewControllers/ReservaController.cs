@@ -1,7 +1,6 @@
 using Foundation;
 using System;
 using UIKit;
-using CoreGraphics;
 using TelerikUI;
 using System.Collections.Generic;
 using WorklabsMx.iOS.ViewElements;
@@ -41,7 +40,7 @@ namespace WorklabsMx.iOS
             {
                 AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
             };
-            this.View.AddSubview(calendarView);
+            View.AddSubview(calendarView);
             calendarDelegate = new CalendarDelegate(eventView);
 
             events = new List<TKCalendarEvent>();
@@ -81,7 +80,7 @@ namespace WorklabsMx.iOS
         public CalendarDataSource(ReservaController main)
         {
             this.main = main;
-            this.events = main.events;
+            events = main.events;
         }
 
         public override TKCalendarEventProtocol[] EventsForDate(TKCalendar calendar, NSDate date)

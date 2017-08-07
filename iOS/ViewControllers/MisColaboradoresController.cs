@@ -1,4 +1,3 @@
-using Foundation;
 using System;
 using UIKit;
 using System.Collections.Generic;
@@ -54,13 +53,10 @@ namespace WorklabsMx.iOS
             searchView.Add(btnSearch);
             View.AddSubview(searchView);
 
-
-            this.FillColaboradores(storageLocal.Get("Miembro_Id"));
-
-
+            FillColaboradores(storageLocal.Get("Miembro_Id"));
         }
 
-        private void FillColaboradores(string miembro_id, string busqueda = "")
+        void FillColaboradores(string miembro_id, string busqueda = "")
         {
 
             scrollView = new UIScrollView(new CGRect(0, totalSize, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height));

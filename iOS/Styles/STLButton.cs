@@ -4,16 +4,16 @@ namespace WorklabsMx.iOS.Styles
 {
     public class STLButton : UIButton
     {
-        public STLButton(string text) : base()
+        public STLButton(string text)
         {
             BackgroundColor = UIColor.FromRGB(101, 216, 250);
             ClipsToBounds = true;
             Layer.CornerRadius = 10;
-            base.TouchDown += (sender, e) =>
+            TouchDown += (sender, e) =>
             {
                 BackgroundColor = UIColor.FromRGB(101, 216, 0);
             };
-            base.TouchUpInside += (sender, e) =>
+            TouchUpInside += (sender, e) =>
             {
                 BackgroundColor = UIColor.FromRGB(101, 216, 250);
             };
@@ -21,39 +21,39 @@ namespace WorklabsMx.iOS.Styles
             SetTitle(text, UIControlState.Normal);
         }
 
-        public STLButton(UIImage image) : base()
+        public STLButton(UIImage image)
         {
             BackgroundColor = UIColor.FromRGB(101, 216, 250);
             ClipsToBounds = true;
             Layer.CornerRadius = 10;
-            base.TouchDown += (sender, e) =>
+            TouchDown += (sender, e) =>
             {
                 BackgroundColor = UIColor.FromRGB(101, 216, 0);
             };
-            base.TouchUpInside += (sender, e) =>
+            TouchUpInside += (sender, e) =>
             {
                 BackgroundColor = UIColor.FromRGB(101, 216, 250);
             };
             SetImage(image, UIControlState.Normal);
         }
 
-		public STLButton(string text, UIImage image) : base()
-		{
-			BackgroundColor = UIColor.FromRGB(101, 216, 250);
-			ClipsToBounds = true;
-			Layer.CornerRadius = 10;
-			base.TouchDown += (sender, e) =>
-			{
-				BackgroundColor = UIColor.FromRGB(101, 216, 0);
-			};
-			base.TouchUpInside += (sender, e) =>
-			{
-				BackgroundColor = UIColor.FromRGB(101, 216, 250);
-			};
-			SetTitleColor(UIColor.Black, UIControlState.Normal);
-			SetTitle(text, UIControlState.Normal);
-			SetImage(image, UIControlState.Normal);
+        public STLButton(string text, UIImage image)
+        {
+            BackgroundColor = UIColor.FromRGB(101, 216, 250);
+            ClipsToBounds = true;
+            Layer.CornerRadius = 10;
+            TouchDown += (sender, e) =>
+            {
+                BackgroundColor = UIColor.FromRGB(101, 216, 0);
+            };
+            TouchUpInside += (sender, e) =>
+            {
+                BackgroundColor = UIColor.FromRGB(101, 216, 250);
+            };
+            SetTitleColor(UIColor.Black, UIControlState.Normal);
+            SetTitle(text, UIControlState.Normal);
+            SetImage(image, UIControlState.Normal);
             HorizontalAlignment = UIControlContentHorizontalAlignment.Left;
-		}
+        }
     }
 }

@@ -1,4 +1,3 @@
-using Foundation;
 using System;
 using UIKit;
 using WorklabsMx.Models;
@@ -6,9 +5,7 @@ using WorklabsMx.iOS.ViewElements;
 using CoreGraphics;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
-using WorklabsMx.iOS.Helpers;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
@@ -37,7 +34,14 @@ namespace WorklabsMx.iOS
             }), true);
 
         }
-
+        /// <summary>
+        /// Llena la información de la vista
+        /// </summary>
+        /// <param name="nombre">Nombre</param>
+        /// <param name="pais">Pais</param>
+        /// <param name="estado">Estado</param>
+        /// <param name="municipio">Municipio</param>
+        /// <param name="giro">Giro de la empresa</param>
         void FillData(string nombre = "", string pais = "", string estado = "", string municipio = "", string giro = "")
         {
             using (UIScrollView scrollView = new UIScrollView(new CGRect(0, position, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)))
@@ -52,6 +56,9 @@ namespace WorklabsMx.iOS
                 View.Add(scrollView);
             }
         }
+        /// <summary>
+        /// Vista de la busqueda
+        /// </summary>
         void SearchView()
         {
             UITextField txtNombre = new STLTextField("Nombre", 130);
@@ -137,6 +144,11 @@ namespace WorklabsMx.iOS
             View.AddSubview(searchView);
 
         }
+        /// <summary>
+        /// Genera el objeto de drop down list
+        /// </summary>
+        /// <param name="selectPosition">Posición donde aparecerá el objeto</param>
+        /// <param name="field">Campo a donde se le agregará la selección</param>
         void DropDownList(int selectPosition, UITextField field)
         {
             List<string> data = new List<string>();

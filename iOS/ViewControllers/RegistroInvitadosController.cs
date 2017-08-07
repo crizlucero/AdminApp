@@ -1,10 +1,7 @@
 using Foundation;
 using System;
 using UIKit;
-using System.Drawing;
-using System.Collections.Generic;
 using CoreGraphics;
-using WorklabsMx;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
 

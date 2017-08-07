@@ -1,4 +1,3 @@
-using Foundation;
 using System;
 using UIKit;
 using PerpetualEngine.Storage;
@@ -6,7 +5,6 @@ using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
 using CoreGraphics;
-using System.Threading.Tasks;
 using System.Threading;
 
 namespace WorklabsMx.iOS
@@ -51,13 +49,13 @@ namespace WorklabsMx.iOS
             View.Add(btnRefresh);
         }
 
-        private void RefreshAccess()
+        void RefreshAccess()
         {
             var storageLocal = SimpleStorage.EditGroup("Login");
             imgQr.Image = ImageGallery.LoadImageUrl(new MiembrosController().GetLlaveAcceso(storageLocal.Get("Miembro_Id")));
         }
 
-        private void RunRefreshAccess()
+        void RunRefreshAccess()
         {
             EventWaitHandle handle = new EventWaitHandle(false, EventResetMode.ManualReset, "GoodMutexName");
 

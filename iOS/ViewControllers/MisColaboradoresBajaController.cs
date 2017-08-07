@@ -1,4 +1,3 @@
-using Foundation;
 using System;
 using UIKit;
 using CoreGraphics;
@@ -54,12 +53,11 @@ namespace WorklabsMx.iOS
             View.AddSubview(searchView);
 
 
-            this.FillColaboradores(storageLocal.Get("Miembro_Id"));
+            FillColaboradores(storageLocal.Get("Miembro_Id"));
         }
 
-        private void FillColaboradores(string miembro_id, string busqueda = "")
+        void FillColaboradores(string miembro_id, string busqueda = "")
         {
-
             scrollView = new UIScrollView(new CGRect(0, totalSize, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height));
             List<ColaboradorModel> colaboradores = new ColaboradoresController().GetColaboradoresMiembro(miembro_id, busqueda, "0");
             foreach (ColaboradorModel colaborador in colaboradores)
@@ -96,8 +94,6 @@ namespace WorklabsMx.iOS
                 scrollView.AddSubview(new STLImageLabel(scrollView, "Profesión", 240 + totalSize, "ic_school"));
 
                 scrollView.AddSubview(new STLLabel(colaborador.Colaborador_Profesion, 270 + totalSize));
-
-
 
                 totalSize += 360;
             }

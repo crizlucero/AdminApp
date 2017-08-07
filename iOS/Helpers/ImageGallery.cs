@@ -40,23 +40,20 @@ namespace WorklabsMx.iOS.Helpers
             }
 
             // get common info (shared between images and video)
-            NSUrl referenceURL = e.Info[new NSString("UIImagePickerControllerReferenceUrl")] as NSUrl;
-            if (referenceURL != null)
-                Console.WriteLine("Url:" + referenceURL.ToString());
+            if (e.Info[new NSString("UIImagePickerControllerReferenceUrl")] is NSUrl referenceURL)
+                Console.WriteLine("Url:" + referenceURL);
 
             // if it was an image, get the other image info
             if (isImage)
             {
                 // get the original image
-                UIImage originalImage = e.Info[UIImagePickerController.OriginalImage] as UIImage;
-                if (originalImage != null)
+                if (e.Info[UIImagePickerController.OriginalImage] is UIImage originalImage)
                 {
                     // do something with the image
-                    imageView.Image = originalImage; // display
+                    imageView.Image = originalImage;
                 }
 
-                UIImage editedImage = e.Info[UIImagePickerController.EditedImage] as UIImage;
-                if (editedImage != null)
+                if (e.Info[UIImagePickerController.EditedImage] is UIImage editedImage)
                 {
                     // do something with the image
                     Console.WriteLine("got the edited image");
@@ -72,7 +69,6 @@ namespace WorklabsMx.iOS.Helpers
         {
             if (imagen != null)
                 using (var url = new NSUrl("http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + imagen.Replace(@"\", "/")))
-
                 {
                     using (var data = NSData.FromUrl(url))
                     {
@@ -86,7 +82,7 @@ namespace WorklabsMx.iOS.Helpers
 
         public static UIImage LoadImageUrl(string llave)
         {
-            if (llave != null || llave != "")
+            if (!string.IsNullOrEmpty(llave))
             {
                 int loop = 0;
                 while (true)
@@ -115,7 +111,6 @@ namespace WorklabsMx.iOS.Helpers
                 new ImageGallery(imagePicker, imagen);
                 owner.PresentViewController(imagePicker, true, () => { });
             };
-
             return btnPhoto;
         }
     }

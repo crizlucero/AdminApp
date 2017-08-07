@@ -1,4 +1,3 @@
-using Foundation;
 using System;
 using UIKit;
 using System.Collections.Generic;
@@ -20,12 +19,12 @@ namespace WorklabsMx.iOS
             table = new UITableView(View.Bounds);
             List<ItemsMenu> tableItems = new List<ItemsMenu>();
             var localStorage = PerpetualEngine.Storage.SimpleStorage.EditGroup("Menu");
-            foreach (ItemsMenu menu in new WorklabsMx.Controllers.EscritorioController().GetMenu(localStorage.Get("Menu_Id")))
+            var loginStorage = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
+
+            foreach (ItemsMenu submenu in new Controllers.EscritorioController().GetMenu(Convert.ToInt32(loginStorage.Get("Usuario_Tipo")), localStorage.Get("Menu_Id")))
             {
-                tableItems.Add(menu);
+                tableItems.Add(submenu);
             }
-
-
             table.Source = new STLTableViewSource(tableItems, this);
             Add(table);
         }

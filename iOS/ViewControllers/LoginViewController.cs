@@ -1,11 +1,8 @@
 ﻿using System;
 using UIKit;
-using System.Data.SqlClient;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.Net;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
+using System.Collections.Generic;
 
 namespace WorklabsMx.iOS
 {
@@ -23,16 +20,9 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
             NavigationItem.Title = ViewModel.Title;
             var localStorage = SimpleStorage.EditGroup("Login");
-            localStorage.Delete("Miembro_Id");
+            localStorage.Delete("Usuario_Id");
+            localStorage.Delete("Usuario_Tipo");
         }
-
-        //partial void NotNowButton_TouchUpInside(UIButton sender) => NavigateToTabbed();
-
-        /*partial void LoginButton_TouchUpInside(UIButton sender)
-        {
-            if (Settings.IsLoggedIn)
-                NavigateToTabbed();
-        }*/
 
         void NavigateToTabbed()
         {
@@ -47,10 +37,11 @@ namespace WorklabsMx.iOS
 
         partial void BtnIniciarSesion_TouchUpInside(UIButton sender)
         {
-            int MiembrosId = new LoginController().MemberLogin(this.txtEmail.Text, new PassSecurity().EncodePassword(this.txtPassword.Text));
+            List<string> MiembrosId = new LoginController().MemberLogin(this.txtEmail.Text, new PassSecurity().EncodePassword(this.txtPassword.Text));
             var localStorage = SimpleStorage.EditGroup("Login");
-            localStorage.Put("Miembro_Id", MiembrosId.ToString());
-            if (MiembrosId > 0)
+            localStorage.Put("Usuario_Id", MiembrosId[0]);
+            localStorage.Put("Usuario_Tipo", MiembrosId[1]);
+            if (MiembrosId.Count > 0)
                 NavigateToTabbed();
             else
             {

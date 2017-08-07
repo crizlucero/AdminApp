@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using Foundation;
 using UIKit;
 
@@ -28,10 +27,8 @@ namespace WorklabsMx.iOS.Helpers
             return cell;
         }
 
-        public override nint RowsInSection(UITableView tableview, nint section)
-        {
-            return TableItems.Count;
-        }
+        public override nint RowsInSection(UITableView tableview, nint section) => TableItems.Count;
+
 
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {

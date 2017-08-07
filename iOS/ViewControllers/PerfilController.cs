@@ -17,8 +17,7 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
-            miembro = new MiembrosController().GetMemberData(storageLocal.Get("Miembro_Id"));
-
+            miembro = new MiembrosController().GetMemberData(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
 
             new InfoPersonaCard(miembro, View, 60);
         }

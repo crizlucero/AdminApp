@@ -1,5 +1,4 @@
-﻿using System;
-using CoreGraphics;
+﻿using CoreGraphics;
 using Foundation;
 using UIKit;
 using WorklabsMx.iOS.Styles;
@@ -11,14 +10,13 @@ namespace WorklabsMx.iOS.ViewElements
     {
         public InfoPersonaCard(MiembroModel miembro, UIView View, int initialPosition = 0)
         {
-            
             using (UIView headerView = new UIView(new CGRect(0, initialPosition, UIScreen.MainScreen.Bounds.Width, 100)) { BackgroundColor = UIColor.White })
             {
-                UIView line = new UIView(new System.Drawing.RectangleF(0,0,100,100))
-				{
+                UIView line = new UIView(new System.Drawing.RectangleF(0, 0, 100, 100))
+                {
                     Frame = new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 5),
                     BackgroundColor = UIColor.FromRGB(101, 216, 250)
-				};
+                };
                 headerView.AddSubview(line);
                 headerView.AddSubview(new STLLabel(miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos, 10, 22));
                 UILabel lblMail = new STLLabel(miembro.Miembro_Correo_Electronico, 14)
@@ -41,6 +39,7 @@ namespace WorklabsMx.iOS.ViewElements
             }
             using (UIScrollView scrollView = new UIScrollView(new CGRect(0, 70 + initialPosition, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)) { BackgroundColor = UIColor.White })
             {
+                int empresaSize = 0;
                 scrollView.AddSubview(new STLImageView(50, miembro.Miembro_Fotografia)
                 {
                     Frame = new CGRect(UIScreen.MainScreen.Bounds.Width / 4, 50, 200, 200)
@@ -51,7 +50,7 @@ namespace WorklabsMx.iOS.ViewElements
                 scrollView.AddSubview(new STLImageLabel(scrollView, "Fecha de Nacimiento", 310, "ic_today"));
                 scrollView.AddSubview(new STLLabel(miembro.Miembro_Fecha_Nacimiento, 340) { Frame = new CGRect(30, 340, UIScreen.MainScreen.Bounds.Width, 30) });
 
-                scrollView.AddSubview(new STLImageLabel(scrollView, "Profesión", 370, "ic_scholl"));
+                scrollView.AddSubview(new STLImageLabel(scrollView, "Profesión", 370, "ic_school"));
                 scrollView.AddSubview(new STLLabel(miembro.Miembro_Profesion, 400) { Frame = new CGRect(30, 400, UIScreen.MainScreen.Bounds.Width, 30) });
 
                 scrollView.AddSubview(new STLImageLabel(scrollView, "Puesto", 430, "ic_work"));
@@ -60,13 +59,20 @@ namespace WorklabsMx.iOS.ViewElements
                 scrollView.AddSubview(new STLImageLabel(scrollView, "Habilidades", 490, "ic_create"));
                 scrollView.AddSubview(new STLLabel(miembro.Miembro_Habilidades, 520) { Frame = new CGRect(30, 520, UIScreen.MainScreen.Bounds.Width, 30) });
 
-                scrollView.AddSubview(new STLImageLabel(scrollView, "Teléfono", 550, "ic_call"));
-                scrollView.AddSubview(new STLLabel(miembro.Miembro_Telefono, 580) { Frame = new CGRect(30, 580, UIScreen.MainScreen.Bounds.Width, 30) });
+                if (!string.IsNullOrEmpty(miembro.Miembro_Empresa))
+                {
+                    scrollView.AddSubview(new STLImageLabel(scrollView, "Empresa", 550, "ic_domain"));
+                    scrollView.AddSubview(new STLLabel(miembro.Miembro_Empresa, 580) { Frame = new CGRect(30, 580, UIScreen.MainScreen.Bounds.Width, 30) });
+                    empresaSize = 90;
+                }
+                scrollView.AddSubview(new STLImageLabel(scrollView, "Teléfono", 550 + empresaSize, "ic_call"));
+                scrollView.AddSubview(new STLLabel(miembro.Miembro_Telefono, 580) { Frame = new CGRect(30, 580 + empresaSize, UIScreen.MainScreen.Bounds.Width, 30) });
 
-                scrollView.AddSubview(new STLImageLabel(scrollView, "Celular", 610, "ic_stay_current_portrait"));
-                scrollView.AddSubview(new STLLabel(miembro.Miembro_Celular, 640) { Frame = new CGRect(30, 640, UIScreen.MainScreen.Bounds.Width, 30) });
+                scrollView.AddSubview(new STLImageLabel(scrollView, "Celular", 610 + empresaSize, "ic_stay_current_portrait"));
+                scrollView.AddSubview(new STLLabel(miembro.Miembro_Celular, 640) { Frame = new CGRect(30, 640 + empresaSize, UIScreen.MainScreen.Bounds.Width, 30) });
 
-                scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 1010);
+
+                scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 1010 + empresaSize);
 
                 View.AddSubview(scrollView);
             }

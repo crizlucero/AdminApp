@@ -12,7 +12,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Editar", UIBarButtonItemStyle.Plain, HandleEventHandler), true);
+            NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Editar", UIBarButtonItemStyle.Plain, HandleEventHandler), true);
         }
 
         void HandleEventHandler(object sender, EventArgs e)
@@ -21,12 +21,12 @@ namespace WorklabsMx.iOS
             switch (TabBar.SelectedItem.Title)
             {
                 case "Mi Perfil":
-                    controller = this.Storyboard.InstantiateViewController("AboutMeModificaController");
+                    controller = Storyboard.InstantiateViewController("AboutMeModificaController");
                     controller.Title = "Edición de campos";
                     this.NavigationController.PushViewController(controller, true);
                     break;
                 case "Mi Empresa":
-                    controller = this.Storyboard.InstantiateViewController("EmpresaMiembroModificaController");
+                    controller = Storyboard.InstantiateViewController("EmpresaMiembroModificaController");
                     controller.Title = "Edición de campos";
                     this.NavigationController.PushViewController(controller, true); break;
             }
