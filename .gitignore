@@ -10,3 +10,13 @@ iOS/bin/iPhoneSimulator/Debug/
 Droid/bin/Debug/
 
 Droid/obj/\.cache/
+
+WorklabsMx\.Droid/bin/Debug/
+
+WorklabsMx\.Droid/obj/Debug/android/assets/
+
+WorklabsMx\.Droid/obj/Debug/linksrc/
+
+WorklabsMx\.Droid/obj/Debug/
+
+MobileAppService/obj/Debug/netcoreapp1\.0/
