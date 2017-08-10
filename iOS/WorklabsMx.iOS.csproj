@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -112,9 +112,6 @@
     <Reference Include="PerpetualEngine.SimpleStorage.iOS-Unified">
       <HintPath>..\packages\SimpleStorage.1.4.2\lib\Xamarin.iOS10\PerpetualEngine.SimpleStorage.iOS-Unified.dll</HintPath>
     </Reference>
-    <Reference Include="BouncyCastle">
-      <HintPath>..\packages\MimeKit.1.16.2\lib\Xamarin.iOS10\BouncyCastle.dll</HintPath>
-    </Reference>
     <Reference Include="Plugin.Connectivity.Abstractions">
       <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.2\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
     </Reference>
@@ -163,758 +160,267 @@
     <Reference Include="Telerik.XamarinForms.Input">
       <HintPath>..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_2_721_2_Trial\Binaries\iOS\Telerik.XamarinForms.Input.dll</HintPath>
     </Reference>
+    <Reference Include="BouncyCastle">
+      <HintPath>..\packages\MimeKit.1.18.0\lib\Xamarin.iOS10\BouncyCastle.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit">
+      <HintPath>..\packages\MimeKit.1.18.0\lib\Xamarin.iOS10\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit">
+      <HintPath>..\packages\MailKit.1.18.0\lib\Xamarin.iOS10\MailKit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\First.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\First.imageset\tab_feed.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\First.imageset\tab_feed%402x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\First.imageset\tab_feed%403x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\profile_generic.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\profile_generic%402x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\profile_generic%403x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Second.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Second.imageset\tab_about.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Second.imageset\tab_about%402x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Second.imageset\tab_about%403x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\XamarinLogo.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\XamarinLogo.imageset\xamarin_logo.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\XamarinLogo.imageset\xamarin_logo%402x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\XamarinLogo.imageset\xamarin_logo%403x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_business_center.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_business_center.imageset\ic_business_center.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_business_center.imageset\ic_business_center%402x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_business_center.imageset\ic_business_center%403x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_call.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_call.imageset\ic_call.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_call.imageset\ic_call%402x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_call.imageset\ic_call%403x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_public.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_public.imageset\ic_public.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_public.imageset\ic_public_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_public.imageset\ic_public_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_create.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_create.imageset\ic_create.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_create.imageset\ic_create%402x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_create.imageset\ic_create%403x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_email.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_email.imageset\ic_email.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_email.imageset\ic_email_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_email.imageset\ic_email_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_person.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_person.imageset\ic_person.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_person.imageset\ic_person_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_person.imageset\ic_person_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_place.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_place.imageset\ic_place.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_place.imageset\ic_place_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_place.imageset\ic_place_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_school.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_school.imageset\ic_school.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_school.imageset\ic_school_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_school.imageset\ic_school_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_share.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_share.imageset\ic_share.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_share.imageset\ic_share_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_share.imageset\ic_share_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_stay_current_portrait.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_stay_current_portrait.imageset\ic_stay_current_portrait.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_stay_current_portrait.imageset\ic_stay_current_portrait_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_stay_current_portrait.imageset\ic_stay_current_portrait_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_today.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_today.imageset\ic_today.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_today.imageset\ic_today_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_today.imageset\ic_today_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_work.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_work.imageset\ic_work.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_work.imageset\ic_work_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_work.imageset\ic_work_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_credit_card.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_credit_card.imageset\ic_credit_card.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_credit_card.imageset\ic_credit_card_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_credit_card.imageset\ic_credit_card_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_description.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_description.imageset\ic_description.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_description.imageset\ic_description_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_description.imageset\ic_description_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_dashboard.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_dashboard.imageset\ic_dashboard.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_dashboard.imageset\ic_dashboard_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_dashboard.imageset\ic_dashboard_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_insert_invitation.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_insert_invitation.imageset\ic_insert_invitation.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_insert_invitation.imageset\ic_insert_invitation_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_insert_invitation.imageset\ic_insert_invitation_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_format_list_bulleted.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_format_list_bulleted.imageset\ic_format_list_bulleted.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_format_list_bulleted.imageset\ic_format_list_bulleted_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_format_list_bulleted.imageset\ic_format_list_bulleted_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_book.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_book.imageset\ic_book.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_book.imageset\ic_book_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_book.imageset\ic_book_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_label.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_label.imageset\ic_label.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_label.imageset\ic_label_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_label.imageset\ic_label_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_cloud.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_cloud.imageset\ic_cloud.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_cloud.imageset\ic_cloud_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_cloud.imageset\ic_cloud_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_home.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_domain.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_domain.imageset\ic_domain.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_domain.imageset\ic_domain_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_domain.imageset\ic_domain_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook_box_black_24dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook_box_black_36dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook_box_black_48dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram_black_24dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram_black_36dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram_black_48dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\ic_qrcode_black_36dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\ic_qrcode_black_24dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\sync_2.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\sync_2%402x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\sync_2%402x~ipad.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_thumb_up.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_thumb_up.imageset\ic_thumb_up.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_thumb_up.imageset\ic_thumb_up_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_thumb_up.imageset\ic_thumb_up_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_power_settings_new.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_power_settings_new.imageset\ic_power_settings_new.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_power_settings_new.imageset\ic_power_settings_new_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_power_settings_new.imageset\ic_power_settings_new_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_send.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_send.imageset\ic_send.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_send.imageset\ic_send_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_send.imageset\ic_send_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_logo_worklabs.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_logo_worklabs.imageset\itemContent.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\ic_attach_file.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\ic_attach_file_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\ic_attach_file_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_search.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_search.imageset\ic_search.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_search.imageset\ic_search_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_search.imageset\ic_search_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_group.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_group.imageset\ic_group.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_group.imageset\ic_group_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_group.imageset\ic_group_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_black_18dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_black_24dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_black_36dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_black_48dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_grey600_18dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_grey600_24dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_grey600_36dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_grey600_48dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_white_18dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_white_24dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_white_36dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_white_48dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter_box_black_24dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter_box_black_36dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter_box_black_48dp.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\ic_remove.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\ic_remove_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\ic_remove_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_people_outline.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_people_outline.imageset\ic_people_outline.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_people_outline.imageset\ic_people_outline_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_people_outline.imageset\ic_people_outline_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\ic_person_add.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\ic_person_add_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\ic_person_add_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\.DS_Store">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_add.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_add.imageset\ic_add.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_add.imageset\ic_add_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_add.imageset\ic_add_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_clear.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_clear.imageset\ic_clear.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_clear.imageset\ic_clear_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_clear.imageset\ic_clear_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_check.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_check.imageset\ic_check.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_check.imageset\ic_check_2x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ic_check.imageset\ic_check_3x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\First.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\First.imageset\tab_feed.png" />
+    <ImageAsset Include="Assets.xcassets\First.imageset\tab_feed%402x.png" />
+    <ImageAsset Include="Assets.xcassets\First.imageset\tab_feed%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\profile_generic.png" />
+    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\profile_generic%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\profile_generic%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Second.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Second.imageset\tab_about.png" />
+    <ImageAsset Include="Assets.xcassets\Second.imageset\tab_about%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Second.imageset\tab_about%403x.png" />
+    <ImageAsset Include="Assets.xcassets\XamarinLogo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\XamarinLogo.imageset\xamarin_logo.png" />
+    <ImageAsset Include="Assets.xcassets\XamarinLogo.imageset\xamarin_logo%402x.png" />
+    <ImageAsset Include="Assets.xcassets\XamarinLogo.imageset\xamarin_logo%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_business_center.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_business_center.imageset\ic_business_center.png" />
+    <ImageAsset Include="Assets.xcassets\ic_business_center.imageset\ic_business_center%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_business_center.imageset\ic_business_center%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_call.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_call.imageset\ic_call.png" />
+    <ImageAsset Include="Assets.xcassets\ic_call.imageset\ic_call%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_call.imageset\ic_call%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_public.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_public.imageset\ic_public.png" />
+    <ImageAsset Include="Assets.xcassets\ic_public.imageset\ic_public_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_public.imageset\ic_public_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_create.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_create.imageset\ic_create.png" />
+    <ImageAsset Include="Assets.xcassets\ic_create.imageset\ic_create%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_create.imageset\ic_create%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_email.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_email.imageset\ic_email.png" />
+    <ImageAsset Include="Assets.xcassets\ic_email.imageset\ic_email_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_email.imageset\ic_email_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_person.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_person.imageset\ic_person.png" />
+    <ImageAsset Include="Assets.xcassets\ic_person.imageset\ic_person_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_person.imageset\ic_person_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_place.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_place.imageset\ic_place.png" />
+    <ImageAsset Include="Assets.xcassets\ic_place.imageset\ic_place_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_place.imageset\ic_place_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_school.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_school.imageset\ic_school.png" />
+    <ImageAsset Include="Assets.xcassets\ic_school.imageset\ic_school_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_school.imageset\ic_school_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_share.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_share.imageset\ic_share.png" />
+    <ImageAsset Include="Assets.xcassets\ic_share.imageset\ic_share_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_share.imageset\ic_share_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_stay_current_portrait.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_stay_current_portrait.imageset\ic_stay_current_portrait.png" />
+    <ImageAsset Include="Assets.xcassets\ic_stay_current_portrait.imageset\ic_stay_current_portrait_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_stay_current_portrait.imageset\ic_stay_current_portrait_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_today.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_today.imageset\ic_today.png" />
+    <ImageAsset Include="Assets.xcassets\ic_today.imageset\ic_today_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_today.imageset\ic_today_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_work.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_work.imageset\ic_work.png" />
+    <ImageAsset Include="Assets.xcassets\ic_work.imageset\ic_work_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_work.imageset\ic_work_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_credit_card.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_credit_card.imageset\ic_credit_card.png" />
+    <ImageAsset Include="Assets.xcassets\ic_credit_card.imageset\ic_credit_card_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_credit_card.imageset\ic_credit_card_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_description.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_description.imageset\ic_description.png" />
+    <ImageAsset Include="Assets.xcassets\ic_description.imageset\ic_description_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_description.imageset\ic_description_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_dashboard.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_dashboard.imageset\ic_dashboard.png" />
+    <ImageAsset Include="Assets.xcassets\ic_dashboard.imageset\ic_dashboard_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_dashboard.imageset\ic_dashboard_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_insert_invitation.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_insert_invitation.imageset\ic_insert_invitation.png" />
+    <ImageAsset Include="Assets.xcassets\ic_insert_invitation.imageset\ic_insert_invitation_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_insert_invitation.imageset\ic_insert_invitation_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_format_list_bulleted.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_format_list_bulleted.imageset\ic_format_list_bulleted.png" />
+    <ImageAsset Include="Assets.xcassets\ic_format_list_bulleted.imageset\ic_format_list_bulleted_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_format_list_bulleted.imageset\ic_format_list_bulleted_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_book.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_book.imageset\ic_book.png" />
+    <ImageAsset Include="Assets.xcassets\ic_book.imageset\ic_book_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_book.imageset\ic_book_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_label.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_label.imageset\ic_label.png" />
+    <ImageAsset Include="Assets.xcassets\ic_label.imageset\ic_label_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_label.imageset\ic_label_3x.png" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\Assets.xcassets\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\ic_cloud.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_cloud.imageset\ic_cloud.png" />
+    <ImageAsset Include="Assets.xcassets\ic_cloud.imageset\ic_cloud_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_cloud.imageset\ic_cloud_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_home.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home.png" />
+    <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_domain.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_domain.imageset\ic_domain.png" />
+    <ImageAsset Include="Assets.xcassets\ic_domain.imageset\ic_domain_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_domain.imageset\ic_domain_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook_box_black_24dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook_box_black_36dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook_box_black_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram_black_24dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram_black_36dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram_black_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\ic_qrcode_black_36dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\ic_qrcode_black_24dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\sync_2.png" />
+    <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\sync_2%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\sync_2%402x~ipad.png" />
+    <ImageAsset Include="Assets.xcassets\ic_thumb_up.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_thumb_up.imageset\ic_thumb_up.png" />
+    <ImageAsset Include="Assets.xcassets\ic_thumb_up.imageset\ic_thumb_up_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_thumb_up.imageset\ic_thumb_up_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_power_settings_new.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_power_settings_new.imageset\ic_power_settings_new.png" />
+    <ImageAsset Include="Assets.xcassets\ic_power_settings_new.imageset\ic_power_settings_new_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_power_settings_new.imageset\ic_power_settings_new_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_send.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_send.imageset\ic_send.png" />
+    <ImageAsset Include="Assets.xcassets\ic_send.imageset\ic_send_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_send.imageset\ic_send_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_logo_worklabs.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_logo_worklabs.imageset\itemContent.png" />
+    <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\ic_attach_file.png" />
+    <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\ic_attach_file_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\ic_attach_file_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\ic_search.png" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\ic_search_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\ic_search_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_group.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_group.imageset\ic_group.png" />
+    <ImageAsset Include="Assets.xcassets\ic_group.imageset\ic_group_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_group.imageset\ic_group_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete.png" />
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_black_18dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_black_24dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_black_36dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_black_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_grey600_18dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_grey600_24dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_grey600_36dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_grey600_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_white_18dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_white_24dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_white_36dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_white_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter_box_black_24dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter_box_black_36dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter_box_black_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\ic_remove.png" />
+    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\ic_remove_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\ic_remove_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_people_outline.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_people_outline.imageset\ic_people_outline.png" />
+    <ImageAsset Include="Assets.xcassets\ic_people_outline.imageset\ic_people_outline_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_people_outline.imageset\ic_people_outline_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\ic_person_add.png" />
+    <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\ic_person_add_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\ic_person_add_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\.DS_Store" />
+    <ImageAsset Include="Assets.xcassets\ic_add.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_add.imageset\ic_add.png" />
+    <ImageAsset Include="Assets.xcassets\ic_add.imageset\ic_add_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_add.imageset\ic_add_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_clear.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_clear.imageset\ic_clear.png" />
+    <ImageAsset Include="Assets.xcassets\ic_clear.imageset\ic_clear_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_clear.imageset\ic_clear_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_check.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_check.imageset\ic_check.png" />
+    <ImageAsset Include="Assets.xcassets\ic_check.imageset\ic_check_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_check.imageset\ic_check_3x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1024,14 +530,23 @@
       <DependentUpon>DirectorioEmpresasController.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\PickerDataModel.cs" />
-    <Compile Include="ViewControllers\BusquedasController.cs" />
-    <Compile Include="ViewControllers\BusquedasController.designer.cs">
-      <DependentUpon>BusquedasController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helpers\DropDownListSource.cs" />
     <Compile Include="Styles\STLDropDownList.cs" />
     <Compile Include="ViewElements\UICheckBox.cs" />
     <Compile Include="ViewElements\HorarioEventos.cs" />
+    <Compile Include="ViewElements\UIDropdownList.cs" />
+    <Compile Include="ViewControllers\TarifasController.cs" />
+    <Compile Include="ViewControllers\TarifasController.designer.cs">
+      <DependentUpon>TarifasController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ProductosController.cs" />
+    <Compile Include="ViewControllers\ProductosController.designer.cs">
+      <DependentUpon>ProductosController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\CarritoCompraController.cs" />
+    <Compile Include="ViewControllers\CarritoCompraController.designer.cs">
+      <DependentUpon>CarritoCompraController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

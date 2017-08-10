@@ -5,12 +5,14 @@ using CoreGraphics;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
+using WorklabsMx.iOS.ViewElements;
 
 namespace WorklabsMx.iOS
 {
     public partial class AboutMeModificaController : UIViewController
     {
         MiembroModel miembro;
+        UITableView selectView;
         public AboutMeModificaController(IntPtr handle) : base(handle)
         {
         }
@@ -68,18 +70,16 @@ namespace WorklabsMx.iOS
                 scrollView.Add(dpFechaNacimiento);
 
                 scrollView.Add(new STLLabel("Genero", 630));
-                PickerDataModel mdlGenero = new PickerDataModel();
-                foreach (string pck in new PickerItemsController().GetGeneros())
+                UITextField txtGenero = new STLTextField("Genero", 660, miembro.Genero_Descripcion);
+                txtGenero.EditingDidBegin += (sender, e) =>
                 {
-                    mdlGenero.Items.Add(pck);
-                }
-                UIPickerView pckGenero = new UIPickerView
-                {
-                    Frame = new CGRect(30, 660, UIScreen.MainScreen.Bounds.Width, 50),
-                    Model = mdlGenero
+                    selectView = new UIDropdownList(txtGenero, View);
                 };
-                pckGenero.Select(Convert.ToInt32(miembro.Genero_Id) - 1, 0, true);
-                scrollView.Add(pckGenero);
+                txtGenero.EditingDidEnd += (sender, e) =>
+                {
+                    selectView.RemoveFromSuperview();
+                };
+                scrollView.Add(txtGenero);
                 //UITextField txtGenero = new STLTextField("Genero", 590, miembro.Genero_Descripcion);
                 //scrollView.Add(txtGenero);
 

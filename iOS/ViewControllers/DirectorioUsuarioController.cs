@@ -11,6 +11,7 @@ namespace WorklabsMx.iOS
     public partial class DirectorioUsuarioController : UIViewController
     {
         UIScrollView searchView;
+        UITableView selectView;
         int position = 0;
         public DirectorioUsuarioController(IntPtr handle) : base(handle)
         {
@@ -55,12 +56,41 @@ namespace WorklabsMx.iOS
             UITextField txtProfesion = new STLTextField("Profesión", 310);
             UITextField txtHabilidades = new STLTextField("Habilidades", 370);
             UITextField txtPais = new STLTextField("País", 430);
+            txtPais.EditingDidBegin += (sender, e) =>
+            {
+                selectView = new UIDropdownList(txtPais, View);
+            };
+            txtPais.EditingDidEnd += (sender, e) =>
+            {
+                selectView.RemoveFromSuperview();
+            };
             UITextField txtEstado = new STLTextField("Estado", 490);
+            txtEstado.EditingDidBegin += (sender, e) =>
+            {
+                if (!string.IsNullOrEmpty(txtPais.Text))
+                    selectView = new UIDropdownList(txtEstado, View, txtPais.Text);
+            };
+            txtEstado.EditingDidEnd += (sender, e) =>
+            {
+                if (!string.IsNullOrEmpty(txtPais.Text))
+                    selectView.RemoveFromSuperview();
+            };
             UITextField txtMunicipio = new STLTextField("Municipio", 550);
-            UICheckBox cbDisponibilidad = new UICheckBox("Disponibilidad", 20, 600);
+            txtMunicipio.EditingDidBegin += (sender, e) =>
+            {
+                if (!string.IsNullOrEmpty(txtEstado.Text))
+                    selectView = new UIDropdownList(txtMunicipio, View, txtEstado.Text);
+            };
+            txtMunicipio.EditingDidEnd += (sender, e) =>
+            {
+                if (!string.IsNullOrEmpty(txtEstado.Text))
+                    selectView.RemoveFromSuperview();
+            };
+            UITextField txtEmpresa = new STLTextField("Empresa", 610);
+            UICheckBox cbDisponibilidad = new UICheckBox("Disponibilidad", 20, 650);
 
 
-            UIButton btnBuscar = new STLButton("Buscar") { Frame = new CGRect(20, 630, 100, 30) };
+            UIButton btnBuscar = new STLButton("Buscar") { Frame = new CGRect(20, 680, 100, 30) };
             btnBuscar.TouchUpInside += (sender, e) =>
             {
                 position = 32;
@@ -101,14 +131,17 @@ namespace WorklabsMx.iOS
                 new STLLabel("Municipio", 520),
                 txtMunicipio,
 
-                new STLLabel("Disponibiliudad", 400){ Frame = new CGRect(50, 595, UIScreen.MainScreen.Bounds.Width,30)},
+                new STLLabel("Empresa", 580),
+                txtEmpresa,
+
+                new STLLabel("Disponibiliudad", 400){ Frame = new CGRect(50, 645, UIScreen.MainScreen.Bounds.Width,30)},
                 cbDisponibilidad,
 
                 btnBuscar
             };
             searchView.BackgroundColor = UIColor.White;
 
-            searchView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 630);
+            searchView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 730);
 
             View.AddSubview(searchView);
 

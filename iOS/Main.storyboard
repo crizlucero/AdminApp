@@ -638,22 +638,57 @@
             </objects>
             <point key="canvasLocation" x="3882" y="1071"/>
         </scene>
-        <scene sceneID="6268">
+        <scene sceneID="6301">
             <objects>
-                <viewController id="6269" sceneMemberID="viewController" storyboardIdentifier="BusquedasController" customClass="BusquedasController">
+                <viewController id="6302" sceneMemberID="viewController" storyboardIdentifier="TarifasController" customClass="TarifasController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6266"/>
-                        <viewControllerLayoutGuide type="bottom" id="6267"/>
+                        <viewControllerLayoutGuide type="top" id="6299"/>
+                        <viewControllerLayoutGuide type="bottom" id="6300"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6270">
+                    <view key="view" contentMode="scaleToFill" id="6303">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6304" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4590" y="273"/>
+        </scene>
+        <scene sceneID="6323">
+            <objects>
+                <viewController id="6324" sceneMemberID="viewController" storyboardIdentifier="ProductosController" customClass="ProductosController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6321"/>
+                        <viewControllerLayoutGuide type="bottom" id="6322"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6325">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6271" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6326" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4608" y="599"/>
+            <point key="canvasLocation" x="4591" y="985"/>
+        </scene>
+        <scene sceneID="6387">
+            <objects>
+                <viewController id="6388" sceneMemberID="viewController" storyboardIdentifier="CarritoCompraController" customClass="CarritoCompraController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6385"/>
+                        <viewControllerLayoutGuide type="bottom" id="6386"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6389">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6390" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5275" y="550"/>
         </scene>
     </scenes>
     <resources>

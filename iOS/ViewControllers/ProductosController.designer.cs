@@ -11,8 +11,8 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
-    [Register ("BusquedasController")]
-    partial class BusquedasController
+    [Register ("ProductosController")]
+    partial class ProductosController
     {
     }
 }

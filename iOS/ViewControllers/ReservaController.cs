@@ -70,6 +70,7 @@ namespace WorklabsMx.iOS
             calendarView.DataSource = new CalendarDataSource(this);
             calendarView.NavigateToDate(NSDate.Now, true);
             calendarView.ReloadData();
+            eventView.ContentSize = new CoreGraphics.CGSize(UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height / 2);
             Add(eventView);
         }
     }

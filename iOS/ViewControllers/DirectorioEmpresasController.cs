@@ -5,7 +5,6 @@ using WorklabsMx.iOS.ViewElements;
 using CoreGraphics;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
-using System.Collections.Generic;
 
 namespace WorklabsMx.iOS
 {
@@ -65,37 +64,38 @@ namespace WorklabsMx.iOS
             txtPais = new STLTextField("País", 190);
             txtPais.EditingDidBegin += (sender, e) =>
             {
-                DropDownList(220, txtPais);
-                txtPais.EndEditing(true);
+                selectView = new UIDropdownList(txtPais, View);
             };
             txtPais.EditingDidEnd += (sender, e) =>
             {
                 selectView.RemoveFromSuperview();
-                txtEstado.Enabled = !string.IsNullOrEmpty(txtPais.Text);
             };
-            txtEstado = new STLTextField("Estado", 250) { Enabled = false };
+            txtEstado = new STLTextField("Estado", 250);
             txtEstado.EditingDidBegin += (sender, e) =>
             {
-                DropDownList(280, txtEstado);
+                if (!string.IsNullOrEmpty(txtPais.Text))
+                    selectView = new UIDropdownList(txtEstado, View, txtPais.Text);
             };
             txtEstado.EditingDidEnd += (sender, e) =>
             {
-                selectView.RemoveFromSuperview();
-                txtMunicipio.Enabled = !string.IsNullOrEmpty(txtEstado.Text);
+                if (!string.IsNullOrEmpty(txtPais.Text))
+                    selectView.RemoveFromSuperview();
             };
-            txtMunicipio = new STLTextField("Municipio", 310) { Enabled = false };
+            txtMunicipio = new STLTextField("Municipio", 310);
             txtMunicipio.EditingDidBegin += (sender, e) =>
             {
-                DropDownList(340, txtMunicipio);
+                if (!string.IsNullOrEmpty(txtEstado.Text))
+                    selectView = new UIDropdownList(txtMunicipio, View, txtEstado.Text);
             };
             txtMunicipio.EditingDidEnd += (sender, e) =>
             {
-                selectView.RemoveFromSuperview();
+                if (!string.IsNullOrEmpty(txtEstado.Text))
+                    selectView.RemoveFromSuperview();
             };
             txtGiro = new STLTextField("Giro", 370);
             txtGiro.EditingDidBegin += (sender, e) =>
             {
-                DropDownList(400, txtGiro);
+                selectView = new UIDropdownList(txtGiro, View);
             };
             txtGiro.EditingDidEnd += (sender, e) =>
             {
@@ -108,6 +108,7 @@ namespace WorklabsMx.iOS
                 position = 32;
                 FillData(txtNombre.Text, txtPais.Text, txtEstado.Text, txtMunicipio.Text, txtGiro.Text);
                 searchView.RemoveFromSuperview();
+                selectView.RemoveFromSuperview();
             };
 
             UIButton btnClose = new STLButton(UIImage.FromBundle("ic_clear")) { Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 40, 70, 30, 30) };
@@ -143,25 +144,6 @@ namespace WorklabsMx.iOS
 
             View.AddSubview(searchView);
 
-        }
-        /// <summary>
-        /// Genera el objeto de drop down list
-        /// </summary>
-        /// <param name="selectPosition">Posición donde aparecerá el objeto</param>
-        /// <param name="field">Campo a donde se le agregará la selección</param>
-        void DropDownList(int selectPosition, UITextField field)
-        {
-            List<string> data = new List<string>();
-            field.Text = "";
-            switch (field.Placeholder)
-            {
-                case "País": data = items.GetPaises(); break;
-                case "Estado": data = items.GetEstados(txtPais.Text); break;
-                case "Municipio": data = items.GetMunicipios(txtEstado.Text); break;
-                case "Giro": data = items.GetGiros(); break;
-            }
-            selectView = new STLDropDownList(selectPosition, data, field);
-            View.AddSubview(selectView);
         }
     }
 }

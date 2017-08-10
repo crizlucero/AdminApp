@@ -34,6 +34,7 @@ namespace WorklabsMx.iOS.Helpers
         {
             field.Text = TableItems[indexPath.Row];
             selectView.RemoveFromSuperview();
+            field.EndEditing(true);
         }
     }
 }
