@@ -7,6 +7,8 @@ using WorklabsMx.iOS.Styles;
 using System.Collections.Generic;
 using PerpetualEngine.Storage;
 using System.Threading.Tasks;
+using WorklabsMx.iOS.ViewElements;
+using WorklabsMx.Helpers;
 
 namespace WorklabsMx.iOS
 {
@@ -21,9 +23,12 @@ namespace WorklabsMx.iOS
         SimpleStorage storageLocal;
         UITextField txtPublish;
         bool endLine = false;
+        List<PostCard> AllPost;
+        int postNumber;
         public EscritorioController(IntPtr handle) : base(handle)
         {
             storageLocal = SimpleStorage.EditGroup("Login");
+            AllPost = new List<PostCard>();
         }
 
         public async override void ViewDidLoad()
@@ -81,95 +86,56 @@ namespace WorklabsMx.iOS
         /// </summary>
         private async Task AddPostsAsync()
         {
+
             List<PostModel> posts = new Controllers.EscritorioController().GetMuroPosts(currentPage);
             if (posts.Count > 0)
             {
                 endLine = (posts.Count < 5);
                 foreach (PostModel post in posts)
                 {
-                    UIImageView pstImage = new UIImageView
+                    AllPost.Add(new PostCard(post)
                     {
-                        Image = ImageGallery.LoadImage(post.Miembro_Fotografia),
-                        Frame = new CGRect(10, 20 + totalSize, 50, 50)
-                    };
-                    pstImage.Layer.MasksToBounds = true;
-                    pstImage.Layer.CornerRadius = 25;
-                    scrollView.Add(pstImage);
-
-                    scrollView.Add(new UILabel
-                    {
-                        Frame = new CGRect(65, 25 + totalSize, UIScreen.MainScreen.Bounds.Width, 20),
-                        Text = post.Miembro_Nombre + " " + post.Miembro_Apellidos,
-                        Font = UIFont.BoldSystemFontOfSize(16)
+                        Frame = new CGRect(0, totalSize, UIScreen.MainScreen.Bounds.Width, 140)
                     });
-                    UILabel lblfecha = new STLLabel(post.POST_FECHA, 45 + totalSize, 12)
+                    AllPost[postNumber].lblNombre.TouchUpInside += (sender, e) =>
                     {
-                        Frame = new CGRect(65, 35 + totalSize, UIScreen.MainScreen.Bounds.Width, 50)
-                    };
-                    scrollView.Add(lblfecha);
-
-                    //Likes
-                    UIButton btnLike = new STLButton(new Controllers.EscritorioController().GetLikes(post.POST_ID) + " Like(s)", UIImage.FromBundle("ic_thumb_up"))
-                    {
-                        Frame = new CGRect(10, 75 + totalSize, UIScreen.MainScreen.Bounds.Width - 100, 20),
-                        Font = UIFont.SystemFontOfSize(10),
-                        BackgroundColor = UIColor.White,
-
-                    };
-                    btnLike.TouchUpInside += (sender, e) =>
-                    {
-                        btnLike.BackgroundColor = UIColor.White;
-                        if (new Controllers.EscritorioController().PostLike(post.POST_ID, SimpleStorage.EditGroup("Login").Get("Miembro_Id")))
-                            btnLike.SetTitle(new Controllers.EscritorioController().GetLikes(post.POST_ID) + " Like(s)", UIControlState.Normal);
-                    };
-                    btnLike.TouchDown += (sender, e) =>
-                    {
-                        btnLike.BackgroundColor = UIColor.LightGray;
-
-                    };
-                    scrollView.Add(btnLike);
-
-                    if (post.POST_FOTO_URL != "")
-                    {
-                        UIImageView imgPost = new STLImageView(110 + totalSize, post.POST_FOTO_URL)
+                        try
                         {
-                            Frame = new CGRect(10, 140 + totalSize, UIScreen.MainScreen.Bounds.Width - 100, 100)
-                        };
-                        scrollView.Add(imgPost);
-                        totalSize += 160;
-                    }
-
-                    UILabel txtPost = new UILabel
-                    {
-                        Frame = new CGRect(10, 110 + totalSize, UIScreen.MainScreen.Bounds.Width - 10, 30),
-                        Text = post.POST_CONTENIDO,
-                        Font = UIFont.SystemFontOfSize(16),
-                        LineBreakMode = UILineBreakMode.WordWrap,
-                        Lines = 0
+                            PerfilController perfilController = (PerfilController)Storyboard.InstantiateViewController("PerfilIndividualController");
+                            perfilController.Tipo = post.Tipo;
+                            perfilController.Usuario = post.MIEMBRO_ID;
+                            NavigationController.PushViewController(perfilController, true);
+                            ((UIButton)sender).BackgroundColor = UIColor.Clear;
+                        }
+                        catch (Exception ex)
+                        {
+                            SlackLogs.SendMessage(ex.Message);
+                        }
                     };
-                    int postSize = 30 * Convert.ToInt32(Math.Floor(txtPost.IntrinsicContentSize.Width / (UIScreen.MainScreen.Bounds.Width - 10)));
-                    txtPost.Frame = new CGRect(10, 110 + totalSize, UIScreen.MainScreen.Bounds.Width - 10, 30 + postSize);
-                    scrollView.Add(txtPost);
-                    totalSize += postSize;
-
+                    totalSize += AllPost[postNumber].totalSize;
+                    scrollView.AddSubview(AllPost[postNumber]);
                     UITextField txtComentario = new STLTextField("Escribe un comentario", 215 + totalSize)
                     {
-                        Frame = new CGRect(5, 140 + totalSize, UIScreen.MainScreen.Bounds.Width - 50, 30)
+                        Frame = new CGRect(5, 140 + totalSize - (AllPost[postNumber].PostComments.Count * 60), UIScreen.MainScreen.Bounds.Width - 50, 30)
                     };
                     scrollView.Add(txtComentario);
 
                     UIButton btnComentar = new STLButton(UIImage.FromBundle("ic_send"))
                     {
-                        Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 40, 140 + totalSize, 30, 30),
+                        Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 40, 140 + totalSize - (AllPost[postNumber].PostComments.Count * 60), 30, 30),
                         BackgroundColor = UIColor.LightGray
                     };
                     btnComentar.Layer.CornerRadius = 15;
                     btnComentar.TouchUpInside += async (sender, e) =>
                     {
-                        if (new Controllers.EscritorioController().CommentPost(post.POST_ID, storageLocal.Get("Miembro_Id"), txtComentario.Text))
+                        if (new Controllers.EscritorioController().CommentPost(post.POST_ID, storageLocal.Get("Usuario_Id"), txtComentario.Text))
                         {
                             nfloat scrollPosition = scrollView.ContentOffset.Y;
                             txtComentario.Text = "";
+                            /*for (int i = postNumber; i < AllPost.Count; i++)
+                            {
+                                AllPost[i].Frame = new CGRect(0, totalSize + 60, UIScreen.MainScreen.Bounds.Width, 140);
+                            }*/
                             await AddPostsAsync();
                             scrollView.ContentOffset = new CGPoint(0, scrollPosition);
                         }
@@ -177,9 +143,10 @@ namespace WorklabsMx.iOS
                     scrollView.Add(btnComentar);
 
                     #region Comentarios
-                    await AddCommentsPostAsync(post.POST_ID);
+                    //await AddCommentsPostAsync(post.POST_ID);
                     #endregion
                     totalSize += 180;
+                    ++postNumber;
                 }
                 scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 100 + totalSize);
 
@@ -193,49 +160,7 @@ namespace WorklabsMx.iOS
             }
         }
 
-        private async Task AddCommentsPostAsync(string post_id)
-        {
-            int commentSize = 0;
-            UIScrollView scrollCommentView = new UIScrollView(new CGRect(0, 170 + totalSize, UIScreen.MainScreen.Bounds.Width, 100));
-            List<ComentarioModel> comentarios = new WorklabsMx.Controllers.EscritorioController().GetComentariosPost(post_id);
 
-            foreach (ComentarioModel comentario in comentarios)
-            {
-                UIImageView pstImage = new UIImageView
-                {
-                    Image = ImageGallery.LoadImage(comentario.Miembro_Fotografia),
-                    Frame = new CGRect(10, 20 + commentSize, 20, 20)
-                };
-                pstImage.Layer.CornerRadius = 10;
-                scrollCommentView.Add(pstImage);
-
-                scrollCommentView.Add(new UILabel
-                {
-                    Frame = new CGRect(30, 20 + commentSize, UIScreen.MainScreen.Bounds.Width, 10),
-                    Text = comentario.Nombre,
-                    Font = UIFont.BoldSystemFontOfSize(10)
-                });
-
-                scrollCommentView.Add(new UILabel
-                {
-                    Frame = new CGRect(30, 30 + commentSize, UIScreen.MainScreen.Bounds.Width, 8),
-                    Text = comentario.COMM_FECHA,
-                    Font = UIFont.SystemFontOfSize(8)
-                });
-
-                UILabel txtPost = new UILabel
-                {
-                    Frame = new CGRect(10, 40 + commentSize, UIScreen.MainScreen.Bounds.Width - 10, 20),
-                    Text = comentario.COMM_CONTENIDO,
-                    Font = UIFont.SystemFontOfSize(12)
-                };
-                commentSize += 60;
-                scrollCommentView.Add(txtPost);
-            }
-            scrollCommentView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 80);
-            totalSize += commentSize;
-            scrollView.Add(scrollCommentView);
-        }
 
         void BtnPhoto_TouchUpInside(object sender, EventArgs e)
         {
@@ -253,12 +178,13 @@ namespace WorklabsMx.iOS
         {
             if (imagen != null)
                 imagen.Hidden = true;
-            if (new WorklabsMx.Controllers.EscritorioController().SetPost(storageLocal.Get("Miembro_Id"), null, txtPublish.Text, "", imagen?.Image.AsPNG().ToArray()))
+            if (new WorklabsMx.Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), null, txtPublish.Text, "", imagen?.Image.AsPNG().ToArray()))
             {
                 scrollView.RemoveFromSuperview();
                 totalSize = 0;
                 currentPage = 0;
                 scrollView = new UIScrollView(new CGRect(0, 100, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height));
+                AllPost.Reverse();
                 await AddPostsAsync();
                 txtPublish.Text = "";
             }

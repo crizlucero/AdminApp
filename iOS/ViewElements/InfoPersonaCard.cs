@@ -1,5 +1,6 @@
 ﻿using CoreGraphics;
 using Foundation;
+using ObjCRuntime;
 using UIKit;
 using WorklabsMx.iOS.Styles;
 using WorklabsMx.Models;
@@ -8,6 +9,7 @@ namespace WorklabsMx.iOS.ViewElements
 {
     public class InfoPersonaCard
     {
+        public UIButton lblNombre;
         public InfoPersonaCard(MiembroModel miembro, UIView View, int initialPosition = 0)
         {
             using (UIView headerView = new UIView(new CGRect(0, initialPosition, UIScreen.MainScreen.Bounds.Width, 100)) { BackgroundColor = UIColor.White })
@@ -18,22 +20,30 @@ namespace WorklabsMx.iOS.ViewElements
                     BackgroundColor = UIColor.FromRGB(101, 216, 250)
                 };
                 headerView.AddSubview(line);
-                headerView.AddSubview(new STLLabel(miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos, 10, 22));
-                UILabel lblMail = new STLLabel(miembro.Miembro_Correo_Electronico, 14)
+                lblNombre = new STLButton(miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos)
                 {
-                    TextColor = UIColor.Cyan,
+                    Frame = new CGRect(20, 10, UIScreen.MainScreen.Bounds.Width - 20, 30),
+                    Font = UIFont.BoldSystemFontOfSize(22),
+                    HorizontalAlignment = UIControlContentHorizontalAlignment.Left
+                };
+                headerView.AddSubview(lblNombre);
+
+                using (STLButton lblMail = new STLButton(miembro.Miembro_Correo_Electronico)
+                {
                     BackgroundColor = UIColor.Clear,
                     UserInteractionEnabled = true,
-                    Frame = new CGRect(20, 35, UIScreen.MainScreen.Bounds.Width, 30)
-                };
-                UITapGestureRecognizer tapMail = new UITapGestureRecognizer
+                    Font = UIFont.BoldSystemFontOfSize(14),
+                    Frame = new CGRect(20, 35, UIScreen.MainScreen.Bounds.Width, 30),
+                    HorizontalAlignment = UIControlContentHorizontalAlignment.Left
+                })
                 {
-                    NumberOfTapsRequired = 1,
-                    DelaysTouchesBegan = true,
-                };
-                tapMail.AddTarget(() => UIApplication.SharedApplication.OpenUrl(new NSUrl("mailto:" + miembro.Miembro_Correo_Electronico)));
-                lblMail.AddGestureRecognizer(tapMail);
-                headerView.AddSubview(lblMail);
+                    lblMail.SetTitleColor(UIColor.DarkGray, UIControlState.Normal);
+                    lblMail.TouchUpInside += (sender, e) =>
+                    {
+                        UIApplication.SharedApplication.OpenUrl(NSUrl.FromString("mailto:" + miembro.Miembro_Correo_Electronico), new NSDictionary { }, null);
+                    };
+                    headerView.AddSubview(lblMail);
+                }
 
                 View.AddSubview(headerView);
             }

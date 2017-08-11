@@ -6,7 +6,7 @@ namespace WorklabsMx.iOS.Styles
     {
         public STLButton(string text)
         {
-            BackgroundColor = UIColor.FromRGB(101, 216, 250);
+            //BackgroundColor = UIColor.FromRGB(101, 216, 250);
             ClipsToBounds = true;
             Layer.CornerRadius = 10;
             TouchDown += (sender, e) =>

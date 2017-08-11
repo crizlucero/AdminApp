@@ -28,7 +28,7 @@ namespace WorklabsMx.iOS
                                                  .InstantiateViewController("splitViewController");
             else
                 Window.RootViewController = UIStoryboard.FromName("Main", null)
-                                                  .InstantiateViewController("loginViewController");
+                                                  .InstantiateViewController("LoginViewController");
 
             return true;
         }

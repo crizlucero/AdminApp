@@ -547,6 +547,8 @@
     <Compile Include="ViewControllers\CarritoCompraController.designer.cs">
       <DependentUpon>CarritoCompraController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewElements\PostCard.cs" />
+    <Compile Include="ViewElements\CommentCard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

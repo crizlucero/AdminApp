@@ -289,7 +289,7 @@
         </scene>
         <scene sceneID="4503">
             <objects>
-                <viewController id="4504" sceneMemberID="viewController" customClass="PerfilController" title="Mi Perfil">
+                <viewController id="4504" sceneMemberID="viewController" customClass="PerfilController" title="Mi Perfil" storyboardIdentifier="PerfilIndividualController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4496"/>
                         <viewControllerLayoutGuide type="bottom" id="4497"/>

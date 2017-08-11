@@ -14,6 +14,7 @@ namespace WorklabsMx.iOS.Styles
             Layer.BorderColor = UIColor.LightGray.CGColor;
             Layer.BorderWidth = 1f;
             KeyboardType = keyboard;
+            BackgroundColor = UIColor.White;
         }
     }
 }

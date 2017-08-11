@@ -220,7 +220,7 @@ namespace WorklabsMx.iOS
 
             scrollView.AddSubview(new STLLabel(promo.Descuento_Descripcion)
             {
-                Frame = new CGRect(UIScreen.MainScreen.Bounds.Width * 2 / 3, 30 + size, UIScreen.MainScreen.Bounds.Width / 3, 30)
+                Frame = new CGRect(UIScreen.MainScreen.Bounds.Width * 2 / 3, 30 + size, UIScreen.MainScreen.Bounds.Width / 3 - 10, 30)
             });
             size += 45;
 

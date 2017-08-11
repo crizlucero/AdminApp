@@ -38,9 +38,16 @@ namespace WorklabsMx.iOS
             {
                 foreach (MiembroModel usuario in new MiembrosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio))
                 {
-                    new InfoPersonaCard(usuario, scrollView, position);
+                    InfoPersonaCard personaCard = new InfoPersonaCard(usuario, scrollView, position);
+					personaCard.lblNombre.TouchUpInside += (sender, e) =>
+					{
+						PerfilController perfilController = (PerfilController)Storyboard.InstantiateViewController("PerfilIndividualController");
+						perfilController.Tipo = usuario.Miembro_Tipo;
+                        perfilController.Usuario = usuario.Miembro_Id;
+						NavigationController.PushViewController(perfilController, true);
+						((UIButton)sender).BackgroundColor = UIColor.Clear;
+					};
                     position += 400;
-
                 }
                 scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, position);
                 View.AddSubview(scrollView);

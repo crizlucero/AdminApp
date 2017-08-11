@@ -13,21 +13,22 @@ namespace WorklabsMx.iOS.ViewElements
             using (UIView headerView = new UIView(new CGRect(0, initialPosition, UIScreen.MainScreen.Bounds.Width, 100)) { BackgroundColor = UIColor.White })
             {
                 headerView.AddSubview(new STLLabel(empresa.Empresa_Miembro_Nombre, 10, 22));
-                UILabel lblMail = new STLLabel(empresa.Empresa_Miembro_Correo_Electronico, 14)
+                using (UIButton lblMail = new STLButton(empresa.Empresa_Miembro_Correo_Electronico)
                 {
-                    TextColor = UIColor.Cyan,
                     BackgroundColor = UIColor.Clear,
                     UserInteractionEnabled = true,
-                    Frame = new CGRect(20, 35, UIScreen.MainScreen.Bounds.Width, 30)
-                };
-                UITapGestureRecognizer tapMail = new UITapGestureRecognizer
+                    Frame = new CGRect(20, 35, UIScreen.MainScreen.Bounds.Width, 30),
+                    Font = UIFont.BoldSystemFontOfSize(14)
+                })
                 {
-                    NumberOfTapsRequired = 1,
-                    DelaysTouchesBegan = true,
-                };
-                tapMail.AddTarget(() => UIApplication.SharedApplication.OpenUrl(new NSUrl("mailto:" + empresa.Empresa_Miembro_Correo_Electronico)));
-                lblMail.AddGestureRecognizer(tapMail);
-                headerView.AddSubview(lblMail);
+                    lblMail.SetTitleColor(UIColor.DarkGray, UIControlState.Normal);
+                    lblMail.TouchUpInside += (sender, e) =>
+                    {
+                        UIApplication.SharedApplication.OpenUrl(new NSUrl("mailto:" + empresa.Empresa_Miembro_Correo_Electronico));
+                    };
+
+                    headerView.AddSubview(lblMail);
+                }
 
                 View.AddSubview(headerView);
             }

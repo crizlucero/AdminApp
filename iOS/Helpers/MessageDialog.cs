@@ -1,4 +1,5 @@
 ﻿using System;
+using Foundation;
 using UIKit;
 
 using static WorklabsMx.iOS.Utils;
@@ -32,6 +33,21 @@ namespace WorklabsMx.iOS
                     confirmationAction(e.ButtonIndex == 0);
                 };
                 alertView.Show();
+            });
+        }
+
+        public void ShowImage(UIImage image)
+        {
+            EnsureInvokedOnMainThread(() =>
+            {
+                UIImageView uiIV = new UIImageView(image);
+                UIAlertView Msg = new UIAlertView
+                {
+                    Frame = new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)
+                };
+                Msg.SetValueForKey(uiIV, (NSString)"accessoryView");
+                Msg.AddButton("X");
+                Msg.Show();
             });
         }
     }
