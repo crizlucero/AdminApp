@@ -48,6 +48,15 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\EscritorioController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\PostModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ComentarioModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DatosFiscales.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\UploadImages.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\PickerItemsController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\SlackLogs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Logs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\MembresiaModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ProductoModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\PagosController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PromocionModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />

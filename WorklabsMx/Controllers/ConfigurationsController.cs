@@ -1,13 +1,11 @@
 ﻿using System;
+using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 
 namespace WorklabsMx.Controllers
 {
     public class ConfigurationsController : DataBaseModel
     {
-        public ConfigurationsController() : base()
-        {
-        }
         /// <summary>
         /// Obtiene las configuraciones
         /// </summary>
@@ -55,6 +53,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                SlackLogs.SendMessage(e.Message);
             }
             finally
             {

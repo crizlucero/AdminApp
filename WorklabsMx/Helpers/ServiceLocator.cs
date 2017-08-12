@@ -36,8 +36,7 @@ namespace WorklabsMx
         /// <returns>Implementation</returns>
         public T Get<T>() where T : class
         {
-            Lazy<object> service;
-            if (registeredServices.TryGetValue(typeof(T), out service))
+            if (registeredServices.TryGetValue(typeof(T), out Lazy<object> service))
             {
                 return (T)service.Value;
             }
