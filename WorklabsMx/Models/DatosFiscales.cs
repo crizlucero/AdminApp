@@ -1,5 +1,4 @@
-﻿using System;
-namespace WorklabsMx.Models
+﻿namespace WorklabsMx.Models
 {
     public class DatosFiscales
     {
@@ -16,10 +15,5 @@ namespace WorklabsMx.Models
         public string Domicilio_Fiscal_Empresa_Numero_Interior { get; set; }
         public string Domicilio_Fiscal_Empresa_Correo_Electronico { get; set; }
         public string Domicilio_Fiscal_Empresa_Estatus { get; set; }
-
-
-        public DatosFiscales()
-        {
-        }
     }
 }

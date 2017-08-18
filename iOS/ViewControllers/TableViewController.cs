@@ -31,7 +31,7 @@ namespace WorklabsMx.iOS
                 Console.WriteLine(e.Message);
                 SlackLogs.SendMessage(e.Message);
             }
-            foreach (ItemsMenu menu in new Controllers.EscritorioController().GetMenu(Convert.ToInt32(localStorage.Get("Usuario_Tipo"))))
+            foreach (ItemsMenu menu in new Controllers.EscritorioController().GetMenuiOS(Convert.ToInt32(localStorage.Get("Usuario_Tipo"))))
             {
                 tableItems.Add(menu);
             }

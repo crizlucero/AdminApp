@@ -36,23 +36,23 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
             View.ClearsContextBeforeDrawing = true;
             #region Publicar
-            viewView = new UIView(new CGRect(0, 50, UIScreen.MainScreen.Bounds.Width, 30));
+            viewView = new UIView(new CGRect(0, 50, UIScreen.MainScreen.Bounds.Width, 50));
             txtPublish = new STLTextField("Publica algo :)", 20)
             {
-                Frame = new CGRect(5, 20, UIScreen.MainScreen.Bounds.Width - 120, 30)
+                Frame = new CGRect(5, 20, UIScreen.MainScreen.Bounds.Width - 50, 30)
             };
             viewView.Add(txtPublish);
             UIButton btnPhoto = new STLButton(UIImage.FromBundle("ic_attach_file"))
             {
-                Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 140, 20, 30, 30),
+                Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 70, 20, 30, 30),
                 BackgroundColor = UIColor.FromRGBA(0, 0, 0, 0)
             };
             btnPhoto.TouchUpInside += BtnPhoto_TouchUpInside;
             viewView.Add(btnPhoto);
 
-            UIButton btnPublicar = new STLButton("Publicar")
+            UIButton btnPublicar = new STLButton(UIImage.FromBundle("ic_send"))
             {
-                Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 110, 20, 100, 30)
+                Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 40, 20, 30, 30)
             };
             btnPublicar.TouchUpInside += BtnPublicar_TouchUpInside;
             viewView.Add(btnPublicar);
@@ -77,16 +77,13 @@ namespace WorklabsMx.iOS
             #region Posts
             scrollView = new UIScrollView(new CGRect(0, 100, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height));
             await this.AddPostsAsync();
-
             #endregion
-
         }
         /// <summary>
         /// Agrega a la pantalla los posts
         /// </summary>
         private async Task AddPostsAsync()
         {
-
             List<PostModel> posts = new Controllers.EscritorioController().GetMuroPosts(currentPage);
             if (posts.Count > 0)
             {
@@ -104,13 +101,29 @@ namespace WorklabsMx.iOS
                             PerfilController perfilController = (PerfilController)Storyboard.InstantiateViewController("PerfilIndividualController");
                             perfilController.Tipo = post.Tipo;
                             perfilController.Usuario = post.MIEMBRO_ID;
+                            perfilController.Title = "Perfil";
                             NavigationController.PushViewController(perfilController, true);
                             ((UIButton)sender).BackgroundColor = UIColor.Clear;
                         }
-                        catch (Exception ex)
+                        catch (Exception ex) { SlackLogs.SendMessage(ex.Message); }
+                    };
+
+                    AllPost[postNumber].btnDelete.TouchUpInside += (sender, e) =>
+                    {
+                        if (post.MIEMBRO_ID == storageLocal.Get("Usuario_Id") && post.Tipo == storageLocal.Get("Usuario_Tipo"))
                         {
-                            SlackLogs.SendMessage(ex.Message);
+                            new MessageDialog().SendConfirmation("Se eliminará el post", "Borrar post", (obj) =>
+                            {
+                                if (obj)
+                                    Console.WriteLine("x");
+                            });
                         }
+                        else
+                            new MessageDialog().SendConfirmation("¿Desea reportar el post?", "Reportar post", (obj) =>
+                            {
+                                if (obj)
+                                    Console.WriteLine("x");
+                            });
                     };
                     totalSize += AllPost[postNumber].totalSize;
                     scrollView.AddSubview(AllPost[postNumber]);
@@ -122,8 +135,7 @@ namespace WorklabsMx.iOS
 
                     UIButton btnComentar = new STLButton(UIImage.FromBundle("ic_send"))
                     {
-                        Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 40, 140 + totalSize - (AllPost[postNumber].PostComments.Count * 60), 30, 30),
-                        BackgroundColor = UIColor.LightGray
+                        Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 40, 140 + totalSize - (AllPost[postNumber].PostComments.Count * 60), 30, 30)
                     };
                     btnComentar.Layer.CornerRadius = 15;
                     btnComentar.TouchUpInside += async (sender, e) =>
@@ -132,19 +144,12 @@ namespace WorklabsMx.iOS
                         {
                             nfloat scrollPosition = scrollView.ContentOffset.Y;
                             txtComentario.Text = "";
-                            /*for (int i = postNumber; i < AllPost.Count; i++)
-                            {
-                                AllPost[i].Frame = new CGRect(0, totalSize + 60, UIScreen.MainScreen.Bounds.Width, 140);
-                            }*/
                             await AddPostsAsync();
                             scrollView.ContentOffset = new CGPoint(0, scrollPosition);
                         }
                     };
                     scrollView.Add(btnComentar);
 
-                    #region Comentarios
-                    //await AddCommentsPostAsync(post.POST_ID);
-                    #endregion
                     totalSize += 180;
                     ++postNumber;
                 }
@@ -159,8 +164,6 @@ namespace WorklabsMx.iOS
                 Console.WriteLine("No more elements");
             }
         }
-
-
 
         void BtnPhoto_TouchUpInside(object sender, EventArgs e)
         {
@@ -178,7 +181,7 @@ namespace WorklabsMx.iOS
         {
             if (imagen != null)
                 imagen.Hidden = true;
-            if (new WorklabsMx.Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), null, txtPublish.Text, "", imagen?.Image.AsPNG().ToArray()))
+            if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtPublish.Text, "", imagen?.Image.AsPNG().ToArray()))
             {
                 scrollView.RemoveFromSuperview();
                 totalSize = 0;

@@ -27,6 +27,7 @@ namespace WorklabsMx
             MailMessage message = new MailMessage(configuracion.Parametro_Varchar_1, email);
             message.Subject = "Recuperación de contraseña";
             message.Body = "Hola " + name + "\n Tu contraseña nueva es: " + password;
+            message.IsBodyHtml = true;
             SmtpClient client = new SmtpClient();
             client.Port = Convert.ToInt32(configuracion.Parametro_Int_1);
             client.EnableSsl = true;

@@ -1,5 +1,4 @@
-﻿using System;
-namespace WorklabsMx.Models
+﻿namespace WorklabsMx.Models
 {
     public class MiembroModel
     {
@@ -20,9 +19,7 @@ namespace WorklabsMx.Models
         public string Miembro_Fotografia { get; set; }
         public string Miembro_Fecha_Registro { get; set; }
         public string Miembro_Estatus { get; set; }
-
-        public MiembroModel()
-        {
-        }
+        public string Miembro_Tipo { get; set; }
+        public string Miembro_Empresa { get; set; }
     }
 }

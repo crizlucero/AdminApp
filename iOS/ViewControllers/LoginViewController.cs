@@ -8,17 +8,15 @@ namespace WorklabsMx.iOS
 {
     public partial class LoginViewController : UIViewController
     {
-        public LoginViewModel ViewModel;
 
         public LoginViewController(IntPtr handle) : base(handle)
         {
-            ViewModel = new LoginViewModel();
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            NavigationItem.Title = ViewModel.Title;
+            NavigationItem.Title = "Iniciar Sesión";
             var localStorage = SimpleStorage.EditGroup("Login");
             localStorage.Delete("Usuario_Id");
             localStorage.Delete("Usuario_Tipo");
@@ -37,21 +35,18 @@ namespace WorklabsMx.iOS
 
         partial void BtnIniciarSesion_TouchUpInside(UIButton sender)
         {
+
             List<string> MiembrosId = new LoginController().MemberLogin(this.txtEmail.Text, new PassSecurity().EncodePassword(this.txtPassword.Text));
-            var localStorage = SimpleStorage.EditGroup("Login");
-            localStorage.Put("Usuario_Id", MiembrosId[0]);
-            localStorage.Put("Usuario_Tipo", MiembrosId[1]);
             if (MiembrosId.Count > 0)
+            {
+                var localStorage = SimpleStorage.EditGroup("Login");
+                localStorage.Put("Usuario_Id", MiembrosId[0]);
+                localStorage.Put("Usuario_Tipo", MiembrosId[1]);
                 NavigateToTabbed();
+            }
             else
             {
-                MessagingCenterAlert m = new MessagingCenterAlert
-                {
-                    Message = "Correo y/o contraseña incorrecto",
-                    Title = "Error de autenticación",
-                    Cancel = "Ok"
-                };
-
+                new MessageDialog().SendToast("Correo y/o contraseña incorrecto");
             }
 
         }

@@ -1,4 +1,5 @@
-﻿using CoreGraphics;
+﻿using System;
+using CoreGraphics;
 using Foundation;
 using ObjCRuntime;
 using UIKit;
@@ -10,6 +11,7 @@ namespace WorklabsMx.iOS.ViewElements
     public class InfoPersonaCard
     {
         public UIButton lblNombre;
+        public UIButton lblMail;
         public InfoPersonaCard(MiembroModel miembro, UIView View, int initialPosition = 0)
         {
             using (UIView headerView = new UIView(new CGRect(0, initialPosition, UIScreen.MainScreen.Bounds.Width, 100)) { BackgroundColor = UIColor.White })
@@ -28,22 +30,18 @@ namespace WorklabsMx.iOS.ViewElements
                 };
                 headerView.AddSubview(lblNombre);
 
-                using (STLButton lblMail = new STLButton(miembro.Miembro_Correo_Electronico)
+                lblMail = new STLButton(miembro.Miembro_Correo_Electronico)
                 {
                     BackgroundColor = UIColor.Clear,
                     UserInteractionEnabled = true,
                     Font = UIFont.BoldSystemFontOfSize(14),
                     Frame = new CGRect(20, 35, UIScreen.MainScreen.Bounds.Width, 30),
                     HorizontalAlignment = UIControlContentHorizontalAlignment.Left
-                })
-                {
-                    lblMail.SetTitleColor(UIColor.DarkGray, UIControlState.Normal);
-                    lblMail.TouchUpInside += (sender, e) =>
-                    {
-                        UIApplication.SharedApplication.OpenUrl(NSUrl.FromString("mailto:" + miembro.Miembro_Correo_Electronico), new NSDictionary { }, null);
-                    };
-                    headerView.AddSubview(lblMail);
-                }
+                };
+
+                lblMail.SetTitleColor(UIColor.DarkGray, UIControlState.Normal);
+                headerView.AddSubview(lblMail);
+
 
                 View.AddSubview(headerView);
             }

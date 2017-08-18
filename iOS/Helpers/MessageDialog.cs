@@ -18,10 +18,7 @@ namespace WorklabsMx.iOS
             });
         }
 
-        public void SendToast(string message)
-        {
-            SendMessage(message);
-        }
+        public void SendToast(string message) => SendMessage(message);
 
         public void SendConfirmation(string message, string title, Action<bool> confirmationAction)
         {

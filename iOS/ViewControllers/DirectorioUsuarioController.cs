@@ -5,6 +5,7 @@ using WorklabsMx.iOS.ViewElements;
 using WorklabsMx.Models;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
+using MessageUI;
 
 namespace WorklabsMx.iOS
 {
@@ -39,11 +40,33 @@ namespace WorklabsMx.iOS
                 foreach (MiembroModel usuario in new MiembrosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio))
                 {
                     InfoPersonaCard personaCard = new InfoPersonaCard(usuario, scrollView, position);
+					personaCard.lblMail.TouchUpInside += (sender, e) =>
+					{
+						//UIApplication.SharedApplication.OpenUrl(NSUrl.FromString("mailto:" + miembro.Miembro_Correo_Electronico), new NSDictionary { }, null);
+						MFMailComposeViewController mailController;
+						if (MFMailComposeViewController.CanSendMail)
+						{
+							mailController = new MFMailComposeViewController();
+
+							mailController.SetToRecipients(new string[] { usuario.Miembro_Correo_Electronico });
+							mailController.SetSubject("Contacto - Worklabs");
+							mailController.SetMessageBody("", false);
+
+							mailController.Finished += (object s, MFComposeResultEventArgs args) =>
+							{
+								Console.WriteLine(args.Result.ToString());
+								args.Controller.DismissViewController(true, null);
+							};
+
+							this.PresentViewController(mailController, true, null);
+						}
+					};
 					personaCard.lblNombre.TouchUpInside += (sender, e) =>
 					{
 						PerfilController perfilController = (PerfilController)Storyboard.InstantiateViewController("PerfilIndividualController");
 						perfilController.Tipo = usuario.Miembro_Tipo;
                         perfilController.Usuario = usuario.Miembro_Id;
+                        perfilController.Title = "Perfil";
 						NavigationController.PushViewController(perfilController, true);
 						((UIButton)sender).BackgroundColor = UIColor.Clear;
 					};
@@ -94,7 +117,7 @@ namespace WorklabsMx.iOS
                     selectView.RemoveFromSuperview();
             };
             UITextField txtEmpresa = new STLTextField("Empresa", 610);
-            UICheckBox cbDisponibilidad = new UICheckBox("Disponibilidad", 20, 650);
+            UICheckBox cbDisponibilidad = new UICheckBox(20, 650);
 
 
             UIButton btnBuscar = new STLButton("Buscar") { Frame = new CGRect(20, 680, 100, 30) };
@@ -141,7 +164,7 @@ namespace WorklabsMx.iOS
                 new STLLabel("Empresa", 580),
                 txtEmpresa,
 
-                new STLLabel("Disponibiliudad", 400){ Frame = new CGRect(50, 645, UIScreen.MainScreen.Bounds.Width,30)},
+                new STLLabel("Disponibilidad", 400){ Frame = new CGRect(50, 645, UIScreen.MainScreen.Bounds.Width,30)},
                 cbDisponibilidad,
 
                 btnBuscar

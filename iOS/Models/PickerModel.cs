@@ -19,14 +19,10 @@ namespace WorklabsMx.iOS.Models
 
         public override nint GetRowsInComponent(UIPickerView pickerView, nint component) => _items.Count;
 
-        public override string GetTitle(UIPickerView pickerView, nint row, nint component)
-        {
-            return _items[(int)row];
-        }
+        public override string GetTitle(UIPickerView pickerView, nint row, nint component) => _items[(int)row];
 
-        public override void Selected(UIPickerView pickerView, nint row, nint component)
-        {
-            selectedIndex = (int)row;
-        }
+
+        public override void Selected(UIPickerView pickerView, nint row, nint component) => selectedIndex = (int)row;
+
     }
 }

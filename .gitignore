@@ -24,3 +24,9 @@ MobileAppService/obj/Debug/netcoreapp1\.0/
 iOS/Assets\.xcassets/Assets\.xcassets/Assets\.xcassets/Assets\.xcassets/
 
 iOS/Assets\.xcassets/Assets\.xcassets/
+
+Droid/Droid/bin/Debug/
+
+Droid/Droid/obj/Debug/__library_projects__/
+
+Droid/Droid/obj/Debug/

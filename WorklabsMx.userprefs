@@ -1,15 +1,43 @@
-﻿<Properties StartupConfiguration="{B1E8F735-9D60-4621-AAAD-1C12B19CC308}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/EmpresaMiembroModificaController.cs">
+﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/DataBaseModel.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/EmpresaMiembroModificaController.cs" Line="121" Column="13" />
+      <File FileName="iOS/ViewElements/UIDropdownList.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Controllers/ColaboradoresController.cs" Line="49" Column="116" />
+      <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="15" Column="10" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="405" Column="1" />
+      <File FileName="WorklabsMx/Controllers/InvitadosController.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Helpers/Emails.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Helpers/SlackLogs.cs" Line="20" Column="52" />
+      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Interfaces/IMessageDialog.cs" Line="1" Column="14" />
+      <File FileName="iOS/Helpers/MessageDialog.cs" Line="9" Column="32" />
+      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Helpers/PassSecurity.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/ColaboradorModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/ComentarioModel.cs" Line="8" Column="28" />
+      <File FileName="WorklabsMx/Models/ConfiguracionesModel.cs" Line="25" Column="57" />
+      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="12" Column="10" />
+      <File FileName="WorklabsMx/Models/DatosFiscales.cs" Line="17" Column="69" />
+      <File FileName="WorklabsMx/Models/EmpresaModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/ItemsMenu.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/MembresiaModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/MiembroModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/PostModel.cs" Line="15" Column="55" />
+      <File FileName="WorklabsMx/Models/ProductoModel.cs" Line="11" Column="1" />
+      <File FileName="WorklabsMx/Models/PromocionModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/app.config" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/worklabs/Projects/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="358" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.MobileAppService PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.362DED79-20E6-4F78-B3C8-30858522B37E" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_x86" AndroidDesignerPreferredTheme="MasterDetailTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="MyTheme" />
   <MultiItemStartupConfigurations />
 </Properties>

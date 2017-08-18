@@ -14,7 +14,7 @@ namespace WorklabsMx
 
         public static void Initialize()
         {
-            if (UseMockDataStore)
+           /* if (UseMockDataStore)
                 ServiceLocator.Instance.Register<IDataStore<Item>, MockDataStore>();
             else
                 ServiceLocator.Instance.Register<IDataStore<Item>, CloudDataStore>();
@@ -22,8 +22,8 @@ namespace WorklabsMx
 #if __IOS__
 			ServiceLocator.Instance.Register<IMessageDialog, iOS.MessageDialog>();
 #else
-            ServiceLocator.Instance.Register<IMessageDialog, Droid.MessageDialog>();
-#endif
+            //ServiceLocator.Instance.Register<IMessageDialog, Droid.MessageDialog>();
+#endif*/
         }
 
         public static IDictionary<string, string> LoginParameters => null;

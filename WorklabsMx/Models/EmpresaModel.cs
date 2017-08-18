@@ -1,9 +1,7 @@
-﻿using System;
-namespace WorklabsMx.Models
+﻿namespace WorklabsMx.Models
 {
     public class EmpresaModel
     {
-
         public string Empresa_Miembro_Red_Social_3 { get; set; }
         public string Empresa_Miembro_Red_Social_2 { get; set; }
         public string Empresa_Miembro_Red_Social_1 { get; set; }
@@ -23,10 +21,5 @@ namespace WorklabsMx.Models
         public string Territorio_Colonia_Descripcion { get; set; }
         public string Territorio_Cp { get; set; }
         public string Giro_Descripcion { get; set; }
-
-
-        public EmpresaModel()
-        {
-        }
     }
 }

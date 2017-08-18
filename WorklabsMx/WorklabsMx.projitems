@@ -9,25 +9,7 @@
     <Import_RootNamespace>WorklabsMx</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Command.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MessagingCenter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MessagingCenterAlert.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ObservableObject.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ObservableRangeCollection.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ServiceLocator.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Settings.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IBaseDataObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IMessageDialog.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\BaseDataObject.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Item.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\CloudDataStore.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\MockDataStore.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AboutViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ItemDetailViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ItemsViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ItemsMenu.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Emails.cs" />
@@ -35,9 +17,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\ConfiguracionesModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\MiembroModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\EmpresaModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GeneroViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ColaboradorModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Images.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\DataBaseModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\LoginController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\ConfigurationsController.cs" />
@@ -52,7 +32,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\UploadImages.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\PickerItemsController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\SlackLogs.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Logs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\MembresiaModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ProductoModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\PagosController.cs" />
@@ -60,8 +39,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />
+    <None Include="$(MSBuildThisFileDirectory)HTMLTemplates\PlantillaNotificacion1.html" />
+    <None Include="$(MSBuildThisFileDirectory)HTMLTemplates\PlantillaNotificacionComentarios.html" />
+    <None Include="$(MSBuildThisFileDirectory)HTMLTemplates\PlantillaNotificacionErrores.html" />
+    <None Include="$(MSBuildThisFileDirectory)HTMLTemplates\PlantillaNotificacionRegistro.html" />
+    <None Include="$(MSBuildThisFileDirectory)HTMLTemplates\PlantillaNotificacionRegistroComunicaciones.html" />
+    <None Include="$(MSBuildThisFileDirectory)HTMLTemplates\PlantillaNotificacionRegistroDataCenter.html" />
+    <None Include="$(MSBuildThisFileDirectory)HTMLTemplates\PlantillaNotificacionRegistroUbicaciones.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Controllers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)HTMLTemplates\" />
   </ItemGroup>
 </Project>

@@ -18,7 +18,7 @@ namespace WorklabsMx.Controllers
             List<PostModel> posts = new List<PostModel>();
             string query = "SELECT p.*, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
                 "INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id " +
-                "WHERE POST_ESTATUS = 1 ORDER BY Post_Fecha DESC OFFSET @page ROWS Fetch next 5 rows only";
+                "WHERE POST_ESTATUS = 1 ORDER BY Post_Fecha DESC OFFSET @page ROWS Fetch next 10 rows only";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@page", page);
             try
@@ -55,49 +55,49 @@ namespace WorklabsMx.Controllers
         }
 
         public List<PostModel> GetPerfilPosts(string usuario_id, string tipo, int page = 0)
-		{
+        {
 
-			List<PostModel> posts = new List<PostModel>();
-			string query = "SELECT p.*, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
-				"INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id " +
-				"WHERE POST_ESTATUS = 1 AND m.Usuario_Id = @usuario_id AND m.Usuario_Tipo = @tipo " +
+            List<PostModel> posts = new List<PostModel>();
+            string query = "SELECT p.*, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
+                "INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id " +
+                "WHERE POST_ESTATUS = 1 AND m.Usuario_Id = @usuario_id AND m.Usuario_Tipo = @tipo " +
                 "ORDER BY Post_Fecha DESC OFFSET @page ROWS Fetch next 5 rows only";
-			command = CreateCommand(query);
-			command.Parameters.AddWithValue("@page", page);
+            command = CreateCommand(query);
+            command.Parameters.AddWithValue("@page", page);
             command.Parameters.AddWithValue("@usuario_id", usuario_id);
             command.Parameters.AddWithValue("@tipo", tipo);
-			try
-			{
-				conn.Open();
-				reader = command.ExecuteReader();
-				while (reader.Read())
-				{
-					PostModel post = new PostModel()
-					{
-						POST_ID = reader["POST_ID"].ToString(),
-						Tipo = reader["Usuario_Tipo"].ToString(),
-						MIEMBRO_ID = reader["MIEMBRO_ID"].ToString(),
-						POST_FECHA = reader["POST_FECHA"].ToString(),
-						POST_FOTO_URL = reader["POST_FOTO_URL"].ToString(),
-						POST_CONTENIDO = reader["POST_CONTENIDO"].ToString(),
-						Miembro_Nombre = reader["Usuario_Nombre"].ToString(),
-						Miembro_Apellidos = reader["Usuario_Apellidos"].ToString(),
-						Miembro_Fotografia = reader["Usuario_Fotografia"].ToString()
-					};
-					posts.Add(post);
-				}
-			}
-			catch (Exception e)
-			{
-				Console.WriteLine(e.Message);
-				SlackLogs.SendMessage(e.Message);
-			}
-			finally
-			{
-				conn.Close();
-			}
-			return posts;
-		}
+            try
+            {
+                conn.Open();
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    PostModel post = new PostModel()
+                    {
+                        POST_ID = reader["POST_ID"].ToString(),
+                        Tipo = reader["Usuario_Tipo"].ToString(),
+                        MIEMBRO_ID = reader["MIEMBRO_ID"].ToString(),
+                        POST_FECHA = reader["POST_FECHA"].ToString(),
+                        POST_FOTO_URL = reader["POST_FOTO_URL"].ToString(),
+                        POST_CONTENIDO = reader["POST_CONTENIDO"].ToString(),
+                        Miembro_Nombre = reader["Usuario_Nombre"].ToString(),
+                        Miembro_Apellidos = reader["Usuario_Apellidos"].ToString(),
+                        Miembro_Fotografia = reader["Usuario_Fotografia"].ToString()
+                    };
+                    posts.Add(post);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                SlackLogs.SendMessage(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return posts;
+        }
         /// <summary>
         /// Obtiene los likes del post
         /// </summary>
@@ -171,11 +171,11 @@ namespace WorklabsMx.Controllers
             return comentarios;
         }
         /// <summary>
-        /// Obtain the menu
+        /// Obtiene el menú de iOS
         /// </summary>
         /// <returns>Menu</returns>
         /// <param name="menu_id">Identificador del menu (si no es raiz)</param>
-        public List<ItemsMenu> GetMenu(int tipo, string menu_id = null)
+        public List<ItemsMenu> GetMenuiOS(int tipo, string menu_id = null)
         {
             List<ItemsMenu> menus = new List<ItemsMenu>();
             string query = "SELECT * FROM cat_Menu WHERE Menu_Padre_Id " + (menu_id == null ? " IS NULL" : " = @menu_id ");
@@ -200,6 +200,53 @@ namespace WorklabsMx.Controllers
                         Controller = reader["Menu_Controller_iOS"].ToString(),
                         Admin = Convert.ToBoolean(reader["Menu_Solo_Admin"]),
                         Image = reader["Menu_Imagen_iOS"].ToString(),
+                        Principal = false
+                    };
+                    menus.Add(menu);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                SlackLogs.SendMessage(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return menus;
+        }
+        /// <summary>
+        /// Obtiene el menú de Android
+        /// </summary>
+        /// <returns>Menu</returns>
+        /// <param name="menu_id">Identificador del menu (si no es raiz)</param>
+        public List<ItemsMenu> GetMenuAndroid(int tipo, string menu_id = null)
+        {
+            List<ItemsMenu> menus = new List<ItemsMenu>();
+            string query = "SELECT * FROM cat_Menu WHERE Menu_Padre_Id " + (string.IsNullOrEmpty(menu_id) ? " IS NULL" : " = @menu_id ");
+            if (tipo == 1)
+            {
+                query += " AND Menu_Solo_Admin = 0";
+            }
+            command = CreateCommand(query);
+            if (menu_id != null)
+                command.Parameters.AddWithValue("@menu_id", menu_id);
+
+            try
+            {
+                conn.Open();
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    ItemsMenu menu = new ItemsMenu
+                    {
+                        Menu_Id = reader["Menu_Id"].ToString(),
+                        Label = reader["Menu_Nombre"].ToString(),
+                        Controller = reader["Menu_Controller_Android"].ToString(),
+                        Admin = Convert.ToBoolean(reader["Menu_Solo_Admin"]),
+                        Image = reader["Menu_Imagen_Android"].ToString(),
                         Principal = false
                     };
                     menus.Add(menu);
@@ -304,8 +351,14 @@ namespace WorklabsMx.Controllers
             return true;
         }
 
-        public bool SetPost(string miembro_id, string colaborador_id, string comentario, string fotoNombre, byte[] fotografia)
+        public bool SetPost(string usuario_id, string tipo, string comentario, string fotoNombre, byte[] fotografia)
         {
+            string miembro_id = null;
+            string colaborador_id = null;
+            if (tipo == "0")
+                miembro_id = usuario_id;
+            else
+                colaborador_id = usuario_id;
             try
             {
                 conn.Open();
@@ -345,6 +398,11 @@ namespace WorklabsMx.Controllers
             }
 
             return true;
+        }
+
+        public void ReportarPost(string miembro_id, string tipo, string post_id){
+
+
         }
     }
 }

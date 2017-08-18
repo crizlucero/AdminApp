@@ -145,6 +145,7 @@ namespace WorklabsMx.Controllers
                 {
                     MiembroModel usuario = new MiembroModel()
                     {
+                        Miembro_Id = reader["Usuario_Id"].ToString(),
                         Miembro_Nombre = reader["Usuario_Nombre"].ToString(),
                         Miembro_Apellidos = reader["Usuario_Apellidos"].ToString(),
                         Miembro_Profesion = reader["Usuario_Profesion"].ToString(),
@@ -157,7 +158,8 @@ namespace WorklabsMx.Controllers
                         Miembro_Fecha_Nacimiento = reader["Usuario_Fecha_Nacimiento"].ToString(),
                         Miembro_Fecha_Registro = reader["Usuario_Fecha_Registro"].ToString(),
                         Genero_Descripcion = reader["Usuario_Genero_Descripcion"].ToString(),
-                        Miembro_Empresa = reader["Usuario_Empresa_Nombre"].ToString()
+                        Miembro_Empresa = reader["Usuario_Empresa_Nombre"].ToString(),
+                        Miembro_Tipo = reader["Usuario_Tipo"].ToString()
                     };
                     usuarios.Add(usuario);
                 }

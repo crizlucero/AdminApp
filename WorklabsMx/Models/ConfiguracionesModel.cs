@@ -1,5 +1,4 @@
-﻿using System;
-namespace WorklabsMx.Models
+﻿namespace WorklabsMx.Models
 {
     public class ConfiguracionesModel
     {
@@ -24,9 +23,5 @@ namespace WorklabsMx.Models
         public string Parametro_Fecha_Alta { get; set; }
         public string Parametro_Fecha_Modificacion { get; set; }
         public string Parametro_Fecha_Baja { get; set; }
-
-        public ConfiguracionesModel()
-        {
-        }
     }
 }

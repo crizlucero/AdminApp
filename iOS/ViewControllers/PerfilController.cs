@@ -10,6 +10,9 @@ using PerpetualEngine.Storage;
 using CoreGraphics;
 using WorklabsMx.Helpers;
 using WorklabsMx.iOS.Styles;
+using Contacts;
+using ContactsUI;
+using Foundation;
 
 namespace WorklabsMx.iOS
 {
@@ -82,6 +85,34 @@ namespace WorklabsMx.iOS
                 #endregion
             };
 
+            if (Usuario != storageLocal.Get("Usuario_Id") || Tipo != storageLocal.Get("Usuario_Tipo"))
+            {
+                NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_person_add"), UIBarButtonItemStyle.Plain, (sender, e) =>
+                {
+                    // Create a new Mutable Contact (read/write)
+                    // and attach it to the editor
+                    CNContactStore store = new CNContactStore();
+                    CNMutableContact contact = new CNMutableContact();
+                    CNContactViewController editor = CNContactViewController.FromNewContact(contact);
+
+                    CNLabeledValue<CNPhoneNumber> cellPhone = new CNLabeledValue<CNPhoneNumber>(CNLabelPhoneNumberKey.Mobile, new CNPhoneNumber(miembro.Miembro_Celular));
+                    CNLabeledValue<CNPhoneNumber> telephone = new CNLabeledValue<CNPhoneNumber>(CNLabelPhoneNumberKey.Main, new CNPhoneNumber(miembro.Miembro_Telefono));
+                    CNLabeledValue<NSString> email = new CNLabeledValue<NSString>(CNLabelKey.Home, new NSString(miembro.Miembro_Correo_Electronico));
+                    // Configure editor
+
+                    editor.ContactStore = store;
+                    contact.GivenName = miembro.Miembro_Nombre;
+                    contact.FamilyName = miembro.Miembro_Apellidos;
+                    contact.JobTitle = miembro.Miembro_Puesto;
+                    contact.PhoneNumbers = new[] { telephone, cellPhone };
+                    contact.EmailAddresses = new CNLabeledValue<NSString>[] { email };
+                    // Display picker
+                    var navController = ParentViewController as UINavigationController;
+                    navController.PushViewController(editor, true);
+
+                }), true);
+            }
+
             UIBarButtonItem bbiInfo = new UIBarButtonItem(UIImage.FromBundle("ic_format_list_bulleted"), UIBarButtonItemStyle.Done, (sender, e) =>
             {
                 new InfoPersonaCard(miembro, View, 100);
@@ -105,7 +136,11 @@ namespace WorklabsMx.iOS
         private async Task AddPostsAsync()
         {
 
-            List<PostModel> posts = new Controllers.EscritorioController().GetPerfilPosts(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
+            List<PostModel> posts;
+            if (string.IsNullOrEmpty(Usuario))
+                posts = new Controllers.EscritorioController().GetPerfilPosts(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
+            else
+                posts = new Controllers.EscritorioController().GetPerfilPosts(Usuario, Tipo);
             if (posts.Count > 0)
             {
                 endLine = (posts.Count < 5);

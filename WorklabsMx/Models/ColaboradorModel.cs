@@ -1,11 +1,11 @@
-﻿using System;
-namespace WorklabsMx.Models
+﻿namespace WorklabsMx.Models
 {
     public class ColaboradorModel
     {
         public string Colaborador_Id { get; set; }
         public string Miembro_Empresa_Id { get; set; }
         public string Genero_Id { get; set; }
+        public string Genero_Descripcion { get; set; }
         public string Colaborador_Nombre { get; set; }
         public string Colaborador_Apellidos { get; set; }
         public string Colaborador_Fecha_Nacimiento { get; set; }

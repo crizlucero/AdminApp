@@ -20,10 +20,8 @@ namespace WorklabsMx.iOS.Helpers
             this.imageView = imageView;
         }
 
-        public void Handle_Canceled(object sender, EventArgs e)
-        {
-            imagePicker.DismissViewController(true, () => { });
-        }
+        public void Handle_Canceled(object sender, EventArgs e) => imagePicker.DismissViewController(true, () => { });
+
 
         public void Handle_FinishedPickingMedia(object sender, UIImagePickerMediaPickedEventArgs e)
         {
@@ -68,7 +66,7 @@ namespace WorklabsMx.iOS.Helpers
         public static UIImage LoadImage(string imagen)
         {
             if (imagen != null)
-                using (var url = new NSUrl("http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + imagen.Replace(@"\", "/")))
+                using (var url = new NSUrl("http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + imagen.Replace("\\", "/")))
                 {
                     using (var data = NSData.FromUrl(url))
                     {

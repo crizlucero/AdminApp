@@ -17,7 +17,8 @@ namespace WorklabsMx.iOS.ViewElements
         public int comentarioSize;
         public UIButton lblNombre;
         public int usrTipo;
-        public PostCard(PostModel post)
+        public UIButton btnDelete;
+		public PostCard(PostModel post)
         {
             PostComments = new List<CommentCard>();
             UIButton pstImage = new UIButton()
@@ -43,6 +44,14 @@ namespace WorklabsMx.iOS.ViewElements
             };
             lblNombre.SetTitleColor(UIColor.DarkGray, UIControlState.Normal);
             Add(lblNombre);
+
+            //Delete or report post
+            btnDelete = new STLButton(UIImage.FromBundle("ic_clear"))
+            {
+                Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 30, 25, 20,20) 
+            };
+            Add(btnDelete);
+
             UILabel lblfecha = new STLLabel(post.POST_FECHA, 45, 12)
             {
                 Frame = new CGRect(65, 35, UIScreen.MainScreen.Bounds.Width, 50)
@@ -98,20 +107,18 @@ namespace WorklabsMx.iOS.ViewElements
 
             #region Comentarios
             UIScrollView commentScroll = new UIScrollView(new CGRect(0, 170 + totalSize, UIScreen.MainScreen.Bounds.Width, 100));
-            foreach (ComentarioModel comentario in new WorklabsMx.Controllers.EscritorioController().GetComentariosPost(post.POST_ID))
+            foreach (ComentarioModel comentario in new Controllers.EscritorioController().GetComentariosPost(post.POST_ID))
             {
                 PostComments.Add(new CommentCard(comentario)
                 {
                     Frame = new CGRect(0, 170 + totalSize, UIScreen.MainScreen.Bounds.Width, 100)
                 });
                 AddSubview(PostComments[comentarioCount]);
-                //comentarioSize += 60;
                 totalSize += 60;
                 ++comentarioCount;
 
             }
             #endregion
-            //totalSize += 60;
         }
 
         public void ResizeCommentCard()

@@ -13,7 +13,6 @@ namespace WorklabsMx.Controllers
         /// <param name="parametro">Parametro a elegir</param>
         public ConfiguracionesModel GetConfiguraciones(string parametro)
         {
-
             string query = "SELECT * FROM vw_cat_Parametros_Generales WHERE Parametro_Descripcion = @Parametro";
             ConfiguracionesModel configuracion = new ConfiguracionesModel();
             try

@@ -1,5 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Hello">Hello World, Click Me!</string>
-    <string name="ApplicationName">WorklabsMx.Droid</string>
+	<string name="hello">Hello World, Click Me!</string>
+	<string name="app_name">WorklabsMx</string>
+	<string name="CorreoElectronico">Correo Electrónico</string>
+	<string name="Password">Contraseña</string>
+	<string name="Login">Iniciar Sesión</string>
+	<string name="Recovery">Recuperar Contraseña</string>
+	<string name="Register">Registrar</string>
+	<string name="LoginError">Correo Electrónico y/o Constraseña incorrectos</string>
+	<string name="open_drawer">Open drawer</string>
+	<string name="close_drawer">Close drawer</string>
 </resources>
