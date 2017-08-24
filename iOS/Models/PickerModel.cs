@@ -6,12 +6,9 @@ namespace WorklabsMx.iOS.Models
 {
     public class PickerModel : UIPickerViewModel
     {
-        private List<string> _items;
+        List<string> _items;
         protected int selectedIndex = 0;
-        public PickerModel(List<string> items)
-        {
-            this._items = items;
-        }
+        public PickerModel(List<string> items) => _items = items;
 
         public string SelectedItem => _items[selectedIndex];
 

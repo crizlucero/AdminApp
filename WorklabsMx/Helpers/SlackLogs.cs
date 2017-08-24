@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WorklabsMx.Helpers
 {
-    public class SlackLogs
+    public static class SlackLogs
     {
         public static void SendMessage(string msg)
         {

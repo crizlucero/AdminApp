@@ -85,6 +85,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Configuration.ConfigurationManager">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.0\lib\netstandard2.0\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -94,6 +97,9 @@
     <Compile Include="ViewController\HomeFragment.cs" />
     <Compile Include="Helpers\ImagesHelper.cs" />
     <Compile Include="ViewElement\MenuView.cs" />
+    <Compile Include="ViewController\PerfilActivity.cs" />
+    <Compile Include="Fragments\MyProfileFragment.cs" />
+    <Compile Include="Fragments\MenuFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -133,6 +139,27 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_power_settings_new.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_label.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_send.png" />
+    <AndroidResource Include="Resources\layout\PerfilLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_profile.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_domain.png" />
+    <AndroidResource Include="Resources\layout\MenuLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_view_list.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_open_book.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_today.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_school.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_public.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_business_center.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_cellphone.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_work.png" />
+    <AndroidResource Include="Resources\layout\DatosFacturacionLayout.axml" />
+    <AndroidResource Include="Resources\layout\RegistroInvitadosLayout.axml" />
+    <AndroidResource Include="Resources\layout\ReservaSalaJuntasLayout.axml" />
+    <AndroidResource Include="Resources\layout\MiEmpresaLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_place.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_share.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_facebook.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_instagram.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_twitter.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -140,6 +167,7 @@
     <Folder Include="ViewController\" />
     <Folder Include="Helpers\" />
     <Folder Include="ViewElement\" />
+    <Folder Include="Fragments\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="xamandroidsupportv7appcompat">

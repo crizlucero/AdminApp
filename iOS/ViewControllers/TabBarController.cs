@@ -12,7 +12,10 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Editar", UIBarButtonItemStyle.Plain, HandleEventHandler), true);
+            if (PerpetualEngine.Storage.SimpleStorage.EditGroup("Login").Get("Usuario_Tipo") == "0")
+                NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Editar", UIBarButtonItemStyle.Plain, HandleEventHandler), true);
+
+
         }
 
         void HandleEventHandler(object sender, EventArgs e)
@@ -30,6 +33,10 @@ namespace WorklabsMx.iOS
                     controller.Title = "Edición de campos";
                     this.NavigationController.PushViewController(controller, true); break;
             }
+        }
+        public override void ViewWillAppear(bool animated)
+        {
+            TabBar.Hidden |= PerpetualEngine.Storage.SimpleStorage.EditGroup("Login").Get("Usuario_Tipo") == "1";
         }
     }
 }

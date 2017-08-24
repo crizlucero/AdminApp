@@ -9,6 +9,7 @@ using PerpetualEngine.Storage;
 using System.Threading.Tasks;
 using WorklabsMx.iOS.ViewElements;
 using WorklabsMx.Helpers;
+using ToastIOS;
 
 namespace WorklabsMx.iOS
 {
@@ -17,14 +18,13 @@ namespace WorklabsMx.iOS
         UIView viewView;
         UIScrollView scrollView;
         UIImageView imagen;
-        int totalSize = 0;
+        int postNumber, totalSize = 0;
         static int currentPage = 0;
         ImageGallery selectImage;
         SimpleStorage storageLocal;
         UITextField txtPublish;
         bool endLine = false;
         List<PostCard> AllPost;
-        int postNumber;
         public EscritorioController(IntPtr handle) : base(handle)
         {
             storageLocal = SimpleStorage.EditGroup("Login");
@@ -112,17 +112,30 @@ namespace WorklabsMx.iOS
                     {
                         if (post.MIEMBRO_ID == storageLocal.Get("Usuario_Id") && post.Tipo == storageLocal.Get("Usuario_Tipo"))
                         {
-                            new MessageDialog().SendConfirmation("Se eliminará el post", "Borrar post", (obj) =>
+                            new MessageDialog().SendConfirmation("Se eliminará el post", "Borrar post", async (obj) =>
                             {
                                 if (obj)
-                                    Console.WriteLine("x");
+                                    if (new Controllers.EscritorioController().OcultarPost(post.MIEMBRO_ID, post.POST_ID, 0))
+                                    {
+                                        new MessageDialog().SendToast("Post eliminado");
+                                        currentPage = 0;
+                                        await AddPostsAsync();
+                                    }
+                                    else
+                                        new MessageDialog().SendToast("Hubo un error, intente de nuevo");
                             });
                         }
                         else
                             new MessageDialog().SendConfirmation("¿Desea reportar el post?", "Reportar post", (obj) =>
                             {
                                 if (obj)
-                                    Console.WriteLine("x");
+                                {
+                                    ReporteController reporteController = (ReporteController)Storyboard.InstantiateViewController("ReporteController");
+                                    reporteController.post_id = post.POST_ID;
+                                    reporteController.Title = "Reportar Post";
+                                    NavigationController.PushViewController(reporteController, true);
+                                    ((UIButton)sender).BackgroundColor = UIColor.Clear;
+                                }
                             });
                     };
                     totalSize += AllPost[postNumber].totalSize;

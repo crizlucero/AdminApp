@@ -61,7 +61,8 @@ namespace WorklabsMx.Droid
 
         void OpenDashboard()
         {
-            SetContentView(Resource.Layout.Main);
+			SetContentView(Resource.Layout.Main);
+
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
             ActionBar.Title = "Escritorio";

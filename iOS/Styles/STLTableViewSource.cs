@@ -7,7 +7,7 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.iOS.Styles
 {
-    public partial class STLTableViewSource : UITableViewSource
+    public class STLTableViewSource : UITableViewSource
     {
 
         internal List<ItemsMenu> TableItems;
@@ -28,7 +28,9 @@ namespace WorklabsMx.iOS.Styles
                 cell = new UITableViewCell(UITableViewCellStyle.Default, CellIdentifier);
             cell.TextLabel.Text = item;
             if (!TableItems[indexPath.Row].Principal)
+            {
                 cell.ImageView.Image = UIImage.FromBundle(TableItems[indexPath.Row].Image);
+            }
             else
             {
                 using (var url = new NSUrl(TableItems[indexPath.Row].Image))

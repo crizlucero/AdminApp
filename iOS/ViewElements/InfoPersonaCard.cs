@@ -10,8 +10,7 @@ namespace WorklabsMx.iOS.ViewElements
 {
     public class InfoPersonaCard
     {
-        public UIButton lblNombre;
-        public UIButton lblMail;
+        public UIButton lblNombre, lblMail;
         public InfoPersonaCard(MiembroModel miembro, UIView View, int initialPosition = 0)
         {
             using (UIView headerView = new UIView(new CGRect(0, initialPosition, UIScreen.MainScreen.Bounds.Width, 100)) { BackgroundColor = UIColor.White })
@@ -62,7 +61,7 @@ namespace WorklabsMx.iOS.ViewElements
                 scrollView.AddSubview(new STLLabel(miembro.Miembro_Profesion, 400) { Frame = new CGRect(30, 400, UIScreen.MainScreen.Bounds.Width, 30) });
 
                 scrollView.AddSubview(new STLImageLabel(scrollView, "Puesto", 430, "ic_work"));
-                scrollView.AddSubview(new STLLabel(miembro.Genero_Descripcion, 460) { Frame = new CGRect(30, 460, UIScreen.MainScreen.Bounds.Width, 30) });
+                scrollView.AddSubview(new STLLabel(miembro.Miembro_Puesto, 460) { Frame = new CGRect(30, 460, UIScreen.MainScreen.Bounds.Width, 30) });
 
                 scrollView.AddSubview(new STLImageLabel(scrollView, "Habilidades", 490, "ic_create"));
                 scrollView.AddSubview(new STLLabel(miembro.Miembro_Habilidades, 520) { Frame = new CGRect(30, 520, UIScreen.MainScreen.Bounds.Width, 30) });

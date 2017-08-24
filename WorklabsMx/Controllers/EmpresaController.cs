@@ -150,29 +150,28 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    EmpresaModel empresa = new EmpresaModel
-                    {
-                        Giro_Descripcion = reader["Giro_Descripcion"].ToString(),
-                        Empresa_Miembro_Red_Social_3 = reader["Empresa_Miembro_Red_Social_3"].ToString(),
-                        Empresa_Miembro_Red_Social_2 = reader["Empresa_Miembro_Red_Social_2"].ToString(),
-                        Empresa_Miembro_Red_Social_1 = reader["Empresa_Miembro_Red_Social_1"].ToString(),
-                        Empresa_Miembro_Pagina_Web = reader["Empresa_Miembro_Pagina_Web"].ToString(),
-                        Empresa_Miembro_Telefono = reader["Empresa_Miembro_Telefono"].ToString(),
-                        Empresa_Miembro_Correo_Electronico = reader["Empresa_Miembro_Correo_Electronico"].ToString(),
-                        Empresa_Miembro_Numero_Interior = reader["Empresa_Miembro_Numero_Interior"].ToString(),
-                        Empresa_Miembro_Numero_Exterior = reader["Empresa_Miembro_Numero_Exterior"].ToString(),
-                        Empresa_Miembro_Calle = reader["Empresa_Miembro_Calle"].ToString(),
-                        Empresa_Miembro_Nombre = reader["Empresa_Miembro_Nombre"].ToString(),
-                        Empresa_Miembro_Rfc = reader["Empresa_Miembro_Rfc"].ToString(),
-                        Empresa_Miembro_Razon_Social = reader["Empresa_Miembro_Razon_Social"].ToString(),
-                        Empresa_Miembro_Logotipo = reader["Empresa_Miembro_Logotipo"].ToString(),
-                        Empresa_Miembro_Id = reader["Empresa_Miembro_Id"].ToString(),
-                        Territorio_Estado_Descripcion = reader["Territorio_Estado_Descripcion"].ToString(),
-                        Territorio_Municipio_Descripcion = reader["Territorio_Municipio_Descripcion"].ToString(),
-                        Territorio_Colonia_Descripcion = reader["Territorio_Colonia_Descripcion"].ToString(),
-                        Territorio_Cp = reader["Territorio_Cp"].ToString()
-                    };
-                    empresas.Add(empresa);
+					empresas.Add(new EmpresaModel
+					{
+						Giro_Descripcion = reader["Giro_Descripcion"].ToString(),
+						Empresa_Miembro_Red_Social_3 = reader["Empresa_Miembro_Red_Social_3"].ToString(),
+						Empresa_Miembro_Red_Social_2 = reader["Empresa_Miembro_Red_Social_2"].ToString(),
+						Empresa_Miembro_Red_Social_1 = reader["Empresa_Miembro_Red_Social_1"].ToString(),
+						Empresa_Miembro_Pagina_Web = reader["Empresa_Miembro_Pagina_Web"].ToString(),
+						Empresa_Miembro_Telefono = reader["Empresa_Miembro_Telefono"].ToString(),
+						Empresa_Miembro_Correo_Electronico = reader["Empresa_Miembro_Correo_Electronico"].ToString(),
+						Empresa_Miembro_Numero_Interior = reader["Empresa_Miembro_Numero_Interior"].ToString(),
+						Empresa_Miembro_Numero_Exterior = reader["Empresa_Miembro_Numero_Exterior"].ToString(),
+						Empresa_Miembro_Calle = reader["Empresa_Miembro_Calle"].ToString(),
+						Empresa_Miembro_Nombre = reader["Empresa_Miembro_Nombre"].ToString(),
+						Empresa_Miembro_Rfc = reader["Empresa_Miembro_Rfc"].ToString(),
+						Empresa_Miembro_Razon_Social = reader["Empresa_Miembro_Razon_Social"].ToString(),
+						Empresa_Miembro_Logotipo = reader["Empresa_Miembro_Logotipo"].ToString(),
+						Empresa_Miembro_Id = reader["Empresa_Miembro_Id"].ToString(),
+						Territorio_Estado_Descripcion = reader["Territorio_Estado_Descripcion"].ToString(),
+						Territorio_Municipio_Descripcion = reader["Territorio_Municipio_Descripcion"].ToString(),
+						Territorio_Colonia_Descripcion = reader["Territorio_Colonia_Descripcion"].ToString(),
+						Territorio_Cp = reader["Territorio_Cp"].ToString()
+					});
                 }
             }
             catch (Exception e)

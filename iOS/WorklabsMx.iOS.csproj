@@ -409,6 +409,18 @@
     <ImageAsset Include="Assets.xcassets\ic_check.imageset\ic_check.png" />
     <ImageAsset Include="Assets.xcassets\ic_check.imageset\ic_check_2x.png" />
     <ImageAsset Include="Assets.xcassets\ic_check.imageset\ic_check_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_shopping_cart.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_shopping_cart.imageset\ic_shopping_cart.png" />
+    <ImageAsset Include="Assets.xcassets\ic_shopping_cart.imageset\ic_shopping_cart_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_shopping_cart.imageset\ic_shopping_cart_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_radiobutton_check.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_radiobutton_check.imageset\ic_radio_button_checked.png" />
+    <ImageAsset Include="Assets.xcassets\ic_radiobutton_check.imageset\ic_radio_button_checked_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_radiobutton_check.imageset\ic_radio_button_checked_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_radiobutton_uncheck.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_radiobutton_uncheck.imageset\ic_radio_button_unchecked.png" />
+    <ImageAsset Include="Assets.xcassets\ic_radiobutton_uncheck.imageset\ic_radio_button_unchecked_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_radiobutton_uncheck.imageset\ic_radio_button_unchecked_3x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -540,6 +552,20 @@
     <Compile Include="ViewControllers\FacturasController.designer.cs">
       <DependentUpon>FacturasController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Styles\STLCarritoCompra.cs" />
+    <Compile Include="ViewControllers\MiMembresiaController.cs" />
+    <Compile Include="ViewControllers\MiMembresiaController.designer.cs">
+      <DependentUpon>MiMembresiaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\PaymentController.cs" />
+    <Compile Include="ViewControllers\PaymentController.designer.cs">
+      <DependentUpon>PaymentController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ReporteController.cs" />
+    <Compile Include="ViewControllers\ReporteController.designer.cs">
+      <DependentUpon>ReporteController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewElements\UIRadioButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -563,6 +589,9 @@
     <Folder Include="Assets.xcassets\ic_search.imageset\" />
     <Folder Include="Assets.xcassets\ic_twitter.imageset\" />
     <Folder Include="ViewElements\" />
+    <Folder Include="Assets.xcassets\ic_shopping_cart.imageset\" />
+    <Folder Include="Assets.xcassets\ic_radiobutton_check.imageset\" />
+    <Folder Include="Assets.xcassets\ic_radiobutton_uncheck.imageset\" />
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

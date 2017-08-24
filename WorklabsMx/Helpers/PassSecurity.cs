@@ -6,19 +6,22 @@ namespace WorklabsMx
 {
     public class PassSecurity
     {
-
+        /// <summary>
+        /// Caracteres disponibles para la generación de una nueva clave
+        /// </summary>
         static readonly char[] AvailableCharacters = {
-		    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-		    'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-		    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-		    'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-		    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-', '_'
-	     };
+            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+            'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-', '_'
+         };
 
-        public PassSecurity()
-        {
-        }
-
+        /// <summary>
+        /// Genera una nueva clave
+        /// </summary>
+        /// <returns>Password</returns>
+        /// <param name="length">Longitud de la clave</param>
         public string GeneraIdentifier(int length = 6)
         {
             char[] identifier = new char[length];
@@ -37,7 +40,11 @@ namespace WorklabsMx
 
             return new string(identifier);
         }
-
+        /// <summary>
+        /// Encripta el password
+        /// </summary>
+        /// <returns>Password encriptado</returns>
+        /// <param name="originalPassword">Cadena original del password</param>
         public string EncodePassword(string originalPassword)
         {
             SHA1 sha1 = new SHA1CryptoServiceProvider();

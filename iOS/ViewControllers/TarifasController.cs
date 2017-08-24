@@ -7,6 +7,7 @@ using WorklabsMx.iOS.ViewElements;
 using WorklabsMx.Controllers;
 using System.Collections.Generic;
 using WorklabsMx.Models;
+using PerpetualEngine.Storage;
 
 namespace WorklabsMx.iOS
 {
@@ -14,12 +15,16 @@ namespace WorklabsMx.iOS
     {
         UITableView selectView;
         int size = 30;
-        Dictionary<string, int> Membresias;
+        readonly Dictionary<string, int> Membresias;
+        readonly Dictionary<string, CarritoModel> Carrito;
         public string test;
         bool CanPay;
+        SimpleStorage Storage;
         public TarifasController(IntPtr handle) : base(handle)
         {
+            Storage = SimpleStorage.EditGroup("Login");
             Membresias = new Dictionary<string, int>();
+            Carrito = new CarritoController().GetCarrito(Storage.Get("Usuario_Id"), "Membresia");
             CanPay = false;
         }
         public override void ViewDidLoad()
@@ -41,8 +46,18 @@ namespace WorklabsMx.iOS
 
                 foreach (MembresiaModel membresia in new PickerItemsController().GetMembresias())
                 {
+                    if (!Carrito.ContainsKey(membresia.Membresia_Id))
+                    {
+                        Membresias.Add(membresia.Membresia_Id, 0);
+                    }
+                    else
+                    {
+                        Membresias.Add(membresia.Membresia_Id, (int)Carrito[membresia.Membresia_Id].Producto_Cantidad);
+                        CanPay = true;
+                    }
+
                     size += 40;
-                    Membresias.Add(membresia.Membresia_Id, 0);
+
                     UILabel lblMembresia = new UILabel
                     {
                         Frame = new CGRect(10, size, UIScreen.MainScreen.Bounds.Width / 2 + 30, 30),
@@ -91,7 +106,7 @@ namespace WorklabsMx.iOS
                 scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, size + 30);
                 View.AddSubview(scrollView);
             }
-            NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Pagar", UIBarButtonItemStyle.Plain, (sender, e) =>
+            NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_shopping_cart"), UIBarButtonItemStyle.Plain, (sender, e) =>
             {
                 if (CanPay)
                 {
@@ -99,8 +114,10 @@ namespace WorklabsMx.iOS
                     controller.Title = "Confirmación de pago";
                     controller.membresias = Membresias;
                     NavigationController.PushViewController(controller, true);
-                }else{
-                    new MessageDialog().SendMessage("Debe de seleccionar algún producto","Aviso");
+                }
+                else
+                {
+                    new MessageDialog().SendMessage("Debe de seleccionar algún producto", "Aviso");
                 }
             }), true);
         }

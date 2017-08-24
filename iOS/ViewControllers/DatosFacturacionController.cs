@@ -14,9 +14,7 @@ namespace WorklabsMx.iOS
         DatosFiscales datosfiscales;
         UITableView selectView;
         string pais;
-        UITextField txtEstado;
-        UITextField txtMunicipio;
-        UITextField txtColonia;
+        UITextField txtEstado, txtMunicipio, txtColonia;
         readonly PickerItemsController items;
         public DatosFacturacionController(IntPtr handle) : base(handle)
         {

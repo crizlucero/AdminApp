@@ -12,10 +12,7 @@ namespace WorklabsMx.iOS
     {
         UIScrollView searchView;
         UITableView selectView;
-        UITextField txtPais;
-        UITextField txtEstado;
-        UITextField txtMunicipio;
-        UITextField txtGiro;
+        UITextField txtPais, txtEstado, txtMunicipio, txtGiro;
         readonly PickerItemsController items;
         int position = 0;
         public DirectorioEmpresasController(IntPtr handle) : base(handle)

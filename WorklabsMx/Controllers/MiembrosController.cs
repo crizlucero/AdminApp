@@ -25,24 +25,26 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    miembro = new MiembroModel();
-                    miembro.Miembro_Id = reader["Usuario_Id"].ToString();
-                    miembro.Miembro_Nombre = reader["Usuario_Nombre"].ToString();
-                    miembro.Miembro_Apellidos = reader["Usuario_Apellidos"].ToString();
-                    miembro.Miembro_Fecha_Nacimiento = reader["Usuario_Fecha_Nacimiento"].ToString();
-                    miembro.Genero_Id = reader["Usuario_Genero_Id"].ToString();
-                    miembro.Genero_Descripcion = reader["Usuario_Genero_Descripcion"].ToString();
-                    miembro.Miembro_Correo_Electronico = reader["Usuario_Correo_Electronico"].ToString();
-                    miembro.Miembro_Telefono = reader["Usuario_Telefono"].ToString();
-                    miembro.Miembro_Celular = reader["Usuario_Celular"].ToString();
-                    miembro.Miembro_Profesion = reader["Usuario_Profesion"].ToString();
-                    miembro.Miembro_Puesto = reader["Usuario_Puesto"].ToString();
-                    miembro.Miembro_Habilidades = reader["Usuario_Habilidades"].ToString();
-                    miembro.Miembro_Identificacion = reader["Usuario_Identificacion"].ToString();
-                    miembro.Miembro_Llave_Acceso = reader["Usuario_Llave_Acceso"].ToString();
-                    miembro.Miembro_Fotografia = reader["Usuario_Fotografia"].ToString();
-                    miembro.Miembro_Fecha_Registro = reader["Usuario_Fecha_Registro"].ToString();
-                    miembro.Miembro_Estatus = reader["Usuario_Estatus"].ToString();
+                    miembro = new MiembroModel()
+                    {
+                        Miembro_Id = reader["Usuario_Id"].ToString(),
+                        Miembro_Nombre = reader["Usuario_Nombre"].ToString(),
+                        Miembro_Apellidos = reader["Usuario_Apellidos"].ToString(),
+                        Miembro_Fecha_Nacimiento = reader["Usuario_Fecha_Nacimiento"].ToString(),
+                        Genero_Id = reader["Usuario_Genero_Id"].ToString(),
+                        Genero_Descripcion = reader["Usuario_Genero_Descripcion"].ToString(),
+                        Miembro_Correo_Electronico = reader["Usuario_Correo_Electronico"].ToString(),
+                        Miembro_Telefono = reader["Usuario_Telefono"].ToString(),
+                        Miembro_Celular = reader["Usuario_Celular"].ToString(),
+                        Miembro_Profesion = reader["Usuario_Profesion"].ToString(),
+                        Miembro_Puesto = reader["Usuario_Puesto"].ToString(),
+                        Miembro_Habilidades = reader["Usuario_Habilidades"].ToString(),
+                        Miembro_Identificacion = reader["Usuario_Identificacion"].ToString(),
+                        Miembro_Llave_Acceso = reader["Usuario_Llave_Acceso"].ToString(),
+                        Miembro_Fotografia = reader["Usuario_Fotografia"].ToString(),
+                        Miembro_Fecha_Registro = reader["Usuario_Fecha_Registro"].ToString(),
+                        Miembro_Estatus = reader["Usuario_Estatus"].ToString()
+                    };
                 }
             }
             catch (Exception e)
@@ -143,7 +145,7 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    MiembroModel usuario = new MiembroModel()
+                    usuarios.Add(new MiembroModel()
                     {
                         Miembro_Id = reader["Usuario_Id"].ToString(),
                         Miembro_Nombre = reader["Usuario_Nombre"].ToString(),
@@ -160,8 +162,7 @@ namespace WorklabsMx.Controllers
                         Genero_Descripcion = reader["Usuario_Genero_Descripcion"].ToString(),
                         Miembro_Empresa = reader["Usuario_Empresa_Nombre"].ToString(),
                         Miembro_Tipo = reader["Usuario_Tipo"].ToString()
-                    };
-                    usuarios.Add(usuario);
+                    });
                 }
             }
             catch (Exception e)

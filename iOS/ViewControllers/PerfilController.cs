@@ -19,18 +19,16 @@ namespace WorklabsMx.iOS
     public partial class PerfilController : UIViewController
     {
         MiembroModel miembro;
-        public string Usuario = string.Empty;
-        public string Tipo = string.Empty;
+        public string Usuario = string.Empty, Tipo = string.Empty;
         UIScrollView scrollView;
         UIImageView imagen;
-        int totalSize = 0;
+        int postNumber, totalSize = 0;
         static int currentPage = 0;
         ImageGallery selectImage;
         SimpleStorage storageLocal;
         UITextField txtPublish;
         bool endLine = false;
         List<PostCard> AllPost;
-        int postNumber;
         UIView viewView;
         public PerfilController(IntPtr handle) : base(handle)
         {

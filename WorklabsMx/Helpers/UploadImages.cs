@@ -7,10 +7,6 @@ namespace WorklabsMx.Helpers
 {
     public class UploadImages
     {
-        public UploadImages()
-        {
-        }
-
         public bool UploadBitmapAsync(byte[] image)
         {
             string boundary = "---------------------------" + DateTime.Now.Ticks.ToString("x");

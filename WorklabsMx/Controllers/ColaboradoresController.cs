@@ -27,29 +27,28 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    ColaboradorModel colaborador = new ColaboradorModel()
-                    {
-                        Colaborador_Id = reader["Colaborador_Empresa_Id"].ToString(),
-                        Genero_Descripcion = reader["Genero_Descripcion"].ToString(),
-                        Colaborador_Nombre = reader["Colaborador_Empresa_Nombre"].ToString(),
-                        Colaborador_Apellidos = reader["Colaborador_Empresa_Apellidos"].ToString(),
-                        Colaborador_Fecha_Nacimiento = reader["Colaborador_Empresa_Fecha_Nacimiento"].ToString(),
-                        Colaborador_Correo_Electronico = reader["Colaborador_Empresa_Correo_Electronico"].ToString(),
-                        Colaborador_Telefono = reader["Colaborador_Empresa_Telefono"].ToString(),
-                        Colaborador_Celular = reader["Colaborador_Empresa_Celular"].ToString(),
-                        Colaborador_Profesion = reader["Colaborador_Empresa_Profesion"].ToString(),
-                        Colaborador_Puesto = reader["Colaborador_Empresa_Puesto"].ToString(),
-                        Colaborador_Habilidades = reader["Colaborador_Empresa_Habilidades"].ToString(),
-                        Colaborador_Llave_Acceso = reader["Colaborador_Empresa_Llave_Acceso"].ToString(),
-                        Colaborador_Fotografia = reader["Colaborador_Empresa_Fotografia"].ToString(),
-                        //colaborador.//Colaborador_Fecha_Registro = reader["Colaborador_Empresa_Fecha_Registro"].ToString(),
-                        Colaborador_Estatus = reader["Colaborador_Empresa_Estatus"].ToString(),
-                        //colaborador.Colaborador_Fecha_Alta = reader["Colaborador_Empresa_Fecha_Alta"].ToString();
-                        //colaborador.Colaborador_Fecha_Modificacion = reader["Colaborador_Empresa_Fecha_Modificacion"].ToString();
-                        //colaborador.Colaborador_Fecha_Baja = reader["Colaborador_Empresa_Fecha_Baja"].ToString();
-                        Colaborador_Disponibilidad = reader["Colaborador_Empresa_Disponibilidad_Trabajo"].ToString()
-                    };
-                    colaboradores.Add(colaborador);
+					colaboradores.Add(new ColaboradorModel()
+					{
+						Colaborador_Id = reader["Colaborador_Empresa_Id"].ToString(),
+						Genero_Descripcion = reader["Genero_Descripcion"].ToString(),
+						Colaborador_Nombre = reader["Colaborador_Empresa_Nombre"].ToString(),
+						Colaborador_Apellidos = reader["Colaborador_Empresa_Apellidos"].ToString(),
+						Colaborador_Fecha_Nacimiento = reader["Colaborador_Empresa_Fecha_Nacimiento"].ToString(),
+						Colaborador_Correo_Electronico = reader["Colaborador_Empresa_Correo_Electronico"].ToString(),
+						Colaborador_Telefono = reader["Colaborador_Empresa_Telefono"].ToString(),
+						Colaborador_Celular = reader["Colaborador_Empresa_Celular"].ToString(),
+						Colaborador_Profesion = reader["Colaborador_Empresa_Profesion"].ToString(),
+						Colaborador_Puesto = reader["Colaborador_Empresa_Puesto"].ToString(),
+						Colaborador_Habilidades = reader["Colaborador_Empresa_Habilidades"].ToString(),
+						Colaborador_Llave_Acceso = reader["Colaborador_Empresa_Llave_Acceso"].ToString(),
+						Colaborador_Fotografia = reader["Colaborador_Empresa_Fotografia"].ToString(),
+						//colaborador.//Colaborador_Fecha_Registro = reader["Colaborador_Empresa_Fecha_Registro"].ToString(),
+						Colaborador_Estatus = reader["Colaborador_Empresa_Estatus"].ToString(),
+						//colaborador.Colaborador_Fecha_Alta = reader["Colaborador_Empresa_Fecha_Alta"].ToString();
+						//colaborador.Colaborador_Fecha_Modificacion = reader["Colaborador_Empresa_Fecha_Modificacion"].ToString();
+						//colaborador.Colaborador_Fecha_Baja = reader["Colaborador_Empresa_Fecha_Baja"].ToString();
+						Colaborador_Disponibilidad = reader["Colaborador_Empresa_Disponibilidad_Trabajo"].ToString()
+					});
                 }
             }
             catch (Exception e)

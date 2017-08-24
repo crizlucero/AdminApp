@@ -11,14 +11,11 @@ namespace WorklabsMx.iOS.ViewElements
 {
     public class PostCard : UIView
     {
-        public int totalSize;
         public List<CommentCard> PostComments;
-        public int comentarioCount;
-        public int comentarioSize;
-        public UIButton lblNombre;
-        public int usrTipo;
-        public UIButton btnDelete;
-		public PostCard(PostModel post)
+        public int totalSize, comentarioCount, comentarioSize, usrTipo;
+        public UIButton lblNombre, btnDelete;
+
+        public PostCard(PostModel post)
         {
             PostComments = new List<CommentCard>();
             UIButton pstImage = new UIButton()
@@ -48,7 +45,7 @@ namespace WorklabsMx.iOS.ViewElements
             //Delete or report post
             btnDelete = new STLButton(UIImage.FromBundle("ic_clear"))
             {
-                Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 30, 25, 20,20) 
+                Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 30, 25, 20, 20)
             };
             Add(btnDelete);
 
@@ -103,7 +100,6 @@ namespace WorklabsMx.iOS.ViewElements
             txtPost.Frame = new CGRect(10, 110 + totalSize, UIScreen.MainScreen.Bounds.Width - 10, 30 + postSize);
             Add(txtPost);
             totalSize += postSize;
-
 
             #region Comentarios
             UIScrollView commentScroll = new UIScrollView(new CGRect(0, 170 + totalSize, UIScreen.MainScreen.Bounds.Width, 100));

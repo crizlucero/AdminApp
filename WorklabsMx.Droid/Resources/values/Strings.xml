@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="hello">Hello World, Click Me!</string>
 	<string name="app_name">WorklabsMx</string>
 	<string name="CorreoElectronico">Correo Electrónico</string>
 	<string name="Password">Contraseña</string>
@@ -10,4 +9,35 @@
 	<string name="LoginError">Correo Electrónico y/o Constraseña incorrectos</string>
 	<string name="open_drawer">Open drawer</string>
 	<string name="close_drawer">Close drawer</string>
+	<string name="MiPerfil">Mi Perfil</string>
+	<string name="MiEmpresa">Mi Empresa</string>
+	<string name="Genero">Género</string>
+	<string name="FechaNacimiento">Fecha de Nacimiento</string>
+	<string name="Profesion">Profesión</string>
+	<string name="Puesto">Puesto</string>
+	<string name="Habilidades">Habilidades</string>
+	<string name="Telefono">Teléfono</string>
+	<string name="Celular">Celular</string>
+	<string name="RazonSocial">Razón Social</string>
+	<string name="RFC">RFC</string>
+	<string name="Estado">Estado</string>
+	<string name="Municipio">Municipio</string>
+	<string name="Colonia">Colonia</string>
+	<string name="CodigoPostal">Código Postal</string>
+	<string name="Calle">Calle</string>
+	<string name="NumExterior">Num. Exterior</string>
+	<string name="NumInterior">Num. Interior</string>
+	<string name="Nombre">Nombre</string>
+    <string name="Asunto">Asunto</string>
+    <string name="CC">CC</string>
+	<string name="Fecha">Fecha</string>
+    <string name="HoraSalida">Hora de Salida</string>
+    <string name="HoraEntrada">Hora de Entrada</string>
+	<string name="GiroComercial">Giro Comercial</string>
+	<string name="Direccion">Dirección</string>
+    <string name="PaginaWeb">Página Web</string>
+	<string name="RedesSociales">Redes Sociales</string>
+	<string name="Facebook">Facebook</string>
+	<string name="Twitter">Twitter</string>
+	<string name="Instagram">Instagram</string>
 </resources>

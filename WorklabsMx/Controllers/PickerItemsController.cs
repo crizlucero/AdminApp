@@ -253,13 +253,12 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    MembresiaModel membresia = new MembresiaModel
+                    membresias.Add(new MembresiaModel
                     {
                         Membresia_Id = reader["Membresia_Id"].ToString(),
                         Membresia_Descripcion = reader["Membresia_Descripcion"].ToString(),
                         Membresia_Espacios_Disponibles = reader["Membresia_Espacios_Disponibles"].ToString()
-                    };
-                    membresias.Add(membresia);
+                    });
                 }
             }
             catch (Exception e)
@@ -299,14 +298,13 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    MembresiaModel membresia = new MembresiaModel
+                    membresias.Add(new MembresiaModel
                     {
                         Membresia_Id = reader["Membresia_Id"].ToString(),
                         Membresia_Descripcion = reader["Membresia_Descripcion"].ToString(),
                         Membresia_Precio_Base = reader["Membresia_Precio_Base"].ToString(),
                         Inscripcion_Precio_Base = reader["Membresia_Precio_Inscripcion"].ToString()
-                    };
-                    membresias.Add(membresia);
+                    });
                 }
             }
             catch (Exception e)
@@ -336,13 +334,12 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    ProductoModel producto = new ProductoModel
+                    productos.Add(new ProductoModel
                     {
                         Producto_Id = reader["Producto_Id"].ToString(),
                         Producto_Descripcion = reader["Producto_Descripcion"].ToString(),
                         Producto_Disponibilidad = reader["Disponibilidad_Producto_Descripcion"].ToString()
-                    };
-                    productos.Add(producto);
+                    });
                 }
             }
             catch (Exception e)
@@ -379,13 +376,12 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    ProductoModel producto = new ProductoModel
+                    productos.Add(new ProductoModel
                     {
                         Producto_Id = reader["Producto_Id"].ToString(),
                         Producto_Descripcion = reader["Producto_Descripcion"].ToString(),
                         Producto_Precio_Base = reader["Producto_Precio_Base"].ToString()
-                    };
-                    productos.Add(producto);
+                    });
                 }
             }
             catch (Exception e)

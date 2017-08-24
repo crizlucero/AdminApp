@@ -5,6 +5,7 @@ using WorklabsMx.iOS.Styles;
 using WorklabsMx.Controllers;
 using System.Collections.Generic;
 using WorklabsMx.Models;
+using PerpetualEngine.Storage;
 
 namespace WorklabsMx.iOS
 {
@@ -13,7 +14,7 @@ namespace WorklabsMx.iOS
         int totalSize = 20;
         UIScrollView scrollView;
         UIView searchView;
-        PerpetualEngine.Storage.SimpleStorage storageLocal;
+        SimpleStorage storageLocal;
         public MisColaboradoresBajaController(IntPtr handle) : base(handle)
         {
         }
@@ -22,7 +23,7 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             View.ClearsContextBeforeDrawing = true;
-            storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
+            storageLocal = SimpleStorage.EditGroup("Login");
 
             searchView = new UIView(new CGRect(0, 60, UIScreen.MainScreen.Bounds.Width, 40))
             {
