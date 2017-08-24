@@ -19,7 +19,7 @@ namespace WorklabsMx.iOS
     public partial class PerfilController : UIViewController
     {
         MiembroModel miembro;
-        public string Usuario = string.Empty, Tipo = string.Empty;
+        public string Usuario = null, Tipo = null;
         UIScrollView scrollView;
         UIImageView imagen;
         int postNumber, totalSize = 0;
@@ -79,7 +79,7 @@ namespace WorklabsMx.iOS
                 #region Posts
                 scrollView = new UIScrollView(new CGRect(0, 150, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)) { BackgroundColor = UIColor.White };
                 await this.AddPostsAsync();
-
+                View.AddSubview(scrollView);
                 #endregion
             };
 
@@ -131,14 +131,12 @@ namespace WorklabsMx.iOS
         /// <summary>
         /// Agrega a la pantalla los posts
         /// </summary>
-        private async Task AddPostsAsync()
+        async Task AddPostsAsync()
         {
 
             List<PostModel> posts;
-            if (string.IsNullOrEmpty(Usuario))
-                posts = new Controllers.EscritorioController().GetPerfilPosts(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
-            else
-                posts = new Controllers.EscritorioController().GetPerfilPosts(Usuario, Tipo);
+            posts = new Controllers.EscritorioController().GetPerfilPosts(Usuario ?? storageLocal.Get("Usuario_Id"),
+                                                                          Tipo ?? storageLocal.Get("Usuario_Tipo"));
             if (posts.Count > 0)
             {
                 endLine = (posts.Count < 5);
@@ -185,10 +183,6 @@ namespace WorklabsMx.iOS
                             {
                                 nfloat scrollPosition = scrollView.ContentOffset.Y;
                                 txtComentario.Text = "";
-                                /*for (int i = postNumber; i < AllPost.Count; i++)
-                                {
-                                    AllPost[i].Frame = new CGRect(0, totalSize + 60, UIScreen.MainScreen.Bounds.Width, 140);
-                                }*/
                                 await AddPostsAsync();
                                 scrollView.ContentOffset = new CGPoint(0, scrollPosition);
                             }
@@ -235,7 +229,7 @@ namespace WorklabsMx.iOS
         {
             if (imagen != null)
                 imagen.Hidden = true;
-            if (new WorklabsMx.Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), null, txtPublish.Text, "", imagen?.Image.AsPNG().ToArray()))
+            if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), null, txtPublish.Text, "", imagen?.Image.AsPNG().ToArray()))
             {
                 scrollView.RemoveFromSuperview();
                 totalSize = 0;
@@ -252,7 +246,7 @@ namespace WorklabsMx.iOS
             if (((UIScrollView)sender).ContentOffset.Y > totalSize - 1000 && !endLine)
             {
                 currentPage += 5;
-                await this.AddPostsAsync();
+                await AddPostsAsync();
             }
         }
     }

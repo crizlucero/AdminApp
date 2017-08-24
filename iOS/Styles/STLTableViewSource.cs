@@ -55,12 +55,22 @@ namespace WorklabsMx.iOS.Styles
         {
             if (TableItems[indexPath.Row].Controller != null)
             {
-                var localStorage = SimpleStorage.EditGroup("Menu");
-                localStorage.Put("Menu_Id", TableItems[indexPath.Row].Menu_Id);
-                UIViewController controller = owner.Storyboard.InstantiateViewController(TableItems[indexPath.Row].Controller);
+                if (!TableItems[indexPath.Row].Controller.Contains("Login"))
+                {
+                    var localStorage = SimpleStorage.EditGroup("Menu");
+                    localStorage.Put("Menu_Id", TableItems[indexPath.Row].Menu_Id);
+                    UIViewController controller = owner.Storyboard.InstantiateViewController(TableItems[indexPath.Row].Controller);
 
-                controller.Title = TableItems[indexPath.Row].Label;
-                owner.NavigationController.PushViewController(controller, true);
+                    controller.Title = TableItems[indexPath.Row].Label;
+                    owner.NavigationController.PushViewController(controller, true);
+                }
+                else
+                {
+                    var controller = UIStoryboard.FromName("Main", null)
+                        .InstantiateViewController("LoginViewController");
+                    controller.Title = "Iniciar Sesión";
+                    UIApplication.SharedApplication.Windows[0].RootViewController = controller;
+                }
             }
         }
     }

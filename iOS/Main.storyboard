@@ -37,7 +37,7 @@
         <!--Root View Controller-->
         <scene sceneID="2047">
             <objects>
-                <viewController id="2044" customClass="LoginViewController" sceneMemberID="viewController" storyboardIdentifier="LoginViewController">
+                <viewController id="2044" customClass="LoginViewController" sceneMemberID="viewController" storyboardIdentifier="LoginViewController" title="Iniciar Sesión" modalTransitionStyle="partialCurl">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2039"/>
                         <viewControllerLayoutGuide type="bottom" id="2040"/>
