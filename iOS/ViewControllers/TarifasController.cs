@@ -46,13 +46,10 @@ namespace WorklabsMx.iOS
 
                 foreach (MembresiaModel membresia in new PickerItemsController().GetMembresias())
                 {
-                    if (!Carrito.ContainsKey(membresia.Membresia_Id))
+                    Membresias.Add(membresia.Membresia_Id, 0);
+                    if (Carrito.ContainsKey(membresia.Membresia_Id))
                     {
-                        Membresias.Add(membresia.Membresia_Id, 0);
-                    }
-                    else
-                    {
-                        Membresias.Add(membresia.Membresia_Id, (int)Carrito[membresia.Membresia_Id].Producto_Cantidad);
+                        Membresias[membresia.Membresia_Id] = (int)Carrito[membresia.Membresia_Id].Producto_Cantidad;
                         CanPay = true;
                     }
 
@@ -68,7 +65,7 @@ namespace WorklabsMx.iOS
                     scrollView.AddSubview(lblMembresia);
                     UITextField txtCantidad = new UITextField
                     {
-                        Text = "0",
+                        Text = Carrito.ContainsKey(membresia.Membresia_Id) ? Carrito[membresia.Membresia_Id].Membresia_Cantidad.ToString() : "0",
                         Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 120, size, 30, 30),
                         Font = UIFont.SystemFontOfSize(14),
                         KeyboardType = UIKeyboardType.NumberPad
@@ -78,7 +75,7 @@ namespace WorklabsMx.iOS
                     UIStepper stpMembresia = new UIStepper
                     {
                         Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 100, size, 55, 30),
-                        Value = 0,
+                        Value = Carrito.ContainsKey(membresia.Membresia_Id) ? Carrito[membresia.Membresia_Id].Membresia_Cantidad : 0,
                         MaximumValue = Convert.ToDouble(membresia.Membresia_Espacios_Disponibles)
                     };
                     stpMembresia.ValueChanged += (sender, e) =>

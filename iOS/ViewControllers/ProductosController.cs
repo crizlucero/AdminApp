@@ -46,13 +46,10 @@ namespace WorklabsMx.iOS
 
                 foreach (ProductoModel producto in new PickerItemsController().GetProductos())
                 {
-                    if (!Carrito.ContainsKey(producto.Producto_Id))
+                    Productos.Add(producto.Producto_Id, 0);
+                    if (Carrito.ContainsKey(producto.Producto_Id))
                     {
-                        Productos.Add(producto.Producto_Id, 0);
-                    }
-                    else
-                    {
-                        Productos.Add(producto.Producto_Id, (int)Carrito[producto.Producto_Id].Producto_Cantidad);
+                        Productos[producto.Producto_Id] = (int)Carrito[producto.Producto_Id].Producto_Cantidad;
                         CanPay = true;
                     }
 

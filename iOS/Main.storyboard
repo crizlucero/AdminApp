@@ -103,6 +103,9 @@
                                 <state key="normal" title="Registrarse">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="BtnRegistro_TouchUpInside:" destination="2044" id="13206" eventType="touchUpInside"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5838" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES" image="ic_logo_worklabs">
                                 <rect key="frame" x="180" y="121" width="240" height="50"/>

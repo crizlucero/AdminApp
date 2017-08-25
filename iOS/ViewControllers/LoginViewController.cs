@@ -3,6 +3,7 @@ using UIKit;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using System.Collections.Generic;
+using Foundation;
 
 namespace WorklabsMx.iOS
 {
@@ -57,5 +58,8 @@ namespace WorklabsMx.iOS
             if (miembro.Length > 0)
                 new Emails().SendMail(txtEmailRecuperar.Text, miembro, new PassSecurity().GeneraIdentifier());
         }
+
+        partial void BtnRegistro_TouchUpInside(UIButton sender) =>
+            UIApplication.SharedApplication.OpenUrl(new NSUrl("http://desarrolloworklabs.com/registro-miembro#registry"));
     }
 }

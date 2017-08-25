@@ -13,9 +13,9 @@ namespace WorklabsMx.iOS.Styles
         internal List<ItemsMenu> TableItems;
         string CellIdentifier = "TableCell";
         readonly UITableViewController owner;
-        public STLTableViewSource(List<ItemsMenu> items, UITableViewController owner) : base()
+        public STLTableViewSource(List<ItemsMenu> items, UITableViewController owner)
         {
-            this.TableItems = items;
+            TableItems = items;
             this.owner = owner;
         }
 

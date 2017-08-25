@@ -7,7 +7,6 @@ using WorklabsMx.Controllers;
 using System;
 using Android.Views;
 using Android.Content;
-using Android.Support.V7.App;
 using WorklabsMx.Models;
 using Android.Graphics.Drawables;
 using Android.Support.V4.Content;
@@ -30,7 +29,6 @@ namespace WorklabsMx.Droid
             SimpleStorage.SetContext(ApplicationContext);
 
             storage = SimpleStorage.EditGroup("Login");
-            Console.WriteLine(storage.Get("Usuario_Id"));
 
             if (storage.HasKey("Usuario_Id") && storage.HasKey("Usuario_Tipo"))
             {
@@ -61,15 +59,14 @@ namespace WorklabsMx.Droid
 
         void OpenDashboard()
         {
-			SetContentView(Resource.Layout.Main);
+            SetContentView(Resource.Layout.Main);
 
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
             ActionBar.Title = "Escritorio";
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
-            TableLayout menu_layout = FindViewById<TableLayout>(Resource.Id.menu_layout);
-            FillMenu(menu_layout, storage.Get("Usuario_Tipo"));
+            FillMenu(FindViewById<TableLayout>(Resource.Id.menu_layout));
             scroll = FindViewById<ScrollView>(Resource.Id.post_scroll);
             FillPosts();
             scroll.ScrollChange += (sender, e) =>
@@ -109,8 +106,6 @@ namespace WorklabsMx.Droid
                         Text = post.Miembro_Nombre + " " + post.Miembro_Apellidos,
                         TextSize = 14
                     };
-                    //lblNombre.SetMinimumWidth(Window.Attributes.Width - 120);
-                    //lblNombre.SetMaxWidth(Window.Attributes.Width - 120);
                     lblNombre.Touch += (sender, e) =>
                     {
                         Console.WriteLine("x");
@@ -178,31 +173,39 @@ namespace WorklabsMx.Droid
             return base.OnOptionsItemSelected(item);
         }
 
-        void FillMenu(TableLayout menuLayout, string tipo, string parent = null)
-        {
-            foreach (ItemsMenu menu in new EscritorioController().GetMenuAndroid(Convert.ToInt32(tipo), parent))
-            {
-                TableRow row = new TableRow(this);
-                Drawable icon = ContextCompat.GetDrawable(this, Resources.GetIdentifier(menu.Image, "mipmap", PackageName));
-                icon.SetBounds(0, 0, 30, 30);
-                Button btnMenu = new Button(this)
-                {
-                    Text = menu.Label,
-                    TextAlignment = TextAlignment.ViewStart
+		void FillMenu(TableLayout menuLayout)
+		{
+			storage.Delete("Parent");
+			foreach (ItemsMenu menu in new EscritorioController().GetMenuAndroid(Convert.ToInt32(storage.Get("Usuario_Tipo"))))
+			{
+				TableRow row = new TableRow(this);
+				Drawable icon = ContextCompat.GetDrawable(this, Resources.GetIdentifier(menu.Image, "mipmap", PackageName));
+				icon.SetBounds(0, 0, 30, 30);
+				Button btnMenu = new Button(this)
+				{
+					Text = menu.Label,
+					TextAlignment = TextAlignment.ViewStart
 
-                };
-                btnMenu.SetCompoundDrawables(icon, null, null, null);
-                btnMenu.Click += (sender, e) =>
-                {
-                    //Type activity = Type.GetType(menu.Controller, true);
-                    //Intent intent = new Intent(this, activity);
-                    //StartActivity(new Intent(this, activity));
-                };
+				};
+				btnMenu.SetCompoundDrawables(icon, null, null, null);
+				btnMenu.Click += delegate
+				{
+					switch (menu.Controller)
+					{
+						case "MainActivity": StartActivity(new Intent(this, typeof(MainActivity))); break;
+						case "SubMenuActivity":
+							storage.Put("Parent", menu.Menu_Id);
+							StartActivity(new Intent(this, typeof(SubMenuActivity))); break;
+						case "LogoutActivity":
+							storage.Delete("Usuario_Id"); storage.Delete("Usuario_Tipo");
+							StartActivity(new Intent(this, typeof(MainActivity))); break;
+					}
+				};
 
-                row.SetMinimumHeight(30);
-                row.AddView(btnMenu);
-                menuLayout.AddView(row);
-            }
-        }
+				row.SetMinimumHeight(30);
+				row.AddView(btnMenu);
+				menuLayout.AddView(row);
+			}
+		}
     }
 }

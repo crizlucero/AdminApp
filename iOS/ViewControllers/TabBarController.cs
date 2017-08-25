@@ -14,8 +14,6 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
             if (PerpetualEngine.Storage.SimpleStorage.EditGroup("Login").Get("Usuario_Tipo") == "0")
                 NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Editar", UIBarButtonItemStyle.Plain, HandleEventHandler), true);
-
-
         }
 
         void HandleEventHandler(object sender, EventArgs e)
@@ -34,9 +32,8 @@ namespace WorklabsMx.iOS
                     this.NavigationController.PushViewController(controller, true); break;
             }
         }
-        public override void ViewWillAppear(bool animated)
-        {
+        public override void ViewWillAppear(bool animated) =>
             TabBar.Hidden |= PerpetualEngine.Storage.SimpleStorage.EditGroup("Login").Get("Usuario_Tipo") == "1";
-        }
+
     }
 }

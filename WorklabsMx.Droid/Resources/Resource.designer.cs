@@ -2396,10 +2396,13 @@ namespace WorklabsMx.Droid
 			public const int select_dialog_singlechoice_material = 2130968631;
 			
 			// aapt resource value: 0x7f040038
-			public const int support_simple_spinner_dropdown_item = 2130968632;
+			public const int SubmenuLayout = 2130968632;
 			
 			// aapt resource value: 0x7f040039
-			public const int ToolbarLayout = 2130968633;
+			public const int support_simple_spinner_dropdown_item = 2130968633;
+			
+			// aapt resource value: 0x7f04003a
+			public const int ToolbarLayout = 2130968634;
 			
 			static Layout()
 			{

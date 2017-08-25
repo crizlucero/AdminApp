@@ -26,7 +26,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtPublicar"
             android:hint="Publica algo :)"
-            android:layout_toLeftOf="@+id/btnPublicar" />
+            android:layout_toLeftOf="@+id/btnPublicar"
+            android:editable="true"
+            android:enabled="true" />
         <ImageButton
             android:layout_width="45.0dp"
             android:layout_height="41.0dp"

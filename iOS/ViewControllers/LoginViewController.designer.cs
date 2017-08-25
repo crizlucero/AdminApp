@@ -54,6 +54,10 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BtnIniciarSesion_TouchUpInside (UIKit.UIButton sender);
 
+        [Action ("BtnRegistro_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void BtnRegistro_TouchUpInside (UIKit.UIButton sender);
+
         [Action ("BtnRestaurar_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BtnRestaurar_TouchUpInside (UIKit.UIButton sender);
