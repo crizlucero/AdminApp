@@ -102,6 +102,8 @@
     <Compile Include="Fragments\MenuFragment.cs" />
     <Compile Include="ViewController\SubMenuActivity.cs" />
     <Compile Include="Helpers\MenuService.cs" />
+    <Compile Include="ViewController\DirectorioUsuariosActivity.cs" />
+    <Compile Include="ViewController\DirectorioEmpresaActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -163,6 +165,7 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_instagram.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_twitter.png" />
     <AndroidResource Include="Resources\layout\SubmenuLayout.axml" />
+    <AndroidResource Include="Resources\layout\DirectorioLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

@@ -40,4 +40,9 @@
 	<string name="Facebook">Facebook</string>
 	<string name="Twitter">Twitter</string>
 	<string name="Instagram">Instagram</string>
+    <string name="DirectorioUsuario">Directorio de Usuarios</string>
+	<string name="DirectorioEmpresas">Directorio de Empresas</string>
+	<string name="Perfil">Perfil</string>
+    <string name="AsuntoCorreo">Contacto desde Worklabs</string>
+	<string name="AplicationNotFound">No tiene la aplicación instalada necesaria</string>
 </resources>

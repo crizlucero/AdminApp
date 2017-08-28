@@ -25,10 +25,20 @@ namespace WorklabsMx.Droid.Fragments
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            // Use this to return your custom view for this Fragment
-            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
+			// Use this to return your custom view for this Fragment
+			// return inflater.Inflate(Resource.Layout.YourFragment, container, false);
 
-            return base.OnCreateView(inflater, container, savedInstanceState);
+			base.OnCreateView(inflater, container, savedInstanceState);
+
+			var view = inflater.Inflate(
+                Resource.Layout.PerfilLayout, container, false);
+
+			var sampleTextView =
+                view.FindViewById<TextView>(Resource.Id.txtProfileName);
+			sampleTextView.Text = "sample fragment text";
+
+
+			return view;
         }
     }
 }

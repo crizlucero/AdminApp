@@ -1,13 +1,5 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using PerpetualEngine.Storage;
@@ -31,9 +23,19 @@ namespace WorklabsMx.Droid
             FillUserData();
 			Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
 			SetActionBar(toolbar);
-			ActionBar.Title = "Perfil";
+            ActionBar.Title = Resources.GetString(Resource.String.MiPerfil);
 			ActionBar.SetDisplayHomeAsUpEnabled(true);
 			ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+
+			/*ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
+			var tab = this.ActionBar.NewTab();
+			tab.SetIcon(Resource.Mipmap.ic_profile);
+			tab.TabSelected += (sender, e) =>
+			{
+				e.FragmentTransaction.Add(Resource.Id.ProfileLayout, new MyProfileFragment());
+			};
+			ActionBar.AddTab(tab);*/
+
             /*ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
             ActionBar.Tab tab = ActionBar.NewTab();
             tab.SetText(Resources.GetString(Resource.String.MiPerfil));
