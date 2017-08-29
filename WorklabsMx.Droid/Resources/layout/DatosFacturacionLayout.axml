@@ -32,8 +32,10 @@
                 android:layout_height="37.5dp">
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtRazonSocialFactura" />
+                    android:layout_height="40.5dp"
+                    android:enabled="false"
+                    android:id="@+id/txtRazonSocialFactura"
+                    android:hint="@string/RazonSocial" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -53,8 +55,10 @@
                 android:layout_height="37.5dp">
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtRFCFactura" />
+                    android:layout_height="40.5dp"
+                    android:enabled="false"
+                    android:id="@+id/txtRFCFactura"
+                    android:hint="@string/RFC" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -74,8 +78,9 @@
                 android:layout_height="37.5dp">
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtEstadoFactura" />
+                    android:layout_height="40.5dp"
+                    android:id="@+id/txtEstadoFactura"
+                    android:hint="@string/Estado" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -95,8 +100,9 @@
                 android:layout_height="37.5dp">
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtMunicipioFactura" />
+                    android:layout_height="40.5dp"
+                    android:id="@+id/txtMunicipioFactura"
+                    android:hint="@string/Municipio" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -116,8 +122,9 @@
                 android:layout_height="37.5dp">
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtColoniaFactura" />
+                    android:layout_height="40.5dp"
+                    android:id="@+id/txtColoniaFactura"
+                    android:hint="@string/Colonia" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -137,8 +144,10 @@
                 android:layout_height="37.5dp">
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtCodigoPostalFactura" />
+                    android:layout_height="40.5dp"
+                    android:id="@+id/txtCodigoPostalFactura"
+                    android:inputType="number"
+                    android:hint="@string/CodigoPostal" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -158,8 +167,9 @@
                 android:layout_height="37.5dp">
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtCalleFactura" />
+                    android:layout_height="40.5dp"
+                    android:id="@+id/txtCalleFactura"
+                    android:hint="@string/Calle" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -179,8 +189,9 @@
                 android:layout_height="37.5dp">
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtNumExteriorFactura" />
+                    android:layout_height="40.5dp"
+                    android:id="@+id/txtNumExteriorFactura"
+                    android:hint="@string/NumExterior" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -200,8 +211,9 @@
                 android:layout_height="37.5dp">
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtNumInteriorFactura" />
+                    android:layout_height="40.5dp"
+                    android:id="@+id/txtNumInteriorFactura"
+                    android:hint="@string/NumInterior" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

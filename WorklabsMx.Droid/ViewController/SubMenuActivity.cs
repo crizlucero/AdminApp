@@ -1,6 +1,7 @@
 ﻿using System;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Support.V4.Content;
@@ -59,15 +60,19 @@ namespace WorklabsMx.Droid
                 {
                     Text = menu.Label,
                     TextAlignment = TextAlignment.ViewStart
-
                 };
+                btnMenu.SetWidth(Resources.DisplayMetrics.WidthPixels);
+                btnMenu.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
+                btnMenu.SetBackgroundColor(Color.White);
                 btnMenu.SetCompoundDrawables(icon, null, null, null);
                 btnMenu.Click += delegate
                 {
                     switch (menu.Controller)
                     {
+                        case "ReservaSalaJuntasActivity": StartActivity(new Intent(this, typeof(ReservaSalaJuntasActivity))); break;
+                        case "RegistroInvitadosActivity": StartActivity(new Intent(this, typeof(RegistroInvitadosActivity))); break;
                         case "PerfilActivity": StartActivity(new Intent(this, typeof(PerfilActivity))); break;
-                        case "DatosFacturacionActivity":
+                        case "DatosFacturacionActivity": StartActivity(new Intent(this, typeof(DatosFacturacionActivity))); break;
                         case "MisColaboradoresActivity": break;
                         case "DirectorioUsuarioActivity": StartActivity(new Intent(this, typeof(DirectorioUsuariosActivity))); break;
                         case "DirectorioEmpresasActivity": StartActivity(new Intent(this, typeof(DirectorioEmpresaActivity))); break;

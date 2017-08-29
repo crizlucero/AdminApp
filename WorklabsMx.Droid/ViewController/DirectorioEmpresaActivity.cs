@@ -26,7 +26,7 @@ namespace WorklabsMx.Droid
 
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
-            ActionBar.Title = Resources.GetString(Resource.String.Perfil);
+            ActionBar.Title = Resources.GetString(Resource.String.DirectorioEmpresas);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
         }

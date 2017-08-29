@@ -23,6 +23,11 @@ namespace WorklabsMx.Droid
 
             svDirectorio = FindViewById<ScrollView>(Resource.Id.svDirectorio);
             FillDirectorioUsuario();
+			Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+			SetActionBar(toolbar);
+			ActionBar.Title = Resources.GetString(Resource.String.DirectorioUsuario);
+			ActionBar.SetDisplayHomeAsUpEnabled(true);
+			ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
         }
 
         void FillDirectorioUsuario(string nombre = "", string apellido = "", string puesto = "", string profesion = "",

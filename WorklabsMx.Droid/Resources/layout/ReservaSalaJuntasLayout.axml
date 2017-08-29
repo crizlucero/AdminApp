@@ -5,8 +5,423 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
-    <DatePicker
-        android:layout_width="349.0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/datePicker1" />
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarlayout" />
+    <CalendarView
+        android:layout_width="match_parent"
+        android:layout_height="320.0dp"
+        android:id="@+id/cvSalaJuntas"
+        android:minDate="08/29/2017" />
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView1">
+        <TableLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tableLayout1">
+            <TableRow
+                android:id="@+id/tr00">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv00"
+                    android:text="@string/zero24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="0.0dp" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent00"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr01">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv01"
+                    android:text="@string/one24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent01"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr02">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv02"
+                    android:text="@string/two24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp"
+                    android:textAlignment="center" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent02"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr03">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv03"
+                    android:text="@string/three24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent03"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr04">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv04"
+                    android:text="@string/four24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp"
+                    android:textAlignment="center" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent04"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr05">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv05"
+                    android:text="@string/five24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent05"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr06">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv06"
+                    android:text="@string/six24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp"
+                    android:textAlignment="center" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent06"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr07">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv01"
+                    android:text="@string/seven24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent07"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr08">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv08"
+                    android:text="@string/eight24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp"
+                    android:textAlignment="center" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent08"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr09">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv09"
+                    android:text="@string/nine24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent09"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr10">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv10"
+                    android:text="@string/ten24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp"
+                    android:textAlignment="center" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent10"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr11">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv11"
+                    android:text="@string/eleven24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent11"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr12">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv12"
+                    android:text="@string/twelve24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp"
+                    android:textAlignment="center" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent12"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr13">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv13"
+                    android:text="@string/thirteen24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent13"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr14">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv14"
+                    android:text="@string/fourteen24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp"
+                    android:textAlignment="center" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent14"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr15">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv15"
+                    android:text="@string/fifteen24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent15"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr16">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv16"
+                    android:text="@string/sixteen24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp"
+                    android:textAlignment="center" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent16"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr17">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv11"
+                    android:text="@string/seventeen24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent17"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr18">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv18"
+                    android:text="@string/eightteen24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp"
+                    android:textAlignment="center" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent18"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr19">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv19"
+                    android:text="@string/seventeen24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent19"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr20">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv10"
+                    android:text="@string/twenty24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp"
+                    android:textAlignment="center" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent20"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr21">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv21"
+                    android:text="@string/twentyone24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent21"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr22">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv22"
+                    android:text="@string/twentytwo24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp"
+                    android:textAlignment="center" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent22"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr23">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="0"
+                    android:id="@+id/tv23"
+                    android:text="@string/twentythree24h"
+                    android:layout_width="79.5dp"
+                    android:layout_height="38.0dp" />
+                <TextView
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_column="1"
+                    android:id="@+id/tvEvent23"
+                    android:layout_width="105.0dp" />
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
 </LinearLayout>

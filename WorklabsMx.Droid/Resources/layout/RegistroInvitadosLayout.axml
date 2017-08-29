@@ -33,7 +33,8 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txtNombreInvitado" />
+                    android:id="@+id/txtNombreInvitado"
+                    android:hint="@string/Nombre" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -54,7 +55,8 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txtAsuntoInvitado" />
+                    android:id="@+id/txtAsuntoInvitado"
+                    android:hint="@string/Asunto" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -74,8 +76,9 @@
                 android:layout_height="37.5dp">
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtCorreoInvitado" />
+                    android:layout_height="40.0dp"
+                    android:id="@+id/txtCorreoInvitado"
+                    android:hint="@string/CorreoElectronico" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -95,8 +98,9 @@
                 android:layout_height="37.5dp">
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtCCInvitado" />
+                    android:layout_height="40.5dp"
+                    android:id="@+id/txtCCInvitado"
+                    android:hint="@string/CC" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -117,8 +121,9 @@
                 <EditText
                     android:inputType="time"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtHoraEntradaInvitado" />
+                    android:layout_height="39.5dp"
+                    android:id="@+id/txtHoraEntradaInvitado"
+                    android:hint="@string/HoraEntrada" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -139,8 +144,9 @@
                 <EditText
                     android:inputType="time"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtHoraSalidaInvitado" />
+                    android:layout_height="41.5dp"
+                    android:id="@+id/txtHoraSalidaInvitado"
+                    android:hint="@string/HoraSalida" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -161,8 +167,9 @@
                 <EditText
                     android:inputType="date"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtFechaInvitado" />
+                    android:layout_height="41.0dp"
+                    android:id="@+id/txtFechaInvitado"
+                    android:hint="@string/Fecha" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

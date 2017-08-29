@@ -11,6 +11,7 @@ using WorklabsMx.Models;
 using Android.Graphics.Drawables;
 using Android.Support.V4.Content;
 using WorklabsMx.Droid.Helpers;
+using Android.Graphics;
 
 namespace WorklabsMx.Droid
 {
@@ -71,7 +72,6 @@ namespace WorklabsMx.Droid
             FillPosts();
             scroll.ScrollChange += (sender, e) =>
             {
-                Console.WriteLine(string.Format("{0} : {1}", ((ScrollView)sender).ScrollY, scroll.Height));
                 if (limitPage)
                     if ((((ScrollView)sender).ScrollY / (page + 1)) >= (scroll.Height - 500))
                     {
@@ -173,39 +173,39 @@ namespace WorklabsMx.Droid
             return base.OnOptionsItemSelected(item);
         }
 
-		void FillMenu(TableLayout menuLayout)
-		{
-			storage.Delete("Parent");
-			foreach (ItemsMenu menu in new EscritorioController().GetMenuAndroid(Convert.ToInt32(storage.Get("Usuario_Tipo"))))
-			{
-				TableRow row = new TableRow(this);
-				Drawable icon = ContextCompat.GetDrawable(this, Resources.GetIdentifier(menu.Image, "mipmap", PackageName));
-				icon.SetBounds(0, 0, 30, 30);
-				Button btnMenu = new Button(this)
-				{
-					Text = menu.Label,
-					TextAlignment = TextAlignment.ViewStart
-
-				};
-				btnMenu.SetCompoundDrawables(icon, null, null, null);
-				btnMenu.Click += delegate
-				{
-					switch (menu.Controller)
-					{
-						case "MainActivity": StartActivity(new Intent(this, typeof(MainActivity))); break;
-						case "SubMenuActivity":
-							storage.Put("Parent", menu.Menu_Id);
-							StartActivity(new Intent(this, typeof(SubMenuActivity))); break;
-						case "LogoutActivity":
-							storage.Delete("Usuario_Id"); storage.Delete("Usuario_Tipo");
-							StartActivity(new Intent(this, typeof(MainActivity))); break;
-					}
-				};
-
-				row.SetMinimumHeight(30);
-				row.AddView(btnMenu);
-				menuLayout.AddView(row);
-			}
-		}
+        void FillMenu(TableLayout menuLayout)
+        {
+            storage.Delete("Parent");
+            foreach (ItemsMenu menu in new EscritorioController().GetMenuAndroid(Convert.ToInt32(storage.Get("Usuario_Tipo"))))
+            {
+                TableRow row = new TableRow(this);
+                Drawable icon = ContextCompat.GetDrawable(this, Resources.GetIdentifier(menu.Image, "mipmap", PackageName));
+                icon.SetBounds(0, 0, 30, 30);
+                Button btnMenu = new Button(this)
+                {
+                    Text = menu.Label,
+                    TextAlignment = TextAlignment.ViewStart
+                };
+                btnMenu.SetWidth(Resources.DisplayMetrics.WidthPixels);
+                btnMenu.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
+                btnMenu.SetBackgroundColor(Color.White);
+                btnMenu.SetCompoundDrawables(icon, null, null, null);
+                btnMenu.Click += delegate
+                {
+                    switch (menu.Controller)
+                    {
+                        case "MainActivity": StartActivity(new Intent(this, typeof(MainActivity))); break;
+                        case "SubMenuActivity":
+                            storage.Put("Parent", menu.Menu_Id);
+                            StartActivity(new Intent(this, typeof(SubMenuActivity))); break;
+                        case "LogoutActivity":
+                            storage.Delete("Usuario_Id"); storage.Delete("Usuario_Tipo");
+                            StartActivity(new Intent(this, typeof(MainActivity))); break;
+                    }
+                };
+                row.AddView(btnMenu);
+                menuLayout.AddView(row);
+            }
+        }
     }
 }

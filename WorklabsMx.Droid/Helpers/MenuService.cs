@@ -37,6 +37,7 @@ namespace WorklabsMx.Droid.Helpers
                     switch (menu.Controller)
                     {
                         case "MainActivity": StartActivity(new Intent(context, typeof(MainActivity))); break;
+                        case "RegistroInvitadosActivity": StartActivity(new Intent(context, typeof(RegistroInvitadosActivity))); break;
                         case "SubMenuActivity":
                             storage.Put("Parent", menu.Menu_Id);
                             StartActivity(new Intent(context, typeof(SubMenuActivity))); break;

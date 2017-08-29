@@ -104,6 +104,9 @@
     <Compile Include="Helpers\MenuService.cs" />
     <Compile Include="ViewController\DirectorioUsuariosActivity.cs" />
     <Compile Include="ViewController\DirectorioEmpresaActivity.cs" />
+    <Compile Include="ViewController\DatosFacturacionActivity.cs" />
+    <Compile Include="ViewController\RegistroInvitadosActivity.cs" />
+    <Compile Include="ViewController\ReservaSalaJuntasActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -166,6 +169,7 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_twitter.png" />
     <AndroidResource Include="Resources\layout\SubmenuLayout.axml" />
     <AndroidResource Include="Resources\layout\DirectorioLayout.axml" />
+    <AndroidResource Include="Resources\menu\send_menu.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
