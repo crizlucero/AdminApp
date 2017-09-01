@@ -17,7 +17,6 @@ namespace WorklabsMx.iOS
         int size = 30;
         readonly Dictionary<string, int> Membresias;
         readonly Dictionary<string, CarritoModel> Carrito;
-        public string test;
         bool CanPay;
         SimpleStorage Storage;
         public TarifasController(IntPtr handle) : base(handle)

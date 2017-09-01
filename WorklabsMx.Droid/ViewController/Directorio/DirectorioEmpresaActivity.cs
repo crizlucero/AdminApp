@@ -357,5 +357,26 @@ namespace WorklabsMx.Droid
             }
             svDirectorio.AddView(llDirectorio);
         }
+
+		public override bool OnCreateOptionsMenu(IMenu menu)
+		{
+            MenuInflater.Inflate(Resource.Menu.search_menu, menu);
+			return base.OnCreateOptionsMenu(menu);
+		}
+
+		public override bool OnOptionsItemSelected(IMenuItem item)
+		{
+			switch (item.ItemId)
+			{
+                case Resource.Id.menu_search:
+					
+					break;
+				default:
+					base.OnBackPressed();
+					break;
+			}
+
+			return base.OnOptionsItemSelected(item);
+		}
     }
 }

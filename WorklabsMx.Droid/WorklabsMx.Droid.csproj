@@ -97,16 +97,20 @@
     <Compile Include="ViewController\HomeFragment.cs" />
     <Compile Include="Helpers\ImagesHelper.cs" />
     <Compile Include="ViewElement\MenuView.cs" />
-    <Compile Include="ViewController\PerfilActivity.cs" />
     <Compile Include="Fragments\MyProfileFragment.cs" />
     <Compile Include="Fragments\MenuFragment.cs" />
     <Compile Include="ViewController\SubMenuActivity.cs" />
     <Compile Include="Helpers\MenuService.cs" />
-    <Compile Include="ViewController\DirectorioUsuariosActivity.cs" />
-    <Compile Include="ViewController\DirectorioEmpresaActivity.cs" />
-    <Compile Include="ViewController\DatosFacturacionActivity.cs" />
-    <Compile Include="ViewController\RegistroInvitadosActivity.cs" />
-    <Compile Include="ViewController\ReservaSalaJuntasActivity.cs" />
+    <Compile Include="ViewController\Servicios\MembresiasActivity.cs" />
+    <Compile Include="ViewController\Servicios\ProductosActivity.cs" />
+    <Compile Include="ViewController\MiPerfil\PerfilActivity.cs" />
+    <Compile Include="ViewController\MiPerfil\DatosFacturacionActivity.cs" />
+    <Compile Include="ViewController\Directorio\DirectorioEmpresaActivity.cs" />
+    <Compile Include="ViewController\Directorio\DirectorioUsuariosActivity.cs" />
+    <Compile Include="ViewController\Formatos\RegistroInvitadosActivity.cs" />
+    <Compile Include="ViewController\Formatos\ReservaSalaJuntasActivity.cs" />
+    <Compile Include="ViewController\Servicios\ShoppingCartActivity.cs" />
+    <Compile Include="ViewController\Servicios\PaymentActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -170,6 +174,20 @@
     <AndroidResource Include="Resources\layout\SubmenuLayout.axml" />
     <AndroidResource Include="Resources\layout\DirectorioLayout.axml" />
     <AndroidResource Include="Resources\menu\send_menu.xml" />
+    <AndroidResource Include="Resources\layout\ProductosLayout.axml" />
+    <AndroidResource Include="Resources\layout\MembresiasLayout.axml" />
+    <AndroidResource Include="Resources\menu\edit_menu.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_add.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_remove.png" />
+    <AndroidResource Include="Resources\menu\shopping_menu.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_shopping_cart.png" />
+    <AndroidResource Include="Resources\layout\CarritoLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_check.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_clear.png" />
+    <AndroidResource Include="Resources\menu\payment_menu.xml" />
+    <AndroidResource Include="Resources\layout\PagoLayout.axml" />
+    <AndroidResource Include="Resources\menu\search_menu.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_search.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -178,6 +196,10 @@
     <Folder Include="Helpers\" />
     <Folder Include="ViewElement\" />
     <Folder Include="Fragments\" />
+    <Folder Include="ViewController\Servicios\" />
+    <Folder Include="ViewController\MiPerfil\" />
+    <Folder Include="ViewController\Directorio\" />
+    <Folder Include="ViewController\Formatos\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="xamandroidsupportv7appcompat">

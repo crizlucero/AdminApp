@@ -23,9 +23,9 @@ namespace WorklabsMx.iOS
                 UITextField txtNombre = new STLTextField("Nombre", 60);
                 scrollView.AddSubview(txtNombre);
 
-                scrollView.AddSubview(new STLLabel("Numéro de tarjeta", 90));
+                scrollView.AddSubview(new STLLabel("Número de tarjeta", 90));
 
-                UITextField txtTarjeta = new STLTextField("Numéro de tarjeta", 120, "", UIKeyboardType.NumberPad)
+                UITextField txtTarjeta = new STLTextField("Número de tarjeta", 120, "", UIKeyboardType.NumberPad)
                 {
                     SecureTextEntry = true,
                     ShouldChangeCharacters = (textField, range, replacementString) =>

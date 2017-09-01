@@ -429,10 +429,6 @@
     <Compile Include="ViewControllers\LoginViewController.designer.cs">
       <DependentUpon>LoginViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\TabBarController.cs" />
-    <Compile Include="ViewControllers\TabBarController.designer.cs">
-      <DependentUpon>TabBarController.cs</DependentUpon>
-    </Compile>
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="ViewControllers\SplitViewController.cs" />
@@ -447,37 +443,13 @@
     <Compile Include="ViewControllers\DashboardController.designer.cs">
       <DependentUpon>DashboardController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\RegistroInvitadosController.cs" />
-    <Compile Include="ViewControllers\RegistroInvitadosController.designer.cs">
-      <DependentUpon>RegistroInvitadosController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\PerfilController.cs" />
-    <Compile Include="ViewControllers\PerfilController.designer.cs">
-      <DependentUpon>PerfilController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewControllers\AboutMeController.cs" />
     <Compile Include="ViewControllers\AboutMeController.designer.cs">
       <DependentUpon>AboutMeController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\EmpresaMiembroController.cs" />
-    <Compile Include="ViewControllers\EmpresaMiembroController.designer.cs">
-      <DependentUpon>EmpresaMiembroController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\EmpresaMiembroModificaController.cs" />
-    <Compile Include="ViewControllers\EmpresaMiembroModificaController.designer.cs">
-      <DependentUpon>EmpresaMiembroModificaController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewControllers\AboutMeModificaController.cs" />
     <Compile Include="ViewControllers\AboutMeModificaController.designer.cs">
       <DependentUpon>AboutMeModificaController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\MisColaboradoresController.cs" />
-    <Compile Include="ViewControllers\MisColaboradoresController.designer.cs">
-      <DependentUpon>MisColaboradoresController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\MisColaboradoresCambiosController.cs" />
-    <Compile Include="ViewControllers\MisColaboradoresCambiosController.designer.cs">
-      <DependentUpon>MisColaboradoresCambiosController.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewControllers\EscritorioController.cs" />
     <Compile Include="ViewControllers\EscritorioController.designer.cs">
@@ -494,58 +466,22 @@
     <Compile Include="Styles\STLLabel.cs" />
     <Compile Include="Styles\STLImageLabel.cs" />
     <Compile Include="Styles\STLImageView.cs" />
-    <Compile Include="ViewControllers\DatosFacturacionController.cs" />
-    <Compile Include="ViewControllers\DatosFacturacionController.designer.cs">
-      <DependentUpon>DatosFacturacionController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helpers\LoadingView.cs" />
     <Compile Include="Models\PickerModel.cs" />
     <Compile Include="Helpers\DatePickerHelper.cs" />
-    <Compile Include="ViewControllers\ReservaController.cs" />
-    <Compile Include="ViewControllers\ReservaController.designer.cs">
-      <DependentUpon>ReservaController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helpers\Calendario.cs" />
     <Compile Include="ViewControllers\SubMenuController.cs" />
     <Compile Include="ViewControllers\SubMenuController.designer.cs">
       <DependentUpon>SubMenuController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\MisColaboradoresBajaController.cs" />
-    <Compile Include="ViewControllers\MisColaboradoresBajaController.designer.cs">
-      <DependentUpon>MisColaboradoresBajaController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\TabBarColaboradorController.cs" />
-    <Compile Include="ViewControllers\TabBarColaboradorController.designer.cs">
-      <DependentUpon>TabBarColaboradorController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\DirectorioUsuarioController.cs" />
-    <Compile Include="ViewControllers\DirectorioUsuarioController.designer.cs">
-      <DependentUpon>DirectorioUsuarioController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewElements\InfoPersonaCard.cs" />
     <Compile Include="ViewElements\InfoEmpresaCard.cs" />
-    <Compile Include="ViewControllers\DirectorioEmpresasController.cs" />
-    <Compile Include="ViewControllers\DirectorioEmpresasController.designer.cs">
-      <DependentUpon>DirectorioEmpresasController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helpers\PickerDataModel.cs" />
     <Compile Include="Helpers\DropDownListSource.cs" />
     <Compile Include="Styles\STLDropDownList.cs" />
     <Compile Include="ViewElements\UICheckBox.cs" />
     <Compile Include="ViewElements\HorarioEventos.cs" />
     <Compile Include="ViewElements\UIDropdownList.cs" />
-    <Compile Include="ViewControllers\TarifasController.cs" />
-    <Compile Include="ViewControllers\TarifasController.designer.cs">
-      <DependentUpon>TarifasController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\ProductosController.cs" />
-    <Compile Include="ViewControllers\ProductosController.designer.cs">
-      <DependentUpon>ProductosController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\CarritoCompraController.cs" />
-    <Compile Include="ViewControllers\CarritoCompraController.designer.cs">
-      <DependentUpon>CarritoCompraController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewElements\PostCard.cs" />
     <Compile Include="ViewElements\CommentCard.cs" />
     <Compile Include="ViewControllers\FacturasController.cs" />
@@ -557,15 +493,79 @@
     <Compile Include="ViewControllers\MiMembresiaController.designer.cs">
       <DependentUpon>MiMembresiaController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\PaymentController.cs" />
-    <Compile Include="ViewControllers\PaymentController.designer.cs">
-      <DependentUpon>PaymentController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewControllers\ReporteController.cs" />
     <Compile Include="ViewControllers\ReporteController.designer.cs">
       <DependentUpon>ReporteController.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewElements\UIRadioButton.cs" />
+    <Compile Include="ViewControllers\MiPerfil\PerfilController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\PerfilController.designer.cs">
+      <DependentUpon>PerfilController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\DatosFacturacionController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\DatosFacturacionController.designer.cs">
+      <DependentUpon>DatosFacturacionController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Directorio\DirectorioEmpresasController.cs" />
+    <Compile Include="ViewControllers\Directorio\DirectorioEmpresasController.designer.cs">
+      <DependentUpon>DirectorioEmpresasController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Directorio\DirectorioUsuarioController.cs" />
+    <Compile Include="ViewControllers\Directorio\DirectorioUsuarioController.designer.cs">
+      <DependentUpon>DirectorioUsuarioController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\CarritoCompraController.cs" />
+    <Compile Include="ViewControllers\Servicios\CarritoCompraController.designer.cs">
+      <DependentUpon>CarritoCompraController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\MisColaboradoresBajaController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\MisColaboradoresBajaController.designer.cs">
+      <DependentUpon>MisColaboradoresBajaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\MisColaboradoresCambiosController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\MisColaboradoresCambiosController.designer.cs">
+      <DependentUpon>MisColaboradoresCambiosController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\MisColaboradoresController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\MisColaboradoresController.designer.cs">
+      <DependentUpon>MisColaboradoresController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Formatos\ReservaController.cs" />
+    <Compile Include="ViewControllers\Formatos\ReservaController.designer.cs">
+      <DependentUpon>ReservaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Formatos\RegistroInvitadosController.cs" />
+    <Compile Include="ViewControllers\Formatos\RegistroInvitadosController.designer.cs">
+      <DependentUpon>RegistroInvitadosController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\TarifasController.cs" />
+    <Compile Include="ViewControllers\Servicios\TarifasController.designer.cs">
+      <DependentUpon>TarifasController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\ProductosController.cs" />
+    <Compile Include="ViewControllers\Servicios\ProductosController.designer.cs">
+      <DependentUpon>ProductosController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\PaymentController.cs" />
+    <Compile Include="ViewControllers\Servicios\PaymentController.designer.cs">
+      <DependentUpon>PaymentController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\TabBarColaboradorController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\TabBarColaboradorController.designer.cs">
+      <DependentUpon>TabBarColaboradorController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\TabBarController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\TabBarController.designer.cs">
+      <DependentUpon>TabBarController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\EmpresaMiembroController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\EmpresaMiembroController.designer.cs">
+      <DependentUpon>EmpresaMiembroController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\EmpresaMiembroModificaController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\EmpresaMiembroModificaController.designer.cs">
+      <DependentUpon>EmpresaMiembroModificaController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -592,6 +592,10 @@
     <Folder Include="Assets.xcassets\ic_shopping_cart.imageset\" />
     <Folder Include="Assets.xcassets\ic_radiobutton_check.imageset\" />
     <Folder Include="Assets.xcassets\ic_radiobutton_uncheck.imageset\" />
+    <Folder Include="ViewControllers\MiPerfil\" />
+    <Folder Include="ViewControllers\Servicios\" />
+    <Folder Include="ViewControllers\Directorio\" />
+    <Folder Include="ViewControllers\Formatos\" />
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
