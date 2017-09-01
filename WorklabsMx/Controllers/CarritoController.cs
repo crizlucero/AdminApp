@@ -16,9 +16,13 @@ namespace WorklabsMx.Controllers
         /// <param name="tipo">Tipo.</param>
         public Dictionary<string, CarritoModel> GetCarrito(string miembro_id, string tipo)
         {
-            miembro_id = "2";
             Dictionary<string, CarritoModel> carrito = new Dictionary<string, CarritoModel>();
-            string query = "SELECT * FROM vw_pro_Carrito_Compras WHERE Miembro_Id = @miembro_id AND Pedido_Estatus = 1";
+            string query = "SELECT * FROM vw_pro_Carrito_Compras WHERE Miembro_Id = @miembro_id AND Pedido_Estatus = 1 ";
+            switch (tipo)
+            {
+                case "Producto": query += " AND Producto_Id IS NOT NULL"; break;
+                case "Membresia": query += " AND Membresia_Id IS NOT NULL"; break;
+            }
             try
             {
                 conn.Open();
@@ -29,35 +33,30 @@ namespace WorklabsMx.Controllers
                 {
                     if (tipo == "Producto")
                     {
-                        carrito.Add(reader["Producto_Id"].ToString(), new CarritoModel
+                        carrito.Add(reader["Producto_Id"].ToString(), new CarritoModel()
                         {
                             Pedido_Id = reader["Pedido_Id"].ToString(),
                             Miembro_Id = reader["Miembro_Id"].ToString(),
                             Producto_Id = reader["Producto_Id"].ToString(),
                             Producto_Cantidad = Convert.ToDouble(reader["Producto_Cantidad"].ToString()),
-                            Membresia_Id = reader["Membresia_Id"].ToString(),
-                            Membresia_Cantidad = reader["Membresia_Cantidad"].ToString(),
                             Pedido_Estatus = reader["Pedido_Estatus"].ToString(),
-                            Precio_Base = reader["Lista_Precio_Producto_Precio_Base"].ToString(),
-                            Dias_Prorrateo = reader["Lista_Precio_Producto_Dias_Prorrateo"].ToString(),
-                            Pedido_Total = reader["Pedido_Total"].ToString()
+                            Precio_Base = reader["Lista_Precio_Producto_Precio_Prorrateo_Neto"].ToString(),
+                            Dias_Prorrateo = (DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month) - DateTime.Now.Day).ToString(),//reader["Lista_Precio_Producto_Dias_Prorrateo"].ToString(),
+                            Pedido_Total = reader["Lista_Precio_Producto_Precio_Prorrateo_Neto"].ToString()
                         });
                     }
                     else if (!string.IsNullOrEmpty(reader["Membresia_Id"].ToString()))
                     {
-                        carrito.Add(reader["Membresia_Id"].ToString(), new CarritoModel
-                        {
-                            Pedido_Id = reader["Pedido_Id"].ToString(),
-                            Miembro_Id = reader["Miembro_Id"].ToString(),
-                            Producto_Id = reader["Producto_Id"].ToString(),
-                            Producto_Cantidad = Convert.ToDouble(reader["Producto_Cantidad"].ToString()),
-                            Membresia_Id = reader["Membresia_Id"].ToString(),
-                            Membresia_Cantidad = reader["Membresia_Cantidad"].ToString(),
-                            Pedido_Estatus = reader["Pedido_Estatus"].ToString(),
-                            Precio_Base = reader["Lista_Precio_Producto_Precio_Base"].ToString(),
-                            Dias_Prorrateo = reader["Lista_Precio_Producto_Dias_Prorrateo"].ToString(),
-                            Pedido_Total = reader["Pedido_Total"].ToString()
-                        });
+                        CarritoModel model = new CarritoModel();
+                        model.Pedido_Id = reader["Pedido_Id"].ToString();
+                        model.Miembro_Id = reader["Miembro_Id"].ToString();
+                        model.Membresia_Id = reader["Membresia_Id"].ToString();
+                        model.Membresia_Cantidad = Convert.ToDouble(reader["Membresia_Cantidad"].ToString());
+                        model.Pedido_Estatus = reader["Pedido_Estatus"].ToString();
+                        model.Precio_Base = reader["Lista_Precio_Membresia_Precio_Prorrateo_Neto"].ToString();
+                        model.Dias_Prorrateo = (DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month) - DateTime.Now.Day).ToString();//reader["Lista_Precio_Producto_Dias_Prorrateo"].ToString(),
+                        model.Pedido_Total = reader["Lista_Precio_Membresia_Precio_Prorrateo_Neto"].ToString();
+                        carrito.Add(reader["Membresia_Id"].ToString(), model);
                     }
                 }
             }
@@ -113,10 +112,28 @@ namespace WorklabsMx.Controllers
                 conn.Close();
             }
         }
-
+        /// <summary>
+        /// Genera el encabezado de la orden de venta.
+        /// </summary>
+        /// <returns>Identificador del encabezado de la orden de venta</returns>
+        /// <param name="empresa_miembro_id">Identificador de la empresa</param>
+        /// <param name="moneda_id">Identificador de la moneda</param>
+        /// <param name="impuesto_id">Identificador del impuesto </param>
+        /// <param name="promocion_id">Identificador de la promoción</param>
+        /// <param name="descuento_id">Identificador del descuento</param>
+        /// <param name="folio">Folio de la orden de venta</param>
+        /// <param name="suma">Cantidad total de productos</param>
+        /// <param name="porcentajeDescuento">Porcentaje del descuento total</param>
+        /// <param name="descuento">Descuento de la venta</param>
+        /// <param name="subTotal">Subtotal de la venta</param>
+        /// <param name="impuesto">Total de impuestos de la venta</param>
+        /// <param name="total">Total de la venta</param>
+        /// <param name="pagado">Cantidad de lo pagado</param>
+        /// <param name="facturado">Cantidad de lo facturado</param>
+        /// <param name="estatus">Estatus de la orden de venta</param>
         public int GenerarOrdenVentaEncabezado(string empresa_miembro_id, string moneda_id, string impuesto_id, string promocion_id, string descuento_id, string folio,
-                                               string suma, string porcentajeDescuento, string descuento, string subTotal, string impuesto, string total, string pagado, string facturado,
-                                               string estatus)
+                                               string suma, string porcentajeDescuento, string descuento, string subTotal, string impuesto, string total, string pagado,
+                                               string facturado, string estatus)
         {
             int encabezado_id = 0;
             try
@@ -156,13 +173,29 @@ namespace WorklabsMx.Controllers
                 SlackLogs.SendMessage(e.Message);
                 transaction.Rollback();
             }
-            finally
-            {
-                conn.Close();
-            }
+            finally { conn.Close(); }
             return encabezado_id;
         }
-
+        /// <summary>
+        /// Genera el detalle de la orden de venta
+        /// </summary>
+        /// <returns>Identificador de los productos de la orden de venta</returns>
+        /// <param name="detalle_id">Identificador del Detalle</param>
+        /// <param name="encabezado_id">Identificador del encabezado de la orden de venta</param>
+        /// <param name="membresia_id">Identificador de la Membresia</param>
+        /// <param name="inscripcion_membresia_id">Identificador de la inscripcion de la membresia</param>
+        /// <param name="precio_membresia_id">Identificador del precio de la membresia</param>
+        /// <param name="producto_id">Identificador del Producto</param>
+        /// <param name="precio_producto_id">Identificador del precio del producto</param>
+        /// <param name="detalle_descripcion">Descripción del detalle</param>
+        /// <param name="detalle_cantidad">Cantidad del producto</param>
+        /// <param name="importe_precio">Importe del producto</param>
+        /// <param name="importe_prorrateo">Importe de prorrateo del producto</param>
+        /// <param name="importe_descuento">Importe del descuento del producto</param>
+        /// <param name="importe_subtotal">Importe del subtotal del producto</param>
+        /// <param name="importe_impuesto">Importe del impuesto del producto</param>
+        /// <param name="importe_total">Importe del total del producto</param>
+        /// <param name="estatus">Estatus del producto</param>
         public int GenerarOrdenVentaDetalle(string detalle_id, string encabezado_id, string membresia_id, string inscripcion_membresia_id, string precio_membresia_id, string producto_id,
                                              string precio_producto_id, string detalle_descripcion, string detalle_cantidad, string importe_precio, string importe_prorrateo,
                                              string importe_descuento, string importe_subtotal, string importe_impuesto, string importe_total, string estatus)
@@ -206,10 +239,7 @@ namespace WorklabsMx.Controllers
                 SlackLogs.SendMessage(e.Message);
                 transaction.Rollback();
             }
-            finally
-            {
-                conn.Close();
-            }
+            finally { conn.Close(); }
             return detalle;
         }
     }

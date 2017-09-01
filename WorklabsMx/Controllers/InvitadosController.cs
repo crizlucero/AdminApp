@@ -59,7 +59,6 @@ namespace WorklabsMx.Controllers
                 Console.WriteLine(ex.Message);
                 return false;
                 SlackLogs.SendMessage(ex.Message);
-                //clsLog.ReportarError("CARPETA: Dashboard_Cliente" + Environment.NewLine + "PAGINA: registrarinvitados.aspx" + Environment.NewLine + "PROCESO: registrarenbd" + Environment.NewLine + "ERROR: " + ex.Message);
             }
             finally
             {

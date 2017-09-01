@@ -60,12 +60,12 @@ namespace WorklabsMx.Controllers
         {
 
             List<PostModel> posts = new List<PostModel>();
-			string query = "select * FROM (SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
-				"INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id WHERE m.Usuario_Tipo = 0 " +
-				"union all " +
-				"SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
-				"INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 1) as Posts " +
-				"WHERE POST_ESTATUS = 1 AND Usuario_Id = @usuario_id AND Usuario_Tipo = @tipo ORDER BY Post_Fecha DESC OFFSET @page ROWS Fetch next 10 rows only";
+            string query = "select * FROM (SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
+                "INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id WHERE m.Usuario_Tipo = 0 " +
+                "union all " +
+                "SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
+                "INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 1) as Posts " +
+                "WHERE POST_ESTATUS = 1 AND Usuario_Id = @usuario_id AND Usuario_Tipo = @tipo ORDER BY Post_Fecha DESC OFFSET @page ROWS Fetch next 10 rows only";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@page", page);
             command.Parameters.AddWithValue("@usuario_id", usuario_id);
@@ -95,10 +95,7 @@ namespace WorklabsMx.Controllers
                 Console.WriteLine(e.Message);
                 SlackLogs.SendMessage(e.Message);
             }
-            finally
-            {
-                conn.Close();
-            }
+            finally { conn.Close(); }
             return posts;
         }
         /// <summary>
@@ -121,10 +118,7 @@ namespace WorklabsMx.Controllers
                 Console.WriteLine(e.Message);
                 SlackLogs.SendMessage(e.Message);
             }
-            finally
-            {
-                conn.Close();
-            }
+            finally { conn.Close(); }
             return "";
         }
         /// <summary>
@@ -165,10 +159,7 @@ namespace WorklabsMx.Controllers
                 Console.WriteLine(e.Message);
                 SlackLogs.SendMessage(e.Message);
             }
-            finally
-            {
-                conn.Close();
-            }
+            finally { conn.Close(); }
             return comentarios;
         }
         /// <summary>
@@ -349,7 +340,15 @@ namespace WorklabsMx.Controllers
 
             return true;
         }
-
+        /// <summary>
+        /// Guarda el post
+        /// </summary>
+        /// <returns><c>true</c>, si se guarda el post <c>false</c> existió algún problema.</returns>
+        /// <param name="usuario_id">Identificador del usuario</param>
+        /// <param name="tipo">Tipo de usuario</param>
+        /// <param name="comentario">Comentario.</param>
+        /// <param name="fotoNombre">Nombre de la fotografía</param>
+        /// <param name="fotografia">Bytes de la fotografía</param>
         public bool SetPost(string usuario_id, string tipo, string comentario, string fotoNombre, byte[] fotografia)
         {
             string miembro_id = null;
@@ -405,7 +404,11 @@ namespace WorklabsMx.Controllers
 
             return true;
         }
-
+        /// <summary>
+        /// Obtiene un sólo post
+        /// </summary>
+        /// <returns>Post</returns>
+        /// <param name="post_id">Identificador del post</param>
         public PostModel GetSinglePost(string post_id)
         {
             PostModel post = new PostModel();
@@ -444,7 +447,13 @@ namespace WorklabsMx.Controllers
             finally { conn.Close(); }
             return post;
         }
-
+        /// <summary>
+        /// Oculta el post
+        /// </summary>
+        /// <returns><c>true</c>, Si el post se ocultó <c>false</c> Existió algún error</returns>
+        /// <param name="miembro_id">Identificador del miembro</param>
+        /// <param name="post_id">Identificador del post</param>
+        /// <param name="post_estatus">Estado del post</param>
         public bool OcultarPost(string miembro_id, string post_id, int post_estatus)
         {
             try
@@ -478,7 +487,10 @@ namespace WorklabsMx.Controllers
 
             return true;
         }
-
+        /// <summary>
+        /// Mensajes para reportar
+        /// </summary>
+        /// <returns>Mensajes</returns>
         public Dictionary<int, string> GetMensajesReporte()
         {
             Dictionary<int, string> reportes = new Dictionary<int, string>();
@@ -498,7 +510,14 @@ namespace WorklabsMx.Controllers
 
             return reportes;
         }
-
+        /// <summary>
+        /// Se reporta el post
+        /// </summary>
+        /// <returns><c>true</c>, Si fue reportado <c>false</c> Existió algún error</returns>
+        /// <param name="post_id">Identificador del post</param>
+        /// <param name="miembro_id">Identificador del miembro que reporta</param>
+        /// <param name="miembro_tipo">Tipo del miembro que reporta.</param>
+        /// <param name="mensaje_id">Identificador del mensaje de reporte</param>
         public bool ReportarPost(string post_id, string miembro_id, string miembro_tipo, int mensaje_id)
         {
             try

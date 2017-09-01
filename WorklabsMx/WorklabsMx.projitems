@@ -39,6 +39,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\CarritoController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\CarritoModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Pagos.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\SucursalController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\SucursalModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />

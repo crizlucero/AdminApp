@@ -31,8 +31,6 @@ namespace WorklabsMx.Controllers
                     datos.Add(reader["Usuario_Id"].ToString());
                     datos.Add(reader["Usuario_Tipo"].ToString());
                 }
-                //return Convert.ToInt32(command.ExecuteScalar());
-
             }
             catch (Exception e)
             {
@@ -106,7 +104,6 @@ namespace WorklabsMx.Controllers
                 Console.WriteLine(ex.Message);
                 transaction.Rollback();
                 SlackLogs.SendMessage(ex.Message);
-                //clsLog.ReportarError("CARPETA: Sign_In" + Environment.NewLine + "PAGINA: login.aspx" + Environment.NewLine + "PROCESO: bttnActualizarUser_Command" + Environment.NewLine + "ERROR: " + ex.Message);
                 return false;
             }
             finally

@@ -9,7 +9,7 @@ namespace WorklabsMx.Controllers
         public PromocionModel AplicarCupon(string cupon)
         {
             PromocionModel promo = new PromocionModel();
-            string query = "SELECT Descuento_Id, Promocion_Descripcion, Descuento_Descripcion, Descuento_Procentaje as Descuento_Porcentaje " +
+            string query = "SELECT Descuento_Id, Promocion_Descripcion, Descuento_Descripcion, Descuento_Porcentaje, Codigo_Promocion_Descripcion " +
                 "FROM vw_cat_Promociones_Codigos WHERE Codigo_Promocion_Descripcion = @cupon AND " +
                 "GETDATE() Between Promocion_Fecha_Inicio AND Promocion_Fecha_Fin";
             command = CreateCommand(query);
@@ -25,7 +25,8 @@ namespace WorklabsMx.Controllers
                         Descuento_Id = reader["Descuento_Id"].ToString(),
                         Descuento_Descripcion = reader["Descuento_Descripcion"].ToString(),
                         Descuento_Porcentaje = Convert.ToDecimal(reader["Descuento_Porcentaje"].ToString()),
-                        Promocion_Descripcion = reader["Promocion_Descripcion"].ToString()
+                        Promocion_Descripcion = reader["Promocion_Descripcion"].ToString(),
+                        Codigo_Promocion_Descripcion = reader["Codigo_Promocion_Descripcion"].ToString()
                     };
                 }
             }

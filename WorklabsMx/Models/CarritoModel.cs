@@ -8,7 +8,7 @@ namespace WorklabsMx.Models
         public string Producto_Id { get; set; }
         public double Producto_Cantidad { get; set; }
         public string Membresia_Id { get; set; }
-        public string Membresia_Cantidad { get; set; }
+        public double Membresia_Cantidad { get; set; }
         public string Pedido_Estatus { get; set; }
         public string Precio_Base { get; set; }
         public string Dias_Prorrateo { get; set; }
