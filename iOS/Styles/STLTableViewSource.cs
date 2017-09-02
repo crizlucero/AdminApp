@@ -7,15 +7,15 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.iOS.Styles
 {
-    public partial class STLTableViewSource : UITableViewSource
+    public class STLTableViewSource : UITableViewSource
     {
 
         internal List<ItemsMenu> TableItems;
         string CellIdentifier = "TableCell";
         readonly UITableViewController owner;
-        public STLTableViewSource(List<ItemsMenu> items, UITableViewController owner) : base()
+        public STLTableViewSource(List<ItemsMenu> items, UITableViewController owner)
         {
-            this.TableItems = items;
+            TableItems = items;
             this.owner = owner;
         }
 
@@ -28,7 +28,9 @@ namespace WorklabsMx.iOS.Styles
                 cell = new UITableViewCell(UITableViewCellStyle.Default, CellIdentifier);
             cell.TextLabel.Text = item;
             if (!TableItems[indexPath.Row].Principal)
+            {
                 cell.ImageView.Image = UIImage.FromBundle(TableItems[indexPath.Row].Image);
+            }
             else
             {
                 using (var url = new NSUrl(TableItems[indexPath.Row].Image))
@@ -53,12 +55,22 @@ namespace WorklabsMx.iOS.Styles
         {
             if (TableItems[indexPath.Row].Controller != null)
             {
-                var localStorage = SimpleStorage.EditGroup("Menu");
-                localStorage.Put("Menu_Id", TableItems[indexPath.Row].Menu_Id);
-                UIViewController controller = owner.Storyboard.InstantiateViewController(TableItems[indexPath.Row].Controller);
+                if (!TableItems[indexPath.Row].Controller.Contains("Login"))
+                {
+                    var localStorage = SimpleStorage.EditGroup("Menu");
+                    localStorage.Put("Menu_Id", TableItems[indexPath.Row].Menu_Id);
+                    UIViewController controller = owner.Storyboard.InstantiateViewController(TableItems[indexPath.Row].Controller);
 
-                controller.Title = TableItems[indexPath.Row].Label;
-                owner.NavigationController.PushViewController(controller, true);
+                    controller.Title = TableItems[indexPath.Row].Label;
+                    owner.NavigationController.PushViewController(controller, true);
+                }
+                else
+                {
+                    var controller = UIStoryboard.FromName("Main", null)
+                        .InstantiateViewController("LoginViewController");
+                    controller.Title = "Iniciar Sesión";
+                    UIApplication.SharedApplication.Windows[0].RootViewController = controller;
+                }
             }
         }
     }

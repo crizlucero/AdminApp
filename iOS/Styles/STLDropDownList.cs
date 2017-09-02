@@ -7,10 +7,12 @@ namespace WorklabsMx.iOS.Styles
 {
     public class STLDropDownList : UITableView
     {
-        public STLDropDownList(int position, List<string> items, UITextField field)
+        public STLDropDownList(List<string> items, UITextField field)
         {
-            Frame = new CGRect(20, position, UIScreen.MainScreen.Bounds.Width / 2, UIScreen.MainScreen.Bounds.Height / 5);
+            Frame = new CGRect(0, UIScreen.MainScreen.Bounds.Height * 2 / 3, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height / 3);
             Source = new DropDownListSource(items, field, this);
+            Layer.BorderColor = UIColor.LightGray.CGColor;
+            Layer.BorderWidth = 1;
         }
     }
 }

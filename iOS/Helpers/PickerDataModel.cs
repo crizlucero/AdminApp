@@ -17,10 +17,8 @@ namespace WorklabsMx.iOS.Styles
 
         int selectedIndex = 0;
 
-        public PickerDataModel()
-        {
-            Items = new List<string>();
-        }
+        public PickerDataModel() => Items = new List<string>();
+
 
         /// <summary>
         /// Called by the picker to determine how many rows are in a given spinner item

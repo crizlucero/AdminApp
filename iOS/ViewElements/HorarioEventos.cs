@@ -15,7 +15,7 @@ namespace WorklabsMx.iOS.ViewElements
             GenerarHorarios();
         }
 
-        private void GenerarHorarios()
+        void GenerarHorarios()
         {
             int size = 0;
             for (int i = 0; i < 24; ++i)

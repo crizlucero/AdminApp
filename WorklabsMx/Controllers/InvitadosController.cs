@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Data;
+using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 
 namespace WorklabsMx.Controllers
 {
     public class InvitadosController : DataBaseModel
     {
-        public InvitadosController() : base()
-        {
-        }
-
         /// <summary>
         /// Registro de invitado
         /// </summary>
@@ -61,7 +58,7 @@ namespace WorklabsMx.Controllers
                 transaction.Rollback();
                 Console.WriteLine(ex.Message);
                 return false;
-                //clsLog.ReportarError("CARPETA: Dashboard_Cliente" + Environment.NewLine + "PAGINA: registrarinvitados.aspx" + Environment.NewLine + "PROCESO: registrarenbd" + Environment.NewLine + "ERROR: " + ex.Message);
+                SlackLogs.SendMessage(ex.Message);
             }
             finally
             {

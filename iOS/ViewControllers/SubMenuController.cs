@@ -21,7 +21,7 @@ namespace WorklabsMx.iOS
             var localStorage = PerpetualEngine.Storage.SimpleStorage.EditGroup("Menu");
             var loginStorage = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
 
-            foreach (ItemsMenu submenu in new Controllers.EscritorioController().GetMenu(Convert.ToInt32(loginStorage.Get("Usuario_Tipo")), localStorage.Get("Menu_Id")))
+            foreach (ItemsMenu submenu in new Controllers.EscritorioController().GetMenuiOS(Convert.ToInt32(loginStorage.Get("Usuario_Tipo")), localStorage.Get("Menu_Id")))
             {
                 tableItems.Add(submenu);
             }

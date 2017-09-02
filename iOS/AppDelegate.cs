@@ -26,9 +26,11 @@ namespace WorklabsMx.iOS
                 Window.RootViewController = UIStoryboard.FromName("Main", null)
                                                  .InstantiateViewController("splitViewController");
             else
-                Window.RootViewController = UIStoryboard.FromName("Main", null)
-                                                  .InstantiateViewController("loginViewController");
-
+            {
+                var controller = UIStoryboard.FromName("Main", null).InstantiateViewController("LoginViewController");
+                controller.Title = "Iniciar Sesión";
+                Window.RootViewController = controller;
+            }
             return true;
         }
 

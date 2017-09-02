@@ -1,15 +1,26 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/EmpresaMiembroModificaController.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="iOS/ViewControllers/EmpresaMiembroModificaController.cs" Line="121" Column="13" />
+      <File FileName="iOS/Styles/STLTextField.cs" Line="1" Column="1" />
+      <File FileName="iOS/ViewControllers/PaymentController.cs" Line="37" Column="51" />
+      <File FileName="iOS/Styles/STLLabel.cs" Line="1" Column="1" />
+      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="133" Column="139" />
+      <File FileName="iOS/ViewControllers/ReporteController.cs" Line="8" Column="30" />
+      <File FileName="iOS/ViewElements/UIRadioButton.cs" Line="24" Column="9" />
+      <File FileName="iOS/ViewElements/PostCard.cs" Line="102" Column="35" />
+      <File FileName="WorklabsMx/Controllers/ColaboradoresController.cs" Line="126" Column="14" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="508" Column="54" />
+      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="16" Column="47" />
+      <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="29" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.MobileAppService PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.362DED79-20E6-4F78-B3C8-30858522B37E" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" AndroidDesignerPreferredTheme="MasterDetailTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="MyTheme" />
   <MultiItemStartupConfigurations />
 </Properties>

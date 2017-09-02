@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarlayout" />
+    <ScrollView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="25.0dp">
+                <TextView
+                    android:text="@string/Nombre"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="37.5dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtNombreInvitado"
+                    android:hint="@string/Nombre" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="25.0dp">
+                <TextView
+                    android:text="@string/Asunto"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="37.5dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtAsuntoInvitado"
+                    android:hint="@string/Asunto" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="25.0dp">
+                <TextView
+                    android:text="@string/CorreoElectronico"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="37.5dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40.0dp"
+                    android:id="@+id/txtCorreoInvitado"
+                    android:hint="@string/CorreoElectronico" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="25.0dp">
+                <TextView
+                    android:text="@string/CC"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="37.5dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40.5dp"
+                    android:id="@+id/txtCCInvitado"
+                    android:hint="@string/CC" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="25.0dp">
+                <TextView
+                    android:text="@string/HoraEntrada"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="37.5dp">
+                <EditText
+                    android:inputType="time"
+                    android:layout_width="match_parent"
+                    android:layout_height="39.5dp"
+                    android:id="@+id/txtHoraEntradaInvitado"
+                    android:hint="@string/HoraEntrada" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="25.0dp">
+                <TextView
+                    android:text="@string/HoraSalida"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="37.5dp">
+                <EditText
+                    android:inputType="time"
+                    android:layout_width="match_parent"
+                    android:layout_height="41.5dp"
+                    android:id="@+id/txtHoraSalidaInvitado"
+                    android:hint="@string/HoraSalida" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="25.0dp">
+                <TextView
+                    android:text="@string/Fecha"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="37.5dp">
+                <EditText
+                    android:inputType="date"
+                    android:layout_width="match_parent"
+                    android:layout_height="41.0dp"
+                    android:id="@+id/txtFechaInvitado"
+                    android:hint="@string/Fecha" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,13 +1,11 @@
 ﻿using System;
+using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 
 namespace WorklabsMx.Controllers
 {
     public class ConfigurationsController : DataBaseModel
     {
-        public ConfigurationsController() : base()
-        {
-        }
         /// <summary>
         /// Obtiene las configuraciones
         /// </summary>
@@ -15,7 +13,6 @@ namespace WorklabsMx.Controllers
         /// <param name="parametro">Parametro a elegir</param>
         public ConfiguracionesModel GetConfiguraciones(string parametro)
         {
-
             string query = "SELECT * FROM vw_cat_Parametros_Generales WHERE Parametro_Descripcion = @Parametro";
             ConfiguracionesModel configuracion = new ConfiguracionesModel();
             try
@@ -55,6 +52,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                SlackLogs.SendMessage(e.Message);
             }
             finally
             {

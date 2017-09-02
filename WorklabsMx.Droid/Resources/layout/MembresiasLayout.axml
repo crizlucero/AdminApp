@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarlayout" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="43.5dp"
+        android:id="@+id/linearLayout1">
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/spSucursal" />
+    </LinearLayout>
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView1">
+        <TableLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tlMembresias">
+            <TableRow
+                android:id="@+id/tableRow1">
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRow2">
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRow3">
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+</LinearLayout>

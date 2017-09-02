@@ -6,28 +6,26 @@ using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
 using CoreGraphics;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
     public partial class AccesoController : UIViewController
     {
         UIImageView imgQr;
-        public AccesoController(IntPtr handle) : base(handle)
-        {
-            ThreadPool.QueueUserWorkItem((x) => this.RunRefreshAccess());
-        }
+        string strAcceso = string.Empty;
+        public AccesoController(IntPtr handle) : base(handle) { }
 
-        public override void ViewDidLoad()
+        public async override void ViewDidLoad()
         {
             base.ViewDidLoad();
             var storageLocal = SimpleStorage.EditGroup("Login");
+            strAcceso = new MiembrosController().GetLlaveAcceso(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
             imgQr = new UIImageView
             {
-                Image = ImageGallery.LoadImageUrl(new MiembrosController().GetLlaveAcceso(storageLocal.Get("Miembro_Id"))),
-                Frame = new CGRect(UIScreen.MainScreen.Bounds.Width / 5,
-                                                UIScreen.MainScreen.Bounds.Height / 4,
-                                                 (UIScreen.MainScreen.Bounds.Width * 3 / 5),
-                                                 (UIScreen.MainScreen.Bounds.Width * 3 / 5))
+                Image = ImageGallery.LoadImageUrl(strAcceso),
+                Frame = new CGRect(UIScreen.MainScreen.Bounds.Width / 5, UIScreen.MainScreen.Bounds.Height / 4,
+                                  (UIScreen.MainScreen.Bounds.Width * 3 / 5), (UIScreen.MainScreen.Bounds.Width * 3 / 5))
             };
 
             View.Add(imgQr);
@@ -40,31 +38,36 @@ namespace WorklabsMx.iOS
             btnRefresh.SetImage(imgRefresh, UIControlState.Normal);
             btnRefresh.Layer.CornerRadius = 25;
             btnRefresh.TouchUpInside += (sender, e) =>
-           {
-               LoadingView loadPop = new LoadingView(UIScreen.MainScreen.Bounds);
-               View.Add(loadPop);
-               RefreshAccess();
-               loadPop.Hide();
-           };
+            {
+                RefreshAccess();
+            };
             View.Add(btnRefresh);
+            await RunRefreshAccess();
         }
 
         void RefreshAccess()
         {
             var storageLocal = SimpleStorage.EditGroup("Login");
-            imgQr.Image = ImageGallery.LoadImageUrl(new MiembrosController().GetLlaveAcceso(storageLocal.Get("Miembro_Id")));
+            string newAcceso = new MiembrosController().GetLlaveAcceso(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
+            if (!strAcceso.Equals(newAcceso))
+            {
+                LoadingView loadPop = new LoadingView(UIScreen.MainScreen.Bounds);
+                View.Add(loadPop);
+                imgQr.Image = ImageGallery.LoadImageUrl(newAcceso);
+                loadPop.Hide();
+            }
+            else
+                Console.WriteLine(newAcceso);
         }
 
-        void RunRefreshAccess()
+        async Task RunRefreshAccess()
         {
-            EventWaitHandle handle = new EventWaitHandle(false, EventResetMode.ManualReset, "GoodMutexName");
 
             while (true)
             {
-                handle.WaitOne(2000);
-                this.RefreshAccess();
-                handle.Reset();
-                return;
+                await Task.Delay(30000);
+
+                RefreshAccess();
             }
         }
     }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace WorklabsMx.Models
+﻿namespace WorklabsMx.Models
 {
     public class PostModel
     {
@@ -16,10 +13,5 @@ namespace WorklabsMx.Models
         public string Miembro_Nombre { get; set; }
         public string Miembro_Apellidos { get; set; }
         public string Miembro_Fotografia { get; set; }
-        //public List<ComentarioModel> Comentarios { get; set; }
-
-        public PostModel()
-        {
-        }
     }
 }

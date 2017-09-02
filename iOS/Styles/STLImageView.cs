@@ -14,9 +14,7 @@ namespace WorklabsMx.iOS.Styles
             Image = ImageGallery.LoadImage(imageSource);
         }
 
-        async void GetImage(string imageSource)
-        {
-            this.Image = await Task.Run(() => ImageGallery.LoadImage(imageSource));
-        }
+        async void GetImage(string imageSource) => Image = await Task.Run(() => ImageGallery.LoadImage(imageSource));
+
     }
 }
