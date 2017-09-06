@@ -28,6 +28,7 @@
 	<string name="NumExterior">Num. Exterior</string>
 	<string name="NumInterior">Num. Interior</string>
 	<string name="Nombre">Nombre</string>
+	<string name="Apellidos">Apellidos</string>
 	<string name="Asunto">Asunto</string>
 	<string name="CC">CC</string>
 	<string name="Fecha">Fecha</string>
@@ -125,4 +126,11 @@
 	<string name="NombreTarjetaHabiente">Nombre del tarjetahabiente</string>
 	<string name="RealizaPago">Realice el pago</string>
 	<string name="Buscar">Buscar</string>
+    <string name="Contacto">Contacto</string>
+	<string name="NombreEmpresa">Nombre de la Empresa</string>
+	<string name="EditarPerfil">Editar Datos del Perfil</string>
+	<string name="EditarEmpresa">Editar Datos de la Empresa</string>
+	<string name="Guardar">Guardar</string>
+	<string name="Escritorio">Escritorio</string>
+	<string name="Acceso">Acceso</string>
 </resources>

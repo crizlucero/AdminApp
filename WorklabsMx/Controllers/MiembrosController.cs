@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 
@@ -172,6 +173,47 @@ namespace WorklabsMx.Controllers
             }
             finally { conn.Close(); }
             return usuarios;
+        }
+
+        public bool UpdateDataMiembros(int usuario_id, string nombre, string apellido, string correo, string telefono, 
+                                       string celular, string profesion, string puesto, string habilidades, DateTime fechaNacimiento, 
+                                       string foto)
+        {
+            try
+            {
+                conn.Open();
+                transaction = conn.BeginTransaction();
+
+                command = CreateCommand();
+                command.Connection = conn;
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "sp_Perfil_Miembros";
+
+                command.Parameters.AddWithValue("@Miembro_Id", usuario_id);
+                command.Parameters.AddWithValue("@Miembro_Nombre", nombre);
+                command.Parameters.AddWithValue("@Miembro_Apellidos", apellido);
+                command.Parameters.AddWithValue("@Miembro_Correo_Electronico", correo);
+                command.Parameters.AddWithValue("@Miembro_Telefono", telefono);
+                command.Parameters.AddWithValue("@Miembro_Celular", celular);
+                command.Parameters.AddWithValue("@Miembro_Profesion", profesion);
+                command.Parameters.AddWithValue("@Miembro_Puesto", puesto);
+                command.Parameters.AddWithValue("@Miembro_Habilidades", habilidades);
+
+                command.Parameters.AddWithValue("@Miembro_Fecha_Nacimiento", fechaNacimiento);
+                command.Parameters.AddWithValue("@Miembro_Fotografia", foto);
+
+                command.Transaction = transaction;
+                command.ExecuteNonQuery();
+                transaction.Commit();
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message);
+                transaction.Rollback();
+                return false;
+            }
+            finally { conn.Close(); }
+            return true;
         }
     }
 }

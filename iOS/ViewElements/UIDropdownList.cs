@@ -32,6 +32,10 @@ namespace WorklabsMx.iOS.ViewElements
             View.AddSubview(new STLDropDownList(data, field));
         }
 
-
+		public UIDropdownList(UITextField field, UIView View, List<string> data)
+		{
+			field.Text = "";
+			View.AddSubview(new STLDropDownList(data, field));
+		}
     }
 }

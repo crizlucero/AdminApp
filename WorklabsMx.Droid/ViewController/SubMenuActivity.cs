@@ -71,7 +71,7 @@ namespace WorklabsMx.Droid
                     {
                         case "ReservaSalaJuntasActivity": StartActivity(new Intent(this, typeof(ReservaSalaJuntasActivity))); break;
                         case "RegistroInvitadosActivity": StartActivity(new Intent(this, typeof(RegistroInvitadosActivity))); break;
-                        case "PerfilActivity": StartActivity(new Intent(this, typeof(PerfilActivity))); break;
+                        case "PerfilActivity": StartActivity(new Intent(this, typeof(TabPerfilActivity))); break;
                         case "DatosFacturacionActivity": StartActivity(new Intent(this, typeof(DatosFacturacionActivity))); break;
                         case "MisColaboradoresActivity": break;
                         case "MembresiasActivity": StartActivity(new Intent(this, typeof(MembresiasActivity))); break; 

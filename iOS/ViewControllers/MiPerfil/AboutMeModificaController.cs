@@ -20,7 +20,6 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            Title = "Actualizar datos";
             var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
             miembro = new MiembrosController().GetMemberData(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
             Title = "Mi Perfil";
@@ -95,10 +94,13 @@ namespace WorklabsMx.iOS
                 UITextField txtCelular = new STLTextField("Celular", 870, miembro.Miembro_Celular, UIKeyboardType.PhonePad);
                 scrollView.Add(txtCelular);
 
-
                 this.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Actualizar", UIBarButtonItemStyle.Plain, (sender, e) =>
                 {
-                    //Actualizar datos
+                    if (new MiembrosController().UpdateDataMiembros(Convert.ToInt32(storageLocal.Get("Usuario_Id")), txtNombre.Text, txtApellidos.Text, txtEmail.Text,
+                                                                   txtTelefono.Text, txtCelular.Text, txtProfesion.Text, txtPuesto.Text, txtHabilidades.Text, (DateTime)dpFechaNacimiento.Date, ""))
+                        new MessageDialog().SendToast("Datos guardados");
+                    else
+                        new MessageDialog().SendToast("Hubo un error\nIntente de nuevo");
                 }), true);
                 scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 940);
                 Add(scrollView);

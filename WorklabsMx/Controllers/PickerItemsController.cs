@@ -168,19 +168,41 @@ namespace WorklabsMx.Controllers
 
             return giros;
         }
+
+        public int GetGiroId(string giro)
+        {
+            string query = "SELECT Giro_Id FROM cat_Miembros_Empresas_Giros WHERE Giro_Descripcion = @giro";
+            command = CreateCommand(query);
+            command.Parameters.AddWithValue("@giro", giro);
+            try
+            {
+                conn.Open();
+                return Convert.ToInt32(command.ExecuteScalar().ToString());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                SlackLogs.SendMessage(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return -1;
+        }
         /// <summary>
         /// Obtiene las colonias
         /// </summary>
         /// <returns>Colonias</returns>
         /// <param name="municipio">Municipio seleccionado</param>
-        public List<string> GetColonias(string municipio)
+        public List<string> GetColonias(string codigopostal)
         {
             List<string> colonias = new List<string>();
 
             string query = "SELECT DISTINCT Territorio_Colonia_Descripcion FROM vw_cat_Territorios " +
-                "WHERE Territorio_Municipio_Descripcion = @municipio ORDER BY Territorio_Colonia_Descripcion";
+                "WHERE Territorio_Cp = @codigopostal ORDER BY Territorio_Colonia_Descripcion";
             command = CreateCommand(query);
-            command.Parameters.AddWithValue("@municipio", municipio);
+            command.Parameters.AddWithValue("@codigopostal", codigopostal);
             try
             {
                 conn.Open();
@@ -201,6 +223,24 @@ namespace WorklabsMx.Controllers
             }
 
             return colonias;
+        }
+
+        public int GetColonia(string colonia)
+        {
+            string query = "SELECT Territorio_Colonia_Id FROM vw_cat_Territorios WHERE Territorio_Colonia_Descripcion = @colonia";
+            try
+            {
+                command = CreateCommand(query);
+                command.Parameters.AddWithValue("@colonia", colonia);
+                conn.Open();
+                return Convert.ToInt32(command.ExecuteScalar());
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message);
+            }
+            finally { conn.Close(); }
+            return -1;
         }
         /// <summary>
         /// Obtiene las sucursales
@@ -397,6 +437,26 @@ namespace WorklabsMx.Controllers
             return productos;
         }
 
-
+        public List<string> GetCodigosPostales()
+        {
+            List<string> CPs = new List<string>();
+            string query = "SELECT Territorio_Cp FROM vw_cat_Territorios";
+            try
+            {
+                command = CreateCommand(query);
+                conn.Open();
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    CPs.Add(reader.GetString(0));
+                }
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message);
+            }
+            finally { conn.Close(); }
+            return CPs;
+        }
     }
 }

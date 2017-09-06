@@ -21,56 +21,13 @@ namespace WorklabsMx.Droid
             SimpleStorage.SetContext(ApplicationContext);
             storage = SimpleStorage.EditGroup("Login");
             FillUserData();
-			Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-			SetActionBar(toolbar);
-            ActionBar.Title = Resources.GetString(Resource.String.MiPerfil);
-			ActionBar.SetDisplayHomeAsUpEnabled(true);
-			ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
 
-			/*ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
-			var tab = this.ActionBar.NewTab();
-			tab.SetIcon(Resource.Mipmap.ic_profile);
-			tab.TabSelected += (sender, e) =>
-			{
-				e.FragmentTransaction.Add(Resource.Id.ProfileLayout, new MyProfileFragment());
-			};
-			ActionBar.AddTab(tab);*/
-
-            /*ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
-            ActionBar.Tab tab = ActionBar.NewTab();
-            tab.SetText(Resources.GetString(Resource.String.MiPerfil));
-            tab.SetIcon(Resource.Mipmap.ic_profile);
-            tab.TabSelected += (sender, e) => {
-                
-            };
-
-            ActionBar.AddTab(tab);
-
-            tab = ActionBar.NewTab();
-            tab.SetText(Resources.GetString(Resource.String.MiEmpresa));
-            tab.SetIcon(Resource.Mipmap.ic_domain);
-            tab.TabSelected += (sender, e) => {
-                
-            };
-            ActionBar.AddTab(tab);*/
         }
-
-		public override bool OnCreateOptionsMenu(IMenu menu)
-		{
-			//MenuInflater.Inflate(Resource.Menu.top_menus, menu);
-			return base.OnCreateOptionsMenu(menu);
-		}
-
-		public override bool OnOptionsItemSelected(IMenuItem item)
-		{
-
-			base.OnBackPressed();
-			return base.OnOptionsItemSelected(item);
-		}
 
         void FillUserData()
         {
             MiembroModel miembro = new MiembrosController().GetMemberData(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"));
+            FindViewById<ImageView>(Resource.Id.imgPerfil).SetImageURI(Android.Net.Uri.Parse("http://worklabs.mx/Dashboard_Client/usr_imgs/" + miembro.Miembro_Fotografia));
             FindViewById<TextView>(Resource.Id.txtProfileName).Text = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos;
             FindViewById<TextView>(Resource.Id.txtEmailPerfil).Text = miembro.Miembro_Correo_Electronico;
             FindViewById<TextView>(Resource.Id.txtGeneroPerfil).Text = miembro.Genero_Descripcion;

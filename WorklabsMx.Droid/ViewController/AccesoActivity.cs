@@ -26,7 +26,10 @@ namespace WorklabsMx.Droid
             SetContentView(Resource.Layout.AccesoLayout);
 			Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
 			SetActionBar(toolbar);
-			ActionBar.Title = "Acceso";
+            ActionBar.Title = Resources.GetString(Resource.String.Acceso);
+			ActionBar.SetDisplayHomeAsUpEnabled(true);
+			ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+
             var storageLocal = SimpleStorage.EditGroup("Login");
             strAcceso = new MiembrosController().GetLlaveAcceso(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
             WebView qrCode = FindViewById<WebView>(Resource.Id.wvQRCode);
@@ -36,17 +39,13 @@ namespace WorklabsMx.Droid
 
 		public override bool OnCreateOptionsMenu(IMenu menu)
 		{
-			MenuInflater.Inflate(Resource.Menu.top_menus, menu);
+			//MenuInflater.Inflate(Resource.Menu.top_menus, menu);
 			return base.OnCreateOptionsMenu(menu);
 		}
 
 		public override bool OnOptionsItemSelected(IMenuItem item)
 		{
-			switch (item.TitleFormatted.ToString())
-			{
-				case "Menu": break;
-				case "Acceso": StartActivity(new Intent(this, typeof(AccesoActivity))); break;
-			}
+			base.OnBackPressed(); 
 			return base.OnOptionsItemSelected(item);
 		}
     }

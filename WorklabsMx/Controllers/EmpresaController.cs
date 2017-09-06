@@ -61,10 +61,7 @@ namespace WorklabsMx.Controllers
                 Console.WriteLine(e.Message);
                 SlackLogs.SendMessage(e.Message);
             }
-            finally
-            {
-                conn.Close();
-            }
+            finally { conn.Close(); }
 
             return empresa;
         }
@@ -110,10 +107,7 @@ namespace WorklabsMx.Controllers
                 Console.WriteLine(e.Message);
                 SlackLogs.SendMessage(e.Message);
             }
-            finally
-            {
-                conn.Close();
-            }
+            finally { conn.Close(); }
             return datosfiscales;
         }
         /// <summary>
@@ -150,28 +144,28 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-					empresas.Add(new EmpresaModel
-					{
-						Giro_Descripcion = reader["Giro_Descripcion"].ToString(),
-						Empresa_Miembro_Red_Social_3 = reader["Empresa_Miembro_Red_Social_3"].ToString(),
-						Empresa_Miembro_Red_Social_2 = reader["Empresa_Miembro_Red_Social_2"].ToString(),
-						Empresa_Miembro_Red_Social_1 = reader["Empresa_Miembro_Red_Social_1"].ToString(),
-						Empresa_Miembro_Pagina_Web = reader["Empresa_Miembro_Pagina_Web"].ToString(),
-						Empresa_Miembro_Telefono = reader["Empresa_Miembro_Telefono"].ToString(),
-						Empresa_Miembro_Correo_Electronico = reader["Empresa_Miembro_Correo_Electronico"].ToString(),
-						Empresa_Miembro_Numero_Interior = reader["Empresa_Miembro_Numero_Interior"].ToString(),
-						Empresa_Miembro_Numero_Exterior = reader["Empresa_Miembro_Numero_Exterior"].ToString(),
-						Empresa_Miembro_Calle = reader["Empresa_Miembro_Calle"].ToString(),
-						Empresa_Miembro_Nombre = reader["Empresa_Miembro_Nombre"].ToString(),
-						Empresa_Miembro_Rfc = reader["Empresa_Miembro_Rfc"].ToString(),
-						Empresa_Miembro_Razon_Social = reader["Empresa_Miembro_Razon_Social"].ToString(),
-						Empresa_Miembro_Logotipo = reader["Empresa_Miembro_Logotipo"].ToString(),
-						Empresa_Miembro_Id = reader["Empresa_Miembro_Id"].ToString(),
-						Territorio_Estado_Descripcion = reader["Territorio_Estado_Descripcion"].ToString(),
-						Territorio_Municipio_Descripcion = reader["Territorio_Municipio_Descripcion"].ToString(),
-						Territorio_Colonia_Descripcion = reader["Territorio_Colonia_Descripcion"].ToString(),
-						Territorio_Cp = reader["Territorio_Cp"].ToString()
-					});
+                    empresas.Add(new EmpresaModel
+                    {
+                        Giro_Descripcion = reader["Giro_Descripcion"].ToString(),
+                        Empresa_Miembro_Red_Social_3 = reader["Empresa_Miembro_Red_Social_3"].ToString(),
+                        Empresa_Miembro_Red_Social_2 = reader["Empresa_Miembro_Red_Social_2"].ToString(),
+                        Empresa_Miembro_Red_Social_1 = reader["Empresa_Miembro_Red_Social_1"].ToString(),
+                        Empresa_Miembro_Pagina_Web = reader["Empresa_Miembro_Pagina_Web"].ToString(),
+                        Empresa_Miembro_Telefono = reader["Empresa_Miembro_Telefono"].ToString(),
+                        Empresa_Miembro_Correo_Electronico = reader["Empresa_Miembro_Correo_Electronico"].ToString(),
+                        Empresa_Miembro_Numero_Interior = reader["Empresa_Miembro_Numero_Interior"].ToString(),
+                        Empresa_Miembro_Numero_Exterior = reader["Empresa_Miembro_Numero_Exterior"].ToString(),
+                        Empresa_Miembro_Calle = reader["Empresa_Miembro_Calle"].ToString(),
+                        Empresa_Miembro_Nombre = reader["Empresa_Miembro_Nombre"].ToString(),
+                        Empresa_Miembro_Rfc = reader["Empresa_Miembro_Rfc"].ToString(),
+                        Empresa_Miembro_Razon_Social = reader["Empresa_Miembro_Razon_Social"].ToString(),
+                        Empresa_Miembro_Logotipo = reader["Empresa_Miembro_Logotipo"].ToString(),
+                        Empresa_Miembro_Id = reader["Empresa_Miembro_Id"].ToString(),
+                        Territorio_Estado_Descripcion = reader["Territorio_Estado_Descripcion"].ToString(),
+                        Territorio_Municipio_Descripcion = reader["Territorio_Municipio_Descripcion"].ToString(),
+                        Territorio_Colonia_Descripcion = reader["Territorio_Colonia_Descripcion"].ToString(),
+                        Territorio_Cp = reader["Territorio_Cp"].ToString()
+                    });
                 }
             }
             catch (Exception e)
@@ -179,10 +173,7 @@ namespace WorklabsMx.Controllers
                 Console.WriteLine(e.Message);
                 SlackLogs.SendMessage(e.Message);
             }
-            finally
-            {
-                conn.Close();
-            }
+            finally { conn.Close(); }
             return empresas;
         }
         /// <summary>
@@ -191,7 +182,7 @@ namespace WorklabsMx.Controllers
         /// <returns><c>true</c>, Si los datos fiscales fueron actualizados, <c>false</c> Existió un error.</returns>
         /// <param name="Domicilio_Fiscal_Empresa_Id">Identificador del domicilio fiscal de la empresa</param>
         /// <param name="empresa_miembro_id">Identificador del id del miembro de la Empresa</param>
-        public bool UpdateDatosFiscales(string Domicilio_Fiscal_Empresa_Id, string empresa_miembro_id)
+        public bool UpdateDatosFiscales(string Domicilio_Fiscal_Empresa_Id, string empresa_miembro_id, string territorio_id, string calle, string numExterior, string numInterior, string correo)
         {
             try
             {
@@ -200,50 +191,79 @@ namespace WorklabsMx.Controllers
                 command = CreateCommand();
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = "sp_cat_Miembros_Empresas_Domicilios_Fiscales";
-                command.Parameters.AddWithValue("@Transaccion", "MODIFICAR");
+                command.Connection = conn;
+                command.Parameters.AddWithValue("@Trasaccion", "MODIFICAR");
                 command.Parameters.AddWithValue("@Domicilio_Fiscal_Empresa_Id", Domicilio_Fiscal_Empresa_Id);
                 command.Parameters.AddWithValue("@Empresa_Miembro_Id", empresa_miembro_id);
-                command.Parameters.AddWithValue("@Territorio_Id", empresa_miembro_id);
-                command.Parameters.AddWithValue("@Domicilio_Fiscal_Empresa_Calle", empresa_miembro_id);
-                command.Parameters.AddWithValue("@Domicilio_Fiscal_Empresa_Numero_Exterior", empresa_miembro_id);
-                command.Parameters.AddWithValue("@Domicilio_Fiscal_Empresa_Numero_Interior", empresa_miembro_id);
-                command.Parameters.AddWithValue("@Domicilio_Fiscal_Empresa_Correo_Electronico", empresa_miembro_id);
-                command.Parameters.AddWithValue("@Domicilio_Fiscal_Empresa_Estatus", empresa_miembro_id);
+                command.Parameters.AddWithValue("@Territorio_Id", territorio_id);
+                command.Parameters.AddWithValue("@Domicilio_Fiscal_Empresa_Calle", calle);
+                command.Parameters.AddWithValue("@Domicilio_Fiscal_Empresa_Numero_Exterior", numExterior);
+                command.Parameters.AddWithValue("@Domicilio_Fiscal_Empresa_Numero_Interior", numInterior);
+                command.Parameters.AddWithValue("@Domicilio_Fiscal_Empresa_Correo_Electronico", correo);
+                command.Parameters.AddWithValue("@Domicilio_Fiscal_Empresa_Estatus", 1);
+                command.Parameters.Add("@Domicilio_Fiscal_Empresa_Id_Salida", SqlDbType.Int).Direction = ParameterDirection.Output;
 
-
+                command.Transaction = transaction;
+                command.ExecuteNonQuery();
+                transaction.Commit();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 SlackLogs.SendMessage(e.Message);
+                transaction.Rollback();
+                return false;
             }
             finally { conn.Close(); }
 
-            return false;
+            return true;
         }
 
-        public int GetTerritorioId(string pais, string estado, string municipio, string colonia)
+        public bool UpdateDataEmpresa(string empresa_id, string miembro_id, string giro_id, string territorio_id, string razonSocial,
+                                      string rfc, string nombre, string calle, string numExterior, string numInterior, string correo,
+                                     string telefono, string paginaWeb, string facebook, string twitter, string instagram, string logo)
         {
-            string query = "SELECT Territorio_Id FROM vw_cat_Territorios WHERE Territorio_Pais_Descripcion = @pais " +
-                "AND Territorio_Estado_Descripcion = @estado AND Territorio_Municipio_Descripcion = @municipio AND Territorio_Colonia_Descripcion = @colonia";
-            command = CreateCommand(query);
-            command.Parameters.AddWithValue("@pais", pais);
-            command.Parameters.AddWithValue("@estado", estado);
-            command.Parameters.AddWithValue("@municipio", municipio);
-            command.Parameters.AddWithValue("@colonia", colonia);
             try
             {
                 conn.Open();
-                return (int)command.ExecuteScalar();
-
+                transaction = conn.BeginTransaction();
+                command = CreateCommand();
+                command.Connection = conn;
+                command.Transaction = transaction;
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "sp_cat_Miembros_Empresas";
+                command.Parameters.AddWithValue("@Trasaccion", "MODIFICAR");
+                command.Parameters.AddWithValue("@Empresa_Miembro_Id", empresa_id);
+                command.Parameters.AddWithValue("@Miembro_Id", miembro_id);
+                command.Parameters.AddWithValue("@Giro_Id", giro_id);
+                command.Parameters.AddWithValue("@Territorio_Id", territorio_id);
+                command.Parameters.AddWithValue("@Empresa_Miembro_Razon_Social", razonSocial);
+                command.Parameters.AddWithValue("@Empresa_Miembro_Rfc", rfc);
+                command.Parameters.AddWithValue("@Empresa_Miembro_Nombre", nombre);
+                command.Parameters.AddWithValue("@Empresa_Miembro_Calle", calle);
+                command.Parameters.AddWithValue("@Empresa_Miembro_Numero_Exterior", numExterior);
+                command.Parameters.AddWithValue("@Empresa_Miembro_Numero_Interior", numInterior);
+                command.Parameters.AddWithValue("@Empresa_Miembro_Correo_Electronico", correo);
+                command.Parameters.AddWithValue("@Empresa_Miembro_Telefono", telefono);
+                command.Parameters.AddWithValue("@Empresa_Miembro_Pagina_Web", paginaWeb);
+                command.Parameters.AddWithValue("@Empresa_Miembro_Red_Social_1", facebook);
+                command.Parameters.AddWithValue("@Empresa_Miembro_Red_Social_2", twitter);
+                command.Parameters.AddWithValue("@Empresa_Miembro_Red_Social_3", instagram);
+                command.Parameters.AddWithValue("@Empresa_Miembro_Logotipo", logo);
+                command.Parameters.AddWithValue("@Empresa_Miembro_Estatus", 1);
+                command.Parameters.Add("@Empresa_Miembro_Id_Salida", SqlDbType.Int).Direction = ParameterDirection.Output;
+                command.Transaction = transaction;
+                command.ExecuteNonQuery();
+                transaction.Commit();
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
                 SlackLogs.SendMessage(e.Message);
+                transaction.Rollback();
+                return false;
             }
             finally { conn.Close(); }
-            return -1;
+            return true;
         }
     }
 }

@@ -111,6 +111,10 @@
     <Compile Include="ViewController\Formatos\ReservaSalaJuntasActivity.cs" />
     <Compile Include="ViewController\Servicios\ShoppingCartActivity.cs" />
     <Compile Include="ViewController\Servicios\PaymentActivity.cs" />
+    <Compile Include="ViewController\MiPerfil\TabPerfilActivity.cs" />
+    <Compile Include="ViewController\MiPerfil\MiEmpresaActivity.cs" />
+    <Compile Include="ViewController\MiPerfil\EditPerfilActivity.cs" />
+    <Compile Include="ViewController\MiPerfil\EditEmpresaActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -188,6 +192,12 @@
     <AndroidResource Include="Resources\layout\PagoLayout.axml" />
     <AndroidResource Include="Resources\menu\search_menu.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_search.png" />
+    <AndroidResource Include="Resources\layout\TabsLayout.axml" />
+    <AndroidResource Include="Resources\layout\EditPerfilLayout.axml" />
+    <AndroidResource Include="Resources\layout\EditCompanyLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_save.png" />
+    <AndroidResource Include="Resources\menu\save_menu.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_email.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

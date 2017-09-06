@@ -12,6 +12,12 @@ namespace WorklabsMx.iOS.ViewElements
         {
             using (UIView headerView = new UIView(new CGRect(0, initialPosition, UIScreen.MainScreen.Bounds.Width, 100)) { BackgroundColor = UIColor.White })
             {
+				UIView line = new UIView(new System.Drawing.RectangleF(0, 0, 100, 100))
+				{
+					Frame = new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 5),
+					BackgroundColor = UIColor.FromRGB(101, 216, 250)
+				};
+				headerView.AddSubview(line);
                 headerView.AddSubview(new STLLabel(empresa.Empresa_Miembro_Nombre, 10, 22));
                 using (UIButton lblMail = new STLButton(empresa.Empresa_Miembro_Correo_Electronico)
                 {

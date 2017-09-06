@@ -149,13 +149,13 @@
       <HintPath>..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_2_721_2_Trial\Binaries\iOS\Telerik.XamarinForms.Input.dll</HintPath>
     </Reference>
     <Reference Include="BouncyCastle">
-      <HintPath>..\packages\MimeKit.1.18.0\lib\Xamarin.iOS10\BouncyCastle.dll</HintPath>
+      <HintPath>..\packages\MimeKit.1.18.1\lib\Xamarin.iOS10\BouncyCastle.dll</HintPath>
     </Reference>
     <Reference Include="MimeKit">
-      <HintPath>..\packages\MimeKit.1.18.0\lib\Xamarin.iOS10\MimeKit.dll</HintPath>
+      <HintPath>..\packages\MimeKit.1.18.1\lib\Xamarin.iOS10\MimeKit.dll</HintPath>
     </Reference>
     <Reference Include="MailKit">
-      <HintPath>..\packages\MailKit.1.18.0\lib\Xamarin.iOS10\MailKit.dll</HintPath>
+      <HintPath>..\packages\MailKit.1.18.1.1\lib\Xamarin.iOS10\MailKit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -443,14 +443,6 @@
     <Compile Include="ViewControllers\DashboardController.designer.cs">
       <DependentUpon>DashboardController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\AboutMeController.cs" />
-    <Compile Include="ViewControllers\AboutMeController.designer.cs">
-      <DependentUpon>AboutMeController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\AboutMeModificaController.cs" />
-    <Compile Include="ViewControllers\AboutMeModificaController.designer.cs">
-      <DependentUpon>AboutMeModificaController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewControllers\EscritorioController.cs" />
     <Compile Include="ViewControllers\EscritorioController.designer.cs">
       <DependentUpon>EscritorioController.cs</DependentUpon>
@@ -565,6 +557,14 @@
     <Compile Include="ViewControllers\MiPerfil\EmpresaMiembroModificaController.cs" />
     <Compile Include="ViewControllers\MiPerfil\EmpresaMiembroModificaController.designer.cs">
       <DependentUpon>EmpresaMiembroModificaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\AboutMeModificaController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\AboutMeModificaController.designer.cs">
+      <DependentUpon>AboutMeModificaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\AboutMeController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\AboutMeController.designer.cs">
+      <DependentUpon>AboutMeController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

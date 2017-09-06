@@ -41,6 +41,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Pagos.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\SucursalController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\SucursalModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\TerritorioController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TerritorioModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />

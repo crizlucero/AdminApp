@@ -6,6 +6,7 @@ using WorklabsMx.Models;
 using WorklabsMx.Controllers;
 using PerpetualEngine.Storage;
 using WorklabsMx.iOS.ViewElements;
+using System.Collections.Generic;
 
 namespace WorklabsMx.iOS
 {
@@ -13,20 +14,28 @@ namespace WorklabsMx.iOS
     {
         DatosFiscales datosfiscales;
         UITableView selectView;
-        string pais;
-        UITextField txtEstado, txtMunicipio, txtColonia;
+        string territorio_id, empresa_id, pais;
+        List<string> colonias;
+        UITextField txtEstado, txtMunicipio, txtColonia, txtCP;
         readonly PickerItemsController items;
+        SimpleStorage storage;
+        UIScrollView scrollView;
         public DatosFacturacionController(IntPtr handle) : base(handle)
         {
             items = new PickerItemsController();
+            storage = SimpleStorage.EditGroup("Login");
+            datosfiscales = new EmpresaController().GetDatosFiscales(storage.Get("Usuario_Id"));
+            TerritorioModel territorio = new TerritorioController().GetTerritorio(datosfiscales.Territorio_CP);
+            empresa_id = datosfiscales.Domicilio_Fiscal_Empresa_Id;
+            territorio_id = territorio.Territorio_Id;
+            colonias = items.GetColonias(territorio.CP);
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            datosfiscales = new EmpresaController().GetDatosFiscales(SimpleStorage.EditGroup("Login").Get("Usuario_Id"));
             pais = datosfiscales.Territorio_Pais;
-            using (UIScrollView scrollView = new UIScrollView(new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)))
+            using (scrollView = new UIScrollView(new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)))
             {
                 scrollView.Add(new STLLabel("Razón social", 30));
                 UITextField txtRazonSocial = new STLTextField("Razón Social", 60, datosfiscales.Razon_Social)
@@ -45,30 +54,18 @@ namespace WorklabsMx.iOS
                 scrollView.Add(txtRFC);
 
                 scrollView.Add(new STLLabel("Estado", 150));
-                txtEstado = new STLTextField("Estado", 180, datosfiscales.Territorio_Estado);
-                txtEstado.EditingDidBegin += (sender, e) =>
+                txtEstado = new STLTextField("Estado", 180, datosfiscales.Territorio_Estado)
                 {
-                    if (!string.IsNullOrEmpty(pais))
-                        selectView = new UIDropdownList(txtEstado, View, pais);
-                };
-                txtEstado.EditingDidEnd += (sender, e) =>
-                {
-                    if (!string.IsNullOrEmpty(pais))
-                        selectView.RemoveFromSuperview();
+                    Enabled = false,
+                    TextColor = UIColor.Gray
                 };
                 scrollView.Add(txtEstado);
 
                 scrollView.Add(new STLLabel("Municipio", 210));
-                txtMunicipio = new STLTextField("Municipio", 240, datosfiscales.Territorio_Municipio);
-                txtMunicipio.EditingDidBegin += (sender, e) =>
+                txtMunicipio = new STLTextField("Municipio", 240, datosfiscales.Territorio_Municipio)
                 {
-                    if (!string.IsNullOrEmpty(txtEstado.Text))
-                        selectView = new UIDropdownList(txtMunicipio, View, txtEstado.Text);
-                };
-                txtMunicipio.EditingDidEnd += (sender, e) =>
-                {
-                    if (!string.IsNullOrEmpty(txtEstado.Text))
-                        selectView.RemoveFromSuperview();
+                    Enabled = false,
+                    TextColor = UIColor.Gray
                 };
                 scrollView.Add(txtMunicipio);
 
@@ -76,18 +73,20 @@ namespace WorklabsMx.iOS
                 txtColonia = new STLTextField("Colonia", 300, datosfiscales.Territorio_Colonia);
                 txtColonia.EditingDidBegin += (sender, e) =>
                 {
-                    if (!string.IsNullOrEmpty(txtMunicipio.Text))
-                        selectView = new UIDropdownList(txtColonia, scrollView, txtMunicipio.Text);
+                    //selectView = new UIDropdownList(txtColonia, scrollView, colonias);
+                    selectView = new STLDropDownList(colonias, txtColonia);
+                    View.AddSubview(selectView);
                 };
                 txtColonia.EditingDidEnd += (sender, e) =>
                 {
-                    if (!string.IsNullOrEmpty(txtMunicipio.Text))
-                        selectView.RemoveFromSuperview();
+                    GetTerritorioId();
+                    selectView.RemoveFromSuperview();
                 };
                 scrollView.Add(txtColonia);
 
                 scrollView.Add(new STLLabel("Código Postal", 330));
-                UITextField txtCP = new STLTextField("Código Postal", 360, datosfiscales.Territorio_CP, UIKeyboardType.NumberPad);
+                txtCP = new STLTextField("Código Postal", 360, datosfiscales.Territorio_CP, UIKeyboardType.NumberPad);
+                txtCP.EditingChanged += TxtCP_EditingChanged;
                 scrollView.Add(txtCP);
 
                 scrollView.Add(new STLLabel("Calle", 390));
@@ -106,10 +105,29 @@ namespace WorklabsMx.iOS
                 View.Add(scrollView);
                 NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Actualizar", UIBarButtonItemStyle.Plain, (sender, e) =>
                 {
-                    new EmpresaController().UpdateDatosFiscales("", "");
+                    if (new EmpresaController().UpdateDatosFiscales(empresa_id, storage.Get("Usuario_Id"), territorio_id, txtCalle.Text, txtNumExterior.Text, txtNumInterior.Text, ""))
+                        new MessageDialog().SendToast("Datos guardados");
+                    else
+                        new MessageDialog().SendToast("Hubo un error\nIntente de nuevo");
                 }), true);
             }
 
+        }
+
+        void TxtCP_EditingChanged(object sender, EventArgs e)
+        {
+            if (((UITextField)sender).Text.Length == 5)
+            {
+                TerritorioModel territorio = new TerritorioController().GetTerritorio(((UITextField)sender).Text);
+                territorio_id = territorio.Territorio_Id;
+                txtEstado.Text = territorio.Estado;
+                txtMunicipio.Text = territorio.Municipio;
+                colonias = items.GetColonias(territorio.CP);
+            }
+        }
+        void GetTerritorioId()
+        {
+            territorio_id = new TerritorioController().GetTerritorioId(txtCP.Text, txtColonia.Text);
         }
     }
 }

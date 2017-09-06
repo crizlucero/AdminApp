@@ -64,7 +64,7 @@ namespace WorklabsMx.Droid
 
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
-            ActionBar.Title = "Escritorio";
+            ActionBar.Title = Resources.GetString(Resource.String.Escritorio);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
             FillMenu(FindViewById<TableLayout>(Resource.Id.menu_layout));
@@ -156,7 +156,9 @@ namespace WorklabsMx.Droid
 
             switch (item.ItemId)
             {
-                case Resource.Id.menu_acceso: break;
+                case Resource.Id.menu_acceso:
+                    StartActivity(new Intent(this, typeof(AccesoActivity)));
+                    break;
                 default:
                     ScrollView menu_scroll = FindViewById<ScrollView>(Resource.Id.menu_scroll);
                     if (menu_scroll.Visibility == ViewStates.Gone)

@@ -23,14 +23,13 @@ namespace WorklabsMx.iOS
             {
                 case "Mi Perfil":
                     controller = Storyboard.InstantiateViewController("AboutMeModificaController");
-                    controller.Title = "Edición de campos";
-                    this.NavigationController.PushViewController(controller, true);
                     break;
-                case "Mi Empresa":
+                default: 
                     controller = Storyboard.InstantiateViewController("EmpresaMiembroModificaController");
-                    controller.Title = "Edición de campos";
-                    this.NavigationController.PushViewController(controller, true); break;
+                    break;
             }
+			controller.Title = "Actualizar datos";
+			this.NavigationController.PushViewController(controller, true);
         }
         public override void ViewWillAppear(bool animated) =>
             TabBar.Hidden |= PerpetualEngine.Storage.SimpleStorage.EditGroup("Login").Get("Usuario_Tipo") == "1";
