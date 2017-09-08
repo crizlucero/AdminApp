@@ -12,7 +12,7 @@ namespace WorklabsMx.iOS
 {
     public partial class ReporteController : UIViewController
     {
-        public string post_id;
+        public string post_id, comment_id;
         readonly List<UIRadioButton> radios;
         readonly Controllers.EscritorioController ctrlEscritorio;
         int size = 30;
@@ -32,7 +32,13 @@ namespace WorklabsMx.iOS
                 UIRadioButton radioSelected = radios.Find(radio => radio.IsChecked);
                 if (radioSelected != null)
                 {
-                    if (ctrlEscritorio.ReportarPost(post_id, storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), radioSelected.IDRadio))
+                    bool report = false;
+                    if (string.IsNullOrEmpty(post_id))
+                        report = ctrlEscritorio.ReportarPost(post_id, storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), radioSelected.IDRadio);
+                    else
+                        report = ctrlEscritorio.ReportarComment(comment_id, storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), radioSelected.IDRadio);
+
+                    if (report)
                     {
                         NavigationController.PopViewController(true);
                         new MessageDialog().SendToast("Gracias por su aportación \n El equipo de Worklabs revisará el caso.");
@@ -45,6 +51,7 @@ namespace WorklabsMx.iOS
             }), true);
 
             #region Post a reportar
+
             using (UIView postView = new UIView(new CGRect(0, 50, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)))
             {
                 PostModel post = ctrlEscritorio.GetSinglePost(post_id);

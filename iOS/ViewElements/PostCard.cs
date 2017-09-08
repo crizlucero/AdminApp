@@ -14,13 +14,16 @@ namespace WorklabsMx.iOS.ViewElements
         public List<CommentCard> PostComments;
         public int totalSize, comentarioCount, comentarioSize, usrTipo;
         public UIButton lblNombre, btnDelete;
-
-        public PostCard(PostModel post)
+        SimpleStorage storageLocal;
+        UIViewController owner;
+        public bool image = false;
+        public PostCard(PostModel post, UIViewController owner)
         {
+            this.owner = owner;
+            storageLocal = SimpleStorage.EditGroup("Login");
             PostComments = new List<CommentCard>();
             UIButton pstImage = new UIButton()
             {
-
                 Frame = new CGRect(10, 20, 50, 50)
             };
             pstImage.SetImage(ImageGallery.LoadImage(post.Miembro_Fotografia), UIControlState.Normal);
@@ -30,7 +33,7 @@ namespace WorklabsMx.iOS.ViewElements
             {
                 new MessageDialog().ShowImage(ImageGallery.LoadImage(post.Miembro_Fotografia));
             };
-            Add(pstImage);
+            AddSubview(pstImage);
 
             lblNombre = new STLButton(post.Miembro_Nombre + " " + post.Miembro_Apellidos)
             {
@@ -40,20 +43,20 @@ namespace WorklabsMx.iOS.ViewElements
                 HorizontalAlignment = UIControlContentHorizontalAlignment.Left
             };
             lblNombre.SetTitleColor(UIColor.DarkGray, UIControlState.Normal);
-            Add(lblNombre);
+            AddSubview(lblNombre);
 
             //Delete or report post
             btnDelete = new STLButton(UIImage.FromBundle("ic_clear"))
             {
                 Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 30, 25, 20, 20)
             };
-            Add(btnDelete);
+            AddSubview(btnDelete);
 
             UILabel lblfecha = new STLLabel(post.POST_FECHA, 45, 12)
             {
                 Frame = new CGRect(65, 35, UIScreen.MainScreen.Bounds.Width, 50)
             };
-            Add(lblfecha);
+            AddSubview(lblfecha);
 
             //Likes
             using (UIButton btnLike = new STLButton(new Controllers.EscritorioController().GetLikes(post.POST_ID) + " Like(s)", UIImage.FromBundle("ic_thumb_up"))
@@ -75,7 +78,7 @@ namespace WorklabsMx.iOS.ViewElements
                     btnLike.BackgroundColor = UIColor.LightGray;
 
                 };
-                Add(btnLike);
+                AddSubview(btnLike);
             }
 
             if (post.POST_FOTO_URL != "")
@@ -84,8 +87,9 @@ namespace WorklabsMx.iOS.ViewElements
                 {
                     Frame = new CGRect(10, 140, UIScreen.MainScreen.Bounds.Width - 100, 100)
                 };
-                Add(imgPost);
+                AddSubview(imgPost);
                 totalSize += 160;
+                image = true;
             }
 
             UILabel txtPost = new UILabel
@@ -98,23 +102,78 @@ namespace WorklabsMx.iOS.ViewElements
             };
             int postSize = 30 * Convert.ToInt32(Math.Floor(txtPost.IntrinsicContentSize.Width / (UIScreen.MainScreen.Bounds.Width - 10)));
             txtPost.Frame = new CGRect(10, 110 + totalSize, UIScreen.MainScreen.Bounds.Width - 10, 30 + postSize);
-            Add(txtPost);
+            AddSubview(txtPost);
             totalSize += postSize;
-
             #region Comentarios
-            UIScrollView commentScroll = new UIScrollView(new CGRect(0, 170 + totalSize, UIScreen.MainScreen.Bounds.Width, 100));
-            foreach (ComentarioModel comentario in new Controllers.EscritorioController().GetComentariosPost(post.POST_ID))
-            {
-                PostComments.Add(new CommentCard(comentario)
-                {
-                    Frame = new CGRect(0, 170 + totalSize, UIScreen.MainScreen.Bounds.Width, 100)
-                });
-                AddSubview(PostComments[comentarioCount]);
-                totalSize += 60;
-                ++comentarioCount;
-
-            }
+            AddComentarios(post);
             #endregion
+        }
+
+        void AddComentarios(PostModel post)
+        {
+            List<ComentarioModel> comentarios = new Controllers.EscritorioController().GetComentariosPost(post.POST_ID);
+            if (comentarios.Count > 0)
+            {
+                int commentSize = 0;
+                int viewSize = 200;
+                if (comentarios.Count < 4)
+                    viewSize = 60 * comentarios.Count;
+                UIView commentView = new UIView(new CGRect(0, 170 + totalSize, UIScreen.MainScreen.Bounds.Width, viewSize));
+                UIScrollView commentScroll = new UIScrollView(new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, viewSize));
+                foreach (ComentarioModel comentario in comentarios)
+                {
+                    CommentCard comment = new CommentCard(comentario, owner)
+                    {
+                        Frame = new CGRect(0, commentSize, UIScreen.MainScreen.Bounds.Width, 80)
+                    };
+                    PostComments.Add(comment);
+                    commentScroll.AddSubview(PostComments[comentarioCount]);
+
+                    UIButton btnCommentDelete = new STLButton(UIImage.FromBundle("ic_clear"))
+                    {
+                        Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 30, 20 + commentSize, 20, 20)
+                    };
+                    btnCommentDelete.TouchUpInside += (sender, e) =>
+                    {
+                        if (comentario.USUARIO_ID == storageLocal.Get("Usuario_Id") && comentario.USUARIO_TIPO == storageLocal.Get("Usuario_Tipo"))
+                        {
+                            new MessageDialog().SendConfirmation("Se eliminará el comentario", "Borrar comentario", (obj) =>
+                           {
+                               if (obj)
+                                   if (new Controllers.EscritorioController().OcultarComment(comentario.COMM_ID, 0))
+                                   {
+                                       new MessageDialog().SendToast("Comentario eliminado");
+                                       commentScroll.RemoveFromSuperview();
+                                       AddComentarios(post);
+                                   }
+                                   else
+                                       new MessageDialog().SendToast("Hubo un error, intente de nuevo");
+                           });
+                        }
+                        else
+                            new MessageDialog().SendConfirmation("¿Desea reportar el comentario?", "Reportar comentario", (obj) =>
+                            {
+                                if (obj)
+                                {
+                                    ReporteController reporteController = (ReporteController)owner.Storyboard.InstantiateViewController("ReporteController");
+                                    reporteController.comment_id = comentario.COMM_ID;
+                                    reporteController.Title = "Reportar Post";
+                                    owner.NavigationController.PushViewController(reporteController, true);
+                                    ((UIButton)sender).BackgroundColor = UIColor.Clear;
+                                }
+                            });
+                    };
+                    commentScroll.AddSubview(btnCommentDelete);
+
+                    commentSize += 50;
+                    ++comentarioCount;
+                }
+                commentScroll.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, commentSize);
+                commentView.AddSubview(commentScroll);
+                commentView.BringSubviewToFront(commentScroll);
+                AddSubview(commentView);
+                totalSize += viewSize;
+            }
         }
 
         public void ResizeCommentCard()

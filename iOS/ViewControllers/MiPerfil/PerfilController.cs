@@ -144,7 +144,7 @@ namespace WorklabsMx.iOS
                 {
                     try
                     {
-                        AllPost.Add(new PostCard(post)
+                        AllPost.Add(new PostCard(post, this)
                         {
                             Frame = new CGRect(0, totalSize, UIScreen.MainScreen.Bounds.Width, 140)
                         });
@@ -179,10 +179,11 @@ namespace WorklabsMx.iOS
                         btnComentar.Layer.CornerRadius = 15;
                         btnComentar.TouchUpInside += async (sender, e) =>
                         {
-                            if (new Controllers.EscritorioController().CommentPost(post.POST_ID, storageLocal.Get("Usuario_Id"), txtComentario.Text))
+                            if (new Controllers.EscritorioController().CommentPost(post.POST_ID, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtComentario.Text))
                             {
                                 nfloat scrollPosition = scrollView.ContentOffset.Y;
                                 txtComentario.Text = "";
+                                scrollView.RemoveFromSuperview();
                                 await AddPostsAsync();
                                 scrollView.ContentOffset = new CGPoint(0, scrollPosition);
                             }

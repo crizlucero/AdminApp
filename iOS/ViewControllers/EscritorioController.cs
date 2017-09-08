@@ -89,7 +89,7 @@ namespace WorklabsMx.iOS
                 endLine = (posts.Count < 5);
                 foreach (PostModel post in posts)
                 {
-                    AllPost.Add(new PostCard(post)
+                    AllPost.Add(new PostCard(post, this)
                     {
                         Frame = new CGRect(0, totalSize, UIScreen.MainScreen.Bounds.Width, 140)
                     });
@@ -137,22 +137,26 @@ namespace WorklabsMx.iOS
                                 }
                             });
                     };
-                    totalSize += AllPost[postNumber].totalSize;
+
+                    if (AllPost[postNumber].comentarioCount > 0)
+                        AllPost[postNumber].Frame = new CGRect(0, totalSize, UIScreen.MainScreen.Bounds.Width, 370);
+
                     scrollView.AddSubview(AllPost[postNumber]);
-                    UITextField txtComentario = new STLTextField("Escribe un comentario", 215 + totalSize)
+                    scrollView.BringSubviewToFront(AllPost[postNumber]);
+                    UITextField txtComentario = new STLTextField("Escribe un comentario", 215)
                     {
-                        Frame = new CGRect(5, 140 + totalSize - (AllPost[postNumber].PostComments.Count * 60), UIScreen.MainScreen.Bounds.Width - 50, 30)
+                        Frame = new CGRect(5, 140 + totalSize + (AllPost[postNumber].image ? 110 : 0), UIScreen.MainScreen.Bounds.Width - 50, 30)
                     };
                     scrollView.Add(txtComentario);
 
                     UIButton btnComentar = new STLButton(UIImage.FromBundle("ic_send"))
                     {
-                        Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 40, 140 + totalSize - (AllPost[postNumber].PostComments.Count * 60), 30, 30)
+                        Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 40, 140 + totalSize + (AllPost[postNumber].image ? 110 : 0), 30, 30)
                     };
                     btnComentar.Layer.CornerRadius = 15;
                     btnComentar.TouchUpInside += async (sender, e) =>
                     {
-                        if (new Controllers.EscritorioController().CommentPost(post.POST_ID, storageLocal.Get("Usuario_Id"), txtComentario.Text))
+                        if (new Controllers.EscritorioController().CommentPost(post.POST_ID, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtComentario.Text))
                         {
                             nfloat scrollPosition = scrollView.ContentOffset.Y;
                             txtComentario.Text = "";
@@ -161,7 +165,7 @@ namespace WorklabsMx.iOS
                         }
                     };
                     scrollView.Add(btnComentar);
-
+                    totalSize += AllPost[postNumber].totalSize;
                     totalSize += 180;
                     ++postNumber;
                 }
@@ -169,6 +173,7 @@ namespace WorklabsMx.iOS
 
                 scrollView.Scrolled += ScrollView_Scrolled;
                 View.AddSubview(scrollView);
+                View.BringSubviewToFront(scrollView);
             }
             else
             {
