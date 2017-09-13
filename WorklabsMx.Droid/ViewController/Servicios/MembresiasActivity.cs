@@ -23,7 +23,7 @@ namespace WorklabsMx.Droid
         {
             Storage = SimpleStorage.EditGroup("Login");
             Membresias = new Dictionary<string, int>();
-            Carrito = new CarritoController().GetCarrito(Storage.Get("Usuario_Id"), "Membresia");
+            Carrito = new CarritoController().GetCarrito(Storage.Get("Usuario_Id"), TiposServicios.Membresia);
             CanPay = false;
         }
         protected override void OnCreate(Bundle savedInstanceState)

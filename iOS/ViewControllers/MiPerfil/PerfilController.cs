@@ -13,6 +13,7 @@ using WorklabsMx.iOS.Styles;
 using Contacts;
 using ContactsUI;
 using Foundation;
+using MessageUI;
 
 namespace WorklabsMx.iOS
 {
@@ -47,13 +48,12 @@ namespace WorklabsMx.iOS
 
             UIToolbar tbNav = new UIToolbar
             {
-                Frame = new CoreGraphics.CGRect(0, 60, UIScreen.MainScreen.Bounds.Width, 40)
+                Frame = new CGRect(0, 60, UIScreen.MainScreen.Bounds.Width, 40)
             };
-            UIBarButtonItem bbiPosts = new UIBarButtonItem(UIBarButtonSystemItem.Bookmarks, (sender, e) => { });
-            bbiPosts.Clicked += async (sender, e) =>
+            UIBarButtonItem bbiPosts = new UIBarButtonItem(UIBarButtonSystemItem.Bookmarks, async (sender, e) =>
             {
                 #region Publicar
-                viewView = new UIView(new CGRect(0, 100, UIScreen.MainScreen.Bounds.Width, 30)) { BackgroundColor = UIColor.White };
+                viewView = new UIView(new CGRect(0, 100, UIScreen.MainScreen.Bounds.Width, 100)) { BackgroundColor = UIColor.White };
                 txtPublish = new STLTextField("Publica algo :)", 20)
                 {
                     Frame = new CGRect(5, 20, UIScreen.MainScreen.Bounds.Width - 120, 30)
@@ -81,7 +81,7 @@ namespace WorklabsMx.iOS
                 await this.AddPostsAsync();
                 View.AddSubview(scrollView);
                 #endregion
-            };
+            });
 
             if (Usuario != storageLocal.Get("Usuario_Id") || Tipo != storageLocal.Get("Usuario_Tipo"))
             {
@@ -116,12 +116,19 @@ namespace WorklabsMx.iOS
                 new InfoPersonaCard(miembro, View, 100);
             });
 
+            UIBarButtonItem bbiFavorites = new UIBarButtonItem(UIImage.FromBundle("ic_star"), UIBarButtonItemStyle.Done, (sender, e) =>
+            {
+                MiembrosFavoritos();
+            });
+
             UIBarButtonItem bbiSpace = new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace);
             UIBarButtonItem[] bbs = {
                 bbiSpace,
                 bbiInfo,
                 bbiSpace,
                 bbiPosts,
+                bbiSpace,
+                bbiFavorites,
                 bbiSpace
             };
             tbNav.SetItems(bbs, false);
@@ -248,6 +255,50 @@ namespace WorklabsMx.iOS
             {
                 currentPage += 5;
                 await AddPostsAsync();
+            }
+        }
+
+        void MiembrosFavoritos()
+        {
+            using (UIScrollView scrollView = new UIScrollView(new CGRect(0, 100, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)))
+            {
+                int position = 0;
+                foreach (MiembroModel usuario in new MiembrosController().GetMiembrosFavoritos(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo")))
+                {
+                    InfoPersonaCard personaCard = new InfoPersonaCard(usuario, scrollView, position);
+                    personaCard.lblMail.TouchUpInside += (sender, e) =>
+                    {
+                        MFMailComposeViewController mailController;
+                        if (MFMailComposeViewController.CanSendMail)
+                        {
+                            mailController = new MFMailComposeViewController();
+
+                            mailController.SetToRecipients(new string[] { usuario.Miembro_Correo_Electronico });
+                            mailController.SetSubject("Contacto - Worklabs");
+                            mailController.SetMessageBody("", false);
+
+                            mailController.Finished += (object s, MFComposeResultEventArgs args) =>
+                            {
+                                Console.WriteLine(args.Result.ToString());
+                                args.Controller.DismissViewController(true, null);
+                            };
+
+                            this.PresentViewController(mailController, true, null);
+                        }
+                    };
+                    personaCard.lblNombre.TouchUpInside += (sender, e) =>
+                    {
+                        PerfilController perfilController = (PerfilController)Storyboard.InstantiateViewController("PerfilIndividualController");
+                        perfilController.Tipo = usuario.Miembro_Tipo;
+                        perfilController.Usuario = usuario.Miembro_Id;
+                        perfilController.Title = "Perfil";
+                        NavigationController.PushViewController(perfilController, true);
+                        ((UIButton)sender).BackgroundColor = UIColor.Clear;
+                    };
+                    position += 400;
+                }
+                scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, position);
+                View.AddSubview(scrollView);
             }
         }
     }

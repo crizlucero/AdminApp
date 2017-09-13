@@ -129,9 +129,9 @@ namespace WorklabsMx.Controllers
         public List<ComentarioModel> GetComentariosPost(string post_id)
         {
             List<ComentarioModel> comentarios = new List<ComentarioModel>();
-            string query = "SELECT TOP 10 mc.*, CONCAT(m.Miembro_Nombre,' ', m.Miembro_Apellidos) as Nombre, m.Miembro_Fotografia FROM Muro_Comments mc " +
-                "INNER JOIN cat_Miembros m on mc.MIEMBRO_ID = m.MIEMBRO_ID " +
-                "WHERE COMM_POST_ID = @post_id";
+            string query = "SELECT mc.*, CONCAT(d.Usuario_Nombre,' ', d.Usuario_Apellidos) as Nombre, d.Usuario_Fotografia, d.Usuario_Tipo FROM vw_Muro_Comments mc " +
+                "INNER JOIN vw_pro_Usuarios_Directorio d on mc.MIEMBRO_ID = d.Usuario_Id " +
+                "WHERE POST_ID = @post_id AND COMM_ESTATUS = 0 AND d.Usuario_Tipo = CASE WHEN mc.Tipo = 'MIEMBRO' Then 0 ELSE 1 END ORDER by COMM_FECHA";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@post_id", post_id);
             try
@@ -143,14 +143,14 @@ namespace WorklabsMx.Controllers
                     comentarios.Add(new ComentarioModel
                     {
                         COMM_ID = reader["COMM_ID"].ToString(),
-                        MIEMBRO_ID = reader["MIEMBRO_ID"].ToString(),
-                        COMM_POST_ID = reader["COMM_POST_ID"].ToString(),
+                        USUARIO_ID = reader["MIEMBRO_ID"].ToString(),
+                        POST_ID = reader["POST_ID"].ToString(),
                         COMM_FECHA = reader["COMM_FECHA"].ToString(),
                         COMM_CONTENIDO = reader["COMM_CONTENIDO"].ToString(),
-                        COLABORADOR_ID = reader["COLABORADOR_ID"].ToString(),
                         COMM_ESTATUS = reader["COMM_ESTATUS"].ToString(),
                         Nombre = reader["Nombre"].ToString(),
-                        Miembro_Fotografia = reader["Miembro_Fotografia"].ToString()
+                        Miembro_Fotografia = reader["Miembro_Fotografia"].ToString(),
+                        USUARIO_TIPO = reader["Usuario_Tipo"].ToString()
                     });
                 }
             }
@@ -306,8 +306,14 @@ namespace WorklabsMx.Controllers
         /// <param name="miembro_id">Identificador del miembro</param>
         /// <param name="comentario">Comentario realizado</param>
         /// <returns><c>true</c> Si el post fue comentado, <c>false</c> Existió algún error.</returns>
-        public bool CommentPost(string post_id, string miembro_id, string comentario)
+        public bool CommentPost(string post_id, string usuario_id, string tipo, string comentario)
         {
+			string miembro_id = null;
+			string colaborador_id = null;
+			if (tipo == "0")
+				miembro_id = usuario_id;
+			else
+				colaborador_id = usuario_id;
             try
             {
                 conn.Open();
@@ -320,6 +326,8 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Comm_Contenido", comentario);
                 command.Parameters.AddWithValue("@Comm_Fecha", DateTime.Now);
                 command.Parameters.AddWithValue("@Comm_Post_Id", post_id);
+                command.Parameters.AddWithValue("@colaborador_Id", colaborador_id);
+                command.Parameters.AddWithValue("@comm_estatus", 1);
 
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();
@@ -487,6 +495,40 @@ namespace WorklabsMx.Controllers
 
             return true;
         }
+
+        public bool OcultarComment(string comment_id, int comment_estatus)
+        {
+            try
+            {
+                conn.Open();
+                transaction = conn.BeginTransaction();
+                command = CreateCommand();
+                command.Connection = conn;
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "sp_Muro_Comentarios_Ocultar";
+                command.Parameters.AddWithValue("@Comment_Id", comment_id);
+                command.Parameters.AddWithValue("@Comment_Estatus", comment_estatus);
+
+                command.Transaction = transaction;
+                command.ExecuteNonQuery();
+                transaction.Commit();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                transaction.Rollback();
+                SlackLogs.SendMessage(e.Message);
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return true;
+        }
+
         /// <summary>
         /// Mensajes para reportar
         /// </summary>
@@ -529,6 +571,35 @@ namespace WorklabsMx.Controllers
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = "sp_pro_Reportar_Post";
                 command.Parameters.AddWithValue("@Post_Id", post_id);
+                command.Parameters.AddWithValue("@Miembro_Id", miembro_id);
+                command.Parameters.AddWithValue("@Miembro_Tipo", miembro_tipo);
+                command.Parameters.AddWithValue("@Mensaje_Id", mensaje_id);
+
+                command.Transaction = transaction;
+                command.ExecuteNonQuery();
+                transaction.Commit();
+            }
+            catch (Exception e)
+            {
+                transaction.Rollback();
+                SlackLogs.SendMessage(e.Message);
+                return false;
+            }
+            finally { conn.Close(); }
+            return true;
+        }
+
+        public bool ReportarComment(string comment_id, string miembro_id, string miembro_tipo, int mensaje_id)
+        {
+            try
+            {
+                conn.Open();
+                transaction = conn.BeginTransaction();
+                command = CreateCommand();
+                command.Connection = conn;
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "sp_pro_Reportar_Comentario";
+                command.Parameters.AddWithValue("@Comment_Id", comment_id);
                 command.Parameters.AddWithValue("@Miembro_Id", miembro_id);
                 command.Parameters.AddWithValue("@Miembro_Tipo", miembro_tipo);
                 command.Parameters.AddWithValue("@Mensaje_Id", mensaje_id);

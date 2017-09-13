@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Foundation;
 using UIKit;
+using WorklabsMx.Helpers;
 using WorklabsMx.iOS.Styles;
 
 namespace WorklabsMx.iOS.Helpers
@@ -82,19 +83,23 @@ namespace WorklabsMx.iOS.Helpers
         {
             if (!string.IsNullOrEmpty(llave))
             {
-                int loop = 0;
                 while (true)
                 {
-                    using (var url = new NSUrl("https://api.qrserver.com/v1/create-qr-code/?data=" + llave))
+                    try
                     {
-                        using (var data = NSData.FromUrl(url))
+                        using (var url = new NSUrl("https://api.qrserver.com/v1/create-qr-code/?data=" + Uri.EscapeUriString(llave)))
                         {
-                            if (data != null)
-                                return UIImage.LoadFromData(data);
+                            using (var data = NSData.FromUrl(url))
+                            {
+                                if (data != null)
+                                    return UIImage.LoadFromData(data);
+                            }
                         }
                     }
-                    Console.WriteLine(loop);
-                    ++loop;
+                    catch (Exception e)
+                    {
+                        SlackLogs.SendMessage(e.Message);
+                    }
                 }
             }
             return UIImage.FromBundle("ProfileImage");

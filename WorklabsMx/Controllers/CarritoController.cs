@@ -14,14 +14,14 @@ namespace WorklabsMx.Controllers
         /// <returns>The carrito.</returns>
         /// <param name="miembro_id">Miembro identifier.</param>
         /// <param name="tipo">Tipo.</param>
-        public Dictionary<string, CarritoModel> GetCarrito(string miembro_id, string tipo)
+        public Dictionary<string, CarritoModel> GetCarrito(string miembro_id, TiposServicios tipo)
         {
             Dictionary<string, CarritoModel> carrito = new Dictionary<string, CarritoModel>();
             string query = "SELECT * FROM vw_pro_Carrito_Compras WHERE Miembro_Id = @miembro_id AND Pedido_Estatus = 1 ";
             switch (tipo)
             {
-                case "Producto": query += " AND Producto_Id IS NOT NULL"; break;
-                case "Membresia": query += " AND Membresia_Id IS NOT NULL"; break;
+                case TiposServicios.Producto: query += " AND Producto_Id IS NOT NULL"; break;
+                case TiposServicios.Membresia: query += " AND Membresia_Id IS NOT NULL"; break;
             }
             try
             {
@@ -31,7 +31,7 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    if (tipo == "Producto")
+                    if (tipo == TiposServicios.Producto)
                     {
                         carrito.Add(reader["Producto_Id"].ToString(), new CarritoModel()
                         {
@@ -241,6 +241,82 @@ namespace WorklabsMx.Controllers
             }
             finally { conn.Close(); }
             return detalle;
+        }
+
+        public bool AddCarritoCompras(string miembro_id, TiposServicios tipo, string id, int cantidad, int sucursal)
+        {
+            try
+            {
+                conn.Open();
+                transaction = conn.BeginTransaction();
+                command = CreateCommand();
+                command.Connection = conn;
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "sp_pro_Carrito_Compras";
+
+                command.Parameters.AddWithValue("@Transaccion", "ALTA");
+                command.Parameters.AddWithValue("@miembro_Id", miembro_id);
+                if (tipo == TiposServicios.Producto)
+                {
+                    command.Parameters.AddWithValue("@producto_Id", id);
+                    command.Parameters.AddWithValue("@producto_cantidad", cantidad);
+                }
+                else if (tipo == TiposServicios.Membresia)
+                {
+                    command.Parameters.AddWithValue("@membresia_id", id);
+                    command.Parameters.AddWithValue("@membresia_cantidad", cantidad);
+                }
+                command.Parameters.AddWithValue("@Pedido_Estatus", 1);
+                command.Parameters.AddWithValue("@sucursal_id", sucursal);
+
+                command.Transaction = transaction;
+                command.ExecuteNonQuery();
+                transaction.Commit();
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message);
+                transaction.Rollback();
+                return false;
+            }
+            finally { conn.Close(); }
+            return true;
+        }
+
+        public bool CheckQuantity(string membresia_id, int cantidad)
+        {
+            string query = "SELECT Distribucion_Membresia_Espacio FROM vw_cat_Membresias_Distribuciones_Disponibles WHERE Membresia_Id = @membresia_id";
+            try
+            {
+                conn.Open();
+                command = CreateCommand(query);
+                command.Parameters.AddWithValue("@membresia_id", membresia_id);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (reader.GetInt32(0) < cantidad) return true;
+                }
+                return false;
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message);
+                return false;
+            }
+            finally { conn.Close(); }
+        }
+
+        public void AddCarrito(Dictionary<string, int> datos, TiposServicios tipo, string usuario_id, int sucursal)
+        {
+            Dictionary<string, CarritoModel> carrito = GetCarrito(usuario_id, tipo);
+            foreach (KeyValuePair<string, int> element in datos)
+                if (!carrito.ContainsKey(element.Key))
+                {
+                    if (element.Value > 0)
+                        AddCarritoCompras(usuario_id, tipo, element.Key, element.Value, sucursal);
+                }
+                else
+                    Console.WriteLine("Existe el producto");
         }
     }
 }

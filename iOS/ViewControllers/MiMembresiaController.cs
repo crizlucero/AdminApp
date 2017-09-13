@@ -1,7 +1,5 @@
-using Foundation;
 using System;
 using UIKit;
-using System.Collections.Generic;
 using WorklabsMx.Models;
 using WorklabsMx.Controllers;
 using PerpetualEngine.Storage;
@@ -21,7 +19,7 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
             int sizeTotal = 90;
             SimpleStorage storage = SimpleStorage.EditGroup("Login");
-            Title = "Suscripciones contratas";
+            Title = "Mis Subscripciones";
             #region Membresias
             UILabel lblMembresias = new STLLabel("MEMBRESIAS", 50, 20)
             {

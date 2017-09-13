@@ -366,7 +366,7 @@ namespace WorklabsMx.Controllers
 
             string query = "select Producto_Id, Producto_Descripcion, Disponibilidad_Producto_Descripcion " +
                 "FROM vw_cat_Productos " +
-                "WHERE Producto_Estatus = 1 ";
+                "WHERE Producto_Estatus = 1 ORDER BY Disponibilidad_Producto_Descripcion";
             command = CreateCommand(query);
             try
             {

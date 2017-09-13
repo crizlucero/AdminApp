@@ -62,7 +62,7 @@ namespace WorklabsMx.iOS
                 UIDatePicker dpFechaNacimiento = new UIDatePicker
                 {
                     Mode = UIDatePickerMode.Date,
-                    Frame = new CGRect(40, 500, UIScreen.MainScreen.Bounds.Width - 40, 100),
+                    Frame = new CGRect(40, 500, UIScreen.MainScreen.Bounds.Width - 80, 100),
                     Date = DatePickerHelper.GetDate(miembro.Miembro_Fecha_Nacimiento)
                 };
 

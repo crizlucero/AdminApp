@@ -24,7 +24,8 @@ namespace WorklabsMx.iOS.ViewElements
                     BackgroundColor = UIColor.Clear,
                     UserInteractionEnabled = true,
                     Frame = new CGRect(20, 35, UIScreen.MainScreen.Bounds.Width, 30),
-                    Font = UIFont.BoldSystemFontOfSize(14)
+                    Font = UIFont.BoldSystemFontOfSize(14),
+                    HorizontalAlignment = UIControlContentHorizontalAlignment.Left
                 })
                 {
                     lblMail.SetTitleColor(UIColor.DarkGray, UIControlState.Normal);

@@ -42,7 +42,6 @@ namespace WorklabsMx.iOS
                     InfoPersonaCard personaCard = new InfoPersonaCard(usuario, scrollView, position);
 					personaCard.lblMail.TouchUpInside += (sender, e) =>
 					{
-						//UIApplication.SharedApplication.OpenUrl(NSUrl.FromString("mailto:" + miembro.Miembro_Correo_Electronico), new NSDictionary { }, null);
 						MFMailComposeViewController mailController;
 						if (MFMailComposeViewController.CanSendMail)
 						{

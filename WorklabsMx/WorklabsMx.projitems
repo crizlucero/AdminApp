@@ -43,6 +43,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\SucursalModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\TerritorioController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\TerritorioModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\SuscripcionesController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enum\TiposServicios.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enum\TiposTransacciones.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />
@@ -57,5 +60,6 @@
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Controllers\" />
     <Folder Include="$(MSBuildThisFileDirectory)HTMLTemplates\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Enum\" />
   </ItemGroup>
 </Project>

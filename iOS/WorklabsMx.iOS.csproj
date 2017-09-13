@@ -421,6 +421,18 @@
     <ImageAsset Include="Assets.xcassets\ic_radiobutton_uncheck.imageset\ic_radio_button_unchecked.png" />
     <ImageAsset Include="Assets.xcassets\ic_radiobutton_uncheck.imageset\ic_radio_button_unchecked_2x.png" />
     <ImageAsset Include="Assets.xcassets\ic_radiobutton_uncheck.imageset\ic_radio_button_unchecked_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_star.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_star_border.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_star.imageset\ic_star.png" />
+    <ImageAsset Include="Assets.xcassets\ic_star.imageset\ic_star_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_star.imageset\ic_star_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_star_border.imageset\ic_star_border.png" />
+    <ImageAsset Include="Assets.xcassets\ic_star_border.imageset\ic_star_border_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_star_border.imageset\ic_star_border_3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_left_arrow.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_left_arrow.imageset\ic_keyboard_arrow_left.png" />
+    <ImageAsset Include="Assets.xcassets\ic_left_arrow.imageset\ic_keyboard_arrow_left_2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_left_arrow.imageset\ic_keyboard_arrow_left_3x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -566,6 +578,7 @@
     <Compile Include="ViewControllers\MiPerfil\AboutMeController.designer.cs">
       <DependentUpon>AboutMeController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CarritoHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -596,6 +609,9 @@
     <Folder Include="ViewControllers\Servicios\" />
     <Folder Include="ViewControllers\Directorio\" />
     <Folder Include="ViewControllers\Formatos\" />
+    <Folder Include="Assets.xcassets\ic_star.imageset\" />
+    <Folder Include="Assets.xcassets\ic_star_border.imageset\" />
+    <Folder Include="Assets.xcassets\ic_left_arrow.imageset\" />
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

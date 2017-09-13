@@ -24,7 +24,7 @@ namespace WorklabsMx.Droid
             Storage = SimpleStorage.EditGroup("Login");
             Productos = new Dictionary<string, int>();
             CanPay = false;
-            Carrito = new CarritoController().GetCarrito(Storage.Get("Usuario_Id"), "Producto");
+            Carrito = new CarritoController().GetCarrito(Storage.Get("Usuario_Id"), TiposServicios.Producto);
         }
 
         protected override void OnCreate(Bundle savedInstanceState)

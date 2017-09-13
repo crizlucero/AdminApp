@@ -5,13 +5,15 @@ using CoreGraphics;
 using System.Collections.Generic;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
+using PerpetualEngine.Storage;
+using WorklabsMx.Helpers;
 
 namespace WorklabsMx.iOS
 {
     public partial class CarritoCompraController : UIViewController
     {
 
-        public Dictionary<string, int> membresias, productos;
+        Dictionary<string, int> membresias = null, productos = null;
         int size = 30;
         UIScrollView scrollView;
         UIView totalesView, cuponesView;
@@ -19,24 +21,44 @@ namespace WorklabsMx.iOS
         List<UIView> Conceptos;
         decimal Descuento, Subtotal, IVA = 0.16M, Total, IVATotal;
         UILabel txtDescuento, txtSubtotal, txtIva, txtTotal;
+        SimpleStorage Storage;
         public CarritoCompraController(IntPtr handle) : base(handle)
         {
             Descuentos = new List<decimal>();
             Conceptos = new List<UIView>();
+            membresias = new Dictionary<string, int>();
+            productos = new Dictionary<string, int>();
+            Storage = SimpleStorage.EditGroup("Login");
+            Dictionary<string, CarritoModel> CarritoMembresia = new CarritoController().GetCarrito(Storage.Get("Usuario_Id"), TiposServicios.Membresia);
+            Dictionary<string, CarritoModel> CarritoProducto = new CarritoController().GetCarrito(Storage.Get("Usuario_Id"), TiposServicios.Producto);
+            try
+            {
+                foreach (MembresiaModel membresia in new PickerItemsController().GetMembresias())
+                    if (CarritoMembresia.ContainsKey(membresia.Membresia_Id))
+                        membresias.Add(membresia.Membresia_Id, (int)CarritoMembresia[membresia.Membresia_Id].Membresia_Cantidad);
+                foreach (ProductoModel producto in new PickerItemsController().GetProductos())
+                    if (CarritoProducto.ContainsKey(producto.Producto_Id))
+                        productos.Add(producto.Producto_Id, (int)CarritoProducto[producto.Producto_Id].Producto_Cantidad);
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message);
+            }
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
 
-            NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_credit_card"), UIBarButtonItemStyle.Plain, (sender, e) => {
+            NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_credit_card"), UIBarButtonItemStyle.Plain, (sender, e) =>
+            {
                 PaymentController controller = (PaymentController)Storyboard.InstantiateViewController("PaymentController");
-				controller.Title = "Realiza el pago";
+                controller.Title = "Realiza el pago";
                 controller.Descuento = Descuento;
                 controller.IVATotal = IVATotal;
                 controller.Total = Total;
                 controller.Subtotal = Subtotal;
-				NavigationController.PushViewController(controller, true);
+                NavigationController.PushViewController(controller, true);
             }), true);
 
             scrollView = new UIScrollView(new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)) { BackgroundColor = UIColor.White };
@@ -60,9 +82,9 @@ namespace WorklabsMx.iOS
                 BackgroundColor = UIColor.LightGray
             });
             #region Descripciones
-            if (membresias != null)
+            if (membresias.Count > 0)
                 AddMembresiaDescripcion(new PickerItemsController().GetMembresiasPrecios(membresias));
-            else
+            if (productos.Count > 0)
                 AddProductosDescripcion(new PickerItemsController().GetProductosPrecios(productos));
             #endregion
             #region Cupones
@@ -287,11 +309,11 @@ namespace WorklabsMx.iOS
         public void CuponView()
         {
             cuponesView = new UIView(new CGRect(0, 60 + size, UIScreen.MainScreen.Bounds.Width / 6, 30)) { BackgroundColor = UIColor.White };
-            cuponesView.AddSubview(new STLLabel("Cupon")
+            cuponesView.AddSubview(new STLLabel("Código de Promoción")
             {
                 Frame = new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width / 6, 30)
             });
-            UITextField txtCupon = new STLTextField("Cupon")
+            UITextField txtCupon = new STLTextField("Código de Promoción")
             {
                 Frame = new CGRect(UIScreen.MainScreen.Bounds.Width / 6, 0, UIScreen.MainScreen.Bounds.Width * 2 / 3, 30)
             };
@@ -316,6 +338,7 @@ namespace WorklabsMx.iOS
                     ShowPromocion(promo);
                     ShowTablaTotales();
                     Descuentos.Add(promo.Descuento_Porcentaje);
+                    txtCupon.Enabled = false;
                 }
             };
             cuponesView.AddSubview(btnCupon);
