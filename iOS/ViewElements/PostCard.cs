@@ -22,7 +22,8 @@ namespace WorklabsMx.iOS.ViewElements
             this.owner = owner;
             storageLocal = SimpleStorage.EditGroup("Login");
             PostComments = new List<CommentCard>();
-            UIButton pstImage = new UIButton()
+            AddSubview(new STLLine(2));
+            UIButton pstImage = new UIButton
             {
                 Frame = new CGRect(10, 20, 50, 50)
             };

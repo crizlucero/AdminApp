@@ -12,6 +12,7 @@ namespace WorklabsMx.iOS.ViewElements
         public CommentCard(ComentarioModel comentario, UIViewController owner)
         {
             this.owner = owner;
+            AddSubview(new STLLine(1));
             UIImageView pstImage = new UIImageView
             {
                 Image = ImageGallery.LoadImage(comentario.Miembro_Fotografia),

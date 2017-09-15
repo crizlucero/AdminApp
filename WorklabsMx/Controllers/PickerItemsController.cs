@@ -281,11 +281,13 @@ namespace WorklabsMx.Controllers
         {
             List<MembresiaModel> membresias = new List<MembresiaModel>();
 
-            string query = "select Membresia_Id, Membresia_Descripcion, " +
-                "count(Distribucion_Membresia_Espacio) as Membresia_Espacios_Disponibles " +
-                "FROM vw_cat_Membresias_Distribuciones_Disponibles " +
-                "WHERE Distribucion_Membresia_Estatus = 1 " +
-                "GROUP BY Membresia_Id, Membresia_Descripcion";
+            string query = "select mdd.Membresia_Id, mdd.Membresia_Descripcion, " +
+                "count(Distribucion_Membresia_Espacio) as Membresia_Espacios_Disponibles, " +
+                "mlp.Lista_Precio_Membresia_Precio_Base, mlp.Lista_Precio_Membresia_Precio_Inscripcion " +
+                "FROM vw_cat_Membresias_Distribuciones_Disponibles AS mdd " +
+                "INNER JOIN vw_cat_Membresias_Listas_Precios AS mlp ON mlp.Membresia_Id = mdd.Membresia_Id " +
+                "WHERE mdd.Distribucion_Membresia_Estatus = 1 " +
+                "GROUP BY mdd.Membresia_Id, mdd.Membresia_Descripcion, mlp.Lista_Precio_Membresia_Precio_Base, mlp.Lista_Precio_Membresia_Precio_Inscripcion";
             command = CreateCommand(query);
             try
             {
@@ -297,7 +299,9 @@ namespace WorklabsMx.Controllers
                     {
                         Membresia_Id = reader["Membresia_Id"].ToString(),
                         Membresia_Descripcion = reader["Membresia_Descripcion"].ToString(),
-                        Membresia_Espacios_Disponibles = reader["Membresia_Espacios_Disponibles"].ToString()
+                        Membresia_Espacios_Disponibles = reader["Membresia_Espacios_Disponibles"].ToString(),
+						Membresia_Precio_Base = Convert.ToDouble(reader["Lista_Precio_Membresia_Precio_Base"]),
+						Inscripcion_Precio_Base = Convert.ToDouble(reader["Lista_Precio_Membresia_Precio_Inscripcion"])
                     });
                 }
             }
@@ -342,8 +346,8 @@ namespace WorklabsMx.Controllers
                     {
                         Membresia_Id = reader["Membresia_Id"].ToString(),
                         Membresia_Descripcion = reader["Membresia_Descripcion"].ToString(),
-                        Membresia_Precio_Base = reader["Membresia_Precio_Base"].ToString(),
-                        Inscripcion_Precio_Base = reader["Membresia_Precio_Inscripcion"].ToString()
+                        Membresia_Precio_Base = Convert.ToDouble(reader["Membresia_Precio_Base"]),
+                        Inscripcion_Precio_Base = Convert.ToDouble(reader["Membresia_Precio_Inscripcion"])
                     });
                 }
             }
@@ -364,8 +368,10 @@ namespace WorklabsMx.Controllers
         {
             List<ProductoModel> productos = new List<ProductoModel>();
 
-            string query = "select Producto_Id, Producto_Descripcion, Disponibilidad_Producto_Descripcion " +
-                "FROM vw_cat_Productos " +
+            string query = "select p.Producto_Id, p.Producto_Descripcion, p.Disponibilidad_Producto_Descripcion, " +
+                "plp.Lista_Precio_Producto_Precio_Base " +
+                "FROM vw_cat_Productos AS p INNER JOIN vw_cat_Productos_Listas_Precios AS plp " +
+                "ON p.Producto_Id = plp.Lista_Precio_Producto_Id " +
                 "WHERE Producto_Estatus = 1 ORDER BY Disponibilidad_Producto_Descripcion";
             command = CreateCommand(query);
             try
@@ -378,7 +384,8 @@ namespace WorklabsMx.Controllers
                     {
                         Producto_Id = reader["Producto_Id"].ToString(),
                         Producto_Descripcion = reader["Producto_Descripcion"].ToString(),
-                        Producto_Disponibilidad = reader["Disponibilidad_Producto_Descripcion"].ToString()
+                        Producto_Disponibilidad = reader["Disponibilidad_Producto_Descripcion"].ToString(),
+                        Producto_Precio_Base = Convert.ToInt32(reader["Lista_Precio_Producto_Precio_Base"])
                     });
                 }
             }
@@ -420,7 +427,7 @@ namespace WorklabsMx.Controllers
                     {
                         Producto_Id = reader["Producto_Id"].ToString(),
                         Producto_Descripcion = reader["Producto_Descripcion"].ToString(),
-                        Producto_Precio_Base = reader["Producto_Precio_Base"].ToString()
+                        Producto_Precio_Base = Convert.ToInt32(reader["Producto_Precio_Base"])
                     });
                 }
             }

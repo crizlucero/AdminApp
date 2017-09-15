@@ -64,12 +64,7 @@ namespace WorklabsMx.iOS
             List<ColaboradorModel> colaboradores = new ColaboradoresController().GetColaboradoresMiembro(miembro_id, busqueda);
             foreach (ColaboradorModel colaborador in colaboradores)
             {
-                UIView line = new UIView(new System.Drawing.RectangleF(0, 0, 100, 100))
-                {
-                    Frame = new CGRect(0, totalSize, UIScreen.MainScreen.Bounds.Width, 2),
-                    BackgroundColor = UIColor.LightGray
-                };
-                scrollView.AddSubview(line);
+                scrollView.AddSubview(new STLLine());
                 scrollView.AddSubview(new STLImageView(20 + totalSize, colaborador.Colaborador_Fotografia));
 
                 UIButton btnBaja = new STLButton(UIImage.FromBundle("ic_remove"))

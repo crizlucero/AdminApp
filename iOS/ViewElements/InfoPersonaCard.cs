@@ -21,12 +21,7 @@ namespace WorklabsMx.iOS.ViewElements
             using (UIView headerView = new UIView(new CGRect(0, initialPosition, UIScreen.MainScreen.Bounds.Width, 100)) { BackgroundColor = UIColor.White })
             {
                 SimpleStorage storage = SimpleStorage.EditGroup("Login");
-                UIView line = new UIView(new System.Drawing.RectangleF(0, 0, 100, 100))
-                {
-                    Frame = new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 5),
-                    BackgroundColor = UIColor.FromRGB(101, 216, 250)
-                };
-                headerView.AddSubview(line);
+                headerView.AddSubview(new STLLine());
                 lblNombre = new STLButton(miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos)
                 {
                     Frame = new CGRect(20, 10, UIScreen.MainScreen.Bounds.Width - 20, 30),

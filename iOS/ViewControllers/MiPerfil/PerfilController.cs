@@ -140,7 +140,6 @@ namespace WorklabsMx.iOS
         /// </summary>
         async Task AddPostsAsync()
         {
-
             List<PostModel> posts;
             posts = new Controllers.EscritorioController().GetPerfilPosts(Usuario ?? storageLocal.Get("Usuario_Id"),
                                                                           Tipo ?? storageLocal.Get("Usuario_Tipo"));

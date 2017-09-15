@@ -14,15 +14,15 @@ namespace WorklabsMx.iOS
     public partial class ProductosController : UIViewController
     {
         UITableView selectView;
-        int size, sucursal;
-        readonly Dictionary<string, int> Productos;
-        readonly Dictionary<string, CarritoModel> Carrito;
+        int size;
+        readonly Dictionary<string, CarritoModel> Carrito, Productos;
         bool CanPay, Changed;
         SimpleStorage Storage;
+
         public ProductosController(IntPtr handle) : base(handle)
         {
             Storage = SimpleStorage.EditGroup("Login");
-            Productos = new Dictionary<string, int>();
+            Productos = new Dictionary<string, CarritoModel>();
             CanPay = false;
             Carrito = new CarritoController().GetCarrito(Storage.Get("Usuario_Id"), TiposServicios.Producto);
         }
@@ -35,26 +35,26 @@ namespace WorklabsMx.iOS
             {
                 foreach (ProductoModel producto in new PickerItemsController().GetProductos())
                 {
-                    UIView line = new UIView(new System.Drawing.RectangleF(0, 0, 100, 100))
-                    {
-                        Frame = new CGRect(0, size, UIScreen.MainScreen.Bounds.Width, 5),
-                        BackgroundColor = UIColor.FromRGB(101, 216, 250)
-                    };
-                    scrollView.AddSubview(line);
-                    Productos.Add(producto.Producto_Id, 0);
+                    double subtotal = producto.Producto_Precio_Base;
+                    UIDatePicker dpFechaInicio = new UIDatePicker();
+                    UIStepper stpMesesProducto = new UIStepper();
+                    UITextField txtMesesCantidad = new UITextField { Text = "1" };
+                    scrollView.AddSubview(new STLLine());
+                    Productos.Add(producto.Producto_Id, new CarritoModel { Producto_Cantidad = 0 });
                     if (Carrito.ContainsKey(producto.Producto_Id))
                     {
-                        Productos[producto.Producto_Id] = (int)Carrito[producto.Producto_Id].Producto_Cantidad;
+                        Productos[producto.Producto_Id].Producto_Cantidad = (int)Carrito[producto.Producto_Id].Producto_Cantidad;
+                        Productos[producto.Producto_Id].Sucursal_Id = Carrito[producto.Producto_Id].Sucursal_Id;
                         CanPay = true;
                     }
 
                     size += 10;
 
-                    UILabel lblMembresia = new STLLabel(producto.Producto_Descripcion, size, 14)
+                    UILabel lblProducto = new STLLabel(producto.Producto_Descripcion, size, 14)
                     {
                         Frame = new CGRect(10, size, UIScreen.MainScreen.Bounds.Width / 2 + 30, 30)
                     };
-                    scrollView.AddSubview(lblMembresia);
+                    scrollView.AddSubview(lblProducto);
                     UITextField txtCantidad = new UITextField
                     {
                         Text = Carrito.ContainsKey(producto.Producto_Id) ? Carrito[producto.Producto_Id].Producto_Cantidad.ToString() : "0",
@@ -64,39 +64,37 @@ namespace WorklabsMx.iOS
                     };
 
                     scrollView.AddSubview(txtCantidad);
-                    UIStepper stpMembresia = new UIStepper
+                    UIStepper stpProducto = new UIStepper
                     {
                         Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 100, size, 55, 30),
                         Value = Carrito.ContainsKey(producto.Producto_Id) ? Carrito[producto.Producto_Id].Producto_Cantidad : 0,
                         MinimumValue = 0
                     };
-                    stpMembresia.ValueChanged += (sender, e) =>
-                    {
-                        txtCantidad.Text = stpMembresia.Value.ToString();
-                        Productos[producto.Producto_Id] = (int)stpMembresia.Value;
-                        CanPay = (stpMembresia.Value > 0);
-                        Changed = CanPay;
-                    };
-                    txtCantidad.EditingChanged += (sender, e) =>
-                    {
-                        if (!string.IsNullOrEmpty(txtCantidad.Text))
-                        {
-                            stpMembresia.Value = Convert.ToDouble(txtCantidad.Text);
-                            Productos[producto.Producto_Id] = (int)stpMembresia.Value;
-                            CanPay = (stpMembresia.Value > 0);
-                            Changed = CanPay;
-                        }
-                    };
-                    scrollView.AddSubview(stpMembresia);
+
+                    scrollView.AddSubview(stpProducto);
                     size += 45;
-                    UITextField txtSucursal = new STLTextField("Sucursal", size);
+                    ///
+                    if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
+                        scrollView.AddSubview(new STLLabel("Tarifa Mensual", size));
+                    else
+                        scrollView.AddSubview(new STLLabel("Tarifa de pago único", size));
+                    scrollView.AddSubview(new STLLabel(producto.Producto_Precio_Base.ToString("C"))
+                    {
+                        Frame = new CGRect(UIScreen.MainScreen.Bounds.Width * 2 / 3, size, UIScreen.MainScreen.Bounds.Width / 5, 30)
+                    });
+                    ///
+                    size += 45;
+                    UITextField txtSucursal = new STLTextField("Sucursal", size)
+                    {
+                        Text = Carrito.ContainsKey(producto.Producto_Id) ? Carrito[producto.Producto_Id].Sucursal_Descripcion : ""
+                    };
                     txtSucursal.EditingDidBegin += (sender, e) =>
                     {
                         selectView = new UIDropdownList(txtSucursal, View);
                     };
                     txtSucursal.EditingDidEnd += (sender, e) =>
                     {
-                        sucursal = new SucursalController().GetSucursalId(txtSucursal.Text);
+                        Productos[producto.Producto_Id].Sucursal_Id = new SucursalController().GetSucursalId(txtSucursal.Text);
                         selectView.RemoveFromSuperview();
                     };
                     scrollView.AddSubview(txtSucursal);
@@ -105,7 +103,7 @@ namespace WorklabsMx.iOS
                         size += 40;
                         scrollView.AddSubview(new STLLabel("Fecha de Inicio", size, 12));
                         size += 30;
-                        UIDatePicker dpFechaInicio = new UIDatePicker
+                        dpFechaInicio = new UIDatePicker
                         {
                             Mode = UIDatePickerMode.Date,
                             Frame = new CGRect(40, size, UIScreen.MainScreen.Bounds.Width - 80, 100),
@@ -115,8 +113,111 @@ namespace WorklabsMx.iOS
 
                         scrollView.Add(dpFechaInicio);
                         size += 100;
-                    }
+                        UILabel lblMeses = new STLLabel("Cantidad de meses", size, 14);
+                        scrollView.AddSubview(lblMeses);
+                        txtMesesCantidad = new UITextField
+                        {
+                            Text = "1",
+                            Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 120, size, 30, 30),
+                            Font = UIFont.SystemFontOfSize(14),
+                            KeyboardType = UIKeyboardType.NumberPad
+                        };
 
+                        scrollView.AddSubview(txtMesesCantidad);
+                        stpMesesProducto = new UIStepper
+                        {
+                            Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 100, size, 55, 30),
+                            MinimumValue = 1
+                        };
+
+                        scrollView.AddSubview(stpMesesProducto);
+                    }
+                    /////
+
+                    UILabel lblProporcional = new STLLabel(subtotal.ToString("C")), lblTotal = new STLLabel((producto.Producto_Precio_Base * stpMesesProducto.Value).ToString("C"));
+                    stpMesesProducto.ValueChanged += (sender, e) =>
+                    {
+                        txtMesesCantidad.Text = stpMesesProducto.Value.ToString();
+                        lblTotal.Text = (((producto.Producto_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1)) + subtotal) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
+                    };
+                    txtMesesCantidad.EditingChanged += (sender, e) =>
+                    {
+                        if (!string.IsNullOrEmpty(txtMesesCantidad.Text))
+                        {
+                            if (Convert.ToInt32(txtMesesCantidad.Text) < 1)
+                            {
+                                new MessageDialog().SendMessage("La cantidad de meses a contratar debe ser mínimo 1", "Meses de membresias");
+                                txtMesesCantidad.Text = "1";
+                            }
+                            double EndMonth = GetMonthsDays((DateTime)dpFechaInicio.Date);
+                            double currentDay = ((DateTime)dpFechaInicio.Date).Day;
+                            subtotal = Convert.ToInt32(txtMesesCantidad.Text) == 0 ? 0 : (producto.Producto_Precio_Base / EndMonth * (EndMonth - currentDay + 1));
+                            lblProporcional.Text = subtotal.ToString("C");
+                            lblTotal.Text = (((producto.Producto_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1)) + subtotal) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
+                            stpMesesProducto.Value = Convert.ToDouble(txtMesesCantidad.Text);
+                            Productos[producto.Producto_Id].Membresia_Cantidad = (int)stpMesesProducto.Value;
+                            CanPay = (stpMesesProducto.Value > 0);
+                            Changed = CanPay;
+                        }
+                    };
+                    if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
+                    {
+                        size += 45;
+                        scrollView.AddSubview(new STLLabel("Proporcional al mes", size));
+                        subtotal = Convert.ToInt32(txtCantidad.Text) == 0 ? 0 : (producto.Producto_Precio_Base / GetMonthsDays((DateTime)dpFechaInicio.Date) *
+                                    (GetMonthsDays((DateTime)dpFechaInicio.Date) - ((DateTime)dpFechaInicio.Date).Day + 1));
+                        lblTotal.Text = subtotal.ToString("C");
+                        lblProporcional.Text = subtotal.ToString("C");
+
+                        lblProporcional.Frame = new CGRect(UIScreen.MainScreen.Bounds.Width * 2 / 3, size, UIScreen.MainScreen.Bounds.Width / 4, 30);
+                        dpFechaInicio.ValueChanged += (sender, e) =>
+                        {
+                            double EndMonth = GetMonthsDays(((DateTime)(((UIDatePicker)sender).Date)));
+                            double currentDay = ((DateTime)(((UIDatePicker)sender).Date)).Day;
+                            subtotal = (producto.Producto_Precio_Base / EndMonth * (EndMonth - currentDay + 1));
+                            lblProporcional.Text = subtotal.ToString("C");
+                            lblTotal.Text = (((producto.Producto_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1)) + subtotal) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
+                        };
+                        scrollView.AddSubview(lblProporcional);
+                    }
+                    stpProducto.ValueChanged += (sender, e) =>
+                    {
+                        txtCantidad.Text = stpProducto.Value.ToString();
+                        Productos[producto.Producto_Id].Producto_Cantidad = (int)stpProducto.Value;
+                        CanPay = (stpProducto.Value > 0);
+                        Changed = CanPay;
+                        double EndMonth = GetMonthsDays((DateTime)dpFechaInicio.Date);
+                        double currentDay = ((DateTime)dpFechaInicio.Date).Day;
+                        if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
+                            subtotal = Convert.ToInt32(txtCantidad.Text) == 0 ? 0 : (producto.Producto_Precio_Base / EndMonth * (EndMonth - currentDay + 1));
+                        else
+                            subtotal = Convert.ToInt32(txtCantidad.Text) == 0 ? 0 : producto.Producto_Precio_Base;
+                        lblProporcional.Text = subtotal.ToString("C");
+                        lblTotal.Text = (((producto.Producto_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1)) + subtotal) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
+                    };
+                    txtCantidad.EditingChanged += (sender, e) =>
+                    {
+                        if (!string.IsNullOrEmpty(txtCantidad.Text))
+                        {
+                            stpProducto.Value = Convert.ToDouble(txtCantidad.Text);
+                            Productos[producto.Producto_Id].Producto_Cantidad = (int)stpProducto.Value;
+                            CanPay = (stpProducto.Value > 0);
+                            Changed = CanPay;
+                            double EndMonth = GetMonthsDays((DateTime)dpFechaInicio.Date);
+                            double currentDay = ((DateTime)dpFechaInicio.Date).Day;
+                            if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
+                                subtotal = Convert.ToInt32(txtCantidad.Text) == 0 ? 0 : (producto.Producto_Precio_Base / EndMonth * (EndMonth - currentDay + 1));
+                            else
+                                subtotal = Convert.ToInt32(txtCantidad.Text) == 0 ? 0 : producto.Producto_Precio_Base;
+                            lblProporcional.Text = subtotal.ToString("C");
+                            lblTotal.Text = (((producto.Producto_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1)) + subtotal) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
+                        }
+                    };
+                    size += 45;
+                    scrollView.AddSubview(new STLLabel("Total", size));
+                    lblTotal.Frame = new CGRect(UIScreen.MainScreen.Bounds.Width * 2 / 3, size, UIScreen.MainScreen.Bounds.Width / 4, 30);
+                    scrollView.AddSubview(lblTotal);
+                    ///
                     size += 45;
                 }
                 scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, size + 30);
@@ -125,42 +226,34 @@ namespace WorklabsMx.iOS
             NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_shopping_cart"), UIBarButtonItemStyle.Plain, (sender, e) =>
             {
                 if (CanPay)
-                {
-                    if (sucursal > 0)
+                    if (new CarritoController().AddCarrito(Productos, TiposServicios.Producto, Storage.Get("Usuario_Id")))
                     {
-                        new CarritoController().AddCarrito(Productos, TiposServicios.Membresia, Storage.Get("Usuario_Id"), sucursal);
                         CarritoCompraController controller = (CarritoCompraController)Storyboard.InstantiateViewController("CarritoCompraController");
                         controller.Title = "Confirmación de pago";
                         NavigationController.PushViewController(controller, true);
                     }
                     else
                         new MessageDialog().SendMessage("Debe de seleccionar alguna sucursal", "Aviso");
-                }
                 else
-                {
                     new MessageDialog().SendMessage("Debe de seleccionar algún producto", "Aviso");
-                }
 
             }), true);
 
             NavigationItem.SetLeftBarButtonItem(new UIBarButtonItem(UIBarButtonSystemItem.Cancel, (sender, e) =>
             {
                 if (Changed)
-                {
-                    if (sucursal > 0)
-                    {
-                        new CarritoController().AddCarrito(Productos, TiposServicios.Membresia, Storage.Get("Usuario_Id"), sucursal);
+                    if (new CarritoController().AddCarrito(Productos, TiposServicios.Producto, Storage.Get("Usuario_Id")))
                         NavigationController.PopViewController(true);
-                    }
                     else
                         new MessageDialog().SendMessage("Debe de seleccionar alguna sucursal", "Aviso");
-                }
                 else
-                {
                     NavigationController.PopViewController(true);
-                }
 
             }), true);
         }
+
+        double GetMonthsDays(DateTime date) =>
+             (new DateTime(date.Year, date.Month, 1)).AddMonths(1).AddDays(-1).Day;
+
     }
 }

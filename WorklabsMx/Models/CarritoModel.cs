@@ -13,6 +13,8 @@ namespace WorklabsMx.Models
         public string Precio_Base { get; set; }
         public string Dias_Prorrateo { get; set; }
         public string Pedido_Total { get; set; }
-
+        public int Sucursal_Id { get; set; }
+        public string Sucursal_Descripcion { get; set; }
+        public string Membresia_Fecha_Inicio { get; set; }
     }
 }

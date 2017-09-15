@@ -18,7 +18,6 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
 
-            //this.DefineMinMaxDate();
             var scrollView = new UIScrollView(new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height));
             UITextField txtNombre = new STLTextField("Nombre", 20);
             scrollView.Add(txtNombre);
@@ -34,20 +33,33 @@ namespace WorklabsMx.iOS
 
             scrollView.Add(new STLLabel("Hora de Entrada", 180));
 
-            UIDatePicker dpHoraEntrada = new UIDatePicker { Mode = UIDatePickerMode.Time, Frame = new CGRect(40, 200, UIScreen.MainScreen.Bounds.Width - 40, 100) };
+            UIDatePicker dpHoraEntrada = new UIDatePicker
+            {
+                Mode = UIDatePickerMode.Time,
+                Frame = new CGRect(40, 200, UIScreen.MainScreen.Bounds.Width - 80, 100)
+            };
             scrollView.Add(dpHoraEntrada);
 
-            scrollView.Add(new UILabel { Text = "Hora de Salida", Frame = new CGRect(40, 310, UIScreen.MainScreen.Bounds.Width, 30) });
+            scrollView.Add(new STLLabel("Hora de Salida", 310));
 
-            UIDatePicker dpHoraSalida = new UIDatePicker { Mode = UIDatePickerMode.Time, Frame = new CGRect(40, 330, UIScreen.MainScreen.Bounds.Width - 40, 100) };
+            UIDatePicker dpHoraSalida = new UIDatePicker
+            {
+                Mode = UIDatePickerMode.Time,
+                Frame = new CGRect(40, 330, UIScreen.MainScreen.Bounds.Width - 80, 100)
+            };
             scrollView.Add(dpHoraSalida);
 
-            scrollView.Add(new UILabel { Text = "Fecha", Frame = new CGRect(40, 440, UIScreen.MainScreen.Bounds.Width, 30) });
+            scrollView.Add(new STLLabel("Fecha", 440));
 
-            dpFecha = new UIDatePicker { Mode = UIDatePickerMode.Date, Frame = new CGRect(40, 450, UIScreen.MainScreen.Bounds.Width - 40, 100), MinimumDate = (NSDate)DateTime.Today };
+            dpFecha = new UIDatePicker
+            {
+                Mode = UIDatePickerMode.Date,
+                Frame = new CGRect(40, 450, UIScreen.MainScreen.Bounds.Width - 80, 100),
+                MinimumDate = (NSDate)DateTime.Today
+            };
             scrollView.Add(dpFecha);
 
-            this.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Registrar", UIBarButtonItemStyle.Plain, (sender, e) =>
+            NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Registrar", UIBarButtonItemStyle.Plain, (sender, e) =>
             {
                 new InvitadosController().RegistraInvitado(txtNombre.Text, txtAsunto.Text, txtEmail.Text, txtCC.Text, (DateTime)dpHoraEntrada.Date, (DateTime)dpHoraSalida.Date, (DateTime)dpFecha.Date);
             }), true);
@@ -56,7 +68,7 @@ namespace WorklabsMx.iOS
             Add(scrollView);
         }
 
-        private void DefineMinMaxDate()
+        void DefineMinMaxDate()
         {
             dpFecha.MinimumDate = (NSDate)DateTime.Today;
             dpFecha.MaximumDate = (NSDate)DateTime.Now.AddMonths(1).AddDays(-1);

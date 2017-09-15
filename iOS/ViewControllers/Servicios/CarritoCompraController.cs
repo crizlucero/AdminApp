@@ -101,7 +101,6 @@ namespace WorklabsMx.iOS
             scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, size);
 
             View.AddSubview(scrollView);
-
         }
 
         public void AddMembresiaDescripcion(List<MembresiaModel> membresiasPrecios)
@@ -240,7 +239,6 @@ namespace WorklabsMx.iOS
 
         public void ShowTablaTotales()
         {
-
             totalesView = new UIView(new CGRect(0, size, UIScreen.MainScreen.Bounds.Width, 150));
 
             totalesView.AddSubview(new STLLabel("Subtotal")
@@ -311,11 +309,11 @@ namespace WorklabsMx.iOS
             cuponesView = new UIView(new CGRect(0, 60 + size, UIScreen.MainScreen.Bounds.Width / 6, 30)) { BackgroundColor = UIColor.White };
             cuponesView.AddSubview(new STLLabel("Código de Promoción")
             {
-                Frame = new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width / 6, 30)
+                Frame = new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width / 2, 30)
             });
             UITextField txtCupon = new STLTextField("Código de Promoción")
             {
-                Frame = new CGRect(UIScreen.MainScreen.Bounds.Width / 6, 0, UIScreen.MainScreen.Bounds.Width * 2 / 3, 30)
+                Frame = new CGRect((UIScreen.MainScreen.Bounds.Width / 2) - 20, 0, UIScreen.MainScreen.Bounds.Width * 2 / 5, 30)
             };
             cuponesView.AddSubview(txtCupon);
 

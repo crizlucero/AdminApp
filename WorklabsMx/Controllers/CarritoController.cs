@@ -42,21 +42,27 @@ namespace WorklabsMx.Controllers
                             Pedido_Estatus = reader["Pedido_Estatus"].ToString(),
                             Precio_Base = reader["Lista_Precio_Producto_Precio_Prorrateo_Neto"].ToString(),
                             Dias_Prorrateo = (DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month) - DateTime.Now.Day).ToString(),//reader["Lista_Precio_Producto_Dias_Prorrateo"].ToString(),
-                            Pedido_Total = reader["Lista_Precio_Producto_Precio_Prorrateo_Neto"].ToString()
+                            Pedido_Total = reader["Lista_Precio_Producto_Precio_Prorrateo_Neto"].ToString(),
+                            Sucursal_Id = Convert.ToInt32(reader["Sucursal_Id"].ToString()),
+                            Sucursal_Descripcion = reader["Sucursal_Descripcion"].ToString()
                         });
                     }
                     else if (!string.IsNullOrEmpty(reader["Membresia_Id"].ToString()))
                     {
-                        CarritoModel model = new CarritoModel();
-                        model.Pedido_Id = reader["Pedido_Id"].ToString();
-                        model.Miembro_Id = reader["Miembro_Id"].ToString();
-                        model.Membresia_Id = reader["Membresia_Id"].ToString();
-                        model.Membresia_Cantidad = Convert.ToDouble(reader["Membresia_Cantidad"].ToString());
-                        model.Pedido_Estatus = reader["Pedido_Estatus"].ToString();
-                        model.Precio_Base = reader["Lista_Precio_Membresia_Precio_Prorrateo_Neto"].ToString();
-                        model.Dias_Prorrateo = (DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month) - DateTime.Now.Day).ToString();//reader["Lista_Precio_Producto_Dias_Prorrateo"].ToString(),
-                        model.Pedido_Total = reader["Lista_Precio_Membresia_Precio_Prorrateo_Neto"].ToString();
-                        carrito.Add(reader["Membresia_Id"].ToString(), model);
+                        carrito.Add(reader["Membresia_Id"].ToString(), new CarritoModel()
+                        {
+                            Pedido_Id = reader["Pedido_Id"].ToString(),
+                            Miembro_Id = reader["Miembro_Id"].ToString(),
+                            Membresia_Id = reader["Membresia_Id"].ToString(),
+                            Membresia_Cantidad = Convert.ToDouble(reader["Membresia_Cantidad"].ToString()),
+                            Pedido_Estatus = reader["Pedido_Estatus"].ToString(),
+                            Precio_Base = reader["Lista_Precio_Membresia_Precio_Prorrateo_Neto"].ToString(),
+                            Dias_Prorrateo = (DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month) - DateTime.Now.Day).ToString(),
+                            Pedido_Total = reader["Lista_Precio_Membresia_Precio_Prorrateo_Neto"].ToString(),
+                            Sucursal_Id = Convert.ToInt32(reader["Sucursal_Id"].ToString()),
+                            Sucursal_Descripcion = reader["Sucursal_Descripcion"].ToString(),
+                            Membresia_Fecha_Inicio = reader["Membresia_Fecha_Inicio"].ToString()
+                        });
                     }
                 }
             }
@@ -243,7 +249,7 @@ namespace WorklabsMx.Controllers
             return detalle;
         }
 
-        public bool AddCarritoCompras(string miembro_id, TiposServicios tipo, string id, int cantidad, int sucursal)
+        public bool AddCarritoCompras(string miembro_id, TiposServicios tipo, string id, int cantidad, int sucursal, int membresia_meses_cantidad, DateTime membresia_fecha_inicio)
         {
             try
             {
@@ -265,6 +271,8 @@ namespace WorklabsMx.Controllers
                 {
                     command.Parameters.AddWithValue("@membresia_id", id);
                     command.Parameters.AddWithValue("@membresia_cantidad", cantidad);
+                    command.Parameters.AddWithValue("@membresia_meses_cantidad", membresia_meses_cantidad);
+                    command.Parameters.AddWithValue("@membresia_fecha_inicio", membresia_fecha_inicio);
                 }
                 command.Parameters.AddWithValue("@Pedido_Estatus", 1);
                 command.Parameters.AddWithValue("@sucursal_id", sucursal);
@@ -306,17 +314,28 @@ namespace WorklabsMx.Controllers
             finally { conn.Close(); }
         }
 
-        public void AddCarrito(Dictionary<string, int> datos, TiposServicios tipo, string usuario_id, int sucursal)
+        public bool AddCarrito(Dictionary<string, CarritoModel> datos, TiposServicios tipo, string usuario_id)
         {
             Dictionary<string, CarritoModel> carrito = GetCarrito(usuario_id, tipo);
-            foreach (KeyValuePair<string, int> element in datos)
+            foreach (KeyValuePair<string, CarritoModel> element in datos)
                 if (!carrito.ContainsKey(element.Key))
                 {
-                    if (element.Value > 0)
-                        AddCarritoCompras(usuario_id, tipo, element.Key, element.Value, sucursal);
+                    if (element.Value.Producto_Cantidad > 0)
+                    {
+                        if (element.Value.Sucursal_Id == 0)
+                            return false;
+                        AddCarritoCompras(usuario_id, tipo, element.Key, (int)element.Value.Producto_Cantidad, element.Value.Sucursal_Id, (int)element.Value.Membresia_Cantidad, DateTime.SpecifyKind(DateTime.Parse(element.Value.Membresia_Fecha_Inicio), DateTimeKind.Utc));
+                    }
+                    else if (element.Value.Membresia_Cantidad > 0)
+                    {
+                        if (element.Value.Sucursal_Id == 0)
+                            return false;
+                        AddCarritoCompras(usuario_id, tipo, element.Key, (int)element.Value.Membresia_Cantidad, element.Value.Sucursal_Id, (int)element.Value.Membresia_Cantidad, DateTime.SpecifyKind(DateTime.Parse(element.Value.Membresia_Fecha_Inicio), DateTimeKind.Utc));
+                    }
                 }
                 else
                     Console.WriteLine("Existe el producto");
+            return true;
         }
     }
 }
