@@ -8,6 +8,7 @@ using WorklabsMx.Controllers;
 using System.Collections.Generic;
 using WorklabsMx.Models;
 using PerpetualEngine.Storage;
+using WorklabsMx.Helpers;
 
 namespace WorklabsMx.iOS
 {
@@ -49,7 +50,7 @@ namespace WorklabsMx.iOS
                         CanPay = true;
                     }
 
-                    scrollView.AddSubview(new STLLine());
+                    scrollView.AddSubview(new STLLine(size));
 
                     size += 10;
 
@@ -85,7 +86,7 @@ namespace WorklabsMx.iOS
                     });
                     size += 45;
                     scrollView.AddSubview(new STLLabel("Tarifa Inscripción", size));
-                    scrollView.AddSubview(new STLLabel(membresia.Membresia_Precio_Base.ToString("C"))
+                    scrollView.AddSubview(new STLLabel(membresia.Inscripcion_Precio_Base.ToString("C"))
                     {
                         Frame = new CGRect(UIScreen.MainScreen.Bounds.Width * 2 / 3, size, UIScreen.MainScreen.Bounds.Width / 4, 30)
                     });
@@ -142,20 +143,20 @@ namespace WorklabsMx.iOS
                     stpMesesMembresia.ValueChanged += (sender, e) =>
                     {
                         txtMesesCantidad.Text = stpMesesMembresia.Value.ToString();
-                        lblTotal.Text = (((membresia.Membresia_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1)) + subtotal) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
+                        lblTotal.Text = (((membresia.Membresia_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1)) + subtotal + (membresia.Inscripcion_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1))) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
                     };
                     txtMesesCantidad.EditingChanged += (sender, e) =>
                     {
                         if (!string.IsNullOrEmpty(txtMesesCantidad.Text) || txtMesesCantidad.Text != "0")
                         {
-                            lblTotal.Text = (membresia.Membresia_Precio_Base * stpMesesMembresia.Value).ToString("C");
+                            lblTotal.Text = (((membresia.Membresia_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1)) + subtotal + (membresia.Inscripcion_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1))) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
                         }
                     };
                     size += 45;
                     scrollView.AddSubview(new STLLabel("Proporcional al mes", size));
-                    subtotal = (membresia.Membresia_Precio_Base / GetMonthsDays((DateTime)dpFechaInicio.Date) *
-                                (GetMonthsDays((DateTime)dpFechaInicio.Date) - ((DateTime)dpFechaInicio.Date).Day + 1));
-                    lblTotal.Text = (subtotal * Convert.ToDouble(txtCantidad.Text)).ToString("C");
+                    subtotal = (membresia.Membresia_Precio_Base / DateHelper.GetMonthsDays((DateTime)dpFechaInicio.Date) *
+                                (DateHelper.GetMonthsDays((DateTime)dpFechaInicio.Date) - ((DateTime)dpFechaInicio.Date).Day + 1));
+                    lblTotal.Text = (((membresia.Membresia_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1)) + subtotal + (membresia.Inscripcion_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1))) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
                     lblProporcional.Text = (subtotal * Convert.ToDouble(txtCantidad.Text)).ToString("C");
 
                     lblProporcional.Frame = new CGRect(UIScreen.MainScreen.Bounds.Width * 2 / 3, size, UIScreen.MainScreen.Bounds.Width / 4, 30);
@@ -165,11 +166,11 @@ namespace WorklabsMx.iOS
                         Membresias[membresia.Membresia_Id].Membresia_Cantidad = (int)stpMembresia.Value;
                         CanPay = (stpMembresia.Value > 0);
                         Changed = CanPay;
-                        double EndMonth = GetMonthsDays((DateTime)dpFechaInicio.Date);
+                        double EndMonth = DateHelper.GetMonthsDays((DateTime)dpFechaInicio.Date);
                         double currentDay = ((DateTime)dpFechaInicio.Date).Day;
                         subtotal = Convert.ToInt32(txtCantidad.Text) == 0 ? 0 : (membresia.Membresia_Precio_Base / EndMonth * (EndMonth - currentDay + 1));
                         lblProporcional.Text = subtotal.ToString("C");
-                        lblTotal.Text = (((membresia.Membresia_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1)) + subtotal) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
+                        lblTotal.Text = (((membresia.Membresia_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1)) + subtotal + (membresia.Inscripcion_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1))) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
                     };
                     txtCantidad.EditingChanged += (sender, e) =>
                     {
@@ -180,11 +181,11 @@ namespace WorklabsMx.iOS
                                 new MessageDialog().SendMessage("Tamaño de " + membresia.Membresia_Descripcion, "Superaste el tamaño permitido");
                                 txtCantidad.Text = membresia.Membresia_Espacios_Disponibles;
                             }
-                            double EndMonth = GetMonthsDays((DateTime)dpFechaInicio.Date);
+                            double EndMonth = DateHelper.GetMonthsDays((DateTime)dpFechaInicio.Date);
                             double currentDay = ((DateTime)dpFechaInicio.Date).Day;
                             subtotal = Convert.ToInt32(txtCantidad.Text) == 0 ? 0 : (membresia.Membresia_Precio_Base / EndMonth * (EndMonth - currentDay + 1));
                             lblProporcional.Text = subtotal.ToString("C");
-                            lblTotal.Text = (((membresia.Membresia_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1)) + subtotal) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
+                            lblTotal.Text = (((membresia.Membresia_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1)) + subtotal + (membresia.Inscripcion_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1))) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
                             stpMembresia.Value = Convert.ToDouble(txtCantidad.Text);
                             Membresias[membresia.Membresia_Id].Membresia_Cantidad = (int)stpMembresia.Value;
                             CanPay = (stpMembresia.Value > 0);
@@ -200,11 +201,11 @@ namespace WorklabsMx.iOS
                                 new MessageDialog().SendMessage("La cantidad de meses a contratar debe ser mínimo 1", "Meses de membresias");
                                 txtMesesCantidad.Text = "1";
                             }
-                            double EndMonth = GetMonthsDays((DateTime)dpFechaInicio.Date);
+                            double EndMonth = DateHelper.GetMonthsDays((DateTime)dpFechaInicio.Date);
                             double currentDay = ((DateTime)dpFechaInicio.Date).Day;
                             subtotal = Convert.ToInt32(txtMesesCantidad.Text) == 0 ? 0 : (membresia.Membresia_Precio_Base / EndMonth * (EndMonth - currentDay + 1));
                             lblProporcional.Text = subtotal.ToString("C");
-                            lblTotal.Text = (((membresia.Membresia_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1)) + subtotal) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
+                            lblTotal.Text = (((membresia.Membresia_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1)) + subtotal + (membresia.Inscripcion_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1))) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
                             stpMesesMembresia.Value = Convert.ToDouble(txtMesesCantidad.Text);
                             Membresias[membresia.Membresia_Id].Membresia_Cantidad = (int)stpMesesMembresia.Value;
                             CanPay = (stpMesesMembresia.Value > 0);
@@ -213,11 +214,11 @@ namespace WorklabsMx.iOS
                     };
                     dpFechaInicio.ValueChanged += (sender, e) =>
                     {
-                        double EndMonth = GetMonthsDays(((DateTime)(((UIDatePicker)sender).Date)));
+                        double EndMonth = DateHelper.GetMonthsDays(((DateTime)(((UIDatePicker)sender).Date)));
                         double currentDay = ((DateTime)(((UIDatePicker)sender).Date)).Day;
                         subtotal = Convert.ToInt32(txtCantidad.Text) == 0 ? 0 : (membresia.Membresia_Precio_Base / EndMonth * (EndMonth - currentDay + 1));
                         lblProporcional.Text = subtotal.ToString("C");
-                        lblTotal.Text = (((membresia.Membresia_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1)) + subtotal) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
+                        lblTotal.Text = (((membresia.Membresia_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1)) + subtotal + (membresia.Inscripcion_Precio_Base * (Convert.ToDouble(txtMesesCantidad.Text) - 1))) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
                     };
                     scrollView.AddSubview(lblProporcional);
                     size += 45;
@@ -236,7 +237,7 @@ namespace WorklabsMx.iOS
                     if (new CarritoController().AddCarrito(Membresias, TiposServicios.Membresia, Storage.Get("Usuario_Id")))
                     {
                         CarritoCompraController controller = (CarritoCompraController)Storyboard.InstantiateViewController("CarritoCompraController");
-                        controller.Title = "Confirmación de pago";
+                        controller.Title = "Confirmación de compra";
                         NavigationController.PushViewController(controller, true);
                     }
                     else
@@ -259,7 +260,5 @@ namespace WorklabsMx.iOS
                     NavigationController.PopViewController(true);
             }), true);
         }
-        double GetMonthsDays(DateTime date) =>
-             (new DateTime(date.Year, date.Month, 1)).AddMonths(1).AddDays(-1).Day;
     }
 }

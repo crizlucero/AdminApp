@@ -39,7 +39,7 @@ namespace WorklabsMx.Controllers
             }
             finally
             {
-                this.conn.Close();
+                conn.Close();
             }
             return datos;
         }
@@ -80,7 +80,6 @@ namespace WorklabsMx.Controllers
         /// <param name="password">Contraseña nueva</param>
         public bool Registrarenbd(string email, string password)
         {
-
             string newPassword = new PassSecurity().EncodePassword(password);
             transaction = conn.BeginTransaction();
             try
@@ -96,9 +95,7 @@ namespace WorklabsMx.Controllers
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();
                 transaction.Commit();
-
             }
-
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);

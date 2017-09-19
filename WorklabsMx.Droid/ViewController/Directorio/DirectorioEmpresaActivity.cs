@@ -40,26 +40,28 @@ namespace WorklabsMx.Droid
             };
             foreach (EmpresaModel empresa in new EmpresaController().GetDirectorioEmpresas(nombre, pais, estado, municipio, giro))
             {
-                RelativeLayout rlNombre = new RelativeLayout(this)
+                LinearLayout llNombre = new LinearLayout(this)
                 {
                     LayoutParameters = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent)
                 };
                 TextView txtNombre = new TextView(this)
                 {
                     Text = empresa.Empresa_Miembro_Nombre,
-                    TextSize = 20
+                    TextSize = 50
                 };
                 txtNombre.SetX(10);
-                rlNombre.AddView(txtNombre);
+                llNombre.AddView(txtNombre);
+                llDirectorio.AddView(llNombre);
 
+				LinearLayout llEmail = new LinearLayout(this)
+				{
+					LayoutParameters = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent)
+				};
                 TextView txtEmail = new TextView(this)
                 {
                     TextSize = 14,
                     Text = empresa.Empresa_Miembro_Correo_Electronico
                 };
-                txtEmail.SetX(10);
-                txtEmail.SetY(30);
-                txtEmail.LayoutParameters = new ViewGroup.LayoutParams(350, 70);
                 txtEmail.Click += (sender, e) =>
                 {
                     try
@@ -77,9 +79,9 @@ namespace WorklabsMx.Droid
                         Toast.MakeText(this, Resource.String.AplicationNotFound, ToastLength.Short).Show();
                     }
                 };
-                rlNombre.AddView(txtEmail);
+                llEmail.AddView(txtEmail);
 
-                llDirectorio.AddView(rlNombre);
+                llDirectorio.AddView(llEmail);
 
                 ScrollView svInfo = new ScrollView(this)
                 {
@@ -112,7 +114,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = Resources.GetString(Resource.String.GiroComercial)
                 };
-                txtGiro.SetX(50);
+                txtGiro.SetX(100);
                 rlGiro.AddView(txtGiro);
                 llInfo.AddView(rlGiro);
 
@@ -125,7 +127,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = empresa.Giro_Descripcion
                 };
-                txtMiembroGiro.SetX(20);
+                txtMiembroGiro.SetX(50);
                 llGiro.AddView(txtMiembroGiro);
                 llInfo.AddView(llGiro);
                 #endregion
@@ -142,7 +144,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = Resources.GetString(Resource.String.Direccion)
                 };
-                txtDireccion.SetX(50);
+                txtDireccion.SetX(100);
                 rlDireccion.AddView(txtDireccion);
                 llInfo.AddView(rlDireccion);
 
@@ -159,7 +161,7 @@ namespace WorklabsMx.Droid
                                                    " Col. " + empresa.Territorio_Colonia_Descripcion
                                                     + " CP. " + empresa.Territorio_Cp
                 };
-                txtMiembroDireccion.SetX(20);
+                txtMiembroDireccion.SetX(50);
                 llDireccion.AddView(txtMiembroDireccion);
                 llInfo.AddView(llDireccion);
                 #endregion
@@ -176,7 +178,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = Resources.GetString(Resource.String.Telefono)
                 };
-                txtTelefono.SetX(50);
+                txtTelefono.SetX(100);
                 rlTelefono.AddView(txtTelefono);
                 llInfo.AddView(rlTelefono);
 
@@ -189,7 +191,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = empresa.Empresa_Miembro_Telefono
                 };
-                txtMiembroTelefono.SetX(20);
+                txtMiembroTelefono.SetX(50);
                 llTelefono.AddView(txtMiembroTelefono);
                 llInfo.AddView(llTelefono);
                 #endregion
@@ -206,7 +208,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = Resources.GetString(Resource.String.RFC)
                 };
-                txtRFC.SetX(50);
+                txtRFC.SetX(100);
                 rlRFC.AddView(txtRFC);
                 llInfo.AddView(rlRFC);
 
@@ -219,7 +221,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = empresa.Empresa_Miembro_Rfc
                 };
-                txtMiembroRFC.SetX(20);
+                txtMiembroRFC.SetX(50);
                 llRFC.AddView(txtMiembroRFC);
                 llInfo.AddView(llRFC);
                 #endregion
@@ -236,7 +238,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = Resources.GetString(Resource.String.RazonSocial)
                 };
-                txtRazonSocial.SetX(50);
+                txtRazonSocial.SetX(100);
                 rlRazonSocial.AddView(txtRazonSocial);
                 llInfo.AddView(rlRazonSocial);
 
@@ -249,7 +251,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = empresa.Empresa_Miembro_Razon_Social
                 };
-                txtMiembroRazonSocial.SetX(20);
+                txtMiembroRazonSocial.SetX(50);
                 llRazonSocial.AddView(txtMiembroRazonSocial);
                 llInfo.AddView(llRazonSocial);
                 #endregion
@@ -266,7 +268,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = Resources.GetString(Resource.String.PaginaWeb)
                 };
-                txtPaginaWeb.SetX(50);
+                txtPaginaWeb.SetX(100);
                 rlPaginaWeb.AddView(txtPaginaWeb);
                 llInfo.AddView(rlPaginaWeb);
 
@@ -279,7 +281,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = empresa.Empresa_Miembro_Pagina_Web
                 };
-                txtMiembroPaginaWeb.SetX(20);
+                txtMiembroPaginaWeb.SetX(50);
                 llPaginaWeb.AddView(txtMiembroPaginaWeb);
                 llInfo.AddView(llPaginaWeb);
                 #endregion
@@ -296,7 +298,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = Resources.GetString(Resource.String.RedesSociales)
                 };
-                txtRedesSociales.SetX(50);
+                txtRedesSociales.SetX(100);
                 rlRedesSociales.AddView(txtRedesSociales);
                 llInfo.AddView(rlRedesSociales);
                 #region Facebook
@@ -312,7 +314,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = empresa.Empresa_Miembro_Red_Social_1
                 };
-                txtFacebook.SetX(50);
+                txtFacebook.SetX(100);
                 rlFacebook.AddView(txtFacebook);
                 llInfo.AddView(rlFacebook);
                 #endregion
@@ -329,7 +331,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = empresa.Empresa_Miembro_Red_Social_2
                 };
-                txtTwitter.SetX(50);
+                txtTwitter.SetX(100);
                 rlTwitter.AddView(txtTwitter);
                 llInfo.AddView(rlTwitter);
                 #endregion
@@ -346,7 +348,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = empresa.Empresa_Miembro_Red_Social_3
                 };
-                txtInstagram.SetX(50);
+                txtInstagram.SetX(100);
                 rlInstagram.AddView(txtInstagram);
                 llInfo.AddView(rlInstagram);
                 #endregion

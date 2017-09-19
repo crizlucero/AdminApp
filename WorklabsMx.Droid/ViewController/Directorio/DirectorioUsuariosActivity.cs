@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
@@ -14,6 +16,8 @@ namespace WorklabsMx.Droid
     public class DirectorioUsuariosActivity : Activity
     {
         ScrollView svDirectorio;
+        SimpleStorage storage;
+        MiembrosController Favorites;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -22,12 +26,15 @@ namespace WorklabsMx.Droid
             SetTitle(Resource.String.DirectorioUsuario);
 
             svDirectorio = FindViewById<ScrollView>(Resource.Id.svDirectorio);
+            Favorites = new MiembrosController();
+            storage = SimpleStorage.EditGroup("Login");
             FillDirectorioUsuario();
-			Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-			SetActionBar(toolbar);
-			ActionBar.Title = Resources.GetString(Resource.String.DirectorioUsuario);
-			ActionBar.SetDisplayHomeAsUpEnabled(true);
-			ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            SetActionBar(toolbar);
+            ActionBar.Title = Resources.GetString(Resource.String.DirectorioUsuario);
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+
         }
 
         void FillDirectorioUsuario(string nombre = "", string apellido = "", string puesto = "", string profesion = "",
@@ -41,7 +48,7 @@ namespace WorklabsMx.Droid
             };
             foreach (MiembroModel miembro in new MiembrosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio))
             {
-                RelativeLayout rlNombre = new RelativeLayout(this)
+                RelativeLayout llNombre = new RelativeLayout(this)
                 {
                     LayoutParameters = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent)
                 };
@@ -50,17 +57,51 @@ namespace WorklabsMx.Droid
                     Text = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos,
                     TextSize = 20
                 };
-                txtNombre.SetX(10);
-                rlNombre.AddView(txtNombre);
-
+                llNombre.AddView(txtNombre);
+                if (storage.Get("Usuario_Id") != miembro.Miembro_Id || storage.Get("Usuario_Tipo") != miembro.Miembro_Tipo)
+                {
+                    KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo);
+                    ImageButton btnFavorito = new ImageButton(this);
+                    btnFavorito.SetBackgroundColor(Android.Graphics.Color.White);
+                    btnFavorito.SetImageResource(Resource.Mipmap.ic_star_border);
+                    if (isFavorite.Value)
+                        btnFavorito.SetImageResource(Resource.Mipmap.ic_star);
+                    btnFavorito.SetX(Resources.DisplayMetrics.WidthPixels - 140);
+                    btnFavorito.Click += (sender, e) =>
+                    {
+                        if (isFavorite.Key == 0)
+                        {
+                            if (Favorites.AddMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo))
+                                btnFavorito.SetImageResource(Resource.Mipmap.ic_star);
+                            else
+                                Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
+                        }
+                        else
+                        {
+                            if (Favorites.RemoveMiembroFavorito(isFavorite))
+                            {
+                                if (isFavorite.Value)
+                                    btnFavorito.SetImageResource(Resource.Mipmap.ic_star_border);
+                                else
+                                    btnFavorito.SetImageResource(Resource.Mipmap.ic_star);
+                            }
+                            else
+                                Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
+                        }
+                        isFavorite = Favorites.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo);
+                    };
+                    llNombre.AddView(btnFavorito);
+                }
+                llDirectorio.AddView(llNombre);
+                LinearLayout llEmail = new LinearLayout(this)
+                {
+                    LayoutParameters = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent)
+                };
                 TextView txtEmail = new TextView(this)
                 {
                     TextSize = 14,
                     Text = miembro.Miembro_Correo_Electronico
                 };
-                txtEmail.SetX(10);
-                txtEmail.SetY(30);
-                txtEmail.LayoutParameters = new ViewGroup.LayoutParams(350, 70);
                 txtEmail.Click += (sender, e) =>
                 {
                     try
@@ -77,9 +118,9 @@ namespace WorklabsMx.Droid
                         SlackLogs.SendMessage(ex.Message);
                     }
                 };
-                rlNombre.AddView(txtEmail);
+                llEmail.AddView(txtEmail);
 
-                llDirectorio.AddView(rlNombre);
+                llDirectorio.AddView(llEmail);
 
                 ScrollView svInfo = new ScrollView(this)
                 {
@@ -112,7 +153,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = Resources.GetString(Resource.String.Genero)
                 };
-                txtGenero.SetX(50);
+                txtGenero.SetX(100);
                 rlGenero.AddView(txtGenero);
                 llInfo.AddView(rlGenero);
 
@@ -125,7 +166,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = miembro.Genero_Descripcion
                 };
-                txtMiembroGenero.SetX(20);
+                txtMiembroGenero.SetX(50);
                 llGenero.AddView(txtMiembroGenero);
                 llInfo.AddView(llGenero);
                 #endregion
@@ -142,7 +183,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = Resources.GetString(Resource.String.FechaNacimiento)
                 };
-                txtFechaNacimiento.SetX(50);
+                txtFechaNacimiento.SetX(100);
                 rlFechaNacimiento.AddView(txtFechaNacimiento);
                 llInfo.AddView(rlFechaNacimiento);
 
@@ -155,7 +196,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = miembro.Miembro_Fecha_Nacimiento
                 };
-                txtMiembroFechaNacimiento.SetX(20);
+                txtMiembroFechaNacimiento.SetX(50);
                 llFechaNacimiento.AddView(txtMiembroFechaNacimiento);
                 llInfo.AddView(llFechaNacimiento);
                 #endregion
@@ -172,7 +213,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = Resources.GetString(Resource.String.Profesion)
                 };
-                txtProfesion.SetX(50);
+                txtProfesion.SetX(100);
                 rlProfesion.AddView(txtProfesion);
                 llInfo.AddView(rlProfesion);
 
@@ -185,7 +226,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = miembro.Miembro_Profesion
                 };
-                txtMiembroProfesion.SetX(20);
+                txtMiembroProfesion.SetX(50);
                 llProfesion.AddView(txtMiembroProfesion);
                 llInfo.AddView(llProfesion);
                 #endregion
@@ -202,7 +243,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = Resources.GetString(Resource.String.Puesto)
                 };
-                txtPuesto.SetX(50);
+                txtPuesto.SetX(100);
                 rlPuesto.AddView(txtPuesto);
                 llInfo.AddView(rlPuesto);
 
@@ -215,7 +256,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = miembro.Miembro_Puesto
                 };
-                txtMiembroPuesto.SetX(20);
+                txtMiembroPuesto.SetX(50);
                 llPuesto.AddView(txtMiembroPuesto);
                 llInfo.AddView(llPuesto);
                 #endregion
@@ -232,7 +273,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = Resources.GetString(Resource.String.Habilidades)
                 };
-                txtHabilidades.SetX(50);
+                txtHabilidades.SetX(100);
                 rlHabilidades.AddView(txtHabilidades);
                 llInfo.AddView(rlHabilidades);
 
@@ -245,7 +286,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = miembro.Miembro_Habilidades
                 };
-                txtMiembroHabilidades.SetX(20);
+                txtMiembroHabilidades.SetX(50);
                 llHabilidades.AddView(txtMiembroHabilidades);
                 llInfo.AddView(llHabilidades);
                 #endregion
@@ -262,7 +303,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = Resources.GetString(Resource.String.MiEmpresa)
                 };
-                txtEmpresa.SetX(50);
+                txtEmpresa.SetX(100);
                 rlEmpresa.AddView(txtEmpresa);
                 llInfo.AddView(rlEmpresa);
 
@@ -275,7 +316,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = miembro.Miembro_Empresa
                 };
-                txtMiembroEmpresa.SetX(20);
+                txtMiembroEmpresa.SetX(50);
                 llEmpresa.AddView(txtMiembroEmpresa);
                 llInfo.AddView(llEmpresa);
                 #endregion
@@ -292,7 +333,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = Resources.GetString(Resource.String.Telefono)
                 };
-                txtTelefono.SetX(50);
+                txtTelefono.SetX(100);
                 rlTelefono.AddView(txtTelefono);
                 llInfo.AddView(rlTelefono);
 
@@ -305,7 +346,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = miembro.Miembro_Telefono
                 };
-                txtMiembroTelefono.SetX(20);
+                txtMiembroTelefono.SetX(50);
                 llTelefono.AddView(txtMiembroTelefono);
                 llInfo.AddView(llTelefono);
                 #endregion
@@ -323,7 +364,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = Resources.GetString(Resource.String.Celular)
                 };
-                txtCelular.SetX(50);
+                txtCelular.SetX(100);
                 rlCelular.AddView(txtCelular);
                 llInfo.AddView(rlCelular);
 
@@ -336,7 +377,7 @@ namespace WorklabsMx.Droid
                 {
                     Text = miembro.Miembro_Celular
                 };
-                txtMiembroCelular.SetX(20);
+                txtMiembroCelular.SetX(50);
                 llCelular.AddView(txtMiembroCelular);
                 llInfo.AddView(llCelular);
                 #endregion
@@ -347,25 +388,25 @@ namespace WorklabsMx.Droid
             svDirectorio.AddView(llDirectorio);
         }
 
-		public override bool OnCreateOptionsMenu(IMenu menu)
-		{
-			MenuInflater.Inflate(Resource.Menu.search_menu, menu);
-			return base.OnCreateOptionsMenu(menu);
-		}
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.search_menu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
 
-		public override bool OnOptionsItemSelected(IMenuItem item)
-		{
-			switch (item.ItemId)
-			{
-				case Resource.Id.menu_search:
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.menu_search:
 
-					break;
-				default:
-					base.OnBackPressed();
-					break;
-			}
+                    break;
+                default:
+                    base.OnBackPressed();
+                    break;
+            }
 
-			return base.OnOptionsItemSelected(item);
-		}
+            return base.OnOptionsItemSelected(item);
+        }
     }
 }

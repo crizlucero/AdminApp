@@ -133,4 +133,6 @@
 	<string name="Guardar">Guardar</string>
 	<string name="Escritorio">Escritorio</string>
 	<string name="Acceso">Acceso</string>
+	<string name="NumeroInferior">La cantidad debe de ser mayor</string>
+	<string name="NumeroSuperior">La cantidad debe de ser menor</string>
 </resources>

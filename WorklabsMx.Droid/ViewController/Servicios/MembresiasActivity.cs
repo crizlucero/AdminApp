@@ -8,6 +8,7 @@ using Android.Views;
 using Android.Widget;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
+using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
@@ -17,14 +18,20 @@ namespace WorklabsMx.Droid
     {
         bool CanPay;
         SimpleStorage Storage;
-        readonly Dictionary<string, int> Membresias;
-        readonly Dictionary<string, CarritoModel> Carrito;
+        Dictionary<string, CarritoModel> Carrito, Membresias;
+        ArrayAdapter adapter;
+        TableRow.LayoutParams param;
         public MembresiasActivity()
         {
             Storage = SimpleStorage.EditGroup("Login");
-            Membresias = new Dictionary<string, int>();
+            Membresias = new Dictionary<string, CarritoModel>();
             Carrito = new CarritoController().GetCarrito(Storage.Get("Usuario_Id"), TiposServicios.Membresia);
             CanPay = false;
+            param = new TableRow.LayoutParams
+            {
+                Column = 1,
+                Span = 3
+            };
         }
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -38,8 +45,7 @@ namespace WorklabsMx.Droid
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
 
-            Spinner txtSucursales = FindViewById<Spinner>(Resource.Id.spSucursal);
-            txtSucursales.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, new SucursalController().GetSucursalNombres().ToArray());
+            adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, new SucursalController().GetSucursalNombres().ToArray());
             FillData();
         }
 
@@ -48,15 +54,36 @@ namespace WorklabsMx.Droid
             TableLayout tlMembresias = FindViewById<TableLayout>(Resource.Id.tlMembresias);
             foreach (MembresiaModel membresia in new PickerItemsController().GetMembresias())
             {
-                Membresias.Add(membresia.Membresia_Id, 0);
+                double subtotal = membresia.Membresia_Precio_Base;
+                int mesMembresia = 1;
+                TextView lblProporcional = new TextView(this), lblTotal = new TextView(this);
+                EditText dpFechaInicio = new EditText(this)
+                {
+                    InputType = Android.Text.InputTypes.DatetimeVariationDate
+                }, txtMesesMembresias = new EditText(this)
+                {
+                    TextSize = 14,
+                    InputType = Android.Text.InputTypes.NumberFlagSigned
+                };
+
+                Membresias.Add(membresia.Membresia_Id, new CarritoModel { Membresia_Cantidad = 0, Sucursal_Id = 0 });
                 if (Carrito.ContainsKey(membresia.Membresia_Id))
                 {
-                    Membresias[membresia.Membresia_Id] = (int)Carrito[membresia.Membresia_Id].Membresia_Cantidad;
+                    Membresias[membresia.Membresia_Id].Membresia_Cantidad = (int)Carrito[membresia.Membresia_Id].Membresia_Cantidad;
+                    Membresias[membresia.Membresia_Id].Sucursal_Id = Carrito[membresia.Membresia_Id].Sucursal_Id;
+                    Membresias[membresia.Membresia_Id].Membresia_Fecha_Inicio = Carrito[membresia.Membresia_Id].Membresia_Fecha_Inicio;
                     CanPay = true;
                 }
 
                 TableRow trMembresia = new TableRow(this);
+                View line = new View(this);
+                line.SetBackgroundColor(Android.Graphics.Color.Cyan);
+                line.LayoutParameters = new TableRow.LayoutParams(ViewGroup.LayoutParams.MatchParent, 5);
 
+                trMembresia.AddView(line);
+                tlMembresias.AddView(trMembresia);
+
+                trMembresia = new TableRow(this);
                 TextView lblNombre = new TextView(this)
                 {
                     Text = membresia.Membresia_Descripcion,
@@ -76,8 +103,16 @@ namespace WorklabsMx.Droid
                 txtCantidadMembresias.TextChanged += (sender, e) =>
                 {
                     if (!string.IsNullOrEmpty(txtCantidadMembresias.Text))
-                        if (Convert.ToInt32(txtCantidadMembresias.Text) >= 0)
-                            Membresias[membresia.Membresia_Id] = Convert.ToInt32(txtCantidadMembresias.Text);
+                    {
+                        Membresias[membresia.Membresia_Id].Membresia_Cantidad = Convert.ToInt32(txtCantidadMembresias.Text);
+                        subtotal = (membresia.Membresia_Precio_Base / DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) *
+                            (DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) - (DateTime.Parse(dpFechaInicio.Text)).Day + 1));
+                        lblProporcional.Text = subtotal.ToString("C");
+                        lblTotal.Text = (((membresia.Membresia_Precio_Base * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base)
+                                          * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
+                    }
+                    //else
+                    //    Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
                 };
 
                 trMembresia.AddView(txtCantidadMembresias, 1);
@@ -86,9 +121,14 @@ namespace WorklabsMx.Droid
                 btnPlus.SetImageResource(Resource.Mipmap.ic_add);
                 btnPlus.Click += (sender, e) =>
                 {
-                    ++Membresias[membresia.Membresia_Id];
+                    ++Membresias[membresia.Membresia_Id].Membresia_Cantidad;
 
-                    txtCantidadMembresias.Text = Membresias[membresia.Membresia_Id].ToString();
+                    txtCantidadMembresias.Text = Membresias[membresia.Membresia_Id].Membresia_Cantidad.ToString();
+                    subtotal = (membresia.Membresia_Precio_Base / DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) *
+                            (DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) - (DateTime.Parse(dpFechaInicio.Text)).Day + 1));
+                    lblProporcional.Text = subtotal.ToString("C");
+                    lblTotal.Text = (((membresia.Membresia_Precio_Base * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base)
+                                          * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
                 };
 
                 trMembresia.AddView(btnPlus, 2);
@@ -97,14 +137,141 @@ namespace WorklabsMx.Droid
                 btnLess.SetImageResource(Resource.Mipmap.ic_remove);
                 btnLess.Click += (sender, e) =>
                 {
-                    if (Membresias[membresia.Membresia_Id] > 0)
+                    if (Membresias[membresia.Membresia_Id].Membresia_Cantidad > 0)
                     {
-                        --Membresias[membresia.Membresia_Id];
-                        txtCantidadMembresias.Text = Membresias[membresia.Membresia_Id].ToString();
+                        --Membresias[membresia.Membresia_Id].Membresia_Cantidad;
+                        txtCantidadMembresias.Text = Membresias[membresia.Membresia_Id].Membresia_Cantidad.ToString();
+                        subtotal = (membresia.Membresia_Precio_Base / DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) *
+                            (DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) - (DateTime.Parse(dpFechaInicio.Text)).Day + 1));
+                        lblProporcional.Text = subtotal.ToString("C");
+                        lblTotal.Text = (((membresia.Membresia_Precio_Base * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base)
+                                          * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
                     }
+                    else
+                        Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
                 };
 
                 trMembresia.AddView(btnLess, 3);
+
+                tlMembresias.AddView(trMembresia);
+                trMembresia = new TableRow(this);
+                trMembresia.AddView(new TextView(this) { Text = "Tarifa Mensual" });
+
+                trMembresia.AddView(new TextView(this) { Text = membresia.Membresia_Precio_Base.ToString("C") }, param);
+
+                tlMembresias.AddView(trMembresia);
+                trMembresia = new TableRow(this);
+                trMembresia.AddView(new TextView(this) { Text = "Tarifa Inscripción" });
+
+                trMembresia.AddView(new TextView(this) { Text = membresia.Inscripcion_Precio_Base.ToString("C") }, param);
+
+                tlMembresias.AddView(trMembresia);
+
+                trMembresia = new TableRow(this);
+                Spinner spSucursales = new Spinner(this);
+                spSucursales.Adapter = adapter;
+                trMembresia.AddView(spSucursales);
+                tlMembresias.AddView(trMembresia);
+
+                trMembresia = new TableRow(this);
+                trMembresia.AddView(new TextView(this) { Text = "Fecha de Inicio" });
+                dpFechaInicio.Text = !string.IsNullOrEmpty(membresia.Membresia_Fecha_Inicio) ? membresia.Membresia_Fecha_Inicio : DateTime.Now.ToString("dd/MM/yyyy");
+                dpFechaInicio.TextChanged += (sender, e) =>
+                {
+                    if (DateTime.TryParse(dpFechaInicio.Text, out DateTime fecha))
+                    {
+                        if (fecha >= DateTime.Now)
+                        {
+                            mesMembresia = Convert.ToInt32(txtMesesMembresias.Text);
+                            subtotal = (membresia.Membresia_Precio_Base / DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) *
+                                    (DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) - (DateTime.Parse(dpFechaInicio.Text)).Day + 1));
+                            lblProporcional.Text = subtotal.ToString("C");
+                            lblTotal.Text = (((membresia.Membresia_Precio_Base * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base)
+                                          * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
+                        }
+                    }
+                };
+                trMembresia.AddView(dpFechaInicio, param);
+
+                tlMembresias.AddView(trMembresia);
+
+                trMembresia = new TableRow(this);
+                trMembresia.AddView(new TextView(this) { Text = "Cantidad de meses" }, 0);
+
+                txtMesesMembresias.Text = "1";
+                txtMesesMembresias.SetMaxWidth(70);
+                txtMesesMembresias.SetFadingEdgeLength(2);
+                txtMesesMembresias.TextChanged += (sender, e) =>
+                {
+                    if (!string.IsNullOrEmpty(txtMesesMembresias.Text))
+                        if (mesMembresia > 1)
+                        {
+                            mesMembresia = Convert.ToInt32(txtMesesMembresias.Text);
+                            subtotal = (membresia.Membresia_Precio_Base / DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) *
+                                    (DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) - (DateTime.Parse(dpFechaInicio.Text)).Day + 1));
+                            lblProporcional.Text = subtotal.ToString("C");
+                            lblTotal.Text = (((membresia.Membresia_Precio_Base * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base)
+                                          * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
+                        }
+                        else
+                            Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
+                };
+
+                trMembresia.AddView(txtMesesMembresias, 1);
+
+                ImageButton btnMesesPlus = new ImageButton(this);
+                btnMesesPlus.SetImageResource(Resource.Mipmap.ic_add);
+                btnMesesPlus.Click += (sender, e) =>
+                {
+                    ++mesMembresia;
+                    txtMesesMembresias.Text = mesMembresia.ToString();
+                    subtotal = (membresia.Membresia_Precio_Base / DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) *
+                            (DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) - (DateTime.Parse(dpFechaInicio.Text)).Day + 1));
+                    lblProporcional.Text = subtotal.ToString("C");
+                    lblTotal.Text = (((membresia.Membresia_Precio_Base * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base)
+                                          * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
+                };
+
+                trMembresia.AddView(btnMesesPlus, 2);
+
+                ImageButton btnMesesLess = new ImageButton(this);
+                btnMesesLess.SetImageResource(Resource.Mipmap.ic_remove);
+                btnMesesLess.Click += (sender, e) =>
+                {
+                    if (mesMembresia > 1)
+                    {
+                        --mesMembresia;
+                        txtMesesMembresias.Text = mesMembresia.ToString();
+                        subtotal = (membresia.Membresia_Precio_Base / DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) *
+                                    (DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) - (DateTime.Parse(dpFechaInicio.Text)).Day + 1));
+                        lblProporcional.Text = subtotal.ToString("C");
+                        lblTotal.Text = (((membresia.Membresia_Precio_Base * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base)
+                                          * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
+                    }
+                    else
+                        Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
+                };
+
+                trMembresia.AddView(btnMesesLess, 3);
+
+                tlMembresias.AddView(trMembresia);
+
+                trMembresia = new TableRow(this);
+                trMembresia.AddView(new TextView(this) { Text = "Proporcional al mes" });
+                subtotal = (membresia.Membresia_Precio_Base / DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) *
+                            (DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) - (DateTime.Parse(dpFechaInicio.Text)).Day + 1));
+                lblProporcional.Text = Carrito.ContainsKey(membresia.Membresia_Id) ? subtotal.ToString("C") : 0.ToString("C");
+                trMembresia.AddView(lblProporcional, param);
+
+                tlMembresias.AddView(trMembresia);
+
+                trMembresia = new TableRow(this);
+                trMembresia.AddView(new TextView(this) { Text = "Total" });
+
+                lblTotal.Text = Carrito.ContainsKey(membresia.Membresia_Id) ?
+                    (((membresia.Membresia_Precio_Base * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base)
+                      * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C") : 0.ToString("C");
+                trMembresia.AddView(lblTotal, param);
 
                 tlMembresias.AddView(trMembresia);
             }

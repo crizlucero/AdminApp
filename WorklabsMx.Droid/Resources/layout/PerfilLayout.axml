@@ -12,14 +12,14 @@
         android:id="@+id/relativeLayout1">
         <TextView
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="wrap_content"
+            android:layout_width="307.0dp"
             android:layout_height="wrap_content"
             android:id="@+id/txtProfileName"
             android:text="Nombre del usuario"
             android:translationX="10dp" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="192.5dp"
+            android:layout_width="306.5dp"
             android:layout_height="21.5dp"
             android:layout_below="@id/txtProfileName"
             android:id="@+id/txtEmailPerfil"
@@ -29,6 +29,13 @@
             android:translationX="10dp"
             android:text="@string/CorreoElectronico"
             android:textSize="14dp" />
+        <ImageButton
+            android:src="@mipmap/ic_star_border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/txtProfileName"
+            android:id="@+id/btnFavorite"
+            android:visibility="invisible" />
     </RelativeLayout>
     <ScrollView
         android:layout_width="match_parent"

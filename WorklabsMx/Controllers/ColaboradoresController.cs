@@ -100,7 +100,6 @@ namespace WorklabsMx.Controllers
                         Colaborador_Fecha_Modificacion = reader["Colaborador_Fecha_Modificacion"].ToString(),
                         Colaborador_Fecha_Baja = reader["Colaborador_Fecha_Baja"].ToString(),
                         Colaborador_Disponibilidad = reader["Colaborador_Disponibilidad"].ToString()
-
                     };
                 }
             }
@@ -127,6 +126,7 @@ namespace WorklabsMx.Controllers
                 conn.Open();
                 transaction = conn.BeginTransaction();
                 command = CreateCommand();
+                command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
                 if (colaborador_id != null)
                 {
@@ -153,7 +153,8 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Colaborador_Habilidades", habilidades);
 
                 command.Parameters.AddWithValue("@Colaborador_Fecha_Nacimiento", fecha_nacimiento);
-
+                command.ExecuteNonQuery();
+                transaction.Commit();
             }
             catch (Exception e)
             {

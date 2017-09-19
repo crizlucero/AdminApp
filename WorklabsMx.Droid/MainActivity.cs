@@ -93,11 +93,11 @@ namespace WorklabsMx.Droid
                     TableRow row = new TableRow(this);
                     row.SetMinimumHeight(100);
                     RelativeLayout rl = new RelativeLayout(this);
-                    rl.SetMinimumHeight(100);
+                    rl.SetMinimumHeight(150);
 
                     ImageButton ibFotoPostUsuario = new ImageButton(this);
-                    ibFotoPostUsuario.SetMinimumWidth(100);
-                    ibFotoPostUsuario.SetMinimumHeight(100);
+                    ibFotoPostUsuario.SetMinimumWidth(150);
+                    ibFotoPostUsuario.SetMinimumHeight(150);
                     ibFotoPostUsuario.SetImageURI(ImagesHelper.GetPerfilImagen(post.Miembro_Fotografia));
                     rl.AddView(ibFotoPostUsuario);
 
@@ -106,11 +106,14 @@ namespace WorklabsMx.Droid
                         Text = post.Miembro_Nombre + " " + post.Miembro_Apellidos,
                         TextSize = 14
                     };
-                    lblNombre.Touch += (sender, e) =>
+                    lblNombre.Click += (sender, e) =>
                     {
-                        Console.WriteLine("x");
+                        Intent perfil = new Intent(this, typeof(PerfilActivity));
+                        perfil.PutExtra("usuario_id", post.MIEMBRO_ID);
+                        perfil.PutExtra("usuario_tipo", post.Tipo);
+                        StartActivity(perfil);
                     };
-                    lblNombre.SetX(110);
+                    lblNombre.SetX(170);
                     lblNombre.SetY(20);
                     rl.AddView(lblNombre);
 
@@ -120,8 +123,8 @@ namespace WorklabsMx.Droid
                         TextSize = 12
                     };
                     lblFecha.SetMinimumWidth(600);
-                    lblFecha.SetX(110);
-                    lblFecha.SetY(50);
+                    lblFecha.SetX(170);
+                    lblFecha.SetY(70);
                     rl.AddView(lblFecha);
                     row.AddView(rl);
                     tlPost.AddView(row);

@@ -55,10 +55,10 @@ namespace WorklabsMx.Controllers
 
             catch (Exception ex)
             {
+                SlackLogs.SendMessage(ex.Message);
                 transaction.Rollback();
                 Console.WriteLine(ex.Message);
                 return false;
-                SlackLogs.SendMessage(ex.Message);
             }
             finally
             {

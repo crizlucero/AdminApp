@@ -8,6 +8,7 @@ using WorklabsMx.Controllers;
 using WorklabsMx.Models;
 using PerpetualEngine.Storage;
 using Foundation;
+using WorklabsMx.Helpers;
 
 namespace WorklabsMx.iOS
 {
@@ -39,7 +40,7 @@ namespace WorklabsMx.iOS
                     UIDatePicker dpFechaInicio = new UIDatePicker();
                     UIStepper stpMesesProducto = new UIStepper();
                     UITextField txtMesesCantidad = new UITextField { Text = "1" };
-                    scrollView.AddSubview(new STLLine());
+                    scrollView.AddSubview(new STLLine(size));
                     Productos.Add(producto.Producto_Id, new CarritoModel { Producto_Cantidad = 0 });
                     if (Carrito.ContainsKey(producto.Producto_Id))
                     {
@@ -149,7 +150,7 @@ namespace WorklabsMx.iOS
                                 new MessageDialog().SendMessage("La cantidad de meses a contratar debe ser mínimo 1", "Meses de membresias");
                                 txtMesesCantidad.Text = "1";
                             }
-                            double EndMonth = GetMonthsDays((DateTime)dpFechaInicio.Date);
+                            double EndMonth = DateHelper.GetMonthsDays((DateTime)dpFechaInicio.Date);
                             double currentDay = ((DateTime)dpFechaInicio.Date).Day;
                             subtotal = Convert.ToInt32(txtMesesCantidad.Text) == 0 ? 0 : (producto.Producto_Precio_Base / EndMonth * (EndMonth - currentDay + 1));
                             lblProporcional.Text = subtotal.ToString("C");
@@ -164,15 +165,15 @@ namespace WorklabsMx.iOS
                     {
                         size += 45;
                         scrollView.AddSubview(new STLLabel("Proporcional al mes", size));
-                        subtotal = Convert.ToInt32(txtCantidad.Text) == 0 ? 0 : (producto.Producto_Precio_Base / GetMonthsDays((DateTime)dpFechaInicio.Date) *
-                                    (GetMonthsDays((DateTime)dpFechaInicio.Date) - ((DateTime)dpFechaInicio.Date).Day + 1));
+                        subtotal = Convert.ToInt32(txtCantidad.Text) == 0 ? 0 : (producto.Producto_Precio_Base / DateHelper.GetMonthsDays((DateTime)dpFechaInicio.Date) *
+                                    (DateHelper.GetMonthsDays((DateTime)dpFechaInicio.Date) - ((DateTime)dpFechaInicio.Date).Day + 1));
                         lblTotal.Text = subtotal.ToString("C");
                         lblProporcional.Text = subtotal.ToString("C");
 
                         lblProporcional.Frame = new CGRect(UIScreen.MainScreen.Bounds.Width * 2 / 3, size, UIScreen.MainScreen.Bounds.Width / 4, 30);
                         dpFechaInicio.ValueChanged += (sender, e) =>
                         {
-                            double EndMonth = GetMonthsDays(((DateTime)(((UIDatePicker)sender).Date)));
+                            double EndMonth = DateHelper.GetMonthsDays(((DateTime)(((UIDatePicker)sender).Date)));
                             double currentDay = ((DateTime)(((UIDatePicker)sender).Date)).Day;
                             subtotal = (producto.Producto_Precio_Base / EndMonth * (EndMonth - currentDay + 1));
                             lblProporcional.Text = subtotal.ToString("C");
@@ -186,7 +187,7 @@ namespace WorklabsMx.iOS
                         Productos[producto.Producto_Id].Producto_Cantidad = (int)stpProducto.Value;
                         CanPay = (stpProducto.Value > 0);
                         Changed = CanPay;
-                        double EndMonth = GetMonthsDays((DateTime)dpFechaInicio.Date);
+                        double EndMonth = DateHelper.GetMonthsDays((DateTime)dpFechaInicio.Date);
                         double currentDay = ((DateTime)dpFechaInicio.Date).Day;
                         if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
                             subtotal = Convert.ToInt32(txtCantidad.Text) == 0 ? 0 : (producto.Producto_Precio_Base / EndMonth * (EndMonth - currentDay + 1));
@@ -203,7 +204,7 @@ namespace WorklabsMx.iOS
                             Productos[producto.Producto_Id].Producto_Cantidad = (int)stpProducto.Value;
                             CanPay = (stpProducto.Value > 0);
                             Changed = CanPay;
-                            double EndMonth = GetMonthsDays((DateTime)dpFechaInicio.Date);
+                            double EndMonth = DateHelper.GetMonthsDays((DateTime)dpFechaInicio.Date);
                             double currentDay = ((DateTime)dpFechaInicio.Date).Day;
                             if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
                                 subtotal = Convert.ToInt32(txtCantidad.Text) == 0 ? 0 : (producto.Producto_Precio_Base / EndMonth * (EndMonth - currentDay + 1));
@@ -251,9 +252,5 @@ namespace WorklabsMx.iOS
 
             }), true);
         }
-
-        double GetMonthsDays(DateTime date) =>
-             (new DateTime(date.Year, date.Month, 1)).AddMonths(1).AddDays(-1).Day;
-
     }
 }

@@ -115,6 +115,7 @@
     <Compile Include="ViewController\MiPerfil\MiEmpresaActivity.cs" />
     <Compile Include="ViewController\MiPerfil\EditPerfilActivity.cs" />
     <Compile Include="ViewController\MiPerfil\EditEmpresaActivity.cs" />
+    <Compile Include="ViewController\PerfilesActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -198,6 +199,9 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_save.png" />
     <AndroidResource Include="Resources\menu\save_menu.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_email.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_star_border.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_star.png" />
+    <AndroidResource Include="Resources\layout\PrePerfilLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

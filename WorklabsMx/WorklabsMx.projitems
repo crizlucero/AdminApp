@@ -46,6 +46,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\SuscripcionesController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enum\TiposServicios.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enum\TiposTransacciones.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\DateHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />

@@ -318,7 +318,7 @@ namespace WorklabsMx.Controllers
         {
             Dictionary<string, CarritoModel> carrito = GetCarrito(usuario_id, tipo);
             foreach (KeyValuePair<string, CarritoModel> element in datos)
-                if (!carrito.ContainsKey(element.Key))
+                if (!carrito.ContainsKey(element.Key) || (carrito[element.Key].Membresia_Cantidad != element.Value.Membresia_Cantidad || carrito[element.Key].Producto_Cantidad != element.Value.Producto_Cantidad))
                 {
                     if (element.Value.Producto_Cantidad > 0)
                     {
