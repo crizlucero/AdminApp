@@ -1727,8 +1727,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b0026
 			public const int action_mode_close_button = 2131427366;
 			
-			// aapt resource value: 0x7f0b0129
-			public const int action_refresh = 2131427625;
+			// aapt resource value: 0x7f0b012b
+			public const int action_refresh = 2131427627;
 			
 			// aapt resource value: 0x7f0b00b9
 			public const int action_text = 2131427513;
@@ -1738,6 +1738,9 @@ namespace WorklabsMx.Droid
 			
 			// aapt resource value: 0x7f0b0027
 			public const int activity_chooser_view_content = 2131427367;
+			
+			// aapt resource value: 0x7f0b00e0
+			public const int acusacion_table = 2131427552;
 			
 			// aapt resource value: 0x7f0b0018
 			public const int add = 2131427352;
@@ -1799,8 +1802,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b0037
 			public const int customPanel = 2131427383;
 			
-			// aapt resource value: 0x7f0b00e1
-			public const int cvSalaJuntas = 2131427553;
+			// aapt resource value: 0x7f0b00e3
+			public const int cvSalaJuntas = 2131427555;
 			
 			// aapt resource value: 0x7f0b0045
 			public const int decor_content_parent = 2131427397;
@@ -1892,32 +1895,32 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b00bd
 			public const int media_actions = 2131427517;
 			
-			// aapt resource value: 0x7f0b0131
-			public const int menu_acceso = 2131427633;
+			// aapt resource value: 0x7f0b0133
+			public const int menu_acceso = 2131427635;
 			
-			// aapt resource value: 0x7f0b0130
-			public const int menu_cart = 2131427632;
+			// aapt resource value: 0x7f0b0132
+			public const int menu_cart = 2131427634;
 			
-			// aapt resource value: 0x7f0b012a
-			public const int menu_edit = 2131427626;
+			// aapt resource value: 0x7f0b012c
+			public const int menu_edit = 2131427628;
 			
 			// aapt resource value: 0x7f0b00a9
 			public const int menu_layout = 2131427497;
 			
-			// aapt resource value: 0x7f0b012c
-			public const int menu_payment = 2131427628;
+			// aapt resource value: 0x7f0b012e
+			public const int menu_payment = 2131427630;
 			
-			// aapt resource value: 0x7f0b012d
-			public const int menu_save = 2131427629;
+			// aapt resource value: 0x7f0b012f
+			public const int menu_save = 2131427631;
 			
 			// aapt resource value: 0x7f0b00a8
 			public const int menu_scroll = 2131427496;
 			
-			// aapt resource value: 0x7f0b012e
-			public const int menu_search = 2131427630;
+			// aapt resource value: 0x7f0b0130
+			public const int menu_search = 2131427632;
 			
-			// aapt resource value: 0x7f0b012f
-			public const int menu_send = 2131427631;
+			// aapt resource value: 0x7f0b0131
+			public const int menu_send = 2131427633;
 			
 			// aapt resource value: 0x7f0b001c
 			public const int middle = 2131427356;
@@ -1925,8 +1928,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b0013
 			public const int multiply = 2131427347;
 			
-			// aapt resource value: 0x7f0b012b
-			public const int nav_home = 2131427627;
+			// aapt resource value: 0x7f0b012d
+			public const int nav_home = 2131427629;
 			
 			// aapt resource value: 0x7f0b0020
 			public const int never = 2131427360;
@@ -2039,8 +2042,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b0011
 			public const int showTitle = 2131427345;
 			
-			// aapt resource value: 0x7f0b00e0
-			public const int spSucursal = 2131427552;
+			// aapt resource value: 0x7f0b00e2
+			public const int spSucursal = 2131427554;
 			
 			// aapt resource value: 0x7f0b002f
 			public const int spacer = 2131427375;
@@ -2069,14 +2072,14 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b007b
 			public const int svDirectorio = 2131427451;
 			
-			// aapt resource value: 0x7f0b0128
-			public const int tabHostProfile = 2131427624;
+			// aapt resource value: 0x7f0b012a
+			public const int tabHostProfile = 2131427626;
 			
 			// aapt resource value: 0x7f0b000b
 			public const int tabMode = 2131427339;
 			
-			// aapt resource value: 0x7f0b00e2
-			public const int tableLayout1 = 2131427554;
+			// aapt resource value: 0x7f0b00e4
+			public const int tableLayout1 = 2131427556;
 			
 			// aapt resource value: 0x7f0b0063
 			public const int tableLayout4 = 2131427427;
@@ -2095,6 +2098,9 @@ namespace WorklabsMx.Droid
 			
 			// aapt resource value: 0x7f0b006d
 			public const int tableRow5 = 2131427437;
+			
+			// aapt resource value: 0x7f0b00e1
+			public const int tableRow6 = 2131427553;
 			
 			// aapt resource value: 0x7f0b00cc
 			public const int text = 2131427532;
@@ -2180,218 +2186,218 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b0039
 			public const int topPanel = 2131427385;
 			
-			// aapt resource value: 0x7f0b00e3
-			public const int tr00 = 2131427555;
+			// aapt resource value: 0x7f0b00e5
+			public const int tr00 = 2131427557;
 			
-			// aapt resource value: 0x7f0b00e6
-			public const int tr01 = 2131427558;
+			// aapt resource value: 0x7f0b00e8
+			public const int tr01 = 2131427560;
 			
-			// aapt resource value: 0x7f0b00e9
-			public const int tr02 = 2131427561;
+			// aapt resource value: 0x7f0b00eb
+			public const int tr02 = 2131427563;
 			
-			// aapt resource value: 0x7f0b00ec
-			public const int tr03 = 2131427564;
+			// aapt resource value: 0x7f0b00ee
+			public const int tr03 = 2131427566;
 			
-			// aapt resource value: 0x7f0b00ef
-			public const int tr04 = 2131427567;
+			// aapt resource value: 0x7f0b00f1
+			public const int tr04 = 2131427569;
 			
-			// aapt resource value: 0x7f0b00f2
-			public const int tr05 = 2131427570;
+			// aapt resource value: 0x7f0b00f4
+			public const int tr05 = 2131427572;
 			
-			// aapt resource value: 0x7f0b00f5
-			public const int tr06 = 2131427573;
-			
-			// aapt resource value: 0x7f0b00f8
-			public const int tr07 = 2131427576;
+			// aapt resource value: 0x7f0b00f7
+			public const int tr06 = 2131427575;
 			
 			// aapt resource value: 0x7f0b00fa
-			public const int tr08 = 2131427578;
+			public const int tr07 = 2131427578;
 			
-			// aapt resource value: 0x7f0b00fd
-			public const int tr09 = 2131427581;
+			// aapt resource value: 0x7f0b00fc
+			public const int tr08 = 2131427580;
 			
-			// aapt resource value: 0x7f0b0100
-			public const int tr10 = 2131427584;
+			// aapt resource value: 0x7f0b00ff
+			public const int tr09 = 2131427583;
 			
-			// aapt resource value: 0x7f0b0103
-			public const int tr11 = 2131427587;
+			// aapt resource value: 0x7f0b0102
+			public const int tr10 = 2131427586;
 			
-			// aapt resource value: 0x7f0b0106
-			public const int tr12 = 2131427590;
+			// aapt resource value: 0x7f0b0105
+			public const int tr11 = 2131427589;
 			
-			// aapt resource value: 0x7f0b0109
-			public const int tr13 = 2131427593;
+			// aapt resource value: 0x7f0b0108
+			public const int tr12 = 2131427592;
 			
-			// aapt resource value: 0x7f0b010c
-			public const int tr14 = 2131427596;
+			// aapt resource value: 0x7f0b010b
+			public const int tr13 = 2131427595;
 			
-			// aapt resource value: 0x7f0b010f
-			public const int tr15 = 2131427599;
+			// aapt resource value: 0x7f0b010e
+			public const int tr14 = 2131427598;
 			
-			// aapt resource value: 0x7f0b0112
-			public const int tr16 = 2131427602;
+			// aapt resource value: 0x7f0b0111
+			public const int tr15 = 2131427601;
 			
-			// aapt resource value: 0x7f0b0115
-			public const int tr17 = 2131427605;
+			// aapt resource value: 0x7f0b0114
+			public const int tr16 = 2131427604;
 			
 			// aapt resource value: 0x7f0b0117
-			public const int tr18 = 2131427607;
+			public const int tr17 = 2131427607;
 			
-			// aapt resource value: 0x7f0b011a
-			public const int tr19 = 2131427610;
+			// aapt resource value: 0x7f0b0119
+			public const int tr18 = 2131427609;
 			
-			// aapt resource value: 0x7f0b011d
-			public const int tr20 = 2131427613;
+			// aapt resource value: 0x7f0b011c
+			public const int tr19 = 2131427612;
 			
 			// aapt resource value: 0x7f0b011f
-			public const int tr21 = 2131427615;
+			public const int tr20 = 2131427615;
 			
-			// aapt resource value: 0x7f0b0122
-			public const int tr22 = 2131427618;
+			// aapt resource value: 0x7f0b0121
+			public const int tr21 = 2131427617;
 			
-			// aapt resource value: 0x7f0b0125
-			public const int tr23 = 2131427621;
+			// aapt resource value: 0x7f0b0124
+			public const int tr22 = 2131427620;
+			
+			// aapt resource value: 0x7f0b0127
+			public const int tr23 = 2131427623;
 			
 			// aapt resource value: 0x7f0b005a
 			public const int trCarrito = 2131427418;
 			
-			// aapt resource value: 0x7f0b00e4
-			public const int tv00 = 2131427556;
+			// aapt resource value: 0x7f0b00e6
+			public const int tv00 = 2131427558;
 			
-			// aapt resource value: 0x7f0b00e7
-			public const int tv01 = 2131427559;
+			// aapt resource value: 0x7f0b00e9
+			public const int tv01 = 2131427561;
 			
-			// aapt resource value: 0x7f0b00ea
-			public const int tv02 = 2131427562;
+			// aapt resource value: 0x7f0b00ec
+			public const int tv02 = 2131427564;
 			
-			// aapt resource value: 0x7f0b00ed
-			public const int tv03 = 2131427565;
+			// aapt resource value: 0x7f0b00ef
+			public const int tv03 = 2131427567;
 			
-			// aapt resource value: 0x7f0b00f0
-			public const int tv04 = 2131427568;
+			// aapt resource value: 0x7f0b00f2
+			public const int tv04 = 2131427570;
 			
-			// aapt resource value: 0x7f0b00f3
-			public const int tv05 = 2131427571;
+			// aapt resource value: 0x7f0b00f5
+			public const int tv05 = 2131427573;
 			
-			// aapt resource value: 0x7f0b00f6
-			public const int tv06 = 2131427574;
+			// aapt resource value: 0x7f0b00f8
+			public const int tv06 = 2131427576;
 			
-			// aapt resource value: 0x7f0b00fb
-			public const int tv08 = 2131427579;
+			// aapt resource value: 0x7f0b00fd
+			public const int tv08 = 2131427581;
 			
-			// aapt resource value: 0x7f0b00fe
-			public const int tv09 = 2131427582;
+			// aapt resource value: 0x7f0b0100
+			public const int tv09 = 2131427584;
 			
-			// aapt resource value: 0x7f0b0101
-			public const int tv10 = 2131427585;
+			// aapt resource value: 0x7f0b0103
+			public const int tv10 = 2131427587;
 			
-			// aapt resource value: 0x7f0b0104
-			public const int tv11 = 2131427588;
+			// aapt resource value: 0x7f0b0106
+			public const int tv11 = 2131427590;
 			
-			// aapt resource value: 0x7f0b0107
-			public const int tv12 = 2131427591;
+			// aapt resource value: 0x7f0b0109
+			public const int tv12 = 2131427593;
 			
-			// aapt resource value: 0x7f0b010a
-			public const int tv13 = 2131427594;
+			// aapt resource value: 0x7f0b010c
+			public const int tv13 = 2131427596;
 			
-			// aapt resource value: 0x7f0b010d
-			public const int tv14 = 2131427597;
+			// aapt resource value: 0x7f0b010f
+			public const int tv14 = 2131427599;
 			
-			// aapt resource value: 0x7f0b0110
-			public const int tv15 = 2131427600;
+			// aapt resource value: 0x7f0b0112
+			public const int tv15 = 2131427602;
 			
-			// aapt resource value: 0x7f0b0113
-			public const int tv16 = 2131427603;
+			// aapt resource value: 0x7f0b0115
+			public const int tv16 = 2131427605;
 			
-			// aapt resource value: 0x7f0b0118
-			public const int tv18 = 2131427608;
+			// aapt resource value: 0x7f0b011a
+			public const int tv18 = 2131427610;
 			
-			// aapt resource value: 0x7f0b011b
-			public const int tv19 = 2131427611;
+			// aapt resource value: 0x7f0b011d
+			public const int tv19 = 2131427613;
 			
-			// aapt resource value: 0x7f0b0120
-			public const int tv21 = 2131427616;
+			// aapt resource value: 0x7f0b0122
+			public const int tv21 = 2131427618;
 			
-			// aapt resource value: 0x7f0b0123
-			public const int tv22 = 2131427619;
+			// aapt resource value: 0x7f0b0125
+			public const int tv22 = 2131427621;
 			
-			// aapt resource value: 0x7f0b0126
-			public const int tv23 = 2131427622;
+			// aapt resource value: 0x7f0b0128
+			public const int tv23 = 2131427624;
 			
 			// aapt resource value: 0x7f0b0069
 			public const int tvDescuento = 2131427433;
 			
-			// aapt resource value: 0x7f0b00e5
-			public const int tvEvent00 = 2131427557;
+			// aapt resource value: 0x7f0b00e7
+			public const int tvEvent00 = 2131427559;
 			
-			// aapt resource value: 0x7f0b00e8
-			public const int tvEvent01 = 2131427560;
+			// aapt resource value: 0x7f0b00ea
+			public const int tvEvent01 = 2131427562;
 			
-			// aapt resource value: 0x7f0b00eb
-			public const int tvEvent02 = 2131427563;
+			// aapt resource value: 0x7f0b00ed
+			public const int tvEvent02 = 2131427565;
 			
-			// aapt resource value: 0x7f0b00ee
-			public const int tvEvent03 = 2131427566;
+			// aapt resource value: 0x7f0b00f0
+			public const int tvEvent03 = 2131427568;
 			
-			// aapt resource value: 0x7f0b00f1
-			public const int tvEvent04 = 2131427569;
+			// aapt resource value: 0x7f0b00f3
+			public const int tvEvent04 = 2131427571;
 			
-			// aapt resource value: 0x7f0b00f4
-			public const int tvEvent05 = 2131427572;
-			
-			// aapt resource value: 0x7f0b00f7
-			public const int tvEvent06 = 2131427575;
+			// aapt resource value: 0x7f0b00f6
+			public const int tvEvent05 = 2131427574;
 			
 			// aapt resource value: 0x7f0b00f9
-			public const int tvEvent07 = 2131427577;
+			public const int tvEvent06 = 2131427577;
 			
-			// aapt resource value: 0x7f0b00fc
-			public const int tvEvent08 = 2131427580;
+			// aapt resource value: 0x7f0b00fb
+			public const int tvEvent07 = 2131427579;
 			
-			// aapt resource value: 0x7f0b00ff
-			public const int tvEvent09 = 2131427583;
+			// aapt resource value: 0x7f0b00fe
+			public const int tvEvent08 = 2131427582;
 			
-			// aapt resource value: 0x7f0b0102
-			public const int tvEvent10 = 2131427586;
+			// aapt resource value: 0x7f0b0101
+			public const int tvEvent09 = 2131427585;
 			
-			// aapt resource value: 0x7f0b0105
-			public const int tvEvent11 = 2131427589;
+			// aapt resource value: 0x7f0b0104
+			public const int tvEvent10 = 2131427588;
 			
-			// aapt resource value: 0x7f0b0108
-			public const int tvEvent12 = 2131427592;
+			// aapt resource value: 0x7f0b0107
+			public const int tvEvent11 = 2131427591;
 			
-			// aapt resource value: 0x7f0b010b
-			public const int tvEvent13 = 2131427595;
+			// aapt resource value: 0x7f0b010a
+			public const int tvEvent12 = 2131427594;
 			
-			// aapt resource value: 0x7f0b010e
-			public const int tvEvent14 = 2131427598;
+			// aapt resource value: 0x7f0b010d
+			public const int tvEvent13 = 2131427597;
 			
-			// aapt resource value: 0x7f0b0111
-			public const int tvEvent15 = 2131427601;
+			// aapt resource value: 0x7f0b0110
+			public const int tvEvent14 = 2131427600;
 			
-			// aapt resource value: 0x7f0b0114
-			public const int tvEvent16 = 2131427604;
+			// aapt resource value: 0x7f0b0113
+			public const int tvEvent15 = 2131427603;
 			
 			// aapt resource value: 0x7f0b0116
-			public const int tvEvent17 = 2131427606;
+			public const int tvEvent16 = 2131427606;
 			
-			// aapt resource value: 0x7f0b0119
-			public const int tvEvent18 = 2131427609;
+			// aapt resource value: 0x7f0b0118
+			public const int tvEvent17 = 2131427608;
 			
-			// aapt resource value: 0x7f0b011c
-			public const int tvEvent19 = 2131427612;
+			// aapt resource value: 0x7f0b011b
+			public const int tvEvent18 = 2131427611;
 			
 			// aapt resource value: 0x7f0b011e
-			public const int tvEvent20 = 2131427614;
+			public const int tvEvent19 = 2131427614;
 			
-			// aapt resource value: 0x7f0b0121
-			public const int tvEvent21 = 2131427617;
+			// aapt resource value: 0x7f0b0120
+			public const int tvEvent20 = 2131427616;
 			
-			// aapt resource value: 0x7f0b0124
-			public const int tvEvent22 = 2131427620;
+			// aapt resource value: 0x7f0b0123
+			public const int tvEvent21 = 2131427619;
 			
-			// aapt resource value: 0x7f0b0127
-			public const int tvEvent23 = 2131427623;
+			// aapt resource value: 0x7f0b0126
+			public const int tvEvent22 = 2131427622;
+			
+			// aapt resource value: 0x7f0b0129
+			public const int tvEvent23 = 2131427625;
 			
 			// aapt resource value: 0x7f0b006c
 			public const int tvIVA = 2131427436;
@@ -2810,28 +2816,34 @@ namespace WorklabsMx.Droid
 			public const int RegistroInvitadosLayout = 2130968635;
 			
 			// aapt resource value: 0x7f04003c
-			public const int ReservaSalaJuntasLayout = 2130968636;
+			public const int ReportLayout = 2130968636;
 			
 			// aapt resource value: 0x7f04003d
-			public const int select_dialog_item_material = 2130968637;
+			public const int ReservaSalaJuntasLayout = 2130968637;
 			
 			// aapt resource value: 0x7f04003e
-			public const int select_dialog_multichoice_material = 2130968638;
+			public const int select_dialog_item_material = 2130968638;
 			
 			// aapt resource value: 0x7f04003f
-			public const int select_dialog_singlechoice_material = 2130968639;
+			public const int select_dialog_multichoice_material = 2130968639;
 			
 			// aapt resource value: 0x7f040040
-			public const int SubmenuLayout = 2130968640;
+			public const int select_dialog_singlechoice_material = 2130968640;
 			
 			// aapt resource value: 0x7f040041
-			public const int support_simple_spinner_dropdown_item = 2130968641;
+			public const int SubmenuLayout = 2130968641;
 			
 			// aapt resource value: 0x7f040042
-			public const int TabsLayout = 2130968642;
+			public const int SubscriptionLayout = 2130968642;
 			
 			// aapt resource value: 0x7f040043
-			public const int ToolbarLayout = 2130968643;
+			public const int support_simple_spinner_dropdown_item = 2130968643;
+			
+			// aapt resource value: 0x7f040044
+			public const int TabsLayout = 2130968644;
+			
+			// aapt resource value: 0x7f040045
+			public const int ToolbarLayout = 2130968645;
 			
 			static Layout()
 			{
@@ -2995,19 +3007,22 @@ namespace WorklabsMx.Droid
 			public const int ic_star_border = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public const int ic_today = 2130903076;
+			public const int ic_thumb_up = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int ic_twitter = 2130903077;
+			public const int ic_today = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int ic_view_list = 2130903078;
+			public const int ic_twitter = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int ic_work = 2130903079;
+			public const int ic_view_list = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int Icon = 2130903080;
+			public const int ic_work = 2130903080;
+			
+			// aapt resource value: 0x7f030029
+			public const int Icon = 2130903081;
 			
 			static Mipmap()
 			{
@@ -3066,6 +3081,9 @@ namespace WorklabsMx.Droid
 			
 			// aapt resource value: 0x7f060038
 			public const int Colonia = 2131099704;
+			
+			// aapt resource value: 0x7f0600aa
+			public const int Comentar = 2131099818;
 			
 			// aapt resource value: 0x7f060089
 			public const int Comprar = 2131099785;
@@ -3246,6 +3264,9 @@ namespace WorklabsMx.Droid
 			
 			// aapt resource value: 0x7f060055
 			public const int ReservaSala = 2131099733;
+			
+			// aapt resource value: 0x7f0600a9
+			public const int Subscripciones = 2131099817;
 			
 			// aapt resource value: 0x7f060091
 			public const int Subtotal = 2131099793;

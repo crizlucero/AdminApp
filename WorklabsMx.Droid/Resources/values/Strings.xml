@@ -135,4 +135,6 @@
 	<string name="Acceso">Acceso</string>
 	<string name="NumeroInferior">La cantidad debe de ser mayor</string>
 	<string name="NumeroSuperior">La cantidad debe de ser menor</string>
+	<string name="Subscripciones">Subscripciones</string>
+	<string name="Comentar">Comentar</string>
 </resources>

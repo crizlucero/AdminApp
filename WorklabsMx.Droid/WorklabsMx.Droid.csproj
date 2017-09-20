@@ -116,6 +116,8 @@
     <Compile Include="ViewController\MiPerfil\EditPerfilActivity.cs" />
     <Compile Include="ViewController\MiPerfil\EditEmpresaActivity.cs" />
     <Compile Include="ViewController\PerfilesActivity.cs" />
+    <Compile Include="ViewController\MyMembershipActivity.cs" />
+    <Compile Include="ViewController\ReportActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -202,6 +204,9 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_star_border.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_star.png" />
     <AndroidResource Include="Resources\layout\PrePerfilLayout.axml" />
+    <AndroidResource Include="Resources\layout\SubscriptionLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_thumb_up.png" />
+    <AndroidResource Include="Resources\layout\ReportLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

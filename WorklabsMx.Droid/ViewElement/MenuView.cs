@@ -1,16 +1,8 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using System;
 using Android.App;
 using Android.Content;
 using Android.Graphics.Drawables;
-using Android.OS;
-using Android.Runtime;
 using Android.Support.V4.Content;
-using Android.Util;
 using Android.Views;
 using Android.Widget;
 using WorklabsMx.Controllers;
