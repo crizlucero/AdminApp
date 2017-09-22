@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
@@ -12,23 +13,33 @@ using WorklabsMx.Controllers;
 using WorklabsMx.Droid.Helpers;
 using WorklabsMx.Models;
 
-namespace WorklabsMx.Droid.ViewController
+namespace WorklabsMx.Droid
 {
     [Activity(Label = "ReportActivity")]
     public class ReportActivity : Activity
     {
-        string post_id;
+        string post_id, comment_id;
+        int acusacion_id;
+        bool isSelectedRadio;
         SimpleStorage localStorage;
+        EscritorioController ctrlEscritorio;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.ReportLayout);
             SimpleStorage.SetContext(ApplicationContext);
-
+            ctrlEscritorio = new EscritorioController();
             localStorage = SimpleStorage.EditGroup("Login");
             post_id = Intent.GetStringExtra("post_id");
+            comment_id = Intent.GetStringExtra("comment_id");
+            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            SetActionBar(toolbar);
+            ActionBar.Title = Resources.GetString(Resource.String.Reportes);
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
             FillPost();
+            FillAcusacion();
         }
         void FillPost()
         {
@@ -59,6 +70,7 @@ namespace WorklabsMx.Droid.ViewController
             };
             lblNombre.SetX(170);
             lblNombre.SetY(20);
+            lblNombre.SetWidth(Resources.DisplayMetrics.WidthPixels - 140);
             rl.AddView(lblNombre);
 
             TextView lblFecha = new TextView(this)
@@ -66,7 +78,7 @@ namespace WorklabsMx.Droid.ViewController
                 Text = post.POST_FECHA,
                 TextSize = 12
             };
-            lblFecha.SetMinimumWidth(300);
+            lblFecha.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels - 140);
             lblFecha.SetX(170);
             lblFecha.SetY(70);
             rl.AddView(lblFecha);
@@ -112,42 +124,66 @@ namespace WorklabsMx.Droid.ViewController
             row.AddView(llPost);
 
             tlPost.AddView(row);
-            //Comentarios
-            row = new TableRow(this);
-            RelativeLayout rlComentar = new RelativeLayout(this);
-            EditText txtComentar = new EditText(this)
-            {
-                Hint = Resources.GetString(Resource.String.Comentar)
-            };
-            txtComentar.SetWidth(Resources.DisplayMetrics.WidthPixels - 140);
-            rlComentar.AddView(txtComentar);
-            row.AddView(rlComentar);
 
-            LinearLayout llComentar = new LinearLayout(this);
-            ImageButton btnComentar = new ImageButton(this);
-            btnComentar.SetBackgroundColor(Color.White);
-            btnComentar.SetImageResource(Resource.Mipmap.ic_send);
-            llComentar.AddView(btnComentar);
-            row.AddView(llComentar, 1);
-            tlPost.AddView(row);
         }
 
-        void FillAcusacion(){
-            TableLayout tlPost = FindViewById<TableLayout>(Resource.Id.post_table);
-			foreach (KeyValuePair<int, string> mensaje in new EscritorioController().GetMensajesReporte())
-			{
-                TableRow row = new TableRow(this);
+        void FillAcusacion()
+        {
+            RadioGroup rgAcusaciones = FindViewById<RadioGroup>(Resource.Id.rgAcusaciones);
+            foreach (KeyValuePair<int, string> mensaje in new EscritorioController().GetMensajesReporte())
+            {
                 LinearLayout llRadio = new LinearLayout(this);
-                RadioGroup rgAcusacion = new RadioGroup(this);
-                llRadio.AddView(rgAcusacion);
-                row.AddView(llRadio);
-				LinearLayout llAcusacion = new LinearLayout(this);
-                TextView lblAcusacion = new TextView(this){
-                    Text = mensaje.Value
+
+                RadioButton rbAcusacion = new RadioButton(this)
+                {
+                    Text = mensaje.Value,
+                    Tag = mensaje.Key
                 };
-				llAcusacion.AddView(lblAcusacion);
-				row.AddView(llAcusacion);
-			}
-		}
+                rbAcusacion.Click += (sender, e) =>
+                {
+                    isSelectedRadio = true;
+                    acusacion_id = Convert.ToInt32(((RadioButton)sender).Tag);
+                };
+                rgAcusaciones.AddView(rbAcusacion);
+            }
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.send_menu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+
+            switch (item.ItemId)
+            {
+                case Resource.Id.menu_send:
+                    if (isSelectedRadio)
+                    {
+                        bool report = false;
+                        if (!string.IsNullOrEmpty(post_id))
+                            report = ctrlEscritorio.ReportarPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), acusacion_id);
+                        else
+                            report = ctrlEscritorio.ReportarComment(comment_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), acusacion_id);
+
+                        if (report)
+                        {
+                            Toast.MakeText(this, "Gracias por su aportación\nEl equipo de Worklabs revisará el caso.", ToastLength.Short).Show();
+                            base.OnBackPressed();
+                        }
+                        else
+                            Toast.MakeText(this, "Existió un error, intente de nuevo", ToastLength.Short).Show();
+                    }
+                    else
+                        Toast.MakeText(this, "Seleccione una opción de reporte", ToastLength.Short).Show();
+                    break;
+                default:
+                    base.OnBackPressed();
+                    break;
+            }
+            return base.OnOptionsItemSelected(item);
+        }
     }
 }

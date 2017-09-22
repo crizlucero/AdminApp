@@ -79,12 +79,12 @@ namespace WorklabsMx.iOS
 
         void SearchView()
         {
-            UITextField txtNombre = new STLTextField("Nombre", 130);
-            UITextField txtApellidos = new STLTextField("Apellidos", 190);
-            UITextField txtPuesto = new STLTextField("Puesto", 250);
-            UITextField txtProfesion = new STLTextField("Profesión", 310);
-            UITextField txtHabilidades = new STLTextField("Habilidades", 370);
-            UITextField txtPais = new STLTextField("País", 430);
+            UITextField txtNombre = new STLTextField("Nombre", 30);
+            UITextField txtApellidos = new STLTextField("Apellidos", 90);
+            UITextField txtPuesto = new STLTextField("Puesto", 150);
+            UITextField txtProfesion = new STLTextField("Profesión", 210);
+            UITextField txtHabilidades = new STLTextField("Habilidades", 270);
+            UITextField txtPais = new STLTextField("País", 330);
             txtPais.EditingDidBegin += (sender, e) =>
             {
                 selectView = new UIDropdownList(txtPais, View);
@@ -93,7 +93,7 @@ namespace WorklabsMx.iOS
             {
                 selectView.RemoveFromSuperview();
             };
-            UITextField txtEstado = new STLTextField("Estado", 490);
+            UITextField txtEstado = new STLTextField("Estado", 390);
             txtEstado.EditingDidBegin += (sender, e) =>
             {
                 if (!string.IsNullOrEmpty(txtPais.Text))
@@ -104,7 +104,7 @@ namespace WorklabsMx.iOS
                 if (!string.IsNullOrEmpty(txtPais.Text))
                     selectView.RemoveFromSuperview();
             };
-            UITextField txtMunicipio = new STLTextField("Municipio", 550);
+            UITextField txtMunicipio = new STLTextField("Municipio", 450);
             txtMunicipio.EditingDidBegin += (sender, e) =>
             {
                 if (!string.IsNullOrEmpty(txtEstado.Text))
@@ -115,11 +115,11 @@ namespace WorklabsMx.iOS
                 if (!string.IsNullOrEmpty(txtEstado.Text))
                     selectView.RemoveFromSuperview();
             };
-            UITextField txtEmpresa = new STLTextField("Empresa", 610);
-            UICheckBox cbDisponibilidad = new UICheckBox(20, 650);
+            UITextField txtEmpresa = new STLTextField("Empresa", 510);
+            UICheckBox cbDisponibilidad = new UICheckBox(20, 550);
 
 
-            UIButton btnBuscar = new STLButton("Buscar") { Frame = new CGRect(20, 680, 100, 30) };
+            UIButton btnBuscar = new STLButton("Buscar") { Frame = new CGRect(20, 580, 100, 30) };
             btnBuscar.TouchUpInside += (sender, e) =>
             {
                 position = 32;
@@ -127,43 +127,43 @@ namespace WorklabsMx.iOS
                 searchView.RemoveFromSuperview();
             };
 
-            UIButton btnClose = new STLButton(UIImage.FromBundle("ic_clear")) { Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 40, 70, 30, 30) };
+            UIButton btnClose = new STLButton(UIImage.FromBundle("ic_clear")) { Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 40, 0, 30, 30) };
             btnClose.TouchUpInside += (sender, e) =>
             {
                 searchView.RemoveFromSuperview();
             };
-            searchView = new UIScrollView(new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height))
+            searchView = new UIScrollView(new CGRect(0, 70, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height))
             {
                 btnClose,
 
-                new STLLabel("Nombre", 100),
+                new STLLabel("Nombre", 0),
                 txtNombre,
 
-                new STLLabel("Apellidos", 160),
+                new STLLabel("Apellidos", 60),
                 txtApellidos,
 
-                new STLLabel("Puesto", 220),
+                new STLLabel("Puesto", 120),
                 txtPuesto,
 
-                new STLLabel("Profesión", 280),
+                new STLLabel("Profesión", 180),
                 txtProfesion,
 
-                new STLLabel("Habilidades", 340),
+                new STLLabel("Habilidades", 240),
                 txtHabilidades,
 
-                new STLLabel("País", 400),
+                new STLLabel("País", 300),
                 txtPais,
 
-                new STLLabel("Estado", 460),
+                new STLLabel("Estado", 360),
                 txtEstado,
 
-                new STLLabel("Municipio", 520),
+                new STLLabel("Municipio", 420),
                 txtMunicipio,
 
-                new STLLabel("Empresa", 580),
+                new STLLabel("Empresa", 480),
                 txtEmpresa,
 
-                new STLLabel("Disponibilidad", 400){ Frame = new CGRect(50, 645, UIScreen.MainScreen.Bounds.Width,30)},
+                new STLLabel("Disponibilidad", 545){ Frame = new CGRect(50, 545, UIScreen.MainScreen.Bounds.Width,30)},
                 cbDisponibilidad,
 
                 btnBuscar

@@ -17,12 +17,17 @@ namespace WorklabsMx.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            Directorio();
 
+        }
+
+        void Directorio(string nombre = "", string pais = "", string estado = "", string municipio = "", string giro = "")
+        {
             SetContentView(Resource.Layout.DirectorioLayout);
             SetTitle(Resource.String.DirectorioEmpresas);
 
             svDirectorio = FindViewById<ScrollView>(Resource.Id.svDirectorio);
-            FillDirectorioUsuario();
+            FillDirectorioUsuario(nombre, pais, estado, municipio, giro);
 
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
@@ -53,10 +58,10 @@ namespace WorklabsMx.Droid
                 llNombre.AddView(txtNombre);
                 llDirectorio.AddView(llNombre);
 
-				LinearLayout llEmail = new LinearLayout(this)
-				{
-					LayoutParameters = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent)
-				};
+                LinearLayout llEmail = new LinearLayout(this)
+                {
+                    LayoutParameters = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent)
+                };
                 TextView txtEmail = new TextView(this)
                 {
                     TextSize = 14,
@@ -360,25 +365,48 @@ namespace WorklabsMx.Droid
             svDirectorio.AddView(llDirectorio);
         }
 
-		public override bool OnCreateOptionsMenu(IMenu menu)
-		{
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
             MenuInflater.Inflate(Resource.Menu.search_menu, menu);
-			return base.OnCreateOptionsMenu(menu);
-		}
+            return base.OnCreateOptionsMenu(menu);
+        }
 
-		public override bool OnOptionsItemSelected(IMenuItem item)
-		{
-			switch (item.ItemId)
-			{
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
                 case Resource.Id.menu_search:
-					
-					break;
-				default:
-					base.OnBackPressed();
-					break;
-			}
+                    SearchView();
+                    break;
+                default:
+                    base.OnBackPressed();
+                    break;
+            }
 
-			return base.OnOptionsItemSelected(item);
+            return base.OnOptionsItemSelected(item);
+        }
+
+		void SearchView()
+		{
+            SetContentView(Resource.Layout.SearchCompanyLayout);
+
+
+			FindViewById<ImageButton>(Resource.Id.btnClear).Click += (sender, e) =>
+			{
+				Directorio();
+			};
+
+			FindViewById<Button>(Resource.Id.btnBuscar).Click += (sender, e) =>
+			{
+				Directorio(FindViewById<TextView>(Resource.Id.txtNombre).Text, FindViewById<TextView>(Resource.Id.txtPais).Text, 
+                           FindViewById<TextView>(Resource.Id.txtEstado).Text, FindViewById<TextView>(Resource.Id.txtMunicipio).Text, 
+                           FindViewById<TextView>(Resource.Id.txtGiroComercial).Text);
+			};
+			Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+			SetActionBar(toolbar);
+            ActionBar.Title = Resources.GetString(Resource.String.DirectorioEmpresas);
+			ActionBar.SetDisplayHomeAsUpEnabled(true);
+			ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
 		}
     }
 }

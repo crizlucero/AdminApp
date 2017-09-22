@@ -137,4 +137,9 @@
 	<string name="NumeroSuperior">La cantidad debe de ser menor</string>
 	<string name="Subscripciones">Subscripciones</string>
 	<string name="Comentar">Comentar</string>
+	<string name="Reportes">Reportes</string>
+	<string name="MisColaboradores">Mis Colaboradores</string>
+	<string name="Pais">País</string>
+	<string name="Empresa">Empresa</string>
+	<string name="Disponibilidad">Disponibilidad</string>
 </resources>

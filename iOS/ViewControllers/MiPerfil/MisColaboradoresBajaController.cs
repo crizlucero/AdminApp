@@ -6,14 +6,14 @@ using WorklabsMx.Controllers;
 using System.Collections.Generic;
 using WorklabsMx.Models;
 using PerpetualEngine.Storage;
+using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
     public partial class MisColaboradoresBajaController : UIViewController
     {
-        int totalSize = 20;
+        int totalSize = 45;
         UIScrollView scrollView;
-        UIView searchView;
         SimpleStorage storageLocal;
         public MisColaboradoresBajaController(IntPtr handle) : base(handle)
         {
@@ -25,45 +25,17 @@ namespace WorklabsMx.iOS
             View.ClearsContextBeforeDrawing = true;
             storageLocal = SimpleStorage.EditGroup("Login");
 
-            searchView = new UIView(new CGRect(0, 60, UIScreen.MainScreen.Bounds.Width, 40))
-            {
-                BackgroundColor = UIColor.White
-            };
-            UITextField txtSearch = new STLTextField("Buscar", 10)
-            {
-                Frame = new CGRect(10, 10, UIScreen.MainScreen.Bounds.Width - 20, 30)
-            };
-            searchView.Add(txtSearch);
-
-            UIButton btnSearch = new STLButton("")
-            {
-                Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 40, 11, 29, 28),
-                BackgroundColor = UIColor.White
-            };
-            btnSearch.SetImage(UIImage.FromBundle("ic_search"), UIControlState.Normal);
-            btnSearch.TouchUpInside += (sender, e) =>
-            {
-                btnSearch.BackgroundColor = UIColor.White;
-                scrollView.RemoveFromSuperview();
-                totalSize = 52;
-                FillColaboradores(storageLocal.Get("Miembro_Id"), txtSearch.Text);
-
-            };
-
-            searchView.Add(btnSearch);
-            View.AddSubview(searchView);
-
-
-            FillColaboradores(storageLocal.Get("Miembro_Id"));
+            FillColaboradores(storageLocal.Get("Usuario_Id"));
         }
 
-        void FillColaboradores(string miembro_id, string busqueda = "")
+        public void FillColaboradores(string miembro_id)
         {
+           
             scrollView = new UIScrollView(new CGRect(0, totalSize, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height));
-            List<ColaboradorModel> colaboradores = new ColaboradoresController().GetColaboradoresMiembro(miembro_id, busqueda, "0");
+            List<ColaboradorModel> colaboradores = new ColaboradoresController().GetColaboradoresMiembro(miembro_id, 0);
             foreach (ColaboradorModel colaborador in colaboradores)
             {
-                scrollView.AddSubview(new STLLine());
+                scrollView.AddSubview(new STLLine(totalSize));
                 scrollView.AddSubview(new STLImageView(20 + totalSize, colaborador.Colaborador_Fotografia));
 
                 UIButton btnAlta = new STLButton(UIImage.FromBundle("ic_add"))
@@ -72,23 +44,19 @@ namespace WorklabsMx.iOS
                 };
                 btnAlta.TouchUpInside += (sender, e) =>
                 {
-                    totalSize = 20;
+                    totalSize = 45;
+                    new ColaboradoresController().ChangeColaboradorEstatus(colaborador.Colaborador_Id, 1);
+                    scrollView.RemoveFromSuperview();
                     FillColaboradores(miembro_id);
                 };
                 scrollView.AddSubview(btnAlta);
 
                 scrollView.AddSubview(new STLLabel(colaborador.Colaborador_Nombre + " " + colaborador.Colaborador_Apellidos, 70 + totalSize));
-
                 scrollView.AddSubview(new STLImageLabel(scrollView, "Género", 100 + totalSize, "ic_person"));
-
                 scrollView.AddSubview(new STLLabel(colaborador.Genero_Id, 130 + totalSize));
-
                 scrollView.AddSubview(new STLImageLabel(scrollView, "Fecha de Nacimiento", 170 + totalSize, "ic_today"));
-
                 scrollView.AddSubview(new STLLabel(Convert.ToDateTime(colaborador.Colaborador_Fecha_Nacimiento).ToString("MM/dd/yyyy"), 200 + totalSize));
-
                 scrollView.AddSubview(new STLImageLabel(scrollView, "Profesión", 240 + totalSize, "ic_school"));
-
                 scrollView.AddSubview(new STLLabel(colaborador.Colaborador_Profesion, 270 + totalSize));
 
                 totalSize += 360;
@@ -96,7 +64,6 @@ namespace WorklabsMx.iOS
 
             scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 40 + totalSize);
             View.AddSubview(scrollView);
-            View.BringSubviewToFront(searchView);
             View.SendSubviewToBack(scrollView);
         }
     }

@@ -11,31 +11,18 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/post_table">
-        <TableRow
-            android:id="@+id/tableRow1">
-        </TableRow>
-        <TableRow
-            android:id="@+id/tableRow2">
-        </TableRow>
-        <TableRow
-            android:id="@+id/tableRow3">
-        </TableRow>
-    </TableLayout>
-    <TableLayout
+        android:id="@+id/post_table" />
+    <LinearLayout
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/acusacion_table">
-        <TableRow
-            android:id="@+id/tableRow4">
-        </TableRow>
-        <TableRow
-            android:id="@+id/tableRow5">
-        </TableRow>
-        <TableRow
-            android:id="@+id/tableRow6">
-        </TableRow>
-    </TableLayout>
+        android:id="@+id/llAcusaciones">
+        <RadioGroup
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rgAcusaciones" />
+    </LinearLayout>
 </LinearLayout>

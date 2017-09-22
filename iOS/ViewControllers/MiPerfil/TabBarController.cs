@@ -33,6 +33,5 @@ namespace WorklabsMx.iOS
         }
         public override void ViewWillAppear(bool animated) =>
             TabBar.Hidden |= PerpetualEngine.Storage.SimpleStorage.EditGroup("Login").Get("Usuario_Tipo") == "1";
-
     }
 }

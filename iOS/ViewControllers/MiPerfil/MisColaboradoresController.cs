@@ -13,10 +13,10 @@ namespace WorklabsMx.iOS
     {
         int totalSize = 20;
         UIScrollView scrollView;
-        UIView searchView;
         SimpleStorage storageLocal;
         public MisColaboradoresController(IntPtr handle) : base(handle)
         {
+            storageLocal = SimpleStorage.EditGroup("Login");
         }
 
         public override void ViewDidLoad()
@@ -24,57 +24,27 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
 
             View.ClearsContextBeforeDrawing = true;
-            storageLocal = SimpleStorage.EditGroup("Login");
 
-            searchView = new UIView(new CGRect(0, 60, UIScreen.MainScreen.Bounds.Width, 40))
-            {
-                BackgroundColor = UIColor.White
-            };
-            UITextField txtSearch = new STLTextField("Buscar", 10)
-            {
-                Frame = new CGRect(10, 10, UIScreen.MainScreen.Bounds.Width - 20, 30)
-            };
-            searchView.Add(txtSearch);
-
-            UIButton btnSearch = new STLButton("")
-            {
-                Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 40, 11, 29, 28),
-                BackgroundColor = UIColor.White
-            };
-            btnSearch.SetImage(UIImage.FromBundle("ic_search"), UIControlState.Normal);
-            btnSearch.TouchUpInside += (sender, e) =>
-            {
-                btnSearch.BackgroundColor = UIColor.White;
-                scrollView.RemoveFromSuperview();
-                totalSize = 52;
-                FillColaboradores(storageLocal.Get("Miembro_Id"), txtSearch.Text);
-
-            };
-
-            searchView.Add(btnSearch);
-            View.AddSubview(searchView);
-
-            FillColaboradores(storageLocal.Get("Miembro_Id"));
+            FillColaboradores(storageLocal.Get("Usuario_Id"));
         }
 
-        void FillColaboradores(string miembro_id, string busqueda = "")
+        public void FillColaboradores(string miembro_id)
         {
-
             scrollView = new UIScrollView(new CGRect(0, totalSize, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height));
-            List<ColaboradorModel> colaboradores = new ColaboradoresController().GetColaboradoresMiembro(miembro_id, busqueda);
-            foreach (ColaboradorModel colaborador in colaboradores)
+            foreach (ColaboradorModel colaborador in new ColaboradoresController().GetColaboradoresMiembro(miembro_id, 1))
             {
-                scrollView.AddSubview(new STLLine());
+                scrollView.AddSubview(new STLLine(totalSize));
                 scrollView.AddSubview(new STLImageView(20 + totalSize, colaborador.Colaborador_Fotografia));
 
-                UIButton btnBaja = new STLButton(UIImage.FromBundle("ic_remove"))
+                UIButton btnBaja = new STLButton(UIImage.FromBundle("ic_clear"))
                 {
                     Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 40, 20 + totalSize, 20, 20),
                     BackgroundColor = UIColor.White
                 };
                 btnBaja.TouchUpInside += (sender, e) =>
                 {
-                    totalSize = 52;
+                    totalSize = 45;
+                    new ColaboradoresController().ChangeColaboradorEstatus(colaborador.Colaborador_Id, 0);
                     scrollView.RemoveFromSuperview();
                     FillColaboradores(miembro_id);
                 };
@@ -127,7 +97,6 @@ namespace WorklabsMx.iOS
 
             scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 40 + totalSize);
             View.AddSubview(scrollView);
-            View.BringSubviewToFront(searchView);
             View.SendSubviewToBack(scrollView);
         }
     }

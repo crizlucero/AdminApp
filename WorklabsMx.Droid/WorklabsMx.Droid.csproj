@@ -118,6 +118,7 @@
     <Compile Include="ViewController\PerfilesActivity.cs" />
     <Compile Include="ViewController\MyMembershipActivity.cs" />
     <Compile Include="ViewController\ReportActivity.cs" />
+    <Compile Include="ViewController\MiPerfil\MisColaboradoresActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -207,6 +208,8 @@
     <AndroidResource Include="Resources\layout\SubscriptionLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_thumb_up.png" />
     <AndroidResource Include="Resources\layout\ReportLayout.axml" />
+    <AndroidResource Include="Resources\layout\SearchUserLayout.axml" />
+    <AndroidResource Include="Resources\layout\SearchCompanyLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

@@ -145,12 +145,12 @@ namespace WorklabsMx.Droid
                     btnClear.SetMinimumHeight(15);
                     btnClear.Click += (sender, e) =>
                     {
-                        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+                        AlertDialog.Builder alert = new AlertDialog.Builder(this);
                         if (post.MIEMBRO_ID == localStorage.Get("Usuario_Id") && post.Tipo == localStorage.Get("Usuario_Tipo"))
                         {
-                            dialog.SetTitle("Eliminar post");
-                            dialog.SetMessage("Se eliminará el post");
-                            dialog.SetPositiveButton("Ok", (senderO, eO) =>
+                            alert.SetTitle("Eliminar post");
+                            alert.SetMessage("Se eliminará el post");
+                            alert.SetPositiveButton("Ok", (senderO, eO) =>
                             {
 
                                 if (new EscritorioController().OcultarPost(post.MIEMBRO_ID, post.POST_ID, 0))
@@ -161,24 +161,24 @@ namespace WorklabsMx.Droid
                                 else
                                     Toast.MakeText(this, "Hubo un error, intente de nuevo", ToastLength.Short).Show();
                             });
-                            dialog.SetNegativeButton("Cancelar", (sender1, e1) => { });
+                            alert.SetNegativeButton("Cancelar", (sender1, e1) => { });
                         }
                         else
                         {
-							dialog.SetTitle("Reportar post");
-							dialog.SetMessage("¿Desea reportar el post?");
-                            dialog.SetPositiveButton("Ok", (senderO, eO) =>
+                            alert.SetTitle("Reportar post");
+                            alert.SetMessage("¿Desea reportar el post?");
+                            alert.SetPositiveButton("Ok", (senderO, eO) =>
                             {
                                 {
-                                    /*ReporteController reporteController = (ReporteController)Storyboard.InstantiateViewController("ReporteController");
-                                    reporteController.post_id = post.POST_ID;
-                                    reporteController.Title = "Reportar Post";
-                                    NavigationController.PushViewController(reporteController, true);
-                                    ((UIButton)sender).BackgroundColor = UIColor.Clear;*/
+                                    Intent intent = new Intent(this, typeof(ReportActivity));
+                                    intent.PutExtra("post_id", post.POST_ID);
+                                    StartActivity(intent);
                                 }
                             });
-                            dialog.SetNegativeButton("Cancelar", (sender1, e1) => { });
+                            alert.SetNegativeButton("Cancelar", (sender1, e1) => { });
                         }
+                        Dialog dialog = alert.Create();
+                        dialog.Show();
                     };
                     llButton.AddView(btnClear);
 
@@ -197,7 +197,8 @@ namespace WorklabsMx.Droid
                     lblLike.SetMinWidth(Window.Attributes.Width);
                     lblLike.SetMinHeight(50);
                     lblLike.SetX(10);
-                    lblLike.Click += (sender, e) => {
+                    lblLike.Click += (sender, e) =>
+                    {
                         if (new EscritorioController().PostLike(post.POST_ID, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")))
                             lblLike.Text = "\t" + new EscritorioController().GetLikes(post.POST_ID) + " Like(s)";
                     };
@@ -254,8 +255,8 @@ namespace WorklabsMx.Droid
             foreach (ComentarioModel comentario in new EscritorioController().GetComentariosPost(post_id))
             {
                 TableRow trComment = new TableRow(this);
-
                 RelativeLayout rl = new RelativeLayout(this);
+
                 rl.SetMinimumHeight(70);
 
                 ImageButton ibFotoPostUsuario = new ImageButton(this);
@@ -277,6 +278,7 @@ namespace WorklabsMx.Droid
                     StartActivity(perfil);
                 };
                 lblNombre.SetX(80);
+                lblNombre.SetMinWidth(Resources.DisplayMetrics.WidthPixels - 140);
                 rl.AddView(lblNombre);
 
                 TextView lblFecha = new TextView(this)
@@ -284,11 +286,11 @@ namespace WorklabsMx.Droid
                     Text = comentario.COMM_FECHA,
                     TextSize = 8
                 };
-                lblFecha.SetMinimumWidth(600);
+                lblFecha.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels - 140);
                 lblFecha.SetX(80);
                 lblFecha.SetY(30);
                 rl.AddView(lblFecha);
-                trComment.AddView(rl);
+                trComment.AddView(rl, 0);
 
                 LinearLayout llButton = new LinearLayout(this);
                 ImageButton btnClear = new ImageButton(this);
@@ -296,7 +298,42 @@ namespace WorklabsMx.Droid
                 btnClear.SetImageResource(Resource.Mipmap.ic_clear);
                 btnClear.SetMinimumWidth(15);
                 btnClear.SetMinimumHeight(15);
-                btnClear.SetX(50);
+                btnClear.Click += (sender, e) => {
+					AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                    if (comentario.USUARIO_ID == localStorage.Get("Usuario_Id") && comentario.USUARIO_TIPO== localStorage.Get("Usuario_Tipo"))
+					{
+						alert.SetTitle("Eliminar comentario");
+						alert.SetMessage("Se eliminará el comentario");
+						alert.SetPositiveButton("Ok", (senderO, eO) =>
+						{
+
+                            if (new EscritorioController().OcultarComment( comentario.COMM_ID, 0))
+							{
+								Toast.MakeText(this, "Comentario eliminado", ToastLength.Short).Show();
+
+							}
+							else
+								Toast.MakeText(this, "Hubo un error, intente de nuevo", ToastLength.Short).Show();
+						});
+						alert.SetNegativeButton("Cancelar", (sender1, e1) => { });
+					}
+					else
+					{
+						alert.SetTitle("Reportar comentario");
+						alert.SetMessage("¿Desea reportar el comentario?");
+						alert.SetPositiveButton("Ok", (senderO, eO) =>
+						{
+							{
+								Intent intent = new Intent(this, typeof(ReportActivity));
+                                intent.PutExtra("comment_id", comentario.COMM_ID);
+								StartActivity(intent);
+							}
+						});
+						alert.SetNegativeButton("Cancelar", (sender1, e1) => { });
+					}
+					Dialog dialog = alert.Create();
+					dialog.Show();
+                };
                 llButton.AddView(btnClear);
 
                 trComment.AddView(llButton, 1);
@@ -318,9 +355,8 @@ namespace WorklabsMx.Droid
                 trComment.AddView(llComentario);
 
                 tlComments.AddView(trComment);
-
-                row.AddView(tlComments, param);
             }
+            row.AddView(tlComments, param);
             return row;
         }
 
