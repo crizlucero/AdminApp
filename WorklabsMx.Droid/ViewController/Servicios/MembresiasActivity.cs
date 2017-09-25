@@ -301,7 +301,6 @@ namespace WorklabsMx.Droid
                     base.OnBackPressed();
                     break;
             }
-
             return base.OnOptionsItemSelected(item);
         }
     }

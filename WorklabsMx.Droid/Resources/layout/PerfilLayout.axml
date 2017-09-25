@@ -39,14 +39,14 @@
     </RelativeLayout>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/scrollLayout1"
+        android:layout_height="360dp"
+        android:id="@+id/svPerfil"
         android:minWidth="25px"
         android:minHeight="25px">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="300dp"
             android:id="@+id/linearLayout1">
             <LinearLayout
                 android:orientation="vertical"
@@ -267,4 +267,27 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/rlBottomToolbar">
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="100dp"
+            android:id="@+id/btnDescripcion"
+            android:src="@mipmap/ic_format_list_bulleted" />
+        <ImageButton
+            android:src="@mipmap/ic_open_book"
+            android:layout_width="50.0dp"
+            android:layout_height="50.0dp"
+            android:layout_toRightOf="@id/btnDescripcion"
+            android:id="@+id/btnPosts" />
+        <ImageButton
+            android:src="@mipmap/ic_star"
+            android:layout_width="50.0dp"
+            android:layout_height="50.0dp"
+            android:layout_toRightOf="@id/btnPosts"
+            android:id="@+id/btnFavoritos" />
+    </RelativeLayout>
 </LinearLayout>

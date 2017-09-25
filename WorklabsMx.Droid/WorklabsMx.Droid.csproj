@@ -163,7 +163,6 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_domain.png" />
     <AndroidResource Include="Resources\layout\MenuLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_view_list.png" />
-    <AndroidResource Include="Resources\mipmap-hdpi\ic_open_book.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_today.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_school.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_public.png" />
@@ -210,6 +209,9 @@
     <AndroidResource Include="Resources\layout\ReportLayout.axml" />
     <AndroidResource Include="Resources\layout\SearchUserLayout.axml" />
     <AndroidResource Include="Resources\layout\SearchCompanyLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_open_book.png" />
+    <AndroidResource Include="Resources\layout\PostsUserLayout.axml" />
+    <AndroidResource Include="Resources\layout\FavoritesUserLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

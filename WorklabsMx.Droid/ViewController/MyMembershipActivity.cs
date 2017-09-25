@@ -42,7 +42,7 @@ namespace WorklabsMx.Droid
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             base.OnBackPressed();
-            return base.OnOptionsItemSelected(item);
+            return base.OnOptionsItemSelected( item);
         }
     }
 }

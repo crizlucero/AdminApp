@@ -411,7 +411,6 @@ namespace WorklabsMx.Droid
                     base.OnBackPressed();
                     break;
             }
-
             return base.OnOptionsItemSelected(item);
         }
 
@@ -433,11 +432,11 @@ namespace WorklabsMx.Droid
                            FindViewById<TextView>(Resource.Id.txtPais).Text, FindViewById<TextView>(Resource.Id.txtEstado).Text,
                            FindViewById<TextView>(Resource.Id.txtMunicipio).Text);
             };
-			Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-			SetActionBar(toolbar);
-			ActionBar.Title = Resources.GetString(Resource.String.DirectorioUsuario);
-			ActionBar.SetDisplayHomeAsUpEnabled(true);
-			ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            SetActionBar(toolbar);
+            ActionBar.Title = Resources.GetString(Resource.String.DirectorioUsuario);
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
         }
     }
 }

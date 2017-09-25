@@ -51,7 +51,7 @@ namespace WorklabsMx.Droid
                 LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent),
                 Orientation = Orientation.Vertical
             };
-            foreach (ColaboradorModel colaborador in new ColaboradoresController().GetColaboradoresMiembro(miembro_id,1, nombre, apellido, puesto, profesion, habilidades, disponibilidad))
+            foreach (ColaboradorModel colaborador in new ColaboradoresController().GetColaboradoresMiembro(miembro_id, 1, nombre, apellido, puesto, profesion, habilidades, disponibilidad))
             {
                 RelativeLayout llNombre = new RelativeLayout(this)
                 {
@@ -370,17 +370,17 @@ namespace WorklabsMx.Droid
         void SearchView()
         {
             SetContentView(Resource.Layout.SearchUserLayout);
-			FindViewById<ImageButton>(Resource.Id.btnClear).Click += (sender, e) =>
-			{
-				Directorio();
-			};
+            FindViewById<ImageButton>(Resource.Id.btnClear).Click += (sender, e) =>
+            {
+                Directorio();
+            };
 
-			FindViewById<Button>(Resource.Id.btnBuscar).Click += (sender, e) =>
-			{
-				Directorio(FindViewById<TextView>(Resource.Id.txtNombre).Text, FindViewById<TextView>(Resource.Id.txtApellidos).Text,
-						   FindViewById<TextView>(Resource.Id.txtPuesto).Text, FindViewById<TextView>(Resource.Id.txtProfesion).Text,
-						   FindViewById<TextView>(Resource.Id.txtHabilidades).Text, FindViewById<CheckBox>(Resource.Id.cbDisponibilidad).Checked);
-			};
+            FindViewById<Button>(Resource.Id.btnBuscar).Click += (sender, e) =>
+            {
+                Directorio(FindViewById<TextView>(Resource.Id.txtNombre).Text, FindViewById<TextView>(Resource.Id.txtApellidos).Text,
+                           FindViewById<TextView>(Resource.Id.txtPuesto).Text, FindViewById<TextView>(Resource.Id.txtProfesion).Text,
+                           FindViewById<TextView>(Resource.Id.txtHabilidades).Text, FindViewById<CheckBox>(Resource.Id.cbDisponibilidad).Checked);
+            };
             FindViewById<LinearLayout>(Resource.Id.llLblPais).Visibility = ViewStates.Gone;
             FindViewById<LinearLayout>(Resource.Id.llLblEstado).Visibility = ViewStates.Gone;
             FindViewById<LinearLayout>(Resource.Id.llLblMunicipio).Visibility = ViewStates.Gone;

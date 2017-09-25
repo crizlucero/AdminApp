@@ -386,27 +386,27 @@ namespace WorklabsMx.Droid
             return base.OnOptionsItemSelected(item);
         }
 
-		void SearchView()
-		{
+        void SearchView()
+        {
             SetContentView(Resource.Layout.SearchCompanyLayout);
 
 
-			FindViewById<ImageButton>(Resource.Id.btnClear).Click += (sender, e) =>
-			{
-				Directorio();
-			};
+            FindViewById<ImageButton>(Resource.Id.btnClear).Click += (sender, e) =>
+            {
+                Directorio();
+            };
 
-			FindViewById<Button>(Resource.Id.btnBuscar).Click += (sender, e) =>
-			{
-				Directorio(FindViewById<TextView>(Resource.Id.txtNombre).Text, FindViewById<TextView>(Resource.Id.txtPais).Text, 
-                           FindViewById<TextView>(Resource.Id.txtEstado).Text, FindViewById<TextView>(Resource.Id.txtMunicipio).Text, 
+            FindViewById<Button>(Resource.Id.btnBuscar).Click += (sender, e) =>
+            {
+                Directorio(FindViewById<TextView>(Resource.Id.txtNombre).Text, FindViewById<TextView>(Resource.Id.txtPais).Text,
+                           FindViewById<TextView>(Resource.Id.txtEstado).Text, FindViewById<TextView>(Resource.Id.txtMunicipio).Text,
                            FindViewById<TextView>(Resource.Id.txtGiroComercial).Text);
-			};
-			Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-			SetActionBar(toolbar);
+            };
+            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.DirectorioEmpresas);
-			ActionBar.SetDisplayHomeAsUpEnabled(true);
-			ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
-		}
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+        }
     }
 }
