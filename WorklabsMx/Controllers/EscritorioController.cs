@@ -17,10 +17,10 @@ namespace WorklabsMx.Controllers
 
             List<PostModel> posts = new List<PostModel>();
             string query = "select * FROM (SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
-                "INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id WHERE m.Usuario_Tipo = 0 " +
+                "INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id WHERE m.Usuario_Tipo = 1 " +
                 "union all " +
                 "SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
-                "INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 1) as Posts " +
+                "INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 2) as Posts " +
                 "WHERE POST_ESTATUS = 1 ORDER BY Post_Fecha DESC OFFSET @page ROWS Fetch next 10 rows only";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@page", page);
@@ -61,10 +61,10 @@ namespace WorklabsMx.Controllers
 
             List<PostModel> posts = new List<PostModel>();
             string query = "select * FROM (SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
-                "INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id WHERE m.Usuario_Tipo = 0 " +
+                "INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id WHERE m.Usuario_Tipo = 1 " +
                 "union all " +
                 "SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
-                "INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 1) as Posts " +
+                "INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 2) as Posts " +
                 "WHERE POST_ESTATUS = 1 AND Usuario_Id = @usuario_id AND Usuario_Tipo = @tipo ORDER BY Post_Fecha DESC OFFSET @page ROWS Fetch next 10 rows only";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@page", page);
@@ -174,7 +174,7 @@ namespace WorklabsMx.Controllers
         {
             List<ItemsMenu> menus = new List<ItemsMenu>();
             string query = "SELECT * FROM cat_Menu WHERE Menu_Padre_Id " + (menu_id == null ? " IS NULL" : " = @menu_id ");
-            if (tipo == 1)
+            if (tipo == 2)
             {
                 query += " AND Menu_Solo_Admin = 0";
             }
@@ -220,7 +220,7 @@ namespace WorklabsMx.Controllers
         {
             List<ItemsMenu> menus = new List<ItemsMenu>();
             string query = "SELECT * FROM cat_Menu WHERE Menu_Padre_Id " + (string.IsNullOrEmpty(menu_id) ? " IS NULL" : " = @menu_id ");
-            if (tipo == 1)
+            if (tipo == 2)
             {
                 query += " AND Menu_Solo_Admin = 0";
             }
