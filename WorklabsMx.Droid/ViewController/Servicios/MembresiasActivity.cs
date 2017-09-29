@@ -54,6 +54,7 @@ namespace WorklabsMx.Droid
             TableLayout tlMembresias = FindViewById<TableLayout>(Resource.Id.tlMembresias);
             foreach (MembresiaModel membresia in new PickerItemsController().GetMembresias())
             {
+                
                 double subtotal = membresia.Membresia_Precio_Base;
                 int mesMembresia = 1;
                 TextView lblProporcional = new TextView(this), lblTotal = new TextView(this);
@@ -69,10 +70,13 @@ namespace WorklabsMx.Droid
                 Membresias.Add(membresia.Membresia_Id, new CarritoModel { Membresia_Cantidad = 0, Sucursal_Id = 0 });
                 if (Carrito.ContainsKey(membresia.Membresia_Id))
                 {
-                    Membresias[membresia.Membresia_Id].Membresia_Cantidad = (int)Carrito[membresia.Membresia_Id].Membresia_Cantidad;
-                    Membresias[membresia.Membresia_Id].Sucursal_Id = Carrito[membresia.Membresia_Id].Sucursal_Id;
-                    Membresias[membresia.Membresia_Id].Membresia_Fecha_Inicio = Carrito[membresia.Membresia_Id].Membresia_Fecha_Inicio;
-                    CanPay = true;
+                    if (DateTime.Parse(Carrito[membresia.Membresia_Id].Membresia_Fecha_Inicio) >= DateTime.Now)
+                    {
+                        Membresias[membresia.Membresia_Id].Membresia_Cantidad = (int)Carrito[membresia.Membresia_Id].Membresia_Cantidad;
+                        Membresias[membresia.Membresia_Id].Sucursal_Id = Carrito[membresia.Membresia_Id].Sucursal_Id;
+                        Membresias[membresia.Membresia_Id].Membresia_Fecha_Inicio = Carrito[membresia.Membresia_Id].Membresia_Fecha_Inicio;
+                        CanPay = true;
+                    }
                 }
 
                 TableRow trMembresia = new TableRow(this);
@@ -94,7 +98,7 @@ namespace WorklabsMx.Droid
 
                 EditText txtCantidadMembresias = new EditText(this)
                 {
-                    Text = Carrito.ContainsKey(membresia.Membresia_Id) ? Carrito[membresia.Membresia_Id].Membresia_Cantidad.ToString() : "0",
+                    Text = Membresias[membresia.Membresia_Id].Membresia_Cantidad.ToString(),
                     TextSize = 14,
                     InputType = Android.Text.InputTypes.NumberFlagSigned
                 };
@@ -175,7 +179,7 @@ namespace WorklabsMx.Droid
 
                 trMembresia = new TableRow(this);
                 trMembresia.AddView(new TextView(this) { Text = "Fecha de Inicio" });
-                dpFechaInicio.Text = !string.IsNullOrEmpty(membresia.Membresia_Fecha_Inicio) ? membresia.Membresia_Fecha_Inicio : DateTime.Now.ToString("dd/MM/yyyy");
+                dpFechaInicio.Text = !string.IsNullOrEmpty(Membresias[membresia.Membresia_Id].Membresia_Fecha_Inicio) ? Membresias[membresia.Membresia_Id].Membresia_Fecha_Inicio : DateTime.Now.ToString("dd/MM/yyyy");
                 dpFechaInicio.TextChanged += (sender, e) =>
                 {
                     if (DateTime.TryParse(dpFechaInicio.Text, out DateTime fecha))

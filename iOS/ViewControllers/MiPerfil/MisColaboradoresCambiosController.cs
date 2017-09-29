@@ -21,15 +21,14 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
 
-            Title = "Actualizar datos";
-            string rightButton = "Agregar";
+            Title = "Agregar Colaborador";
             var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
             if (!string.IsNullOrEmpty(storageLocal.Get("Colaborador_Id")))
             {
                 colaborador = new ColaboradoresController().GetColaborador(storageLocal.Get("Colaborador_Id"));
-                rightButton = "Actualizar";
+                Title = "Modificar Colaborador";
             }
-            Title = colaborador.Colaborador_Nombre + " " + colaborador.Colaborador_Apellidos;
+
             using (var scrollView = new UIScrollView(new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)))
             {
                 scrollView.Add(new STLLabel("Fotografía", 40));
@@ -88,7 +87,7 @@ namespace WorklabsMx.iOS
                 scrollView.Add(txtCelular);
 
 
-                NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(rightButton, UIBarButtonItemStyle.Plain, (sender, e) =>
+                NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_send"), UIBarButtonItemStyle.Plain, (sender, e) =>
                 {
                     new ColaboradoresController().AddChangeColaborador(colaborador.Miembro_Empresa_Id, txtNombre.Text, txtApellidos.Text,
                                                                        txtEmail.Text, txtTelefono.Text, txtCelular.Text, txtProfesion.Text,

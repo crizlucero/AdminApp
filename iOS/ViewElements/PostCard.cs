@@ -166,7 +166,7 @@ namespace WorklabsMx.iOS.ViewElements
                     };
                     commentScroll.AddSubview(btnCommentDelete);
 
-                    commentSize += 50;
+                    commentSize += 80;
                     ++comentarioCount;
                 }
                 commentScroll.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, commentSize);

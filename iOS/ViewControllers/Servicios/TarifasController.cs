@@ -44,10 +44,13 @@ namespace WorklabsMx.iOS
                     });
                     if (Carrito.ContainsKey(membresia.Membresia_Id))
                     {
-                        Membresias[membresia.Membresia_Id].Membresia_Cantidad = (int)Carrito[membresia.Membresia_Id].Membresia_Cantidad;
-                        Membresias[membresia.Membresia_Id].Sucursal_Id = Carrito[membresia.Membresia_Id].Sucursal_Id;
-                        Membresias[membresia.Membresia_Id].Membresia_Fecha_Inicio = Carrito[membresia.Membresia_Id].Membresia_Fecha_Inicio;
-                        CanPay = true;
+						if (DateTime.Parse(Carrito[membresia.Membresia_Id].Membresia_Fecha_Inicio) >= DateTime.Now)
+						{
+							Membresias[membresia.Membresia_Id].Membresia_Cantidad = (int)Carrito[membresia.Membresia_Id].Membresia_Cantidad;
+							Membresias[membresia.Membresia_Id].Sucursal_Id = Carrito[membresia.Membresia_Id].Sucursal_Id;
+							Membresias[membresia.Membresia_Id].Membresia_Fecha_Inicio = Carrito[membresia.Membresia_Id].Membresia_Fecha_Inicio;
+							CanPay = true;
+						}
                     }
 
                     scrollView.AddSubview(new STLLine(size));
@@ -62,7 +65,7 @@ namespace WorklabsMx.iOS
                     scrollView.AddSubview(lblMembresia);
                     UITextField txtCantidad = new UITextField
                     {
-                        Text = Carrito.ContainsKey(membresia.Membresia_Id) ? Carrito[membresia.Membresia_Id].Membresia_Cantidad.ToString() : "0",
+                        Text = Membresias[membresia.Membresia_Id].Membresia_Cantidad.ToString(),
                         Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 120, size, 30, 30),
                         Font = UIFont.SystemFontOfSize(14),
                         KeyboardType = UIKeyboardType.NumberPad
@@ -72,7 +75,7 @@ namespace WorklabsMx.iOS
                     UIStepper stpMembresia = new UIStepper
                     {
                         Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 100, size, 55, 30),
-                        Value = Carrito.ContainsKey(membresia.Membresia_Id) ? Carrito[membresia.Membresia_Id].Membresia_Cantidad : 0,
+                        Value = Membresias[membresia.Membresia_Id].Membresia_Cantidad,
                         MaximumValue = Convert.ToDouble(membresia.Membresia_Espacios_Disponibles)
                     };
 
@@ -114,7 +117,7 @@ namespace WorklabsMx.iOS
                     {
                         Mode = UIDatePickerMode.Date,
                         Frame = new CGRect(40, size, UIScreen.MainScreen.Bounds.Width - 80, 100),
-                        Date = Carrito.ContainsKey(membresia.Membresia_Id) ? (NSDate)DateTime.SpecifyKind(DateTime.Parse(Membresias[membresia.Membresia_Id].Membresia_Fecha_Inicio), DateTimeKind.Utc) : (NSDate)DateTime.Now,
+                        Date = !string.IsNullOrEmpty(Membresias[membresia.Membresia_Id].Membresia_Fecha_Inicio) ? (NSDate)DateTime.SpecifyKind(DateTime.Parse(Membresias[membresia.Membresia_Id].Membresia_Fecha_Inicio), DateTimeKind.Utc) : (NSDate)DateTime.Now,
                         MinimumDate = (NSDate)DateTime.Now
                     };
 

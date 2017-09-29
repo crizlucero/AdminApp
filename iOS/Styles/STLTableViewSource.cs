@@ -41,7 +41,7 @@ namespace WorklabsMx.iOS.Styles
                         {
                             cell.ImageView.Image = UIImage.LoadFromData(data);
                             cell.ImageView.Layer.MasksToBounds = true;
-                            cell.ImageView.Layer.CornerRadius = 25;
+                            cell.ImageView.Layer.CornerRadius = 20;
                         }
                     }
                 }
@@ -71,6 +71,13 @@ namespace WorklabsMx.iOS.Styles
                     controller.Title = "Iniciar Sesión";
                     UIApplication.SharedApplication.Windows[0].RootViewController = controller;
                 }
+            }else if(indexPath.Row == 0){
+				var localStorage = SimpleStorage.EditGroup("Menu");
+				localStorage.Put("Menu_Id", TableItems[indexPath.Row].Menu_Id);
+                UIViewController controller = owner.Storyboard.InstantiateViewController("PerfilController");
+
+				controller.Title = TableItems[indexPath.Row].Label;
+				owner.NavigationController.PushViewController(controller, true);
             }
         }
     }

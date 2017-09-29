@@ -44,9 +44,13 @@ namespace WorklabsMx.iOS
                     Productos.Add(producto.Producto_Id, new CarritoModel { Producto_Cantidad = 0 });
                     if (Carrito.ContainsKey(producto.Producto_Id))
                     {
-                        Productos[producto.Producto_Id].Producto_Cantidad = (int)Carrito[producto.Producto_Id].Producto_Cantidad;
-                        Productos[producto.Producto_Id].Sucursal_Id = Carrito[producto.Producto_Id].Sucursal_Id;
-                        CanPay = true;
+						if (DateTime.Parse(Productos[producto.Producto_Id].Membresia_Fecha_Inicio) >= DateTime.Now)
+						{
+							Productos[producto.Producto_Id].Producto_Cantidad = (int)Carrito[producto.Producto_Id].Producto_Cantidad;
+							Productos[producto.Producto_Id].Sucursal_Id = Carrito[producto.Producto_Id].Sucursal_Id;
+							Productos[producto.Producto_Id].Membresia_Fecha_Inicio = Carrito[producto.Producto_Id].Membresia_Fecha_Inicio;
+							CanPay = true;
+						}
                     }
 
                     size += 10;
@@ -58,7 +62,7 @@ namespace WorklabsMx.iOS
                     scrollView.AddSubview(lblProducto);
                     UITextField txtCantidad = new UITextField
                     {
-                        Text = Carrito.ContainsKey(producto.Producto_Id) ? Carrito[producto.Producto_Id].Producto_Cantidad.ToString() : "0",
+                        Text = Productos[producto.Producto_Id].Producto_Cantidad.ToString(),
                         Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 120, size, 30, 30),
                         Font = UIFont.SystemFontOfSize(14),
                         KeyboardType = UIKeyboardType.NumberPad
@@ -68,7 +72,7 @@ namespace WorklabsMx.iOS
                     UIStepper stpProducto = new UIStepper
                     {
                         Frame = new CGRect(UIScreen.MainScreen.Bounds.Width - 100, size, 55, 30),
-                        Value = Carrito.ContainsKey(producto.Producto_Id) ? Carrito[producto.Producto_Id].Producto_Cantidad : 0,
+                        Value = Productos[producto.Producto_Id].Producto_Cantidad,
                         MinimumValue = 0
                     };
 
@@ -108,7 +112,7 @@ namespace WorklabsMx.iOS
                         {
                             Mode = UIDatePickerMode.Date,
                             Frame = new CGRect(40, size, UIScreen.MainScreen.Bounds.Width - 80, 100),
-                            Date = (NSDate)DateTime.Now,
+                            Date =!string.IsNullOrEmpty(Productos[producto.Producto_Id].Membresia_Fecha_Inicio) ? (NSDate)DateTime.SpecifyKind(DateTime.Parse(Productos[producto.Producto_Id].Membresia_Fecha_Inicio), DateTimeKind.Utc) : (NSDate)DateTime.Now,
                             MinimumDate = (NSDate)DateTime.Now
                         };
 
@@ -147,7 +151,7 @@ namespace WorklabsMx.iOS
                         {
                             if (Convert.ToInt32(txtMesesCantidad.Text) < 1)
                             {
-                                new MessageDialog().SendMessage("La cantidad de meses a contratar debe ser mínimo 1", "Meses de membresias");
+                                new MessageDialog().SendMessage("La cantidad de meses a contratar debe ser mínimo 1", "Meses de productos");
                                 txtMesesCantidad.Text = "1";
                             }
                             double EndMonth = DateHelper.GetMonthsDays((DateTime)dpFechaInicio.Date);

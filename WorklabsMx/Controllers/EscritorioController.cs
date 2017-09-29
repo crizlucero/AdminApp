@@ -129,9 +129,12 @@ namespace WorklabsMx.Controllers
         public List<ComentarioModel> GetComentariosPost(string post_id)
         {
             List<ComentarioModel> comentarios = new List<ComentarioModel>();
-            string query = "SELECT mc.*, CONCAT(d.Usuario_Nombre,' ', d.Usuario_Apellidos) as Nombre, d.Usuario_Fotografia, d.Usuario_Tipo FROM vw_Muro_Comments mc " +
-                "INNER JOIN vw_pro_Usuarios_Directorio d on mc.MIEMBRO_ID = d.Usuario_Id " +
-                "WHERE POST_ID = @post_id AND COMM_ESTATUS = 0 AND d.Usuario_Tipo = CASE WHEN mc.Tipo = 'MIEMBRO' Then 0 ELSE 1 END ORDER by COMM_FECHA";
+            string query = "select * FROM (SELECT p.*, Usuario_Id, CONCAT(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia, Usuario_Tipo from Muro_Comments as p " +
+				"INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id WHERE m.Usuario_Tipo = 0 " +
+				"union all " +
+				"SELECT p.*, Usuario_Id, CONCAT(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia, Usuario_Tipo from Muro_Comments as p " +
+				"INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 1) as Posts " +
+				"WHERE COMM_ESTATUS = 1 ORDER BY COMM_FECHA --DESC OFFSET @page ROWS Fetch next 10 rows only";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@post_id", post_id);
             try
@@ -143,13 +146,13 @@ namespace WorklabsMx.Controllers
                     comentarios.Add(new ComentarioModel
                     {
                         COMM_ID = reader["COMM_ID"].ToString(),
-                        USUARIO_ID = reader["MIEMBRO_ID"].ToString(),
+                        USUARIO_ID = reader["Usuario_ID"].ToString(),
                         POST_ID = reader["POST_ID"].ToString(),
                         COMM_FECHA = reader["COMM_FECHA"].ToString(),
                         COMM_CONTENIDO = reader["COMM_CONTENIDO"].ToString(),
                         COMM_ESTATUS = reader["COMM_ESTATUS"].ToString(),
                         Nombre = reader["Nombre"].ToString(),
-                        Miembro_Fotografia = reader["Miembro_Fotografia"].ToString(),
+                        Miembro_Fotografia = reader["Usuario_Fotografia"].ToString(),
                         USUARIO_TIPO = reader["Usuario_Tipo"].ToString()
                     });
                 }
@@ -303,7 +306,8 @@ namespace WorklabsMx.Controllers
         /// Agrega un comentario al post
         /// </summary>
         /// <param name="post_id">Identificador del post</param>
-        /// <param name="miembro_id">Identificador del miembro</param>
+        /// <param name="usuario_id">Identificador del miembro</param>
+        /// <param name="tipo">Tipo de miembro</param>
         /// <param name="comentario">Comentario realizado</param>
         /// <returns><c>true</c> Si el post fue comentado, <c>false</c> Existió algún error.</returns>
         public bool CommentPost(string post_id, string usuario_id, string tipo, string comentario)
@@ -574,6 +578,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Miembro_Id", miembro_id);
                 command.Parameters.AddWithValue("@Miembro_Tipo", miembro_tipo);
                 command.Parameters.AddWithValue("@Mensaje_Id", mensaje_id);
+                command.Parameters.AddWithValue("@Post_Reporte_Fecha", DateTime.Now);
 
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();
@@ -603,6 +608,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Miembro_Id", miembro_id);
                 command.Parameters.AddWithValue("@Miembro_Tipo", miembro_tipo);
                 command.Parameters.AddWithValue("@Mensaje_Id", mensaje_id);
+                command.Parameters.AddWithValue("@Comment_Reporte_Fecha", DateTime.Now);
 
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();

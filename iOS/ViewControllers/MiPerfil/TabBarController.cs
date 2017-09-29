@@ -13,7 +13,7 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             if (PerpetualEngine.Storage.SimpleStorage.EditGroup("Login").Get("Usuario_Tipo") == "0")
-                NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Editar", UIBarButtonItemStyle.Plain, HandleEventHandler), true);
+                NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_create"), UIBarButtonItemStyle.Plain, HandleEventHandler), true);
         }
 
         void HandleEventHandler(object sender, EventArgs e)

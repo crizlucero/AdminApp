@@ -62,9 +62,9 @@ namespace WorklabsMx.Controllers
         /// </summary>
         /// <returns>Nombre del miembro</returns>
         /// <param name="miembro_id">Identificador del miembro</param>
-        public Dictionary<string, string> GetMemberName(string miembro_id, string tipo)
+        public KeyValuePair<string, string> GetMemberName(string miembro_id, string tipo)
         {
-            Dictionary<string, string> data = new Dictionary<string, string>();
+            KeyValuePair<string, string> data = new KeyValuePair<string, string>();
             command = CreateCommand("select Concat(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia from vw_pro_Usuarios_Directorio " +
                 "where Usuario_Id = @miembro_id AND Usuario_Tipo = @tipo");
             command.Parameters.AddWithValue("@miembro_id", miembro_id);
@@ -75,8 +75,7 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    data.Add("Nombre", reader["Nombre"].ToString());
-                    data.Add("Fotografia", reader["Usuario_Fotografia"].ToString().Replace(@"\", "/"));
+                    data = new KeyValuePair<string, string>(reader["Nombre"].ToString(), reader["Usuario_Fotografia"].ToString().Replace(@"\", "/"));
                 }
             }
             catch (Exception e)
@@ -117,8 +116,8 @@ namespace WorklabsMx.Controllers
         /// <param name="profesion">Profesion</param>
         /// <param name="habilidades">Habilidades</param>
         /// <param name="disponibilidad">Si es <c>true</c> el usuario tiene disponibilidad para trabajar</param>
-        public List<MiembroModel> GetDirectorioUsuarios(string nombre, string apellido, string puesto, string profesion, string habilidades,
-                                                        bool disponibilidad, string pais, string estado, string municipio)
+        public List<MiembroModel> GetDirectorioUsuarios(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "",
+                                                        bool disponibilidad = true, string pais = "", string estado = "", string municipio = "")
         {
             List<MiembroModel> usuarios = new List<MiembroModel>();
 
@@ -126,7 +125,7 @@ namespace WorklabsMx.Controllers
                 "Usuario_Nombre LIKE @nombre AND Usuario_Apellidos LIKE @apellido AND " +
                 "Usuario_Profesion LIKE @profesion AND Usuario_Puesto LIKE @puesto AND " +
                 "Usuario_Habilidades LIKE @habilidades AND Usuario_Empresa_Pais_Descripcion LIKE @pais AND " +
-                "Usuario_Empresa_Estado_Descripcion LIKE @estado and Usuario_Empresa_Municipio_Descripcion LIKE @municipio");
+                "Usuario_Empresa_Estado_Descripcion LIKE @estado and Usuario_Empresa_Municipio_Descripcion LIKE @municipio AND Usuario_Disponibilidad_Trabajo LIKE @disponibilidad");
             command.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
             command.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
             command.Parameters.AddWithValue("@profesion", "%" + profesion + "%");
@@ -135,7 +134,7 @@ namespace WorklabsMx.Controllers
             command.Parameters.AddWithValue("@pais", "%" + pais + "%");
             command.Parameters.AddWithValue("@estado", "%" + estado + "%");
             command.Parameters.AddWithValue("@municipio", "%" + municipio + "%");
-            command.Parameters.AddWithValue("@disponibilidad", disponibilidad);
+            command.Parameters.AddWithValue("@disponibilidad", "%" + disponibilidad + "%\t");
             try
             {
                 conn.Open();
@@ -185,15 +184,13 @@ namespace WorklabsMx.Controllers
         /// <param name="habilidades">Habilidades del usuario</param>
         /// <param name="fechaNacimiento">Fecha nacimiento del usuario</param>
         /// <param name="foto">Foto del usuario</param>
-        public bool UpdateDataMiembros(int usuario_id, string nombre, string apellido, string correo, string telefono,
-                                       string celular, string profesion, string puesto, string habilidades, DateTime fechaNacimiento,
-                                       string foto)
+        public bool UpdateDataMiembros(int usuario_id, string nombre, string apellido, string correo, string telefono, string celular,
+                                       string profesion, string puesto, string habilidades, DateTime fechaNacimiento, string foto)
         {
             try
             {
                 conn.Open();
                 transaction = conn.BeginTransaction();
-
                 command = CreateCommand();
                 command.Connection = conn;
                 command.Transaction = transaction;
@@ -209,7 +206,6 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Miembro_Profesion", profesion);
                 command.Parameters.AddWithValue("@Miembro_Puesto", puesto);
                 command.Parameters.AddWithValue("@Miembro_Habilidades", habilidades);
-
                 command.Parameters.AddWithValue("@Miembro_Fecha_Nacimiento", fechaNacimiento);
                 command.Parameters.AddWithValue("@Miembro_Fotografia", foto);
 

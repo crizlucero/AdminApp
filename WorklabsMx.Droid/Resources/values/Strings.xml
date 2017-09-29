@@ -142,4 +142,5 @@
 	<string name="Pais">País</string>
 	<string name="Empresa">Empresa</string>
 	<string name="Disponibilidad">Disponibilidad</string>
+    <string name="MiCuenta">Mi Cuenta</string>
 </resources>

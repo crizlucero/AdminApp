@@ -44,7 +44,7 @@ namespace WorklabsMx.iOS
                 miembro = new MiembrosController().GetMemberData(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
             else
                 miembro = new MiembrosController().GetMemberData(Usuario, Tipo);
-            new InfoPersonaCard(miembro, View, 100);
+            new InfoPersonaCard(miembro, View);
 
             UIToolbar tbNav = new UIToolbar
             {
@@ -113,7 +113,7 @@ namespace WorklabsMx.iOS
 
             UIBarButtonItem bbiInfo = new UIBarButtonItem(UIImage.FromBundle("ic_format_list_bulleted"), UIBarButtonItemStyle.Done, (sender, e) =>
             {
-                new InfoPersonaCard(miembro, View, 100);
+                new InfoPersonaCard(miembro, View);
             });
 
             UIBarButtonItem bbiFavorites = new UIBarButtonItem(UIImage.FromBundle("ic_star"), UIBarButtonItemStyle.Done, (sender, e) =>
@@ -207,7 +207,7 @@ namespace WorklabsMx.iOS
                         SlackLogs.SendMessage(e.Message);
                     }
                 }
-                scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 100 + totalSize);
+                scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, totalSize);
 
                 scrollView.Scrolled += ScrollView_Scrolled;
                 View.AddSubview(scrollView);

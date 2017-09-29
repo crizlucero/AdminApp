@@ -70,10 +70,13 @@ namespace WorklabsMx.Droid
                 Productos.Add(producto.Producto_Id, new CarritoModel { Producto_Cantidad = 0, Sucursal_Id = 0 });
                 if (Carrito.ContainsKey(producto.Producto_Id))
                 {
-                    Productos[producto.Producto_Id].Membresia_Cantidad = (int)Carrito[producto.Producto_Id].Producto_Cantidad;
-                    Productos[producto.Producto_Id].Sucursal_Id = Carrito[producto.Producto_Id].Sucursal_Id;
-                    Productos[producto.Producto_Id].Membresia_Fecha_Inicio = Carrito[producto.Producto_Id].Membresia_Fecha_Inicio;
-                    CanPay = true;
+                    if (DateTime.Parse(Productos[producto.Producto_Id].Membresia_Fecha_Inicio) >= DateTime.Now)
+                    {
+                        Productos[producto.Producto_Id].Producto_Cantidad = (int)Carrito[producto.Producto_Id].Producto_Cantidad;
+                        Productos[producto.Producto_Id].Sucursal_Id = Carrito[producto.Producto_Id].Sucursal_Id;
+                        Productos[producto.Producto_Id].Membresia_Fecha_Inicio = Carrito[producto.Producto_Id].Membresia_Fecha_Inicio;
+                        CanPay = true;
+                    }
                 }
 
                 TableRow trProducto = new TableRow(this);
@@ -96,7 +99,7 @@ namespace WorklabsMx.Droid
 
                 EditText txtCantidadProductos = new EditText(this)
                 {
-                    Text = Carrito.ContainsKey(producto.Producto_Id) ? Carrito[producto.Producto_Id].Producto_Cantidad.ToString() : "0",
+                    Text = Productos[producto.Producto_Id].Producto_Cantidad.ToString(),
                     TextSize = 14,
                     InputType = Android.Text.InputTypes.NumberFlagSigned
                 };
@@ -184,7 +187,7 @@ namespace WorklabsMx.Droid
                 {
                     trProducto = new TableRow(this);
                     trProducto.AddView(new TextView(this) { Text = "Fecha de Inicio" });
-                    dpFechaInicio.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                    dpFechaInicio.Text = !string.IsNullOrEmpty(Productos[producto.Producto_Id].Membresia_Fecha_Inicio) ? Productos[producto.Producto_Id].Membresia_Fecha_Inicio : DateTime.Now.ToString("dd/MM/yyyy");
                     dpFechaInicio.TextChanged += (sender, e) =>
                     {
                         if (DateTime.TryParse(dpFechaInicio.Text, out DateTime fecha))

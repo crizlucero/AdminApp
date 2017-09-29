@@ -7,12 +7,12 @@ namespace WorklabsMx.iOS.ViewElements
     {
         public bool IsChecked { get; set; }
         UIImageView Image { get; set; }
-        public UICheckBox(int x, int y)
+        public UICheckBox(int x, int y, bool IsChecked = false)
         {
             Frame = new CGRect(x, y, 20, 20);
             Layer.BorderWidth = 1;
             Layer.BorderColor = UIColor.LightGray.CGColor;
-            IsChecked = false;
+            this.IsChecked = IsChecked;
             Image = new UIImageView(UIImage.FromBundle("ic_check")) { Frame = new CGRect(0, 0, 20, 20) };
             Image.Hidden = !IsChecked;
             Add(Image);

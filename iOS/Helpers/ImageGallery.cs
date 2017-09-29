@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Foundation;
 using UIKit;
 using WorklabsMx.Helpers;
@@ -105,16 +104,16 @@ namespace WorklabsMx.iOS.Helpers
             return UIImage.FromBundle("ProfileImage");
         }
 
-        public static UIButton SelectPhoto(UIViewController owner, UIImageView imagen)
-        {
-            UIButton btnPhoto = new STLButton("Seleccionar imagen");
-            btnPhoto.TouchUpInside += (s, e) =>
-            {
-                UIImagePickerController imagePicker = new UIImagePickerController();
-                new ImageGallery(imagePicker, imagen);
-                owner.PresentViewController(imagePicker, true, () => { });
-            };
-            return btnPhoto;
-        }
+		public static UIButton SelectPhoto(UIViewController owner, UIImageView imagen)
+		{
+			UIButton btnPhoto = new STLButton("Seleccionar imagen");
+			btnPhoto.TouchUpInside += (s, e) =>
+			{
+				UIImagePickerController imagePicker = new UIImagePickerController();
+				new ImageGallery(imagePicker, imagen);
+				owner.PresentViewController(imagePicker, true, () => { });
+			};
+			return btnPhoto;
+		}
     }
 }

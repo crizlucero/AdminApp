@@ -3283,6 +3283,9 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f060087
 			public const int Membresias = 2131099783;
 			
+			// aapt resource value: 0x7f0600b0
+			public const int MiCuenta = 2131099824;
+			
 			// aapt resource value: 0x7f06002c
 			public const int MiEmpresa = 2131099692;
 			

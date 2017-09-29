@@ -13,42 +13,49 @@ namespace WorklabsMx.Controllers
         /// </summary>
         /// <returns>Colaboradores de un miembro</returns>
         /// <param name="miembro_id">Identificador del miembro</param>
-        public List<ColaboradorModel> GetColaboradoresMiembro(string miembro_id, string busqueda = "", string status = "1")
+        public List<ColaboradorModel> GetColaboradoresMiembro(string miembro_id, int estatus = 1, string nombre = "", string apellido = "", string puesto = "",
+                                                              string profesion = "", string habilidades = "",
+                                                              bool disponibilidad = true)
         {
             List<ColaboradorModel> colaboradores = new List<ColaboradorModel>();
-            string query = "select c.* from vw_cat_Miembros_Empresas_Colaboradores as c inner join vw_cat_Miembros_Empresas as m on c.Empresa_Miembro_Id = m.Empresa_Miembro_Id WHERE Miembro_Id  = @miembro_id";
-            command = CreateCommand(query);
+            command = CreateCommand("select c.* from vw_cat_Miembros_Empresas_Colaboradores as c " +
+                "inner join vw_cat_Miembros_Empresas as m on c.Empresa_Miembro_Id = m.Empresa_Miembro_Id " +
+                "WHERE Miembro_Id  = @miembro_id AND Colaborador_Empresa_Nombre LIKE @nombre AND Colaborador_Empresa_Apellidos LIKE @apellido " +
+                "AND Colaborador_Empresa_Profesion LIKE @profesion AND Colaborador_Empresa_Puesto LIKE @puesto AND Colaborador_Empresa_Habilidades LIKE @habilidades AND " +
+                                    "Colaborador_Empresa_Puesto LIKE @puesto AND Colaborador_Empresa_Disponibilidad_Trabajo LIKE @disponibilidad AND " +
+                                    "Colaborador_Empresa_Estatus = @estatus");
             command.Parameters.AddWithValue("@miembro_id", miembro_id);
-            //command.Parameters.AddWithValue("@buqueda", busqueda);
-            //command.Parameters.AddWithValue("@status", status);
+            command.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
+            command.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
+            command.Parameters.AddWithValue("@profesion", "%" + profesion + "%");
+            command.Parameters.AddWithValue("@puesto", "%" + puesto + "%");
+            command.Parameters.AddWithValue("@habilidades", "%" + habilidades + "%");
+            command.Parameters.AddWithValue("@disponibilidad", disponibilidad);
+            command.Parameters.AddWithValue("@estatus", estatus);
             try
             {
                 conn.Open();
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-					colaboradores.Add(new ColaboradorModel()
-					{
-						Colaborador_Id = reader["Colaborador_Empresa_Id"].ToString(),
-						Genero_Descripcion = reader["Genero_Descripcion"].ToString(),
-						Colaborador_Nombre = reader["Colaborador_Empresa_Nombre"].ToString(),
-						Colaborador_Apellidos = reader["Colaborador_Empresa_Apellidos"].ToString(),
-						Colaborador_Fecha_Nacimiento = reader["Colaborador_Empresa_Fecha_Nacimiento"].ToString(),
-						Colaborador_Correo_Electronico = reader["Colaborador_Empresa_Correo_Electronico"].ToString(),
-						Colaborador_Telefono = reader["Colaborador_Empresa_Telefono"].ToString(),
-						Colaborador_Celular = reader["Colaborador_Empresa_Celular"].ToString(),
-						Colaborador_Profesion = reader["Colaborador_Empresa_Profesion"].ToString(),
-						Colaborador_Puesto = reader["Colaborador_Empresa_Puesto"].ToString(),
-						Colaborador_Habilidades = reader["Colaborador_Empresa_Habilidades"].ToString(),
-						Colaborador_Llave_Acceso = reader["Colaborador_Empresa_Llave_Acceso"].ToString(),
-						Colaborador_Fotografia = reader["Colaborador_Empresa_Fotografia"].ToString(),
-						//colaborador.//Colaborador_Fecha_Registro = reader["Colaborador_Empresa_Fecha_Registro"].ToString(),
-						Colaborador_Estatus = reader["Colaborador_Empresa_Estatus"].ToString(),
-						//colaborador.Colaborador_Fecha_Alta = reader["Colaborador_Empresa_Fecha_Alta"].ToString();
-						//colaborador.Colaborador_Fecha_Modificacion = reader["Colaborador_Empresa_Fecha_Modificacion"].ToString();
-						//colaborador.Colaborador_Fecha_Baja = reader["Colaborador_Empresa_Fecha_Baja"].ToString();
-						Colaborador_Disponibilidad = reader["Colaborador_Empresa_Disponibilidad_Trabajo"].ToString()
-					});
+                    colaboradores.Add(new ColaboradorModel()
+                    {
+                        Colaborador_Id = reader["Colaborador_Empresa_Id"].ToString(),
+                        Genero_Descripcion = reader["Genero_Descripcion"].ToString(),
+                        Colaborador_Nombre = reader["Colaborador_Empresa_Nombre"].ToString(),
+                        Colaborador_Apellidos = reader["Colaborador_Empresa_Apellidos"].ToString(),
+                        Colaborador_Fecha_Nacimiento = reader["Colaborador_Empresa_Fecha_Nacimiento"].ToString(),
+                        Colaborador_Correo_Electronico = reader["Colaborador_Empresa_Correo_Electronico"].ToString(),
+                        Colaborador_Telefono = reader["Colaborador_Empresa_Telefono"].ToString(),
+                        Colaborador_Celular = reader["Colaborador_Empresa_Celular"].ToString(),
+                        Colaborador_Profesion = reader["Colaborador_Empresa_Profesion"].ToString(),
+                        Colaborador_Puesto = reader["Colaborador_Empresa_Puesto"].ToString(),
+                        Colaborador_Habilidades = reader["Colaborador_Empresa_Habilidades"].ToString(),
+                        Colaborador_Llave_Acceso = reader["Colaborador_Empresa_Llave_Acceso"].ToString(),
+                        Colaborador_Fotografia = reader["Colaborador_Empresa_Fotografia"].ToString(),
+                        Colaborador_Estatus = reader["Colaborador_Empresa_Estatus"].ToString(),
+                        Colaborador_Disponibilidad = reader["Colaborador_Empresa_Disponibilidad_Trabajo"].ToString()
+                    });
                 }
             }
             catch (Exception e)
@@ -70,7 +77,7 @@ namespace WorklabsMx.Controllers
         public ColaboradorModel GetColaborador(string colaborador_id)
         {
             ColaboradorModel colaborador = new ColaboradorModel();
-            string query = "SELECT * FROM vw_cat_Miembros_Empresas_Colaboradores where Colaborador_Id = @colaborador_id";
+            string query = "SELECT * FROM vw_cat_Miembros_Empresas_Colaboradores where Colaborador_Empresa_Id = @colaborador_id";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@colaborador_id", colaborador_id);
             try
@@ -115,6 +122,34 @@ namespace WorklabsMx.Controllers
             return colaborador;
         }
 
+        public bool ChangeColaboradorEstatus(string colaborador_id, int estatus)
+        {
+            try
+            {
+                conn.Open();
+                transaction = conn.BeginTransaction();
+                command = CreateCommand();
+                command.Connection = conn;
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "sp_Colaborador_Estatus";
+                command.Parameters.AddWithValue("@Colaborador_Id", colaborador_id);
+
+                command.Parameters.AddWithValue("@Colaborador_Estatus", estatus);
+                command.Transaction = transaction;
+                command.ExecuteNonQuery();
+                transaction.Commit();
+            }
+            catch (Exception e)
+            {
+                transaction.Rollback();
+                Console.WriteLine(e.Message);
+                SlackLogs.SendMessage(e.Message);
+                return false;
+            }
+            finally { conn.Close(); }
+            return true;
+        }
+
         public bool AddChangeColaborador(string empresa_id, string nombre, string apellidos, string mail,
                                          string telefono, string celular, string profesion, string puesto,
                                          string habilidades, string fecha_nacimiento, string colaborador_id)
@@ -153,6 +188,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Colaborador_Habilidades", habilidades);
 
                 command.Parameters.AddWithValue("@Colaborador_Fecha_Nacimiento", fecha_nacimiento);
+                command.Transaction = transaction;
                 command.ExecuteNonQuery();
                 transaction.Commit();
             }

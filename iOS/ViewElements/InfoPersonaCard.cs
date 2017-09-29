@@ -41,7 +41,7 @@ namespace WorklabsMx.iOS.ViewElements
 
                 lblMail.SetTitleColor(UIColor.DarkGray, UIControlState.Normal);
                 headerView.AddSubview(lblMail);
-                if (storage.Get("Usuario_Id") != miembro.Miembro_Id || storage.Get("Usuario_Tipo") != miembro.Miembro_Tipo )
+                if (storage.Get("Usuario_Id") != miembro.Miembro_Id || storage.Get("Usuario_Tipo") != miembro.Miembro_Tipo)
                 {
                     KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo);
                     UIImage star = UIImage.FromBundle("ic_star_border");
@@ -112,7 +112,7 @@ namespace WorklabsMx.iOS.ViewElements
                 scrollView.AddSubview(new STLLabel(miembro.Miembro_Celular, 640) { Frame = new CGRect(30, 640 + empresaSize, UIScreen.MainScreen.Bounds.Width, 30) });
 
 
-                scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 1010 + empresaSize);
+                scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 750 + empresaSize);
 
                 View.AddSubview(scrollView);
             }

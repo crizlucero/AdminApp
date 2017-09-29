@@ -103,7 +103,7 @@ namespace WorklabsMx.iOS
 
                 scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 580);
                 View.Add(scrollView);
-                NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Actualizar", UIBarButtonItemStyle.Plain, (sender, e) =>
+                NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_send"), UIBarButtonItemStyle.Plain, (sender, e) =>
                 {
                     if (new EmpresaController().UpdateDatosFiscales(empresa_id, storage.Get("Usuario_Id"), territorio_id, txtCalle.Text, txtNumExterior.Text, txtNumInterior.Text, ""))
                         new MessageDialog().SendToast("Datos guardados");

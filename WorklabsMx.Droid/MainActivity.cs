@@ -393,6 +393,31 @@ namespace WorklabsMx.Droid
         void FillMenu(TableLayout menuLayout)
         {
             localStorage.Delete("Parent");
+
+            using (TableRow row = new TableRow(this))
+            {
+                KeyValuePair<string, string> data = new MiembrosController().GetMemberName(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+                ImageView image = new ImageView(this);
+                image.SetImageBitmap(ImagesHelper.GetImageBitmapFromUrl(data.Value));
+                Drawable icon = image.Drawable;
+                icon.SetBounds(0, 0, 30, 30);
+
+                Button btnMenu = new Button(this)
+                {
+                    Text = data.Key,
+                    TextAlignment = TextAlignment.ViewStart
+                };
+                btnMenu.SetWidth(Resources.DisplayMetrics.WidthPixels);
+                btnMenu.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
+                btnMenu.SetBackgroundColor(Color.White);
+                //btnMenu.SetCompoundDrawables(icon, null, null, null);
+                btnMenu.Click += delegate
+                {
+                    StartActivity(new Intent(this, typeof(TabPerfilActivity)));
+                };
+                row.AddView(btnMenu);
+                menuLayout.AddView(row);
+            }
             foreach (ItemsMenu menu in new EscritorioController().GetMenuAndroid(Convert.ToInt32(localStorage.Get("Usuario_Tipo"))))
             {
                 TableRow row = new TableRow(this);

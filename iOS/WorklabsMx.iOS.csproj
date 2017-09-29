@@ -112,12 +112,6 @@
     <Reference Include="PerpetualEngine.SimpleStorage.iOS-Unified">
       <HintPath>..\packages\SimpleStorage.1.4.2\lib\Xamarin.iOS10\PerpetualEngine.SimpleStorage.iOS-Unified.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.Connectivity.Abstractions">
-      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.2\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Connectivity">
-      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.2\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
-    </Reference>
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="MonoTouch.NUnitLite" />
     <Reference Include="Mono.Security" />
@@ -156,6 +150,12 @@
     </Reference>
     <Reference Include="MailKit">
       <HintPath>..\packages\MailKit.1.18.1.1\lib\Xamarin.iOS10\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.3\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.3\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

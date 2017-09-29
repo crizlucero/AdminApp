@@ -68,7 +68,7 @@ namespace WorklabsMx.iOS.ViewElements
                 scrollView.AddSubview(new STLImageLabel(scrollView, empresa.Empresa_Miembro_Red_Social_2, 670, "ic_twitter"));
                 scrollView.AddSubview(new STLImageLabel(scrollView, empresa.Empresa_Miembro_Red_Social_3, 700, "ic_instagram"));
 
-                scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 1090);
+                scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 870);
 
                 View.AddSubview(scrollView);
             }

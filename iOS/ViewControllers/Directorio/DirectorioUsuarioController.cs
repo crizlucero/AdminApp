@@ -116,13 +116,13 @@ namespace WorklabsMx.iOS
                     selectView.RemoveFromSuperview();
             };
             UITextField txtEmpresa = new STLTextField("Empresa", 510);
-            UICheckBox cbDisponibilidad = new UICheckBox(20, 550);
+            UICheckBox cbDisponibilidad = new UICheckBox(20, 550, true);
 
 
             UIButton btnBuscar = new STLButton("Buscar") { Frame = new CGRect(20, 580, 100, 30) };
             btnBuscar.TouchUpInside += (sender, e) =>
             {
-                position = 32;
+                position = 0;
                 FillData(txtNombre.Text, txtApellidos.Text, txtPuesto.Text, txtProfesion.Text, txtHabilidades.Text, cbDisponibilidad.IsChecked, txtPais.Text, txtEstado.Text, txtMunicipio.Text);
                 searchView.RemoveFromSuperview();
             };
@@ -170,7 +170,7 @@ namespace WorklabsMx.iOS
             };
             searchView.BackgroundColor = UIColor.White;
 
-            searchView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 730);
+            searchView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 780);
 
             View.AddSubview(searchView);
 
