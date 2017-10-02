@@ -6,32 +6,36 @@ using WorklabsMx.Controllers;
 using System.Collections.Generic;
 using WorklabsMx.Models;
 using PerpetualEngine.Storage;
-using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
     public partial class MisColaboradoresBajaController : UIViewController
     {
-        int totalSize = 45;
         UIScrollView scrollView;
         SimpleStorage storageLocal;
         public MisColaboradoresBajaController(IntPtr handle) : base(handle)
         {
+            storageLocal = SimpleStorage.EditGroup("Login");
+        }
+
+        public override void ViewDidAppear(bool animated)
+        {
+            base.ViewDidAppear(animated);
+            FillColaboradores(storageLocal.Get("Usuario_Id"));
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
             View.ClearsContextBeforeDrawing = true;
-            storageLocal = SimpleStorage.EditGroup("Login");
 
             FillColaboradores(storageLocal.Get("Usuario_Id"));
         }
 
         public void FillColaboradores(string miembro_id)
         {
-           
-            scrollView = new UIScrollView(new CGRect(0, totalSize, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height));
+            int totalSize = 45;
+            scrollView = new UIScrollView(new CGRect(0, totalSize, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)) { BackgroundColor = UIColor.White };
             List<ColaboradorModel> colaboradores = new ColaboradoresController().GetColaboradoresMiembro(miembro_id, 0);
             foreach (ColaboradorModel colaborador in colaboradores)
             {
@@ -44,10 +48,13 @@ namespace WorklabsMx.iOS
                 };
                 btnAlta.TouchUpInside += (sender, e) =>
                 {
-                    totalSize = 45;
-                    new ColaboradoresController().ChangeColaboradorEstatus(colaborador.Colaborador_Id, 1);
-                    scrollView.RemoveFromSuperview();
-                    FillColaboradores(miembro_id);
+                    if (new ColaboradoresController().ChangeColaboradorEstatus(colaborador.Colaborador_Id, 1))
+                    {
+                        scrollView.RemoveFromSuperview();
+                        FillColaboradores(miembro_id);
+                    }
+                    else
+                        new MessageDialog().SendToast("Ocurrió un error");
                 };
                 scrollView.AddSubview(btnAlta);
 
@@ -63,8 +70,8 @@ namespace WorklabsMx.iOS
             }
 
             scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 40 + totalSize);
-            View.AddSubview(scrollView);
-            View.SendSubviewToBack(scrollView);
+            View.Add(scrollView);
+            //View.SendSubviewToBack(scrollView);
         }
     }
 }

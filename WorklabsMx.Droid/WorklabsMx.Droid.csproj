@@ -119,6 +119,8 @@
     <Compile Include="ViewController\MyMembershipActivity.cs" />
     <Compile Include="ViewController\ReportActivity.cs" />
     <Compile Include="ViewController\MiPerfil\MisColaboradoresActivity.cs" />
+    <Compile Include="ViewController\MiPerfil\TabColaboradoresActivity.cs" />
+    <Compile Include="ViewController\MiPerfil\MisColaboradoresBajaActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -212,6 +214,11 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_open_book.png" />
     <AndroidResource Include="Resources\layout\PostsUserLayout.axml" />
     <AndroidResource Include="Resources\layout\FavoritesUserLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_group.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_people_outline.png" />
+    <AndroidResource Include="Resources\menu\add_person_menu.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_person_add.png" />
+    <AndroidResource Include="Resources\layout\ColaboradoresLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

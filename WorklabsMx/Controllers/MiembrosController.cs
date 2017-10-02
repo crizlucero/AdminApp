@@ -134,7 +134,7 @@ namespace WorklabsMx.Controllers
             command.Parameters.AddWithValue("@pais", "%" + pais + "%");
             command.Parameters.AddWithValue("@estado", "%" + estado + "%");
             command.Parameters.AddWithValue("@municipio", "%" + municipio + "%");
-            command.Parameters.AddWithValue("@disponibilidad", "%" + disponibilidad + "%\t");
+            command.Parameters.AddWithValue("@disponibilidad", "%" + disponibilidad + "%");
             try
             {
                 conn.Open();
@@ -237,7 +237,7 @@ namespace WorklabsMx.Controllers
             {
                 conn.Open();
                 command = CreateCommand("SELECT Miembros_Favoritos_Id, CAST(Miembros_Favoritos_Estatus AS BIT) AS Estatus FROM pro_Miembros_Favoritos WHERE " +
-                "Usuario_Id = @miembro_id AND Usuario_Tipo = @miembro_tipo AND Usuario_Favorito_Id = @miembro_favorito_id AND Usuario_Favorito_Tipo = @miembro_favorito_tipo");
+                "Usuario_Id = @miembro_id AND Usuario_Tipo = @miembro_tipo AND Usuario_Favorito_Id = @miembro_favorito_id AND Usuario_Favorito_Tipo = @miembro_favorito_tipo AND Usuario_Estatus = 1");
                 command.Parameters.AddWithValue("@miembro_id", miembro_id);
                 command.Parameters.AddWithValue("@miembro_tipo", miembro_tipo);
                 command.Parameters.AddWithValue("@miembro_favorito_id", miembro_favorito_id);

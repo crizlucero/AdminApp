@@ -1,13 +1,7 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using System;
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using PerpetualEngine.Storage;
@@ -17,8 +11,8 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "MisColaboradoresActivity")]
-    public class MisColaboradoresActivity : Activity
+    [Activity(Label = "MisColaboradoresBajaActivity")]
+    public class MisColaboradoresBajaActivity : Activity
     {
         ScrollView svDirectorio;
         SimpleStorage storage;
@@ -26,13 +20,14 @@ namespace WorklabsMx.Droid
         {
             base.OnCreate(savedInstanceState);
 
-            Directorio();
-        }
-		protected override void OnResume()
-		{
-			base.OnResume();
 			Directorio();
-		}
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+			Directorio();
+        }
 
         void Directorio(string nombre = "", string apellido = "", string puesto = "", string profesion = "",
                       string habilidades = "", bool disponibilidad = true)
@@ -51,7 +46,7 @@ namespace WorklabsMx.Droid
                 LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent),
                 Orientation = Orientation.Vertical
             };
-            foreach (ColaboradorModel colaborador in new ColaboradoresController().GetColaboradoresMiembro(miembro_id, 1, nombre, apellido, puesto, profesion, habilidades, disponibilidad))
+            foreach (ColaboradorModel colaborador in new ColaboradoresController().GetColaboradoresMiembro(miembro_id, 0, nombre, apellido, puesto, profesion, habilidades, disponibilidad))
             {
                 LinearLayout llColaborador = new LinearLayout(this)
                 {
@@ -69,17 +64,15 @@ namespace WorklabsMx.Droid
                 };
                 rlNombre.AddView(txtNombre);
 
-                ImageButton btnBaja = new ImageButton(this);
-                btnBaja.SetImageResource(Resource.Mipmap.ic_clear);
-                btnBaja.SetX(Resources.DisplayMetrics.WidthPixels - 120);
-                btnBaja.Click += (sender, e) =>
+                ImageButton btnAlta = new ImageButton(this);
+                btnAlta.SetImageResource(Resource.Mipmap.ic_add);
+                btnAlta.SetX(Resources.DisplayMetrics.WidthPixels - 120);
+                btnAlta.Click += (sender, e) =>
                 {
-                    if (new ColaboradoresController().ChangeColaboradorEstatus(colaborador.Colaborador_Id, 0))
-                        llDirectorio.RemoveView(llColaborador);
-                    else
-                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
+                    new ColaboradoresController().ChangeColaboradorEstatus(colaborador.Colaborador_Id, 1);
+                    llDirectorio.RemoveView(llColaborador);
                 };
-                rlNombre.AddView(btnBaja);
+                rlNombre.AddView(btnAlta);
                 llColaborador.AddView(rlNombre);
                 LinearLayout llEmail = new LinearLayout(this)
                 {

@@ -7,8 +7,8 @@ using Android.Widget;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "TabPerfilActivity")]
-    public class TabPerfilActivity : ActivityGroup
+    [Activity(Label = "TabColaboradoresActivity")]
+    public class TabColaboradoresActivity : ActivityGroup
     {
         static TabHost _tabs;
 
@@ -17,6 +17,7 @@ namespace WorklabsMx.Droid
             TabHost.TabSpec spec = _tabs.NewTabSpec(tabId);
             spec.SetIndicator(tabName, (Image));
             spec.SetContent(intent);
+
             _tabs.AddTab(spec);
             if (IsCurrent)
                 _tabs.SetCurrentTabByTag(tabId);
@@ -36,14 +37,14 @@ namespace WorklabsMx.Droid
             _tabs = FindViewById<TabHost>(Resource.Id.tabHostProfile);
             _tabs.Setup(LocalActivityManager);
 
-            CreateNewTab(new Intent(this, typeof(PerfilActivity)), "tab1", "Perfil", Resources.GetDrawable(Resource.Mipmap.ic_group), true);
-            CreateNewTab(new Intent(this, typeof(MiEmpresaActivity)), "tab2", "Empresa", Resources.GetDrawable(Resource.Mipmap.ic_people_outline), false);
+            CreateNewTab(new Intent(this, typeof(MisColaboradoresActivity)), "tab1", Resources.GetString(Resource.String.MisColaboradores), Resources.GetDrawable(Resource.Mipmap.ic_menu), true);
+            CreateNewTab(new Intent(this, typeof(MisColaboradoresBajaActivity)), "tab2", Resources.GetString(Resource.String.ColaboradoresBaja), Resources.GetDrawable(Resource.Mipmap.ic_domain), false);
 
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            MenuInflater.Inflate(Resource.Menu.edit_menu, menu);
+            MenuInflater.Inflate(Resource.Menu.add_person_menu, menu);
             return base.OnCreateOptionsMenu(menu);
         }
 

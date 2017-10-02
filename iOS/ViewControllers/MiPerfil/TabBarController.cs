@@ -12,7 +12,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            if (PerpetualEngine.Storage.SimpleStorage.EditGroup("Login").Get("Usuario_Tipo") == "0")
+            if (PerpetualEngine.Storage.SimpleStorage.EditGroup("Login").Get("Usuario_Tipo") == "1")
                 NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_create"), UIBarButtonItemStyle.Plain, HandleEventHandler), true);
         }
 
@@ -32,6 +32,6 @@ namespace WorklabsMx.iOS
 			this.NavigationController.PushViewController(controller, true);
         }
         public override void ViewWillAppear(bool animated) =>
-            TabBar.Hidden |= PerpetualEngine.Storage.SimpleStorage.EditGroup("Login").Get("Usuario_Tipo") == "1";
+            TabBar.Hidden |= PerpetualEngine.Storage.SimpleStorage.EditGroup("Login").Get("Usuario_Tipo") == "2";
     }
 }
