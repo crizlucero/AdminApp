@@ -1,0 +1,7 @@
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/ibtool/_BundleResourceWithLogicalName.items
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/actool/_PartialAppManifest.items
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/actool/_BundleResourceWithLogicalName.items
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/optimized/
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.csprojResolveAssemblyReference.cache
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.csproj.WorklabsMx.iOS.exe.config
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.csproj.CoreCompileInputs.cache

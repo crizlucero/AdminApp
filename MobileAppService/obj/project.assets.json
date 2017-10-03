@@ -22808,15 +22808,15 @@
     ]
   },
   "packageFolders": {
-    "/Users/worklabs/.nuget/packages/": {}
+    "/Users/gilberto/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/worklabs/Projects/WorklabsMx/MobileAppService/WorklabsMx.MobileAppService.csproj",
+      "projectUniqueName": "/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/MobileAppService/WorklabsMx.MobileAppService.csproj",
       "projectName": "WorklabsMx.MobileAppService",
-      "projectPath": "/Users/worklabs/Projects/WorklabsMx/MobileAppService/WorklabsMx.MobileAppService.csproj",
-      "outputPath": "/Users/worklabs/Projects/WorklabsMx/MobileAppService/obj",
+      "projectPath": "/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/MobileAppService/WorklabsMx.MobileAppService.csproj",
+      "outputPath": "/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/MobileAppService/obj",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.0"
@@ -22831,6 +22831,7 @@
       "netcoreapp1.0": {
         "dependencies": {
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "1.0.5"
           },

@@ -21,6 +21,7 @@ namespace WorklabsMx.iOS
             App.Initialize();
 
             // Select first UIViewController.
+
             var storage = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
             if (!string.IsNullOrEmpty(storage.Get("Usuario_Id")) && !string.IsNullOrEmpty(storage.Get("Usuario_Tipo")))
                 Window.RootViewController = UIStoryboard.FromName("Main", null)
