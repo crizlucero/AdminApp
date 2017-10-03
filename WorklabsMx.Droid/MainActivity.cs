@@ -12,6 +12,7 @@ using Android.Graphics.Drawables;
 using Android.Support.V4.Content;
 using WorklabsMx.Droid.Helpers;
 using Android.Graphics;
+using Android.Views.InputMethods;
 
 namespace WorklabsMx.Droid
 {
@@ -24,6 +25,8 @@ namespace WorklabsMx.Droid
         int sizePage = 10;
         TableRow.LayoutParams param;
         SimpleStorage localStorage;
+        EditText txtEmail, txtPassword;
+
         public MainActivity()
         {
             param = new TableRow.LayoutParams
@@ -32,6 +35,7 @@ namespace WorklabsMx.Droid
                 Span = 2
             };
         }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -40,7 +44,7 @@ namespace WorklabsMx.Droid
 
             localStorage = SimpleStorage.EditGroup("Login");
 
-            if (localStorage.HasKey("Usuario_Id") && localStorage.HasKey("Usuario_Tipo"))
+            if (localStorage.HasKey("Usuario_Id") && localStorage.HasKey("Usuario_Tipo") && localStorage.HasKey("Empresa_Id"))
             {
                 OpenDashboard();
             }
@@ -48,22 +52,29 @@ namespace WorklabsMx.Droid
             {
                 SetContentView(Resource.Layout.LoginLayout);
 
-                EditText txtEmail = FindViewById<EditText>(Resource.Id.txtEmail);
-                EditText txtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
+                txtEmail = FindViewById<EditText>(Resource.Id.txtEmail);
+                txtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
                 Button btnLogin = FindViewById<Button>(Resource.Id.btnLogin);
-                btnLogin.Touch += (sender, e) =>
+                txtEmail.EditorAction += (sender, e) =>
                 {
-                    List<string> MiembrosId = new LoginController().MemberLogin(txtEmail.Text, new PassSecurity().EncodePassword(txtPassword.Text));
-                    if (MiembrosId.Count > 0)
+                    if (Android.Util.Patterns.EmailAddress.Matcher(txtEmail.Text).Matches())
                     {
-                        localStorage = SimpleStorage.EditGroup("Login");
-                        localStorage.Put("Usuario_Id", MiembrosId[0]);
-                        localStorage.Put("Usuario_Tipo", MiembrosId[1]);
-                        OpenDashboard();
+                        if (e.ActionId == ImeAction.Done || e.ActionId == ImeAction.Next)
+                        {
+                            txtPassword.RequestFocus();
+                        }
                     }
-                    else
-                        Toast.MakeText(this, Resource.String.LoginError, ToastLength.Short);
+                    else Toast.MakeText(this, Resource.String.FormatoCorreoError, ToastLength.Short).Show();
                 };
+
+                txtPassword.EditorAction += (sender, e) =>
+                {
+                    if (e.ActionId == ImeAction.Done)
+                    {
+                        btnLogin.CallOnClick();
+                    }
+                };
+                btnLogin.Touch += BtnLogin_Touch;
             }
         }
 
@@ -298,41 +309,42 @@ namespace WorklabsMx.Droid
                 btnClear.SetImageResource(Resource.Mipmap.ic_clear);
                 btnClear.SetMinimumWidth(15);
                 btnClear.SetMinimumHeight(15);
-                btnClear.Click += (sender, e) => {
-					AlertDialog.Builder alert = new AlertDialog.Builder(this);
-                    if (comentario.USUARIO_ID == localStorage.Get("Usuario_Id") && comentario.USUARIO_TIPO== localStorage.Get("Usuario_Tipo"))
-					{
-						alert.SetTitle("Eliminar comentario");
-						alert.SetMessage("Se eliminará el comentario");
-						alert.SetPositiveButton("Ok", (senderO, eO) =>
-						{
+                btnClear.Click += (sender, e) =>
+                {
+                    AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                    if (comentario.USUARIO_ID == localStorage.Get("Usuario_Id") && comentario.USUARIO_TIPO == localStorage.Get("Usuario_Tipo"))
+                    {
+                        alert.SetTitle("Eliminar comentario");
+                        alert.SetMessage("Se eliminará el comentario");
+                        alert.SetPositiveButton("Ok", (senderO, eO) =>
+                        {
 
-                            if (new EscritorioController().OcultarComment( comentario.COMM_ID, 0))
-							{
-								Toast.MakeText(this, "Comentario eliminado", ToastLength.Short).Show();
+                            if (new EscritorioController().OcultarComment(comentario.COMM_ID, 0))
+                            {
+                                Toast.MakeText(this, "Comentario eliminado", ToastLength.Short).Show();
 
-							}
-							else
-								Toast.MakeText(this, "Hubo un error, intente de nuevo", ToastLength.Short).Show();
-						});
-						alert.SetNegativeButton("Cancelar", (sender1, e1) => { });
-					}
-					else
-					{
-						alert.SetTitle("Reportar comentario");
-						alert.SetMessage("¿Desea reportar el comentario?");
-						alert.SetPositiveButton("Ok", (senderO, eO) =>
-						{
-							{
-								Intent intent = new Intent(this, typeof(ReportActivity));
+                            }
+                            else
+                                Toast.MakeText(this, "Hubo un error, intente de nuevo", ToastLength.Short).Show();
+                        });
+                        alert.SetNegativeButton("Cancelar", (sender1, e1) => { });
+                    }
+                    else
+                    {
+                        alert.SetTitle("Reportar comentario");
+                        alert.SetMessage("¿Desea reportar el comentario?");
+                        alert.SetPositiveButton("Ok", (senderO, eO) =>
+                        {
+                            {
+                                Intent intent = new Intent(this, typeof(ReportActivity));
                                 intent.PutExtra("comment_id", comentario.COMM_ID);
-								StartActivity(intent);
-							}
-						});
-						alert.SetNegativeButton("Cancelar", (sender1, e1) => { });
-					}
-					Dialog dialog = alert.Create();
-					dialog.Show();
+                                StartActivity(intent);
+                            }
+                        });
+                        alert.SetNegativeButton("Cancelar", (sender1, e1) => { });
+                    }
+                    Dialog dialog = alert.Create();
+                    dialog.Show();
                 };
                 llButton.AddView(btnClear);
 
@@ -442,13 +454,33 @@ namespace WorklabsMx.Droid
                             localStorage.Put("Parent", menu.Menu_Id);
                             StartActivity(new Intent(this, typeof(SubMenuActivity))); break;
                         case "LogoutActivity":
-                            localStorage.Delete("Usuario_Id"); localStorage.Delete("Usuario_Tipo");
+                            localStorage.Delete("Usuario_Id"); localStorage.Delete("Usuario_Tipo"); localStorage.Delete("Empresa_Id");
                             StartActivity(new Intent(this, typeof(MainActivity))); break;
                     }
                 };
                 row.AddView(btnMenu);
                 menuLayout.AddView(row);
             }
+        }
+
+        void BtnLogin_Touch(object sender, View.TouchEventArgs e)
+        {
+            if (Android.Util.Patterns.EmailAddress.Matcher(txtEmail.Text).Matches())
+            {
+                List<string> MiembrosId = new LoginController().MemberLogin(txtEmail.Text, new PassSecurity().EncodePassword(txtPassword.Text));
+                if (MiembrosId.Count > 0)
+                {
+                    localStorage = SimpleStorage.EditGroup("Login");
+                    localStorage.Put("Usuario_Id", MiembrosId[0]);
+                    localStorage.Put("Usuario_Tipo", MiembrosId[1]);
+                    localStorage.Put("Empresa_Id", MiembrosId[2]);
+                    OpenDashboard();
+                }
+                else
+                    Toast.MakeText(this, Resource.String.LoginError, ToastLength.Short).Show();
+            }
+            else
+                Toast.MakeText(this, Resource.String.FormatoCorreoError, ToastLength.Short).Show();
         }
     }
 }

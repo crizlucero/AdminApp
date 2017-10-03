@@ -23,12 +23,16 @@ namespace WorklabsMx.Droid.Helpers
 
                 using (var webClient = new WebClient())
                 {
-                    var imageBytes = webClient.DownloadData("http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + url);
-                    if (imageBytes != null && imageBytes.Length > 0)
+                    try
                     {
-                        bytes = imageBytes;
-                        imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
+                        var imageBytes = webClient.DownloadData("http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + url);
+                        if (imageBytes != null && imageBytes.Length > 0)
+                        {
+                            bytes = imageBytes;
+                            imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
+                        }
                     }
+                    catch (Exception e) { SlackLogs.SendMessage(e.Message); }
                 }
                 return imageBitmap;
             }

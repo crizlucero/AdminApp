@@ -45,7 +45,8 @@
             android:layout_width="match_parent"
             android:layout_height="42.0dp"
             android:id="@+id/txtPassword"
-            android:hint="@string/Password" />
+            android:hint="@string/Password"
+            android:maxLength="8" />
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"

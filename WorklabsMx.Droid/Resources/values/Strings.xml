@@ -143,5 +143,8 @@
 	<string name="Empresa">Empresa</string>
 	<string name="Disponibilidad">Disponibilidad</string>
     <string name="MiCuenta">Mi Cuenta</string>
-	<string name="ColaboradoresBaja">colaboradores en baja</string>
+	<string name="ColaboradoresBaja">Colaboradores en baja</string>
+	<string name="FormatoCorreoError">Formato de correo electrónico incorrecto</string>
+	<string name="Renovar">Renovar</string>
+	<string name="Modificar">Modificar</string>
 </resources>

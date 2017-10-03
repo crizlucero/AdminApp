@@ -19,7 +19,7 @@ namespace WorklabsMx.Controllers
             List<string> datos = new List<string>();
             try
             {
-                string query = "SELECT Usuario_Id, Usuario_Tipo FROM vw_pro_Usuarios_Directorio where Usuario_Correo_Electronico = @email --and Miembro_Contrasena = @password";
+                string query = "SELECT Usuario_Id, Usuario_Tipo, Usuario_Empresa_Id FROM vw_pro_Usuarios_Directorio where Usuario_Correo_Electronico = @email --and Miembro_Contrasena = @password";
                 command = CreateCommand(query);
                 command.Parameters.AddWithValue("@email", email);
                 command.Parameters.AddWithValue("@password", password);
@@ -30,6 +30,7 @@ namespace WorklabsMx.Controllers
                 {
                     datos.Add(reader["Usuario_Id"].ToString());
                     datos.Add(reader["Usuario_Tipo"].ToString());
+                    datos.Add(reader["Usuario_Empresa_Id"].ToString());
                 }
             }
             catch (Exception e)

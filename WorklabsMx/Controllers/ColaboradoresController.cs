@@ -13,18 +13,17 @@ namespace WorklabsMx.Controllers
         /// </summary>
         /// <returns>Colaboradores de un miembro</returns>
         /// <param name="miembro_id">Identificador del miembro</param>
-        public List<ColaboradorModel> GetColaboradoresMiembro(string miembro_id, int estatus = 1, string nombre = "", string apellido = "", string puesto = "",
+        public List<ColaboradorModel> GetColaboradoresMiembro(string empresa_id, int estatus = 1, string nombre = "", string apellido = "", string puesto = "",
                                                               string profesion = "", string habilidades = "",
                                                               bool disponibilidad = true)
         {
             List<ColaboradorModel> colaboradores = new List<ColaboradorModel>();
-            command = CreateCommand("select c.* from vw_cat_Miembros_Empresas_Colaboradores as c " +
-                "inner join vw_cat_Miembros_Empresas as m on c.Empresa_Miembro_Id = m.Empresa_Miembro_Id " +
-                "WHERE Miembro_Id  = @miembro_id AND Colaborador_Empresa_Nombre LIKE @nombre AND Colaborador_Empresa_Apellidos LIKE @apellido " +
-                "AND Colaborador_Empresa_Profesion LIKE @profesion AND Colaborador_Empresa_Puesto LIKE @puesto AND Colaborador_Empresa_Habilidades LIKE @habilidades AND " +
-                                    "Colaborador_Empresa_Puesto LIKE @puesto AND Colaborador_Empresa_Disponibilidad_Trabajo LIKE @disponibilidad AND " +
-                                    "Colaborador_Empresa_Estatus = @estatus");
-            command.Parameters.AddWithValue("@miembro_id", miembro_id);
+            command = CreateCommand("select * from vw_pro_Usuarios_Directorio " +
+                "WHERE Usuario_Empresa_Id  = @empresa_id AND Usuario_Nombre LIKE @nombre AND Usuario_Apellidos LIKE @apellido " +
+                "AND Usuario_Profesion LIKE @profesion AND Usuario_Puesto LIKE @puesto AND Usuario_Habilidades LIKE @habilidades AND " +
+                                    "Usuario_Puesto LIKE @puesto AND Usuario_Disponibilidad_Trabajo LIKE @disponibilidad AND " +
+                                    "Usuario_Estatus = @estatus AND Usuario_Tipo = 2");
+            command.Parameters.AddWithValue("@empresa_id", empresa_id);
             command.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
             command.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
             command.Parameters.AddWithValue("@profesion", "%" + profesion + "%");
@@ -38,23 +37,23 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    colaboradores.Add(new ColaboradorModel()
+                    colaboradores.Add(new ColaboradorModel
                     {
-                        Colaborador_Id = reader["Colaborador_Empresa_Id"].ToString(),
-                        Genero_Descripcion = reader["Genero_Descripcion"].ToString(),
-                        Colaborador_Nombre = reader["Colaborador_Empresa_Nombre"].ToString(),
-                        Colaborador_Apellidos = reader["Colaborador_Empresa_Apellidos"].ToString(),
-                        Colaborador_Fecha_Nacimiento = reader["Colaborador_Empresa_Fecha_Nacimiento"].ToString(),
-                        Colaborador_Correo_Electronico = reader["Colaborador_Empresa_Correo_Electronico"].ToString(),
-                        Colaborador_Telefono = reader["Colaborador_Empresa_Telefono"].ToString(),
-                        Colaborador_Celular = reader["Colaborador_Empresa_Celular"].ToString(),
-                        Colaborador_Profesion = reader["Colaborador_Empresa_Profesion"].ToString(),
-                        Colaborador_Puesto = reader["Colaborador_Empresa_Puesto"].ToString(),
-                        Colaborador_Habilidades = reader["Colaborador_Empresa_Habilidades"].ToString(),
-                        Colaborador_Llave_Acceso = reader["Colaborador_Empresa_Llave_Acceso"].ToString(),
-                        Colaborador_Fotografia = reader["Colaborador_Empresa_Fotografia"].ToString(),
-                        Colaborador_Estatus = reader["Colaborador_Empresa_Estatus"].ToString(),
-                        Colaborador_Disponibilidad = reader["Colaborador_Empresa_Disponibilidad_Trabajo"].ToString()
+                        Colaborador_Id = reader["Usuario_Id"].ToString(),
+                        Genero_Descripcion = reader["Usuario_Genero_Descripcion"].ToString(),
+                        Colaborador_Nombre = reader["Usuario_Nombre"].ToString(),
+                        Colaborador_Apellidos = reader["Usuario_Apellidos"].ToString(),
+                        Colaborador_Fecha_Nacimiento = reader["Usuario_Fecha_Nacimiento"].ToString(),
+                        Colaborador_Correo_Electronico = reader["Usuario_Correo_Electronico"].ToString(),
+                        Colaborador_Telefono = reader["Usuario_Telefono"].ToString(),
+                        Colaborador_Celular = reader["Usuario_Celular"].ToString(),
+                        Colaborador_Profesion = reader["Usuario_Profesion"].ToString(),
+                        Colaborador_Puesto = reader["Usuario_Puesto"].ToString(),
+                        Colaborador_Habilidades = reader["Usuario_Habilidades"].ToString(),
+                        Colaborador_Llave_Acceso = reader["Usuario_Llave_Acceso"].ToString(),
+                        Colaborador_Fotografia = reader["Usuario_Fotografia"].ToString(),
+                        Colaborador_Estatus = reader["Usuario_Estatus"].ToString(),
+                        Colaborador_Disponibilidad = reader["Usuario_Disponibilidad_Trabajo"].ToString()
                     });
                 }
             }
@@ -74,40 +73,36 @@ namespace WorklabsMx.Controllers
         /// </summary>
         /// <returns>Colaborador</returns>
         /// <param name="colaborador_id">Identificador del colaborador</param>
-        public ColaboradorModel GetColaborador(string colaborador_id)
+        public ColaboradorModel GetColaborador(string usuario_id)
         {
             ColaboradorModel colaborador = new ColaboradorModel();
-            string query = "SELECT * FROM vw_cat_Miembros_Empresas_Colaboradores where Colaborador_Empresa_Id = @colaborador_id";
+            string query = "SELECT * FROM vw_pro_Usuarios_Directorio where Usuario_Id = @usuario_id AND Usuario_Tipo = 2";
             command = CreateCommand(query);
-            command.Parameters.AddWithValue("@colaborador_id", colaborador_id);
+            command.Parameters.AddWithValue("@usuario_id", usuario_id);
             try
             {
                 conn.Open();
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    colaborador = new ColaboradorModel
-                    {
-                        Colaborador_Id = reader["Colaborador_Id"].ToString(),
-                        Genero_Id = reader["Genero_Id"].ToString(),
-                        Colaborador_Nombre = reader["Colaborador_Nombre"].ToString(),
-                        Colaborador_Apellidos = reader["Colaborador_Apellidos"].ToString(),
-                        Colaborador_Fecha_Nacimiento = reader["Colaborador_Fecha_Nacimiento"].ToString(),
-                        Colaborador_Correo_Electronico = reader["Colaborador_Correo_Electronico"].ToString(),
-                        Colaborador_Telefono = reader["Colaborador_Telefono"].ToString(),
-                        Colaborador_Celular = reader["Colaborador_Celular"].ToString(),
-                        Colaborador_Profesion = reader["Colaborador_Profesion"].ToString(),
-                        Colaborador_Puesto = reader["Colaborador_Puesto"].ToString(),
-                        Colaborador_Habilidades = reader["Colaborador_Habilidades"].ToString(),
-                        Colaborador_Llave_Acceso = reader["Colaborador_Llave_Acceso"].ToString(),
-                        Colaborador_Fotografia = reader["Colaborador_Fotografia"].ToString(),
-                        Colaborador_Fecha_Registro = reader["Colaborador_Fecha_Registro"].ToString(),
-                        Colaborador_Estatus = reader["Colaborador_Estatus"].ToString(),
-                        Colaborador_Fecha_Alta = reader["Colaborador_Fecha_Alta"].ToString(),
-                        Colaborador_Fecha_Modificacion = reader["Colaborador_Fecha_Modificacion"].ToString(),
-                        Colaborador_Fecha_Baja = reader["Colaborador_Fecha_Baja"].ToString(),
-                        Colaborador_Disponibilidad = reader["Colaborador_Disponibilidad"].ToString()
-                    };
+
+                    colaborador.Colaborador_Id = reader["Usuario_Id"].ToString();
+                    colaborador.Genero_Id = reader["Usuario_Genero_Id"].ToString();
+                    colaborador.Colaborador_Nombre = reader["Usuario_Nombre"].ToString();
+                    colaborador.Colaborador_Apellidos = reader["Usuario_Apellidos"].ToString();
+                    colaborador.Colaborador_Fecha_Nacimiento = reader["Usuario_Fecha_Nacimiento"].ToString();
+                    colaborador.Colaborador_Correo_Electronico = reader["Usuario_Correo_Electronico"].ToString();
+                    colaborador.Colaborador_Telefono = reader["Usuario_Telefono"].ToString();
+                    colaborador.Colaborador_Celular = reader["Usuario_Celular"].ToString();
+                    colaborador.Colaborador_Profesion = reader["Usuario_Profesion"].ToString();
+                    colaborador.Colaborador_Puesto = reader["Usuario_Puesto"].ToString();
+                    colaborador.Colaborador_Habilidades = reader["Usuario_Habilidades"].ToString();
+                    colaborador.Colaborador_Llave_Acceso = reader["Usuario_Llave_Acceso"].ToString();
+                    colaborador.Colaborador_Fotografia = reader["Usuario_Fotografia"].ToString();
+                    colaborador.Colaborador_Fecha_Registro = reader["Usuario_Fecha_Registro"].ToString();
+                    colaborador.Colaborador_Estatus = reader["Usuario_Estatus"].ToString();
+                    colaborador.Colaborador_Disponibilidad = reader["Usuario_Disponibilidad_Trabajo"].ToString();
+
                 }
             }
             catch (Exception e)

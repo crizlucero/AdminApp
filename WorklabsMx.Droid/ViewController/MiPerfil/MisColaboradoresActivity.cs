@@ -1,13 +1,8 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using System;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using PerpetualEngine.Storage;
@@ -28,11 +23,11 @@ namespace WorklabsMx.Droid
 
             Directorio();
         }
-		protected override void OnResume()
-		{
-			base.OnResume();
-			Directorio();
-		}
+        protected override void OnResume()
+        {
+            base.OnResume();
+            Directorio();
+        }
 
         void Directorio(string nombre = "", string apellido = "", string puesto = "", string profesion = "",
                       string habilidades = "", bool disponibilidad = true)
@@ -355,10 +350,38 @@ namespace WorklabsMx.Droid
                 txtMiembroCelular.SetX(50);
                 llCelular.AddView(txtMiembroCelular);
                 llInfo.AddView(llCelular);
-                #endregion
-
                 svInfo.AddView(llInfo);
                 llColaborador.AddView(svInfo);
+                #endregion
+
+                #region Renovar/Modificar
+                RelativeLayout rlButtons = new RelativeLayout(this);
+
+                Button btnRenovar = new Button(this) { Text = Resources.GetString(Resource.String.Renovar) };
+                btnRenovar.SetBackgroundColor(Color.Red);
+                //btnRenovar.SetX(Resources.DisplayMetrics.WidthPixels / 3);
+                btnRenovar.SetMinWidth(Resources.DisplayMetrics.WidthPixels / 2);
+                btnRenovar.Click += (sender, e) =>
+                {
+
+                };
+                rlButtons.AddView(btnRenovar);
+
+                Button btnModificar = new Button(this) { Text = Resources.GetString(Resource.String.Modificar) };
+                btnModificar.SetBackgroundColor(Color.White);
+                btnModificar.SetMinWidth(Resources.DisplayMetrics.WidthPixels / 2);
+                btnModificar.SetX(Resources.DisplayMetrics.WidthPixels / 2);
+                btnModificar.Click += (sender, e) =>
+                {
+                    Intent intent = new Intent(this, typeof(MisColaboradoresCambiosActivity));
+                    intent.PutExtra("colaborador_id", colaborador.Colaborador_Id);
+                    intent.PutExtra("colaborador_tipo", "2");
+                    StartActivity(intent);
+                };
+                rlButtons.AddView(btnModificar);
+
+                llColaborador.AddView(rlButtons);
+                #endregion
                 llDirectorio.AddView(llColaborador);
             }
             svDirectorio.AddView(llDirectorio);
@@ -366,7 +389,7 @@ namespace WorklabsMx.Droid
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            MenuInflater.Inflate(Resource.Menu.search_menu, menu);
+            MenuInflater.Inflate(Resource.Menu.add_person_menu, menu);
             return base.OnCreateOptionsMenu(menu);
         }
 
@@ -375,8 +398,8 @@ namespace WorklabsMx.Droid
 
             switch (item.ItemId)
             {
-                case Resource.Id.menu_search:
-                    SearchView();
+                case Resource.Id.menu_add_person:
+                    StartActivity(new Intent(this, typeof(MisColaboradoresCambiosActivity)));
                     break;
                 default:
                     base.OnBackPressed();

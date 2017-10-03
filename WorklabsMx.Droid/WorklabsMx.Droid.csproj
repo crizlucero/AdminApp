@@ -121,6 +121,7 @@
     <Compile Include="ViewController\MiPerfil\MisColaboradoresActivity.cs" />
     <Compile Include="ViewController\MiPerfil\TabColaboradoresActivity.cs" />
     <Compile Include="ViewController\MiPerfil\MisColaboradoresBajaActivity.cs" />
+    <Compile Include="ViewController\MiPerfil\MisColaboradoresCambiosActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -219,6 +220,7 @@
     <AndroidResource Include="Resources\menu\add_person_menu.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_person_add.png" />
     <AndroidResource Include="Resources\layout\ColaboradoresLayout.axml" />
+    <AndroidResource Include="Resources\layout\ColaboradorCambioLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
