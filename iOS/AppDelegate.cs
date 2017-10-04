@@ -1,5 +1,6 @@
 ﻿using Foundation;
 using UIKit;
+using WorklabsMx.iOS.Helpers;
 
 namespace WorklabsMx.iOS
 {
@@ -24,8 +25,15 @@ namespace WorklabsMx.iOS
 
             var storage = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
             if (!string.IsNullOrEmpty(storage.Get("Usuario_Id")) && !string.IsNullOrEmpty(storage.Get("Usuario_Tipo")))
-                Window.RootViewController = UIStoryboard.FromName("Main", null)
-                                                 .InstantiateViewController("splitViewController");
+            {
+                if(InternetConectionHelper.VerificarConexion()) {
+					Window.RootViewController = UIStoryboard.FromName("Main", null)
+												 .InstantiateViewController("splitViewController");
+                } else {
+                    
+                }
+
+            }
             else
             {
                 var controller = UIStoryboard.FromName("Main", null).InstantiateViewController("LoginViewController");
