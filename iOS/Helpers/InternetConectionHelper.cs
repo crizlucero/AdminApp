@@ -4,10 +4,20 @@ namespace WorklabsMx.iOS.Helpers
 {
     public class InternetConectionHelper
     {
-        public bool VerificarConexion()
+        public static bool VerificarConexion()
         {
             NetworkStatus internetStatus = Reachability.InternetConnectionStatus();
-            return true;
+            switch (internetStatus)
+            {
+                case NetworkStatus.NotReachable:
+                    return false;
+				case NetworkStatus.ReachableViaCarrierDataNetwork:
+					return true;
+				case NetworkStatus.ReachableViaWiFiNetwork:
+					return true;
+                default:
+                    return false;
+            }
         }
     }
 }

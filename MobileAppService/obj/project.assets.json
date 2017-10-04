@@ -22813,10 +22813,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/MobileAppService/WorklabsMx.MobileAppService.csproj",
+      "projectUniqueName": "/Users/gilberto/Documents/WorkLabs/WorklabsMx/MobileAppService/WorklabsMx.MobileAppService.csproj",
       "projectName": "WorklabsMx.MobileAppService",
-      "projectPath": "/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/MobileAppService/WorklabsMx.MobileAppService.csproj",
-      "outputPath": "/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/MobileAppService/obj",
+      "projectPath": "/Users/gilberto/Documents/WorkLabs/WorklabsMx/MobileAppService/WorklabsMx.MobileAppService.csproj",
+      "outputPath": "/Users/gilberto/Documents/WorkLabs/WorklabsMx/MobileAppService/obj",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.0"
