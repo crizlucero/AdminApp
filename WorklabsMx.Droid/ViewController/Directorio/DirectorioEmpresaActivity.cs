@@ -52,7 +52,7 @@ namespace WorklabsMx.Droid
                 TextView txtNombre = new TextView(this)
                 {
                     Text = empresa.Empresa_Miembro_Nombre,
-                    TextSize = 50
+                    TextSize = 22
                 };
                 txtNombre.SetX(10);
                 llNombre.AddView(txtNombre);

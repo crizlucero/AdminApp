@@ -13,6 +13,7 @@ using Android.Support.V4.Content;
 using WorklabsMx.Droid.Helpers;
 using Android.Graphics;
 using Android.Views.InputMethods;
+using Android.Net;
 
 namespace WorklabsMx.Droid
 {
@@ -39,42 +40,52 @@ namespace WorklabsMx.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            SimpleStorage.SetContext(ApplicationContext);
-
-            localStorage = SimpleStorage.EditGroup("Login");
-
-            if (localStorage.HasKey("Usuario_Id") && localStorage.HasKey("Usuario_Tipo") && localStorage.HasKey("Empresa_Id"))
+            try
             {
-                OpenDashboard();
-            }
-            else
-            {
-                SetContentView(Resource.Layout.LoginLayout);
+                bool isOnline = ((ConnectivityManager)GetSystemService(ConnectivityService)).ActiveNetworkInfo.IsConnected;
+                SimpleStorage.SetContext(ApplicationContext);
 
-                txtEmail = FindViewById<EditText>(Resource.Id.txtEmail);
-                txtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
-                Button btnLogin = FindViewById<Button>(Resource.Id.btnLogin);
-                txtEmail.EditorAction += (sender, e) =>
+                localStorage = SimpleStorage.EditGroup("Login");
+
+                if (localStorage.HasKey("Usuario_Id") && localStorage.HasKey("Usuario_Tipo") && localStorage.HasKey("Empresa_Id"))
                 {
-                    if (Android.Util.Patterns.EmailAddress.Matcher(txtEmail.Text).Matches())
+                    OpenDashboard();
+                }
+                else
+                {
+                    SetContentView(Resource.Layout.LoginLayout);
+
+                    txtEmail = FindViewById<EditText>(Resource.Id.txtEmail);
+                    txtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
+                    Button btnLogin = FindViewById<Button>(Resource.Id.btnLogin);
+                    txtEmail.EditorAction += (sender, e) =>
                     {
-                        if (e.ActionId == ImeAction.Done || e.ActionId == ImeAction.Next)
+                        if (Android.Util.Patterns.EmailAddress.Matcher(txtEmail.Text).Matches())
                         {
-                            txtPassword.RequestFocus();
+                            if (e.ActionId == ImeAction.Done || e.ActionId == ImeAction.Next)
+                            {
+                                txtPassword.RequestFocus();
+                            }
                         }
-                    }
-                    else Toast.MakeText(this, Resource.String.FormatoCorreoError, ToastLength.Short).Show();
-                };
+                        else Toast.MakeText(this, Resource.String.FormatoCorreoError, ToastLength.Short).Show();
+                    };
 
-                txtPassword.EditorAction += (sender, e) =>
-                {
-                    if (e.ActionId == ImeAction.Done)
+                    txtPassword.EditorAction += (sender, e) =>
                     {
-                        btnLogin.CallOnClick();
-                    }
-                };
-                btnLogin.Touch += BtnLogin_Touch;
+                        if (e.ActionId == ImeAction.Done)
+                        {
+                            btnLogin.CallOnClick();
+                        }
+                    };
+                    btnLogin.Touch += BtnLogin_Touch;
+                }
+            }
+            catch
+            {
+                SetContentView(Resource.Layout.OfflineAppLayout);
+                Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+                SetActionBar(toolbar);
+                ActionBar.Title = Resources.GetString(Resource.String.NoConnection);
             }
         }
 
@@ -374,7 +385,13 @@ namespace WorklabsMx.Droid
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            MenuInflater.Inflate(Resource.Menu.top_menus, menu);
+            try
+            {
+                bool isOnline = ((ConnectivityManager)GetSystemService(ConnectivityService)).ActiveNetworkInfo.IsConnected;
+                MenuInflater.Inflate(Resource.Menu.top_menus, menu);
+            }
+            catch { }
+
             return base.OnCreateOptionsMenu(menu);
         }
 

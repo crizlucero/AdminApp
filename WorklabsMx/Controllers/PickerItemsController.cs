@@ -321,23 +321,22 @@ namespace WorklabsMx.Controllers
         public List<MembresiaModel> GetMembresiasPrecios(Dictionary<string, int> dictMembresias)
         {
             List<MembresiaModel> membresias = new List<MembresiaModel>();
-            string membresias_id = string.Empty;
-            foreach (KeyValuePair<string, int> key in dictMembresias)
-            {
-                if (key.Value != 0)
-                    membresias_id += key.Key + ",";
-            }
-            string query = "SELECT Membresia_Id, Membresia_Descripcion, " +
-                "Lista_Precio_Membresia_Precio_Base_Neto as Membresia_Precio_Base, " +
-                "Lista_Precio_Membresia_Precio_Inscripcion_Neto as Membresia_Precio_Inscripcion " +
-                "FROM vw_cat_Membresias_Listas_Precios " +
-                " " +
-                "WHERE Membresia_Id in (" + membresias_id.Substring(0, membresias_id.Length - 1) + ")";
-
-            command = CreateCommand(query);
-            //command.Parameters.AddWithValue("@productos_id", productos_id.Substring(0, productos_id.Length - 1));
             try
             {
+				string membresias_id = string.Empty;
+				foreach (KeyValuePair<string, int> key in dictMembresias)
+				{
+					if (key.Value != 0)
+						membresias_id += key.Key + ",";
+				}
+				string query = "SELECT Membresia_Id, Membresia_Descripcion, " +
+					"Lista_Precio_Membresia_Precio_Base_Neto as Membresia_Precio_Base, " +
+					"Lista_Precio_Membresia_Precio_Inscripcion_Neto as Membresia_Precio_Inscripcion " +
+					"FROM vw_cat_Membresias_Listas_Precios " +
+					" " +
+					"WHERE Membresia_Id in (" + membresias_id.Substring(0, membresias_id.Length - 1) + ")";
+
+				command = CreateCommand(query);
                 conn.Open();
                 reader = command.ExecuteReader();
                 while (reader.Read())
@@ -405,20 +404,19 @@ namespace WorklabsMx.Controllers
         public List<ProductoModel> GetProductosPrecios(Dictionary<string, int> dictProductos)
         {
             List<ProductoModel> productos = new List<ProductoModel>();
-            string productos_id = string.Empty;
-            foreach (KeyValuePair<string, int> key in dictProductos)
-            {
-                if (key.Value != 0)
-                    productos_id += key.Key + ",";
-            }
-            string query = "SELECT Producto_Id, Producto_Descripcion, " +
-                "Lista_Precio_Producto_Precio_Base_Neto as Producto_Precio_Base FROM vw_cat_Productos_Listas_Precios " +
-                "Where Producto_Id in (" + productos_id.Substring(0, productos_id.Length - 1) + ")";
-
-            command = CreateCommand(query);
-            //command.Parameters.AddWithValue("@productos_id", productos_id.Substring(0, productos_id.Length - 1));
             try
             {
+				string productos_id = string.Empty;
+				foreach (KeyValuePair<string, int> key in dictProductos)
+				{
+					if (key.Value != 0)
+						productos_id += key.Key + ",";
+				}
+				string query = "SELECT Producto_Id, Producto_Descripcion, " +
+					"Lista_Precio_Producto_Precio_Base_Neto as Producto_Precio_Base FROM vw_cat_Productos_Listas_Precios " +
+					"Where Producto_Id in (" + productos_id.Substring(0, productos_id.Length - 1) + ")";
+
+				command = CreateCommand(query);
                 conn.Open();
                 reader = command.ExecuteReader();
                 while (reader.Read())

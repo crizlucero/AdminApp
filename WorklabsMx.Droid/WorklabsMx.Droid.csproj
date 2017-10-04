@@ -88,6 +88,9 @@
     <Reference Include="Xamarin.Android.Support.v7.AppCompat">
       <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
     </Reference>
+    <Reference Include="AndHUD">
+      <HintPath>..\packages\AndHUD.1.2.0\lib\MonoAndroid\AndHUD.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -221,6 +224,7 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_person_add.png" />
     <AndroidResource Include="Resources\layout\ColaboradoresLayout.axml" />
     <AndroidResource Include="Resources\layout\ColaboradorCambioLayout.axml" />
+    <AndroidResource Include="Resources\layout\OfflineAppLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

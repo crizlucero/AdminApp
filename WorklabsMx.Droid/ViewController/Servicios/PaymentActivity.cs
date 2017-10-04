@@ -4,6 +4,7 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using AndroidHUD;
 
 namespace WorklabsMx.Droid
 {
@@ -49,6 +50,9 @@ namespace WorklabsMx.Droid
 			switch (item.ItemId)
 			{
 				case Resource.Id.menu_payment:
+                    AndHUD.Shared.Show(this, Resources.GetString(Resource.String.RealizandoPago), -1, MaskType.Black);
+                    Console.WriteLine("x");
+                    //AndHUD.Shared.Dismiss(this);
 					break;
 				default:
 					base.OnBackPressed();

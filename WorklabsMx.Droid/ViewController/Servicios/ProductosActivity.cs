@@ -133,11 +133,11 @@ namespace WorklabsMx.Droid
                     ++Productos[producto.Producto_Id].Producto_Cantidad;
 
                     txtCantidadProductos.Text = Productos[producto.Producto_Id].Producto_Cantidad.ToString();
-					if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
-						subtotal = (producto.Producto_Precio_Base / DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) *
-							(DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) - (DateTime.Parse(dpFechaInicio.Text)).Day + 1));
-					else
-						subtotal = producto.Producto_Precio_Base;
+                    if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
+                        subtotal = (producto.Producto_Precio_Base / DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) *
+                            (DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) - (DateTime.Parse(dpFechaInicio.Text)).Day + 1));
+                    else
+                        subtotal = producto.Producto_Precio_Base;
                     lblProporcional.Text = subtotal.ToString("C");
                     lblTotal.Text = (((producto.Producto_Precio_Base * ((Convert.ToDouble(txtMesesProductos.Text) - 1)) + subtotal)
                                       * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C");
@@ -156,11 +156,11 @@ namespace WorklabsMx.Droid
                     {
                         --Productos[producto.Producto_Id].Producto_Cantidad;
                         txtCantidadProductos.Text = Productos[producto.Producto_Id].Producto_Cantidad.ToString();
-						if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
-							subtotal = (producto.Producto_Precio_Base / DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) *
-								(DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) - (DateTime.Parse(dpFechaInicio.Text)).Day + 1));
-						else
-							subtotal = producto.Producto_Precio_Base;
+                        if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
+                            subtotal = (producto.Producto_Precio_Base / DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) *
+                                (DateHelper.GetMonthsDays(DateTime.Parse(dpFechaInicio.Text)) - (DateTime.Parse(dpFechaInicio.Text)).Day + 1));
+                        else
+                            subtotal = producto.Producto_Precio_Base;
                         lblProporcional.Text = subtotal.ToString("C");
                         lblTotal.Text = (((producto.Producto_Precio_Base * ((Convert.ToDouble(txtMesesProductos.Text) - 1)) + subtotal)
                                           * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C");
@@ -300,14 +300,10 @@ namespace WorklabsMx.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.menu_cart:
-                    if (CanPay)
-                    {
-                        Intent intent = new Intent(this, typeof(ShoppingCartActivity));
-                        intent.PutExtra("Datos", "{" + string.Join(",", Productos.Select(d => string.Format("\"{0}\": {1}", d.Key, string.Join(",", d.Value)))) + "}");
-                        intent.PutExtra("Tipo", true);
-                        StartActivity(intent);
-                    }
-                    Toast.MakeText(this, Resource.String.NoSeleccionProducto, ToastLength.Short);
+                    if (new CarritoController().AddCarrito(Productos, TiposServicios.Producto, Storage.Get("Usuario_Id")))
+                        StartActivity(new Intent(this, typeof(ShoppingCartActivity)));
+                    else
+                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
                     break;
                 default:
                     base.OnBackPressed();
