@@ -140,7 +140,6 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
-    <AndroidResource Include="Resources\layout\LoginLayout.axml" />
     <AndroidResource Include="Resources\layout\ToolbarLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_menu.png" />
     <AndroidResource Include="Resources\menu\top_menus.xml" />
@@ -225,6 +224,11 @@
     <AndroidResource Include="Resources\layout\ColaboradoresLayout.axml" />
     <AndroidResource Include="Resources\layout\ColaboradorCambioLayout.axml" />
     <AndroidResource Include="Resources\layout\OfflineAppLayout.axml" />
+    <AndroidResource Include="Resources\menu\refresh_menu.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\LogBackground.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\LoginLayout.axml" />
+    <AndroidResource Include="Resources\layout\LoginLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\WorklabsTitle.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

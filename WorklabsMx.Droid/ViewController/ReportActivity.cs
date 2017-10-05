@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Android.App;
 using Android.Content;
-using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Support.V4.Content;
@@ -12,6 +11,7 @@ using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Droid.Helpers;
 using WorklabsMx.Models;
+using System.Linq;
 
 namespace WorklabsMx.Droid
 {

@@ -14,6 +14,9 @@ using WorklabsMx.Droid.Helpers;
 using Android.Graphics;
 using Android.Views.InputMethods;
 using Android.Net;
+using System.Linq;
+using System.Threading.Tasks;
+using WorklabsMx.Helpers;
 
 namespace WorklabsMx.Droid
 {
@@ -27,7 +30,8 @@ namespace WorklabsMx.Droid
         TableRow.LayoutParams param;
         SimpleStorage localStorage;
         EditText txtEmail, txtPassword;
-
+        EscritorioController DashboardController;
+        TableLayout tlPost;
         public MainActivity()
         {
             param = new TableRow.LayoutParams
@@ -35,6 +39,7 @@ namespace WorklabsMx.Droid
                 Column = 0,
                 Span = 2
             };
+            DashboardController = new EscritorioController();
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -100,181 +105,176 @@ namespace WorklabsMx.Droid
             ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
             FillMenu(FindViewById<TableLayout>(Resource.Id.menu_layout));
             scroll = FindViewById<ScrollView>(Resource.Id.post_scroll);
+            tlPost = FindViewById<TableLayout>(Resource.Id.post_table);
             FillPosts();
             scroll.ScrollChange += (sender, e) =>
-            {
-                if (limitPage)
-                    if ((((ScrollView)sender).ScrollY / (page + 1)) >= (scroll.Height - 500))
-                    {
-                        ++page;
-                        FillPosts();
-                    }
-            };
+           {
+               if (limitPage)
+                   if ((((ScrollView)sender).ScrollY / (page + 1)) >= (scroll.Height * .9))
+                   {
+                       ++page;
+                       FillPosts();
+                   }
+           };
         }
 
         void FillPosts()
         {
-            TableLayout tlPost = FindViewById<TableLayout>(Resource.Id.post_table);
-            List<PostModel> posts = new EscritorioController().GetMuroPosts(page);
-            limitPage = !(posts.Count < sizePage);
-            if (posts.Count <= sizePage)
-            {
-                foreach (PostModel post in posts)
-                {
-                    TableRow row = new TableRow(this);
-                    row.SetMinimumHeight(100);
-                    RelativeLayout rl = new RelativeLayout(this);
-                    rl.SetMinimumHeight(150);
+            DashboardController.GetMuroPosts(page * sizePage).ForEach((post) =>
+              {
+                  TableRow row = new TableRow(this);
+                  row.SetMinimumHeight(100);
+                  RelativeLayout rl = new RelativeLayout(this);
+                  rl.SetMinimumHeight(150);
 
-                    ImageButton ibFotoPostUsuario = new ImageButton(this);
-                    ibFotoPostUsuario.SetMinimumWidth(150);
-                    ibFotoPostUsuario.SetMinimumHeight(150);
-                    ibFotoPostUsuario.SetImageURI(ImagesHelper.GetPerfilImagen(post.Miembro_Fotografia));
-                    rl.AddView(ibFotoPostUsuario);
+                  ImageButton ibFotoPostUsuario = new ImageButton(this);
+                  ibFotoPostUsuario.SetMinimumWidth(150);
+                  ibFotoPostUsuario.SetMinimumHeight(150);
+                  ibFotoPostUsuario.SetImageURI(ImagesHelper.GetPerfilImagen(post.Miembro_Fotografia));
+                  rl.AddView(ibFotoPostUsuario);
 
-                    TextView lblNombre = new TextView(this)
-                    {
-                        Text = post.Miembro_Nombre + " " + post.Miembro_Apellidos,
-                        TextSize = 14
-                    };
-                    lblNombre.Click += (sender, e) =>
-                    {
-                        Intent perfil = new Intent(this, typeof(PerfilActivity));
-                        perfil.PutExtra("usuario_id", post.MIEMBRO_ID);
-                        perfil.PutExtra("usuario_tipo", post.Tipo);
-                        StartActivity(perfil);
-                    };
-                    lblNombre.SetX(170);
-                    lblNombre.SetY(20);
-                    rl.AddView(lblNombre);
+                  TextView lblNombre = new TextView(this)
+                  {
+                      Text = post.Miembro_Nombre + " " + post.Miembro_Apellidos,
+                      TextSize = 14
+                  };
+                  lblNombre.Click += (sender, e) =>
+                  {
+                      Intent perfil = new Intent(this, typeof(PerfilActivity));
+                      perfil.PutExtra("usuario_id", post.MIEMBRO_ID);
+                      perfil.PutExtra("usuario_tipo", post.Tipo);
+                      StartActivity(perfil);
+                  };
+                  lblNombre.SetX(170);
+                  lblNombre.SetY(20);
+                  rl.AddView(lblNombre);
 
-                    TextView lblFecha = new TextView(this)
-                    {
-                        Text = post.POST_FECHA,
-                        TextSize = 12
-                    };
-                    lblFecha.SetMinimumWidth(300);
-                    lblFecha.SetX(170);
-                    lblFecha.SetY(70);
-                    rl.AddView(lblFecha);
-                    row.AddView(rl);
+                  TextView lblFecha = new TextView(this)
+                  {
+                      Text = post.POST_FECHA,
+                      TextSize = 12
+                  };
+                  lblFecha.SetMinimumWidth(300);
+                  lblFecha.SetX(170);
+                  lblFecha.SetY(70);
+                  rl.AddView(lblFecha);
+                  row.AddView(rl);
 
-                    LinearLayout llButton = new LinearLayout(this);
-                    ImageButton btnClear = new ImageButton(this);
-                    btnClear.SetImageResource(Resource.Mipmap.ic_clear);
-                    btnClear.SetBackgroundColor(Color.White);
-                    btnClear.SetMinimumWidth(15);
-                    btnClear.SetMinimumHeight(15);
-                    btnClear.Click += (sender, e) =>
-                    {
-                        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-                        if (post.MIEMBRO_ID == localStorage.Get("Usuario_Id") && post.Tipo == localStorage.Get("Usuario_Tipo"))
-                        {
-                            alert.SetTitle("Eliminar post");
-                            alert.SetMessage("Se eliminará el post");
-                            alert.SetPositiveButton("Ok", (senderO, eO) =>
-                            {
+                  LinearLayout llButton = new LinearLayout(this);
+                  ImageButton btnClear = new ImageButton(this);
+                  btnClear.SetImageResource(Resource.Mipmap.ic_clear);
+                  btnClear.SetBackgroundColor(Color.White);
+                  btnClear.SetMinimumWidth(15);
+                  btnClear.SetMinimumHeight(15);
+                  btnClear.Click += (sender, e) =>
+                  {
+                      AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                      if (post.MIEMBRO_ID == localStorage.Get("Usuario_Id") && post.Tipo == localStorage.Get("Usuario_Tipo"))
+                      {
+                          alert.SetTitle("Eliminar post");
+                          alert.SetMessage("Se eliminará el post");
+                          alert.SetPositiveButton("Ok", (senderO, eO) =>
+                          {
 
-                                if (new EscritorioController().OcultarPost(post.MIEMBRO_ID, post.POST_ID, 0))
-                                {
-                                    Toast.MakeText(this, "Post eliminado", ToastLength.Short).Show();
+                              if (new EscritorioController().OcultarPost(post.MIEMBRO_ID, post.POST_ID, 0))
+                              {
+                                  Toast.MakeText(this, "Post eliminado", ToastLength.Short).Show();
 
-                                }
-                                else
-                                    Toast.MakeText(this, "Hubo un error, intente de nuevo", ToastLength.Short).Show();
-                            });
-                            alert.SetNegativeButton("Cancelar", (sender1, e1) => { });
-                        }
-                        else
-                        {
-                            alert.SetTitle("Reportar post");
-                            alert.SetMessage("¿Desea reportar el post?");
-                            alert.SetPositiveButton("Ok", (senderO, eO) =>
-                            {
-                                {
-                                    Intent intent = new Intent(this, typeof(ReportActivity));
-                                    intent.PutExtra("post_id", post.POST_ID);
-                                    StartActivity(intent);
-                                }
-                            });
-                            alert.SetNegativeButton("Cancelar", (sender1, e1) => { });
-                        }
-                        Dialog dialog = alert.Create();
-                        dialog.Show();
-                    };
-                    llButton.AddView(btnClear);
+                              }
+                              else
+                                  Toast.MakeText(this, "Hubo un error, intente de nuevo", ToastLength.Short).Show();
+                          });
+                          alert.SetNegativeButton("Cancelar", (sender1, e1) => { });
+                      }
+                      else
+                      {
+                          alert.SetTitle("Reportar post");
+                          alert.SetMessage("¿Desea reportar el post?");
+                          alert.SetPositiveButton("Ok", (senderO, eO) =>
+                          {
+                              {
+                                  Intent intent = new Intent(this, typeof(ReportActivity));
+                                  intent.PutExtra("post_id", post.POST_ID);
+                                  StartActivity(intent);
+                              }
+                          });
+                          alert.SetNegativeButton("Cancelar", (sender1, e1) => { });
+                      }
+                      Dialog dialog = alert.Create();
+                      dialog.Show();
+                  };
+                  llButton.AddView(btnClear);
 
-                    row.AddView(llButton, 1);
-                    tlPost.AddView(row);
+                  row.AddView(llButton, 1);
+                  tlPost.AddView(row);
 
-                    row = new TableRow(this);
-                    LinearLayout llLike = new LinearLayout(this);
-                    Drawable icon = ContextCompat.GetDrawable(this, Resource.Mipmap.ic_thumb_up);
-                    icon.SetBounds(0, 0, 30, 30);
-                    TextView lblLike = new TextView(this)
-                    {
-                        Text = "\t" + new EscritorioController().GetLikes(post.POST_ID) + " Like(s)"
-                    };
-                    lblLike.SetCompoundDrawables(icon, null, null, null);
-                    lblLike.SetMinWidth(Window.Attributes.Width);
-                    lblLike.SetMinHeight(50);
-                    lblLike.SetX(10);
-                    lblLike.Click += (sender, e) =>
-                    {
-                        if (new EscritorioController().PostLike(post.POST_ID, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")))
-                            lblLike.Text = "\t" + new EscritorioController().GetLikes(post.POST_ID) + " Like(s)";
-                    };
-                    llLike.AddView(lblLike);
+                  row = new TableRow(this);
+                  LinearLayout llLike = new LinearLayout(this);
+                  Drawable icon = ContextCompat.GetDrawable(this, Resource.Mipmap.ic_thumb_up);
+                  icon.SetBounds(0, 0, 30, 30);
+                  TextView lblLike = new TextView(this)
+                  {
+                      Text = "\t" + new EscritorioController().GetLikes(post.POST_ID) + " Like(s)"
+                  };
+                  lblLike.SetCompoundDrawables(icon, null, null, null);
+                  lblLike.SetMinWidth(Window.Attributes.Width);
+                  lblLike.SetMinHeight(50);
+                  lblLike.SetX(10);
+                  lblLike.Click += (sender, e) =>
+                  {
+                      if (new EscritorioController().PostLike(post.POST_ID, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")))
+                          lblLike.Text = "\t" + new EscritorioController().GetLikes(post.POST_ID) + " Like(s)";
+                  };
+                  llLike.AddView(lblLike);
 
-                    row.AddView(llLike);
+                  row.AddView(llLike);
 
-                    tlPost.AddView(row);
+                  tlPost.AddView(row);
 
-                    row = new TableRow(this);
-                    LinearLayout llPost = new LinearLayout(this);
+                  row = new TableRow(this);
+                  LinearLayout llPost = new LinearLayout(this);
 
-                    TextView lblPost = new TextView(this)
-                    {
-                        Text = post.POST_CONTENIDO
-                    };
-                    lblPost.SetMinWidth(Window.Attributes.Width);
-                    lblPost.SetMinHeight(50);
-                    lblPost.SetX(10);
-                    llPost.AddView(lblPost);
+                  TextView lblPost = new TextView(this)
+                  {
+                      Text = post.POST_CONTENIDO
+                  };
+                  lblPost.SetMinWidth(Window.Attributes.Width);
+                  lblPost.SetMinHeight(50);
+                  lblPost.SetX(10);
+                  llPost.AddView(lblPost);
 
-                    row.AddView(llPost);
+                  row.AddView(llPost);
 
-                    tlPost.AddView(row);
-                    //Comentarios
-                    row = new TableRow(this);
-                    RelativeLayout rlComentar = new RelativeLayout(this);
-                    EditText txtComentar = new EditText(this)
-                    {
-                        Hint = Resources.GetString(Resource.String.Comentar)
-                    };
-                    txtComentar.SetWidth(Resources.DisplayMetrics.WidthPixels - 140);
-                    rlComentar.AddView(txtComentar);
-                    row.AddView(rlComentar);
+                  tlPost.AddView(row);
+                  //Comentarios
+                  row = new TableRow(this);
+                  RelativeLayout rlComentar = new RelativeLayout(this);
+                  EditText txtComentar = new EditText(this)
+                  {
+                      Hint = Resources.GetString(Resource.String.Comentar)
+                  };
+                  txtComentar.SetWidth(Resources.DisplayMetrics.WidthPixels - 140);
+                  rlComentar.AddView(txtComentar);
+                  row.AddView(rlComentar);
 
-                    LinearLayout llComentar = new LinearLayout(this);
-                    ImageButton btnComentar = new ImageButton(this);
-                    btnComentar.SetBackgroundColor(Color.White);
-                    btnComentar.SetImageResource(Resource.Mipmap.ic_send);
-                    llComentar.AddView(btnComentar);
-                    row.AddView(llComentar, 1);
-                    tlPost.AddView(row);
+                  LinearLayout llComentar = new LinearLayout(this);
+                  ImageButton btnComentar = new ImageButton(this);
+                  btnComentar.SetBackgroundColor(Color.White);
+                  btnComentar.SetImageResource(Resource.Mipmap.ic_send);
+                  llComentar.AddView(btnComentar);
+                  row.AddView(llComentar, 1);
+                  tlPost.AddView(row);
 
-                    tlPost.AddView(FillComments(post.POST_ID));
-                }
-            }
-            else limitPage = false;
+                  //tlPost.AddView(FillComments(post.POST_ID));
+              });
         }
 
         TableRow FillComments(string post_id)
         {
             TableRow row = new TableRow(this);
             TableLayout tlComments = new TableLayout(this);
-            foreach (ComentarioModel comentario in new EscritorioController().GetComentariosPost(post_id))
+            List<ComentarioModel> comentarios = DashboardController.GetComentariosPost(post_id);
+            Parallel.ForEach(comentarios, (comentario) =>
             {
                 TableRow trComment = new TableRow(this);
                 RelativeLayout rl = new RelativeLayout(this);
@@ -378,7 +378,7 @@ namespace WorklabsMx.Droid
                 trComment.AddView(llComentario);
 
                 tlComments.AddView(trComment);
-            }
+            });
             row.AddView(tlComments, param);
             return row;
         }
@@ -390,7 +390,7 @@ namespace WorklabsMx.Droid
                 bool isOnline = ((ConnectivityManager)GetSystemService(ConnectivityService)).ActiveNetworkInfo.IsConnected;
                 MenuInflater.Inflate(Resource.Menu.top_menus, menu);
             }
-            catch { }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
 
             return base.OnCreateOptionsMenu(menu);
         }
@@ -447,7 +447,7 @@ namespace WorklabsMx.Droid
                 row.AddView(btnMenu);
                 menuLayout.AddView(row);
             }
-            foreach (ItemsMenu menu in new EscritorioController().GetMenuAndroid(Convert.ToInt32(localStorage.Get("Usuario_Tipo"))))
+            DashboardController.GetMenuAndroid(Convert.ToInt32(localStorage.Get("Usuario_Tipo"))).ForEach((menu) =>
             {
                 TableRow row = new TableRow(this);
                 Drawable icon = ContextCompat.GetDrawable(this, Resources.GetIdentifier(menu.Image, "mipmap", PackageName));
@@ -477,7 +477,7 @@ namespace WorklabsMx.Droid
                 };
                 row.AddView(btnMenu);
                 menuLayout.AddView(row);
-            }
+            });
         }
 
         void BtnLogin_Touch(object sender, View.TouchEventArgs e)

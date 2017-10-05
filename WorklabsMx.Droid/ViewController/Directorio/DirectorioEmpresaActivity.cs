@@ -14,6 +14,11 @@ namespace WorklabsMx.Droid
     public class DirectorioEmpresaActivity : Activity
     {
         ScrollView svDirectorio;
+        EmpresaController CompanyController;
+        public DirectorioEmpresaActivity()
+        {
+            CompanyController = new EmpresaController();
+        }
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -43,7 +48,7 @@ namespace WorklabsMx.Droid
                 LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent),
                 Orientation = Orientation.Vertical
             };
-            foreach (EmpresaModel empresa in new EmpresaController().GetDirectorioEmpresas(nombre, pais, estado, municipio, giro))
+            CompanyController.GetDirectorioEmpresas(nombre, pais, estado, municipio, giro).ForEach((empresa) =>
             {
                 LinearLayout llNombre = new LinearLayout(this)
                 {
@@ -361,7 +366,7 @@ namespace WorklabsMx.Droid
 
                 svInfo.AddView(llInfo);
                 llDirectorio.AddView(svInfo);
-            }
+            });
             svDirectorio.AddView(llDirectorio);
         }
 

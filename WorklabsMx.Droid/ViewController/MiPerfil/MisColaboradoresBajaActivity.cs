@@ -20,13 +20,13 @@ namespace WorklabsMx.Droid
         {
             base.OnCreate(savedInstanceState);
 
-			Directorio();
+            Directorio();
         }
 
         protected override void OnResume()
         {
             base.OnResume();
-			Directorio();
+            Directorio();
         }
 
         void Directorio(string nombre = "", string apellido = "", string puesto = "", string profesion = "",
@@ -46,7 +46,7 @@ namespace WorklabsMx.Droid
                 LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent),
                 Orientation = Orientation.Vertical
             };
-            foreach (ColaboradorModel colaborador in new ColaboradoresController().GetColaboradoresMiembro(miembro_id, 0, nombre, apellido, puesto, profesion, habilidades, disponibilidad))
+            new ColaboradoresController().GetColaboradoresMiembro(miembro_id, 0, nombre, apellido, puesto, profesion, habilidades, disponibilidad).ForEach((colaborador) =>
             {
                 LinearLayout llColaborador = new LinearLayout(this)
                 {
@@ -353,7 +353,7 @@ namespace WorklabsMx.Droid
                 svInfo.AddView(llInfo);
                 llColaborador.AddView(svInfo);
                 llDirectorio.AddView(llColaborador);
-            }
+            });
             svDirectorio.AddView(llDirectorio);
         }
 

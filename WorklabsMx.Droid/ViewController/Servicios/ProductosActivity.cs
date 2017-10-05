@@ -53,7 +53,7 @@ namespace WorklabsMx.Droid
         void FillData()
         {
             TableLayout tlProductos = FindViewById<TableLayout>(Resource.Id.tlProductos);
-            foreach (ProductoModel producto in new PickerItemsController().GetProductos())
+            new PickerItemsController().GetProductos().ForEach((producto) =>
             {
                 double subtotal = producto.Producto_Precio_Base;
                 int mesProducto = 1;
@@ -286,7 +286,7 @@ namespace WorklabsMx.Droid
                 trProducto.AddView(lblTotal, param);
 
                 tlProductos.AddView(trProducto);
-            }
+            });
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)

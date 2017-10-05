@@ -17,7 +17,7 @@ namespace WorklabsMx.Droid
     {
         ScrollView svDirectorio;
         SimpleStorage storage;
-        MiembrosController Favorites;
+        MiembrosController MembersController;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -32,7 +32,7 @@ namespace WorklabsMx.Droid
             SetTitle(Resource.String.DirectorioUsuario);
 
             svDirectorio = FindViewById<ScrollView>(Resource.Id.svDirectorio);
-            Favorites = new MiembrosController();
+            MembersController = new MiembrosController();
             storage = SimpleStorage.EditGroup("Login");
             FillDirectorioUsuario(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
@@ -52,7 +52,7 @@ namespace WorklabsMx.Droid
                 LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent),
                 Orientation = Orientation.Vertical
             };
-            foreach (MiembroModel miembro in new MiembrosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio))
+            MembersController.GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio).ForEach((miembro) =>
             {
                 RelativeLayout llNombre = new RelativeLayout(this)
                 {
@@ -66,7 +66,7 @@ namespace WorklabsMx.Droid
                 llNombre.AddView(txtNombre);
                 if (storage.Get("Usuario_Id") != miembro.Miembro_Id || storage.Get("Usuario_Tipo") != miembro.Miembro_Tipo)
                 {
-                    KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo);
+                    KeyValuePair<int, bool> isFavorite = MembersController.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo);
                     ImageButton btnFavorito = new ImageButton(this);
                     btnFavorito.SetBackgroundColor(Android.Graphics.Color.White);
                     btnFavorito.SetImageResource(Resource.Mipmap.ic_star_border);
@@ -77,14 +77,14 @@ namespace WorklabsMx.Droid
                     {
                         if (isFavorite.Key == 0)
                         {
-                            if (Favorites.AddMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo))
+                            if (MembersController.AddMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo))
                                 btnFavorito.SetImageResource(Resource.Mipmap.ic_star);
                             else
                                 Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
                         }
                         else
                         {
-                            if (Favorites.RemoveMiembroFavorito(isFavorite))
+                            if (MembersController.RemoveMiembroFavorito(isFavorite))
                             {
                                 if (isFavorite.Value)
                                     btnFavorito.SetImageResource(Resource.Mipmap.ic_star_border);
@@ -94,7 +94,7 @@ namespace WorklabsMx.Droid
                             else
                                 Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
                         }
-                        isFavorite = Favorites.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo);
+                        isFavorite = MembersController.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo);
                     };
                     llNombre.AddView(btnFavorito);
                 }
@@ -390,7 +390,7 @@ namespace WorklabsMx.Droid
 
                 svInfo.AddView(llInfo);
                 llDirectorio.AddView(svInfo);
-            }
+            });
             svDirectorio.AddView(llDirectorio);
         }
 

@@ -8,14 +8,15 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbarlayout" />
-    <android.webkit.WebView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="267.0dp"
-        android:id="@+id/wvQRCode" />
-    <ImageButton
-        android:src="@mipmap/ic_refresh"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnAccesoRefresh"
-        android:backgroundTint="#ffffffff" />
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+        <android.webkit.WebView
+            android:layout_width="250.0dp"
+            android:layout_height="250.0dp"
+            android:id="@+id/wvQRCode"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
 </LinearLayout>
