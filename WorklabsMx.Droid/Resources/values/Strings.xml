@@ -125,6 +125,7 @@
 	<string name="TarjetaAnioYY">YY</string>
 	<string name="NombreTarjetaHabiente">Nombre del tarjetahabiente</string>
 	<string name="RealizaPago">Realice el pago</string>
+	<string name="RealizandoPago">Se está realizando el pago</string>
 	<string name="Buscar">Buscar</string>
     <string name="Contacto">Contacto</string>
 	<string name="NombreEmpresa">Nombre de la Empresa</string>
@@ -147,4 +148,6 @@
 	<string name="FormatoCorreoError">Formato de correo electrónico incorrecto</string>
 	<string name="Renovar">Renovar</string>
 	<string name="Modificar">Modificar</string>
+	<string name="OfflineApp">No tienes acceso a una conexión de Internet</string>
+	<string name="NoConnection">Sin Conexión</string>
 </resources>

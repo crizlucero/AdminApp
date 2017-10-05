@@ -6,6 +6,7 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Helpers;
@@ -292,14 +293,10 @@ namespace WorklabsMx.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.menu_cart:
-                    if (CanPay)
-                    {
-                        Intent intent = new Intent(this, typeof(ShoppingCartActivity));
-                        intent.PutExtra("Datos", "{" + string.Join(",", Membresias.Select(d => string.Format("\"{0}\": {1}", d.Key, string.Join(",", d.Value)))) + "}");
-                        intent.PutExtra("Tipo", false);
-                        StartActivity(intent);
-                    }
-                    Toast.MakeText(this, Resource.String.NoSeleccionMembresia, ToastLength.Short);
+                    if (new CarritoController().AddCarrito(Membresias, TiposServicios.Membresia, Storage.Get("Usuario_Id")))
+                        StartActivity(new Intent(this, typeof(ShoppingCartActivity)));
+                    else
+                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
                     break;
                 default:
                     base.OnBackPressed();
