@@ -160,6 +160,9 @@
     <Reference Include="Telerik.Xamarin.iOS">
       <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\iOS\Telerik.Xamarin.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="SVProgressHUD">
+      <HintPath>..\packages\SVProgressHUD.2.1.2\lib\Xamarin.iOS10\SVProgressHUD.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -436,6 +439,10 @@
     <ImageAsset Include="Assets.xcassets\ic_left_arrow.imageset\ic_keyboard_arrow_left.png" />
     <ImageAsset Include="Assets.xcassets\ic_left_arrow.imageset\ic_keyboard_arrow_left_2x.png" />
     <ImageAsset Include="Assets.xcassets\ic_left_arrow.imageset\ic_keyboard_arrow_left_3x.png" />
+    <ImageAsset Include="Assets.xcassets\BackGround.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\BackGround.imageset\BackGround.png" />
+    <ImageAsset Include="Assets.xcassets\Leyenda.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Leyenda.imageset\leyenda.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -617,6 +624,8 @@
     <Folder Include="Assets.xcassets\ic_star.imageset\" />
     <Folder Include="Assets.xcassets\ic_star_border.imageset\" />
     <Folder Include="Assets.xcassets\ic_left_arrow.imageset\" />
+    <Folder Include="Assets.xcassets\BackGround.imageset\" />
+    <Folder Include="Assets.xcassets\Leyenda.imageset\" />
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

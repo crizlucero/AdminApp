@@ -4,6 +4,7 @@ using Foundation;
 using PerpetualEngine.Storage;
 using UIKit;
 using WorklabsMx.Models;
+using SVProgressHUDBinding;
 
 namespace WorklabsMx.iOS.Styles
 {
@@ -62,6 +63,7 @@ namespace WorklabsMx.iOS.Styles
                     UIViewController controller = owner.Storyboard.InstantiateViewController(TableItems[indexPath.Row].Controller);
 
                     controller.Title = TableItems[indexPath.Row].Label;
+                    //SVProgressHUD.Show();
                     owner.NavigationController.PushViewController(controller, true);
                 }
                 else
