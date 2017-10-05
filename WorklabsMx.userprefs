@@ -1,26 +1,25 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AppDelegate.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/ConfigurationsController.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="138" Column="9" />
-      <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="40" Column="14" />
-      <File FileName="iOS/Helpers/InternetConectionHelper.cs" Line="7" Column="38" />
-      <File FileName="iOS/Helpers/Reachability.cs" Line="27" Column="4" />
-      <File FileName="iOS/AppDelegate.cs" Line="29" Column="61" />
-      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="121" Column="60" />
-      <File FileName="iOS/Helpers/CarritoHelper.cs" Line="4" Column="31" />
-      <File FileName="iOS/Helpers/DropDownListSource.cs" Line="1" Column="1" />
-      <File FileName="iOS/Helpers/ImageGallery.cs" Line="9" Column="30" />
+      <File FileName="iOS/AppDelegate.cs" Line="31" Column="81" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="34" Column="20" />
+      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="56" Column="1" />
+      <File FileName="iOS/Styles/STLTableViewSource.cs" Line="6" Column="25" />
+      <File FileName="iOS/Helpers/InternetConectionHelper.cs" Line="8" Column="4" />
+      <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="16" Column="70" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/SplitViewController.cs" relfile="iOS/ViewControllers/SplitViewController.cs" line="15" column="22" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="120" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="79" column="4" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="35" column="19" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.MobileAppService PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.38F7EDDF-B427-4183-BC05-D1227651EE0B" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2D138E58-2D7F-4857-B330-A912F1819788" />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="MyTheme" />
   <MultiItemStartupConfigurations />
 </Properties>

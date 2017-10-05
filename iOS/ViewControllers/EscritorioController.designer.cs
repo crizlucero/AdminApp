@@ -14,8 +14,25 @@ namespace WorklabsMx.iOS
     [Register ("EscritorioController")]
     partial class EscritorioController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblMensaje { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView VistaMensaje { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (lblMensaje != null) {
+                lblMensaje.Dispose ();
+                lblMensaje = null;
+            }
+
+            if (VistaMensaje != null) {
+                VistaMensaje.Dispose ();
+                VistaMensaje = null;
+            }
         }
     }
 }

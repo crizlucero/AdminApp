@@ -584,7 +584,6 @@
     <Compile Include="Helpers\CarritoHelper.cs" />
     <Compile Include="Styles\STLLine.cs" />
     <Compile Include="Helpers\InternetConectionHelper.cs" />
-    <Compile Include="Helpers\Reachability.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
