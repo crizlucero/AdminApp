@@ -66,7 +66,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: gilberto.e.barrera@gmail.com (Z5TY2R9UPD)</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -591,6 +591,13 @@
     <Compile Include="Helpers\CarritoHelper.cs" />
     <Compile Include="Styles\STLLine.cs" />
     <Compile Include="Helpers\InternetConectionHelper.cs" />
+    <Compile Include="Helpers\StyleHelper.cs" />
+    <Compile Include="ViewControllers\Post\PostTableViewController.cs" />
+    <Compile Include="ViewControllers\Post\PostBodyCell.cs" />
+    <Compile Include="ComentariosHeaderCell.cs" />
+    <Compile Include="ComentariosHeaderCell.designer.cs">
+      <DependentUpon>ComentariosHeaderCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -626,6 +633,7 @@
     <Folder Include="Assets.xcassets\ic_left_arrow.imageset\" />
     <Folder Include="Assets.xcassets\BackGround.imageset\" />
     <Folder Include="Assets.xcassets\Leyenda.imageset\" />
+    <Folder Include="ViewControllers\Post\" />
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

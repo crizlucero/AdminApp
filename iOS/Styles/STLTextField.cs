@@ -16,5 +16,6 @@ namespace WorklabsMx.iOS.Styles
             KeyboardType = keyboard;
             BackgroundColor = UIColor.White;
         }
+
     }
 }
