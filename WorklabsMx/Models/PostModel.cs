@@ -13,5 +13,6 @@
         public string Miembro_Nombre { get; set; }
         public string Miembro_Apellidos { get; set; }
         public string Miembro_Fotografia { get; set; }
+        public string Miembro_Puesto { get; set; }
     }
 }

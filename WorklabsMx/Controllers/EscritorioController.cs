@@ -16,10 +16,10 @@ namespace WorklabsMx.Controllers
         {
 
             List<PostModel> posts = new List<PostModel>();
-            string query = "select * FROM (SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
+            string query = "select * FROM (SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo, Usuario_Puesto from Muro_Posts as p " +
                 "INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id WHERE m.Usuario_Tipo = 1 " +
                 "union all " +
-                "SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
+                "SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo, Usuario_Puesto from Muro_Posts as p " +
                 "INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 2) as Posts " +
                 "WHERE POST_ESTATUS = 1 ORDER BY Post_Fecha DESC OFFSET @page ROWS Fetch next 10 rows only";
             command = CreateCommand(query);
@@ -40,7 +40,8 @@ namespace WorklabsMx.Controllers
                         POST_CONTENIDO = reader["POST_CONTENIDO"].ToString(),
                         Miembro_Nombre = reader["Usuario_Nombre"].ToString(),
                         Miembro_Apellidos = reader["Usuario_Apellidos"].ToString(),
-                        Miembro_Fotografia = reader["Usuario_Fotografia"].ToString()
+                        Miembro_Fotografia = reader["Usuario_Fotografia"].ToString(),
+                        Miembro_Puesto = reader["Usuario_Puesto"].ToString()
                     });
                 }
             }

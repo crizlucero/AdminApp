@@ -125,7 +125,7 @@ namespace WorklabsMx.Controllers
                 "Usuario_Nombre LIKE @nombre AND Usuario_Apellidos LIKE @apellido AND " +
                 "Usuario_Profesion LIKE @profesion AND Usuario_Puesto LIKE @puesto AND " +
                 "Usuario_Habilidades LIKE @habilidades AND Usuario_Empresa_Pais_Descripcion LIKE @pais AND " +
-                "Usuario_Empresa_Estado_Descripcion LIKE @estado and Usuario_Empresa_Municipio_Descripcion LIKE @municipio AND Usuario_Disponibilidad_Trabajo LIKE @disponibilidad");
+                "Usuario_Empresa_Estado_Descripcion LIKE @estado and Usuario_Empresa_Municipio_Descripcion LIKE @municipio --AND Usuario_Disponibilidad_Trabajo LIKE @disponibilidad");
             command.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
             command.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
             command.Parameters.AddWithValue("@profesion", "%" + profesion + "%");
@@ -237,7 +237,7 @@ namespace WorklabsMx.Controllers
             {
                 conn.Open();
                 command = CreateCommand("SELECT Miembros_Favoritos_Id, CAST(Miembros_Favoritos_Estatus AS BIT) AS Estatus FROM pro_Miembros_Favoritos WHERE " +
-                "Usuario_Id = @miembro_id AND Usuario_Tipo = @miembro_tipo AND Usuario_Favorito_Id = @miembro_favorito_id AND Usuario_Favorito_Tipo = @miembro_favorito_tipo AND Usuario_Estatus = 1");
+                "Usuario_Id = @miembro_id AND Usuario_Tipo = @miembro_tipo AND Usuario_Favorito_Id = @miembro_favorito_id AND Usuario_Favorito_Tipo = @miembro_favorito_tipo AND Miembros_Favoritos_Estatus = 1");
                 command.Parameters.AddWithValue("@miembro_id", miembro_id);
                 command.Parameters.AddWithValue("@miembro_tipo", miembro_tipo);
                 command.Parameters.AddWithValue("@miembro_favorito_id", miembro_favorito_id);

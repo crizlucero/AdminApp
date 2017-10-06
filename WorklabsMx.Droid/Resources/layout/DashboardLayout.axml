@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarlayout" />
+    <ScrollView
+        android:id="@+id/menu_scroll"
+        android:visibility="gone"
+        android:layout_height="0dp"
+        android:layout_width="match_parent">
+        <TableLayout
+            android:id="@+id/menu_layout"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+    </ScrollView>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="66.0dp"
+        android:id="@+id/gridLayout1"
+        android:columnCount="2"
+        android:rowCount="3"
+        style="@style/GridCard"
+        android:background="@drawable/cardstyle">
+        <ImageView
+            android:src="@mipmap/ic_logo_mini"
+            android:id="@+id/imgPerfil"
+            android:layout_rowSpan="3"
+            android:background="@drawable/imagestyle"
+            android:layout_gravity="center" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/textView1"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:text="@string/Nombre"
+            android:textStyle="bold"
+            android:textSize="18dp" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/textView2"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:text="@string/Puesto"
+            android:textStyle="bold"
+            android:textSize="10dp" />
+        <Button
+            android:background="@drawable/buttonstyle"
+            style="@style/ButtonApply"
+            android:text="@string/Publicar"
+            android:layout_column="1"
+            android:layout_gravity="left"
+            android:layout_height="20dp" />
+    </GridLayout>
+    <ScrollView
+        android:id="@+id/post_scroll"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+        <TableLayout
+            android:id="@+id/post_table"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:minWidth="25px"
+            android:minHeight="25px" />
+    </ScrollView>
+</LinearLayout>
