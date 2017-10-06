@@ -51,7 +51,7 @@ namespace WorklabsMx.Droid
 
         void FillMenu(TableLayout menuLayout)
         {
-            foreach (ItemsMenu menu in new EscritorioController().GetMenuAndroid(Convert.ToInt32(storage.Get("Usuario_Tipo")), storage.Get("Parent")))
+            new EscritorioController().GetMenuAndroid(Convert.ToInt32(storage.Get("Usuario_Tipo")), storage.Get("Parent")).ForEach((menu) =>
             {
                 TableRow row = new TableRow(this);
                 Drawable icon = ContextCompat.GetDrawable(this, Resources.GetIdentifier(menu.Image, "mipmap", PackageName));
@@ -84,7 +84,7 @@ namespace WorklabsMx.Droid
                 row.SetMinimumHeight(30);
                 row.AddView(btnMenu);
                 menuLayout.AddView(row);
-            }
+            });
         }
     }
 }

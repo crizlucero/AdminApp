@@ -41,5 +41,15 @@ namespace WorklabsMx.Controllers
             }
             return promo;
         }
+
+        public bool RealizarPago()
+        {
+            try
+            {
+                
+            }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            return true;
+        }
     }
 }

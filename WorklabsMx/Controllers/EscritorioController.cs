@@ -16,10 +16,10 @@ namespace WorklabsMx.Controllers
         {
 
             List<PostModel> posts = new List<PostModel>();
-            string query = "select * FROM (SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
+            string query = "select * FROM (SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo, Usuario_Puesto from Muro_Posts as p " +
                 "INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id WHERE m.Usuario_Tipo = 1 " +
                 "union all " +
-                "SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
+                "SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo, Usuario_Puesto from Muro_Posts as p " +
                 "INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 2) as Posts " +
                 "WHERE POST_ESTATUS = 1 ORDER BY Post_Fecha DESC OFFSET @page ROWS Fetch next 10 rows only";
             command = CreateCommand(query);
@@ -40,7 +40,8 @@ namespace WorklabsMx.Controllers
                         POST_CONTENIDO = reader["POST_CONTENIDO"].ToString(),
                         Miembro_Nombre = reader["Usuario_Nombre"].ToString(),
                         Miembro_Apellidos = reader["Usuario_Apellidos"].ToString(),
-                        Miembro_Fotografia = reader["Usuario_Fotografia"].ToString()
+                        Miembro_Fotografia = reader["Usuario_Fotografia"].ToString(),
+                        Miembro_Puesto = reader["Usuario_Puesto"].ToString()
                     });
                 }
             }
@@ -130,11 +131,11 @@ namespace WorklabsMx.Controllers
         {
             List<ComentarioModel> comentarios = new List<ComentarioModel>();
             string query = "select * FROM (SELECT p.*, Usuario_Id, CONCAT(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia, Usuario_Tipo from Muro_Comments as p " +
-				"INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id WHERE m.Usuario_Tipo = 0 " +
-				"union all " +
-				"SELECT p.*, Usuario_Id, CONCAT(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia, Usuario_Tipo from Muro_Comments as p " +
-				"INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 1) as Posts " +
-				"WHERE COMM_ESTATUS = 1 ORDER BY COMM_FECHA --DESC OFFSET @page ROWS Fetch next 10 rows only";
+                "INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id WHERE m.Usuario_Tipo = 0 " +
+                "union all " +
+                "SELECT p.*, Usuario_Id, CONCAT(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia, Usuario_Tipo from Muro_Comments as p " +
+                "INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 1) as Posts " +
+                "WHERE COMM_ESTATUS = 1 ORDER BY COMM_FECHA --DESC OFFSET @page ROWS Fetch next 10 rows only";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@post_id", post_id);
             try
@@ -312,12 +313,12 @@ namespace WorklabsMx.Controllers
         /// <returns><c>true</c> Si el post fue comentado, <c>false</c> Existió algún error.</returns>
         public bool CommentPost(string post_id, string usuario_id, string tipo, string comentario)
         {
-			string miembro_id = null;
-			string colaborador_id = null;
-			if (tipo == "0")
-				miembro_id = usuario_id;
-			else
-				colaborador_id = usuario_id;
+            string miembro_id = null;
+            string colaborador_id = null;
+            if (tipo == "0")
+                miembro_id = usuario_id;
+            else
+                colaborador_id = usuario_id;
             try
             {
                 conn.Open();
@@ -622,6 +623,38 @@ namespace WorklabsMx.Controllers
             }
             finally { conn.Close(); }
             return true;
+        }
+
+        public List<string> GetMuroPostID(int page = 0)
+        {
+            List<string> posts_id = new List<string>();
+            string query = "select POST_ID FROM (SELECT POST_ID, POST_ESTATUS, Post_Fecha from Muro_Posts as p " +
+                "INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id WHERE m.Usuario_Tipo = 1 " +
+                "union all " +
+                "SELECT POST_ID, POST_ESTATUS, Post_Fecha from Muro_Posts as p " +
+                "INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 2) as Posts " +
+                "WHERE POST_ESTATUS = 1 ORDER BY Post_Fecha DESC OFFSET @page ROWS Fetch next 10 rows only";
+            command = CreateCommand(query);
+            command.Parameters.AddWithValue("@page", page);
+            try
+            {
+                conn.Open();
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    posts_id.Add(reader["POST_ID"].ToString());
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                SlackLogs.SendMessage(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return posts_id;
         }
     }
 }

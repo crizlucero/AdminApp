@@ -46,7 +46,7 @@ namespace WorklabsMx.Droid
                 LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent),
                 Orientation = Orientation.Vertical
             };
-            foreach (ColaboradorModel colaborador in new ColaboradoresController().GetColaboradoresMiembro(miembro_id, 1, nombre, apellido, puesto, profesion, habilidades, disponibilidad))
+            new ColaboradoresController().GetColaboradoresMiembro(miembro_id, 1, nombre, apellido, puesto, profesion, habilidades, disponibilidad).ForEach((colaborador) =>
             {
                 LinearLayout llColaborador = new LinearLayout(this)
                 {
@@ -383,7 +383,7 @@ namespace WorklabsMx.Droid
                 llColaborador.AddView(rlButtons);
                 #endregion
                 llDirectorio.AddView(llColaborador);
-            }
+            });
             svDirectorio.AddView(llDirectorio);
         }
 

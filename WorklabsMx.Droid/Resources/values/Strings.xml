@@ -138,6 +138,7 @@
 	<string name="NumeroSuperior">La cantidad debe de ser menor</string>
 	<string name="Subscripciones">Subscripciones</string>
 	<string name="Comentar">Comentar</string>
+	<string name="Comentarios">COMENTARIOS</string>
 	<string name="Reportes">Reportes</string>
 	<string name="MisColaboradores">Mis Colaboradores</string>
 	<string name="Pais">País</string>
@@ -150,4 +151,7 @@
 	<string name="Modificar">Modificar</string>
 	<string name="OfflineApp">No tienes acceso a una conexión de Internet</string>
 	<string name="NoConnection">Sin Conexión</string>
+	<string name="ScanQR">SCAN QR CODE FOR ACCESS</string>
+	<string name="Publicar">Publicar</string>
+	<string name="Likes">LIKES</string>
 </resources>

@@ -125,6 +125,7 @@
     <Compile Include="ViewController\MiPerfil\TabColaboradoresActivity.cs" />
     <Compile Include="ViewController\MiPerfil\MisColaboradoresBajaActivity.cs" />
     <Compile Include="ViewController\MiPerfil\MisColaboradoresCambiosActivity.cs" />
+    <Compile Include="ViewController\CommentsActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -140,7 +141,6 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
-    <AndroidResource Include="Resources\layout\LoginLayout.axml" />
     <AndroidResource Include="Resources\layout\ToolbarLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_menu.png" />
     <AndroidResource Include="Resources\menu\top_menus.xml" />
@@ -225,6 +225,18 @@
     <AndroidResource Include="Resources\layout\ColaboradoresLayout.axml" />
     <AndroidResource Include="Resources\layout\ColaboradorCambioLayout.axml" />
     <AndroidResource Include="Resources\layout\OfflineAppLayout.axml" />
+    <AndroidResource Include="Resources\menu\refresh_menu.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_log_background.png" />
+    <AndroidResource Include="Resources\layout\LoginLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_worklabs_title.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_logo_mini.png" />
+    <AndroidResource Include="Resources\layout\DashboardLayout.axml" />
+    <AndroidResource Include="Resources\drawable\ButtonStyle.xml" />
+    <AndroidResource Include="Resources\drawable\ImageStyle.xml" />
+    <AndroidResource Include="Resources\drawable\CardStyle.xml" />
+    <AndroidResource Include="Resources\layout\PostLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_star_like.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_mode_comment.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
