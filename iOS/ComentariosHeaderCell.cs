@@ -14,9 +14,18 @@ namespace WorklabsMx.iOS
 
         internal void UpdateCell(MiembroModel miembro)
         {
-            lblNombre.Text = miembro.Miembro_Nombre;
-            lblProfesion.Text = miembro.Miembro_Profesion;
-            //imgPerfil.Image = miembro.Miembro_Fotografia;
+            if (miembro != null)
+            {
+				lblNombre.Text = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos;
+				lblProfesion.Text = miembro.Miembro_Profesion;
+				//imgPerfil.Image = miembro.Miembro_Fotografia;
+			}
+            else
+            {
+                lblNombre.Text = "Gilberto Escareño Barrera";
+                lblProfesion.Text = "Desarrollador";
+            }
+
         }
 
     }

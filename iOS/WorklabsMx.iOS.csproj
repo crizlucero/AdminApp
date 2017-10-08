@@ -593,10 +593,17 @@
     <Compile Include="Helpers\InternetConectionHelper.cs" />
     <Compile Include="Helpers\StyleHelper.cs" />
     <Compile Include="ViewControllers\Post\PostTableViewController.cs" />
-    <Compile Include="ViewControllers\Post\PostBodyCell.cs" />
     <Compile Include="ComentariosHeaderCell.cs" />
     <Compile Include="ComentariosHeaderCell.designer.cs">
       <DependentUpon>ComentariosHeaderCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComentariosBodyCell.cs" />
+    <Compile Include="ComentariosBodyCell.designer.cs">
+      <DependentUpon>ComentariosBodyCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoComentsCell.cs" />
+    <Compile Include="NoComentsCell.designer.cs">
+      <DependentUpon>NoComentsCell.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

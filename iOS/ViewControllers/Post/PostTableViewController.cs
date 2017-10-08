@@ -1,7 +1,10 @@
 ﻿using System;
 using UIKit;
 using WorklabsMx.Models;
-using WorklabsMx.iOS.ViewControllers.Post;
+using System.Collections.Generic;
+using WorklabsMx.iOS.Helpers;
+using CoreGraphics;
+using SVProgressHUDBinding;
 
 namespace WorklabsMx.iOS
 {
@@ -12,17 +15,42 @@ namespace WorklabsMx.iOS
         const string IdentificadorCeldaNoInfo = "NoInfo";
 
         bool isShowInformation = false;
+        bool existeConeccion = true;
 
         MiembroModel miembro;
+        static int currentPage = 0;
 
+        List<PostModel> posts; 
+
+ 
 		public PostTableViewController(IntPtr handle) : base(handle)
         {
-            
+            posts = new List<PostModel>();
 		}
 
 		public override void ViewDidLoad()
         {
-            base.ViewDidLoad();
+			base.ViewDidLoad();
+            if (InternetConectionHelper.VerificarConexion())
+            {
+				this.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_qr"), UIBarButtonItemStyle.Plain, (sender, e) =>
+				{
+					UIActivityIndicatorView waiting = new UIActivityIndicatorView
+					{
+						Frame = new CGRect(UIScreen.MainScreen.Bounds.Width / 2, UIScreen.MainScreen.Bounds.Height / 2, 30, 30)
+					};
+					View.AddSubview(waiting);
+					UIViewController controller = this.Storyboard.InstantiateViewController("AccesoController");
+					controller.Title = "Control de Acceso";
+					this.NavigationController.PushViewController(controller, true);
+				}), true);
+				posts = new Controllers.EscritorioController().GetMuroPosts(currentPage);
+            } else {
+                isShowInformation = false;
+                existeConeccion = false;
+            }
+          
+            SVProgressHUD.Dismiss();
         }
 
         public override void ViewWillAppear(bool animated)
@@ -45,6 +73,11 @@ namespace WorklabsMx.iOS
 
         public override nint NumberOfSections(UITableView tableView)
         {
+            if (posts.Count > 0)
+            {
+                isShowInformation = true;
+                return posts.Count;
+            }
             isShowInformation = false;
             return 0;
         }
@@ -65,14 +98,27 @@ namespace WorklabsMx.iOS
         {
             if (isShowInformation)
             {
-                var currentCell = tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath) as PostBodyCell;
-                return currentCell;
+                var currentPost = posts[indexPath.Row];
+                var currentPostCell = (ComentariosBodyCell) tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
+                currentPostCell.UpdateCell(currentPost);
+                return currentPostCell;
             }
             else 
             {
-                var noPostCell = tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath) as PostBodyCell;
+                var noPostCell = (NoComentsCell) tableView.DequeueReusableCell(IdentificadorCeldaNoInfo, indexPath);
+                noPostCell.UpdateCell(this.existeConeccion);
                 return noPostCell;
             }
+        }
+
+        public override void WillDisplay(UITableView tableView, UITableViewCell cell, Foundation.NSIndexPath indexPath)
+        {
+            var lastElement = posts.Count - 1;
+            if (indexPath.Row == lastElement) 
+            {
+                currentPage += 5;
+				// handle your logic here to get more items, add it to dataSource and reload tableview
+			}
         }
 
     }
