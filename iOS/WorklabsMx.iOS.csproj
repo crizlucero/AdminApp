@@ -443,6 +443,16 @@
     <ImageAsset Include="Assets.xcassets\BackGround.imageset\BackGround.png" />
     <ImageAsset Include="Assets.xcassets\Leyenda.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Leyenda.imageset\leyenda.png" />
+    <ImageAsset Include="Assets.xcassets\Profile.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Profile.imageset\profile.png" />
+    <ImageAsset Include="Assets.xcassets\Likes.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Likes.imageset\Likes.png" />
+    <ImageAsset Include="Assets.xcassets\Comments.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Comments.imageset\Comments.png" />
+    <ImageAsset Include="Assets.xcassets\back.imageset\back.png" />
+    <ImageAsset Include="Assets.xcassets\back.imageset\back%402x.png" />
+    <ImageAsset Include="Assets.xcassets\back.imageset\back%403x.png" />
+    <ImageAsset Include="Assets.xcassets\back.imageset\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -592,18 +602,21 @@
     <Compile Include="Styles\STLLine.cs" />
     <Compile Include="Helpers\InternetConectionHelper.cs" />
     <Compile Include="Helpers\StyleHelper.cs" />
-    <Compile Include="ViewControllers\Post\PostTableViewController.cs" />
-    <Compile Include="ComentariosHeaderCell.cs" />
-    <Compile Include="ComentariosHeaderCell.designer.cs">
+    <Compile Include="ViewControllers\Post\ComentariosHeaderCell.cs" />
+    <Compile Include="ViewControllers\Post\ComentariosHeaderCell.designer.cs">
       <DependentUpon>ComentariosHeaderCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="ComentariosBodyCell.cs" />
-    <Compile Include="ComentariosBodyCell.designer.cs">
-      <DependentUpon>ComentariosBodyCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NoComentsCell.cs" />
-    <Compile Include="NoComentsCell.designer.cs">
+    <Compile Include="ViewControllers\Post\NoComentsCell.cs" />
+    <Compile Include="ViewControllers\Post\NoComentsCell.designer.cs">
       <DependentUpon>NoComentsCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PublicarPostViewController.cs" />
+    <Compile Include="PublicarPostViewController.designer.cs">
+      <DependentUpon>PublicarPostViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Post\ComentariosBodyCell.cs" />
+    <Compile Include="ViewControllers\Post\ComentariosBodyCell.designer.cs">
+      <DependentUpon>ComentariosBodyCell.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -641,6 +654,10 @@
     <Folder Include="Assets.xcassets\BackGround.imageset\" />
     <Folder Include="Assets.xcassets\Leyenda.imageset\" />
     <Folder Include="ViewControllers\Post\" />
+    <Folder Include="Assets.xcassets\Profile.imageset\" />
+    <Folder Include="Assets.xcassets\Likes.imageset\" />
+    <Folder Include="Assets.xcassets\Comments.imageset\" />
+    <Folder Include="Assets.xcassets\back.imageset\" />
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

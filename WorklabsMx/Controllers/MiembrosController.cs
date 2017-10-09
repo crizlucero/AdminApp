@@ -6,6 +6,11 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.Controllers
 {
+
+    public enum CamposMiembro {
+        
+    }
+
     public class MiembrosController : DataBaseModel
     {
         /// <summary>

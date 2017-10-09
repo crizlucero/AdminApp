@@ -46,6 +46,10 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblOcupacion { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwVistaComentario { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (imgComentarios != null) {
@@ -86,6 +90,11 @@ namespace WorklabsMx.iOS
             if (lblOcupacion != null) {
                 lblOcupacion.Dispose ();
                 lblOcupacion = null;
+            }
+
+            if (vwVistaComentario != null) {
+                vwVistaComentario.Dispose ();
+                vwVistaComentario = null;
             }
         }
     }
