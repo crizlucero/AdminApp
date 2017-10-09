@@ -1,44 +1,32 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/EscritorioController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/EscritorioController.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/Post/PostTableViewController.cs" Line="50" Column="32" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="54" Column="30" />
-      <File FileName="iOS/Styles/STLTableViewSource.cs" Line="65" Column="72" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="9" Column="18" />
-      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="102" Column="36" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="343" Column="43" />
-      <File FileName="iOS/ViewControllers.cs" Line="5" Column="25" />
-      <File FileName="iOS/ViewControllers/SplitViewController.cs" Line="4" Column="26" />
-      <File FileName="iOS/ViewControllers.designer.cs" Line="14" Column="17" />
-      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="2" Column="1" />
+      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="132" Column="1" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="22" Column="25" />
+      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="87" Column="1" />
+      <File FileName="iOS/ViewControllers/Post/ComentariosHeaderCell.cs" Line="28" Column="1" />
+      <File FileName="iOS/ViewControllers/Post/NoComentsCell.cs" Line="9" Column="29" />
+      <File FileName="iOS/ViewControllers/Post/ComentariosBodyCell.cs" Line="7" Column="2" />
+      <File FileName="iOS/PublicarPostViewController.cs" Line="29" Column="4" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="112" Column="49" />
+      <File FileName="iOS/ViewControllers/TableViewController.cs" Line="28" Column="14" />
+      <File FileName="iOS/Main.cs" Line="12" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>localStorage.Get("Usuario_Tipo")</Value>
-          <Value>menus</Value>
-          <Value>controller</Value>
-          <Value>controller.Title</Value>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="120" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="79" column="4" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="33" column="16" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/WorklabsMx.Droid/ViewController/SubMenuActivity.cs" relfile="WorklabsMx.Droid/ViewController/SubMenuActivity.cs" line="56" column="21" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="58" column="29" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/EscritorioController.cs" relfile="iOS/ViewControllers/EscritorioController.cs" line="72" column="22" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/WorklabsMx.Droid/ViewController/CommentsActivity.cs" relfile="WorklabsMx.Droid/ViewController/CommentsActivity.cs" line="24" column="49" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/WorklabsMx.Droid/MainActivity.cs" relfile="WorklabsMx.Droid/MainActivity.cs" line="36" column="15" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="28" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="120" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="79" column="4" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx.Droid/ViewController/SubMenuActivity.cs" relfile="WorklabsMx.Droid/ViewController/SubMenuActivity.cs" line="56" column="21" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx.Droid/MainActivity.cs" relfile="WorklabsMx.Droid/MainActivity.cs" line="36" column="15" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="103" column="25" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="123" column="28" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/EscritorioController.cs" relfile="iOS/ViewControllers/EscritorioController.cs" line="70" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.MobileAppService PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.38F7EDDF-B427-4183-BC05-D1227651EE0B" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.FC7D3210-A803-4B77-84C4-0CE927BDCF67" />
   <MultiItemStartupConfigurations />
 </Properties>

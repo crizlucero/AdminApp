@@ -14,6 +14,10 @@ namespace WorklabsMx.iOS
         const string IdentificadorCeldaPost = "Post";
         const string IdentificadorCeldaNoInfo = "NoInfo";
 
+        const int TamañoPublicacion = 190;
+        const int TamañoHeader = 120;
+        const int TamañoMensajeNoInfo = 400;
+
         bool isShowInformation = false;
         bool existeConeccion = true;
 
@@ -67,7 +71,7 @@ namespace WorklabsMx.iOS
 
         public override nfloat GetHeightForHeader(UITableView tableView, nint section)
         {
-            return 120;
+            return TamañoHeader;
         }
 
 
@@ -86,11 +90,11 @@ namespace WorklabsMx.iOS
         {
             if(isShowInformation)
             {
-                return 170;
+                return TamañoPublicacion;
             }
             else 
             {
-                return 400;
+                return TamañoMensajeNoInfo;
             }
         }
 
@@ -117,7 +121,7 @@ namespace WorklabsMx.iOS
             if (indexPath.Row == lastElement) 
             {
                 currentPage += 5;
-				// handle your logic here to get more items, add it to dataSource and reload tableview
+                //this.TableView.ReloadData();
 			}
         }
 

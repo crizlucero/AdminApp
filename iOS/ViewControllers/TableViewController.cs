@@ -21,10 +21,10 @@ namespace WorklabsMx.iOS
             table = new UITableView(View.Bounds);
             List<ItemsMenu> tableItems = new List<ItemsMenu>();
             var localStorage = SimpleStorage.EditGroup("Login");
-            KeyValuePair<string, string> data = new MiembrosController().GetMemberName(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+            List<string> data = new MiembrosController().GetMemberName(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
             try
             {
-                tableItems.Add(new ItemsMenu { Image = "http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + data.Value, Label = data.Key, Principal = true });
+                tableItems.Add(new ItemsMenu { Image = "http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + data[2], Label = data[1], Principal = true });
             }
             catch (Exception e)
             {

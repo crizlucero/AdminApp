@@ -2,22 +2,28 @@ using Foundation;
 using System;
 using UIKit;
 using WorklabsMx.Models;
+using PerpetualEngine.Storage;
+using System.Data;
+using System.Collections.Generic;
 
 namespace WorklabsMx.iOS
 {
     public partial class ComentariosHeaderCell : UITableViewCell
     {
+        
         public ComentariosHeaderCell (IntPtr handle) : base (handle)
         {
             
         }
 
-        internal void UpdateCell(MiembroModel miembro)
+        internal void UpdateCell(List<string> miembro)
         {
             if (miembro != null)
             {
-				lblNombre.Text = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos;
-				lblProfesion.Text = miembro.Miembro_Profesion;
+                lblNombre.Text = miembro[0].ToString();
+                //miembro["Usuario_Fotografia"].ToString().Replace(@"\", "/");
+                lblProfesion.Text = miembro[2].ToString();
+				
 				//imgPerfil.Image = miembro.Miembro_Fotografia;
 			}
             else
@@ -27,6 +33,14 @@ namespace WorklabsMx.iOS
             }
 
         }
+
+		partial void BtnPublicar_TouchUpInside(UIButton sender)
+		{
+		    
+		}
+
+       
+
 
     }
 }

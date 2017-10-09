@@ -18,7 +18,7 @@
 					else
 					{
 						SVProgressHUD.Dismiss();
-						new MessageDialog().SendToast("Correo y/o contraseñ incorrecto");
+						new MessageDialog().SendToast("Correo y/o contraseña incorrecto");
 					}
 				}
 				else
