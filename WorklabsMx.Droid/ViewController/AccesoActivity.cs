@@ -23,7 +23,7 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.Acceso);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
 
             var storageLocal = SimpleStorage.EditGroup("Login");
             strAcceso = new MiembrosController().GetLlaveAcceso(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));

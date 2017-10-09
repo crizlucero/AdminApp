@@ -39,7 +39,7 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.DirectorioUsuario);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
 
         }
 
@@ -436,7 +436,7 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.DirectorioUsuario);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
         }
     }
 }

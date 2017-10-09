@@ -21,7 +21,7 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.MiCuenta);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
         }
 
         void FillData()

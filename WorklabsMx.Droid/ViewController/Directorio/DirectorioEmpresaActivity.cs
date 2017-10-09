@@ -38,7 +38,7 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.DirectorioEmpresas);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
         }
 
         void FillDirectorioUsuario(string nombre = "", string pais = "", string estado = "", string municipio = "", string giro = "")
@@ -411,7 +411,7 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.DirectorioEmpresas);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace WorklabsMx.Droid
 			SetActionBar(toolbar);
 			ActionBar.Title = Resources.GetString(Resource.String.ReservaSala);
 			ActionBar.SetDisplayHomeAsUpEnabled(true);
-			ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+			//ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
 
             sucursales = FindViewById<Spinner>(Resource.Id.spSucursal);
             sucursales.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, new PickerItemsController().GetSucursales().ToArray());

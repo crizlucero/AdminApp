@@ -38,7 +38,7 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.EditarEmpresa);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
             NombreEmpresa = FindViewById<EditText>(Resource.Id.txtNombreEmpresa);
             CorreoElectronico = FindViewById<EditText>(Resource.Id.txtEmailEmpresa);
             GiroComercial = FindViewById<Spinner>(Resource.Id.txtGiroComercialEmpresa);

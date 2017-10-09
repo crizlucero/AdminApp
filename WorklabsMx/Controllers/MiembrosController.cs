@@ -62,10 +62,10 @@ namespace WorklabsMx.Controllers
         /// </summary>
         /// <returns>Nombre del miembro</returns>
         /// <param name="miembro_id">Identificador del miembro</param>
-        public KeyValuePair<string, string> GetMemberName(string miembro_id, string tipo)
+        public List<string> GetMemberName(string miembro_id, string tipo)
         {
-            KeyValuePair<string, string> data = new KeyValuePair<string, string>();
-            command = CreateCommand("select Concat(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia from vw_pro_Usuarios_Directorio " +
+            List<string> data = new List<string>();
+            command = CreateCommand("select Concat(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia, Usuario_Puesto from vw_pro_Usuarios_Directorio " +
                 "where Usuario_Id = @miembro_id AND Usuario_Tipo = @tipo");
             command.Parameters.AddWithValue("@miembro_id", miembro_id);
             command.Parameters.AddWithValue("@tipo", tipo);
@@ -75,7 +75,10 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    data = new KeyValuePair<string, string>(reader["Nombre"].ToString(), reader["Usuario_Fotografia"].ToString().Replace(@"\", "/"));
+                    data = new List<string> {
+                        reader["Nombre"].ToString(),
+                        reader["Usuario_Fotografia"].ToString().Replace(@"\", "/"),
+                        reader["Usuario_Puesto"].ToString()};
                 }
             }
             catch (Exception e)

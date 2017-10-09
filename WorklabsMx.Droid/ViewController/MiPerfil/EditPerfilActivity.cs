@@ -33,7 +33,7 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.EditarPerfil);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
             generos = FindViewById<Spinner>(Resource.Id.txtGeneroPerfil);
             generos.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, new PickerItemsController().GetGeneros().ToArray());
             nombre = FindViewById<TextView>(Resource.Id.txtNombrePerfil);

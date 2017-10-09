@@ -32,7 +32,7 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.MiPerfil);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
 
             Email = FindViewById<EditText>(Resource.Id.txtCorreoElectronicoFactura);
             RazonSocial = FindViewById<EditText>(Resource.Id.txtRazonSocialFactura);

@@ -130,12 +130,12 @@ namespace WorklabsMx.Controllers
         public List<ComentarioModel> GetComentariosPost(string post_id)
         {
             List<ComentarioModel> comentarios = new List<ComentarioModel>();
-            string query = "select * FROM (SELECT p.*, Usuario_Id, CONCAT(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia, Usuario_Tipo from Muro_Comments as p " +
-                "INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id WHERE m.Usuario_Tipo = 0 " +
+            string query = "select * FROM (SELECT p.*, Usuario_Id, CONCAT(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia, Usuario_Tipo, Usuario_Puesto from Muro_Comments as p " +
+                "INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id WHERE m.Usuario_Tipo = 1 " +
                 "union all " +
-                "SELECT p.*, Usuario_Id, CONCAT(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia, Usuario_Tipo from Muro_Comments as p " +
-                "INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 1) as Posts " +
-                "WHERE COMM_ESTATUS = 1 ORDER BY COMM_FECHA --DESC OFFSET @page ROWS Fetch next 10 rows only";
+                "SELECT p.*, Usuario_Id, CONCAT(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia, Usuario_Tipo, Usuario_Puesto from Muro_Comments as p " +
+                "INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 2) as Comments " +
+                "WHERE COMM_ESTATUS = 1 AND Post_Id = @post_id ORDER BY COMM_FECHA --DESC OFFSET @page ROWS Fetch next 10 rows only";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@post_id", post_id);
             try
@@ -154,7 +154,8 @@ namespace WorklabsMx.Controllers
                         COMM_ESTATUS = reader["COMM_ESTATUS"].ToString(),
                         Nombre = reader["Nombre"].ToString(),
                         Miembro_Fotografia = reader["Usuario_Fotografia"].ToString(),
-                        USUARIO_TIPO = reader["Usuario_Tipo"].ToString()
+                        USUARIO_TIPO = reader["Usuario_Tipo"].ToString(),
+                        USUARIO_PUESTO = reader["Usuario_Puesto"].ToString()
                     });
                 }
             }

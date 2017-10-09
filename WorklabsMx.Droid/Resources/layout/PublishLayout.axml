@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="323.0dp"
+        android:id="@+id/gridLayout1"
+        android:rowCount="5"
+        android:columnCount="5"
+        android:layout_margin="10dp">
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:id="@+id/imageView1"
+            android:layout_rowSpan="3"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+        <TextView
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/lblNombre"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnSpan="4" />
+        <TextView
+            android:text="Small Text"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/lblPuesto"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_columnSpan="3"
+            android:layout_columnWeight="3"
+            style="@drawable/edittextstyle" />
+        <EditText
+            android:id="@+id/txtPublicacion"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:layout_columnSpan="5"
+            android:layout_columnWeight="5"
+            android:gravity="top|left"
+            android:hint="@string/Postear"
+            android:background="@drawable/edittextstyle"
+            android:lines="10"
+            android:padding="10dp" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/textView3"
+            android:text="00/00/00"
+            android:layout_columnSpan="3"
+            android:layout_columnWeight="8"
+            android:textSize="8dp"
+            android:textColor="@color/material_grey_600"
+            android:layout_gravity="top" />
+        <ImageButton
+            android:src="@android:drawable/ic_menu_gallery"
+            android:id="@+id/imageButton1"
+            android:layout_column="3"
+            android:layout_height="20dp"
+            android:layout_width="20dp" />
+        <Button
+            android:background="@drawable/buttonstyle"
+            style="@style/ButtonApply"
+            android:text="@string/Publicar"
+            android:id="@+id/btnPublish"
+            android:layout_column="4"
+            android:layout_gravity="left"
+            android:layout_height="20dp" />
+    </GridLayout>
+</LinearLayout>

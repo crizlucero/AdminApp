@@ -7,15 +7,14 @@ using WorklabsMx.Controllers;
 using System;
 using Android.Views;
 using Android.Content;
-using WorklabsMx.Models;
 using Android.Graphics.Drawables;
 using Android.Support.V4.Content;
 using WorklabsMx.Droid.Helpers;
 using Android.Graphics;
 using Android.Views.InputMethods;
 using Android.Net;
-using System.Threading.Tasks;
 using WorklabsMx.Helpers;
+using AndroidHUD;
 
 namespace WorklabsMx.Droid
 {
@@ -31,6 +30,7 @@ namespace WorklabsMx.Droid
         EditText txtEmail, txtPassword;
         EscritorioController DashboardController;
         TableLayout tlPost;
+        string nombre, puesto, foto;
         public MainActivity()
         {
             param = new TableRow.LayoutParams
@@ -104,18 +104,24 @@ namespace WorklabsMx.Droid
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
             FillMenu(FindViewById<TableLayout>(Resource.Id.menu_layout));
+            FindViewById<TextView>(Resource.Id.lblNombre).Text = nombre;
+            FindViewById<TextView>(Resource.Id.lblPuesto).Text = puesto;
             scroll = FindViewById<ScrollView>(Resource.Id.post_scroll);
             tlPost = FindViewById<TableLayout>(Resource.Id.post_table);
+            FindViewById<Button>(Resource.Id.btnInitPublish).Click += (sender, e) =>
+            {
+                ShowPublish();
+            };
             FillPosts();
             scroll.ScrollChange += (sender, e) =>
-           {
-               if (limitPage)
-                   if ((((ScrollView)sender).ScrollY / (page + 1)) >= ((scroll.Height) * .4))
-                   {
-                       ++page;
-                       FillPosts();
-                   }
-           };
+            {
+                if (limitPage)
+                    if ((((ScrollView)sender).ScrollY / (page + 1)) >= ((scroll.Height) * .4))
+                    {
+                        ++page;
+                        FillPosts();
+                    }
+            };
         }
 
         void FillPosts()
@@ -125,6 +131,9 @@ namespace WorklabsMx.Droid
 
                 TableRow row = new TableRow(this);
                 row.SetMinimumHeight(100);
+                TableLayout.LayoutParams layoutParams = new TableLayout.LayoutParams(ViewGroup.LayoutParams.FillParent, ViewGroup.LayoutParams.WrapContent);
+				layoutParams.SetMargins(10, 10, 10, 10);
+                row.LayoutParameters = layoutParams;
                 GridLayout glPost = new GridLayout(this)
                 {
                     ColumnCount = 4,
@@ -142,6 +151,10 @@ namespace WorklabsMx.Droid
                 param.ColumnSpec = GridLayout.InvokeSpec(0);
                 param.RowSpec = GridLayout.InvokeSpec(0, 3);
                 ibFotoPostUsuario.LayoutParameters = param;
+                ibFotoPostUsuario.Click += (sender, e) =>
+                {
+                    AndHUD.Shared.ShowImage(this, Resources.GetDrawable(Resource.Mipmap.ic_work), null, MaskType.Black);
+                };
                 glPost.AddView(ibFotoPostUsuario);
 
                 TextView txtNombre = new TextView(this)
@@ -244,6 +257,12 @@ namespace WorklabsMx.Droid
                     intent.PutExtra("post_id", post.POST_ID);
                     StartActivity(intent);
                 };
+                llComment.Click += (sender, e) =>
+                {
+                    Intent intent = new Intent(this, typeof(CommentsActivity));
+                    intent.PutExtra("post_id", post.POST_ID);
+                    StartActivity(intent);
+                };
                 llComment.AddView(lblComment);
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center);
@@ -300,15 +319,18 @@ namespace WorklabsMx.Droid
 
             using (TableRow row = new TableRow(this))
             {
-                KeyValuePair<string, string> data = new MiembrosController().GetMemberName(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+                List<string> data = new MiembrosController().GetMemberName(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+                nombre = data[0];
+                foto = data[1];
+                puesto = data[2];
                 ImageView image = new ImageView(this);
-                image.SetImageBitmap(ImagesHelper.GetImageBitmapFromUrl(data.Value));
+                image.SetImageBitmap(ImagesHelper.GetImageBitmapFromUrl(foto));
                 Drawable icon = image.Drawable;
                 icon.SetBounds(0, 0, 30, 30);
 
                 Button btnMenu = new Button(this)
                 {
-                    Text = data.Key,
+                    Text = nombre,
                     TextAlignment = TextAlignment.ViewStart
                 };
                 btnMenu.SetWidth(Resources.DisplayMetrics.WidthPixels);
@@ -373,6 +395,19 @@ namespace WorklabsMx.Droid
             }
             else
                 Toast.MakeText(this, Resource.String.FormatoCorreoError, ToastLength.Short).Show();
+        }
+
+        void ShowPublish()
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            LayoutInflater liView = LayoutInflater;
+
+            View customView = liView.Inflate(Resource.Layout.PublishLayout, null);
+
+            builder.SetView(customView);
+            builder.Create();
+            builder.Show();
         }
     }
 }

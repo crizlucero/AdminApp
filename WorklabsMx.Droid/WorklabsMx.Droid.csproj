@@ -237,6 +237,9 @@
     <AndroidResource Include="Resources\layout\PostLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_star_like.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_mode_comment.png" />
+    <AndroidResource Include="Resources\layout\CommentLayout.axml" />
+    <AndroidResource Include="Resources\layout\PublishLayout.axml" />
+    <AndroidResource Include="Resources\drawable\EditTextStyle.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

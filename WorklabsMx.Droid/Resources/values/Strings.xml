@@ -137,7 +137,7 @@
 	<string name="NumeroInferior">La cantidad debe de ser mayor</string>
 	<string name="NumeroSuperior">La cantidad debe de ser menor</string>
 	<string name="Subscripciones">Subscripciones</string>
-	<string name="Comentar">Comentar</string>
+	<string name="Comentar">Escribe un comentario...</string>
 	<string name="Comentarios">COMENTARIOS</string>
 	<string name="Reportes">Reportes</string>
 	<string name="MisColaboradores">Mis Colaboradores</string>
@@ -154,4 +154,5 @@
 	<string name="ScanQR">SCAN QR CODE FOR ACCESS</string>
 	<string name="Publicar">Publicar</string>
 	<string name="Likes">LIKES</string>
+	<string name="Postear">Escribe una publicación... :)</string>
 </resources>

@@ -30,7 +30,7 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.MisColaboradores);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
             InitiateView();
             colaborador_id = Intent.GetStringExtra("colaborador_id");
             colaborador_tipo = Intent.GetStringExtra("colaborador_tipo");
