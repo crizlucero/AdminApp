@@ -48,7 +48,7 @@ namespace WorklabsMx.Controllers
                         Miembro_Puesto = reader["Usuario_Puesto"].ToString(),
                         Miembro_Habilidades = reader["Usuario_Habilidades"].ToString(),
                         Miembro_Identificacion = reader["Usuario_Identificacion"].ToString(),
-                        Miembro_Llave_Acceso = reader["Usuario_Llave_Acceso"].ToString(),
+                        //Miembro_Llave_Acceso = reader["Usuario_Llave_Acceso"].ToString();
                         Miembro_Fotografia = reader["Usuario_Fotografia"].ToString(),
                         Miembro_Fecha_Registro = reader["Usuario_Fecha_Registro"].ToString(),
                         Miembro_Estatus = reader["Usuario_Estatus"].ToString(),
