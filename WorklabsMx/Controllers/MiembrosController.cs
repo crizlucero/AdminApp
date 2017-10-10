@@ -6,10 +6,13 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.Controllers
 {
-
-    public enum CamposMiembro {
-        
-    }
+    
+    public enum CamposMiembro: int
+	{
+        Usuario_Nombre = 0,
+        usuario_Fotografia = 1,
+        Usuario_Apellidos = 2
+	}
 
     public class MiembrosController : DataBaseModel
     {

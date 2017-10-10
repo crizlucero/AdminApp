@@ -24,7 +24,7 @@ namespace WorklabsMx.iOS
             List<string> data = new MiembrosController().GetMemberName(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
             try
             {
-                tableItems.Add(new ItemsMenu { Image = "http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + data[2], Label = data[1], Principal = true });
+                tableItems.Add(new ItemsMenu { Image = "http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + data[(int)CamposMiembro.usuario_Fotografia], Label = data[(int)CamposMiembro.Usuario_Nombre], Principal = true });
             }
             catch (Exception e)
             {

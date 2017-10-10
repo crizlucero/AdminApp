@@ -1,23 +1,36 @@
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/Directorio/DirectorioEmpresaActivity.cs">
+﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/EscritorioController.cs">
     <Files>
-      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioEmpresaActivity.cs" Line="388" Column="27" />
+      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioEmpresaActivity.cs" Line="395" Column="10" />
+      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="78" Column="42" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="85" Column="57" />
+      <File FileName="iOS/PublicarPostViewController.cs" Line="53" Column="1" />
+      <File FileName="iOS/Main.storyboard" />
+      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="10" Column="35" />
+      <File FileName="iOS/ViewControllers/Post/ComentariosHeaderCell.cs" Line="23" Column="41" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>miembro</Value>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="120" column="1" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="79" column="4" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="33" column="16" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="58" column="29" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/EscritorioController.cs" relfile="iOS/ViewControllers/EscritorioController.cs" line="72" column="22" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="28" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="120" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="79" column="4" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="33" column="16" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="58" column="29" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="28" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/Post/ComentariosHeaderCell.cs" relfile="iOS/ViewControllers/Post/ComentariosHeaderCell.cs" line="23" column="41" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.MobileAppService PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D08335DC-9984-4043-A7F8-19CC75440514" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="MyTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.38F7EDDF-B427-4183-BC05-D1227651EE0B" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_Nougat" AndroidDesignerPreferredTheme="MyTheme" />
   <MultiItemStartupConfigurations />
 </Properties>

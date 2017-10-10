@@ -39,5 +39,17 @@ namespace WorklabsMx.iOS
 		{
 			this.DismissViewController(true, null);
 		}
+
+        public override void TouchesBegan(NSSet touches, UIEvent evt)
+        {
+            var touch = touches.AnyObject as UITouch;
+
+            var location = touch.LocationInView(this.View);
+            if (this.vwVistaComentar.Frame.Contains(location) == false)
+            {
+                this.DismissViewController(true, null);
+            }
+
+        }
     }
 }
