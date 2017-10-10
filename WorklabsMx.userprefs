@@ -29,7 +29,6 @@
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/MiPerfil/PerfilController.cs" relfile="iOS/ViewControllers/MiPerfil/PerfilController.cs" line="239" column="56" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.MobileAppService PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2D138E58-2D7F-4857-B330-A912F1819788" />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_Nougat" AndroidDesignerPreferredTheme="MyTheme" />

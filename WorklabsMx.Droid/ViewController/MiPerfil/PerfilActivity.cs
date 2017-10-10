@@ -99,7 +99,8 @@ namespace WorklabsMx.Droid
             {
                 miembro = new MiembrosController().GetMemberData(usuario_id, usuario_tipo);
                 ActionBar.Title = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos;
-                if (storage.Get("Usuario_Id") != miembro.Miembro_Id || storage.Get("Usuario_Tipo") != miembro.Miembro_Tipo)
+                Console.WriteLine(storage.Get("Usuario_Id") + " " + storage.Get("Usuario_Tipo"));
+                if (storage.Get("Usuario_Id") != miembro.Miembro_Id && storage.Get("Usuario_Tipo") != miembro.Miembro_Tipo)
                 {
                     KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(usuario_id, usuario_tipo, miembro.Miembro_Id, miembro.Miembro_Tipo);
                     btnFavorito.Visibility = ViewStates.Visible;

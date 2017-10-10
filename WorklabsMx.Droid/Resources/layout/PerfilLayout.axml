@@ -39,7 +39,8 @@
     </RelativeLayout>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="360dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
         android:id="@+id/svPerfil"
         android:minWidth="25px"
         android:minHeight="25px">
@@ -270,6 +271,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginTop="-50dp"
+        android:background="#CCC"
         android:id="@+id/rlBottomToolbar">
         <ImageButton
             android:layout_width="50dp"
