@@ -5,12 +5,14 @@ using WorklabsMx.Models;
 using PerpetualEngine.Storage;
 using System.Data;
 using System.Collections.Generic;
+using WorklabsMx.Controllers;
+using WorklabsMx.iOS.Helpers;
 
 namespace WorklabsMx.iOS
 {
     public partial class ComentariosHeaderCell : UITableViewCell
     {
-        
+
         public ComentariosHeaderCell (IntPtr handle) : base (handle)
         {
             
@@ -20,11 +22,10 @@ namespace WorklabsMx.iOS
         {
             if (miembro != null)
             {
-                lblNombre.Text = miembro[0].ToString();
-                //miembro["Usuario_Fotografia"].ToString().Replace(@"\", "/");
-                lblProfesion.Text = miembro[2].ToString();
-				
-				//imgPerfil.Image = miembro.Miembro_Fotografia;
+                lblNombre.Text = miembro[(int)CamposMiembro.Usuario_Nombre].ToString();
+                lblProfesion.Text = miembro[(int)CamposMiembro.Usuario_Profesion].ToString();
+                imgPerfil.Image = ImageGallery.LoadImage(miembro[(int)CamposMiembro.usuario_Fotografia]);
+
 			}
             else
             {
@@ -34,12 +35,15 @@ namespace WorklabsMx.iOS
 
         }
 
+        public UIImageView getImagenPerfil()
+        {
+            return this.imgPerfil;
+        }
+
 		partial void BtnPublicar_TouchUpInside(UIButton sender)
 		{
-		    
+            
 		}
-
-       
 
 
     }

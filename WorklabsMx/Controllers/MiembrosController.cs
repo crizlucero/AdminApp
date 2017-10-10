@@ -11,7 +11,7 @@ namespace WorklabsMx.Controllers
 	{
         Usuario_Nombre = 0,
         usuario_Fotografia = 1,
-        Usuario_Apellidos = 2
+        Usuario_Profesion = 2
 	}
 
     public class MiembrosController : DataBaseModel

@@ -24,6 +24,10 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView imgPerfil { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblComentarios { get; set; }
 
         [Outlet]
@@ -60,6 +64,11 @@ namespace WorklabsMx.iOS
             if (imgLikes != null) {
                 imgLikes.Dispose ();
                 imgLikes = null;
+            }
+
+            if (imgPerfil != null) {
+                imgPerfil.Dispose ();
+                imgPerfil = null;
             }
 
             if (lblComentarios != null) {

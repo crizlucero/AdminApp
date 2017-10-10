@@ -22,7 +22,8 @@ namespace WorklabsMx.iOS
             lblDetalleComentario.Text = post.POST_CONTENIDO == "" ? "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam" : post.POST_CONTENIDO ;
 
             StyleHelper.Style(vwVistaComentario.Layer);
-			//imgPerfil.Image = miembro.Miembro_Fotografia;
+
+            imgPerfil.Image = ImageGallery.LoadImage(post.Miembro_Fotografia);
 		}
 
     }
