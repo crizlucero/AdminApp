@@ -8,17 +8,23 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbarlayout" />
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="364.0dp"
-        android:layout_gravity="center">
-        <android.webkit.WebView
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:id="@+id/wvQRCode"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
-    </RelativeLayout>
+        android:gravity="center">
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center">
+            <android.webkit.WebView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:id="@+id/wvQRCode"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:background="#fff" />
+        </RelativeLayout>
+    </LinearLayout>
     <RelativeLayout
         android:orientation="vertical"
         android:minWidth="25px"

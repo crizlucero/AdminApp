@@ -657,5 +657,26 @@ namespace WorklabsMx.Controllers
             }
             return posts_id;
         }
+
+        public string TotalComments(string post_id){
+            string query = "select count(Post_ID) from vw_Muro_Comments Where Post_ID = @post_id";
+            command = CreateCommand(query);
+            command.Parameters.AddWithValue("@post_id", post_id);
+            try
+            {
+                conn.Open();
+                return command.ExecuteScalar().ToString();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                SlackLogs.SendMessage(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return "0";
+        }
     }
 }

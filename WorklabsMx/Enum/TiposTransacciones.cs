@@ -1,6 +1,9 @@
-﻿
-public enum TiposTransacciones
+﻿using System;
+namespace WorklabsMx.Enum
 {
-    Baja = 0,
-    Alta = 1
+    public enum TiposTransacciones : int
+    {
+        Baja = 0,
+        Alta = 1
+    }
 }

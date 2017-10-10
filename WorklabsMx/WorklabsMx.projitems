@@ -47,6 +47,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Enum\TiposServicios.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enum\TiposTransacciones.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\DateHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enum\TiposAccesosServicios.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enum\TiposUsuarios.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enum\TiposEstatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enum\CamposMiembro.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />

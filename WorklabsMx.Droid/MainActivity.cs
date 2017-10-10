@@ -15,6 +15,7 @@ using Android.Views.InputMethods;
 using Android.Net;
 using WorklabsMx.Helpers;
 using AndroidHUD;
+using WorklabsMx.Enum;
 
 namespace WorklabsMx.Droid
 {
@@ -132,11 +133,11 @@ namespace WorklabsMx.Droid
                 TableRow row = new TableRow(this);
                 row.SetMinimumHeight(100);
                 TableLayout.LayoutParams layoutParams = new TableLayout.LayoutParams(ViewGroup.LayoutParams.FillParent, ViewGroup.LayoutParams.WrapContent);
-				layoutParams.SetMargins(10, 10, 10, 10);
+                layoutParams.SetMargins(10, 10, 10, 10);
                 row.LayoutParameters = layoutParams;
                 GridLayout glPost = new GridLayout(this)
                 {
-                    ColumnCount = 4,
+                    ColumnCount = 5,
                     RowCount = 4
                 };
 
@@ -165,14 +166,21 @@ namespace WorklabsMx.Droid
                 txtNombre.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels - 150);
                 txtNombre.Click += (sender, e) =>
                 {
-                    Intent perfil = new Intent(this, typeof(PerfilActivity));
-                    perfil.PutExtra("usuario_id", post.MIEMBRO_ID);
-                    perfil.PutExtra("usuario_tipo", post.Tipo);
-                    StartActivity(perfil);
+                    if (localStorage.Get("Usuario_Id") != post.MIEMBRO_ID || localStorage.Get("Usuario_Tipo") != post.Tipo)
+                    {
+                        Intent perfil = new Intent(this, typeof(PerfilActivity));
+                        perfil.PutExtra("usuario_id", post.MIEMBRO_ID);
+                        perfil.PutExtra("usuario_tipo", post.Tipo);
+                        StartActivity(perfil);
+                    }
+                    else
+                    {
+                        StartActivity(new Intent(this, typeof(TabPerfilActivity)));
+                    }
                 };
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center);
-                param.ColumnSpec = GridLayout.InvokeSpec(1, 3);
+                param.ColumnSpec = GridLayout.InvokeSpec(1, 4);
                 param.RowSpec = GridLayout.InvokeSpec(0);
                 txtNombre.LayoutParameters = param;
                 glPost.AddView(txtNombre);
@@ -184,7 +192,7 @@ namespace WorklabsMx.Droid
                 };
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center);
-                param.ColumnSpec = GridLayout.InvokeSpec(1, 3);
+                param.ColumnSpec = GridLayout.InvokeSpec(1, 4);
                 param.RowSpec = GridLayout.InvokeSpec(1);
                 txtPuesto.LayoutParameters = param;
                 glPost.AddView(txtPuesto);
@@ -196,7 +204,7 @@ namespace WorklabsMx.Droid
                 };
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center);
-                param.ColumnSpec = GridLayout.InvokeSpec(1, 3);
+                param.ColumnSpec = GridLayout.InvokeSpec(1, 4);
                 param.RowSpec = GridLayout.InvokeSpec(2);
                 txtPost.LayoutParameters = param;
                 glPost.AddView(txtPost);
@@ -223,17 +231,17 @@ namespace WorklabsMx.Droid
                     TextSize = 10
                 };
                 lblLike.SetCompoundDrawables(icon, null, null, null);
-                lblLike.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 150) / 5);
+                lblLike.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 130) / 5);
                 //lblLike.SetMinHeight(50);
-                lblLike.SetX(10);
+                //lblLike.SetX(15);
                 lblLike.Click += (sender, e) =>
                 {
                     if (new EscritorioController().PostLike(post.POST_ID, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")))
-                        lblLike.Text = "\t" + new EscritorioController().GetLikes(post.POST_ID) + " Like(s)";
+                        lblLike.Text = new EscritorioController().GetLikes(post.POST_ID) + " Like(s)";
                 };
                 llLike.AddView(lblLike);
                 param = new GridLayout.LayoutParams();
-                param.SetGravity(GravityFlags.Center);
+                param.SetGravity(GravityFlags.Center | GravityFlags.Left);
                 param.ColumnSpec = GridLayout.InvokeSpec(2);
                 param.RowSpec = GridLayout.InvokeSpec(3);
                 llLike.LayoutParameters = param;
@@ -244,13 +252,13 @@ namespace WorklabsMx.Droid
                 iconComment.SetBounds(0, 0, 20, 20);
                 TextView lblComment = new TextView(this)
                 {
-                    Text = Resources.GetString(Resource.String.Comentarios),
+                    Text = DashboardController.TotalComments(post.POST_ID) + " " + Resources.GetString(Resource.String.Comentarios),
                     TextSize = 10
                 };
                 lblComment.SetCompoundDrawables(iconComment, null, null, null);
-                lblComment.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 150) / 3);
+                lblComment.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 110) / 3);
                 //lblLike.SetMinHeight(50);
-                lblComment.SetX(10);
+                //lblComment.SetX(10);
                 lblComment.Click += (sender, e) =>
                 {
                     Intent intent = new Intent(this, typeof(CommentsActivity));
@@ -265,8 +273,8 @@ namespace WorklabsMx.Droid
                 };
                 llComment.AddView(lblComment);
                 param = new GridLayout.LayoutParams();
-                param.SetGravity(GravityFlags.Center);
-                param.ColumnSpec = GridLayout.InvokeSpec(3);
+                param.SetGravity(GravityFlags.Center | GravityFlags.Left);
+                param.ColumnSpec = GridLayout.InvokeSpec(3, 2);
                 param.RowSpec = GridLayout.InvokeSpec(3);
                 llComment.LayoutParameters = param;
                 glPost.AddView(llComment);
@@ -320,9 +328,9 @@ namespace WorklabsMx.Droid
             using (TableRow row = new TableRow(this))
             {
                 List<string> data = new MiembrosController().GetMemberName(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
-                nombre = data[0];
-                foto = data[1];
-                puesto = data[2];
+                nombre = data[(int)CamposMiembro.Usuario_Nombre];
+                foto = data[(int)CamposMiembro.Usuario_Fotografia];
+                puesto = data[(int)CamposMiembro.Usuario_Puesto];
                 ImageView image = new ImageView(this);
                 image.SetImageBitmap(ImagesHelper.GetImageBitmapFromUrl(foto));
                 Drawable icon = image.Drawable;

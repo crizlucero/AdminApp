@@ -3,42 +3,62 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <RelativeLayout
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="40.0dp"
-        android:id="@+id/publicar_layout"
-        android:clipChildren="true">
-        <EditText
-            android:layout_width="333.5dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtPublicar"
-            android:hint="Publica algo :)"
-            android:layout_toLeftOf="@+id/btnPublicar"
-            android:editable="true"
-            android:enabled="true" />
-        <ImageButton
-            android:layout_width="45.0dp"
-            android:layout_height="41.0dp"
-            android:layout_alignParentRight="true"
-            android:id="@+id/btnPublicar"
-            android:src="@mipmap/ic_send"
-            android:backgroundTint="#ffffffff" />
-    </RelativeLayout>
+        android:layout_height="66.0dp"
+        android:id="@+id/gridLayout1"
+        android:columnCount="2"
+        android:rowCount="3"
+        style="@style/GridCard"
+        android:background="@drawable/cardstyle">
+        <ImageView
+            android:src="@mipmap/ic_logo_mini"
+            android:id="@+id/imgPerfil"
+            android:layout_rowSpan="3"
+            android:background="@drawable/imagestyle"
+            android:layout_gravity="center" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/lblNombre"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:text="@string/Nombre"
+            android:textStyle="bold"
+            android:textSize="18dp" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/lblPuesto"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:text="@string/Puesto"
+            android:textStyle="bold"
+            android:textSize="10dp" />
+        <Button
+            android:background="@drawable/buttonstyle"
+            style="@style/ButtonApply"
+            android:text="@string/Publicar"
+            android:layout_column="1"
+            android:layout_gravity="left"
+            android:layout_height="20dp"
+            android:id="@+id/btnInitPublish" />
+    </GridLayout>
     <ScrollView
+        android:id="@+id/post_scroll"
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_height="370dp"
-        android:id="@+id/svPosts"
-        android:minWidth="25px"
-        android:minHeight="25px">
+        android:layout_marginBottom="50dp">
         <TableLayout
             android:id="@+id/post_table"
             android:layout_height="match_parent"
-            android:layout_width="match_parent" />
+            android:layout_width="match_parent"
+            android:minWidth="25px"
+            android:minHeight="25px" />
     </ScrollView>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:id="@+id/rlBottomToolbar">
+        android:id="@+id/rlBottomToolbar"
+        android:layout_marginTop="-50dp">
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"

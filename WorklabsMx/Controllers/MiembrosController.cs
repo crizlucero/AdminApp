@@ -3,17 +3,10 @@ using System.Collections.Generic;
 using System.Data;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
+using WorklabsMx.Enum;
 
 namespace WorklabsMx.Controllers
 {
-    
-    public enum CamposMiembro: int
-	{
-        Usuario_Nombre = 0,
-        usuario_Fotografia = 1,
-        Usuario_Profesion = 2
-	}
-
     public class MiembrosController : DataBaseModel
     {
         /// <summary>
@@ -48,7 +41,6 @@ namespace WorklabsMx.Controllers
                         Miembro_Puesto = reader["Usuario_Puesto"].ToString(),
                         Miembro_Habilidades = reader["Usuario_Habilidades"].ToString(),
                         Miembro_Identificacion = reader["Usuario_Identificacion"].ToString(),
-                        //Miembro_Llave_Acceso = reader["Usuario_Llave_Acceso"].ToString();
                         Miembro_Fotografia = reader["Usuario_Fotografia"].ToString(),
                         Miembro_Fecha_Registro = reader["Usuario_Fecha_Registro"].ToString(),
                         Miembro_Estatus = reader["Usuario_Estatus"].ToString(),
@@ -100,9 +92,10 @@ namespace WorklabsMx.Controllers
 
         public string GetLlaveAcceso(string usuario_id, string tipo)
         {
-            command = CreateCommand("SELECT Usuario_Llave_Acceso FROM vw_pro_Usuarios_Directorio WHERE Usuario_Id = @usuario_id AND Usuario_Tipo = @tipo");
+            command = CreateCommand("SELECT Usuario_Servicio_Contrasena FROM vw_pro_Usuarios_Accesos WHERE Usuario_Id = @usuario_id AND Usuario_Tipo = @tipo AND Usuario_Servicio_Id = @servicio_id");
             command.Parameters.AddWithValue("@usuario_id", usuario_id);
             command.Parameters.AddWithValue("@tipo", tipo);
+            command.Parameters.AddWithValue("@servicio_id", (int)TiposAccesosServicios.AccesoEdificio);
             try
             {
                 conn.Open();
