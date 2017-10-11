@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using WorklabsMx.Enum;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 
@@ -176,7 +177,7 @@ namespace WorklabsMx.Controllers
         {
             List<ItemsMenu> menus = new List<ItemsMenu>();
             string query = "SELECT * FROM cat_Menu WHERE Menu_Padre_Id " + (menu_id == null ? " IS NULL" : " = @menu_id ");
-            if (tipo == 2)
+            if (tipo == (int)TiposUsuarios.Colaborador)
             {
                 query += " AND Menu_Solo_Admin = 0";
             }
@@ -222,7 +223,7 @@ namespace WorklabsMx.Controllers
         {
             List<ItemsMenu> menus = new List<ItemsMenu>();
             string query = "SELECT * FROM cat_Menu WHERE Menu_Padre_Id " + (string.IsNullOrEmpty(menu_id) ? " IS NULL" : " = @menu_id ");
-            if (tipo == 2)
+            if (tipo == (int)TiposUsuarios.Colaborador)
             {
                 query += " AND Menu_Solo_Admin = 0";
             }
@@ -268,7 +269,7 @@ namespace WorklabsMx.Controllers
         {
             string miembro_id = null;
             string colaborador_id = null;
-            if (tipo == "0")
+            if (tipo == ((int)TiposUsuarios.Miembro).ToString())
                 miembro_id = usuario_id;
             else
                 colaborador_id = usuario_id;
@@ -316,7 +317,7 @@ namespace WorklabsMx.Controllers
         {
             string miembro_id = null;
             string colaborador_id = null;
-            if (tipo == "0")
+            if (tipo == ((int)TiposUsuarios.Miembro).ToString())
                 miembro_id = usuario_id;
             else
                 colaborador_id = usuario_id;
@@ -367,7 +368,7 @@ namespace WorklabsMx.Controllers
         {
             string miembro_id = null;
             string colaborador_id = null;
-            if (tipo == "0")
+            if (tipo == ((int)TiposUsuarios.Miembro).ToString())
                 miembro_id = usuario_id;
             else
                 colaborador_id = usuario_id;
@@ -658,7 +659,8 @@ namespace WorklabsMx.Controllers
             return posts_id;
         }
 
-        public string TotalComments(string post_id){
+        public string TotalComments(string post_id)
+        {
             string query = "select count(Post_ID) from vw_Muro_Comments Where Post_ID = @post_id";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@post_id", post_id);

@@ -244,6 +244,8 @@
     <AndroidResource Include="Resources\layout\PrePostUserLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
     <AndroidResource Include="Resources\drawable\CornerBorderLine.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_fullscreen.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_attach.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
