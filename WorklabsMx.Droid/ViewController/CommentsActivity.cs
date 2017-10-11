@@ -25,23 +25,42 @@ namespace WorklabsMx.Droid
         EscritorioController DashboardController;
         SimpleStorage localStorage;
         TableLayout tlComentarios;
+        ScrollView svComentarios;
+        string post_id;
+        public CommentsActivity()
+        {
+            localStorage = SimpleStorage.EditGroup("Login");
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.CommentLayout);
 
+            post_id = Intent.GetStringExtra("post_id");
+
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.Escritorio);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             DashboardController = new EscritorioController();
+            svComentarios = FindViewById<ScrollView>(Resource.Id.svComentarios);
             tlComentarios = FindViewById<TableLayout>(Resource.Id.llComentarios);
-            FillComments(Intent.GetStringExtra("post_id"));
+            FillComments();
+            FindViewById<ImageButton>(Resource.Id.btnApplyComment).Click += (sender, e) =>
+            {
+                if (new EscritorioController().CommentPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), FindViewById<EditText>(Resource.Id.txtComment).Text))
+                {
+                    FindViewById<EditText>(Resource.Id.txtComment).Text = "";
+                    FillComments();
+                    svComentarios.ScrollY = svComentarios.Height;
+                }
+            };
 
         }
 
-        void FillComments(string post_id)
+        void FillComments()
         {
             DashboardController.GetComentariosPost(post_id).ForEach((comentario) =>
             {

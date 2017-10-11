@@ -31,6 +31,7 @@ namespace WorklabsMx.Droid
         EditText txtEmail, txtPassword;
         EscritorioController DashboardController;
         TableLayout tlPost;
+        AlertDialog dialog;
         string nombre, puesto, foto;
         public MainActivity()
         {
@@ -131,9 +132,10 @@ namespace WorklabsMx.Droid
             {
 
                 TableRow row = new TableRow(this);
-                row.SetMinimumHeight(100);
+                row.SetBackgroundResource(Resource.Drawable.CornerBorderLine);
+                row.TranslationZ = 20;
                 TableLayout.LayoutParams layoutParams = new TableLayout.LayoutParams(ViewGroup.LayoutParams.FillParent, ViewGroup.LayoutParams.WrapContent);
-                layoutParams.SetMargins(10, 10, 10, 10);
+                layoutParams.SetMargins(5, 15, 5, 15);
                 row.LayoutParameters = layoutParams;
                 GridLayout glPost = new GridLayout(this)
                 {
@@ -407,15 +409,45 @@ namespace WorklabsMx.Droid
 
         void ShowPublish()
         {
+
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
             LayoutInflater liView = LayoutInflater;
 
-            View customView = liView.Inflate(Resource.Layout.PublishLayout, null);
+            View customView = liView.Inflate(Resource.Layout.PublishLayout, null, true);
+
+            customView.FindViewById<TextView>(Resource.Id.lblNombre).Text = nombre;
+            customView.FindViewById<TextView>(Resource.Id.lblPuesto).Text = puesto;
+            customView.FindViewById<TextView>(Resource.Id.lblFecha).Text = DateTime.Now.ToString("d");
+            customView.FindViewById<ImageButton>(Resource.Id.btnAttachImage).Click += (sender, e) =>
+            {
+                var imageIntent = new Intent();
+                imageIntent.SetType("image/*");
+                imageIntent.SetAction(Intent.ActionGetContent);
+                StartActivityForResult(
+                    Intent.CreateChooser(imageIntent, "Select photo"), 0);
+            };
+            customView.FindViewById<Button>(Resource.Id.btnPublishApply).Click += (sender, e) =>
+            {
+                if (new EscritorioController().SetPost(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), customView.FindViewById<EditText>(Resource.Id.txtPublicacion).Text, "", null))
+                {
+                    tlPost.RemoveAllViews();
+                    page = 0;
+                    FillPosts();
+                    dialog.Dismiss();
+                }
+            };
 
             builder.SetView(customView);
             builder.Create();
-            builder.Show();
+            dialog = builder.Show();
+            dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
+        }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+
         }
     }
 }

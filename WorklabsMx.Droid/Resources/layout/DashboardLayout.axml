@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
-    android:id="@+id/lDashboard">
+    android:id="@+id/lDashboard"
+    android:background="#CCC">
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbarlayout" />
@@ -26,7 +27,8 @@
         android:columnCount="2"
         android:rowCount="3"
         style="@style/GridCard"
-        android:background="@drawable/cardstyle">
+        android:background="@drawable/cardstyle"
+        android:translationZ="3dp">
         <ImageView
             android:src="@mipmap/ic_logo_mini"
             android:id="@+id/imgPerfil"
