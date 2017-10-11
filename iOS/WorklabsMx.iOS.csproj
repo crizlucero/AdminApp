@@ -338,8 +338,6 @@
     <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram_black_36dp.png" />
     <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram_black_48dp.png" />
     <ImageAsset Include="Assets.xcassets\ic_qr.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\ic_qrcode_black_36dp.png" />
-    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\ic_qrcode_black_24dp.png" />
     <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\sync_2.png" />
     <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\sync_2%402x.png" />
@@ -453,6 +451,17 @@
     <ImageAsset Include="Assets.xcassets\back.imageset\back%402x.png" />
     <ImageAsset Include="Assets.xcassets\back.imageset\back%403x.png" />
     <ImageAsset Include="Assets.xcassets\back.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_derechaabajo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_derechaabajo.imageset\derechaAbajo.png" />
+    <ImageAsset Include="Assets.xcassets\ic_derechaarriba.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_derechaarriba.imageset\derechaArriba.png" />
+    <ImageAsset Include="Assets.xcassets\ic_izquierdaabajo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_izquierdaabajo.imageset\izquierdaAbajo.png" />
+    <ImageAsset Include="Assets.xcassets\ic_izquierdaarriba.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_izquierdaarriba.imageset\izquierdaArriba.png" />
+    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\qr.png" />
+    <ImageAsset Include="Assets.xcassets\worklabs.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\worklabs.imageset\worklabs.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -658,6 +667,11 @@
     <Folder Include="Assets.xcassets\Likes.imageset\" />
     <Folder Include="Assets.xcassets\Comments.imageset\" />
     <Folder Include="Assets.xcassets\back.imageset\" />
+    <Folder Include="Assets.xcassets\ic_derechaabajo.imageset\" />
+    <Folder Include="Assets.xcassets\ic_derechaarriba.imageset\" />
+    <Folder Include="Assets.xcassets\ic_izquierdaabajo.imageset\" />
+    <Folder Include="Assets.xcassets\ic_izquierdaarriba.imageset\" />
+    <Folder Include="Assets.xcassets\worklabs.imageset\" />
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

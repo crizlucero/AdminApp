@@ -16,22 +16,17 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblMensaje { get; set; }
+        UIKit.UIBarButtonItem btnScanQr { get; set; }
 
-        [Outlet]
+        [Action ("btnToScanQr_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView VistaMensaje { get; set; }
+        partial void btnToScanQr_TouchUpInside (UIKit.UIBarButtonItem sender);
 
         void ReleaseDesignerOutlets ()
         {
-            if (lblMensaje != null) {
-                lblMensaje.Dispose ();
-                lblMensaje = null;
-            }
-
-            if (VistaMensaje != null) {
-                VistaMensaje.Dispose ();
-                VistaMensaje = null;
+            if (btnScanQr != null) {
+                btnScanQr.Dispose ();
+                btnScanQr = null;
             }
         }
     }
