@@ -11,22 +11,18 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
-    [Register ("EscritorioController")]
-    partial class EscritorioController
+    [Register ("ComentarPostTableViewController")]
+    partial class ComentarPostTableViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIBarButtonItem btnScanQr { get; set; }
-
-        [Action ("btnToScanQr_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnToScanQr_TouchUpInside (UIKit.UIBarButtonItem sender);
+        UIKit.UIView vwSeccionComentarios { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (btnScanQr != null) {
-                btnScanQr.Dispose ();
-                btnScanQr = null;
+            if (vwSeccionComentarios != null) {
+                vwSeccionComentarios.Dispose ();
+                vwSeccionComentarios = null;
             }
         }
     }

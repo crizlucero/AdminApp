@@ -6,6 +6,7 @@ using PerpetualEngine.Storage;
 using SVProgressHUDBinding;
 using System.Collections.Generic;
 using WorklabsMx.Controllers;
+using WorklabsMx.Enum;
 
 namespace WorklabsMx.iOS
 {
@@ -30,9 +31,9 @@ namespace WorklabsMx.iOS
 
 		public void setInfoPublicacion(List<string> miembro)
 		{
-            this.ImagenPerfil = miembro[(int)CamposMiembro.usuario_Fotografia];
+            this.ImagenPerfil = miembro[(int)CamposMiembro.Usuario_Fotografia];
             this.Nombre = miembro[(int)CamposMiembro.Usuario_Nombre];
-            this.Ocupacion = miembro[(int)CamposMiembro.Usuario_Profesion];
+            this.Ocupacion = miembro[(int)CamposMiembro.Usuario_Puesto];
 		}
 
 		public override void ViewWillAppear(bool animated)

@@ -6,33 +6,23 @@ using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
 using CoreGraphics;
 using System.Threading.Tasks;
+using SVProgressHUDBinding;
 
 namespace WorklabsMx.iOS
 {
     public partial class AccesoController : UIViewController
     {
-        UIImageView imgQr;
         string strAcceso = string.Empty;
         public AccesoController(IntPtr handle) : base(handle) { }
 
         public override void ViewDidLoad()
         {
+            
             base.ViewDidLoad();
+            imgQr.Image = ImageGallery.LoadImageUrl(strAcceso);
             var storageLocal = SimpleStorage.EditGroup("Login");
-            View.BackgroundColor = UIColor.Black;
+
             strAcceso = new MiembrosController().GetLlaveAcceso(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
-
-            imgQr = new UIImageView
-            {
-                Image = ImageGallery.LoadImageUrl(strAcceso),
-                Frame = new CGRect(UIScreen.MainScreen.Bounds.Width / 5, UIScreen.MainScreen.Bounds.Height / 3,
-                                  (UIScreen.MainScreen.Bounds.Width * 3 / 5), (UIScreen.MainScreen.Bounds.Width * 3 / 5)),
-                BackgroundColor = UIColor.White
-            };
-            imgQr.Layer.BorderColor = UIColor.White.CGColor;
-            imgQr.Layer.BorderWidth = 2;
-
-            View.Add(imgQr);
 
             UIButton btnRefresh = new STLButton("")
             {
@@ -47,6 +37,7 @@ namespace WorklabsMx.iOS
 
         void RefreshAccess()
         {
+            
             var storageLocal = SimpleStorage.EditGroup("Login");
             string newAcceso = new MiembrosController().GetLlaveAcceso(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
             if (!strAcceso.Equals(newAcceso))

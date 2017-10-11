@@ -10,6 +10,22 @@
       <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="57" Column="23" />
       <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="322" Column="25" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WorklabsMx" expanded="True">
+            <Node name="WorklabsMx.iOS" expanded="True">
+              <Node name="ViewControllers" expanded="True">
+                <Node name="Servicios" expanded="True" />
+                <Node name="AccesoController.cs" expanded="True" />
+                <Node name="EscritorioController.cs" expanded="True" />
+              </Node>
+              <Node name="SeccionComentariosTableView.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -21,6 +37,7 @@
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="28" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.MobileAppService PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="MyTheme" />
   <MultiItemStartupConfigurations />

@@ -9,6 +9,7 @@ using WorklabsMx.Models;
 using PerpetualEngine.Storage;
 using Foundation;
 using WorklabsMx.Helpers;
+using WorklabsMx.Enum;
 
 namespace WorklabsMx.iOS
 {
