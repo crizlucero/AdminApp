@@ -16,6 +16,10 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnPublicar { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextView txtComentarPost { get; set; }
 
         [Outlet]
@@ -24,6 +28,11 @@ namespace WorklabsMx.iOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnPublicar != null) {
+                btnPublicar.Dispose ();
+                btnPublicar = null;
+            }
+
             if (txtComentarPost != null) {
                 txtComentarPost.Dispose ();
                 txtComentarPost = null;

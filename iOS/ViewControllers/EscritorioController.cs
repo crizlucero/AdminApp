@@ -13,7 +13,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 
         static int currentPage = 0;
 
-        List<PostModel> posts;         List<PostModel> allPosts = new List<PostModel>();         List<string> miembro;          UIImageView ImagenPerfil;
+        List<PostModel> posts;         List<PostModel> allPosts = new Controllers.EscritorioController().GetMuroPosts(currentPage);         List<string> miembro;         PostModel CurrentPost;          UIImageView ImagenPerfil;
 
         public EscritorioController(IntPtr handle) : base(handle)         {
            
@@ -27,7 +27,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         public override void ViewWillAppear(bool animated)
         {             base.ViewWillAppear(animated);
 			if (InternetConectionHelper.VerificarConexion())
-			{                 currentPage = 0;                 posts = new Controllers.EscritorioController().GetMuroPosts(currentPage);                 allPosts = posts;
+			{                 currentPage = 0;                 //posts = new Controllers.EscritorioController().GetMuroPosts(currentPage);                 //allPosts = posts;
 			    var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
 			    miembro = new MiembrosController().GetMemberName(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
 			}
@@ -81,7 +81,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
                 var currentPost = allPosts[indexPath.Row];
                 var currentPostCell = (ComentariosBodyCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
                 currentPostCell.UpdateCell(currentPost);
-
+                this.CurrentPost = currentPost;
                 return currentPostCell;
             }
             else
@@ -92,12 +92,14 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
             }
         }          public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
         {
-            if(segue.Identifier == "toShowPostView")             {                 var postCommentView = (PublicarPostViewController)segue.DestinationViewController;                 postCommentView.setInfoPublicacion(miembro);             }
+            if(segue.Identifier == "toShowPostView")             {                 var postCommentView = (PublicarPostViewController)segue.DestinationViewController;                 postCommentView.setInfoPublicacion(miembro);             }              else if(segue.Identifier == "comentarPost")             {
+				var CommentView = (ComentarPostTableViewController)segue.DestinationViewController;
+				CommentView.setInfoPost(this.CurrentPost);             }
         } 
         public override void WillDisplay(UITableView tableView, UITableViewCell cell, Foundation.NSIndexPath indexPath)
         {
 			
-            /*if (tableView.ContentOffset.Y >= (tableView.ContentSize.Height - tableView.Frame.Size.Height))
+            if (tableView.ContentOffset.Y >= (tableView.ContentSize.Height - tableView.Frame.Size.Height))
 			{
 				currentPage += 5;
 				posts = new Controllers.EscritorioController().GetMuroPosts(currentPage);
@@ -106,7 +108,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 					allPosts.Add(post);
 				}                 this.TableView.ScrollToRow(indexPath, UITableViewScrollPosition.Bottom, true);
 				this.TableView.ReloadData();	
-			}*/
+			}
         }
 
         partial void btnToScanQr_TouchUpInside(UIBarButtonItem sender)

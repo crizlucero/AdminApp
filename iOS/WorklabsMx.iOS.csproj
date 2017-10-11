@@ -651,6 +651,10 @@
     <Compile Include="NoComentariosViewCell.designer.cs">
       <DependentUpon>NoComentariosViewCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="SeccionComentariosTableViewController.cs" />
+    <Compile Include="SeccionComentariosTableViewController.designer.cs">
+      <DependentUpon>SeccionComentariosTableViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

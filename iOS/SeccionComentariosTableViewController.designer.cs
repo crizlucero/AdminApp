@@ -11,8 +11,8 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
-    [Register ("SeccionComentariosTableView")]
-    partial class SeccionComentariosTableView
+    [Register ("SeccionComentariosTableViewController")]
+    partial class SeccionComentariosTableViewController
     {
     }
 }
