@@ -6,6 +6,7 @@ using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
 using WorklabsMx.Helpers;
+using WorklabsMx.Enum;
 
 namespace WorklabsMx.iOS
 {
@@ -24,7 +25,7 @@ namespace WorklabsMx.iOS
             List<string> data = new MiembrosController().GetMemberName(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
             try
             {
-                tableItems.Add(new ItemsMenu { Image = "http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + data[(int)CamposMiembro.usuario_Fotografia], Label = data[(int)CamposMiembro.Usuario_Nombre], Principal = true });
+                tableItems.Add(new ItemsMenu { Image = "http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + data[(int)CamposMiembro.Usuario_Fotografia], Label = data[(int)CamposMiembro.Usuario_Nombre], Principal = true });
             }
             catch (Exception e)
             {

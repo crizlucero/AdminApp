@@ -7,6 +7,7 @@ using System.Data;
 using System.Collections.Generic;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Helpers;
+using WorklabsMx.Enum;
 
 namespace WorklabsMx.iOS
 {
@@ -23,8 +24,8 @@ namespace WorklabsMx.iOS
             if (miembro != null)
             {
                 lblNombre.Text = miembro[(int)CamposMiembro.Usuario_Nombre].ToString();
-                lblProfesion.Text = miembro[(int)CamposMiembro.Usuario_Profesion].ToString();
-                imgPerfil.Image = ImageGallery.LoadImage(miembro[(int)CamposMiembro.usuario_Fotografia]);
+                lblProfesion.Text = miembro[(int)CamposMiembro.Usuario_Puesto].ToString();
+                imgPerfil.Image = ImageGallery.LoadImage(miembro[(int)CamposMiembro.Usuario_Fotografia]);
 
 			}
             else

@@ -22,27 +22,6 @@ using System; using UIKit; using CoreGraphics; using WorklabsMx.iOS.Helper
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-			/*if (InternetConectionHelper.VerificarConexion())
-            {
-                this.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_qr"), UIBarButtonItemStyle.Plain, (sender, e) =>
-                {
-                    UIActivityIndicatorView waiting = new UIActivityIndicatorView
-                    {
-                        Frame = new CGRect(UIScreen.MainScreen.Bounds.Width / 2, UIScreen.MainScreen.Bounds.Height / 2, 30, 30)
-                    };
-                    View.AddSubview(waiting);
-                    UIViewController controller = this.Storyboard.InstantiateViewController("AccesoController");
-                    controller.Title = "Control de Acceso";
-                    this.NavigationController.PushViewController(controller, true);
-                }), true);
-
-
-		    }
-            else
-            {
-                isShowInformation = false;
-                existeConeccion = false;
-            }*/
 		}
 
         public override void ViewWillAppear(bool animated)
@@ -54,9 +33,9 @@ using System; using UIKit; using CoreGraphics; using WorklabsMx.iOS.Helper
 			}
 			else
 			{
-				isShowInformation = false;
+                this.btnScanQr.Title = "";                 this.btnScanQr.Enabled = false;                 isShowInformation = false;
 				existeConeccion = false;
-			}             SVProgressHUD.Dismiss(); 
+			}             SVProgressHUD.Dismiss();
         }
 
         public override UIView GetViewForHeader(UITableView tableView, nint section)
@@ -118,7 +97,7 @@ using System; using UIKit; using CoreGraphics; using WorklabsMx.iOS.Helper
         public override void WillDisplay(UITableView tableView, UITableViewCell cell, Foundation.NSIndexPath indexPath)
         {
 			
-            if (tableView.ContentOffset.Y >= (tableView.ContentSize.Height - tableView.Frame.Size.Height))
+            /*if (tableView.ContentOffset.Y >= (tableView.ContentSize.Height - tableView.Frame.Size.Height))
 			{
 				currentPage += 5;
 				posts = new Controllers.EscritorioController().GetMuroPosts(currentPage);
@@ -127,7 +106,7 @@ using System; using UIKit; using CoreGraphics; using WorklabsMx.iOS.Helper
 					allPosts.Add(post);
 				}                 this.TableView.ScrollToRow(indexPath, UITableViewScrollPosition.Bottom, true);
 				this.TableView.ReloadData();	
-			}
+			}*/
         }
 
         partial void btnToScanQr_TouchUpInside(UIBarButtonItem sender)

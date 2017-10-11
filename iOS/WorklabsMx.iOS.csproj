@@ -462,6 +462,8 @@
     <ImageAsset Include="Assets.xcassets\ic_qr.imageset\qr.png" />
     <ImageAsset Include="Assets.xcassets\worklabs.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\worklabs.imageset\worklabs.png" />
+    <ImageAsset Include="Assets.xcassets\qr.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\qr.imageset\ic_qrcode.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -619,13 +621,13 @@
     <Compile Include="ViewControllers\Post\NoComentsCell.designer.cs">
       <DependentUpon>NoComentsCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="PublicarPostViewController.cs" />
-    <Compile Include="PublicarPostViewController.designer.cs">
-      <DependentUpon>PublicarPostViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewControllers\Post\ComentariosBodyCell.cs" />
     <Compile Include="ViewControllers\Post\ComentariosBodyCell.designer.cs">
       <DependentUpon>ComentariosBodyCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Post\PublicarPostViewController.cs" />
+    <Compile Include="ViewControllers\Post\PublicarPostViewController.designer.cs">
+      <DependentUpon>PublicarPostViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -672,6 +674,8 @@
     <Folder Include="Assets.xcassets\ic_izquierdaabajo.imageset\" />
     <Folder Include="Assets.xcassets\ic_izquierdaarriba.imageset\" />
     <Folder Include="Assets.xcassets\worklabs.imageset\" />
+    <Folder Include="Assets.xcassets\ic_qr_NAVBAR.imageset\" />
+    <Folder Include="Assets.xcassets\qr.imageset\" />
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

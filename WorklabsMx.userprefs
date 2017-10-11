@@ -1,12 +1,9 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.storyboard">
     <Files>
-      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="168" Column="5" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="96" Column="31" />
-      <File FileName="iOS/PublicarPostViewController.cs" Line="76" Column="4" />
-      <File FileName="WorklabsMx/Helpers/SlackLogs.cs" Line="17" Column="13" />
-      <File FileName="iOS/ViewControllers/TableViewController.cs" Line="23" Column="31" />
-      <File FileName="iOS/ViewControllers/AccesoController.cs" Line="23" Column="17" />
+      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="15" Column="1" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="99" Column="1" />
+      <File FileName="iOS/ViewControllers/AccesoController.cs" Line="25" Column="22" />
       <File FileName="iOS/Main.storyboard" />
     </Files>
   </MonoDevelop.Ide.Workbench>
