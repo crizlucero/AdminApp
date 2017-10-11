@@ -629,6 +629,26 @@
     <Compile Include="ViewControllers\Post\PublicarPostViewController.designer.cs">
       <DependentUpon>PublicarPostViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComentarPostTableViewController.cs" />
+    <Compile Include="ComentarPostTableViewController.designer.cs">
+      <DependentUpon>ComentarPostTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComentarPostHeaderCell.cs" />
+    <Compile Include="ComentarPostHeaderCell.designer.cs">
+      <DependentUpon>ComentarPostHeaderCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeccionComentariosTableView.cs" />
+    <Compile Include="SeccionComentariosTableView.designer.cs">
+      <DependentUpon>SeccionComentariosTableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComentarioViewCell.cs" />
+    <Compile Include="ComentarioViewCell.designer.cs">
+      <DependentUpon>ComentarioViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoComentariosViewCell.cs" />
+    <Compile Include="NoComentariosViewCell.designer.cs">
+      <DependentUpon>NoComentariosViewCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
