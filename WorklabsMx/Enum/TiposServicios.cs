@@ -1,6 +1,10 @@
-﻿public enum TiposServicios
+﻿using System;
+namespace WorklabsMx.Enum
 {
-    Membresia=1,
-    Producto=2,
-    Servicio=3
+    public enum TiposServicios : int
+    {
+        Membresia = 1,
+        Producto = 2,
+        Servicio = 3
+    }
 }
