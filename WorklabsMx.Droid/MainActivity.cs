@@ -197,7 +197,7 @@ namespace WorklabsMx.Droid
                             if (new EscritorioController().OcultarPost(post.MIEMBRO_ID, post.POST_ID, 0))
                             {
                                 Toast.MakeText(this, Resources.GetString(Resource.String.PostEliminado), ToastLength.Short).Show();
-                                page = 0;;
+                                page = 0;
                                 tlPost.RemoveView(row);
                             }
                             else

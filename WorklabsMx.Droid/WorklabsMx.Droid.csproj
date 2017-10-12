@@ -246,6 +246,7 @@
     <AndroidResource Include="Resources\drawable\CornerBorderLine.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_fullscreen.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_attach.png" />
+    <AndroidResource Include="Resources\drawable\NoBorderStyle.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

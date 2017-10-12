@@ -4,36 +4,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:descendantFocusability="beforeDescendants"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    android:background="#CCC">
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbarlayout" />
-    <AbsoluteLayout
+    <GridLayout
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="167.0dp"
         android:id="@+id/absoluteLayout1"
         android:layout_margin="10dp"
+        android:columnCount="2"
+        android:rowCount="1"
         android:background="@color/material_grey_300">
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtComment"
-            android:background="@drawable/edittextstyle"
+            android:background="@drawable/noborderstyle"
             android:hint="@string/Comentar"
             android:gravity="top|left"
             android:lines="8"
+            android:layout_column="0"
             android:padding="10dp" />
         <ImageButton
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@mipmap/ic_send"
-            android:layout_x="330dp"
-            android:layout_y="135dp"
-            android:background="@drawable/edittextstyle"
-            android:id="@+id/btnApplyComment" />
-    </AbsoluteLayout>
+            android:background="@drawable/noborderstyle"
+            android:id="@+id/btnApplyComment"
+            android:layout_column="1"
+            android:layout_marginLeft="-35dp"
+            android:layout_marginTop="130dp"
+            android:tint="#3957D9" />
+    </GridLayout>
     <ScrollView
         android:minWidth="25px"
         android:minHeight="25px"
@@ -44,6 +50,38 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/llComentarios" />
+            android:id="@+id/llComentarios"
+            android:minWidth="25px"
+            android:minHeight="25px">
+            <TableRow
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:id="@+id/tableRow1"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:gravity="center">
+                <RelativeLayout
+                    android:orientation="vertical"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_column="0"
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+                    <TextView
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:id="@+id/textView1"
+                        android:text="@string/NoComentarios"
+                        android:textSize="30dp"
+                        android:width="200dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textColor="#888" />
+                </RelativeLayout>
+            </TableRow>
+        </TableLayout>
     </ScrollView>
 </LinearLayout>

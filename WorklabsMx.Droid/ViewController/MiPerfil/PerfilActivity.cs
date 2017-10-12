@@ -48,12 +48,9 @@ namespace WorklabsMx.Droid
 
         void ButtonAction()
         {
-            FindViewById<ImageButton>(Resource.Id.btnDescripcion).Click += (sender, e) =>
-            {
-                FillDescripcionData();
-            };
+            FindViewById<ImageButton>(Resource.Id.btnDescripcion).Click += (sender, e) => FillDescripcionData();
 
-            FindViewById<ImageButton>(Resource.Id.btnPosts).Click += (sender, e) =>
+            FindViewById<ImageButton>(Resource.Id.btnPosts).Click += delegate
             {
                 SetContentView(Resource.Layout.PostsUserLayout);
                 if (!string.IsNullOrEmpty(Intent.GetStringExtra("usuario_id")) && !string.IsNullOrEmpty(Intent.GetStringExtra("usuario_tipo")))
@@ -62,24 +59,20 @@ namespace WorklabsMx.Droid
                     Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
                     SetActionBar(toolbar);
                     ActionBar.SetDisplayHomeAsUpEnabled(true);
-                }else{
+                }
+                else
+                {
                     SetContentView(Resource.Layout.PostsUserLayout);
                 }
                 tlPost = FindViewById<TableLayout>(Resource.Id.post_table);
                 List<string> data = new MiembrosController().GetMemberName(usuario_id, usuario_tipo);
                 FindViewById<TextView>(Resource.Id.lblNombre).Text = data[(int)CamposMiembro.Usuario_Nombre];
                 FindViewById<TextView>(Resource.Id.lblPuesto).Text = data[(int)CamposMiembro.Usuario_Puesto];
-                FindViewById<Button>(Resource.Id.btnInitPublish).Click += (senderx, ex) =>
-                {
-                    ShowPublish();
-                };
+                FindViewById<Button>(Resource.Id.btnInitPublish).Click += (sender, e) => ShowPublish();
                 FillPosts();
             };
 
-            FindViewById<ImageButton>(Resource.Id.btnFavoritos).Click += (sender, e) =>
-            {
-                DirectorioFavoritos();
-            };
+            FindViewById<ImageButton>(Resource.Id.btnFavoritos).Click += (sender, e) => DirectorioFavoritos();
         }
 
 
@@ -106,7 +99,7 @@ namespace WorklabsMx.Droid
             ButtonAction();
             MiembroModel miembro;
             ImageButton btnFavorito = FindViewById<ImageButton>(Resource.Id.btnFavorite);
-            miembro = new MiembrosController().GetMemberData(usuario_id,usuario_tipo);
+            miembro = new MiembrosController().GetMemberData(usuario_id, usuario_tipo);
             if (!string.IsNullOrEmpty(Intent.GetStringExtra("usuario_id")) || !string.IsNullOrEmpty(Intent.GetStringExtra("usuario_tipo")))
             {
                 ActionBar.Title = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos;
@@ -117,7 +110,7 @@ namespace WorklabsMx.Droid
                     btnFavorito.SetBackgroundColor(Color.White);
                     if (isFavorite.Value)
                         btnFavorito.SetImageResource(Resource.Mipmap.ic_star);
-                    btnFavorito.Click += (sender, e) =>
+                    btnFavorito.Click += delegate
                     {
                         if (isFavorite.Key == 0)
                         {
@@ -168,7 +161,7 @@ namespace WorklabsMx.Droid
             {
                 TableRow row = new TableRow(this);
                 row.SetMinimumHeight(100);
-                TableLayout.LayoutParams layoutParams = new TableLayout.LayoutParams(ViewGroup.LayoutParams.FillParent, ViewGroup.LayoutParams.WrapContent);
+                TableLayout.LayoutParams layoutParams = new TableLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent);
                 layoutParams.SetMargins(10, 10, 10, 10);
                 row.LayoutParameters = layoutParams;
                 GridLayout glPost = new GridLayout(this)
@@ -188,10 +181,7 @@ namespace WorklabsMx.Droid
                 param.ColumnSpec = GridLayout.InvokeSpec(0);
                 param.RowSpec = GridLayout.InvokeSpec(0, 3);
                 ibFotoPostUsuario.LayoutParameters = param;
-                ibFotoPostUsuario.Click += (sender, e) =>
-                {
-                    AndHUD.Shared.ShowImage(this, Resources.GetDrawable(Resource.Mipmap.ic_work), null, MaskType.Black);
-                };
+                ibFotoPostUsuario.Click += (sender, e) => AndHUD.Shared.ShowImage(this, Resources.GetDrawable(Resource.Mipmap.ic_work, null), null, MaskType.Black);
                 glPost.AddView(ibFotoPostUsuario);
 
                 TextView txtNombre = new TextView(this)
@@ -200,7 +190,7 @@ namespace WorklabsMx.Droid
                     TextSize = 14,
                 };
                 txtNombre.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels - 150);
-                txtNombre.Click += (sender, e) =>
+                txtNombre.Click += delegate
                 {
                     Intent perfil = new Intent(this, typeof(PerfilActivity));
                     perfil.PutExtra("usuario_id", post.MIEMBRO_ID);
@@ -261,9 +251,7 @@ namespace WorklabsMx.Droid
                 };
                 lblLike.SetCompoundDrawables(icon, null, null, null);
                 lblLike.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 130) / 5);
-                //lblLike.SetMinHeight(50);
-                //lblLike.SetX(15);
-                lblLike.Click += (sender, e) =>
+                lblLike.Click += delegate
                  {
                      if (new EscritorioController().PostLike(post.POST_ID, usuario_id, usuario_tipo))
                          lblLike.Text = new EscritorioController().GetLikes(post.POST_ID) + " Like(s)";
@@ -286,15 +274,13 @@ namespace WorklabsMx.Droid
                 };
                 lblComment.SetCompoundDrawables(iconComment, null, null, null);
                 lblComment.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 110) / 3);
-                //lblLike.SetMinHeight(50);
-                //lblComment.SetX(10);
-                lblComment.Click += (sender, e) =>
+                lblComment.Click += delegate
                  {
                      Intent intent = new Intent(this, typeof(CommentsActivity));
                      intent.PutExtra("post_id", post.POST_ID);
                      StartActivity(intent);
                  };
-                llComment.Click += (sender, e) =>
+                llComment.Click += delegate
                 {
                     Intent intent = new Intent(this, typeof(CommentsActivity));
                     intent.PutExtra("post_id", post.POST_ID);
@@ -361,7 +347,7 @@ namespace WorklabsMx.Droid
                     if (!isFavorite.Value)
                         btnFavorito.SetImageResource(Resource.Mipmap.ic_star_border);
                     btnFavorito.SetX(Resources.DisplayMetrics.WidthPixels - 140);
-                    btnFavorito.Click += (sender, e) =>
+                    btnFavorito.Click += delegate
                     {
                         if (isFavorite.Key == 0)
                         {
@@ -396,7 +382,7 @@ namespace WorklabsMx.Droid
                     TextSize = 14,
                     Text = miembro.Miembro_Correo_Electronico
                 };
-                txtEmail.Click += (sender, e) =>
+                txtEmail.Click += delegate
                 {
                     try
                     {

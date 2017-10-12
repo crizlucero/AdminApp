@@ -15,36 +15,19 @@
       <File FileName="iOS/ViewElements/PostCard.cs" Line="116" Column="1" />
 =======
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/CommentsActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Helpers/Emails.cs">
     <Files>
-      <File FileName="WorklabsMx.Droid/ViewController/AccesoActivity.cs" Line="71" Column="2" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="413" Column="23" />
-      <File FileName="WorklabsMx/Enum/TiposUsuarios.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/Resources/values/styles.xml" Line="32" Column="42" />
-      <File FileName="WorklabsMx.Droid/Resources/drawable/CornerBorderLine.xml" Line="7" Column="30" />
-      <File FileName="WorklabsMx.Droid/Resources/drawable/CardStyle.xml" Line="5" Column="32" />
-      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="57" Column="23" />
-      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="322" Column="25" />
->>>>>>> abd95a92cdddcd3fdb2dc445e84d57f6d04f7fae
+      <File FileName="WorklabsMx.Droid/ViewController/AccesoActivity.cs" Line="65" Column="10" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="247" Column="18" />
+      <File FileName="WorklabsMx.Droid/Resources/values/styles.xml" Line="6" Column="46" />
+      <File FileName="WorklabsMx.Droid/Resources/drawable/CornerBorderLine.xml" Line="2" Column="1" />
+      <File FileName="WorklabsMx.Droid/Resources/drawable/CardStyle.xml" Line="10" Column="8" />
+      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="134" Column="63" />
+      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/PerfilActivity.cs" Line="356" Column="33" />
+      <File FileName="WorklabsMx.Droid/ViewController/ReportActivity.cs" Line="144" Column="47" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="506" Column="21" />
+      <File FileName="WorklabsMx/Helpers/Emails.cs" Line="52" Column="57" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="WorklabsMx" expanded="True">
-            <Node name="WorklabsMx.iOS" expanded="True">
-              <Node name="ViewControllers" expanded="True">
-                <Node name="Servicios" expanded="True" />
-                <Node name="AccesoController.cs" expanded="True" />
-                <Node name="EscritorioController.cs" expanded="True" />
-              </Node>
-              <Node name="ViewElements" expanded="True">
-                <Node name="PostCard.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -56,7 +39,6 @@
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="28" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.MobileAppService PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="MyTheme" />
   <MultiItemStartupConfigurations />

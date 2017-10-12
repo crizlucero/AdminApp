@@ -155,4 +155,18 @@
 	<string name="Publicar">Publicar</string>
 	<string name="Likes">LIKES</string>
 	<string name="Postear">Escribe una publicación... :)</string>
+	<string name="NoComentarios">Sé el primero en comentar</string>
+	<string name="BorrarComentario">Eliminar comentario</string>
+	<string name="MensajeBorrarComentario">Se eliminará el comentario</string>
+	<string name="ComentarioEliminado">Comentario eliminado</string>
+	<string name="ErrorIntento">Hubo un error, intente de nuevo</string>
+	<string name="Cancelar">Cancelar</string>
+    <string name="ReportarComentario">Reportar comentario</string>
+	<string name="MensajeReportarComentario">¿Desea reportar el comentario?</string>
+	<string name="OK">OK</string>
+	<string name="BorrarPost">Eliminar post</string>
+    <string name="MensajeBorrarPost">Se eliminará el post</string>
+    <string name="PostEliminado">Post eliminado</string>
+    <string name="ReportarPost">Reportar post</string>
+    <string name="MensajeReportarPost">¿Desea reportar el post?</string>
 </resources>
