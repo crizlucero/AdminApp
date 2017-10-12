@@ -1719,46 +1719,49 @@ namespace WorklabsMx.Droid
 			public const int ImageStyle = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int notification_action_background = 2130837594;
+			public const int NoBorderStyle = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int notification_bg = 2130837595;
+			public const int notification_action_background = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int notification_bg_low = 2130837596;
+			public const int notification_bg = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int notification_bg_low_normal = 2130837597;
+			public const int notification_bg_low = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int notification_bg_low_pressed = 2130837598;
+			public const int notification_bg_low_normal = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int notification_bg_normal = 2130837599;
+			public const int notification_bg_low_pressed = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int notification_bg_normal_pressed = 2130837600;
+			public const int notification_bg_normal = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int notification_icon_background = 2130837601;
-			
-			// aapt resource value: 0x7f020066
-			public const int notification_template_icon_bg = 2130837606;
-			
-			// aapt resource value: 0x7f020067
-			public const int notification_template_icon_low_bg = 2130837607;
+			public const int notification_bg_normal_pressed = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int notification_tile_bg = 2130837602;
+			public const int notification_icon_background = 2130837602;
+			
+			// aapt resource value: 0x7f020067
+			public const int notification_template_icon_bg = 2130837607;
+			
+			// aapt resource value: 0x7f020068
+			public const int notification_template_icon_low_bg = 2130837608;
 			
 			// aapt resource value: 0x7f020063
-			public const int notify_panel_notification_icon_bg = 2130837603;
+			public const int notification_tile_bg = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int roundedbg = 2130837604;
+			public const int notify_panel_notification_icon_bg = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int roundedbgdark = 2130837605;
+			public const int roundedbg = 2130837605;
+			
+			// aapt resource value: 0x7f020066
+			public const int roundedbgdark = 2130837606;
 			
 			static Drawable()
 			{
@@ -3413,6 +3416,12 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f06004e
 			public const int AsuntoCorreo = 2131099726;
 			
+			// aapt resource value: 0x7f0600be
+			public const int BorrarComentario = 2131099838;
+			
+			// aapt resource value: 0x7f0600c6
+			public const int BorrarPost = 2131099846;
+			
 			// aapt resource value: 0x7f0600a0
 			public const int Buscar = 2131099808;
 			
@@ -3421,6 +3430,9 @@ namespace WorklabsMx.Droid
 			
 			// aapt resource value: 0x7f06003a
 			public const int Calle = 2131099706;
+			
+			// aapt resource value: 0x7f0600c2
+			public const int Cancelar = 2131099842;
 			
 			// aapt resource value: 0x7f06008b
 			public const int Cantidad = 2131099787;
@@ -3445,6 +3457,9 @@ namespace WorklabsMx.Droid
 			
 			// aapt resource value: 0x7f0600ab
 			public const int Comentar = 2131099819;
+			
+			// aapt resource value: 0x7f0600c0
+			public const int ComentarioEliminado = 2131099840;
 			
 			// aapt resource value: 0x7f0600ac
 			public const int Comentarios = 2131099820;
@@ -3499,6 +3514,9 @@ namespace WorklabsMx.Droid
 			
 			// aapt resource value: 0x7f060051
 			public const int ErrorAlGuardar = 2131099729;
+			
+			// aapt resource value: 0x7f0600c1
+			public const int ErrorIntento = 2131099841;
 			
 			// aapt resource value: 0x7f0600a6
 			public const int Escritorio = 2131099814;
@@ -3557,6 +3575,18 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f060087
 			public const int Membresias = 2131099783;
 			
+			// aapt resource value: 0x7f0600bf
+			public const int MensajeBorrarComentario = 2131099839;
+			
+			// aapt resource value: 0x7f0600c7
+			public const int MensajeBorrarPost = 2131099847;
+			
+			// aapt resource value: 0x7f0600c4
+			public const int MensajeReportarComentario = 2131099844;
+			
+			// aapt resource value: 0x7f0600ca
+			public const int MensajeReportarPost = 2131099850;
+			
 			// aapt resource value: 0x7f0600b2
 			public const int MiCuenta = 2131099826;
 			
@@ -3574,6 +3604,9 @@ namespace WorklabsMx.Droid
 			
 			// aapt resource value: 0x7f060037
 			public const int Municipio = 2131099703;
+			
+			// aapt resource value: 0x7f0600bd
+			public const int NoComentarios = 2131099837;
 			
 			// aapt resource value: 0x7f0600b8
 			public const int NoConnection = 2131099832;
@@ -3608,6 +3641,9 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f060097
 			public const int NumeroTarjeta = 2131099799;
 			
+			// aapt resource value: 0x7f0600c5
+			public const int OK = 2131099845;
+			
 			// aapt resource value: 0x7f0600b7
 			public const int OfflineApp = 2131099831;
 			
@@ -3625,6 +3661,9 @@ namespace WorklabsMx.Droid
 			
 			// aapt resource value: 0x7f06004d
 			public const int Perfil = 2131099725;
+			
+			// aapt resource value: 0x7f0600c8
+			public const int PostEliminado = 2131099848;
 			
 			// aapt resource value: 0x7f0600bc
 			public const int Postear = 2131099836;
@@ -3667,6 +3706,12 @@ namespace WorklabsMx.Droid
 			
 			// aapt resource value: 0x7f0600b5
 			public const int Renovar = 2131099829;
+			
+			// aapt resource value: 0x7f0600c3
+			public const int ReportarComentario = 2131099843;
+			
+			// aapt resource value: 0x7f0600c9
+			public const int ReportarPost = 2131099849;
 			
 			// aapt resource value: 0x7f0600ad
 			public const int Reportes = 2131099821;

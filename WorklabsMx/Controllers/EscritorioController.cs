@@ -661,7 +661,7 @@ namespace WorklabsMx.Controllers
 
         public string TotalComments(string post_id)
         {
-            string query = "select count(Post_ID) from vw_Muro_Comments Where Post_ID = @post_id";
+            string query = "select count(Post_ID) from vw_Muro_Comments Where Post_ID = @post_id AND COMM_ESTATUS = 1";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@post_id", post_id);
             try

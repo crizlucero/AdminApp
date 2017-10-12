@@ -26,7 +26,6 @@ namespace WorklabsMx.Droid
         ScrollView scroll;
         bool limitPage = true;
         int sizePage = 10;
-        TableRow.LayoutParams param;
         SimpleStorage localStorage;
         EditText txtEmail, txtPassword;
         EscritorioController DashboardController;
@@ -35,11 +34,6 @@ namespace WorklabsMx.Droid
         string nombre, puesto, foto;
         public MainActivity()
         {
-            param = new TableRow.LayoutParams
-            {
-                Column = 0,
-                Span = 2
-            };
             DashboardController = new EscritorioController();
         }
 
@@ -110,10 +104,7 @@ namespace WorklabsMx.Droid
             FindViewById<TextView>(Resource.Id.lblPuesto).Text = puesto;
             scroll = FindViewById<ScrollView>(Resource.Id.post_scroll);
             tlPost = FindViewById<TableLayout>(Resource.Id.post_table);
-            FindViewById<Button>(Resource.Id.btnInitPublish).Click += (sender, e) =>
-            {
-                ShowPublish();
-            };
+            FindViewById<Button>(Resource.Id.btnInitPublish).Click += (sender, e) => ShowPublish();
             FillPosts();
             scroll.ScrollChange += (sender, e) =>
             {
@@ -134,7 +125,7 @@ namespace WorklabsMx.Droid
                 TableRow row = new TableRow(this);
                 row.SetBackgroundResource(Resource.Drawable.CornerBorderLine);
                 row.TranslationZ = 20;
-                TableLayout.LayoutParams layoutParams = new TableLayout.LayoutParams(ViewGroup.LayoutParams.FillParent, ViewGroup.LayoutParams.WrapContent);
+                TableLayout.LayoutParams layoutParams = new TableLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent);
                 layoutParams.SetMargins(5, 15, 5, 15);
                 row.LayoutParameters = layoutParams;
                 GridLayout glPost = new GridLayout(this)
@@ -154,10 +145,7 @@ namespace WorklabsMx.Droid
                 param.ColumnSpec = GridLayout.InvokeSpec(0);
                 param.RowSpec = GridLayout.InvokeSpec(0, 3);
                 ibFotoPostUsuario.LayoutParameters = param;
-                ibFotoPostUsuario.Click += (sender, e) =>
-                {
-                    AndHUD.Shared.ShowImage(this, Resources.GetDrawable(Resource.Mipmap.ic_work), null, MaskType.Black);
-                };
+                ibFotoPostUsuario.Click += (sender, e) => AndHUD.Shared.ShowImage(this, Resources.GetDrawable(Resource.Mipmap.ic_work, null), null, MaskType.Black);
                 glPost.AddView(ibFotoPostUsuario);
 
                 TextView txtNombre = new TextView(this)
@@ -165,8 +153,7 @@ namespace WorklabsMx.Droid
                     Text = post.Miembro_Nombre + " " + post.Miembro_Apellidos,
                     TextSize = 14,
                 };
-                txtNombre.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels - 150);
-                txtNombre.Click += (sender, e) =>
+                txtNombre.Click += delegate
                 {
                     if (localStorage.Get("Usuario_Id") != post.MIEMBRO_ID || localStorage.Get("Usuario_Tipo") != post.Tipo)
                     {
@@ -182,10 +169,67 @@ namespace WorklabsMx.Droid
                 };
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center);
-                param.ColumnSpec = GridLayout.InvokeSpec(1, 4);
+                param.RightMargin = 30;
+                param.ColumnSpec = GridLayout.InvokeSpec(1, 2);
                 param.RowSpec = GridLayout.InvokeSpec(0);
                 txtNombre.LayoutParameters = param;
                 glPost.AddView(txtNombre);
+
+                LinearLayout llButton = new LinearLayout(this);
+                llButton.SetMinimumWidth(20);
+                llButton.SetMinimumHeight(20);
+                ImageButton btnClear = new ImageButton(this);
+                btnClear.SetBackgroundColor(Color.White);
+                btnClear.SetImageResource(Resource.Mipmap.ic_clear);
+                btnClear.SetMinimumWidth(15);
+                btnClear.SetMinimumHeight(15);
+                btnClear.SetMaxWidth(20);
+                btnClear.SetMaxHeight(20);
+                btnClear.Click += delegate
+                {
+                    AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                    if (post.MIEMBRO_ID == localStorage.Get("Usuario_Id") && post.Tipo == localStorage.Get("Usuario_Tipo"))
+                    {
+                        alert.SetTitle(Resources.GetString(Resource.String.BorrarPost));
+                        alert.SetMessage(Resources.GetString(Resource.String.MensajeBorrarPost));
+                        alert.SetPositiveButton(Resources.GetString(Resource.String.OK), delegate
+                        {
+                            if (new EscritorioController().OcultarPost(post.MIEMBRO_ID, post.POST_ID, 0))
+                            {
+                                Toast.MakeText(this, Resources.GetString(Resource.String.PostEliminado), ToastLength.Short).Show();
+                                page = 0;
+                                tlPost.RemoveView(row);
+                            }
+                            else
+                                Toast.MakeText(this, Resources.GetString(Resource.String.ErrorIntento), ToastLength.Short).Show();
+                        });
+                        alert.SetNegativeButton(Resources.GetString(Resource.String.Cancelar), (sender, e) => { });
+                    }
+                    else
+                    {
+                        alert.SetTitle(Resources.GetString(Resource.String.ReportarPost));
+                        alert.SetMessage(Resources.GetString(Resource.String.MensajeReportarPost));
+                        alert.SetPositiveButton(Resources.GetString(Resource.String.OK), delegate
+                        {
+                            Intent intent = new Intent(this, typeof(ReportActivity));
+                            intent.PutExtra("post_id", post.POST_ID);
+                            StartActivity(intent);
+                        });
+                        alert.SetNegativeButton(Resources.GetString(Resource.String.Cancelar), (sender, e) => { });
+                    }
+                    alert.Create();
+                    alert.Show();
+                };
+                param = new GridLayout.LayoutParams();
+                param.Width = 30;
+                param.Height = 30;
+                param.LeftMargin = (Resources.DisplayMetrics.WidthPixels / 6);
+                param.TopMargin = 20;
+                param.ColumnSpec = GridLayout.InvokeSpec(3);
+                param.RowSpec = GridLayout.InvokeSpec(0, 3);
+                llButton.LayoutParameters = param;
+                llButton.AddView(btnClear);
+                glPost.AddView(llButton);
 
                 TextView txtPuesto = new TextView(this)
                 {
@@ -234,9 +278,7 @@ namespace WorklabsMx.Droid
                 };
                 lblLike.SetCompoundDrawables(icon, null, null, null);
                 lblLike.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 130) / 5);
-                //lblLike.SetMinHeight(50);
-                //lblLike.SetX(15);
-                lblLike.Click += (sender, e) =>
+                lblLike.Click += delegate
                 {
                     if (new EscritorioController().PostLike(post.POST_ID, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")))
                         lblLike.Text = new EscritorioController().GetLikes(post.POST_ID) + " Like(s)";
@@ -252,22 +294,22 @@ namespace WorklabsMx.Droid
                 LinearLayout llComment = new LinearLayout(this);
                 Drawable iconComment = ContextCompat.GetDrawable(this, Resource.Mipmap.ic_mode_comment);
                 iconComment.SetBounds(0, 0, 20, 20);
+                string totalComment = DashboardController.TotalComments(post.POST_ID);
                 TextView lblComment = new TextView(this)
                 {
-                    Text = DashboardController.TotalComments(post.POST_ID) + " " + Resources.GetString(Resource.String.Comentarios),
+                    Text = totalComment + " " + Resources.GetString(Resource.String.Comentarios),
                     TextSize = 10
                 };
                 lblComment.SetCompoundDrawables(iconComment, null, null, null);
                 lblComment.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 110) / 3);
-                //lblLike.SetMinHeight(50);
-                //lblComment.SetX(10);
-                lblComment.Click += (sender, e) =>
+                lblComment.Click += delegate
                 {
                     Intent intent = new Intent(this, typeof(CommentsActivity));
                     intent.PutExtra("post_id", post.POST_ID);
+                    intent.PutExtra("comments_total", totalComment);
                     StartActivity(intent);
                 };
-                llComment.Click += (sender, e) =>
+                llComment.Click += delegate
                 {
                     Intent intent = new Intent(this, typeof(CommentsActivity));
                     intent.PutExtra("post_id", post.POST_ID);
@@ -275,6 +317,7 @@ namespace WorklabsMx.Droid
                 };
                 llComment.AddView(lblComment);
                 param = new GridLayout.LayoutParams();
+                param.LeftMargin = -30;
                 param.SetGravity(GravityFlags.Center | GravityFlags.Left);
                 param.ColumnSpec = GridLayout.InvokeSpec(3, 2);
                 param.RowSpec = GridLayout.InvokeSpec(3);
@@ -346,11 +389,9 @@ namespace WorklabsMx.Droid
                 btnMenu.SetWidth(Resources.DisplayMetrics.WidthPixels);
                 btnMenu.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
                 btnMenu.SetBackgroundColor(Color.White);
-                //btnMenu.SetCompoundDrawables(icon, null, null, null);
-                btnMenu.Click += delegate
-                {
+                btnMenu.Click += (sender, e) =>
                     StartActivity(new Intent(this, typeof(TabPerfilActivity)));
-                };
+
                 row.AddView(btnMenu);
                 menuLayout.AddView(row);
             }

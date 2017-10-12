@@ -1,15 +1,14 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Net;
 using System.Text;
-using WorklabsMx.iOS.Helpers;
 
 namespace WorklabsMx.Helpers
 {
     public static class SlackLogs
     {
         public static void SendMessage(string msg)
-        {
-            if (InternetConectionHelper.VerificarConexion())
+        {try
             {
                 string data = "token=xoxp-213367599047-211854966112-224276554563-723f48fe23f6f5dd27325c74cb34b523&channel=logs&text=" + msg;
                 var post = Encoding.ASCII.GetBytes(data);
@@ -25,6 +24,8 @@ namespace WorklabsMx.Helpers
 
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 string responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+            }catch(Exception e){
+                Console.WriteLine(e.Message);
             }
         }
     }

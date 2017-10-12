@@ -1,21 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
-using Android.Graphics.Drawables;
 using Android.OS;
-using Android.Runtime;
-using Android.Support.V4.Content;
 using Android.Views;
 using Android.Widget;
 using AndroidHUD;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Droid.Helpers;
-using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
@@ -47,12 +40,14 @@ namespace WorklabsMx.Droid
             DashboardController = new EscritorioController();
             svComentarios = FindViewById<ScrollView>(Resource.Id.svComentarios);
             tlComentarios = FindViewById<TableLayout>(Resource.Id.llComentarios);
-            FillComments();
-            FindViewById<ImageButton>(Resource.Id.btnApplyComment).Click += (sender, e) =>
+            if (Convert.ToInt32(Intent.GetStringExtra("comments_total")) > 0)
+                FillComments();
+            FindViewById<ImageButton>(Resource.Id.btnApplyComment).Click += delegate
             {
                 if (new EscritorioController().CommentPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), FindViewById<EditText>(Resource.Id.txtComment).Text))
                 {
                     FindViewById<EditText>(Resource.Id.txtComment).Text = "";
+                    FindViewById<EditText>(Resource.Id.txtComment).ClearFocus();
                     FillComments();
                     svComentarios.ScrollY = svComentarios.Height;
                 }
@@ -62,13 +57,14 @@ namespace WorklabsMx.Droid
 
         void FillComments()
         {
+            tlComentarios.RemoveAllViews();
             DashboardController.GetComentariosPost(post_id).ForEach((comentario) =>
             {
                 TableRow row = new TableRow(this);
                 row.SetMinimumHeight(100);
-                row.SetBackgroundColor(Color.AliceBlue);
-                TableLayout.LayoutParams layoutParams = new TableLayout.LayoutParams(ViewGroup.LayoutParams.FillParent, ViewGroup.LayoutParams.WrapContent);
-                layoutParams.SetMargins(10, 10, 10, 10);
+                row.SetBackgroundResource(Resource.Drawable.CardStyle);
+                TableLayout.LayoutParams layoutParams = new TableLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent);
+                layoutParams.SetMargins(10, 0, 10, 0);
                 row.LayoutParameters = layoutParams;
                 GridLayout glPost = new GridLayout(this)
                 {
@@ -88,9 +84,8 @@ namespace WorklabsMx.Droid
                 param.RowSpec = GridLayout.InvokeSpec(0, 3);
                 ibFotoPostUsuario.LayoutParameters = param;
                 ibFotoPostUsuario.Click += (sender, e) =>
-                {
-                    AndHUD.Shared.ShowImage(this, Resources.GetDrawable(Resource.Mipmap.ic_work), null, MaskType.Black);
-                };
+                    AndHUD.Shared.ShowImage(this, Resources.GetDrawable(Resource.Mipmap.ic_work, null), null, MaskType.Black);
+
                 glPost.AddView(ibFotoPostUsuario);
 
                 TextView txtNombre = new TextView(this)
@@ -99,7 +94,7 @@ namespace WorklabsMx.Droid
                     TextSize = 14,
                 };
                 txtNombre.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels - 150);
-                txtNombre.Click += (sender, e) =>
+                txtNombre.Click += delegate
                 {
                     Intent perfil = new Intent(this, typeof(PerfilActivity));
                     perfil.PutExtra("usuario_id", comentario.USUARIO_ID);
@@ -112,6 +107,65 @@ namespace WorklabsMx.Droid
                 param.RowSpec = GridLayout.InvokeSpec(0);
                 txtNombre.LayoutParameters = param;
                 glPost.AddView(txtNombre);
+
+                LinearLayout llButton = new LinearLayout(this);
+                llButton.SetMinimumWidth(20);
+                llButton.SetMinimumHeight(20);
+                ImageButton btnClear = new ImageButton(this);
+                btnClear.SetBackgroundColor(Color.White);
+                btnClear.SetImageResource(Resource.Mipmap.ic_clear);
+                btnClear.SetMinimumWidth(15);
+                btnClear.SetMinimumHeight(15);
+                btnClear.SetMaxWidth(20);
+                btnClear.SetMaxHeight(20);
+                btnClear.Click += delegate
+                {
+                    AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                    if (comentario.USUARIO_ID == localStorage.Get("Usuario_Id") && comentario.USUARIO_TIPO == localStorage.Get("Usuario_Tipo"))
+                    {
+                        alert.SetTitle(Resources.GetString(Resource.String.BorrarComentario));
+                        alert.SetMessage(Resources.GetString(Resource.String.MensajeBorrarComentario));
+                        alert.SetPositiveButton(Resources.GetString(Resource.String.OK), (senderO, eO) =>
+                        {
+
+                            if (new EscritorioController().OcultarComment(comentario.POST_ID, 0))
+                            {
+                                Toast.MakeText(this, Resources.GetString(Resource.String.ComentarioEliminado), ToastLength.Short).Show();
+                                tlComentarios.RemoveView(row);
+                            }
+                            else
+                                Toast.MakeText(this, Resources.GetString(Resource.String.ErrorIntento), ToastLength.Short).Show();
+                        });
+                        alert.SetNegativeButton(Resources.GetString(Resource.String.Cancelar), (sender1, e1) => { });
+                    }
+                    else
+                    {
+                        alert.SetTitle(Resources.GetString(Resource.String.ReportarComentario));
+                        alert.SetMessage(Resources.GetString(Resource.String.MensajeReportarComentario));
+                        alert.SetPositiveButton(Resources.GetString(Resource.String.OK), (senderO, eO) =>
+                        {
+                            {
+                                Intent intent = new Intent(this, typeof(ReportActivity));
+                                intent.PutExtra("comment_id", comentario.COMM_ID);
+                                StartActivity(intent);
+                            }
+                        });
+                        alert.SetNegativeButton(Resources.GetString(Resource.String.Cancelar), (sender1, e1) => { });
+                    }
+                    alert.Create();
+                    alert.Show();
+                };
+                param = new GridLayout.LayoutParams();
+                param.Width = 30;
+                param.Height = 30;
+                param.LeftMargin = (Resources.DisplayMetrics.WidthPixels / 6);
+                param.TopMargin = 20;
+                param.ColumnSpec = GridLayout.InvokeSpec(3);
+                param.RowSpec = GridLayout.InvokeSpec(0, 3);
+                llButton.LayoutParameters = param;
+                llButton.AddView(btnClear);
+                glPost.AddView(llButton);
+
 
                 TextView txtPuesto = new TextView(this)
                 {
@@ -150,87 +204,12 @@ namespace WorklabsMx.Droid
                 txtFecha.LayoutParameters = param;
                 glPost.AddView(txtFecha);
 
-                LinearLayout llLike = new LinearLayout(this);
-                Drawable icon = ContextCompat.GetDrawable(this, Resource.Mipmap.ic_star_like);
-                icon.SetBounds(0, 0, 20, 20);
-                TextView lblLike = new TextView(this)
-                {
-                    //Text = new EscritorioController().GetLikes(comentario.COMM_ID) + " Like(s)",
-                    TextSize = 10
-                };
-                lblLike.SetCompoundDrawables(icon, null, null, null);
-                lblLike.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 150) / 5);
-                //lblLike.SetMinHeight(50);
-                lblLike.SetX(10);
-                lblLike.Click += (sender, e) =>
-                {
-                    //if (new EscritorioController().PostLike(post.POST_ID, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")))
-                    //	lblLike.Text = "\t" + new EscritorioController().GetLikes(post.POST_ID) + " Like(s)";
-                };
-                llLike.AddView(lblLike);
-                param = new GridLayout.LayoutParams();
-                param.SetGravity(GravityFlags.Center);
-                param.ColumnSpec = GridLayout.InvokeSpec(2);
-                param.RowSpec = GridLayout.InvokeSpec(3);
-                llLike.LayoutParameters = param;
-                glPost.AddView(llLike);
-
                 row.AddView(glPost);
                 tlComentarios.AddView(row);
-                /*
-                LinearLayout llButton = new LinearLayout(this);
-                ImageButton btnClear = new ImageButton(this);
-                btnClear.SetBackgroundColor(Color.White);
-                btnClear.SetImageResource(Resource.Mipmap.ic_clear);
-                btnClear.SetMinimumWidth(15);
-                btnClear.SetMinimumHeight(15);
-                btnClear.Click += (sender, e) =>
-                {
-                    AlertDialog.Builder alert = new AlertDialog.Builder(this);
-                    if (comentario.USUARIO_ID == localStorage.Get("Usuario_Id") && comentario.USUARIO_TIPO == localStorage.Get("Usuario_Tipo"))
-                    {
-                        alert.SetTitle("Eliminar comentario");
-                        alert.SetMessage("Se eliminará el comentario");
-                        alert.SetPositiveButton("Ok", (senderO, eO) =>
-                        {
-
-                            if (new EscritorioController().OcultarComment(comentario.COMM_ID, 0))
-                            {
-                                Toast.MakeText(this, "Comentario eliminado", ToastLength.Short).Show();
-
-                            }
-                            else
-                                Toast.MakeText(this, "Hubo un error, intente de nuevo", ToastLength.Short).Show();
-                        });
-                        alert.SetNegativeButton("Cancelar", (sender1, e1) => { });
-                    }
-                    else
-                    {
-                        alert.SetTitle("Reportar comentario");
-                        alert.SetMessage("¿Desea reportar el comentario?");
-                        alert.SetPositiveButton("Ok", (senderO, eO) =>
-                        {
-                            {
-                                Intent intent = new Intent(this, typeof(ReportActivity));
-                                intent.PutExtra("comment_id", comentario.COMM_ID);
-                                StartActivity(intent);
-                            }
-                        });
-                        alert.SetNegativeButton("Cancelar", (sender1, e1) => { });
-                    }
-                    Dialog dialog = alert.Create();
-                    dialog.Show();
-                };
-                llButton.AddView(btnClear);
-
-                trComment.AddView(llButton, 1);*/
             });
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            return base.OnCreateOptionsMenu(menu);
-        }
+        public override bool OnCreateOptionsMenu(IMenu menu) => base.OnCreateOptionsMenu(menu);
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {

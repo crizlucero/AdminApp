@@ -28,14 +28,15 @@ namespace WorklabsMx
             message.Subject = "Recuperación de contraseña";
             message.Body = "Hola " + name + "\n Tu contraseña nueva es: " + password;
             message.IsBodyHtml = true;
-            SmtpClient client = new SmtpClient();
-            client.Port = Convert.ToInt32(configuracion.Parametro_Int_1);
-            client.EnableSsl = true;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.UseDefaultCredentials = false;
-            client.Credentials = new NetworkCredential(configuracion.Parametro_Varchar_1, "worklabs1000");
-            client.Host = configuracion.Parametro_Varchar_3;
-
+            SmtpClient client = new SmtpClient
+            {
+                Port = Convert.ToInt32(configuracion.Parametro_Int_1),
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(configuracion.Parametro_Varchar_1, "worklabs1000"),
+                Host = configuracion.Parametro_Varchar_3
+            };
             try
             {
                 client.Send(message);
@@ -60,16 +61,15 @@ namespace WorklabsMx
             MailMessage message = new MailMessage(configuracion.Parametro_Varchar_1, email);
             message.Subject = "Recuperación de contraseña";
             message.Body = "Hola " + name + "\n Tu código de acceso es: \n<img src='https://api.qrserver.com/v1/create-qr-code/?data=" + clave + "&amp;size=60x60'/>";
-            //MailKit client = new MailKit();
-            SmtpClient client = new SmtpClient();
-            client.Port = Convert.ToInt32(configuracion.Parametro_Int_1);
-            client.EnableSsl = true;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.UseDefaultCredentials = false;
-            client.Credentials = new NetworkCredential(configuracion.Parametro_Varchar_1, "worklabs1000");
-            client.Host = configuracion.Parametro_Varchar_3;
-
-
+            SmtpClient client = new SmtpClient
+            {
+                Port = Convert.ToInt32(configuracion.Parametro_Int_1),
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(configuracion.Parametro_Varchar_1, "worklabs1000"),
+                Host = configuracion.Parametro_Varchar_3
+            };
             try
             {
                 client.Send(message);

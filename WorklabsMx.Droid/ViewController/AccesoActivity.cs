@@ -14,7 +14,7 @@ namespace WorklabsMx.Droid
     {
         string strAcceso = string.Empty;
         WebView qrCode;
-
+        SimpleStorage storageLocal;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -23,9 +23,8 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.Acceso);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
 
-            var storageLocal = SimpleStorage.EditGroup("Login");
+            storageLocal = SimpleStorage.EditGroup("Login");
             strAcceso = new MiembrosController().GetLlaveAcceso(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
             qrCode = FindViewById<WebView>(Resource.Id.wvQRCode);
             string url = "https://api.qrserver.com/v1/create-qr-code/?data=" + Uri.EscapeUriString(strAcceso);
@@ -56,13 +55,10 @@ namespace WorklabsMx.Droid
 
         void RefreshAccess()
         {
-            var storageLocal = SimpleStorage.EditGroup("Login");
             string newAcceso = new MiembrosController().GetLlaveAcceso(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
             if (!strAcceso.Equals(newAcceso))
             {
-                strAcceso = newAcceso;
-                string url = "https://api.qrserver.com/v1/create-qr-code/?data=" + Uri.EscapeUriString(strAcceso);
-                qrCode.LoadUrl(url);
+                qrCode.LoadUrl("https://api.qrserver.com/v1/create-qr-code/?data=" + Uri.EscapeUriString(strAcceso = newAcceso));
             }
             else
                 Console.WriteLine(newAcceso);

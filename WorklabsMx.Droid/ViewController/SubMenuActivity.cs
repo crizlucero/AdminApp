@@ -32,13 +32,11 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = "Escritorio";
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
             FillMenu(FindViewById<TableLayout>(Resource.Id.menu_layout));
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            //MenuInflater.Inflate(Resource.Menu.top_menus, menu);
             return base.OnCreateOptionsMenu(menu);
         }
 

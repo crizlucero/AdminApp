@@ -37,7 +37,6 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.Reportes);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
             FillPost();
             FillAcusacion();
         }
@@ -61,7 +60,7 @@ namespace WorklabsMx.Droid
                 Text = post.Miembro_Nombre + " " + post.Miembro_Apellidos,
                 TextSize = 14
             };
-            lblNombre.Click += (sender, e) =>
+            lblNombre.Click += delegate
             {
                 Intent perfil = new Intent(this, typeof(PerfilActivity));
                 perfil.PutExtra("usuario_id", post.MIEMBRO_ID);
@@ -98,7 +97,7 @@ namespace WorklabsMx.Droid
             lblLike.SetMinWidth(Window.Attributes.Width);
             lblLike.SetMinHeight(50);
             lblLike.SetX(10);
-            lblLike.Click += (sender, e) =>
+            lblLike.Click += delegate
             {
                 if (new EscritorioController().PostLike(post.POST_ID, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")))
                     lblLike.Text = "\t" + new EscritorioController().GetLikes(post.POST_ID) + " Like(s)";
