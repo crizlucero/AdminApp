@@ -3,6 +3,8 @@ using UIKit;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Models;
 using System.Collections.Generic;
+using BigTed;
+using Foundation;
 
 namespace WorklabsMx.iOS
 {
@@ -21,7 +23,9 @@ namespace WorklabsMx.iOS
 
         PostModel LocalPost;
 
-        List<ComentarioModel> comentarios = new List<ComentarioModel>();
+        List<ComentarioModel> comentarios;
+
+       
 
         public SeccionComentariosTableViewController (IntPtr handle) : base (handle)
         {
@@ -30,23 +34,25 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            /*var tap = new UITapGestureRecognizer(this.handleTap);
+            View.AddGestureRecognizer(tap);*/
+            if(InternetConectionHelper.VerificarConexion())
+            {
+                this.comentarios = new Controllers.EscritorioController().GetComentariosPost(this.LocalPost.POST_ID);
+            }
+            else
+            {
+                isShowInformation = false;
+                existeConeccion = false;
+            }
+            BTProgressHUD.Dismiss();
         }
 
-        public override void ViewWillAppear(bool animated)
+
+        private void handleTap (UITapGestureRecognizer reconizer)
         {
-            base.ViewWillAppear(animated);
-
-			if (InternetConectionHelper.VerificarConexion())
-			{
-                
-			}
-			else
-			{
-				isShowInformation = false;
-				existeConeccion = false;
-			}
+            this.View.EndEditing(true);
         }
-
 
 		public override nint RowsInSection(UITableView tableView, nint section)
 		{
@@ -56,7 +62,7 @@ namespace WorklabsMx.iOS
 				return comentarios.Count;
 			}
 			isShowInformation = false;
-			return 0;
+			return 1;
 		}
 
 		public override nfloat GetHeightForRow(UITableView tableView, Foundation.NSIndexPath indexPath)
@@ -78,7 +84,6 @@ namespace WorklabsMx.iOS
 				var currentPost = comentarios[indexPath.Row];
 				var currentPostCell = (ComentarioViewCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
 				currentPostCell.UpdateCell(currentPost);
-
 				return currentPostCell;
 			}
 			else
@@ -87,15 +92,17 @@ namespace WorklabsMx.iOS
 				noPostCell.UpdateCell(this.existeConeccion);
 				return noPostCell;
 			}
+
 		}
 
 		public void setInfoPosto(PostModel Post)
 		{
             this.LocalPost = Post;
-            comentarios = new Controllers.EscritorioController().GetComentariosPost(this.LocalPost.POST_ID);
-            this.TableView.ReloadData();
 		}
 
-
+        public void evHandler(Object sender)
+        {
+            // need someData here!!!
+        }
     }
 }

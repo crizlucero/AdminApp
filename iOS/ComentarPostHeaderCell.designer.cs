@@ -26,6 +26,10 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwComentarPost { get; set; }
 
+        [Action ("btnComentar_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnComentar_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (btnPublicar != null) {
