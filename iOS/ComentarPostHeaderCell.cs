@@ -5,12 +5,15 @@ using PerpetualEngine.Storage;
 
 namespace WorklabsMx.iOS
 {
+
     public partial class ComentarPostHeaderCell : UITableViewCell
     {
 
         public string Placeholder { get; set; }
         PostModel LocalPost;
         bool sendComment = false;
+
+        public event EventHandler PostComentado;
 
         public ComentarPostHeaderCell (IntPtr handle) : base (handle)
         {
@@ -44,7 +47,10 @@ namespace WorklabsMx.iOS
             var localStorage = SimpleStorage.EditGroup("Login");
             if (new Controllers.EscritorioController().CommentPost(LocalPost.POST_ID, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), txtComentarPost.Text))
             {
-                
+                if (PostComentado != null)
+                {
+                    PostComentado(this, EventArgs.Empty);
+                }
             }
         }
 

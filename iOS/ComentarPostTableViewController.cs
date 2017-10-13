@@ -17,6 +17,9 @@ namespace WorklabsMx.iOS
 
         PostModel LocalPost;
 
+        SeccionComentariosTableViewController objSeccionComentarios;
+
+
         public ComentarPostTableViewController (IntPtr handle) : base (handle)
         {
             
@@ -36,6 +39,12 @@ namespace WorklabsMx.iOS
             BTProgressHUD.Dismiss();
         }
 
+
+        void PostComentato(object sender, EventArgs e)
+        {
+            objSeccionComentarios.setInfoPosto(this.LocalPost);
+        }
+
         private void handleTap(UITapGestureRecognizer reconizer)
         {
             this.View.EndEditing(true);
@@ -45,6 +54,7 @@ namespace WorklabsMx.iOS
 		{
 			var headerCell = (ComentarPostHeaderCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
             headerCell.UpdateCell(this.LocalPost);
+            headerCell.PostComentado += PostComentato;
 			return headerCell;
 		}
 
@@ -63,7 +73,8 @@ namespace WorklabsMx.iOS
 			if (segue.Identifier == "SeccionComentarios")
 			{
                 BTProgressHUD.Show(status: "Cargando comentarios");
-				var comentariostView = (SeccionComentariosTableViewController)segue.DestinationViewController;
+                var comentariostView = (SeccionComentariosTableViewController)segue.DestinationViewController;
+                objSeccionComentarios = comentariostView;
 				comentariostView.setInfoPosto(this.LocalPost);
 			}
 			
