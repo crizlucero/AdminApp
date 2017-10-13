@@ -21,11 +21,7 @@ namespace WorklabsMx.iOS
 		bool isShowInformation = false;
 		bool existeConeccion = true;
 
-        PostModel LocalPost;
-
         List<ComentarioModel> comentarios;
-
-       
 
         public SeccionComentariosTableViewController (IntPtr handle) : base (handle)
         {
@@ -36,18 +32,9 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
             /*var tap = new UITapGestureRecognizer(this.handleTap);
             View.AddGestureRecognizer(tap);*/
-            if(InternetConectionHelper.VerificarConexion())
-            {
-                this.comentarios = new Controllers.EscritorioController().GetComentariosPost(this.LocalPost.POST_ID);
-            }
-            else
-            {
-                isShowInformation = false;
-                existeConeccion = false;
-            }
+
             BTProgressHUD.Dismiss();
         }
-
 
         private void handleTap (UITapGestureRecognizer reconizer)
         {
@@ -97,7 +84,16 @@ namespace WorklabsMx.iOS
 
 		public void setInfoPosto(PostModel Post)
 		{
-            this.LocalPost = Post;
+            if (InternetConectionHelper.VerificarConexion())
+            {
+                this.comentarios = new Controllers.EscritorioController().GetComentariosPost(Post.POST_ID);
+            }
+            else
+            {
+                isShowInformation = false;
+                existeConeccion = false;
+            }
+            this.TableView.ReloadData();
 		}
 
         public void evHandler(Object sender)
