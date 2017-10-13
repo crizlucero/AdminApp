@@ -1,21 +1,59 @@
 using System;
 using UIKit;
+using WorklabsMx.Models;
+using PerpetualEngine.Storage;
 
 namespace WorklabsMx.iOS
 {
     public partial class ComentarPostHeaderCell : UITableViewCell
     {
+
+        public string Placeholder { get; set; }
+        PostModel LocalPost;
+        bool sendComment = false;
+
         public ComentarPostHeaderCell (IntPtr handle) : base (handle)
         {
             
         }
 
-        internal void UpdateCell()
+        internal void UpdateCell(PostModel Post)
         {
+            this.LocalPost = Post;
+            Placeholder = "Escribe un comentario";
+            this.txtComentarPost.ShouldBeginEditing = t => {
+                if (this.txtComentarPost.Text == Placeholder)
+                    this.txtComentarPost.Text = string.Empty;
+                this.txtComentarPost.TextColor = UIColor.Black;
+                return true;
+            };
+            this.txtComentarPost.ShouldEndEditing = t => {
+                if (string.IsNullOrEmpty(this.txtComentarPost.Text))
+                    this.txtComentarPost.Text = Placeholder;
+                var color = new UIColor(149, 152, 154, 1);
+
+                this.txtComentarPost.TextColor = color;
+                return true;
+            };
+
             this.txtComentarPost.Changed += HandleTextMessageChanged;
         }
 
-		private void HandleTextMessageChanged(object sender, EventArgs e)
+        partial void btnComentar_TouchUpInside(UIButton sender)
+        {
+            var localStorage = SimpleStorage.EditGroup("Login");
+            if (new Controllers.EscritorioController().CommentPost(LocalPost.POST_ID, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), txtComentarPost.Text))
+            {
+                
+            }
+        }
+
+        internal bool SendActionPost()
+        {
+            return sendComment;
+        }
+
+        private void HandleTextMessageChanged(object sender, EventArgs e)
 		{
 			if (string.IsNullOrWhiteSpace(txtComentarPost.Text))
 			{
@@ -28,5 +66,7 @@ namespace WorklabsMx.iOS
 				this.btnPublicar.Layer.Opacity = 1f;
 			}
 		}
+
+       
     }
 }

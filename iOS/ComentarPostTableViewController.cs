@@ -1,8 +1,10 @@
 using System;
 using UIKit;
 using WorklabsMx.iOS.Helpers;
-using SVProgressHUDBinding;
 using WorklabsMx.Models;
+using BigTed;
+
+using Foundation;
 
 namespace WorklabsMx.iOS
 {
@@ -23,20 +25,26 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            /*var tap = new UITapGestureRecognizer(this.handleTap);
+            View.AddGestureRecognizer(tap);*/
             StyleHelper.Style(vwSeccionComentarios.Layer);
         }
 
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            BTProgressHUD.Dismiss();
+        }
 
-            SVProgressHUD.Dismiss();
+        private void handleTap(UITapGestureRecognizer reconizer)
+        {
+            this.View.EndEditing(true);
         }
 
 		public override UIView GetViewForHeader(UITableView tableView, nint section)
 		{
 			var headerCell = (ComentarPostHeaderCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
-            headerCell.UpdateCell();
+            headerCell.UpdateCell(this.LocalPost);
 			return headerCell;
 		}
 
@@ -54,11 +62,13 @@ namespace WorklabsMx.iOS
 		{
 			if (segue.Identifier == "SeccionComentarios")
 			{
+                BTProgressHUD.Show(status: "Cargando comentarios");
 				var comentariostView = (SeccionComentariosTableViewController)segue.DestinationViewController;
-				comentariostView.setInfoPosto(LocalPost);
+				comentariostView.setInfoPosto(this.LocalPost);
 			}
 			
 		}
+       
 
     }
 }

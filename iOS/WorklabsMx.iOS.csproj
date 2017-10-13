@@ -163,6 +163,9 @@
     <Reference Include="SVProgressHUD">
       <HintPath>..\packages\SVProgressHUD.2.1.2\lib\Xamarin.iOS10\SVProgressHUD.dll</HintPath>
     </Reference>
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\packages\BTProgressHUD.1.2.0.6\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -638,10 +641,6 @@
     <Compile Include="ComentarPostHeaderCell.cs" />
     <Compile Include="ComentarPostHeaderCell.designer.cs">
       <DependentUpon>ComentarPostHeaderCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SeccionComentariosTableView.cs" />
-    <Compile Include="SeccionComentariosTableView.designer.cs">
-      <DependentUpon>SeccionComentariosTableView.cs</DependentUpon>
     </Compile>
     <Compile Include="ComentarioViewCell.cs" />
     <Compile Include="ComentarioViewCell.designer.cs">

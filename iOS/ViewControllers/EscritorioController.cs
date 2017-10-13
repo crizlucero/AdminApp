@@ -1,4 +1,4 @@
-using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.Models; using System.Collections.Generic; using SVProgressHUDBinding; using WorklabsMx.Controllers;   namespace WorklabsMx.iOS {     public partial class EscritorioController : UITableViewController //UIViewController
+using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.Models; using System.Collections.Generic; using WorklabsMx.Controllers; using BigTed;  namespace WorklabsMx.iOS {     public partial class EscritorioController : UITableViewController //UIViewController
     {
         const string IdentificadorCeldaHeader = "Header";
         const string IdentificadorCeldaPost = "Post";
@@ -21,21 +21,12 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 
         public override void ViewDidLoad()
         {
-            base.ViewDidLoad();
+            base.ViewDidLoad();             currentPage = 0;             if (InternetConectionHelper.VerificarConexion())             {                 allPosts = new Controllers.EscritorioController().GetMuroPosts(currentPage);                 var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");                 miembro = new MiembrosController().GetMemberName(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));             }             else             {                 this.btnScanQr.Title = "";                 this.btnScanQr.Enabled = false;                 isShowInformation = false;                 existeConeccion = false;             }             BTProgressHUD.Dismiss();
 		}
 
         public override void ViewWillAppear(bool animated)
         {             base.ViewWillAppear(animated);
-			if (InternetConectionHelper.VerificarConexion())
-			{                 currentPage = 0;                 //posts = new Controllers.EscritorioController().GetMuroPosts(currentPage);                 //allPosts = posts;
-			    var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
-			    miembro = new MiembrosController().GetMemberName(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
-			}
-			else
-			{
-                this.btnScanQr.Title = "";                 this.btnScanQr.Enabled = false;                 isShowInformation = false;
-				existeConeccion = false;
-			}             SVProgressHUD.Dismiss();
+			
         }
 
         public override UIView GetViewForHeader(UITableView tableView, nint section)
@@ -59,7 +50,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 				return allPosts.Count;
 			}
 			isShowInformation = false;
-			return 0;
+			return 1;
         }
   
         public override nfloat GetHeightForRow(UITableView tableView, Foundation.NSIndexPath indexPath)
@@ -95,21 +86,22 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
             if(segue.Identifier == "toShowPostView")             {                 var postCommentView = (PublicarPostViewController)segue.DestinationViewController;                 postCommentView.setInfoPublicacion(miembro);             }              else if(segue.Identifier == "comentarPost")             {
 				var CommentView = (ComentarPostTableViewController)segue.DestinationViewController;
 				CommentView.setInfoPost(this.CurrentPost);             }
-        } 
+        }  
         public override void WillDisplay(UITableView tableView, UITableViewCell cell, Foundation.NSIndexPath indexPath)
         {
 			
-            if (tableView.ContentOffset.Y >= (tableView.ContentSize.Height - tableView.Frame.Size.Height))
-			{
-				currentPage += 5;
-				posts = new Controllers.EscritorioController().GetMuroPosts(currentPage);
-				foreach (var post in posts)
-				{
-					allPosts.Add(post);
-				}                 this.TableView.ScrollToRow(indexPath, UITableViewScrollPosition.Bottom, true);
-				this.TableView.ReloadData();	
+            if (tableView.ContentOffset.Y > (tableView.ContentSize.Height - tableView.Frame.Size.Height))
+			{                                  BTProgressHUD.Show();                 if (InternetConectionHelper.VerificarConexion())                 {
+                    currentPage += 5;
+                    posts = new Controllers.EscritorioController().GetMuroPosts(currentPage);
+                    foreach (var post in posts)
+                    {
+                        allPosts.Add(post);
+                    }
+                    this.TableView.ReloadData();                     BTProgressHUD.Dismiss();
+                }                 else                 {                     BTProgressHUD.Dismiss();                     new MessageDialog().SendToast("No tienes acceso a una conexión de Internet, intenta de nuevo");                 }
 			}
-        }
+        } 
 
         partial void btnToScanQr_TouchUpInside(UIBarButtonItem sender)
         {

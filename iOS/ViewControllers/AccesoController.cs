@@ -6,7 +6,6 @@ using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
 using CoreGraphics;
 using System.Threading.Tasks;
-using SVProgressHUDBinding;
 
 namespace WorklabsMx.iOS
 {
