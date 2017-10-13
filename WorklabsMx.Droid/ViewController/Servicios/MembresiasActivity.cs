@@ -18,7 +18,6 @@ namespace WorklabsMx.Droid
     [Activity(Label = "MembresiasActivity")]
     public class MembresiasActivity : Activity
     {
-        bool CanPay;
         SimpleStorage Storage;
         Dictionary<string, CarritoModel> Carrito, Membresias;
         ArrayAdapter adapter;
@@ -28,7 +27,6 @@ namespace WorklabsMx.Droid
             Storage = SimpleStorage.EditGroup("Login");
             Membresias = new Dictionary<string, CarritoModel>();
             Carrito = new CarritoController().GetCarrito(Storage.Get("Usuario_Id"), TiposServicios.Membresia);
-            CanPay = false;
             param = new TableRow.LayoutParams
             {
                 Column = 1,
@@ -77,7 +75,7 @@ namespace WorklabsMx.Droid
                         Membresias[membresia.Membresia_Id].Membresia_Cantidad = (int)Carrito[membresia.Membresia_Id].Membresia_Cantidad;
                         Membresias[membresia.Membresia_Id].Sucursal_Id = Carrito[membresia.Membresia_Id].Sucursal_Id;
                         Membresias[membresia.Membresia_Id].Membresia_Fecha_Inicio = Carrito[membresia.Membresia_Id].Membresia_Fecha_Inicio;
-                        CanPay = true;
+
                     }
                 }
 

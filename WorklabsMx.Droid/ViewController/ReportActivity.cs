@@ -12,6 +12,7 @@ using WorklabsMx.Controllers;
 using WorklabsMx.Droid.Helpers;
 using WorklabsMx.Models;
 using System.Linq;
+using AndroidHUD;
 
 namespace WorklabsMx.Droid
 {
@@ -162,11 +163,12 @@ namespace WorklabsMx.Droid
                     if (isSelectedRadio)
                     {
                         bool report = false;
+                        AndHUD.Shared.Show(this, null, -1, MaskType.Black);
                         if (!string.IsNullOrEmpty(post_id))
                             report = ctrlEscritorio.ReportarPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), acusacion_id);
                         else
                             report = ctrlEscritorio.ReportarComment(comment_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), acusacion_id);
-
+                        AndHUD.Shared.Dismiss(this);
                         if (report)
                         {
                             Toast.MakeText(this, "Gracias por su aportación\nEl equipo de Worklabs revisará el caso.", ToastLength.Short).Show();

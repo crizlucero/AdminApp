@@ -16,6 +16,9 @@ using Android.Net;
 using WorklabsMx.Helpers;
 using AndroidHUD;
 using WorklabsMx.Enum;
+using Java.IO;
+using Android.Provider;
+using Android.Content.PM;
 
 namespace WorklabsMx.Droid
 {
@@ -32,6 +35,11 @@ namespace WorklabsMx.Droid
         TableLayout tlPost;
         AlertDialog dialog;
         string nombre, puesto, foto;
+        File _file, _dir;
+        Bitmap bitmap;
+        View customView;
+        readonly int PickImageId = 1000, TakePicture = 500;
+
         public MainActivity()
         {
             DashboardController = new EscritorioController();
@@ -105,6 +113,7 @@ namespace WorklabsMx.Droid
             scroll = FindViewById<ScrollView>(Resource.Id.post_scroll);
             tlPost = FindViewById<TableLayout>(Resource.Id.post_table);
             FindViewById<Button>(Resource.Id.btnInitPublish).Click += (sender, e) => ShowPublish();
+
             FillPosts();
             scroll.ScrollChange += (sender, e) =>
             {
@@ -119,9 +128,10 @@ namespace WorklabsMx.Droid
 
         void FillPosts()
         {
+            AndHUD.Shared.Show(this, null, -1, MaskType.Black);
+
             DashboardController.GetMuroPosts(page * sizePage).ForEach((post) =>
             {
-
                 TableRow row = new TableRow(this);
                 row.SetBackgroundResource(Resource.Drawable.CornerBorderLine);
                 row.TranslationZ = 20;
@@ -169,7 +179,7 @@ namespace WorklabsMx.Droid
                 };
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center);
-                param.RightMargin = 30;
+                //param.RightMargin = 10;
                 param.ColumnSpec = GridLayout.InvokeSpec(1, 2);
                 param.RowSpec = GridLayout.InvokeSpec(0);
                 txtNombre.LayoutParameters = param;
@@ -193,16 +203,18 @@ namespace WorklabsMx.Droid
                         alert.SetTitle(Resources.GetString(Resource.String.BorrarPost));
                         alert.SetMessage(Resources.GetString(Resource.String.MensajeBorrarPost));
                         alert.SetPositiveButton(Resources.GetString(Resource.String.OK), delegate
+                    {
+                        AndHUD.Shared.Show(this, null, -1, MaskType.Black);
+                        if (new EscritorioController().OcultarPost(post.MIEMBRO_ID, post.POST_ID, 0))
                         {
-                            if (new EscritorioController().OcultarPost(post.MIEMBRO_ID, post.POST_ID, 0))
-                            {
-                                Toast.MakeText(this, Resources.GetString(Resource.String.PostEliminado), ToastLength.Short).Show();
-                                page = 0;
-                                tlPost.RemoveView(row);
-                            }
-                            else
-                                Toast.MakeText(this, Resources.GetString(Resource.String.ErrorIntento), ToastLength.Short).Show();
-                        });
+                            Toast.MakeText(this, Resources.GetString(Resource.String.PostEliminado), ToastLength.Short).Show();
+                            page = 0;
+                            tlPost.RemoveView(row);
+                        }
+                        else
+                            Toast.MakeText(this, Resources.GetString(Resource.String.ErrorIntento), ToastLength.Short).Show();
+                        AndHUD.Shared.Dismiss(this);
+                    });
                         alert.SetNegativeButton(Resources.GetString(Resource.String.Cancelar), (sender, e) => { });
                     }
                     else
@@ -210,11 +222,11 @@ namespace WorklabsMx.Droid
                         alert.SetTitle(Resources.GetString(Resource.String.ReportarPost));
                         alert.SetMessage(Resources.GetString(Resource.String.MensajeReportarPost));
                         alert.SetPositiveButton(Resources.GetString(Resource.String.OK), delegate
-                        {
-                            Intent intent = new Intent(this, typeof(ReportActivity));
-                            intent.PutExtra("post_id", post.POST_ID);
-                            StartActivity(intent);
-                        });
+                    {
+                        Intent intent = new Intent(this, typeof(ReportActivity));
+                        intent.PutExtra("post_id", post.POST_ID);
+                        StartActivity(intent);
+                    });
                         alert.SetNegativeButton(Resources.GetString(Resource.String.Cancelar), (sender, e) => { });
                     }
                     alert.Create();
@@ -223,7 +235,7 @@ namespace WorklabsMx.Droid
                 param = new GridLayout.LayoutParams();
                 param.Width = 30;
                 param.Height = 30;
-                param.LeftMargin = (Resources.DisplayMetrics.WidthPixels / 6);
+                param.LeftMargin = (Resources.DisplayMetrics.WidthPixels / 7);
                 param.TopMargin = 20;
                 param.ColumnSpec = GridLayout.InvokeSpec(3);
                 param.RowSpec = GridLayout.InvokeSpec(0, 3);
@@ -326,8 +338,9 @@ namespace WorklabsMx.Droid
 
                 row.AddView(glPost);
                 tlPost.AddView(row);
-
             });
+            AndHUD.Shared.Dismiss(this);
+
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -455,18 +468,28 @@ namespace WorklabsMx.Droid
 
             LayoutInflater liView = LayoutInflater;
 
-            View customView = liView.Inflate(Resource.Layout.PublishLayout, null, true);
+            customView = liView.Inflate(Resource.Layout.PublishLayout, null, true);
 
             customView.FindViewById<TextView>(Resource.Id.lblNombre).Text = nombre;
             customView.FindViewById<TextView>(Resource.Id.lblPuesto).Text = puesto;
             customView.FindViewById<TextView>(Resource.Id.lblFecha).Text = DateTime.Now.ToString("d");
-            customView.FindViewById<ImageButton>(Resource.Id.btnAttachImage).Click += (sender, e) =>
+            customView.FindViewById<ImageButton>(Resource.Id.btnTakePicture).Click += delegate
+            {
+                CreateDirectoryForPictures();
+                IsThereAnAppToTakePictures();
+                Intent intent = new Intent(MediaStore.ActionImageCapture);
+                _file = new File(_dir, String.Format("myPhoto_{0}.jpg", Guid.NewGuid()));
+                intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(_file));
+                StartActivityForResult(intent, TakePicture);
+            };
+
+            customView.FindViewById<ImageButton>(Resource.Id.btnAttachImage).Click += delegate
             {
                 var imageIntent = new Intent();
                 imageIntent.SetType("image/*");
                 imageIntent.SetAction(Intent.ActionGetContent);
                 StartActivityForResult(
-                    Intent.CreateChooser(imageIntent, "Select photo"), 0);
+                    Intent.CreateChooser(imageIntent, "Select photo"), PickImageId);
             };
             customView.FindViewById<Button>(Resource.Id.btnPublishApply).Click += (sender, e) =>
             {
@@ -476,6 +499,7 @@ namespace WorklabsMx.Droid
                     page = 0;
                     FillPosts();
                     dialog.Dismiss();
+                    customView.FindViewById<ImageView>(Resource.Id.imgPicture).Visibility = ViewStates.Gone;
                 }
             };
 
@@ -485,8 +509,51 @@ namespace WorklabsMx.Droid
             dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
         }
 
+        void CreateDirectoryForPictures()
+        {
+            _dir = new File(
+                Android.OS.Environment.GetExternalStoragePublicDirectory(
+                    Android.OS.Environment.DirectoryPictures), "CameraAppDemo");
+            if (!_dir.Exists())
+                _dir.Mkdirs();
+        }
+
+        bool IsThereAnAppToTakePictures()
+        {
+            Intent intent = new Intent(MediaStore.ActionImageCapture);
+            IList<ResolveInfo> availableActivities =
+                PackageManager.QueryIntentActivities(intent, PackageInfoFlags.MatchDefaultOnly);
+            return availableActivities != null && availableActivities.Count > 0;
+        }
+
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
+            ImageView imgPicture = customView.FindViewById<ImageView>(Resource.Id.imgPicture);
+            if (resultCode == Result.Ok)
+            {
+                if (requestCode == TakePicture && resultCode == Result.Ok)
+                {
+                    Intent mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
+                    Android.Net.Uri contentUri = Android.Net.Uri.FromFile(_file);
+                    mediaScanIntent.SetData(contentUri);
+                    SendBroadcast(mediaScanIntent);
+
+                    int height = Resources.DisplayMetrics.HeightPixels;
+                    int width = imgPicture.Height;
+                    bitmap = _file.Path.LoadAndResizeBitmap(width, height);
+                    if (bitmap != null)
+                    {
+                        imgPicture.SetImageBitmap(bitmap);
+                        bitmap = null;
+                    }
+
+                    GC.Collect();
+                }
+                if (requestCode == PickImageId && resultCode == Result.Ok && data != null)
+                    imgPicture.SetImageURI((data.Data));
+                imgPicture.Visibility = ViewStates.Visible;
+                customView.FindViewById<Button>(Resource.Id.btnPublishApply).Enabled = true;
+            }
             base.OnActivityResult(requestCode, resultCode, data);
 
         }

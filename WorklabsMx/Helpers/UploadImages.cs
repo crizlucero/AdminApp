@@ -1,12 +1,12 @@
 ﻿using System;
 using System.IO;
 using System.Net;
-using System.Threading.Tasks;
 
 namespace WorklabsMx.Helpers
 {
     public class UploadImages
     {
+
         public bool UploadBitmapAsync(byte[] image)
         {
             string boundary = "---------------------------" + DateTime.Now.Ticks.ToString("x");

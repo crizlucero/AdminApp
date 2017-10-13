@@ -18,7 +18,6 @@ namespace WorklabsMx.Droid
     public class ProductosActivity : Activity
     {
         readonly Dictionary<string, CarritoModel> Carrito, Productos;
-        bool CanPay;
         SimpleStorage Storage;
         ArrayAdapter adapter;
         TableRow.LayoutParams param;
@@ -26,7 +25,6 @@ namespace WorklabsMx.Droid
         {
             Storage = SimpleStorage.EditGroup("Login");
             Productos = new Dictionary<string, CarritoModel>();
-            CanPay = false;
             Carrito = new CarritoController().GetCarrito(Storage.Get("Usuario_Id"), TiposServicios.Producto);
             param = new TableRow.LayoutParams
             {
@@ -76,7 +74,6 @@ namespace WorklabsMx.Droid
                         Productos[producto.Producto_Id].Producto_Cantidad = (int)Carrito[producto.Producto_Id].Producto_Cantidad;
                         Productos[producto.Producto_Id].Sucursal_Id = Carrito[producto.Producto_Id].Sucursal_Id;
                         Productos[producto.Producto_Id].Membresia_Fecha_Inicio = Carrito[producto.Producto_Id].Membresia_Fecha_Inicio;
-                        CanPay = true;
                     }
                 }
 
