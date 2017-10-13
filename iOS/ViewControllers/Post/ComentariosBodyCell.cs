@@ -26,5 +26,9 @@ namespace WorklabsMx.iOS
             imgPerfil.Image = ImageGallery.LoadImage(post.Miembro_Fotografia);
 		}
 
+        partial void btnLikes_TouchUpInside(UIButton sender)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
