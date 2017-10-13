@@ -136,7 +136,7 @@ namespace WorklabsMx.Controllers
                 "union all " +
                 "SELECT p.*, Usuario_Id, CONCAT(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia, Usuario_Tipo, Usuario_Puesto from Muro_Comments as p " +
                 "INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 2) as Comments " +
-                "WHERE COMM_ESTATUS = 1 AND Post_Id = @post_id ORDER BY COMM_FECHA --DESC OFFSET @page ROWS Fetch next 10 rows only";
+                "WHERE COMM_ESTATUS = 1 AND Post_Id = @post_id ORDER BY COMM_FECHA DESC --OFFSET @page ROWS Fetch next 10 rows only";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@post_id", post_id);
             try
