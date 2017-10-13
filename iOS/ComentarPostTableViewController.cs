@@ -3,6 +3,7 @@ using UIKit;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Models;
 using BigTed;
+using CoreGraphics;
 
 using Foundation;
 
@@ -13,7 +14,7 @@ namespace WorklabsMx.iOS
 
 		const string IdentificadorCeldaHeader = "CeldaComentar";
        
-        const int TamañoHeader = 142;
+        const int TamañoHeader = 130;
 
         PostModel LocalPost;
 
@@ -28,6 +29,9 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            //CGRect newFrame = new CGRect(this.vwVistaSeccionComentarios.Frame.X, this.vwVistaSeccionComentarios.Frame.Y, this.vwVistaSeccionComentarios.Frame.Width, 150);
+            //this.vwVistaSeccionComentarios.Frame = newFrame;
             /*var tap = new UITapGestureRecognizer(this.handleTap);
             View.AddGestureRecognizer(tap);*/
             StyleHelper.Style(vwSeccionComentarios.Layer);

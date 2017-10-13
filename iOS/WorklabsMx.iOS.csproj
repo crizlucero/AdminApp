@@ -469,6 +469,10 @@
     <ImageAsset Include="Assets.xcassets\qr.imageset\ic_qrcode.png" />
     <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\botonComentar.png" />
+    <ImageAsset Include="Assets.xcassets\Camera.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Camera.imageset\camrera%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Camera.imageset\camera%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Camera.imageset\camera.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -702,6 +706,7 @@
     <Folder Include="Assets.xcassets\ic_qr_NAVBAR.imageset\" />
     <Folder Include="Assets.xcassets\qr.imageset\" />
     <Folder Include="Assets.xcassets\ic_comentar.imageset\" />
+    <Folder Include="Assets.xcassets\Camera.imageset\" />
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

@@ -6,6 +6,7 @@ using PerpetualEngine.Storage;
 using SVProgressHUDBinding;
 using System.Collections.Generic;
 using WorklabsMx.Enum;
+using Photos;
 
 namespace WorklabsMx.iOS
 {
@@ -101,5 +102,55 @@ namespace WorklabsMx.iOS
                 this.btnPublicar.Layer.Opacity = 1f;
             }
         }
+
+        partial void btnGaleria_TouchUpInside(UIButton sender)
+        {
+            var ShowGalleryAlert = UIAlertController.Create(null, null, UIAlertControllerStyle.ActionSheet);
+
+            //Add Action
+            ShowGalleryAlert.AddAction(UIAlertAction.Create("Seleccionar de la galeria", UIAlertActionStyle.Default, null));
+            ShowGalleryAlert.AddAction(UIAlertAction.Create("Tomar fotografia", UIAlertActionStyle.Default, null));
+
+            var CloseAction = UIAlertAction.Create("Cancelar", UIAlertActionStyle.Cancel, null);
+            ShowGalleryAlert.AddAction(CloseAction);
+            PresentViewController(ShowGalleryAlert, true, null);
+        }
+
+        private UIImagePickerController SelectImage(UIImagePickerController imagePicker)
+        {
+            imagePicker.AllowsEditing = false;
+            imagePicker.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+            imagePicker.AllowsEditing = true;
+            return imagePicker;
+        }
+
+        private UIImagePickerController TakePhoto(UIImagePickerController imagePicker)
+        {
+            imagePicker.AllowsEditing = false;
+            imagePicker.SourceType = UIImagePickerControllerSourceType.Camera;
+            imagePicker.CameraDevice = UIImagePickerControllerCameraDevice.Rear;
+            imagePicker.AllowsEditing = true;
+            return imagePicker;
+        }
+
+       /* private UIAlertAction AbrirGaleria(UIImagePickerController ImagePicker)
+        {
+            var abrirGaleria = UIAlertAction.Create("Seleccionar foto", UIAlertActionStyle.Default, actionAbrirGaleria(ImagePicker));
+            return abrirGaleria;
+            
+        }
+
+        private void actionAbrirGaleria(UIImagePickerController ImagePicker)
+        {
+            var photos = PHPhotoLibrary.AuthorizationStatus;
+            if (photos != PHAuthorizationStatus.NotDetermined)
+            {
+                this.PresentViewController(this.SelectImage(ImagePicker), true , null);
+
+            }
+            PHPhotoLibrary.RequestAuthorization({ 
+                
+            });
+        }*/
     }
 }

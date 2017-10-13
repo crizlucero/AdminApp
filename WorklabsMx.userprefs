@@ -1,19 +1,25 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ComentarPostHeaderCell.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Post/PublicarPostViewController.cs">
     <Files>
-      <File FileName="iOS/ComentarPostTableViewController.cs" Line="47" Column="9" />
-      <File FileName="iOS/SeccionComentariosTableViewController.cs" Line="99" Column="30" />
-      <File FileName="iOS/ComentarPostHeaderCell.cs" Line="52" Column="1" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="3" Column="1" />
-      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="81" Column="16" />
-      <File FileName="iOS/ComentarioViewCell.cs" Line="28" Column="1" />
+      <File FileName="iOS/ComentarPostTableViewController.cs" Line="34" Column="63" />
+      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="88" Column="10" />
+      <File FileName="iOS/ComentarioViewCell.cs" Line="17" Column="25" />
+      <File FileName="iOS/ViewControllers/Post/ComentariosBodyCell.cs" Line="41" Column="14" />
+      <File FileName="iOS/ViewElements/PostCard.cs" Line="71" Column="24" />
+      <File FileName="WorklabsMx.Droid/ViewController/ReportActivity.cs" Line="102" Column="83" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="268" Column="21" />
+      <File FileName="iOS/SeccionComentariosTableViewController.cs" Line="46" Column="17" />
+      <File FileName="iOS/ViewControllers/Post/PublicarPostViewController.cs" Line="147" Column="14" />
+      <File FileName="iOS/ViewControllers/MiPerfil/AboutMeModificaController.cs" Line="73" Column="60" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State>
-          <Value>Post.POST_ID</Value>
+          <Value>PostLocal</Value>
           <Value>this.LocalPost</Value>
           <Value>LocalPost</Value>
+          <Value>new Controllers.EscritorioController().GetLikes(PostLocal.POST_ID) + " LIKES"</Value>
+          <Value>this.lblLikes.Text</Value>
         </State>
       </Pad>
     </Pads>

@@ -14,7 +14,7 @@ namespace WorklabsMx.iOS
 		const string IdentificadorCeldaPost = "CeldaComentario";
 		const string IdentificadorCeldaNoInfo = "CeldaNoComentarios";
 
-		const int TamañoPublicacion = 125;
+		const int TamañoPublicacion = 100;
 		const int TamañoMensajeNoInfo = 400;
 
 

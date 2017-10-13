@@ -24,7 +24,7 @@ namespace WorklabsMx.iOS
 
         partial void btnLikes_TouchUpInside(UIButton sender)
         {
-            throw new NotImplementedException();
+           
         }
     }
 }

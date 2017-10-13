@@ -20,11 +20,11 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnPublicar { get; set; }
+        UIKit.UIButton btnGaleria { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIImageView imgAdjuntar { get; set; }
+        UIKit.UIButton btnPublicar { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -54,6 +54,10 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnClose_TouchUpInside (UIKit.UIButton sender);
 
+        [Action ("btnGaleria_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnGaleria_TouchUpInside (UIKit.UIButton sender);
+
         [Action ("btnPublicar_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnPublicar_TouchUpInside (UIKit.UIButton sender);
@@ -65,14 +69,14 @@ namespace WorklabsMx.iOS
                 btnClose = null;
             }
 
+            if (btnGaleria != null) {
+                btnGaleria.Dispose ();
+                btnGaleria = null;
+            }
+
             if (btnPublicar != null) {
                 btnPublicar.Dispose ();
                 btnPublicar = null;
-            }
-
-            if (imgAdjuntar != null) {
-                imgAdjuntar.Dispose ();
-                imgAdjuntar = null;
             }
 
             if (imgPerfil != null) {
