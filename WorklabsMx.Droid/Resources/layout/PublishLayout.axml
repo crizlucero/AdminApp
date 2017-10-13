@@ -5,9 +5,9 @@
     android:layout_height="match_parent">
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="258.0dp"
+        android:layout_height="360.0dp"
         android:id="@+id/gridLayout1"
-        android:rowCount="5"
+        android:rowCount="6"
         android:columnCount="4"
         android:layout_marginRight="0.0dp">
         <ImageView
@@ -50,6 +50,17 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="0"
             android:layout_columnSpan="4" />
+        <ImageView xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/imgPicture"
+            android:layout_column="0"
+            android:layout_height="75dp"
+            android:layout_width="75dp"
+            android:layout_row="4"
+            android:layout_gravity="left"
+            android:layout_columnWeight="40"
+            android:layout_columnSpan="2"
+            android:layout_marginLeft="10dp"
+            tools:visibility="gone" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblFecha"
@@ -58,15 +69,25 @@
             android:textColor="@color/material_grey_600"
             android:layout_gravity="top"
             android:layout_marginLeft="10dp"
-            android:layout_row="4"
+            android:layout_row="5"
             android:layout_column="0" />
+        <ImageButton
+            android:src="@mipmap/ic_add_photo"
+            android:id="@+id/btnTakePicture"
+            android:layout_column="1"
+            android:layout_height="20dp"
+            android:layout_width="30dp"
+            android:layout_row="5"
+            android:layout_gravity="right"
+            android:tint="#3957D9"
+            android:layout_columnWeight="40" />
         <ImageButton
             android:src="@mipmap/ic_attach"
             android:id="@+id/btnAttachImage"
             android:layout_column="2"
             android:layout_height="20dp"
             android:layout_width="30dp"
-            android:layout_row="4"
+            android:layout_row="5"
             android:layout_gravity="right"
             android:layout_columnWeight="2" />
         <Button
@@ -79,7 +100,8 @@
             android:layout_height="20dp"
             android:gravity="center"
             android:layout_marginRight="10dp"
-            android:layout_row="4"
-            android:layout_width="wrap_content" />
+            android:layout_row="5"
+            android:layout_width="wrap_content"
+            android:enabled="false" />
     </GridLayout>
 </LinearLayout>

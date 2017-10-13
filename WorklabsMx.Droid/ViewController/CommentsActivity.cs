@@ -35,7 +35,7 @@ namespace WorklabsMx.Droid
 
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
-            ActionBar.Title = Resources.GetString(Resource.String.Escritorio);
+            ActionBar.Title = Resources.GetString(Resource.String.Comentarios);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             DashboardController = new EscritorioController();
             svComentarios = FindViewById<ScrollView>(Resource.Id.svComentarios);
@@ -44,6 +44,7 @@ namespace WorklabsMx.Droid
                 FillComments();
             FindViewById<ImageButton>(Resource.Id.btnApplyComment).Click += delegate
             {
+                AndHUD.Shared.Show(this, null, -1, MaskType.Black);
                 if (new EscritorioController().CommentPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), FindViewById<EditText>(Resource.Id.txtComment).Text))
                 {
                     FindViewById<EditText>(Resource.Id.txtComment).Text = "";
@@ -51,12 +52,14 @@ namespace WorklabsMx.Droid
                     FillComments();
                     svComentarios.ScrollY = svComentarios.Height;
                 }
+                AndHUD.Shared.Dismiss(this);
             };
 
         }
 
         void FillComments()
         {
+            AndHUD.Shared.Show(this, null, -1, MaskType.Black);
             tlComentarios.RemoveAllViews();
             DashboardController.GetComentariosPost(post_id).ForEach((comentario) =>
             {
@@ -93,7 +96,7 @@ namespace WorklabsMx.Droid
                     Text = comentario.Nombre,
                     TextSize = 14,
                 };
-                txtNombre.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels - 150);
+                txtNombre.SetMinimumWidth((Resources.DisplayMetrics.WidthPixels - 200) / 2);
                 txtNombre.Click += delegate
                 {
                     Intent perfil = new Intent(this, typeof(PerfilActivity));
@@ -103,7 +106,7 @@ namespace WorklabsMx.Droid
                 };
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center);
-                param.ColumnSpec = GridLayout.InvokeSpec(1, 3);
+                param.ColumnSpec = GridLayout.InvokeSpec(1, 2);
                 param.RowSpec = GridLayout.InvokeSpec(0);
                 txtNombre.LayoutParameters = param;
                 glPost.AddView(txtNombre);
@@ -111,6 +114,7 @@ namespace WorklabsMx.Droid
                 LinearLayout llButton = new LinearLayout(this);
                 llButton.SetMinimumWidth(20);
                 llButton.SetMinimumHeight(20);
+                llButton.SetBackgroundColor(Color.AliceBlue);
                 ImageButton btnClear = new ImageButton(this);
                 btnClear.SetBackgroundColor(Color.White);
                 btnClear.SetImageResource(Resource.Mipmap.ic_clear);
@@ -127,7 +131,7 @@ namespace WorklabsMx.Droid
                         alert.SetMessage(Resources.GetString(Resource.String.MensajeBorrarComentario));
                         alert.SetPositiveButton(Resources.GetString(Resource.String.OK), (senderO, eO) =>
                         {
-
+                            AndHUD.Shared.Show(this, null, -1, MaskType.Black);
                             if (new EscritorioController().OcultarComment(comentario.POST_ID, 0))
                             {
                                 Toast.MakeText(this, Resources.GetString(Resource.String.ComentarioEliminado), ToastLength.Short).Show();
@@ -135,6 +139,7 @@ namespace WorklabsMx.Droid
                             }
                             else
                                 Toast.MakeText(this, Resources.GetString(Resource.String.ErrorIntento), ToastLength.Short).Show();
+                            AndHUD.Shared.Dismiss();
                         });
                         alert.SetNegativeButton(Resources.GetString(Resource.String.Cancelar), (sender1, e1) => { });
                     }
@@ -144,11 +149,9 @@ namespace WorklabsMx.Droid
                         alert.SetMessage(Resources.GetString(Resource.String.MensajeReportarComentario));
                         alert.SetPositiveButton(Resources.GetString(Resource.String.OK), (senderO, eO) =>
                         {
-                            {
-                                Intent intent = new Intent(this, typeof(ReportActivity));
-                                intent.PutExtra("comment_id", comentario.COMM_ID);
-                                StartActivity(intent);
-                            }
+                            Intent intent = new Intent(this, typeof(ReportActivity));
+                            intent.PutExtra("comment_id", comentario.COMM_ID);
+                            StartActivity(intent);
                         });
                         alert.SetNegativeButton(Resources.GetString(Resource.String.Cancelar), (sender1, e1) => { });
                     }
@@ -158,14 +161,14 @@ namespace WorklabsMx.Droid
                 param = new GridLayout.LayoutParams();
                 param.Width = 30;
                 param.Height = 30;
-                param.LeftMargin = (Resources.DisplayMetrics.WidthPixels / 6);
+                param.LeftMargin = (Resources.DisplayMetrics.WidthPixels / 5);
+                param.SetGravity(GravityFlags.Right);
                 param.TopMargin = 20;
                 param.ColumnSpec = GridLayout.InvokeSpec(3);
                 param.RowSpec = GridLayout.InvokeSpec(0, 3);
                 llButton.LayoutParameters = param;
                 llButton.AddView(btnClear);
                 glPost.AddView(llButton);
-
 
                 TextView txtPuesto = new TextView(this)
                 {
@@ -207,6 +210,7 @@ namespace WorklabsMx.Droid
                 row.AddView(glPost);
                 tlComentarios.AddView(row);
             });
+            AndHUD.Shared.Dismiss(this);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu) => base.OnCreateOptionsMenu(menu);

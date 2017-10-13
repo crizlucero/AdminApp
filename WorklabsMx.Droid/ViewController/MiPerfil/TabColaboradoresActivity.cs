@@ -37,8 +37,8 @@ namespace WorklabsMx.Droid
             _tabs = FindViewById<TabHost>(Resource.Id.tabHostProfile);
             _tabs.Setup(LocalActivityManager);
 
-            CreateNewTab(new Intent(this, typeof(MisColaboradoresActivity)), "tab1", Resources.GetString(Resource.String.MisColaboradores), Resources.GetDrawable(Resource.Mipmap.ic_menu), true);
-            CreateNewTab(new Intent(this, typeof(MisColaboradoresBajaActivity)), "tab2", Resources.GetString(Resource.String.ColaboradoresBaja), Resources.GetDrawable(Resource.Mipmap.ic_domain), false);
+            CreateNewTab(new Intent(this, typeof(MisColaboradoresActivity)), "tab1", Resources.GetString(Resource.String.MisColaboradores), Resources.GetDrawable(Resource.Mipmap.ic_menu, null), true);
+            CreateNewTab(new Intent(this, typeof(MisColaboradoresBajaActivity)), "tab2", Resources.GetString(Resource.String.ColaboradoresBaja), Resources.GetDrawable(Resource.Mipmap.ic_domain, null), false);
 
         }
 
