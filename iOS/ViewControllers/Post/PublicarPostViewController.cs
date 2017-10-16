@@ -7,6 +7,8 @@ using SVProgressHUDBinding;
 using System.Collections.Generic;
 using WorklabsMx.Enum;
 using Photos;
+using System.Threading.Tasks;
+using AVFoundation;
 
 namespace WorklabsMx.iOS
 {
@@ -27,8 +29,9 @@ namespace WorklabsMx.iOS
         }
 
 		public override void ViewDidLoad()
-		{
+        {
 			base.ViewDidLoad();
+            imagePicker = new UIImagePickerController();
             imagePicker.Delegate = this;
 		}
 
@@ -54,6 +57,7 @@ namespace WorklabsMx.iOS
             FechaActual = DateTime.Now;
             lblFechaPublicacion.Text = String.Format("{0:dddd, d MMMM, yyyy}", FechaActual);  // "Sunday, March 9, 2008"
             imgPerfil.Image = ImageGallery.LoadImage(this.ImagenPerfil);
+            this.btnDeleteImge.Hidden = true;
 
 		}
 
@@ -108,21 +112,32 @@ namespace WorklabsMx.iOS
 
         partial void btnGaleria_TouchUpInside(UIButton sender)
         {
+            PresentViewController(CrearActionSheet(), true, null);
+        }
+
+
+        private UIAlertController CrearActionSheet()
+        {
             var ShowGalleryAlert = UIAlertController.Create(null, null, UIAlertControllerStyle.ActionSheet);
 
-            //Add Action
             ShowGalleryAlert.AddAction(this.AbrirGaleria(this.imagePicker));
-            ShowGalleryAlert.AddAction(UIAlertAction.Create("Tomar fotografia", UIAlertActionStyle.Default, null));
+            ShowGalleryAlert.AddAction(this.AbrirCamara(this.imagePicker));
 
             var CloseAction = UIAlertAction.Create("Cancelar", UIAlertActionStyle.Cancel, null);
             ShowGalleryAlert.AddAction(CloseAction);
-            PresentViewController(ShowGalleryAlert, true, null);
+            return ShowGalleryAlert;
+
         }
 
         [Foundation.Export("imagePickerController:didFinishPickingImage:editingInfo:")]
         public void FinishedPickingImage(UIKit.UIImagePickerController picker, UIKit.UIImage image, Foundation.NSDictionary editingInfo)
         {
-            var ImagenSeleccionada = image;
+            this.btnImageComment.SetImage(image, UIControlState.Normal);
+            this.btnDeleteImge.Hidden = false;
+            this.btnPublicar.Enabled = true;
+            this.btnPublicar.Layer.Opacity = 1f;
+            this.btnImageComment.ContentMode = UIViewContentMode.ScaleAspectFit;
+            picker.DismissViewController(true, null);
         }
 
         [Foundation.Export("imagePickerControllerDidCancel:")]
@@ -148,13 +163,39 @@ namespace WorklabsMx.iOS
             return imagePicker;
         }
 
+        private UIAlertAction AbrirCamara(UIImagePickerController ImagePicker)
+        {
+            const String HeaderMessage = "Se necesita acceso a la camara";
+            const String BodyMessage = "Habilita el acceso de Worklabs a la camara en la configuración de tu iPhone";
+            UIAlertAction openCamera = UIAlertAction.Create("Tomar fotografia", UIAlertActionStyle.Default, (action) =>
+            {
+                AVCaptureDevice.RequestAccessForMediaType(NSString.Empty ,(accessGranted) => 
+                {
+                    Task.Delay(1000);
+                    if(accessGranted)
+                    {
+                        this.PresentViewController(this.TakePhoto(imagePicker), true, null);
+                    }
+                    else 
+                    {
+                        this.PresentViewController(this.PermisosDispositivo(HeaderMessage, BodyMessage), true, null); 
+                    }
+                });
+            });
+            return openCamera;
+        }
+
+
         private UIAlertAction AbrirGaleria(UIImagePickerController ImagePicker)
         {
+            const String HeaderMessage = "Se necesita acceso a la galería";
+            const String BodyMessage = "Habilita el acceso de Worklabs a la galería en la configuración de tu iPhone";
             UIAlertAction openGalery = UIAlertAction.Create("Selecciona una foto", UIAlertActionStyle.Default, (action) =>
             {
                 var photos = PHPhotoLibrary.AuthorizationStatus;
                 if (photos != PHAuthorizationStatus.NotDetermined)
                 {
+                    Task.Delay(1000);
                     this.PresentViewController(this.SelectImage(ImagePicker), true, null);
                 }
                 else 
@@ -162,10 +203,11 @@ namespace WorklabsMx.iOS
                     PHPhotoLibrary.RequestAuthorization(handler: (obj) => {
                         if (obj != PHAuthorizationStatus.Authorized)
                         {
-                            this.PresentViewController(this.PermisosDispositivo(), true, null); 
+                            this.PresentViewController(this.PermisosDispositivo(HeaderMessage, BodyMessage), true, null); 
                         }
                         else 
                         {
+                            Task.Delay(1000);
                             this.PresentViewController(this.SelectImage(ImagePicker), true, null);
                         }
                     });
@@ -175,13 +217,30 @@ namespace WorklabsMx.iOS
 
         }
 
-        private UIAlertController PermisosDispositivo()
+        private UIAlertController PermisosDispositivo(String headerMessage, String BodyMessage)
         {
-            var message = "Habilita el acceso de Worklabs a la cámara en la configuración iPhone";
-            var alert = UIAlertController.Create("Se necesita acceso a la galeria", message, UIAlertControllerStyle.Alert);
+            var alert = UIAlertController.Create(headerMessage, BodyMessage, UIAlertControllerStyle.Alert);
+            alert.AddAction(UIAlertAction.Create("Aceptar", UIAlertActionStyle.Default, (Action) =>
+            {
+                this.openSettings();
+            }));
             return alert;
         }
 
-        
+        private void openSettings()
+        {
+            var url = new NSUrl(UIApplication.OpenSettingsUrlString.ToString());
+            UIApplication.SharedApplication.OpenUrl(url);
+        }
+
+        partial void btnImageComment_TouchUpInside(UIButton sender)
+        {
+            
+        }
+
+        partial void btnDeleteImage_TouchUpInside(UIButton sender)
+        {
+            this.btnImageComment.SetImage(null, UIControlState.Normal);
+        }
     }
 }

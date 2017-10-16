@@ -6,8 +6,8 @@
 	<dict>
 		<key>output-files</key>
 		<array>
-			<string>/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/actool/bundle/Assets.car</string>
-			<string>/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/actool/partial-info.plist</string>
+			<string>/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/actool/bundle/Assets.car</string>
+			<string>/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/actool/partial-info.plist</string>
 		</array>
 	</dict>
 </dict>
