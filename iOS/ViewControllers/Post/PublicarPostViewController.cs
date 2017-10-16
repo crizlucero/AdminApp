@@ -19,6 +19,8 @@ namespace WorklabsMx.iOS
         string Ocupacion;
         string ImagenPerfil;
 
+        UIImagePickerController imagePicker;
+
         public PublicarPostViewController(IntPtr handle) : base(handle)
         {
             storageLocal = SimpleStorage.EditGroup("Login");
@@ -27,6 +29,7 @@ namespace WorklabsMx.iOS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+            imagePicker.Delegate = this;
 		}
 
 		public void setInfoPublicacion(List<string> miembro)
@@ -108,7 +111,7 @@ namespace WorklabsMx.iOS
             var ShowGalleryAlert = UIAlertController.Create(null, null, UIAlertControllerStyle.ActionSheet);
 
             //Add Action
-            ShowGalleryAlert.AddAction(UIAlertAction.Create("Seleccionar de la galeria", UIAlertActionStyle.Default, null));
+            ShowGalleryAlert.AddAction(this.AbrirGaleria(this.imagePicker));
             ShowGalleryAlert.AddAction(UIAlertAction.Create("Tomar fotografia", UIAlertActionStyle.Default, null));
 
             var CloseAction = UIAlertAction.Create("Cancelar", UIAlertActionStyle.Cancel, null);
@@ -116,7 +119,19 @@ namespace WorklabsMx.iOS
             PresentViewController(ShowGalleryAlert, true, null);
         }
 
-        private UIImagePickerController SelectImage(UIImagePickerController imagePicker)
+        [Foundation.Export("imagePickerController:didFinishPickingImage:editingInfo:")]
+        public void FinishedPickingImage(UIKit.UIImagePickerController picker, UIKit.UIImage image, Foundation.NSDictionary editingInfo)
+        {
+            var ImagenSeleccionada = image;
+        }
+
+        [Foundation.Export("imagePickerControllerDidCancel:")]
+        public void Canceled(UIKit.UIImagePickerController picker)
+        {
+            picker.DismissViewController(true, null);
+        }
+
+        private UIImagePickerController SelectImage(UIImagePickerController ImagePicker)
         {
             imagePicker.AllowsEditing = false;
             imagePicker.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
@@ -124,7 +139,7 @@ namespace WorklabsMx.iOS
             return imagePicker;
         }
 
-        private UIImagePickerController TakePhoto(UIImagePickerController imagePicker)
+        private UIImagePickerController TakePhoto(UIImagePickerController ImagePicker)
         {
             imagePicker.AllowsEditing = false;
             imagePicker.SourceType = UIImagePickerControllerSourceType.Camera;
@@ -133,24 +148,40 @@ namespace WorklabsMx.iOS
             return imagePicker;
         }
 
-       /* private UIAlertAction AbrirGaleria(UIImagePickerController ImagePicker)
+        private UIAlertAction AbrirGaleria(UIImagePickerController ImagePicker)
         {
-            var abrirGaleria = UIAlertAction.Create("Seleccionar foto", UIAlertActionStyle.Default, actionAbrirGaleria(ImagePicker));
-            return abrirGaleria;
-            
+            UIAlertAction openGalery = UIAlertAction.Create("Selecciona una foto", UIAlertActionStyle.Default, (action) =>
+            {
+                var photos = PHPhotoLibrary.AuthorizationStatus;
+                if (photos != PHAuthorizationStatus.NotDetermined)
+                {
+                    this.PresentViewController(this.SelectImage(ImagePicker), true, null);
+                }
+                else 
+                {
+                    PHPhotoLibrary.RequestAuthorization(handler: (obj) => {
+                        if (obj != PHAuthorizationStatus.Authorized)
+                        {
+                            this.PresentViewController(this.PermisosDispositivo(), true, null); 
+                        }
+                        else 
+                        {
+                            this.PresentViewController(this.SelectImage(ImagePicker), true, null);
+                        }
+                    });
+                }
+            });
+            return openGalery;
+
         }
 
-        private void actionAbrirGaleria(UIImagePickerController ImagePicker)
+        private UIAlertController PermisosDispositivo()
         {
-            var photos = PHPhotoLibrary.AuthorizationStatus;
-            if (photos != PHAuthorizationStatus.NotDetermined)
-            {
-                this.PresentViewController(this.SelectImage(ImagePicker), true , null);
+            var message = "Habilita el acceso de Worklabs a la cámara en la configuración iPhone";
+            var alert = UIAlertController.Create("Se necesita acceso a la galeria", message, UIAlertControllerStyle.Alert);
+            return alert;
+        }
 
-            }
-            PHPhotoLibrary.RequestAuthorization({ 
-                
-            });
-        }*/
+        
     }
 }
