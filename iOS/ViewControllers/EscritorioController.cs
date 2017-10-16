@@ -13,7 +13,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 
         static int currentPage = 0;
 
-        List<PostModel> posts;         List<PostModel> allPosts = new Controllers.EscritorioController().GetMuroPosts(currentPage);         List<string> miembro;         PostModel CurrentPost;          UIImageView ImagenPerfil;
+        List<PostModel> posts;         List<PostModel> allPosts = new Controllers.EscritorioController().GetMuroPosts(currentPage);         List<string> miembro;         List<String> Likes = new List<string>();         List<UIImage> PostImages = new List<UIImage>();         PostModel CurrentPost;          UIImageView ImagenPerfil;
 
         public EscritorioController(IntPtr handle) : base(handle)         {
            
@@ -21,7 +21,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 
         public override void ViewDidLoad()
         {
-            base.ViewDidLoad();             currentPage = 0;             if (InternetConectionHelper.VerificarConexion())             {                 allPosts = new Controllers.EscritorioController().GetMuroPosts(currentPage);                 var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");                 miembro = new MiembrosController().GetMemberName(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));             }             else             {                 this.btnScanQr.Title = "";                 this.btnScanQr.Enabled = false;                 isShowInformation = false;                 existeConeccion = false;             }             BTProgressHUD.Dismiss();
+            base.ViewDidLoad();             currentPage = 0;             if (InternetConectionHelper.VerificarConexion())             {                 allPosts = new Controllers.EscritorioController().GetMuroPosts(currentPage);                 for (int Indice = 0; Indice < allPosts.Count; Indice++)                 {                     var like = new Controllers.EscritorioController().GetLikes(allPosts[Indice].POST_ID) + " LIKES";                     var PostImage = ImageGallery.LoadImage(allPosts[Indice].Miembro_Fotografia);                     Likes.Add(like);                     PostImages.Add(PostImage);                 }                 var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");                 miembro = new MiembrosController().GetMemberName(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));             }             else             {                 this.btnScanQr.Title = "";                 this.btnScanQr.Enabled = false;                 isShowInformation = false;                 existeConeccion = false;             }             BTProgressHUD.Dismiss();
 		}
 
         public override void ViewWillAppear(bool animated)
@@ -40,7 +40,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         {
             return TamañoHeader;
         }
-
+         
 
         public override nint RowsInSection(UITableView tableView, nint section)
         {
@@ -69,9 +69,9 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         {
             if (isShowInformation)
             {
-                var currentPost = allPosts[indexPath.Row];
+                var currentPost = allPosts[indexPath.Row];                 var currentLike = Likes[indexPath.Row];                 var currentPostImage = PostImages[indexPath.Row];
                 var currentPostCell = (ComentariosBodyCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
-                currentPostCell.UpdateCell(currentPost);
+                currentPostCell.UpdateCell(currentPost, currentLike, currentPostImage);
                 this.CurrentPost = currentPost;
                 return currentPostCell;
             }
@@ -87,16 +87,15 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 				var CommentView = (ComentarPostTableViewController)segue.DestinationViewController;
 				CommentView.setInfoPost(this.CurrentPost);             }
         }  
-        public override void WillDisplay(UITableView tableView, UITableViewCell cell, Foundation.NSIndexPath indexPath)
-        {
+        public override void WillDisplay(UITableView tableView, UITableViewCell cell, Foundation.NSIndexPath indexPath)         {
 			
-            if (tableView.ContentOffset.Y > (tableView.ContentSize.Height - tableView.Frame.Size.Height))
+            if (tableView.ContentOffset.Y >= (tableView.ContentSize.Height - tableView.Frame.Size.Height))
 			{                                  BTProgressHUD.Show();                 if (InternetConectionHelper.VerificarConexion())                 {
                     currentPage += 5;
                     posts = new Controllers.EscritorioController().GetMuroPosts(currentPage);
                     foreach (var post in posts)
                     {
-                        allPosts.Add(post);
+                        allPosts.Add(post);                         var like = new Controllers.EscritorioController().GetLikes(post.POST_ID) + " LIKES";                         var PostImage = ImageGallery.LoadImage(post.Miembro_Fotografia);                         Likes.Add(like);                         PostImages.Add(PostImage);
                     }
                     this.TableView.ReloadData();                     BTProgressHUD.Dismiss();
                 }                 else                 {                     BTProgressHUD.Dismiss();                     new MessageDialog().SendToast("No tienes acceso a una conexión de Internet, intenta de nuevo");                 }

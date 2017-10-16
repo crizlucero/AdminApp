@@ -9,6 +9,8 @@
 	--fastdev \
 	--debug \
 	--linksdkonly \
+	--i18n \
+	'cjk,mideast,other,rare,west' \
 	--sdkroot \
 	/Applications/Xcode.app/Contents/Developer \
 	--sdk \

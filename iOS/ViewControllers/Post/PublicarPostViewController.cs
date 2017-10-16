@@ -171,13 +171,14 @@ namespace WorklabsMx.iOS
             {
                 AVCaptureDevice.RequestAccessForMediaType(NSString.Empty ,(accessGranted) => 
                 {
-                    Task.Delay(1000);
+                    Task.Delay(300);
                     if(accessGranted)
                     {
                         this.PresentViewController(this.TakePhoto(imagePicker), true, null);
                     }
                     else 
                     {
+                        Task.Delay(300);
                         this.PresentViewController(this.PermisosDispositivo(HeaderMessage, BodyMessage), true, null); 
                     }
                 });
@@ -195,7 +196,7 @@ namespace WorklabsMx.iOS
                 var photos = PHPhotoLibrary.AuthorizationStatus;
                 if (photos != PHAuthorizationStatus.NotDetermined)
                 {
-                    Task.Delay(1000);
+                    Task.Delay(300);
                     this.PresentViewController(this.SelectImage(ImagePicker), true, null);
                 }
                 else 
@@ -203,11 +204,12 @@ namespace WorklabsMx.iOS
                     PHPhotoLibrary.RequestAuthorization(handler: (obj) => {
                         if (obj != PHAuthorizationStatus.Authorized)
                         {
+                            Task.Delay(300);
                             this.PresentViewController(this.PermisosDispositivo(HeaderMessage, BodyMessage), true, null); 
                         }
                         else 
                         {
-                            Task.Delay(1000);
+                            Task.Delay(300);
                             this.PresentViewController(this.SelectImage(ImagePicker), true, null);
                         }
                     });
@@ -224,13 +226,13 @@ namespace WorklabsMx.iOS
             {
                 this.openSettings();
             }));
+            alert.AddAction(UIAlertAction.Create("Cancelar", UIAlertActionStyle.Default, null));
             return alert;
         }
 
         private void openSettings()
         {
-            var url = new NSUrl(UIApplication.OpenSettingsUrlString.ToString());
-            UIApplication.SharedApplication.OpenUrl(url);
+            UIApplication.SharedApplication.OpenUrl(new NSUrl(UIApplication.OpenSettingsUrlString));
         }
 
         partial void btnImageComment_TouchUpInside(UIButton sender)

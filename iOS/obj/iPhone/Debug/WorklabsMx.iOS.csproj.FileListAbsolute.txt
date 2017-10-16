@@ -67,6 +67,7 @@
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.csproj.CoreCompileInputs.cache
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.exe
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.pdb
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Debug/BTProgressHUD.dll
 /Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/bin/iPhone/Debug/WorklabsMx.iOS.exe.config
 /Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/bin/iPhone/Debug/WorklabsMx.iOS.exe
 /Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/bin/iPhone/Debug/WorklabsMx.iOS.pdb
@@ -137,4 +138,3 @@
 /Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.csproj.CoreCompileInputs.cache
 /Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.exe
 /Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.pdb
-/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Debug/BTProgressHUD.dll

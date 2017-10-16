@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
+#import <Photos/Photos.h>
 #import <QuartzCore/QuartzCore.h>
 #import <Contacts/Contacts.h>
 #import <EventKit/EventKit.h>
@@ -16,6 +17,7 @@
 #import <CloudKit/CloudKit.h>
 #import <ContactsUI/ContactsUI.h>
 #import <Intents/Intents.h>
+#import <AVFoundation/AVFoundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 
 @protocol UIPickerViewModel;
@@ -43,7 +45,6 @@
 @class ComentariosHeaderCell;
 @class NoComentsCell;
 @class ComentariosBodyCell;
-@class PublicarPostViewController;
 @class ComentarPostTableViewController;
 @class ComentarPostHeaderCell;
 @class ComentarioViewCell;
@@ -88,6 +89,7 @@
 @class PaymentController;
 @class EmpresaMiembroModificaController;
 @class AboutMeModificaController;
+@class PublicarPostViewController;
 @class WorklabsMx_iOS_ViewElements_PostCard;
 @class WorklabsMx_iOS_Styles_STLImageView;
 @class __UIGestureRecognizerToken;
@@ -803,48 +805,6 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface PublicarPostViewController : UIViewController {
-}
-	@property (nonatomic, assign) UIButton * btnClose;
-	@property (nonatomic, assign) UIButton * btnGaleria;
-	@property (nonatomic, assign) UIButton * btnPublicar;
-	@property (nonatomic, assign) UIImageView * imgPerfil;
-	@property (nonatomic, assign) UILabel * lblFechaPublicacion;
-	@property (nonatomic, assign) UILabel * lblNombre;
-	@property (nonatomic, assign) UILabel * lblOcupacion;
-	@property (nonatomic, assign) UITextView * txtPublicacion;
-	@property (nonatomic, assign) UIView * vwVistaComentar;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIButton *) btnClose;
-	-(void) setBtnClose:(UIButton *)p0;
-	-(UIButton *) btnGaleria;
-	-(void) setBtnGaleria:(UIButton *)p0;
-	-(UIButton *) btnPublicar;
-	-(void) setBtnPublicar:(UIButton *)p0;
-	-(UIImageView *) imgPerfil;
-	-(void) setImgPerfil:(UIImageView *)p0;
-	-(UILabel *) lblFechaPublicacion;
-	-(void) setLblFechaPublicacion:(UILabel *)p0;
-	-(UILabel *) lblNombre;
-	-(void) setLblNombre:(UILabel *)p0;
-	-(UILabel *) lblOcupacion;
-	-(void) setLblOcupacion:(UILabel *)p0;
-	-(UITextView *) txtPublicacion;
-	-(void) setTxtPublicacion:(UITextView *)p0;
-	-(UIView *) vwVistaComentar;
-	-(void) setVwVistaComentar:(UIView *)p0;
-	-(void) viewDidLoad;
-	-(void) viewWillAppear:(BOOL)p0;
-	-(void) touchesBegan:(NSSet *)p0 withEvent:(UIEvent *)p1;
-	-(void) btnClose_TouchUpInside:(UIButton *)p0;
-	-(void) btnGaleria_TouchUpInside:(UIButton *)p0;
-	-(void) btnPublicar_TouchUpInside:(UIButton *)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
 @interface ComentarPostTableViewController : UITableViewController {
 }
 	@property (nonatomic, assign) UIView * vwSeccionComentarios;
@@ -1408,6 +1368,58 @@
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
 	-(void) viewDidLoad;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface PublicarPostViewController : UIViewController {
+}
+	@property (nonatomic, assign) UIButton * btnClose;
+	@property (nonatomic, assign) UIButton * btnDeleteImge;
+	@property (nonatomic, assign) UIButton * btnGaleria;
+	@property (nonatomic, assign) UIButton * btnImageComment;
+	@property (nonatomic, assign) UIButton * btnPublicar;
+	@property (nonatomic, assign) UIImageView * imgPerfil;
+	@property (nonatomic, assign) UILabel * lblFechaPublicacion;
+	@property (nonatomic, assign) UILabel * lblNombre;
+	@property (nonatomic, assign) UILabel * lblOcupacion;
+	@property (nonatomic, assign) UITextView * txtPublicacion;
+	@property (nonatomic, assign) UIView * vwVistaComentar;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnClose;
+	-(void) setBtnClose:(UIButton *)p0;
+	-(UIButton *) btnDeleteImge;
+	-(void) setBtnDeleteImge:(UIButton *)p0;
+	-(UIButton *) btnGaleria;
+	-(void) setBtnGaleria:(UIButton *)p0;
+	-(UIButton *) btnImageComment;
+	-(void) setBtnImageComment:(UIButton *)p0;
+	-(UIButton *) btnPublicar;
+	-(void) setBtnPublicar:(UIButton *)p0;
+	-(UIImageView *) imgPerfil;
+	-(void) setImgPerfil:(UIImageView *)p0;
+	-(UILabel *) lblFechaPublicacion;
+	-(void) setLblFechaPublicacion:(UILabel *)p0;
+	-(UILabel *) lblNombre;
+	-(void) setLblNombre:(UILabel *)p0;
+	-(UILabel *) lblOcupacion;
+	-(void) setLblOcupacion:(UILabel *)p0;
+	-(UITextView *) txtPublicacion;
+	-(void) setTxtPublicacion:(UITextView *)p0;
+	-(UIView *) vwVistaComentar;
+	-(void) setVwVistaComentar:(UIView *)p0;
+	-(void) viewDidLoad;
+	-(void) viewWillAppear:(BOOL)p0;
+	-(void) touchesBegan:(NSSet *)p0 withEvent:(UIEvent *)p1;
+	-(void) imagePickerController:(UIImagePickerController *)p0 didFinishPickingImage:(UIImage *)p1 editingInfo:(NSDictionary *)p2;
+	-(void) imagePickerControllerDidCancel:(UIImagePickerController *)p0;
+	-(void) btnClose_TouchUpInside:(UIButton *)p0;
+	-(void) btnDeleteImage_TouchUpInside:(UIButton *)p0;
+	-(void) btnGaleria_TouchUpInside:(UIButton *)p0;
+	-(void) btnImageComment_TouchUpInside:(UIButton *)p0;
+	-(void) btnPublicar_TouchUpInside:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 

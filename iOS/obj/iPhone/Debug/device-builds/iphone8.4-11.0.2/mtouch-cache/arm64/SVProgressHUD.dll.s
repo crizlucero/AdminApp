@@ -23412,13 +23412,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 228,3176,169,247,70,391195135,0,32275
+	.long 228,3176,169,247,70,391195135,0,32279
 	.long 128,8,8,10,0,25,36584,4296
 	.long 4032,3088,0,3504,3992,3184,0,2480
 	.long 344,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 166,195,32,76,116,182,120,54,115,141,123,102,97,134,60,76
+	.byte 96,204,115,0,233,100,24,228,71,222,35,222,227,254,45,213
 	.globl _mono_aot_module_SVProgressHUD_info
 	.align 3
 _mono_aot_module_SVProgressHUD_info:

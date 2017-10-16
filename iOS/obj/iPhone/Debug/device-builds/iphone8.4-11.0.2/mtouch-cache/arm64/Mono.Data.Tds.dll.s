@@ -8923,7 +8923,7 @@ ldr x1, [x16, #280]
 .word 0xaa1903e0
 .word 0xaa1a03e1
 .word 0xf9400322
-.word 0xf9408050
+.word 0xf9408450
 .word 0xd63f0200
 .word 0x14000048
 .loc 2 477 0
@@ -8947,7 +8947,7 @@ ldr x1, [x16, #280]
 .word 0xaa1903e0
 .word 0xaa1a03e1
 .word 0xf9400322
-.word 0xf9408050
+.word 0xf9408450
 .word 0xd63f0200
 .word 0x14000032
 .loc 2 479 0
@@ -8960,7 +8960,7 @@ bl _p_41
 .word 0xf9401ba2
 .word 0xaa0203e0
 .word 0xf9400042
-.word 0xf9408050
+.word 0xf9408450
 .word 0xd63f0200
 .word 0x14000026
 .loc 2 481 0
@@ -8973,7 +8973,7 @@ bl _p_41
 .word 0xf9401ba2
 .word 0xaa0203e0
 .word 0xf9400042
-.word 0xf9408050
+.word 0xf9408450
 .word 0xd63f0200
 .word 0x1400001a
 .loc 2 483 0
@@ -12114,7 +12114,7 @@ bl _p_64
 .word 0xaa0203e0
 .word 0xf9400fa1
 .word 0xf9400042
-.word 0xf9408050
+.word 0xf9408450
 .word 0xd63f0200
 .loc 4 586 0
 .word 0xf90033a0
@@ -32572,7 +32572,7 @@ Mono_Data_Tds_Protocol_TdsComm_Append_string:
 .word 0xaa0203e0
 .word 0xaa1a03e1
 .word 0xf9400042
-.word 0xf9408050
+.word 0xf9408450
 .word 0xd63f0200
 .word 0xaa0003e1
 .word 0xaa1903e0
@@ -32641,7 +32641,7 @@ bl _p_22
 .word 0xaa0203e0
 .word 0xaa1803e1
 .word 0xf9400042
-.word 0xf9408050
+.word 0xf9408450
 .word 0xd63f0200
 .word 0xaa0003f8
 .loc 10 416 0
@@ -44783,7 +44783,7 @@ _mono_aot_file_info:
 	.long 624,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 141,190,7,48,32,176,160,92,8,143,221,75,214,11,255,134
+	.byte 88,50,103,216,78,19,57,204,228,174,198,141,64,30,82,116
 	.globl _mono_aot_module_Mono_Data_Tds_info
 	.align 3
 _mono_aot_module_Mono_Data_Tds_info:
