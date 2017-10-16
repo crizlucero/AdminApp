@@ -11,7 +11,6 @@ namespace WorklabsMx.iOS
 
         PostModel PostLocal;
         SimpleStorage storageLocal;
-        String LikesLocal;
 
         public ComentariosBodyCell (IntPtr handle) : base (handle)
         {
@@ -31,7 +30,6 @@ namespace WorklabsMx.iOS
 
             imgPerfil.Image = PostImage;
 
-            LikesLocal = Likes;
             PostLocal = post;
 		}
 
@@ -40,7 +38,7 @@ namespace WorklabsMx.iOS
             storageLocal = SimpleStorage.EditGroup("Login");
             if (new Controllers.EscritorioController().PostLike(PostLocal.POST_ID, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo")))
             {
-                this.lblLikes.Text = LikesLocal;
+                this.lblLikes.Text = new Controllers.EscritorioController().GetLikes(PostLocal.POST_ID) + " LIKES";
             }
         }
     }

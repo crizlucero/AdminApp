@@ -238,12 +238,22 @@ namespace WorklabsMx.iOS
 
         partial void btnImageComment_TouchUpInside(UIButton sender)
         {
-            
+            this.PerformSegue("toViewImage", null);
         }
 
         partial void btnDeleteImage_TouchUpInside(UIButton sender)
         {
             this.btnImageComment.SetImage(null, UIControlState.Normal);
+        }
+
+        public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
+        {
+            if (segue.Identifier == "toViewImage")
+            {
+                var postCommentView = (DetailCommentImage)segue.DestinationViewController;
+                postCommentView.ImagenPost = this.btnImageComment.ImageView;
+            }
+
         }
     }
 }

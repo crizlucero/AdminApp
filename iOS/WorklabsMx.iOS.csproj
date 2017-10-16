@@ -663,6 +663,10 @@
     <Compile Include="SeccionComentariosTableViewController.designer.cs">
       <DependentUpon>SeccionComentariosTableViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetailCommentImage.cs" />
+    <Compile Include="DetailCommentImage.designer.cs">
+      <DependentUpon>DetailCommentImage.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
