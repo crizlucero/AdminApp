@@ -169,16 +169,17 @@ namespace WorklabsMx.iOS
             const String BodyMessage = "Habilita el acceso de Worklabs a la camara en la configuración de tu iPhone";
             UIAlertAction openCamera = UIAlertAction.Create("Tomar fotografia", UIAlertActionStyle.Default, (action) =>
             {
-                AVCaptureDevice.RequestAccessForMediaType(NSString.Empty ,(accessGranted) => 
+                AVCaptureDevice.RequestAccessForMediaType(AVMediaType.Video ,(accessGranted) => 
                 {
-                    Task.Delay(300);
+                    
                     if(accessGranted)
                     {
+                        
                         this.PresentViewController(this.TakePhoto(imagePicker), true, null);
                     }
                     else 
                     {
-                        Task.Delay(300);
+                       
                         this.PresentViewController(this.PermisosDispositivo(HeaderMessage, BodyMessage), true, null); 
                     }
                 });
@@ -196,7 +197,7 @@ namespace WorklabsMx.iOS
                 var photos = PHPhotoLibrary.AuthorizationStatus;
                 if (photos != PHAuthorizationStatus.NotDetermined)
                 {
-                    Task.Delay(300);
+                    //Task.Delay(300);
                     this.PresentViewController(this.SelectImage(ImagePicker), true, null);
                 }
                 else 
@@ -204,12 +205,12 @@ namespace WorklabsMx.iOS
                     PHPhotoLibrary.RequestAuthorization(handler: (obj) => {
                         if (obj != PHAuthorizationStatus.Authorized)
                         {
-                            Task.Delay(300);
+                            //Task.Delay(300);
                             this.PresentViewController(this.PermisosDispositivo(HeaderMessage, BodyMessage), true, null); 
                         }
                         else 
                         {
-                            Task.Delay(300);
+                            //Task.Delay(300);
                             this.PresentViewController(this.SelectImage(ImagePicker), true, null);
                         }
                     });

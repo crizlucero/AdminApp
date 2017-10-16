@@ -1,20 +1,24 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/EscritorioController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Post/PublicarPostViewController.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="30" Column="10" />
-      <File FileName="iOS/ViewControllers/Post/ComentariosBodyCell.cs" Line="31" Column="55" />
+      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="130" Column="9" />
       <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="54" Column="1" />
       <File FileName="iOS/SeccionComentariosTableViewController.cs" Line="1" Column="1" />
       <File FileName="iOS/ComentarPostTableViewController.cs" Line="57" Column="42" />
-      <File FileName="iOS/ViewControllers/Post/PublicarPostViewController.cs" Line="81" Column="4" />
+      <File FileName="iOS/ViewControllers/Post/PublicarPostViewController.cs" Line="170" Column="1" />
       <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="367" Column="97" />
-      <File FileName="iOS/Helpers/ImageGallery.cs" Line="66" Column="30" />
+      <File FileName="iOS/Helpers/ImageGallery.cs" Line="66" Column="31" />
+      <File FileName="iOS/Main.cs" Line="10" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/Post/PublicarPostViewController.cs" relfile="iOS/ViewControllers/Post/PublicarPostViewController.cs" line="243" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/Post/PublicarPostViewController.cs" relfile="iOS/ViewControllers/Post/PublicarPostViewController.cs" line="246" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/Post/PublicarPostViewController.cs" relfile="iOS/ViewControllers/Post/PublicarPostViewController.cs" line="154" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/Post/PublicarPostViewController.cs" relfile="iOS/ViewControllers/Post/PublicarPostViewController.cs" line="152" column="27" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/Post/PublicarPostViewController.cs" relfile="iOS/ViewControllers/Post/PublicarPostViewController.cs" line="178" column="66" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/Post/PublicarPostViewController.cs" relfile="iOS/ViewControllers/Post/PublicarPostViewController.cs" line="168" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

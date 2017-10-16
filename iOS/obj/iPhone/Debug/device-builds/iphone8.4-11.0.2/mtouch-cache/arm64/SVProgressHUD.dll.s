@@ -23418,7 +23418,7 @@ _mono_aot_file_info:
 	.long 344,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 96,204,115,0,233,100,24,228,71,222,35,222,227,254,45,213
+	.byte 236,222,179,41,221,191,173,141,115,236,198,26,80,201,159,50
 	.globl _mono_aot_module_SVProgressHUD_info
 	.align 3
 _mono_aot_module_SVProgressHUD_info:
