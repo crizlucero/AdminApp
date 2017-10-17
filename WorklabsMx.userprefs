@@ -5,6 +5,23 @@
       <File FileName="WorklabsMx.Droid/ViewController/AccesoActivity.cs" Line="23" Column="35" />
       <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="42" Column="82" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WorklabsMx" expanded="True">
+            <Node name="WorklabsMx" expanded="True">
+              <Node name="Controllers" expanded="True" />
+            </Node>
+            <Node name="WorklabsMx.iOS" expanded="True">
+              <Node name="ViewControllers" expanded="True">
+                <Node name="Post" expanded="True" />
+                <Node name="EscritorioController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

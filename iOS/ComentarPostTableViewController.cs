@@ -4,8 +4,8 @@ using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Models;
 using BigTed;
 using CoreGraphics;
-
 using Foundation;
+using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
@@ -72,11 +72,12 @@ namespace WorklabsMx.iOS
             this.LocalPost = Post;
 		}
 
-		public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
+        public async override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
 		{
+            BTProgressHUD.Show(status: "Cargando comentarios");
+            await Task.Delay(500);
 			if (segue.Identifier == "SeccionComentarios")
 			{
-                BTProgressHUD.Show(status: "Cargando comentarios");
                 var comentariostView = (SeccionComentariosTableViewController)segue.DestinationViewController;
                 objSeccionComentarios = comentariostView;
 				comentariostView.setInfoPosto(this.LocalPost);

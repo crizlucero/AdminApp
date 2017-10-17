@@ -10,5 +10,32 @@
 			<string>/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/actool/partial-info.plist</string>
 		</array>
 	</dict>
+	<key>com.apple.actool.document.warnings</key>
+	<array>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Likes.imageset/[universal][][][1x][][][][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>The file "Likes.png" for the image set "Likes" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Likes.imageset/[universal][][][1x][][][][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>The file "Likes.png" for the image set "Likes" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+	</array>
 </dict>
 </plist>

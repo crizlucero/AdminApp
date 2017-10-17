@@ -17,7 +17,6 @@ extern void *mono_aot_module_System_Runtime_Serialization_info;
 extern void *mono_aot_module_Microsoft_CSharp_info;
 extern void *mono_aot_module_Telerik_Xamarin_iOS_info;
 extern void *mono_aot_module_BTProgressHUD_info;
-extern void *mono_aot_module_SVProgressHUD_info;
 extern void *mono_aot_module_Plugin_Connectivity_info;
 extern void *mono_aot_module_Plugin_Connectivity_Abstractions_info;
 extern void *mono_aot_module_I18N_info;
@@ -46,7 +45,6 @@ void xamarin_register_modules_impl ()
 	mono_aot_register_module (mono_aot_module_Microsoft_CSharp_info);
 	mono_aot_register_module (mono_aot_module_Telerik_Xamarin_iOS_info);
 	mono_aot_register_module (mono_aot_module_BTProgressHUD_info);
-	mono_aot_register_module (mono_aot_module_SVProgressHUD_info);
 	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_info);
 	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_Abstractions_info);
 	mono_aot_register_module (mono_aot_module_I18N_info);
@@ -64,8 +62,6 @@ void xamarin_register_assemblies_impl ()
 	xamarin_open_and_register ("Telerik.Xamarin.iOS.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
 	xamarin_open_and_register ("BTProgressHUD.dll", &exception_gchandle);
-	xamarin_process_managed_exception_gchandle (exception_gchandle);
-	xamarin_open_and_register ("SVProgressHUD.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
 
 }

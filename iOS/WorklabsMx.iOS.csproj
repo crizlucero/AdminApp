@@ -448,7 +448,6 @@
     <ImageAsset Include="Assets.xcassets\Profile.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Profile.imageset\profile.png" />
     <ImageAsset Include="Assets.xcassets\Likes.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Likes.imageset\Likes.png" />
     <ImageAsset Include="Assets.xcassets\Comments.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Comments.imageset\Comments.png" />
     <ImageAsset Include="Assets.xcassets\back.imageset\back.png" />
@@ -478,6 +477,12 @@
     <ImageAsset Include="Assets.xcassets\delete-image.imageset\dele-image.png" />
     <ImageAsset Include="Assets.xcassets\delete-image.imageset\dele-image%402x.png" />
     <ImageAsset Include="Assets.xcassets\delete-image.imageset\dele-image%403x.png" />
+    <ImageAsset Include="Assets.xcassets\close.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\close.imageset\close.png" />
+    <ImageAsset Include="Assets.xcassets\close.imageset\close%402x.png" />
+    <ImageAsset Include="Assets.xcassets\close.imageset\close%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Likes.imageset\Likes%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Likes.imageset\Likes%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -717,6 +722,7 @@
     <Folder Include="Assets.xcassets\ic_comentar.imageset\" />
     <Folder Include="Assets.xcassets\Camera.imageset\" />
     <Folder Include="Assets.xcassets\delete-image.imageset\" />
+    <Folder Include="Assets.xcassets\close.imageset\" />
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
