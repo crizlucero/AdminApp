@@ -34,7 +34,13 @@ namespace WorklabsMx.Droid.Helpers
             }
             return null;
         }
-
+        /// <summary>
+        /// Carga y redimensiona la imagen
+        /// </summary>
+        /// <returns>Imagen redimensionada</returns>
+        /// <param name="fileName">Nombre del archivo</param>
+        /// <param name="width">Ancho</param>
+        /// <param name="height">Alto</param>
         public static Bitmap LoadAndResizeBitmap(this string fileName, int width, int height)
         {
             // First we get the the dimensions of the file on disk

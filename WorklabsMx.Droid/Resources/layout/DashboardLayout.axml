@@ -42,7 +42,8 @@
             android:layout_column="1"
             android:text="@string/Nombre"
             android:textStyle="bold"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:layout_marginRight="10dp" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblPuesto"

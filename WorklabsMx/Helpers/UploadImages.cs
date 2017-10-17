@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Specialized;
+using System.Drawing;
 using System.IO;
 using System.Net;
+using System.Net.Http;
+using System.Text;
 
 namespace WorklabsMx.Helpers
 {
@@ -10,9 +14,9 @@ namespace WorklabsMx.Helpers
         public bool UploadBitmapAsync(byte[] image)
         {
             string boundary = "---------------------------" + DateTime.Now.Ticks.ToString("x");
-            byte[] boundaryBytes = System.Text.Encoding.ASCII.GetBytes("--" + boundary + "\r\n");
+            byte[] boundaryBytes = Encoding.ASCII.GetBytes("--" + boundary + "\r\n");
 
-            WebRequest request = WebRequest.Create("");
+            WebRequest request = WebRequest.Create("http://10.10.28.127:8080/api/Image/");
             request.ContentType = "multipart/form-data; boundary=" + boundary;
             request.Method = "POST";
 
@@ -23,8 +27,8 @@ namespace WorklabsMx.Helpers
 
                 // write header bytes.
                 string headerTemplate = "Content-Disposition: form-data; name=\"{0}\"; filename=\"{1}\"\r\nContent-Type: {2}\r\n\r\n";
-                string header = string.Format(headerTemplate, "MyName", "MyFileName", "content type");
-                byte[] headerbytes = System.Text.Encoding.UTF8.GetBytes(header);
+                string header = string.Format(headerTemplate, "name", "MyFileName.png", "content type");
+                byte[] headerbytes = Encoding.UTF8.GetBytes(header);
                 requestStream.Write(headerbytes, 0, headerbytes.Length);
 
                 using (MemoryStream memoryStream = new MemoryStream(image))
@@ -38,15 +42,9 @@ namespace WorklabsMx.Helpers
                 }
 
                 // write trailing boundary bytes.
-                byte[] trailerBytes = System.Text.Encoding.ASCII.GetBytes("\r\n--" + boundary + "--\r\n");
+                byte[] trailerBytes = Encoding.ASCII.GetBytes("\r\n--" + boundary + "--\r\n");
                 requestStream.Write(trailerBytes, 0, trailerBytes.Length);
 
-            }
-            using (HttpWebResponse wr = (HttpWebResponse)request.GetResponse())
-            {
-                using (Stream response = wr.GetResponseStream())
-                {
-                }
             }
             return false;
         }

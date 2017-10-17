@@ -37,7 +37,7 @@ namespace WorklabsMx.Controllers
                         Tipo = reader["Usuario_Tipo"].ToString(),
                         MIEMBRO_ID = reader["Usuario_Id"].ToString(),
                         POST_FECHA = reader["POST_FECHA"].ToString(),
-                        POST_FOTO_URL = reader["POST_FOTO_URL"].ToString(),
+                        POST_FOTO_URL = reader["POST_FOTO_URL"].ToString().Replace(@"\","/"),
                         POST_CONTENIDO = reader["POST_CONTENIDO"].ToString(),
                         Miembro_Nombre = reader["Usuario_Nombre"].ToString(),
                         Miembro_Apellidos = reader["Usuario_Apellidos"].ToString(),
@@ -400,8 +400,8 @@ namespace WorklabsMx.Controllers
 
                 command.Parameters.AddWithValue("@Post_Fotografia", fotoNombre);
 
-                command.Transaction = transaction;
-                command.ExecuteNonQuery();
+                //command.Transaction = transaction;
+                //command.ExecuteNonQuery();
                 transaction.Commit();
 
             }

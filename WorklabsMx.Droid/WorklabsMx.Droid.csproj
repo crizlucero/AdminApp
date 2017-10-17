@@ -249,6 +249,7 @@
     <AndroidResource Include="Resources\drawable\NoBorderStyle.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_photo_camera.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_add_photo.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_delete.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
