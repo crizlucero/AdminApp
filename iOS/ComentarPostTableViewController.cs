@@ -74,10 +74,10 @@ namespace WorklabsMx.iOS
 
         public async override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
 		{
-            await Task.Delay(2000);
+            BTProgressHUD.Show(status: "Cargando comentarios");
+            await Task.Delay(500);
 			if (segue.Identifier == "SeccionComentarios")
 			{
-                BTProgressHUD.Show(status: "Cargando comentarios");
                 var comentariostView = (SeccionComentariosTableViewController)segue.DestinationViewController;
                 objSeccionComentarios = comentariostView;
 				comentariostView.setInfoPosto(this.LocalPost);

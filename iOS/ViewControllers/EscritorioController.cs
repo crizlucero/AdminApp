@@ -88,8 +88,8 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 				CommentView.setInfoPost(this.CurrentPost);             }
         }  
         public async override void WillDisplay(UITableView tableView, UITableViewCell cell, Foundation.NSIndexPath indexPath)         {
-            if (tableView.ContentOffset.Y >= (tableView.ContentSize.Height - tableView.Frame.Size.Height) - 5)
-			{                 BTProgressHUD.Show();                 await Task.Delay(2000);                 if (InternetConectionHelper.VerificarConexion())                 {
+            if (tableView.ContentOffset.Y >= (tableView.ContentSize.Height - tableView.Frame.Size.Height) - 2)
+			{                 BTProgressHUD.Show();                 await Task.Delay(1000);                 if (InternetConectionHelper.VerificarConexion())                 {
                     currentPage += 5;
                     posts = new Controllers.EscritorioController().GetMuroPosts(currentPage);
                     foreach (var post in posts)

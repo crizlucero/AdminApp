@@ -31,11 +31,6 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            foreach (var comentario in comentarios)
-            {
-                var ImagenComentario = ImageGallery.LoadImage(comentario.Miembro_Fotografia);
-                ImagenesComentario.Add(ImagenComentario);
-            }
             /*var tap = new UITapGestureRecognizer(this.handleTap);
             View.AddGestureRecognizer(tap);*/
 
@@ -49,13 +44,20 @@ namespace WorklabsMx.iOS
 
 		public override nint RowsInSection(UITableView tableView, nint section)
 		{
-			if (comentarios.Count > 0)
-			{
-				isShowInformation = true;
-				return comentarios.Count;
-			}
-			isShowInformation = false;
-			return 1;
+            if (comentarios == null)
+            {
+                return 0;
+            }
+            else
+            {
+                if (comentarios.Count > 0)
+                {
+                    isShowInformation = true;
+                    return comentarios.Count;
+                }
+                isShowInformation = false;
+                return 1;
+            }
 		}
 
 		public override nfloat GetHeightForRow(UITableView tableView, Foundation.NSIndexPath indexPath)
@@ -72,11 +74,12 @@ namespace WorklabsMx.iOS
 
 		public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
 		{
+           
 			if (isShowInformation)
 			{
 				var currentPost = comentarios[indexPath.Row];
 				var currentPostCell = (ComentarioViewCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
-				currentPostCell.UpdateCell(currentPost);
+                currentPostCell.UpdateCell(currentPost, ImagenesComentario[indexPath.Row]);
 				return currentPostCell;
 			}
 			else
@@ -93,18 +96,20 @@ namespace WorklabsMx.iOS
             if (InternetConectionHelper.VerificarConexion())
             {
                 this.comentarios = new Controllers.EscritorioController().GetComentariosPost(Post.POST_ID);
+                foreach (var comentario in comentarios)
+                {
+                    var ImagenComentario = ImageGallery.LoadImage(comentario.Miembro_Fotografia);
+                    ImagenesComentario.Add(ImagenComentario);
+                }
             }
             else
             {
                 isShowInformation = false;
                 existeConeccion = false;
             }
+            BTProgressHUD.Dismiss();
             this.TableView.ReloadData();
 		}
 
-        public void evHandler(Object sender)
-        {
-            // need someData here!!!
-        }
     }
 }
