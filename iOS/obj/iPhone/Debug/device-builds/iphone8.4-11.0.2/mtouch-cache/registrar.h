@@ -556,8 +556,6 @@
 @class TelerikUI_TKViewTransition_TKViewTransitionAppearance;
 @class TKViewTransition;
 @class BigTed_ProgressHUD;
-@class SVProgressHUDBinding_SVProgressHUD_SVProgressHUDAppearance;
-@class SVProgressHUD;
 
 @protocol UIPickerViewModel<UIPickerViewDataSource, UIPickerViewDelegate>
 @end
@@ -6804,50 +6802,6 @@
 	-(void) drawRect:(CGRect)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 	-(id) init;
-@end
-
-@interface SVProgressHUDBinding_SVProgressHUD_SVProgressHUDAppearance : UIKit_UIView_UIViewAppearance {
-}
-@end
-
-@interface SVProgressHUD : UIView {
-}
-	-(UIColor *) backgroundColor;
-	-(void) setBackgroundColor:(UIColor *)p0;
-	-(CGFloat) cornerRadius;
-	-(void) setCornerRadius:(CGFloat)p0;
-	-(NSUInteger) defaultAnimationType;
-	-(void) setDefaultAnimationType:(NSUInteger)p0;
-	-(NSUInteger) defaultMaskType;
-	-(void) setDefaultMaskType:(NSUInteger)p0;
-	-(NSInteger) defaultStyle;
-	-(void) setDefaultStyle:(NSInteger)p0;
-	-(UIImage *) errorImage;
-	-(void) setErrorImage:(UIImage *)p0;
-	-(UIFont *) font;
-	-(void) setFont:(UIFont *)p0;
-	-(UIColor *) foregroundColor;
-	-(void) setForegroundColor:(UIColor *)p0;
-	-(UIImage *) infoImage;
-	-(void) setInfoImage:(UIImage *)p0;
-	-(double) minimumDismissTimeInterval;
-	-(void) setMinimumDismissTimeInterval:(double)p0;
-	-(CGSize) minimumSize;
-	-(void) setMinimumSize:(CGSize)p0;
-	-(UIOffset) offsetFromCenter;
-	-(void) setOffsetFromCenter:(UIOffset)p0;
-	-(CGFloat) ringNoTextRadius;
-	-(void) setRingNoTextRadius:(CGFloat)p0;
-	-(CGFloat) ringRadius;
-	-(void) setRingRadius:(CGFloat)p0;
-	-(CGFloat) ringThickness;
-	-(void) setRingThickness:(CGFloat)p0;
-	-(UIImage *) successImage;
-	-(void) setSuccessImage:(UIImage *)p0;
-	-(UIView *) viewForExtension;
-	-(void) setViewForExtension:(UIView *)p0;
-	-(id) init;
-	-(id) initWithCoder:(NSCoder *)p0;
 @end
 
 

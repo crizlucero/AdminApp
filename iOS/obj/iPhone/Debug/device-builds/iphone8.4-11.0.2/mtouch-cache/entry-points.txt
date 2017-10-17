@@ -650,20 +650,4 @@ ObjectiveCClass=OBJC_CLASS_$_TKViewTransition
 	/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/mtouch-cache/Link/Telerik.Xamarin.iOS.dll
 ObjectiveCClass=OBJC_CLASS_$_TKWeakReference
 	/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/mtouch-cache/Link/Telerik.Xamarin.iOS.dll
-Field=SVProgressHUDDidAppearNotification
-	/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/mtouch-cache/Link/SVProgressHUD.dll
-Field=SVProgressHUDDidDisappearNotification
-	/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/mtouch-cache/Link/SVProgressHUD.dll
-Field=SVProgressHUDDidReceiveTouchEventNotification
-	/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/mtouch-cache/Link/SVProgressHUD.dll
-Field=SVProgressHUDDidTouchDownInsideNotification
-	/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/mtouch-cache/Link/SVProgressHUD.dll
-Field=SVProgressHUDStatusUserInfoKey
-	/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/mtouch-cache/Link/SVProgressHUD.dll
-Field=SVProgressHUDWillAppearNotification
-	/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/mtouch-cache/Link/SVProgressHUD.dll
-Field=SVProgressHUDWillDisappearNotification
-	/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/mtouch-cache/Link/SVProgressHUD.dll
-ObjectiveCClass=OBJC_CLASS_$_SVProgressHUD
-	/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/mtouch-cache/Link/SVProgressHUD.dll
 Function=mono_pmip

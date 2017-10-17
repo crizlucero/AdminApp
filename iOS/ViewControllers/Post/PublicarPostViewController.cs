@@ -3,12 +3,12 @@ using System;
 using UIKit;
 using WorklabsMx.iOS.Helpers;
 using PerpetualEngine.Storage;
-using SVProgressHUDBinding;
 using System.Collections.Generic;
 using WorklabsMx.Enum;
 using Photos;
 using AVFoundation;
 using WorklabsMx.Helpers;
+using BigTed;
 
 namespace WorklabsMx.iOS
 {
@@ -63,18 +63,15 @@ namespace WorklabsMx.iOS
 
         partial void btnPublicar_TouchUpInside(UIButton sender)
         {
-            if (!SVProgressHUD.IsVisible)
-            {
-                SVProgressHUD.ShowWithStatus("Publicando Post");
-            }
+            BTProgressHUD.Show(status: "Iniciando sesión");
             if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtPublicacion.Text, "", this.imgPerfil.Image?.AsPNG().ToArray()))
             {
-                SVProgressHUD.Dismiss();
+                BTProgressHUD.Dismiss();
                 this.DismissViewController(true, null);
             }
             else 
             {
-                SVProgressHUD.Dismiss();
+                BTProgressHUD.Dismiss();
                 new MessageDialog().SendToast("No se pudo publicar el post");
             }
         }

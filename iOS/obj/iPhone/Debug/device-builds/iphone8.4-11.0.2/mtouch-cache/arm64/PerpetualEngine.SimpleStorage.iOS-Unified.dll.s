@@ -59764,7 +59764,7 @@ _mono_aot_file_info:
 	.long 592,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 151,98,232,67,245,174,214,187,168,223,242,218,249,226,199,119
+	.byte 36,130,86,109,18,22,117,216,157,168,166,154,91,149,147,111
 	.globl _mono_aot_module_PerpetualEngine_SimpleStorage_iOS_Unified_info
 	.align 3
 _mono_aot_module_PerpetualEngine_SimpleStorage_iOS_Unified_info:

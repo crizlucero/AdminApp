@@ -1,14 +1,10 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/SeccionComentariosTableViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/EscritorioController.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="54" Column="18" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="10" Column="1" />
-      <File FileName="iOS/ComentarPostTableViewController.cs" Line="6" Column="20" />
-      <File FileName="iOS/SeccionComentariosTableViewController.cs" Line="73" Column="25" />
-      <File FileName="iOS/ComentarioViewCell.cs" Line="21" Column="13" />
-      <File FileName="iOS/ViewControllers/Post/ComentariosBodyCell.cs" Line="24" Column="34" />
-      <File FileName="iOS/ViewControllers/MiPerfil/PerfilController.cs" Line="267" Column="84" />
-      <File FileName="iOS/ViewControllers/AccesoController.cs" Line="59" Column="41" />
+      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="40" Column="9" />
+      <File FileName="iOS/ViewControllers/Post/PublicarPostViewController.cs" Line="66" Column="60" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="9" Column="1" />
+      <File FileName="iOS/ComentarPostTableViewController.cs" Line="83" Column="28" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,8 +14,10 @@
               <Node name="Controllers" expanded="True" />
             </Node>
             <Node name="WorklabsMx.iOS" expanded="True">
-              <Node name="ViewControllers" expanded="True" />
-              <Node name="SeccionComentariosTableViewController.cs" selected="True" />
+              <Node name="ViewControllers" expanded="True">
+                <Node name="Post" expanded="True" />
+                <Node name="EscritorioController.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -28,7 +26,9 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="369" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" />
