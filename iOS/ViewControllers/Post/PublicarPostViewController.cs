@@ -7,8 +7,8 @@ using SVProgressHUDBinding;
 using System.Collections.Generic;
 using WorklabsMx.Enum;
 using Photos;
-using System.Threading.Tasks;
 using AVFoundation;
+using WorklabsMx.Helpers;
 
 namespace WorklabsMx.iOS
 {
@@ -20,54 +20,53 @@ namespace WorklabsMx.iOS
         string Nombre;
         string Ocupacion;
         string ImagenPerfil;
+        float opacity = 0.5f;
 
-        UIImagePickerController imagePicker;
+        UIImagePickerController imgPicker;
 
         public PublicarPostViewController(IntPtr handle) : base(handle)
         {
             storageLocal = SimpleStorage.EditGroup("Login");
         }
 
-		public override void ViewDidLoad()
+        public override void ViewDidLoad()
         {
-			base.ViewDidLoad();
-            imagePicker = new UIImagePickerController();
-            imagePicker.Delegate = this;
-		}
+            base.ViewDidLoad();
 
-		public void setInfoPublicacion(List<string> miembro)
-		{
+            imgPicker = new UIImagePickerController();
+            imgPicker.Delegate = this;
+        }
+
+        public void setInfoPublicacion(List<string> miembro)
+        {
             this.ImagenPerfil = miembro[(int)CamposMiembro.Usuario_Fotografia];
             this.Nombre = miembro[(int)CamposMiembro.Usuario_Nombre];
             this.Ocupacion = miembro[(int)CamposMiembro.Usuario_Puesto];
-		}
+        }
 
-		public override void ViewWillAppear(bool animated)
-		{
-			base.ViewWillAppear(animated);
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
             this.lblNombre.Text = Nombre;
             this.lblOcupacion.Text = Ocupacion;
             var color = new UIColor(1, 0.8f);
             this.View.BackgroundColor = color;
-			StyleHelper.Style(btnPublicar.Layer);
-			StyleHelper.Style(vwVistaComentar.Layer);
-			this.btnPublicar.Enabled = false;
-            this.btnPublicar.Layer.Opacity = 0.5f;
-			this.txtPublicacion.Changed += HandleTextMessageChanged;
+            StyleHelper.Style(btnPublicar.Layer);
+            StyleHelper.Style(vwVistaComentar.Layer);
+            this.btnPublicar.Layer.Opacity = opacity;
+            this.txtPublicacion.Changed += HandleTextMessageChanged;
             FechaActual = DateTime.Now;
             lblFechaPublicacion.Text = String.Format("{0:dddd, d MMMM, yyyy}", FechaActual);  // "Sunday, March 9, 2008"
             imgPerfil.Image = ImageGallery.LoadImage(this.ImagenPerfil);
-            this.btnDeleteImge.Hidden = true;
-
-		}
+        }
 
 
-		partial void btnPublicar_TouchUpInside(UIButton sender)
-		{
-			if (!SVProgressHUD.IsVisible)
-			{
-				SVProgressHUD.ShowWithStatus("Publicando Post");
-			}
+        partial void btnPublicar_TouchUpInside(UIButton sender)
+        {
+            if (!SVProgressHUD.IsVisible)
+            {
+                SVProgressHUD.ShowWithStatus("Publicando Post");
+            }
             if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtPublicacion.Text, "", this.imgPerfil.Image?.AsPNG().ToArray()))
             {
                 SVProgressHUD.Dismiss();
@@ -78,12 +77,12 @@ namespace WorklabsMx.iOS
                 SVProgressHUD.Dismiss();
                 new MessageDialog().SendToast("No se pudo publicar el post");
             }
-		}
+        }
 
-		partial void btnClose_TouchUpInside(UIButton sender)
-		{
-			this.DismissViewController(true, null);
-		}
+        partial void btnClose_TouchUpInside(UIButton sender)
+        {
+            this.DismissViewController(true, null);
+        }
 
         public override void TouchesBegan(NSSet touches, UIEvent evt)
         {
@@ -120,8 +119,8 @@ namespace WorklabsMx.iOS
         {
             var ShowGalleryAlert = UIAlertController.Create(null, null, UIAlertControllerStyle.ActionSheet);
 
-            ShowGalleryAlert.AddAction(this.AbrirGaleria(this.imagePicker));
-            ShowGalleryAlert.AddAction(this.AbrirCamara(this.imagePicker));
+            ShowGalleryAlert.AddAction(this.AbrirGaleria(this.imgPicker));
+            ShowGalleryAlert.AddAction(this.AbrirCamara(this.imgPicker));
 
             var CloseAction = UIAlertAction.Create("Cancelar", UIAlertActionStyle.Cancel, null);
             ShowGalleryAlert.AddAction(CloseAction);
@@ -135,7 +134,7 @@ namespace WorklabsMx.iOS
             this.btnImageComment.SetImage(image, UIControlState.Normal);
             this.btnDeleteImge.Hidden = false;
             this.btnPublicar.Enabled = true;
-            this.btnPublicar.Layer.Opacity = 1f;
+            opacity = 1f;
             this.btnImageComment.ContentMode = UIViewContentMode.ScaleAspectFit;
             picker.DismissViewController(true, null);
         }
@@ -148,44 +147,52 @@ namespace WorklabsMx.iOS
 
         private UIImagePickerController SelectImage(UIImagePickerController ImagePicker)
         {
-            imagePicker.AllowsEditing = false;
-            imagePicker.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
-            imagePicker.AllowsEditing = true;
-            return imagePicker;
-        }
-
-        private UIImagePickerController TakePhoto(UIImagePickerController ImagePicker)
-        {
-            imagePicker.AllowsEditing = false;
-            imagePicker.SourceType = UIImagePickerControllerSourceType.Camera;
-            imagePicker.CameraDevice = UIImagePickerControllerCameraDevice.Rear;
-            imagePicker.AllowsEditing = true;
-            return imagePicker;
+            ImagePicker.AllowsEditing = false;
+            ImagePicker.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+            ImagePicker.AllowsEditing = true;
+            return ImagePicker;
         }
 
         private UIAlertAction AbrirCamara(UIImagePickerController ImagePicker)
         {
             const String HeaderMessage = "Se necesita acceso a la camara";
             const String BodyMessage = "Habilita el acceso de Worklabs a la camara en la configuración de tu iPhone";
-            UIAlertAction openCamera = UIAlertAction.Create("Tomar fotografia", UIAlertActionStyle.Default, (action) =>
+
+
+            UIAlertAction openCamera = UIAlertAction.Create("Tomar fotografia", UIAlertActionStyle.Default,  ( action ) =>
             {
-                AVCaptureDevice.RequestAccessForMediaType(AVMediaType.Video ,(accessGranted) => 
-                {
-                    
-                    if(accessGranted)
+                AVCaptureDevice.RequestAccessForMediaType(AVMediaType.Video, ( bool isAccessGranted) => 
+                   {
+                    InvokeOnMainThread(() => 
                     {
-                        
-                        this.PresentViewController(this.TakePhoto(imagePicker), true, null);
-                    }
-                    else 
-                    {
-                       
-                        this.PresentViewController(this.PermisosDispositivo(HeaderMessage, BodyMessage), true, null); 
-                    }
-                });
+                        try
+                       {
+                           if (isAccessGranted)
+                           {
+                               ImagePicker.SourceType = UIImagePickerControllerSourceType.Camera;
+                               ImagePicker.CameraDevice = UIImagePickerControllerCameraDevice.Rear;
+                               ImagePicker.AllowsEditing = true;
+
+                                this.PresentViewController(ImagePicker, true, null);
+                           }
+                           else
+                           {
+                                this.PresentViewController(this.PermisosDispositivo(HeaderMessage, BodyMessage), true, null);
+                           }
+                       }
+                       catch (Exception e)
+                       {
+                         SlackLogs.SendMessage(e.Message);
+                       }
+
+                    });
+                   });
+              
             });
+        
             return openCamera;
         }
+
 
 
         private UIAlertAction AbrirGaleria(UIImagePickerController ImagePicker)
@@ -197,22 +204,23 @@ namespace WorklabsMx.iOS
                 var photos = PHPhotoLibrary.AuthorizationStatus;
                 if (photos != PHAuthorizationStatus.NotDetermined)
                 {
-                    //Task.Delay(300);
                     this.PresentViewController(this.SelectImage(ImagePicker), true, null);
                 }
                 else 
                 {
-                    PHPhotoLibrary.RequestAuthorization(handler: (obj) => {
-                        if (obj != PHAuthorizationStatus.Authorized)
+                    PHPhotoLibrary.RequestAuthorization(handler: (obj) =>
+                    {
+                        InvokeOnMainThread(() =>
                         {
-                            //Task.Delay(300);
-                            this.PresentViewController(this.PermisosDispositivo(HeaderMessage, BodyMessage), true, null); 
-                        }
-                        else 
-                        {
-                            //Task.Delay(300);
-                            this.PresentViewController(this.SelectImage(ImagePicker), true, null);
-                        }
+                            if (obj != PHAuthorizationStatus.Authorized)
+                            {
+                                this.PresentViewController(this.PermisosDispositivo(HeaderMessage, BodyMessage), true, null);
+                            }
+                            else
+                            {
+                                this.PresentViewController(this.SelectImage(ImagePicker), true, null);
+                            }
+                        });
                     });
                 }
             });
@@ -244,6 +252,12 @@ namespace WorklabsMx.iOS
         partial void btnDeleteImage_TouchUpInside(UIButton sender)
         {
             this.btnImageComment.SetImage(null, UIControlState.Normal);
+            if (this.txtPublicacion.Text == "")
+            {
+                this.btnPublicar.Layer.Opacity = 0.5f;
+                this.btnPublicar.Enabled = false;
+            }
+            this.btnDeleteImge.Hidden = true;
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)

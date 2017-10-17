@@ -21,6 +21,7 @@ namespace WorklabsMx.iOS
 		bool isShowInformation = false;
 		bool existeConeccion = true;
 
+        List<UIImage> ImagenesComentario = new List<UIImage>();
         List<ComentarioModel> comentarios;
 
         public SeccionComentariosTableViewController (IntPtr handle) : base (handle)
@@ -30,6 +31,11 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            foreach (var comentario in comentarios)
+            {
+                var ImagenComentario = ImageGallery.LoadImage(comentario.Miembro_Fotografia);
+                ImagenesComentario.Add(ImagenComentario);
+            }
             /*var tap = new UITapGestureRecognizer(this.handleTap);
             View.AddGestureRecognizer(tap);*/
 

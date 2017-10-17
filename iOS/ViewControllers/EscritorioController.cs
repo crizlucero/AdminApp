@@ -1,4 +1,4 @@
-using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.Models; using System.Collections.Generic; using WorklabsMx.Controllers; using BigTed;  namespace WorklabsMx.iOS {     public partial class EscritorioController : UITableViewController //UIViewController
+using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.Models; using System.Collections.Generic; using WorklabsMx.Controllers; using BigTed; using System.Threading.Tasks;  namespace WorklabsMx.iOS {     public partial class EscritorioController : UITableViewController //UIViewController
     {
         const string IdentificadorCeldaHeader = "Header";
         const string IdentificadorCeldaPost = "Post";
@@ -87,10 +87,9 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 				var CommentView = (ComentarPostTableViewController)segue.DestinationViewController;
 				CommentView.setInfoPost(this.CurrentPost);             }
         }  
-        public override void WillDisplay(UITableView tableView, UITableViewCell cell, Foundation.NSIndexPath indexPath)         {
-			
-            if (tableView.ContentOffset.Y >= (tableView.ContentSize.Height - tableView.Frame.Size.Height))
-			{                                  BTProgressHUD.Show();                 if (InternetConectionHelper.VerificarConexion())                 {
+        public async override void WillDisplay(UITableView tableView, UITableViewCell cell, Foundation.NSIndexPath indexPath)         {
+            if (tableView.ContentOffset.Y >= (tableView.ContentSize.Height - tableView.Frame.Size.Height) - 5)
+			{                 BTProgressHUD.Show();                 await Task.Delay(2000);                 if (InternetConectionHelper.VerificarConexion())                 {
                     currentPage += 5;
                     posts = new Controllers.EscritorioController().GetMuroPosts(currentPage);
                     foreach (var post in posts)

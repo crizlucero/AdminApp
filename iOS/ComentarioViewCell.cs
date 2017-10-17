@@ -11,7 +11,7 @@ namespace WorklabsMx.iOS
         {
         }
 
-		internal void UpdateCell(ComentarioModel comentario)
+		internal void UpdateCell(ComentarioModel comentario, UIImage ImagenComentario)
 		{
             lblNombre.Text = comentario.Nombre;
 			lblLikes.Text = "11 LIKES";
@@ -19,7 +19,7 @@ namespace WorklabsMx.iOS
 			lblPuesto.Text = comentario.USUARIO_PUESTO == "" ? "Designer Jewelry" : comentario.USUARIO_PUESTO;
 			lblContenido.Text = comentario.COMM_CONTENIDO == "" ? "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam" : comentario.COMM_CONTENIDO;
 
-			imgPerfil.Image = ImageGallery.LoadImage(comentario.Miembro_Fotografia);
+            imgPerfil.Image = ImagenComentario;
 		}
 
         partial void btnLikes_TouchUpInside(UIButton sender)

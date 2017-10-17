@@ -571,6 +571,16 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc/UIViewController-j9e-Zd-ZbT.nib/objects-11.0+.nib">
+      <LogicalName>Main.storyboardc/UIViewController-j9e-Zd-ZbT.nib/objects-11.0+.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc/UIViewController-j9e-Zd-ZbT.nib/runtime.nib">
+      <LogicalName>Main.storyboardc/UIViewController-j9e-Zd-ZbT.nib/runtime.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc/UIViewController-lv3-U7-Dnb.nib/objects-11.0+.nib">
       <LogicalName>Main.storyboardc/UIViewController-lv3-U7-Dnb.nib/objects-11.0+.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -588,6 +598,16 @@
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc/aw2-K3-JAL-view-Yhm-jV-taQ.nib/runtime.nib">
       <LogicalName>Main.storyboardc/aw2-K3-JAL-view-Yhm-jV-taQ.nib/runtime.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc/j9e-Zd-ZbT-view-wj6-JX-hBV.nib/objects-11.0+.nib">
+      <LogicalName>Main.storyboardc/j9e-Zd-ZbT-view-wj6-JX-hBV.nib/objects-11.0+.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc/j9e-Zd-ZbT-view-wj6-JX-hBV.nib/runtime.nib">
+      <LogicalName>Main.storyboardc/j9e-Zd-ZbT-view-wj6-JX-hBV.nib/runtime.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
