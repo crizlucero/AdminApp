@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X5k-f2-b5h">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="NO" initialViewController="X5k-f2-b5h">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <development version="7000" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,15 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="Icon-60.png" translatesAutoresizingMaskIntoConstraints="NO" id="23">
-                                <rect key="frame" x="270" y="270" width="60" height="60"/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGround" translatesAutoresizingMaskIntoConstraints="NO" id="25A-DZ-oOe">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Leyenda" translatesAutoresizingMaskIntoConstraints="NO" id="ACZ-65-AgG">
+                                <rect key="frame" x="47" y="269" width="506" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="Xai-u7-i9Y"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="23" firstAttribute="centerY" secondItem="yd7-JS-zBw" secondAttribute="centerY" priority="1" id="39"/>
-                            <constraint firstItem="23" firstAttribute="centerX" secondItem="yd7-JS-zBw" secondAttribute="centerX" priority="1" id="41"/>
+                            <constraint firstItem="ACZ-65-AgG" firstAttribute="centerY" secondItem="yd7-JS-zBw" secondAttribute="centerY" constant="-4.5" id="3YR-PC-qOO"/>
+                            <constraint firstAttribute="trailing" secondItem="ACZ-65-AgG" secondAttribute="trailing" constant="47" id="4Iy-Ez-ebL"/>
+                            <constraint firstItem="25A-DZ-oOe" firstAttribute="top" secondItem="yd7-JS-zBw" secondAttribute="top" id="6vb-NX-5Fe"/>
+                            <constraint firstAttribute="trailing" secondItem="25A-DZ-oOe" secondAttribute="trailing" id="Bmt-Ox-HrK"/>
+                            <constraint firstItem="ACZ-65-AgG" firstAttribute="centerX" secondItem="yd7-JS-zBw" secondAttribute="centerX" id="ZCd-Na-eXf"/>
+                            <constraint firstItem="ACZ-65-AgG" firstAttribute="leading" secondItem="yd7-JS-zBw" secondAttribute="leading" constant="47" id="cTU-kg-3rU"/>
+                            <constraint firstItem="9ZL-r4-8FZ" firstAttribute="top" secondItem="25A-DZ-oOe" secondAttribute="bottom" id="frf-Gy-I7o"/>
+                            <constraint firstItem="25A-DZ-oOe" firstAttribute="leading" secondItem="yd7-JS-zBw" secondAttribute="leading" id="wjt-s8-RlY"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -34,9 +46,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="First" width="32" height="30"/>
-        <image name="ProfileImage" width="95" height="95"/>
-        <image name="Second" width="32" height="30"/>
-        <image name="XamarinLogo" width="220" height="51"/>
+        <image name="BackGround" width="16" height="16"/>
+        <image name="Leyenda" width="16" height="16"/>
     </resources>
 </document>

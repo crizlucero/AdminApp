@@ -4,9 +4,9 @@ using Foundation;
 using PerpetualEngine.Storage;
 using UIKit;
 using WorklabsMx.Models;
-using SVProgressHUDBinding;
 using BigTed;
 using System.Threading.Tasks;
+using SidebarNavigation;
 
 namespace WorklabsMx.iOS.Styles
 {
@@ -68,6 +68,7 @@ namespace WorklabsMx.iOS.Styles
                     UIViewController controller = owner.Storyboard.InstantiateViewController(TableItems[indexPath.Row].Controller);
 
                     controller.Title = TableItems[indexPath.Row].Label;
+                    BTProgressHUD.Dismiss();
                     owner.NavigationController.PushViewController(controller, true);
                 }
                 else
