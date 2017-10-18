@@ -49,7 +49,6 @@ namespace WorklabsMx.Droid
                     break;
             }
 
-
             return base.OnOptionsItemSelected(item);
         }
 

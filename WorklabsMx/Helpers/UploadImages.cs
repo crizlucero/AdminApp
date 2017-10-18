@@ -44,7 +44,6 @@ namespace WorklabsMx.Helpers
                 // write trailing boundary bytes.
                 byte[] trailerBytes = Encoding.ASCII.GetBytes("\r\n--" + boundary + "--\r\n");
                 requestStream.Write(trailerBytes, 0, trailerBytes.Length);
-
             }
             return false;
         }
