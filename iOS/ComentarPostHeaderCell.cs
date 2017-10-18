@@ -10,19 +10,33 @@ namespace WorklabsMx.iOS
     {
 
         public string Placeholder { get; set; }
+
         PostModel LocalPost;
-        bool sendComment = false;
 
         public event EventHandler PostComentado;
 
+        public event EventHandler TextoEscrito;
+
         public ComentarPostHeaderCell (IntPtr handle) : base (handle)
         {
-            
+
+        }
+
+        internal void getText(UITextView TextoComentario)
+        {
+            if (TextoComentario != null)
+            {
+                this.txtComentarPost.Text = TextoComentario.Text;
+                this.btnPublicar.Enabled = true;
+                this.btnPublicar.Layer.Opacity = 1f;
+            }
+
         }
 
         internal void UpdateCell(PostModel Post)
         {
             this.LocalPost = Post;
+
             Placeholder = "Escribe un comentario";
             this.txtComentarPost.ShouldBeginEditing = t => {
                 if (this.txtComentarPost.Text == Placeholder)
@@ -38,7 +52,6 @@ namespace WorklabsMx.iOS
                 this.txtComentarPost.TextColor = color;
                 return true;
             };
-
             this.txtComentarPost.Changed += HandleTextMessageChanged;
         }
 
@@ -54,13 +67,14 @@ namespace WorklabsMx.iOS
             }
         }
 
-        internal bool SendActionPost()
-        {
-            return sendComment;
-        }
+
 
         private void HandleTextMessageChanged(object sender, EventArgs e)
 		{
+             if (TextoEscrito != null)
+            {
+                TextoEscrito(txtComentarPost, EventArgs.Empty);
+            }
 			if (string.IsNullOrWhiteSpace(txtComentarPost.Text))
 			{
 				this.btnPublicar.Enabled = false;

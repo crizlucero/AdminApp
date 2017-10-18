@@ -31,15 +31,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            /*var tap = new UITapGestureRecognizer(this.handleTap);
-            View.AddGestureRecognizer(tap);*/
-
             BTProgressHUD.Dismiss();
-        }
-
-        private void handleTap (UITapGestureRecognizer reconizer)
-        {
-            this.View.EndEditing(true);
         }
 
 		public override nint RowsInSection(UITableView tableView, nint section)
