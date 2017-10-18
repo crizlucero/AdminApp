@@ -11,10 +11,8 @@ namespace WorklabsMx
     public class Emails
     {
         readonly ConfiguracionesModel configuracion;
-        public Emails()
-        {
-            configuracion = new ConfigurationsController().GetConfiguraciones("CORREO ELECTRÓNICO PARA NOTIFICACIONES");
-        }
+        public Emails() => configuracion = new ConfigurationsController().GetConfiguraciones("CORREO ELECTRÓNICO PARA NOTIFICACIONES");
+
         /// <summary>
         /// Envia el correo electrónico con los datos del cliente
         /// </summary>

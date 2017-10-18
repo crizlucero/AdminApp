@@ -61,15 +61,20 @@
             android:layout_height="20dp"
             android:id="@+id/btnInitPublish" />
     </GridLayout>
-    <ScrollView
-        android:id="@+id/post_scroll"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent">
-        <TableLayout
-            android:id="@+id/post_table"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:id="@+id/post_scroll"
             android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            android:minWidth="25px"
-            android:minHeight="25px" />
-    </ScrollView>
+            android:layout_width="match_parent">
+            <TableLayout
+                android:id="@+id/post_table"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:minWidth="25px"
+                android:minHeight="25px" />
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

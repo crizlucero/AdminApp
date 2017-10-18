@@ -35,14 +35,10 @@ namespace WorklabsMx.Droid
             FillMenu(FindViewById<TableLayout>(Resource.Id.menu_layout));
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            return base.OnCreateOptionsMenu(menu);
-        }
+        public override bool OnCreateOptionsMenu(IMenu menu) => base.OnCreateOptionsMenu(menu);
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-
             base.OnBackPressed();
             return base.OnOptionsItemSelected(item);
         }

@@ -21,16 +21,19 @@ using Android.Provider;
 using Android.Content.PM;
 using static Android.Provider.MediaStore.Images;
 using System.Threading.Tasks;
+using Android.Support.V4.Widget;
+using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "WorklabsMx", MainLauncher = true, Icon = "@mipmap/icon")]
+    [Activity(Label = "WorklabsMx", Icon = "@mipmap/icon",
+        LaunchMode = LaunchMode.SingleInstance,
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
+              ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
-        int page = 0;
         ScrollView scroll;
-        bool limitPage = true;
-        int sizePage = 10;
+        int page;
         SimpleStorage localStorage;
         EditText txtEmail, txtPassword;
         EscritorioController DashboardController;
@@ -40,11 +43,12 @@ namespace WorklabsMx.Droid
         File _file, _dir;
         Bitmap bitmap;
         View customView;
-        readonly int PickImageId = 1000, TakePicture = 500;
-
+        readonly int sizePage = 10, PickImageId = 1000, TakePicture = 500;
+        bool isLimit;
         public MainActivity()
         {
             DashboardController = new EscritorioController();
+            isLimit = false;
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -115,24 +119,35 @@ namespace WorklabsMx.Droid
             scroll = FindViewById<ScrollView>(Resource.Id.post_scroll);
             tlPost = FindViewById<TableLayout>(Resource.Id.post_table);
             FindViewById<Button>(Resource.Id.btnInitPublish).Click += (sender, e) => ShowPublish();
+            SwipeRefreshLayout refresher = FindViewById<SwipeRefreshLayout>(Resource.Id.swipe_container);
+            refresher.SetColorSchemeColors(Color.Gray, Color.LightGray, Color.Gray, Color.DarkGray, Color.Black, Color.DarkGray);
+            refresher.Refresh += async (sender, e) =>
+            {
+                page = 0;
+                tlPost.RemoveAllViews();
+                await FillPosts();
+                ((SwipeRefreshLayout)sender).Refreshing = false;
+            };
 
             await FillPosts();
             scroll.ScrollChange += async (sender, e) =>
             {
-                if (limitPage)
-                    if ((((ScrollView)sender).ScrollY / (page + 1)) >= ((scroll.Height) * .4))
+                if (!isLimit)
+                    if ((((ScrollView)sender).ScrollY / (page + 1)) > ((scroll.Height) * .4))
                     {
                         ++page;
-                        await FillPosts();
+                        await FillPosts(page);
                     }
             };
         }
 
-        async Task FillPosts()
+        async Task FillPosts(int pages = 0)
         {
             AndHUD.Shared.Show(this, null, -1, MaskType.Black);
             await Task.Delay(500);
-            DashboardController.GetMuroPosts(page * sizePage).ForEach((post) =>
+            List<PostModel> posts = DashboardController.GetMuroPosts(pages * sizePage);
+            isLimit = posts.Count == 0;
+            posts.ForEach((post) =>
             {
                 int i = 0;
                 TableRow row = new TableRow(this);
@@ -306,7 +321,7 @@ namespace WorklabsMx.Droid
                 icon.SetBounds(0, 0, 20, 20);
                 TextView lblLike = new TextView(this)
                 {
-                    Text = new EscritorioController().GetLikes(post.POST_ID) + " Like(s)",
+                    Text = /*new EscritorioController().GetLikes(post.POST_ID)*/ "0" + " Like(s)",
                     TextSize = 10
                 };
                 lblLike.SetCompoundDrawables(icon, null, null, null);
@@ -327,7 +342,7 @@ namespace WorklabsMx.Droid
                 LinearLayout llComment = new LinearLayout(this);
                 Drawable iconComment = ContextCompat.GetDrawable(this, Resource.Mipmap.ic_mode_comment);
                 iconComment.SetBounds(0, 0, 20, 20);
-                string totalComment = DashboardController.TotalComments(post.POST_ID);
+                string totalComment = "0";//DashboardController.TotalComments(post.POST_ID);
                 TextView lblComment = new TextView(this)
                 {
                     Text = totalComment + " " + Resources.GetString(Resource.String.Comentarios),
@@ -603,7 +618,6 @@ namespace WorklabsMx.Droid
                 customView.FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Visible;
                 customView.FindViewById<Button>(Resource.Id.btnPublishApply).Enabled = true;
             }
-
         }
     }
 }
