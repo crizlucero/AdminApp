@@ -16,8 +16,8 @@ namespace WorklabsMx.iOS
             lblNombre.Text = comentario.Nombre;
 			lblLikes.Text = "11 LIKES";
             lblFechaPost.Text = comentario.COMM_FECHA;
-			lblPuesto.Text = comentario.USUARIO_PUESTO == "" ? "Designer Jewelry" : comentario.USUARIO_PUESTO;
-			lblContenido.Text = comentario.COMM_CONTENIDO == "" ? "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam" : comentario.COMM_CONTENIDO;
+            lblPuesto.Text = comentario.USUARIO_PUESTO;
+			lblContenido.Text = comentario.COMM_CONTENIDO;
 
             imgPerfil.Image = ImagenComentario;
 		}

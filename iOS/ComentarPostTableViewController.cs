@@ -20,6 +20,7 @@ namespace WorklabsMx.iOS
 
         SeccionComentariosTableViewController objSeccionComentarios;
 
+        UITextView TextoComentario;
 
         public ComentarPostTableViewController (IntPtr handle) : base (handle)
         {
@@ -29,18 +30,15 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
-            //CGRect newFrame = new CGRect(this.vwVistaSeccionComentarios.Frame.X, this.vwVistaSeccionComentarios.Frame.Y, this.vwVistaSeccionComentarios.Frame.Width, 150);
-            //this.vwVistaSeccionComentarios.Frame = newFrame;
-            /*var tap = new UITapGestureRecognizer(this.handleTap);
-            View.AddGestureRecognizer(tap);*/
+             var Tap = new UITapGestureRecognizer(this.Tapped);
+            this.View.AddGestureRecognizer(Tap);
             StyleHelper.Style(vwSeccionComentarios.Layer);
+            BTProgressHUD.Dismiss();
         }
 
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            BTProgressHUD.Dismiss();
         }
 
 
@@ -49,23 +47,28 @@ namespace WorklabsMx.iOS
             objSeccionComentarios.setInfoPosto(this.LocalPost);
         }
 
-        private void handleTap(UITapGestureRecognizer reconizer)
+        void TextoEscrito(object sender, EventArgs e)
         {
-            this.View.EndEditing(true);
+            TextoComentario = (UITextView)sender;
         }
+
 
 		public override UIView GetViewForHeader(UITableView tableView, nint section)
 		{
 			var headerCell = (ComentarPostHeaderCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
+            headerCell.getText(TextoComentario);
             headerCell.UpdateCell(this.LocalPost);
             headerCell.PostComentado += PostComentato;
-			return headerCell;
+            headerCell.TextoEscrito += TextoEscrito;
+
+			return headerCell.ContentView;
 		}
 
 		public override nfloat GetHeightForHeader(UITableView tableView, nint section)
 		{
 			return TamañoHeader;
 		}
+
 
 		public void setInfoPost(PostModel Post)
 		{
@@ -84,6 +87,12 @@ namespace WorklabsMx.iOS
 			}
 			
 		}
+
+        private void Tapped(UITapGestureRecognizer Recognizer)
+        {
+            this.View.EndEditing(true);
+            this.TableView.ReloadData();
+        }
        
 
     }
