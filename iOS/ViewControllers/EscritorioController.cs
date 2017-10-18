@@ -72,7 +72,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
                 var currentPost = allPosts[indexPath.Row];                 var currentLike = Likes[indexPath.Row];                 var currentPostImage = PostImages[indexPath.Row];
                 var currentPostCell = (ComentariosBodyCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
                 currentPostCell.UpdateCell(currentPost, currentLike, currentPostImage);
-                this.CurrentPost = currentPost;
+                this.CurrentPost = currentPost;                 this.WillDisplay(indexPath.Row);
                 return currentPostCell;
             }
             else
@@ -86,20 +86,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
             if(segue.Identifier == "toShowPostView")             {                 var postCommentView = (PublicarPostViewController)segue.DestinationViewController;                 postCommentView.setInfoPublicacion(miembro);             }              else if(segue.Identifier == "comentarPost")             {
 				var CommentView = (ComentarPostTableViewController)segue.DestinationViewController;
 				CommentView.setInfoPost(this.CurrentPost);             }
-        }  
-        public async override void WillDisplay(UITableView tableView, UITableViewCell cell, Foundation.NSIndexPath indexPath)         {              int LastRow = allPosts.Count - 1;              if((indexPath.Row == LastRow) && (LastRow < allPosts.Count))
-            //if (tableView.ContentOffset.Y >= (tableView.ContentSize.Height - tableView.Frame.Size.Height) - 2)
-			{                 BTProgressHUD.Show();                 await Task.Delay(500);                 if (InternetConectionHelper.VerificarConexion())                 {
-                    currentPage += 5;
-                    posts = new Controllers.EscritorioController().GetMuroPosts(currentPage);
-                    foreach (var post in posts)
-                    {
-                        allPosts.Add(post);                         var like = new Controllers.EscritorioController().GetLikes(post.POST_ID) + " LIKES";                         var PostImage = ImageGallery.LoadImage(post.Miembro_Fotografia);                         Likes.Add(like);                         PostImages.Add(PostImage);
-                    }                     BTProgressHUD.Dismiss();
-                    this.TableView.ReloadData(); 
-                }                 else                 {                     BTProgressHUD.Dismiss();                     new MessageDialog().SendToast("No tienes acceso a una conexión de Internet, intenta de nuevo");                 }
-			}
-        } 
+        }          private async void WillDisplay(int Row)         {                          int LastRow = allPosts.Count - 1;              if ((Row == LastRow) && (LastRow < allPosts.Count))             {                 BTProgressHUD.Show();                 await Task.Delay(500);                 this.TableView.ScrollEnabled = false;                  if (InternetConectionHelper.VerificarConexion())                 {                     currentPage += 5;                     posts = new Controllers.EscritorioController().GetMuroPosts(currentPage);                     foreach (var post in posts)                     {                         allPosts.Add(post);                         var like = new Controllers.EscritorioController().GetLikes(post.POST_ID) + " LIKES";                         var PostImage = ImageGallery.LoadImage(post.Miembro_Fotografia);                         Likes.Add(like);                         PostImages.Add(PostImage);                     }                     BTProgressHUD.Dismiss();                     this.TableView.ScrollEnabled = true;                     if (LastRow != allPosts.Count - 1){                         this.TableView.ReloadData();                     }                   }                 else                 {                     BTProgressHUD.Dismiss();                     this.TableView.ScrollEnabled = true;                     new MessageDialog().SendToast("No tienes acceso a una conexión de Internet, intenta de nuevo");                 }             }             BTProgressHUD.Dismiss();         } 
         partial void btnToScanQr_TouchUpInside(UIBarButtonItem sender)
         {
             this.PerformSegue("toScanQr", sender);

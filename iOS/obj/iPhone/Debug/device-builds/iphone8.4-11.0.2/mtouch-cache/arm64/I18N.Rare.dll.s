@@ -110600,7 +110600,7 @@ _mono_aot_file_info:
 	.long 360,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 242,47,86,240,97,148,13,204,241,227,107,143,178,112,14,217
+	.byte 233,206,182,164,36,200,92,27,197,17,183,32,30,11,29,206
 	.globl _mono_aot_module_I18N_Rare_info
 	.align 3
 _mono_aot_module_I18N_Rare_info:

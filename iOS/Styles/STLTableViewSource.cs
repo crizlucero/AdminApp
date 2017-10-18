@@ -5,6 +5,8 @@ using PerpetualEngine.Storage;
 using UIKit;
 using WorklabsMx.Models;
 using SVProgressHUDBinding;
+using BigTed;
+using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS.Styles
 {
@@ -52,12 +54,15 @@ namespace WorklabsMx.iOS.Styles
 
         public override nint RowsInSection(UITableView tableview, nint section) => TableItems.Count;
 
-        public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+        public override async void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
             if (TableItems[indexPath.Row].Controller != null)
             {
                 if (!TableItems[indexPath.Row].Controller.Contains("Login"))
                 {
+
+                    BTProgressHUD.Show();
+                    await Task.Delay(500);
                     var localStorage = SimpleStorage.EditGroup("Menu");
                     localStorage.Put("Menu_Id", TableItems[indexPath.Row].Menu_Id);
                     UIViewController controller = owner.Storyboard.InstantiateViewController(TableItems[indexPath.Row].Controller);
