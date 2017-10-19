@@ -16,6 +16,7 @@ using WorklabsMx.Droid.Helpers;
 
 namespace WorklabsMx.Droid
 {
+    [Activity(Label = "@string/app_name")]
     public class CommentsActivity : Activity
     {
         EscritorioController DashboardController;
@@ -75,6 +76,7 @@ namespace WorklabsMx.Droid
             tlComentarios.RemoveAllViews();
             DashboardController.GetComentariosPost(post_id).ForEach((comentario) =>
             {
+                int i= 0;
                 String Usuario_Id = comentario.Miembro_Id ?? comentario.Colaborador_Empresa_Id;
                 TableRow row = new TableRow(this);
                 row.SetMinimumHeight(100);
@@ -97,7 +99,7 @@ namespace WorklabsMx.Droid
                 GridLayout.LayoutParams param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center);
                 param.ColumnSpec = GridLayout.InvokeSpec(0);
-                param.RowSpec = GridLayout.InvokeSpec(0, 3);
+                param.RowSpec = GridLayout.InvokeSpec(i, 3);
                 ibFotoPostUsuario.LayoutParameters = param;
                 ibFotoPostUsuario.Click += (sender, e) =>
                     AndHUD.Shared.ShowImage(this, Resources.GetDrawable(Resource.Mipmap.ic_work, null), null, MaskType.Black);
@@ -120,7 +122,7 @@ namespace WorklabsMx.Droid
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center);
                 param.ColumnSpec = GridLayout.InvokeSpec(1, 2);
-                param.RowSpec = GridLayout.InvokeSpec(0);
+                param.RowSpec = GridLayout.InvokeSpec(i);
                 txtNombre.LayoutParameters = param;
                 glPost.AddView(txtNombre);
 
@@ -178,11 +180,11 @@ namespace WorklabsMx.Droid
                 param.SetGravity(GravityFlags.Right);
                 param.TopMargin = 20;
                 param.ColumnSpec = GridLayout.InvokeSpec(3);
-                param.RowSpec = GridLayout.InvokeSpec(0, 3);
+                param.RowSpec = GridLayout.InvokeSpec(i, 3);
                 llButton.LayoutParameters = param;
                 llButton.AddView(btnClear);
                 glPost.AddView(llButton);
-
+                ++i;
                 TextView txtPuesto = new TextView(this)
                 {
                     //Text = comentario.USUARIO_PUESTO,
@@ -191,10 +193,10 @@ namespace WorklabsMx.Droid
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center);
                 param.ColumnSpec = GridLayout.InvokeSpec(1, 3);
-                param.RowSpec = GridLayout.InvokeSpec(1);
+                param.RowSpec = GridLayout.InvokeSpec(i);
                 txtPuesto.LayoutParameters = param;
                 glPost.AddView(txtPuesto);
-
+                ++i;
                 TextView txtPost = new TextView(this)
                 {
                     Text = comentario.Comentario_Contenido,
@@ -203,10 +205,29 @@ namespace WorklabsMx.Droid
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center);
                 param.ColumnSpec = GridLayout.InvokeSpec(1, 3);
-                param.RowSpec = GridLayout.InvokeSpec(2);
+                param.RowSpec = GridLayout.InvokeSpec(i);
                 txtPost.LayoutParameters = param;
                 glPost.AddView(txtPost);
-
+                ++i;
+                if (!string.IsNullOrEmpty(comentario.Comentario_Imagen))
+                {
+                    Android.Net.Uri url = Android.Net.Uri.Parse("http://desarrolloworklabs.com/Dashboard_Client/" + comentario.Comentario_Imagen_Ruta);
+                    ImageView imgPost = new ImageView(this);
+                    imgPost.SetMaxWidth(75);
+                    imgPost.SetMaxHeight(75);
+                    imgPost.SetImageURI(url);
+                    imgPost.Click += delegate
+                    {
+                        AndHUD.Shared.ShowImage(this, Drawable.CreateFromPath(""));
+                    };
+                    param = new GridLayout.LayoutParams();
+                    param.SetGravity(GravityFlags.Center);
+                    param.ColumnSpec = GridLayout.InvokeSpec(1, 2);
+                    param.RowSpec = GridLayout.InvokeSpec(i);
+                    imgPost.LayoutParameters = param;
+                    glPost.AddView(imgPost);
+                    ++i;
+                }
                 TextView txtFecha = new TextView(this)
                 {
                     Text = comentario.Comentario_Fecha.Substring(0, comentario.Comentario_Fecha.Length - 6),
@@ -216,7 +237,7 @@ namespace WorklabsMx.Droid
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center);
                 param.ColumnSpec = GridLayout.InvokeSpec(1);
-                param.RowSpec = GridLayout.InvokeSpec(3);
+                param.RowSpec = GridLayout.InvokeSpec(i);
                 txtFecha.LayoutParameters = param;
                 glPost.AddView(txtFecha);
 
@@ -239,7 +260,7 @@ namespace WorklabsMx.Droid
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center | GravityFlags.Left);
                 param.ColumnSpec = GridLayout.InvokeSpec(2);
-                param.RowSpec = GridLayout.InvokeSpec(3);
+                param.RowSpec = GridLayout.InvokeSpec(i);
                 llLike.LayoutParameters = param;
                 glPost.AddView(llLike);
 

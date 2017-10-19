@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Support.V4.Content;
+using Android.Support.V4.Widget;
 using Android.Views;
 using Android.Widget;
 using AndroidHUD;
@@ -50,7 +52,7 @@ namespace WorklabsMx.Droid
         {
             FindViewById<ImageButton>(Resource.Id.btnDescripcion).Click += (sender, e) => FillDescripcionData();
 
-            FindViewById<ImageButton>(Resource.Id.btnPosts).Click += delegate
+            FindViewById<ImageButton>(Resource.Id.btnPosts).Click += async delegate
             {
                 SetContentView(Resource.Layout.PostsUserLayout);
                 if (!string.IsNullOrEmpty(Intent.GetStringExtra("usuario_id")) && !string.IsNullOrEmpty(Intent.GetStringExtra("usuario_tipo")))
@@ -69,7 +71,15 @@ namespace WorklabsMx.Droid
                 FindViewById<TextView>(Resource.Id.lblNombre).Text = data[(int)CamposMiembro.Usuario_Nombre];
                 FindViewById<TextView>(Resource.Id.lblPuesto).Text = data[(int)CamposMiembro.Usuario_Puesto];
                 FindViewById<Button>(Resource.Id.btnInitPublish).Click += (sender, e) => ShowPublish();
-                FillPosts();
+                await FillPosts();
+                SwipeRefreshLayout refresher = FindViewById<SwipeRefreshLayout>(Resource.Id.swipe_container);
+                refresher.SetColorSchemeColors(Color.Gray, Color.LightGray, Color.Gray, Color.DarkGray, Color.Black, Color.DarkGray);
+                refresher.Refresh += async (sender, e) =>
+                {
+                    tlPost.RemoveAllViews();
+                    await FillPosts();
+                    ((SwipeRefreshLayout)sender).Refreshing = false;
+                };
             };
 
             FindViewById<ImageButton>(Resource.Id.btnFavoritos).Click += (sender, e) => DirectorioFavoritos();
@@ -154,8 +164,10 @@ namespace WorklabsMx.Droid
         }
 
 
-        void FillPosts()
+        async Task FillPosts()
         {
+            AndHUD.Shared.Show(this, null, -1, MaskType.Black);
+            await Task.Delay(500);
             ButtonAction();
             new EscritorioController().GetPerfilPosts(usuario_id, usuario_tipo).ForEach((post) =>
             {
@@ -296,8 +308,8 @@ namespace WorklabsMx.Droid
 
                 row.AddView(glPost);
                 tlPost.AddView(row);
-
             });
+            AndHUD.Shared.Dismiss();
         }
 
         void DirectorioFavoritos()

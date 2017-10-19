@@ -327,7 +327,7 @@ namespace WorklabsMx.Controllers
         /// <summary>
         /// Agrega un like al post
         /// </summary>
-        /// <param name="post_id">Identificador del post</param>
+        /// <param name="comentario_id">Identificador del comentario</param>
         /// <param name="usuario_id">Identificador del usuario</param>
         public bool CommentLike(string comentario_id, string usuario_id, string tipo)
         {
@@ -449,7 +449,7 @@ namespace WorklabsMx.Controllers
             try
             {
                 conn.Open();
-                if (fotografia?.Length != 0)
+                if (fotografia.Length != 0)
                 {
                     new UploadImages().UploadBitmapAsync(fotografia);
                 }
