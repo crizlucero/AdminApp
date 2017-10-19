@@ -2,17 +2,21 @@
 {
     public class PostModel
     {
-        public string POST_ID { get; set; }
-        public string Tipo { get; set; }
-        public string POST_MIEMBRO_COLABORADOR_ID { get; set; }
-        public string MIEMBRO_ID { get; set; }
-        public string COLABORADOR_ID { get; set; }
-        public string POST_FECHA { get; set; }
-        public string POST_FOTO_URL { get; set; }
-        public string POST_CONTENIDO { get; set; }
-        public string Miembro_Nombre { get; set; }
-        public string Miembro_Apellidos { get; set; }
-        public string Miembro_Fotografia { get; set; }
-        public string Miembro_Puesto { get; set; }
+        public string Publicacion_Id { get; set; }
+        public string Miembro_Id { get; set; }
+        public string Colaborador_Empresa_Id { get; set; }
+        public string Usuario_Nombre { get; set; }
+        public string Usuario_Tipo { get; set; }
+        public string Usuario_Fotografia_Ruta { get; set; }
+        public string Publicacion_Contenido { get; set; }
+        public string Publicacion_Imagen { get; set; }
+        public string Publicacion_Imagen_Ruta { get; set; }
+        public string Publicacion_Fecha { get; set; }
+        public string Publicacion_Comentarios_Cantidad { get; set; }
+        public string Publicacion_Me_Gustan_Cantidad { get; set; }
+        public string Publicacion_Estatus { get; set; }
+        public string Publicacion_Fecha_Alta { get; set; }
+        public string Publicacion_Fecha_Modificacion { get; set; }
+        public string Publicacion_Fecha_Baja { get; set; }
     }
 }
