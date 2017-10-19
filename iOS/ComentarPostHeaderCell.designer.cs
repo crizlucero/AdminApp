@@ -16,7 +16,19 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnBorrarFoto { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnFotografia { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnPublicar { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnSleccionarFoto { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -26,15 +38,42 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwComentarPost { get; set; }
 
+        [Action ("btnBorrarFot_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnBorrarFot_TouchUpInside (UIKit.UIButton sender);
+
         [Action ("btnComentar_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnComentar_TouchUpInside (UIKit.UIButton sender);
 
+        [Action ("btnFoto_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnFoto_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("btnSleccionarfoto_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnSleccionarfoto_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
+            if (btnBorrarFoto != null) {
+                btnBorrarFoto.Dispose ();
+                btnBorrarFoto = null;
+            }
+
+            if (btnFotografia != null) {
+                btnFotografia.Dispose ();
+                btnFotografia = null;
+            }
+
             if (btnPublicar != null) {
                 btnPublicar.Dispose ();
                 btnPublicar = null;
+            }
+
+            if (btnSleccionarFoto != null) {
+                btnSleccionarFoto.Dispose ();
+                btnSleccionarFoto = null;
             }
 
             if (txtComentarPost != null) {

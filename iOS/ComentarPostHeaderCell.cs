@@ -3,6 +3,7 @@ using UIKit;
 using WorklabsMx.Models;
 using PerpetualEngine.Storage;
 
+
 namespace WorklabsMx.iOS
 {
 
@@ -16,6 +17,12 @@ namespace WorklabsMx.iOS
         public event EventHandler PostComentado;
 
         public event EventHandler TextoEscrito;
+
+        public event EventHandler MostrarActionSheet;
+
+        public event EventHandler MostrarImagenEnGrande;
+
+        float opacity = 0.5f;
 
         public ComentarPostHeaderCell (IntPtr handle) : base (handle)
         {
@@ -31,6 +38,18 @@ namespace WorklabsMx.iOS
                 this.btnPublicar.Layer.Opacity = 1f;
             }
 
+        }
+
+        internal void getConfigImageLoaded(UIImage image)
+        {
+            if (image != null)
+            {
+                this.btnFotografia.SetImage(image, UIControlState.Normal);
+                this.btnBorrarFoto.Hidden = false;
+                this.btnPublicar.Enabled = true;
+                this.btnPublicar.Layer.Opacity = 1f;
+                this.btnFotografia.ContentMode = UIViewContentMode.ScaleAspectFit;
+            }
         }
 
         internal void UpdateCell(PostModel Post)
@@ -78,15 +97,45 @@ namespace WorklabsMx.iOS
 			if (string.IsNullOrWhiteSpace(txtComentarPost.Text))
 			{
 				this.btnPublicar.Enabled = false;
-				this.btnPublicar.Layer.Opacity = 0.5f;
+                this.btnPublicar.Layer.Opacity = 0.5f;
 			}
 			else
 			{
 				this.btnPublicar.Enabled = true;
 				this.btnPublicar.Layer.Opacity = 1f;
-			}
+            }
 		}
 
-       
+
+        partial void btnFoto_TouchUpInside(UIButton sender)
+        {
+            if(MostrarImagenEnGrande != null)
+            {
+                MostrarImagenEnGrande(sender.ImageView, EventArgs.Empty);
+            }
+        }
+
+        partial void btnBorrarFot_TouchUpInside(UIButton sender)
+        {
+            this.btnFotografia.SetImage(null, UIControlState.Normal);
+            if (this.txtComentarPost.Text == "")
+            {
+                this.btnPublicar.Layer.Opacity = 0.5f;
+                this.btnPublicar.Enabled = false;
+            }
+            this.btnBorrarFoto.Hidden = true;
+        }
+
+        partial void btnSleccionarfoto_TouchUpInside(UIButton sender)
+        {
+            if(MostrarActionSheet != null)
+            {
+                MostrarActionSheet(this, EventArgs.Empty);
+            }
+        }
+
+
+
+
     }
 }
