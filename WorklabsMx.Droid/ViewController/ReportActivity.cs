@@ -102,7 +102,7 @@ namespace WorklabsMx.Droid
             lblLike.Click += delegate
             {
                 if (new EscritorioController().PostLike(post.Publicacion_Id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")))
-                    lblLike.Text = "\t" + new EscritorioController().GetLikes(post.Publicacion_Id) + " Like(s)";
+                    lblLike.Text = "\t" + new EscritorioController().GetLikesPublish(post.Publicacion_Id) + " Like(s)";
             };
             llLike.AddView(lblLike);
 

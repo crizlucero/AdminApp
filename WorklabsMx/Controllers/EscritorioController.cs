@@ -106,11 +106,30 @@ namespace WorklabsMx.Controllers
         /// </summary>
         /// <returns>Likes del post</returns>
         /// <param name="post_id">Identificador del post</param>
-        public string GetLikes(string post_id)
+        public string GetLikesPublish(string post_id)
         {
-            string query = "SELECT count(POST_ID) FROM MuroPosts_Likes muro WHERE POST_ID = @post_id AND LIKE_ESTATUS = 1";
+            string query = "select Count(Me_Gusta_Publicacion_Id) FROM vw_pro_Red_Social_Publicaciones_Me_Gustan Where Publicacion_Id = @post_id AND Me_Gusta_Publicacion_Estatus = 1";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@post_id", post_id);
+            try
+            {
+                conn.Open();
+                return command.ExecuteScalar().ToString();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                SlackLogs.SendMessage(e.Message);
+            }
+            finally { conn.Close(); }
+            return "";
+        }
+
+        public string GetLikesComments(string comment_id)
+        {
+            string query = "select Count(Me_Gusta_Comentario_Id) FROM vw_pro_Red_Social_Publicaciones_Comentarios_Me_Gustan Where Comentario_Id = @comment_id AND Me_Gusta_Comentario_Estatus = 1";
+            command = CreateCommand(query);
+            command.Parameters.AddWithValue("@comment_id", comment_id);
             try
             {
                 conn.Open();
@@ -304,6 +323,54 @@ namespace WorklabsMx.Controllers
             }
             return true;
         }
+
+        /// <summary>
+        /// Agrega un like al post
+        /// </summary>
+        /// <param name="post_id">Identificador del post</param>
+        /// <param name="usuario_id">Identificador del usuario</param>
+        public bool CommentLike(string comentario_id, string usuario_id, string tipo)
+        {
+            string miembro_id = null;
+            string colaborador_id = null;
+            if (tipo == ((int)TiposUsuarios.Miembro).ToString())
+                miembro_id = usuario_id;
+            else
+                colaborador_id = usuario_id;
+            try
+            {
+                conn.Open();
+                transaction = conn.BeginTransaction();
+                command = CreateCommand();
+                command.Connection = conn;
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "sp_pro_Red_Social_Publicaciones_Comentarios_Me_Gustan";
+                command.Parameters.AddWithValue("@Trasaccion", "ALTA");
+                command.Parameters.AddWithValue("@Comentario_Id", comentario_id);
+                command.Parameters.AddWithValue("@Miembro_Id", miembro_id);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Id", colaborador_id);
+                command.Parameters.AddWithValue("@Me_Gusta_Comentario_Estatus", 1);
+                command.Parameters.AddWithValue("@Me_Gusta_Comentario_Id", DBNull.Value);
+
+                command.Transaction = transaction;
+                command.ExecuteNonQuery();
+                transaction.Commit();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                transaction.Rollback();
+                SlackLogs.SendMessage(e.Message);
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return true;
+        }
+
         /// <summary>
         /// Agrega un comentario al post
         /// </summary>

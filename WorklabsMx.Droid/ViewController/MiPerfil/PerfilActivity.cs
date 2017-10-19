@@ -246,16 +246,16 @@ namespace WorklabsMx.Droid
                 icon.SetBounds(0, 0, 20, 20);
                 TextView lblLike = new TextView(this)
                 {
-                    Text = new EscritorioController().GetLikes(post.Publicacion_Id) + " Like(s)",
+                    Text = new EscritorioController().GetLikesPublish(post.Publicacion_Id) + " Like(s)",
                     TextSize = 10
                 };
                 lblLike.SetCompoundDrawables(icon, null, null, null);
                 lblLike.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 130) / 5);
                 lblLike.Click += delegate
-                 {
+                {
                     if (new EscritorioController().PostLike(post.Publicacion_Id, usuario_id, usuario_tipo))
-                        lblLike.Text = new EscritorioController().GetLikes(post.Publicacion_Id) + " Like(s)";
-                 };
+                        lblLike.Text = new EscritorioController().GetLikesPublish(post.Publicacion_Id) + " Like(s)";
+                };
                 llLike.AddView(lblLike);
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center | GravityFlags.Left);
@@ -277,7 +277,7 @@ namespace WorklabsMx.Droid
                 lblComment.Click += delegate
                  {
                      Intent intent = new Intent(this, typeof(CommentsActivity));
-                    intent.PutExtra("post_id", post.Publicacion_Id);
+                     intent.PutExtra("post_id", post.Publicacion_Id);
                      StartActivity(intent);
                  };
                 llComment.Click += delegate

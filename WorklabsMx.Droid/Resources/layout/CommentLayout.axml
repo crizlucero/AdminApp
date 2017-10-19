@@ -41,49 +41,54 @@
             android:layout_marginTop="130dp"
             android:tint="#3957D9" />
     </GridLayout>
-    <ScrollView
-        android:minWidth="25px"
-        android:minHeight="25px"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/svComentarios">
-        <TableLayout
+        android:layout_height="match_parent">
+        <ScrollView
+            android:minWidth="25px"
+            android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/llComentarios"
-            android:minWidth="25px"
-            android:minHeight="25px">
-            <TableRow
-                android:minWidth="25px"
-                android:minHeight="25px"
-                android:id="@+id/tableRow1"
-                android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/svComentarios">
+            <TableLayout
                 android:layout_width="match_parent"
-                android:gravity="center">
-                <RelativeLayout
-                    android:orientation="vertical"
+                android:layout_height="match_parent"
+                android:id="@+id/llComentarios"
+                android:minWidth="25px"
+                android:minHeight="25px">
+                <TableRow
                     android:minWidth="25px"
                     android:minHeight="25px"
-                    android:layout_column="0"
-                    android:id="@+id/linearLayout1"
-                    android:layout_width="match_parent"
+                    android:id="@+id/tableRow1"
                     android:layout_height="match_parent"
+                    android:layout_width="match_parent"
                     android:gravity="center">
-                    <TextView
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:id="@+id/textView1"
-                        android:text="@string/NoComentarios"
-                        android:textSize="30dp"
-                        android:width="200dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:textColor="#888" />
-                </RelativeLayout>
-            </TableRow>
-        </TableLayout>
-    </ScrollView>
+                    <RelativeLayout
+                        android:orientation="vertical"
+                        android:minWidth="25px"
+                        android:minHeight="25px"
+                        android:layout_column="0"
+                        android:id="@+id/linearLayout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+                        <TextView
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:id="@+id/textView1"
+                            android:text="@string/NoComentarios"
+                            android:textSize="30dp"
+                            android:width="200dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="#888" />
+                    </RelativeLayout>
+                </TableRow>
+            </TableLayout>
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>
