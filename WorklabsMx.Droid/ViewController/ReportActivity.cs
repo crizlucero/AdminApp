@@ -45,6 +45,7 @@ namespace WorklabsMx.Droid
         {
             TableLayout tlPost = FindViewById<TableLayout>(Resource.Id.post_table);
             PostModel post = new EscritorioController().GetSinglePost(post_id);
+            string Usuario_Id = post.Miembro_Id ?? post.Colaborador_Empresa_Id;
             TableRow row = new TableRow(this);
             row.SetMinimumHeight(100);
             RelativeLayout rl = new RelativeLayout(this);
@@ -53,19 +54,19 @@ namespace WorklabsMx.Droid
             ImageButton ibFotoPostUsuario = new ImageButton(this);
             ibFotoPostUsuario.SetMinimumWidth(150);
             ibFotoPostUsuario.SetMinimumHeight(150);
-            ibFotoPostUsuario.SetImageURI(ImagesHelper.GetPerfilImagen(post.Miembro_Fotografia));
+            ibFotoPostUsuario.SetImageURI(ImagesHelper.GetPerfilImagen(post.Usuario_Fotografia_Ruta));
             rl.AddView(ibFotoPostUsuario);
 
             TextView lblNombre = new TextView(this)
             {
-                Text = post.Miembro_Nombre + " " + post.Miembro_Apellidos,
+                Text = post.Usuario_Nombre,
                 TextSize = 14
             };
             lblNombre.Click += delegate
             {
                 Intent perfil = new Intent(this, typeof(PerfilActivity));
-                perfil.PutExtra("usuario_id", post.MIEMBRO_ID);
-                perfil.PutExtra("usuario_tipo", post.Tipo);
+                perfil.PutExtra("usuario_id", Usuario_Id);
+                perfil.PutExtra("usuario_tipo", post.Usuario_Tipo);
                 StartActivity(perfil);
             };
             lblNombre.SetX(170);
@@ -75,7 +76,7 @@ namespace WorklabsMx.Droid
 
             TextView lblFecha = new TextView(this)
             {
-                Text = post.POST_FECHA,
+                Text = post.Publicacion_Fecha,
                 TextSize = 12
             };
             lblFecha.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels - 140);
@@ -92,7 +93,7 @@ namespace WorklabsMx.Droid
             icon.SetBounds(0, 0, 30, 30);
             TextView lblLike = new TextView(this)
             {
-                Text = "\t" + new EscritorioController().GetLikes(post.POST_ID) + " Like(s)"
+                Text = "\t" + post.Publicacion_Me_Gustan_Cantidad + " Like(s)"
             };
             lblLike.SetCompoundDrawables(icon, null, null, null);
             lblLike.SetMinWidth(Window.Attributes.Width);
@@ -100,8 +101,8 @@ namespace WorklabsMx.Droid
             lblLike.SetX(10);
             lblLike.Click += delegate
             {
-                if (new EscritorioController().PostLike(post.POST_ID, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")))
-                    lblLike.Text = "\t" + new EscritorioController().GetLikes(post.POST_ID) + " Like(s)";
+                if (new EscritorioController().PostLike(post.Publicacion_Id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")))
+                    lblLike.Text = "\t" + new EscritorioController().GetLikes(post.Publicacion_Id) + " Like(s)";
             };
             llLike.AddView(lblLike);
 
@@ -114,7 +115,7 @@ namespace WorklabsMx.Droid
 
             TextView lblPost = new TextView(this)
             {
-                Text = post.POST_CONTENIDO
+                Text = post.Publicacion_Contenido
             };
             lblPost.SetMinWidth(Window.Attributes.Width);
             lblPost.SetMinHeight(50);
