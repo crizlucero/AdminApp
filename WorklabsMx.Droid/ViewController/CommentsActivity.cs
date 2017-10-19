@@ -63,6 +63,7 @@ namespace WorklabsMx.Droid
             tlComentarios.RemoveAllViews();
             DashboardController.GetComentariosPost(post_id).ForEach((comentario) =>
             {
+                String Usuario_Id = comentario.Miembro_Id ?? comentario.Colaborador_Empresa_Id;
                 TableRow row = new TableRow(this);
                 row.SetMinimumHeight(100);
                 row.SetBackgroundResource(Resource.Drawable.CardStyle);
@@ -80,7 +81,7 @@ namespace WorklabsMx.Droid
                 ImageButton ibFotoPostUsuario = new ImageButton(this);
                 ibFotoPostUsuario.SetMinimumWidth(150);
                 ibFotoPostUsuario.SetMinimumHeight(150);
-                ibFotoPostUsuario.SetImageURI(ImagesHelper.GetPerfilImagen(comentario.Miembro_Fotografia));
+                ibFotoPostUsuario.SetImageURI(ImagesHelper.GetPerfilImagen(comentario.Usuario_Fotografia_Ruta));
                 GridLayout.LayoutParams param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center);
                 param.ColumnSpec = GridLayout.InvokeSpec(0);
@@ -93,15 +94,15 @@ namespace WorklabsMx.Droid
 
                 TextView txtNombre = new TextView(this)
                 {
-                    Text = comentario.Nombre,
+                    Text = comentario.Usuario_Nombre,
                     TextSize = 14,
                 };
                 txtNombre.SetMinimumWidth((Resources.DisplayMetrics.WidthPixels - 200) / 2);
                 txtNombre.Click += delegate
                 {
                     Intent perfil = new Intent(this, typeof(PerfilActivity));
-                    perfil.PutExtra("usuario_id", comentario.USUARIO_ID);
-                    perfil.PutExtra("usuario_tipo", comentario.USUARIO_TIPO);
+                    perfil.PutExtra("usuario_id", Usuario_Id);
+                    perfil.PutExtra("usuario_tipo", comentario.Usuario_Tipo);
                     StartActivity(perfil);
                 };
                 param = new GridLayout.LayoutParams();
@@ -125,14 +126,14 @@ namespace WorklabsMx.Droid
                 btnClear.Click += delegate
                 {
                     AlertDialog.Builder alert = new AlertDialog.Builder(this);
-                    if (comentario.USUARIO_ID == localStorage.Get("Usuario_Id") && comentario.USUARIO_TIPO == localStorage.Get("Usuario_Tipo"))
+                    if (Usuario_Id == localStorage.Get("Usuario_Id") && comentario.Usuario_Tipo == localStorage.Get("Usuario_Tipo"))
                     {
                         alert.SetTitle(Resources.GetString(Resource.String.BorrarComentario));
                         alert.SetMessage(Resources.GetString(Resource.String.MensajeBorrarComentario));
                         alert.SetPositiveButton(Resources.GetString(Resource.String.OK), (senderO, eO) =>
                         {
                             AndHUD.Shared.Show(this, null, -1, MaskType.Black);
-                            if (new EscritorioController().OcultarComment(comentario.POST_ID, 0))
+                            if (new EscritorioController().OcultarComment(comentario.Publicacion_Id, 0))
                             {
                                 Toast.MakeText(this, Resources.GetString(Resource.String.ComentarioEliminado), ToastLength.Short).Show();
                                 tlComentarios.RemoveView(row);
@@ -150,7 +151,7 @@ namespace WorklabsMx.Droid
                         alert.SetPositiveButton(Resources.GetString(Resource.String.OK), (senderO, eO) =>
                         {
                             Intent intent = new Intent(this, typeof(ReportActivity));
-                            intent.PutExtra("comment_id", comentario.COMM_ID);
+                            intent.PutExtra("comment_id", comentario.Comentario_Id);
                             StartActivity(intent);
                         });
                         alert.SetNegativeButton(Resources.GetString(Resource.String.Cancelar), (sender1, e1) => { });
@@ -172,7 +173,7 @@ namespace WorklabsMx.Droid
 
                 TextView txtPuesto = new TextView(this)
                 {
-                    Text = comentario.USUARIO_PUESTO,
+                    //Text = comentario.USUARIO_PUESTO,
                     TextSize = 12
                 };
                 param = new GridLayout.LayoutParams();
@@ -184,7 +185,7 @@ namespace WorklabsMx.Droid
 
                 TextView txtPost = new TextView(this)
                 {
-                    Text = comentario.COMM_CONTENIDO,
+                    Text = comentario.Comentario_Contenido,
                     TextSize = 10,
                 };
                 param = new GridLayout.LayoutParams();
@@ -196,7 +197,7 @@ namespace WorklabsMx.Droid
 
                 TextView txtFecha = new TextView(this)
                 {
-                    Text = comentario.COMM_FECHA.Substring(0, comentario.COMM_FECHA.Length - 6),
+                    Text = comentario.Comentario_Fecha.Substring(0, comentario.Comentario_Fecha.Length - 6),
                     TextSize = 10,
                 };
                 txtFecha.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 150) / 2);
