@@ -462,7 +462,7 @@ namespace WorklabsMx.Droid
                 {
                     switch (menu.Controller)
                     {
-                        case "MainActivity": StartActivity(new Intent(this, typeof(MainActivity))); break;
+                        case "MainActivity": FindViewById<ScrollView>(Resource.Id.menu_scroll).Visibility = ViewStates.Gone; break;//StartActivity(new Intent(this, typeof(MainActivity))); break;
                         case "MyMembershipActivity": StartActivity(new Intent(this, typeof(MyMembershipActivity))); break;
                         case "SubMenuActivity":
                             localStorage.Put("Parent", menu.Menu_Id);
