@@ -65,7 +65,7 @@ namespace WorklabsMx.Controllers
             query += " Miembro_Id = ";
             if (tipo == ((int)TiposUsuarios.Colaborador).ToString())
                 query += " Colaborador_Empresa_Id = ";
-            query += "@usuario_id AND Usuario_Tipo = @tipo ORDER BY Post_Fecha DESC OFFSET @page ROWS Fetch next 10 rows only";
+            query += "@usuario_id AND Usuario_Tipo = @tipo ORDER BY Publicacion_Fecha_Alta DESC OFFSET @page ROWS Fetch next 10 rows only";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@page", page);
             command.Parameters.AddWithValue("@usuario_id", usuario_id);
@@ -436,12 +436,10 @@ namespace WorklabsMx.Controllers
         /// <param name="usuario_id">Identificador del usuario</param>
         /// <param name="tipo">Tipo de usuario</param>
         /// <param name="comentario">Comentario.</param>
-        /// <param name="fotoNombre">Nombre de la fotografía</param>
         /// <param name="fotografia">Bytes de la fotografía</param>
-        public bool SetPost(string usuario_id, string tipo, string comentario, string fotoNombre, byte[] fotografia)
+        public bool SetPost(string usuario_id, string tipo, string comentario, byte[] fotografia)
         {
-            string miembro_id = null;
-            string colaborador_id = null;
+            string miembro_id = null, colaborador_id = null, fotoNombre = null;
             if (tipo == ((int)TiposUsuarios.Miembro).ToString())
                 miembro_id = usuario_id;
             else
@@ -451,7 +449,9 @@ namespace WorklabsMx.Controllers
                 conn.Open();
                 if (fotografia.Length != 0)
                 {
-                    new UploadImages().UploadBitmapAsync(fotografia);
+                    if (new UploadImages().UploadBitmapAsync(fotografia))
+                        fotoNombre = Guid.NewGuid().ToString();
+
                 }
                 transaction = conn.BeginTransaction();
                 command = CreateCommand();

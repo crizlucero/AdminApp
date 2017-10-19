@@ -462,7 +462,7 @@ namespace WorklabsMx.Droid
                 {
                     switch (menu.Controller)
                     {
-                        case "MainActivity": FindViewById<ScrollView>(Resource.Id.menu_scroll).Visibility = ViewStates.Gone; break;//StartActivity(new Intent(this, typeof(MainActivity))); break;
+                        case "MainActivity": StartActivity(new Intent(this, typeof(MainActivity))); break;
                         case "MyMembershipActivity": StartActivity(new Intent(this, typeof(MyMembershipActivity))); break;
                         case "SubMenuActivity":
                             localStorage.Put("Parent", menu.Menu_Id);
@@ -560,7 +560,7 @@ namespace WorklabsMx.Droid
                     bitmap?.Compress(Bitmap.CompressFormat.Png, 0, stream);
                     byte[] bitmapData = stream?.ToArray();
                     if (new EscritorioController().SetPost(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"),
-                                                           customView.FindViewById<EditText>(Resource.Id.txtPublicacion).Text, !string.IsNullOrEmpty(imgPublish) ? imgPublish : _file?.Name,
+                                                           customView.FindViewById<EditText>(Resource.Id.txtPublicacion).Text,
                                                            bitmapData))
                     {
                         tlPost.RemoveAllViews();
