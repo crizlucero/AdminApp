@@ -278,12 +278,13 @@ namespace WorklabsMx.Controllers
                 command = CreateCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "sp_Miembros_Posts_Likes";
-                command.Parameters.AddWithValue("@Post_Id", post_id);
-                command.Parameters.AddWithValue("@MIEMBRO_Id", miembro_id);
-                command.Parameters.AddWithValue("@COLABORADOR_Id", colaborador_id);
-                command.Parameters.AddWithValue("@Like_Estatus", 1);
-                command.Parameters.AddWithValue("@Like_Fecha", DateTime.Now);
+                command.CommandText = "sp_pro_Red_Social_Publicaciones_Me_Gustan";
+                command.Parameters.AddWithValue("@Trasaccion", "ALTA");
+                command.Parameters.AddWithValue("@Publicacion_Id", post_id);
+                command.Parameters.AddWithValue("@Miembro_Id", miembro_id);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Id", colaborador_id);
+                command.Parameters.AddWithValue("@Me_Gusta_Publicacion_Estatus", 1);
+                command.Parameters.AddWithValue("@Me_Gusta_Publicacion_Id", "");
 
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();
@@ -326,13 +327,13 @@ namespace WorklabsMx.Controllers
                 command = CreateCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "sp_Comentar";
-                command.Parameters.AddWithValue("@MIEMBRO_Id", miembro_id);
-                command.Parameters.AddWithValue("@Comm_Contenido", comentario);
-                command.Parameters.AddWithValue("@Comm_Fecha", DateTime.Now);
-                command.Parameters.AddWithValue("@Comm_Post_Id", post_id);
-                command.Parameters.AddWithValue("@colaborador_Id", colaborador_id);
-                command.Parameters.AddWithValue("@comm_estatus", 1);
+                command.CommandText = "sp_pro_Red_Social_Publicaciones_Comentarios";
+                command.Parameters.AddWithValue("@Miembro_Id", miembro_id);
+                command.Parameters.AddWithValue("@Comentario_Contenido", comentario);
+                command.Parameters.AddWithValue("@Publicacion_Id", post_id);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Id", colaborador_id);
+                command.Parameters.AddWithValue("@Comentario_Estatus", 1);
+                command.Parameters.AddWithValue("@Comentario_Imagen", DBNull.Value);
 
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();
@@ -373,7 +374,7 @@ namespace WorklabsMx.Controllers
             try
             {
                 conn.Open();
-                if (fotografia != null)
+                if (fotografia.Length != 0)
                 {
                     new UploadImages().UploadBitmapAsync(fotografia);
                 }
@@ -381,25 +382,29 @@ namespace WorklabsMx.Controllers
                 command = CreateCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "sp_Postear";
+                command.CommandText = "sp_pro_Red_Social_Publicaciones";
+
+                command.Parameters.AddWithValue("@Trasaccion", "ALTA");
+
+                command.Parameters.AddWithValue("@Publicacion_Id", "");
+
                 if (!string.IsNullOrEmpty(miembro_id))
                     command.Parameters.AddWithValue("@miembro_Id", miembro_id);
                 else
                     command.Parameters.AddWithValue("@miembro_Id", DBNull.Value);
                 if (!string.IsNullOrEmpty(colaborador_id))
-                    command.Parameters.AddWithValue("@colaborador_Id", colaborador_id);
+                    command.Parameters.AddWithValue("@Colaborador_Empresa_Id", colaborador_id);
                 else
-                    command.Parameters.AddWithValue("@colaborador_Id", DBNull.Value);
+                    command.Parameters.AddWithValue("@Colaborador_Empresa_Id", DBNull.Value);
 
-                command.Parameters.AddWithValue("@Post_Fecha", DateTime.Now);
-                command.Parameters.AddWithValue("@Post_Estatus", 1);
+                command.Parameters.AddWithValue("@Publicacion_Estatus", 1);
 
-                command.Parameters.AddWithValue("@Post_Contenido", comentario);
+                command.Parameters.AddWithValue("@Publicacion_Contenido", comentario);
 
-                command.Parameters.AddWithValue("@Post_Fotografia", fotoNombre);
+                command.Parameters.AddWithValue("@Publicacion_Imagen", fotoNombre);
 
-                //command.Transaction = transaction;
-                //command.ExecuteNonQuery();
+                command.Transaction = transaction;
+                command.ExecuteNonQuery();
                 transaction.Commit();
 
             }

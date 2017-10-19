@@ -518,6 +518,14 @@ namespace WorklabsMx.Droid
                 AndHUD.Shared.ShowImage(this, Drawable.CreateFromPath(_file.ToPath().ToString()));
             };
 
+            customView.FindViewById<EditText>(Resource.Id.txtPublicacion).TextChanged += (sender, e) =>
+            {
+                if (!string.IsNullOrEmpty(((EditText)sender).Text))
+                    customView.FindViewById<Button>(Resource.Id.btnPublishApply).Enabled = true;
+                else
+                    customView.FindViewById<Button>(Resource.Id.btnPublishApply).Enabled = false;
+            };
+
             customView.FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Click += delegate
             {
                 ImageButton imgPicture = customView.FindViewById<ImageButton>(Resource.Id.imgPicture);
@@ -546,20 +554,24 @@ namespace WorklabsMx.Droid
             };
             customView.FindViewById<Button>(Resource.Id.btnPublishApply).Click += async delegate
             {
-                System.IO.MemoryStream stream = new System.IO.MemoryStream();
-                bitmap.Compress(Bitmap.CompressFormat.Png, 0, stream);
-                byte[] bitmapData = stream.ToArray();
-                if (new EscritorioController().SetPost(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"),
-                                                       customView.FindViewById<EditText>(Resource.Id.txtPublicacion).Text, !string.IsNullOrEmpty(imgPublish) ? imgPublish : _file.Name,
-                                                       bitmapData))
+                try
                 {
-                    tlPost.RemoveAllViews();
-                    page = 0;
-                    await FillPosts();
-                    dialog.Dismiss();
-                    customView.FindViewById<ImageView>(Resource.Id.imgPicture).Visibility = ViewStates.Gone;
-                    customView.FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Gone;
+                    System.IO.MemoryStream stream = new System.IO.MemoryStream();
+                    bitmap?.Compress(Bitmap.CompressFormat.Png, 0, stream);
+                    byte[] bitmapData = stream?.ToArray();
+                    if (new EscritorioController().SetPost(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"),
+                                                           customView.FindViewById<EditText>(Resource.Id.txtPublicacion).Text, !string.IsNullOrEmpty(imgPublish) ? imgPublish : _file?.Name,
+                                                           bitmapData))
+                    {
+                        tlPost.RemoveAllViews();
+                        page = 0;
+                        await FillPosts();
+                        dialog.Dismiss();
+                        customView.FindViewById<ImageView>(Resource.Id.imgPicture).Visibility = ViewStates.Gone;
+                        customView.FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Gone;
+                    }
                 }
+                catch (Exception e) { SlackLogs.SendMessage(e.Message); }
             };
 
             builder.SetView(customView);
