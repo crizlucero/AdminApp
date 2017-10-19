@@ -328,10 +328,18 @@ namespace WorklabsMx.Controllers
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = "sp_pro_Red_Social_Publicaciones_Comentarios";
-                command.Parameters.AddWithValue("@Miembro_Id", miembro_id);
+                command.Parameters.AddWithValue("@Trasaccion", "ALTA");
+                command.Parameters.AddWithValue("@Comentario_Id", DBNull.Value);
+                if (!string.IsNullOrEmpty(miembro_id))
+                    command.Parameters.AddWithValue("@miembro_Id", miembro_id);
+                else
+                    command.Parameters.AddWithValue("@miembro_Id", DBNull.Value);
+                if (!string.IsNullOrEmpty(colaborador_id))
+                    command.Parameters.AddWithValue("@Colaborador_Empresa_Id", colaborador_id);
+                else
+                    command.Parameters.AddWithValue("@Colaborador_Empresa_Id", DBNull.Value);
                 command.Parameters.AddWithValue("@Comentario_Contenido", comentario);
                 command.Parameters.AddWithValue("@Publicacion_Id", post_id);
-                command.Parameters.AddWithValue("@Colaborador_Empresa_Id", colaborador_id);
                 command.Parameters.AddWithValue("@Comentario_Estatus", 1);
                 command.Parameters.AddWithValue("@Comentario_Imagen", DBNull.Value);
 
