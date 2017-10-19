@@ -57,7 +57,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="C18-gF-wjH" firstAttribute="centerY" secondItem="edq-D8-xyq" secondAttribute="centerY" id="A8J-vx-6sX"/>
                                 <constraint firstItem="C18-gF-wjH" firstAttribute="leading" secondItem="edq-D8-xyq" secondAttribute="leading" constant="8" id="NsJ-7C-5D8"/>
@@ -104,12 +104,16 @@
                                                         <action selector="btnComentar_TouchUpInside:" destination="qZP-9f-FXP" eventType="touchUpInside" id="21797"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWG-IN-dPK">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWG-IN-dPK">
                                                     <rect key="frame" x="8" y="70" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="G4R-TV-Q8q"/>
                                                     </constraints>
+                                                    <color key="tintColor" red="0.10980392160000001" green="0.52941176469999995" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="btnFotografia_TouchUpInside:" destination="qZP-9f-FXP" eventType="touchUpInside" id="38438"/>
+                                                    </connections>
                                                 </button>
                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBi-Zk-BpA">
                                                     <rect key="frame" x="79" y="70" width="50" height="50"/>
@@ -118,6 +122,9 @@
                                                         <constraint firstAttribute="height" constant="50" id="qiC-28-QyX"/>
                                                     </constraints>
                                                     <state key="normal" image="delete-image"/>
+                                                    <connections>
+                                                        <action selector="btnBorrarFoto_TouchUpInside:" destination="qZP-9f-FXP" eventType="touchUpInside" id="38439"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEU-kI-Wzd">
                                                     <rect key="frame" x="238" y="95" width="25" height="25"/>
@@ -125,6 +132,9 @@
                                                         <constraint firstAttribute="width" constant="25" id="45T-tw-FMT"/>
                                                     </constraints>
                                                     <state key="normal" image="Camera"/>
+                                                    <connections>
+                                                        <action selector="btnSleccionarImagen_TouchUpInside:" destination="qZP-9f-FXP" eventType="touchUpInside" id="38428"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -183,7 +193,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fAM-4O-1c5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-508.125" y="1674.2957746478874"/>
+            <point key="canvasLocation" x="-508.125" y="1674.296"/>
         </scene>
         <!--Seccion Comentarios Table View Controller-->
         <scene sceneID="xOd-gn-3h5">

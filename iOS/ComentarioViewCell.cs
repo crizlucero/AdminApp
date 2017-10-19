@@ -13,11 +13,11 @@ namespace WorklabsMx.iOS
 
 		internal void UpdateCell(ComentarioModel comentario, UIImage ImagenComentario)
 		{
-            lblNombre.Text = comentario.Nombre;
+            lblNombre.Text = comentario.Usuario_Nombre;
 			lblLikes.Text = "11 LIKES";
-            lblFechaPost.Text = comentario.COMM_FECHA;
-            lblPuesto.Text = comentario.USUARIO_PUESTO;
-			lblContenido.Text = comentario.COMM_CONTENIDO;
+            lblFechaPost.Text = comentario.Comentario_Fecha;
+            //lblPuesto.Text = comentario.USUARIO_PUESTO;
+			lblContenido.Text = comentario.Comentario_Contenido;
 
             imgPerfil.Image = ImagenComentario;
 		}

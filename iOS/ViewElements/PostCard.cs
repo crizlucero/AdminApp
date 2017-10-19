@@ -27,16 +27,16 @@ namespace WorklabsMx.iOS.ViewElements
             {
                 Frame = new CGRect(10, 20, 50, 50)
             };
-            pstImage.SetImage(ImageGallery.LoadImage(post.Miembro_Fotografia), UIControlState.Normal);
+            pstImage.SetImage(ImageGallery.LoadImage(post.Usuario_Fotografia_Ruta), UIControlState.Normal);
             pstImage.Layer.MasksToBounds = true;
             pstImage.Layer.CornerRadius = 25;
             pstImage.TouchUpInside += (sender, e) =>
             {
-                new MessageDialog().ShowImage(ImageGallery.LoadImage(post.Miembro_Fotografia));
+                new MessageDialog().ShowImage(ImageGallery.LoadImage(post.Usuario_Fotografia_Ruta));
             };
             AddSubview(pstImage);
 
-            lblNombre = new STLButton(post.Miembro_Nombre + " " + post.Miembro_Apellidos)
+            lblNombre = new STLButton(post.Usuario_Nombre)
             {
                 Frame = new CGRect(65, 25, UIScreen.MainScreen.Bounds.Width, 20),
                 Font = UIFont.BoldSystemFontOfSize(16),
@@ -53,14 +53,14 @@ namespace WorklabsMx.iOS.ViewElements
             };
             AddSubview(btnDelete);
 
-            UILabel lblfecha = new STLLabel(post.POST_FECHA, 45, 12)
+            UILabel lblfecha = new STLLabel(post.Publicacion_Fecha, 45, 12)
             {
                 Frame = new CGRect(65, 35, UIScreen.MainScreen.Bounds.Width, 50)
             };
             AddSubview(lblfecha);
 
             //Likes
-            using (UIButton btnLike = new STLButton(new Controllers.EscritorioController().GetLikes(post.POST_ID) + " Like(s)", UIImage.FromBundle("ic_thumb_up"))
+            using (UIButton btnLike = new STLButton(new Controllers.EscritorioController().GetLikesPublish(post.Publicacion_Id) + " Like(s)", UIImage.FromBundle("ic_thumb_up"))
             {
                 Frame = new CGRect(10, 75, UIScreen.MainScreen.Bounds.Width - 100, 20),
                 Font = UIFont.SystemFontOfSize(10),
@@ -71,8 +71,8 @@ namespace WorklabsMx.iOS.ViewElements
                 btnLike.TouchUpInside += (sender, e) =>
                  {
                      btnLike.BackgroundColor = UIColor.White;
-                     if (new Controllers.EscritorioController().PostLike(post.POST_ID, SimpleStorage.EditGroup("Login").Get("Usuario_Id"), SimpleStorage.EditGroup("Login").Get("Usuario_Tipo")))
-                         btnLike.SetTitle(new Controllers.EscritorioController().GetLikes(post.POST_ID) + " Like(s)", UIControlState.Normal);
+                    if (new Controllers.EscritorioController().PostLike(post.Publicacion_Id, SimpleStorage.EditGroup("Login").Get("Usuario_Id"), SimpleStorage.EditGroup("Login").Get("Usuario_Tipo")))
+                        btnLike.SetTitle(new Controllers.EscritorioController().GetLikesPublish(post.Publicacion_Id) + " Like(s)", UIControlState.Normal);
                  };
                 btnLike.TouchDown += (sender, e) =>
                 {
@@ -82,9 +82,9 @@ namespace WorklabsMx.iOS.ViewElements
                 AddSubview(btnLike);
             }
 
-            if (post.POST_FOTO_URL != "")
+            if (post.Publicacion_Imagen_Ruta != "")
             {
-                UIImageView imgPost = new STLImageView(110, post.POST_FOTO_URL)
+                UIImageView imgPost = new STLImageView(110, post.Publicacion_Imagen_Ruta)
                 {
                     Frame = new CGRect(10, 140, UIScreen.MainScreen.Bounds.Width - 100, 100)
                 };
@@ -96,7 +96,7 @@ namespace WorklabsMx.iOS.ViewElements
             UILabel txtPost = new UILabel
             {
                 Frame = new CGRect(10, 110 + totalSize, UIScreen.MainScreen.Bounds.Width - 10, 30),
-                Text = post.POST_CONTENIDO,
+                Text = post.Publicacion_Contenido,
                 Font = UIFont.SystemFontOfSize(16),
                 LineBreakMode = UILineBreakMode.WordWrap,
                 Lines = 0
@@ -112,7 +112,7 @@ namespace WorklabsMx.iOS.ViewElements
 
         void AddComentarios(PostModel post)
         {
-            List<ComentarioModel> comentarios = new Controllers.EscritorioController().GetComentariosPost(post.POST_ID);
+            List<ComentarioModel> comentarios = new Controllers.EscritorioController().GetComentariosPost(post.Publicacion_Id);
             if (comentarios.Count > 0)
             {
                 int commentSize = 0;
@@ -136,12 +136,12 @@ namespace WorklabsMx.iOS.ViewElements
                     };
                     btnCommentDelete.TouchUpInside += (sender, e) =>
                     {
-                        if (comentario.USUARIO_ID == storageLocal.Get("Usuario_Id") && comentario.USUARIO_TIPO == storageLocal.Get("Usuario_Tipo"))
+                        if (comentario.Miembro_Id == storageLocal.Get("Usuario_Id") && comentario.Usuario_Tipo == storageLocal.Get("Usuario_Tipo"))
                         {
                             new MessageDialog().SendConfirmation("Se eliminará el comentario", "Borrar comentario", (obj) =>
                            {
                                if (obj)
-                                   if (new Controllers.EscritorioController().OcultarComment(comentario.COMM_ID, 0))
+                                   if (new Controllers.EscritorioController().OcultarComment(comentario.Comentario_Id, 0))
                                    {
                                        new MessageDialog().SendToast("Comentario eliminado");
                                        commentScroll.RemoveFromSuperview();
@@ -157,7 +157,7 @@ namespace WorklabsMx.iOS.ViewElements
                                 if (obj)
                                 {
                                     ReporteController reporteController = (ReporteController)owner.Storyboard.InstantiateViewController("ReporteController");
-                                    reporteController.comment_id = comentario.COMM_ID;
+                                    reporteController.comment_id = comentario.Comentario_Id;
                                     reporteController.Title = "Reportar Post";
                                     owner.NavigationController.PushViewController(reporteController, true);
                                     ((UIButton)sender).BackgroundColor = UIColor.Clear;

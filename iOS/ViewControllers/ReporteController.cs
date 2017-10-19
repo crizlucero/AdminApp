@@ -55,7 +55,7 @@ namespace WorklabsMx.iOS
             using (UIView postView = new UIView(new CGRect(0, 50, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)))
             {
                 PostModel post = ctrlEscritorio.GetSinglePost(post_id);
-                UIButton pstImage = new STLButton(ImageGallery.LoadImage(post.Miembro_Fotografia))
+                UIButton pstImage = new STLButton(ImageGallery.LoadImage(post.Usuario_Fotografia_Ruta))
                 {
                     Frame = new CGRect(10, 20, 50, 50)
                 };
@@ -63,11 +63,11 @@ namespace WorklabsMx.iOS
                 pstImage.Layer.CornerRadius = 25;
                 pstImage.TouchUpInside += (sender, e) =>
                 {
-                    new MessageDialog().ShowImage(ImageGallery.LoadImage(post.Miembro_Fotografia));
+                    new MessageDialog().ShowImage(ImageGallery.LoadImage(post.Usuario_Fotografia_Ruta));
                 };
                 postView.AddSubview(pstImage);
 
-                UIButton lblNombre = new STLButton(post.Miembro_Nombre + " " + post.Miembro_Apellidos)
+                UIButton lblNombre = new STLButton(post.Usuario_Nombre)
                 {
                     Frame = new CGRect(65, 25, UIScreen.MainScreen.Bounds.Width, 20),
                     Font = UIFont.BoldSystemFontOfSize(16),
@@ -77,15 +77,15 @@ namespace WorklabsMx.iOS
                 lblNombre.SetTitleColor(UIColor.DarkGray, UIControlState.Normal);
                 postView.AddSubview(lblNombre);
 
-                UILabel lblfecha = new STLLabel(post.POST_FECHA, 45, 12)
+                UILabel lblfecha = new STLLabel(post.Publicacion_Fecha, 45, 12)
                 {
                     Frame = new CGRect(65, 35, UIScreen.MainScreen.Bounds.Width, 50)
                 };
                 postView.AddSubview(lblfecha);
 
-                if (post.POST_FOTO_URL != "")
+                if (post.Publicacion_Imagen_Ruta != "")
                 {
-                    UIImageView imgPost = new STLImageView(110, post.POST_FOTO_URL)
+                    UIImageView imgPost = new STLImageView(110, post.Publicacion_Imagen_Ruta)
                     {
                         Frame = new CGRect(10, 90, UIScreen.MainScreen.Bounds.Width - 100, 100)
                     };
@@ -96,7 +96,7 @@ namespace WorklabsMx.iOS
                 UILabel txtPost = new UILabel
                 {
                     Frame = new CGRect(10, 90 + size, UIScreen.MainScreen.Bounds.Width - 10, 30),
-                    Text = post.POST_CONTENIDO,
+                    Text = post.Publicacion_Contenido,
                     Font = UIFont.SystemFontOfSize(16),
                     LineBreakMode = UILineBreakMode.WordWrap,
                     Lines = 0

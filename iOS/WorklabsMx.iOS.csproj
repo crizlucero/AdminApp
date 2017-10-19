@@ -675,15 +675,8 @@
     <Compile Include="DetailCommentImage.designer.cs">
       <DependentUpon>DetailCommentImage.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Helpers\CamaraHelper.cs" />
-=======
-<<<<<<< HEAD
-    <Compile Include="Helpers\CamaraHelper.cs" />
-=======
     <Compile Include="Helpers\Settings.cs" />
->>>>>>> 224b0ecd1fdbcc12c0695b15bf30c69a6f7fab8a
->>>>>>> 604a2040239a8645d1989d87ac4b73a509bd9bd4
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

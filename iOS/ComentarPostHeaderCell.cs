@@ -76,7 +76,7 @@ namespace WorklabsMx.iOS
         partial void btnComentar_TouchUpInside(UIButton sender)
         {
             var localStorage = SimpleStorage.EditGroup("Login");
-            if (new Controllers.EscritorioController().CommentPost(LocalPost.POST_ID, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), txtComentarPost.Text))
+            if (new Controllers.EscritorioController().CommentPost(LocalPost.Publicacion_Id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), txtComentarPost.Text))
             {
                 if (PostComentado != null)
                 {

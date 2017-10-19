@@ -159,8 +159,8 @@ namespace WorklabsMx.iOS
                             try
                             {
                                 PerfilController perfilController = (PerfilController)Storyboard.InstantiateViewController("PerfilIndividualController");
-                                perfilController.Tipo = post.Tipo;
-                                perfilController.Usuario = post.MIEMBRO_ID;
+                                perfilController.Tipo = post.Usuario_Tipo;
+                                perfilController.Usuario = post.Miembro_Id;
                                 NavigationController.PushViewController(perfilController, true);
                                 ((UIButton)sender).BackgroundColor = UIColor.Clear;
                             }
@@ -185,7 +185,7 @@ namespace WorklabsMx.iOS
                         btnComentar.Layer.CornerRadius = 15;
                         btnComentar.TouchUpInside += async (sender, e) =>
                         {
-                            if (new Controllers.EscritorioController().CommentPost(post.POST_ID, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtComentario.Text))
+                            if (new Controllers.EscritorioController().CommentPost(post.Publicacion_Id, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtComentario.Text))
                             {
                                 nfloat scrollPosition = scrollView.ContentOffset.Y;
                                 txtComentario.Text = "";

@@ -19,12 +19,12 @@ namespace WorklabsMx.iOS
 
 		internal void UpdateCell(PostModel post, String Likes, UIImage PostImage)
 		{
-            lblNombre.Text = post.Miembro_Nombre + " " + post.Miembro_Apellidos;
+            lblNombre.Text = post.Usuario_Nombre;
             lblLikes.Text = Likes;
-            lblFechaPost.Text = post.POST_FECHA;
-            lblOcupacion.Text = post.Miembro_Puesto;
+            lblFechaPost.Text = post.Publicacion_Fecha;
+            //lblOcupacion.Text = post.Miembro_Puesto;
             lblComentarios.Text = "09 COMENTARIOS";
-            lblDetalleComentario.Text = post.POST_CONTENIDO;
+            lblDetalleComentario.Text = post.Publicacion_Contenido;
 
             StyleHelper.Style(vwVistaComentario.Layer);
 
@@ -36,9 +36,9 @@ namespace WorklabsMx.iOS
         partial void btnLikes_TouchUpInside(UIButton sender)
         {
             storageLocal = SimpleStorage.EditGroup("Login");
-            if (new Controllers.EscritorioController().PostLike(PostLocal.POST_ID, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo")))
+            if (new Controllers.EscritorioController().PostLike(PostLocal.Publicacion_Id, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo")))
             {
-                this.lblLikes.Text = new Controllers.EscritorioController().GetLikes(PostLocal.POST_ID) + " LIKES";
+                this.lblLikes.Text = new Controllers.EscritorioController().GetLikesComments(PostLocal.Publicacion_Id) + " LIKES";
             }
         }
     }

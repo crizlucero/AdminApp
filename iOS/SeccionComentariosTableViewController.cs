@@ -86,10 +86,10 @@ namespace WorklabsMx.iOS
 		{
             if (InternetConectionHelper.VerificarConexion())
             {
-                this.comentarios = new Controllers.EscritorioController().GetComentariosPost(Post.POST_ID);
+                this.comentarios = new Controllers.EscritorioController().GetComentariosPost(Post.Publicacion_Id);
                 foreach (var comentario in comentarios)
                 {
-                    var ImagenComentario = ImageGallery.LoadImage(comentario.Miembro_Fotografia);
+                    var ImagenComentario = ImageGallery.LoadImage(comentario.Usuario_Fotografia_Ruta);
                     ImagenesComentario.Add(ImagenComentario);
                 }
             }
