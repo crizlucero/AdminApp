@@ -24,6 +24,8 @@ namespace WorklabsMx.iOS
 
         UIImagePickerController imgPicker;
 
+        UIImage ImagenPublicacion;
+
         public PublicarPostViewController(IntPtr handle) : base(handle)
         {
             storageLocal = SimpleStorage.EditGroup("Login");
@@ -64,7 +66,10 @@ namespace WorklabsMx.iOS
         partial void btnPublicar_TouchUpInside(UIButton sender)
         {
             BTProgressHUD.Show(status: "Iniciando sesión");
-            if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtPublicacion.Text, "", this.imgPerfil.Image?.AsPNG().ToArray()))
+
+            var id = new NSUuid();
+
+            if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtPublicacion.Text, id.ToString(), ImagenPublicacion?.AsPNG().ToArray()))
             {
                 BTProgressHUD.Dismiss();
                 this.DismissViewController(true, null);
@@ -128,6 +133,7 @@ namespace WorklabsMx.iOS
         [Foundation.Export("imagePickerController:didFinishPickingImage:editingInfo:")]
         public void FinishedPickingImage(UIKit.UIImagePickerController picker, UIKit.UIImage image, Foundation.NSDictionary editingInfo)
         {
+            ImagenPublicacion = image;
             this.btnImageComment.SetImage(image, UIControlState.Normal);
             this.btnDeleteImge.Hidden = false;
             this.btnPublicar.Enabled = true;

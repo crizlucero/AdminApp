@@ -16,6 +16,10 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnImagenComentatio { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnLikes { get; set; }
 
         [Outlet]
@@ -54,12 +58,21 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwVistaComentario { get; set; }
 
+        [Action ("btnImagenComentatio_touchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnImagenComentatio_touchUpInside (UIKit.UIButton sender);
+
         [Action ("btnLikes_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnLikes_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnImagenComentatio != null) {
+                btnImagenComentatio.Dispose ();
+                btnImagenComentatio = null;
+            }
+
             if (btnLikes != null) {
                 btnLikes.Dispose ();
                 btnLikes = null;

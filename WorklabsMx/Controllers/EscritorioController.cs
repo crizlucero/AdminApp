@@ -449,7 +449,7 @@ namespace WorklabsMx.Controllers
             try
             {
                 conn.Open();
-                if (fotografia.Length != 0)
+                if (fotografia?.Length != 0)
                 {
                     new UploadImages().UploadBitmapAsync(fotografia);
                 }

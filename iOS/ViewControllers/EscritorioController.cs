@@ -4,7 +4,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         const string IdentificadorCeldaPost = "Post";
         const string IdentificadorCeldaNoInfo = "NoInfo";
 
-        const int TamañoPublicacion = 190;
+        const int TamañoPublicacion = 223;
         const int TamañoHeader = 120;
         const int TamañoMensajeNoInfo = 400;
 

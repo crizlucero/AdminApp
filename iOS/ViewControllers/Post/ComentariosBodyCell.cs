@@ -23,7 +23,7 @@ namespace WorklabsMx.iOS
             lblLikes.Text = Likes;
             lblFechaPost.Text = post.Publicacion_Fecha;
             //lblOcupacion.Text = post.Miembro_Puesto;
-            lblComentarios.Text = "09 COMENTARIOS";
+            lblComentarios.Text = post.Publicacion_Comentarios_Cantidad + " COMENTARIOS";
             lblDetalleComentario.Text = post.Publicacion_Contenido;
 
             StyleHelper.Style(vwVistaComentario.Layer);
@@ -40,6 +40,11 @@ namespace WorklabsMx.iOS
             {
                 this.lblLikes.Text = new Controllers.EscritorioController().GetLikesComments(PostLocal.Publicacion_Id) + " LIKES";
             }
+        }
+
+        partial void btnImagenComentatio_touchUpInside(UIButton sender)
+        {
+           
         }
     }
 }
