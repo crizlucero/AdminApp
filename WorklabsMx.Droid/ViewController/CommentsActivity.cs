@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
+using Android.Graphics.Drawables;
 using Android.OS;
+using Android.Support.V4.Content;
+using Android.Support.V4.Widget;
 using Android.Views;
 using Android.Widget;
 using AndroidHUD;
@@ -12,7 +16,6 @@ using WorklabsMx.Droid.Helpers;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "CommentsActivity")]
     public class CommentsActivity : Activity
     {
         EscritorioController DashboardController;
@@ -25,7 +28,7 @@ namespace WorklabsMx.Droid
             localStorage = SimpleStorage.EditGroup("Login");
         }
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected async override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
@@ -41,15 +44,23 @@ namespace WorklabsMx.Droid
             svComentarios = FindViewById<ScrollView>(Resource.Id.svComentarios);
             tlComentarios = FindViewById<TableLayout>(Resource.Id.llComentarios);
             if (Convert.ToInt32(Intent.GetStringExtra("comments_total")) > 0)
-                FillComments();
-            FindViewById<ImageButton>(Resource.Id.btnApplyComment).Click += delegate
+                await FillComments();
+            SwipeRefreshLayout refresher = FindViewById<SwipeRefreshLayout>(Resource.Id.swipe_container);
+            refresher.SetColorSchemeColors(Color.Gray, Color.LightGray, Color.Gray, Color.DarkGray, Color.Black, Color.DarkGray);
+            refresher.Refresh += async (sender, e) =>
+            {
+                tlComentarios.RemoveAllViews();
+                await FillComments();
+                ((SwipeRefreshLayout)sender).Refreshing = false;
+            };
+            FindViewById<ImageButton>(Resource.Id.btnApplyComment).Click +=async delegate
             {
                 AndHUD.Shared.Show(this, null, -1, MaskType.Black);
                 if (new EscritorioController().CommentPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), FindViewById<EditText>(Resource.Id.txtComment).Text))
                 {
                     FindViewById<EditText>(Resource.Id.txtComment).Text = "";
                     FindViewById<EditText>(Resource.Id.txtComment).ClearFocus();
-                    FillComments();
+                    await FillComments();
                     svComentarios.ScrollY = svComentarios.Height;
                 }
                 AndHUD.Shared.Dismiss(this);
@@ -57,12 +68,14 @@ namespace WorklabsMx.Droid
 
         }
 
-        void FillComments()
+        async Task FillComments()
         {
             AndHUD.Shared.Show(this, null, -1, MaskType.Black);
+            await Task.Delay(500);
             tlComentarios.RemoveAllViews();
             DashboardController.GetComentariosPost(post_id).ForEach((comentario) =>
             {
+                String Usuario_Id = comentario.Miembro_Id ?? comentario.Colaborador_Empresa_Id;
                 TableRow row = new TableRow(this);
                 row.SetMinimumHeight(100);
                 row.SetBackgroundResource(Resource.Drawable.CardStyle);
@@ -80,7 +93,7 @@ namespace WorklabsMx.Droid
                 ImageButton ibFotoPostUsuario = new ImageButton(this);
                 ibFotoPostUsuario.SetMinimumWidth(150);
                 ibFotoPostUsuario.SetMinimumHeight(150);
-                ibFotoPostUsuario.SetImageURI(ImagesHelper.GetPerfilImagen(comentario.Miembro_Fotografia));
+                ibFotoPostUsuario.SetImageURI(ImagesHelper.GetPerfilImagen(comentario.Usuario_Fotografia_Ruta));
                 GridLayout.LayoutParams param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center);
                 param.ColumnSpec = GridLayout.InvokeSpec(0);
@@ -93,15 +106,15 @@ namespace WorklabsMx.Droid
 
                 TextView txtNombre = new TextView(this)
                 {
-                    Text = comentario.Nombre,
+                    Text = comentario.Usuario_Nombre,
                     TextSize = 14,
                 };
                 txtNombre.SetMinimumWidth((Resources.DisplayMetrics.WidthPixels - 200) / 2);
                 txtNombre.Click += delegate
                 {
                     Intent perfil = new Intent(this, typeof(PerfilActivity));
-                    perfil.PutExtra("usuario_id", comentario.USUARIO_ID);
-                    perfil.PutExtra("usuario_tipo", comentario.USUARIO_TIPO);
+                    perfil.PutExtra("usuario_id", Usuario_Id);
+                    perfil.PutExtra("usuario_tipo", comentario.Usuario_Tipo);
                     StartActivity(perfil);
                 };
                 param = new GridLayout.LayoutParams();
@@ -125,14 +138,14 @@ namespace WorklabsMx.Droid
                 btnClear.Click += delegate
                 {
                     AlertDialog.Builder alert = new AlertDialog.Builder(this);
-                    if (comentario.USUARIO_ID == localStorage.Get("Usuario_Id") && comentario.USUARIO_TIPO == localStorage.Get("Usuario_Tipo"))
+                    if (Usuario_Id == localStorage.Get("Usuario_Id") && comentario.Usuario_Tipo == localStorage.Get("Usuario_Tipo"))
                     {
                         alert.SetTitle(Resources.GetString(Resource.String.BorrarComentario));
                         alert.SetMessage(Resources.GetString(Resource.String.MensajeBorrarComentario));
                         alert.SetPositiveButton(Resources.GetString(Resource.String.OK), (senderO, eO) =>
                         {
                             AndHUD.Shared.Show(this, null, -1, MaskType.Black);
-                            if (new EscritorioController().OcultarComment(comentario.POST_ID, 0))
+                            if (new EscritorioController().OcultarComment(comentario.Publicacion_Id, 0))
                             {
                                 Toast.MakeText(this, Resources.GetString(Resource.String.ComentarioEliminado), ToastLength.Short).Show();
                                 tlComentarios.RemoveView(row);
@@ -150,7 +163,7 @@ namespace WorklabsMx.Droid
                         alert.SetPositiveButton(Resources.GetString(Resource.String.OK), (senderO, eO) =>
                         {
                             Intent intent = new Intent(this, typeof(ReportActivity));
-                            intent.PutExtra("comment_id", comentario.COMM_ID);
+                            intent.PutExtra("comment_id", comentario.Comentario_Id);
                             StartActivity(intent);
                         });
                         alert.SetNegativeButton(Resources.GetString(Resource.String.Cancelar), (sender1, e1) => { });
@@ -172,7 +185,7 @@ namespace WorklabsMx.Droid
 
                 TextView txtPuesto = new TextView(this)
                 {
-                    Text = comentario.USUARIO_PUESTO,
+                    //Text = comentario.USUARIO_PUESTO,
                     TextSize = 12
                 };
                 param = new GridLayout.LayoutParams();
@@ -184,7 +197,7 @@ namespace WorklabsMx.Droid
 
                 TextView txtPost = new TextView(this)
                 {
-                    Text = comentario.COMM_CONTENIDO,
+                    Text = comentario.Comentario_Contenido,
                     TextSize = 10,
                 };
                 param = new GridLayout.LayoutParams();
@@ -196,7 +209,7 @@ namespace WorklabsMx.Droid
 
                 TextView txtFecha = new TextView(this)
                 {
-                    Text = comentario.COMM_FECHA.Substring(0, comentario.COMM_FECHA.Length - 6),
+                    Text = comentario.Comentario_Fecha.Substring(0, comentario.Comentario_Fecha.Length - 6),
                     TextSize = 10,
                 };
                 txtFecha.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 150) / 2);
@@ -206,6 +219,29 @@ namespace WorklabsMx.Droid
                 param.RowSpec = GridLayout.InvokeSpec(3);
                 txtFecha.LayoutParameters = param;
                 glPost.AddView(txtFecha);
+
+                LinearLayout llLike = new LinearLayout(this);
+                Drawable icon = ContextCompat.GetDrawable(this, Resource.Mipmap.ic_star_like);
+                icon.SetBounds(0, 0, 20, 20);
+                TextView lblLike = new TextView(this)
+                {
+                    Text = comentario.Comentario_Me_Gustan_Cantidad + " Like(s)",
+                    TextSize = 10
+                };
+                lblLike.SetCompoundDrawables(icon, null, null, null);
+                lblLike.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 130) / 5);
+                lblLike.Click += delegate
+                {
+                    if (new EscritorioController().CommentLike(comentario.Comentario_Id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")))
+                        lblLike.Text = new EscritorioController().GetLikesComments(comentario.Comentario_Id) + " Like(s)";
+                };
+                llLike.AddView(lblLike);
+                param = new GridLayout.LayoutParams();
+                param.SetGravity(GravityFlags.Center | GravityFlags.Left);
+                param.ColumnSpec = GridLayout.InvokeSpec(2);
+                param.RowSpec = GridLayout.InvokeSpec(3);
+                llLike.LayoutParameters = param;
+                glPost.AddView(llLike);
 
                 row.AddView(glPost);
                 tlComentarios.AddView(row);
