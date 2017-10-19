@@ -22,6 +22,7 @@ namespace WorklabsMx.iOS
 
         public event EventHandler MostrarImagenEnGrande;
 
+
         public ComentarPostHeaderCell (IntPtr handle) : base (handle)
         {
 
