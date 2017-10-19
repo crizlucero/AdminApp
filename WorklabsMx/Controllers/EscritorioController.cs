@@ -17,12 +17,8 @@ namespace WorklabsMx.Controllers
         {
 
             List<PostModel> posts = new List<PostModel>();
-            string query = "select * FROM (SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo, Usuario_Puesto from Muro_Posts as p " +
-                "INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id WHERE m.Usuario_Tipo = 1 " +
-                "union all " +
-                "SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo, Usuario_Puesto from Muro_Posts as p " +
-                "INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 2) as Posts " +
-                "WHERE POST_ESTATUS = 1 ORDER BY Post_Fecha DESC OFFSET @page ROWS Fetch next 10 rows only";
+            string query = "SELECT * FROM vw_pro_Red_Social_Publicaciones " +
+                "WHERE Publicacion_Estatus = 1 ORDER BY Publicacion_Fecha_Alta DESC OFFSET @page ROWS Fetch next 10 rows only";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@page", page);
             try
@@ -33,16 +29,18 @@ namespace WorklabsMx.Controllers
                 {
                     posts.Add(new PostModel
                     {
-                        POST_ID = reader["POST_ID"].ToString(),
-                        Tipo = reader["Usuario_Tipo"].ToString(),
-                        MIEMBRO_ID = reader["Usuario_Id"].ToString(),
-                        POST_FECHA = reader["POST_FECHA"].ToString(),
-                        POST_FOTO_URL = reader["POST_FOTO_URL"].ToString().Replace(@"\","/"),
-                        POST_CONTENIDO = reader["POST_CONTENIDO"].ToString(),
-                        Miembro_Nombre = reader["Usuario_Nombre"].ToString(),
-                        Miembro_Apellidos = reader["Usuario_Apellidos"].ToString(),
-                        Miembro_Fotografia = reader["Usuario_Fotografia"].ToString(),
-                        Miembro_Puesto = reader["Usuario_Puesto"].ToString()
+                        Publicacion_Id = reader["Publicacion_Id"].ToString(),
+                        Miembro_Id = reader["Miembro_Id"].ToString(),
+                        Colaborador_Empresa_Id = reader["Colaborador_Empresa_Id"].ToString(),
+                        Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
+                        Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
+                        Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString(),
+                        Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
+                        Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),
+                        Publicacion_Imagen_Ruta = reader["Publicacion_Imagen_Ruta"].ToString(),
+                        Publicacion_Fecha = reader["Publicacion_Fecha"].ToString(),
+                        Publicacion_Comentarios_Cantidad = reader["Publicacion_Comentarios_Cantidad"].ToString(),
+                        Publicacion_Me_Gustan_Cantidad = reader["Publicacion_Me_Gustan_Cantidad"].ToString()
                     });
                 }
             }
@@ -62,12 +60,12 @@ namespace WorklabsMx.Controllers
         {
 
             List<PostModel> posts = new List<PostModel>();
-            string query = "select * FROM (SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
-                "INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id WHERE m.Usuario_Tipo = 1 " +
-                "union all " +
-                "SELECT p.*, Usuario_Id, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
-                "INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 2) as Posts " +
-                "WHERE POST_ESTATUS = 1 AND Usuario_Id = @usuario_id AND Usuario_Tipo = @tipo ORDER BY Post_Fecha DESC OFFSET @page ROWS Fetch next 10 rows only";
+            string query = "select * FROM vw_pro_Red_Social_Publicaciones " +
+                "WHERE Publicacion_Estatus = 1 AND ";
+            query += " Miembro_Id = ";
+            if (tipo == ((int)TiposUsuarios.Colaborador).ToString())
+                query += " Colaborador_Empresa_Id = ";
+            query += "@usuario_id AND Usuario_Tipo = @tipo ORDER BY Post_Fecha DESC OFFSET @page ROWS Fetch next 10 rows only";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@page", page);
             command.Parameters.AddWithValue("@usuario_id", usuario_id);
@@ -80,15 +78,18 @@ namespace WorklabsMx.Controllers
                 {
                     posts.Add(new PostModel
                     {
-                        POST_ID = reader["POST_ID"].ToString(),
-                        Tipo = reader["Usuario_Tipo"].ToString(),
-                        MIEMBRO_ID = reader["MIEMBRO_ID"].ToString(),
-                        POST_FECHA = reader["POST_FECHA"].ToString(),
-                        POST_FOTO_URL = reader["POST_FOTO_URL"].ToString(),
-                        POST_CONTENIDO = reader["POST_CONTENIDO"].ToString(),
-                        Miembro_Nombre = reader["Usuario_Nombre"].ToString(),
-                        Miembro_Apellidos = reader["Usuario_Apellidos"].ToString(),
-                        Miembro_Fotografia = reader["Usuario_Fotografia"].ToString()
+                        Publicacion_Id = reader["Publicacion_Id"].ToString(),
+                        Miembro_Id = reader["Miembro_Id"].ToString(),
+                        Colaborador_Empresa_Id = reader["Colaborador_Empresa_Id"].ToString(),
+                        Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
+                        Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
+                        Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString(),
+                        Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
+                        Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),
+                        Publicacion_Imagen_Ruta = reader["Publicacion_Imagen_Ruta"].ToString(),
+                        Publicacion_Fecha = reader["Publicacion_Fecha"].ToString(),
+                        Publicacion_Comentarios_Cantidad = reader["Publicacion_Comentarios_Cantidad"].ToString(),
+                        Publicacion_Me_Gustan_Cantidad = reader["Publicacion_Me_Gustan_Cantidad"].ToString()
                     });
                 }
             }
@@ -131,12 +132,8 @@ namespace WorklabsMx.Controllers
         public List<ComentarioModel> GetComentariosPost(string post_id)
         {
             List<ComentarioModel> comentarios = new List<ComentarioModel>();
-            string query = "select * FROM (SELECT p.*, Usuario_Id, CONCAT(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia, Usuario_Tipo, Usuario_Puesto from Muro_Comments as p " +
-                "INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id WHERE m.Usuario_Tipo = 1 " +
-                "union all " +
-                "SELECT p.*, Usuario_Id, CONCAT(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia, Usuario_Tipo, Usuario_Puesto from Muro_Comments as p " +
-                "INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 2) as Comments " +
-                "WHERE COMM_ESTATUS = 1 AND Post_Id = @post_id ORDER BY COMM_FECHA DESC --OFFSET @page ROWS Fetch next 10 rows only";
+            string query = "select * FROM vw_pro_Red_Social_Publicaciones_Comentarios " +
+                "WHERE Comentario_Estatus = 1 AND Publicacion_Id = @post_id ORDER BY Comentario_Fecha DESC --OFFSET @page ROWS Fetch next 10 rows only";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@post_id", post_id);
             try
@@ -145,19 +142,20 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    comentarios.Add(new ComentarioModel
-                    {
-                        COMM_ID = reader["COMM_ID"].ToString(),
-                        USUARIO_ID = reader["Usuario_ID"].ToString(),
-                        POST_ID = reader["POST_ID"].ToString(),
-                        COMM_FECHA = reader["COMM_FECHA"].ToString(),
-                        COMM_CONTENIDO = reader["COMM_CONTENIDO"].ToString(),
-                        COMM_ESTATUS = reader["COMM_ESTATUS"].ToString(),
-                        Nombre = reader["Nombre"].ToString(),
-                        Miembro_Fotografia = reader["Usuario_Fotografia"].ToString(),
-                        USUARIO_TIPO = reader["Usuario_Tipo"].ToString(),
-                        USUARIO_PUESTO = reader["Usuario_Puesto"].ToString()
-                    });
+                    ComentarioModel comentario = new ComentarioModel();
+                    comentario.Comentario_Id = reader["Comentario_Id"].ToString();
+                    comentario.Publicacion_Id = reader["Publicacion_Id"].ToString();
+                    comentario.Miembro_Id = reader["Miembro_Id"].ToString();
+                    comentario.Colaborador_Empresa_Id = reader["Colaborador_Empresa_Id"].ToString();
+                    comentario.Usuario_Nombre = reader["Usuario_Nombre"].ToString();
+                    comentario.Usuario_Tipo = reader["Usuario_Tipo"].ToString();
+                    comentario.Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString();
+                    comentario.Comentario_Contenido = reader["Comentario_Contenido"].ToString();
+                    comentario.Comentario_Imagen = reader["Comentario_Imagen"].ToString();
+                    comentario.Comentario_Imagen_Ruta = reader["Comentario_Imagen_Ruta"].ToString();
+                    comentario.Comentario_Fecha = reader["Comentario_Fecha"].ToString();
+                    comentario.Comentario_Me_Gustan_Cantidad = reader["Comentario_Me_Gustan_Cantidad"].ToString();
+                    comentarios.Add(comentario);
                 }
             }
             catch (Exception e)
@@ -280,12 +278,13 @@ namespace WorklabsMx.Controllers
                 command = CreateCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "sp_Miembros_Posts_Likes";
-                command.Parameters.AddWithValue("@Post_Id", post_id);
-                command.Parameters.AddWithValue("@MIEMBRO_Id", miembro_id);
-                command.Parameters.AddWithValue("@COLABORADOR_Id", colaborador_id);
-                command.Parameters.AddWithValue("@Like_Estatus", 1);
-                command.Parameters.AddWithValue("@Like_Fecha", DateTime.Now);
+                command.CommandText = "sp_pro_Red_Social_Publicaciones_Me_Gustan";
+                command.Parameters.AddWithValue("@Trasaccion", "ALTA");
+                command.Parameters.AddWithValue("@Publicacion_Id", post_id);
+                command.Parameters.AddWithValue("@Miembro_Id", miembro_id);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Id", colaborador_id);
+                command.Parameters.AddWithValue("@Me_Gusta_Publicacion_Estatus", 1);
+                command.Parameters.AddWithValue("@Me_Gusta_Publicacion_Id", "");
 
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();
@@ -328,13 +327,21 @@ namespace WorklabsMx.Controllers
                 command = CreateCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "sp_Comentar";
-                command.Parameters.AddWithValue("@MIEMBRO_Id", miembro_id);
-                command.Parameters.AddWithValue("@Comm_Contenido", comentario);
-                command.Parameters.AddWithValue("@Comm_Fecha", DateTime.Now);
-                command.Parameters.AddWithValue("@Comm_Post_Id", post_id);
-                command.Parameters.AddWithValue("@colaborador_Id", colaborador_id);
-                command.Parameters.AddWithValue("@comm_estatus", 1);
+                command.CommandText = "sp_pro_Red_Social_Publicaciones_Comentarios";
+                command.Parameters.AddWithValue("@Trasaccion", "ALTA");
+                command.Parameters.AddWithValue("@Comentario_Id", DBNull.Value);
+                if (!string.IsNullOrEmpty(miembro_id))
+                    command.Parameters.AddWithValue("@miembro_Id", miembro_id);
+                else
+                    command.Parameters.AddWithValue("@miembro_Id", DBNull.Value);
+                if (!string.IsNullOrEmpty(colaborador_id))
+                    command.Parameters.AddWithValue("@Colaborador_Empresa_Id", colaborador_id);
+                else
+                    command.Parameters.AddWithValue("@Colaborador_Empresa_Id", DBNull.Value);
+                command.Parameters.AddWithValue("@Comentario_Contenido", comentario);
+                command.Parameters.AddWithValue("@Publicacion_Id", post_id);
+                command.Parameters.AddWithValue("@Comentario_Estatus", 1);
+                command.Parameters.AddWithValue("@Comentario_Imagen", DBNull.Value);
 
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();
@@ -375,7 +382,7 @@ namespace WorklabsMx.Controllers
             try
             {
                 conn.Open();
-                if (fotografia != null)
+                if (fotografia.Length != 0)
                 {
                     new UploadImages().UploadBitmapAsync(fotografia);
                 }
@@ -383,25 +390,29 @@ namespace WorklabsMx.Controllers
                 command = CreateCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "sp_Postear";
+                command.CommandText = "sp_pro_Red_Social_Publicaciones";
+
+                command.Parameters.AddWithValue("@Trasaccion", "ALTA");
+
+                command.Parameters.AddWithValue("@Publicacion_Id", "");
+
                 if (!string.IsNullOrEmpty(miembro_id))
                     command.Parameters.AddWithValue("@miembro_Id", miembro_id);
                 else
                     command.Parameters.AddWithValue("@miembro_Id", DBNull.Value);
                 if (!string.IsNullOrEmpty(colaborador_id))
-                    command.Parameters.AddWithValue("@colaborador_Id", colaborador_id);
+                    command.Parameters.AddWithValue("@Colaborador_Empresa_Id", colaborador_id);
                 else
-                    command.Parameters.AddWithValue("@colaborador_Id", DBNull.Value);
+                    command.Parameters.AddWithValue("@Colaborador_Empresa_Id", DBNull.Value);
 
-                command.Parameters.AddWithValue("@Post_Fecha", DateTime.Now);
-                command.Parameters.AddWithValue("@Post_Estatus", 1);
+                command.Parameters.AddWithValue("@Publicacion_Estatus", 1);
 
-                command.Parameters.AddWithValue("@Post_Contenido", comentario);
+                command.Parameters.AddWithValue("@Publicacion_Contenido", comentario);
 
-                command.Parameters.AddWithValue("@Post_Fotografia", fotoNombre);
+                command.Parameters.AddWithValue("@Publicacion_Imagen", fotoNombre);
 
-                //command.Transaction = transaction;
-                //command.ExecuteNonQuery();
+                command.Transaction = transaction;
+                command.ExecuteNonQuery();
                 transaction.Commit();
 
             }
@@ -427,12 +438,8 @@ namespace WorklabsMx.Controllers
         public PostModel GetSinglePost(string post_id)
         {
             PostModel post = new PostModel();
-            string query = "select * FROM (SELECT p.*, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
-                "INNER JOIN vw_pro_Usuarios_Directorio as m on p.Miembro_ID = m.Usuario_Id WHERE m.Usuario_Tipo = 0 " +
-                "union all " +
-                "SELECT p.*, Usuario_Nombre, Usuario_Apellidos, Usuario_Fotografia, Usuario_Tipo from Muro_Posts as p " +
-                "INNER JOIN vw_pro_Usuarios_Directorio as c on p.Colaborador_Id = c.Usuario_Id WHERE c.Usuario_Tipo = 1) as Posts " +
-                "WHERE POST_ID = @post_id";
+            string query = "select * FROM vw_pro_Red_Social_Publicaciones " +
+                "WHERE Publicacion_Id = @post_id";
             try
             {
                 conn.Open();
@@ -443,15 +450,18 @@ namespace WorklabsMx.Controllers
                 {
                     post = new PostModel
                     {
-                        POST_ID = reader["POST_ID"].ToString(),
-                        Tipo = reader["Usuario_Tipo"].ToString(),
-                        MIEMBRO_ID = reader["MIEMBRO_ID"].ToString(),
-                        POST_FECHA = reader["POST_FECHA"].ToString(),
-                        POST_FOTO_URL = reader["POST_FOTO_URL"].ToString(),
-                        POST_CONTENIDO = reader["POST_CONTENIDO"].ToString(),
-                        Miembro_Nombre = reader["Usuario_Nombre"].ToString(),
-                        Miembro_Apellidos = reader["Usuario_Apellidos"].ToString(),
-                        Miembro_Fotografia = reader["Usuario_Fotografia"].ToString()
+                        Publicacion_Id = reader["Publicacion_Id"].ToString(),
+                        Miembro_Id = reader["Miembro_Id"].ToString(),
+                        Colaborador_Empresa_Id = reader["Colaborador_Empresa_Id"].ToString(),
+                        Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
+                        Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
+                        Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString(),
+                        Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
+                        Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),
+                        Publicacion_Imagen_Ruta = reader["Publicacion_Imagen_Ruta"].ToString(),
+                        Publicacion_Fecha = reader["Publicacion_Fecha"].ToString(),
+                        Publicacion_Comentarios_Cantidad = reader["Publicacion_Comentarios_Cantidad"].ToString(),
+                        Publicacion_Me_Gustan_Cantidad = reader["Publicacion_Me_Gustan_Cantidad"].ToString()
                     };
                 }
             }
