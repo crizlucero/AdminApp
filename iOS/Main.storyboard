@@ -25,7 +25,7 @@
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="edq-D8-xyq">
-                            <rect key="frame" x="0.0" y="128" width="320" height="375"/>
+                            <rect key="frame" x="0.0" y="169" width="320" height="375"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C18-gF-wjH">
@@ -74,18 +74,18 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CeldaComentar" rowHeight="100" id="qZP-9f-FXP" customClass="ComentarPostHeaderCell">
-                                <rect key="frame" x="0.0" y="28" width="320" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CeldaComentar" rowHeight="141" id="qZP-9f-FXP" customClass="ComentarPostHeaderCell">
+                                <rect key="frame" x="0.0" y="28" width="320" height="141"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qZP-9f-FXP" id="I6N-t3-a3E">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="141"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wc3-Rd-QhA">
-                                            <rect key="frame" x="8" y="8" width="304" height="84"/>
+                                            <rect key="frame" x="8" y="8" width="304" height="125"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Escribe un comentario" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="NYg-RF-Rmu">
-                                                    <rect key="frame" x="8" y="8" width="266" height="68"/>
+                                                    <rect key="frame" x="8" y="8" width="288" height="57"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" red="0.10980392160000001" green="0.52941176469999995" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="textColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
@@ -93,7 +93,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hbt-L5-FYm">
-                                                    <rect key="frame" x="279" y="51" width="25" height="25"/>
+                                                    <rect key="frame" x="271" y="95" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="C8L-Wx-chR"/>
                                                         <constraint firstAttribute="height" constant="25" id="Mic-7a-nwV"/>
@@ -104,15 +104,53 @@
                                                         <action selector="btnComentar_TouchUpInside:" destination="qZP-9f-FXP" eventType="touchUpInside" id="21797"/>
                                                     </connections>
                                                 </button>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBi-Zk-BpA">
+                                                    <rect key="frame" x="79" y="70" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="Rqp-tf-rDn"/>
+                                                        <constraint firstAttribute="height" constant="50" id="qiC-28-QyX"/>
+                                                    </constraints>
+                                                    <state key="normal" image="delete-image"/>
+                                                    <connections>
+                                                        <action selector="btnBorrarFoto_TouchUpInside:" destination="qZP-9f-FXP" eventType="touchUpInside" id="38424"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEU-kI-Wzd">
+                                                    <rect key="frame" x="238" y="95" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="45T-tw-FMT"/>
+                                                    </constraints>
+                                                    <state key="normal" image="Camera"/>
+                                                    <connections>
+                                                        <action selector="btnSleccionarImagen_TouchUpInside:" destination="qZP-9f-FXP" eventType="touchUpInside" id="38422"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWG-IN-dPK">
+                                                    <rect key="frame" x="8" y="70" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="G4R-TV-Q8q"/>
+                                                    </constraints>
+                                                    <color key="tintColor" red="0.10980392160000001" green="0.52941176469999995" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="btnFotografia_TouchUpInside:" destination="qZP-9f-FXP" eventType="touchUpInside" id="38423"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="NYg-RF-Rmu" firstAttribute="top" secondItem="Wc3-Rd-QhA" secondAttribute="top" constant="8" id="7xt-YM-DVf"/>
-                                                <constraint firstItem="NYg-RF-Rmu" firstAttribute="leading" secondItem="Wc3-Rd-QhA" secondAttribute="leading" constant="8" id="F6J-hd-Asy"/>
-                                                <constraint firstItem="Hbt-L5-FYm" firstAttribute="leading" secondItem="NYg-RF-Rmu" secondAttribute="trailing" constant="5" id="McI-Tg-Dag"/>
-                                                <constraint firstAttribute="bottom" secondItem="Hbt-L5-FYm" secondAttribute="bottom" constant="8" id="VXP-pB-njY"/>
-                                                <constraint firstAttribute="bottom" secondItem="NYg-RF-Rmu" secondAttribute="bottom" constant="8" id="cy5-IN-0Dc"/>
-                                                <constraint firstAttribute="trailing" secondItem="Hbt-L5-FYm" secondAttribute="trailing" id="u1e-K3-7AR"/>
+                                                <constraint firstItem="TBi-Zk-BpA" firstAttribute="bottom" secondItem="XEU-kI-Wzd" secondAttribute="bottom" id="2SA-qv-8Cd"/>
+                                                <constraint firstItem="NYg-RF-Rmu" firstAttribute="top" secondItem="Wc3-Rd-QhA" secondAttribute="topMargin" id="EO7-le-6JC"/>
+                                                <constraint firstItem="NYg-RF-Rmu" firstAttribute="leading" secondItem="kWG-IN-dPK" secondAttribute="leading" id="JZo-LO-SE2"/>
+                                                <constraint firstItem="NYg-RF-Rmu" firstAttribute="bottom" secondItem="Hbt-L5-FYm" secondAttribute="bottom" constant="-55" id="LI1-Ug-x7u"/>
+                                                <constraint firstItem="kWG-IN-dPK" firstAttribute="bottom" secondItem="TBi-Zk-BpA" secondAttribute="bottom" id="Rqr-XQ-yqZ"/>
+                                                <constraint firstItem="XEU-kI-Wzd" firstAttribute="top" secondItem="Hbt-L5-FYm" secondAttribute="top" id="ZTe-ms-TPq"/>
+                                                <constraint firstItem="Hbt-L5-FYm" firstAttribute="leading" secondItem="NYg-RF-Rmu" secondAttribute="trailing" constant="-25" id="caQ-6Q-kNu"/>
+                                                <constraint firstAttribute="bottom" secondItem="kWG-IN-dPK" secondAttribute="bottom" constant="5" id="eio-tF-8zl"/>
+                                                <constraint firstItem="NYg-RF-Rmu" firstAttribute="leading" secondItem="Wc3-Rd-QhA" secondAttribute="leadingMargin" id="oBQ-qd-7fV"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hbt-L5-FYm" secondAttribute="trailing" constant="8" id="qaE-9J-IJ8"/>
+                                                <constraint firstItem="TBi-Zk-BpA" firstAttribute="leading" secondItem="kWG-IN-dPK" secondAttribute="trailing" constant="21" id="qic-Kb-2qw"/>
+                                                <constraint firstItem="kWG-IN-dPK" firstAttribute="top" secondItem="TBi-Zk-BpA" secondAttribute="top" id="w1A-MU-1QF"/>
+                                                <constraint firstItem="Hbt-L5-FYm" firstAttribute="leading" secondItem="XEU-kI-Wzd" secondAttribute="trailing" constant="8" symbolic="YES" id="xRC-at-qL1"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -124,14 +162,17 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstItem="Wc3-Rd-QhA" firstAttribute="leading" secondItem="I6N-t3-a3E" secondAttribute="leading" constant="8" id="HnJ-dw-vkE"/>
-                                        <constraint firstItem="Wc3-Rd-QhA" firstAttribute="top" secondItem="I6N-t3-a3E" secondAttribute="top" constant="8" id="Lfz-za-pU6"/>
-                                        <constraint firstAttribute="bottom" secondItem="Wc3-Rd-QhA" secondAttribute="bottom" constant="8" id="VKK-HF-yB1"/>
-                                        <constraint firstAttribute="trailing" secondItem="Wc3-Rd-QhA" secondAttribute="trailing" constant="8" id="gyh-Hk-aBC"/>
+                                        <constraint firstItem="Wc3-Rd-QhA" firstAttribute="trailing" secondItem="I6N-t3-a3E" secondAttribute="trailingMargin" id="MD4-eI-0Fm"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Wc3-Rd-QhA" secondAttribute="bottom" id="SNC-at-SNc"/>
+                                        <constraint firstItem="Wc3-Rd-QhA" firstAttribute="leading" secondItem="I6N-t3-a3E" secondAttribute="leadingMargin" id="flf-NY-oNe"/>
+                                        <constraint firstItem="Wc3-Rd-QhA" firstAttribute="top" secondItem="I6N-t3-a3E" secondAttribute="topMargin" id="wPY-yB-At2"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="btnBorrarFoto" destination="TBi-Zk-BpA" id="name-outlet-TBi-Zk-BpA"/>
+                                    <outlet property="btnFotografia" destination="kWG-IN-dPK" id="name-outlet-kWG-IN-dPK"/>
                                     <outlet property="btnPublicar" destination="Hbt-L5-FYm" id="name-outlet-Hbt-L5-FYm"/>
+                                    <outlet property="btnSeleccionarImagen" destination="XEU-kI-Wzd" id="name-outlet-XEU-kI-Wzd"/>
                                     <outlet property="txtComentarPost" destination="NYg-RF-Rmu" id="name-outlet-NYg-RF-Rmu"/>
                                     <outlet property="vwComentarPost" destination="Wc3-Rd-QhA" id="name-outlet-Wc3-Rd-QhA"/>
                                 </connections>
@@ -146,6 +187,7 @@
                     <connections>
                         <outlet property="vwSeccionComentarios" destination="C18-gF-wjH" id="name-outlet-C18-gF-wjH"/>
                         <outlet property="vwVistaSeccionComentarios" destination="edq-D8-xyq" id="name-outlet-edq-D8-xyq"/>
+                        <segue destination="j9e-Zd-ZbT" kind="presentation" identifier="toViewImageFromComments" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="x8P-0C-WFm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fAM-4O-1c5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -762,7 +804,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjK-eh-QNu">
-                                <rect key="frame" x="0.0" y="94" width="320" height="381"/>
+                                <rect key="frame" x="0.0" y="94" width="320" height="380"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWx-ZR-Y96">
                                         <rect key="frame" x="11" y="0.0" width="30" height="30"/>
@@ -778,7 +820,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nTM-oK-dAk">
-                                        <rect key="frame" x="11" y="41" width="298" height="299"/>
+                                        <rect key="frame" x="11" y="41" width="298" height="298"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -808,7 +850,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O6u-OA-Rdy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-952.5" y="893.66197183098598"/>
+            <point key="canvasLocation" x="-952.5" y="893.66200000000003"/>
         </scene>
         <!--Publicar Post View Controller-->
         <scene sceneID="igS-vK-50b">
@@ -1839,10 +1881,10 @@
         <image name="Comments" width="9" height="9"/>
         <image name="First" width="32" height="30"/>
         <image name="Leyenda" width="250" height="27"/>
-        <image name="Likes" width="10" height="9"/>
+        <image name="Likes" width="25" height="25"/>
         <image name="Profile" width="100" height="100"/>
         <image name="back" width="25" height="25"/>
-        <image name="close" width="16" height="16"/>
+        <image name="close" width="100" height="100"/>
         <image name="delete-image" width="60" height="60"/>
         <image name="ic_comentar" width="21" height="20"/>
         <image name="ic_dashboard" width="24" height="24"/>
@@ -1857,5 +1899,8 @@
         <image name="qr" width="36" height="36"/>
         <image name="worklabs" width="104" height="49"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="x8P-0C-WFm"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.10980392156862745" green="0.52941176470588236" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
