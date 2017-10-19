@@ -675,6 +675,7 @@
     <Compile Include="DetailCommentImage.designer.cs">
       <DependentUpon>DetailCommentImage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CamaraHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
