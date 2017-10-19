@@ -16,7 +16,6 @@ using WorklabsMx.Droid.Helpers;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "CommentsActivity")]
     public class CommentsActivity : Activity
     {
         EscritorioController DashboardController;
