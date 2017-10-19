@@ -1,16 +1,11 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Styles/STLTableViewSource.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Post/PublicarPostViewController.cs">
     <Files>
-      <File FileName="iOS/ComentarPostHeaderCell.cs" Line="19" Column="9" />
-      <File FileName="iOS/ComentarPostTableViewController.cs" Line="94" Column="41" />
-      <File FileName="iOS/SeccionComentariosTableViewController.cs" Line="8" Column="21" />
-      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="169" Column="44" />
-      <File FileName="iOS/ComentarioViewCell.cs" Line="16" Column="48" />
-      <File FileName="iOS/ViewControllers/Post/ComentariosBodyCell.cs" Line="18" Column="10" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="96" Column="1" />
-      <File FileName="iOS/Main.cs" Line="12" Column="1" />
-      <File FileName="iOS/ViewControllers/TableViewController.cs" Line="1" Column="1" />
-      <File FileName="iOS/Styles/STLTableViewSource.cs" Line="25" Column="70" />
+      <File FileName="iOS/ComentarPostHeaderCell.cs" Line="114" Column="51" />
+      <File FileName="iOS/Main.storyboard" />
+      <File FileName="iOS/ViewControllers/Post/PublicarPostViewController.cs" Line="266" Column="14" />
+      <File FileName="iOS/ComentarPostTableViewController.cs" Line="70" Column="70" />
+      <File FileName="iOS/DetailCommentImage.cs" Line="10" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
@@ -25,6 +20,5 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.FC7D3210-A803-4B77-84C4-0CE927BDCF67" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.SelectDevice" AndroidDesignerPreferredTheme="MyTheme" />
   <MultiItemStartupConfigurations />
 </Properties>
