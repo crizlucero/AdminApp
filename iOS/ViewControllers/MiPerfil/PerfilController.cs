@@ -236,7 +236,7 @@ namespace WorklabsMx.iOS
         {
             if (imagen != null)
                 imagen.Hidden = true;
-            if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), null, txtPublish.Text, "", imagen?.Image.AsPNG().ToArray()))
+            if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), null, txtPublish.Text, imagen?.Image.AsPNG().ToArray()))
             {
                 scrollView.RemoveFromSuperview();
                 totalSize = 0;
