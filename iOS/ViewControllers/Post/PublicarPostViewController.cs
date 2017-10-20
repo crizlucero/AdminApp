@@ -94,7 +94,7 @@ namespace WorklabsMx.iOS
                 NombreFoto = "";
             }
 
-            if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtPublicacion.Text, NombreFoto, Fotografia))
+            if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtPublicacion.Text, Fotografia))
             {
                 this.PostPublicadoDelegate?.PostPublicado();
                 this.DismissViewController(true, null);
