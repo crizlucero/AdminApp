@@ -124,7 +124,7 @@ namespace WorklabsMx.iOS
         partial void btnBorrarFoto_TouchUpInside(UIButton sender)
         {
             this.btnFotografia.SetImage(null, UIControlState.Normal);
-            if (this.txtComentarPost.Text == "")
+            if (this.txtComentarPost.Text == "Escribe un comentario")
             {
                 this.btnPublicar.Layer.Opacity = 0.5f;
                 this.btnPublicar.Enabled = false;

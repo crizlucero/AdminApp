@@ -9,9 +9,16 @@ using Photos;
 using AVFoundation;
 using WorklabsMx.Helpers;
 using BigTed;
+using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface PostPublicadoDel
+    {
+        void PostPublicado();
+    }
+
     public partial class PublicarPostViewController : UIViewController
     {
         
@@ -25,6 +32,8 @@ namespace WorklabsMx.iOS
         UIImagePickerController imgPicker;
 
         UIImage ImagenPublicacion;
+
+        public PostPublicadoDel PostPublicadoDelegate;
 
         public PublicarPostViewController(IntPtr handle) : base(handle)
         {
@@ -58,27 +67,48 @@ namespace WorklabsMx.iOS
             this.btnPublicar.Layer.Opacity = opacity;
             this.txtPublicacion.Changed += HandleTextMessageChanged;
             FechaActual = DateTime.Now;
-            lblFechaPublicacion.Text = String.Format("{0:dddd, d MMMM, yyyy}", FechaActual);  // "Sunday, March 9, 2008"
+            lblFechaPublicacion.Text = String.Format("{0:dddd, d MMMM, yyyy}", FechaActual);
             imgPerfil.Image = ImageGallery.LoadImage(this.ImagenPerfil);
         }
 
 
-        partial void btnPublicar_TouchUpInside(UIButton sender)
+        private async void PublicarPost()
         {
-            BTProgressHUD.Show(status: "Iniciando sesión");
+            BTProgressHUD.Show();
+            await Task.Delay(500);
+            NSUuid id;
 
-            var id = new NSUuid();
+            byte[] Fotografia;
+            string NombreFoto;
 
-            if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtPublicacion.Text, id.ToString(), ImagenPublicacion?.AsPNG().ToArray()))
+            if (ImagenPublicacion != null )
             {
-                BTProgressHUD.Dismiss();
-                this.DismissViewController(true, null);
+                Fotografia = ImagenPublicacion?.AsPNG().ToArray();
+                id = new NSUuid();
+                NombreFoto = id.ToString();
             }
             else 
+            {
+                Fotografia = null;
+                id = null;
+                NombreFoto = "";
+            }
+
+            if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtPublicacion.Text, NombreFoto, Fotografia))
+            {
+                this.PostPublicadoDelegate?.PostPublicado();
+                this.DismissViewController(true, null);
+            }
+            else
             {
                 BTProgressHUD.Dismiss();
                 new MessageDialog().SendToast("No se pudo publicar el post");
             }
+        }
+
+        partial void btnPublicar_TouchUpInside(UIButton sender)
+        {
+            this.PublicarPost();
         }
 
         partial void btnClose_TouchUpInside(UIButton sender)
@@ -161,7 +191,6 @@ namespace WorklabsMx.iOS
             const String HeaderMessage = "Se necesita acceso a la camara";
             const String BodyMessage = "Habilita el acceso de Worklabs a la camara en la configuración de tu iPhone";
 
-
             UIAlertAction openCamera = UIAlertAction.Create("Tomar fotografia", UIAlertActionStyle.Default,  ( action ) =>
             {
                 AVCaptureDevice.RequestAccessForMediaType(AVMediaType.Video, ( bool isAccessGranted) => 
@@ -172,10 +201,9 @@ namespace WorklabsMx.iOS
                        {
                            if (isAccessGranted)
                            {
-                               ImagePicker.SourceType = UIImagePickerControllerSourceType.Camera;
-                               ImagePicker.CameraDevice = UIImagePickerControllerCameraDevice.Rear;
-                               ImagePicker.AllowsEditing = true;
-
+                                ImagePicker.SourceType = UIImagePickerControllerSourceType.Camera;
+                                ImagePicker.CameraDevice = UIImagePickerControllerCameraDevice.Rear;
+                                ImagePicker.AllowsEditing = true;
                                 this.PresentViewController(ImagePicker, true, null);
                            }
                            else
@@ -189,8 +217,8 @@ namespace WorklabsMx.iOS
                        }
 
                     });
-                   });
-              
+                });
+             
             });
         
             return openCamera;
@@ -228,7 +256,6 @@ namespace WorklabsMx.iOS
                 }
             });
             return openGalery;
-
         }
 
         private UIAlertController PermisosDispositivo(String headerMessage, String BodyMessage)
@@ -273,4 +300,7 @@ namespace WorklabsMx.iOS
 
         }
     }
+
+
+
 }

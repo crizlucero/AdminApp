@@ -70,7 +70,8 @@ namespace WorklabsMx.iOS
 			{
 				var currentPost = comentarios[indexPath.Row];
 				var currentPostCell = (ComentarioViewCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
-                currentPostCell.UpdateCell(currentPost, ImagenesComentario[indexPath.Row]);
+                currentPostCell.UpdateCell(currentPost);
+                currentPostCell.MostrarImagenEnGrande += MostrarImagenEnGrande;
 				return currentPostCell;
 			}
 			else
@@ -82,16 +83,25 @@ namespace WorklabsMx.iOS
 
 		}
 
+        public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
+        {
+            if (segue.Identifier == "ToViewImageFromComment")
+            {
+                var ImageView = (DetailCommentImage)segue.DestinationViewController;
+                ImageView.ImagenPost = (UIImageView)sender;
+            }
+        }
+
+        void MostrarImagenEnGrande(object sender, EventArgs e)
+        {
+            this.PerformSegue("ToViewImageFromComment", (UIImageView)sender);
+        }
+
 		public void setInfoPosto(PostModel Post)
 		{
             if (InternetConectionHelper.VerificarConexion())
             {
                 this.comentarios = new Controllers.EscritorioController().GetComentariosPost(Post.Publicacion_Id);
-                foreach (var comentario in comentarios)
-                {
-                    var ImagenComentario = ImageGallery.LoadImage(comentario.Usuario_Fotografia_Ruta);
-                    ImagenesComentario.Add(ImagenComentario);
-                }
             }
             else
             {
