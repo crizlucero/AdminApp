@@ -265,8 +265,8 @@ namespace WorklabsMx.Droid
                 lblLike.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 130) / 5);
                 lblLike.Click += delegate
                 {
-                    if (new EscritorioController().PostLike(post.Publicacion_Id, usuario_id, usuario_tipo))
-                        lblLike.Text = new EscritorioController().GetLikesPublish(post.Publicacion_Id) + " Like(s)";
+                    /*if (new EscritorioController().PostLike(post.Publicacion_Id, usuario_id, usuario_tipo))
+                        lblLike.Text = new EscritorioController().GetLikesPublish(post.Publicacion_Id) + " Like(s)";*/
                 };
                 llLike.AddView(lblLike);
                 param = new GridLayout.LayoutParams();

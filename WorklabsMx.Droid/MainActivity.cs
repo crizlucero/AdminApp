@@ -43,6 +43,7 @@ namespace WorklabsMx.Droid
         File _file, _dir;
         Bitmap bitmap;
         View customView;
+        List<PostModel> posts;
         readonly int sizePage = 10, PickImageId = 1000, TakePicture = 500;
         bool isLimit;
         public MainActivity()
@@ -145,7 +146,7 @@ namespace WorklabsMx.Droid
         {
             AndHUD.Shared.Show(this, null, -1, MaskType.Black);
             await Task.Delay(500);
-            List<PostModel> posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), pages * sizePage);
+            posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
             isLimit = posts.Count < 10;
             posts.ForEach(post =>
             {
@@ -329,10 +330,27 @@ namespace WorklabsMx.Droid
                 lblLike.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 130) / 5);
                 lblLike.Click += delegate
                 {
-                    if (new EscritorioController().PostLike(post.Publicacion_Id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")))
+                    string transaccion = "ALTA";
+                    if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
+                        transaccion = "BAJA";
+                    else if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Baja).ToString())
+                        transaccion = "MODIFICAR";
+                    if (new EscritorioController().PostLike(post.Publicacion_Id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), transaccion))
+                    {
                         lblLike.Text = new EscritorioController().GetLikesPublish(post.Publicacion_Id) + " Like(s)";
+                        if (transaccion == "BAJA")
+                        {
+                            post.Publicacion_Me_Gusta_Usuario = "0";
+                            lblLike.SetTextColor(Color.Black);
+                        }
+                        else
+                        {
+                            post.Publicacion_Me_Gusta_Usuario = "1";
+                            lblLike.SetTextColor(Color.Rgb(57, 87, 217));
+                        }
+                    }
                 };
-                if (post.Publicacion_Me_Gusta_Usuario != ((int)TiposMeGusta.Inactivo).ToString())
+                if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
                 {
                     lblLike.SetTextColor(Color.Rgb(57, 87, 217));
                 }
@@ -363,11 +381,11 @@ namespace WorklabsMx.Droid
                     StartActivity(intent);
                 };
                 llComment.Click += delegate
-                {
-                    Intent intent = new Intent(this, typeof(CommentsActivity));
-                    intent.PutExtra("post_id", post.Publicacion_Id);
-                    StartActivity(intent);
-                };
+                                {
+                                    Intent intent = new Intent(this, typeof(CommentsActivity));
+                                    intent.PutExtra("post_id", post.Publicacion_Id);
+                                    StartActivity(intent);
+                                };
                 llComment.AddView(lblComment);
                 param = new GridLayout.LayoutParams();
                 param.LeftMargin = -30;
