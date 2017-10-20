@@ -13,9 +13,8 @@ namespace WorklabsMx.Controllers
         /// Obtiene los posts del muro
         /// </summary>
         /// <returns>Posts</returns>
-        public List<PostModel> GetMuroPosts(string usuario_id, string usuario_tipo,int page = 0)
+        public List<PostModel> GetMuroPosts(string usuario_id, string usuario_tipo)
         {
-            
             List<PostModel> posts = new List<PostModel>();
             try{
                 conn.Open();
@@ -282,11 +281,11 @@ namespace WorklabsMx.Controllers
         /// </summary>
         /// <param name="post_id">Identificador del post</param>
         /// <param name="usuario_id">Identificador del usuario</param>
-        public bool PostLike(string post_id, string usuario_id, string tipo)
+        public bool PostLike(string post_id, string usuario_id, string usuario_tipo, string transaccion)
         {
             string miembro_id = null;
             string colaborador_id = null;
-            if (tipo == ((int)TiposUsuarios.Miembro).ToString())
+            if (usuario_tipo == ((int)TiposUsuarios.Miembro).ToString())
                 miembro_id = usuario_id;
             else
                 colaborador_id = usuario_id;
@@ -298,7 +297,7 @@ namespace WorklabsMx.Controllers
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = "sp_pro_Red_Social_Publicaciones_Me_Gustan";
-                command.Parameters.AddWithValue("@Trasaccion", "ALTA");
+                command.Parameters.AddWithValue("@Trasaccion", transaccion);
                 command.Parameters.AddWithValue("@Publicacion_Id", post_id);
                 command.Parameters.AddWithValue("@Miembro_Id", miembro_id);
                 command.Parameters.AddWithValue("@Colaborador_Empresa_Id", colaborador_id);
