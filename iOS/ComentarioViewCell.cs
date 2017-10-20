@@ -9,10 +9,13 @@ namespace WorklabsMx.iOS
     public partial class ComentarioViewCell : UITableViewCell
     {
 
-        String comentarioLocal;
+        ComentarioModel comentarioLocal;
         SimpleStorage storageLocal;
 
         public event EventHandler MostrarImagenEnGrande;
+
+        public event EventHandler LeDioLike;
+
 
         public ComentarioViewCell (IntPtr handle) : base (handle)
         {
@@ -38,16 +41,23 @@ namespace WorklabsMx.iOS
                 btnImagenComentario.Hidden = true;
                 btnImagenComentario.Enabled = false;
             }
-            comentarioLocal = comentario.Comentario_Id;
+            comentarioLocal = comentario;
 
 		}
 
         partial void btnLikes_TouchUpInside(UIButton sender)
         {
             storageLocal = SimpleStorage.EditGroup("Login");
-            if (new Controllers.EscritorioController().PostLike(comentarioLocal, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo")))
+            if (comentarioLocal.Comentario_Me_Gustan_Cantidad == "2")
             {
-                this.lblLikes.Text = new Controllers.EscritorioController().GetLikesPublish(comentarioLocal) + " LIKES";
+                if (new Controllers.EscritorioController().PostLike(comentarioLocal.Comentario_Id, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo")))
+                {
+                    //this.lblLikes.Text = new Controllers.EscritorioController().GetLikesPublish(comentarioLocal.Comentario_Id) + " LIKES";
+                    if(LeDioLike != null)
+                    {
+                        LeDioLike(null, EventArgs.Empty);
+                    }
+                }
             }
         }
 

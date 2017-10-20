@@ -20,6 +20,8 @@ namespace WorklabsMx.iOS
 		bool isShowInformation = false;
 		bool existeConeccion = true;
 
+        PostModel PostLocal;
+
         List<UIImage> ImagenesComentario = new List<UIImage>();
         List<ComentarioModel> comentarios;
 
@@ -63,6 +65,12 @@ namespace WorklabsMx.iOS
 			}
 		}
 
+        void LeDioLike(object sender, EventArgs e)
+        {
+            this.comentarios = new Controllers.EscritorioController().GetComentariosPost(PostLocal.Publicacion_Id);
+            this.TableView.ReloadData();
+        }
+
 		public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
 		{
            
@@ -101,6 +109,7 @@ namespace WorklabsMx.iOS
 		{
             if (InternetConectionHelper.VerificarConexion())
             {
+                PostLocal = Post;
                 this.comentarios = new Controllers.EscritorioController().GetComentariosPost(Post.Publicacion_Id);
             }
             else
