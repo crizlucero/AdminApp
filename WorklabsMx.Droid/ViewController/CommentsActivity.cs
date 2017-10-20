@@ -54,7 +54,7 @@ namespace WorklabsMx.Droid
                 await FillComments();
                 ((SwipeRefreshLayout)sender).Refreshing = false;
             };
-            FindViewById<ImageButton>(Resource.Id.btnApplyComment).Click +=async delegate
+            FindViewById<ImageButton>(Resource.Id.btnApplyComment).Click += async delegate
             {
                 AndHUD.Shared.Show(this, null, -1, MaskType.Black);
                 if (new EscritorioController().CommentPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), FindViewById<EditText>(Resource.Id.txtComment).Text))
@@ -76,7 +76,7 @@ namespace WorklabsMx.Droid
             tlComentarios.RemoveAllViews();
             DashboardController.GetComentariosPost(post_id).ForEach((comentario) =>
             {
-                int i= 0;
+                int i = 0;
                 String Usuario_Id = comentario.Miembro_Id ?? comentario.Colaborador_Empresa_Id;
                 TableRow row = new TableRow(this);
                 row.SetMinimumHeight(100);
@@ -187,7 +187,7 @@ namespace WorklabsMx.Droid
                 ++i;
                 TextView txtPuesto = new TextView(this)
                 {
-                    //Text = comentario.USUARIO_PUESTO,
+                    Text = comentario.Usuario_Puesto,
                     TextSize = 12
                 };
                 param = new GridLayout.LayoutParams();

@@ -146,8 +146,8 @@ namespace WorklabsMx.Droid
             AndHUD.Shared.Show(this, null, -1, MaskType.Black);
             await Task.Delay(500);
             List<PostModel> posts = DashboardController.GetMuroPosts(pages * sizePage);
-            isLimit = posts.Count == 0;
-            posts.ForEach((post) =>
+            isLimit = posts.Count < 10;
+            posts.ForEach(post =>
             {
                 string Usuario_Id = post.Miembro_Id ?? post.Colaborador_Empresa_Id;
                 int i = 0;
@@ -263,7 +263,7 @@ namespace WorklabsMx.Droid
                 ++i;
                 TextView txtPuesto = new TextView(this)
                 {
-                    //Text = post.Miembro_Puesto,
+                    Text = post.Usuario_Puesto,
                     TextSize = 12
                 };
                 param = new GridLayout.LayoutParams();

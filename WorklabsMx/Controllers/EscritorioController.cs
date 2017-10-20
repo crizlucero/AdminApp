@@ -35,6 +35,7 @@ namespace WorklabsMx.Controllers
                         Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
                         Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
                         Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString(),
+                        Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
                         Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
                         Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),
                         Publicacion_Imagen_Ruta = reader["Publicacion_Imagen_Ruta"].ToString(),
@@ -84,6 +85,7 @@ namespace WorklabsMx.Controllers
                         Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
                         Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
                         Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString(),
+                        Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
                         Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
                         Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),
                         Publicacion_Imagen_Ruta = reader["Publicacion_Imagen_Ruta"].ToString(),
@@ -161,20 +163,22 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    ComentarioModel comentario = new ComentarioModel();
-                    comentario.Comentario_Id = reader["Comentario_Id"].ToString();
-                    comentario.Publicacion_Id = reader["Publicacion_Id"].ToString();
-                    comentario.Miembro_Id = reader["Miembro_Id"].ToString();
-                    comentario.Colaborador_Empresa_Id = reader["Colaborador_Empresa_Id"].ToString();
-                    comentario.Usuario_Nombre = reader["Usuario_Nombre"].ToString();
-                    comentario.Usuario_Tipo = reader["Usuario_Tipo"].ToString();
-                    comentario.Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString();
-                    comentario.Comentario_Contenido = reader["Comentario_Contenido"].ToString();
-                    comentario.Comentario_Imagen = reader["Comentario_Imagen"].ToString();
-                    comentario.Comentario_Imagen_Ruta = reader["Comentario_Imagen_Ruta"].ToString();
-                    comentario.Comentario_Fecha = reader["Comentario_Fecha"].ToString();
-                    comentario.Comentario_Me_Gustan_Cantidad = reader["Comentario_Me_Gustan_Cantidad"].ToString();
-                    comentarios.Add(comentario);
+                    comentarios.Add(new ComentarioModel
+                    {
+                        Comentario_Id = reader["Comentario_Id"].ToString(),
+                        Publicacion_Id = reader["Publicacion_Id"].ToString(),
+                        Miembro_Id = reader["Miembro_Id"].ToString(),
+                        Colaborador_Empresa_Id = reader["Colaborador_Empresa_Id"].ToString(),
+                        Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
+                        Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
+                        Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString(),
+                        Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
+                        Comentario_Contenido = reader["Comentario_Contenido"].ToString(),
+                        Comentario_Imagen = reader["Comentario_Imagen"].ToString(),
+                        Comentario_Imagen_Ruta = reader["Comentario_Imagen_Ruta"].ToString(),
+                        Comentario_Fecha = reader["Comentario_Fecha"].ToString(),
+                        Comentario_Me_Gustan_Cantidad = reader["Comentario_Me_Gustan_Cantidad"].ToString()
+                    });
                 }
             }
             catch (Exception e)
@@ -523,6 +527,7 @@ namespace WorklabsMx.Controllers
                         Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
                         Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
                         Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString(),
+                        Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
                         Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
                         Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),
                         Publicacion_Imagen_Ruta = reader["Publicacion_Imagen_Ruta"].ToString(),
