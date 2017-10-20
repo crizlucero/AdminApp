@@ -13,17 +13,19 @@ namespace WorklabsMx.Controllers
         /// Obtiene los posts del muro
         /// </summary>
         /// <returns>Posts</returns>
-        public List<PostModel> GetMuroPosts(int page = 0)
+        public List<PostModel> GetMuroPosts(string usuario_id, string usuario_tipo,int page = 0)
         {
-
+            
             List<PostModel> posts = new List<PostModel>();
-            string query = "SELECT * FROM vw_pro_Red_Social_Publicaciones " +
-                "WHERE Publicacion_Estatus = 1 ORDER BY Publicacion_Fecha_Alta DESC OFFSET @page ROWS Fetch next 10 rows only";
-            command = CreateCommand(query);
-            command.Parameters.AddWithValue("@page", page);
-            try
-            {
+            try{
                 conn.Open();
+                command = CreateCommand();
+                command.Connection = conn;
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "sp_vw_pro_Red_Social_Publicaciones";
+                command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
+                command.Parameters.AddWithValue("@Usuario_Tipo", usuario_tipo);
+
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
@@ -41,19 +43,13 @@ namespace WorklabsMx.Controllers
                         Publicacion_Imagen_Ruta = reader["Publicacion_Imagen_Ruta"].ToString(),
                         Publicacion_Fecha = reader["Publicacion_Fecha"].ToString(),
                         Publicacion_Comentarios_Cantidad = reader["Publicacion_Comentarios_Cantidad"].ToString(),
-                        Publicacion_Me_Gustan_Cantidad = reader["Publicacion_Me_Gustan_Cantidad"].ToString()
+                        Publicacion_Me_Gustan_Cantidad = reader["Publicacion_Me_Gustan_Cantidad"].ToString(),
+                        Publicacion_Me_Gusta_Usuario = reader["Publicacion_Me_Gusta_Usuario"].ToString()
                     });
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
+            }catch(Exception e){
                 SlackLogs.SendMessage(e.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
+            }finally {conn.Close();}
             return posts;
         }
 
