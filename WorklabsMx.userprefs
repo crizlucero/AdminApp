@@ -5,9 +5,29 @@
       <File FileName="iOS/ComentarioViewCell.cs" Line="29" Column="1" />
       <File FileName="iOS/ViewControllers/Post/ComentariosBodyCell.cs" Line="53" Column="61" />
       <File FileName="iOS/ComentarPostHeaderCell.cs" Line="23" Column="8" />
+<<<<<<< HEAD
       <File FileName="iOS/ViewControllers/Post/PublicarPostViewController.cs" Line="97" Column="150" />
       <File FileName="iOS/ViewControllers/MiPerfil/PerfilController.cs" Line="239" Column="58" />
       <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="289" Column="21" />
+=======
+      <File FileName="iOS/ViewControllers/Post/PublicarPostViewController.cs" Line="168" Column="13" />
+      <File FileName="iOS/SeccionComentariosTableViewController.cs" Line="92" Column="14" />
+      <File FileName="iOS/ComentarPostTableViewController.cs" Line="72" Column="1" />
+      <File FileName="iOS/DetailCommentImage.cs" Line="10" Column="28" />
+      <File FileName="iOS/Helpers/ImageGallery.cs" Line="66" Column="30" />
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Enum/EmptyEnumeration.cs">
+    <Files>
+      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="190" Column="53" />
+      <File FileName="WorklabsMx.Droid/Resources/drawable/ButtonStyle.xml" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="335" Column="61" />
+      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/PerfilActivity.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="47" Column="105" />
+      <File FileName="WorklabsMx/Models/PostModel.cs" Line="22" Column="37" />
+      <File FileName="WorklabsMx/Models/ComentarioModel.cs" Line="21" Column="50" />
+      <File FileName="WorklabsMx/Enum/EmptyEnumeration.cs" Line="4" Column="26" />
+>>>>>>> 7c7c1e15bc5192344bf66006b30eb80297af9c8a
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">

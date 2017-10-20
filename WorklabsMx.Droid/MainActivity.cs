@@ -145,7 +145,7 @@ namespace WorklabsMx.Droid
         {
             AndHUD.Shared.Show(this, null, -1, MaskType.Black);
             await Task.Delay(500);
-            List<PostModel> posts = DashboardController.GetMuroPosts(pages * sizePage);
+            List<PostModel> posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), pages * sizePage);
             isLimit = posts.Count < 10;
             posts.ForEach(post =>
             {
@@ -332,6 +332,10 @@ namespace WorklabsMx.Droid
                     if (new EscritorioController().PostLike(post.Publicacion_Id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")))
                         lblLike.Text = new EscritorioController().GetLikesPublish(post.Publicacion_Id) + " Like(s)";
                 };
+                if (post.Publicacion_Me_Gusta_Usuario != ((int)TiposMeGusta.Inactivo).ToString())
+                {
+                    lblLike.SetTextColor(Color.Rgb(57, 87, 217));
+                }
                 llLike.AddView(lblLike);
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center | GravityFlags.Left);
