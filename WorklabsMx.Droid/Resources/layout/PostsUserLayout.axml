@@ -42,23 +42,28 @@
             android:layout_height="20dp"
             android:id="@+id/btnInitPublish" />
     </GridLayout>
-    <ScrollView
-        android:id="@+id/post_scroll"
-        android:layout_height="match_parent"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_container"
         android:layout_width="match_parent"
-        android:layout_marginBottom="50dp">
-        <TableLayout
-            android:id="@+id/post_table"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:id="@+id/post_scroll"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:minWidth="25px"
-            android:minHeight="25px" />
-    </ScrollView>
+            android:layout_marginBottom="50dp">
+            <TableLayout
+                android:id="@+id/post_table"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:minHeight="350dp" />
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:id="@+id/rlBottomToolbar"
-        android:layout_marginTop="-50dp">
+        android:layout_marginTop="-50dp"
+        android:background="#CCC"
+        android:id="@+id/rlBottomToolbar">
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"

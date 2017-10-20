@@ -35,6 +35,7 @@ namespace WorklabsMx.Controllers
                         Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
                         Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
                         Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString(),
+                        Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
                         Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
                         Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),
                         Publicacion_Imagen_Ruta = reader["Publicacion_Imagen_Ruta"].ToString(),
@@ -65,7 +66,7 @@ namespace WorklabsMx.Controllers
             query += " Miembro_Id = ";
             if (tipo == ((int)TiposUsuarios.Colaborador).ToString())
                 query += " Colaborador_Empresa_Id = ";
-            query += "@usuario_id AND Usuario_Tipo = @tipo ORDER BY Post_Fecha DESC OFFSET @page ROWS Fetch next 10 rows only";
+            query += "@usuario_id AND Usuario_Tipo = @tipo ORDER BY Publicacion_Fecha_Alta DESC OFFSET @page ROWS Fetch next 10 rows only";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@page", page);
             command.Parameters.AddWithValue("@usuario_id", usuario_id);
@@ -84,6 +85,7 @@ namespace WorklabsMx.Controllers
                         Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
                         Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
                         Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString(),
+                        Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
                         Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
                         Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),
                         Publicacion_Imagen_Ruta = reader["Publicacion_Imagen_Ruta"].ToString(),
@@ -161,20 +163,22 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    ComentarioModel comentario = new ComentarioModel();
-                    comentario.Comentario_Id = reader["Comentario_Id"].ToString();
-                    comentario.Publicacion_Id = reader["Publicacion_Id"].ToString();
-                    comentario.Miembro_Id = reader["Miembro_Id"].ToString();
-                    comentario.Colaborador_Empresa_Id = reader["Colaborador_Empresa_Id"].ToString();
-                    comentario.Usuario_Nombre = reader["Usuario_Nombre"].ToString();
-                    comentario.Usuario_Tipo = reader["Usuario_Tipo"].ToString();
-                    comentario.Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString();
-                    comentario.Comentario_Contenido = reader["Comentario_Contenido"].ToString();
-                    comentario.Comentario_Imagen = reader["Comentario_Imagen"].ToString();
-                    comentario.Comentario_Imagen_Ruta = reader["Comentario_Imagen_Ruta"].ToString();
-                    comentario.Comentario_Fecha = reader["Comentario_Fecha"].ToString();
-                    comentario.Comentario_Me_Gustan_Cantidad = reader["Comentario_Me_Gustan_Cantidad"].ToString();
-                    comentarios.Add(comentario);
+                    comentarios.Add(new ComentarioModel
+                    {
+                        Comentario_Id = reader["Comentario_Id"].ToString(),
+                        Publicacion_Id = reader["Publicacion_Id"].ToString(),
+                        Miembro_Id = reader["Miembro_Id"].ToString(),
+                        Colaborador_Empresa_Id = reader["Colaborador_Empresa_Id"].ToString(),
+                        Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
+                        Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
+                        Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString(),
+                        Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
+                        Comentario_Contenido = reader["Comentario_Contenido"].ToString(),
+                        Comentario_Imagen = reader["Comentario_Imagen"].ToString(),
+                        Comentario_Imagen_Ruta = reader["Comentario_Imagen_Ruta"].ToString(),
+                        Comentario_Fecha = reader["Comentario_Fecha"].ToString(),
+                        Comentario_Me_Gustan_Cantidad = reader["Comentario_Me_Gustan_Cantidad"].ToString()
+                    });
                 }
             }
             catch (Exception e)
@@ -327,7 +331,7 @@ namespace WorklabsMx.Controllers
         /// <summary>
         /// Agrega un like al post
         /// </summary>
-        /// <param name="post_id">Identificador del post</param>
+        /// <param name="comentario_id">Identificador del comentario</param>
         /// <param name="usuario_id">Identificador del usuario</param>
         public bool CommentLike(string comentario_id, string usuario_id, string tipo)
         {
@@ -436,12 +440,10 @@ namespace WorklabsMx.Controllers
         /// <param name="usuario_id">Identificador del usuario</param>
         /// <param name="tipo">Tipo de usuario</param>
         /// <param name="comentario">Comentario.</param>
-        /// <param name="fotoNombre">Nombre de la fotografía</param>
         /// <param name="fotografia">Bytes de la fotografía</param>
-        public bool SetPost(string usuario_id, string tipo, string comentario, string fotoNombre, byte[] fotografia)
+        public bool SetPost(string usuario_id, string tipo, string comentario, byte[] fotografia)
         {
-            string miembro_id = null;
-            string colaborador_id = null;
+            string miembro_id = null, colaborador_id = null, fotoNombre = null;
             if (tipo == ((int)TiposUsuarios.Miembro).ToString())
                 miembro_id = usuario_id;
             else
@@ -449,9 +451,11 @@ namespace WorklabsMx.Controllers
             try
             {
                 conn.Open();
-                if (fotografia?.Length != 0)
+                if (fotografia.Length != 0)
                 {
-                    new UploadImages().UploadBitmapAsync(fotografia);
+                    if (new UploadImages().UploadBitmapAsync(fotografia))
+                        fotoNombre = Guid.NewGuid().ToString();
+
                 }
                 transaction = conn.BeginTransaction();
                 command = CreateCommand();
@@ -523,6 +527,7 @@ namespace WorklabsMx.Controllers
                         Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
                         Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
                         Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString(),
+                        Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
                         Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
                         Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),
                         Publicacion_Imagen_Ruta = reader["Publicacion_Imagen_Ruta"].ToString(),

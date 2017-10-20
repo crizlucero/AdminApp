@@ -18,5 +18,6 @@
         public string Comentario_Fecha_Alta { get; set; }
         public string Comentario_Fecha_Modificacion { get; set; }
         public string Comentario_Fecha_Baja { get; set; }
+        public string Usuario_Puesto { get; set; }
     }
 }

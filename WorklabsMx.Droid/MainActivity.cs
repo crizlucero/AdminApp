@@ -146,8 +146,8 @@ namespace WorklabsMx.Droid
             AndHUD.Shared.Show(this, null, -1, MaskType.Black);
             await Task.Delay(500);
             List<PostModel> posts = DashboardController.GetMuroPosts(pages * sizePage);
-            isLimit = posts.Count == 0;
-            posts.ForEach((post) =>
+            isLimit = posts.Count < 10;
+            posts.ForEach(post =>
             {
                 string Usuario_Id = post.Miembro_Id ?? post.Colaborador_Empresa_Id;
                 int i = 0;
@@ -263,7 +263,7 @@ namespace WorklabsMx.Droid
                 ++i;
                 TextView txtPuesto = new TextView(this)
                 {
-                    //Text = post.Miembro_Puesto,
+                    Text = post.Usuario_Puesto,
                     TextSize = 12
                 };
                 param = new GridLayout.LayoutParams();
@@ -462,7 +462,7 @@ namespace WorklabsMx.Droid
                 {
                     switch (menu.Controller)
                     {
-                        case "MainActivity": StartActivity(new Intent(this, typeof(MainActivity))); break;
+                        case "MainActivity": FindViewById<ScrollView>(Resource.Id.menu_scroll).Visibility = ViewStates.Gone; break;//StartActivity(new Intent(this, typeof(MainActivity))); break;
                         case "MyMembershipActivity": StartActivity(new Intent(this, typeof(MyMembershipActivity))); break;
                         case "SubMenuActivity":
                             localStorage.Put("Parent", menu.Menu_Id);
@@ -560,7 +560,7 @@ namespace WorklabsMx.Droid
                     bitmap?.Compress(Bitmap.CompressFormat.Png, 0, stream);
                     byte[] bitmapData = stream?.ToArray();
                     if (new EscritorioController().SetPost(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"),
-                                                           customView.FindViewById<EditText>(Resource.Id.txtPublicacion).Text, !string.IsNullOrEmpty(imgPublish) ? imgPublish : _file?.Name,
+                                                           customView.FindViewById<EditText>(Resource.Id.txtPublicacion).Text,
                                                            bitmapData))
                     {
                         tlPost.RemoveAllViews();

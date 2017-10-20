@@ -8,6 +8,7 @@
         public string Usuario_Nombre { get; set; }
         public string Usuario_Tipo { get; set; }
         public string Usuario_Fotografia_Ruta { get; set; }
+        public string Usuario_Puesto { get; set;}
         public string Publicacion_Contenido { get; set; }
         public string Publicacion_Imagen { get; set; }
         public string Publicacion_Imagen_Ruta { get; set; }
