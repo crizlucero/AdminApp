@@ -3,6 +3,7 @@ using UIKit;
 using WorklabsMx.Models;
 using WorklabsMx.iOS.Helpers;
 using PerpetualEngine.Storage;
+using WorklabsMx.Enum;
 
 namespace WorklabsMx.iOS
 {
@@ -47,18 +48,34 @@ namespace WorklabsMx.iOS
 
         partial void btnLikes_TouchUpInside(UIButton sender)
         {
-            storageLocal = SimpleStorage.EditGroup("Login");
-            if (comentarioLocal.Comentario_Me_Gustan_Cantidad == "2")
+            /*var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
+            string transaccion = "ALTA";
+            if (comentarioLocal.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
             {
-                if (new Controllers.EscritorioController().PostLike(comentarioLocal.Comentario_Id, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo")))
+                transaccion = "BAJA";
+            }
+            else if (comentarioLocal.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Baja).ToString())
+            {
+                transaccion = "MODIFICAR";
+            }
+            if (new Controllers.EscritorioController().PostLike(comentarioLocal.Publicacion_Id, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), transaccion))
+            {
+                lblLikes.Text = new Controllers.EscritorioController().GetLikesPublish(comentarioLocal.Publicacion_Id) + " LIKES";
+                if (transaccion == "BAJA")
                 {
-                    //this.lblLikes.Text = new Controllers.EscritorioController().GetLikesPublish(comentarioLocal.Comentario_Id) + " LIKES";
-                    if(LeDioLike != null)
-                    {
-                        LeDioLike(null, EventArgs.Empty);
-                    }
+                    comentarioLocal.Publicacion_Me_Gusta_Usuario = "0";
+                    lblLikes.TextColor = UIColor.Black;
+                }
+                else
+                {
+                    comentarioLocal.Publicacion_Me_Gusta_Usuario = "1";
+                    lblLikes.TextColor = (UIColor.FromRGB(57, 87, 217));
                 }
             }
+            if (comentarioLocal.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
+            {
+                lblLikes.TextColor = (UIColor.FromRGB(57, 87, 217));
+            }*/
         }
 
         partial void btnImagenComentario_TouchUpInside(UIButton sender)

@@ -131,16 +131,6 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc/5511-view-5512.nib/objects-11.0+.nib">
-      <LogicalName>Main.storyboardc/5511-view-5512.nib/objects-11.0+.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc/5511-view-5512.nib/runtime.nib">
-      <LogicalName>Main.storyboardc/5511-view-5512.nib/runtime.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc/5678-view-5679.nib/objects-11.0+.nib">
       <LogicalName>Main.storyboardc/5678-view-5679.nib/objects-11.0+.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -348,16 +338,6 @@
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc/EscritorioController.nib/runtime.nib">
       <LogicalName>Main.storyboardc/EscritorioController.nib/runtime.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc/EscritorioController1.nib/objects-11.0+.nib">
-      <LogicalName>Main.storyboardc/EscritorioController1.nib/objects-11.0+.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc/EscritorioController1.nib/runtime.nib">
-      <LogicalName>Main.storyboardc/EscritorioController1.nib/runtime.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
