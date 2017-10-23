@@ -23,10 +23,11 @@ using static Android.Provider.MediaStore.Images;
 using System.Threading.Tasks;
 using Android.Support.V4.Widget;
 using WorklabsMx.Models;
+using System.Linq;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "WorklabsMx", Icon = "@mipmap/icon",
+    [Activity(Label = "@string/app_name", Icon = "@mipmap/icon",
         LaunchMode = LaunchMode.SingleInstance,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
               ScreenOrientation = ScreenOrientation.Portrait)]
@@ -39,7 +40,7 @@ namespace WorklabsMx.Droid
         EscritorioController DashboardController;
         TableLayout tlPost;
         AlertDialog dialog;
-        string nombre, puesto, foto, imgPublish;
+        string nombre, puesto, foto, imgPublish, imagePath;
         File _file, _dir;
         Bitmap bitmap;
         View customView;
@@ -129,26 +130,25 @@ namespace WorklabsMx.Droid
                 await FillPosts();
                 ((SwipeRefreshLayout)sender).Refreshing = false;
             };
-
+            posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
             await FillPosts();
             scroll.ScrollChange += async (sender, e) =>
             {
-                if (!isLimit)
+                if ((posts.Count / (page + 1)) < 10)
                     if ((((ScrollView)sender).ScrollY / (page + 1)) > ((scroll.Height) * .4))
                     {
                         ++page;
-                        await FillPosts(page);
+                        await FillPosts();
                     }
             };
         }
 
-        async Task FillPosts(int pages = 0)
+        async Task FillPosts()
         {
             AndHUD.Shared.Show(this, null, -1, MaskType.Black);
             await Task.Delay(500);
-            posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
-            isLimit = posts.Count < 10;
-            posts.ForEach(post =>
+
+            posts.Skip(page * sizePage).Take(sizePage).ToList().ForEach(post =>
             {
                 string Usuario_Id = post.Miembro_Id ?? post.Colaborador_Empresa_Id;
                 int i = 0;
@@ -578,12 +578,9 @@ namespace WorklabsMx.Droid
             {
                 try
                 {
-                    System.IO.MemoryStream stream = new System.IO.MemoryStream();
-                    bitmap?.Compress(Bitmap.CompressFormat.Png, 0, stream);
-                    byte[] bitmapData = stream?.ToArray();
                     if (new EscritorioController().SetPost(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"),
                                                            customView.FindViewById<EditText>(Resource.Id.txtPublicacion).Text,
-                                                           bitmapData))
+                                                           imagePath))
                     {
                         tlPost.RemoveAllViews();
                         page = 0;
@@ -606,7 +603,7 @@ namespace WorklabsMx.Droid
         {
             _dir = new File(
                 Android.OS.Environment.GetExternalStoragePublicDirectory(
-                    Android.OS.Environment.DirectoryPictures), "CameraAppDemo");
+                    Android.OS.Environment.DirectoryPictures), "WorklabsMx");
             if (!_dir.Exists())
                 _dir.Mkdirs();
         }
@@ -634,6 +631,7 @@ namespace WorklabsMx.Droid
 
                     int height = Resources.DisplayMetrics.HeightPixels;
                     int width = imgPicture.Height;
+                    imagePath = _file.Path;
                     bitmap = _file.Path.LoadAndResizeBitmap(width, height);
                     if (bitmap != null)
                     {
@@ -645,6 +643,7 @@ namespace WorklabsMx.Droid
                 }
                 if (requestCode == PickImageId && resultCode == Result.Ok && data != null)
                 {
+                    imagePath = (string)data.Data;
                     bitmap = Media.GetBitmap(ContentResolver, data.Data);
                     imgPicture.SetImageURI(data.Data);
                     imgPublish = System.Uri.EscapeUriString(data.Data.LastPathSegment);
@@ -652,6 +651,7 @@ namespace WorklabsMx.Droid
                 imgPicture.Visibility = ViewStates.Visible;
                 customView.FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Visible;
                 customView.FindViewById<Button>(Resource.Id.btnPublishApply).Enabled = true;
+                customView.FindViewById<GridLayout>(Resource.Id.gvPublish).SetMinimumHeight(440);
             }
         }
     }

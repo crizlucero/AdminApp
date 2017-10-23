@@ -440,7 +440,7 @@ namespace WorklabsMx.Controllers
         /// <param name="tipo">Tipo de usuario</param>
         /// <param name="comentario">Comentario.</param>
         /// <param name="fotografia">Bytes de la fotografía</param>
-        public bool SetPost(string usuario_id, string tipo, string comentario, byte[] fotografia)
+        public bool SetPost(string usuario_id, string tipo, string comentario, string fotografia)
         {
             string miembro_id = null, colaborador_id = null, fotoNombre = null;
             if (tipo == ((int)TiposUsuarios.Miembro).ToString())
@@ -450,7 +450,7 @@ namespace WorklabsMx.Controllers
             try
             {
                 conn.Open();
-                if (fotografia.Length != 0)
+                if (!string.IsNullOrEmpty(fotografia))
                 {
                     if (new UploadImages().UploadBitmapAsync(fotografia))
                         fotoNombre = Guid.NewGuid().ToString();
@@ -482,8 +482,8 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Publicacion_Imagen", fotoNombre);
 
                 command.Transaction = transaction;
-                command.ExecuteNonQuery();
-                transaction.Commit();
+                //command.ExecuteNonQuery();
+                //transaction.Commit();
 
             }
             catch (Exception e)
