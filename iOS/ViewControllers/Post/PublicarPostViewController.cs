@@ -94,6 +94,8 @@ namespace WorklabsMx.iOS
                 NombreFoto = "";
             }
 
+            bool FotoEnviada = ImageGallery.UpLoadImageFTP(Fotografia);
+
             if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtPublicacion.Text, Fotografia))
             {
                 this.PostPublicadoDelegate?.PostPublicado();
