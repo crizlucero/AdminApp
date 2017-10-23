@@ -13,6 +13,7 @@ using AndroidHUD;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Droid.Helpers;
+using WorklabsMx.Enum;
 
 namespace WorklabsMx.Droid
 {
@@ -74,7 +75,7 @@ namespace WorklabsMx.Droid
             AndHUD.Shared.Show(this, null, -1, MaskType.Black);
             await Task.Delay(500);
             tlComentarios.RemoveAllViews();
-            DashboardController.GetComentariosPost(post_id).ForEach((comentario) =>
+            DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")).ForEach(comentario =>
             {
                 int i = 0;
                 String Usuario_Id = comentario.Miembro_Id ?? comentario.Colaborador_Empresa_Id;
@@ -253,9 +254,30 @@ namespace WorklabsMx.Droid
                 lblLike.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 130) / 5);
                 lblLike.Click += delegate
                 {
-                    if (new EscritorioController().CommentLike(comentario.Comentario_Id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")))
+                    string transaccion = "ALTA";
+                    if (comentario.Comentario_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
+                        transaccion = "BAJA";
+                    else if (comentario.Comentario_Me_Gusta_Usuario == ((int)TiposMeGusta.Baja).ToString())
+                        transaccion = "MODIFICAR";
+                    if (new EscritorioController().CommentLike(comentario.Comentario_Id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), transaccion))
+                    {
                         lblLike.Text = new EscritorioController().GetLikesComments(comentario.Comentario_Id) + " Like(s)";
+                        if (transaccion == "BAJA")
+                        {
+                            comentario.Comentario_Me_Gusta_Usuario = "0";
+                            lblLike.SetTextColor(Color.Black);
+                        }
+                        else
+                        {
+                            comentario.Comentario_Me_Gusta_Usuario = "1";
+                            lblLike.SetTextColor(Color.Rgb(57, 87, 217));
+                        }
+                    }
                 };
+                if (comentario.Comentario_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
+                {
+                    lblLike.SetTextColor(Color.Rgb(57, 87, 217));
+                }
                 llLike.AddView(lblLike);
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center | GravityFlags.Left);
