@@ -104,7 +104,15 @@ namespace WorklabsMx.iOS
                 await Task.Delay(500);
                 var comentariostView = (SeccionComentariosTableViewController)segue.DestinationViewController;
                 objSeccionComentarios = comentariostView;
-				comentariostView.setInfoPosto(this.LocalPost);
+                try
+                {
+                    comentariostView.setInfoPosto(this.LocalPost);
+                }
+                catch(Exception e)
+                {
+                    SlackLogs.SendMessage(e.Message);
+                }
+				
 			}
             else if (segue.Identifier == "toViewImageFromComments")
             {

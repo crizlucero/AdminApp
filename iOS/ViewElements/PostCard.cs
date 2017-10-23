@@ -142,7 +142,7 @@ namespace WorklabsMx.iOS.ViewElements
 
         void AddComentarios(PostModel post)
         {
-            List<ComentarioModel> comentarios = new Controllers.EscritorioController().GetComentariosPost(post.Publicacion_Id);
+            List<ComentarioModel> comentarios = new Controllers.EscritorioController().GetComentariosPost(post.Publicacion_Id, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
             if (comentarios.Count > 0)
             {
                 int commentSize = 0;

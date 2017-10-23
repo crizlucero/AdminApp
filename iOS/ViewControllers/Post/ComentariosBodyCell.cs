@@ -2,7 +2,6 @@ using System;
 using UIKit;
 using WorklabsMx.Models;
 using WorklabsMx.iOS.Helpers;
-using PerpetualEngine.Storage;
 using WorklabsMx.Enum;
 using CoreGraphics;
 
@@ -16,7 +15,7 @@ namespace WorklabsMx.iOS
 
         public event EventHandler MostrarImagenEnGrande;
 
-        public event EventHandler LeDioLike;
+        public event EventHandler ComentarPost;
 
         string transaccion = "ALTA";
 
@@ -26,8 +25,8 @@ namespace WorklabsMx.iOS
             
         }
 
-		internal void UpdateCell(PostModel post)
-		{
+        internal void UpdateCell(PostModel post)
+        {
             lblNombre.Text = post.Usuario_Nombre;
             lblLikes.Text = post.Publicacion_Me_Gustan_Cantidad + " LIKES";
             lblFechaPost.Text = post.Publicacion_Fecha;
@@ -50,12 +49,12 @@ namespace WorklabsMx.iOS
                 btnImagenComentatio.Hidden = true;
                 btnImagenComentatio.Enabled = false;
                 btnImagenComentatio.Frame = new CGRect(btnImagenComentatio.Frame.X, btnImagenComentatio.Frame.Y, btnImagenComentatio.Frame.Width, 0);
+
                 //btnImagenComentatio.Frame.Size.Height = 0;
             }
 
-
             PostLocal = post;
-		}
+        }
 
         partial void btnLikes_TouchUpInside(UIButton sender)
         {
@@ -72,6 +71,7 @@ namespace WorklabsMx.iOS
             if (new Controllers.EscritorioController().PostLike(PostLocal.Publicacion_Id, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), transaccion))
             {
                 lblLikes.Text = new Controllers.EscritorioController().GetLikesPublish(PostLocal.Publicacion_Id) + " LIKES";
+
                 if (transaccion == "BAJA")
                 {
                     PostLocal.Publicacion_Me_Gusta_Usuario = "0";
@@ -84,10 +84,7 @@ namespace WorklabsMx.iOS
                 }
             }
 
-            if (LeDioLike != null)
-            {
-                LeDioLike(this, EventArgs.Empty);
-            }
+
         }
 
         partial void btnImagenComentatio_touchUpInside(UIButton sender)
@@ -97,5 +94,14 @@ namespace WorklabsMx.iOS
                 MostrarImagenEnGrande(sender.ImageView, EventArgs.Empty);
             }
         }
+
+        partial void btnComentarPost_TouchUpInside(UIButton sender)
+        {
+            if (ComentarPost != null)
+            {
+                ComentarPost(PostLocal, EventArgs.Empty);
+            }
+        }    
+    
     }
 }
