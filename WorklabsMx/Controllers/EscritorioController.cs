@@ -145,13 +145,16 @@ namespace WorklabsMx.Controllers
         /// </summary>
         /// <returns>Comentarios del post</returns>
         /// <param name="post_id">Identificador del post</param>
-        public List<ComentarioModel> GetComentariosPost(string post_id)
+        public List<ComentarioModel> GetComentariosPost(string post_id, string usuario_id, string usuario_tipo)
         {
             List<ComentarioModel> comentarios = new List<ComentarioModel>();
-            string query = "select * FROM vw_pro_Red_Social_Publicaciones_Comentarios " +
-                "WHERE Comentario_Estatus = 1 AND Publicacion_Id = @post_id ORDER BY Comentario_Fecha DESC --OFFSET @page ROWS Fetch next 10 rows only";
-            command = CreateCommand(query);
-            command.Parameters.AddWithValue("@post_id", post_id);
+            command = CreateCommand();
+            command.Connection = conn;
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "sp_vw_pro_Red_Social_Publicaciones_Comentarios";
+            command.Parameters.AddWithValue("@Post_Id", post_id);
+            command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
+            command.Parameters.AddWithValue("@Usuario_Tipo", usuario_tipo);
             try
             {
                 conn.Open();
@@ -172,7 +175,8 @@ namespace WorklabsMx.Controllers
                         Comentario_Imagen = reader["Comentario_Imagen"].ToString(),
                         Comentario_Imagen_Ruta = reader["Comentario_Imagen_Ruta"].ToString(),
                         Comentario_Fecha = reader["Comentario_Fecha"].ToString(),
-                        Comentario_Me_Gustan_Cantidad = reader["Comentario_Me_Gustan_Cantidad"].ToString()
+                        Comentario_Me_Gustan_Cantidad = reader["Comentario_Me_Gustan_Cantidad"].ToString(),
+                        Comentario_Me_Gusta_Usuario = reader["Comentario_Me_Gusta_Usuario"].ToString()
                     });
                 }
             }
@@ -328,7 +332,7 @@ namespace WorklabsMx.Controllers
         /// </summary>
         /// <param name="comentario_id">Identificador del comentario</param>
         /// <param name="usuario_id">Identificador del usuario</param>
-        public bool CommentLike(string comentario_id, string usuario_id, string tipo)
+        public bool CommentLike(string comentario_id, string usuario_id, string tipo, string transaccion)
         {
             string miembro_id = null;
             string colaborador_id = null;
@@ -344,7 +348,7 @@ namespace WorklabsMx.Controllers
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = "sp_pro_Red_Social_Publicaciones_Comentarios_Me_Gustan";
-                command.Parameters.AddWithValue("@Trasaccion", "ALTA");
+                command.Parameters.AddWithValue("@Trasaccion", transaccion);
                 command.Parameters.AddWithValue("@Comentario_Id", comentario_id);
                 command.Parameters.AddWithValue("@Miembro_Id", miembro_id);
                 command.Parameters.AddWithValue("@Colaborador_Empresa_Id", colaborador_id);
