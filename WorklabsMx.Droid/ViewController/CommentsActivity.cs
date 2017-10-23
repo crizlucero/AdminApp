@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
@@ -14,6 +15,8 @@ using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Droid.Helpers;
 using WorklabsMx.Enum;
+using WorklabsMx.Models;
+using System.Linq;
 
 namespace WorklabsMx.Droid
 {
@@ -24,6 +27,9 @@ namespace WorklabsMx.Droid
         SimpleStorage localStorage;
         TableLayout tlComentarios;
         ScrollView svComentarios;
+        List<ComentarioModel> comentarios;
+        readonly int sizePage = 10;
+        int page;
         string post_id;
         public CommentsActivity()
         {
@@ -45,8 +51,13 @@ namespace WorklabsMx.Droid
             DashboardController = new EscritorioController();
             svComentarios = FindViewById<ScrollView>(Resource.Id.svComentarios);
             tlComentarios = FindViewById<TableLayout>(Resource.Id.llComentarios);
+            comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+
             if (Convert.ToInt32(Intent.GetStringExtra("comments_total")) > 0)
+            {
+                tlComentarios.RemoveAllViews();
                 await FillComments();
+            }
             SwipeRefreshLayout refresher = FindViewById<SwipeRefreshLayout>(Resource.Id.swipe_container);
             refresher.SetColorSchemeColors(Color.Gray, Color.LightGray, Color.Gray, Color.DarkGray, Color.Black, Color.DarkGray);
             refresher.Refresh += async (sender, e) =>
@@ -67,6 +78,15 @@ namespace WorklabsMx.Droid
                 }
                 AndHUD.Shared.Dismiss(this);
             };
+            svComentarios.ScrollChange += async (sender, e) =>
+            {
+                if ((comentarios.Count / (page + 1)) < 10)
+                    if ((((ScrollView)sender).ScrollY / (page + 1)) > ((svComentarios.Height) * .4))
+                    {
+                        ++page;
+                        await FillComments();
+                    }
+            };
 
         }
 
@@ -74,8 +94,8 @@ namespace WorklabsMx.Droid
         {
             AndHUD.Shared.Show(this, null, -1, MaskType.Black);
             await Task.Delay(500);
-            tlComentarios.RemoveAllViews();
-            DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")).ForEach(comentario =>
+
+            comentarios.Skip(page * sizePage).Take(sizePage).ToList().ForEach(comentario =>
             {
                 int i = 0;
                 String Usuario_Id = comentario.Miembro_Id ?? comentario.Colaborador_Empresa_Id;

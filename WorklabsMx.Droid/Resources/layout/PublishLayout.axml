@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="255.5dp"
+        android:layout_height="wrap_content"
         android:id="@+id/gvPublish"
         android:rowCount="6"
         android:columnCount="4"

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 
@@ -46,10 +47,38 @@ namespace WorklabsMx.Controllers
         {
             try
             {
-                
+
             }
             catch (Exception e) { SlackLogs.SendMessage(e.Message); }
             return true;
+        }
+
+        public List<RenovacionPagosModel> GetRenovaciones()
+        {
+            List<RenovacionPagosModel> renovaciones = new List<RenovacionPagosModel>();
+            string query = "SELECT * FROM vw_pro_Miembros_Productos_Servicios_Renovacion_Morosos";
+            try
+            {
+                conn.Open();
+                command = CreateCommand(query);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    renovaciones.Add(new RenovacionPagosModel
+                    {
+                        Empresa_Id = reader["Membresia_Miembro_Id"].ToString(),
+                        Num_Tarjeta = reader["Transaccion_Pago_Tarjeta"].ToString(),
+                        Fecha_Vencimiento = reader["Transaccion_Pago_Tarjeta_Vencimiento"].ToString(),
+                        Monto_Pagar = reader["Transaccion_Pago_Importe"].ToString(),
+                        Titular = reader["Transaccion_Pago_Titular"].ToString()
+                    });
+                }
+            }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            finally { conn.Close(); }
+
+
+            return renovaciones;
         }
     }
 }
