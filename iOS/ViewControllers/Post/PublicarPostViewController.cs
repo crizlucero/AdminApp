@@ -89,7 +89,7 @@ namespace WorklabsMx.iOS
             }
             else 
             {
-                Fotografia = null;
+                Fotografia = new byte[0];
                 id = null;
                 NombreFoto = "";
             }

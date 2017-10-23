@@ -4,6 +4,7 @@ using WorklabsMx.Models;
 using WorklabsMx.iOS.Helpers;
 using PerpetualEngine.Storage;
 using WorklabsMx.Enum;
+using CoreGraphics;
 
 namespace WorklabsMx.iOS
 {
@@ -11,11 +12,14 @@ namespace WorklabsMx.iOS
     {
 
         PostModel PostLocal;
-        SimpleStorage storageLocal;
+        //SimpleStorage storageLocal;
 
         public event EventHandler MostrarImagenEnGrande;
 
         public event EventHandler LeDioLike;
+
+        string transaccion = "ALTA";
+
 
         public ComentariosBodyCell (IntPtr handle) : base (handle)
         {
@@ -25,7 +29,7 @@ namespace WorklabsMx.iOS
 		internal void UpdateCell(PostModel post)
 		{
             lblNombre.Text = post.Usuario_Nombre;
-            lblLikes.Text = post.Publicacion_Me_Gustan_Cantidad;
+            lblLikes.Text = post.Publicacion_Me_Gustan_Cantidad + " LIKES";
             lblFechaPost.Text = post.Publicacion_Fecha;
             //lblOcupacion.Text = post.Miembro_Puesto;
             lblComentarios.Text = post.Publicacion_Comentarios_Cantidad + " COMENTARIOS";
@@ -45,7 +49,10 @@ namespace WorklabsMx.iOS
             {
                 btnImagenComentatio.Hidden = true;
                 btnImagenComentatio.Enabled = false;
+                btnImagenComentatio.Frame = new CGRect(btnImagenComentatio.Frame.X, btnImagenComentatio.Frame.Y, btnImagenComentatio.Frame.Width, 0);
+                //btnImagenComentatio.Frame.Size.Height = 0;
             }
+
 
             PostLocal = post;
 		}
@@ -53,15 +60,15 @@ namespace WorklabsMx.iOS
         partial void btnLikes_TouchUpInside(UIButton sender)
         {
             var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
-            string transaccion = "ALTA";
             if (PostLocal.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
             {
-                transaccion = "BAJA"; 
+                transaccion = "BAJA";
             }
             else if (PostLocal.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Baja).ToString())
             {
-                transaccion = "MODIFICAR"; 
+                transaccion = "MODIFICAR";
             }
+
             if (new Controllers.EscritorioController().PostLike(PostLocal.Publicacion_Id, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), transaccion))
             {
                 lblLikes.Text = new Controllers.EscritorioController().GetLikesPublish(PostLocal.Publicacion_Id) + " LIKES";
@@ -76,9 +83,10 @@ namespace WorklabsMx.iOS
                     lblLikes.TextColor = (UIColor.FromRGB(57, 87, 217));
                 }
             }
-            if (PostLocal.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
+
+            if (LeDioLike != null)
             {
-                lblLikes.TextColor = (UIColor.FromRGB(57, 87, 217));
+                LeDioLike(this, EventArgs.Empty);
             }
         }
 

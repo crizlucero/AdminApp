@@ -48,7 +48,7 @@ namespace WorklabsMx.iOS
 
         partial void btnLikes_TouchUpInside(UIButton sender)
         {
-            /*var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
+            var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
             string transaccion = "ALTA";
             if (comentarioLocal.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
             {
@@ -75,7 +75,7 @@ namespace WorklabsMx.iOS
             if (comentarioLocal.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
             {
                 lblLikes.TextColor = (UIColor.FromRGB(57, 87, 217));
-            }*/
+            }
         }
 
         partial void btnImagenComentario_TouchUpInside(UIButton sender)

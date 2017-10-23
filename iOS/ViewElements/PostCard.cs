@@ -6,6 +6,7 @@ using UIKit;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.iOS.Styles;
 using WorklabsMx.Models;
+using WorklabsMx.Enum;
 
 namespace WorklabsMx.iOS.ViewElements
 {
@@ -71,8 +72,37 @@ namespace WorklabsMx.iOS.ViewElements
                 btnLike.TouchUpInside += (sender, e) =>
                  {
                      btnLike.BackgroundColor = UIColor.White;
-                    if (new Controllers.EscritorioController().PostLike(post.Publicacion_Id, SimpleStorage.EditGroup("Login").Get("Usuario_Id"), SimpleStorage.EditGroup("Login").Get("Usuario_Tipo")))
-                        btnLike.SetTitle(new Controllers.EscritorioController().GetLikesPublish(post.Publicacion_Id) + " Like(s)", UIControlState.Normal);
+
+                     string transaccion = "ALTA";
+                    if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
+                     {
+                         transaccion = "BAJA";
+                     }
+                    else if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Baja).ToString())
+                     {
+                         transaccion = "MODIFICAR";
+                     }
+                    if (new Controllers.EscritorioController().PostLike(post.Publicacion_Id, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), transaccion))
+                     {
+                        //lblLikes.Text = new Controllers.EscritorioController().GetLikesPublish(post.Publicacion_Id) + " LIKES";
+                         if (transaccion == "BAJA")
+                         {
+                            post.Publicacion_Me_Gusta_Usuario = "0";
+                             //lblLikes.TextColor = UIColor.Black;
+                         }
+                         else
+                         {
+                            post.Publicacion_Me_Gusta_Usuario = "1";
+                             //lblLikes.TextColor = (UIColor.FromRGB(57, 87, 217));
+                         }
+                     }
+                    if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
+                     {
+                         //lblLikes.TextColor = (UIColor.FromRGB(57, 87, 217));
+                     }
+
+                    /*if (new Controllers.EscritorioController().PostLike(post.Publicacion_Id, SimpleStorage.EditGroup("Login").Get("Usuario_Id"), SimpleStorage.EditGroup("Login").Get("Usuario_Tipo")))
+                        btnLike.SetTitle(new Controllers.EscritorioController().GetLikesPublish(post.Publicacion_Id) + " Like(s)", UIControlState.Normal);*/
                  };
                 btnLike.TouchDown += (sender, e) =>
                 {
