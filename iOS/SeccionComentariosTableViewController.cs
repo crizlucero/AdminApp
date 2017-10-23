@@ -4,6 +4,7 @@ using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Models;
 using System.Collections.Generic;
 using BigTed;
+using PerpetualEngine.Storage;
 
 namespace WorklabsMx.iOS
 {
@@ -20,9 +21,10 @@ namespace WorklabsMx.iOS
 		bool isShowInformation = false;
 		bool existeConeccion = true;
 
+        SimpleStorage storageLocal;
+
         PostModel PostLocal;
 
-        List<UIImage> ImagenesComentario = new List<UIImage>();
         List<ComentarioModel> comentarios;
 
         public SeccionComentariosTableViewController (IntPtr handle) : base (handle)
@@ -32,7 +34,6 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            BTProgressHUD.Dismiss();
         }
 
 		public override nint RowsInSection(UITableView tableView, nint section)
@@ -57,7 +58,15 @@ namespace WorklabsMx.iOS
 		{
 			if (isShowInformation)
 			{
-				return TamañoPublicacion;
+                if (comentarios[indexPath.Row].Comentario_Imagen_Ruta == "")
+                {
+                    return TamañoPublicacion - 50;
+                }
+                else 
+                {
+                    return TamañoPublicacion;
+                }
+				
 			}
 			else
 			{
@@ -65,11 +74,6 @@ namespace WorklabsMx.iOS
 			}
 		}
 
-        void LeDioLike(object sender, EventArgs e)
-        {
-            this.comentarios = new Controllers.EscritorioController().GetComentariosPost(PostLocal.Publicacion_Id);
-            this.TableView.ReloadData();
-        }
 
 		public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
 		{
@@ -80,6 +84,7 @@ namespace WorklabsMx.iOS
 				var currentPostCell = (ComentarioViewCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
                 currentPostCell.UpdateCell(currentPost);
                 currentPostCell.MostrarImagenEnGrande += MostrarImagenEnGrande;
+                this.WillDisplay(indexPath.Row);
 				return currentPostCell;
 			}
 			else
@@ -107,19 +112,29 @@ namespace WorklabsMx.iOS
 
 		public void setInfoPosto(PostModel Post)
 		{
+            storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
             if (InternetConectionHelper.VerificarConexion())
             {
                 PostLocal = Post;
-                this.comentarios = new Controllers.EscritorioController().GetComentariosPost(Post.Publicacion_Id);
+                this.comentarios = new Controllers.EscritorioController().GetComentariosPost(Post.Publicacion_Id,storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
             }
             else
             {
                 isShowInformation = false;
                 existeConeccion = false;
             }
-            BTProgressHUD.Dismiss();
+
             this.TableView.ReloadData();
 		}
+
+        private void WillDisplay(int Row)
+        {
+            int LastRow = this.comentarios.Count - 1;
+            if ((Row == LastRow) /*&& (LastRow < allPosts.Count)*/)
+            {
+                BTProgressHUD.Dismiss();
+            }
+        }
 
     }
 }

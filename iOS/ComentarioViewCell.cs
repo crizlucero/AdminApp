@@ -2,8 +2,8 @@ using System;
 using UIKit;
 using WorklabsMx.Models;
 using WorklabsMx.iOS.Helpers;
-using PerpetualEngine.Storage;
 using WorklabsMx.Enum;
+using CoreGraphics;
 
 namespace WorklabsMx.iOS
 {
@@ -11,11 +11,8 @@ namespace WorklabsMx.iOS
     {
 
         ComentarioModel comentarioLocal;
-        SimpleStorage storageLocal;
 
         public event EventHandler MostrarImagenEnGrande;
-
-        public event EventHandler LeDioLike;
 
 
         public ComentarioViewCell (IntPtr handle) : base (handle)
@@ -39,9 +36,11 @@ namespace WorklabsMx.iOS
             }
             else 
             {
+                btnImagenComentario.Frame = new CGRect(btnImagenComentario.Frame.X, btnImagenComentario.Frame.Y, btnImagenComentario.Frame.Width, 0);
                 btnImagenComentario.Hidden = true;
                 btnImagenComentario.Enabled = false;
             }
+
             comentarioLocal = comentario;
 
 		}
@@ -50,11 +49,11 @@ namespace WorklabsMx.iOS
         {
             var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
             string transaccion = "ALTA";
-            if (comentarioLocal.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
+            if (comentarioLocal.Comentario_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
             {
                 transaccion = "BAJA";
             }
-            else if (comentarioLocal.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Baja).ToString())
+            else if (comentarioLocal.Comentario_Me_Gusta_Usuario == ((int)TiposMeGusta.Baja).ToString())
             {
                 transaccion = "MODIFICAR";
             }
@@ -63,19 +62,17 @@ namespace WorklabsMx.iOS
                 lblLikes.Text = new Controllers.EscritorioController().GetLikesPublish(comentarioLocal.Publicacion_Id) + " LIKES";
                 if (transaccion == "BAJA")
                 {
-                    comentarioLocal.Publicacion_Me_Gusta_Usuario = "0";
+                    comentarioLocal.Comentario_Me_Gusta_Usuario = "0";
                     lblLikes.TextColor = UIColor.Black;
+
                 }
                 else
                 {
-                    comentarioLocal.Publicacion_Me_Gusta_Usuario = "1";
+                    comentarioLocal.Comentario_Me_Gusta_Usuario = "1";
                     lblLikes.TextColor = (UIColor.FromRGB(57, 87, 217));
                 }
             }
-            if (comentarioLocal.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
-            {
-                lblLikes.TextColor = (UIColor.FromRGB(57, 87, 217));
-            }
+
         }
 
         partial void btnImagenComentario_TouchUpInside(UIButton sender)

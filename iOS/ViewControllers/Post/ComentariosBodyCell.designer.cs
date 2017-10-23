@@ -58,6 +58,10 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwVistaComentario { get; set; }
 
+        [Action ("btnComentarPost_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnComentarPost_TouchUpInside (UIKit.UIButton sender);
+
         [Action ("btnImagenComentatio_touchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnImagenComentatio_touchUpInside (UIKit.UIButton sender);
