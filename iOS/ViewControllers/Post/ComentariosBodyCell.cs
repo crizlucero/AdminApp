@@ -36,7 +36,7 @@ namespace WorklabsMx.iOS
 
             StyleHelper.Style(vwVistaComentario.Layer);
 
-            imgPerfil.Image = ImageGallery.LoadImage(post.Usuario_Fotografia_Ruta);
+            imgPerfil.Image = ImageGallery.LoadImageUrl(post.Usuario_Fotografia_Ruta);
 
             if (post.Publicacion_Imagen_Ruta != "")
             {

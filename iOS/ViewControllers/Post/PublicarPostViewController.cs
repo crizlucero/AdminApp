@@ -33,6 +33,8 @@ namespace WorklabsMx.iOS
 
         UIImage ImagenPublicacion;
 
+        string UrlImage = "";
+
         public PostPublicadoDel PostPublicadoDelegate;
 
         public PublicarPostViewController(IntPtr handle) : base(handle)
@@ -94,9 +96,9 @@ namespace WorklabsMx.iOS
                 NombreFoto = "";
             }
 
-            bool FotoEnviada = ImageGallery.UpLoadImageFTP(Fotografia);
+            //bool FotoEnviada = ImageGallery.UpLoadImageFTP(Fotografia);
 
-            if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtPublicacion.Text, Fotografia))
+            if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtPublicacion.Text, UrlImage))
             {
                 this.PostPublicadoDelegate?.PostPublicado();
                 this.DismissViewController(true, null);
@@ -166,6 +168,8 @@ namespace WorklabsMx.iOS
         public void FinishedPickingImage(UIKit.UIImagePickerController picker, UIKit.UIImage image, Foundation.NSDictionary editingInfo)
         {
             ImagenPublicacion = image;
+            var imageUrl = editingInfo["UIImagePickerControllerReferenceURL"] as NSUrl;
+            UrlImage = imageUrl.RelativeString;
             this.btnImageComment.SetImage(image, UIControlState.Normal);
             this.btnDeleteImge.Hidden = false;
             this.btnPublicar.Enabled = true;

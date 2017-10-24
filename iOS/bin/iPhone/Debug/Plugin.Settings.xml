@@ -211,6 +211,12 @@
             <param name="fileName">Name of file for settings to be stored and retrieved </param>
             <returns>True of was added or updated and you need to save it.</returns>
         </member>
+        <member name="M:Plugin.Settings.SettingsImplementation.OpenAppSettings">
+            <summary>
+            Attempts to open the app settings page.
+            </summary>
+            <returns>true if success, else false and not supported</returns>
+        </member>
         <member name="T:Plugin.Settings.CrossSettings">
             <summary>
             Cross Platform settings

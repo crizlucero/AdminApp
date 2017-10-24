@@ -53,12 +53,12 @@
 				<integer>7</integer>
 			</dict>
 		</array>
-		<key>Mc7-Et-5cg</key>
+		<key>jlP-VZ-ipH</key>
 		<array>
 			<dict>
 				<key>affected-objects</key>
 				<array>
-					<string>Mc7-Et-5cg</string>
+					<string>jlP-VZ-ipH</string>
 				</array>
 				<key>message</key>
 				<string>Push segues are deprecated since iOS 8.0</string>
