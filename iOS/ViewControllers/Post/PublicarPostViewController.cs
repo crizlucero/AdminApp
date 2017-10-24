@@ -78,25 +78,17 @@ namespace WorklabsMx.iOS
         {
             BTProgressHUD.Show();
             await Task.Delay(500);
-            NSUuid id;
 
             byte[] Fotografia;
-            string NombreFoto;
 
             if (ImagenPublicacion != null )
             {
                 Fotografia = ImagenPublicacion?.AsPNG().ToArray();
-                id = new NSUuid();
-                NombreFoto = id.ToString();
             }
             else 
             {
                 Fotografia = new byte[0];
-                id = null;
-                NombreFoto = "";
             }
-
-            //bool FotoEnviada = ImageGallery.UpLoadImageFTP(Fotografia);
 
             if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtPublicacion.Text, Fotografia))
             {
