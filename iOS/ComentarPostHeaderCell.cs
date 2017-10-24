@@ -43,6 +43,8 @@ namespace WorklabsMx.iOS
         {
             if (image != null)
             {
+                this.btnFotografia.UserInteractionEnabled = true;
+                this.btnFotografia.Hidden = false;
                 this.btnFotografia.SetImage(image, UIControlState.Normal);
                 this.btnBorrarFoto.Hidden = false;
                 this.btnPublicar.Enabled = true;
@@ -115,15 +117,21 @@ namespace WorklabsMx.iOS
 
         partial void btnFotografia_TouchUpInside(UIButton sender)
         {
-            if (MostrarImagenEnGrande != null)
+            if (this.btnFotografia.ImageView.Image != null)
             {
-                MostrarImagenEnGrande(sender.ImageView, EventArgs.Empty);
+                if (MostrarImagenEnGrande != null)
+                {
+                    MostrarImagenEnGrande(sender.ImageView, EventArgs.Empty);
+                }
             }
         }
 
         partial void btnBorrarFoto_TouchUpInside(UIButton sender)
         {
-            this.btnFotografia.SetImage(null, UIControlState.Normal);
+            this.btnFotografia.ImageView.Image = null;
+            this.btnFotografia.UserInteractionEnabled = false;
+            this.btnFotografia.Enabled = false;
+            this.btnFotografia.Hidden = true;
             if (this.txtComentarPost.Text == "Escribe un comentario")
             {
                 this.btnPublicar.Layer.Opacity = 0.5f;

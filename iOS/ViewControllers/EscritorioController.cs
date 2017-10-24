@@ -17,7 +17,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 
         public override void ViewDidLoad()
         {
-            base.ViewDidLoad();             this.CargarInfo(); 
+            base.ViewDidLoad();             this.CargarInfo();
 		}
 
         public override void ViewWillAppear(bool animated)
