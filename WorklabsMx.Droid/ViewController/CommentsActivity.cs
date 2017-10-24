@@ -17,6 +17,10 @@ using WorklabsMx.Droid.Helpers;
 using WorklabsMx.Enum;
 using WorklabsMx.Models;
 using System.Linq;
+using Java.IO;
+using Android.Content.PM;
+using Android.Provider;
+using static Android.Provider.MediaStore.Images;
 
 namespace WorklabsMx.Droid
 {
@@ -28,9 +32,11 @@ namespace WorklabsMx.Droid
         TableLayout tlComentarios;
         ScrollView svComentarios;
         List<ComentarioModel> comentarios;
-        readonly int sizePage = 10;
+        File _file, _dir;
+        Bitmap bitmap;
+        readonly int sizePage = 10, PickImageId = 1000, TakePicture = 500;
         int page;
-        string post_id;
+        string post_id, imgPublish;
         public CommentsActivity()
         {
             localStorage = SimpleStorage.EditGroup("Login");
@@ -52,7 +58,8 @@ namespace WorklabsMx.Droid
             svComentarios = FindViewById<ScrollView>(Resource.Id.svComentarios);
             tlComentarios = FindViewById<TableLayout>(Resource.Id.llComentarios);
             comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
-
+            FindViewById<ImageButton>(Resource.Id.imgPicture).Visibility = ViewStates.Gone;
+            FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Gone;
             if (Convert.ToInt32(Intent.GetStringExtra("comments_total")) > 0)
             {
                 tlComentarios.RemoveAllViews();
@@ -69,7 +76,10 @@ namespace WorklabsMx.Droid
             FindViewById<ImageButton>(Resource.Id.btnApplyComment).Click += async delegate
             {
                 AndHUD.Shared.Show(this, null, -1, MaskType.Black);
-                if (new EscritorioController().CommentPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), FindViewById<EditText>(Resource.Id.txtComment).Text))
+                System.IO.MemoryStream stream = new System.IO.MemoryStream();
+                bitmap?.Compress(Bitmap.CompressFormat.Png, 0, stream);
+                byte[] bitmapData = stream?.ToArray();
+                if (new EscritorioController().CommentPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), FindViewById<EditText>(Resource.Id.txtComment).Text, bitmapData))
                 {
                     FindViewById<EditText>(Resource.Id.txtComment).Text = "";
                     FindViewById<EditText>(Resource.Id.txtComment).ClearFocus();
@@ -85,7 +95,37 @@ namespace WorklabsMx.Droid
                     {
                         ++page;
                         await FillComments();
+                        FindViewById<ImageView>(Resource.Id.imgPicture).Visibility = ViewStates.Gone;
+                        FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Gone;
                     }
+            };
+
+            FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Click += delegate
+            {
+                ImageButton imgPicture = FindViewById<ImageButton>(Resource.Id.imgPicture);
+                _file = null;
+                imgPicture.SetImageURI(null);
+                imgPicture.Visibility = ViewStates.Gone;
+                FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Gone;
+            };
+
+            FindViewById<ImageButton>(Resource.Id.btnTakePicture).Click += delegate
+            {
+                CreateDirectoryForPictures();
+                IsThereAnAppToTakePictures();
+                Intent intent = new Intent(MediaStore.ActionImageCapture);
+                _file = new File(_dir, String.Format("{0}.png", Guid.NewGuid()));
+                intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(_file));
+                StartActivityForResult(intent, TakePicture);
+            };
+
+            FindViewById<ImageButton>(Resource.Id.btnAttachImage).Click += delegate
+            {
+                var imageIntent = new Intent();
+                imageIntent.SetType("image/*");
+                imageIntent.SetAction(Intent.ActionGetContent);
+                StartActivityForResult(
+                    Intent.CreateChooser(imageIntent, "Select photo"), PickImageId);
             };
 
         }
@@ -318,6 +358,58 @@ namespace WorklabsMx.Droid
         {
             base.OnBackPressed();
             return base.OnOptionsItemSelected(item);
+        }
+
+        void CreateDirectoryForPictures()
+        {
+            _dir = new File(
+                Android.OS.Environment.GetExternalStoragePublicDirectory(
+                    Android.OS.Environment.DirectoryPictures), "WorklabsMx");
+            if (!_dir.Exists())
+                _dir.Mkdirs();
+        }
+
+        bool IsThereAnAppToTakePictures()
+        {
+            Intent intent = new Intent(MediaStore.ActionImageCapture);
+            IList<ResolveInfo> availableActivities =
+                PackageManager.QueryIntentActivities(intent, PackageInfoFlags.MatchDefaultOnly);
+            return availableActivities != null && availableActivities.Count > 0;
+        }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            ImageButton imgPicture = FindViewById<ImageButton>(Resource.Id.imgPicture);
+            if (resultCode == Result.Ok)
+            {
+                if (requestCode == TakePicture && resultCode == Result.Ok)
+                {
+                    Intent mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
+                    Android.Net.Uri contentUri = Android.Net.Uri.FromFile(_file);
+                    mediaScanIntent.SetData(contentUri);
+                    SendBroadcast(mediaScanIntent);
+
+                    int height = Resources.DisplayMetrics.HeightPixels;
+                    int width = 75;
+                    bitmap = _file.Path.LoadAndResizeBitmap(width, height);
+                    if (bitmap != null)
+                    {
+                        imgPicture.SetImageBitmap(bitmap);
+                        //bitmap = null;
+                    }
+
+                    GC.Collect();
+                }
+                if (requestCode == PickImageId && resultCode == Result.Ok && data != null)
+                {
+                    bitmap = Media.GetBitmap(ContentResolver, data.Data);
+                    imgPicture.SetImageURI(data.Data);
+                    imgPublish = Uri.EscapeUriString(data.Data.LastPathSegment);
+                }
+                imgPicture.Visibility = ViewStates.Visible;
+                FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Visible;
+            }
         }
     }
 }

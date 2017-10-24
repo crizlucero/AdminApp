@@ -387,16 +387,21 @@ namespace WorklabsMx.Controllers
         /// <param name="tipo">Tipo de miembro</param>
         /// <param name="comentario">Comentario realizado</param>
         /// <returns><c>true</c> Si el post fue comentado, <c>false</c> Existió algún error.</returns>
-        public bool CommentPost(string post_id, string usuario_id, string tipo, string comentario)
+        public bool CommentPost(string post_id, string usuario_id, string tipo, string comentario, byte[] fotografia)
         {
-            string miembro_id = null;
-            string colaborador_id = null;
+            string miembro_id = null, colaborador_id = null, fotoNombre = null;
             if (tipo == ((int)TiposUsuarios.Miembro).ToString())
                 miembro_id = usuario_id;
             else
                 colaborador_id = usuario_id;
             try
             {
+                conn.Open();
+                if (!fotografia.Equals(null))
+                {
+                    fotoNombre = Guid.NewGuid().ToString() + ".png";
+                    new UploadImages().UploadBitmapAsync(fotoNombre, fotografia);
+                }
                 conn.Open();
                 transaction = conn.BeginTransaction();
                 command = CreateCommand();
@@ -416,11 +421,11 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Comentario_Contenido", comentario);
                 command.Parameters.AddWithValue("@Publicacion_Id", post_id);
                 command.Parameters.AddWithValue("@Comentario_Estatus", 1);
-                command.Parameters.AddWithValue("@Comentario_Imagen", DBNull.Value);
+                command.Parameters.AddWithValue("@Comentario_Imagen", fotoNombre);
 
                 command.Transaction = transaction;
-                command.ExecuteNonQuery();
-                transaction.Commit();
+                //command.ExecuteNonQuery();
+                //transaction.Commit();
 
             }
             catch (Exception e)
