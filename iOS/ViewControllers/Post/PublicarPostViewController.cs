@@ -78,27 +78,19 @@ namespace WorklabsMx.iOS
         {
             BTProgressHUD.Show();
             await Task.Delay(500);
-            NSUuid id;
 
             byte[] Fotografia;
-            string NombreFoto;
 
             if (ImagenPublicacion != null )
             {
                 Fotografia = ImagenPublicacion?.AsPNG().ToArray();
-                id = new NSUuid();
-                NombreFoto = id.ToString();
             }
             else 
             {
                 Fotografia = new byte[0];
-                id = null;
-                NombreFoto = "";
             }
 
-            //bool FotoEnviada = ImageGallery.UpLoadImageFTP(Fotografia);
-
-            if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtPublicacion.Text, UrlImage))
+            if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtPublicacion.Text, Fotografia))
             {
                 this.PostPublicadoDelegate?.PostPublicado();
                 this.DismissViewController(true, null);
@@ -175,6 +167,7 @@ namespace WorklabsMx.iOS
             this.btnPublicar.Enabled = true;
             opacity = 1f;
             this.btnImageComment.ContentMode = UIViewContentMode.ScaleAspectFit;
+            this.btnImageComment.Enabled = true;
             picker.DismissViewController(true, null);
         }
 
@@ -282,7 +275,11 @@ namespace WorklabsMx.iOS
 
         partial void btnImageComment_TouchUpInside(UIButton sender)
         {
-            this.PerformSegue("toViewImage", null);
+            if (this.btnImageComment.Enabled)
+            {
+                this.PerformSegue("toViewImage", null);
+            }
+
         }
 
         partial void btnDeleteImage_TouchUpInside(UIButton sender)
@@ -294,6 +291,7 @@ namespace WorklabsMx.iOS
                 this.btnPublicar.Enabled = false;
             }
             this.btnDeleteImge.Hidden = true;
+            this.btnImageComment.Enabled = false;
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)

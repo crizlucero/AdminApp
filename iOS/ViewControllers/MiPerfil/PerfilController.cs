@@ -235,8 +235,11 @@ namespace WorklabsMx.iOS
         async void BtnPublicar_TouchUpInside(object sender, EventArgs e)
         {
             if (imagen != null)
+            {
                 imagen.Hidden = true;
-            if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), null, txtPublish.Text, ""))
+            }
+
+            if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), null, txtPublish.Text, imagen.Image?.AsPNG().ToArray()))
             {
                 scrollView.RemoveFromSuperview();
                 totalSize = 0;

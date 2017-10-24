@@ -125,7 +125,7 @@ namespace WorklabsMx.iOS
         private void Tapped(UITapGestureRecognizer Recognizer)
         {
             this.View.EndEditing(true);
-            this.TableView.ReloadData();
+            //this.TableView.ReloadData();
         }
 
         private UIAlertController CrearActionSheet()
