@@ -46,11 +46,9 @@ namespace WorklabsMx.Droid
         View customView;
         List<PostModel> posts;
         readonly int sizePage = 10, PickImageId = 1000, TakePicture = 500;
-        bool isLimit;
         public MainActivity()
         {
             DashboardController = new EscritorioController();
-            isLimit = false;
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -578,9 +576,12 @@ namespace WorklabsMx.Droid
             {
                 try
                 {
+                    System.IO.MemoryStream stream = new System.IO.MemoryStream();
+                    bitmap?.Compress(Bitmap.CompressFormat.Png, 0, stream);
+                    byte[] bitmapData = stream?.ToArray();
                     if (new EscritorioController().SetPost(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"),
                                                            customView.FindViewById<EditText>(Resource.Id.txtPublicacion).Text,
-                                                           imagePath))
+                                                           bitmapData))
                     {
                         tlPost.RemoveAllViews();
                         page = 0;
@@ -630,7 +631,7 @@ namespace WorklabsMx.Droid
                     SendBroadcast(mediaScanIntent);
 
                     int height = Resources.DisplayMetrics.HeightPixels;
-                    int width = imgPicture.Height;
+                    int width = 75;
                     imagePath = _file.Path;
                     bitmap = _file.Path.LoadAndResizeBitmap(width, height);
                     if (bitmap != null)

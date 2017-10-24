@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using WorklabsMx.Enum;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
@@ -16,7 +17,8 @@ namespace WorklabsMx.Controllers
         public List<PostModel> GetMuroPosts(string usuario_id, string usuario_tipo)
         {
             List<PostModel> posts = new List<PostModel>();
-            try{
+            try
+            {
                 conn.Open();
                 command = CreateCommand();
                 command.Connection = conn;
@@ -46,9 +48,12 @@ namespace WorklabsMx.Controllers
                         Publicacion_Me_Gusta_Usuario = reader["Publicacion_Me_Gusta_Usuario"].ToString()
                     });
                 }
-            }catch(Exception e){
+            }
+            catch (Exception e)
+            {
                 SlackLogs.SendMessage(e.Message);
-            }finally {conn.Close();}
+            }
+            finally { conn.Close(); }
             return posts;
         }
 
@@ -440,7 +445,7 @@ namespace WorklabsMx.Controllers
         /// <param name="tipo">Tipo de usuario</param>
         /// <param name="comentario">Comentario.</param>
         /// <param name="fotografia">Bytes de la fotografía</param>
-        public bool SetPost(string usuario_id, string tipo, string comentario, string fotografia)
+        public bool SetPost(string usuario_id, string tipo, string comentario, byte[] fotografia)
         {
             string miembro_id = null, colaborador_id = null, fotoNombre = null;
             if (tipo == ((int)TiposUsuarios.Miembro).ToString())
@@ -450,10 +455,11 @@ namespace WorklabsMx.Controllers
             try
             {
                 conn.Open();
-                if (!string.IsNullOrEmpty(fotografia))
+                if (!fotografia.Equals(null))
                 {
-                    if (new UploadImages().UploadBitmapAsync(fotografia))
-                        fotoNombre = Guid.NewGuid().ToString();
+                    fotoNombre = Guid.NewGuid().ToString() + ".png";
+                    new UploadImages().UploadBitmapAsync(fotoNombre, fotografia);
+
 
                 }
                 transaction = conn.BeginTransaction();
