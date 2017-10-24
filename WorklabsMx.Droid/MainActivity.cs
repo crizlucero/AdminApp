@@ -551,6 +551,7 @@ namespace WorklabsMx.Droid
                 ImageButton imgPicture = customView.FindViewById<ImageButton>(Resource.Id.imgPicture);
                 imgPicture.SetImageURI(null);
                 imgPicture.Visibility = ViewStates.Gone;
+                _file = null;
                 customView.FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Gone;
             };
 
@@ -559,7 +560,7 @@ namespace WorklabsMx.Droid
                 CreateDirectoryForPictures();
                 IsThereAnAppToTakePictures();
                 Intent intent = new Intent(MediaStore.ActionImageCapture);
-                _file = new File(_dir, String.Format("myPhoto_{0}.jpg", Guid.NewGuid()));
+                _file = new File(_dir, String.Format("{0}.png", Guid.NewGuid()));
                 intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(_file));
                 StartActivityForResult(intent, TakePicture);
             };
