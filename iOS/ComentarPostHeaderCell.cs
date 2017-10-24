@@ -22,6 +22,8 @@ namespace WorklabsMx.iOS
 
         public event EventHandler MostrarImagenEnGrande;
 
+        bool mostrarImagen = false;
+
 
         public ComentarPostHeaderCell (IntPtr handle) : base (handle)
         {
@@ -43,19 +45,26 @@ namespace WorklabsMx.iOS
         {
             if (image != null)
             {
-                this.btnFotografia.UserInteractionEnabled = true;
-                this.btnFotografia.Hidden = false;
+                mostrarImagen = true;
                 this.btnFotografia.SetImage(image, UIControlState.Normal);
+                this.btnFotografia.ContentMode = UIViewContentMode.ScaleAspectFit;
+                this.btnFotografia.Hidden = false;
+                this.btnFotografia.Enabled = true;
                 this.btnBorrarFoto.Hidden = false;
+                this.btnBorrarFoto.Enabled = true;
                 this.btnPublicar.Enabled = true;
                 this.btnPublicar.Layer.Opacity = 1f;
-                this.btnFotografia.ContentMode = UIViewContentMode.ScaleAspectFit;
             }
         }
 
         internal void UpdateCell(PostModel Post)
         {
             this.LocalPost = Post;
+
+            if (mostrarImagen)
+            {
+                
+            }
 
             Placeholder = "Escribe un comentario";
             this.txtComentarPost.ShouldBeginEditing = t => {
@@ -117,7 +126,7 @@ namespace WorklabsMx.iOS
 
         partial void btnFotografia_TouchUpInside(UIButton sender)
         {
-            if (this.btnFotografia.ImageView.Image != null)
+            if (mostrarImagen)
             {
                 if (MostrarImagenEnGrande != null)
                 {
@@ -128,16 +137,16 @@ namespace WorklabsMx.iOS
 
         partial void btnBorrarFoto_TouchUpInside(UIButton sender)
         {
-            this.btnFotografia.ImageView.Image = null;
-            this.btnFotografia.UserInteractionEnabled = false;
-            this.btnFotografia.Enabled = false;
+            mostrarImagen = false;
             this.btnFotografia.Hidden = true;
+            this.btnFotografia.Enabled = false;
             if (this.txtComentarPost.Text == "Escribe un comentario")
             {
                 this.btnPublicar.Layer.Opacity = 0.5f;
                 this.btnPublicar.Enabled = false;
             }
             this.btnBorrarFoto.Hidden = true;
+            this.btnBorrarFoto.Enabled = false;
         }
     }
 }

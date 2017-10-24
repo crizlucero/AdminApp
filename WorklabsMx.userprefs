@@ -1,17 +1,14 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ComentarPostHeaderCell.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ComentarPostTableViewController.cs">
     <Files>
       <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="1" Column="1" />
       <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="41" Column="28" />
-      <File FileName="iOS/ViewControllers/Post/PublicarPostViewController.cs" Line="163" Column="35" />
-      <File FileName="iOS/ViewControllers/Post/ComentariosBodyCell.cs" Line="42" Column="14" />
-      <File FileName="iOS/Helpers/ImageGallery.cs" Line="97" Column="48" />
-      <File FileName="iOS/ComentarioViewCell.cs" Line="29" Column="13" />
-      <File FileName="iOS/SeccionComentariosTableViewController.cs" Line="84" Column="42" />
-      <File FileName="iOS/ComentarPostHeaderCell.cs" Line="47" Column="35" />
-      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="1" Column="1" />
-      <File FileName="iOS/ViewControllers/Post/ComentariosHeaderCell.cs" Line="39" Column="43" />
-      <File FileName="iOS/ViewControllers/MiPerfil/PerfilController.cs" Line="1" Column="1" />
+      <File FileName="iOS/ViewControllers/Post/PublicarPostViewController.cs" Line="155" Column="10" />
+      <File FileName="iOS/ViewControllers/Post/ComentariosBodyCell.cs" Line="32" Column="56" />
+      <File FileName="iOS/ComentarioViewCell.cs" Line="21" Column="9" />
+      <File FileName="iOS/SeccionComentariosTableViewController.cs" Line="74" Column="5" />
+      <File FileName="iOS/ComentarPostHeaderCell.cs" Line="28" Column="38" />
+      <File FileName="iOS/ComentarPostTableViewController.cs" Line="79" Column="54" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
@@ -24,6 +21,10 @@
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="28" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ComentarPostTableViewController.cs" relfile="iOS/ComentarPostTableViewController.cs" line="55" column="35" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="453" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ComentarPostHeaderCell.cs" relfile="iOS/ComentarPostHeaderCell.cs" line="128" column="28" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ComentarPostHeaderCell.cs" relfile="iOS/ComentarPostHeaderCell.cs" line="124" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ComentarPostHeaderCell.cs" relfile="iOS/ComentarPostHeaderCell.cs" line="116" column="25" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ComentarPostHeaderCell.cs" relfile="iOS/ComentarPostHeaderCell.cs" line="62" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

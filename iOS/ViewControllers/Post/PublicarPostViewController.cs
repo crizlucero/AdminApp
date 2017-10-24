@@ -175,6 +175,7 @@ namespace WorklabsMx.iOS
             this.btnPublicar.Enabled = true;
             opacity = 1f;
             this.btnImageComment.ContentMode = UIViewContentMode.ScaleAspectFit;
+            this.btnImageComment.Enabled = true;
             picker.DismissViewController(true, null);
         }
 
@@ -282,7 +283,11 @@ namespace WorklabsMx.iOS
 
         partial void btnImageComment_TouchUpInside(UIButton sender)
         {
-            this.PerformSegue("toViewImage", null);
+            if (this.btnImageComment.Enabled)
+            {
+                this.PerformSegue("toViewImage", null);
+            }
+
         }
 
         partial void btnDeleteImage_TouchUpInside(UIButton sender)
@@ -294,6 +299,7 @@ namespace WorklabsMx.iOS
                 this.btnPublicar.Enabled = false;
             }
             this.btnDeleteImge.Hidden = true;
+            this.btnImageComment.Enabled = false;
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
