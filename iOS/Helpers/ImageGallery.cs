@@ -3,9 +3,12 @@ using Foundation;
 using UIKit;
 using WorklabsMx.Helpers;
 using WorklabsMx.iOS.Styles;
+using System.Net;
+using System.IO;
 
 namespace WorklabsMx.iOS.Helpers
 {
+    
     public class ImageGallery
     {
         UIImagePickerController imagePicker;
@@ -115,5 +118,38 @@ namespace WorklabsMx.iOS.Helpers
 			};
 			return btnPhoto;
 		}
+
+        public static bool UpLoadImageFTP(byte[] image)
+        {
+            try
+            {
+                FtpWebRequest req = (FtpWebRequest)WebRequest.Create("ftp://www.site2.com/images/");
+                req.UseBinary = true;
+                req.Method = WebRequestMethods.Ftp.UploadFile;
+                req.Credentials = new NetworkCredential("myUser", "myPass");
+
+                req.ContentLength = image.Length;
+                Stream reqStream = req.GetRequestStream();
+                reqStream.Write(image, 0, image.Length);
+                reqStream.Close();
+                return true;     
+            }
+            catch(Exception e)
+            {
+                SlackLogs.SendMessage(e.Message);
+                return false;
+            }
+        }
+
+        public static byte[] GetImgByteFTP(string ftpFilePath)
+        {
+            WebClient ftpClient = new WebClient();
+            ftpClient.Credentials = new NetworkCredential("myUser", "myPass");
+
+            byte[] imageByte = ftpClient.DownloadData(ftpFilePath);
+            return imageByte;
+
+        }
+
     }
 }

@@ -361,7 +361,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Me_Gusta_Comentario_Id", DBNull.Value);
 
                 command.Transaction = transaction;
-                command.ExecuteNonQuery();
+                command.ExecuteNonQuery(); 
                 transaction.Commit();
 
             }
