@@ -1,55 +1,36 @@
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Helpers/Pagos.cs">
+﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Helpers/UploadImages.cs">
     <Files>
-      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="58" Column="48" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="658" Column="2" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="486" Column="19" />
-      <File FileName="WorklabsMx/Models/ComentarioModel.cs" Line="22" Column="63" />
-      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="15" Column="10" />
-      <File FileName="WorklabsMx/Controllers/PagosController.cs" Line="82" Column="10" />
-      <File FileName="WorklabsMx/Models/RenovacionPagosModel.cs" Line="3" Column="30" />
-      <File FileName="WorklabsMx/Models/PromocionModel.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="66" Column="50" />
-      <File FileName="WorklabsMx/Helpers/Pagos.cs" Line="5" Column="36" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="461" Column="46" />
+      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="132" Column="32" />
+      <File FileName="iOS/ViewControllers/MiPerfil/PerfilController.cs" Line="239" Column="33" />
+      <File FileName="iOS/ViewControllers/Post/PublicarPostViewController.cs" Line="97" Column="14" />
+      <File FileName="iOS/ViewControllers/Post/ComentariosBodyCell.cs" Line="39" Column="1" />
+      <File FileName="iOS/Helpers/ImageGallery.cs" Line="72" Column="100" />
+      <File FileName="iOS/ComentarioViewCell.cs" Line="26" Column="61" />
+      <File FileName="iOS/SeccionComentariosTableViewController.cs" Line="95" Column="5" />
+      <File FileName="WorklabsMx/Enum/TiposMeGusta.cs" Line="4" Column="17" />
+      <File FileName="iOS/ComentarPostHeaderCell.cs" Line="75" Column="9" />
+      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="11" Column="16" />
+      <File FileName="iOS/ViewControllers/Post/ComentariosHeaderCell.cs" Line="39" Column="43" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="582" Column="59" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="120" column="1" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="79" column="4" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="33" column="16" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="58" column="29" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="28" column="1" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/MainActivity.cs" relfile="WorklabsMx.Droid/MainActivity.cs" line="137" column="38" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Helpers/UploadImages.cs" relfile="WorklabsMx/Helpers/UploadImages.cs" line="20" column="1" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="453" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="120" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="79" column="4" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="33" column="16" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="58" column="29" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="28" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ComentarPostHeaderCell.cs" relfile="iOS/ComentarPostHeaderCell.cs" line="79" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ComentarPostTableViewController.cs" relfile="iOS/ComentarPostTableViewController.cs" line="55" column="35" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="458" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="488" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D08335DC-9984-4043-A7F8-19CC75440514" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="MyTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" />
   <MultiItemStartupConfigurations />
 </Properties>
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/Helpers/ImagesHelper.cs">
-      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="83" Column="52" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="254" Column="41" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="460" Column="46" />
-      <File FileName="WorklabsMx/Models/ComentarioModel.cs" Line="22" Column="63" />
-      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="24" Column="66" />
-      <File FileName="WorklabsMx/Controllers/PagosController.cs" Line="62" Column="25" />
-      <File FileName="WorklabsMx/Models/RenovacionPagosModel.cs" Line="3" Column="30" />
-      <File FileName="WorklabsMx/Models/PromocionModel.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="69" Column="55" />
-      <File FileName="WorklabsMx/Helpers/Pagos.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/Helpers/ImagesHelper.cs" Line="59" Column="54" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="120" column="1" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="79" column="4" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="33" column="16" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="58" column="29" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="28" column="1" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="457" column="1" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Helpers/UploadImages.cs" relfile="WorklabsMx/Helpers/UploadImages.cs" line="18" column="1" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D08335DC-9984-4043-A7F8-19CC75440514" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="MyTheme" />

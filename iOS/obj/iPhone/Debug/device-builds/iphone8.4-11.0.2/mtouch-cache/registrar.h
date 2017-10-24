@@ -30,6 +30,7 @@
 @class AppDelegate;
 @class TableViewController;
 @class DashboardController;
+@class EscritorioController;
 @class SubMenuController;
 @class FacturasController;
 @class MiMembresiaController;
@@ -57,7 +58,6 @@
 @class WorklabsMx_iOS_Models_PickerModel;
 @class WorklabsMx_iOS_Styles_STLButton;
 @class WorklabsMx_iOS_Styles_STLTextField;
-@class WorklabsMx_iOS_Styles_STLTableViewSource;
 @class WorklabsMx_iOS_Styles_STLLabel;
 @class WorklabsMx_iOS_Styles_STLImageLabel;
 @class WorklabsMx_iOS_Styles_PickerDataModel;
@@ -71,7 +71,6 @@
 @class WorklabsMx_iOS_Helpers_DropDownListSource;
 @class SplitViewController;
 @class LoginViewController;
-@class EscritorioController;
 @class AccesoController;
 @class ReporteController;
 @class PerfilController;
@@ -92,6 +91,7 @@
 @class PublicarPostViewController;
 @class ComentarPostTableViewController;
 @class WorklabsMx_iOS_ViewElements_PostCard;
+@class WorklabsMx_iOS_Styles_STLTableViewSource;
 @class WorklabsMx_iOS_Styles_STLImageView;
 @class __UIGestureRecognizerToken;
 @class __UIGestureRecognizerParameterlessToken;
@@ -601,6 +601,27 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
+@interface EscritorioController : UITableViewController {
+}
+	@property (nonatomic, assign) UIBarButtonItem * btnScanQr;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIBarButtonItem *) btnScanQr;
+	-(void) setBtnScanQr:(UIBarButtonItem *)p0;
+	-(void) viewDidLoad;
+	-(void) viewWillAppear:(BOOL)p0;
+	-(UIView *) tableView:(UITableView *)p0 viewForHeaderInSection:(NSInteger)p1;
+	-(CGFloat) tableView:(UITableView *)p0 heightForHeaderInSection:(NSInteger)p1;
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
+	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1;
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
+	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
+	-(void) btnToScanQr_TouchUpInside:(UIBarButtonItem *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
 @interface SubMenuController : UITableViewController {
 }
 	-(void) release;
@@ -744,6 +765,7 @@
 
 @interface ComentariosBodyCell : UITableViewCell {
 }
+	@property (nonatomic, assign) UIButton * btnImagenComentatio;
 	@property (nonatomic, assign) UIButton * btnLikes;
 	@property (nonatomic, assign) UIImageView * imgComentarios;
 	@property (nonatomic, assign) UIImageView * imgPerfil;
@@ -758,6 +780,8 @@
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnImagenComentatio;
+	-(void) setBtnImagenComentatio:(UIButton *)p0;
 	-(UIButton *) btnLikes;
 	-(void) setBtnLikes:(UIButton *)p0;
 	-(UIImageView *) imgComentarios;
@@ -778,31 +802,46 @@
 	-(void) setLblOcupacion:(UILabel *)p0;
 	-(UIView *) vwVistaComentario;
 	-(void) setVwVistaComentario:(UIView *)p0;
+	-(void) btnComentarPost_TouchUpInside:(UIButton *)p0;
+	-(void) btnImagenComentatio_touchUpInside:(UIButton *)p0;
 	-(void) btnLikes_TouchUpInside:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
 @interface ComentarPostHeaderCell : UITableViewCell {
 }
+	@property (nonatomic, assign) UIButton * btnBorrarFoto;
+	@property (nonatomic, assign) UIButton * btnFotografia;
 	@property (nonatomic, assign) UIButton * btnPublicar;
+	@property (nonatomic, assign) UIButton * btnSeleccionarImagen;
 	@property (nonatomic, assign) UITextView * txtComentarPost;
 	@property (nonatomic, assign) UIView * vwComentarPost;
 	-(void) release;
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnBorrarFoto;
+	-(void) setBtnBorrarFoto:(UIButton *)p0;
+	-(UIButton *) btnFotografia;
+	-(void) setBtnFotografia:(UIButton *)p0;
 	-(UIButton *) btnPublicar;
 	-(void) setBtnPublicar:(UIButton *)p0;
+	-(UIButton *) btnSeleccionarImagen;
+	-(void) setBtnSeleccionarImagen:(UIButton *)p0;
 	-(UITextView *) txtComentarPost;
 	-(void) setTxtComentarPost:(UITextView *)p0;
 	-(UIView *) vwComentarPost;
 	-(void) setVwComentarPost:(UIView *)p0;
+	-(void) btnBorrarFoto_TouchUpInside:(UIButton *)p0;
 	-(void) btnComentar_TouchUpInside:(UIButton *)p0;
+	-(void) btnFotografia_TouchUpInside:(UIButton *)p0;
+	-(void) btnSleccionarImagen_TouchUpInside:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
 @interface ComentarioViewCell : UITableViewCell {
 }
+	@property (nonatomic, assign) UIButton * btnImagenComentario;
 	@property (nonatomic, assign) UIButton * btnLikes;
 	@property (nonatomic, assign) UIImageView * imgPerfil;
 	@property (nonatomic, assign) UILabel * lblContenido;
@@ -814,6 +853,8 @@
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnImagenComentario;
+	-(void) setBtnImagenComentario:(UIButton *)p0;
 	-(UIButton *) btnLikes;
 	-(void) setBtnLikes:(UIButton *)p0;
 	-(UIImageView *) imgPerfil;
@@ -828,6 +869,7 @@
 	-(void) setLblNombre:(UILabel *)p0;
 	-(UILabel *) lblPuesto;
 	-(void) setLblPuesto:(UILabel *)p0;
+	-(void) btnImagenComentario_TouchUpInside:(UIButton *)p0;
 	-(void) btnLikes_TouchUpInside:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
@@ -854,6 +896,7 @@
 	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
 	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1;
 	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
+	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -952,18 +995,6 @@
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
-@interface WorklabsMx_iOS_Styles_STLTableViewSource : NSObject<UIScrollViewDelegate> {
-}
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
-	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
-	-(void) tableView:(UITableView *)p0 didSelectRowAtIndexPath:(NSIndexPath *)p1;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -1167,27 +1198,6 @@
 	-(void) BtnIniciarSesion_TouchUpInside:(UIButton *)p0;
 	-(void) BtnRegistro_TouchUpInside:(UIButton *)p0;
 	-(void) BtnRestaurar_TouchUpInside:(UIButton *)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
-@interface EscritorioController : UITableViewController {
-}
-	@property (nonatomic, assign) UIBarButtonItem * btnScanQr;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIBarButtonItem *) btnScanQr;
-	-(void) setBtnScanQr:(UIBarButtonItem *)p0;
-	-(void) viewDidLoad;
-	-(void) viewWillAppear:(BOOL)p0;
-	-(UIView *) tableView:(UITableView *)p0 viewForHeaderInSection:(NSInteger)p1;
-	-(CGFloat) tableView:(UITableView *)p0 heightForHeaderInSection:(NSInteger)p1;
-	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
-	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1;
-	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
-	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
-	-(void) btnToScanQr_TouchUpInside:(UIBarButtonItem *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -1439,6 +1449,8 @@
 	-(UIView *) tableView:(UITableView *)p0 viewForHeaderInSection:(NSInteger)p1;
 	-(CGFloat) tableView:(UITableView *)p0 heightForHeaderInSection:(NSInteger)p1;
 	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
+	-(void) imagePickerController:(UIImagePickerController *)p0 didFinishPickingImage:(UIImage *)p1 editingInfo:(NSDictionary *)p2;
+	-(void) imagePickerControllerDidCancel:(UIImagePickerController *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -1448,6 +1460,18 @@
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface WorklabsMx_iOS_Styles_STLTableViewSource : NSObject<UIScrollViewDelegate> {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
+	-(void) tableView:(UITableView *)p0 didSelectRowAtIndexPath:(NSIndexPath *)p1;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -1467,6 +1491,7 @@
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
 	-(BOOL) conformsToProtocol:(void *)p0;
+	-(id) init;
 @end
 
 @interface __UIGestureRecognizerParameterlessToken : __UIGestureRecognizerToken {
