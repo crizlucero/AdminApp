@@ -91,6 +91,12 @@ namespace WorklabsMx.iOS
             {
                 if (PostComentado != null)
                 {
+                    this.txtComentarPost.Text = "";
+                    this.btnPublicar.Enabled = false;
+                    this.btnPublicar.Layer.Opacity = 0.5f;
+                    mostrarImagen = false;
+                    this.btnFotografia.Hidden = true;
+                    this.btnFotografia.Enabled = false;
                     PostComentado(this, EventArgs.Empty);
                 }
             }
