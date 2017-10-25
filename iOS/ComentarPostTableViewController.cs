@@ -43,11 +43,9 @@ namespace WorklabsMx.iOS
             StyleHelper.Style(vwSeccionComentarios.Layer);
         }
 
-        public async override void ViewWillDisappear(bool animated)
+        public override void ViewWillDisappear(bool animated)
         {
             base.ViewWillDisappear(animated);
-            BTProgressHUD.Show(status: "Cargando publicaciones");
-            await Task.Delay(100);        
         }
 
         void PostComentato(object sender, EventArgs e)
