@@ -7,7 +7,7 @@ namespace WorklabsMx.iOS
     {
         public NoComentsCell (IntPtr handle) : base (handle)
         {
-            lblMessageNoComments.Text = "No hay comentarios en tu muro";
+            
         }
 
 		internal void UpdateCell(bool existeConeccion)

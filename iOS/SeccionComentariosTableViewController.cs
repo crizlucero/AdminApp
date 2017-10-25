@@ -5,6 +5,7 @@ using WorklabsMx.Models;
 using System.Collections.Generic;
 using BigTed;
 using PerpetualEngine.Storage;
+using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
@@ -26,6 +27,8 @@ namespace WorklabsMx.iOS
         PostModel PostLocal;
 
         List<ComentarioModel> comentarios;
+        List<UIImage> allProfileImages = new List<UIImage>();
+        List<UIImage> allCommentImages = new List<UIImage>();
 
         public SeccionComentariosTableViewController (IntPtr handle) : base (handle)
         {
@@ -82,7 +85,9 @@ namespace WorklabsMx.iOS
 			{
 				var currentPost = comentarios[indexPath.Row];
 				var currentPostCell = (ComentarioViewCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
-                currentPostCell.UpdateCell(currentPost);
+                var currentImageProfile = allProfileImages[indexPath.Row];
+                var currentImageComments = allCommentImages[indexPath.Row];
+                currentPostCell.UpdateCell(currentPost, currentImageProfile, currentImageComments);
                 currentPostCell.MostrarImagenEnGrande += MostrarImagenEnGrande;
                 this.WillDisplay(indexPath.Row);
 				return currentPostCell;
@@ -110,13 +115,20 @@ namespace WorklabsMx.iOS
             this.PerformSegue("ToViewImageFromComment", (UIImageView)sender);
         }
 
-		public void setInfoPosto(PostModel Post)
+		public async void setInfoPosto(PostModel Post)
 		{
+            BTProgressHUD.Show(status: "Cargando comentarios");
+            await Task.Delay(500);
             storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
             if (InternetConectionHelper.VerificarConexion())
             {
                 PostLocal = Post;
                 this.comentarios = new Controllers.EscritorioController().GetComentariosPost(Post.Publicacion_Id,storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
+                foreach(ComentarioModel comentario in this.comentarios)
+                {
+                    allCommentImages.Add(ImageGallery.LoadImage(comentario.Comentario_Imagen_Ruta));
+                    allProfileImages.Add(ImageGallery.LoadImage(comentario.Usuario_Fotografia_Ruta));
+                }
             }
             else
             {
