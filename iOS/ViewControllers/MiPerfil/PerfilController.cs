@@ -185,7 +185,8 @@ namespace WorklabsMx.iOS
                         btnComentar.Layer.CornerRadius = 15;
                         btnComentar.TouchUpInside += async (sender, e) =>
                         {
-                            if (new Controllers.EscritorioController().CommentPost(post.Publicacion_Id, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtComentario.Text))
+                            byte[] Fotografia = new byte[0];
+                            if (new Controllers.EscritorioController().CommentPost(post.Publicacion_Id, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtComentario.Text, Fotografia))
                             {
                                 nfloat scrollPosition = scrollView.ContentOffset.Y;
                                 txtComentario.Text = "";

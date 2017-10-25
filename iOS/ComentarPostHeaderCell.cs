@@ -24,6 +24,8 @@ namespace WorklabsMx.iOS
 
         bool mostrarImagen = false;
 
+        UIImage ImagenPublicacion;
+
 
         public ComentarPostHeaderCell (IntPtr handle) : base (handle)
         {
@@ -46,6 +48,7 @@ namespace WorklabsMx.iOS
             if (image != null)
             {
                 mostrarImagen = true;
+                ImagenPublicacion = image;
                 this.btnFotografia.SetImage(image, UIControlState.Normal);
                 this.btnFotografia.ContentMode = UIViewContentMode.ScaleAspectFit;
                 this.btnFotografia.Hidden = false;
@@ -87,7 +90,19 @@ namespace WorklabsMx.iOS
         partial void btnComentar_TouchUpInside(UIButton sender)
         {
             var localStorage = SimpleStorage.EditGroup("Login");
-            if (new Controllers.EscritorioController().CommentPost(LocalPost.Publicacion_Id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), txtComentarPost.Text))
+
+            byte[] Fotografia;
+
+            if (ImagenPublicacion != null)
+            {
+                Fotografia = ImagenPublicacion?.AsPNG().ToArray();
+            }
+            else
+            {
+                Fotografia = new byte[0];
+            }
+
+            if (new Controllers.EscritorioController().CommentPost(LocalPost.Publicacion_Id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), txtComentarPost.Text, Fotografia))
             {
                 if (PostComentado != null)
                 {
@@ -105,22 +120,22 @@ namespace WorklabsMx.iOS
 
 
         private void HandleTextMessageChanged(object sender, EventArgs e)
-		{
-             if (TextoEscrito != null)
+        {
+            if (TextoEscrito != null)
             {
                 TextoEscrito(txtComentarPost, EventArgs.Empty);
             }
-			if (string.IsNullOrWhiteSpace(txtComentarPost.Text))
-			{
-				this.btnPublicar.Enabled = false;
+            if (string.IsNullOrWhiteSpace(txtComentarPost.Text))
+            {
+                this.btnPublicar.Enabled = false;
                 this.btnPublicar.Layer.Opacity = 0.5f;
-			}
-			else
-			{
-				this.btnPublicar.Enabled = true;
-				this.btnPublicar.Layer.Opacity = 1f;
             }
-		}
+            else
+            {
+                this.btnPublicar.Enabled = true;
+                this.btnPublicar.Layer.Opacity = 1f;
+            }
+        }
 
         partial void btnSleccionarImagen_TouchUpInside(UIButton sender)
         {
