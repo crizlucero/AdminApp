@@ -63,12 +63,6 @@ namespace WorklabsMx.iOS
         internal void UpdateCell(PostModel Post)
         {
             this.LocalPost = Post;
-
-            if (mostrarImagen)
-            {
-                
-            }
-
             Placeholder = "Escribe un comentario";
             this.txtComentarPost.ShouldBeginEditing = t => {
                 if (this.txtComentarPost.Text == Placeholder)
