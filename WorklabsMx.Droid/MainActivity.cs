@@ -632,7 +632,7 @@ namespace WorklabsMx.Droid
                     SendBroadcast(mediaScanIntent);
 
                     int height = Resources.DisplayMetrics.HeightPixels;
-                    int width = 75;
+                    int width = 900;
                     imagePath = _file.Path;
                     bitmap = _file.Path.LoadAndResizeBitmap(width, height);
                     if (bitmap != null)

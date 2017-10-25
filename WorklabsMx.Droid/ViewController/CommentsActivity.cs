@@ -127,7 +127,6 @@ namespace WorklabsMx.Droid
                 StartActivityForResult(
                     Intent.CreateChooser(imageIntent, "Select photo"), PickImageId);
             };
-
         }
 
         async Task FillComments()

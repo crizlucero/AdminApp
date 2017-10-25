@@ -6,7 +6,7 @@ namespace WorklabsMx.Helpers
     public class UploadImages
     {
 
-        public bool UploadBitmapAsync(string imgNombre, byte[] image)
+        public void UploadBitmapAsync(string imgNombre, byte[] image) 
         {
             try
             {
@@ -18,9 +18,8 @@ namespace WorklabsMx.Helpers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                throw new Exception(e.Message);
             }
-            return false;
         }
     }
 }
