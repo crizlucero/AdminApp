@@ -94,6 +94,7 @@ namespace WorklabsMx.iOS
             {
                 this.PostPublicadoDelegate?.PostPublicado();
                 this.DismissViewController(true, null);
+                BTProgressHUD.Dismiss();
             }
             else
             {
