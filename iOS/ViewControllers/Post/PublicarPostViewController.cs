@@ -98,7 +98,7 @@ namespace WorklabsMx.iOS
             else
             {
                 BTProgressHUD.Dismiss();
-                new MessageDialog().SendToast("No se pudo publicar el post");
+                new MessageDialog().SendToast("No pudimos publicar tu mensaje, intenta de nuevo");
             }
         }
 
