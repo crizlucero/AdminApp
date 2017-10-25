@@ -396,7 +396,6 @@ namespace WorklabsMx.Controllers
                 colaborador_id = usuario_id;
             try
             {
-                conn.Open();
                 if (!fotografia.Equals(null))
                 {
                     fotoNombre = Guid.NewGuid().ToString() + ".png";
