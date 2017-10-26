@@ -424,8 +424,8 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Comentario_Imagen", fotoNombre);
 
                 command.Transaction = transaction;
-                //command.ExecuteNonQuery();
-                //transaction.Commit();
+                command.ExecuteNonQuery();
+                transaction.Commit();
 
             }
             catch (Exception e)
@@ -493,8 +493,8 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Publicacion_Imagen", fotoNombre);
 
                 command.Transaction = transaction;
-                //command.ExecuteNonQuery();
-                //transaction.Commit();
+                command.ExecuteNonQuery();
+                transaction.Commit();
 
             }
             catch (Exception e)

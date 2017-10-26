@@ -19,7 +19,7 @@ namespace WorklabsMx.iOS
         {
         }
 
-		internal void UpdateCell(ComentarioModel comentario)
+        internal void UpdateCell(ComentarioModel comentario, UIImage currentImageProfile, UIImage currentImageComments)
 		{
             lblNombre.Text = comentario.Usuario_Nombre;
 			lblLikes.Text = comentario.Comentario_Me_Gustan_Cantidad + " LIKES";
@@ -27,10 +27,10 @@ namespace WorklabsMx.iOS
             //lblPuesto.Text = comentario.USUARIO_PUESTO;
 			lblContenido.Text = comentario.Comentario_Contenido;
 
-            imgPerfil.Image = ImageGallery.LoadImage(comentario.Usuario_Fotografia_Ruta);
+            imgPerfil.Image = currentImageProfile;
             if (comentario.Comentario_Imagen_Ruta != "")
             {
-                btnImagenComentario.ImageView.Image = ImageGallery.LoadImage(comentario.Comentario_Imagen_Ruta);
+                btnImagenComentario.ImageView.Image = currentImageComments;
                 btnImagenComentario.Hidden = false;
                 btnImagenComentario.Enabled = true;
             }

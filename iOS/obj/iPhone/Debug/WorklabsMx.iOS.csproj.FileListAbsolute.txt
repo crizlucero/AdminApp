@@ -129,10 +129,6 @@
 /Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/bin/iPhone/Debug/Telerik.XamarinForms.DataControls.xml
 /Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/bin/iPhone/Debug/Telerik.XamarinForms.Common.xml
 /Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/bin/iPhone/Debug/Telerik.XamarinForms.Chart.xml
-/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/ibtool/_BundleResourceWithLogicalName.items
-/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/actool/_PartialAppManifest.items
-/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/actool/_BundleResourceWithLogicalName.items
-/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.2/optimized/
 /Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.csprojResolveAssemblyReference.cache
 /Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.csproj.WorklabsMx.iOS.exe.config
 /Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.csproj.CoreCompileInputs.cache
@@ -142,3 +138,7 @@
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Debug/Xamarin-Sidebar-Unified.pdb
 /Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/bin/iPhone/Debug/Xamarin-Sidebar-Unified.dll
 /Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/bin/iPhone/Debug/Xamarin-Sidebar-Unified.pdb
+/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.3/ibtool/_BundleResourceWithLogicalName.items
+/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.3/actool/_PartialAppManifest.items
+/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.3/actool/_BundleResourceWithLogicalName.items
+/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.3/optimized/

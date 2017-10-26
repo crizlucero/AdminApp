@@ -2,7 +2,7 @@ using System;
 using UIKit;
 using WorklabsMx.Models;
 using PerpetualEngine.Storage;
-
+using BigTed;
 
 namespace WorklabsMx.iOS
 {
@@ -63,12 +63,6 @@ namespace WorklabsMx.iOS
         internal void UpdateCell(PostModel Post)
         {
             this.LocalPost = Post;
-
-            if (mostrarImagen)
-            {
-                
-            }
-
             Placeholder = "Escribe un comentario";
             this.txtComentarPost.ShouldBeginEditing = t => {
                 if (this.txtComentarPost.Text == Placeholder)
@@ -89,6 +83,7 @@ namespace WorklabsMx.iOS
 
         partial void btnComentar_TouchUpInside(UIButton sender)
         {
+            BTProgressHUD.Show();
             var localStorage = SimpleStorage.EditGroup("Login");
 
             byte[] Fotografia;
@@ -106,15 +101,23 @@ namespace WorklabsMx.iOS
             {
                 if (PostComentado != null)
                 {
-                    this.txtComentarPost.Text = "";
+                    this.txtComentarPost.Text = Placeholder;
+                    var color = new UIColor(149, 152, 154, 1);
                     this.btnPublicar.Enabled = false;
                     this.btnPublicar.Layer.Opacity = 0.5f;
                     mostrarImagen = false;
                     this.btnFotografia.Hidden = true;
                     this.btnFotografia.Enabled = false;
+                    this.btnBorrarFoto.Hidden = true;
+                    this.btnBorrarFoto.Enabled = false;
                     PostComentado(this, EventArgs.Empty);
                 }
             }
+            else 
+            {
+                BTProgressHUD.Dismiss();
+                new MessageDialog().SendToast("No pudimos publicar tu comentario, intenta de nuevo");
+            } 
         }
 
 

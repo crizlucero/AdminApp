@@ -25,7 +25,7 @@ namespace WorklabsMx.iOS
             
         }
 
-        internal void UpdateCell(PostModel post)
+        internal void UpdateCell(PostModel post, UIImage currentImageProfile, UIImage currentImagePost)
         {
             lblNombre.Text = post.Usuario_Nombre;
             lblLikes.Text = post.Publicacion_Me_Gustan_Cantidad + " LIKES";
@@ -36,11 +36,11 @@ namespace WorklabsMx.iOS
 
             StyleHelper.Style(vwVistaComentario.Layer);
 
-            imgPerfil.Image = ImageGallery.LoadImage(post.Usuario_Fotografia_Ruta);
+            imgPerfil.Image = currentImageProfile;
 
             if (post.Publicacion_Imagen_Ruta != "")
             {
-                btnImagenComentatio.ImageView.Image = ImageGallery.LoadImage(post.Publicacion_Imagen_Ruta);
+                btnImagenComentatio.ImageView.Image = currentImagePost;
                 btnImagenComentatio.Hidden = false;
                 btnImagenComentatio.Enabled = true;
             }

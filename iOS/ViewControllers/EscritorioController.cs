@@ -1,4 +1,4 @@
-using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.Models; using System.Collections.Generic; using WorklabsMx.Controllers; using BigTed;  namespace WorklabsMx.iOS {     public partial class EscritorioController : UITableViewController
+using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.Models; using System.Collections.Generic; using WorklabsMx.Controllers; using BigTed; using WorklabsMx.Helpers; using System.Threading.Tasks;  namespace WorklabsMx.iOS {     public partial class EscritorioController : UITableViewController
     {
         const string IdentificadorCeldaHeader = "Header";
         const string IdentificadorCeldaPost = "Post";
@@ -10,13 +10,13 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 
         bool isShowInformation = false;
         bool existeConeccion = true;
-         List<PostModel> allPosts = new List<PostModel>();         List<string> miembro;         PostModel CurrentPost;          UIImageView ImagenPerfil; 
+         List<PostModel> allPosts = new List<PostModel>();         List<UIImage> allProfileImages = new List<UIImage>();         List<UIImage> allPostImages = new List<UIImage>();         List<string> miembro;         PostModel CurrentPost;          UIImageView ImagenPerfil; 
         public EscritorioController(IntPtr handle) : base(handle)         {
             
         }
 
         public override void ViewDidLoad()
-        {             /*if (!BTProgressHUD.IsVisible)             {                 BTProgressHUD.Show();             }*/
+        {
             base.ViewDidLoad();
 		}
 
@@ -25,7 +25,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
             this.CargarInfo();             this.TableView.ReloadData();
         }          public override void ViewDidAppear(bool animated)
         {
-            base.ViewDidAppear(animated);             BTProgressHUD.Dismiss();
+            base.ViewDidAppear(animated); 
         }
          void MostrarImagenEnGrande(object sender, EventArgs e)         {             this.PerformSegue("toShowImageFromPost", (UIImageView)sender);         }          void ComentarPost(object sender, EventArgs e)         {             CurrentPost = (PostModel)sender;         } 
         public override UIView GetViewForHeader(UITableView tableView, nint section)
@@ -45,7 +45,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         {
 			if (allPosts.Count > 0)
 			{
-				isShowInformation = true;
+			    isShowInformation = true;
 				return allPosts.Count;
 			}
 			isShowInformation = false;
@@ -69,12 +69,12 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
             if (isShowInformation)
             {
                 var currentPost = allPosts[indexPath.Row];
-                var currentPostCell = (ComentariosBodyCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
-                currentPostCell.UpdateCell(currentPost);                 currentPostCell.MostrarImagenEnGrande += MostrarImagenEnGrande;                 currentPostCell.ComentarPost += ComentarPost;                 //this.WillDisplay(indexPath.Row);                 //BTProgressHUD.Dismiss();
+                var currentPostCell = (ComentariosBodyCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);                 var currentImageProfile = allProfileImages[indexPath.Row];                 var currentImagePost = allPostImages[indexPath.Row];
+                currentPostCell.UpdateCell(currentPost, currentImageProfile, currentImagePost);                 currentPostCell.MostrarImagenEnGrande += MostrarImagenEnGrande;                 currentPostCell.ComentarPost += ComentarPost;                 this.WillDisplay(indexPath.Row);
                 return currentPostCell;
             }
             else
-            {
+            {                 BTProgressHUD.Dismiss();
                 var noPostCell = (NoComentsCell)tableView.DequeueReusableCell(IdentificadorCeldaNoInfo, indexPath);
                 noPostCell.UpdateCell(this.existeConeccion);
                 return noPostCell;
@@ -84,9 +84,9 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
             if(segue.Identifier == "toShowPostView")             {                 var postCommentView = (PublicarPostViewController)segue.DestinationViewController;                 postCommentView.PostPublicadoDelegate = this;                 postCommentView.setInfoPublicacion(miembro);             }              else if(segue.Identifier == "comentarPost")             {
 				var CommentView = (ComentarPostTableViewController)segue.DestinationViewController;
                 CommentView.setInfoPost(CurrentPost);             }             else if(segue.Identifier == "toShowImageFromPost")             {                 var ImageView = (DetailCommentImage)segue.DestinationViewController;                 ImageView.ImagenPost = (UIImageView)sender;             }
-        }          /* private void WillDisplay(int Row)         {             int LastRow = allPosts.Count - 1;             if ((Row == LastRow) /& (LastRow < allPosts.Count))             {                 BTProgressHUD.Dismiss();
-                BTProgressHUD.Show();                 await Task.Delay(500);                 this.TableView.ScrollEnabled = false;                 if (InternetConectionHelper.VerificarConexion())                 {                     var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");                     allPosts = new Controllers.EscritorioController().GetMuroPosts(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));                     BTProgressHUD.Dismiss();                     this.TableView.ScrollEnabled = true;                     if (LastRow != allPosts.Count - 1)                     {                         this.TableView.ReloadData();                     }                  }                 else                 {                     BTProgressHUD.Dismiss();                     this.TableView.ScrollEnabled = true;                     new MessageDialog().SendToast("No tienes acceso a una conexión de Internet, intenta de nuevo");                 }             }             BTProgressHUD.Dismiss();
-            }         }*/           private void CargarInfo()         {             if (InternetConectionHelper.VerificarConexion())             {                 var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");                 allPosts = new Controllers.EscritorioController().GetMuroPosts(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));                 miembro = new MiembrosController().GetMemberName(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));             }             else             {                 this.btnScanQr.Title = "";                 this.btnScanQr.Enabled = false;                 isShowInformation = false;                 existeConeccion = false;             }         } 
+        }          private void WillDisplay(int Row)         {             int LastRow = allPosts.Count - 1;             if ((Row == LastRow) /*&& (LastRow < allPosts.Count)*/)             {                 BTProgressHUD.Dismiss();
+                /*BTProgressHUD.Show();                 await Task.Delay(500);                 this.TableView.ScrollEnabled = false;                 if (InternetConectionHelper.VerificarConexion())                 {                     var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");                     allPosts = new Controllers.EscritorioController().GetMuroPosts(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));                     BTProgressHUD.Dismiss();                     this.TableView.ScrollEnabled = true;                     if (LastRow != allPosts.Count - 1)                     {                         this.TableView.ReloadData();                     }                  }                 else                 {                     BTProgressHUD.Dismiss();                     this.TableView.ScrollEnabled = true;                     new MessageDialog().SendToast("No tienes acceso a una conexión de Internet, intenta de nuevo");                 }             }             BTProgressHUD.Dismiss();*/
+            }         }           private void CargarInfo()         {                          try             {                 if (InternetConectionHelper.VerificarConexion())                 {                     var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");                     allPosts = new Controllers.EscritorioController().GetMuroPosts(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));                      foreach (PostModel currentPost in allPosts)                     {                         allPostImages.Add(ImageGallery.LoadImage(currentPost.Publicacion_Imagen_Ruta));                         allProfileImages.Add(ImageGallery.LoadImage(currentPost.Usuario_Fotografia_Ruta));                     }                     miembro = new MiembrosController().GetMemberName(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));                 }                 else                 {                     this.btnScanQr.Title = "";                     this.btnScanQr.Enabled = false;                     isShowInformation = false;                     existeConeccion = false;                 }             }             catch(Exception e)             {                 SlackLogs.SendMessage(e.Message);             }                     } 
         partial void btnToScanQr_TouchUpInside(UIBarButtonItem sender)
         {
             this.PerformSegue("toScanQr", sender);

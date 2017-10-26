@@ -41,14 +41,12 @@ namespace WorklabsMx.iOS
              var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
             StyleHelper.Style(vwSeccionComentarios.Layer);
-            BTProgressHUD.Dismiss();
         }
 
-        public override void ViewWillAppear(bool animated)
+        public override void ViewWillDisappear(bool animated)
         {
-            base.ViewWillAppear(animated);
+            base.ViewWillDisappear(animated);
         }
-
 
         void PostComentato(object sender, EventArgs e)
         {
