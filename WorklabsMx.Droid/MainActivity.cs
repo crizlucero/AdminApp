@@ -148,7 +148,7 @@ namespace WorklabsMx.Droid
 
             posts.Skip(page * sizePage).Take(sizePage).ToList().ForEach(post =>
             {
-                string Usuario_Id = post.Miembro_Id ?? post.Colaborador_Empresa_Id;
+                string Usuario_Id = !string.IsNullOrEmpty(post.Miembro_Id) ? post.Miembro_Id : post.Colaborador_Empresa_Id;
                 int i = 0;
                 TableRow row = new TableRow(this);
                 row.SetBackgroundResource(Resource.Drawable.CornerBorderLine);
@@ -191,9 +191,7 @@ namespace WorklabsMx.Droid
                         StartActivity(perfil);
                     }
                     else
-                    {
                         StartActivity(new Intent(this, typeof(TabPerfilActivity)));
-                    }
                 };
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center);
@@ -349,9 +347,7 @@ namespace WorklabsMx.Droid
                     }
                 };
                 if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
-                {
                     lblLike.SetTextColor(Color.Rgb(57, 87, 217));
-                }
                 llLike.AddView(lblLike);
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center | GravityFlags.Left);
@@ -591,6 +587,8 @@ namespace WorklabsMx.Droid
                         customView.FindViewById<ImageView>(Resource.Id.imgPicture).Visibility = ViewStates.Gone;
                         customView.FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Gone;
                     }
+                    else
+                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
                 }
                 catch (Exception e) { SlackLogs.SendMessage(e.Message); }
             };

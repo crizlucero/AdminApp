@@ -86,6 +86,8 @@ namespace WorklabsMx.Droid
                     await FillComments();
                     svComentarios.ScrollY = svComentarios.Height;
                 }
+                else
+                    Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
                 AndHUD.Shared.Dismiss(this);
             };
             svComentarios.ScrollChange += async (sender, e) =>
@@ -137,7 +139,7 @@ namespace WorklabsMx.Droid
             comentarios.Skip(page * sizePage).Take(sizePage).ToList().ForEach(comentario =>
             {
                 int i = 0;
-                String Usuario_Id = comentario.Miembro_Id ?? comentario.Colaborador_Empresa_Id;
+                String Usuario_Id = !string.IsNullOrEmpty(comentario.Miembro_Id) ? comentario.Miembro_Id : comentario.Colaborador_Empresa_Id;
                 TableRow row = new TableRow(this);
                 row.SetMinimumHeight(100);
                 row.SetBackgroundResource(Resource.Drawable.CardStyle);

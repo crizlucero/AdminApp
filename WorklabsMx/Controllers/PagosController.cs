@@ -43,16 +43,6 @@ namespace WorklabsMx.Controllers
             return promo;
         }
 
-        public bool RealizarPago()
-        {
-            try
-            {
-
-            }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
-            return true;
-        }
-
         public List<RenovacionPagosModel> GetRenovaciones()
         {
             List<RenovacionPagosModel> renovaciones = new List<RenovacionPagosModel>();
@@ -76,7 +66,6 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e) { SlackLogs.SendMessage(e.Message); }
             finally { conn.Close(); }
-
 
             return renovaciones;
         }
