@@ -113,15 +113,6 @@
     <Reference Include="Mono.Data.Tds" />
     <Reference Include="Mono.Data.Sqlite" />
     <Reference Include="Mono.CSharp" />
-    <Reference Include="BouncyCastle">
-      <HintPath>..\packages\MimeKit.1.18.1\lib\Xamarin.iOS10\BouncyCastle.dll</HintPath>
-    </Reference>
-    <Reference Include="MimeKit">
-      <HintPath>..\packages\MimeKit.1.18.1\lib\Xamarin.iOS10\MimeKit.dll</HintPath>
-    </Reference>
-    <Reference Include="MailKit">
-      <HintPath>..\packages\MailKit.1.18.1.1\lib\Xamarin.iOS10\MailKit.dll</HintPath>
-    </Reference>
     <Reference Include="Plugin.Connectivity.Abstractions">
       <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.3\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
     </Reference>
@@ -169,6 +160,15 @@
     </Reference>
     <Reference Include="Plugin.Settings">
       <HintPath>..\packages\Xam.Plugins.Settings.3.1.1\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle">
+      <HintPath>..\packages\MimeKit.1.20.0\lib\Xamarin.iOS10\BouncyCastle.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit">
+      <HintPath>..\packages\MimeKit.1.20.0\lib\Xamarin.iOS10\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit">
+      <HintPath>..\packages\MailKit.1.20.0\lib\Xamarin.iOS10\MailKit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

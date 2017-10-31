@@ -1,15 +1,17 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/MiPerfil/PerfilActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/EmpresaController.cs">
     <Files>
       <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="265" Column="35" />
       <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="349" Column="96" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="69" Column="33" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="1" Column="1" />
       <File FileName="WorklabsMx/Models/RenovacionPagosModel.cs" Line="3" Column="30" />
       <File FileName="WorklabsMx/Models/PromocionModel.cs" Line="1" Column="1" />
       <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="69" Column="55" />
       <File FileName="WorklabsMx/Helpers/Pagos.cs" Line="1" Column="1" />
       <File FileName="WorklabsMx.Droid/Helpers/ImagesHelper.cs" Line="64" Column="13" />
-      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/PerfilActivity.cs" Line="51" Column="10" />
+      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/PerfilActivity.cs" Line="93" Column="110" />
+      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="243" Column="58" />
+      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="193" Column="64" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
