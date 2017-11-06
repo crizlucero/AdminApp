@@ -45,6 +45,7 @@ namespace WorklabsMx.iOS
                     Productos.Add(producto.Producto_Id, new CarritoModel { Producto_Cantidad = 0 });
                     if (Carrito.ContainsKey(producto.Producto_Id))
                     {
+                        Productos[producto.Producto_Id].Membresia_Fecha_Inicio = DateTime.Now.ToString();
 						if (DateTime.Parse(Productos[producto.Producto_Id].Membresia_Fecha_Inicio) >= DateTime.Now)
 						{
 							Productos[producto.Producto_Id].Producto_Cantidad = (int)Carrito[producto.Producto_Id].Producto_Cantidad;

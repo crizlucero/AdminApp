@@ -677,6 +677,14 @@
     </Compile>
     <Compile Include="Helpers\CamaraHelper.cs" />
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="ColeccionProductos.cs" />
+    <Compile Include="ColeccionProductos.designer.cs">
+      <DependentUpon>ColeccionProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsCell.cs" />
+    <Compile Include="ProductsCell.designer.cs">
+      <DependentUpon>ProductsCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
