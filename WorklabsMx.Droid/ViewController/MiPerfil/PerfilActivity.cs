@@ -17,6 +17,11 @@ using WorklabsMx.Droid.Helpers;
 using WorklabsMx.Enum;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
+using System.Linq;
+using Java.IO;
+using Android.Provider;
+using Android.Content.PM;
+using static Android.Provider.MediaStore.Images;
 
 namespace WorklabsMx.Droid
 {
@@ -24,10 +29,18 @@ namespace WorklabsMx.Droid
     public class PerfilActivity : Activity
     {
         SimpleStorage storage;
-        public string usuario_id = string.Empty, usuario_tipo = string.Empty;
+        public string usuario_id = string.Empty, usuario_tipo = string.Empty, imgPublish, imagePath;
+        AlertDialog dialog;
         MiembrosController Favorites;
+        MiembroModel miembro;
         TableLayout tlPost;
-        ScrollView svDirectorio;
+        ScrollView svDirectorio, svPosts;
+        View customView;
+        List<PostModel> posts;
+        int page = 0;
+        readonly int sizePage = 10, PickImageId = 1000, TakePicture = 500;
+        File _file, _dir;
+        Bitmap bitmap;
         public PerfilActivity()
         {
             storage = SimpleStorage.EditGroup("Login");
@@ -44,6 +57,11 @@ namespace WorklabsMx.Droid
                 usuario_id = storage.Get("Usuario_Id");
                 usuario_tipo = storage.Get("Usuario_Tipo");
             }
+            posts = new EscritorioController().GetMuroPosts(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"));
+            if (usuario_tipo == (((int)TiposUsuarios.Miembro).ToString()))
+                posts = posts.Where(user => user.Miembro_Id == usuario_id && user.Usuario_Tipo == usuario_tipo).ToList();
+            else
+                posts = posts.Where(user => user.Colaborador_Empresa_Id == usuario_id && user.Usuario_Tipo == usuario_tipo).ToList();
             FillDescripcionData();
             SimpleStorage.SetContext(ApplicationContext);
         }
@@ -58,19 +76,19 @@ namespace WorklabsMx.Droid
                 if (!string.IsNullOrEmpty(Intent.GetStringExtra("usuario_id")) && !string.IsNullOrEmpty(Intent.GetStringExtra("usuario_tipo")))
                 {
                     SetContentView(Resource.Layout.PrePostUserLayout);
+
                     Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
                     SetActionBar(toolbar);
                     ActionBar.SetDisplayHomeAsUpEnabled(true);
+                    ActionBar.Title = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos;
                 }
-                else
-                {
-                    SetContentView(Resource.Layout.PostsUserLayout);
-                }
+
                 tlPost = FindViewById<TableLayout>(Resource.Id.post_table);
-                List<string> data = new MiembrosController().GetMemberName(usuario_id, usuario_tipo);
+                List<string> data = new MiembrosController().GetMemberName(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"));
                 FindViewById<TextView>(Resource.Id.lblNombre).Text = data[(int)CamposMiembro.Usuario_Nombre];
                 FindViewById<TextView>(Resource.Id.lblPuesto).Text = data[(int)CamposMiembro.Usuario_Puesto];
                 FindViewById<Button>(Resource.Id.btnInitPublish).Click += (sender, e) => ShowPublish();
+                svPosts = FindViewById<ScrollView>(Resource.Id.post_scroll);
                 await FillPosts();
                 SwipeRefreshLayout refresher = FindViewById<SwipeRefreshLayout>(Resource.Id.swipe_container);
                 refresher.SetColorSchemeColors(Color.Gray, Color.LightGray, Color.Gray, Color.DarkGray, Color.Black, Color.DarkGray);
@@ -80,12 +98,19 @@ namespace WorklabsMx.Droid
                     await FillPosts();
                     ((SwipeRefreshLayout)sender).Refreshing = false;
                 };
+                svPosts.ScrollChange += async (sender, e) =>
+                {
+                    if ((posts.Count / (page + 1)) < 10)
+                        if ((((ScrollView)sender).ScrollY / (page + 1)) > ((svPosts.Height) * .4))
+                        {
+                            ++page;
+                            await FillPosts();
+                        }
+                };
             };
 
             FindViewById<ImageButton>(Resource.Id.btnFavoritos).Click += (sender, e) => DirectorioFavoritos();
         }
-
-
 
         void FillDescripcionData()
         {
@@ -107,7 +132,6 @@ namespace WorklabsMx.Droid
         void FillUserData()
         {
             ButtonAction();
-            MiembroModel miembro;
             ImageButton btnFavorito = FindViewById<ImageButton>(Resource.Id.btnFavorite);
             miembro = new MiembrosController().GetMemberData(usuario_id, usuario_tipo);
             if (!string.IsNullOrEmpty(Intent.GetStringExtra("usuario_id")) || !string.IsNullOrEmpty(Intent.GetStringExtra("usuario_tipo")))
@@ -169,7 +193,8 @@ namespace WorklabsMx.Droid
             AndHUD.Shared.Show(this, null, -1, MaskType.Black);
             await Task.Delay(500);
             ButtonAction();
-            new EscritorioController().GetPerfilPosts(usuario_id, usuario_tipo).ForEach((post) =>
+
+            posts.Skip(page * sizePage).Take(sizePage).ToList().ForEach((post) =>
             {
                 TableRow row = new TableRow(this);
                 row.SetMinimumHeight(100);
@@ -218,7 +243,7 @@ namespace WorklabsMx.Droid
 
                 TextView txtPuesto = new TextView(this)
                 {
-                    //Text = post.Miembro_Puesto,
+                    Text = post.Usuario_Puesto,
                     TextSize = 12
                 };
                 param = new GridLayout.LayoutParams();
@@ -265,9 +290,28 @@ namespace WorklabsMx.Droid
                 lblLike.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 130) / 5);
                 lblLike.Click += delegate
                 {
-                    /*if (new EscritorioController().PostLike(post.Publicacion_Id, usuario_id, usuario_tipo))
-                        lblLike.Text = new EscritorioController().GetLikesPublish(post.Publicacion_Id) + " Like(s)";*/
+                    string transaccion = "ALTA";
+                    if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
+                        transaccion = "BAJA";
+                    else if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Baja).ToString())
+                        transaccion = "MODIFICAR";
+                    if (new EscritorioController().PostLike(post.Publicacion_Id, storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), transaccion))
+                    {
+                        lblLike.Text = new EscritorioController().GetLikesPublish(post.Publicacion_Id) + " Like(s)";
+                        if (transaccion == "BAJA")
+                        {
+                            post.Publicacion_Me_Gusta_Usuario = "0";
+                            lblLike.SetTextColor(Color.Black);
+                        }
+                        else
+                        {
+                            post.Publicacion_Me_Gusta_Usuario = "1";
+                            lblLike.SetTextColor(Color.Rgb(57, 87, 217));
+                        }
+                    }
                 };
+                if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
+                    lblLike.SetTextColor(Color.Rgb(57, 87, 217));
                 llLike.AddView(lblLike);
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center | GravityFlags.Left);
@@ -321,6 +365,7 @@ namespace WorklabsMx.Droid
                 Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
                 SetActionBar(toolbar);
                 ActionBar.SetDisplayHomeAsUpEnabled(true);
+                ActionBar.Title = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos;
             }
             else
             {
@@ -338,7 +383,7 @@ namespace WorklabsMx.Droid
                 LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent),
                 Orientation = Orientation.Vertical
             };
-            foreach (MiembroModel miembro in new MiembrosController().GetMiembrosFavoritos(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo")))
+            foreach (MiembroModel favorito in new MiembrosController().GetMiembrosFavoritos(usuario_id, usuario_tipo))
             {
                 RelativeLayout llNombre = new RelativeLayout(this)
                 {
@@ -346,13 +391,13 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtNombre = new TextView(this)
                 {
-                    Text = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos,
+                    Text = favorito.Miembro_Nombre + " " + favorito.Miembro_Apellidos,
                     TextSize = 20
                 };
                 llNombre.AddView(txtNombre);
-                if (storage.Get("Usuario_Id") != miembro.Miembro_Id || storage.Get("Usuario_Tipo") != miembro.Miembro_Tipo)
+                if (storage.Get("Usuario_Id") != favorito.Miembro_Id || storage.Get("Usuario_Tipo") != favorito.Miembro_Tipo)
                 {
-                    KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo);
+                    KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), favorito.Miembro_Id, favorito.Miembro_Tipo);
                     ImageButton btnFavorito = new ImageButton(this);
                     btnFavorito.SetBackgroundColor(Color.White);
                     btnFavorito.SetImageResource(Resource.Mipmap.ic_star);
@@ -363,7 +408,7 @@ namespace WorklabsMx.Droid
                     {
                         if (isFavorite.Key == 0)
                         {
-                            if (Favorites.AddMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo))
+                            if (Favorites.AddMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), favorito.Miembro_Id, favorito.Miembro_Tipo))
                                 btnFavorito.SetImageResource(Resource.Mipmap.ic_star);
                             else
                                 Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
@@ -380,7 +425,7 @@ namespace WorklabsMx.Droid
                             else
                                 Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
                         }
-                        isFavorite = Favorites.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo);
+                        isFavorite = Favorites.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), favorito.Miembro_Id, favorito.Miembro_Tipo);
                     };
                     llNombre.AddView(btnFavorito);
                 }
@@ -392,7 +437,7 @@ namespace WorklabsMx.Droid
                 TextView txtEmail = new TextView(this)
                 {
                     TextSize = 14,
-                    Text = miembro.Miembro_Correo_Electronico
+                    Text = favorito.Miembro_Correo_Electronico
                 };
                 txtEmail.Click += delegate
                 {
@@ -400,7 +445,7 @@ namespace WorklabsMx.Droid
                     {
                         Intent email = new Intent(Intent.ActionSend);
                         email.PutExtra(Intent.ExtraEmail,
-                                       new string[] { miembro.Miembro_Correo_Electronico });
+                                       new string[] { favorito.Miembro_Correo_Electronico });
                         email.PutExtra(Intent.ExtraSubject, Resources.GetString(Resource.String.AsuntoCorreo));
                         email.SetType("message/rfc822");
                         StartActivity(email);
@@ -456,7 +501,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroGenero = new TextView(this)
                 {
-                    Text = miembro.Genero_Descripcion
+                    Text = favorito.Genero_Descripcion
                 };
                 txtMiembroGenero.SetX(50);
                 llGenero.AddView(txtMiembroGenero);
@@ -486,7 +531,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroFechaNacimiento = new TextView(this)
                 {
-                    Text = miembro.Miembro_Fecha_Nacimiento
+                    Text = favorito.Miembro_Fecha_Nacimiento
                 };
                 txtMiembroFechaNacimiento.SetX(50);
                 llFechaNacimiento.AddView(txtMiembroFechaNacimiento);
@@ -516,7 +561,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroProfesion = new TextView(this)
                 {
-                    Text = miembro.Miembro_Profesion
+                    Text = favorito.Miembro_Profesion
                 };
                 txtMiembroProfesion.SetX(50);
                 llProfesion.AddView(txtMiembroProfesion);
@@ -546,7 +591,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroPuesto = new TextView(this)
                 {
-                    Text = miembro.Miembro_Puesto
+                    Text = favorito.Miembro_Puesto
                 };
                 txtMiembroPuesto.SetX(50);
                 llPuesto.AddView(txtMiembroPuesto);
@@ -576,7 +621,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroHabilidades = new TextView(this)
                 {
-                    Text = miembro.Miembro_Habilidades
+                    Text = favorito.Miembro_Habilidades
                 };
                 txtMiembroHabilidades.SetX(50);
                 llHabilidades.AddView(txtMiembroHabilidades);
@@ -606,7 +651,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroEmpresa = new TextView(this)
                 {
-                    Text = miembro.Miembro_Empresa
+                    Text = favorito.Miembro_Empresa
                 };
                 txtMiembroEmpresa.SetX(50);
                 llEmpresa.AddView(txtMiembroEmpresa);
@@ -636,7 +681,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroTelefono = new TextView(this)
                 {
-                    Text = miembro.Miembro_Telefono
+                    Text = favorito.Miembro_Telefono
                 };
                 txtMiembroTelefono.SetX(50);
                 llTelefono.AddView(txtMiembroTelefono);
@@ -667,7 +712,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroCelular = new TextView(this)
                 {
-                    Text = miembro.Miembro_Celular
+                    Text = favorito.Miembro_Celular
                 };
                 txtMiembroCelular.SetX(50);
                 llCelular.AddView(txtMiembroCelular);
@@ -686,11 +731,137 @@ namespace WorklabsMx.Droid
 
             LayoutInflater liView = LayoutInflater;
 
-            View customView = liView.Inflate(Resource.Layout.PublishLayout, null);
+            customView = liView.Inflate(Resource.Layout.PublishLayout, null, true);
+
+            customView.FindViewById<TextView>(Resource.Id.lblNombre).Text = FindViewById<TextView>(Resource.Id.lblNombre).Text;
+            customView.FindViewById<TextView>(Resource.Id.lblPuesto).Text = FindViewById<TextView>(Resource.Id.lblPuesto).Text;
+            customView.FindViewById<TextView>(Resource.Id.lblFecha).Text = DateTime.Now.ToString("d");
+            customView.FindViewById<ImageButton>(Resource.Id.imgPicture).Visibility = ViewStates.Gone;
+            customView.FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Gone;
+            customView.FindViewById<ImageButton>(Resource.Id.imgPicture).Click += delegate
+            {
+                AndHUD.Shared.ShowImage(this, Drawable.CreateFromPath(_file.ToPath().ToString()));
+            };
+
+            customView.FindViewById<EditText>(Resource.Id.txtPublicacion).TextChanged += (sender, e) =>
+            {
+                if (!string.IsNullOrEmpty(((EditText)sender).Text))
+                    customView.FindViewById<Button>(Resource.Id.btnPublishApply).Enabled = true;
+                else
+                    customView.FindViewById<Button>(Resource.Id.btnPublishApply).Enabled = false;
+            };
+
+            customView.FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Click += delegate
+            {
+                ImageButton imgPicture = customView.FindViewById<ImageButton>(Resource.Id.imgPicture);
+                imgPicture.SetImageURI(null);
+                imgPicture.Visibility = ViewStates.Gone;
+                _file = null;
+                customView.FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Gone;
+            };
+
+            customView.FindViewById<ImageButton>(Resource.Id.btnTakePicture).Click += delegate
+            {
+                CreateDirectoryForPictures();
+                IsThereAnAppToTakePictures();
+                Intent intent = new Intent(MediaStore.ActionImageCapture);
+                _file = new File(_dir, String.Format("{0}.png", Guid.NewGuid()));
+                intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(_file));
+                StartActivityForResult(intent, TakePicture);
+            };
+
+            customView.FindViewById<ImageButton>(Resource.Id.btnAttachImage).Click += delegate
+            {
+                var imageIntent = new Intent();
+                imageIntent.SetType("image/*");
+                imageIntent.SetAction(Intent.ActionGetContent);
+                StartActivityForResult(
+                    Intent.CreateChooser(imageIntent, "Select photo"), PickImageId);
+            };
+            customView.FindViewById<Button>(Resource.Id.btnPublishApply).Click += async delegate
+            {
+                try
+                {
+                    System.IO.MemoryStream stream = new System.IO.MemoryStream();
+                    bitmap?.Compress(Bitmap.CompressFormat.Png, 0, stream);
+                    byte[] bitmapData = stream?.ToArray();
+                    if (new EscritorioController().SetPost(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"),
+                                                           customView.FindViewById<EditText>(Resource.Id.txtPublicacion).Text,
+                                                           bitmapData))
+                    {
+                        tlPost.RemoveAllViews();
+                        page = 0;
+                        await FillPosts();
+                        dialog.Dismiss();
+                        customView.FindViewById<ImageView>(Resource.Id.imgPicture).Visibility = ViewStates.Gone;
+                        customView.FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Gone;
+                    }
+                    else
+                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
+                }
+                catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            };
 
             builder.SetView(customView);
             builder.Create();
-            builder.Show();
+            dialog = builder.Show();
+            dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
+        }
+
+        void CreateDirectoryForPictures()
+        {
+            _dir = new File(
+                Android.OS.Environment.GetExternalStoragePublicDirectory(
+                    Android.OS.Environment.DirectoryPictures), "WorklabsMx");
+            if (!_dir.Exists())
+                _dir.Mkdirs();
+        }
+
+        bool IsThereAnAppToTakePictures()
+        {
+            Intent intent = new Intent(MediaStore.ActionImageCapture);
+            IList<ResolveInfo> availableActivities =
+                PackageManager.QueryIntentActivities(intent, PackageInfoFlags.MatchDefaultOnly);
+            return availableActivities != null && availableActivities.Count > 0;
+        }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            ImageButton imgPicture = customView.FindViewById<ImageButton>(Resource.Id.imgPicture);
+            if (resultCode == Result.Ok)
+            {
+                if (requestCode == TakePicture && resultCode == Result.Ok)
+                {
+                    Intent mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
+                    Android.Net.Uri contentUri = Android.Net.Uri.FromFile(_file);
+                    mediaScanIntent.SetData(contentUri);
+                    SendBroadcast(mediaScanIntent);
+
+                    int height = Resources.DisplayMetrics.HeightPixels;
+                    int width = 900;
+                    imagePath = _file.Path;
+                    bitmap = _file.Path.LoadAndResizeBitmap(width, height);
+                    if (bitmap != null)
+                    {
+                        imgPicture.SetImageBitmap(bitmap);
+                        //bitmap = null;
+                    }
+
+                    GC.Collect();
+                }
+                if (requestCode == PickImageId && resultCode == Result.Ok && data != null)
+                {
+                    imagePath = (string)data.Data;
+                    bitmap = Media.GetBitmap(ContentResolver, data.Data);
+                    imgPicture.SetImageURI(data.Data);
+                    imgPublish = System.Uri.EscapeUriString(data.Data.LastPathSegment);
+                }
+                imgPicture.Visibility = ViewStates.Visible;
+                customView.FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Visible;
+                customView.FindViewById<Button>(Resource.Id.btnPublishApply).Enabled = true;
+                customView.FindViewById<GridLayout>(Resource.Id.gvPublish).SetMinimumHeight(440);
+            }
         }
     }
 }

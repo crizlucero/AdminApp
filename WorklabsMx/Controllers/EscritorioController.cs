@@ -361,7 +361,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Me_Gusta_Comentario_Id", DBNull.Value);
 
                 command.Transaction = transaction;
-                command.ExecuteNonQuery(); 
+                command.ExecuteNonQuery();
                 transaction.Commit();
 
             }
@@ -386,6 +386,7 @@ namespace WorklabsMx.Controllers
         /// <param name="usuario_id">Identificador del miembro</param>
         /// <param name="tipo">Tipo de miembro</param>
         /// <param name="comentario">Comentario realizado</param>
+        /// <param name="fotografia">Imagen a guardar</param> 
         /// <returns><c>true</c> Si el post fue comentado, <c>false</c> Existió algún error.</returns>
         public bool CommentPost(string post_id, string usuario_id, string tipo, string comentario, byte[] fotografia)
         {
