@@ -16,11 +16,7 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnFechaInicio { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnScursal { get; set; }
+        UIKit.UIDatePicker dpkFechaInicio { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -29,6 +25,10 @@ namespace WorklabsMx.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblCantidadProductos { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblFechaInicio { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -60,6 +60,10 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIPickerView pkvSucursal { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIStepper stpCantidadMeses { get; set; }
 
         [Outlet]
@@ -74,13 +78,9 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwProductos { get; set; }
 
-        [Action ("btnFechaInicio_TouchUpInside:")]
+        [Action ("dtpFechaInicio_ValueChanged:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnFechaInicio_TouchUpInside (UIKit.UIButton sender);
-
-        [Action ("btnSucursal_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnSucursal_TouchUpInside (UIKit.UIButton sender);
+        partial void dtpFechaInicio_ValueChanged (UIKit.UIDatePicker sender);
 
         [Action ("stpCantidadProductos_Changed:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -92,14 +92,9 @@ namespace WorklabsMx.iOS
 
         void ReleaseDesignerOutlets ()
         {
-            if (btnFechaInicio != null) {
-                btnFechaInicio.Dispose ();
-                btnFechaInicio = null;
-            }
-
-            if (btnScursal != null) {
-                btnScursal.Dispose ();
-                btnScursal = null;
+            if (dpkFechaInicio != null) {
+                dpkFechaInicio.Dispose ();
+                dpkFechaInicio = null;
             }
 
             if (lblCantidadMeses != null) {
@@ -110,6 +105,11 @@ namespace WorklabsMx.iOS
             if (lblCantidadProductos != null) {
                 lblCantidadProductos.Dispose ();
                 lblCantidadProductos = null;
+            }
+
+            if (lblFechaInicio != null) {
+                lblFechaInicio.Dispose ();
+                lblFechaInicio = null;
             }
 
             if (lblMensajeMeses != null) {
@@ -145,6 +145,11 @@ namespace WorklabsMx.iOS
             if (lblTotal != null) {
                 lblTotal.Dispose ();
                 lblTotal = null;
+            }
+
+            if (pkvSucursal != null) {
+                pkvSucursal.Dispose ();
+                pkvSucursal = null;
             }
 
             if (stpCantidadMeses != null) {

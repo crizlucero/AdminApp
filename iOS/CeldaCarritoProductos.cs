@@ -5,6 +5,9 @@ using WorklabsMx.Models;
 using WorklabsMx.iOS.Helpers;
 using CoreGraphics;
 using WorklabsMx.Helpers;
+using System.Collections.Generic;
+using WorklabsMx.Controllers;
+using WorklabsMx.Enum;
 
 namespace WorklabsMx.iOS
 {
@@ -22,29 +25,38 @@ namespace WorklabsMx.iOS
 
         public override void LayoutIfNeeded()
         {
-            base.LayoutIfNeeded();
+            base.LayoutIfNeeded(); 
 
         }
 
         internal void UpdateCell(ProductoModel Producto, bool QuitarViewCompraRecurrente, string MensajeTarifa)
         {
+            var pickerModelSucursales = new SucursalesModel();
+            pkvSucursal.Model = pickerModelSucursales;
             StyleHelper.Style(this.vwProductos.Layer);
             ProductoGlobal = Producto;
             double subtotal = Producto.Producto_Precio_Base;
             subTotalGlobal = subtotal;
             if (QuitarViewCompraRecurrente)
             {
-                //this.vwControlesTarifaMensual.Frame = new CGRect(vwControlesTarifaMensual.Frame.X, vwControlesTarifaMensual.Frame.Y, vwControlesTarifaMensual.Frame.Width, 0);
-                this.btnFechaInicio.Hidden = true;
-                this.btnFechaInicio.Enabled = false;
+                this.vwControlesTarifaMensual.Frame = new CGRect(vwControlesTarifaMensual.Frame.X, vwControlesTarifaMensual.Frame.Y, vwControlesTarifaMensual.Frame.Width, 0);
                 this.lblMensajeMeses.Hidden = true;
                 this.lblCantidadMeses.Hidden = true;
                 this.stpCantidadMeses.Hidden = true;
                 this.lblMensajeProporcionalMes.Hidden = true;
                 this.lblProporcionalMes.Hidden = true;
+                this.lblFechaInicio.Hidden = true;
+                dpkFechaInicio.Hidden = true;
             }
             else 
             {
+                this.lblMensajeMeses.Hidden = false;
+                this.lblCantidadMeses.Hidden = false;
+                this.stpCantidadMeses.Hidden = false;
+                this.lblMensajeProporcionalMes.Hidden = false;
+                this.lblProporcionalMes.Hidden = false;
+                this.lblFechaInicio.Hidden = false;
+                dpkFechaInicio.Hidden = false;
                 this.ProporcionalMes();
             }
             this.lblCantidadMeses.Text = "1";
@@ -59,9 +71,6 @@ namespace WorklabsMx.iOS
         partial void stpCantidadProductos_Changed(UIStepper sender)
         {
             this.lblCantidadProductos.Text = sender.Value.ToString();
-            /*Productos[producto.Producto_Id].Producto_Cantidad = (int)stpProducto.Value;
-            CanPay = (stpProducto.Value > 0);
-            Changed = CanPay;*/
             this.ProporcionalMes();
             lblTotal.Text = (((ProductoGlobal.Producto_Precio_Base * (Convert.ToDouble(this.lblCantidadMeses.Text) - 1)) + subTotalGlobal) * Convert.ToDouble(lblCantidadProductos.Text)).ToString("C");
         }
@@ -81,6 +90,40 @@ namespace WorklabsMx.iOS
             else
                 subTotalGlobal = Convert.ToInt32(lblCantidadProductos.Text) == 0 ? 0 : ProductoGlobal.Producto_Precio_Base;
             this.lblProporcionalMes.Text = subTotalGlobal.ToString("C");
+        }
+
+        partial void dtpFechaInicio_ValueChanged(UIDatePicker sender)
+        {
+            
+        }
+    }
+
+    public class SucursalesModel : UIPickerViewModel
+    {
+
+        PickerItemsController items = new PickerItemsController();
+
+        List<string> Sucursales = new List<string>();
+
+
+        public SucursalesModel()
+        {
+            Sucursales = items.GetSucursales();
+        }
+
+        public override nint GetComponentCount(UIPickerView pickerView)
+        {
+            return 1;
+        }
+
+        public override nint GetRowsInComponent(UIPickerView pickerView, nint component)
+        {
+            return Sucursales.Count;
+        }
+
+        public override string GetTitle(UIPickerView pickerView, nint row, nint component)
+        {
+            return Sucursales[row.GetHashCode()].ToString();
         }
     }
 }
