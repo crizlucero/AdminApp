@@ -6,6 +6,8 @@ using WorklabsMx.Models;
 using BigTed;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Helpers;
+using PerpetualEngine.Storage;
+using WorklabsMx.Enum;
 
 namespace WorklabsMx.iOS
 {
@@ -16,7 +18,8 @@ namespace WorklabsMx.iOS
         const string IDENTIFIER_NO_PRODUCTS_CELL = "NoProducts";
 
         const int TamañoHeader = 73;
-        const int TamañoVistaProductos = 337;
+        const int TamañoVistaProductos = 447;
+        const int TamañoViewControles = 169;
 
         bool isShowInformation = false;
         bool QuitarViewCompraRecurrente = false;
@@ -25,6 +28,10 @@ namespace WorklabsMx.iOS
         string MensajeTarifa = "";
 
         List<ProductoModel> allProducts = new List<ProductoModel>();
+        Dictionary<string, CarritoModel> Carrito = new Dictionary<string, CarritoModel>();
+
+        SimpleStorage Storage;
+
 
         public CarritoProductos (IntPtr handle) : base (handle)
         {
@@ -33,6 +40,8 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            Storage = SimpleStorage.EditGroup("Login");
+            Carrito = new CarritoController().GetCarrito(Storage.Get("Usuario_Id"), TiposServicios.Producto);
             if (InternetConectionHelper.VerificarConexion())
             {
                 this.allProducts = new PickerItemsController().GetProductos();
@@ -86,7 +95,7 @@ namespace WorklabsMx.iOS
                 {
                     this.QuitarViewCompraRecurrente = true;
                     this.MensajeTarifa = "Tarifa de pago único";
-                    return TamañoVistaProductos - 113;
+                    return TamañoVistaProductos - TamañoViewControles;
                 }
 
             }
