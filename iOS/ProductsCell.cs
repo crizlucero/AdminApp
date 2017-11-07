@@ -2,6 +2,7 @@ using Foundation;
 using System;
 using UIKit;
 using WorklabsMx.Models;
+using WorklabsMx.iOS.Helpers;
 
 namespace WorklabsMx.iOS
 {
@@ -9,11 +10,13 @@ namespace WorklabsMx.iOS
     {
         public ProductsCell (IntPtr handle) : base (handle)
         {
+            StyleHelper.Style(this.Layer);
         }
 
         public override void LayoutIfNeeded()
         {
             base.LayoutIfNeeded();
+
         }
 
         internal void UpdateCell(ProductoModel Producto)
@@ -22,11 +25,11 @@ namespace WorklabsMx.iOS
 
             if (Producto.Producto_Disponibilidad.Contains("RECURRENTE"))
             {
-                mensaje = "Tarifa Mensual: ";
+                mensaje = "Tarifa Mensual: $";
             }
             else
             {
-                mensaje = "Tarifa de pago único: ";
+                mensaje = "Tarifa de pago único: $";
             }
             lblNombreProducto.Text = Producto.Producto_Descripcion;
             lblDescripcionProducto.Text = mensaje + Producto.Producto_Precio_Base.ToString();

@@ -685,6 +685,26 @@
     <Compile Include="ProductsCell.designer.cs">
       <DependentUpon>ProductsCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductosHeader.cs" />
+    <Compile Include="ProductosHeader.designer.cs">
+      <DependentUpon>ProductosHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarritoProductos.cs" />
+    <Compile Include="CarritoProductos.designer.cs">
+      <DependentUpon>CarritoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeaderCarritoProductos.cs" />
+    <Compile Include="HeaderCarritoProductos.designer.cs">
+      <DependentUpon>HeaderCarritoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaCarritoProductos.cs" />
+    <Compile Include="CeldaCarritoProductos.designer.cs">
+      <DependentUpon>CeldaCarritoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaNoProductos.cs" />
+    <Compile Include="CeldaNoProductos.designer.cs">
+      <DependentUpon>CeldaNoProductos.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

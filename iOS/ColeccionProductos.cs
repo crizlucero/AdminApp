@@ -13,6 +13,8 @@ namespace WorklabsMx.iOS
 
         const string IDENTIFIER_PRODUCTS_CELL = "productsCell";
 
+        const string IDENTIFIER_HEADER = "ProductosHeader";
+
         List<ProductoModel> products = new List<ProductoModel>();
 
         public ColeccionProductos(IntPtr handle) : base(handle)
@@ -25,6 +27,13 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
 
             this.products = new PickerItemsController().GetProductos();
+        }
+
+        //[Export("collectionView:viewForSupplementaryElementOfKind:atIndexPath:")]
+        public override UICollectionReusableView GetViewForSupplementaryElement(UICollectionView collectionView, NSString elementKind, NSIndexPath indexPath)
+        {
+            var header = (ProductosHeader)collectionView.DequeueReusableSupplementaryView(elementKind, IDENTIFIER_HEADER, indexPath);
+            return header;
         }
 
         public override nint NumberOfSections(UICollectionView collectionView)
@@ -70,6 +79,8 @@ namespace WorklabsMx.iOS
         {
             return new CGSize(this.CollectionView.Frame.Size.Width, 60);
         }
+
+
 
 
     }
