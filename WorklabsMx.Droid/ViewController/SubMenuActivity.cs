@@ -70,6 +70,7 @@ namespace WorklabsMx.Droid
                         case "MisColaboradoresActivity": StartActivity(new Intent(this, typeof(TabColaboradoresActivity))); break;
                         case "MembresiasActivity": StartActivity(new Intent(this, typeof(MembresiasActivity))); break;
                         case "ProductosActivity": StartActivity(new Intent(this, typeof(ProductosActivity))); break;
+                        case "ColeccionProductosActivity": StartActivity(new Intent(this, typeof(ColeccionProductosActivity))); break;
                         case "DirectorioUsuarioActivity": StartActivity(new Intent(this, typeof(DirectorioUsuariosActivity))); break;
                         case "DirectorioEmpresasActivity": StartActivity(new Intent(this, typeof(DirectorioEmpresaActivity))); break;
                     }

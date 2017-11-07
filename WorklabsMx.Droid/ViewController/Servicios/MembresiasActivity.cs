@@ -197,7 +197,7 @@ namespace WorklabsMx.Droid
                 };
                 trMembresia.AddView(dpFechaInicio, param);
 
-                tlMembresias.AddView(trMembresia);
+                //tlMembresias.AddView(trMembresia);
 
                 trMembresia = new TableRow(this);
                 trMembresia.AddView(new TextView(this) { Text = "Cantidad de meses" }, 0);

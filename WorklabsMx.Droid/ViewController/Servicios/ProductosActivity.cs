@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -14,7 +13,7 @@ using WorklabsMx.Enum;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "@string/Productos")]
+    [Activity(Label = "@string/app_name")]
     public class ProductosActivity : Activity
     {
         readonly Dictionary<string, CarritoModel> Carrito, Productos;
@@ -43,7 +42,6 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.Productos);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
 
             adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, new SucursalController().GetSucursalNombres().ToArray());
             FillData();
@@ -66,7 +64,7 @@ namespace WorklabsMx.Droid
                     TextSize = 14,
                     InputType = Android.Text.InputTypes.NumberFlagSigned
                 };
-                Productos.Add(producto.Producto_Id, new CarritoModel { Producto_Cantidad = 0, Sucursal_Id = 0 });
+                Productos.Add(producto.Producto_Id, new CarritoModel { Producto_Cantidad = 0, Sucursal_Id = 1, Membresia_Fecha_Inicio = DateTime.Now.ToString("dd/MM/yyyy") });
                 if (Carrito.ContainsKey(producto.Producto_Id))
                 {
                     if (DateTime.Parse(Productos[producto.Producto_Id].Membresia_Fecha_Inicio) >= DateTime.Now)
@@ -186,6 +184,7 @@ namespace WorklabsMx.Droid
                     trProducto = new TableRow(this);
                     trProducto.AddView(new TextView(this) { Text = "Fecha de Inicio" });
                     dpFechaInicio.Text = !string.IsNullOrEmpty(Productos[producto.Producto_Id].Membresia_Fecha_Inicio) ? Productos[producto.Producto_Id].Membresia_Fecha_Inicio : DateTime.Now.ToString("dd/MM/yyyy");
+
                     dpFechaInicio.TextChanged += (sender, e) =>
                     {
                         if (DateTime.TryParse(dpFechaInicio.Text, out DateTime fecha))

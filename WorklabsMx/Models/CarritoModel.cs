@@ -16,5 +16,6 @@ namespace WorklabsMx.Models
         public int Sucursal_Id { get; set; }
         public string Sucursal_Descripcion { get; set; }
         public string Membresia_Fecha_Inicio { get; set; }
+        public double Meses_Adelantados { get; set; }
     }
 }
