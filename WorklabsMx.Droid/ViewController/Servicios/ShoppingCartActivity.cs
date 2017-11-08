@@ -12,6 +12,8 @@ using WorklabsMx.Controllers;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 using WorklabsMx.Enum;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace WorklabsMx.Droid
 {
@@ -41,12 +43,17 @@ namespace WorklabsMx.Droid
             CarritoProducto = JsonConvert.DeserializeObject<Dictionary<string, CarritoModel>>(Intent.GetStringExtra("Productos"));
             try
             {
-                foreach (MembresiaModel membresia in new PickerItemsController().GetMembresias())
+                new PickerItemsController().GetMembresias().ForEach(membresia =>
+                {
                     if (CarritoMembresia.ContainsKey(membresia.Membresia_Id))
                         membresias.Add(membresia.Membresia_Id, (int)CarritoMembresia[membresia.Membresia_Id].Membresia_Cantidad);
-                foreach (ProductoModel producto in new PickerItemsController().GetProductos())
+                });
+                new PickerItemsController().GetProductos().ForEach(producto =>
+                {
                     if (CarritoProducto.ContainsKey(producto.Producto_Id))
                         productos.Add(producto.Producto_Id, (int)CarritoProducto[producto.Producto_Id].Producto_Cantidad);
+                });
+
             }
             catch (Exception e)
             {
@@ -80,12 +87,13 @@ namespace WorklabsMx.Droid
 
         void AddMembresiaDescripcion(List<MembresiaModel> membresiasPrecios)
         {
-            foreach (MembresiaModel precio in membresiasPrecios)
+            membresiasPrecios.ForEach(precio =>
             {
                 TableRow trDescripcion = new TableRow(this);
 
                 ImageButton btnErase = new ImageButton(this);
                 btnErase.SetImageResource(Resource.Mipmap.ic_clear);
+                btnErase.SetBackgroundColor(Color.White);
                 trDescripcion.AddView(btnErase, 0);
 
                 TextView lblCantidad = new TextView(this)
@@ -153,12 +161,12 @@ namespace WorklabsMx.Droid
                 Total += (Convert.ToDecimal(precio.Membresia_Precio_Prorrateo) * Convert.ToDecimal(membresias[precio.Membresia_Id])) +
                     (Convert.ToDecimal(precio.Membresia_Precio_Base) * ((decimal)CarritoMembresia[precio.Membresia_Id].Meses_Adelantados - 1)) +
                     (Convert.ToDecimal(precio.Inscripcion_Precio_Base) * Convert.ToDecimal(membresias[precio.Membresia_Id]));
-            }
+            });
         }
 
         void AddProductosDescripcion(List<ProductoModel> productosPrecios)
         {
-            foreach (ProductoModel precio in productosPrecios)
+            productosPrecios.ForEach(precio =>
             {
                 TableRow trDescripcion = new TableRow(this);
 
@@ -206,9 +214,9 @@ namespace WorklabsMx.Droid
                     FillPrices();
                 };
 
-                Total += (Convert.ToDecimal(precio.Producto_Precio_Base) * Convert.ToDecimal(productos[precio.Producto_Id])) +
+                Total += (Convert.ToDecimal(precio.Producto_Precio_Prorrateo) * Convert.ToDecimal(productos[precio.Producto_Id])) +
                     (Convert.ToDecimal(precio.Producto_Precio_Base) * ((decimal)CarritoProducto[precio.Producto_Id].Meses_Adelantados - 1));
-            }
+            });
 
         }
 

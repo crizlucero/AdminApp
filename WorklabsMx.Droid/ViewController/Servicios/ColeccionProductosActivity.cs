@@ -1,13 +1,8 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
@@ -50,7 +45,18 @@ namespace WorklabsMx.Droid
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
             adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, new SucursalController().GetSucursalNombres().ToArray());
-            FillDataMembresias();
+            FindViewById<ImageButton>(Resource.Id.btnProductos).Click += delegate
+            {
+                FindViewById<TableLayout>(Resource.Id.tlProductos).RemoveAllViews();
+                FillDataProductos();
+            };
+
+            FindViewById<ImageButton>(Resource.Id.btnMembresias).Click += delegate
+            {
+                FindViewById<TableLayout>(Resource.Id.tlProductos).RemoveAllViews();
+                FillDataMembresias();
+            };
+
             FillDataProductos();
         }
 
@@ -59,7 +65,6 @@ namespace WorklabsMx.Droid
             TableLayout tlMembresias = FindViewById<TableLayout>(Resource.Id.tlProductos);
             foreach (MembresiaModel membresia in new PickerItemsController().GetMembresias())
             {
-
                 double subtotal = membresia.Membresia_Precio_Base_Neto;
                 int mesMembresia = 1;
                 TextView lblProporcional = new TextView(this), lblTotal = new TextView(this);
@@ -71,8 +76,8 @@ namespace WorklabsMx.Droid
                     TextSize = 14,
                     InputType = Android.Text.InputTypes.NumberFlagSigned
                 };
-
-                Membresias.Add(membresia.Membresia_Id, new CarritoModel { Membresia_Cantidad = 0, Sucursal_Id = 0, Meses_Adelantados = 1, Membresia_Fecha_Inicio = DateTime.Now.ToString("d") });
+                if (!Membresias.ContainsKey(membresia.Membresia_Id))
+                    Membresias.Add(membresia.Membresia_Id, new CarritoModel { Membresia_Cantidad = 0, Sucursal_Id = 0, Meses_Adelantados = 1, Membresia_Fecha_Inicio = DateTime.Now.ToString("d") });
 
                 TableRow trMembresia = new TableRow(this);
                 View line = new View(this);
@@ -184,9 +189,9 @@ namespace WorklabsMx.Droid
                         if (mesMembresia > 1)
                         {
                             mesMembresia = Convert.ToInt32(txtMesesMembresias.Text);
-                        Membresias[membresia.Membresia_Id].Meses_Adelantados = mesMembresia;
-                        subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
-                                    (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
+                            Membresias[membresia.Membresia_Id].Meses_Adelantados = mesMembresia;
+                            subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
+                                        (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
                             lblProporcional.Text = subtotal.ToString("C");
                             lblTotal.Text = (((membresia.Membresia_Precio_Base_Neto * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base_Neto)
                                           * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
@@ -201,7 +206,7 @@ namespace WorklabsMx.Droid
                 btnMesesPlus.SetImageResource(Resource.Mipmap.ic_add);
                 btnMesesPlus.Click += (sender, e) =>
                 {
-                    
+
                     ++mesMembresia;
                     ++Membresias[membresia.Membresia_Id].Meses_Adelantados;
                     txtMesesMembresias.Text = mesMembresia.ToString();
@@ -228,7 +233,7 @@ namespace WorklabsMx.Droid
                         lblProporcional.Text = subtotal.ToString("C");
                         lblTotal.Text = (((membresia.Membresia_Precio_Base_Neto * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base_Neto)
                                           * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
-                    } 
+                    }
                     else
                         Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
                 };
@@ -274,7 +279,8 @@ namespace WorklabsMx.Droid
                     TextSize = 14,
                     InputType = Android.Text.InputTypes.NumberFlagSigned
                 };
-                Productos.Add(producto.Producto_Id, new CarritoModel { Producto_Cantidad = 0, Sucursal_Id = 1, Membresia_Fecha_Inicio = DateTime.Now.ToString("dd/MM/yyyy"), Meses_Adelantados = 1 });
+                if (!Productos.ContainsKey(producto.Producto_Id))
+                    Productos.Add(producto.Producto_Id, new CarritoModel { Producto_Cantidad = 0, Sucursal_Id = 1, Membresia_Fecha_Inicio = DateTime.Now.ToString("dd/MM/yyyy"), Meses_Adelantados = 1 });
 
                 TableRow trProducto = new TableRow(this);
                 View line = new View(this);
@@ -309,8 +315,8 @@ namespace WorklabsMx.Droid
                         {
                             Productos[producto.Producto_Id].Producto_Cantidad = Convert.ToInt32(txtCantidadProductos.Text);
                             if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
-                            subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
-                                            (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
+                                subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
+                                                (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
                             else
                                 subtotal = producto.Producto_Precio_Base_Neto;
                             lblProporcional.Text = subtotal.ToString("C");
@@ -395,8 +401,8 @@ namespace WorklabsMx.Droid
                             {
                                 Productos[producto.Producto_Id].Meses_Adelantados = Convert.ToInt32(txtMesesProductos.Text);
                                 mesProducto = Convert.ToInt32(txtMesesProductos.Text);
-                            subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
-                                        (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
+                                subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
+                                            (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
                                 lblProporcional.Text = subtotal.ToString("C");
                                 lblTotal.Text = (((producto.Producto_Precio_Base_Neto * ((Convert.ToDouble(txtMesesProductos.Text) - 1)) + subtotal)
                                                   * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C");
@@ -412,7 +418,7 @@ namespace WorklabsMx.Droid
                     btnMesesPlus.Click += (sender, e) =>
                     {
                         ++mesProducto;
-                        txtMesesProductos.Text = txtMesesProductos.ToString();
+                        txtMesesProductos.Text = mesProducto.ToString();
                         Productos[producto.Producto_Id].Meses_Adelantados = Convert.ToInt32(txtMesesProductos.Text);
                         subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
                                     (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
@@ -430,7 +436,7 @@ namespace WorklabsMx.Droid
                         if (mesProducto > 1)
                         {
                             --mesProducto;
-                            txtMesesProductos.Text = txtMesesProductos.ToString();
+                            txtMesesProductos.Text = mesProducto.ToString();
                             Productos[producto.Producto_Id].Meses_Adelantados = Convert.ToInt32(txtMesesProductos.Text);
                             subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
                                         (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
