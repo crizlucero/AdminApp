@@ -16,7 +16,8 @@ namespace WorklabsMx.iOS
 
         double subTotalGlobal = 0.0;
         ProductoModel ProductoGlobal;
-        DateTime dpFechaInicio;
+        public event EventHandler ObtenerTotalPagar;
+        public event EventHandler ObtenerTotalProductos;
 
         public CeldaCarritoProductos (IntPtr handle) : base (handle)
         {
@@ -57,34 +58,38 @@ namespace WorklabsMx.iOS
                 this.lblProporcionalMes.Hidden = false;
                 this.lblFechaInicio.Hidden = false;
                 dpkFechaInicio.Hidden = false;
-                this.ProporcionalMes();
+                dpkFechaInicio.MinimumDate = (NSDate)DateTime.Now;
             }
             this.lblCantidadMeses.Text = "1";
             this.lblMensajeTarifa.Text = MensajeTarifa;
             this.lblNombreProducto.Text = Producto.Producto_Descripcion;
             this.lblTarifa.Text = Producto.Producto_Precio_Base.ToString("C");
-            this.lblTotal.Text = (Producto.Producto_Precio_Base * stpCantidadMeses.Value).ToString("C");
+            this.lblTotal.Text = "$0.00";
             this.lblCantidadProductos.Text = "0";
-            dpFechaInicio = DateTime.Now;
+            this.ProporcionalMes();
         }
 
         partial void stpCantidadProductos_Changed(UIStepper sender)
         {
             this.lblCantidadProductos.Text = sender.Value.ToString();
+            if (ObtenerTotalProductos != null)
+            {
+                ObtenerTotalProductos(int.Parse(sender.Value.ToString()), EventArgs.Empty);
+            }
             this.ProporcionalMes();
-            lblTotal.Text = (((ProductoGlobal.Producto_Precio_Base * (Convert.ToDouble(this.lblCantidadMeses.Text) - 1)) + subTotalGlobal) * Convert.ToDouble(lblCantidadProductos.Text)).ToString("C");
+            this.ObtenerTotal();
         }
 
         partial void stpMeses_Changed(UIStepper sender)
         {
             this.lblCantidadMeses.Text = sender.Value.ToString();
-            this.lblTotal.Text = (((ProductoGlobal.Producto_Precio_Base * (Convert.ToDouble(lblCantidadMeses.Text) - 1)) + subTotalGlobal) * Convert.ToDouble(lblCantidadProductos.Text)).ToString("C");
+            this.ObtenerTotal();
         }
 
         private void ProporcionalMes()
         {
-            double EndMonth = DateHelper.GetMonthsDays((DateTime)dpFechaInicio.Date);
-            double currentDay = ((DateTime)dpFechaInicio.Date).Day;
+            double EndMonth = DateHelper.GetMonthsDays((DateTime)dpkFechaInicio.Date);
+            double currentDay = ((DateTime)dpkFechaInicio.Date).Day;
             if (ProductoGlobal.Producto_Disponibilidad.Contains("RECURRENTE"))
                 subTotalGlobal = Convert.ToInt32(lblCantidadProductos.Text) == 0 ? 0 : (ProductoGlobal.Producto_Precio_Base / EndMonth * (EndMonth - currentDay + 1));
             else
@@ -94,7 +99,21 @@ namespace WorklabsMx.iOS
 
         partial void dtpFechaInicio_ValueChanged(UIDatePicker sender)
         {
-            
+            double EndMonth = DateHelper.GetMonthsDays((DateTime)dpkFechaInicio.Date);
+            double currentDay = ((DateTime)dpkFechaInicio.Date).Day;
+            subTotalGlobal = Convert.ToInt32(lblCantidadMeses.Text) == 0 ? 0 : (ProductoGlobal.Producto_Precio_Base / EndMonth * (EndMonth - currentDay + 1));
+            lblProporcionalMes.Text = subTotalGlobal.ToString("C");
+            this.ObtenerTotal();
+        }
+
+        private void ObtenerTotal()
+        {
+            lblTotal.Text = (((ProductoGlobal.Producto_Precio_Base * (Convert.ToDouble(lblCantidadMeses.Text) - 1)) + subTotalGlobal) * Convert.ToDouble(lblCantidadProductos.Text)).ToString("C");
+            var total = double.Parse((((ProductoGlobal.Producto_Precio_Base * (Convert.ToDouble(lblCantidadMeses.Text) - 1)) + subTotalGlobal) * Convert.ToDouble(lblCantidadProductos.Text)).ToString());
+            if (ObtenerTotalPagar != null)
+            {
+                ObtenerTotalPagar(total, EventArgs.Empty);
+            }
         }
     }
 

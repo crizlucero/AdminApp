@@ -32,6 +32,8 @@ namespace WorklabsMx.iOS
 
         SimpleStorage Storage;
 
+        double TotalPagar = 0.0;
+        int TotalProductos = 0;
 
         public CarritoProductos (IntPtr handle) : base (handle)
         {
@@ -53,6 +55,16 @@ namespace WorklabsMx.iOS
             }
         }
 
+        void ObtenerTotalPagar(object sender, EventArgs e)
+        {
+            this.TotalPagar = TotalPagar + (double)sender;
+        }
+
+        void ObtenerTotalProductos(object sender, EventArgs e)
+        {
+            this.TotalProductos = TotalProductos + (int)sender;
+        }
+
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
@@ -62,6 +74,7 @@ namespace WorklabsMx.iOS
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
             var headerCell = (HeaderCarritoProductos)tableView.DequeueReusableCell(IDENTIFIER_HEADER_PRODUCTS);
+            headerCell.UpdateCell(TotalPagar, TotalProductos);
             return headerCell;
         }
 
@@ -112,6 +125,8 @@ namespace WorklabsMx.iOS
             {
                 var currentProduct = allProducts[indexPath.Row];
                 var currentProductCell = (CeldaCarritoProductos)tableView.DequeueReusableCell(IDENTIFIER_PRODUCTS, indexPath);
+                currentProductCell.ObtenerTotalPagar += ObtenerTotalPagar;
+                currentProductCell.ObtenerTotalProductos += ObtenerTotalProductos;
                 currentProductCell.UpdateCell(currentProduct, this.QuitarViewCompraRecurrente, this.MensajeTarifa);
                 this.WillDisplay(indexPath.Row);
                 return currentProductCell;
