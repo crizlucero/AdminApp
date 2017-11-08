@@ -263,6 +263,10 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_delete.png" />
     <AndroidResource Include="Resources\drawable\background_splash.xml" />
     <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_card_membership.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_store.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_receipt.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_dns.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

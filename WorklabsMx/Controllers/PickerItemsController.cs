@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using WorklabsMx.Enum;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 
@@ -393,8 +395,8 @@ namespace WorklabsMx.Controllers
                         Producto_Id = reader["Producto_Id"].ToString(),
                         Producto_Descripcion = reader["Producto_Descripcion"].ToString(),
                         Producto_Disponibilidad = reader["Disponibilidad_Producto_Descripcion"].ToString(),
-                        Producto_Precio_Base_Neto = Convert.ToInt32(reader["Lista_Precio_Producto_Precio_Base_Neto"]),
-                        Producto_Precio_Base = Convert.ToInt32(reader["Lista_Precio_Producto_Precio_Base"])
+                        Producto_Precio_Base_Neto = Convert.ToDouble(reader["Lista_Precio_Producto_Precio_Base_Neto"]),
+                        Producto_Precio_Base = Convert.ToDouble(reader["Lista_Precio_Producto_Precio_Base"])
                     });
                 }
             }
@@ -423,7 +425,9 @@ namespace WorklabsMx.Controllers
                         productos_id += key.Key + ",";
                 }
                 string query = "SELECT Producto_Id, Producto_Descripcion, " +
-                    "Lista_Precio_Producto_Precio_Base_Neto as Producto_Precio_Base FROM vw_cat_Productos_Listas_Precios " +
+                    "Lista_Precio_Producto_Precio_Base_Neto as Producto_Precio_Base, " +
+                    "Lista_Precio_Producto_Precio_Prorrateo_Neto AS Producto_Precio_Prorrateo " +
+                    "FROM vw_cat_Productos_Listas_Precios " +
                     "Where Producto_Id in (" + productos_id.Substring(0, productos_id.Length - 1) + ")";
 
                 command = CreateCommand(query);
@@ -435,7 +439,8 @@ namespace WorklabsMx.Controllers
                     {
                         Producto_Id = reader["Producto_Id"].ToString(),
                         Producto_Descripcion = reader["Producto_Descripcion"].ToString(),
-                        Producto_Precio_Base = Convert.ToInt32(reader["Producto_Precio_Base"])
+                        Producto_Precio_Base = Convert.ToDouble(reader["Producto_Precio_Base"]),
+                        Producto_Precio_Prorrateo = Convert.ToDouble(reader["Producto_Precio_Prorrateo"])
                     });
                 }
             }
@@ -472,6 +477,38 @@ namespace WorklabsMx.Controllers
             }
             finally { conn.Close(); }
             return CPs;
+        }
+
+        public List<CarritoModel> GetProductosMembresias(TiposServicios referencia_tipo, int referencia_id, int referencia_cantidad, int referencia_meses, 
+                                                         string referencia_fecha_inicio, int precio_id, int moneda_id, int impuesto_id, int descuento_id){
+            List<CarritoModel> carrito = new List<CarritoModel>();
+            try{
+                conn.Open();
+                transaction = conn.BeginTransaction();
+                command = CreateCommand();
+                command.Connection = conn;
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "sp_vw_pro_Carrito_Compras";
+                command.Parameters.AddWithValue("@Referencia_Tipo", referencia_tipo);
+                command.Parameters.AddWithValue("@Referencia_Id", referencia_id);
+                command.Parameters.AddWithValue("@Referencia_Cantidad", referencia_cantidad);
+                command.Parameters.AddWithValue("@Referencia_Meses", referencia_meses);
+                command.Parameters.AddWithValue("@Referencia_Vigencia_Fecha_Inicio", referencia_fecha_inicio);
+                command.Parameters.AddWithValue("@Referencia_Lista_Precio_Id", precio_id);
+                command.Parameters.AddWithValue("@Referencia_Moneda_Id", moneda_id);
+                command.Parameters.AddWithValue("@Referencia_Impuesto_Id", impuesto_id);
+                command.Parameters.AddWithValue("@Referencia_Descuento_Id", descuento_id);
+                command.Transaction = transaction;
+                reader = command.ExecuteReader();
+                transaction.Commit();
+                while(reader.Read()){
+                    
+                }
+            }catch(Exception e){
+                SlackLogs.SendMessage(e.Message);
+                transaction.Rollback();
+            }finally{conn.Close();}
+            return carrito;
         }
     }
 }

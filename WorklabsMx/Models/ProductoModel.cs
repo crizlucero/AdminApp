@@ -7,5 +7,6 @@
         public string Producto_Disponibilidad { get; set; }
         public double Producto_Precio_Base { get; set; }
         public double Producto_Precio_Base_Neto { get; set; }
+        public double Producto_Precio_Prorrateo { get; set; }
     }
 }

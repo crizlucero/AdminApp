@@ -478,7 +478,7 @@ namespace WorklabsMx.Droid
                 {
                     switch (menu.Controller)
                     {
-                        case "MainActivity": FindViewById<ScrollView>(Resource.Id.menu_scroll).Visibility = ViewStates.Gone; break;//StartActivity(new Intent(this, typeof(MainActivity))); break;
+                        case "MainActivity": FindViewById<ScrollView>(Resource.Id.menu_scroll).Visibility = ViewStates.Gone; break;
                         case "MyMembershipActivity": StartActivity(new Intent(this, typeof(MyMembershipActivity))); break;
                         case "SubMenuActivity":
                             localStorage.Put("Parent", menu.Menu_Id);
@@ -486,6 +486,7 @@ namespace WorklabsMx.Droid
                         case "LogoutActivity":
                             localStorage.Delete("Usuario_Id"); localStorage.Delete("Usuario_Tipo"); localStorage.Delete("Empresa_Id");
                             StartActivity(new Intent(this, typeof(MainActivity))); break;
+                        case "ColeccionProductosActivity": StartActivity(new Intent(this, typeof(ColeccionProductosActivity))); break;
                     }
                 };
                 row.AddView(btnMenu);
