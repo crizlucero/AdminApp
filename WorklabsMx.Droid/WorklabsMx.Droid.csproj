@@ -136,6 +136,7 @@
     <Compile Include="ViewController\MiPerfil\MisColaboradoresCambiosActivity.cs" />
     <Compile Include="ViewController\CommentsActivity.cs" />
     <Compile Include="SplashActivity.cs" />
+    <Compile Include="ViewController\Servicios\ColeccionProductosActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

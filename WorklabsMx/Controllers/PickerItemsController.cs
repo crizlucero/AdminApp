@@ -283,11 +283,14 @@ namespace WorklabsMx.Controllers
 
             string query = "select mdd.Membresia_Id, mdd.Membresia_Descripcion, " +
                 "count(Distribucion_Membresia_Espacio) as Membresia_Espacios_Disponibles, " +
-                "mlp.Lista_Precio_Membresia_Precio_Base, mlp.Lista_Precio_Membresia_Precio_Inscripcion " +
+                "mlp.Lista_Precio_Membresia_Precio_Base_Neto, mlp.Lista_Precio_Membresia_Precio_Inscripcion_Neto, " +
+                "mlp.Lista_Precio_Membresia_Precio_Base, mlp.Lista_Precio_Membresia_Precio_Inscripcion," +
+                "mlp.Lista_Precio_Membresia_Precio_Prorrateo " +
                 "FROM vw_cat_Membresias_Distribuciones_Disponibles AS mdd " +
                 "INNER JOIN vw_cat_Membresias_Listas_Precios AS mlp ON mlp.Membresia_Id = mdd.Membresia_Id " +
                 "WHERE mdd.Distribucion_Membresia_Estatus = 1 " +
-                "GROUP BY mdd.Membresia_Id, mdd.Membresia_Descripcion, mlp.Lista_Precio_Membresia_Precio_Base, mlp.Lista_Precio_Membresia_Precio_Inscripcion";
+                "GROUP BY mdd.Membresia_Id, mdd.Membresia_Descripcion, mlp.Lista_Precio_Membresia_Precio_Base_Neto, mlp.Lista_Precio_Membresia_Precio_Inscripcion_Neto, " +
+                "mlp.Lista_Precio_Membresia_Precio_Base, mlp.Lista_Precio_Membresia_Precio_Inscripcion, mlp.Lista_Precio_Membresia_Precio_Prorrateo";
             command = CreateCommand(query);
             try
             {
@@ -300,8 +303,11 @@ namespace WorklabsMx.Controllers
                         Membresia_Id = reader["Membresia_Id"].ToString(),
                         Membresia_Descripcion = reader["Membresia_Descripcion"].ToString(),
                         Membresia_Espacios_Disponibles = reader["Membresia_Espacios_Disponibles"].ToString(),
-						Membresia_Precio_Base = Convert.ToDouble(reader["Lista_Precio_Membresia_Precio_Base"]),
-						Inscripcion_Precio_Base = Convert.ToDouble(reader["Lista_Precio_Membresia_Precio_Inscripcion"])
+                        Membresia_Precio_Base_Neto = Convert.ToDouble(reader["Lista_Precio_Membresia_Precio_Base_Neto"]),
+                        Inscripcion_Precio_Base_Neto = Convert.ToDouble(reader["Lista_Precio_Membresia_Precio_Inscripcion_Neto"]),
+                        Membresia_Precio_Base = Convert.ToDouble(reader["Lista_Precio_Membresia_Precio_Base"]),
+                        Inscripcion_Precio_Base = Convert.ToDouble(reader["Lista_Precio_Membresia_Precio_Inscripcion"]),
+                        Membresia_Precio_Prorrateo = Convert.ToDouble(reader["Lista_Precio_Membresia_Precio_Prorrateo"])
                     });
                 }
             }
@@ -323,20 +329,21 @@ namespace WorklabsMx.Controllers
             List<MembresiaModel> membresias = new List<MembresiaModel>();
             try
             {
-				string membresias_id = string.Empty;
-				foreach (KeyValuePair<string, int> key in dictMembresias)
-				{
-					if (key.Value != 0)
-						membresias_id += key.Key + ",";
-				}
-				string query = "SELECT Membresia_Id, Membresia_Descripcion, " +
-					"Lista_Precio_Membresia_Precio_Base_Neto as Membresia_Precio_Base, " +
-					"Lista_Precio_Membresia_Precio_Inscripcion_Neto as Membresia_Precio_Inscripcion " +
-					"FROM vw_cat_Membresias_Listas_Precios " +
-					" " +
-					"WHERE Membresia_Id in (" + membresias_id.Substring(0, membresias_id.Length - 1) + ")";
+                string membresias_id = string.Empty;
+                foreach (KeyValuePair<string, int> key in dictMembresias)
+                {
+                    if (key.Value != 0)
+                        membresias_id += key.Key + ",";
+                }
+                string query = "SELECT Membresia_Id, Membresia_Descripcion, " +
+                    "Lista_Precio_Membresia_Precio_Base_Neto as Membresia_Precio_Base, " +
+                    "Lista_Precio_Membresia_Precio_Inscripcion_Neto as Membresia_Precio_Inscripcion, " +
+                    "Lista_Precio_Membresia_Precio_Prorrateo as Membresia_Precio_Prorrateo " +
+                    "FROM vw_cat_Membresias_Listas_Precios " +
+                    " " +
+                    "WHERE Membresia_Id in (" + membresias_id.Substring(0, membresias_id.Length - 1) + ")";
 
-				command = CreateCommand(query);
+                command = CreateCommand(query);
                 conn.Open();
                 reader = command.ExecuteReader();
                 while (reader.Read())
@@ -346,7 +353,8 @@ namespace WorklabsMx.Controllers
                         Membresia_Id = reader["Membresia_Id"].ToString(),
                         Membresia_Descripcion = reader["Membresia_Descripcion"].ToString(),
                         Membresia_Precio_Base = Convert.ToDouble(reader["Membresia_Precio_Base"]),
-                        Inscripcion_Precio_Base = Convert.ToDouble(reader["Membresia_Precio_Inscripcion"])
+                        Inscripcion_Precio_Base = Convert.ToDouble(reader["Membresia_Precio_Inscripcion"]),
+                        Membresia_Precio_Prorrateo = Convert.ToDouble(reader["Membresia_Precio_Prorrateo"]),
                     });
                 }
             }
@@ -368,6 +376,7 @@ namespace WorklabsMx.Controllers
             List<ProductoModel> productos = new List<ProductoModel>();
 
             string query = "select p.Producto_Id, p.Producto_Descripcion, p.Disponibilidad_Producto_Descripcion, " +
+                "plp.Lista_Precio_Producto_Precio_Base_Neto, " +
                 "plp.Lista_Precio_Producto_Precio_Base " +
                 "FROM vw_cat_Productos AS p INNER JOIN vw_cat_Productos_Listas_Precios AS plp " +
                 "ON p.Producto_Id = plp.Lista_Precio_Producto_Id " +
@@ -384,6 +393,7 @@ namespace WorklabsMx.Controllers
                         Producto_Id = reader["Producto_Id"].ToString(),
                         Producto_Descripcion = reader["Producto_Descripcion"].ToString(),
                         Producto_Disponibilidad = reader["Disponibilidad_Producto_Descripcion"].ToString(),
+                        Producto_Precio_Base_Neto = Convert.ToInt32(reader["Lista_Precio_Producto_Precio_Base_Neto"]),
                         Producto_Precio_Base = Convert.ToInt32(reader["Lista_Precio_Producto_Precio_Base"])
                     });
                 }
@@ -406,17 +416,17 @@ namespace WorklabsMx.Controllers
             List<ProductoModel> productos = new List<ProductoModel>();
             try
             {
-				string productos_id = string.Empty;
-				foreach (KeyValuePair<string, int> key in dictProductos)
-				{
-					if (key.Value != 0)
-						productos_id += key.Key + ",";
-				}
-				string query = "SELECT Producto_Id, Producto_Descripcion, " +
-					"Lista_Precio_Producto_Precio_Base_Neto as Producto_Precio_Base FROM vw_cat_Productos_Listas_Precios " +
-					"Where Producto_Id in (" + productos_id.Substring(0, productos_id.Length - 1) + ")";
+                string productos_id = string.Empty;
+                foreach (KeyValuePair<string, int> key in dictProductos)
+                {
+                    if (key.Value != 0)
+                        productos_id += key.Key + ",";
+                }
+                string query = "SELECT Producto_Id, Producto_Descripcion, " +
+                    "Lista_Precio_Producto_Precio_Base_Neto as Producto_Precio_Base FROM vw_cat_Productos_Listas_Precios " +
+                    "Where Producto_Id in (" + productos_id.Substring(0, productos_id.Length - 1) + ")";
 
-				command = CreateCommand(query);
+                command = CreateCommand(query);
                 conn.Open();
                 reader = command.ExecuteReader();
                 while (reader.Read())

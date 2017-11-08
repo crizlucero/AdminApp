@@ -15,10 +15,11 @@ using WorklabsMx.Enum;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "@string/ConfirmacionPago")]
+    [Activity(Label = "@string/app_name")]
     public class ShoppingCartActivity : Activity
     {
         Dictionary<string, int> membresias = null, productos = null;
+        Dictionary<string, CarritoModel> CarritoMembresia, CarritoProducto;
         TableLayout tlCarrito;
         decimal Descuento, Subtotal, IVA = 0.16M, Total, IVATotal;
         readonly List<decimal> Descuentos;
@@ -29,8 +30,15 @@ namespace WorklabsMx.Droid
             membresias = new Dictionary<string, int>();
             productos = new Dictionary<string, int>();
             Storage = SimpleStorage.EditGroup("Login");
-            Dictionary<string, CarritoModel> CarritoMembresia = new CarritoController().GetCarrito(Storage.Get("Usuario_Id"), TiposServicios.Membresia);
-            Dictionary<string, CarritoModel> CarritoProducto = new CarritoController().GetCarrito(Storage.Get("Usuario_Id"), TiposServicios.Producto);
+        }
+
+
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.CarritoLayout);
+            CarritoMembresia = JsonConvert.DeserializeObject<Dictionary<string, CarritoModel>>(Intent.GetStringExtra("Membresias"));
+            CarritoProducto = JsonConvert.DeserializeObject<Dictionary<string, CarritoModel>>(Intent.GetStringExtra("Productos"));
             try
             {
                 foreach (MembresiaModel membresia in new PickerItemsController().GetMembresias())
@@ -44,19 +52,10 @@ namespace WorklabsMx.Droid
             {
                 SlackLogs.SendMessage(e.Message);
             }
-        }
-
-
-        protected override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.CarritoLayout);
-
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.ConfirmacionPago);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
 
             tlCarrito = FindViewById<TableLayout>(Resource.Id.tlCarrito);
             if (productos.Count > 0)
@@ -137,7 +136,8 @@ namespace WorklabsMx.Droid
                 {
                     tlCarrito.RemoveView(trDescripcion);
                     tlCarrito.RemoveView(trDescripcionInscripcion);
-                    Total -= (Convert.ToDecimal(precio.Membresia_Precio_Base) * Convert.ToDecimal(membresias[precio.Membresia_Id])) +
+                    Total -= (Convert.ToDecimal(precio.Membresia_Precio_Prorrateo) * Convert.ToDecimal(membresias[precio.Membresia_Id])) +
+                        (Convert.ToDecimal(precio.Membresia_Precio_Base) * ((decimal)CarritoMembresia[precio.Membresia_Id].Meses_Adelantados - 1)) +
                         (Convert.ToDecimal(precio.Inscripcion_Precio_Base) * Convert.ToDecimal(membresias[precio.Membresia_Id]));
                     Descuento = 0;
                     foreach (decimal promo in Descuentos)
@@ -150,7 +150,8 @@ namespace WorklabsMx.Droid
                     FillPrices();
                 };
 
-                Total += (Convert.ToDecimal(precio.Membresia_Precio_Base) * Convert.ToDecimal(membresias[precio.Membresia_Id])) +
+                Total += (Convert.ToDecimal(precio.Membresia_Precio_Prorrateo) * Convert.ToDecimal(membresias[precio.Membresia_Id])) +
+                    (Convert.ToDecimal(precio.Membresia_Precio_Base) * ((decimal)CarritoMembresia[precio.Membresia_Id].Meses_Adelantados - 1)) +
                     (Convert.ToDecimal(precio.Inscripcion_Precio_Base) * Convert.ToDecimal(membresias[precio.Membresia_Id]));
             }
         }
@@ -192,7 +193,8 @@ namespace WorklabsMx.Droid
                 btnErase.Click += (sender, e) =>
                 {
                     tlCarrito.RemoveView(trDescripcion);
-                    Total -= (Convert.ToDecimal(precio.Producto_Precio_Base) * Convert.ToDecimal(productos[precio.Producto_Id]));
+                    Total -= (Convert.ToDecimal(precio.Producto_Precio_Base) * Convert.ToDecimal(productos[precio.Producto_Id])) +
+                    (Convert.ToDecimal(precio.Producto_Precio_Base) * ((decimal)CarritoProducto[precio.Producto_Id].Meses_Adelantados - 1));
                     Descuento = 0;
                     foreach (decimal promo in Descuentos)
                     {
@@ -204,7 +206,8 @@ namespace WorklabsMx.Droid
                     FillPrices();
                 };
 
-                Total += (Convert.ToDecimal(precio.Producto_Precio_Base) * Convert.ToDecimal(productos[precio.Producto_Id]));
+                Total += (Convert.ToDecimal(precio.Producto_Precio_Base) * Convert.ToDecimal(productos[precio.Producto_Id])) +
+                    (Convert.ToDecimal(precio.Producto_Precio_Base) * ((decimal)CarritoProducto[precio.Producto_Id].Meses_Adelantados - 1));
             }
 
         }
