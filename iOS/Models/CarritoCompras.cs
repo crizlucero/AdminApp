@@ -10,6 +10,8 @@
         public int ListaPrecioId { get; set; }
         public int MonedaId { get; set; }
         public int ImpuestoId { get; set; }
-        public int DescuentoId { get; set; }
+        public object DescuentoId { get; set; }
+        public string TotalPagar { get; set; }
+        public int IndiceProducto { get; set; }
     }
 }

@@ -1,133 +1,62 @@
-
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/LoginViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/CeldaCarritoProductos.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="126" Column="14" NotebookId="1" />
-      <File FileName="iOS/TableViewMembresia.cs" Line="57" Column="50" NotebookId="1" />
-      <File FileName="iOS/TableViewCellMembresias.cs" Line="73" Column="59" NotebookId="1" />
-      <File FileName="iOS/CarritoProductos.cs" Line="63" Column="9" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Servicios/ProductosController.cs" Line="27" Column="22" NotebookId="1" />
-      <File FileName="iOS/CeldaCarritoProductos.cs" Line="61" Column="47" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Servicios/TarifasController.cs" Line="177" Column="253" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="21" Column="44" NotebookId="1" />
+      <File FileName="iOS/TableViewMembresia.cs" Line="62" Column="10" NotebookId="1" />
+      <File FileName="iOS/TableViewCellMembresias.cs" Line="86" Column="60" NotebookId="1" />
+      <File FileName="iOS/CeldaCarritoProductos.cs" Line="50" Column="44" NotebookId="1" />
+      <File FileName="iOS/CarritoProductos.cs" Line="80" Column="71" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Servicios/ProductosController.cs" Line="37" Column="14" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Servicios/TarifasController.cs" Line="176" Column="40" NotebookId="1" />
       <File FileName="iOS/Models/SucursalesModel.cs" Line="16" Column="10" NotebookId="1" />
-      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="282" Column="50" NotebookId="1" />
       <File FileName="iOS/ComentarPostHeaderCell.cs" Line="86" Column="13" NotebookId="1" />
       <File FileName="iOS/ComentarPostTableViewController.cs" Line="7" Column="1" NotebookId="1" />
       <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="102" Column="13" NotebookId="1" />
       <File FileName="WorklabsMx/Models/CarritoComprasDetalle.cs" Line="4" Column="6" NotebookId="1" />
       <File FileName="WorklabsMx/Models/MembresiaModel.cs" Line="3" Column="18" NotebookId="1" />
-=======
-  <MonoDevelop.Ide.Workbench>
-    <Files>
-      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="126" Column="14" />
-      <File FileName="iOS/TableViewMembresia.cs" Line="38" Column="45" />
-      <File FileName="iOS/CarritoProductos.cs" Line="14" Column="42" />
-      <File FileName="iOS/TableViewCellMembresias.cs" Line="63" Column="10" />
-      <File FileName="iOS/ViewControllers/Servicios/ProductosController.cs" Line="27" Column="22" />
-      <File FileName="iOS/CeldaCarritoProductos.cs" Line="86" Column="47" />
-      <File FileName="iOS/ViewControllers/Servicios/TarifasController.cs" Line="177" Column="253" />
-      <File FileName="iOS/Models/SucursalesModel.cs" Line="16" Column="10" />
-      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="8" Column="18" />
-      <File FileName="iOS/ComentarPostHeaderCell.cs" Line="86" Column="13" />
-      <File FileName="iOS/ComentarPostTableViewController.cs" Line="7" Column="1" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="102" Column="13" />
-      <File FileName="iOS/ViewControllers/Post/PublicarPostViewController.cs" Line="79" Column="13" />
-      <File FileName="iOS/Styles/STLTableViewSource.cs" Line="64" Column="21" />
-      <File FileName="iOS/SeccionComentariosTableViewController.cs" Line="120" Column="13" />
-      <File FileName="iOS/ViewControllers/MiPerfil/TabBarController.cs" Line="38" Column="1" />
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/ProductoModel.cs">
-    <Files>
-      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="378" Column="2" />
-      <File FileName="WorklabsMx/Controllers/PagosController.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="397" Column="45" />
-      <File FileName="WorklabsMx/Controllers/SucursalController.cs" Line="48" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="69" Column="76" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ColeccionProductosActivity.cs" Line="448" Column="78" />
-      <File FileName="WorklabsMx/Models/CarritoComprasDetalle.cs" Line="7" Column="10" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="120" column="1" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="79" column="4" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="33" column="16" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="58" column="29" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="28" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="MyTheme" />
-  <MultiItemStartupConfigurations />
-</Properties>
-﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench>
-    <Files>
-      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="126" Column="14" />
-      <File FileName="iOS/TableViewMembresia.cs" Line="38" Column="45" />
-      <File FileName="iOS/CarritoProductos.cs" Line="14" Column="42" />
-      <File FileName="iOS/TableViewCellMembresias.cs" Line="63" Column="10" />
-      <File FileName="iOS/ViewControllers/Servicios/ProductosController.cs" Line="27" Column="22" />
-      <File FileName="iOS/CeldaCarritoProductos.cs" Line="86" Column="47" />
-      <File FileName="iOS/ViewControllers/Servicios/TarifasController.cs" Line="177" Column="253" />
-      <File FileName="iOS/Models/SucursalesModel.cs" Line="16" Column="10" />
-      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="8" Column="18" />
-      <File FileName="iOS/ComentarPostHeaderCell.cs" Line="86" Column="13" />
-      <File FileName="iOS/ComentarPostTableViewController.cs" Line="7" Column="1" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="102" Column="13" />
-      <File FileName="iOS/ViewControllers/Post/PublicarPostViewController.cs" Line="79" Column="13" />
-      <File FileName="iOS/Styles/STLTableViewSource.cs" Line="64" Column="21" />
-      <File FileName="iOS/SeccionComentariosTableViewController.cs" Line="120" Column="13" />
-      <File FileName="iOS/ViewControllers/MiPerfil/TabBarController.cs" Line="38" Column="1" />
-=======
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/ProductoModel.cs">
-    <Files>
-      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="378" Column="2" />
-      <File FileName="WorklabsMx/Controllers/PagosController.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="397" Column="45" />
-      <File FileName="WorklabsMx/Controllers/SucursalController.cs" Line="48" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="69" Column="76" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ColeccionProductosActivity.cs" Line="448" Column="78" />
-      <File FileName="WorklabsMx/Models/CarritoComprasDetalle.cs" Line="7" Column="10" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="70" Column="92" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ColeccionProductosActivity.cs" Line="276" Column="46" />
-      <File FileName="WorklabsMx/Models/CarritoComprasDetalle.cs" Line="29" Column="70" />
-      <File FileName="WorklabsMx/Models/CarritoModel.cs" Line="19" Column="19" />
-      <File FileName="WorklabsMx/Models/MembresiaModel.cs" Line="17" Column="9" />
-      <File FileName="WorklabsMx/Models/ProductoModel.cs" Line="10" Column="62" />
->>>>>>> 2de96e263684dabf62375a63d681357a44a615b2
+      <File FileName="iOS/ViewControllers/Post/ComentariosBodyCell.cs" Line="16" Column="9" NotebookId="1" />
+      <File FileName="WorklabsMx/Controllers/CarritoController.cs" Line="72" Column="39" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Servicios/CarritoCompraController.cs" Line="37" Column="95" NotebookId="1" />
+      <File FileName="WorklabsMx/Models/ProductoModel.cs" Line="7" Column="46" NotebookId="1" />
     </Files>
     <FloatingWindows>
       <FloatingWindow WindowId="1" X="1351" Y="23" Width="640" Height="480">
         <Files>
-          <File FileName="iOS/Models/CarritoCompras.cs" Line="14" Column="6" />
+          <File FileName="iOS/Models/CarritoCompras.cs" Line="9" Column="48" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
+    <Pads>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>currentOrderMember</Value>
+          <Value>PreordenProductos</Value>
+          <Value>PreordenMembresias</Value>
+          <Value>preordenMembresia</Value>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="120" column="1" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="79" column="4" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="33" column="16" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="58" column="29" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="28" column="1" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="120" column="1" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="79" column="4" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="33" column="16" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="58" column="29" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="28" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="120" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="79" column="4" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="33" column="16" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="58" column="29" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="28" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="453" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ComentarPostHeaderCell.cs" relfile="iOS/ComentarPostHeaderCell.cs" line="50" column="20" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/SucursalController.cs" relfile="WorklabsMx/Controllers/SucursalController.cs" line="26" column="26" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/SucursalController.cs" relfile="WorklabsMx/Controllers/SucursalController.cs" line="16" column="17" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/CarritoProductos.cs" relfile="iOS/CarritoProductos.cs" line="61" column="87" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/TableViewMembresia.cs" relfile="iOS/TableViewMembresia.cs" line="72" column="28" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/CarritoProductos.cs" relfile="iOS/CarritoProductos.cs" line="79" column="35" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/TableViewMembresia.cs" relfile="iOS/TableViewMembresia.cs" line="53" column="16" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.FC7D3210-A803-4B77-84C4-0CE927BDCF67" />
-=======
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="MyTheme" />
->>>>>>> 2de96e263684dabf62375a63d681357a44a615b2
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B4E637BD-60E4-4441-BC72-CF1534A7E0AA" />
   <MultiItemStartupConfigurations />
 </Properties>

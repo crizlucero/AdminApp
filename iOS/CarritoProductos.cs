@@ -6,6 +6,7 @@ using WorklabsMx.Models;
 using BigTed;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Helpers;
+using WorklabsMx.iOS.Models;
 using PerpetualEngine.Storage;
 using WorklabsMx.Enum;
 
@@ -28,12 +29,9 @@ namespace WorklabsMx.iOS
         string MensajeTarifa = "";
 
         List<ProductoModel> allProducts = new List<ProductoModel>();
-        Dictionary<string, CarritoModel> Carrito = new Dictionary<string, CarritoModel>();
+        List<CarritoCompras> PreordenProductos = new List<CarritoCompras>();
 
         SimpleStorage Storage;
-
-        double TotalPagar = 0.0;
-        int TotalProductos = 0;
 
         public CarritoProductos (IntPtr handle) : base (handle)
         {
@@ -42,8 +40,10 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            this.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromFile("shopping.png"), UIBarButtonItemStyle.Plain, (sender, args) => {
+
+            }), true);
             Storage = SimpleStorage.EditGroup("Login");
-            Carrito = new CarritoController().GetCarrito(Storage.Get("Usuario_Id"), TiposServicios.Producto);
             if (InternetConectionHelper.VerificarConexion())
             {
                 this.allProducts = new PickerItemsController().GetProductos();
@@ -55,24 +55,46 @@ namespace WorklabsMx.iOS
             }
         }
 
-        public double getTotalPagar()
-        {
-            return this.TotalPagar;
-        }
-
-        public void ObtenerTotalPagar(object sender, EventArgs e)
-        {
-            this.TotalPagar = TotalPagar + (double)sender;
-        }
-
-        void ObtenerTotalProductos(object sender, EventArgs e)
-        {
-            this.TotalProductos = TotalProductos + (int)sender;
-        }
-
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            var barViewControllers = this.TabBarController.ViewControllers;
+            var svc = (TableViewMembresia)barViewControllers[1]; //
+            foreach (CarritoCompras preordenMembresia in svc.ObtenerPreordenMembresias())
+            {
+                if (PreordenProductos.Find(x => x.Id == preordenMembresia.Id) == null)
+                {
+                    this.PreordenProductos.Add(preordenMembresia);
+                }
+
+            }
+
+        }
+
+        public List<CarritoCompras> ObtenerPreordenProductos()
+        {
+            return this.PreordenProductos;
+        }
+
+        private void ObtenerPreordenProductos(object sender, EventArgs e)
+        {
+            var currentOrderMember = (CarritoCompras)sender;
+            if (PreordenProductos.Find(x => x.Id == currentOrderMember.Id) != null)
+            {
+                if (currentOrderMember.TotalPagar == "$0.00")
+                {
+                    PreordenProductos.Remove(currentOrderMember);
+                }
+                else
+                {
+                    PreordenProductos[currentOrderMember.IndiceProducto] = currentOrderMember;
+                }
+            }
+            else
+            {
+                PreordenProductos.Add((CarritoCompras)sender);
+            }
+
         }
 
         public override nint RowsInSection(UITableView tableView, nint section)
@@ -106,7 +128,7 @@ namespace WorklabsMx.iOS
             }
             else
             {
-                return TamañoVistaProductos;
+                return 400;
             }
         }
 
@@ -117,9 +139,8 @@ namespace WorklabsMx.iOS
             {
                 var currentProduct = allProducts[indexPath.Row];
                 var currentProductCell = (CeldaCarritoProductos)tableView.DequeueReusableCell(IDENTIFIER_PRODUCTS, indexPath);
-                currentProductCell.ObtenerTotalPagar += ObtenerTotalPagar;
-                currentProductCell.ObtenerTotalProductos += ObtenerTotalProductos;
-                currentProductCell.UpdateCell(currentProduct, this.QuitarViewCompraRecurrente, this.MensajeTarifa);
+                currentProductCell.UpdateCell(currentProduct, this.QuitarViewCompraRecurrente, this.MensajeTarifa, indexPath.Row);
+                currentProductCell.ObtenerPreordenProductos += ObtenerPreordenProductos;
                 this.WillDisplay(indexPath.Row);
                 return currentProductCell;
             }

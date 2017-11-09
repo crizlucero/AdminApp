@@ -1,10 +1,10 @@
+using Foundation;
 using System;
 using UIKit;
 using WorklabsMx.Models;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.iOS.Models;
 using WorklabsMx.Helpers;
-using System.Collections.Generic;
 
 namespace WorklabsMx.iOS
 {
@@ -15,12 +15,20 @@ namespace WorklabsMx.iOS
         CarritoCompras Preorden = new CarritoCompras();
         string FechaInicio;
 
+        public event EventHandler ObtenerPreordenMembresia;
+
+        NSDateFormatter dateFormat = new NSDateFormatter();
+
+        int IndiceMembresia;
+
         public TableViewCellMembresias (IntPtr handle) : base (handle)
         {
         }
 
-        internal void UpdateCell(MembresiaModel Membresia)
+        internal void UpdateCell(MembresiaModel Membresia, int indice)
         {
+            this.IndiceMembresia = indice;
+            dateFormat.DateFormat = "dd/MM/yyyy"; 
             StyleHelper.Style(this.vwMembresias.Layer);
             var pickerModelSucursales = new SucursalesModel();
             pcwSucursal.Model = pickerModelSucursales;
@@ -30,7 +38,7 @@ namespace WorklabsMx.iOS
             this.lblCantidadMeses.Text = "1";
             this.lblCantidadMembresias.Text = "0";
             MembresiaGlobal = Membresia;
-            this.FechaInicio = this.dtpFechaInicio.Date.ToString();
+            this.FechaInicio = dateFormat.ToString(this.dtpFechaInicio.Date);
         }
 
         partial void stpCantidadMembresias_ValueChanged(UIStepper sender)
@@ -43,7 +51,7 @@ namespace WorklabsMx.iOS
 
         partial void dtpFechaInicio_ValueChanged(UIDatePicker sender)
         {
-            this.FechaInicio = sender.Date.ToString();
+            this.FechaInicio = dateFormat.ToString(sender.Date);
             double EndMonth = DateHelper.GetMonthsDays(((DateTime)(((UIDatePicker)sender).Date)));
             double currentDay = ((DateTime)(((UIDatePicker)sender).Date)).Day;
             this.CalcularTotalSubtotal(EndMonth, currentDay);
@@ -52,14 +60,14 @@ namespace WorklabsMx.iOS
         partial void stpCantidadMeses_ValueChanged(UIStepper sender)
         {
             this.lblCantidadMeses.Text = sender.Value.ToString();
-            lblTotal.Text = (((MembresiaGlobal.Membresia_Precio_Base * (Convert.ToDouble(lblCantidadMeses.Text) - 1)) + subtotal + (MembresiaGlobal.Inscripcion_Precio_Base * (Convert.ToDouble(lblCantidadMeses.Text) - 1))) * Convert.ToDouble(lblCantidadMembresias.Text)).ToString("C");
+            lblTotal.Text = (((MembresiaGlobal.Membresia_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text) - 1)) + subtotal + (MembresiaGlobal.Membresia_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text) - 1))) * Convert.ToDouble(lblCantidadMembresias.Text)).ToString("C");
         }
 
         private void CalcularTotalSubtotal(double EndMonth, double currentDay)
         {
-            subtotal = Convert.ToInt32(lblCantidadMembresias.Text) == 0 ? 0 : (MembresiaGlobal.Membresia_Precio_Base / EndMonth * (EndMonth - currentDay + 1));
+            subtotal = Convert.ToInt32(lblCantidadMembresias.Text) == 0 ? 0 : (MembresiaGlobal.Membresia_Precio_Base_Neto / EndMonth * (EndMonth - currentDay + 1));
             lblProporcionalMes.Text = subtotal.ToString("C");
-            lblTotal.Text = (((MembresiaGlobal.Membresia_Precio_Base * (Convert.ToDouble(lblCantidadMeses.Text) - 1)) + subtotal + (MembresiaGlobal.Inscripcion_Precio_Base * (Convert.ToDouble(lblCantidadMeses.Text) - 1))) * Convert.ToDouble(lblCantidadMembresias.Text)).ToString("C");
+            lblTotal.Text = (((MembresiaGlobal.Membresia_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text) - 1)) + subtotal + (MembresiaGlobal.Membresia_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text) - 1))) * Convert.ToDouble(lblCantidadMembresias.Text)).ToString("C");
             this.LlenarPreordenMembresia();
         }
 
@@ -69,7 +77,17 @@ namespace WorklabsMx.iOS
             Preorden.Id = int.Parse(MembresiaGlobal.Membresia_Id);
             Preorden.Cantidad = int.Parse(this.lblCantidadMembresias.Text);
             Preorden.Meses = int.Parse(this.lblCantidadMeses.Text);
-            Preorden.FechaInicio = this.FechaInicio;//dd/dd/yyyy
+            Preorden.FechaInicio = this.FechaInicio;//dd/mm/yyyy
+            Preorden.ListaPrecioId = this.MembresiaGlobal.Lista_Precio_Id;
+            Preorden.MonedaId = this.MembresiaGlobal.Moneda_Id;
+            Preorden.ImpuestoId = this.MembresiaGlobal.Impuesto_Id;
+            Preorden.DescuentoId = null;
+            Preorden.TotalPagar = this.lblTotal.Text;
+            Preorden.IndiceProducto = this.IndiceMembresia;
+            if (ObtenerPreordenMembresia != null)
+            {
+                ObtenerPreordenMembresia(Preorden, EventArgs.Empty);
+            }
         }
     }
 }

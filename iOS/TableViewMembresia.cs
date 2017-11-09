@@ -12,7 +12,7 @@ namespace WorklabsMx.iOS
     public partial class TableViewMembresia : UITableViewController
     {
         const int TamañoRowMembresias = 512;
-        const int TamañoRowNoMembresias = 329;
+        const int TamañoRowNoMembresias = 400;
 
         const string IDENTIFICADOR_CELDA_MEMBRESIAS = "membresias";
         const string IDENTIFICADOR_CELDA_NO_MEMBRESIAS = "no_membresias";
@@ -21,7 +21,8 @@ namespace WorklabsMx.iOS
         bool existeConeccion = true;
 
         List<MembresiaModel> Membresias;
-        List<CarritoCompras> Preorden = new List<CarritoCompras>();
+        List<CarritoCompras> PreordenMembresias = new List<CarritoCompras>();
+
 
         public TableViewMembresia (IntPtr handle) : base (handle)
         {
@@ -31,9 +32,9 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            var barViewControllers = this.TabBarController.ViewControllers;
-            var svc = (CarritoProductos)barViewControllers[0]; //20
-            var total = svc.getTotalPagar();
+            this.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromFile("shopping.png"), UIBarButtonItemStyle.Plain, (sender, args) => {
+
+            }), true);
             BTProgressHUD.Show();
             if (InternetConectionHelper.VerificarConexion())
             {
@@ -49,12 +50,44 @@ namespace WorklabsMx.iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            var barViewControllers = this.TabBarController.ViewControllers;
+            var svc = (CarritoProductos)barViewControllers[0]; //
+            foreach (CarritoCompras preordenProducto in svc.ObtenerPreordenProductos())
+            {
+                if (PreordenMembresias.Find(x => x.Id == preordenProducto.Id) == null)
+                {
+                    this.PreordenMembresias.Add(preordenProducto);
+                }
+
+            }
+
+        }
+
+        public List<CarritoCompras> ObtenerPreordenMembresias()
+        {
+            return this.PreordenMembresias;
         }
 
 
-        public void PreordenProducto(object sender, EventArgs e)
+        private void ObtenerPreordenMembresia(object sender,EventArgs e)
         {
-            Preorden.Add((CarritoCompras)sender);
+            var currentOrderMember = (CarritoCompras)sender;
+            if (PreordenMembresias.Find(x => x.Id == currentOrderMember.Id) != null)
+            {
+                if(currentOrderMember.TotalPagar == "$0.00")
+                {
+                    PreordenMembresias.Remove(currentOrderMember);
+                }
+                else
+                {
+                    PreordenMembresias[currentOrderMember.IndiceProducto] = currentOrderMember;
+                }
+            }
+            else 
+            {
+                PreordenMembresias.Add((CarritoCompras)sender);
+            }
+           
         }
 
         public override nint RowsInSection(UITableView tableView, nint section)
@@ -86,7 +119,8 @@ namespace WorklabsMx.iOS
             {
                 var currentMembership = Membresias[indexPath.Row];
                 var currentMembershipCell = (TableViewCellMembresias)tableView.DequeueReusableCell(IDENTIFICADOR_CELDA_MEMBRESIAS, indexPath);
-                currentMembershipCell.UpdateCell(currentMembership);
+                currentMembershipCell.UpdateCell(currentMembership, indexPath.Row);
+                currentMembershipCell.ObtenerPreordenMembresia += ObtenerPreordenMembresia;
                 this.WillDisplay(indexPath.Row);
                 return currentMembershipCell;
             }
@@ -105,6 +139,14 @@ namespace WorklabsMx.iOS
             if (Row == LastRow)
             {
                 BTProgressHUD.Dismiss();
+            }
+        }
+
+        public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
+        {
+            if (segue.Identifier == "toDetail")
+            {
+                
             }
         }
 

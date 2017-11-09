@@ -383,7 +383,7 @@ namespace WorklabsMx.Controllers
             string query = "select p.Producto_Id, p.Producto_Descripcion, p.Disponibilidad_Producto_Descripcion, " +
                 "plp.Lista_Precio_Producto_Precio_Base_Neto, " +
                 "plp.Lista_Precio_Producto_Precio_Base, " +
-                "Lista_Precio_Producto_Id, Moneda_Id, Impuesto_id" +
+                "Lista_Precio_Producto_Id, Moneda_Id, Impuesto_id " +
                 "FROM vw_cat_Productos AS p INNER JOIN vw_cat_Productos_Listas_Precios AS plp " +
                 "ON p.Producto_Id = plp.Lista_Precio_Producto_Id " +
                 "WHERE Producto_Estatus = 1 ORDER BY Disponibilidad_Producto_Descripcion";
