@@ -20,10 +20,8 @@ namespace WorklabsMx.iOS
         bool isShowInformation = false;
         bool existeConeccion = true;
 
-        //readonly Dictionary<string, CarritoModel> Carrito;
         List<MembresiaModel> Membresias;
-
-        List<Array> arreglo;
+        List<CarritoCompras> Preorden = new List<CarritoCompras>();
 
         public TableViewMembresia (IntPtr handle) : base (handle)
         {
@@ -37,11 +35,9 @@ namespace WorklabsMx.iOS
             var svc = (CarritoProductos)barViewControllers[0]; //20
             var total = svc.getTotalPagar();
             BTProgressHUD.Show();
-
             if (InternetConectionHelper.VerificarConexion())
             {
                 Membresias = new PickerItemsController().GetMembresias();
-               
             }
             else
             {
@@ -53,6 +49,12 @@ namespace WorklabsMx.iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+        }
+
+
+        public void PreordenProducto(object sender, EventArgs e)
+        {
+            Preorden.Add((CarritoCompras)sender);
         }
 
         public override nint RowsInSection(UITableView tableView, nint section)

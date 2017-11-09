@@ -1,41 +1,28 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/ColaboradorModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/LoginViewController.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="126" Column="14" />
-      <File FileName="iOS/TableViewMembresia.cs" Line="36" Column="41" />
-      <File FileName="iOS/CarritoProductos.cs" Line="14" Column="42" />
-      <File FileName="iOS/TableViewCellMembresias.cs" Line="63" Column="10" />
-      <File FileName="iOS/ViewControllers/Servicios/ProductosController.cs" Line="27" Column="22" />
-      <File FileName="iOS/CeldaCarritoProductos.cs" Line="61" Column="47" />
-      <File FileName="iOS/ViewControllers/Servicios/TarifasController.cs" Line="177" Column="253" />
-      <File FileName="iOS/Models/SucursalesModel.cs" Line="16" Column="10" />
-      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="491" Column="40" />
-      <File FileName="iOS/ComentarPostHeaderCell.cs" Line="86" Column="13" />
-      <File FileName="iOS/ComentarPostTableViewController.cs" Line="7" Column="1" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="102" Column="13" />
-      <File FileName="iOS/ViewControllers/Post/PublicarPostViewController.cs" Line="79" Column="13" />
-      <File FileName="iOS/Styles/STLTableViewSource.cs" Line="64" Column="21" />
-      <File FileName="iOS/SeccionComentariosTableViewController.cs" Line="120" Column="13" />
-      <File FileName="iOS/ViewControllers/MiPerfil/TabBarController.cs" Line="38" Column="1" />
-<<<<<<< HEAD
-      <File FileName="WorklabsMx/Models/CarritoModel.cs" Line="4" Column="30" />
-      <File FileName="WorklabsMx/Controllers/CarritoController.cs" Line="16" Column="65" />
-      <File FileName="iOS/Models/CarritoCompras.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Models/ColaboradorModel.cs" Line="1" Column="1" />
-=======
-=======
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/CarritoComprasDetalle.cs">
-    <Files>
-      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="378" Column="2" />
-      <File FileName="WorklabsMx/Controllers/PagosController.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="514" Column="2" />
-      <File FileName="WorklabsMx/Controllers/SucursalController.cs" Line="48" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="69" Column="76" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ColeccionProductosActivity.cs" Line="448" Column="78" />
-      <File FileName="WorklabsMx/Models/CarritoComprasDetalle.cs" Line="7" Column="10" />
->>>>>>> 1925aee716f980240b414f1c029f16abe7e2e495
+      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="126" Column="14" NotebookId="1" />
+      <File FileName="iOS/TableViewMembresia.cs" Line="57" Column="50" NotebookId="1" />
+      <File FileName="iOS/TableViewCellMembresias.cs" Line="73" Column="59" NotebookId="1" />
+      <File FileName="iOS/CarritoProductos.cs" Line="63" Column="9" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Servicios/ProductosController.cs" Line="27" Column="22" NotebookId="1" />
+      <File FileName="iOS/CeldaCarritoProductos.cs" Line="61" Column="47" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Servicios/TarifasController.cs" Line="177" Column="253" NotebookId="1" />
+      <File FileName="iOS/Models/SucursalesModel.cs" Line="16" Column="10" NotebookId="1" />
+      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="iOS/ComentarPostHeaderCell.cs" Line="86" Column="13" NotebookId="1" />
+      <File FileName="iOS/ComentarPostTableViewController.cs" Line="7" Column="1" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="102" Column="13" NotebookId="1" />
+      <File FileName="WorklabsMx/Models/CarritoComprasDetalle.cs" Line="4" Column="6" NotebookId="1" />
+      <File FileName="WorklabsMx/Models/MembresiaModel.cs" Line="3" Column="18" NotebookId="1" />
     </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="1351" Y="23" Width="640" Height="480">
+        <Files>
+          <File FileName="iOS/Models/CarritoCompras.cs" Line="14" Column="6" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -52,7 +39,6 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2D4A8346-EB50-48DE-9B14-561C3115DFD0" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="MyTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.FC7D3210-A803-4B77-84C4-0CE927BDCF67" />
   <MultiItemStartupConfigurations />
 </Properties>
