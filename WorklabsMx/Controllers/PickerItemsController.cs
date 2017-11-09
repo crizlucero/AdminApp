@@ -479,10 +479,12 @@ namespace WorklabsMx.Controllers
             return CPs;
         }
 
-        public List<CarritoModel> GetProductosMembresias(TiposServicios referencia_tipo, int referencia_id, int referencia_cantidad, int referencia_meses, 
-                                                         string referencia_fecha_inicio, int precio_id, int moneda_id, int impuesto_id, int descuento_id){
-            List<CarritoModel> carrito = new List<CarritoModel>();
-            try{
+        public List<CarritoComprasDetalle> GetProductosMembresias(TiposServicios referencia_tipo, int referencia_id, int referencia_cantidad, int referencia_meses,
+                                                         string referencia_fecha_inicio, int precio_id, int moneda_id, int impuesto_id, int descuento_id)
+        {
+            List<CarritoComprasDetalle> carrito = new List<CarritoComprasDetalle>();
+            try
+            {
                 conn.Open();
                 transaction = conn.BeginTransaction();
                 command = CreateCommand();
@@ -501,13 +503,44 @@ namespace WorklabsMx.Controllers
                 command.Transaction = transaction;
                 reader = command.ExecuteReader();
                 transaction.Commit();
-                while(reader.Read()){
-                    
+                while (reader.Read())
+                {
+                    carrito.Add(new CarritoComprasDetalle
+                    {
+                        Membresia_Id = reader["Membresia_Id"].ToString(),
+                        Inscripcion_Membresia_Id = reader["Inscripcion_Membresia_Id"].ToString(),
+                        Lista_Precio_Membresia_Id = reader["Lista_Precio_Membresia_Id"].ToString(),
+                        Producto_Id = reader["Producto_Id"].ToString(),
+                        Lista_Precio_Producto_Id = reader["Lista_Precio_Producto_Id"].ToString(),
+                        Servicio_Id = reader["Servicio_Id"].ToString(),
+                        Lista_Precio_Servicio_Id = reader["Lista_Precio_Servicio_Id"].ToString(),
+                        Carrito_Compras_Detalle_Descripcion = reader["Carrito_Compras_Detalle_Descripcion"].ToString(),
+                        Carrito_Compras_Detalle_Cantidad = reader["Carrito_Compras_Detalle_Cantidad"].ToString(),
+                        Carrito_Compras_Detalle_Importe_Precio = reader["Carrito_Compras_Detalle_Importe_Precio"].ToString(),
+                        Carrito_Compras_Detalle_Importe_Prorrateo = reader["Carrito_Compras_Detalle_Importe_Prorrateo"].ToString(),
+                        Carrito_Compras_Detalle_Importe_Suma = reader["Carrito_Compras_Detalle_Importe_Suma"].ToString(),
+                        Carrito_Compras_Detalle_Importe_Descuento = reader["Carrito_Compras_Detalle_Importe_Descuento"].ToString(),
+                        Carrito_Compras_Detalle_Importe_Subtotal = reader["Carrito_Compras_Detalle_Importe_Subtotal"].ToString(),
+                        Carrito_Compras_Detalle_Importe_Impuesto = reader["Carrito_Compras_Detalle_Importe_Impuesto"].ToString(),
+                        Carrito_Compras_Detalle_Importe_Total = reader["Carrito_Compras_Detalle_Importe_Total"].ToString(),
+                        Carrito_Compras_Detalle_Estatus = reader["Carrito_Compras_Detalle_Estatus"].ToString(),
+                        Carrito_Compras_Detalle_Vigenci_Fecha_Inicio = reader["Carrito_Compras_Detalle_Vigenci_Fecha_Inicio"].ToString(),
+                        Carrito_Compras_Detalle_Vigenci_Fecha_Fin = reader["Carrito_Compras_Detalle_Vigenci_Fecha_Fin"].ToString(),
+                        Carrito_Compras_Detalle_Vigenci_Fecha = reader["Carrito_Compras_Detalle_Vigenci_Fecha"].ToString(),
+                        Carrito_Compras_Detalle_Importe_Suma_Texto = reader["Carrito_Compras_Detalle_Importe_Suma_Texto"].ToString(),
+                        Carrito_Compras_Detalle_Importe_Descuento_Texto = reader["Carrito_Compras_Detalle_Importe_Descuento_Texto"].ToString(),
+                        Carrito_Compras_Detalle_Importe_Subtotal_Texto = reader["Carrito_Compras_Detalle_Importe_Subtotal_Texto"].ToString(),
+                        Carrito_Compras_Detalle_Importe_Impuesto_Texto = reader["Carrito_Compras_Detalle_Importe_Impuesto_Texto"].ToString(),
+                        Carrito_Compras_Detalle_Importe_Total_Texto = reader["Carrito_Compras_Detalle_Importe_Total_Texto"].ToString()
+                    });
                 }
-            }catch(Exception e){
+            }
+            catch (Exception e)
+            {
                 SlackLogs.SendMessage(e.Message);
                 transaction.Rollback();
-            }finally{conn.Close();}
+            }
+            finally { conn.Close(); }
             return carrito;
         }
     }
