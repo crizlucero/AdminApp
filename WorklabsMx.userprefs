@@ -13,6 +13,13 @@
       <File FileName="WorklabsMx/Models/ProductoModel.cs" Line="10" Column="62" />
       <File FileName="WorklabsMx/Controllers/CarritoController.cs" Line="50" Column="22" />
     </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="1351" Y="23" Width="640" Height="480">
+        <Files>
+          <File FileName="iOS/Models/CarritoCompras.cs" Line="14" Column="6" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -25,6 +32,10 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+<<<<<<< HEAD
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.FC7D3210-A803-4B77-84C4-0CE927BDCF67" />
+=======
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="MyTheme" />
+>>>>>>> 2de96e263684dabf62375a63d681357a44a615b2
   <MultiItemStartupConfigurations />
 </Properties>

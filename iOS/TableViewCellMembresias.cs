@@ -12,7 +12,8 @@ namespace WorklabsMx.iOS
     {
         MembresiaModel MembresiaGlobal;
         double subtotal;
-        List<CarritoCompras> Preorden = new List<CarritoCompras>();
+        CarritoCompras Preorden = new CarritoCompras();
+        string FechaInicio;
 
         public TableViewCellMembresias (IntPtr handle) : base (handle)
         {
@@ -29,6 +30,7 @@ namespace WorklabsMx.iOS
             this.lblCantidadMeses.Text = "1";
             this.lblCantidadMembresias.Text = "0";
             MembresiaGlobal = Membresia;
+            this.FechaInicio = this.dtpFechaInicio.Date.ToString();
         }
 
         partial void stpCantidadMembresias_ValueChanged(UIStepper sender)
@@ -41,6 +43,7 @@ namespace WorklabsMx.iOS
 
         partial void dtpFechaInicio_ValueChanged(UIDatePicker sender)
         {
+            this.FechaInicio = sender.Date.ToString();
             double EndMonth = DateHelper.GetMonthsDays(((DateTime)(((UIDatePicker)sender).Date)));
             double currentDay = ((DateTime)(((UIDatePicker)sender).Date)).Day;
             this.CalcularTotalSubtotal(EndMonth, currentDay);
@@ -57,6 +60,16 @@ namespace WorklabsMx.iOS
             subtotal = Convert.ToInt32(lblCantidadMembresias.Text) == 0 ? 0 : (MembresiaGlobal.Membresia_Precio_Base / EndMonth * (EndMonth - currentDay + 1));
             lblProporcionalMes.Text = subtotal.ToString("C");
             lblTotal.Text = (((MembresiaGlobal.Membresia_Precio_Base * (Convert.ToDouble(lblCantidadMeses.Text) - 1)) + subtotal + (MembresiaGlobal.Inscripcion_Precio_Base * (Convert.ToDouble(lblCantidadMeses.Text) - 1))) * Convert.ToDouble(lblCantidadMembresias.Text)).ToString("C");
+            this.LlenarPreordenMembresia();
+        }
+
+        private void LlenarPreordenMembresia()
+        {
+            Preorden.Tipo = "MEMBRESIA";
+            Preorden.Id = int.Parse(MembresiaGlobal.Membresia_Id);
+            Preorden.Cantidad = int.Parse(this.lblCantidadMembresias.Text);
+            Preorden.Meses = int.Parse(this.lblCantidadMeses.Text);
+            Preorden.FechaInicio = this.FechaInicio;//dd/dd/yyyy
         }
     }
 }
