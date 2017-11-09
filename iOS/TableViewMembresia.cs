@@ -1,4 +1,3 @@
-using Foundation;
 using System;
 using UIKit;
 using System.Collections.Generic;
@@ -6,9 +5,7 @@ using WorklabsMx.Models;
 using BigTed;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Helpers;
-using PerpetualEngine.Storage;
-using WorklabsMx.Enum;
-using System.Threading.Tasks;
+using WorklabsMx.iOS.Models;
 
 namespace WorklabsMx.iOS
 {
@@ -26,8 +23,11 @@ namespace WorklabsMx.iOS
         //readonly Dictionary<string, CarritoModel> Carrito;
         List<MembresiaModel> Membresias;
 
+        List<Array> arreglo;
+
         public TableViewMembresia (IntPtr handle) : base (handle)
         {
+            
         }
 
         public override void ViewDidLoad()

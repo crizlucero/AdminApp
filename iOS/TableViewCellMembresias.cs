@@ -1,21 +1,18 @@
-using Foundation;
 using System;
 using UIKit;
 using WorklabsMx.Models;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.iOS.Models;
-using CoreGraphics;
 using WorklabsMx.Helpers;
 using System.Collections.Generic;
-using WorklabsMx.Controllers;
 
 namespace WorklabsMx.iOS
 {
     public partial class TableViewCellMembresias : UITableViewCell
     {
-
         MembresiaModel MembresiaGlobal;
         double subtotal;
+        List<CarritoCompras> Preorden = new List<CarritoCompras>();
 
         public TableViewCellMembresias (IntPtr handle) : base (handle)
         {
