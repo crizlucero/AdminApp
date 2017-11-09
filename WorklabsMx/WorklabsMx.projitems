@@ -53,6 +53,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Enum\CamposMiembro.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enum\TiposMeGusta.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\RenovacionPagosModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\CarritoComprasDetalle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />
