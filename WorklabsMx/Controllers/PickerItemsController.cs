@@ -196,7 +196,7 @@ namespace WorklabsMx.Controllers
         /// Obtiene las colonias
         /// </summary>
         /// <returns>Colonias</returns>
-        /// <param name="municipio">Municipio seleccionado</param>
+        /// <param name="codigopostal">Municipio seleccionado</param>
         public List<string> GetColonias(string codigopostal)
         {
             List<string> colonias = new List<string>();
@@ -287,12 +287,12 @@ namespace WorklabsMx.Controllers
                 "count(Distribucion_Membresia_Espacio) as Membresia_Espacios_Disponibles, " +
                 "mlp.Lista_Precio_Membresia_Precio_Base_Neto, mlp.Lista_Precio_Membresia_Precio_Inscripcion_Neto, " +
                 "mlp.Lista_Precio_Membresia_Precio_Base, mlp.Lista_Precio_Membresia_Precio_Inscripcion," +
-                "mlp.Lista_Precio_Membresia_Precio_Prorrateo " +
+                "mlp.Lista_Precio_Membresia_Precio_Prorrateo, Lista_Precio_Membresia_Id, Moneda_Id, Impuesto_Id " +
                 "FROM vw_cat_Membresias_Distribuciones_Disponibles AS mdd " +
                 "INNER JOIN vw_cat_Membresias_Listas_Precios AS mlp ON mlp.Membresia_Id = mdd.Membresia_Id " +
                 "WHERE mdd.Distribucion_Membresia_Estatus = 1 " +
                 "GROUP BY mdd.Membresia_Id, mdd.Membresia_Descripcion, mlp.Lista_Precio_Membresia_Precio_Base_Neto, mlp.Lista_Precio_Membresia_Precio_Inscripcion_Neto, " +
-                "mlp.Lista_Precio_Membresia_Precio_Base, mlp.Lista_Precio_Membresia_Precio_Inscripcion, mlp.Lista_Precio_Membresia_Precio_Prorrateo";
+                "mlp.Lista_Precio_Membresia_Precio_Base, mlp.Lista_Precio_Membresia_Precio_Inscripcion, mlp.Lista_Precio_Membresia_Precio_Prorrateo, Lista_Precio_Membresia_Id, Moneda_Id, Impuesto_Id";
             command = CreateCommand(query);
             try
             {
@@ -309,7 +309,10 @@ namespace WorklabsMx.Controllers
                         Inscripcion_Precio_Base_Neto = Convert.ToDouble(reader["Lista_Precio_Membresia_Precio_Inscripcion_Neto"]),
                         Membresia_Precio_Base = Convert.ToDouble(reader["Lista_Precio_Membresia_Precio_Base"]),
                         Inscripcion_Precio_Base = Convert.ToDouble(reader["Lista_Precio_Membresia_Precio_Inscripcion"]),
-                        Membresia_Precio_Prorrateo = Convert.ToDouble(reader["Lista_Precio_Membresia_Precio_Prorrateo"])
+                        Membresia_Precio_Prorrateo = Convert.ToDouble(reader["Lista_Precio_Membresia_Precio_Prorrateo"]),
+                        Lista_Precio_Id = Convert.ToInt32(reader["Lista_Precio_Membresia_Id"]),
+                        Moneda_Id  = Convert.ToInt32(reader["Moneda_Id"]),
+                        Impuesto_Id  = Convert.ToInt32(reader["Impuesto_Id"])
                     });
                 }
             }
@@ -379,7 +382,8 @@ namespace WorklabsMx.Controllers
 
             string query = "select p.Producto_Id, p.Producto_Descripcion, p.Disponibilidad_Producto_Descripcion, " +
                 "plp.Lista_Precio_Producto_Precio_Base_Neto, " +
-                "plp.Lista_Precio_Producto_Precio_Base " +
+                "plp.Lista_Precio_Producto_Precio_Base, " +
+                "Lista_Precio_Producto_Id, Moneda_Id, Impuesto_id" +
                 "FROM vw_cat_Productos AS p INNER JOIN vw_cat_Productos_Listas_Precios AS plp " +
                 "ON p.Producto_Id = plp.Lista_Precio_Producto_Id " +
                 "WHERE Producto_Estatus = 1 ORDER BY Disponibilidad_Producto_Descripcion";
@@ -396,7 +400,10 @@ namespace WorklabsMx.Controllers
                         Producto_Descripcion = reader["Producto_Descripcion"].ToString(),
                         Producto_Disponibilidad = reader["Disponibilidad_Producto_Descripcion"].ToString(),
                         Producto_Precio_Base_Neto = Convert.ToDouble(reader["Lista_Precio_Producto_Precio_Base_Neto"]),
-                        Producto_Precio_Base = Convert.ToDouble(reader["Lista_Precio_Producto_Precio_Base"])
+                        Producto_Precio_Base = Convert.ToDouble(reader["Lista_Precio_Producto_Precio_Base"]),
+                        Lista_Precio_Id = Convert.ToInt32(reader["Lista_Precio_Producto_Id"]),
+                        Moneda_Id = Convert.ToInt32(reader["Moneda_Id"]),
+                        Impuesto_Id = Convert.ToInt32(reader["Impuesto_Id"])
                     });
                 }
             }

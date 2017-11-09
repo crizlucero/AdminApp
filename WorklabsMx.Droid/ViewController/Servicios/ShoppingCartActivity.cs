@@ -20,17 +20,19 @@ namespace WorklabsMx.Droid
     [Activity(Label = "@string/app_name")]
     public class ShoppingCartActivity : Activity
     {
-        Dictionary<string, int> membresias = null, productos = null;
+        List<CarritoComprasDetalle> membresias = null, productos = null;
         Dictionary<string, CarritoModel> CarritoMembresia, CarritoProducto;
         TableLayout tlCarrito;
         decimal Descuento, Subtotal, IVA = 0.16M, Total, IVATotal;
         readonly List<decimal> Descuentos;
         SimpleStorage Storage;
+        PickerItemsController controller;
         public ShoppingCartActivity()
         {
             Descuentos = new List<decimal>();
-            membresias = new Dictionary<string, int>();
-            productos = new Dictionary<string, int>();
+            membresias = new List<CarritoComprasDetalle>();
+            productos = new List<CarritoComprasDetalle>();
+            controller = new PickerItemsController();
             Storage = SimpleStorage.EditGroup("Login");
         }
 
@@ -43,15 +45,32 @@ namespace WorklabsMx.Droid
             CarritoProducto = JsonConvert.DeserializeObject<Dictionary<string, CarritoModel>>(Intent.GetStringExtra("Productos"));
             try
             {
-                new PickerItemsController().GetMembresias().ForEach(membresia =>
+                controller.GetMembresias().ForEach(membresia =>
                 {
                     if (CarritoMembresia.ContainsKey(membresia.Membresia_Id))
-                        membresias.Add(membresia.Membresia_Id, (int)CarritoMembresia[membresia.Membresia_Id].Membresia_Cantidad);
+                    {
+
+                        membresias.AddRange(controller.GetProductosMembresias(TiposServicios.Membresia, Convert.ToInt32(membresia.Membresia_Id),
+                                                                              CarritoMembresia[membresia.Membresia_Id].Membresia_Cantidad,
+                                                                              CarritoMembresia[membresia.Membresia_Id].Meses_Adelantados,
+                                                                              CarritoMembresia[membresia.Membresia_Id].Membresia_Fecha_Inicio,
+                                                                              CarritoMembresia[membresia.Membresia_Id].Lista_Precio_Id,
+                                                                              CarritoMembresia[membresia.Membresia_Id].Moneda_Id,
+                                                                              CarritoMembresia[membresia.Membresia_Id].Impuesto_Id,
+                                                                              CarritoMembresia[membresia.Membresia_Id].Descuento_Id));
+                    }
                 });
                 new PickerItemsController().GetProductos().ForEach(producto =>
                 {
                     if (CarritoProducto.ContainsKey(producto.Producto_Id))
-                        productos.Add(producto.Producto_Id, (int)CarritoProducto[producto.Producto_Id].Producto_Cantidad);
+                        productos.AddRange(controller.GetProductosMembresias(TiposServicios.Membresia, Convert.ToInt32(producto.Producto_Id),
+                                                                             CarritoProducto[producto.Producto_Id].Membresia_Cantidad,
+                                                                             CarritoProducto[producto.Producto_Id].Meses_Adelantados,
+                                                                             CarritoProducto[producto.Producto_Id].Membresia_Fecha_Inicio,
+                                                                             CarritoProducto[producto.Producto_Id].Lista_Precio_Id,
+                                                                             CarritoProducto[producto.Producto_Id].Moneda_Id,
+                                                                             CarritoProducto[producto.Producto_Id].Impuesto_Id,
+                                                                             CarritoProducto[producto.Producto_Id].Descuento_Id));
                 });
 
             }
@@ -66,9 +85,9 @@ namespace WorklabsMx.Droid
 
             tlCarrito = FindViewById<TableLayout>(Resource.Id.tlCarrito);
             if (productos.Count > 0)
-                AddProductosDescripcion(new PickerItemsController().GetProductosPrecios(productos));
+                AddProductosDescripcion(controller.GetProductosPrecios(productos));
             if (membresias.Count > 0)
-                AddMembresiaDescripcion(new PickerItemsController().GetMembresiasPrecios(membresias));
+                AddMembresiaDescripcion(controller.GetMembresiasPrecios(membresias));
 
             IVATotal = (Total * IVA);
             Subtotal = Total - IVATotal;

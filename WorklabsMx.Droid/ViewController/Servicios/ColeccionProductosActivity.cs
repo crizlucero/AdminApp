@@ -63,7 +63,7 @@ namespace WorklabsMx.Droid
         void FillDataMembresias()
         {
             TableLayout tlMembresias = FindViewById<TableLayout>(Resource.Id.tlProductos);
-            foreach (MembresiaModel membresia in new PickerItemsController().GetMembresias())
+            new PickerItemsController().GetMembresias().ForEach(membresia =>
             {
                 double subtotal = membresia.Membresia_Precio_Base_Neto;
                 int mesMembresia = 1;
@@ -77,7 +77,16 @@ namespace WorklabsMx.Droid
                     InputType = Android.Text.InputTypes.NumberFlagSigned
                 };
                 if (!Membresias.ContainsKey(membresia.Membresia_Id))
-                    Membresias.Add(membresia.Membresia_Id, new CarritoModel { Membresia_Cantidad = 0, Sucursal_Id = 0, Meses_Adelantados = 1, Membresia_Fecha_Inicio = DateTime.Now.ToString("d") });
+                    Membresias.Add(membresia.Membresia_Id, new CarritoModel
+                    {
+                        Membresia_Cantidad = 0,
+                        Sucursal_Id = 0,
+                        Meses_Adelantados = 1,
+                        Membresia_Fecha_Inicio = DateTime.Now.ToString("d"),
+                        Lista_Precio_Id = membresia.Lista_Precio_Id,
+                        Moneda_Id = membresia.Moneda_Id,
+                        Impuesto_Id = membresia.Impuesto_Id
+                    });
 
                 TableRow trMembresia = new TableRow(this);
                 View line = new View(this);
@@ -258,7 +267,7 @@ namespace WorklabsMx.Droid
                 trMembresia.AddView(lblTotal, param);
 
                 tlMembresias.AddView(trMembresia);
-            }
+            });
         }
 
         void FillDataProductos()
@@ -280,7 +289,16 @@ namespace WorklabsMx.Droid
                     InputType = Android.Text.InputTypes.NumberFlagSigned
                 };
                 if (!Productos.ContainsKey(producto.Producto_Id))
-                    Productos.Add(producto.Producto_Id, new CarritoModel { Producto_Cantidad = 0, Sucursal_Id = 1, Membresia_Fecha_Inicio = DateTime.Now.ToString("dd/MM/yyyy"), Meses_Adelantados = 1 });
+                    Productos.Add(producto.Producto_Id, new CarritoModel
+                    {
+                        Producto_Cantidad = 0,
+                        Sucursal_Id = 1,
+                        Membresia_Fecha_Inicio = DateTime.Now.ToString("dd/MM/yyyy"),
+                        Meses_Adelantados = 1,
+                        Lista_Precio_Id = producto.Lista_Precio_Id,
+                        Impuesto_Id = producto.Moneda_Id,
+                        Moneda_Id = producto.Moneda_Id
+                    });
 
                 TableRow trProducto = new TableRow(this);
                 View line = new View(this);
