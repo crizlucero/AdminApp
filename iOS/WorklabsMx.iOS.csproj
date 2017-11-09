@@ -718,6 +718,7 @@
       <DependentUpon>TableViewCellNoMembresias.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\SucursalesModel.cs" />
+    <Compile Include="Models\CarritoCompras.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
