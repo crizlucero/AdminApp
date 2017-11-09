@@ -486,6 +486,18 @@
     <ImageAsset Include="Assets.xcassets\close.imageset\close%403x.png" />
     <ImageAsset Include="Assets.xcassets\Likes.imageset\Likes%402x.png" />
     <ImageAsset Include="Assets.xcassets\Likes.imageset\Likes%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Product.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Product.imageset\product.png" />
+    <ImageAsset Include="Assets.xcassets\Product.imageset\product%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Product.imageset\product%403x.png" />
+    <ImageAsset Include="Assets.xcassets\membership.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\membership.imageset\membership.png" />
+    <ImageAsset Include="Assets.xcassets\membership.imageset\membership%402x.png" />
+    <ImageAsset Include="Assets.xcassets\membership.imageset\membership%403x.png" />
+    <ImageAsset Include="Assets.xcassets\shopping.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\shopping.imageset\shopping.png" />
+    <ImageAsset Include="Assets.xcassets\shopping.imageset\shopping%402x.png" />
+    <ImageAsset Include="Assets.xcassets\shopping.imageset\shopping%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -677,18 +689,6 @@
     </Compile>
     <Compile Include="Helpers\CamaraHelper.cs" />
     <Compile Include="Helpers\Settings.cs" />
-    <Compile Include="ColeccionProductos.cs" />
-    <Compile Include="ColeccionProductos.designer.cs">
-      <DependentUpon>ColeccionProductos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProductsCell.cs" />
-    <Compile Include="ProductsCell.designer.cs">
-      <DependentUpon>ProductsCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProductosHeader.cs" />
-    <Compile Include="ProductosHeader.designer.cs">
-      <DependentUpon>ProductosHeader.cs</DependentUpon>
-    </Compile>
     <Compile Include="CarritoProductos.cs" />
     <Compile Include="CarritoProductos.designer.cs">
       <DependentUpon>CarritoProductos.cs</DependentUpon>
@@ -705,6 +705,19 @@
     <Compile Include="CeldaNoProductos.designer.cs">
       <DependentUpon>CeldaNoProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="TableViewMembresia.cs" />
+    <Compile Include="TableViewMembresia.designer.cs">
+      <DependentUpon>TableViewMembresia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableViewCellMembresias.cs" />
+    <Compile Include="TableViewCellMembresias.designer.cs">
+      <DependentUpon>TableViewCellMembresias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableViewCellNoMembresias.cs" />
+    <Compile Include="TableViewCellNoMembresias.designer.cs">
+      <DependentUpon>TableViewCellNoMembresias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SucursalesModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -756,6 +769,9 @@
     <Folder Include="Assets.xcassets\Camera.imageset\" />
     <Folder Include="Assets.xcassets\delete-image.imageset\" />
     <Folder Include="Assets.xcassets\close.imageset\" />
+    <Folder Include="Assets.xcassets\Product.imageset\" />
+    <Folder Include="Assets.xcassets\membership.imageset\" />
+    <Folder Include="Assets.xcassets\shopping.imageset\" />
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

@@ -55,7 +55,12 @@ namespace WorklabsMx.iOS
             }
         }
 
-        void ObtenerTotalPagar(object sender, EventArgs e)
+        public double getTotalPagar()
+        {
+            return this.TotalPagar;
+        }
+
+        public void ObtenerTotalPagar(object sender, EventArgs e)
         {
             this.TotalPagar = TotalPagar + (double)sender;
         }
@@ -68,19 +73,6 @@ namespace WorklabsMx.iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-
-        }
-
-        public override UIView GetViewForHeader(UITableView tableView, nint section)
-        {
-            var headerCell = (HeaderCarritoProductos)tableView.DequeueReusableCell(IDENTIFIER_HEADER_PRODUCTS);
-            headerCell.UpdateCell(TotalPagar, TotalProductos);
-            return headerCell;
-        }
-
-        public override nfloat GetHeightForHeader(UITableView tableView, nint section)
-        {
-            return TamañoHeader;
         }
 
         public override nint RowsInSection(UITableView tableView, nint section)

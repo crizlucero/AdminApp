@@ -4,9 +4,9 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
-    public partial class CeldaNoProductos : UITableViewCell
+    public partial class TableViewCellNoMembresias : UITableViewCell
     {
-        public CeldaNoProductos (IntPtr handle) : base (handle)
+        public TableViewCellNoMembresias (IntPtr handle) : base (handle)
         {
         }
 
@@ -14,11 +14,11 @@ namespace WorklabsMx.iOS
         {
             if (existeConeccion)
             {
-                lblMessageNoProducts.Text = "No hay productos disponibles";
+                lblMessage.Text = "No hay membresías disponibles";
             }
             else
             {
-                lblMessageNoProducts.Text = "No tienes acceso a una conexión de Internet";
+                lblMessage.Text = "No tienes acceso a una conexión de Internet";
             }
         }
     }
