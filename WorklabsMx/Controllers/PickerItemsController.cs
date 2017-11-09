@@ -311,8 +311,8 @@ namespace WorklabsMx.Controllers
                         Inscripcion_Precio_Base = Convert.ToDouble(reader["Lista_Precio_Membresia_Precio_Inscripcion"]),
                         Membresia_Precio_Prorrateo = Convert.ToDouble(reader["Lista_Precio_Membresia_Precio_Prorrateo"]),
                         Lista_Precio_Id = Convert.ToInt32(reader["Lista_Precio_Membresia_Id"]),
-                        Moneda_Id  = Convert.ToInt32(reader["Moneda_Id"]),
-                        Impuesto_Id  = Convert.ToInt32(reader["Impuesto_Id"])
+                        Moneda_Id = Convert.ToInt32(reader["Moneda_Id"]),
+                        Impuesto_Id = Convert.ToInt32(reader["Impuesto_Id"])
                     });
                 }
             }
@@ -383,7 +383,7 @@ namespace WorklabsMx.Controllers
             string query = "select p.Producto_Id, p.Producto_Descripcion, p.Disponibilidad_Producto_Descripcion, " +
                 "plp.Lista_Precio_Producto_Precio_Base_Neto, " +
                 "plp.Lista_Precio_Producto_Precio_Base, " +
-                "Lista_Precio_Producto_Id, Moneda_Id, Impuesto_id" +
+                "plp.Lista_Precio_Producto_Id, plp.Moneda_Id, plp.Impuesto_id " +
                 "FROM vw_cat_Productos AS p INNER JOIN vw_cat_Productos_Listas_Precios AS plp " +
                 "ON p.Producto_Id = plp.Lista_Precio_Producto_Id " +
                 "WHERE Producto_Estatus = 1 ORDER BY Disponibilidad_Producto_Descripcion";
@@ -498,7 +498,7 @@ namespace WorklabsMx.Controllers
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = "sp_vw_pro_Carrito_Compras";
-                command.Parameters.AddWithValue("@Referencia_Tipo", referencia_tipo);
+                command.Parameters.AddWithValue("@Referencia_Tipo", referencia_tipo.ToString());
                 command.Parameters.AddWithValue("@Referencia_Id", referencia_id);
                 command.Parameters.AddWithValue("@Referencia_Cantidad", referencia_cantidad);
                 command.Parameters.AddWithValue("@Referencia_Meses", referencia_meses);
@@ -509,7 +509,6 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Referencia_Descuento_Id", descuento_id);
                 command.Transaction = transaction;
                 reader = command.ExecuteReader();
-                transaction.Commit();
                 while (reader.Read())
                 {
                     carrito.Add(new CarritoComprasDetalle
@@ -531,9 +530,9 @@ namespace WorklabsMx.Controllers
                         Carrito_Compras_Detalle_Importe_Impuesto = reader["Carrito_Compras_Detalle_Importe_Impuesto"].ToString(),
                         Carrito_Compras_Detalle_Importe_Total = reader["Carrito_Compras_Detalle_Importe_Total"].ToString(),
                         Carrito_Compras_Detalle_Estatus = reader["Carrito_Compras_Detalle_Estatus"].ToString(),
-                        Carrito_Compras_Detalle_Vigenci_Fecha_Inicio = reader["Carrito_Compras_Detalle_Vigenci_Fecha_Inicio"].ToString(),
-                        Carrito_Compras_Detalle_Vigenci_Fecha_Fin = reader["Carrito_Compras_Detalle_Vigenci_Fecha_Fin"].ToString(),
-                        Carrito_Compras_Detalle_Vigenci_Fecha = reader["Carrito_Compras_Detalle_Vigenci_Fecha"].ToString(),
+                        Carrito_Compras_Detalle_Vigenci_Fecha_Inicio = reader["Carrito_Compras_Detalle_Vigencia_Fecha_Inicio"].ToString(),
+                        Carrito_Compras_Detalle_Vigenci_Fecha_Fin = reader["Carrito_Compras_Detalle_Vigencia_Fecha_Fin"].ToString(),
+                        Carrito_Compras_Detalle_Vigenci_Fecha = reader["Carrito_Compras_Detalle_Vigencia_Fecha"].ToString(),
                         Carrito_Compras_Detalle_Importe_Suma_Texto = reader["Carrito_Compras_Detalle_Importe_Suma_Texto"].ToString(),
                         Carrito_Compras_Detalle_Importe_Descuento_Texto = reader["Carrito_Compras_Detalle_Importe_Descuento_Texto"].ToString(),
                         Carrito_Compras_Detalle_Importe_Subtotal_Texto = reader["Carrito_Compras_Detalle_Importe_Subtotal_Texto"].ToString(),
@@ -541,6 +540,7 @@ namespace WorklabsMx.Controllers
                         Carrito_Compras_Detalle_Importe_Total_Texto = reader["Carrito_Compras_Detalle_Importe_Total_Texto"].ToString()
                     });
                 }
+                transaction.Commit();
             }
             catch (Exception e)
             {
