@@ -293,7 +293,7 @@ namespace WorklabsMx.Droid
                     {
                         Producto_Cantidad = 0,
                         Sucursal_Id = 1,
-                        Membresia_Fecha_Inicio = DateTime.Now.ToString("dd/MM/yyyy"),
+                        Membresia_Fecha_Inicio = DateTime.Now.ToString("d"),
                         Meses_Adelantados = 1,
                         Lista_Precio_Id = producto.Lista_Precio_Id,
                         Impuesto_Id = producto.Moneda_Id,
@@ -419,7 +419,7 @@ namespace WorklabsMx.Droid
                             {
                                 Productos[producto.Producto_Id].Meses_Adelantados = Convert.ToInt32(txtMesesProductos.Text);
                                 mesProducto = Convert.ToInt32(txtMesesProductos.Text);
-                                subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
+                            subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
                                             (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
                                 lblProporcional.Text = subtotal.ToString("C");
                                 lblTotal.Text = (((producto.Producto_Precio_Base_Neto * ((Convert.ToDouble(txtMesesProductos.Text) - 1)) + subtotal)

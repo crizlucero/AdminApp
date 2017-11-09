@@ -39,7 +39,11 @@ namespace WorklabsMx.Controllers
                             Pedido_Id = reader["Pedido_Id"].ToString(),
                             Miembro_Id = reader["Miembro_Id"].ToString(),
                             Producto_Id = reader["Producto_Id"].ToString(),
+<<<<<<< HEAD
                             Producto_Cantidad = int.Parse(reader["Producto_Cantidad"].ToString()),
+=======
+                            Producto_Cantidad = Convert.ToInt32(reader["Producto_Cantidad"].ToString()),
+>>>>>>> 7abe31fe353d7f118e7b6734038a6607a6e2cfaf
                             Pedido_Estatus = reader["Pedido_Estatus"].ToString(),
                             Precio_Base = reader["Lista_Precio_Producto_Precio_Prorrateo_Neto"].ToString(),
                             Dias_Prorrateo = (DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month) - DateTime.Now.Day).ToString(),//reader["Lista_Precio_Producto_Dias_Prorrateo"].ToString(),
@@ -55,7 +59,11 @@ namespace WorklabsMx.Controllers
                             Pedido_Id = reader["Pedido_Id"].ToString(),
                             Miembro_Id = reader["Miembro_Id"].ToString(),
                             Membresia_Id = reader["Membresia_Id"].ToString(),
+<<<<<<< HEAD
                             Membresia_Cantidad = int.Parse(reader["Membresia_Cantidad"].ToString()),
+=======
+                            Membresia_Cantidad = Convert.ToInt32(reader["Membresia_Cantidad"].ToString()),
+>>>>>>> 7abe31fe353d7f118e7b6734038a6607a6e2cfaf
                             Pedido_Estatus = reader["Pedido_Estatus"].ToString(),
                             Precio_Base = reader["Lista_Precio_Membresia_Precio_Prorrateo_Neto"].ToString(),
                             Dias_Prorrateo = (DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month) - DateTime.Now.Day).ToString(),

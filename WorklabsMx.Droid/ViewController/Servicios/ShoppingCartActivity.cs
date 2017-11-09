@@ -23,7 +23,7 @@ namespace WorklabsMx.Droid
         List<CarritoComprasDetalle> membresias = null, productos = null;
         Dictionary<string, CarritoModel> CarritoMembresia, CarritoProducto;
         TableLayout tlCarrito;
-        decimal Descuento, Subtotal, IVA = 0.16M, Total, IVATotal;
+        decimal Descuento, Subtotal, IVA = 1.16M, Total, IVATotal;
         readonly List<decimal> Descuentos;
         SimpleStorage Storage;
         PickerItemsController controller;
@@ -43,56 +43,13 @@ namespace WorklabsMx.Droid
             SetContentView(Resource.Layout.CarritoLayout);
             CarritoMembresia = JsonConvert.DeserializeObject<Dictionary<string, CarritoModel>>(Intent.GetStringExtra("Membresias"));
             CarritoProducto = JsonConvert.DeserializeObject<Dictionary<string, CarritoModel>>(Intent.GetStringExtra("Productos"));
-            try
-            {
-                controller.GetMembresias().ForEach(membresia =>
-                {
-                    if (CarritoMembresia.ContainsKey(membresia.Membresia_Id))
-                    {
 
-                        membresias.AddRange(controller.GetProductosMembresias(TiposServicios.Membresia, Convert.ToInt32(membresia.Membresia_Id),
-                                                                              CarritoMembresia[membresia.Membresia_Id].Membresia_Cantidad,
-                                                                              CarritoMembresia[membresia.Membresia_Id].Meses_Adelantados,
-                                                                              CarritoMembresia[membresia.Membresia_Id].Membresia_Fecha_Inicio,
-                                                                              CarritoMembresia[membresia.Membresia_Id].Lista_Precio_Id,
-                                                                              CarritoMembresia[membresia.Membresia_Id].Moneda_Id,
-                                                                              CarritoMembresia[membresia.Membresia_Id].Impuesto_Id,
-                                                                              CarritoMembresia[membresia.Membresia_Id].Descuento_Id));
-                    }
-                });
-                new PickerItemsController().GetProductos().ForEach(producto =>
-                {
-                    if (CarritoProducto.ContainsKey(producto.Producto_Id))
-                        productos.AddRange(controller.GetProductosMembresias(TiposServicios.Membresia, Convert.ToInt32(producto.Producto_Id),
-                                                                             CarritoProducto[producto.Producto_Id].Membresia_Cantidad,
-                                                                             CarritoProducto[producto.Producto_Id].Meses_Adelantados,
-                                                                             CarritoProducto[producto.Producto_Id].Membresia_Fecha_Inicio,
-                                                                             CarritoProducto[producto.Producto_Id].Lista_Precio_Id,
-                                                                             CarritoProducto[producto.Producto_Id].Moneda_Id,
-                                                                             CarritoProducto[producto.Producto_Id].Impuesto_Id,
-                                                                             CarritoProducto[producto.Producto_Id].Descuento_Id));
-                });
-
-            }
-            catch (Exception e)
-            {
-                SlackLogs.SendMessage(e.Message);
-            }
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.ConfirmacionPago);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-
             tlCarrito = FindViewById<TableLayout>(Resource.Id.tlCarrito);
-            if (productos.Count > 0)
-                AddProductosDescripcion(controller.GetProductosPrecios(productos));
-            if (membresias.Count > 0)
-                AddMembresiaDescripcion(controller.GetMembresiasPrecios(membresias));
-
-            IVATotal = (Total * IVA);
-            Subtotal = Total - IVATotal;
-
-            FillPrices();
+            CalculaPrecios();
             FindViewById<ImageButton>(Resource.Id.btnApply).Click += AplicarDescuento_Click;
         }
 
@@ -104,41 +61,42 @@ namespace WorklabsMx.Droid
             FindViewById<TextView>(Resource.Id.tvTotal).Text = Total.ToString("C");
         }
 
-        void AddMembresiaDescripcion(List<MembresiaModel> membresiasPrecios)
+        void AddMembresiaDescripcion()
         {
-            membresiasPrecios.ForEach(precio =>
+            membresias.ForEach(precio =>
             {
                 TableRow trDescripcion = new TableRow(this);
 
                 ImageButton btnErase = new ImageButton(this);
                 btnErase.SetImageResource(Resource.Mipmap.ic_clear);
                 btnErase.SetBackgroundColor(Color.White);
-                trDescripcion.AddView(btnErase, 0);
+                //trDescripcion.AddView(btnErase, 1);
 
                 TextView lblCantidad = new TextView(this)
                 {
-                    Text = membresias[precio.Membresia_Id].ToString()
+                    Text = precio.Carrito_Compras_Detalle_Cantidad
                 };
-                trDescripcion.AddView(lblCantidad, 1);
+                trDescripcion.AddView(lblCantidad, 0);
 
                 TextView lblDescripcion = new TextView(this)
                 {
-                    Text = precio.Membresia_Descripcion
+                    Text = precio.Carrito_Compras_Detalle_Descripcion
                 };
                 lblDescripcion.SetWidth(120);
-                trDescripcion.AddView(lblDescripcion, 2);
+                trDescripcion.AddView(lblDescripcion, 1);
 
                 TextView lblTotal = new TextView(this)
                 {
-                    Text = (Convert.ToDecimal(precio.Membresia_Precio_Base) * Convert.ToDecimal(membresias[precio.Membresia_Id])).ToString("C")
+                    Text = Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Suma) != 0 ? precio.Carrito_Compras_Detalle_Importe_Suma_Texto : Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Prorrateo).ToString("C") + "MXN"
                 };
-                trDescripcion.AddView(lblTotal, 3);
+                trDescripcion.AddView(lblTotal, 2);
+                tlCarrito.AddView(trDescripcion);
                 //Inscripcion
-                TableRow trDescripcionInscripcion = new TableRow(this);
+                /*TableRow trDescripcionInscripcion = new TableRow(this);
                 trDescripcionInscripcion.AddView(new Space(this), 0);
                 TextView lblCantidadInscripcion = new TextView(this)
                 {
-                    Text = membresias[precio.Membresia_Id].ToString()
+                    Text = ""
                 };
 
                 trDescripcionInscripcion.AddView(lblCantidadInscripcion, 1);
@@ -175,17 +133,15 @@ namespace WorklabsMx.Droid
                     IVATotal = (Total * IVA);
                     Subtotal = Total - IVATotal;
                     FillPrices();
-                };
+                };*/
 
-                Total += (Convert.ToDecimal(precio.Membresia_Precio_Prorrateo) * Convert.ToDecimal(membresias[precio.Membresia_Id])) +
-                    (Convert.ToDecimal(precio.Membresia_Precio_Base) * ((decimal)CarritoMembresia[precio.Membresia_Id].Meses_Adelantados - 1)) +
-                    (Convert.ToDecimal(precio.Inscripcion_Precio_Base) * Convert.ToDecimal(membresias[precio.Membresia_Id]));
+                Subtotal += Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Suma) != 0 ? Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Suma) : Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Prorrateo);
             });
         }
 
-        void AddProductosDescripcion(List<ProductoModel> productosPrecios)
+        void AddProductosDescripcion()
         {
-            productosPrecios.ForEach(precio =>
+            productos.ForEach(precio =>
             {
                 TableRow trDescripcion = new TableRow(this);
 
@@ -194,30 +150,30 @@ namespace WorklabsMx.Droid
                 btnErase.SetMaxWidth(10);
                 btnErase.SetMaxHeight(10);
                 btnErase.SetBackgroundColor(Color.White);
-                trDescripcion.AddView(btnErase, 0);
+                //trDescripcion.AddView(btnErase, 0);
 
                 TextView lblCantidad = new TextView(this)
                 {
-                    Text = productos[precio.Producto_Id].ToString()
+                    Text = precio.Carrito_Compras_Detalle_Cantidad
                 };
-                trDescripcion.AddView(lblCantidad, 1);
+                trDescripcion.AddView(lblCantidad, 0);
 
                 TextView lblDescripcion = new TextView(this)
                 {
-                    Text = precio.Producto_Descripcion
+                    Text = precio.Carrito_Compras_Detalle_Descripcion
                 };
                 lblDescripcion.SetWidth(120);
-                trDescripcion.AddView(lblDescripcion, 2);
+                trDescripcion.AddView(lblDescripcion, 1);
 
                 TextView lblTotal = new TextView(this)
                 {
-                    Text = (Convert.ToDecimal(precio.Producto_Precio_Base) * Convert.ToDecimal(productos[precio.Producto_Id])).ToString("C")
+                    Text = precio.Carrito_Compras_Detalle_Importe_Suma_Texto
                 };
-                trDescripcion.AddView(lblTotal, 3);
+                trDescripcion.AddView(lblTotal, 2);
 
                 tlCarrito.AddView(trDescripcion);
 
-                btnErase.Click += (sender, e) =>
+                /*btnErase.Click += (sender, e) =>
                 {
                     tlCarrito.RemoveView(trDescripcion);
                     Total -= (Convert.ToDecimal(precio.Producto_Precio_Base) * Convert.ToDecimal(productos[precio.Producto_Id])) +
@@ -231,10 +187,9 @@ namespace WorklabsMx.Droid
                     IVATotal = (Total * IVA);
                     Subtotal = Total - IVATotal;
                     FillPrices();
-                };
+                };*/
 
-                Total += (Convert.ToDecimal(precio.Producto_Precio_Prorrateo) * Convert.ToDecimal(productos[precio.Producto_Id])) +
-                    (Convert.ToDecimal(precio.Producto_Precio_Base) * ((decimal)CarritoProducto[precio.Producto_Id].Meses_Adelantados - 1));
+                Subtotal += Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Suma);
             });
 
         }
@@ -244,11 +199,21 @@ namespace WorklabsMx.Droid
             PromocionModel promo = new PagosController().AplicarCupon(FindViewById<EditText>(Resource.Id.txtCupon).Text);
             if (!promo.Equals(null))
             {
-                Descuento += Total * promo.Descuento_Porcentaje;
+                foreach (KeyValuePair<string, CarritoModel> producto in CarritoProducto)
+                {
+                    producto.Value.Descuento_Id = Convert.ToInt32(promo.Descuento_Id);
+                }
+                foreach (KeyValuePair<string, CarritoModel> membresia in CarritoMembresia)
+                {
+                    membresia.Value.Descuento_Id = Convert.ToInt32(promo.Descuento_Id);
+                }
+                CalculaPrecios();
+                tlCarrito.RemoveAllViews();
+                /*Descuento += Total * promo.Descuento_Porcentaje;
                 Total -= Descuento;
-                IVATotal = (Total * IVA);
-                Subtotal = Total - IVATotal;
-                FillPrices();
+                Total = Subtotal * IVA;
+                IVATotal = Total - Subtotal;
+                FillPrices();*/
                 TableRow trCupon = new TableRow(this);
 
                 TextView tvDescuentoDescripcion = new TextView(this)
@@ -293,6 +258,56 @@ namespace WorklabsMx.Droid
                     break;
             }
             return base.OnOptionsItemSelected(item);
+        }
+
+        void CalculaPrecios()
+        {
+            try
+            {
+                if (CarritoMembresia.Count > 0)
+                    controller.GetMembresias().ForEach(membresia =>
+                    {
+                        if (CarritoMembresia[membresia.Membresia_Id].Membresia_Cantidad > 0)
+                        {
+
+                            membresias.AddRange(controller.GetProductosMembresias(TiposServicios.Membresia, Convert.ToInt32(membresia.Membresia_Id),
+                                                                                  CarritoMembresia[membresia.Membresia_Id].Membresia_Cantidad,
+                                                                                  CarritoMembresia[membresia.Membresia_Id].Meses_Adelantados,
+                                                                                  CarritoMembresia[membresia.Membresia_Id].Membresia_Fecha_Inicio,
+                                                                                  CarritoMembresia[membresia.Membresia_Id].Lista_Precio_Id,
+                                                                                  CarritoMembresia[membresia.Membresia_Id].Moneda_Id,
+                                                                                  CarritoMembresia[membresia.Membresia_Id].Impuesto_Id,
+                                                                                  CarritoMembresia[membresia.Membresia_Id].Descuento_Id));
+                        }
+                    });
+                if (CarritoProducto.Count > 0)
+                    controller.GetProductos().ForEach(producto =>
+                    {
+                        if (CarritoProducto[producto.Producto_Id].Producto_Cantidad > 0)
+                            productos.AddRange(controller.GetProductosMembresias(TiposServicios.Producto, Convert.ToInt32(producto.Producto_Id),
+                                                                                 CarritoProducto[producto.Producto_Id].Producto_Cantidad,
+                                                                                 CarritoProducto[producto.Producto_Id].Meses_Adelantados,
+                                                                                 CarritoProducto[producto.Producto_Id].Membresia_Fecha_Inicio,
+                                                                                 CarritoProducto[producto.Producto_Id].Lista_Precio_Id,
+                                                                                 CarritoProducto[producto.Producto_Id].Moneda_Id,
+                                                                                 CarritoProducto[producto.Producto_Id].Impuesto_Id,
+                                                                                 CarritoProducto[producto.Producto_Id].Descuento_Id));
+                    });
+
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message);
+            }
+            if (productos.Count > 0)
+                AddProductosDescripcion();
+            if (membresias.Count > 0)
+                AddMembresiaDescripcion();
+
+            Total = Subtotal * IVA;
+            IVATotal = Total - Subtotal;
+
+            FillPrices();
         }
     }
 }

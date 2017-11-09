@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/CeldaCarritoProductos.cs">
     <Files>
@@ -19,6 +20,22 @@
       <File FileName="WorklabsMx/Controllers/CarritoController.cs" Line="72" Column="39" NotebookId="1" />
       <File FileName="iOS/ViewControllers/Servicios/CarritoCompraController.cs" Line="37" Column="95" NotebookId="1" />
       <File FileName="WorklabsMx/Models/ProductoModel.cs" Line="7" Column="46" NotebookId="1" />
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs">
+    <Files>
+      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="378" Column="2" />
+      <File FileName="WorklabsMx/Controllers/PagosController.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="505" Column="105" />
+      <File FileName="WorklabsMx/Controllers/SucursalController.cs" Line="48" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="210" Column="14" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ColeccionProductosActivity.cs" Line="441" Column="111" />
+      <File FileName="WorklabsMx/Models/CarritoComprasDetalle.cs" Line="29" Column="70" />
+      <File FileName="WorklabsMx/Models/CarritoModel.cs" Line="19" Column="19" />
+      <File FileName="WorklabsMx/Models/MembresiaModel.cs" Line="17" Column="9" />
+      <File FileName="WorklabsMx/Models/ProductoModel.cs" Line="10" Column="62" />
+      <File FileName="WorklabsMx/Controllers/CarritoController.cs" Line="50" Column="22" />
+>>>>>>> 7abe31fe353d7f118e7b6734038a6607a6e2cfaf
     </Files>
     <FloatingWindows>
       <FloatingWindow WindowId="1" X="1351" Y="23" Width="640" Height="480">
@@ -41,6 +58,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
+<<<<<<< HEAD
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="120" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="79" column="4" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="33" column="16" />
@@ -54,6 +72,13 @@
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/TableViewMembresia.cs" relfile="iOS/TableViewMembresia.cs" line="72" column="28" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/CarritoProductos.cs" relfile="iOS/CarritoProductos.cs" line="79" column="35" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/TableViewMembresia.cs" relfile="iOS/TableViewMembresia.cs" line="53" column="16" />
+=======
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="120" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/Helpers/reachability.cs" relfile="iOS/Helpers/reachability.cs" line="79" column="4" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="33" column="16" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="58" column="29" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Post/PostTableViewController.cs" relfile="iOS/ViewControllers/Post/PostTableViewController.cs" line="28" column="1" />
+>>>>>>> 7abe31fe353d7f118e7b6734038a6607a6e2cfaf
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
