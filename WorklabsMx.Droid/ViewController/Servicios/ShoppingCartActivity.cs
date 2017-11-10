@@ -293,7 +293,6 @@ namespace WorklabsMx.Droid
                                                                                  CarritoProducto[producto.Producto_Id].Impuesto_Id,
                                                                                  CarritoProducto[producto.Producto_Id].Descuento_Id));
                     });
-
             }
             catch (Exception e)
             {
