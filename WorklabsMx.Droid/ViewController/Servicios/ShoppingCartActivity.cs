@@ -12,8 +12,6 @@ using WorklabsMx.Controllers;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 using WorklabsMx.Enum;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace WorklabsMx.Droid
 {
@@ -27,6 +25,8 @@ namespace WorklabsMx.Droid
         readonly List<decimal> Descuentos;
         SimpleStorage Storage;
         PickerItemsController controller;
+        View customView;
+        AlertDialog dialog;
         public ShoppingCartActivity()
         {
             Descuentos = new List<decimal>();
@@ -83,6 +83,7 @@ namespace WorklabsMx.Droid
                     Text = precio.Carrito_Compras_Detalle_Descripcion
                 };
                 lblDescripcion.SetWidth(120);
+                lblDescripcion.Click += (sender, e) => ShowDesglose(precio);
                 trDescripcion.AddView(lblDescripcion, 1);
 
                 TextView lblTotal = new TextView(this)
@@ -163,6 +164,7 @@ namespace WorklabsMx.Droid
                     Text = precio.Carrito_Compras_Detalle_Descripcion
                 };
                 lblDescripcion.SetWidth(120);
+                lblDescripcion.Click += (sender, e) => ShowDesglose(precio);
                 trDescripcion.AddView(lblDescripcion, 1);
 
                 TextView lblTotal = new TextView(this)
@@ -208,12 +210,12 @@ namespace WorklabsMx.Droid
                     membresia.Value.Descuento_Id = Convert.ToInt32(promo.Descuento_Id);
                 }
                 CalculaPrecios();
-                tlCarrito.RemoveAllViews();
-                /*Descuento += Total * promo.Descuento_Porcentaje;
-                Total -= Descuento;
+                //tlCarrito.RemoveAllViews();
+                Descuento += Subtotal * promo.Descuento_Porcentaje;
+                Subtotal -= Descuento;
                 Total = Subtotal * IVA;
                 IVATotal = Total - Subtotal;
-                FillPrices();*/
+                FillPrices();
                 TableRow trCupon = new TableRow(this);
 
                 TextView tvDescuentoDescripcion = new TextView(this)
@@ -307,6 +309,27 @@ namespace WorklabsMx.Droid
             IVATotal = Total - Subtotal;
 
             FillPrices();
+        }
+
+        void ShowDesglose(CarritoComprasDetalle despliegue)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            LayoutInflater liView = LayoutInflater;
+
+            customView = liView.Inflate(Resource.Layout.DesgloseIndividualLayout, null, true);
+
+            customView.FindViewById<TextView>(Resource.Id.lblDespliegue).Text = despliegue.Carrito_Compras_Detalle_Descripcion;
+            customView.FindViewById<TextView>(Resource.Id.txtCantidad).Text = despliegue.Carrito_Compras_Detalle_Cantidad;
+            customView.FindViewById<TextView>(Resource.Id.txtPeriodo).Text = despliegue.Carrito_Compras_Detalle_Vigenci_Fecha;
+            customView.FindViewById<TextView>(Resource.Id.txtSubtotal).Text = despliegue.Carrito_Compras_Detalle_Importe_Subtotal_Texto;
+            customView.FindViewById<TextView>(Resource.Id.txtIva).Text = despliegue.Carrito_Compras_Detalle_Importe_Impuesto_Texto;
+            customView.FindViewById<TextView>(Resource.Id.txtTotal).Text = despliegue.Carrito_Compras_Detalle_Importe_Total_Texto;
+
+            builder.SetView(customView);
+            builder.Create();
+            dialog = builder.Show();
+            dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
         }
     }
 }
