@@ -32,9 +32,6 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromFile("shopping.png"), UIBarButtonItemStyle.Plain, (sender, args) => {
-
-            }), true);
             BTProgressHUD.Show();
             if (InternetConectionHelper.VerificarConexion())
             {
