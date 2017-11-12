@@ -10,48 +10,6 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbarlayout" />
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TableLayout
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tlCarrito">
-            <TableRow
-                android:id="@+id/trCarrito"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
-                <TextView
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:layout_column="0"
-                    android:id="@+id/textView10"
-                    android:text="@string/Cantidad"
-                    android:layout_width="57.5dp"
-                    android:drawableBottom="#ff373333" />
-                <TextView
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:layout_column="1"
-                    android:id="@+id/textView11"
-                    android:text="@string/Descripcion"
-                    android:layout_width="170.0dp"
-                    android:drawableBottom="#ff373333"
-                    android:layout_marginRight="0.0dp"
-                    android:minWidth="170.0dp"
-                    android:maxWidth="170.0dp" />
-                <TextView
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:layout_column="2"
-                    android:id="@+id/textView14"
-                    android:text="@string/Total"
-                    android:layout_width="114.0dp"
-                    android:drawableBottom="#ff373333"
-                    android:minWidth="114.0dp"
-                    android:maxWidth="114.0dp" />
-            </TableRow>
-        </TableLayout>
-    </ScrollView>
     <TableLayout
         android:minWidth="25px"
         android:minHeight="25px"
@@ -153,4 +111,46 @@
                 android:textStyle="bold" />
         </TableRow>
     </TableLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tlCarrito">
+            <TableRow
+                android:id="@+id/trCarrito"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_column="0"
+                    android:id="@+id/textView10"
+                    android:text="@string/Cantidad"
+                    android:layout_width="57.5dp"
+                    android:drawableBottom="#ff373333" />
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_column="1"
+                    android:id="@+id/textView11"
+                    android:text="@string/Descripcion"
+                    android:layout_width="170.0dp"
+                    android:drawableBottom="#ff373333"
+                    android:layout_marginRight="0.0dp"
+                    android:minWidth="170.0dp"
+                    android:maxWidth="170.0dp" />
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_column="2"
+                    android:id="@+id/textView14"
+                    android:text="@string/Total"
+                    android:layout_width="114.0dp"
+                    android:drawableBottom="#ff373333"
+                    android:minWidth="114.0dp"
+                    android:maxWidth="114.0dp" />
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
 </LinearLayout>

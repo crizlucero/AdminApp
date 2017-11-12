@@ -169,4 +169,7 @@
     <string name="PostEliminado">Post eliminado</string>
     <string name="ReportarPost">Reportar post</string>
     <string name="MensajeReportarPost">¿Desea reportar el post?</string>
+	<string name="MesesAdelantados">Meses adelantados</string>
+	<string name="Periodo">Periodo</string>
+	<string name="ImporteSinIva">ImporteSinIva</string>
 </resources>

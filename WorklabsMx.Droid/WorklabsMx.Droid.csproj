@@ -267,6 +267,7 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_store.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_receipt.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_dns.png" />
+    <AndroidResource Include="Resources\layout\DesgloseIndividualLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
