@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
@@ -671,7 +670,6 @@
     <Compile Include="ComentarPostHeaderCell.designer.cs">
       <DependentUpon>ComentarPostHeaderCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="ComentarioViewCell.cs" />
     <Compile Include="ComentarioViewCell.designer.cs">
       <DependentUpon>ComentarioViewCell.cs</DependentUpon>
     </Compile>
@@ -719,6 +717,11 @@
     </Compile>
     <Compile Include="Models\SucursalesModel.cs" />
     <Compile Include="Models\CarritoCompras.cs" />
+    <Compile Include="ComentarioViewCell.cs" />
+    <Compile Include="DetalleVenta_Temp.cs" />
+    <Compile Include="DetalleVentaHeader_Temp.cs" />
+    <Compile Include="CeldaDetalleVenta_Temp.cs" />
+    <Compile Include="CeldaNoDetalleVenta_Temp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

@@ -13,5 +13,6 @@
         public object DescuentoId { get; set; }
         public string TotalPagar { get; set; }
         public int IndiceProducto { get; set; }
+        public string Nombre { get; set; }
     }
 }

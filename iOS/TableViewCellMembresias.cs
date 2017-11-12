@@ -84,6 +84,7 @@ namespace WorklabsMx.iOS
             Preorden.DescuentoId = null;
             Preorden.TotalPagar = this.lblTotal.Text;
             Preorden.IndiceProducto = this.IndiceMembresia;
+            Preorden.Nombre = this.lblNombreMembresia.Text;
             if (ObtenerPreordenMembresia != null)
             {
                 ObtenerPreordenMembresia(Preorden, EventArgs.Empty);
