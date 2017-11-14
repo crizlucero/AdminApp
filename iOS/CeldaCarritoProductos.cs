@@ -121,7 +121,7 @@ namespace WorklabsMx.iOS
 
         private void LlenarPreordenProductos()
         {
-            Preorden.Tipo = "PRODUCTO";
+            Preorden.Tipo = TiposServicios.Producto;
             Preorden.Id = int.Parse(ProductoGlobal.Producto_Id);
             Preorden.Cantidad = int.Parse(this.lblCantidadProductos.Text);
             Preorden.Meses = int.Parse(this.lblCantidadMeses.Text);
@@ -129,7 +129,7 @@ namespace WorklabsMx.iOS
             Preorden.ListaPrecioId = this.ProductoGlobal.Lista_Precio_Id;
             Preorden.MonedaId = this.ProductoGlobal.Moneda_Id;
             Preorden.ImpuestoId = this.ProductoGlobal.Impuesto_Id;
-            Preorden.DescuentoId = null;
+            Preorden.DescuentoId = 0;
             Preorden.TotalPagar = this.lblTotal.Text;
             Preorden.IndiceProducto = this.indiceGlobal;
             Preorden.Nombre = this.lblNombreProducto.Text;
