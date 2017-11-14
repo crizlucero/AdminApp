@@ -20,7 +20,6 @@ namespace WorklabsMx.Droid
         SimpleStorage Storage;
         ArrayAdapter adapter;
         TableRow.LayoutParams param;
-
         public ColeccionProductosActivity()
         {
             Storage = SimpleStorage.EditGroup("Login");
@@ -68,13 +67,14 @@ namespace WorklabsMx.Droid
                 double subtotal = membresia.Membresia_Precio_Base_Neto;
                 int mesMembresia = 1;
                 TextView lblProporcional = new TextView(this), lblTotal = new TextView(this);
-                EditText dpFechaInicio = new EditText(this)
-                {
-                    InputType = Android.Text.InputTypes.DatetimeVariationDate
-                }, txtMesesMembresias = new EditText(this)
+                EditText txtMesesMembresias = new EditText(this)
                 {
                     TextSize = 14,
                     InputType = Android.Text.InputTypes.NumberFlagSigned
+                }, dtFechaInicio = new EditText(this)
+                {
+                    Text = DateTime.Now.ToString("d"),
+                    InputType = Android.Text.InputTypes.DatetimeVariationDate
                 };
                 if (!Membresias.ContainsKey(membresia.Membresia_Id))
                     Membresias.Add(membresia.Membresia_Id, new CarritoModel
@@ -118,8 +118,8 @@ namespace WorklabsMx.Droid
                     if (!string.IsNullOrEmpty(txtCantidadMembresias.Text))
                     {
                         Membresias[membresia.Membresia_Id].Membresia_Cantidad = Convert.ToInt32(txtCantidadMembresias.Text);
-                        subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
-                                    (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
+                        subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
+                                    (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                         lblProporcional.Text = subtotal.ToString("C");
                         lblTotal.Text = (((membresia.Membresia_Precio_Base_Neto * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base_Neto)
                                           * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
@@ -137,8 +137,8 @@ namespace WorklabsMx.Droid
                     ++Membresias[membresia.Membresia_Id].Membresia_Cantidad;
 
                     txtCantidadMembresias.Text = Membresias[membresia.Membresia_Id].Membresia_Cantidad.ToString();
-                    subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
-                                (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
+                    subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
+                                (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                     lblProporcional.Text = subtotal.ToString("C");
                     lblTotal.Text = (((membresia.Membresia_Precio_Base_Neto * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base_Neto)
                                           * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
@@ -154,8 +154,8 @@ namespace WorklabsMx.Droid
                     {
                         --Membresias[membresia.Membresia_Id].Membresia_Cantidad;
                         txtCantidadMembresias.Text = Membresias[membresia.Membresia_Id].Membresia_Cantidad.ToString();
-                        subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
-                                    (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
+                        subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
+                                    (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                         lblProporcional.Text = subtotal.ToString("C");
                         lblTotal.Text = (((membresia.Membresia_Precio_Base_Neto * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base_Neto)
                                           * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
@@ -187,6 +187,27 @@ namespace WorklabsMx.Droid
                 tlMembresias.AddView(trMembresia);
 
                 trMembresia = new TableRow(this);
+                trMembresia.AddView(new TextView(this) { Text = "Fecha de inicio" }, 0);
+
+                dtFechaInicio.TextChanged += delegate {
+                    if (DateTime.TryParse(dtFechaInicio.Text, out DateTime fecha))
+                    {
+                        if (fecha >= DateTime.Now)
+                        {
+                            mesMembresia = Convert.ToInt32(txtMesesMembresias.Text);
+                            subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
+                                    (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
+                            lblProporcional.Text = subtotal.ToString("C");
+                            lblTotal.Text = (((membresia.Membresia_Precio_Base_Neto * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal)
+                                              * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
+                        }
+                    }
+                };
+
+                trMembresia.AddView(dtFechaInicio, 1, param);
+                tlMembresias.AddView(trMembresia);
+
+                trMembresia = new TableRow(this);
                 trMembresia.AddView(new TextView(this) { Text = "Cantidad de meses" }, 0);
 
                 txtMesesMembresias.Text = "1";
@@ -199,8 +220,8 @@ namespace WorklabsMx.Droid
                         {
                             mesMembresia = Convert.ToInt32(txtMesesMembresias.Text);
                             Membresias[membresia.Membresia_Id].Meses_Adelantados = mesMembresia;
-                            subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
-                                        (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
+                        subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
+                                    (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                             lblProporcional.Text = subtotal.ToString("C");
                             lblTotal.Text = (((membresia.Membresia_Precio_Base_Neto * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base_Neto)
                                           * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
@@ -219,8 +240,8 @@ namespace WorklabsMx.Droid
                     ++mesMembresia;
                     ++Membresias[membresia.Membresia_Id].Meses_Adelantados;
                     txtMesesMembresias.Text = mesMembresia.ToString();
-                    subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
-                                (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
+                    subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
+                                (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                     lblProporcional.Text = subtotal.ToString("C");
                     lblTotal.Text = (((membresia.Membresia_Precio_Base_Neto * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base_Neto)
                                           * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
@@ -237,8 +258,8 @@ namespace WorklabsMx.Droid
                         --mesMembresia;
                         --Membresias[membresia.Membresia_Id].Meses_Adelantados;
                         txtMesesMembresias.Text = mesMembresia.ToString();
-                        subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
-                                    (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
+                        subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
+                                    (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                         lblProporcional.Text = subtotal.ToString("C");
                         lblTotal.Text = (((membresia.Membresia_Precio_Base_Neto * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base_Neto)
                                           * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
@@ -253,8 +274,8 @@ namespace WorklabsMx.Droid
 
                 trMembresia = new TableRow(this);
                 trMembresia.AddView(new TextView(this) { Text = "Proporcional al mes" });
-                subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
-                            (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
+                subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
+                            (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                 lblProporcional.Text = 0.ToString("C");
                 trMembresia.AddView(lblProporcional, param);
 
@@ -278,15 +299,15 @@ namespace WorklabsMx.Droid
                 double subtotal = producto.Producto_Precio_Base_Neto;
                 int mesProducto = 1;
                 TextView lblProporcional = new TextView(this), lblTotal = new TextView(this);
-                EditText dpFechaInicio = new EditText(this)
-                {
-                    InputType = Android.Text.InputTypes.DatetimeVariationDate,
-                    Text = DateTime.Now.ToString("d")
-                }, txtMesesProductos = new EditText(this)
+                EditText txtMesesProductos = new EditText(this)
                 {
                     Text = "1",
                     TextSize = 14,
                     InputType = Android.Text.InputTypes.NumberFlagSigned
+                }, dtFechaInicio = new EditText(this)
+                {
+                    Text = DateTime.Now.ToString("d"),
+                    InputType = Android.Text.InputTypes.DatetimeVariationDate
                 };
                 if (!Productos.ContainsKey(producto.Producto_Id))
                     Productos.Add(producto.Producto_Id, new CarritoModel
@@ -334,8 +355,8 @@ namespace WorklabsMx.Droid
                         {
                             Productos[producto.Producto_Id].Producto_Cantidad = Convert.ToInt32(txtCantidadProductos.Text);
                             if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
-                                subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
-                                                (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
+                            subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
+                                        (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                             else
                                 subtotal = producto.Producto_Precio_Base_Neto;
                             lblProporcional.Text = subtotal.ToString("C");
@@ -356,8 +377,8 @@ namespace WorklabsMx.Droid
 
                     txtCantidadProductos.Text = Productos[producto.Producto_Id].Producto_Cantidad.ToString();
                     if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
-                        subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
-                                    (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
+                        subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
+                                    (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                     else
                         subtotal = producto.Producto_Precio_Base_Neto;
                     lblProporcional.Text = subtotal.ToString("C");
@@ -379,8 +400,8 @@ namespace WorklabsMx.Droid
                         --Productos[producto.Producto_Id].Producto_Cantidad;
                         txtCantidadProductos.Text = Productos[producto.Producto_Id].Producto_Cantidad.ToString();
                         if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
-                            subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
-                                        (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
+                            subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
+                                        (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                         else
                             subtotal = producto.Producto_Precio_Base_Neto;
                         lblProporcional.Text = subtotal.ToString("C");
@@ -405,8 +426,28 @@ namespace WorklabsMx.Droid
                 spSucursales.Adapter = adapter;
                 trProducto.AddView(spSucursales);
                 tlProductos.AddView(trProducto);
+
                 if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
                 {
+                    trProducto = new TableRow(this);
+                    trProducto.AddView(new TextView(this) { Text = "Fecha de inicio" }, 0);
+                    dtFechaInicio.TextChanged += delegate {
+                        if (DateTime.TryParse(dtFechaInicio.Text, out DateTime fecha))
+                        {
+                            if (fecha >= DateTime.Now)
+                            {
+                                mesProducto = Convert.ToInt32(txtMesesProductos.Text);
+                                subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
+                                        (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
+                                lblProporcional.Text = subtotal.ToString("C");
+                                lblTotal.Text = (((producto.Producto_Precio_Base * ((Convert.ToDouble(txtMesesProductos.Text) - 1)) + subtotal)
+                                                  * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C");
+                            }
+                        }
+                    };
+                    trProducto.AddView(dtFechaInicio, 1, param);
+                    tlProductos.AddView(trProducto);
+
                     trProducto = new TableRow(this);
                     trProducto.AddView(new TextView(this) { Text = "Cantidad de meses" }, 0);
 
@@ -420,8 +461,8 @@ namespace WorklabsMx.Droid
                             {
                                 Productos[producto.Producto_Id].Meses_Adelantados = Convert.ToInt32(txtMesesProductos.Text);
                                 mesProducto = Convert.ToInt32(txtMesesProductos.Text);
-                            subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
-                                            (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
+                                subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
+                                            (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                                 lblProporcional.Text = subtotal.ToString("C");
                                 lblTotal.Text = (((producto.Producto_Precio_Base_Neto * ((Convert.ToDouble(txtMesesProductos.Text) - 1)) + subtotal)
                                                   * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C");
@@ -439,8 +480,8 @@ namespace WorklabsMx.Droid
                         ++mesProducto;
                         txtMesesProductos.Text = mesProducto.ToString();
                         Productos[producto.Producto_Id].Meses_Adelantados = Convert.ToInt32(txtMesesProductos.Text);
-                        subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
-                                    (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
+                        subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
+                                    (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                         lblProporcional.Text = subtotal.ToString("C");
                         lblTotal.Text = (((producto.Producto_Precio_Base_Neto * ((Convert.ToDouble(txtMesesProductos.Text) - 1)) + subtotal)
                                           * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C");
@@ -457,8 +498,8 @@ namespace WorklabsMx.Droid
                             --mesProducto;
                             txtMesesProductos.Text = mesProducto.ToString();
                             Productos[producto.Producto_Id].Meses_Adelantados = Convert.ToInt32(txtMesesProductos.Text);
-                            subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
-                                        (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
+                            subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
+                                        (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                             lblProporcional.Text = subtotal.ToString("C");
                             lblTotal.Text = (((producto.Producto_Precio_Base_Neto * ((Convert.ToDouble(txtMesesProductos.Text) - 1)) + subtotal)
                                               * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C");
@@ -473,8 +514,8 @@ namespace WorklabsMx.Droid
 
                     trProducto = new TableRow(this);
                     trProducto.AddView(new TextView(this) { Text = "Proporcional al mes" });
-                    subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Now) *
-                                (DateHelper.GetMonthsDays(DateTime.Now) - DateTime.Now.Day + 1));
+                    subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
+                                (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                     lblProporcional.Text = subtotal.ToString("C");
                     trProducto.AddView(lblProporcional, param);
 

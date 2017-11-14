@@ -176,12 +176,17 @@ namespace WorklabsMx.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.menu_payment:
-                    Intent intent = new Intent(this, typeof(PaymentActivity));
-                    intent.PutExtra("Descuento", Descuento.ToString());
-                    intent.PutExtra("Subtotal", Subtotal.ToString());
-                    intent.PutExtra("IVA", IVATotal.ToString());
-                    intent.PutExtra("Total", Total.ToString());
-                    StartActivity(intent);
+                    if (FindViewById<Switch>(Resource.Id.swCondiciones).Checked)
+                    {
+                        Intent intent = new Intent(this, typeof(PaymentActivity));
+                        intent.PutExtra("Descuento", Descuento.ToString());
+                        intent.PutExtra("Subtotal", Subtotal.ToString());
+                        intent.PutExtra("IVA", IVATotal.ToString());
+                        intent.PutExtra("Total", Total.ToString());
+                        StartActivity(intent);
+                    }
+                    else
+                        Toast.MakeText(this, Resource.String.NoAceptoTerminos, ToastLength.Short).Show();
                     break;
                 default:
                     base.OnBackPressed();
