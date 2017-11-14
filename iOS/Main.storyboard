@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -366,12 +367,16 @@
             </objects>
             <point key="canvasLocation" x="-1268" y="2365.3670000000002"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar Detalle Venta-->
         <scene sceneID="bQu-nb-VSj">
             <objects>
-                <tabBarController storyboardIdentifier="ColeccionProductos" id="k9j-lW-TTG" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="ColeccionProductos" id="k9j-lW-TTG" customClass="TabBarDetalleVenta" customModule="WorklabsMx_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="u6S-j7-H4B">
-                        <barButtonItem key="rightBarButtonItem" image="shopping" id="17A-gx-y8K"/>
+                        <barButtonItem key="rightBarButtonItem" image="shopping" id="17A-gx-y8K">
+                            <connections>
+                                <action selector="btnDetalleVenta:" destination="k9j-lW-TTG" id="UEA-NF-Wd8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OGq-Vt-at8">
@@ -382,7 +387,7 @@
                     <connections>
                         <segue destination="zy7-f2-U5W" kind="relationship" relationship="viewControllers" id="fLD-ZY-1hz"/>
                         <segue destination="X7L-Mi-xqh" kind="relationship" relationship="viewControllers" id="xu8-FV-ulT"/>
-                        <segue destination="pNA-5L-1sL" kind="push" id="OpS-OC-WZM"/>
+                        <segue destination="pNA-5L-1sL" kind="push" identifier="detalleVenta" id="OpS-OC-WZM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WK2-ud-df2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1802,13 +1807,13 @@
         <!--Detalle de la venta-->
         <scene sceneID="q58-aV-5cX">
             <objects>
-                <tableViewController id="pNA-5L-1sL" customClass="DetalleVenta" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="pNA-5L-1sL" customClass="VentaDetalleTableViewController" customModule="WorklabsMx_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FfG-yW-btM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderDetalleVenta" rowHeight="133" id="Qgn-ng-dgn">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderDetalleVenta" rowHeight="133" id="Qgn-ng-dgn" customClass="VentaDetalleHeader" customModule="WorklabsMx_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="133"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qgn-ng-dgn" id="mU0-FN-IJ7">
@@ -1877,7 +1882,14 @@
                                             <state key="normal" title="Usar cupón">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
+                                                <action selector="btnUsarCupon:" destination="Qgn-ng-dgn" eventType="touchUpInside" id="JS4-op-NRf"/>
                                                 <segue destination="Oiz-SU-rXd" kind="presentation" identifier="canjearcupon" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="reD-Xr-g4T"/>
                                             </connections>
                                         </button>
@@ -1922,8 +1934,15 @@
                                         <constraint firstItem="UZQ-BC-yce" firstAttribute="leading" secondItem="VWl-Gh-xgx" secondAttribute="leading" id="vjI-gS-ZPV"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="btnUsarCupon" destination="z3k-73-nFV" id="dSA-ak-d6i"/>
+                                    <outlet property="lblDescuento" destination="Woi-Fc-i6e" id="IKu-wE-l4I"/>
+                                    <outlet property="lblImpuesto" destination="uL3-rz-PzG" id="Hhi-sU-eOm"/>
+                                    <outlet property="lblSubtotal" destination="T6A-aY-uQD" id="dp7-br-OAo"/>
+                                    <outlet property="lblTotal" destination="sSJ-Lb-Cgb" id="hQF-e0-COa"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CuerpoDetalleVenta" rowHeight="136" id="gWp-hR-EHe">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CuerpoDetalleVenta" rowHeight="136" id="gWp-hR-EHe" customClass="CeldaVentaDetalle" customModule="WorklabsMx_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="161" width="375" height="136"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gWp-hR-EHe" id="nPo-L2-vDF">
@@ -2007,8 +2026,14 @@
                                         <constraint firstItem="4GC-b7-DPV" firstAttribute="leading" secondItem="nPo-L2-vDF" secondAttribute="leading" constant="16" id="qmc-jy-jiB"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblCantidad" destination="NqG-dG-SBa" id="8A4-ML-Thj"/>
+                                    <outlet property="lblNombreProducto" destination="lSP-Qk-z9I" id="h7m-tI-ZUH"/>
+                                    <outlet property="lblTotalPagar" destination="nji-Vw-YNM" id="k04-PL-WCR"/>
+                                    <outlet property="vwVistaDetalleVenta" destination="4GC-b7-DPV" id="abF-sU-WCg"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoInfoDetalleVenta" rowHeight="400" id="0ad-40-tPJ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoInfoDetalleVenta" rowHeight="400" id="0ad-40-tPJ" customClass="CeldaNoDetalleVenta" customModule="WorklabsMx_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="297" width="375" height="400"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0ad-40-tPJ" id="r03-jr-pfj">
@@ -2045,6 +2070,9 @@
                                         <constraint firstAttribute="bottom" secondItem="KNW-ec-huu" secondAttribute="bottom" id="gPh-sC-8Gl"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblNoInfo" destination="waf-kc-6OW" id="ogE-ks-F38"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -2053,7 +2081,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Detalle de la venta" id="BV0-ME-luf">
-                        <barButtonItem key="rightBarButtonItem" title="Pagar" id="Oqk-5h-mkm"/>
+                        <barButtonItem key="leftBarButtonItem" image="back" id="ri0-zn-GrN">
+                            <connections>
+                                <action selector="btnAtras:" destination="pNA-5L-1sL" id="Bvd-tF-u2O"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Pagar" id="Oqk-5h-mkm">
+                            <connections>
+                                <action selector="btnPagar:" destination="pNA-5L-1sL" id="eaP-uU-Jku"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="GMb-gN-JVe" kind="presentation" identifier="detallecompra" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="QT4-yn-NCg"/>
@@ -2473,7 +2510,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Header" rowHeight="120" id="aZt-5R-5gd" customClass="ComentariosHeaderCell" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Header" rowHeight="120" id="aZt-5R-5gd" customClass="ComentariosHeaderCell" customModule="WorklabsMx_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aZt-5R-5gd" id="tdP-0w-LPM">
@@ -3206,34 +3243,34 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BackGround" width="320" height="568"/>
+        <image name="BackGround" width="160" height="284"/>
         <image name="Camera" width="25" height="25"/>
-        <image name="Comments" width="9" height="9"/>
+        <image name="Comments" width="4" height="4"/>
         <image name="First" width="32" height="30"/>
-        <image name="Leyenda" width="250" height="27"/>
+        <image name="Leyenda" width="125" height="13"/>
         <image name="Likes" width="25" height="25"/>
         <image name="Product" width="25" height="25"/>
-        <image name="Profile" width="100" height="100"/>
+        <image name="Profile" width="50" height="50"/>
         <image name="back" width="25" height="25"/>
-        <image name="close" width="100" height="100"/>
-        <image name="delete-image" width="60" height="60"/>
-        <image name="ic_comentar" width="21" height="20"/>
+        <image name="close" width="50" height="50"/>
+        <image name="delete-image" width="30" height="30"/>
+        <image name="ic_comentar" width="10" height="10"/>
         <image name="ic_dashboard" width="24" height="24"/>
-        <image name="ic_derechaabajo" width="21" height="20"/>
-        <image name="ic_derechaarriba" width="20" height="21"/>
+        <image name="ic_derechaabajo" width="10" height="10"/>
+        <image name="ic_derechaarriba" width="10" height="10"/>
         <image name="ic_domain" width="24" height="24"/>
         <image name="ic_group" width="24" height="24"/>
-        <image name="ic_izquierdaabajo" width="20" height="21"/>
-        <image name="ic_izquierdaarriba" width="21" height="20"/>
+        <image name="ic_izquierdaabajo" width="10" height="10"/>
+        <image name="ic_izquierdaarriba" width="10" height="10"/>
         <image name="ic_people_outline" width="24" height="24"/>
-        <image name="ic_qr" width="180" height="180"/>
+        <image name="ic_qr" width="90" height="90"/>
         <image name="membership" width="25" height="25"/>
-        <image name="qr" width="36" height="36"/>
+        <image name="qr" width="18" height="18"/>
         <image name="shopping" width="25" height="25"/>
-        <image name="worklabs" width="104" height="49"/>
+        <image name="worklabs" width="52" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Tlx-3I-mcH"/>
+        <segue reference="teg-hU-Dz2"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.10980392156862745" green="0.52941176470588236" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

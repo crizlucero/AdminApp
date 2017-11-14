@@ -5,6 +5,7 @@ using WorklabsMx.Models;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.iOS.Models;
 using WorklabsMx.Helpers;
+using WorklabsMx.Enum;
 
 namespace WorklabsMx.iOS
 {
@@ -73,7 +74,7 @@ namespace WorklabsMx.iOS
 
         private void LlenarPreordenMembresia()
         {
-            Preorden.Tipo = "MEMBRESIA";
+            Preorden.Tipo = TiposServicios.Membresia;
             Preorden.Id = int.Parse(MembresiaGlobal.Membresia_Id);
             Preorden.Cantidad = int.Parse(this.lblCantidadMembresias.Text);
             Preorden.Meses = int.Parse(this.lblCantidadMeses.Text);
@@ -81,7 +82,7 @@ namespace WorklabsMx.iOS
             Preorden.ListaPrecioId = this.MembresiaGlobal.Lista_Precio_Id;
             Preorden.MonedaId = this.MembresiaGlobal.Moneda_Id;
             Preorden.ImpuestoId = this.MembresiaGlobal.Impuesto_Id;
-            Preorden.DescuentoId = null;
+            Preorden.DescuentoId = 0;
             Preorden.TotalPagar = this.lblTotal.Text;
             Preorden.IndiceProducto = this.IndiceMembresia;
             Preorden.Nombre = this.lblNombreMembresia.Text;

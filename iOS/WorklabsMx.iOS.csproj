@@ -660,10 +660,26 @@
     <Compile Include="Models\SucursalesModel.cs" />
     <Compile Include="Models\CarritoCompras.cs" />
     <Compile Include="ComentarioViewCell.cs" />
-    <Compile Include="DetalleVenta_Temp.cs" />
-    <Compile Include="DetalleVentaHeader_Temp.cs" />
-    <Compile Include="CeldaDetalleVenta_Temp.cs" />
-    <Compile Include="CeldaNoDetalleVenta_Temp.cs" />
+    <Compile Include="VentaDetalleTableViewController.cs" />
+    <Compile Include="VentaDetalleTableViewController.designer.cs">
+      <DependentUpon>VentaDetalleTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaNoDetalleVenta.cs" />
+    <Compile Include="CeldaNoDetalleVenta.designer.cs">
+      <DependentUpon>CeldaNoDetalleVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaVentaDetalle.cs" />
+    <Compile Include="CeldaVentaDetalle.designer.cs">
+      <DependentUpon>CeldaVentaDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentaDetalleHeader.cs" />
+    <Compile Include="VentaDetalleHeader.designer.cs">
+      <DependentUpon>VentaDetalleHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabBarDetalleVenta.cs" />
+    <Compile Include="TabBarDetalleVenta.designer.cs">
+      <DependentUpon>TabBarDetalleVenta.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

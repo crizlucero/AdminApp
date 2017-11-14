@@ -6,8 +6,6 @@ namespace WorklabsMx.iOS
     public class CeldaNoDetalleVenta_Temp : UITableViewCell
     {
 
-        UILabel lblMessage;
-
         public CeldaNoDetalleVenta_Temp(IntPtr handle) : base(handle)
         {
 
