@@ -297,7 +297,8 @@ namespace WorklabsMx.Droid
                         Meses_Adelantados = 1,
                         Lista_Precio_Id = producto.Lista_Precio_Id,
                         Impuesto_Id = producto.Moneda_Id,
-                        Moneda_Id = producto.Moneda_Id
+                        Moneda_Id = producto.Moneda_Id,
+                        Tipo = producto.Producto_Disponibilidad
                     });
 
                 TableRow trProducto = new TableRow(this);

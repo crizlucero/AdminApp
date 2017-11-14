@@ -256,7 +256,7 @@ namespace WorklabsMx.Droid
                 param.RowSpec = GridLayout.InvokeSpec(i, 3);
                 llButton.LayoutParameters = param;
                 llButton.AddView(btnClear);
-                glPost.AddView(llButton);
+                //glPost.AddView(llButton);
                 ++i;
                 TextView txtPuesto = new TextView(this)
                 {

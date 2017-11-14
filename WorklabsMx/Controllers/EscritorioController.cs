@@ -668,12 +668,21 @@ namespace WorklabsMx.Controllers
                 command = CreateCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "sp_pro_Reportar_Post";
-                command.Parameters.AddWithValue("@Post_Id", post_id);
-                command.Parameters.AddWithValue("@Miembro_Id", miembro_id);
-                command.Parameters.AddWithValue("@Miembro_Tipo", miembro_tipo);
-                command.Parameters.AddWithValue("@Mensaje_Id", mensaje_id);
-                command.Parameters.AddWithValue("@Post_Reporte_Fecha", DateTime.Now);
+                command.CommandText = "sp_pro_Red_Social_Publicaciones_Reportes";
+                command.Parameters.AddWithValue("@Trasaccion", "ALTA");
+                command.Parameters.AddWithValue("@Reporte_Publicacion_Id", DBNull.Value);
+                command.Parameters.AddWithValue("@Publicacion_Id", post_id);
+                if (miembro_tipo == TiposUsuarios.Miembro.ToString())
+                {
+                    command.Parameters.AddWithValue("@Miembro_Id", miembro_id);
+                    command.Parameters.AddWithValue("@Colaborador_Empresa_Id", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@Colaborador_Empresa_Id", miembro_id);
+                }
+
+                command.Parameters.AddWithValue("@Reporte_Publicacion_Estatus", 1);
 
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();
