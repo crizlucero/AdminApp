@@ -178,12 +178,13 @@ namespace WorklabsMx.Droid
                 case Resource.Id.menu_payment:
                     if (FindViewById<Switch>(Resource.Id.swCondiciones).Checked)
                     {
-                        Intent intent = new Intent(this, typeof(PaymentActivity));
+                        Console.WriteLine(new PagosController().GetUrlPayment(Total.ToString("F")));
+                        /*Intent intent = new Intent(this, typeof(PaymentActivity));
                         intent.PutExtra("Descuento", Descuento.ToString());
                         intent.PutExtra("Subtotal", Subtotal.ToString());
                         intent.PutExtra("IVA", IVATotal.ToString());
                         intent.PutExtra("Total", Total.ToString());
-                        StartActivity(intent);
+                        StartActivity(intent);*/
                     }
                     else
                         Toast.MakeText(this, Resource.String.NoAceptoTerminos, ToastLength.Short).Show();

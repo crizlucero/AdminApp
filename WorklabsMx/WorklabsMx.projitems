@@ -54,6 +54,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)Enum\TiposMeGusta.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\RenovacionPagosModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\CarritoComprasDetalle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Pagos\bussiness.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Pagos\data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Pagos\datos_adicionales.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Pagos\url.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Pagos\P.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\HttpRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\XmlSerializador.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />
@@ -69,5 +76,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Controllers\" />
     <Folder Include="$(MSBuildThisFileDirectory)HTMLTemplates\" />
     <Folder Include="$(MSBuildThisFileDirectory)Enum\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\Pagos\" />
   </ItemGroup>
 </Project>
