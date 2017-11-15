@@ -8,6 +8,7 @@ using WorklabsMx.iOS.Models;
 using WorklabsMx.Controllers;
 using WorklabsMx.Models;
 using WorklabsMx.Enum;
+using Foundation;
 
 namespace WorklabsMx.iOS
 {
@@ -20,6 +21,8 @@ namespace WorklabsMx.iOS
         public List<CarritoCompras> PreordenProductos = new List<CarritoCompras>();
         PickerItemsController controller;
         List<CarritoComprasDetalle> membresias = null, productos = null;
+
+        NSMutableArray PreordenProducto = new NSMutableArray();
 
         const string IdentificadorCeldaHeader = "HeaderDetalleVenta";
         const string IdentificadorCeldaBody = "CuerpoDetalleVenta";
@@ -96,7 +99,6 @@ namespace WorklabsMx.iOS
             {
                 var currentProduct = PreordenProductos[indexPath.Row];
                 membresias.AddRange(controller.GetProductosMembresias(currentProduct.Tipo, currentProduct.Id, currentProduct.Cantidad, currentProduct.Meses, currentProduct.FechaInicio, currentProduct.ListaPrecioId, currentProduct.MonedaId, currentProduct.ImpuestoId, currentProduct.DescuentoId));
-
                 var currentProductCell = (CeldaVentaDetalle)tableView.DequeueReusableCell(IdentificadorCeldaBody, indexPath);
                 currentProductCell.UpdateCell(currentProduct);
                 this.WillDisplay(indexPath.Row);
@@ -109,6 +111,12 @@ namespace WorklabsMx.iOS
                 noPostCell.UpdateCell(this.existeConeccion);
                 return noPostCell;
             }
+        }
+
+        public override void RowSelected(UITableView tableView, Foundation.NSIndexPath indexPath)
+        {
+            var currentProduct = PreordenProductos[indexPath.Row];
+            this.PerformSegue("detallecompra", currentProduct);
         }
 
         private void WillDisplay(int Row)
@@ -128,7 +136,8 @@ namespace WorklabsMx.iOS
             }
             else if (segue.Identifier == "detallecompra")
             {
-
+                var detalleCompra = (DetalleVentaViewController)segue.DestinationViewController;
+                detalleCompra.Venta = (CarritoCompras)sender;
             }
         }
 
