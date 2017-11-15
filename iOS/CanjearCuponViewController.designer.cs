@@ -11,11 +11,8 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
-    [Register ("TabBarColaboradorController")]
-    partial class TabBarColaboradorController
+    [Register ("CanjearCuponViewController")]
+    partial class CanjearCuponViewController
     {
-        void ReleaseDesignerOutlets ()
-        {
-        }
     }
 }

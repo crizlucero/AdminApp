@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("MiMembresiaController")]
     partial class MiMembresiaController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

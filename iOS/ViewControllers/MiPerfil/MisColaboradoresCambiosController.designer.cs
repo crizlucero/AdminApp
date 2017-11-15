@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("MisColaboradoresCambiosController")]
     partial class MisColaboradoresCambiosController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

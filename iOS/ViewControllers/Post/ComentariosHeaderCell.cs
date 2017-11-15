@@ -23,28 +23,24 @@ namespace WorklabsMx.iOS
         {
             if (miembro != null)
             {
-                lblNombre.Text = miembro[(int)CamposMiembro.Usuario_Nombre].ToString();
-                lblProfesion.Text = miembro[(int)CamposMiembro.Usuario_Puesto].ToString();
-                imgPerfil.Image = ImageGallery.LoadImage(miembro[(int)CamposMiembro.Usuario_Fotografia]);
+                //lblNombre.Text = miembro[(int)CamposMiembro.Usuario_Nombre].ToString();
+                //lblProfesion.Text = miembro[(int)CamposMiembro.Usuario_Puesto].ToString();
+                //imgPerfil.Image = ImageGallery.LoadImage(miembro[(int)CamposMiembro.Usuario_Fotografia]);
 
 			}
             else
             {
-                lblNombre.Text = "Gilberto Escareño Barrera";
-                lblProfesion.Text = "Desarrollador";
+                //lblNombre.Text = "Gilberto Escareño Barrera";
+                //lblProfesion.Text = "Desarrollador";
             }
 
         }
 
-        public UIImageView getImagenPerfil()
+        /*public UIImageView getImagenPerfil()
         {
             return this.imgPerfil;
-        }
+        }*/
 
-		partial void BtnPublicar_TouchUpInside(UIButton sender)
-		{
-            
-		}
 
 
     }

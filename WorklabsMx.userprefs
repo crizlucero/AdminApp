@@ -26,7 +26,7 @@
       <File FileName="WorklabsMx/Models/CarritoComprasDetalle.cs" Line="3" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Helpers/XmlSerializador.cs" relfile="WorklabsMx/Helpers/XmlSerializador.cs" line="23" column="1" />

@@ -1,8 +1,9 @@
 ﻿using WorklabsMx.Enum;
+using Foundation;
 
 namespace WorklabsMx.iOS.Models
 {
-    public class CarritoCompras
+    public class CarritoCompras: NSObject
     {
         public  TiposServicios Tipo { get; set; }
         public int Id { get; set; }

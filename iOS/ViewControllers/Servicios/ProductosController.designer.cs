@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("ProductosController")]
     partial class ProductosController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

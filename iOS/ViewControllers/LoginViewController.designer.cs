@@ -32,14 +32,6 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton LoginButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton NotNowButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtEmail { get; set; }
 
         [Outlet]
@@ -62,14 +54,6 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BtnRestaurar_TouchUpInside (UIKit.UIButton sender);
 
-        [Action ("LoginButton_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void LoginButton_TouchUpInside (UIKit.UIButton sender);
-
-        [Action ("NotNowButton_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void NotNowButton_TouchUpInside (UIKit.UIButton sender);
-
         void ReleaseDesignerOutlets ()
         {
             if (btnIniciarSesion != null) {
@@ -90,16 +74,6 @@ namespace WorklabsMx.iOS
             if (btnRestaurar != null) {
                 btnRestaurar.Dispose ();
                 btnRestaurar = null;
-            }
-
-            if (LoginButton != null) {
-                LoginButton.Dispose ();
-                LoginButton = null;
-            }
-
-            if (NotNowButton != null) {
-                NotNowButton.Dispose ();
-                NotNowButton = null;
             }
 
             if (txtEmail != null) {

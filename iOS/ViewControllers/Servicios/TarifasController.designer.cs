@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("TarifasController")]
     partial class TarifasController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

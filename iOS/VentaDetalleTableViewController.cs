@@ -8,6 +8,7 @@ using WorklabsMx.iOS.Models;
 using WorklabsMx.Controllers;
 using WorklabsMx.Models;
 using WorklabsMx.Enum;
+using Foundation;
 
 namespace WorklabsMx.iOS
 {
@@ -17,10 +18,11 @@ namespace WorklabsMx.iOS
 		{
 		}
 
-
         public List<CarritoCompras> PreordenProductos = new List<CarritoCompras>();
         PickerItemsController controller;
         List<CarritoComprasDetalle> membresias = null, productos = null;
+
+        NSMutableArray PreordenProducto = new NSMutableArray();
 
         const string IdentificadorCeldaHeader = "HeaderDetalleVenta";
         const string IdentificadorCeldaBody = "CuerpoDetalleVenta";
@@ -35,27 +37,28 @@ namespace WorklabsMx.iOS
 
         Double Subtotal = 0.00, Impuesto = 0.00, Total = 0.00;
 
-
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
             controller = new PickerItemsController();
-            membresias = new List<CarritoComprasDetalle>();
             productos = new List<CarritoComprasDetalle>();
         }
 
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            membresias = new List<CarritoComprasDetalle>();
         }
 
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
             var headerCell = (VentaDetalleHeader)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
-            /*foreach(CarritoCompras Producto in PreordenProductos)
+            foreach(CarritoComprasDetalle membresia in membresias)
             {
-                this.Total = this.Total + double.Parse(Producto.TotalPagar.Remove(0,1));
-            }*/
+                this.Subtotal = this.Subtotal + double.Parse(membresia.Carrito_Compras_Detalle_Importe_Suma);
+                this.Total = this.Total + double.Parse(membresia.Carrito_Compras_Detalle_Importe_Suma) * 1.16;
+            }
+            this.Impuesto = Subtotal * 0.16;
             headerCell.UpdateCell(this.Subtotal, this.Impuesto, this.Total);
             return headerCell;
         }
@@ -96,7 +99,6 @@ namespace WorklabsMx.iOS
             {
                 var currentProduct = PreordenProductos[indexPath.Row];
                 membresias.AddRange(controller.GetProductosMembresias(currentProduct.Tipo, currentProduct.Id, currentProduct.Cantidad, currentProduct.Meses, currentProduct.FechaInicio, currentProduct.ListaPrecioId, currentProduct.MonedaId, currentProduct.ImpuestoId, currentProduct.DescuentoId));
-
                 var currentProductCell = (CeldaVentaDetalle)tableView.DequeueReusableCell(IdentificadorCeldaBody, indexPath);
                 currentProductCell.UpdateCell(currentProduct);
                 this.WillDisplay(indexPath.Row);
@@ -109,6 +111,12 @@ namespace WorklabsMx.iOS
                 noPostCell.UpdateCell(this.existeConeccion);
                 return noPostCell;
             }
+        }
+
+        public override void RowSelected(UITableView tableView, Foundation.NSIndexPath indexPath)
+        {
+            var currentProduct = PreordenProductos[indexPath.Row];
+            this.PerformSegue("detallecompra", currentProduct);
         }
 
         private void WillDisplay(int Row)
@@ -128,8 +136,14 @@ namespace WorklabsMx.iOS
             }
             else if (segue.Identifier == "detallecompra")
             {
-
+                var detalleCompra = (DetalleVentaViewController)segue.DestinationViewController;
+                detalleCompra.Venta = (CarritoCompras)sender;
             }
+        }
+
+        partial void btnAtras(UIBarButtonItem sender)
+        {
+            this.NavigationController.PopViewController(true);
         }
 
 	}

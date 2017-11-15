@@ -5,12 +5,16 @@ using System;
 using Foundation;
 using UIKit;
 using WorklabsMx.iOS.Models;
+using System.Collections.Generic;
 
 namespace WorklabsMx.iOS
 {
 	public partial class TabBarDetalleVenta : UITabBarController
 	{
-		public TabBarDetalleVenta (IntPtr handle) : base (handle)
+
+        List<CarritoCompras> listaProductos = new List<CarritoCompras>();
+
+        public TabBarDetalleVenta (IntPtr handle) : base (handle)
 		{
 		}
 
@@ -19,40 +23,41 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
         }
 
-        partial void btnDetalleVenta(UIBarButtonItem sender)
+        partial void btnCarrito_Touch(UIBarButtonItem sender)
         {
-            this.ShouldPerformSegue("detalleVenta", null);
+            var barViewControllers = this.ViewControllers;
+            var vistaProductos = (CarritoProductos)barViewControllers[0];
+            listaProductos = vistaProductos.ObtenerPreordenProductos();
+
+            var VistaMembresias = (TableViewMembresia)barViewControllers[1];
+            var listaMembresias = VistaMembresias.ObtenerPreordenMembresias();
+
+            foreach (CarritoCompras preordenMembresia in listaMembresias)
+            {
+                if (listaProductos.Find(x => x.Id == preordenMembresia.Id) == null)
+                {
+                    listaProductos.Add(preordenMembresia);
+                }
+            }
+
+            if (listaProductos.Count == 0)
+            {
+                new MessageDialog().SendToast("Aun no haz seleccionado un producto o membresía");
+            }
+            else 
+            {
+                this.PerformSegue("detalleVenta", null);
+            }
+           
+
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             if (segue.Identifier == "detalleVenta")
             {
-                var barViewControllers = this.ViewControllers;
-                var vistaProductos = (CarritoProductos)barViewControllers[0];
-                var listaProductos = vistaProductos.ObtenerPreordenProductos();
-
-                var VistaMembresias = (TableViewMembresia)barViewControllers[1];
-                var listaMembresias = VistaMembresias.ObtenerPreordenMembresias();
-
-                foreach(CarritoCompras preordenMembresia in listaMembresias)
-                {
-                    if (listaProductos.Find(x => x.Id == preordenMembresia.Id) == null)
-                    {
-                        listaProductos.Add(preordenMembresia);
-                    }
-                }
-
-                if (listaProductos.Count == 0)
-                {
-                    new MessageDialog().SendToast("Aun no haz seleccionado un producto o membresía");
-                }
-                else
-                {
-                    var postCommentView = (VentaDetalleTableViewController)segue.DestinationViewController;
-                    postCommentView.PreordenProductos = listaProductos;
-                }
-
+                var postCommentView = (VentaDetalleTableViewController)segue.DestinationViewController;
+                postCommentView.PreordenProductos = listaProductos;
             }
         }
 

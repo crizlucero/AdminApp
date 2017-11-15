@@ -7,20 +7,22 @@
 using Foundation;
 using System;
 using System.CodeDom.Compiler;
+using UIKit;
 
 namespace WorklabsMx.iOS
 {
-    [Register ("CeldaNoDetalleVenta")]
-    partial class CeldaNoDetalleVenta
+    [Register ("DetalleVentaViewController")]
+    partial class DetalleVentaViewController
     {
         [Outlet]
-        UIKit.UILabel lblNoInfo { get; set; }
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwDetalleProducto { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (lblNoInfo != null) {
-                lblNoInfo.Dispose ();
-                lblNoInfo = null;
+            if (vwDetalleProducto != null) {
+                vwDetalleProducto.Dispose ();
+                vwDetalleProducto = null;
             }
         }
     }

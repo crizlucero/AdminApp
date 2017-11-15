@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("PaymentController")]
     partial class PaymentController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

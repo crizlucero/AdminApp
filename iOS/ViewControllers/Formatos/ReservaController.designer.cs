@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("ReservaController")]
     partial class ReservaController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

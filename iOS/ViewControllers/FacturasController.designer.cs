@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("FacturasController")]
     partial class FacturasController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

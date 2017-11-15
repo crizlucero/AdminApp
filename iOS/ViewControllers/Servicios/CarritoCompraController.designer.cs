@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("CarritoCompraController")]
     partial class CarritoCompraController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }
