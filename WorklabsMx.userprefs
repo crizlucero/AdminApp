@@ -1,32 +1,25 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/EscritorioController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/PickerItemsController.cs">
     <Files>
-      <File FileName="iOS/TableViewCellMembresias.cs" Line="83" Column="48" />
-      <File FileName="iOS/CeldaCarritoProductos.cs" Line="132" Column="38" />
-      <File FileName="iOS/VentaDetalleTableViewController.cs" Line="98" Column="27" />
-      <File FileName="iOS/CeldaNoDetalleVenta.cs" Line="24" Column="26" />
-      <File FileName="iOS/ViewControllers/Post/ComentariosBodyCell.cs" Line="2" Column="13" />
-      <File FileName="iOS/TabBarDetalleVenta.cs" Line="29" Column="20" />
-      <File FileName="iOS/CarritoProductos.cs" Line="30" Column="47" />
-      <File FileName="iOS/VentaDetalleHeader.cs" Line="19" Column="52" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="275" Column="28" />
-      <File FileName="iOS/Models/CarritoCompras.cs" Line="7" Column="50" />
-      <File FileName="WorklabsMx/Models/CarritoComprasDetalle.cs" Line="16" Column="69" />
-      <File FileName="iOS/VentaDetalleHeader.designer.cs" Line="52" Column="20" />
-      <File FileName="iOS/ViewControllers/EscritorioController.cs" Line="188" Column="14" />
-      <File FileName="iOS/Main.cs" Line="16" Column="1" />
-      <File FileName="iOS/TabBarDetalleVenta.designer.cs" Line="23" Column="1" />
+      <File FileName="iOS/TabBarDetalleVenta.cs" Line="28" Column="1" />
+      <File FileName="iOS/VentaDetalleTableViewController.cs" Line="96" Column="59" />
+      <File FileName="iOS/TabBarDetalleVenta.designer.cs" Line="1" Column="1" />
+      <File FileName="iOS/VentaDetalleHeader.designer.cs" Line="33" Column="45" />
+      <File FileName="iOS/ComentarPostTableViewController.cs" Line="69" Column="10" />
+      <File FileName="iOS/Styles/STLTableViewSource.cs" Line="69" Column="21" />
+      <File FileName="iOS/CarritoProductos.cs" Line="69" Column="37" />
+      <File FileName="iOS/ViewElements/EscritorioController.cs" Line="70" Column="39" />
+      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="500" Column="65" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/VentaDetalleTableViewController.cs" relfile="iOS/VentaDetalleTableViewController.cs" line="100" column="26" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/TabBarDetalleVenta.cs" relfile="iOS/TabBarDetalleVenta.cs" line="24" column="22" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/TabBarDetalleVenta.cs" relfile="iOS/TabBarDetalleVenta.cs" line="29" column="20" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/VentaDetalleTableViewController.cs" relfile="iOS/VentaDetalleTableViewController.cs" line="96" column="27" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/VentaDetalleTableViewController.cs" relfile="iOS/VentaDetalleTableViewController.cs" line="52" column="19" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B4E637BD-60E4-4441-BC72-CF1534A7E0AA" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.89CCA8BE-0586-4891-9CEC-16532ABD6816" />
   <MultiItemStartupConfigurations />
 </Properties>

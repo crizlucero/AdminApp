@@ -14,8 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("TableViewController")]
     partial class TableViewController
     {
-		[Outlet]
-		[GeneratedCode("iOS Designer", "1.0")]
-        UIKit.UITableViewCell cllDashboard { get; set; }
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

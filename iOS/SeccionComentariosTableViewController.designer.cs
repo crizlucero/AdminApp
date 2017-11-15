@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("SeccionComentariosTableViewController")]
     partial class SeccionComentariosTableViewController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace WorklabsMx.iOS
     [Register ("AccesoController")]
     partial class AccesoController
     {
-                [Outlet]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView imgQr { get; set; }
 

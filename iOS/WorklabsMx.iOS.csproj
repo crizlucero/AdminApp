@@ -1,4 +1,4 @@
-﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
@@ -348,7 +348,6 @@
     <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\ic_person_add.png" />
     <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\ic_person_add_2x.png" />
     <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\ic_person_add_3x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\.DS_Store" />
     <ImageAsset Include="Assets.xcassets\ic_add.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_add.imageset\ic_add.png" />
     <ImageAsset Include="Assets.xcassets\ic_add.imageset\ic_add_2x.png" />
@@ -460,10 +459,6 @@
     <Compile Include="ViewControllers\DashboardController.cs" />
     <Compile Include="ViewControllers\DashboardController.designer.cs">
       <DependentUpon>DashboardController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\EscritorioController.cs" />
-    <Compile Include="ViewControllers\EscritorioController.designer.cs">
-      <DependentUpon>EscritorioController.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ImageGallery.cs" />
     <Compile Include="ViewControllers\AccesoController.cs" />
@@ -588,10 +583,6 @@
     <Compile Include="Styles\STLLine.cs" />
     <Compile Include="Helpers\InternetConectionHelper.cs" />
     <Compile Include="Helpers\StyleHelper.cs" />
-    <Compile Include="ViewControllers\Post\ComentariosHeaderCell.cs" />
-    <Compile Include="ViewControllers\Post\ComentariosHeaderCell.designer.cs">
-      <DependentUpon>ComentariosHeaderCell.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewControllers\Post\NoComentsCell.cs" />
     <Compile Include="ViewControllers\Post\NoComentsCell.designer.cs">
       <DependentUpon>NoComentsCell.cs</DependentUpon>
@@ -679,6 +670,14 @@
     <Compile Include="TabBarDetalleVenta.cs" />
     <Compile Include="TabBarDetalleVenta.designer.cs">
       <DependentUpon>TabBarDetalleVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EscritorioHeaderCell.cs" />
+    <Compile Include="EscritorioHeaderCell.designer.cs">
+      <DependentUpon>EscritorioHeaderCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewElements\EscritorioController.cs" />
+    <Compile Include="ViewElements\EscritorioController.designer.cs">
+      <DependentUpon>EscritorioController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

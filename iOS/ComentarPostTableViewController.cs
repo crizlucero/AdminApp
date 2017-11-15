@@ -40,7 +40,7 @@ namespace WorklabsMx.iOS
             imgPicker.Delegate = this;
              var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
-            StyleHelper.Style(vwSeccionComentarios.Layer);
+            //StyleHelper.Style(vwSeccionComentarios.Layer);
         }
 
         public override void ViewWillDisappear(bool animated)

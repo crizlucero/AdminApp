@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("ReporteController")]
     partial class ReporteController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

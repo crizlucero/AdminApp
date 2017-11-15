@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("TabBarColaboradorController")]
     partial class TabBarColaboradorController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

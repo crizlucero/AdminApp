@@ -27,10 +27,8 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         {
             base.ViewDidAppear(animated);
         }
-         void MostrarImagenEnGrande(object sender, EventArgs e)         {             this.PerformSegue("toShowImageFromPost", (UIImageView)sender);         }          void ComentarPost(object sender, EventArgs e)         {             CurrentPost = (PostModel)sender;         } 
-      public override UIView GetViewForHeader(UITableView tableView, nint section)
-        {             var headerCell = (ComentariosHeaderCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
-             headerCell.UpdateCell(miembro);             this.ImagenPerfil = headerCell.getImagenPerfil();
+         void MostrarImagenEnGrande(object sender, EventArgs e)         {             this.PerformSegue("toShowImageFromPost", (UIImageView)sender);         }          void ComentarPost(object sender, EventArgs e)         {             CurrentPost = (PostModel)sender;         }          public override UIView GetViewForHeader(UITableView tableView, nint section)
+        {             var headerCell = (EscritorioHeaderCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);             headerCell.UpdateCell(miembro);             this.ImagenPerfil = headerCell.getImagenPerfil();
             return headerCell;
         }
 

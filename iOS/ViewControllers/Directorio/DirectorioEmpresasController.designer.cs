@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("DirectorioEmpresasController")]
     partial class DirectorioEmpresasController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }
