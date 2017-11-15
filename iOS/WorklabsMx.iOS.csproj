@@ -683,10 +683,6 @@
     <Compile Include="DetalleVentaViewController.designer.cs">
       <DependentUpon>DetalleVentaViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="CanjearCuponViewController.cs" />
-    <Compile Include="CanjearCuponViewController.designer.cs">
-      <DependentUpon>CanjearCuponViewController.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

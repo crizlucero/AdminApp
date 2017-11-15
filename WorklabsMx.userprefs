@@ -1,12 +1,21 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/DetalleVentaViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/TableViewCellMembresias.cs">
     <Files>
-      <File FileName="iOS/TabBarDetalleVenta.cs" Line="59" Column="16" />
-      <File FileName="iOS/VentaDetalleTableViewController.cs" Line="139" Column="47" />
-      <File FileName="iOS/ViewElements/EscritorioController.cs" Line="70" Column="39" />
-      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="1" Column="1" />
+      <File FileName="iOS/TabBarDetalleVenta.cs" Line="29" Column="43" />
+      <File FileName="iOS/VentaDetalleTableViewController.cs" Line="69" Column="53" />
+      <File FileName="iOS/VentaDetalleHeader.cs" Line="30" Column="28" />
+      <File FileName="iOS/ViewControllers/Post/ComentariosBodyCell.cs" Line="16" Column="35" />
+      <File FileName="iOS/ViewElements/EscritorioController.cs" Line="121" Column="44" />
       <File FileName="iOS/Models/CarritoCompras.cs" Line="6" Column="42" />
-      <File FileName="iOS/DetalleVentaViewController.cs" Line="10" Column="29" />
+      <File FileName="iOS/DetalleVentaViewController.cs" Line="13" Column="30" />
+      <File FileName="WorklabsMx/CanjearCuponViewController.cs" Line="28" Column="46" />
+      <File FileName="iOS/ViewControllers/Post/PublicarPostViewController.cs" Line="68" Column="46" />
+      <File FileName="iOS/CeldaVentaDetalle.cs" Line="10" Column="23" />
+      <File FileName="iOS/TableViewCellMembresias.cs" Line="78" Column="1" />
+      <File FileName="iOS/CarritoProductos.cs" Line="136" Column="50" />
+      <File FileName="iOS/CeldaCarritoProductos.cs" Line="118" Column="138" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ColeccionProductosActivity.cs" Line="226" Column="45" />
+      <File FileName="WorklabsMx/Models/MembresiaModel.cs" Line="9" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />

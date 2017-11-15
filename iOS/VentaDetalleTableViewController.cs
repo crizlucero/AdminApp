@@ -50,6 +50,12 @@ namespace WorklabsMx.iOS
             membresias = new List<CarritoComprasDetalle>();
         }
 
+
+        void CanjearCupon(object sender, EventArgs e)
+        {
+            this.PerformSegue("canjearcupon", null);
+        }
+
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
             var headerCell = (VentaDetalleHeader)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
@@ -60,6 +66,7 @@ namespace WorklabsMx.iOS
             }
             this.Impuesto = Subtotal * 0.16;
             headerCell.UpdateCell(this.Subtotal, this.Impuesto, this.Total);
+            headerCell.CanjearCupon += CanjearCupon;
             return headerCell;
         }
 

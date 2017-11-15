@@ -61,14 +61,26 @@ namespace WorklabsMx.iOS
         partial void stpCantidadMeses_ValueChanged(UIStepper sender)
         {
             this.lblCantidadMeses.Text = sender.Value.ToString();
-            lblTotal.Text = (((MembresiaGlobal.Membresia_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text) - 1)) + subtotal + (MembresiaGlobal.Membresia_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text) - 1))) * Convert.ToDouble(lblCantidadMembresias.Text)).ToString("C");
+            //lblTotal.Text = (((MembresiaGlobal.Membresia_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text) - 1)) + subtotal + (MembresiaGlobal.Membresia_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text) - 1))) * Convert.ToDouble(lblCantidadMembresias.Text)).ToString("C");
+            double EndMonth = DateHelper.GetMonthsDays((DateTime)dtpFechaInicio.Date);
+            double currentDay = ((DateTime)dtpFechaInicio.Date).Day;
+            this.CalcularTotalSubtotal(EndMonth, currentDay);
         }
 
         private void CalcularTotalSubtotal(double EndMonth, double currentDay)
         {
             subtotal = Convert.ToInt32(lblCantidadMembresias.Text) == 0 ? 0 : (MembresiaGlobal.Membresia_Precio_Base_Neto / EndMonth * (EndMonth - currentDay + 1));
             lblProporcionalMes.Text = subtotal.ToString("C");
-            lblTotal.Text = (((MembresiaGlobal.Membresia_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text) - 1)) + subtotal + (MembresiaGlobal.Membresia_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text) - 1))) * Convert.ToDouble(lblCantidadMembresias.Text)).ToString("C");
+
+            if (Convert.ToDouble(lblCantidadMeses.Text) > 1)
+            {
+                lblTotal.Text = (((MembresiaGlobal.Membresia_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text))) + subtotal + (MembresiaGlobal.Inscripcion_Precio_Base_Neto)) * Convert.ToDouble(lblCantidadMembresias.Text)).ToString("C");
+            }
+            else 
+            {
+                lblTotal.Text = ((subtotal + (MembresiaGlobal.Inscripcion_Precio_Base_Neto)) * Convert.ToDouble(lblCantidadMembresias.Text)).ToString("C");
+            }
+            //lblTotal.Text = (((MembresiaGlobal.Membresia_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text))) + subtotal + (MembresiaGlobal.Inscripcion_Precio_Base_Neto)) * Convert.ToDouble(lblCantidadMembresias.Text)).ToString("C");
             this.LlenarPreordenMembresia();
         }
 

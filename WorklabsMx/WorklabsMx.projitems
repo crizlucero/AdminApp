@@ -54,6 +54,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Enum\TiposMeGusta.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\RenovacionPagosModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\CarritoComprasDetalle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CanjearCuponViewController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CanjearCuponViewController.designer.cs">
+      <DependentUpon>CanjearCuponViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />

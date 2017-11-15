@@ -32,6 +32,10 @@ namespace WorklabsMx.iOS
         [Outlet]
         UIKit.UILabel lblTotal { get; set; }
 
+        [Action ("btnCanjearCuponTouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnCanjearCuponTouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (btnUsarCupon != null) {
