@@ -256,7 +256,7 @@ namespace WorklabsMx.Droid
                 param.RowSpec = GridLayout.InvokeSpec(i, 3);
                 llButton.LayoutParameters = param;
                 llButton.AddView(btnClear);
-                glPost.AddView(llButton);
+                //glPost.AddView(llButton);
                 ++i;
                 TextView txtPuesto = new TextView(this)
                 {
@@ -499,7 +499,7 @@ namespace WorklabsMx.Droid
             if (Android.Util.Patterns.EmailAddress.Matcher(txtEmail.Text).Matches())
             {
                 AndHUD.Shared.Show(this, null, -1, MaskType.Black);
-                await Task.Delay(500);
+                //await Task.Delay(500);
                 List<string> MiembrosId = new LoginController().MemberLogin(txtEmail.Text, new PassSecurity().EncodePassword(txtPassword.Text));
                 if (MiembrosId.Count > 0)
                 {

@@ -67,11 +67,6 @@ namespace WorklabsMx.Droid
             {
                 TableRow trDescripcion = new TableRow(this);
 
-                ImageButton btnErase = new ImageButton(this);
-                btnErase.SetImageResource(Resource.Mipmap.ic_clear);
-                btnErase.SetBackgroundColor(Color.White);
-                //trDescripcion.AddView(btnErase, 1);
-
                 TextView lblCantidad = new TextView(this)
                 {
                     Text = precio.Carrito_Compras_Detalle_Cantidad
@@ -92,49 +87,6 @@ namespace WorklabsMx.Droid
                 };
                 trDescripcion.AddView(lblTotal, 2);
                 tlCarrito.AddView(trDescripcion);
-                //Inscripcion
-                /*TableRow trDescripcionInscripcion = new TableRow(this);
-                trDescripcionInscripcion.AddView(new Space(this), 0);
-                TextView lblCantidadInscripcion = new TextView(this)
-                {
-                    Text = ""
-                };
-
-                trDescripcionInscripcion.AddView(lblCantidadInscripcion, 1);
-
-                TextView lblDescripcionInscripcion = new TextView(this)
-                {
-                    Text = "Inscripción de " + precio.Membresia_Descripcion
-                };
-                lblDescripcionInscripcion.SetWidth(120);
-                trDescripcionInscripcion.AddView(lblDescripcionInscripcion, 2);
-
-                TextView lblTotalInscripcion = new TextView(this)
-                {
-                    Text = (Convert.ToDecimal(precio.Inscripcion_Precio_Base) * Convert.ToDecimal(membresias[precio.Membresia_Id])).ToString("C")
-                };
-                trDescripcionInscripcion.AddView(lblTotalInscripcion, 3);
-
-                tlCarrito.AddView(trDescripcion);
-                tlCarrito.AddView(trDescripcionInscripcion);
-
-                btnErase.Click += (sender, e) =>
-                {
-                    tlCarrito.RemoveView(trDescripcion);
-                    tlCarrito.RemoveView(trDescripcionInscripcion);
-                    Total -= (Convert.ToDecimal(precio.Membresia_Precio_Prorrateo) * Convert.ToDecimal(membresias[precio.Membresia_Id])) +
-                        (Convert.ToDecimal(precio.Membresia_Precio_Base) * ((decimal)CarritoMembresia[precio.Membresia_Id].Meses_Adelantados - 1)) +
-                        (Convert.ToDecimal(precio.Inscripcion_Precio_Base) * Convert.ToDecimal(membresias[precio.Membresia_Id]));
-                    Descuento = 0;
-                    foreach (decimal promo in Descuentos)
-                    {
-                        Descuento += Total * promo;
-                        Total -= Descuento;
-                    }
-                    IVATotal = (Total * IVA);
-                    Subtotal = Total - IVATotal;
-                    FillPrices();
-                };*/
 
                 Subtotal += Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Suma) != 0 ? Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Suma) : Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Prorrateo);
             });
@@ -145,13 +97,6 @@ namespace WorklabsMx.Droid
             productos.ForEach(precio =>
             {
                 TableRow trDescripcion = new TableRow(this);
-
-                ImageButton btnErase = new ImageButton(this);
-                btnErase.SetImageResource(Resource.Mipmap.ic_clear);
-                btnErase.SetMaxWidth(10);
-                btnErase.SetMaxHeight(10);
-                btnErase.SetBackgroundColor(Color.White);
-                //trDescripcion.AddView(btnErase, 0);
 
                 TextView lblCantidad = new TextView(this)
                 {
@@ -175,22 +120,6 @@ namespace WorklabsMx.Droid
 
                 tlCarrito.AddView(trDescripcion);
 
-                /*btnErase.Click += (sender, e) =>
-                {
-                    tlCarrito.RemoveView(trDescripcion);
-                    Total -= (Convert.ToDecimal(precio.Producto_Precio_Base) * Convert.ToDecimal(productos[precio.Producto_Id])) +
-                    (Convert.ToDecimal(precio.Producto_Precio_Base) * ((decimal)CarritoProducto[precio.Producto_Id].Meses_Adelantados - 1));
-                    Descuento = 0;
-                    foreach (decimal promo in Descuentos)
-                    {
-                        Descuento += Total * promo;
-                        Total -= Descuento;
-                    }
-                    IVATotal = (Total * IVA);
-                    Subtotal = Total - IVATotal;
-                    FillPrices();
-                };*/
-
                 Subtotal += Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Suma);
             });
 
@@ -209,12 +138,9 @@ namespace WorklabsMx.Droid
                 {
                     membresia.Value.Descuento_Id = Convert.ToInt32(promo.Descuento_Id);
                 }
-                CalculaPrecios();
-                //tlCarrito.RemoveAllViews();
-                Descuento += Subtotal * promo.Descuento_Porcentaje;
-                Subtotal -= Descuento;
-                Total = Subtotal * IVA;
-                IVATotal = Total - Subtotal;
+                Descuento = Subtotal * promo.Descuento_Porcentaje;
+                Total = (Subtotal - Descuento) * IVA;
+                IVATotal = Total - (Subtotal - Descuento);
                 FillPrices();
                 TableRow trCupon = new TableRow(this);
 
@@ -234,6 +160,8 @@ namespace WorklabsMx.Droid
                 FindViewById<TableLayout>(Resource.Id.tlCupones).AddView(trCupon);
                 Toast.MakeText(this, Resource.String.CodigoIngresado, ToastLength.Short).Show();
                 ((ImageButton)sender).Enabled = false;
+                FindViewById<EditText>(Resource.Id.txtCupon).Text = "";
+                FindViewById<EditText>(Resource.Id.txtCupon).Hint = "Cupón Agregado";
             }
         }
 
@@ -248,12 +176,17 @@ namespace WorklabsMx.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.menu_payment:
-                    Intent intent = new Intent(this, typeof(PaymentActivity));
-                    intent.PutExtra("Descuento", Descuento.ToString());
-                    intent.PutExtra("Subtotal", Subtotal.ToString());
-                    intent.PutExtra("IVA", IVATotal.ToString());
-                    intent.PutExtra("Total", Total.ToString());
-                    StartActivity(intent);
+                    if (FindViewById<Switch>(Resource.Id.swCondiciones).Checked)
+                    {
+                        Intent intent = new Intent(this, typeof(PaymentActivity));
+                        intent.PutExtra("Descuento", Descuento.ToString());
+                        intent.PutExtra("Subtotal", Subtotal.ToString());
+                        intent.PutExtra("IVA", IVATotal.ToString());
+                        intent.PutExtra("Total", Total.ToString());
+                        StartActivity(intent);
+                    }
+                    else
+                        Toast.MakeText(this, Resource.String.NoAceptoTerminos, ToastLength.Short).Show();
                     break;
                 default:
                     base.OnBackPressed();
@@ -318,10 +251,18 @@ namespace WorklabsMx.Droid
             LayoutInflater liView = LayoutInflater;
 
             customView = liView.Inflate(Resource.Layout.DesgloseIndividualLayout, null, true);
+            if (despliegue.Producto_Id != "")
+                if (!CarritoProducto[despliegue.Producto_Id].Tipo.Contains("RECURRENTE"))
+                {
+                    customView.FindViewById<TextView>(Resource.Id.lblMesesAdelantados).Visibility = ViewStates.Gone;
+                    customView.FindViewById<TextView>(Resource.Id.txtMesesAdelantados).Visibility = ViewStates.Gone;
+                    customView.FindViewById<TextView>(Resource.Id.lblPeriodo).Visibility = ViewStates.Gone;
+                    customView.FindViewById<TextView>(Resource.Id.txtPeriodo).Visibility = ViewStates.Gone;
 
+                }
             customView.FindViewById<TextView>(Resource.Id.lblDespliegue).Text = despliegue.Carrito_Compras_Detalle_Descripcion;
             customView.FindViewById<TextView>(Resource.Id.txtCantidad).Text = despliegue.Carrito_Compras_Detalle_Cantidad;
-            customView.FindViewById<TextView>(Resource.Id.txtPeriodo).Text = despliegue.Carrito_Compras_Detalle_Vigenci_Fecha;
+            customView.FindViewById<TextView>(Resource.Id.txtPeriodo).Text = despliegue.Carrito_Compras_Detalle_Vigencia_Fecha;
             customView.FindViewById<TextView>(Resource.Id.txtSubtotal).Text = despliegue.Carrito_Compras_Detalle_Importe_Subtotal_Texto;
             customView.FindViewById<TextView>(Resource.Id.txtIva).Text = despliegue.Carrito_Compras_Detalle_Importe_Impuesto_Texto;
             customView.FindViewById<TextView>(Resource.Id.txtTotal).Text = despliegue.Carrito_Compras_Detalle_Importe_Total_Texto;

@@ -111,6 +111,19 @@
                 android:textStyle="bold" />
         </TableRow>
     </TableLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Switch
+            android:layout_height="wrap_content"
+            android:id="@+id/swCondiciones"
+            android:text="@string/AceptoTerminos"
+            android:layout_marginLeft="5dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="10dp" />
+    </RelativeLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

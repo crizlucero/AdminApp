@@ -21,6 +21,7 @@ namespace WorklabsMx.Models
         public int Moneda_Id { get; set; }
         public int Impuesto_Id { get; set; }
         public int Descuento_Id { get; set; }
+        public string Tipo { get; set; }
 
     }
 }

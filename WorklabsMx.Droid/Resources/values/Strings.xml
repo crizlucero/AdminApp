@@ -171,5 +171,7 @@
     <string name="MensajeReportarPost">¿Desea reportar el post?</string>
 	<string name="MesesAdelantados">Meses adelantados</string>
 	<string name="Periodo">Periodo</string>
-	<string name="ImporteSinIva">ImporteSinIva</string>
+	<string name="ImporteSinIva">Importe sin IVA</string>
+	<string name="AceptoTerminos">Acepto terminos y condiciones de uso</string>
+	<string name="NoAceptoTerminos">No ha aceptado los terminos y condiciones</string>
 </resources>

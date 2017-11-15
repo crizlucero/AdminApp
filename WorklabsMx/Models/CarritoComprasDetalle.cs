@@ -19,9 +19,9 @@
         public string Carrito_Compras_Detalle_Importe_Impuesto { get; set; }
         public string Carrito_Compras_Detalle_Importe_Total { get; set; }
         public string Carrito_Compras_Detalle_Estatus { get; set; }
-        public string Carrito_Compras_Detalle_Vigenci_Fecha_Inicio { get; set; }
-        public string Carrito_Compras_Detalle_Vigenci_Fecha_Fin { get; set; }
-        public string Carrito_Compras_Detalle_Vigenci_Fecha { get; set; }
+        public string Carrito_Compras_Detalle_Vigencia_Fecha_Inicio { get; set; }
+        public string Carrito_Compras_Detalle_Vigencia_Fecha_Fin { get; set; }
+        public string Carrito_Compras_Detalle_Vigencia_Fecha { get; set; }
         public string Carrito_Compras_Detalle_Importe_Suma_Texto { get; set; }
         public string Carrito_Compras_Detalle_Importe_Descuento_Texto { get; set; }
         public string Carrito_Compras_Detalle_Importe_Subtotal_Texto { get; set; }
