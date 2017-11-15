@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
+using WorklabsMx.Models.Pagos;
 
 namespace WorklabsMx.Controllers
 {
@@ -155,6 +156,69 @@ namespace WorklabsMx.Controllers
             }
             finally { conn.Close(); }
             return true;
+        }
+
+        public string GetUrlPayment(string monto)
+        {
+            string response = "";
+            try
+            {
+                string xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
+                             "<P>" +
+                             "<business>" +
+                             "<id_company>0001</id_company>" +
+                             "<id_branch>0001</id_branch>" +
+                             "<user>0001USER</user>" +
+                             "<pwd>SECRETO</pwd>" +
+                             "</business>" +
+                             "<url>" +
+                             "<reference>FACTURA001</reference>" +
+                             "<amount>" + monto + "</amount>" +
+                             "<moneda>MXN</moneda>" +
+                             "<canal>W</canal>" +
+                             "<omitir_notif_default>1</omitir_notif_default>" +
+                             "<st_correo>1</st_correo>" +
+                             "<mail_cliente>tarjetahabiente@correo.com.mx</mail_cliente>" +
+                             "<datos_adicionales>" +
+                             "<data id=\"1\" display=\"true\">" +
+                             "<label>Nombre</label>" +
+                             "<value>EL CLIENTE</value>" +
+                             "</data>" +
+                             "</datos_adicionales>" +
+                             "</url>" +
+                             "</P>";
+                /*P p = new P
+                {
+                    bussiness = new bussiness
+                    {
+                        id_company = "0001",
+                        id_branch = "0001",
+                        user = "0001USER",
+                        pwd = "SECRETO"
+                    },
+                    url = new url
+                    {
+                        reference = "FACTURA001",
+                        amount = monto,
+                        moneda = "MXN",
+                        mail_cliente = "christian.lucero@worklabs.mx",
+                        datos_adicionales = new datos_adicionales
+                        {
+                            data = new data
+                            {
+                                label = "Nombre",
+                                value = "EL CLIENTE"
+                            }
+                        }
+                    }
+                };*/
+
+                string PostToSend = "<pgs><data0>1234ABCD</data0><data>" + PassSecurity.EncryptAES128(xml, "SECRETO") + "</data></pgs>";
+                response = new HttpRequest().POST("https://qa5.mitec.com.mx/p/gen", PostToSend);
+
+            }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            return response;
         }
     }
 }
