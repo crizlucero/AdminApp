@@ -1,25 +1,5 @@
-<<<<<<< HEAD
-﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/TableViewCellMembresias.cs">
-    <Files>
-      <File FileName="iOS/TabBarDetalleVenta.cs" Line="29" Column="43" />
-      <File FileName="iOS/VentaDetalleTableViewController.cs" Line="69" Column="53" />
-      <File FileName="iOS/VentaDetalleHeader.cs" Line="30" Column="28" />
-      <File FileName="iOS/ViewControllers/Post/ComentariosBodyCell.cs" Line="16" Column="35" />
-      <File FileName="iOS/ViewElements/EscritorioController.cs" Line="121" Column="44" />
-      <File FileName="iOS/Models/CarritoCompras.cs" Line="6" Column="42" />
-      <File FileName="iOS/DetalleVentaViewController.cs" Line="13" Column="30" />
-      <File FileName="WorklabsMx/CanjearCuponViewController.cs" Line="28" Column="46" />
-      <File FileName="iOS/ViewControllers/Post/PublicarPostViewController.cs" Line="68" Column="46" />
-      <File FileName="iOS/CeldaVentaDetalle.cs" Line="10" Column="23" />
-      <File FileName="iOS/TableViewCellMembresias.cs" Line="78" Column="1" />
-      <File FileName="iOS/CarritoProductos.cs" Line="136" Column="50" />
-      <File FileName="iOS/CeldaCarritoProductos.cs" Line="118" Column="138" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ColeccionProductosActivity.cs" Line="226" Column="45" />
-      <File FileName="WorklabsMx/Models/MembresiaModel.cs" Line="9" Column="23" />
-=======
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/CarritoComprasDetalle.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/WorklabsMx.Droid.csproj">
     <Files>
       <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="24" Column="46" />
       <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="33" Column="40" />
@@ -44,10 +24,10 @@
       <File FileName="WorklabsMx/Helpers/HttpRequest.cs" Line="30" Column="37" />
       <File FileName="WorklabsMx/Helpers/XmlSerializador.cs" Line="23" Column="1" />
       <File FileName="WorklabsMx/Models/CarritoComprasDetalle.cs" Line="3" Column="18" />
->>>>>>> 9e37b713e3096b64ec56506163a188b40a0e543e
+      <File FileName="WorklabsMx.Droid/WorklabsMx.Droid.csproj" Line="291" Column="128" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Helpers/XmlSerializador.cs" relfile="WorklabsMx/Helpers/XmlSerializador.cs" line="23" column="1" />
