@@ -7,8 +7,8 @@ using BigTed;
 using WorklabsMx.iOS.Models;
 using WorklabsMx.Controllers;
 using WorklabsMx.Models;
-using WorklabsMx.Enum;
 using Foundation;
+using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
@@ -20,7 +20,7 @@ namespace WorklabsMx.iOS
 
         public List<CarritoCompras> PreordenProductos = new List<CarritoCompras>();
         PickerItemsController controller;
-        List<CarritoComprasDetalle> membresias = null, productos = null;
+        List<CarritoComprasDetalle> membresias = null;
 
         NSMutableArray PreordenProducto = new NSMutableArray();
 
@@ -36,12 +36,13 @@ namespace WorklabsMx.iOS
         bool existeConeccion = true;
 
         Double Subtotal = 0.00, Impuesto = 0.00, Total = 0.00;
+        PromocionModel datosDescuento;
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
             controller = new PickerItemsController();
-            productos = new List<CarritoComprasDetalle>();
+            datosDescuento = new PromocionModel();
         }
 
         public override void ViewWillAppear(bool animated)
@@ -51,13 +52,16 @@ namespace WorklabsMx.iOS
         }
 
 
-        void CanjearCupon(object sender, EventArgs e)
+       /* void CanjearCupon(object sender, EventArgs e)
         {
             this.PerformSegue("canjearcupon", null);
-        }
+        }*/
 
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
+            this.Subtotal = 0;
+            this.Total = 0;
+            this.Impuesto = 0;
             var headerCell = (VentaDetalleHeader)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
             foreach(CarritoComprasDetalle membresia in membresias)
             {
@@ -65,8 +69,8 @@ namespace WorklabsMx.iOS
                 this.Total = this.Total + double.Parse(membresia.Carrito_Compras_Detalle_Importe_Suma) * 1.16;
             }
             this.Impuesto = Subtotal * 0.16;
-            headerCell.UpdateCell(this.Subtotal, this.Impuesto, this.Total);
-            headerCell.CanjearCupon += CanjearCupon;
+            headerCell.UpdateCell(this.Subtotal, this.Impuesto, this.Total, this.datosDescuento);
+            //headerCell.CanjearCupon += CanjearCupon;
             return headerCell;
         }
 
@@ -139,7 +143,8 @@ namespace WorklabsMx.iOS
         {
             if (segue.Identifier == "canjearcupon")
             {
-
+                var vistaCupon = (CanjearCuponController)segue.DestinationViewController;
+                vistaCupon.datosDescuentoDelegate = this;
             }
             else if (segue.Identifier == "detallecompra")
             {
@@ -154,4 +159,18 @@ namespace WorklabsMx.iOS
         }
 
 	}
+
+
+    partial  class VentaDetalleTableViewController : DescuentoAplicadoDel
+    {
+        public async void DescuentoAplicado(PromocionModel datosDescuento)
+        {
+            BTProgressHUD.Show("Aplicando descuento");
+            await Task.Delay(500);
+            this.datosDescuento = datosDescuento;
+            membresias = new List<CarritoComprasDetalle>();
+            this.TableView.ReloadData();
+        }
+    }
+
 }
