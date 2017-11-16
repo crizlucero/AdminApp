@@ -1838,8 +1838,8 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
+                                                <action selector="btnCanjearCuponTouchUpInside:" destination="Qgn-ng-dgn" eventType="touchUpInside" id="81805"/>
                                                 <segue destination="Oiz-SU-rXd" kind="presentation" identifier="canjearcupon" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="reD-Xr-g4T"/>
-                                                <action selector="btnCanjearCuponTouchUpInside:" destination="Qgn-ng-dgn" id="81805" eventType="touchUpInside"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSJ-Lb-Cgb">

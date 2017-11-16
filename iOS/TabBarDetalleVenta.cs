@@ -6,6 +6,8 @@ using Foundation;
 using UIKit;
 using WorklabsMx.iOS.Models;
 using System.Collections.Generic;
+using BigTed;
+using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
@@ -13,6 +15,7 @@ namespace WorklabsMx.iOS
 	{
 
         List<CarritoCompras> listaProductos = new List<CarritoCompras>();
+        int numb = 0;
 
         public TabBarDetalleVenta (IntPtr handle) : base (handle)
 		{
@@ -52,8 +55,19 @@ namespace WorklabsMx.iOS
 
         }
 
+        public async override void ItemSelected(UITabBar tabbar, UITabBarItem item)
+        {
+            numb = numb + 1;
+            if (item.Title == "Membresías" && numb == 1)
+            {
+                BTProgressHUD.Show(status: "Cargando Membresías");
+                await Task.Delay(100);
+            }
+        }
+
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
+            
             if (segue.Identifier == "detalleVenta")
             {
                 var postCommentView = (VentaDetalleTableViewController)segue.DestinationViewController;

@@ -61,9 +61,8 @@ namespace WorklabsMx.iOS
         partial void stpCantidadMeses_ValueChanged(UIStepper sender)
         {
             this.lblCantidadMeses.Text = sender.Value.ToString();
-            //lblTotal.Text = (((MembresiaGlobal.Membresia_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text) - 1)) + subtotal + (MembresiaGlobal.Membresia_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text) - 1))) * Convert.ToDouble(lblCantidadMembresias.Text)).ToString("C");
-            double EndMonth = DateHelper.GetMonthsDays((DateTime)dtpFechaInicio.Date);
             double currentDay = ((DateTime)dtpFechaInicio.Date).Day;
+            double EndMonth = DateHelper.GetMonthsDays((DateTime)dtpFechaInicio.Date);
             this.CalcularTotalSubtotal(EndMonth, currentDay);
         }
 
@@ -80,7 +79,6 @@ namespace WorklabsMx.iOS
             {
                 lblTotal.Text = ((subtotal + (MembresiaGlobal.Inscripcion_Precio_Base_Neto)) * Convert.ToDouble(lblCantidadMembresias.Text)).ToString("C");
             }
-            //lblTotal.Text = (((MembresiaGlobal.Membresia_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text))) + subtotal + (MembresiaGlobal.Inscripcion_Precio_Base_Neto)) * Convert.ToDouble(lblCantidadMembresias.Text)).ToString("C");
             this.LlenarPreordenMembresia();
         }
 
