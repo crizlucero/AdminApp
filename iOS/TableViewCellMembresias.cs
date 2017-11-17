@@ -28,6 +28,7 @@ namespace WorklabsMx.iOS
 
         internal void UpdateCell(MembresiaModel Membresia, int indice)
         {
+            //this.lblTotal.Text = "$0.00";
             this.IndiceMembresia = indice;
             dateFormat.DateFormat = "dd/MM/yyyy"; 
             StyleHelper.Style(this.vwMembresias.Layer);
@@ -36,8 +37,8 @@ namespace WorklabsMx.iOS
             this.lblNombreMembresia.Text = Membresia.Membresia_Descripcion;
             this.lblTarifaMensual.Text = Membresia.Membresia_Precio_Base_Neto.ToString("C");
             this.lblTarifaInscripcion.Text = Membresia.Inscripcion_Precio_Base_Neto.ToString("C");
-            this.lblCantidadMeses.Text = "1";
-            this.lblCantidadMembresias.Text = "0";
+            //this.lblCantidadMeses.Text = "1";
+            //this.lblCantidadMembresias.Text = "0";
             MembresiaGlobal = Membresia;
             this.FechaInicio = dateFormat.ToString(this.dtpFechaInicio.Date);
         }
@@ -73,11 +74,11 @@ namespace WorklabsMx.iOS
 
             if (Convert.ToDouble(lblCantidadMeses.Text) > 1)
             {
-                lblTotal.Text = (((MembresiaGlobal.Membresia_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text))) + subtotal + (MembresiaGlobal.Inscripcion_Precio_Base_Neto)) * Convert.ToDouble(lblCantidadMembresias.Text)).ToString("C");
+                this.lblTotal.Text = (((MembresiaGlobal.Membresia_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text) - 1)) + subtotal  + (MembresiaGlobal.Inscripcion_Precio_Base_Neto)) * Convert.ToDouble(lblCantidadMembresias.Text)).ToString("C");
             }
             else 
             {
-                lblTotal.Text = ((subtotal + (MembresiaGlobal.Inscripcion_Precio_Base_Neto)) * Convert.ToDouble(lblCantidadMembresias.Text)).ToString("C");
+                this.lblTotal.Text = ((subtotal + (MembresiaGlobal.Inscripcion_Precio_Base_Neto)) * Convert.ToDouble(lblCantidadMembresias.Text)).ToString("C");
             }
             this.LlenarPreordenMembresia();
         }

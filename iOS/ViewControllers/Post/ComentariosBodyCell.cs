@@ -30,7 +30,6 @@ namespace WorklabsMx.iOS
             lblNombre.Text = post.Usuario_Nombre;
             lblLikes.Text = post.Publicacion_Me_Gustan_Cantidad + " LIKES";
             lblFechaPost.Text = post.Publicacion_Fecha;
-            //lblOcupacion.Text = post.Miembro_Puesto;
             lblComentarios.Text = post.Publicacion_Comentarios_Cantidad + " COMENTARIOS";
             lblDetalleComentario.Text = post.Publicacion_Contenido;
 
@@ -49,8 +48,6 @@ namespace WorklabsMx.iOS
                 btnImagenComentatio.Hidden = true;
                 btnImagenComentatio.Enabled = false;
                 btnImagenComentatio.Frame = new CGRect(btnImagenComentatio.Frame.X, btnImagenComentatio.Frame.Y, btnImagenComentatio.Frame.Width, 0);
-
-                //btnImagenComentatio.Frame.Size.Height = 0;
             }
 
             PostLocal = post;

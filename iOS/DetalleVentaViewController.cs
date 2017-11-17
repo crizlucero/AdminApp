@@ -34,7 +34,14 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             StyleHelper.Style(vwDetalleProducto.Layer);
+
             this.CargarDetalleCompra();
+        }
+
+        public override void ViewWillAppear(bool animated)
+        {
+            var color = new UIColor(1, 0.8f);
+            this.View.BackgroundColor = color;
         }
 
         partial void btnBack_TouchUpInside(UIButton sender)

@@ -17,14 +17,12 @@ namespace WorklabsMx.iOS
 
         double subTotalGlobal = 0.0;
         ProductoModel ProductoGlobal;
-
         public event EventHandler ObtenerPreordenProductos;
 
         CarritoCompras Preorden = new CarritoCompras();
         string FechaInicio;
         NSDateFormatter dateFormat = new NSDateFormatter();
-
-        int indiceGlobal;
+        string cantidadGlobal = "0";
 
         public CeldaCarritoProductos (IntPtr handle) : base (handle)
         {
@@ -33,13 +31,11 @@ namespace WorklabsMx.iOS
 
         public override void LayoutIfNeeded()
         {
-            base.LayoutIfNeeded(); 
-
+            base.LayoutIfNeeded();
         }
 
         internal void UpdateCell(ProductoModel Producto, bool QuitarViewCompraRecurrente, string MensajeTarifa, int indice)
         {
-            this.indiceGlobal = indice;
             dateFormat.DateFormat = "dd/MM/yyyy";  
             var pickerModelSucursales = new SucursalesModel();
             pkvSucursal.Model = pickerModelSucursales;
@@ -70,18 +66,16 @@ namespace WorklabsMx.iOS
                 dpkFechaInicio.MinimumDate = (NSDate)DateTime.Now;
                 this.FechaInicio = dateFormat.ToString(this.dpkFechaInicio.Date);
             }
-            this.lblCantidadMeses.Text = "1";
             this.lblMensajeTarifa.Text = MensajeTarifa;
             this.lblNombreProducto.Text = Producto.Producto_Descripcion;
             this.lblTarifa.Text = Producto.Producto_Precio_Base_Neto.ToString("C");
-            this.lblTotal.Text = "$0.00";
-            this.lblCantidadProductos.Text = "0";
             this.ProporcionalMes();
         }
 
         partial void stpCantidadProductos_Changed(UIStepper sender)
         {
             this.lblCantidadProductos.Text = sender.Value.ToString();
+            this.cantidadGlobal = sender.Value.ToString();
             this.ProporcionalMes();
             this.ObtenerTotal();
         }
@@ -92,7 +86,7 @@ namespace WorklabsMx.iOS
             this.ObtenerTotal();
         }
 
-        private void ProporcionalMes()
+        internal void ProporcionalMes()
         {
             double EndMonth = DateHelper.GetMonthsDays((DateTime)dpkFechaInicio.Date);
             double currentDay = ((DateTime)dpkFechaInicio.Date).Day;
@@ -113,13 +107,13 @@ namespace WorklabsMx.iOS
             this.ObtenerTotal();
         }
 
-        private void ObtenerTotal()
+        internal void ObtenerTotal()
         {
             lblTotal.Text = (((ProductoGlobal.Producto_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text) - 1)) + subTotalGlobal) * Convert.ToDouble(lblCantidadProductos.Text)).ToString("C");
             this.LlenarPreordenProductos();
         }
 
-        private void LlenarPreordenProductos()
+        internal void LlenarPreordenProductos()
         {
             Preorden.Tipo = TiposServicios.Producto;
             Preorden.Id = int.Parse(ProductoGlobal.Producto_Id);
@@ -131,7 +125,6 @@ namespace WorklabsMx.iOS
             Preorden.ImpuestoId = this.ProductoGlobal.Impuesto_Id;
             Preorden.DescuentoId = 0;
             Preorden.TotalPagar = this.lblTotal.Text;
-            Preorden.IndiceProducto = this.indiceGlobal;
             Preorden.Nombre = this.lblNombreProducto.Text;
             if (ObtenerPreordenProductos != null)
             {

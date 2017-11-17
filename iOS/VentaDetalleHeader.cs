@@ -30,7 +30,9 @@ namespace WorklabsMx.iOS
                 descuento = descuento * 1.16;
 
                 this.lblDescuento.Text = descuento.ToString("C");
-                this.lblTotal.Text = (Total - descuento).ToString("C");
+                this.lblLeyendaTotalDescuento.Hidden = false;
+                this.lblTotalConDescuento.Hidden = false;
+                this.lblTotalConDescuento.Text = (Total - descuento).ToString("C");
                 BTProgressHUD.Dismiss();
             }
 

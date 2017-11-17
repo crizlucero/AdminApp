@@ -29,8 +29,6 @@ namespace WorklabsMx.iOS
         List<ProductoModel> allProducts = new List<ProductoModel>();
         List<CarritoCompras> PreordenProductos = new List<CarritoCompras>();
 
-        SimpleStorage Storage;
-
         public CarritoProductos (IntPtr handle) : base (handle)
         {
         }
@@ -38,21 +36,23 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            Storage = SimpleStorage.EditGroup("Login");
-            if (InternetConectionHelper.VerificarConexion())
-            {
-                this.allProducts = new PickerItemsController().GetProductos();
-            }
-            else 
-            {
-                isShowInformation = false;
-                existeConeccion = false;
-            }
+           
         }
 
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+
+            if (InternetConectionHelper.VerificarConexion())
+            {
+                this.allProducts = new PickerItemsController().GetProductos();
+            }
+            else
+            {
+                isShowInformation = false;
+                existeConeccion = false;
+            }
+
             var barViewControllers = this.TabBarController.ViewControllers;
             var svc = (TableViewMembresia)barViewControllers[1]; //
             foreach (CarritoCompras preordenMembresia in svc.ObtenerPreordenMembresias())
@@ -82,7 +82,7 @@ namespace WorklabsMx.iOS
                 }
                 else
                 {
-                    PreordenProductos[currentOrderMember.IndiceProducto] = currentOrderMember;
+                    PreordenProductos[PreordenProductos.Count - 1] = currentOrderMember;
                 }
             }
             else

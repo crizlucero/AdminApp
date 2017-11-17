@@ -33,6 +33,13 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             BTProgressHUD.Show();
+        }
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+
+
             if (InternetConectionHelper.VerificarConexion())
             {
                 Membresias = new PickerItemsController().GetMembresias();
@@ -42,11 +49,7 @@ namespace WorklabsMx.iOS
                 isShowInformation = false;
                 existeConeccion = false;
             }
-        }
 
-        public override void ViewWillAppear(bool animated)
-        {
-            base.ViewWillAppear(animated);
             var barViewControllers = this.TabBarController.ViewControllers;
             var svc = (CarritoProductos)barViewControllers[0]; //
             foreach (CarritoCompras preordenProducto in svc.ObtenerPreordenProductos())
@@ -77,7 +80,7 @@ namespace WorklabsMx.iOS
                 }
                 else
                 {
-                    PreordenMembresias[currentOrderMember.IndiceProducto] = currentOrderMember;
+                    PreordenMembresias[PreordenMembresias.Count - 1] = currentOrderMember;
                 }
             }
             else 

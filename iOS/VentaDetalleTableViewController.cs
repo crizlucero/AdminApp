@@ -28,7 +28,7 @@ namespace WorklabsMx.iOS
         const string IdentificadorCeldaBody = "CuerpoDetalleVenta";
         const string IdentificadorCeldaNoInfo = "NoInfoDetalleVenta";
 
-        const int TamañoHeader = 133;
+        const int TamañoHeader = 144;
         const int TamañoCeldaProductos = 136;
         const int TamañoMensajeNoInfo = 400;
 
@@ -51,12 +51,6 @@ namespace WorklabsMx.iOS
             membresias = new List<CarritoComprasDetalle>();
         }
 
-
-       /* void CanjearCupon(object sender, EventArgs e)
-        {
-            this.PerformSegue("canjearcupon", null);
-        }*/
-
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
             this.Subtotal = 0;
@@ -70,7 +64,6 @@ namespace WorklabsMx.iOS
             }
             this.Impuesto = Subtotal * 0.16;
             headerCell.UpdateCell(this.Subtotal, this.Impuesto, this.Total, this.datosDescuento);
-            //headerCell.CanjearCupon += CanjearCupon;
             return headerCell;
         }
 

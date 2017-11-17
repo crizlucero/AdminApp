@@ -32,9 +32,13 @@ namespace WorklabsMx.iOS
         [Outlet]
         UIKit.UILabel lblTotal { get; set; }
 
-        [Action ("btnCupon_TouchUpInside:")]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnCupon_TouchUpInside (UIKit.UIButton sender);
+        UIKit.UILabel lblLeyendaTotalDescuento { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblTotalConDescuento { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -53,6 +57,11 @@ namespace WorklabsMx.iOS
                 lblImpuesto = null;
             }
 
+            if (lblLeyendaTotalDescuento != null) {
+                lblLeyendaTotalDescuento.Dispose ();
+                lblLeyendaTotalDescuento = null;
+            }
+
             if (lblSubtotal != null) {
                 lblSubtotal.Dispose ();
                 lblSubtotal = null;
@@ -61,6 +70,11 @@ namespace WorklabsMx.iOS
             if (lblTotal != null) {
                 lblTotal.Dispose ();
                 lblTotal = null;
+            }
+
+            if (lblTotalConDescuento != null) {
+                lblTotalConDescuento.Dispose ();
+                lblTotalConDescuento = null;
             }
         }
     }
