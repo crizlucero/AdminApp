@@ -958,14 +958,14 @@
                                 <rect key="frame" x="0.0" y="540" width="600" height="329"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8xT-RK-Cbv" id="bYj-Kt-PBR">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="329"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="329"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NiB-Eq-pfV">
-                                            <rect key="frame" x="8" y="0.0" width="584" height="329"/>
+                                            <rect key="frame" x="8" y="0.0" width="359" height="329"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No hay membresías disponibles" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuI-dZ-hOe">
-                                                    <rect key="frame" x="8" y="8" width="568" height="313"/>
+                                                    <rect key="frame" x="8" y="8" width="343" height="313"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="41"/>
                                                     <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1791,7 +1791,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Woi-Fc-i6e">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Woi-Fc-i6e">
                                             <rect key="frame" x="138" y="72" width="356" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
@@ -1838,8 +1838,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <action selector="btnCanjearCuponTouchUpInside:" destination="Qgn-ng-dgn" eventType="touchUpInside" id="81805"/>
-                                                <segue destination="Oiz-SU-rXd" kind="presentation" identifier="canjearcupon" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="reD-Xr-g4T"/>
+                                                <segue destination="Oiz-SU-rXd" kind="presentation" identifier="canjearcupon" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="jLc-9T-8dw"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSJ-Lb-Cgb">
@@ -2180,7 +2179,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Subtotal:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E65-AT-P33">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Subtotal:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E65-AT-P33" ambiguous="YES">
                                         <rect key="frame" x="8" y="389" width="90" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="i5B-bV-TfR"/>
@@ -2189,13 +2188,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbF-d2-SJo">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbF-d2-SJo" ambiguous="YES">
                                         <rect key="frame" x="102" y="389" width="450" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Impuesto:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYC-Ht-p3n">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Impuesto:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYC-Ht-p3n" misplaced="YES" ambiguous="YES">
                                         <rect key="frame" x="8" y="437" width="90" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="TIN-U8-UB6"/>
@@ -2204,13 +2203,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPb-3d-Aly">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPb-3d-Aly" ambiguous="YES">
                                         <rect key="frame" x="102" y="437" width="450" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Total:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSs-aE-eWO">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSs-aE-eWO" misplaced="YES" ambiguous="YES">
                                         <rect key="frame" x="8" y="465" width="90" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="RMc-hz-18Q"/>
@@ -2237,7 +2236,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0U-kN-JnT">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0U-kN-JnT" ambiguous="YES">
                                         <rect key="frame" x="106" y="465" width="450" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
@@ -2380,10 +2379,10 @@
             </objects>
             <point key="canvasLocation" x="-2746.4" y="1418.141"/>
         </scene>
-        <!--Canjear Cupon View Controller-->
+        <!--Canjear Cupon Controller-->
         <scene sceneID="LXX-AM-GDF">
             <objects>
-                <viewController id="Oiz-SU-rXd" customClass="CanjearCuponViewController" sceneMemberID="viewController">
+                <viewController id="Oiz-SU-rXd" customClass="CanjearCuponController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YfV-11-dZU"/>
                         <viewControllerLayoutGuide type="bottom" id="22Z-9q-X2x"/>
@@ -2416,7 +2415,7 @@
                                                 </constraints>
                                                 <state key="normal" image="back"/>
                                                 <connections>
-                                                    <action selector="btnBack_TouchUpInside:" destination="Oiz-SU-rXd" eventType="touchDragInside" id="77998"/>
+                                                    <action selector="btnBack_TouchUpInside:" destination="Oiz-SU-rXd" eventType="touchUpInside" id="86208"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -2459,7 +2458,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="btnCanjear_TouchUpInside:" destination="Oiz-SU-rXd" eventType="touchUpInside" id="77175"/>
+                                            <action selector="btnCanjear_TouchUpInside:" destination="Oiz-SU-rXd" eventType="touchUpInside" id="84545"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -3089,7 +3088,7 @@
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6092" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6100">
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6100" fixedFrame="YES">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <items>
                         <navigationItem title="Title" id="6101"/>

@@ -1,4 +1,4 @@
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
@@ -651,7 +651,6 @@
     <Compile Include="Models\SucursalesModel.cs" />
     <Compile Include="Models\CarritoCompras.cs" />
     <Compile Include="ComentarioViewCell.cs" />
-    <Compile Include="VentaDetalleTableViewController.cs" />
     <Compile Include="VentaDetalleTableViewController.designer.cs">
       <DependentUpon>VentaDetalleTableViewController.cs</DependentUpon>
     </Compile>
@@ -660,6 +659,7 @@
       <DependentUpon>CeldaNoDetalleVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="CeldaVentaDetalle.cs" />
+    <Compile Include="VentaDetalleTableViewController.cs" />
     <Compile Include="CeldaVentaDetalle.designer.cs">
       <DependentUpon>CeldaVentaDetalle.cs</DependentUpon>
     </Compile>
@@ -682,6 +682,10 @@
     <Compile Include="DetalleVentaViewController.cs" />
     <Compile Include="DetalleVentaViewController.designer.cs">
       <DependentUpon>DetalleVentaViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CanjearCuponController.cs" />
+    <Compile Include="CanjearCuponController.designer.cs">
+      <DependentUpon>CanjearCuponController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
