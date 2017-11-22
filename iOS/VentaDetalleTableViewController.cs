@@ -18,6 +18,7 @@ namespace WorklabsMx.iOS
 		{
 		}
 
+
         public List<CarritoCompras> PreordenProductos = new List<CarritoCompras>();
         PickerItemsController controller;
         List<CarritoComprasDetalle> membresias = null;
@@ -151,7 +152,17 @@ namespace WorklabsMx.iOS
             this.NavigationController.PopViewController(true);
         }
 
-	}
+        partial void btnPagar(UIBarButtonItem sender)
+        {
+            var ConfirmarCompra = UIAlertController.Create("Confirmar compra", "¿Proceder a pagar?", UIAlertControllerStyle.Alert);
+            ConfirmarCompra.AddAction(UIAlertAction.Create("Aceptar", UIAlertActionStyle.Default, ((UIAlertAction obj) => 
+            {
+                
+            })));
+            ConfirmarCompra.AddAction(UIAlertAction.Create("Cancelar", UIAlertActionStyle.Default, null));
+            this.PresentViewController(ConfirmarCompra, true, null);
+        }
+    }
 
 
     partial  class VentaDetalleTableViewController : DescuentoAplicadoDel

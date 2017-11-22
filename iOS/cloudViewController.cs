@@ -12,11 +12,7 @@ namespace WorklabsMx.iOS
 
 
         const int TamañoCeldaInfo = 70;
-        const int TamañoMensajeNoInfo = 400;
-
-        bool isShowInformation = false;
-        bool existeConeccion = true;
-
+        const int TamañoMensajeNoInfo = 600;
 
         public cloudViewController (IntPtr handle) : base (handle)
         {

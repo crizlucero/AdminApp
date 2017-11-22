@@ -1,14 +1,19 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/TelefoniaTableView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Helpers/MessageDialog.cs">
     <Files>
+      <File FileName="iOS/cloudViewController.cs" Line="43" Column="38" NotebookId="1" />
+      <File FileName="iOS/TelefoniaTableView.cs" Line="14" Column="45" NotebookId="1" />
+      <File FileName="iOS/ComentarPostTableViewController.cs" Line="251" Column="44" NotebookId="1" />
+      <File FileName="iOS/VentaDetalleTableViewController.cs" Line="157" Column="13" NotebookId="1" />
+      <File FileName="WorklabsMx/Controllers/PagosController.cs" Line="111" Column="41" NotebookId="1" />
       <File FileName="iOS/Main.storyboard" NotebookId="1" />
-      <File FileName="iOS/cloudViewController.cs" Line="57" Column="9" NotebookId="1" />
-      <File FileName="iOS/TelefoniaTableView.cs" Line="7" Column="44" NotebookId="1" />
     </Files>
     <FloatingWindows>
-      <FloatingWindow WindowId="1" X="1105" Y="23" Width="906" Height="627">
+      <FloatingWindow WindowId="1" X="1142" Y="23" Width="906" Height="627">
         <Files>
-          <File FileName="iOS/ViewElements/EscritorioController.cs" Line="154" Column="33" />
+          <File FileName="iOS/ViewElements/EscritorioController.cs" Line="115" Column="32" />
+          <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="138" Column="28" />
+          <File FileName="iOS/Helpers/MessageDialog.cs" Line="12" Column="32" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
