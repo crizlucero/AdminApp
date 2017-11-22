@@ -687,6 +687,14 @@
     <Compile Include="CanjearCuponController.designer.cs">
       <DependentUpon>CanjearCuponController.cs</DependentUpon>
     </Compile>
+    <Compile Include="cloudViewController.cs" />
+    <Compile Include="cloudViewController.designer.cs">
+      <DependentUpon>cloudViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelefoniaTableView.cs" />
+    <Compile Include="TelefoniaTableView.designer.cs">
+      <DependentUpon>TelefoniaTableView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
