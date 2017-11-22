@@ -147,11 +147,10 @@
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
-    <AndroidResource Include="Resources\mipmap-hdpi\Icon2.png" />
-    <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\Icon2.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\Icon2.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\Icon2.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon2.png" />
     <AndroidResource Include="Resources\layout\ToolbarLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_menu.png" />
     <AndroidResource Include="Resources\menu\top_menus.xml" />

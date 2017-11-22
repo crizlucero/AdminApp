@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Helpers/MessageDialog.cs">
     <Files>
@@ -17,12 +18,25 @@
         </Files>
       </FloatingWindow>
     </FloatingWindows>
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/MainActivity.cs">
+    <Files>
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="74" Column="80" />
+      <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="44" Column="14" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="692" Column="14" />
+    </Files>
+>>>>>>> 1930523d1e42466fd770d3852a33c9a16949679c
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Helpers/XmlSerializador.cs" relfile="WorklabsMx/Helpers/XmlSerializador.cs" line="23" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/TableViewMembresia.cs" relfile="iOS/TableViewMembresia.cs" line="120" column="23" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.89CCA8BE-0586-4891-9CEC-16532ABD6816" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2D4A8346-EB50-48DE-9B14-561C3115DFD0" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="MyTheme" />
   <MultiItemStartupConfigurations />
 </Properties>
