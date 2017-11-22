@@ -1,6 +1,11 @@
-using Foundation;
 using System;
 using UIKit;
+using System.Collections.Generic;
+using WorklabsMx.Models;
+using BigTed;
+using WorklabsMx.Controllers;
+using WorklabsMx.iOS.Helpers;
+using WorklabsMx.iOS.Models;
 
 namespace WorklabsMx.iOS
 {
@@ -10,9 +15,13 @@ namespace WorklabsMx.iOS
         const string IdentificadorCeldaInfo = "Info";
         const string IdentificadorCeldaNoInfo = "NoInfo";
 
-
         const int TamañoCeldaInfo = 70;
         const int TamañoMensajeNoInfo = 600;
+
+        bool isShowInformation = false;
+        bool existeConeccion = true;
+
+        public List<ProductoModel> allProducts = new List<ProductoModel>();
 
         public cloudViewController (IntPtr handle) : base (handle)
         {

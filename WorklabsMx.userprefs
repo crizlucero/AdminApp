@@ -1,42 +1,27 @@
-<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Helpers/MessageDialog.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ProductosMiCuentaViewController.cs">
     <Files>
-      <File FileName="iOS/cloudViewController.cs" Line="43" Column="38" NotebookId="1" />
-      <File FileName="iOS/TelefoniaTableView.cs" Line="14" Column="45" NotebookId="1" />
-      <File FileName="iOS/ComentarPostTableViewController.cs" Line="251" Column="44" NotebookId="1" />
-      <File FileName="iOS/VentaDetalleTableViewController.cs" Line="157" Column="13" NotebookId="1" />
-      <File FileName="WorklabsMx/Controllers/PagosController.cs" Line="111" Column="41" NotebookId="1" />
-      <File FileName="iOS/Main.storyboard" NotebookId="1" />
+      <File FileName="iOS/ProductosMiCuentaViewController.cs" Line="94" Column="107" NotebookId="1" />
+      <File FileName="iOS/CuentaProductosCell.cs" Line="23" Column="62" NotebookId="1" />
+      <File FileName="iOS/NoInfoCuentaProductosCell.cs" Line="23" Column="10" NotebookId="1" />
+      <File FileName="iOS/MembresiasMiCuentaViewController.cs" Line="7" Column="30" NotebookId="1" />
+      <File FileName="iOS/CuentaMembresiasCell.cs" Line="22" Column="13" NotebookId="1" />
+      <File FileName="WorklabsMx/Models/CarritoComprasDetalle.cs" Line="3" Column="39" NotebookId="1" />
+      <File FileName="iOS/NoInfoCuentaMembresiasCell.cs" Line="7" Column="52" NotebookId="1" />
     </Files>
     <FloatingWindows>
-      <FloatingWindow WindowId="1" X="1142" Y="23" Width="906" Height="627">
+      <FloatingWindow WindowId="1" X="1124" Y="23" Width="906" Height="627">
         <Files>
-          <File FileName="iOS/ViewElements/EscritorioController.cs" Line="115" Column="32" />
-          <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="138" Column="28" />
-          <File FileName="iOS/Helpers/MessageDialog.cs" Line="12" Column="32" />
+          <File FileName="iOS/CarritoProductos.cs" Line="162" Column="10" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
-=======
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/MainActivity.cs">
-    <Files>
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="74" Column="80" />
-      <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="44" Column="14" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="692" Column="14" />
-    </Files>
->>>>>>> 1930523d1e42466fd770d3852a33c9a16949679c
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Helpers/XmlSerializador.cs" relfile="WorklabsMx/Helpers/XmlSerializador.cs" line="23" column="1" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/TableViewMembresia.cs" relfile="iOS/TableViewMembresia.cs" line="120" column="23" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2D4A8346-EB50-48DE-9B14-561C3115DFD0" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="MyTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.89CCA8BE-0586-4891-9CEC-16532ABD6816" />
   <MultiItemStartupConfigurations />
 </Properties>

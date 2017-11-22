@@ -1,5 +1,6 @@
 using System;
 using UIKit;
+using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Models;
 using BigTed;
 using Foundation;
@@ -39,6 +40,7 @@ namespace WorklabsMx.iOS
             imgPicker.Delegate = this;
              var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
+            StyleHelper.Style(vwSeccionComentarios.Layer);
         }
 
         public override void ViewWillDisappear(bool animated)
