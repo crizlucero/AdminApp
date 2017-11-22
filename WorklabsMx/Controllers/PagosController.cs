@@ -72,7 +72,8 @@ namespace WorklabsMx.Controllers
             return renovaciones;
         }
 
-        public bool AddOrdenVentaEncabezado(string miembro_id, string moneda_id, string impuesto_id, string promocion_id, string descuento_id, string folio, string importe_suma)
+        public int AddOrdenVentaEncabezado(int miembro_id, int moneda_id, int impuesto_id, int promocion_id, int descuento_id, string folio, decimal importe_suma, decimal porcentaje_descuento,
+                                           decimal importe_descuento, decimal importe_subtotal, decimal importe_impuesto, decimal importe_total, decimal importe_pagado, decimal importe_facturado)
         {
             try
             {
@@ -91,27 +92,36 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Descuento_Id", descuento_id);
                 command.Parameters.AddWithValue("@Orden_Venta_Encabezado_Folio", folio);
                 command.Parameters.AddWithValue("@Orden_Venta_Encabezado_Importe_Suma", importe_suma);
+                command.Parameters.AddWithValue("@Orden_Venta_Encabezado_Porcentaje_Descuento", porcentaje_descuento);
+                command.Parameters.AddWithValue("@Orden_Venta_Encabezado_Importe_Descuento", importe_descuento);
+                command.Parameters.AddWithValue("@Orden_Venta_Encabezado_Importe_Subtotal", importe_subtotal);
+                command.Parameters.AddWithValue("@Orden_Venta_Encabezado_Importe_Impuesto", importe_impuesto);
+                command.Parameters.AddWithValue("@Orden_Venta_Encabezado_Importe_Total", importe_total);
+                command.Parameters.AddWithValue("@Orden_Venta_Encabezado_Importe_Pagado", importe_pagado);
+                command.Parameters.AddWithValue("@Orden_Venta_Encabezado_Importe_Facturado", importe_facturado);
+                command.Parameters.AddWithValue("@Orden_Venta_Encabezado_Estatus", 1);
+                command.Parameters.Add("@Orden_Venta_Encabezado_Importe_Total", SqlDbType.Int).Direction = ParameterDirection.Output;
 
                 transaction = conn.BeginTransaction();
 
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();
                 transaction.Commit();
+                return Convert.ToInt32(command.Parameters["@Orden_Venta_Encabezado_Importe_Total"].Value);
             }
             catch (Exception e)
             {
                 transaction.Rollback();
                 SlackLogs.SendMessage(e.Message);
-                return false;
+                return -1;
             }
             finally { conn.Close(); }
-            return true;
         }
 
-        public bool AddOrdenVentaDetalle(string encabezado_id, string miembro_id, string Inscripcion_Membresia_Id, string Lista_Precio_Membresia_Id, string Producto_Id, string Lista_Precio_Producto_Id,
-                                         string Orden_Venta_Detalle_Descripcion, string Orden_Venta_Detalle_Cantidad, string Orden_Venta_Detalle_Importe_Precio, string Orden_Venta_Detalle_Importe_Prorrateo,
-                                         string Orden_Venta_Detalle_Importe_Suma, string Orden_Venta_Detalle_Importe_Descuento, string Orden_Venta_Detalle_Importe_Subtotal, string Orden_Venta_Detalle_Importe_Impuesto,
-                                         string Orden_Venta_Detalle_Importe_Total, string Orden_Venta_Detalle_Estatus)
+        public int AddOrdenVentaDetalle(int encabezado_id, int Membresia_Id, int Inscripcion_Membresia_Id, int Lista_Precio_Membresia_Id, int Producto_Id, int Lista_Precio_Producto_Id,
+                                         string Orden_Venta_Detalle_Descripcion, int Orden_Venta_Detalle_Cantidad, decimal Orden_Venta_Detalle_Importe_Precio, decimal Orden_Venta_Detalle_Importe_Prorrateo,
+                                         decimal Orden_Venta_Detalle_Importe_Suma, decimal Orden_Venta_Detalle_Importe_Descuento, decimal Orden_Venta_Detalle_Importe_Subtotal, decimal Orden_Venta_Detalle_Importe_Impuesto,
+                                         decimal Orden_Venta_Detalle_Importe_Total)
         {
             try
             {
@@ -124,11 +134,12 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Trasaccion", "ALTA");
                 command.Parameters.AddWithValue("@Orden_Venta_Detalle_Id", DBNull.Value);
                 command.Parameters.AddWithValue("@Orden_Venta_Encabezado_Id", encabezado_id);
-                command.Parameters.AddWithValue("@Membresia_Id", miembro_id);
+                command.Parameters.AddWithValue("@Membresia_Id", Membresia_Id);
                 command.Parameters.AddWithValue("@Inscripcion_Membresia_Id", Inscripcion_Membresia_Id);
                 command.Parameters.AddWithValue("@Lista_Precio_Membresia_Id", Lista_Precio_Membresia_Id);
                 command.Parameters.AddWithValue("@Producto_Id", Producto_Id);
                 command.Parameters.AddWithValue("@Lista_Precio_Producto_Id", Lista_Precio_Producto_Id);
+
                 command.Parameters.AddWithValue("@Orden_Venta_Detalle_Descripcion", Orden_Venta_Detalle_Descripcion);
                 command.Parameters.AddWithValue("@Orden_Venta_Detalle_Cantidad", Orden_Venta_Detalle_Cantidad);
                 command.Parameters.AddWithValue("@Orden_Venta_Detalle_Importe_Precio", Orden_Venta_Detalle_Importe_Precio);
@@ -138,7 +149,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Orden_Venta_Detalle_Importe_Subtotal", Orden_Venta_Detalle_Importe_Subtotal);
                 command.Parameters.AddWithValue("@Orden_Venta_Detalle_Importe_Impuesto", Orden_Venta_Detalle_Importe_Impuesto);
                 command.Parameters.AddWithValue("@Orden_Venta_Detalle_Importe_Total", Orden_Venta_Detalle_Importe_Total);
-                command.Parameters.AddWithValue("@Orden_Venta_Detalle_Estatus", Orden_Venta_Detalle_Estatus);
+                command.Parameters.AddWithValue("@Orden_Venta_Detalle_Estatus", 1);
                 command.Parameters.Add("@Orden_Venta_Detalle_Id_Salida", SqlDbType.Int).Direction = ParameterDirection.Output;
 
                 transaction = conn.BeginTransaction();
@@ -146,16 +157,15 @@ namespace WorklabsMx.Controllers
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();
                 transaction.Commit();
-                int id = Convert.ToInt32(command.Parameters["@Orden_Venta_Detalle_Id_Salida"].Value);
+                return Convert.ToInt32(command.Parameters["@Orden_Venta_Detalle_Id_Salida"].Value);
             }
             catch (Exception e)
             {
                 transaction.Rollback();
                 SlackLogs.SendMessage(e.Message);
-                return false;
+                return -1;
             }
             finally { conn.Close(); }
-            return true;
         }
 
         public string GetUrlPayment(string monto)

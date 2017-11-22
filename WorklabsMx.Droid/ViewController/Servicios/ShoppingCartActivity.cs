@@ -21,7 +21,8 @@ namespace WorklabsMx.Droid
         List<CarritoComprasDetalle> membresias = null, productos = null;
         Dictionary<string, CarritoModel> CarritoMembresia, CarritoProducto;
         TableLayout tlCarrito;
-        decimal Descuento, Subtotal, IVA = 1.16M, Total, IVATotal;
+        decimal Descuento, Subtotal, IVA = 1.16M, Total, IVATotal, Descuento_Porcentaje;
+        string moneda_id, impuesto_id, descuento_id;
         readonly List<decimal> Descuentos;
         SimpleStorage Storage;
         PickerItemsController controller;
@@ -80,7 +81,6 @@ namespace WorklabsMx.Droid
                 lblDescripcion.SetWidth(120);
                 lblDescripcion.Click += (sender, e) => ShowDesglose(precio);
                 trDescripcion.AddView(lblDescripcion, 1);
-
                 TextView lblTotal = new TextView(this)
                 {
                     Text = Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Suma) != 0 ? precio.Carrito_Compras_Detalle_Importe_Suma_Texto : Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Prorrateo).ToString("C") + "MXN"
@@ -130,6 +130,8 @@ namespace WorklabsMx.Droid
             PromocionModel promo = new PagosController().AplicarCupon(FindViewById<EditText>(Resource.Id.txtCupon).Text);
             if (!promo.Equals(null))
             {
+                descuento_id = promo.Descuento_Id;
+                Descuento_Porcentaje = promo.Descuento_Porcentaje;
                 foreach (KeyValuePair<string, CarritoModel> producto in CarritoProducto)
                 {
                     producto.Value.Descuento_Id = Convert.ToInt32(promo.Descuento_Id);
@@ -178,13 +180,17 @@ namespace WorklabsMx.Droid
                 case Resource.Id.menu_payment:
                     if (FindViewById<Switch>(Resource.Id.swCondiciones).Checked)
                     {
-                        Console.WriteLine(new PagosController().GetUrlPayment(Total.ToString("F")));
-                        /*Intent intent = new Intent(this, typeof(PaymentActivity));
+                        //Console.WriteLine(new PagosController().GetUrlPayment(Total.ToString("F")));
+                        Intent intent = new Intent(this, typeof(PaymentActivity));
+                        intent.PutExtra("Membresias", JsonConvert.SerializeObject(membresias));
+                        intent.PutExtra("Productos", JsonConvert.SerializeObject(productos));
+                        intent.PutExtra("Descuento_Id", descuento_id);
+                        intent.PutExtra("Descuento_Procentaje", Descuento_Porcentaje.ToString());
                         intent.PutExtra("Descuento", Descuento.ToString());
                         intent.PutExtra("Subtotal", Subtotal.ToString());
                         intent.PutExtra("IVA", IVATotal.ToString());
                         intent.PutExtra("Total", Total.ToString());
-                        StartActivity(intent);*/
+                        StartActivity(intent);
                     }
                     else
                         Toast.MakeText(this, Resource.String.NoAceptoTerminos, ToastLength.Short).Show();

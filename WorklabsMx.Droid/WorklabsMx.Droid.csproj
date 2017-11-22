@@ -37,6 +37,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <MandroidI18n>west</MandroidI18n>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -198,7 +199,6 @@
     <AndroidResource Include="Resources\layout\DirectorioLayout.axml" />
     <AndroidResource Include="Resources\menu\send_menu.xml" />
     <AndroidResource Include="Resources\layout\ProductosLayout.axml" />
-    <AndroidResource Include="Resources\layout\MembresiasLayout.axml" />
     <AndroidResource Include="Resources\menu\edit_menu.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_add.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_remove.png" />
@@ -268,6 +268,7 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_dns.png" />
     <AndroidResource Include="Resources\layout\DesgloseIndividualLayout.axml" />
     <AndroidResource Include="Resources\layout\DatePickerLayout.axml" />
+    <AndroidResource Include="Resources\layout\MembresiasLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
