@@ -8,6 +8,8 @@ using WorklabsMx.iOS.Models;
 using System.Collections.Generic;
 using BigTed;
 using System.Threading.Tasks;
+using WorklabsMx.Controllers;
+using WorklabsMx.iOS.Helpers;
 
 namespace WorklabsMx.iOS
 {
@@ -24,6 +26,9 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            var barViewControllers = this.ViewControllers;
+            var vistaMembresias = (TableViewMembresia)barViewControllers[1];
+            vistaMembresias.Membresias = new PickerItemsController().GetMembresias();
         }
 
         partial void btnCarrito_Touch(UIBarButtonItem sender)

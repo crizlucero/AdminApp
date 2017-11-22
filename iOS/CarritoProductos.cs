@@ -26,7 +26,7 @@ namespace WorklabsMx.iOS
 
         string MensajeTarifa = "";
 
-        List<ProductoModel> allProducts = new List<ProductoModel>();
+        public List<ProductoModel> allProducts = new List<ProductoModel>();
         List<CarritoCompras> PreordenProductos = new List<CarritoCompras>();
 
         public CarritoProductos (IntPtr handle) : base (handle)
@@ -87,7 +87,11 @@ namespace WorklabsMx.iOS
             }
             else
             {
-                PreordenProductos.Add((CarritoCompras)sender);
+                if (currentOrderMember.TotalPagar != "$0.00")
+                {
+                    PreordenProductos.Add((CarritoCompras)sender);
+                }
+
             }
 
         }

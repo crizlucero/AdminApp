@@ -20,7 +20,7 @@ namespace WorklabsMx.iOS
         bool isShowInformation = false;
         bool existeConeccion = true;
 
-        List<MembresiaModel> Membresias;
+        public List<MembresiaModel> Membresias;
         List<CarritoCompras> PreordenMembresias = new List<CarritoCompras>();
 
 
@@ -42,7 +42,8 @@ namespace WorklabsMx.iOS
 
             if (InternetConectionHelper.VerificarConexion())
             {
-                Membresias = new PickerItemsController().GetMembresias();
+                //Membresias = new PickerItemsController().GetMembresias();
+                existeConeccion = true;
             }
             else
             {
@@ -85,7 +86,10 @@ namespace WorklabsMx.iOS
             }
             else 
             {
-                PreordenMembresias.Add((CarritoCompras)sender);
+                if (currentOrderMember.TotalPagar != "$0.00")
+                {
+                    PreordenMembresias.Add((CarritoCompras)sender);
+                }
             }
            
         }

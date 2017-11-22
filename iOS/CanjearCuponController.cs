@@ -48,7 +48,7 @@ namespace WorklabsMx.iOS
                     }
                     else 
                     {
-                        new MessageDialog().SendToast("Cupón incorrecto");
+                        new MessageDialog().SendToast("El código de cupón no es válido");
                     }
 
                 }

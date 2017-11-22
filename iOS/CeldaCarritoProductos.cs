@@ -66,6 +66,7 @@ namespace WorklabsMx.iOS
                 dpkFechaInicio.MinimumDate = (NSDate)DateTime.Now;
                 this.FechaInicio = dateFormat.ToString(this.dpkFechaInicio.Date);
             }
+
             this.lblMensajeTarifa.Text = MensajeTarifa;
             this.lblNombreProducto.Text = Producto.Producto_Descripcion;
             this.lblTarifa.Text = Producto.Producto_Precio_Base_Neto.ToString("C");
@@ -107,13 +108,17 @@ namespace WorklabsMx.iOS
             this.ObtenerTotal();
         }
 
-        internal void ObtenerTotal()
+        private void ObtenerTotal()
         {
             lblTotal.Text = (((ProductoGlobal.Producto_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text) - 1)) + subTotalGlobal) * Convert.ToDouble(lblCantidadProductos.Text)).ToString("C");
-            this.LlenarPreordenProductos();
+            if (this.lblTotal.Text != "$0.00")
+            {
+                this.LlenarPreordenProductos();
+            }
+
         }
 
-        internal void LlenarPreordenProductos()
+        private void LlenarPreordenProductos()
         {
             Preorden.Tipo = TiposServicios.Producto;
             Preorden.Id = int.Parse(ProductoGlobal.Producto_Id);
