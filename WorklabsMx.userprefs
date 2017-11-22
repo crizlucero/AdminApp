@@ -1,41 +1,28 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/CeldaCarritoProductos.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="iOS/VentaDetalleTableViewController.cs" Line="88" Column="104" />
-      <File FileName="iOS/VentaDetalleHeader.cs" Line="32" Column="66" />
-      <File FileName="iOS/CanjearCuponController.cs" Line="36" Column="47" />
-      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="489" Column="66" />
-      <File FileName="WorklabsMx/Controllers/PagosController.cs" Line="6" Column="1" />
-      <File FileName="WorklabsMx/Models/PromocionModel.cs" Line="3" Column="18" />
-      <File FileName="iOS/ViewElements/EscritorioController.cs" Line="120" Column="67" />
-      <File FileName="iOS/ViewControllers/Post/PublicarPostViewController.cs" Line="65" Column="1" />
-      <File FileName="iOS/ViewControllers/Post/ComentariosBodyCell.cs" Line="51" Column="14" />
-      <File FileName="iOS/Main.storyboard" />
-      <File FileName="iOS/DetalleVentaViewController.cs" Line="32" Column="10" />
-      <File FileName="iOS/TableViewMembresia.cs" Line="46" Column="14" />
-      <File FileName="iOS/TableViewCellMembresias.cs" Line="19" Column="35" />
-      <File FileName="iOS/CarritoProductos.cs" Line="136" Column="55" />
-      <File FileName="iOS/CeldaCarritoProductos.cs" Line="44" Column="38" />
+      <File FileName="iOS/ViewElements/EscritorioController.cs" Line="191" Column="12" />
+      <File FileName="iOS/CarritoProductos.cs" Line="90" Column="38" />
+      <File FileName="iOS/CeldaCarritoProductos.cs" Line="108" Column="33" />
+      <File FileName="iOS/TabBarDetalleVenta.cs" Line="51" Column="31" />
+      <File FileName="iOS/TableViewMembresia.cs" Line="17" Column="68" />
+      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="10" Column="18" />
+      <File FileName="iOS/TableViewCellMembresias.cs" Line="55" Column="10" />
+      <File FileName="iOS/Info.plist" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>lblCantidadMeses.Text</Value>
-          <Value>subtotal</Value>
-          <Value>(MembresiaGlobal.Membresia_Precio_Base_Neto * (Convert.ToDouble(lblCantidadMeses.Text)))</Value>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Helpers/XmlSerializador.cs" relfile="WorklabsMx/Helpers/XmlSerializador.cs" line="23" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/TableViewMembresia.cs" relfile="iOS/TableViewMembresia.cs" line="120" column="23" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/TableViewCellMembresias.cs" relfile="iOS/TableViewCellMembresias.cs" line="72" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/TableViewCellMembresias.cs" relfile="iOS/TableViewCellMembresias.cs" line="64" column="20" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/CarritoProductos.cs" relfile="iOS/CarritoProductos.cs" line="77" column="27" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/CeldaCarritoProductos.cs" relfile="iOS/CeldaCarritoProductos.cs" line="114" column="20" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B4E637BD-60E4-4441-BC72-CF1534A7E0AA" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.SelectDevice" AndroidDesignerPreferredTheme="MyTheme" />
   <MultiItemStartupConfigurations />
 </Properties>
