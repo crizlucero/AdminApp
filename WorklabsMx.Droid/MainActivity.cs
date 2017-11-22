@@ -67,31 +67,7 @@ namespace WorklabsMx.Droid
                 }
                 else
                 {
-                    SetContentView(Resource.Layout.LoginLayout);
-
-                    txtEmail = FindViewById<EditText>(Resource.Id.txtEmail);
-                    txtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
-                    Button btnLogin = FindViewById<Button>(Resource.Id.btnLogin);
-                    txtEmail.EditorAction += (sender, e) =>
-                    {
-                        if (Android.Util.Patterns.EmailAddress.Matcher(txtEmail.Text).Matches())
-                        {
-                            if (e.ActionId == ImeAction.Done || e.ActionId == ImeAction.Next)
-                            {
-                                txtPassword.RequestFocus();
-                            }
-                        }
-                        else Toast.MakeText(this, Resource.String.FormatoCorreoError, ToastLength.Short).Show();
-                    };
-
-                    txtPassword.EditorAction += (sender, e) =>
-                    {
-                        if (e.ActionId == ImeAction.Done)
-                        {
-                            btnLogin.CallOnClick();
-                        }
-                    };
-                    btnLogin.Touch += BtnLogin_Touch;
+                    OpenLogin();
                 }
             }
             catch (Exception e)
@@ -102,6 +78,35 @@ namespace WorklabsMx.Droid
                 SetActionBar(toolbar);
                 ActionBar.Title = Resources.GetString(Resource.String.NoConnection);
             }
+        }
+
+        void OpenLogin()
+        {
+            SetContentView(Resource.Layout.LoginLayout);
+
+            txtEmail = FindViewById<EditText>(Resource.Id.txtEmail);
+            txtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
+            Button btnLogin = FindViewById<Button>(Resource.Id.btnLogin);
+            txtEmail.EditorAction += (sender, e) =>
+            {
+                if (Android.Util.Patterns.EmailAddress.Matcher(txtEmail.Text).Matches())
+                {
+                    if (e.ActionId == ImeAction.Done || e.ActionId == ImeAction.Next)
+                    {
+                        txtPassword.RequestFocus();
+                    }
+                }
+                else Toast.MakeText(this, Resource.String.FormatoCorreoError, ToastLength.Short).Show();
+            };
+
+            txtPassword.EditorAction += (sender, e) =>
+            {
+                if (e.ActionId == ImeAction.Done)
+                {
+                    btnLogin.CallOnClick();
+                }
+            };
+            btnLogin.Touch += BtnLogin_Touch;
         }
 
         async void OpenDashboard()
@@ -143,8 +148,8 @@ namespace WorklabsMx.Droid
 
         async Task FillPosts()
         {
-            AndHUD.Shared.Show(this, null, -1, MaskType.Black);
-            await Task.Delay(500);
+            //AndHUD.Shared.Show(this, null, -1, MaskType.Black);
+            //await Task.Delay(500);
 
             posts.Skip(page * sizePage).Take(sizePage).ToList().ForEach(post =>
             {
@@ -392,7 +397,7 @@ namespace WorklabsMx.Droid
                 row.AddView(glPost);
                 tlPost.AddView(row);
             });
-            AndHUD.Shared.Dismiss(this);
+            //AndHUD.Shared.Dismiss(this);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -485,7 +490,9 @@ namespace WorklabsMx.Droid
                             StartActivity(new Intent(this, typeof(SubMenuActivity))); break;
                         case "LogoutActivity":
                             localStorage.Delete("Usuario_Id"); localStorage.Delete("Usuario_Tipo"); localStorage.Delete("Empresa_Id");
-                            StartActivity(new Intent(this, typeof(MainActivity))); break;
+                            OpenLogin();
+                            break;
+                        //StartActivity(new Intent(this, typeof(MainActivity))); break;
                         case "ColeccionProductosActivity": StartActivity(new Intent(this, typeof(ColeccionProductosActivity))); break;
                     }
                 };
@@ -494,11 +501,11 @@ namespace WorklabsMx.Droid
             });
         }
 
-        async void BtnLogin_Touch(object sender, View.TouchEventArgs e)
+        void BtnLogin_Touch(object sender, View.TouchEventArgs e)
         {
             if (Android.Util.Patterns.EmailAddress.Matcher(txtEmail.Text).Matches())
             {
-                AndHUD.Shared.Show(this, null, -1, MaskType.Black);
+                //AndHUD.Shared.Show(this, null, -1, MaskType.Black);
                 //await Task.Delay(500);
                 List<string> MiembrosId = new LoginController().MemberLogin(txtEmail.Text, new PassSecurity().EncodePassword(txtPassword.Text));
                 if (MiembrosId.Count > 0)
@@ -507,11 +514,14 @@ namespace WorklabsMx.Droid
                     localStorage.Put("Usuario_Id", MiembrosId[0]);
                     localStorage.Put("Usuario_Tipo", MiembrosId[1]);
                     localStorage.Put("Empresa_Id", MiembrosId[2]);
+                    //AndHUD.Shared.Dismiss(this);
                     OpenDashboard();
                 }
                 else
+                {
                     Toast.MakeText(this, Resource.String.LoginError, ToastLength.Short).Show();
-                AndHUD.Shared.Dismiss();
+                    //AndHUD.Shared.Dismiss(this);
+                }
             }
             else
                 Toast.MakeText(this, Resource.String.FormatoCorreoError, ToastLength.Short).Show();

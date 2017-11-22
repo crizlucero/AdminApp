@@ -1,9 +1,14 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/MainActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/CarritoComprasDetalle.cs">
     <Files>
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="74" Column="80" />
-      <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="44" Column="14" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="39" Column="26" />
       <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="692" Column="14" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/MembresiasActivity.cs" Line="37" Column="10" />
+      <File FileName="WorklabsMx/Controllers/PagosController.cs" Line="167" Column="38" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="45" Column="70" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="45" Column="133" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ColeccionProductosActivity.cs" Line="525" Column="75" />
+      <File FileName="WorklabsMx/Models/CarritoComprasDetalle.cs" Line="13" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
@@ -14,7 +19,6 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2D4A8346-EB50-48DE-9B14-561C3115DFD0" />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="MyTheme" />
   <MultiItemStartupConfigurations />
 </Properties>
