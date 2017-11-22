@@ -201,7 +201,7 @@ namespace WorklabsMx.Controllers
         public List<ItemsMenu> GetMenuiOS(int tipo, string menu_id = null)
         {
             List<ItemsMenu> menus = new List<ItemsMenu>();
-            string query = "SELECT * FROM cat_Menu WHERE Menu_Padre_Id " + (menu_id == null ? " IS NULL" : " = @menu_id ");
+            string query = "SELECT * FROM cat_Menu WHERE Menu_Padre_Id " + (menu_id == null ? " IS NULL" : " = @menu_id AND Menu_Estatus = 1");
             if (tipo == (int)TiposUsuarios.Colaborador)
             {
                 query += " AND Menu_Solo_Admin = 0";
@@ -247,7 +247,7 @@ namespace WorklabsMx.Controllers
         public List<ItemsMenu> GetMenuAndroid(int tipo, string menu_id = null)
         {
             List<ItemsMenu> menus = new List<ItemsMenu>();
-            string query = "SELECT * FROM cat_Menu WHERE Menu_Padre_Id " + (string.IsNullOrEmpty(menu_id) ? " IS NULL" : " = @menu_id ");
+            string query = "SELECT * FROM cat_Menu WHERE Menu_Padre_Id " + (string.IsNullOrEmpty(menu_id) ? " IS NULL" : " = @menu_id AND Menu_Estatus = 1");
             if (tipo == (int)TiposUsuarios.Colaborador)
             {
                 query += " AND Menu_Solo_Admin = 0";

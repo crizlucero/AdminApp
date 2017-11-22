@@ -34,3 +34,9 @@ Droid/Droid/obj/Debug/
 WorklabsMx\.Droid/obj/\.cache/
 
 *.userprefs
+
+WorklabsMx\.Droid/bin/
+
+WorklabsMx\.Droid/obj/
+
+*.apk
