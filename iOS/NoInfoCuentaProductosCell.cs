@@ -14,11 +14,11 @@ namespace WorklabsMx.iOS
         {
             if (existeConeccion)
             {
-                this.lblNoInfo.Text = "No hay productos en tu cuenta";
+                this.lblMensaje.Text = "No hay productos en tu cuenta";
             }
             else
             {
-                this.lblNoInfo.Text = "No tienes acceso a una conexión de Internet";
+                this.lblMensaje.Text = "No tienes acceso a una conexión de Internet";
             }
         }
     }
