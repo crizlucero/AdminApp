@@ -100,14 +100,14 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Orden_Venta_Encabezado_Importe_Pagado", importe_pagado);
                 command.Parameters.AddWithValue("@Orden_Venta_Encabezado_Importe_Facturado", importe_facturado);
                 command.Parameters.AddWithValue("@Orden_Venta_Encabezado_Estatus", 1);
-                command.Parameters.Add("@Orden_Venta_Encabezado_Importe_Total", SqlDbType.Int).Direction = ParameterDirection.Output;
+                command.Parameters.Add("@Orden_Venta_Encabezado_Id_Salida", SqlDbType.Int).Direction = ParameterDirection.Output;
 
                 transaction = conn.BeginTransaction();
 
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();
                 transaction.Commit();
-                return Convert.ToInt32(command.Parameters["@Orden_Venta_Encabezado_Importe_Total"].Value);
+                return Convert.ToInt32(command.Parameters["@Orden_Venta_Encabezado_Id_Salida"].Value);
             }
             catch (Exception e)
             {
@@ -118,7 +118,7 @@ namespace WorklabsMx.Controllers
             finally { conn.Close(); }
         }
 
-        public int AddOrdenVentaDetalle(int encabezado_id, int Membresia_Id, int Inscripcion_Membresia_Id, int Lista_Precio_Membresia_Id, int Producto_Id, int Lista_Precio_Producto_Id,
+        public int AddOrdenVentaDetalle(int encabezado_id, string Membresia_Id, string Inscripcion_Membresia_Id, string Lista_Precio_Membresia_Id, string Producto_Id, string Lista_Precio_Producto_Id,
                                          string Orden_Venta_Detalle_Descripcion, int Orden_Venta_Detalle_Cantidad, decimal Orden_Venta_Detalle_Importe_Precio, decimal Orden_Venta_Detalle_Importe_Prorrateo,
                                          decimal Orden_Venta_Detalle_Importe_Suma, decimal Orden_Venta_Detalle_Importe_Descuento, decimal Orden_Venta_Detalle_Importe_Subtotal, decimal Orden_Venta_Detalle_Importe_Impuesto,
                                          decimal Orden_Venta_Detalle_Importe_Total)
