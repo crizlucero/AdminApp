@@ -506,7 +506,8 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Referencia_Lista_Precio_Id", precio_id);
                 command.Parameters.AddWithValue("@Referencia_Moneda_Id", moneda_id);
                 command.Parameters.AddWithValue("@Referencia_Impuesto_Id", impuesto_id);
-                command.Parameters.AddWithValue("@Referencia_Descuento_Id", descuento_id);
+                if (descuento_id != 0)
+                    command.Parameters.AddWithValue("@Referencia_Descuento_Id", descuento_id);
                 command.Transaction = transaction;
                 reader = command.ExecuteReader();
                 while (reader.Read())

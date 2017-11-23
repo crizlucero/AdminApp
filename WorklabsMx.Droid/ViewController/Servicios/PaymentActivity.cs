@@ -71,14 +71,14 @@ namespace WorklabsMx.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.menu_payment:
-                    int Encabezado_Id = controller.AddOrdenVentaEncabezado(Convert.ToInt32(storage.Get("Usuario_Id")), 1, 1, Descuento_Id, Descuento_Id, "OWL-", Total, 
+                    int Encabezado_Id = controller.AddOrdenVentaEncabezado(Convert.ToInt32(storage.Get("Usuario_Id")), 1, 1, Descuento_Id, Descuento_Id, "OWL-", membresias.Count + productos.Count,
                                                                            Descuento_Porcentaje, Descuento, Subtotal, IVATotal, Total, 0, 0);
                     if (Encabezado_Id != -1)
                     {
                         membresias.ForEach(membresia =>
                         {
-                            controller.AddOrdenVentaDetalle(Encabezado_Id, Convert.ToInt32(membresia.Membresia_Id), Convert.ToInt32(membresia.Inscripcion_Membresia_Id),
-                                                            Convert.ToInt32(membresia.Lista_Precio_Membresia_Id), Convert.ToInt32(membresia.Producto_Id), Convert.ToInt32(membresia.Lista_Precio_Producto_Id),
+                            controller.AddOrdenVentaDetalle(Encabezado_Id, membresia.Membresia_Id, membresia.Inscripcion_Membresia_Id,
+                                                            membresia.Lista_Precio_Membresia_Id, membresia.Producto_Id, membresia.Lista_Precio_Producto_Id,
                                                             membresia.Carrito_Compras_Detalle_Descripcion, Convert.ToInt32(membresia.Carrito_Compras_Detalle_Cantidad),
                                                             Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Precio), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Prorrateo),
                                                             Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Suma), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Descuento),
@@ -87,8 +87,8 @@ namespace WorklabsMx.Droid
                         });
                         productos.ForEach(producto =>
                         {
-                            controller.AddOrdenVentaDetalle(Encabezado_Id, Convert.ToInt32(producto.Membresia_Id), Convert.ToInt32(producto.Inscripcion_Membresia_Id),
-                                                            Convert.ToInt32(producto.Lista_Precio_Membresia_Id), Convert.ToInt32(producto.Producto_Id), Convert.ToInt32(producto.Lista_Precio_Producto_Id),
+                            controller.AddOrdenVentaDetalle(Encabezado_Id, producto.Membresia_Id, producto.Inscripcion_Membresia_Id,
+                                                            producto.Lista_Precio_Membresia_Id, producto.Producto_Id, producto.Lista_Precio_Producto_Id,
                                                             producto.Carrito_Compras_Detalle_Descripcion, Convert.ToInt32(producto.Carrito_Compras_Detalle_Cantidad),
                                                             Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Precio), Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Prorrateo),
                                                             Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Suma), Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Descuento),
