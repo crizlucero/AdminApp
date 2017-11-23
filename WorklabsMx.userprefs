@@ -19,7 +19,7 @@
     </FloatingWindows>
 =======
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/MyMembershipActivity.cs">
     <Files>
       <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="39" Column="26" />
       <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="692" Column="14" />
@@ -29,7 +29,7 @@
       <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="270" Column="128" />
       <File FileName="WorklabsMx.Droid/ViewController/Servicios/ColeccionProductosActivity.cs" Line="19" Column="9" />
       <File FileName="WorklabsMx/Models/CarritoComprasDetalle.cs" Line="13" Column="22" />
-      <File FileName="WorklabsMx.Droid/ViewController/MyMembershipActivity.cs" Line="103" Column="59" />
+      <File FileName="WorklabsMx.Droid/ViewController/MyMembershipActivity.cs" Line="13" Column="40" />
     </Files>
 >>>>>>> 41661a9a8ecd5e063a74c84e21c25b00186172b1
   </MonoDevelop.Ide.Workbench>
@@ -38,10 +38,6 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.89CCA8BE-0586-4891-9CEC-16532ABD6816" />
-=======
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="MyTheme" />
->>>>>>> 41661a9a8ecd5e063a74c84e21c25b00186172b1
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="MyTheme" />
   <MultiItemStartupConfigurations />
 </Properties>
