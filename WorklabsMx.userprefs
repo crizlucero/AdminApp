@@ -9,12 +9,41 @@
       <File FileName="iOS/VentaDetalleTableViewController.cs" Line="160" Column="17" />
       <File FileName="iOS/ViewControllers/Servicios/CarritoCompraController.cs" Line="33" Column="89" />
     </Files>
+<<<<<<< HEAD
+=======
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="1124" Y="23" Width="906" Height="627">
+        <Files>
+          <File FileName="iOS/CarritoProductos.cs" Line="162" Column="10" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/MyMembershipActivity.cs">
+    <Files>
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="39" Column="26" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="692" Column="14" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/MembresiasActivity.cs" Line="37" Column="10" />
+      <File FileName="WorklabsMx/Controllers/PagosController.cs" Line="135" Column="90" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="74" Column="159" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="270" Column="128" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ColeccionProductosActivity.cs" Line="19" Column="9" />
+      <File FileName="WorklabsMx/Models/CarritoComprasDetalle.cs" Line="13" Column="22" />
+      <File FileName="WorklabsMx.Droid/ViewController/MyMembershipActivity.cs" Line="13" Column="40" />
+    </Files>
+>>>>>>> 41661a9a8ecd5e063a74c84e21c25b00186172b1
+>>>>>>> 07c5e7b955f9d71438c116f3ee292f2188ab2876
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+<<<<<<< HEAD
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B4E637BD-60E4-4441-BC72-CF1534A7E0AA" />
+=======
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="MyTheme" />
+>>>>>>> 07c5e7b955f9d71438c116f3ee292f2188ab2876
   <MultiItemStartupConfigurations />
 </Properties>
