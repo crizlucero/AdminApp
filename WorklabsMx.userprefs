@@ -1,3 +1,22 @@
+
+﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ProductosMiCuentaViewController.cs">
+    <Files>
+      <File FileName="iOS/ProductosMiCuentaViewController.cs" Line="94" Column="107" NotebookId="1" />
+      <File FileName="iOS/CuentaProductosCell.cs" Line="23" Column="62" NotebookId="1" />
+      <File FileName="iOS/NoInfoCuentaProductosCell.cs" Line="23" Column="10" NotebookId="1" />
+      <File FileName="iOS/MembresiasMiCuentaViewController.cs" Line="7" Column="30" NotebookId="1" />
+      <File FileName="iOS/CuentaMembresiasCell.cs" Line="22" Column="13" NotebookId="1" />
+      <File FileName="WorklabsMx/Models/CarritoComprasDetalle.cs" Line="3" Column="39" NotebookId="1" />
+      <File FileName="iOS/NoInfoCuentaMembresiasCell.cs" Line="7" Column="52" NotebookId="1" />
+    </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="1124" Y="23" Width="906" Height="627">
+        <Files>
+          <File FileName="iOS/CarritoProductos.cs" Line="162" Column="10" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/PickerItemsController.cs">
     <Files>
@@ -14,6 +33,7 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="MyTheme" />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2D4A8346-EB50-48DE-9B14-561C3115DFD0" />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid PreferredExecutionTarget="Android.Andorid_Emulator" />
   <MultiItemStartupConfigurations />

@@ -9,6 +9,11 @@ using WorklabsMx.Controllers;
 using WorklabsMx.Models;
 using Foundation;
 using System.Threading.Tasks;
+using CoreGraphics;
+using WorklabsMx.iOS.Styles;
+using PerpetualEngine.Storage;
+using WorklabsMx.Helpers;
+using WorklabsMx.Enum;
 
 namespace WorklabsMx.iOS
 {
@@ -157,7 +162,8 @@ namespace WorklabsMx.iOS
             var ConfirmarCompra = UIAlertController.Create("Confirmar compra", "¿Proceder a pagar?", UIAlertControllerStyle.Alert);
             ConfirmarCompra.AddAction(UIAlertAction.Create("Aceptar", UIAlertActionStyle.Default, ((UIAlertAction obj) => 
             {
-                
+                SimpleStorage Storage;
+                int ValorEncabezado = new CarritoController().GenerarOrdenVentaEncabezado(Storage.Get("Usuario_Id"),);
             })));
             ConfirmarCompra.AddAction(UIAlertAction.Create("Cancelar", UIAlertActionStyle.Default, null));
             this.PresentViewController(ConfirmarCompra, true, null);

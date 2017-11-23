@@ -16,13 +16,13 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblNoInfo { get; set; }
+        UIKit.UILabel lblMensaje { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (lblNoInfo != null) {
-                lblNoInfo.Dispose ();
-                lblNoInfo = null;
+            if (lblMensaje != null) {
+                lblMensaje.Dispose ();
+                lblMensaje = null;
             }
         }
     }
