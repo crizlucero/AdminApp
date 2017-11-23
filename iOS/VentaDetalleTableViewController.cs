@@ -44,6 +44,9 @@ namespace WorklabsMx.iOS
         Double Subtotal = 0.00, Impuesto = 0.00, Total = 0.00;
         PromocionModel datosDescuento;
 
+        SimpleStorage Storage;
+        OrdenVentaController ordenventa = new OrdenVentaController();
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -63,13 +66,38 @@ namespace WorklabsMx.iOS
             this.Total = 0;
             this.Impuesto = 0;
             var headerCell = (VentaDetalleHeader)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
+            ordenventa.empresa_miembro_id = Storage.Get("Usuario_");
+            ordenventa.moneda_id = "1";
+            ordenventa.impuesto_id = "1";
+            ordenventa.folio = "FWL-38";
             foreach(CarritoComprasDetalle membresia in membresias)
             {
                 this.Subtotal = this.Subtotal + double.Parse(membresia.Carrito_Compras_Detalle_Importe_Suma);
                 this.Total = this.Total + double.Parse(membresia.Carrito_Compras_Detalle_Importe_Suma) * 1.16;
+                ordenventa.suma = ordenventa.suma + int.Parse(membresia.Carrito_Compras_Detalle_Cantidad);
             }
             this.Impuesto = Subtotal * 0.16;
+            if (this.datosDescuento.Descuento_Id != null)
+            {
+                var descuento = (Subtotal * (double)this.datosDescuento.Descuento_Porcentaje);
+                descuento = descuento * 1.16;
+                ordenventa.descuento = descuento.ToString();
+                ordenventa.porcentajeDecuento = (this.datosDescuento.Descuento_Porcentaje * 100).ToString();
+                ordenventa.descuento_id = this.datosDescuento.Descuento_Id;
+            }
+            else 
+            {
+                ordenventa.descuento = "0";
+                ordenventa.porcentajeDecuento = "0";
+                ordenventa.descuento_id = "0";
+            }
             headerCell.UpdateCell(this.Subtotal, this.Impuesto, this.Total, this.datosDescuento);
+            ordenventa.pagado = "0";
+            ordenventa.facturado = "0";
+            ordenventa.subTotal = this.Subtotal.ToString();
+            ordenventa.total = this.Total.ToString();
+            ordenventa.impuesto = this.Impuesto.ToString();
+            ordenventa.estatus = "1";
             return headerCell;
         }
 
@@ -162,8 +190,7 @@ namespace WorklabsMx.iOS
             var ConfirmarCompra = UIAlertController.Create("Confirmar compra", "¿Proceder a pagar?", UIAlertControllerStyle.Alert);
             ConfirmarCompra.AddAction(UIAlertAction.Create("Aceptar", UIAlertActionStyle.Default, ((UIAlertAction obj) => 
             {
-                SimpleStorage Storage;
-                int ValorEncabezado = new CarritoController().GenerarOrdenVentaEncabezado(Storage.Get("Usuario_Id"),);
+                int ValorEncabezado = new CarritoController().GenerarOrdenVentaEncabezado(ordenventa.empresa_miembro_id, ordenventa.moneda_id, ordenventa.impuesto_id, ordenventa.promocion_id, ordenventa.descuento_id, ordenventa.folio, ordenventa.suma.ToString(), ordenventa.porcentajeDecuento, ordenventa.descuento, ordenventa.subTotal, ordenventa.impuesto, ordenventa.total, ordenventa.pagado, ordenventa.facturado, ordenventa.estatus);
             })));
             ConfirmarCompra.AddAction(UIAlertAction.Create("Cancelar", UIAlertActionStyle.Default, null));
             this.PresentViewController(ConfirmarCompra, true, null);
