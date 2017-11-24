@@ -12040,7 +12040,9 @@ exception_handling:;
 		"Telerik.Xamarin.iOS", 
 		"BTProgressHUD", 
 		"Plugin.Connectivity", 
-		"Plugin.Connectivity.Abstractions"
+		"Plugin.Connectivity.Abstractions", 
+		"I18N", 
+		"I18N.West"
 	};
 
 	static struct MTFullTokenReference __xamarin_token_references [] = {
@@ -12050,7 +12052,7 @@ exception_handling:;
 		__xamarin_registration_assemblies,
 		__xamarin_class_map,
 		__xamarin_token_references,
-		19,
+		21,
 		685,
 		527,
 		0

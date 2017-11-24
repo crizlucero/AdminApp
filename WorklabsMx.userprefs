@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Info.plist">
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="iOS/ComentarPostTableViewController.cs" Line="11" Column="20" />
       <File FileName="iOS/ViewControllers/Servicios/CarritoCompraController.cs" Line="14" Column="26" />
@@ -10,8 +10,6 @@
       <File FileName="iOS/VentaDetalleTableViewController.cs" Line="16" Column="23" />
       <File FileName="WorklabsMx/Controllers/PagosController.cs" Line="76" Column="20" />
       <File FileName="iOS/CarritoProductos.cs" Line="141" Column="43" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="67" Column="56" />
-      <File FileName="iOS/Info.plist" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
@@ -27,7 +25,7 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget">
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" identitySerialNumber="583D18CE90225D8C">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
   </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
   <MultiItemStartupConfigurations />
