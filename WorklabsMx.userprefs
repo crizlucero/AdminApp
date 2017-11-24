@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/MainActivity.cs">
     <Files>
       <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="113" Column="2" />
       <File FileName="WorklabsMx/Controllers/PagosController.cs" Line="77" Column="160" />
@@ -7,17 +7,17 @@
       <File FileName="WorklabsMx/Controllers/CarritoController.cs" Line="1" Column="1" />
       <File FileName="WorklabsMx.Droid/ViewController/Servicios/ColeccionProductosActivity.cs" Line="1" Column="1" />
       <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="509" Column="39" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="155" Column="1" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="470" Column="1" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="298" Column="46" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="400" Column="42" />
+      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="355" Column="15" />
+      <File FileName="WorklabsMx.Droid/Helpers/ImagesHelper.cs" Line="13" Column="42" />
     </Files>
->>>>>>> 700b7a72cf68786a09c741dd477f7707ed6bff83
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2D4A8346-EB50-48DE-9B14-561C3115DFD0" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="MyTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="MyTheme" />
   <MultiItemStartupConfigurations />
 </Properties>

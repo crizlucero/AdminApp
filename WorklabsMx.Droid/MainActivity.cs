@@ -294,6 +294,7 @@ namespace WorklabsMx.Droid
                     ImageView imgPost = new ImageView(this);
                     imgPost.SetMaxWidth(75);
                     imgPost.SetMaxHeight(75);
+
                     imgPost.SetImageURI(url);
                     imgPost.Click += delegate
                     {
