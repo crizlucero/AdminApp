@@ -42,7 +42,7 @@ namespace WorklabsMx.iOS
 
             foreach (CarritoCompras preordenMembresia in listaMembresias)
             {
-                if (listaProductos.Find(x => x.Id == preordenMembresia.Id) == null)
+                if (listaProductos.Find(x => x.Nombre == preordenMembresia.Nombre) == null)
                 {
                     listaProductos.Add(preordenMembresia);
                 }

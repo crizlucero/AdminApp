@@ -55,7 +55,7 @@ namespace WorklabsMx.iOS
             var svc = (CarritoProductos)barViewControllers[0]; //
             foreach (CarritoCompras preordenProducto in svc.ObtenerPreordenProductos())
             {
-                if (PreordenMembresias.Find(x => x.Id == preordenProducto.Id) == null)
+                if (PreordenMembresias.Find(x => x.Nombre == preordenProducto.Nombre) == null)
                 {
                     this.PreordenMembresias.Add(preordenProducto);
                 }
@@ -73,7 +73,7 @@ namespace WorklabsMx.iOS
         private void ObtenerPreordenMembresia(object sender,EventArgs e)
         {
             var currentOrderMember = (CarritoCompras)sender;
-            if (PreordenMembresias.Find(x => x.Id == currentOrderMember.Id) != null)
+            if (PreordenMembresias.Find(x => x.Nombre == currentOrderMember.Nombre) != null)
             {
                 if(currentOrderMember.TotalPagar == "$0.00")
                 {

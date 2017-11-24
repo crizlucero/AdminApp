@@ -66,10 +66,6 @@
 /Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.pdb
 /Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/bin/iPhone/Debug/Xamarin-Sidebar-Unified.dll
 /Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/bin/iPhone/Debug/Xamarin-Sidebar-Unified.pdb
-/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.3/ibtool/_BundleResourceWithLogicalName.items
-/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.3/actool/_PartialAppManifest.items
-/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.3/actool/_BundleResourceWithLogicalName.items
-/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.0.3/optimized/
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Debug/WorklabsMx.iOS.exe.config
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Debug/WorklabsMx.iOS.exe
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Debug/WorklabsMx.iOS.pdb
@@ -142,3 +138,7 @@
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.exe
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.pdb
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.csprojResolveAssemblyReference.cache
+/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.1/ibtool/_BundleResourceWithLogicalName.items
+/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.1/actool/_PartialAppManifest.items
+/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.1/actool/_BundleResourceWithLogicalName.items
+/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.1/optimized/

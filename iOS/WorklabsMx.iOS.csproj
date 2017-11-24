@@ -17,7 +17,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: desarrollo@worklabs.mx (5ETKF7NRTF)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -180,9 +180,6 @@
     <ImageAsset Include="Assets.xcassets\First.imageset\tab_feed%402x.png" />
     <ImageAsset Include="Assets.xcassets\First.imageset\tab_feed%403x.png" />
     <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\profile_generic.png" />
-    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\profile_generic%402x.png" />
-    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\profile_generic%403x.png" />
     <ImageAsset Include="Assets.xcassets\Second.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Second.imageset\tab_about.png" />
     <ImageAsset Include="Assets.xcassets\Second.imageset\tab_about%402x.png" />
@@ -388,17 +385,12 @@
     <ImageAsset Include="Assets.xcassets\ic_left_arrow.imageset\ic_keyboard_arrow_left_2x.png" />
     <ImageAsset Include="Assets.xcassets\ic_left_arrow.imageset\ic_keyboard_arrow_left_3x.png" />
     <ImageAsset Include="Assets.xcassets\BackGround.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\BackGround.imageset\BackGround.png" />
     <ImageAsset Include="Assets.xcassets\Leyenda.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Leyenda.imageset\leyenda.png" />
     <ImageAsset Include="Assets.xcassets\Profile.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Profile.imageset\profile.png" />
     <ImageAsset Include="Assets.xcassets\Likes.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Comments.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Comments.imageset\Comments.png" />
-    <ImageAsset Include="Assets.xcassets\back.imageset\back.png" />
-    <ImageAsset Include="Assets.xcassets\back.imageset\back%402x.png" />
-    <ImageAsset Include="Assets.xcassets\back.imageset\back%403x.png" />
     <ImageAsset Include="Assets.xcassets\back.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_derechaabajo.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_derechaabajo.imageset\derechaAbajo.png" />
@@ -414,11 +406,7 @@
     <ImageAsset Include="Assets.xcassets\qr.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\qr.imageset\ic_qrcode.png" />
     <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\botonComentar.png" />
     <ImageAsset Include="Assets.xcassets\Camera.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Camera.imageset\camrera%403x.png" />
-    <ImageAsset Include="Assets.xcassets\Camera.imageset\camera%402x.png" />
-    <ImageAsset Include="Assets.xcassets\Camera.imageset\camera.png" />
     <ImageAsset Include="Assets.xcassets\delete-image.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\delete-image.imageset\dele-image.png" />
     <ImageAsset Include="Assets.xcassets\delete-image.imageset\dele-image%402x.png" />
@@ -427,8 +415,6 @@
     <ImageAsset Include="Assets.xcassets\close.imageset\close.png" />
     <ImageAsset Include="Assets.xcassets\close.imageset\close%402x.png" />
     <ImageAsset Include="Assets.xcassets\close.imageset\close%403x.png" />
-    <ImageAsset Include="Assets.xcassets\Likes.imageset\Likes%402x.png" />
-    <ImageAsset Include="Assets.xcassets\Likes.imageset\Likes%403x.png" />
     <ImageAsset Include="Assets.xcassets\Product.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Product.imageset\product.png" />
     <ImageAsset Include="Assets.xcassets\Product.imageset\product%402x.png" />
@@ -448,6 +434,27 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120px.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180px.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60px.png" />
+    <ImageAsset Include="Assets.xcassets\BackGround.imageset\Back.jpg" />
+    <ImageAsset Include="Assets.xcassets\Launch.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Launch.imageset\Load.jpg" />
+    <ImageAsset Include="Assets.xcassets\Likes.imageset\Artboard 1.png" />
+    <ImageAsset Include="Assets.xcassets\Likes.imageset\Artboard 4.png" />
+    <ImageAsset Include="Assets.xcassets\Likes.imageset\Artboard 5.png" />
+    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Artboard 24.png" />
+    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Artboard 25.png" />
+    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Artboard 26.png" />
+    <ImageAsset Include="Assets.xcassets\back.imageset\Artboard 21.png" />
+    <ImageAsset Include="Assets.xcassets\back.imageset\Artboard 22.png" />
+    <ImageAsset Include="Assets.xcassets\back.imageset\Artboard 23.png" />
+    <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Artboard 20.png" />
+    <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Artboard 19.png" />
+    <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Artboard 18.png" />
+    <ImageAsset Include="Assets.xcassets\Camera.imageset\Artboard 17.png" />
+    <ImageAsset Include="Assets.xcassets\Camera.imageset\Artboard 15.png" />
+    <ImageAsset Include="Assets.xcassets\Camera.imageset\Artboard 14.png" />
+    <ImageAsset Include="Assets.xcassets\Comments.imageset\Artboard 13.png" />
+    <ImageAsset Include="Assets.xcassets\Comments.imageset\Artboard 11.png" />
+    <ImageAsset Include="Assets.xcassets\Comments.imageset\Artboard 10.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -785,6 +792,7 @@
     <Folder Include="Assets.xcassets\Product.imageset\" />
     <Folder Include="Assets.xcassets\membership.imageset\" />
     <Folder Include="Assets.xcassets\shopping.imageset\" />
+    <Folder Include="Assets.xcassets\Launch.imageset\" />
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
