@@ -13803,7 +13803,7 @@ _mono_aot_file_info:
 	.long 304,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 130,10,133,154,158,48,5,13,65,49,171,85,105,55,2,53
+	.byte 85,164,27,13,198,172,22,188,17,123,194,62,51,222,169,201
 	.globl _mono_aot_module_Plugin_Connectivity_info
 	.align 3
 _mono_aot_module_Plugin_Connectivity_info:

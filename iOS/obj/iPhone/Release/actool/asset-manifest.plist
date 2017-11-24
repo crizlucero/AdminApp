@@ -23,12 +23,48 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
-				<string>./AppIcon.appiconset</string>
+				<string>./Camera.imageset/[universal][][][2x][][][][][][]</string>
 			</array>
 			<key>catalog</key>
 			<string>/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Release/actool/cloned-assets/Assets.xcassets</string>
 			<key>message</key>
-			<string>A 1024x1024 app store icon is required for iOS apps</string>
+			<string>The file "Artboard 15.png" for the image set "Camera" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./ic_comentar.imageset/[universal][][][2x][][][][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Release/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>The file "Artboard 19.png" for the image set "ic_comentar" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./ic_comentar.imageset/[universal][][][2x][][][][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Release/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>The file "Artboard 19.png" for the image set "ic_comentar" does not exist.</string>
+			<key>type</key>
+			<string>Missing Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Camera.imageset/[universal][][][2x][][][][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Release/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>The file "Artboard 15.png" for the image set "Camera" does not exist.</string>
 			<key>type</key>
 			<string>Missing Content</string>
 		</dict>

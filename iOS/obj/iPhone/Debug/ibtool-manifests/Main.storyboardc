@@ -8,6 +8,36 @@
 	<dict/>
 	<key>com.apple.ibtool.document.warnings</key>
 	<dict>
+		<key>10306</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>10306</string>
+				</array>
+				<key>message</key>
+				<string>“Mi Membresia Controller“ is unreachable because it has no entry points, and no identifier for runtime access via -[UIStoryboard instantiateViewControllerWithIdentifier:].</string>
+				<key>type</key>
+				<string>IBUnsupportedConfiguration</string>
+				<key>type-value</key>
+				<integer>9</integer>
+			</dict>
+		</array>
+		<key>308-Y4-fOf</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>308-Y4-fOf</string>
+				</array>
+				<key>message</key>
+				<string>Push segues are deprecated since iOS 8.0</string>
+				<key>type</key>
+				<string>IBDeprecated</string>
+				<key>type-value</key>
+				<integer>7</integer>
+			</dict>
+		</array>
 		<key>4277</key>
 		<array>
 			<dict>
@@ -36,6 +66,36 @@
 				<string>IBUnsupportedConfiguration</string>
 				<key>type-value</key>
 				<integer>9</integer>
+			</dict>
+		</array>
+		<key>II4-wf-bSs</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>II4-wf-bSs</string>
+				</array>
+				<key>message</key>
+				<string>Push segues are deprecated since iOS 8.0</string>
+				<key>type</key>
+				<string>IBDeprecated</string>
+				<key>type-value</key>
+				<integer>7</integer>
+			</dict>
+		</array>
+		<key>jlP-VZ-ipH</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>jlP-VZ-ipH</string>
+				</array>
+				<key>message</key>
+				<string>Push segues are deprecated since iOS 8.0</string>
+				<key>type</key>
+				<string>IBDeprecated</string>
+				<key>type-value</key>
+				<integer>7</integer>
 			</dict>
 		</array>
 	</dict>

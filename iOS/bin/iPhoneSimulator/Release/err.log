@@ -1,93 +1,90 @@
-objc[1543]: Class VCWeakObjectHolder is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/AVConference.framework/Frameworks/ViceroyTrace.framework/ViceroyTrace (0x126136490) and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/AVConference.framework/AVConference (0x125fc0120). One of the two will be used. Which one is undefined.
-objc[1543]: Class SFUserNotification is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/Sharing.framework/Sharing (0x12549b700) and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/SafariServices.framework/SafariServices (0x10e623358). One of the two will be used. Which one is undefined.
-2017-11-24 08:54:21.474 WorklabsMx.iOS[1543:257258] Xamarin.iOS: Unable to locate assembly 'I18N' (culture: '')
-2017-11-24 08:54:21.474 WorklabsMx.iOS[1543:257258] Xamarin.iOS: Unable to locate assembly 'I18N' (culture: '')
-2017-11-24 08:54:21.648 WorklabsMx.iOS[1543:257258] Encoding 1252 data could not be found. Make sure you have correct international codeset assembly installed and enabled.
-2017-11-24 08:54:22.981 WorklabsMx.iOS[1543:257258] Xamarin.iOS: Unable to locate assembly 'I18N' (culture: '')
-2017-11-24 08:54:22.981 WorklabsMx.iOS[1543:257258] Xamarin.iOS: Unable to locate assembly 'I18N' (culture: '')
-2017-11-24 08:54:22.981 WorklabsMx.iOS[1543:257258] Encoding 1252 data could not be found. Make sure you have correct international codeset assembly installed and enabled.
-2017-11-24 08:54:23.586 WorklabsMx.iOS[1543:257258] 
+objc[3305]: Class VCWeakObjectHolder is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/AVConference.framework/Frameworks/ViceroyTrace.framework/ViceroyTrace (0x12549f490) and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/AVConference.framework/AVConference (0x125329120). One of the two will be used. Which one is undefined.
+objc[3305]: Class SFUserNotification is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/Sharing.framework/Sharing (0x124804700) and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/SafariServices.framework/SafariServices (0x10d98b358). One of the two will be used. Which one is undefined.
+2017-11-24 12:19:19.231 WorklabsMx.iOS[3305:1270605] Xamarin.iOS: Unable to locate assembly 'I18N' (culture: '')
+2017-11-24 12:19:19.231 WorklabsMx.iOS[3305:1270605] Xamarin.iOS: Unable to locate assembly 'I18N' (culture: '')
+2017-11-24 12:19:19.277 WorklabsMx.iOS[3305:1270605] Encoding 1252 data could not be found. Make sure you have correct international codeset assembly installed and enabled.
+2017-11-24 12:19:20.107 WorklabsMx.iOS[3305:1270605] Xamarin.iOS: Unable to locate assembly 'I18N' (culture: '')
+2017-11-24 12:19:20.107 WorklabsMx.iOS[3305:1270605] Xamarin.iOS: Unable to locate assembly 'I18N' (culture: '')
+2017-11-24 12:19:20.108 WorklabsMx.iOS[3305:1270605] Encoding 1252 data could not be found. Make sure you have correct international codeset assembly installed and enabled.
+2017-11-24 12:19:20.792 WorklabsMx.iOS[3305:1270605] Xamarin.iOS: Unable to locate assembly 'I18N' (culture: '')
+2017-11-24 12:19:20.792 WorklabsMx.iOS[3305:1270605] Xamarin.iOS: Unable to locate assembly 'I18N' (culture: '')
+2017-11-24 12:19:20.792 WorklabsMx.iOS[3305:1270605] Encoding 1252 data could not be found. Make sure you have correct international codeset assembly installed and enabled.
+2017-11-24 12:19:21.004 WorklabsMx.iOS[3305:1270605] Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+2017-11-24 12:19:21.413 WorklabsMx.iOS[3305:1270605] Xamarin.iOS: Unable to locate assembly 'I18N' (culture: '')
+2017-11-24 12:19:21.414 WorklabsMx.iOS[3305:1270605] Xamarin.iOS: Unable to locate assembly 'I18N' (culture: '')
+2017-11-24 12:19:21.414 WorklabsMx.iOS[3305:1270605] Encoding 1252 data could not be found. Make sure you have correct international codeset assembly installed and enabled.
+2017-11-24 12:19:21.830 WorklabsMx.iOS[3305:1270605] Xamarin.iOS: Unable to locate assembly 'I18N' (culture: '')
+2017-11-24 12:19:21.831 WorklabsMx.iOS[3305:1270605] Xamarin.iOS: Unable to locate assembly 'I18N' (culture: '')
+2017-11-24 12:19:22.216 WorklabsMx.iOS[3305:1270605] Xamarin.iOS: Unable to locate assembly 'I18N' (culture: '')
+2017-11-24 12:19:22.216 WorklabsMx.iOS[3305:1270605] Xamarin.iOS: Unable to locate assembly 'I18N' (culture: '')
+2017-11-24 12:19:22.216 WorklabsMx.iOS[3305:1270605] Encoding 1252 data could not be found. Make sure you have correct international codeset assembly installed and enabled.
+2017-11-24 12:19:22.793 WorklabsMx.iOS[3305:1270605] 
 Unhandled Exception:
-System.ArgumentNullException: Value cannot be null.
-Parameter name: String
-  at System.Number.StringToNumber (System.String str, System.Globalization.NumberStyles options, System.Number+NumberBuffer& number, System.Globalization.NumberFormatInfo info, System.Boolean parseDecimal) [0x00003] in <136edfc8e644410eb152bce382121c61>:0 
-  at System.Number.ParseInt32 (System.String s, System.Globalization.NumberStyles style, System.Globalization.NumberFormatInfo info) [0x00015] in <136edfc8e644410eb152bce382121c61>:0 
-  at System.Int32.Parse (System.String s) [0x00007] in <136edfc8e644410eb152bce382121c61>:0 
-  at WorklabsMx.iOS.LoginViewController.ViewWillAppear (System.Boolean animated) [0x00014] in <8189ce670e8c4b1db613078458bb88fa>:0 
+System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+  at System.ThrowHelper.ThrowArgumentOutOfRangeException (System.ExceptionArgument argument, System.ExceptionResource resource) [0x00029] in <136edfc8e644410eb152bce382121c61>:0 
+  at System.ThrowHelper.ThrowArgumentOutOfRangeException () [0x00000] in <136edfc8e644410eb152bce382121c61>:0 
+  at WorklabsMx.iOS.EscritorioHeaderCell.UpdateCell (System.Collections.Generic.List`1[T] miembro) [0x0003e] in <119d38f7614444c7ad4f7d91a90d1ede>:0 
+  at WorklabsMx.iOS.EscritorioController.GetViewForHeader (UIKit.UITableView tableView, System.nint section) [0x00011] in <119d38f7614444c7ad4f7d91a90d1ede>:0 
 --- End of stack trace from previous location where exception was thrown ---
   at (wrapper managed-to-native) UIKit.UIApplication:UIApplicationMain (int,string[],intptr,intptr)
   at UIKit.UIApplication.Main (System.String[] args, System.IntPtr principal, System.IntPtr delegate) [0x00005] in <f5f7bf9082f2423098c34fc985600d02>:0 
   at UIKit.UIApplication.Main (System.String[] args, System.String principalClassName, System.String delegateClassName) [0x00038] in <f5f7bf9082f2423098c34fc985600d02>:0 
-  at WorklabsMx.iOS.Application.Main (System.String[] args) [0x00000] in <8189ce670e8c4b1db613078458bb88fa>:0 
-2017-11-24 08:54:23.587 WorklabsMx.iOS[1543:257258] Unhandled managed exception:
-Value cannot be null.
-Parameter name: String (System.ArgumentNullException)
-  at System.Number.StringToNumber (System.String str, System.Globalization.NumberStyles options, System.Number+NumberBuffer& number, System.Globalization.NumberFormatInfo info, System.Boolean parseDecimal) [0x00003] in <136edfc8e644410eb152bce382121c61>:0 
-  at System.Number.ParseInt32 (System.String s, System.Globalization.NumberStyles style, System.Globalization.NumberFormatInfo info) [0x00015] in <136edfc8e644410eb152bce382121c61>:0 
-  at System.Int32.Parse (System.String s) [0x00007] in <136edfc8e644410eb152bce382121c61>:0 
-  at WorklabsMx.iOS.LoginViewController.ViewWillAppear (System.Boolean animated) [0x00014] in <8189ce670e8c4b1db613078458bb88fa>:0 
+  at WorklabsMx.iOS.Application.Main (System.String[] args) [0x00000] in <119d38f7614444c7ad4f7d91a90d1ede>:0 
+2017-11-24 12:19:22.794 WorklabsMx.iOS[3305:1270605] Unhandled managed exception:
+Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index (System.ArgumentOutOfRangeException)
+  at System.ThrowHelper.ThrowArgumentOutOfRangeException (System.ExceptionArgument argument, System.ExceptionResource resource) [0x00029] in <136edfc8e644410eb152bce382121c61>:0 
+  at System.ThrowHelper.ThrowArgumentOutOfRangeException () [0x00000] in <136edfc8e644410eb152bce382121c61>:0 
+  at WorklabsMx.iOS.EscritorioHeaderCell.UpdateCell (System.Collections.Generic.List`1[T] miembro) [0x0003e] in <119d38f7614444c7ad4f7d91a90d1ede>:0 
+  at WorklabsMx.iOS.EscritorioController.GetViewForHeader (UIKit.UITableView tableView, System.nint section) [0x00011] in <119d38f7614444c7ad4f7d91a90d1ede>:0 
 --- End of stack trace from previous location where exception was thrown ---
   at (wrapper managed-to-native) UIKit.UIApplication:UIApplicationMain (int,string[],intptr,intptr)
   at UIKit.UIApplication.Main (System.String[] args, System.IntPtr principal, System.IntPtr delegate) [0x00005] in <f5f7bf9082f2423098c34fc985600d02>:0 
   at UIKit.UIApplication.Main (System.String[] args, System.String principalClassName, System.String delegateClassName) [0x00038] in <f5f7bf9082f2423098c34fc985600d02>:0 
-  at WorklabsMx.iOS.Application.Main (System.String[] args) [0x00000] in <8189ce670e8c4b1db613078458bb88fa>:0 
-2017-11-24 08:54:23.587 WorklabsMx.iOS[1543:257258] critical: Stacktrace:
+  at WorklabsMx.iOS.Application.Main (System.String[] args) [0x00000] in <119d38f7614444c7ad4f7d91a90d1ede>:0 
+2017-11-24 12:19:22.794 WorklabsMx.iOS[3305:1270605] critical: Stacktrace:
 
-2017-11-24 08:54:23.587 WorklabsMx.iOS[1543:257258] critical: 
+2017-11-24 12:19:22.795 WorklabsMx.iOS[3305:1270605] critical: 
 Native stacktrace:
 
-2017-11-24 08:54:23.844 WorklabsMx.iOS[1543:257258] critical: 	0   WorklabsMx.iOS                      0x0000000106a95104 mono_handle_native_crash + 244
-2017-11-24 08:54:23.844 WorklabsMx.iOS[1543:257258] critical: 	1   libsystem_platform.dylib            0x0000000117270f5a _sigtramp + 26
-2017-11-24 08:54:23.845 WorklabsMx.iOS[1543:257258] critical: 	2   ???                                 0x000000010717e6d8 0x0 + 4413974232
-2017-11-24 08:54:23.845 WorklabsMx.iOS[1543:257258] critical: 	3   libsystem_c.dylib                   0x0000000116f090e7 abort + 127
-2017-11-24 08:54:23.845 WorklabsMx.iOS[1543:257258] critical: 	4   WorklabsMx.iOS                      0x0000000106c4f652 xamarin_unhandled_exception_handler + 34
-2017-11-24 08:54:23.845 WorklabsMx.iOS[1543:257258] critical: 	5   WorklabsMx.iOS                      0x0000000106afef74 mono_invoke_unhandled_exception_hook + 148
-2017-11-24 08:54:23.845 WorklabsMx.iOS[1543:257258] critical: 	6   WorklabsMx.iOS                      0x0000000106a94c02 mono_handle_exception_internal + 4994
-2017-11-24 08:54:23.845 WorklabsMx.iOS[1543:257258] critical: 	7   WorklabsMx.iOS                      0x0000000106a93878 mono_handle_exception + 24
-2017-11-24 08:54:23.845 WorklabsMx.iOS[1543:257258] critical: 	8   WorklabsMx.iOS                      0x0000000106a15f2f mono_amd64_throw_exception + 143
-2017-11-24 08:54:23.845 WorklabsMx.iOS[1543:257258] critical: 	9   ???                                 0x0000000130959ae7 0x0 + 5110078183
-2017-11-24 08:54:23.845 WorklabsMx.iOS[1543:257258] critical: 	10  WorklabsMx.iOS                      0x0000000106c52e1b xamarin_invoke_trampoline + 3131
-2017-11-24 08:54:23.845 WorklabsMx.iOS[1543:257258] critical: 	11  WorklabsMx.iOS                      0x0000000106c549be xamarin_arch_trampoline + 78
-2017-11-24 08:54:23.845 WorklabsMx.iOS[1543:257258] critical: 	12  WorklabsMx.iOS                      0x0000000106c55642 xamarin_x86_64_common_trampoline + 110
-2017-11-24 08:54:23.845 WorklabsMx.iOS[1543:257258] critical: 	13  UIKit                               0x000000010898159c -[UIViewController _setViewAppearState:isAnimating:] + 444
-2017-11-24 08:54:23.846 WorklabsMx.iOS[1543:257258] critical: 	14  UIKit                               0x0000000108981e31 -[UIViewController __viewWillAppear:] + 147
-2017-11-24 08:54:23.846 WorklabsMx.iOS[1543:257258] critical: 	15  UIKit                               0x000000010898368e -[UIViewController viewWillMoveToWindow:] + 757
-2017-11-24 08:54:23.846 WorklabsMx.iOS[1543:257258] critical: 	16  UIKit                               0x000000010888ec68 -[UIView(Hierarchy) _willMoveToWindow:withAncestorView:] + 657
-2017-11-24 08:54:23.846 WorklabsMx.iOS[1543:257258] critical: 	17  UIKit                               0x00000001088a035d -[UIView(Internal) _addSubview:positioned:relativeTo:] + 453
-2017-11-24 08:54:23.846 WorklabsMx.iOS[1543:257258] critical: 	18  UIKit                               0x0000000108849e56 -[UIWindow addRootViewControllerViewIfPossible] + 845
-2017-11-24 08:54:23.846 WorklabsMx.iOS[1543:257258] critical: 	19  UIKit                               0x000000010884a28b -[UIWindow _setHidden:forced:] + 294
-2017-11-24 08:54:23.846 WorklabsMx.iOS[1543:257258] critical: 	20  UIKit                               0x000000010885d208 -[UIWindow makeKeyAndVisible] + 42
-2017-11-24 08:54:23.846 WorklabsMx.iOS[1543:257258] critical: 	21  UIKit                               0x00000001087cf8cd -[UIApplication _callInitializationDelegatesForMainScene:transitionContext:] + 4711
-2017-11-24 08:54:23.846 WorklabsMx.iOS[1543:257258] critical: 	22  UIKit                               0x00000001087d4afd -[UIApplication _runWithMainScene:transitionContext:completion:] + 1720
-2017-11-24 08:54:23.846 WorklabsMx.iOS[1543:257258] critical: 	23  UIKit                               0x0000000108b9a2e0 __111-[__UICanvasLifecycleMonitor_Compatability _scheduleFirstCommitForScene:transition:firstActivation:completion:]_block_invoke + 924
-2017-11-24 08:54:23.846 WorklabsMx.iOS[1543:257258] critical: 	24  UIKit                               0x0000000108f6cbe0 +[_UICanvas _enqueuePostSettingUpdateTransactionBlock:] + 153
-2017-11-24 08:54:23.846 WorklabsMx.iOS[1543:257258] critical: 	25  UIKit                               0x0000000108b99ed9 -[__UICanvasLifecycleMonitor_Compatability _scheduleFirstCommitForScene:transition:firstActivation:completion:] + 249
-2017-11-24 08:54:23.847 WorklabsMx.iOS[1543:257258] critical: 	26  UIKit                               0x0000000108b9a737 -[__UICanvasLifecycleMonitor_Compatability activateEventsOnly:withContext:completion:] + 668
-2017-11-24 08:54:23.847 WorklabsMx.iOS[1543:257258] critical: 	27  UIKit                               0x000000010950ec4d __82-[_UIApplicationCanvas _transitionLifecycleStateWithTransitionContext:completion:]_block_invoke + 262
-2017-11-24 08:54:23.847 WorklabsMx.iOS[1543:257258] critical: 	28  UIKit                               0x000000010950eb06 -[_UIApplicationCanvas _transitionLifecycleStateWithTransitionContext:completion:] + 444
-2017-11-24 08:54:23.847 WorklabsMx.iOS[1543:257258] critical: 	29  UIKit                               0x00000001091efd52 __125-[_UICanvasLifecycleSettingsDiffAction performActionsForCanvas:withUpdatedScene:settingsDiff:fromSettings:transitionContext:]_block_invoke + 420
-2017-11-24 08:54:23.847 WorklabsMx.iOS[1543:257258] critical: 	30  UIKit                               0x00000001093eca7e _performActionsWithDelayForTransitionContext + 100
-2017-11-24 08:54:23.847 WorklabsMx.iOS[1543:257258] critical: 	31  UIKit                               0x00000001091efb4e -[_UICanvasLifecycleSettingsDiffAction performActionsForCanvas:withUpdatedScene:settingsDiff:fromSettings:transitionContext:] + 231
-2017-11-24 08:54:23.847 WorklabsMx.iOS[1543:257258] critical: 	32  UIKit                               0x0000000108f6c23d -[_UICanvas scene:didUpdateWithDiff:transitionContext:completion:] + 392
-2017-11-24 08:54:23.847 WorklabsMx.iOS[1543:257258] critical: 	33  UIKit                               0x00000001087d337e -[UIApplication workspace:didCreateScene:withTransitionContext:completion:] + 523
-2017-11-24 08:54:23.847 WorklabsMx.iOS[1543:257258] critical: 	34  UIKit                               0x0000000108da7c1b -[UIApplicationSceneClientAgent scene:didInitializeWithEvent:completion:] + 369
-2017-11-24 08:54:23.847 WorklabsMx.iOS[1543:257258] critical: 	35  FrontBoardServices                  0x000000011a44b158 -[FBSSceneImpl _didCreateWithTransitionContext:completion:] + 338
-2017-11-24 08:54:23.848 WorklabsMx.iOS[1543:257258] critical: 	36  FrontBoardServices                  0x000000011a453c4d __56-[FBSWorkspace client:handleCreateScene:withCompletion:]_block_invoke_2 + 235
-2017-11-24 08:54:23.848 WorklabsMx.iOS[1543:257258] critical: 	37  libdispatch.dylib                   0x0000000116dc22b5 _dispatch_client_callout + 8
-2017-11-24 08:54:23.848 WorklabsMx.iOS[1543:257258] critical: 	38  libdispatch.dylib                   0x0000000116dc7565 _dispatch_block_invoke_direct + 324
-2017-11-24 08:54:23.848 WorklabsMx.iOS[1543:257258] critical: 	39  FrontBoardServices                  0x000000011a47f672 __FBSSERIALQUEUE_IS_CALLING_OUT_TO_A_BLOCK__ + 24
-2017-11-24 08:54:23.848 WorklabsMx.iOS[1543:257258] critical: 	40  FrontBoardServices                  0x000000011a47f328 -[FBSSerialQueue _performNext] + 464
-2017-11-24 08:54:23.848 WorklabsMx.iOS[1543:257258] critical: 	41  FrontBoardServices                  0x000000011a47f897 -[FBSSerialQueue _performNextFromRunLoopSource] + 45
-2017-11-24 08:54:23.848 WorklabsMx.iOS[1543:257258] critical: 	42  CoreFoundation                      0x0000000114f2c231 __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 17
-2017-11-24 08:54:23.848 WorklabsMx.iOS[1543:257258] critical: 	43  CoreFoundation                      0x0000000114fcbe41 __CFRunLoopDoSource0 + 81
-2017-11-24 08:54:23.848 WorklabsMx.iOS[1543:257258] critical: 	44  CoreFoundation                      0x0000000114f10b49 __CFRunLoopDoSources0 + 185
-2017-11-24 08:54:23.848 WorklabsMx.iOS[1543:257258] critical: 	45  CoreFoundation                      0x0000000114f1012f __CFRunLoopRun + 1279
-2017-11-24 08:54:23.849 WorklabsMx.iOS[1543:257258] critical: 	46  CoreFoundation                      0x0000000114f0f9b9 CFRunLoopRunSpecific + 409
-2017-11-24 08:54:23.849 WorklabsMx.iOS[1543:257258] critical: 	47  GraphicsServices                    0x00000001177f49c6 GSEventRunModal + 62
-2017-11-24 08:54:23.849 WorklabsMx.iOS[1543:257258] critical: 	48  UIKit                               0x00000001087d65e8 UIApplicationMain + 159
-2017-11-24 08:54:23.849 WorklabsMx.iOS[1543:257258] critical: 	49  ???                                 0x0000000132feb690 0x0 + 5150520976
-2017-11-24 08:54:23.849 WorklabsMx.iOS[1543:257258] critical: 	50  ???                                 0x0000000132feb4f0 0x0 + 5150520560
-2017-11-24 08:54:23.849 WorklabsMx.iOS[1543:257258] critical: 
+2017-11-24 12:19:22.898 WorklabsMx.iOS[3305:1270605] critical: 	0   WorklabsMx.iOS                      0x0000000105dfd104 mono_handle_native_crash + 244
+2017-11-24 12:19:22.898 WorklabsMx.iOS[3305:1270605] critical: 	1   libsystem_platform.dylib            0x00000001165d9f5a _sigtramp + 26
+2017-11-24 12:19:22.898 WorklabsMx.iOS[3305:1270605] critical: 	2   libsystem_pthread.dylib             0x00000001165f830b _pthread_keys + 9787
+2017-11-24 12:19:22.898 WorklabsMx.iOS[3305:1270605] critical: 	3   libsystem_c.dylib                   0x00000001162720e7 abort + 127
+2017-11-24 12:19:22.898 WorklabsMx.iOS[3305:1270605] critical: 	4   WorklabsMx.iOS                      0x0000000105fb7652 xamarin_unhandled_exception_handler + 34
+2017-11-24 12:19:22.898 WorklabsMx.iOS[3305:1270605] critical: 	5   WorklabsMx.iOS                      0x0000000105e66f74 mono_invoke_unhandled_exception_hook + 148
+2017-11-24 12:19:22.898 WorklabsMx.iOS[3305:1270605] critical: 	6   WorklabsMx.iOS                      0x0000000105dfcc02 mono_handle_exception_internal + 4994
+2017-11-24 12:19:22.898 WorklabsMx.iOS[3305:1270605] critical: 	7   WorklabsMx.iOS                      0x0000000105dfb878 mono_handle_exception + 24
+2017-11-24 12:19:22.898 WorklabsMx.iOS[3305:1270605] critical: 	8   WorklabsMx.iOS                      0x0000000105d7df2f mono_amd64_throw_exception + 143
+2017-11-24 12:19:22.899 WorklabsMx.iOS[3305:1270605] critical: 	9   ???                                 0x000000012fcc1ae7 0x0 + 5096872679
+2017-11-24 12:19:22.899 WorklabsMx.iOS[3305:1270605] critical: 	10  WorklabsMx.iOS                      0x0000000105fbae1b xamarin_invoke_trampoline + 3131
+2017-11-24 12:19:22.899 WorklabsMx.iOS[3305:1270605] critical: 	11  WorklabsMx.iOS                      0x0000000105fbc9be xamarin_arch_trampoline + 78
+2017-11-24 12:19:22.899 WorklabsMx.iOS[3305:1270605] critical: 	12  WorklabsMx.iOS                      0x0000000105fbd642 xamarin_x86_64_common_trampoline + 110
+2017-11-24 12:19:22.899 WorklabsMx.iOS[3305:1270605] critical: 	13  UIKit                               0x0000000107c911fb -[UITableView _delegateViewForHeaderInSection:] + 64
+2017-11-24 12:19:22.899 WorklabsMx.iOS[3305:1270605] critical: 	14  UIKit                               0x0000000107c9c908 __96-[UITableView _sectionHeaderView:withFrame:forSection:floating:reuseViewIfPossible:willDisplay:]_block_invoke + 70
+2017-11-24 12:19:22.899 WorklabsMx.iOS[3305:1270605] critical: 	15  UIKit                               0x0000000107c008f0 +[UIView(Animation) performWithoutAnimation:] + 90
+2017-11-24 12:19:22.899 WorklabsMx.iOS[3305:1270605] critical: 	16  UIKit                               0x0000000107c9c636 -[UITableView _sectionHeaderView:withFrame:forSection:floating:reuseViewIfPossible:willDisplay:] + 308
+2017-11-24 12:19:22.899 WorklabsMx.iOS[3305:1270605] critical: 	17  UIKit                               0x0000000107c9d261 -[UITableView _sectionHeaderViewWithFrame:forSection:floating:reuseViewIfPossible:willDisplay:] + 85
+2017-11-24 12:19:22.899 WorklabsMx.iOS[3305:1270605] critical: 	18  UIKit                               0x0000000107c633ce -[UITableView _updateVisibleHeadersAndFootersNow:] + 3265
+2017-11-24 12:19:22.899 WorklabsMx.iOS[3305:1270605] critical: 	19  UIKit                               0x0000000107c64af0 -[UITableView _updateVisibleCellsNow:isRecursive:] + 4172
+2017-11-24 12:19:22.899 WorklabsMx.iOS[3305:1270605] critical: 	20  UIKit                               0x0000000107c85d0b -[UITableView layoutSubviews] + 176
+2017-11-24 12:19:22.900 WorklabsMx.iOS[3305:1270605] critical: 	21  UIKit                               0x0000000107c0f6f5 -[UIView(CALayerDelegate) layoutSublayersOfLayer:] + 1439
+2017-11-24 12:19:22.900 WorklabsMx.iOS[3305:1270605] critical: 	22  QuartzCore                          0x000000010db613ee -[CALayer layoutSublayers] + 153
+2017-11-24 12:19:22.900 WorklabsMx.iOS[3305:1270605] critical: 	23  QuartzCore                          0x000000010db654dd _ZN2CA5Layer16layout_if_neededEPNS_11TransactionE + 401
+2017-11-24 12:19:22.900 WorklabsMx.iOS[3305:1270605] critical: 	24  QuartzCore                          0x000000010daedded _ZN2CA7Context18commit_transactionEPNS_11TransactionE + 365
+2017-11-24 12:19:22.900 WorklabsMx.iOS[3305:1270605] critical: 	25  QuartzCore                          0x000000010db19704 _ZN2CA11Transaction6commitEv + 500
+2017-11-24 12:19:22.900 WorklabsMx.iOS[3305:1270605] critical: 	26  UIKit                               0x0000000107b59d3a __34-[UIApplication _firstCommitBlock]_block_invoke_2 + 141
+2017-11-24 12:19:22.900 WorklabsMx.iOS[3305:1270605] critical: 	27  CoreFoundation                      0x00000001141ef18c __CFRUNLOOP_IS_CALLING_OUT_TO_A_BLOCK__ + 12
+2017-11-24 12:19:22.900 WorklabsMx.iOS[3305:1270605] critical: 	28  CoreFoundation                      0x00000001141d396b __CFRunLoopDoBlocks + 203
+2017-11-24 12:19:22.900 WorklabsMx.iOS[3305:1270605] critical: 	29  CoreFoundation                      0x00000001141d3144 __CFRunLoopRun + 1300
+2017-11-24 12:19:22.900 WorklabsMx.iOS[3305:1270605] critical: 	30  CoreFoundation                      0x00000001141d29b9 CFRunLoopRunSpecific + 409
+2017-11-24 12:19:22.900 WorklabsMx.iOS[3305:1270605] critical: 	31  GraphicsServices                    0x0000000116b5d9c6 GSEventRunModal + 62
+2017-11-24 12:19:22.900 WorklabsMx.iOS[3305:1270605] critical: 	32  UIKit                               0x0000000107b3e5e8 UIApplicationMain + 159
+2017-11-24 12:19:22.900 WorklabsMx.iOS[3305:1270605] critical: 	33  ???                                 0x000000012fd78690 0x0 + 5097621136
+2017-11-24 12:19:22.900 WorklabsMx.iOS[3305:1270605] critical: 	34  ???                                 0x000000012fd784f0 0x0 + 5097620720
+2017-11-24 12:19:22.901 WorklabsMx.iOS[3305:1270605] critical: 
 =================================================================
 Got a SIGABRT while executing native code. This usually indicates
 a fatal error in the mono runtime or one of the native libraries 

@@ -19111,7 +19111,7 @@ _mono_aot_file_info:
 	.long 600,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 137,161,120,9,57,15,152,186,3,195,5,0,80,197,88,27
+	.byte 34,235,190,70,32,116,181,2,59,91,77,174,233,188,77,35
 	.globl _mono_aot_module_PerpetualEngine_SimpleStorage_iOS_Unified_info
 	.align 2
 _mono_aot_module_PerpetualEngine_SimpleStorage_iOS_Unified_info:

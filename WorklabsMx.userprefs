@@ -1,10 +1,8 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/EscritorioController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Info.plist">
     <Files>
       <File FileName="iOS/ComentarPostTableViewController.cs" Line="11" Column="20" />
-      <File FileName="WorklabsMx/Controllers/CarritoController.cs" Line="10" Column="35" />
       <File FileName="iOS/ViewControllers/Servicios/CarritoCompraController.cs" Line="14" Column="26" />
-      <File FileName="iOS/ViewControllers/Servicios/CarritoCompraController.designer.cs" Line="15" Column="19" />
       <File FileName="iOS/ViewControllers/Servicios/TarifasController.cs" Line="243" Column="63" />
       <File FileName="iOS/MembresiasMiCuentaViewController.cs" Line="41" Column="40" />
       <File FileName="iOS/ProductosMiCuentaViewController.cs" Line="1" Column="1" />
@@ -12,9 +10,8 @@
       <File FileName="iOS/VentaDetalleTableViewController.cs" Line="16" Column="23" />
       <File FileName="WorklabsMx/Controllers/PagosController.cs" Line="76" Column="20" />
       <File FileName="iOS/CarritoProductos.cs" Line="141" Column="43" />
-      <File FileName="iOS/CeldaCarritoProductos.cs" Line="48" Column="46" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="67" Column="56" />
       <File FileName="iOS/Info.plist" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="201" Column="42" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
@@ -25,11 +22,13 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.89CCA8BE-0586-4891-9CEC-16532ABD6816" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
+  </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
   <MultiItemStartupConfigurations />
 </Properties>

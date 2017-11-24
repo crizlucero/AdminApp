@@ -5,13 +5,13 @@
 	<key>genre</key>
 	<string>Application</string>
 	<key>bundleVersion</key>
-	<string>1.0</string>
+	<string>1.3</string>
 	<key>itemName</key>
-	<string>Worklabs Mx</string>
+	<string>Worklabs</string>
 	<key>kind</key>
 	<string>software</string>
 	<key>playlistName</key>
-	<string>Worklabs Mx</string>
+	<string>Worklabs</string>
 	<key>softwareIconNeedsShine</key>
 	<true/>
 	<key>softwareVersionBundleId</key>
