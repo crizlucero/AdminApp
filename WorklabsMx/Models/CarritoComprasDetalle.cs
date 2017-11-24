@@ -1,4 +1,6 @@
-﻿namespace WorklabsMx.Models
+﻿using WorklabsMx.Enum;
+
+namespace WorklabsMx.Models
 {
     public class CarritoComprasDetalle
     {
@@ -27,5 +29,6 @@
         public string Carrito_Compras_Detalle_Importe_Subtotal_Texto { get; set; }
         public string Carrito_Compras_Detalle_Importe_Impuesto_Texto { get; set; }
         public string Carrito_Compras_Detalle_Importe_Total_Texto { get; set; }
+        public TiposServicios Tipo { get; set; }
     }
 }
