@@ -9,6 +9,7 @@ using AndroidHUD;
 using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
+using WorklabsMx.Enum;
 using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
@@ -71,19 +72,20 @@ namespace WorklabsMx.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.menu_payment:
-                    int Encabezado_Id = controller.AddOrdenVentaEncabezado(Convert.ToInt32(storage.Get("Usuario_Id")), 1, 1, Descuento_Id, Descuento_Id, "OWL-", membresias.Count + productos.Count,
-                                                                           Descuento_Porcentaje, Descuento, Subtotal, IVATotal, Total, 0, 0);
+                    int Encabezado_Id = controller.AddOrdenVentaEncabezado(Convert.ToInt32(storage.Get("Usuario_Id")), 1, 1, Descuento_Id, Descuento_Id, "OWL-", Subtotal - Descuento,
+                                                                           Descuento_Porcentaje, Descuento, Subtotal, IVATotal, Total, Total, 0);
                     if (Encabezado_Id != -1)
                     {
                         membresias.ForEach(membresia =>
                         {
-                            controller.AddOrdenVentaDetalle(Encabezado_Id, membresia.Membresia_Id, membresia.Inscripcion_Membresia_Id,
+                            if (controller.AddOrdenVentaDetalle(Encabezado_Id, membresia.Membresia_Id, membresia.Inscripcion_Membresia_Id,
                                                             membresia.Lista_Precio_Membresia_Id, membresia.Producto_Id, membresia.Lista_Precio_Producto_Id,
                                                             membresia.Carrito_Compras_Detalle_Descripcion, Convert.ToInt32(membresia.Carrito_Compras_Detalle_Cantidad),
                                                             Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Precio), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Prorrateo),
                                                             Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Suma), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Descuento),
                                                             Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Subtotal), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Impuesto),
-                                                            Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Total));
+                                                               Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Total), TiposServicios.Membresia) != -1)
+                                Console.WriteLine("");
                         });
                         productos.ForEach(producto =>
                         {
@@ -93,7 +95,7 @@ namespace WorklabsMx.Droid
                                                             Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Precio), Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Prorrateo),
                                                             Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Suma), Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Descuento),
                                                             Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Subtotal), Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Impuesto),
-                                                            Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Total));
+                                                            Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Total), TiposServicios.Producto);
                         });
                     }
                     else

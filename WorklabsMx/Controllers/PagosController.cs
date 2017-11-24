@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using WorklabsMx.Enum;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 using WorklabsMx.Models.Pagos;
@@ -88,8 +89,11 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Empresa_Miembro_Id", miembro_id);
                 command.Parameters.AddWithValue("@Moneda_Id", moneda_id);
                 command.Parameters.AddWithValue("@Impuesto_Id", impuesto_id);
-                command.Parameters.AddWithValue("@Promocion_Id", promocion_id);
-                command.Parameters.AddWithValue("@Descuento_Id", descuento_id);
+                if (promocion_id != 0)
+                {
+                    command.Parameters.AddWithValue("@Promocion_Id", promocion_id);
+                    command.Parameters.AddWithValue("@Descuento_Id", descuento_id);
+                }
                 command.Parameters.AddWithValue("@Orden_Venta_Encabezado_Folio", folio);
                 command.Parameters.AddWithValue("@Orden_Venta_Encabezado_Importe_Suma", importe_suma);
                 command.Parameters.AddWithValue("@Orden_Venta_Encabezado_Porcentaje_Descuento", porcentaje_descuento);
@@ -121,7 +125,7 @@ namespace WorklabsMx.Controllers
         public int AddOrdenVentaDetalle(int encabezado_id, string Membresia_Id, string Inscripcion_Membresia_Id, string Lista_Precio_Membresia_Id, string Producto_Id, string Lista_Precio_Producto_Id,
                                          string Orden_Venta_Detalle_Descripcion, int Orden_Venta_Detalle_Cantidad, decimal Orden_Venta_Detalle_Importe_Precio, decimal Orden_Venta_Detalle_Importe_Prorrateo,
                                          decimal Orden_Venta_Detalle_Importe_Suma, decimal Orden_Venta_Detalle_Importe_Descuento, decimal Orden_Venta_Detalle_Importe_Subtotal, decimal Orden_Venta_Detalle_Importe_Impuesto,
-                                         decimal Orden_Venta_Detalle_Importe_Total)
+                                         decimal Orden_Venta_Detalle_Importe_Total, TiposServicios tipo)
         {
             try
             {
@@ -134,11 +138,19 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Trasaccion", "ALTA");
                 command.Parameters.AddWithValue("@Orden_Venta_Detalle_Id", DBNull.Value);
                 command.Parameters.AddWithValue("@Orden_Venta_Encabezado_Id", encabezado_id);
-                command.Parameters.AddWithValue("@Membresia_Id", Membresia_Id);
-                command.Parameters.AddWithValue("@Inscripcion_Membresia_Id", Inscripcion_Membresia_Id);
-                command.Parameters.AddWithValue("@Lista_Precio_Membresia_Id", Lista_Precio_Membresia_Id);
-                command.Parameters.AddWithValue("@Producto_Id", Producto_Id);
-                command.Parameters.AddWithValue("@Lista_Precio_Producto_Id", Lista_Precio_Producto_Id);
+                if (tipo == TiposServicios.Membresia)
+                {
+                    if (!string.IsNullOrEmpty(Membresia_Id))
+                        command.Parameters.AddWithValue("@Membresia_Id", Membresia_Id);
+                    if (!string.IsNullOrEmpty(Membresia_Id))
+                        command.Parameters.AddWithValue("@Inscripcion_Membresia_Id", Inscripcion_Membresia_Id);
+                    command.Parameters.AddWithValue("@Lista_Precio_Membresia_Id", Lista_Precio_Membresia_Id);
+                }
+                else if (tipo == TiposServicios.Producto)
+                {
+                    command.Parameters.AddWithValue("@Producto_Id", Producto_Id);
+                    command.Parameters.AddWithValue("@Lista_Precio_Producto_Id", Lista_Precio_Producto_Id);
+                }
 
                 command.Parameters.AddWithValue("@Orden_Venta_Detalle_Descripcion", Orden_Venta_Detalle_Descripcion);
                 command.Parameters.AddWithValue("@Orden_Venta_Detalle_Cantidad", Orden_Venta_Detalle_Cantidad);

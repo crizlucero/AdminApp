@@ -460,7 +460,7 @@ namespace WorklabsMx.Controllers
             try
             {
                 conn.Open();
-                if (!fotografia.Equals(null))
+                if (fotografia.Length != 0)
                 {
                     fotoNombre = Guid.NewGuid().ToString() + ".png";
                     new UploadImages().UploadBitmapAsync(fotoNombre, fotografia);

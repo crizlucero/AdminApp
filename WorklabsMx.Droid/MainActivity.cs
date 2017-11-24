@@ -130,6 +130,7 @@ namespace WorklabsMx.Droid
             {
                 page = 0;
                 tlPost.RemoveAllViews();
+                posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
                 await FillPosts();
                 ((SwipeRefreshLayout)sender).Refreshing = false;
             };
@@ -593,6 +594,7 @@ namespace WorklabsMx.Droid
                     {
                         tlPost.RemoveAllViews();
                         page = 0;
+                        posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
                         await FillPosts();
                         dialog.Dismiss();
                         customView.FindViewById<ImageView>(Resource.Id.imgPicture).Visibility = ViewStates.Gone;
