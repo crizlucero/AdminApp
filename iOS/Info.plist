@@ -5,9 +5,9 @@
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>CFBundleDisplayName</key>
-	<string>Worklabs Mx</string>
+	<string>Worklabs</string>
 	<key>CFBundleName</key>
-	<string>Worklabs Mx</string>
+	<string>Worklabs</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.WorklabsMx.WorklabsMx</string>
 	<key>CFBundleShortVersionString</key>

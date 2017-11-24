@@ -4091,49 +4091,49 @@ exception_handling:;
 	-(UIWindow *) window
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_7 (self, _cmd, &managed_method, 0x29B00);
+		return native_to_managed_trampoline_7 (self, _cmd, &managed_method, 0x29D00);
 	}
 
 	-(void) setWindow:(UIWindow *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_8 (self, _cmd, &managed_method, p0, 0x29C00);
+		native_to_managed_trampoline_8 (self, _cmd, &managed_method, p0, 0x29E00);
 	}
 
 	-(BOOL) application:(UIApplication *)p0 didFinishLaunchingWithOptions:(NSDictionary *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, p1, 0x29D00);
+		return native_to_managed_trampoline_9 (self, _cmd, &managed_method, p0, p1, 0x29F00);
 	}
 
 	-(void) applicationWillResignActive:(UIApplication *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_10 (self, _cmd, &managed_method, p0, 0x29E00);
+		native_to_managed_trampoline_10 (self, _cmd, &managed_method, p0, 0x2A000);
 	}
 
 	-(void) applicationDidEnterBackground:(UIApplication *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_10 (self, _cmd, &managed_method, p0, 0x29F00);
+		native_to_managed_trampoline_10 (self, _cmd, &managed_method, p0, 0x2A100);
 	}
 
 	-(void) applicationWillEnterForeground:(UIApplication *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_10 (self, _cmd, &managed_method, p0, 0x2A000);
+		native_to_managed_trampoline_10 (self, _cmd, &managed_method, p0, 0x2A200);
 	}
 
 	-(void) applicationDidBecomeActive:(UIApplication *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_10 (self, _cmd, &managed_method, p0, 0x2A100);
+		native_to_managed_trampoline_10 (self, _cmd, &managed_method, p0, 0x2A300);
 	}
 
 	-(void) applicationWillTerminate:(UIApplication *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_10 (self, _cmd, &managed_method, p0, 0x2A200);
+		native_to_managed_trampoline_10 (self, _cmd, &managed_method, p0, 0x2A400);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -4146,7 +4146,7 @@ exception_handling:;
 	{
 		static MonoMethod *managed_method = NULL;
 		bool call_super = false;
-		id rv = native_to_managed_trampoline_6 (self, _cmd, &managed_method, &call_super, 0x2A300);
+		id rv = native_to_managed_trampoline_6 (self, _cmd, &managed_method, &call_super, 0x2A500);
 		if (call_super && rv) {
 			struct objc_super super = {  rv, [NSObject class] };
 			rv = ((id (*)(objc_super*, SEL)) objc_msgSendSuper) (&super, @selector (init));
@@ -4183,13 +4183,13 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2A700);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2A900);
 	}
 
 	-(void) didReceiveMemoryWarning
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2A800);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2AA00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -4259,7 +4259,7 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2B400);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2B600);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -4329,7 +4329,7 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2B900);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2BB00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -4378,7 +4378,7 @@ exception_handling:;
 	-(NSArray *) calendar:(id)p0 eventsForDate:(NSDate *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_11 (self, _cmd, &managed_method, p0, p1, 0x30B00);
+		return native_to_managed_trampoline_11 (self, _cmd, &managed_method, p0, p1, 0x30D00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -4427,7 +4427,7 @@ exception_handling:;
 	-(void) calendar:(id)p0 didSelectDate:(NSDate *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_12 (self, _cmd, &managed_method, p0, p1, 0x30D00);
+		native_to_managed_trampoline_12 (self, _cmd, &managed_method, p0, p1, 0x30F00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -4465,13 +4465,13 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x31C00);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x31E00);
 	}
 
 	-(void) tabBar:(UITabBar *)p0 didSelectItem:(UITabBarItem *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_13 (self, _cmd, &managed_method, p0, p1, 0x31D00);
+		native_to_managed_trampoline_13 (self, _cmd, &managed_method, p0, p1, 0x31F00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -4509,13 +4509,13 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x32100);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x32300);
 	}
 
 	-(void) viewWillAppear:(BOOL)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x32300);
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x32500);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -4553,7 +4553,7 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x32600);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x32800);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -4591,79 +4591,79 @@ exception_handling:;
 	-(UIButton *) btnEditar
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x33900);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x33B00);
 	}
 
 	-(void) setBtnEditar:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x33A00);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x33C00);
 	}
 
 	-(UILabel *) lblCelular
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x33B00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x33D00);
 	}
 
 	-(void) setLblCelular:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x33C00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x33E00);
 	}
 
 	-(UILabel *) lblHabilidades
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x33D00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x33F00);
 	}
 
 	-(void) setLblHabilidades:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x33E00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x34000);
 	}
 
 	-(UILabel *) lblProfesion
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x33F00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x34100);
 	}
 
 	-(void) setLblProfesion:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x34000);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x34200);
 	}
 
 	-(UILabel *) lblPuesto
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x34100);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x34300);
 	}
 
 	-(void) setLblPuesto:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x34200);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x34400);
 	}
 
 	-(UILabel *) lblTelefono
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x34300);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x34500);
 	}
 
 	-(void) setLblTelefono:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x34400);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x34600);
 	}
 
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x33700);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x33900);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -4701,13 +4701,13 @@ exception_handling:;
 	-(UILabel *) lblMessageNoComments
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x34800);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x34A00);
 	}
 
 	-(void) setLblMessageNoComments:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x34900);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x34B00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -4745,151 +4745,151 @@ exception_handling:;
 	-(UIButton *) btnImagenComentatio
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x35100);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x35300);
 	}
 
 	-(void) setBtnImagenComentatio:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x35200);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x35400);
 	}
 
 	-(UIButton *) btnLikes
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x35300);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x35500);
 	}
 
 	-(void) setBtnLikes:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x35400);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x35600);
 	}
 
 	-(UIImageView *) imgComentarios
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_19 (self, _cmd, &managed_method, 0x35500);
+		return native_to_managed_trampoline_19 (self, _cmd, &managed_method, 0x35700);
 	}
 
 	-(void) setImgComentarios:(UIImageView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_20 (self, _cmd, &managed_method, p0, 0x35600);
+		native_to_managed_trampoline_20 (self, _cmd, &managed_method, p0, 0x35800);
 	}
 
 	-(UIImageView *) imgPerfil
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_19 (self, _cmd, &managed_method, 0x35700);
+		return native_to_managed_trampoline_19 (self, _cmd, &managed_method, 0x35900);
 	}
 
 	-(void) setImgPerfil:(UIImageView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_20 (self, _cmd, &managed_method, p0, 0x35800);
+		native_to_managed_trampoline_20 (self, _cmd, &managed_method, p0, 0x35A00);
 	}
 
 	-(UILabel *) lblComentarios
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x35900);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x35B00);
 	}
 
 	-(void) setLblComentarios:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x35A00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x35C00);
 	}
 
 	-(UILabel *) lblDetalleComentario
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x35B00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x35D00);
 	}
 
 	-(void) setLblDetalleComentario:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x35C00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x35E00);
 	}
 
 	-(UILabel *) lblFechaPost
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x35D00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x35F00);
 	}
 
 	-(void) setLblFechaPost:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x35E00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x36000);
 	}
 
 	-(UILabel *) lblLikes
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x35F00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x36100);
 	}
 
 	-(void) setLblLikes:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x36000);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x36200);
 	}
 
 	-(UILabel *) lblNombre
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x36100);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x36300);
 	}
 
 	-(void) setLblNombre:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x36200);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x36400);
 	}
 
 	-(UILabel *) lblOcupacion
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x36300);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x36500);
 	}
 
 	-(void) setLblOcupacion:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x36400);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x36600);
 	}
 
 	-(UIView *) vwVistaComentario
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x36500);
+		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x36700);
 	}
 
 	-(void) setVwVistaComentario:(UIView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x36600);
+		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x36800);
 	}
 
 	-(void) btnComentarPost_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x36700);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x36900);
 	}
 
 	-(void) btnImagenComentatio_touchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x36800);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x36A00);
 	}
 
 	-(void) btnLikes_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x36900);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x36B00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -4927,97 +4927,97 @@ exception_handling:;
 	-(UIButton *) btnBorrarFoto
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x3BE00);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x3C400);
 	}
 
 	-(void) setBtnBorrarFoto:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3BF00);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3C500);
 	}
 
 	-(UIButton *) btnFotografia
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x3C000);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x3C600);
 	}
 
 	-(void) setBtnFotografia:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3C100);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3C700);
 	}
 
 	-(UIButton *) btnPublicar
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x3C200);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x3C800);
 	}
 
 	-(void) setBtnPublicar:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3C300);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3C900);
 	}
 
 	-(UIButton *) btnSeleccionarImagen
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x3C400);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x3CA00);
 	}
 
 	-(void) setBtnSeleccionarImagen:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3C500);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3CB00);
 	}
 
 	-(UITextView *) txtComentarPost
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_23 (self, _cmd, &managed_method, 0x3C600);
+		return native_to_managed_trampoline_23 (self, _cmd, &managed_method, 0x3CC00);
 	}
 
 	-(void) setTxtComentarPost:(UITextView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_24 (self, _cmd, &managed_method, p0, 0x3C700);
+		native_to_managed_trampoline_24 (self, _cmd, &managed_method, p0, 0x3CD00);
 	}
 
 	-(UIView *) vwComentarPost
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x3C800);
+		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x3CE00);
 	}
 
 	-(void) setVwComentarPost:(UIView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x3C900);
+		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x3CF00);
 	}
 
 	-(void) btnBorrarFoto_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3CA00);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3D000);
 	}
 
 	-(void) btnComentar_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3CB00);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3D100);
 	}
 
 	-(void) btnFotografia_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3CC00);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3D200);
 	}
 
 	-(void) btnSleccionarImagen_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3CD00);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3D300);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -5055,109 +5055,109 @@ exception_handling:;
 	-(UIButton *) btnImagenComentario
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x3D100);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x3D700);
 	}
 
 	-(void) setBtnImagenComentario:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3D200);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3D800);
 	}
 
 	-(UIButton *) btnLikes
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x3D300);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x3D900);
 	}
 
 	-(void) setBtnLikes:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3D400);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3DA00);
 	}
 
 	-(UIImageView *) imgPerfil
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_19 (self, _cmd, &managed_method, 0x3D500);
+		return native_to_managed_trampoline_19 (self, _cmd, &managed_method, 0x3DB00);
 	}
 
 	-(void) setImgPerfil:(UIImageView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_20 (self, _cmd, &managed_method, p0, 0x3D600);
+		native_to_managed_trampoline_20 (self, _cmd, &managed_method, p0, 0x3DC00);
 	}
 
 	-(UILabel *) lblContenido
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x3D700);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x3DD00);
 	}
 
 	-(void) setLblContenido:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x3D800);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x3DE00);
 	}
 
 	-(UILabel *) lblFechaPost
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x3D900);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x3DF00);
 	}
 
 	-(void) setLblFechaPost:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x3DA00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x3E000);
 	}
 
 	-(UILabel *) lblLikes
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x3DB00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x3E100);
 	}
 
 	-(void) setLblLikes:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x3DC00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x3E200);
 	}
 
 	-(UILabel *) lblNombre
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x3DD00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x3E300);
 	}
 
 	-(void) setLblNombre:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x3DE00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x3E400);
 	}
 
 	-(UILabel *) lblPuesto
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x3DF00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x3E500);
 	}
 
 	-(void) setLblPuesto:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x3E000);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x3E600);
 	}
 
 	-(void) btnImagenComentario_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3E100);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3E700);
 	}
 
 	-(void) btnLikes_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3E200);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3E800);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -5195,13 +5195,13 @@ exception_handling:;
 	-(UILabel *) lblNoComentariosInfo
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x3EA00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x3F000);
 	}
 
 	-(void) setLblNoComentariosInfo:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x3EB00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x3F100);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -5239,49 +5239,49 @@ exception_handling:;
 	-(UIButton *) btnBack
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x3F900);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x3FF00);
 	}
 
 	-(void) setBtnBack:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3FA00);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x40000);
 	}
 
 	-(UIImageView *) imgCommnet
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_19 (self, _cmd, &managed_method, 0x3FB00);
+		return native_to_managed_trampoline_19 (self, _cmd, &managed_method, 0x40100);
 	}
 
 	-(void) setImgCommnet:(UIImageView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_20 (self, _cmd, &managed_method, p0, 0x3FC00);
+		native_to_managed_trampoline_20 (self, _cmd, &managed_method, p0, 0x40200);
 	}
 
 	-(UIView *) vwImageComment
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x3FD00);
+		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x40300);
 	}
 
 	-(void) setVwImageComment:(UIView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x3FE00);
+		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x40400);
 	}
 
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x3F700);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x3FD00);
 	}
 
 	-(void) btnBack_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x3FF00);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x40500);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -5319,25 +5319,25 @@ exception_handling:;
 	-(UILabel *) lblNumeroProductos
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x40D00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x41300);
 	}
 
 	-(void) setLblNumeroProductos:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x40E00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x41400);
 	}
 
 	-(UILabel *) lblTotalPagar
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x40F00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x41500);
 	}
 
 	-(void) setLblTotalPagar:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x41000);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x41600);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -5375,217 +5375,217 @@ exception_handling:;
 	-(UIDatePicker *) dpkFechaInicio
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_25 (self, _cmd, &managed_method, 0x41A00);
+		return native_to_managed_trampoline_25 (self, _cmd, &managed_method, 0x42000);
 	}
 
 	-(void) setDpkFechaInicio:(UIDatePicker *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_26 (self, _cmd, &managed_method, p0, 0x41B00);
+		native_to_managed_trampoline_26 (self, _cmd, &managed_method, p0, 0x42100);
 	}
 
 	-(UILabel *) lblCantidadMeses
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x41C00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x42200);
 	}
 
 	-(void) setLblCantidadMeses:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x41D00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x42300);
 	}
 
 	-(UILabel *) lblCantidadProductos
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x41E00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x42400);
 	}
 
 	-(void) setLblCantidadProductos:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x41F00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x42500);
 	}
 
 	-(UILabel *) lblFechaInicio
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x42000);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x42600);
 	}
 
 	-(void) setLblFechaInicio:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x42100);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x42700);
 	}
 
 	-(UILabel *) lblMensajeMeses
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x42200);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x42800);
 	}
 
 	-(void) setLblMensajeMeses:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x42300);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x42900);
 	}
 
 	-(UILabel *) lblMensajeProporcionalMes
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x42400);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x42A00);
 	}
 
 	-(void) setLblMensajeProporcionalMes:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x42500);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x42B00);
 	}
 
 	-(UILabel *) lblMensajeTarifa
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x42600);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x42C00);
 	}
 
 	-(void) setLblMensajeTarifa:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x42700);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x42D00);
 	}
 
 	-(UILabel *) lblNombreProducto
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x42800);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x42E00);
 	}
 
 	-(void) setLblNombreProducto:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x42900);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x42F00);
 	}
 
 	-(UILabel *) lblProporcionalMes
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x42A00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x43000);
 	}
 
 	-(void) setLblProporcionalMes:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x42B00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x43100);
 	}
 
 	-(UILabel *) lblTarifa
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x42C00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x43200);
 	}
 
 	-(void) setLblTarifa:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x42D00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x43300);
 	}
 
 	-(UILabel *) lblTotal
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x42E00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x43400);
 	}
 
 	-(void) setLblTotal:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x42F00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x43500);
 	}
 
 	-(UIPickerView *) pkvSucursal
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_27 (self, _cmd, &managed_method, 0x43000);
+		return native_to_managed_trampoline_27 (self, _cmd, &managed_method, 0x43600);
 	}
 
 	-(void) setPkvSucursal:(UIPickerView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_28 (self, _cmd, &managed_method, p0, 0x43100);
+		native_to_managed_trampoline_28 (self, _cmd, &managed_method, p0, 0x43700);
 	}
 
 	-(UIStepper *) stpCantidadMeses
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_29 (self, _cmd, &managed_method, 0x43200);
+		return native_to_managed_trampoline_29 (self, _cmd, &managed_method, 0x43800);
 	}
 
 	-(void) setStpCantidadMeses:(UIStepper *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_30 (self, _cmd, &managed_method, p0, 0x43300);
+		native_to_managed_trampoline_30 (self, _cmd, &managed_method, p0, 0x43900);
 	}
 
 	-(UIStepper *) stpCantidadProductos
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_29 (self, _cmd, &managed_method, 0x43400);
+		return native_to_managed_trampoline_29 (self, _cmd, &managed_method, 0x43A00);
 	}
 
 	-(void) setStpCantidadProductos:(UIStepper *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_30 (self, _cmd, &managed_method, p0, 0x43500);
+		native_to_managed_trampoline_30 (self, _cmd, &managed_method, p0, 0x43B00);
 	}
 
 	-(UIView *) vwControlesTarifaMensual
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x43600);
+		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x43C00);
 	}
 
 	-(void) setVwControlesTarifaMensual:(UIView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x43700);
+		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x43D00);
 	}
 
 	-(UIView *) vwProductos
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x43800);
+		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x43E00);
 	}
 
 	-(void) setVwProductos:(UIView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x43900);
+		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x43F00);
 	}
 
 	-(void) layoutIfNeeded
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x41500);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x41B00);
 	}
 
 	-(void) dtpFechaInicio_ValueChanged:(UIDatePicker *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_26 (self, _cmd, &managed_method, p0, 0x43A00);
+		native_to_managed_trampoline_26 (self, _cmd, &managed_method, p0, 0x44000);
 	}
 
 	-(void) stpCantidadProductos_Changed:(UIStepper *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_30 (self, _cmd, &managed_method, p0, 0x43B00);
+		native_to_managed_trampoline_30 (self, _cmd, &managed_method, p0, 0x44100);
 	}
 
 	-(void) stpMeses_Changed:(UIStepper *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_30 (self, _cmd, &managed_method, p0, 0x43C00);
+		native_to_managed_trampoline_30 (self, _cmd, &managed_method, p0, 0x44200);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -5623,13 +5623,13 @@ exception_handling:;
 	-(UILabel *) lblMessageNoProducts
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x44000);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x44600);
 	}
 
 	-(void) setLblMessageNoProducts:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x44100);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x44700);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -5667,163 +5667,163 @@ exception_handling:;
 	-(UIDatePicker *) dtpFechaInicio
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_25 (self, _cmd, &managed_method, 0x45400);
+		return native_to_managed_trampoline_25 (self, _cmd, &managed_method, 0x45A00);
 	}
 
 	-(void) setDtpFechaInicio:(UIDatePicker *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_26 (self, _cmd, &managed_method, p0, 0x45500);
+		native_to_managed_trampoline_26 (self, _cmd, &managed_method, p0, 0x45B00);
 	}
 
 	-(UILabel *) lblCantidadMembresias
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x45600);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x45C00);
 	}
 
 	-(void) setLblCantidadMembresias:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x45700);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x45D00);
 	}
 
 	-(UILabel *) lblCantidadMeses
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x45800);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x45E00);
 	}
 
 	-(void) setLblCantidadMeses:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x45900);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x45F00);
 	}
 
 	-(UILabel *) lblNombreMembresia
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x45A00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x46000);
 	}
 
 	-(void) setLblNombreMembresia:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x45B00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x46100);
 	}
 
 	-(UILabel *) lblProporcionalMes
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x45C00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x46200);
 	}
 
 	-(void) setLblProporcionalMes:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x45D00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x46300);
 	}
 
 	-(UILabel *) lblTarifaInscripcion
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x45E00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x46400);
 	}
 
 	-(void) setLblTarifaInscripcion:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x45F00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x46500);
 	}
 
 	-(UILabel *) lblTarifaMensual
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x46000);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x46600);
 	}
 
 	-(void) setLblTarifaMensual:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x46100);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x46700);
 	}
 
 	-(UILabel *) lblTotal
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x46200);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x46800);
 	}
 
 	-(void) setLblTotal:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x46300);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x46900);
 	}
 
 	-(UIPickerView *) pcwSucursal
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_27 (self, _cmd, &managed_method, 0x46400);
+		return native_to_managed_trampoline_27 (self, _cmd, &managed_method, 0x46A00);
 	}
 
 	-(void) setPcwSucursal:(UIPickerView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_28 (self, _cmd, &managed_method, p0, 0x46500);
+		native_to_managed_trampoline_28 (self, _cmd, &managed_method, p0, 0x46B00);
 	}
 
 	-(UIStepper *) stpCantidadMembresias
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_29 (self, _cmd, &managed_method, 0x46600);
+		return native_to_managed_trampoline_29 (self, _cmd, &managed_method, 0x46C00);
 	}
 
 	-(void) setStpCantidadMembresias:(UIStepper *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_30 (self, _cmd, &managed_method, p0, 0x46700);
+		native_to_managed_trampoline_30 (self, _cmd, &managed_method, p0, 0x46D00);
 	}
 
 	-(UIStepper *) stpCantidadMeses
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_29 (self, _cmd, &managed_method, 0x46800);
+		return native_to_managed_trampoline_29 (self, _cmd, &managed_method, 0x46E00);
 	}
 
 	-(void) setStpCantidadMeses:(UIStepper *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_30 (self, _cmd, &managed_method, p0, 0x46900);
+		native_to_managed_trampoline_30 (self, _cmd, &managed_method, p0, 0x46F00);
 	}
 
 	-(UIView *) vwMembresias
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x46A00);
+		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x47000);
 	}
 
 	-(void) setVwMembresias:(UIView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x46B00);
+		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x47100);
 	}
 
 	-(void) dtpFechaInicio_ValueChanged:(UIDatePicker *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_26 (self, _cmd, &managed_method, p0, 0x46C00);
+		native_to_managed_trampoline_26 (self, _cmd, &managed_method, p0, 0x47200);
 	}
 
 	-(void) stpCantidadMembresias_ValueChanged:(UIStepper *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_30 (self, _cmd, &managed_method, p0, 0x46D00);
+		native_to_managed_trampoline_30 (self, _cmd, &managed_method, p0, 0x47300);
 	}
 
 	-(void) stpCantidadMeses_ValueChanged:(UIStepper *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_30 (self, _cmd, &managed_method, p0, 0x46E00);
+		native_to_managed_trampoline_30 (self, _cmd, &managed_method, p0, 0x47400);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -5861,13 +5861,13 @@ exception_handling:;
 	-(UILabel *) lblMessage
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x47200);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x47800);
 	}
 
 	-(void) setLblMessage:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x47300);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x47900);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -5905,13 +5905,13 @@ exception_handling:;
 	-(UILabel *) lblNoInfo
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x48500);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x48D00);
 	}
 
 	-(void) setLblNoInfo:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x48600);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x48E00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -5949,49 +5949,49 @@ exception_handling:;
 	-(UILabel *) lblCantidad
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x48A00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x49200);
 	}
 
 	-(void) setLblCantidad:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x48B00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x49300);
 	}
 
 	-(UILabel *) lblNombreProducto
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x48C00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x49400);
 	}
 
 	-(void) setLblNombreProducto:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x48D00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x49500);
 	}
 
 	-(UILabel *) lblTotalPagar
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x48E00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x49600);
 	}
 
 	-(void) setLblTotalPagar:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x48F00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x49700);
 	}
 
 	-(UIView *) vwVistaDetalleVenta
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x49000);
+		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x49800);
 	}
 
 	-(void) setVwVistaDetalleVenta:(UIView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x49100);
+		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x49900);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -6029,85 +6029,85 @@ exception_handling:;
 	-(UIButton *) btnUsarCupon
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x49500);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x49D00);
 	}
 
 	-(void) setBtnUsarCupon:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x49600);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x49E00);
 	}
 
 	-(UILabel *) lblDescuento
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x49700);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x49F00);
 	}
 
 	-(void) setLblDescuento:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x49800);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4A000);
 	}
 
 	-(UILabel *) lblImpuesto
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x49900);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4A100);
 	}
 
 	-(void) setLblImpuesto:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x49A00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4A200);
 	}
 
 	-(UILabel *) lblSubtotal
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x49B00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4A300);
 	}
 
 	-(void) setLblSubtotal:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x49C00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4A400);
 	}
 
 	-(UILabel *) lblTotal
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x49D00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4A500);
 	}
 
 	-(void) setLblTotal:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x49E00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4A600);
 	}
 
 	-(UILabel *) lblLeyendaTotalDescuento
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x49F00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4A700);
 	}
 
 	-(void) setLblLeyendaTotalDescuento:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4A000);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4A800);
 	}
 
 	-(UILabel *) lblTotalConDescuento
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4A100);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4A900);
 	}
 
 	-(void) setLblTotalConDescuento:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4A200);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4AA00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -6145,55 +6145,55 @@ exception_handling:;
 	-(UIImageView *) impPublicar
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_19 (self, _cmd, &managed_method, 0x4AF00);
+		return native_to_managed_trampoline_19 (self, _cmd, &managed_method, 0x4B700);
 	}
 
 	-(void) setImpPublicar:(UIImageView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_20 (self, _cmd, &managed_method, p0, 0x4B000);
+		native_to_managed_trampoline_20 (self, _cmd, &managed_method, p0, 0x4B800);
 	}
 
 	-(UILabel *) lblNombre
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4B100);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4B900);
 	}
 
 	-(void) setLblNombre:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4B200);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4BA00);
 	}
 
 	-(UILabel *) lblProfesion
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4B300);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4BB00);
 	}
 
 	-(void) setLblProfesion:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4B400);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4BC00);
 	}
 
 	-(UIButton *) btnPublicar
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x4B500);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x4BD00);
 	}
 
 	-(void) setBtnPublicar:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x4B600);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x4BE00);
 	}
 
 	-(void) btnPublicar_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x4B700);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x4BF00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -6231,73 +6231,73 @@ exception_handling:;
 	-(UIBarButtonItem *) btnScanQr
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_31 (self, _cmd, &managed_method, 0x4C800);
+		return native_to_managed_trampoline_31 (self, _cmd, &managed_method, 0x4D000);
 	}
 
 	-(void) setBtnScanQr:(UIBarButtonItem *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_32 (self, _cmd, &managed_method, p0, 0x4C900);
+		native_to_managed_trampoline_32 (self, _cmd, &managed_method, p0, 0x4D100);
 	}
 
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x4BA00);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x4C200);
 	}
 
 	-(void) viewWillAppear:(BOOL)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x4BB00);
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x4C300);
 	}
 
 	-(void) viewDidAppear:(BOOL)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x4BC00);
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x4C400);
 	}
 
 	-(UIView *) tableView:(UITableView *)p0 viewForHeaderInSection:(NSInteger)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_33 (self, _cmd, &managed_method, p0, p1, 0x4BF00);
+		return native_to_managed_trampoline_33 (self, _cmd, &managed_method, p0, p1, 0x4C700);
 	}
 
 	-(CGFloat) tableView:(UITableView *)p0 heightForHeaderInSection:(NSInteger)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_34 (self, _cmd, &managed_method, p0, p1, 0x4C000);
+		return native_to_managed_trampoline_34 (self, _cmd, &managed_method, p0, p1, 0x4C800);
 	}
 
 	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_35 (self, _cmd, &managed_method, p0, p1, 0x4C100);
+		return native_to_managed_trampoline_35 (self, _cmd, &managed_method, p0, p1, 0x4C900);
 	}
 
 	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_36 (self, _cmd, &managed_method, p0, p1, 0x4C200);
+		return native_to_managed_trampoline_36 (self, _cmd, &managed_method, p0, p1, 0x4CA00);
 	}
 
 	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_37 (self, _cmd, &managed_method, p0, p1, 0x4C300);
+		return native_to_managed_trampoline_37 (self, _cmd, &managed_method, p0, p1, 0x4CB00);
 	}
 
 	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_38 (self, _cmd, &managed_method, p0, p1, 0x4C400);
+		native_to_managed_trampoline_38 (self, _cmd, &managed_method, p0, p1, 0x4CC00);
 	}
 
 	-(void) btnToScanQr_TouchUpInside:(UIBarButtonItem *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_32 (self, _cmd, &managed_method, p0, 0x4CA00);
+		native_to_managed_trampoline_32 (self, _cmd, &managed_method, p0, 0x4D200);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -6335,163 +6335,163 @@ exception_handling:;
 	-(UILabel *) lblCantidadMeses
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4D000);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4D800);
 	}
 
 	-(void) setLblCantidadMeses:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4D100);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4D900);
 	}
 
 	-(UILabel *) lblCantidadProducto
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4D200);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4DA00);
 	}
 
 	-(void) setLblCantidadProducto:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4D300);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4DB00);
 	}
 
 	-(UILabel *) lblDisponibilidad
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4D400);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4DC00);
 	}
 
 	-(void) setLblDisponibilidad:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4D500);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4DD00);
 	}
 
 	-(UILabel *) lblImpuesto
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4D600);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4DE00);
 	}
 
 	-(void) setLblImpuesto:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4D700);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4DF00);
 	}
 
 	-(UILabel *) lblProducto
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4D800);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4E000);
 	}
 
 	-(void) setLblProducto:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4D900);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4E100);
 	}
 
 	-(UILabel *) lblSubtotal
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4DA00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4E200);
 	}
 
 	-(void) setLblSubtotal:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4DB00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4E300);
 	}
 
 	-(UILabel *) lblSucursal
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4DC00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4E400);
 	}
 
 	-(void) setLblSucursal:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4DD00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4E500);
 	}
 
 	-(UILabel *) lblTarifaMensual
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4DE00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4E600);
 	}
 
 	-(void) setLblTarifaMensual:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4DF00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4E700);
 	}
 
 	-(UILabel *) lblTarifaProporcional
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4E000);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4E800);
 	}
 
 	-(void) setLblTarifaProporcional:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4E100);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4E900);
 	}
 
 	-(UILabel *) lblTotal
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4E200);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4EA00);
 	}
 
 	-(void) setLblTotal:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4E300);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4EB00);
 	}
 
 	-(UILabel *) lblVigencia
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4E400);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x4EC00);
 	}
 
 	-(void) setLblVigencia:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4E500);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x4ED00);
 	}
 
 	-(UIView *) vwDetalleProducto
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x4E600);
+		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x4EE00);
 	}
 
 	-(void) setVwDetalleProducto:(UIView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x4E700);
+		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x4EF00);
 	}
 
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x4CD00);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x4D500);
 	}
 
 	-(void) viewWillAppear:(BOOL)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x4CE00);
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x4D600);
 	}
 
 	-(void) btnBack_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x4E800);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x4F000);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -6529,56 +6529,644 @@ exception_handling:;
 	-(UIButton *) btnCanjearCupon
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x4ED00);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x4F500);
 	}
 
 	-(void) setBtnCanjearCupon:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x4EE00);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x4F600);
 	}
 
 	-(UITextField *) txtCupon
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_39 (self, _cmd, &managed_method, 0x4EF00);
+		return native_to_managed_trampoline_39 (self, _cmd, &managed_method, 0x4F700);
 	}
 
 	-(void) setTxtCupon:(UITextField *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_40 (self, _cmd, &managed_method, p0, 0x4F000);
+		native_to_managed_trampoline_40 (self, _cmd, &managed_method, p0, 0x4F800);
 	}
 
 	-(UIView *) vwCanjearCupon
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x4F100);
+		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x4F900);
 	}
 
 	-(void) setVwCanjearCupon:(UIView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x4F200);
+		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x4FA00);
 	}
 
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x4EC00);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x4F400);
 	}
 
 	-(void) btnBack_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x4F300);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x4FB00);
 	}
 
 	-(void) btnCanjear_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x4F400);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x4FC00);
 	}
+
+	-(BOOL) conformsToProtocol:(void *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, 0x51D12);
+	}
+@end
+
+@implementation cloudViewController {
+	XamarinObject __monoObjectGCHandle;
+}
+	-(void) release
+	{
+		xamarin_release_trampoline (self, _cmd);
+	}
+
+	-(id) retain
+	{
+		return xamarin_retain_trampoline (self, _cmd);
+	}
+
+	-(int) xamarinGetGCHandle
+	{
+		return __monoObjectGCHandle.gc_handle;
+	}
+
+	-(void) xamarinSetGCHandle: (int) gc_handle
+	{
+		__monoObjectGCHandle.gc_handle = gc_handle;
+		__monoObjectGCHandle.native_object = self;
+	}
+
+
+	-(void) viewDidLoad
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x4FF00);
+	}
+
+	-(void) viewWillAppear:(BOOL)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x50000);
+	}
+
+	-(void) viewDidAppear:(BOOL)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x50100);
+	}
+
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_35 (self, _cmd, &managed_method, p0, p1, 0x50200);
+	}
+
+	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_36 (self, _cmd, &managed_method, p0, p1, 0x50300);
+	}
+
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_37 (self, _cmd, &managed_method, p0, p1, 0x50400);
+	}
+
+	-(BOOL) conformsToProtocol:(void *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, 0x51D12);
+	}
+@end
+
+@implementation TelefoniaTableView {
+	XamarinObject __monoObjectGCHandle;
+}
+	-(void) release
+	{
+		xamarin_release_trampoline (self, _cmd);
+	}
+
+	-(id) retain
+	{
+		return xamarin_retain_trampoline (self, _cmd);
+	}
+
+	-(int) xamarinGetGCHandle
+	{
+		return __monoObjectGCHandle.gc_handle;
+	}
+
+	-(void) xamarinSetGCHandle: (int) gc_handle
+	{
+		__monoObjectGCHandle.gc_handle = gc_handle;
+		__monoObjectGCHandle.native_object = self;
+	}
+
+
+	-(void) viewDidLoad
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x50600);
+	}
+
+	-(void) viewWillAppear:(BOOL)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x50700);
+	}
+
+	-(void) viewDidAppear:(BOOL)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x50800);
+	}
+
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_35 (self, _cmd, &managed_method, p0, p1, 0x50900);
+	}
+
+	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_36 (self, _cmd, &managed_method, p0, p1, 0x50A00);
+	}
+
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_37 (self, _cmd, &managed_method, p0, p1, 0x50B00);
+	}
+
+	-(BOOL) conformsToProtocol:(void *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, 0x51D12);
+	}
+@end
+
+@implementation ProductosMiCuentaViewController {
+	XamarinObject __monoObjectGCHandle;
+}
+	-(void) release
+	{
+		xamarin_release_trampoline (self, _cmd);
+	}
+
+	-(id) retain
+	{
+		return xamarin_retain_trampoline (self, _cmd);
+	}
+
+	-(int) xamarinGetGCHandle
+	{
+		return __monoObjectGCHandle.gc_handle;
+	}
+
+	-(void) xamarinSetGCHandle: (int) gc_handle
+	{
+		__monoObjectGCHandle.gc_handle = gc_handle;
+		__monoObjectGCHandle.native_object = self;
+	}
+
+
+	-(void) viewDidLoad
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x50D00);
+	}
+
+	-(void) viewWillAppear:(BOOL)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x50E00);
+	}
+
+	-(void) viewDidAppear:(BOOL)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x50F00);
+	}
+
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_35 (self, _cmd, &managed_method, p0, p1, 0x51000);
+	}
+
+	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_36 (self, _cmd, &managed_method, p0, p1, 0x51100);
+	}
+
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_37 (self, _cmd, &managed_method, p0, p1, 0x51200);
+	}
+
+	-(BOOL) conformsToProtocol:(void *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, 0x51D12);
+	}
+@end
+
+@implementation MembresiasMiCuentaViewController {
+	XamarinObject __monoObjectGCHandle;
+}
+	-(void) release
+	{
+		xamarin_release_trampoline (self, _cmd);
+	}
+
+	-(id) retain
+	{
+		return xamarin_retain_trampoline (self, _cmd);
+	}
+
+	-(int) xamarinGetGCHandle
+	{
+		return __monoObjectGCHandle.gc_handle;
+	}
+
+	-(void) xamarinSetGCHandle: (int) gc_handle
+	{
+		__monoObjectGCHandle.gc_handle = gc_handle;
+		__monoObjectGCHandle.native_object = self;
+	}
+
+
+	-(void) viewDidLoad
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x51500);
+	}
+
+	-(void) viewWillAppear:(BOOL)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x51600);
+	}
+
+	-(void) viewDidAppear:(BOOL)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x51700);
+	}
+
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_35 (self, _cmd, &managed_method, p0, p1, 0x51800);
+	}
+
+	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_36 (self, _cmd, &managed_method, p0, p1, 0x51900);
+	}
+
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_37 (self, _cmd, &managed_method, p0, p1, 0x51A00);
+	}
+
+	-(BOOL) conformsToProtocol:(void *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, 0x51D12);
+	}
+@end
+
+@implementation CuentaProductosCell {
+	XamarinObject __monoObjectGCHandle;
+}
+	-(void) release
+	{
+		xamarin_release_trampoline (self, _cmd);
+	}
+
+	-(id) retain
+	{
+		return xamarin_retain_trampoline (self, _cmd);
+	}
+
+	-(int) xamarinGetGCHandle
+	{
+		return __monoObjectGCHandle.gc_handle;
+	}
+
+	-(void) xamarinSetGCHandle: (int) gc_handle
+	{
+		__monoObjectGCHandle.gc_handle = gc_handle;
+		__monoObjectGCHandle.native_object = self;
+	}
+
+
+	-(UIButton *) btnAgregar
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x51E00);
+	}
+
+	-(void) setBtnAgregar:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x51F00);
+	}
+
+	-(UILabel *) lblCantidad
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x52000);
+	}
+
+	-(void) setLblCantidad:(UILabel *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x52100);
+	}
+
+	-(UILabel *) lblFechaVencimiento
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x52200);
+	}
+
+	-(void) setLblFechaVencimiento:(UILabel *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x52300);
+	}
+
+	-(UILabel *) lblNombreProducto
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x52400);
+	}
+
+	-(void) setLblNombreProducto:(UILabel *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x52500);
+	}
+
+	-(UIView *) vwProductos
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x52600);
+	}
+
+	-(void) setVwProductos:(UIView *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x52700);
+	}
+
+	-(void) btnAgregar_TouchUpInside:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x52800);
+	}
+
+	-(BOOL) conformsToProtocol:(void *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, 0x51D12);
+	}
+@end
+
+@implementation NoInfoCuentaProductosCell {
+	XamarinObject __monoObjectGCHandle;
+}
+	-(void) release
+	{
+		xamarin_release_trampoline (self, _cmd);
+	}
+
+	-(id) retain
+	{
+		return xamarin_retain_trampoline (self, _cmd);
+	}
+
+	-(int) xamarinGetGCHandle
+	{
+		return __monoObjectGCHandle.gc_handle;
+	}
+
+	-(void) xamarinSetGCHandle: (int) gc_handle
+	{
+		__monoObjectGCHandle.gc_handle = gc_handle;
+		__monoObjectGCHandle.native_object = self;
+	}
+
+
+	-(UILabel *) lblMensaje
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x52C00);
+	}
+
+	-(void) setLblMensaje:(UILabel *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x52D00);
+	}
+
+	-(BOOL) conformsToProtocol:(void *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, 0x51D12);
+	}
+@end
+
+@implementation CuentaMembresiasCell {
+	XamarinObject __monoObjectGCHandle;
+}
+	-(void) release
+	{
+		xamarin_release_trampoline (self, _cmd);
+	}
+
+	-(id) retain
+	{
+		return xamarin_retain_trampoline (self, _cmd);
+	}
+
+	-(int) xamarinGetGCHandle
+	{
+		return __monoObjectGCHandle.gc_handle;
+	}
+
+	-(void) xamarinSetGCHandle: (int) gc_handle
+	{
+		__monoObjectGCHandle.gc_handle = gc_handle;
+		__monoObjectGCHandle.native_object = self;
+	}
+
+
+	-(UIButton *) btnRenovar
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x53100);
+	}
+
+	-(void) setBtnRenovar:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x53200);
+	}
+
+	-(UILabel *) lblCantidad
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x53300);
+	}
+
+	-(void) setLblCantidad:(UILabel *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x53400);
+	}
+
+	-(UILabel *) lblFechaVencimiento
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x53500);
+	}
+
+	-(void) setLblFechaVencimiento:(UILabel *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x53600);
+	}
+
+	-(UILabel *) lblNombreMembresia
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x53700);
+	}
+
+	-(void) setLblNombreMembresia:(UILabel *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x53800);
+	}
+
+	-(UIView *) vwMembresias
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x53900);
+	}
+
+	-(void) setVwMembresias:(UIView *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x53A00);
+	}
+
+	-(void) btnRenovar_TouchUPInside:(UIButton *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x53B00);
+	}
+
+	-(BOOL) conformsToProtocol:(void *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, 0x51D12);
+	}
+@end
+
+@implementation NoInfoCuentaMembresiasCell {
+	XamarinObject __monoObjectGCHandle;
+}
+	-(void) release
+	{
+		xamarin_release_trampoline (self, _cmd);
+	}
+
+	-(id) retain
+	{
+		return xamarin_retain_trampoline (self, _cmd);
+	}
+
+	-(int) xamarinGetGCHandle
+	{
+		return __monoObjectGCHandle.gc_handle;
+	}
+
+	-(void) xamarinSetGCHandle: (int) gc_handle
+	{
+		__monoObjectGCHandle.gc_handle = gc_handle;
+		__monoObjectGCHandle.native_object = self;
+	}
+
+
+	-(UILabel *) lblMensaje
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x53F00);
+	}
+
+	-(void) setLblMensaje:(UILabel *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x54000);
+	}
+
+	-(BOOL) conformsToProtocol:(void *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, 0x51D12);
+	}
+@end
+
+@implementation MiCuentaViewController {
+	XamarinObject __monoObjectGCHandle;
+}
+	-(void) release
+	{
+		xamarin_release_trampoline (self, _cmd);
+	}
+
+	-(id) retain
+	{
+		return xamarin_retain_trampoline (self, _cmd);
+	}
+
+	-(int) xamarinGetGCHandle
+	{
+		return __monoObjectGCHandle.gc_handle;
+	}
+
+	-(void) xamarinSetGCHandle: (int) gc_handle
+	{
+		__monoObjectGCHandle.gc_handle = gc_handle;
+		__monoObjectGCHandle.native_object = self;
+	}
+
 
 	-(BOOL) conformsToProtocol:(void *)p0
 	{
@@ -6615,7 +7203,7 @@ exception_handling:;
 	-(void) touchesBegan:(NSSet *)p0 withEvent:(UIEvent *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_41 (self, _cmd, &managed_method, p0, p1, 0x4FD00);
+		native_to_managed_trampoline_41 (self, _cmd, &managed_method, p0, p1, 0x54A00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -6660,7 +7248,7 @@ exception_handling:;
 	{
 		static MonoMethod *managed_method = NULL;
 		bool call_super = false;
-		id rv = native_to_managed_trampoline_6 (self, _cmd, &managed_method, &call_super, 0x4FE00);
+		id rv = native_to_managed_trampoline_6 (self, _cmd, &managed_method, &call_super, 0x54B00);
 		if (call_super && rv) {
 			struct objc_super super = {  rv, [UIScrollView class] };
 			rv = ((id (*)(objc_super*, SEL)) objc_msgSendSuper) (&super, @selector (init));
@@ -6793,25 +7381,25 @@ exception_handling:;
 	-(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_42 (self, _cmd, &managed_method, p0, 0x51000);
+		return native_to_managed_trampoline_42 (self, _cmd, &managed_method, p0, 0x55D00);
 	}
 
 	-(NSInteger) pickerView:(UIPickerView *)p0 numberOfRowsInComponent:(NSInteger)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_43 (self, _cmd, &managed_method, p0, p1, 0x51100);
+		return native_to_managed_trampoline_43 (self, _cmd, &managed_method, p0, p1, 0x55E00);
 	}
 
 	-(NSString *) pickerView:(UIPickerView *)p0 titleForRow:(NSInteger)p1 forComponent:(NSInteger)p2
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_44 (self, _cmd, &managed_method, p0, p1, p2, 0x51200);
+		return native_to_managed_trampoline_44 (self, _cmd, &managed_method, p0, p1, p2, 0x55F00);
 	}
 
 	-(void) pickerView:(UIPickerView *)p0 didSelectRow:(NSInteger)p1 inComponent:(NSInteger)p2
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_45 (self, _cmd, &managed_method, p0, p1, p2, 0x51300);
+		native_to_managed_trampoline_45 (self, _cmd, &managed_method, p0, p1, p2, 0x56000);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -6849,19 +7437,19 @@ exception_handling:;
 	-(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_42 (self, _cmd, &managed_method, p0, 0x51500);
+		return native_to_managed_trampoline_42 (self, _cmd, &managed_method, p0, 0x56200);
 	}
 
 	-(NSInteger) pickerView:(UIPickerView *)p0 numberOfRowsInComponent:(NSInteger)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_43 (self, _cmd, &managed_method, p0, p1, 0x51600);
+		return native_to_managed_trampoline_43 (self, _cmd, &managed_method, p0, p1, 0x56300);
 	}
 
 	-(NSString *) pickerView:(UIPickerView *)p0 titleForRow:(NSInteger)p1 forComponent:(NSInteger)p2
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_44 (self, _cmd, &managed_method, p0, p1, p2, 0x51700);
+		return native_to_managed_trampoline_44 (self, _cmd, &managed_method, p0, p1, p2, 0x56400);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -6874,7 +7462,7 @@ exception_handling:;
 	{
 		static MonoMethod *managed_method = NULL;
 		bool call_super = false;
-		id rv = native_to_managed_trampoline_6 (self, _cmd, &managed_method, &call_super, 0x51400);
+		id rv = native_to_managed_trampoline_6 (self, _cmd, &managed_method, &call_super, 0x56100);
 		if (call_super && rv) {
 			struct objc_super super = {  rv, [NSObject class] };
 			rv = ((id (*)(objc_super*, SEL)) objc_msgSendSuper) (&super, @selector (init));
@@ -6918,7 +7506,95 @@ exception_handling:;
 	{
 		static MonoMethod *managed_method = NULL;
 		bool call_super = false;
-		id rv = native_to_managed_trampoline_6 (self, _cmd, &managed_method, &call_super, 0x53000);
+		id rv = native_to_managed_trampoline_6 (self, _cmd, &managed_method, &call_super, 0x57D00);
+		if (call_super && rv) {
+			struct objc_super super = {  rv, [NSObject class] };
+			rv = ((id (*)(objc_super*, SEL)) objc_msgSendSuper) (&super, @selector (init));
+		}
+		return rv;
+	}
+@end
+
+@implementation WorklabsMx_iOS_Models_OrdenVentaController {
+	XamarinObject __monoObjectGCHandle;
+}
+	-(void) release
+	{
+		xamarin_release_trampoline (self, _cmd);
+	}
+
+	-(id) retain
+	{
+		return xamarin_retain_trampoline (self, _cmd);
+	}
+
+	-(int) xamarinGetGCHandle
+	{
+		return __monoObjectGCHandle.gc_handle;
+	}
+
+	-(void) xamarinSetGCHandle: (int) gc_handle
+	{
+		__monoObjectGCHandle.gc_handle = gc_handle;
+		__monoObjectGCHandle.native_object = self;
+	}
+
+
+	-(BOOL) conformsToProtocol:(void *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, 0x51D12);
+	}
+
+	-(id) init
+	{
+		static MonoMethod *managed_method = NULL;
+		bool call_super = false;
+		id rv = native_to_managed_trampoline_6 (self, _cmd, &managed_method, &call_super, 0x59C00);
+		if (call_super && rv) {
+			struct objc_super super = {  rv, [NSObject class] };
+			rv = ((id (*)(objc_super*, SEL)) objc_msgSendSuper) (&super, @selector (init));
+		}
+		return rv;
+	}
+@end
+
+@implementation WorklabsMx_iOS_Models_OrdenVentaDetalle {
+	XamarinObject __monoObjectGCHandle;
+}
+	-(void) release
+	{
+		xamarin_release_trampoline (self, _cmd);
+	}
+
+	-(id) retain
+	{
+		return xamarin_retain_trampoline (self, _cmd);
+	}
+
+	-(int) xamarinGetGCHandle
+	{
+		return __monoObjectGCHandle.gc_handle;
+	}
+
+	-(void) xamarinSetGCHandle: (int) gc_handle
+	{
+		__monoObjectGCHandle.gc_handle = gc_handle;
+		__monoObjectGCHandle.native_object = self;
+	}
+
+
+	-(BOOL) conformsToProtocol:(void *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, 0x51D12);
+	}
+
+	-(id) init
+	{
+		static MonoMethod *managed_method = NULL;
+		bool call_super = false;
+		id rv = native_to_managed_trampoline_6 (self, _cmd, &managed_method, &call_super, 0x5BD00);
 		if (call_super && rv) {
 			struct objc_super super = {  rv, [NSObject class] };
 			rv = ((id (*)(objc_super*, SEL)) objc_msgSendSuper) (&super, @selector (init));
@@ -7083,25 +7759,25 @@ exception_handling:;
 	-(NSInteger) pickerView:(UIPickerView *)p0 numberOfRowsInComponent:(NSInteger)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_43 (self, _cmd, &managed_method, p0, p1, 0x54500);
+		return native_to_managed_trampoline_43 (self, _cmd, &managed_method, p0, p1, 0x5D200);
 	}
 
 	-(NSString *) pickerView:(UIPickerView *)p0 titleForRow:(NSInteger)p1 forComponent:(NSInteger)p2
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_44 (self, _cmd, &managed_method, p0, p1, p2, 0x54600);
+		return native_to_managed_trampoline_44 (self, _cmd, &managed_method, p0, p1, p2, 0x5D300);
 	}
 
 	-(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_42 (self, _cmd, &managed_method, p0, 0x54700);
+		return native_to_managed_trampoline_42 (self, _cmd, &managed_method, p0, 0x5D400);
 	}
 
 	-(void) pickerView:(UIPickerView *)p0 didSelectRow:(NSInteger)p1 inComponent:(NSInteger)p2
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_45 (self, _cmd, &managed_method, p0, p1, p2, 0x54800);
+		native_to_managed_trampoline_45 (self, _cmd, &managed_method, p0, p1, p2, 0x5D500);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -7114,7 +7790,7 @@ exception_handling:;
 	{
 		static MonoMethod *managed_method = NULL;
 		bool call_super = false;
-		id rv = native_to_managed_trampoline_6 (self, _cmd, &managed_method, &call_super, 0x54400);
+		id rv = native_to_managed_trampoline_6 (self, _cmd, &managed_method, &call_super, 0x5D100);
 		if (call_super && rv) {
 			struct objc_super super = {  rv, [NSObject class] };
 			rv = ((id (*)(objc_super*, SEL)) objc_msgSendSuper) (&super, @selector (init));
@@ -7183,7 +7859,7 @@ exception_handling:;
 	-(void) layoutSubviews
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x54C00);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x5D900);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -7294,7 +7970,7 @@ exception_handling:;
 	{
 		static MonoMethod *managed_method = NULL;
 		bool call_super = false;
-		id rv = native_to_managed_trampoline_6 (self, _cmd, &managed_method, &call_super, 0x55B00);
+		id rv = native_to_managed_trampoline_6 (self, _cmd, &managed_method, &call_super, 0x5E800);
 		if (call_super && rv) {
 			struct objc_super super = {  rv, [TKCalendar class] };
 			rv = ((id (*)(objc_super*, SEL)) objc_msgSendSuper) (&super, @selector (init));
@@ -7331,19 +8007,19 @@ exception_handling:;
 	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_37 (self, _cmd, &managed_method, p0, p1, 0x55D00);
+		return native_to_managed_trampoline_37 (self, _cmd, &managed_method, p0, p1, 0x5EA00);
 	}
 
 	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_35 (self, _cmd, &managed_method, p0, p1, 0x55E00);
+		return native_to_managed_trampoline_35 (self, _cmd, &managed_method, p0, p1, 0x5EB00);
 	}
 
 	-(void) tableView:(UITableView *)p0 didSelectRowAtIndexPath:(NSIndexPath *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_46 (self, _cmd, &managed_method, p0, p1, 0x55F00);
+		native_to_managed_trampoline_46 (self, _cmd, &managed_method, p0, p1, 0x5EC00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -7381,13 +8057,13 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x56700);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x5F400);
 	}
 
 	-(void) didReceiveMemoryWarning
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x56800);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x5F500);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -7425,121 +8101,121 @@ exception_handling:;
 	-(UIButton *) btnIniciarSesion
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x28700);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x28900);
 	}
 
 	-(void) setBtnIniciarSesion:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x28800);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x28A00);
 	}
 
 	-(UIButton *) btnRecuperar
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x28900);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x28B00);
 	}
 
 	-(void) setBtnRecuperar:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x28A00);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x28C00);
 	}
 
 	-(UIButton *) btnRegistro
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x28B00);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x28D00);
 	}
 
 	-(void) setBtnRegistro:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x28C00);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x28E00);
 	}
 
 	-(UIButton *) btnRestaurar
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x28D00);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x28F00);
 	}
 
 	-(void) setBtnRestaurar:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x28E00);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x29000);
 	}
 
 	-(UITextField *) txtEmail
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_39 (self, _cmd, &managed_method, 0x28F00);
+		return native_to_managed_trampoline_39 (self, _cmd, &managed_method, 0x29100);
 	}
 
 	-(void) setTxtEmail:(UITextField *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_40 (self, _cmd, &managed_method, p0, 0x29000);
+		native_to_managed_trampoline_40 (self, _cmd, &managed_method, p0, 0x29200);
 	}
 
 	-(UITextField *) txtEmailRecuperar
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_39 (self, _cmd, &managed_method, 0x29100);
+		return native_to_managed_trampoline_39 (self, _cmd, &managed_method, 0x29300);
 	}
 
 	-(void) setTxtEmailRecuperar:(UITextField *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_40 (self, _cmd, &managed_method, p0, 0x29200);
+		native_to_managed_trampoline_40 (self, _cmd, &managed_method, p0, 0x29400);
 	}
 
 	-(UITextField *) txtPassword
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_39 (self, _cmd, &managed_method, 0x29300);
+		return native_to_managed_trampoline_39 (self, _cmd, &managed_method, 0x29500);
 	}
 
 	-(void) setTxtPassword:(UITextField *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_40 (self, _cmd, &managed_method, p0, 0x29400);
+		native_to_managed_trampoline_40 (self, _cmd, &managed_method, p0, 0x29600);
 	}
 
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x27F00);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x28100);
 	}
 
 	-(void) viewWillAppear:(BOOL)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x28000);
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x28200);
 	}
 
 	-(void) touchesBegan:(NSSet *)p0 withEvent:(UIEvent *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_41 (self, _cmd, &managed_method, p0, p1, 0x28300);
+		native_to_managed_trampoline_41 (self, _cmd, &managed_method, p0, p1, 0x28500);
 	}
 
 	-(void) BtnIniciarSesion_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x29500);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x29700);
 	}
 
 	-(void) BtnRegistro_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x29600);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x29800);
 	}
 
 	-(void) BtnRestaurar_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x29700);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x29900);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -7577,19 +8253,19 @@ exception_handling:;
 	-(UIImageView *) imgQr
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_19 (self, _cmd, &managed_method, 0x2AF00);
+		return native_to_managed_trampoline_19 (self, _cmd, &managed_method, 0x2B100);
 	}
 
 	-(void) setImgQr:(UIImageView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_20 (self, _cmd, &managed_method, p0, 0x2B000);
+		native_to_managed_trampoline_20 (self, _cmd, &managed_method, p0, 0x2B200);
 	}
 
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2AC00);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2AE00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -7627,7 +8303,7 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2BC00);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2BE00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -7665,19 +8341,19 @@ exception_handling:;
 	-(UILabel *) lblGenero
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x2C700);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x2C900);
 	}
 
 	-(void) setLblGenero:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x2C800);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x2CA00);
 	}
 
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2C100);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2C300);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -7715,7 +8391,7 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2D000);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2D200);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -7753,7 +8429,7 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2D700);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2D900);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -7791,7 +8467,7 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2E600);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2E800);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -7829,7 +8505,7 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2EE00);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2F000);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -7867,13 +8543,13 @@ exception_handling:;
 	-(void) viewDidAppear:(BOOL)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x2F700);
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x2F900);
 	}
 
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2F800);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2FA00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -7911,7 +8587,7 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2FC00);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x2FE00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -7949,13 +8625,13 @@ exception_handling:;
 	-(void) viewDidAppear:(BOOL)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x2FF00);
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x30100);
 	}
 
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x30000);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x30200);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -7993,7 +8669,7 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x30800);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x30A00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -8031,7 +8707,7 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x30F00);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x31100);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -8069,7 +8745,7 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x31300);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x31500);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -8107,7 +8783,7 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x31800);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x31A00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -8145,7 +8821,7 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x32900);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x32B00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -8183,7 +8859,7 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x33300);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x33500);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -8221,199 +8897,199 @@ exception_handling:;
 	-(UIButton *) btnClose
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x37C00);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x37E00);
 	}
 
 	-(void) setBtnClose:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x37D00);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x37F00);
 	}
 
 	-(UIButton *) btnDeleteImge
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x37E00);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x38000);
 	}
 
 	-(void) setBtnDeleteImge:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x37F00);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x38100);
 	}
 
 	-(UIButton *) btnGaleria
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x38000);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x38200);
 	}
 
 	-(void) setBtnGaleria:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x38100);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x38300);
 	}
 
 	-(UIButton *) btnImageComment
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x38200);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x38400);
 	}
 
 	-(void) setBtnImageComment:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x38300);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x38500);
 	}
 
 	-(UIButton *) btnPublicar
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x38400);
+		return native_to_managed_trampoline_15 (self, _cmd, &managed_method, 0x38600);
 	}
 
 	-(void) setBtnPublicar:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x38500);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x38700);
 	}
 
 	-(UIImageView *) imgPerfil
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_19 (self, _cmd, &managed_method, 0x38600);
+		return native_to_managed_trampoline_19 (self, _cmd, &managed_method, 0x38800);
 	}
 
 	-(void) setImgPerfil:(UIImageView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_20 (self, _cmd, &managed_method, p0, 0x38700);
+		native_to_managed_trampoline_20 (self, _cmd, &managed_method, p0, 0x38900);
 	}
 
 	-(UILabel *) lblFechaPublicacion
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x38800);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x38A00);
 	}
 
 	-(void) setLblFechaPublicacion:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x38900);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x38B00);
 	}
 
 	-(UILabel *) lblNombre
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x38A00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x38C00);
 	}
 
 	-(void) setLblNombre:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x38B00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x38D00);
 	}
 
 	-(UILabel *) lblOcupacion
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x38C00);
+		return native_to_managed_trampoline_17 (self, _cmd, &managed_method, 0x38E00);
 	}
 
 	-(void) setLblOcupacion:(UILabel *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x38D00);
+		native_to_managed_trampoline_18 (self, _cmd, &managed_method, p0, 0x38F00);
 	}
 
 	-(UITextView *) txtPublicacion
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_23 (self, _cmd, &managed_method, 0x38E00);
+		return native_to_managed_trampoline_23 (self, _cmd, &managed_method, 0x39000);
 	}
 
 	-(void) setTxtPublicacion:(UITextView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_24 (self, _cmd, &managed_method, p0, 0x38F00);
+		native_to_managed_trampoline_24 (self, _cmd, &managed_method, p0, 0x39100);
 	}
 
 	-(UIView *) vwVistaComentar
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x39000);
+		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x39200);
 	}
 
 	-(void) setVwVistaComentar:(UIView *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x39100);
+		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x39300);
 	}
 
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x36D00);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x36F00);
 	}
 
 	-(void) viewWillAppear:(BOOL)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x36F00);
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x37100);
 	}
 
 	-(void) touchesBegan:(NSSet *)p0 withEvent:(UIEvent *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_41 (self, _cmd, &managed_method, p0, p1, 0x37100);
+		native_to_managed_trampoline_41 (self, _cmd, &managed_method, p0, p1, 0x37300);
 	}
 
 	-(void) imagePickerController:(UIImagePickerController *)p0 didFinishPickingImage:(UIImage *)p1 editingInfo:(NSDictionary *)p2
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_47 (self, _cmd, &managed_method, p0, p1, p2, 0x37400);
+		native_to_managed_trampoline_47 (self, _cmd, &managed_method, p0, p1, p2, 0x37600);
 	}
 
 	-(void) imagePickerControllerDidCancel:(UIImagePickerController *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_48 (self, _cmd, &managed_method, p0, 0x37500);
+		native_to_managed_trampoline_48 (self, _cmd, &managed_method, p0, 0x37700);
 	}
 
 	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_38 (self, _cmd, &managed_method, p0, p1, 0x37B00);
+		native_to_managed_trampoline_38 (self, _cmd, &managed_method, p0, p1, 0x37D00);
 	}
 
 	-(void) btnClose_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x39200);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x39400);
 	}
 
 	-(void) btnDeleteImage_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x39300);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x39500);
 	}
 
 	-(void) btnGaleria_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x39400);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x39600);
 	}
 
 	-(void) btnImageComment_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x39500);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x39700);
 	}
 
 	-(void) btnPublicar_TouchUpInside:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x39600);
+		native_to_managed_trampoline_16 (self, _cmd, &managed_method, p0, 0x39800);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -8448,46 +9124,70 @@ exception_handling:;
 	}
 
 
+	-(UIView *) vwSeccionComentarios
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x3AF00);
+	}
+
+	-(void) setVwSeccionComentarios:(UIView *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x3B000);
+	}
+
+	-(UIView *) vwVistaSeccionComentarios
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_21 (self, _cmd, &managed_method, 0x3B100);
+	}
+
+	-(void) setVwVistaSeccionComentarios:(UIView *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_22 (self, _cmd, &managed_method, p0, 0x3B200);
+	}
+
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x39A00);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x39C00);
 	}
 
 	-(void) viewWillDisappear:(BOOL)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x39B00);
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x39D00);
 	}
 
 	-(UIView *) tableView:(UITableView *)p0 viewForHeaderInSection:(NSInteger)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_33 (self, _cmd, &managed_method, p0, p1, 0x3A000);
+		return native_to_managed_trampoline_33 (self, _cmd, &managed_method, p0, p1, 0x3A200);
 	}
 
 	-(CGFloat) tableView:(UITableView *)p0 heightForHeaderInSection:(NSInteger)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_34 (self, _cmd, &managed_method, p0, p1, 0x3A100);
+		return native_to_managed_trampoline_34 (self, _cmd, &managed_method, p0, p1, 0x3A300);
 	}
 
 	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_38 (self, _cmd, &managed_method, p0, p1, 0x3A300);
+		native_to_managed_trampoline_38 (self, _cmd, &managed_method, p0, p1, 0x3A500);
 	}
 
 	-(void) imagePickerController:(UIImagePickerController *)p0 didFinishPickingImage:(UIImage *)p1 editingInfo:(NSDictionary *)p2
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_47 (self, _cmd, &managed_method, p0, p1, p2, 0x3A600);
+		native_to_managed_trampoline_47 (self, _cmd, &managed_method, p0, p1, p2, 0x3A800);
 	}
 
 	-(void) imagePickerControllerDidCancel:(UIImagePickerController *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_48 (self, _cmd, &managed_method, p0, 0x3A700);
+		native_to_managed_trampoline_48 (self, _cmd, &managed_method, p0, 0x3A900);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -8525,31 +9225,31 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x3EE00);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x3F400);
 	}
 
 	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_35 (self, _cmd, &managed_method, p0, p1, 0x3EF00);
+		return native_to_managed_trampoline_35 (self, _cmd, &managed_method, p0, p1, 0x3F500);
 	}
 
 	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_36 (self, _cmd, &managed_method, p0, p1, 0x3F000);
+		return native_to_managed_trampoline_36 (self, _cmd, &managed_method, p0, p1, 0x3F600);
 	}
 
 	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_37 (self, _cmd, &managed_method, p0, p1, 0x3F100);
+		return native_to_managed_trampoline_37 (self, _cmd, &managed_method, p0, p1, 0x3F700);
 	}
 
 	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_38 (self, _cmd, &managed_method, p0, p1, 0x3F200);
+		native_to_managed_trampoline_38 (self, _cmd, &managed_method, p0, p1, 0x3F800);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -8587,31 +9287,31 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x40200);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x40800);
 	}
 
 	-(void) viewWillAppear:(BOOL)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x40300);
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x40900);
 	}
 
 	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_35 (self, _cmd, &managed_method, p0, p1, 0x40600);
+		return native_to_managed_trampoline_35 (self, _cmd, &managed_method, p0, p1, 0x40C00);
 	}
 
 	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_36 (self, _cmd, &managed_method, p0, p1, 0x40700);
+		return native_to_managed_trampoline_36 (self, _cmd, &managed_method, p0, p1, 0x40D00);
 	}
 
 	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_37 (self, _cmd, &managed_method, p0, p1, 0x40800);
+		return native_to_managed_trampoline_37 (self, _cmd, &managed_method, p0, p1, 0x40E00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -8649,37 +9349,37 @@ exception_handling:;
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x44400);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x44A00);
 	}
 
 	-(void) viewWillAppear:(BOOL)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x44500);
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x44B00);
 	}
 
 	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_35 (self, _cmd, &managed_method, p0, p1, 0x44800);
+		return native_to_managed_trampoline_35 (self, _cmd, &managed_method, p0, p1, 0x44E00);
 	}
 
 	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_36 (self, _cmd, &managed_method, p0, p1, 0x44900);
+		return native_to_managed_trampoline_36 (self, _cmd, &managed_method, p0, p1, 0x44F00);
 	}
 
 	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_37 (self, _cmd, &managed_method, p0, p1, 0x44A00);
+		return native_to_managed_trampoline_37 (self, _cmd, &managed_method, p0, p1, 0x45000);
 	}
 
 	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_38 (self, _cmd, &managed_method, p0, p1, 0x44C00);
+		native_to_managed_trampoline_38 (self, _cmd, &managed_method, p0, p1, 0x45200);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -8717,61 +9417,67 @@ exception_handling:;
 	-(void) btnAtras:(UIBarButtonItem *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_32 (self, _cmd, &managed_method, p0, 0x47500);
+		native_to_managed_trampoline_32 (self, _cmd, &managed_method, p0, 0x47B00);
+	}
+
+	-(void) btnPagar:(UIBarButtonItem *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_32 (self, _cmd, &managed_method, p0, 0x47C00);
 	}
 
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x47800);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x47F00);
 	}
 
 	-(void) viewWillAppear:(BOOL)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x47900);
+		native_to_managed_trampoline_14 (self, _cmd, &managed_method, p0, 0x48000);
 	}
 
 	-(UIView *) tableView:(UITableView *)p0 viewForHeaderInSection:(NSInteger)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_33 (self, _cmd, &managed_method, p0, p1, 0x47A00);
+		return native_to_managed_trampoline_33 (self, _cmd, &managed_method, p0, p1, 0x48100);
 	}
 
 	-(CGFloat) tableView:(UITableView *)p0 heightForHeaderInSection:(NSInteger)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_34 (self, _cmd, &managed_method, p0, p1, 0x47B00);
+		return native_to_managed_trampoline_34 (self, _cmd, &managed_method, p0, p1, 0x48200);
 	}
 
 	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_35 (self, _cmd, &managed_method, p0, p1, 0x47C00);
+		return native_to_managed_trampoline_35 (self, _cmd, &managed_method, p0, p1, 0x48300);
 	}
 
 	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_36 (self, _cmd, &managed_method, p0, p1, 0x47D00);
+		return native_to_managed_trampoline_36 (self, _cmd, &managed_method, p0, p1, 0x48400);
 	}
 
 	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_37 (self, _cmd, &managed_method, p0, p1, 0x47E00);
+		return native_to_managed_trampoline_37 (self, _cmd, &managed_method, p0, p1, 0x48500);
 	}
 
 	-(void) tableView:(UITableView *)p0 didSelectRowAtIndexPath:(NSIndexPath *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_46 (self, _cmd, &managed_method, p0, p1, 0x47F00);
+		native_to_managed_trampoline_46 (self, _cmd, &managed_method, p0, p1, 0x48600);
 	}
 
 	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_38 (self, _cmd, &managed_method, p0, p1, 0x48100);
+		native_to_managed_trampoline_38 (self, _cmd, &managed_method, p0, p1, 0x48800);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -8809,37 +9515,37 @@ exception_handling:;
 	-(UIBarButtonItem *) btnCarrito
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_31 (self, _cmd, &managed_method, 0x4A800);
+		return native_to_managed_trampoline_31 (self, _cmd, &managed_method, 0x4B000);
 	}
 
 	-(void) setBtnCarrito:(UIBarButtonItem *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_32 (self, _cmd, &managed_method, p0, 0x4A900);
+		native_to_managed_trampoline_32 (self, _cmd, &managed_method, p0, 0x4B100);
 	}
 
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x4A500);
+		native_to_managed_trampoline_3 (self, _cmd, &managed_method, 0x4AD00);
 	}
 
 	-(void) tabBar:(UITabBar *)p0 didSelectItem:(UITabBarItem *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_13 (self, _cmd, &managed_method, p0, p1, 0x4A600);
+		native_to_managed_trampoline_13 (self, _cmd, &managed_method, p0, p1, 0x4AE00);
 	}
 
 	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_38 (self, _cmd, &managed_method, p0, p1, 0x4A700);
+		native_to_managed_trampoline_38 (self, _cmd, &managed_method, p0, p1, 0x4AF00);
 	}
 
 	-(void) btnCarrito_Touch:(UIBarButtonItem *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_32 (self, _cmd, &managed_method, p0, 0x4AA00);
+		native_to_managed_trampoline_32 (self, _cmd, &managed_method, p0, 0x4B200);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -8909,19 +9615,19 @@ exception_handling:;
 	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_37 (self, _cmd, &managed_method, p0, p1, 0x53800);
+		return native_to_managed_trampoline_37 (self, _cmd, &managed_method, p0, p1, 0x5C500);
 	}
 
 	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_35 (self, _cmd, &managed_method, p0, p1, 0x53900);
+		return native_to_managed_trampoline_35 (self, _cmd, &managed_method, p0, p1, 0x5C600);
 	}
 
 	-(void) tableView:(UITableView *)p0 didSelectRowAtIndexPath:(NSIndexPath *)p1
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_46 (self, _cmd, &managed_method, p0, p1, 0x53A00);
+		native_to_managed_trampoline_46 (self, _cmd, &managed_method, p0, p1, 0x5C700);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -10815,28 +11521,39 @@ exception_handling:;
 		{ NULL, 0x6D00 /* 'EscritorioController' => 'WorklabsMx.iOS.EscritorioController, WorklabsMx.iOS' */ },
 		{ NULL, 0x6E00 /* 'DetalleVentaViewController' => 'WorklabsMx.iOS.DetalleVentaViewController, WorklabsMx.iOS' */ },
 		{ NULL, 0x7000 /* 'CanjearCuponController' => 'WorklabsMx.iOS.CanjearCuponController, WorklabsMx.iOS' */ },
-		{ NULL, 0x7300 /* 'WorklabsMx_iOS_ViewElements_UICheckBox' => 'WorklabsMx.iOS.ViewElements.UICheckBox, WorklabsMx.iOS' */ },
-		{ NULL, 0x7400 /* 'WorklabsMx_iOS_ViewElements_HorarioEventos' => 'WorklabsMx.iOS.ViewElements.HorarioEventos, WorklabsMx.iOS' */ },
-		{ NULL, 0x7500 /* 'WorklabsMx_iOS_ViewElements_UIDropdownList' => 'WorklabsMx.iOS.ViewElements.UIDropdownList, WorklabsMx.iOS' */ },
-		{ NULL, 0x7700 /* 'WorklabsMx_iOS_ViewElements_CommentCard' => 'WorklabsMx.iOS.ViewElements.CommentCard, WorklabsMx.iOS' */ },
-		{ NULL, 0x7800 /* 'WorklabsMx_iOS_ViewElements_UIRadioButton' => 'WorklabsMx.iOS.ViewElements.UIRadioButton, WorklabsMx.iOS' */ },
-		{ NULL, 0x7900 /* 'WorklabsMx_iOS_Models_PickerModel' => 'WorklabsMx.iOS.Models.PickerModel, WorklabsMx.iOS' */ },
-		{ NULL, 0x7A00 /* 'WorklabsMx_iOS_Models_SucursalesModel' => 'WorklabsMx.iOS.Models.SucursalesModel, WorklabsMx.iOS' */ },
-		{ NULL, 0x7B00 /* 'WorklabsMx_iOS_Models_CarritoCompras' => 'WorklabsMx.iOS.Models.CarritoCompras, WorklabsMx.iOS' */ },
-		{ NULL, 0x7C00 /* 'WorklabsMx_iOS_Styles_STLButton' => 'WorklabsMx.iOS.Styles.STLButton, WorklabsMx.iOS' */ },
-		{ NULL, 0x7D00 /* 'WorklabsMx_iOS_Styles_STLTextField' => 'WorklabsMx.iOS.Styles.STLTextField, WorklabsMx.iOS' */ },
-		{ NULL, 0x7F00 /* 'WorklabsMx_iOS_Styles_STLLabel' => 'WorklabsMx.iOS.Styles.STLLabel, WorklabsMx.iOS' */ },
-		{ NULL, 0x8000 /* 'WorklabsMx_iOS_Styles_STLImageLabel' => 'WorklabsMx.iOS.Styles.STLImageLabel, WorklabsMx.iOS' */ },
-		{ NULL, 0x8200 /* 'WorklabsMx_iOS_Styles_PickerDataModel' => 'WorklabsMx.iOS.Styles.PickerDataModel, WorklabsMx.iOS' */ },
-		{ NULL, 0x8300 /* 'WorklabsMx_iOS_Styles_STLDropDownList' => 'WorklabsMx.iOS.Styles.STLDropDownList, WorklabsMx.iOS' */ },
-		{ NULL, 0x8400 /* 'WorklabsMx_iOS_Styles_STLCarritoCompra' => 'WorklabsMx.iOS.Styles.STLCarritoCompra, WorklabsMx.iOS' */ },
-		{ NULL, 0x8500 /* 'WorklabsMx_iOS_Styles_STLLine' => 'WorklabsMx.iOS.Styles.STLLine, WorklabsMx.iOS' */ },
-		{ NULL, 0x8700 /* 'WorklabsMx_iOS_Helpers_LoadingView' => 'WorklabsMx.iOS.Helpers.LoadingView, WorklabsMx.iOS' */ },
+		{ NULL, 0x7100 /* 'cloudViewController' => 'WorklabsMx.iOS.cloudViewController, WorklabsMx.iOS' */ },
+		{ NULL, 0x7200 /* 'TelefoniaTableView' => 'WorklabsMx.iOS.TelefoniaTableView, WorklabsMx.iOS' */ },
+		{ NULL, 0x7300 /* 'ProductosMiCuentaViewController' => 'WorklabsMx.iOS.ProductosMiCuentaViewController, WorklabsMx.iOS' */ },
+		{ NULL, 0x7400 /* 'MembresiasMiCuentaViewController' => 'WorklabsMx.iOS.MembresiasMiCuentaViewController, WorklabsMx.iOS' */ },
+		{ NULL, 0x7500 /* 'CuentaProductosCell' => 'WorklabsMx.iOS.CuentaProductosCell, WorklabsMx.iOS' */ },
+		{ NULL, 0x7600 /* 'NoInfoCuentaProductosCell' => 'WorklabsMx.iOS.NoInfoCuentaProductosCell, WorklabsMx.iOS' */ },
+		{ NULL, 0x7700 /* 'CuentaMembresiasCell' => 'WorklabsMx.iOS.CuentaMembresiasCell, WorklabsMx.iOS' */ },
+		{ NULL, 0x7800 /* 'NoInfoCuentaMembresiasCell' => 'WorklabsMx.iOS.NoInfoCuentaMembresiasCell, WorklabsMx.iOS' */ },
+		{ NULL, 0x7900 /* 'MiCuentaViewController' => 'WorklabsMx.iOS.MiCuentaViewController, WorklabsMx.iOS' */ },
+		{ NULL, 0x7C00 /* 'WorklabsMx_iOS_ViewElements_UICheckBox' => 'WorklabsMx.iOS.ViewElements.UICheckBox, WorklabsMx.iOS' */ },
+		{ NULL, 0x7D00 /* 'WorklabsMx_iOS_ViewElements_HorarioEventos' => 'WorklabsMx.iOS.ViewElements.HorarioEventos, WorklabsMx.iOS' */ },
+		{ NULL, 0x7E00 /* 'WorklabsMx_iOS_ViewElements_UIDropdownList' => 'WorklabsMx.iOS.ViewElements.UIDropdownList, WorklabsMx.iOS' */ },
+		{ NULL, 0x8000 /* 'WorklabsMx_iOS_ViewElements_CommentCard' => 'WorklabsMx.iOS.ViewElements.CommentCard, WorklabsMx.iOS' */ },
+		{ NULL, 0x8100 /* 'WorklabsMx_iOS_ViewElements_UIRadioButton' => 'WorklabsMx.iOS.ViewElements.UIRadioButton, WorklabsMx.iOS' */ },
+		{ NULL, 0x8200 /* 'WorklabsMx_iOS_Models_PickerModel' => 'WorklabsMx.iOS.Models.PickerModel, WorklabsMx.iOS' */ },
+		{ NULL, 0x8300 /* 'WorklabsMx_iOS_Models_SucursalesModel' => 'WorklabsMx.iOS.Models.SucursalesModel, WorklabsMx.iOS' */ },
+		{ NULL, 0x8400 /* 'WorklabsMx_iOS_Models_CarritoCompras' => 'WorklabsMx.iOS.Models.CarritoCompras, WorklabsMx.iOS' */ },
+		{ NULL, 0x8500 /* 'WorklabsMx_iOS_Models_OrdenVentaController' => 'WorklabsMx.iOS.Models.OrdenVentaController, WorklabsMx.iOS' */ },
+		{ NULL, 0x8600 /* 'WorklabsMx_iOS_Models_OrdenVentaDetalle' => 'WorklabsMx.iOS.Models.OrdenVentaDetalle, WorklabsMx.iOS' */ },
+		{ NULL, 0x8700 /* 'WorklabsMx_iOS_Styles_STLButton' => 'WorklabsMx.iOS.Styles.STLButton, WorklabsMx.iOS' */ },
+		{ NULL, 0x8800 /* 'WorklabsMx_iOS_Styles_STLTextField' => 'WorklabsMx.iOS.Styles.STLTextField, WorklabsMx.iOS' */ },
+		{ NULL, 0x8A00 /* 'WorklabsMx_iOS_Styles_STLLabel' => 'WorklabsMx.iOS.Styles.STLLabel, WorklabsMx.iOS' */ },
+		{ NULL, 0x8B00 /* 'WorklabsMx_iOS_Styles_STLImageLabel' => 'WorklabsMx.iOS.Styles.STLImageLabel, WorklabsMx.iOS' */ },
+		{ NULL, 0x8D00 /* 'WorklabsMx_iOS_Styles_PickerDataModel' => 'WorklabsMx.iOS.Styles.PickerDataModel, WorklabsMx.iOS' */ },
+		{ NULL, 0x8E00 /* 'WorklabsMx_iOS_Styles_STLDropDownList' => 'WorklabsMx.iOS.Styles.STLDropDownList, WorklabsMx.iOS' */ },
+		{ NULL, 0x8F00 /* 'WorklabsMx_iOS_Styles_STLCarritoCompra' => 'WorklabsMx.iOS.Styles.STLCarritoCompra, WorklabsMx.iOS' */ },
+		{ NULL, 0x9000 /* 'WorklabsMx_iOS_Styles_STLLine' => 'WorklabsMx.iOS.Styles.STLLine, WorklabsMx.iOS' */ },
+		{ NULL, 0x9200 /* 'WorklabsMx_iOS_Helpers_LoadingView' => 'WorklabsMx.iOS.Helpers.LoadingView, WorklabsMx.iOS' */ },
 		{ NULL, 0x2C31E /* 'TKView' => 'TelerikUI.TKView, Telerik.Xamarin.iOS' */ },
 		{ NULL, 0xE31E /* 'TKCalendar' => 'TelerikUI.TKCalendar, Telerik.Xamarin.iOS' */ },
-		{ NULL, 0x8900 /* 'WorklabsMx_iOS_Helpers_Calendario' => 'WorklabsMx.iOS.Helpers.Calendario, WorklabsMx.iOS' */ },
-		{ NULL, 0x8A00 /* 'WorklabsMx_iOS_Helpers_DropDownListSource' => 'WorklabsMx.iOS.Helpers.DropDownListSource, WorklabsMx.iOS' */ },
-		{ NULL, 0x8F00 /* 'SplitViewController' => 'WorklabsMx.iOS.ViewControllers.SplitViewController, WorklabsMx.iOS' */ },
+		{ NULL, 0x9400 /* 'WorklabsMx_iOS_Helpers_Calendario' => 'WorklabsMx.iOS.Helpers.Calendario, WorklabsMx.iOS' */ },
+		{ NULL, 0x9500 /* 'WorklabsMx_iOS_Helpers_DropDownListSource' => 'WorklabsMx.iOS.Helpers.DropDownListSource, WorklabsMx.iOS' */ },
+		{ NULL, 0x9A00 /* 'SplitViewController' => 'WorklabsMx.iOS.ViewControllers.SplitViewController, WorklabsMx.iOS' */ },
 		{ NULL, 0x3800 /* 'LoginViewController' => 'WorklabsMx.iOS.LoginViewController, WorklabsMx.iOS' */ },
 		{ NULL, 0x3D00 /* 'AccesoController' => 'WorklabsMx.iOS.AccesoController, WorklabsMx.iOS' */ },
 		{ NULL, 0x4100 /* 'ReporteController' => 'WorklabsMx.iOS.ReporteController, WorklabsMx.iOS' */ },
@@ -10861,9 +11578,9 @@ exception_handling:;
 		{ NULL, 0x6400 /* 'TableViewMembresia' => 'WorklabsMx.iOS.TableViewMembresia, WorklabsMx.iOS' */ },
 		{ NULL, 0x6700 /* 'VentaDetalleTableViewController' => 'WorklabsMx.iOS.VentaDetalleTableViewController, WorklabsMx.iOS' */ },
 		{ NULL, 0x6B00 /* 'TabBarDetalleVenta' => 'WorklabsMx.iOS.TabBarDetalleVenta, WorklabsMx.iOS' */ },
-		{ NULL, 0x7600 /* 'WorklabsMx_iOS_ViewElements_PostCard' => 'WorklabsMx.iOS.ViewElements.PostCard, WorklabsMx.iOS' */ },
-		{ NULL, 0x7E00 /* 'WorklabsMx_iOS_Styles_STLTableViewSource' => 'WorklabsMx.iOS.Styles.STLTableViewSource, WorklabsMx.iOS' */ },
-		{ NULL, 0x8100 /* 'WorklabsMx_iOS_Styles_STLImageView' => 'WorklabsMx.iOS.Styles.STLImageView, WorklabsMx.iOS' */ },
+		{ NULL, 0x7F00 /* 'WorklabsMx_iOS_ViewElements_PostCard' => 'WorklabsMx.iOS.ViewElements.PostCard, WorklabsMx.iOS' */ },
+		{ NULL, 0x8900 /* 'WorklabsMx_iOS_Styles_STLTableViewSource' => 'WorklabsMx.iOS.Styles.STLTableViewSource, WorklabsMx.iOS' */ },
+		{ NULL, 0x8C00 /* 'WorklabsMx_iOS_Styles_STLImageView' => 'WorklabsMx.iOS.Styles.STLImageView, WorklabsMx.iOS' */ },
 		{ NULL, 0xB712 /* '__UIGestureRecognizerToken' => 'UIKit.UIGestureRecognizer+Token, Xamarin.iOS' */ },
 		{ NULL, 0xB812 /* '__UIGestureRecognizerParameterlessToken' => 'UIKit.UIGestureRecognizer+ParameterlessDispatch, Xamarin.iOS' */ },
 		{ NULL, 0xB912 /* '__UIGestureRecognizerParametrizedToken' => 'UIKit.UIGestureRecognizer+ParametrizedDispatch, Xamarin.iOS' */ },
@@ -11334,8 +12051,8 @@ exception_handling:;
 		__xamarin_class_map,
 		__xamarin_token_references,
 		19,
-		674,
-		516,
+		685,
+		527,
 		0
 	};
 
@@ -11528,492 +12245,503 @@ void xamarin_create_classes () {
 	__xamarin_class_map [185].handle = [EscritorioController class];
 	__xamarin_class_map [186].handle = [DetalleVentaViewController class];
 	__xamarin_class_map [187].handle = [CanjearCuponController class];
-	__xamarin_class_map [188].handle = [WorklabsMx_iOS_ViewElements_UICheckBox class];
-	__xamarin_class_map [189].handle = [WorklabsMx_iOS_ViewElements_HorarioEventos class];
-	__xamarin_class_map [190].handle = [WorklabsMx_iOS_ViewElements_UIDropdownList class];
-	__xamarin_class_map [191].handle = [WorklabsMx_iOS_ViewElements_CommentCard class];
-	__xamarin_class_map [192].handle = [WorklabsMx_iOS_ViewElements_UIRadioButton class];
-	__xamarin_class_map [193].handle = [WorklabsMx_iOS_Models_PickerModel class];
-	__xamarin_class_map [194].handle = [WorklabsMx_iOS_Models_SucursalesModel class];
-	__xamarin_class_map [195].handle = [WorklabsMx_iOS_Models_CarritoCompras class];
-	__xamarin_class_map [196].handle = [WorklabsMx_iOS_Styles_STLButton class];
-	__xamarin_class_map [197].handle = [WorklabsMx_iOS_Styles_STLTextField class];
-	__xamarin_class_map [198].handle = [WorklabsMx_iOS_Styles_STLLabel class];
-	__xamarin_class_map [199].handle = [WorklabsMx_iOS_Styles_STLImageLabel class];
-	__xamarin_class_map [200].handle = [WorklabsMx_iOS_Styles_PickerDataModel class];
-	__xamarin_class_map [201].handle = [WorklabsMx_iOS_Styles_STLDropDownList class];
-	__xamarin_class_map [202].handle = [WorklabsMx_iOS_Styles_STLCarritoCompra class];
-	__xamarin_class_map [203].handle = [WorklabsMx_iOS_Styles_STLLine class];
-	__xamarin_class_map [204].handle = [WorklabsMx_iOS_Helpers_LoadingView class];
-	__xamarin_class_map [205].handle = [TKView class];
-	__xamarin_class_map [206].handle = [TKCalendar class];
-	__xamarin_class_map [207].handle = [WorklabsMx_iOS_Helpers_Calendario class];
-	__xamarin_class_map [208].handle = [WorklabsMx_iOS_Helpers_DropDownListSource class];
-	__xamarin_class_map [209].handle = [SplitViewController class];
-	__xamarin_class_map [210].handle = [LoginViewController class];
-	__xamarin_class_map [211].handle = [AccesoController class];
-	__xamarin_class_map [212].handle = [ReporteController class];
-	__xamarin_class_map [213].handle = [PerfilController class];
-	__xamarin_class_map [214].handle = [DatosFacturacionController class];
-	__xamarin_class_map [215].handle = [DirectorioEmpresasController class];
-	__xamarin_class_map [216].handle = [DirectorioUsuarioController class];
-	__xamarin_class_map [217].handle = [CarritoCompraController class];
-	__xamarin_class_map [218].handle = [MisColaboradoresBajaController class];
-	__xamarin_class_map [219].handle = [MisColaboradoresCambiosController class];
-	__xamarin_class_map [220].handle = [MisColaboradoresController class];
-	__xamarin_class_map [221].handle = [ReservaController class];
-	__xamarin_class_map [222].handle = [RegistroInvitadosController class];
-	__xamarin_class_map [223].handle = [TarifasController class];
-	__xamarin_class_map [224].handle = [PaymentController class];
-	__xamarin_class_map [225].handle = [EmpresaMiembroModificaController class];
-	__xamarin_class_map [226].handle = [AboutMeModificaController class];
-	__xamarin_class_map [227].handle = [PublicarPostViewController class];
-	__xamarin_class_map [228].handle = [ComentarPostTableViewController class];
-	__xamarin_class_map [229].handle = [SeccionComentariosTableViewController class];
-	__xamarin_class_map [230].handle = [CarritoProductos class];
-	__xamarin_class_map [231].handle = [TableViewMembresia class];
-	__xamarin_class_map [232].handle = [VentaDetalleTableViewController class];
-	__xamarin_class_map [233].handle = [TabBarDetalleVenta class];
-	__xamarin_class_map [234].handle = [WorklabsMx_iOS_ViewElements_PostCard class];
-	__xamarin_class_map [235].handle = [WorklabsMx_iOS_Styles_STLTableViewSource class];
-	__xamarin_class_map [236].handle = [WorklabsMx_iOS_Styles_STLImageView class];
-	__xamarin_class_map [237].handle = objc_getClass ("__UIGestureRecognizerToken");
-	__xamarin_class_map [238].handle = objc_getClass ("__UIGestureRecognizerParameterlessToken");
-	__xamarin_class_map [239].handle = objc_getClass ("__UIGestureRecognizerParametrizedToken");
-	__xamarin_class_map [240].handle = objc_getClass ("__NSObject_Disposer");
-	__xamarin_class_map [241].handle = objc_getClass ("UIKit_UIImagePickerController__UIImagePickerControllerDelegate");
-	__xamarin_class_map [242].handle = objc_getClass ("UIKit_UIView_UIViewAppearance");
-	__xamarin_class_map [243].handle = objc_getClass ("UIKit_UILabel_UILabelAppearance");
-	__xamarin_class_map [244].handle = objc_getClass ("__UILongPressGestureRecognizer");
-	__xamarin_class_map [245].handle = objc_getClass ("__UIPanGestureRecognizer");
-	__xamarin_class_map [246].handle = objc_getClass ("UIKit_UIControl_UIControlAppearance");
-	__xamarin_class_map [247].handle = objc_getClass ("__UIRotationGestureRecognizer");
-	__xamarin_class_map [248].handle = objc_getClass ("__UITapGestureRecognizer");
-	__xamarin_class_map [249].handle = objc_getClass ("__UIPinchGestureRecognizer");
-	__xamarin_class_map [250].handle = objc_getClass ("__UISwipeGestureRecognizer");
-	__xamarin_class_map [251].handle = objc_getClass ("__UIScreenEdgePanGestureRecognizer");
-	__xamarin_class_map [252].handle = objc_getClass ("UIKit_UIAlertView__UIAlertViewDelegate");
-	__xamarin_class_map [253].handle = objc_getClass ("UIKit_UIBarButtonItem_Callback");
-	__xamarin_class_map [254].handle = objc_getClass ("UIKit_UIButton_UIButtonAppearance");
-	__xamarin_class_map [255].handle = objc_getClass ("UIKit_UIScrollView_UIScrollViewAppearance");
-	__xamarin_class_map [256].handle = objc_getClass ("UIKit_UICollectionView_UICollectionViewAppearance");
-	__xamarin_class_map [257].handle = objc_getClass ("UIKit_UITableView_UITableViewAppearance");
-	__xamarin_class_map [258].handle = objc_getClass ("UIKit_UITableViewCell_UITableViewCellAppearance");
-	__xamarin_class_map [259].handle = objc_getClass ("UIKit_UITextField__UITextFieldDelegate");
-	__xamarin_class_map [260].handle = objc_getClass ("UIKit_UITextField_UITextFieldAppearance");
-	__xamarin_class_map [261].handle = objc_getClass ("UIKit_UIScrollView__UIScrollViewDelegate");
-	__xamarin_class_map [262].handle = objc_getClass ("UIKit_UITextView__UITextViewDelegate");
-	__xamarin_class_map [263].handle = objc_getClass ("UIKit_UICollectionReusableView_UICollectionReusableViewAppearance");
-	__xamarin_class_map [264].handle = objc_getClass ("UIKit_UICollectionViewCell_UICollectionViewCellAppearance");
-	__xamarin_class_map [265].handle = [TKAlert class];
-	__xamarin_class_map [266].handle = [TKAlertAction class];
-	__xamarin_class_map [267].handle = [TKStyleNode class];
-	__xamarin_class_map [268].handle = [TKAlertStyle class];
-	__xamarin_class_map [269].handle = [TKAutoCompleteController class];
-	__xamarin_class_map [270].handle = [TKAutoCompleteToken class];
-	__xamarin_class_map [271].handle = [TKShape class];
-	__xamarin_class_map [272].handle = [TKBalloonShape class];
-	__xamarin_class_map [273].handle = [TKCalendarCellStyle class];
-	__xamarin_class_map [274].handle = [TKCalendarDayCellStyle class];
-	__xamarin_class_map [275].handle = [TKCalendarDayViewAllDayEventCellStyle class];
-	__xamarin_class_map [276].handle = [TKCalendarDayViewAllDayEventsViewStyle class];
-	__xamarin_class_map [277].handle = [TKCalendarDayViewEventCellStyle class];
-	__xamarin_class_map [278].handle = [TKCalendarDayViewEventsLayout class];
-	__xamarin_class_map [279].handle = [TKCalendarDayViewEventsViewStyle class];
-	__xamarin_class_map [280].handle = [TKCalendarDayViewPresenterStyle class];
-	__xamarin_class_map [281].handle = [TKCalendarDayViewTimeLineLayoutAttributes class];
-	__xamarin_class_map [282].handle = [TKCalendarEvent class];
-	__xamarin_class_map [283].handle = [TKCalendarEventKitDataSource class];
-	__xamarin_class_map [284].handle = [TKCalendarFlowPresenter class];
-	__xamarin_class_map [285].handle = [TKCalendarInlineViewTableViewCellStyle class];
-	__xamarin_class_map [286].handle = [TKTheme class];
-	__xamarin_class_map [287].handle = [TKCalendarIPadTheme class];
-	__xamarin_class_map [288].handle = [TKCalendarMonthPresenterStyle class];
-	__xamarin_class_map [289].handle = [TKCalendarMonthViewController class];
-	__xamarin_class_map [290].handle = [TKCalendarYearPresenterStyle class];
-	__xamarin_class_map [291].handle = [TKCalendarYearViewController class];
-	__xamarin_class_map [292].handle = [TKChartSeries class];
-	__xamarin_class_map [293].handle = [TKChartFinancialIndicator class];
-	__xamarin_class_map [294].handle = [TKChartSignalLineIndicator class];
-	__xamarin_class_map [295].handle = [TKChartMACDIndicator class];
-	__xamarin_class_map [296].handle = [TKChartAbsoluteVolumeOscillator class];
-	__xamarin_class_map [297].handle = [TKChartAccumulationDistributionLine class];
-	__xamarin_class_map [298].handle = [TKChartAdaptiveMovingAverageIndicator class];
-	__xamarin_class_map [299].handle = [TKChartAnnotation class];
-	__xamarin_class_map [300].handle = [TKChartAnnotationStyle class];
-	__xamarin_class_map [301].handle = [TKChartLineSeries class];
-	__xamarin_class_map [302].handle = [TKChartAreaSeries class];
-	__xamarin_class_map [303].handle = [TKChartTrueRangeIndicator class];
-	__xamarin_class_map [304].handle = [TKChartAverageTrueRangeIndicator class];
-	__xamarin_class_map [305].handle = [TKChartAxis class];
-	__xamarin_class_map [306].handle = [TKChartLabelStyle class];
-	__xamarin_class_map [307].handle = [TKChartAxisLabelStyle class];
-	__xamarin_class_map [308].handle = [TKChartAxisTickStyle class];
-	__xamarin_class_map [309].handle = [TKChartAxisMajorTickStyle class];
-	__xamarin_class_map [310].handle = [TKChartRender class];
-	__xamarin_class_map [311].handle = [TKChartAxisRender class];
-	__xamarin_class_map [312].handle = [TKChartAxisStyle class];
-	__xamarin_class_map [313].handle = [TKChartAxisTitleStyle class];
-	__xamarin_class_map [314].handle = [TKChartPointAnnotation class];
-	__xamarin_class_map [315].handle = [TKChartBalloonAnnotation class];
-	__xamarin_class_map [316].handle = [TKChartBalloonAnnotationStyle class];
-	__xamarin_class_map [317].handle = [TKChartBandAnnotation class];
-	__xamarin_class_map [318].handle = [TKChartGridLineAnnotationStyle class];
-	__xamarin_class_map [319].handle = [TKChartBandAnnotationStyle class];
-	__xamarin_class_map [320].handle = [TKChartBandIndicator class];
-	__xamarin_class_map [321].handle = [TKChartVisualPoint class];
-	__xamarin_class_map [322].handle = [TKChartBandVisualPoint class];
-	__xamarin_class_map [323].handle = [TKChartBarSeries class];
-	__xamarin_class_map [324].handle = [TKChartBollingerBandIndicator class];
-	__xamarin_class_map [325].handle = [TKChartBubbleDataPoint class];
-	__xamarin_class_map [326].handle = [TKChartScatterSeries class];
-	__xamarin_class_map [327].handle = [TKChartBubbleSeries class];
-	__xamarin_class_map [328].handle = [TKChartBubbleVisualPoint class];
-	__xamarin_class_map [329].handle = [TKChartColumnSeries class];
-	__xamarin_class_map [330].handle = [TKChartOhlcSeries class];
-	__xamarin_class_map [331].handle = [TKChartCandlestickSeries class];
-	__xamarin_class_map [332].handle = [TKChartCategoryAxis class];
-	__xamarin_class_map [333].handle = [TKChartChaikinOscillator class];
-	__xamarin_class_map [334].handle = [TKChartCommodityChannelIndex class];
-	__xamarin_class_map [335].handle = [TKChartCrossLineAnnotation class];
-	__xamarin_class_map [336].handle = [TKChartCrossLineAnnotationStyle class];
-	__xamarin_class_map [337].handle = [TKChartDataPoint class];
-	__xamarin_class_map [338].handle = [TKChartDateTimeAxis class];
-	__xamarin_class_map [339].handle = [TKChartDateTimeCategoryAxis class];
-	__xamarin_class_map [340].handle = [TKChartDetrendedPriceOscillator class];
-	__xamarin_class_map [341].handle = [TKChartPieSeries class];
-	__xamarin_class_map [342].handle = [TKChartDonutSeries class];
-	__xamarin_class_map [343].handle = [TKChartEaseOfMovementIndicator class];
-	__xamarin_class_map [344].handle = [TKChartSimpleMovingAverageIndicator class];
-	__xamarin_class_map [345].handle = [TKChartExponentialMovingAverageIndicator class];
-	__xamarin_class_map [346].handle = [TKChartFastStochasticIndicator class];
-	__xamarin_class_map [347].handle = [TKChartFinancialDataPoint class];
-	__xamarin_class_map [348].handle = [TKChartForceIndexIndicator class];
-	__xamarin_class_map [349].handle = [TKChartSlowStochasticIndicator class];
-	__xamarin_class_map [350].handle = [TKChartFullStochasticIndicator class];
-	__xamarin_class_map [351].handle = [TKChartGridLineAnnotation class];
-	__xamarin_class_map [352].handle = [TKChartGridStyle class];
-	__xamarin_class_map [353].handle = [TKChartLayerAnnotation class];
-	__xamarin_class_map [354].handle = [TKChartLegendItemStyle class];
-	__xamarin_class_map [355].handle = [TKChartLegendStyle class];
-	__xamarin_class_map [356].handle = [TKChartNumericAxis class];
-	__xamarin_class_map [357].handle = [TKChartLogarithmicAxis class];
-	__xamarin_class_map [358].handle = [TKChartMarketFacilitationIndex class];
-	__xamarin_class_map [359].handle = [TKChartMedianPriceIndicator class];
-	__xamarin_class_map [360].handle = [TKChartModifiedMovingAverageIndicator class];
-	__xamarin_class_map [361].handle = [TKChartMoneyFlowIndexIndicator class];
-	__xamarin_class_map [362].handle = [TKChartMovingAverageEnvelopesIndicator class];
-	__xamarin_class_map [363].handle = [TKChartNegativeVolumeIndexIndicator class];
-	__xamarin_class_map [364].handle = [TKChartOnBalanceVolumeIndicator class];
-	__xamarin_class_map [365].handle = [TKChartPalette class];
-	__xamarin_class_map [366].handle = [TKChartPaletteItem class];
-	__xamarin_class_map [367].handle = [TKChartPercentagePriceOscillator class];
-	__xamarin_class_map [368].handle = [TKChartPercentageVolumeOscillator class];
-	__xamarin_class_map [369].handle = [TKChartPieVisualPoint class];
-	__xamarin_class_map [370].handle = [TKChartPointLabel class];
-	__xamarin_class_map [371].handle = [TKChartPointLabelRender class];
-	__xamarin_class_map [372].handle = [TKChartPointLabelStyle class];
-	__xamarin_class_map [373].handle = [TKChartPositiveVolumeIndexIndicator class];
-	__xamarin_class_map [374].handle = [TKChartPriceVolumeTrendIndicator class];
-	__xamarin_class_map [375].handle = [TKChartRangeBarSeries class];
-	__xamarin_class_map [376].handle = [TKChartRangeColumnSeries class];
-	__xamarin_class_map [377].handle = [TKChartRangeDataPoint class];
-	__xamarin_class_map [378].handle = [TKChartRangeVisualPoint class];
-	__xamarin_class_map [379].handle = [TKChartRapidAdaptiveVarianceIndicator class];
-	__xamarin_class_map [380].handle = [TKChartRateOfChangeIndicator class];
-	__xamarin_class_map [381].handle = [TKChartRelativeMomentumIndex class];
-	__xamarin_class_map [382].handle = [TKChartRelativeStrengthIndex class];
-	__xamarin_class_map [383].handle = [TKChartSelectionInfo class];
-	__xamarin_class_map [384].handle = [TKChartSeriesRender class];
-	__xamarin_class_map [385].handle = [TKChartSeriesRenderState class];
-	__xamarin_class_map [386].handle = [TKChartSeriesStyle class];
-	__xamarin_class_map [387].handle = [TKChartSplineAreaSeries class];
-	__xamarin_class_map [388].handle = [TKChartSplineSeries class];
-	__xamarin_class_map [389].handle = [TKChartStackInfo class];
-	__xamarin_class_map [390].handle = [TKChartStandardDeviationIndicator class];
-	__xamarin_class_map [391].handle = [TKChartTitleStyle class];
-	__xamarin_class_map [392].handle = [TKChartTrackball class];
-	__xamarin_class_map [393].handle = [TKChartTrackballLineAnnotation class];
-	__xamarin_class_map [394].handle = [TKChartTrackballTooltipAnnotation class];
-	__xamarin_class_map [395].handle = [TKChartTriangularMovingAverageIndicator class];
-	__xamarin_class_map [396].handle = [TKChartTRIXIndicator class];
-	__xamarin_class_map [397].handle = [TKChartTypicalPriceIndicator class];
-	__xamarin_class_map [398].handle = [TKChartUltimateOscillator class];
-	__xamarin_class_map [399].handle = [TKChartViewAnnotation class];
-	__xamarin_class_map [400].handle = [TKChartViewController class];
-	__xamarin_class_map [401].handle = [TKChartWeightedCloseIndicator class];
-	__xamarin_class_map [402].handle = [TKChartWeightedMovingAverageIndicator class];
-	__xamarin_class_map [403].handle = [TKChartWilliamsPercentIndicator class];
-	__xamarin_class_map [404].handle = [TKCoreLayoutItem class];
-	__xamarin_class_map [405].handle = [TKCoreStackLayout class];
-	__xamarin_class_map [406].handle = [TKDataFormAutocompleteController class];
-	__xamarin_class_map [407].handle = [TKDataFormEditorStyle class];
-	__xamarin_class_map [408].handle = [TKDataFormPropertyValidator class];
-	__xamarin_class_map [409].handle = [TKDataFormEmailValidator class];
-	__xamarin_class_map [410].handle = [TKEntity class];
-	__xamarin_class_map [411].handle = [TKDataFormEntityDataSource class];
-	__xamarin_class_map [412].handle = [TKDataFormGroupTitleStyle class];
-	__xamarin_class_map [413].handle = [TKDataFormMaximumLengthValidator class];
-	__xamarin_class_map [414].handle = [TKDataFormMinimumLengthValidator class];
-	__xamarin_class_map [415].handle = [TKDataFormNonEmptyValidator class];
-	__xamarin_class_map [416].handle = [TKDataFormPhoneValidator class];
-	__xamarin_class_map [417].handle = [TKDataFormRangeValidator class];
-	__xamarin_class_map [418].handle = [TKDataFormViewController class];
-	__xamarin_class_map [419].handle = [TKDataSource class];
-	__xamarin_class_map [420].handle = [TKDataSourceAutoCompleteSettings class];
-	__xamarin_class_map [421].handle = [TKDataSourceCalendarSettings class];
-	__xamarin_class_map [422].handle = [TKDataSourceChartSettings class];
-	__xamarin_class_map [423].handle = [TKDataSourceCollectionViewSettings class];
-	__xamarin_class_map [424].handle = [TKDataSourceFilterDescriptor class];
-	__xamarin_class_map [425].handle = [TKDataSourceGroup class];
-	__xamarin_class_map [426].handle = [TKDataSourceGroupDescriptor class];
-	__xamarin_class_map [427].handle = [TKDataSourceListViewSettings class];
-	__xamarin_class_map [428].handle = [TKDataSourceSettings class];
-	__xamarin_class_map [429].handle = [TKDataSourceSortDescriptor class];
-	__xamarin_class_map [430].handle = [TKDataSourceTableViewSettings class];
-	__xamarin_class_map [431].handle = [TKDateRange class];
-	__xamarin_class_map [432].handle = [TKEntityProperty class];
-	__xamarin_class_map [433].handle = [TKEntityPropertyGroup class];
-	__xamarin_class_map [434].handle = [TKExamplesDetailViewController class];
-	__xamarin_class_map [435].handle = [TKExamplesExampleInfo class];
-	__xamarin_class_map [436].handle = [TKExamplesExampleViewController class];
-	__xamarin_class_map [437].handle = [TKExamplesMasterViewController class];
-	__xamarin_class_map [438].handle = [TKExamplesOptionInfo class];
-	__xamarin_class_map [439].handle = [TKExamplesSectionInfo class];
-	__xamarin_class_map [440].handle = [TKExamplesSplitViewController class];
-	__xamarin_class_map [441].handle = [TKFeedback class];
-	__xamarin_class_map [442].handle = [TKFeedbackController class];
-	__xamarin_class_map [443].handle = [TKFeedbackItem class];
-	__xamarin_class_map [444].handle = [TKFill class];
-	__xamarin_class_map [445].handle = [TKGaugeIndicator class];
-	__xamarin_class_map [446].handle = [TKGaugeLabels class];
-	__xamarin_class_map [447].handle = [TKGaugeScale class];
-	__xamarin_class_map [448].handle = [TKGaugeLinearScale class];
-	__xamarin_class_map [449].handle = [TKGaugeNeedle class];
-	__xamarin_class_map [450].handle = [TKGaugeRadialScale class];
-	__xamarin_class_map [451].handle = [TKGaugeSegment class];
-	__xamarin_class_map [452].handle = [TKGaugeTicks class];
-	__xamarin_class_map [453].handle = [TKGradientFill class];
-	__xamarin_class_map [454].handle = [TKGridLayout class];
-	__xamarin_class_map [455].handle = [TKGridLayoutCellDefinition class];
-	__xamarin_class_map [456].handle = [TKImageFill class];
-	__xamarin_class_map [457].handle = [TKLayer class];
-	__xamarin_class_map [458].handle = [TKLayoutInfo class];
-	__xamarin_class_map [459].handle = [TKLinearGradientFill class];
-	__xamarin_class_map [460].handle = [TKListViewLinearLayout class];
-	__xamarin_class_map [461].handle = [TKListViewGridLayout class];
-	__xamarin_class_map [462].handle = [TKListViewStaggeredLayout class];
-	__xamarin_class_map [463].handle = [TKMutableArray class];
-	__xamarin_class_map [464].handle = [TKPlatformFeedbackSource class];
-	__xamarin_class_map [465].handle = [TKPredefinedShape class];
-	__xamarin_class_map [466].handle = [TKRadialGradientFill class];
-	__xamarin_class_map [467].handle = [TKRange class];
-	__xamarin_class_map [468].handle = [TKSideDrawerController class];
-	__xamarin_class_map [469].handle = [TKSideDrawerItem class];
-	__xamarin_class_map [470].handle = [TKSideDrawerItemStyle class];
-	__xamarin_class_map [471].handle = [TKSideDrawerSection class];
-	__xamarin_class_map [472].handle = [TKSideDrawerStyle class];
-	__xamarin_class_map [473].handle = [TKSideDrawerTransition class];
-	__xamarin_class_map [474].handle = [TKSolidFill class];
-	__xamarin_class_map [475].handle = [TKStackLayout class];
-	__xamarin_class_map [476].handle = [TKStroke class];
-	__xamarin_class_map [477].handle = [TKStyleGroup class];
-	__xamarin_class_map [478].handle = [TKStyleID class];
-	__xamarin_class_map [479].handle = [TKStyleSheet class];
-	__xamarin_class_map [480].handle = [TKWeakReference class];
-	__xamarin_class_map [481].handle = [TelerikUI_TKView_TKViewAppearance class];
-	__xamarin_class_map [482].handle = [TelerikUI_TKAlertButtonsView_TKAlertButtonsViewAppearance class];
-	__xamarin_class_map [483].handle = [TKAlertButtonsView class];
-	__xamarin_class_map [484].handle = [TelerikUI_TKAlertContentView_TKAlertContentViewAppearance class];
-	__xamarin_class_map [485].handle = [TKAlertContentView class];
-	__xamarin_class_map [486].handle = [TelerikUI_TKAlertView_TKAlertViewAppearance class];
-	__xamarin_class_map [487].handle = [TKAlertView class];
-	__xamarin_class_map [488].handle = [TelerikUI_TKAutoCompleteCoverView_TKAutoCompleteCoverViewAppearance class];
-	__xamarin_class_map [489].handle = [TKAutoCompleteCoverView class];
-	__xamarin_class_map [490].handle = [TelerikUI_TKListViewReusableCell_TKListViewReusableCellAppearance class];
-	__xamarin_class_map [491].handle = [TelerikUI_TKListViewCell_TKListViewCellAppearance class];
-	__xamarin_class_map [492].handle = [TelerikUI_TKAutoCompleteSuggestionCell_TKAutoCompleteSuggestionCellAppearance class];
-	__xamarin_class_map [493].handle = [TKListViewReusableCell class];
-	__xamarin_class_map [494].handle = [TKListViewCell class];
-	__xamarin_class_map [495].handle = [TKAutoCompleteSuggestionCell class];
-	__xamarin_class_map [496].handle = [TelerikUI_TKAutoCompleteTextView_TKAutoCompleteTextViewAppearance class];
-	__xamarin_class_map [497].handle = [TKAutoCompleteTextView class];
-	__xamarin_class_map [498].handle = [TelerikUI_TKAutoCompleteTokenHolderView_TKAutoCompleteTokenHolderViewAppearance class];
-	__xamarin_class_map [499].handle = [TKAutoCompleteTokenHolderView class];
-	__xamarin_class_map [500].handle = [TelerikUI_TKAutoCompleteTokenRemoveButton_TKAutoCompleteTokenRemoveButtonAppearance class];
-	__xamarin_class_map [501].handle = [TKAutoCompleteTokenRemoveButton class];
-	__xamarin_class_map [502].handle = [TelerikUI_TKAutoCompleteTokenView_TKAutoCompleteTokenViewAppearance class];
-	__xamarin_class_map [503].handle = [TKAutoCompleteTokenView class];
-	__xamarin_class_map [504].handle = [TelerikUI_TKCalendar_TKCalendarAppearance class];
-	__xamarin_class_map [505].handle = [TelerikUI_TKCalendarCell_TKCalendarCellAppearance class];
-	__xamarin_class_map [506].handle = [TKCalendarCell class];
-	__xamarin_class_map [507].handle = [TelerikUI_TKCalendarDayCell_TKCalendarDayCellAppearance class];
-	__xamarin_class_map [508].handle = [TKCalendarDayCell class];
-	__xamarin_class_map [509].handle = [TelerikUI_TKCalendarDayNameCell_TKCalendarDayNameCellAppearance class];
-	__xamarin_class_map [510].handle = [TKCalendarDayNameCell class];
-	__xamarin_class_map [511].handle = [TelerikUI_TKCalendarDayView_TKCalendarDayViewAppearance class];
-	__xamarin_class_map [512].handle = [TKCalendarDayView class];
-	__xamarin_class_map [513].handle = [TelerikUI_TKCalendarDayViewAllDayEventCell_TKCalendarDayViewAllDayEventCellAppearance class];
-	__xamarin_class_map [514].handle = [TKCalendarDayViewAllDayEventCell class];
-	__xamarin_class_map [515].handle = [TelerikUI_TKCalendarDayViewAllDayEventsView_TKCalendarDayViewAllDayEventsViewAppearance class];
-	__xamarin_class_map [516].handle = [TKCalendarDayViewAllDayEventsView class];
-	__xamarin_class_map [517].handle = [TelerikUI_TKCalendarDayViewEventCell_TKCalendarDayViewEventCellAppearance class];
-	__xamarin_class_map [518].handle = [TKCalendarDayViewEventCell class];
-	__xamarin_class_map [519].handle = [TelerikUI_TKCalendarDayViewEventsView_TKCalendarDayViewEventsViewAppearance class];
-	__xamarin_class_map [520].handle = [TKCalendarDayViewEventsView class];
-	__xamarin_class_map [521].handle = [TelerikUI_TKCalendarPresenterBase_TKCalendarPresenterBaseAppearance class];
-	__xamarin_class_map [522].handle = [TelerikUI_TKCalendarDayViewPresenter_TKCalendarDayViewPresenterAppearance class];
-	__xamarin_class_map [523].handle = [TKCalendarPresenterBase class];
-	__xamarin_class_map [524].handle = [TKCalendarDayViewPresenter class];
-	__xamarin_class_map [525].handle = [TelerikUI_TKCalendarDayViewTimeLine_TKCalendarDayViewTimeLineAppearance class];
-	__xamarin_class_map [526].handle = [TKCalendarDayViewTimeLine class];
-	__xamarin_class_map [527].handle = [TelerikUI_TKCalendarInlineView_TKCalendarInlineViewAppearance class];
-	__xamarin_class_map [528].handle = [TKCalendarInlineView class];
-	__xamarin_class_map [529].handle = [TelerikUI_TKCalendarInlineViewTableViewCell_TKCalendarInlineViewTableViewCellAppearance class];
-	__xamarin_class_map [530].handle = [TKCalendarInlineViewTableViewCell class];
-	__xamarin_class_map [531].handle = [TelerikUI_TKCalendarMonthCell_TKCalendarMonthCellAppearance class];
-	__xamarin_class_map [532].handle = [TKCalendarMonthCell class];
-	__xamarin_class_map [533].handle = [TelerikUI_TKCalendarMonthNameCell_TKCalendarMonthNameCellAppearance class];
-	__xamarin_class_map [534].handle = [TKCalendarMonthNameCell class];
-	__xamarin_class_map [535].handle = [TelerikUI_TKCalendarMonthNamesPresenter_TKCalendarMonthNamesPresenterAppearance class];
-	__xamarin_class_map [536].handle = [TKCalendarMonthNamesPresenter class];
-	__xamarin_class_map [537].handle = [TelerikUI_TKCalendarMonthPresenter_TKCalendarMonthPresenterAppearance class];
-	__xamarin_class_map [538].handle = [TKCalendarMonthPresenter class];
-	__xamarin_class_map [539].handle = [TelerikUI_TKCalendarTitleCell_TKCalendarTitleCellAppearance class];
-	__xamarin_class_map [540].handle = [TelerikUI_TKCalendarMonthTitleCell_TKCalendarMonthTitleCellAppearance class];
-	__xamarin_class_map [541].handle = [TKCalendarTitleCell class];
-	__xamarin_class_map [542].handle = [TKCalendarMonthTitleCell class];
-	__xamarin_class_map [543].handle = [TelerikUI_TKCalendarMonthView_TKCalendarMonthViewAppearance class];
-	__xamarin_class_map [544].handle = [TKCalendarMonthView class];
-	__xamarin_class_map [545].handle = [TelerikUI_TKCalendarWeekDayCell_TKCalendarWeekDayCellAppearance class];
-	__xamarin_class_map [546].handle = [TKCalendarWeekDayCell class];
-	__xamarin_class_map [547].handle = [TelerikUI_TKCalendarWeekNumberCell_TKCalendarWeekNumberCellAppearance class];
-	__xamarin_class_map [548].handle = [TKCalendarWeekNumberCell class];
-	__xamarin_class_map [549].handle = [TelerikUI_TKCalendarWeekPresenter_TKCalendarWeekPresenterAppearance class];
-	__xamarin_class_map [550].handle = [TKCalendarWeekPresenter class];
-	__xamarin_class_map [551].handle = [TelerikUI_TKCalendarYearNumberCell_TKCalendarYearNumberCellAppearance class];
-	__xamarin_class_map [552].handle = [TKCalendarYearNumberCell class];
-	__xamarin_class_map [553].handle = [TelerikUI_TKCalendarYearNumbersPresenter_TKCalendarYearNumbersPresenterAppearance class];
-	__xamarin_class_map [554].handle = [TKCalendarYearNumbersPresenter class];
-	__xamarin_class_map [555].handle = [TelerikUI_TKCalendarYearPresenter_TKCalendarYearPresenterAppearance class];
-	__xamarin_class_map [556].handle = [TKCalendarYearPresenter class];
-	__xamarin_class_map [557].handle = [TelerikUI_TKCalendarYearTitleView_TKCalendarYearTitleViewAppearance class];
-	__xamarin_class_map [558].handle = [TKCalendarYearTitleView class];
-	__xamarin_class_map [559].handle = [TelerikUI_TKChart_TKChartAppearance class];
-	__xamarin_class_map [560].handle = [TKChart class];
-	__xamarin_class_map [561].handle = [TelerikUI_TKCoreStackLayoutView_TKCoreStackLayoutViewAppearance class];
-	__xamarin_class_map [562].handle = [TelerikUI_TKChartLegendContainer_TKChartLegendContainerAppearance class];
-	__xamarin_class_map [563].handle = [TKCoreStackLayoutView class];
-	__xamarin_class_map [564].handle = [TKChartLegendContainer class];
-	__xamarin_class_map [565].handle = [TelerikUI_TKChartLegendItem_TKChartLegendItemAppearance class];
-	__xamarin_class_map [566].handle = [TKChartLegendItem class];
-	__xamarin_class_map [567].handle = [TelerikUI_TKChartLegendView_TKChartLegendViewAppearance class];
-	__xamarin_class_map [568].handle = [TKChartLegendView class];
-	__xamarin_class_map [569].handle = [TelerikUI_TKChartPlotView_TKChartPlotViewAppearance class];
-	__xamarin_class_map [570].handle = [TKChartPlotView class];
-	__xamarin_class_map [571].handle = [TelerikUI_TKChartTitleView_TKChartTitleViewAppearance class];
-	__xamarin_class_map [572].handle = [TKChartTitleView class];
-	__xamarin_class_map [573].handle = [TelerikUI_TKCheckView_TKCheckViewAppearance class];
-	__xamarin_class_map [574].handle = [TKCheckView class];
-	__xamarin_class_map [575].handle = [TelerikUI_TKCollectionViewCell_TKCollectionViewCellAppearance class];
-	__xamarin_class_map [576].handle = [TKCollectionViewCell class];
-	__xamarin_class_map [577].handle = [TelerikUI_TKDataForm_TKDataFormAppearance class];
-	__xamarin_class_map [578].handle = [TKDataForm class];
-	__xamarin_class_map [579].handle = [TelerikUI_TKDataFormAccessoryView_TKDataFormAccessoryViewAppearance class];
-	__xamarin_class_map [580].handle = [TKDataFormAccessoryView class];
-	__xamarin_class_map [581].handle = [TelerikUI_TKDataFormEditor_TKDataFormEditorAppearance class];
-	__xamarin_class_map [582].handle = [TelerikUI_TKDataFormViewControllerEditor_TKDataFormViewControllerEditorAppearance class];
-	__xamarin_class_map [583].handle = [TelerikUI_TKDataFormAutocompleteEditor_TKDataFormAutocompleteEditorAppearance class];
-	__xamarin_class_map [584].handle = [TKDataFormEditor class];
-	__xamarin_class_map [585].handle = [TKDataFormViewControllerEditor class];
-	__xamarin_class_map [586].handle = [TKDataFormAutocompleteEditor class];
-	__xamarin_class_map [587].handle = [TelerikUI_TKDataFormAutoCompleteInlineEditor_TKDataFormAutoCompleteInlineEditorAppearance class];
-	__xamarin_class_map [588].handle = [TKDataFormAutoCompleteInlineEditor class];
-	__xamarin_class_map [589].handle = [TelerikUI_TKDataFormInlineEditor_TKDataFormInlineEditorAppearance class];
-	__xamarin_class_map [590].handle = [TelerikUI_TKDataFormDatePickerEditor_TKDataFormDatePickerEditorAppearance class];
-	__xamarin_class_map [591].handle = [TKDataFormInlineEditor class];
-	__xamarin_class_map [592].handle = [TKDataFormDatePickerEditor class];
-	__xamarin_class_map [593].handle = [TelerikUI_TKDataFormTextFieldEditor_TKDataFormTextFieldEditorAppearance class];
-	__xamarin_class_map [594].handle = [TelerikUI_TKDataFormDecimalEditor_TKDataFormDecimalEditorAppearance class];
-	__xamarin_class_map [595].handle = [TKDataFormTextFieldEditor class];
-	__xamarin_class_map [596].handle = [TKDataFormDecimalEditor class];
-	__xamarin_class_map [597].handle = [TelerikUI_TKDataFormEmailEditor_TKDataFormEmailEditorAppearance class];
-	__xamarin_class_map [598].handle = [TKDataFormEmailEditor class];
-	__xamarin_class_map [599].handle = [TelerikUI_TKDataFormMultilineTextEditor_TKDataFormMultilineTextEditorAppearance class];
-	__xamarin_class_map [600].handle = [TKDataFormMultilineTextEditor class];
-	__xamarin_class_map [601].handle = [TelerikUI_TKDataFormNamePhoneEditor_TKDataFormNamePhoneEditorAppearance class];
-	__xamarin_class_map [602].handle = [TKDataFormNamePhoneEditor class];
-	__xamarin_class_map [603].handle = [TelerikUI_TKDataFormNumberEditor_TKDataFormNumberEditorAppearance class];
-	__xamarin_class_map [604].handle = [TKDataFormNumberEditor class];
-	__xamarin_class_map [605].handle = [TelerikUI_TKDataFormOptionsEditor_TKDataFormOptionsEditorAppearance class];
-	__xamarin_class_map [606].handle = [TKDataFormOptionsEditor class];
-	__xamarin_class_map [607].handle = [TelerikUI_TKDataFormPasswordEditor_TKDataFormPasswordEditorAppearance class];
-	__xamarin_class_map [608].handle = [TKDataFormPasswordEditor class];
-	__xamarin_class_map [609].handle = [TelerikUI_TKDataFormPhoneEditor_TKDataFormPhoneEditorAppearance class];
-	__xamarin_class_map [610].handle = [TKDataFormPhoneEditor class];
-	__xamarin_class_map [611].handle = [TelerikUI_TKDataFormPickerViewEditor_TKDataFormPickerViewEditorAppearance class];
-	__xamarin_class_map [612].handle = [TKDataFormPickerViewEditor class];
-	__xamarin_class_map [613].handle = [TelerikUI_TKDataFormSegmentedEditor_TKDataFormSegmentedEditorAppearance class];
-	__xamarin_class_map [614].handle = [TKDataFormSegmentedEditor class];
-	__xamarin_class_map [615].handle = [TelerikUI_TKDataFormSliderEditor_TKDataFormSliderEditorAppearance class];
-	__xamarin_class_map [616].handle = [TKDataFormSliderEditor class];
-	__xamarin_class_map [617].handle = [TelerikUI_TKDataFormStepperEditor_TKDataFormStepperEditorAppearance class];
-	__xamarin_class_map [618].handle = [TKDataFormStepperEditor class];
-	__xamarin_class_map [619].handle = [TelerikUI_TKDataFormSwitchEditor_TKDataFormSwitchEditorAppearance class];
-	__xamarin_class_map [620].handle = [TKDataFormSwitchEditor class];
-	__xamarin_class_map [621].handle = [TelerikUI_TKDataFormTimePickerEditor_TKDataFormTimePickerEditorAppearance class];
-	__xamarin_class_map [622].handle = [TKDataFormTimePickerEditor class];
-	__xamarin_class_map [623].handle = [TelerikUI_TKEntityPropertyGroupEditorsView_TKEntityPropertyGroupEditorsViewAppearance class];
-	__xamarin_class_map [624].handle = [TKEntityPropertyGroupEditorsView class];
-	__xamarin_class_map [625].handle = [TelerikUI_TKEntityPropertyGroupTitleView_TKEntityPropertyGroupTitleViewAppearance class];
-	__xamarin_class_map [626].handle = [TKEntityPropertyGroupTitleView class];
-	__xamarin_class_map [627].handle = [TelerikUI_TKEntityPropertyGroupTitleViewIndicator_TKEntityPropertyGroupTitleViewIndicatorAppearance class];
-	__xamarin_class_map [628].handle = [TKEntityPropertyGroupTitleViewIndicator class];
-	__xamarin_class_map [629].handle = [TelerikUI_TKEntityPropertyGroupView_TKEntityPropertyGroupViewAppearance class];
-	__xamarin_class_map [630].handle = [TKEntityPropertyGroupView class];
-	__xamarin_class_map [631].handle = [TelerikUI_TKGauge_TKGaugeAppearance class];
-	__xamarin_class_map [632].handle = [TKGauge class];
-	__xamarin_class_map [633].handle = [TelerikUI_TKLabel_TKLabelAppearance class];
-	__xamarin_class_map [634].handle = [TKLabel class];
-	__xamarin_class_map [635].handle = [TelerikUI_TKLinearGauge_TKLinearGaugeAppearance class];
-	__xamarin_class_map [636].handle = [TKLinearGauge class];
-	__xamarin_class_map [637].handle = [TelerikUI_TKListView_TKListViewAppearance class];
-	__xamarin_class_map [638].handle = [TKListView class];
-	__xamarin_class_map [639].handle = [TelerikUI_TKListViewCellBackgroundView_TKListViewCellBackgroundViewAppearance class];
-	__xamarin_class_map [640].handle = [TKListViewCellBackgroundView class];
-	__xamarin_class_map [641].handle = [TelerikUI_TKListViewFooterCell_TKListViewFooterCellAppearance class];
-	__xamarin_class_map [642].handle = [TKListViewFooterCell class];
-	__xamarin_class_map [643].handle = [TelerikUI_TKListViewHeaderCell_TKListViewHeaderCellAppearance class];
-	__xamarin_class_map [644].handle = [TKListViewHeaderCell class];
-	__xamarin_class_map [645].handle = [TelerikUI_TKListViewLoadOnDemandCell_TKListViewLoadOnDemandCellAppearance class];
-	__xamarin_class_map [646].handle = [TKListViewLoadOnDemandCell class];
-	__xamarin_class_map [647].handle = [TelerikUI_TKListViewLoadOnDemandView_TKListViewLoadOnDemandViewAppearance class];
-	__xamarin_class_map [648].handle = [TKListViewLoadOnDemandView class];
-	__xamarin_class_map [649].handle = [TelerikUI_TKListViewPullToRefreshView_TKListViewPullToRefreshViewAppearance class];
-	__xamarin_class_map [650].handle = [TKListViewPullToRefreshView class];
-	__xamarin_class_map [651].handle = [TelerikUI_TKModifiedTextField_TKModifiedTextFieldAppearance class];
-	__xamarin_class_map [652].handle = [TKModifiedTextField class];
-	__xamarin_class_map [653].handle = [TelerikUI_TKRadialGauge_TKRadialGaugeAppearance class];
-	__xamarin_class_map [654].handle = [TKRadialGauge class];
-	__xamarin_class_map [655].handle = [TelerikUI_TKSideDrawer_TKSideDrawerAppearance class];
-	__xamarin_class_map [656].handle = [TKSideDrawer class];
-	__xamarin_class_map [657].handle = [TelerikUI_TKSideDrawerHeader_TKSideDrawerHeaderAppearance class];
-	__xamarin_class_map [658].handle = [TKSideDrawerHeader class];
-	__xamarin_class_map [659].handle = [TelerikUI_TKSideDrawerTableView_TKSideDrawerTableViewAppearance class];
-	__xamarin_class_map [660].handle = [TKSideDrawerTableView class];
-	__xamarin_class_map [661].handle = [TelerikUI_TKSideDrawerTableViewCell_TKSideDrawerTableViewCellAppearance class];
-	__xamarin_class_map [662].handle = [TKSideDrawerTableViewCell class];
-	__xamarin_class_map [663].handle = [TelerikUI_TKSideDrawerView_TKSideDrawerViewAppearance class];
-	__xamarin_class_map [664].handle = [TKSideDrawerView class];
-	__xamarin_class_map [665].handle = [TelerikUI_TKSlideView_TKSlideViewAppearance class];
-	__xamarin_class_map [666].handle = [TKSlideView class];
-	__xamarin_class_map [667].handle = [TelerikUI_TKSuggestionListView_TKSuggestionListViewAppearance class];
-	__xamarin_class_map [668].handle = [TKSuggestionListView class];
-	__xamarin_class_map [669].handle = [TelerikUI_TKTextField_TKTextFieldAppearance class];
-	__xamarin_class_map [670].handle = [TKTextField class];
-	__xamarin_class_map [671].handle = [TelerikUI_TKViewTransition_TKViewTransitionAppearance class];
-	__xamarin_class_map [672].handle = [TKViewTransition class];
-	__xamarin_class_map [673].handle = [BigTed_ProgressHUD class];
+	__xamarin_class_map [188].handle = [cloudViewController class];
+	__xamarin_class_map [189].handle = [TelefoniaTableView class];
+	__xamarin_class_map [190].handle = [ProductosMiCuentaViewController class];
+	__xamarin_class_map [191].handle = [MembresiasMiCuentaViewController class];
+	__xamarin_class_map [192].handle = [CuentaProductosCell class];
+	__xamarin_class_map [193].handle = [NoInfoCuentaProductosCell class];
+	__xamarin_class_map [194].handle = [CuentaMembresiasCell class];
+	__xamarin_class_map [195].handle = [NoInfoCuentaMembresiasCell class];
+	__xamarin_class_map [196].handle = [MiCuentaViewController class];
+	__xamarin_class_map [197].handle = [WorklabsMx_iOS_ViewElements_UICheckBox class];
+	__xamarin_class_map [198].handle = [WorklabsMx_iOS_ViewElements_HorarioEventos class];
+	__xamarin_class_map [199].handle = [WorklabsMx_iOS_ViewElements_UIDropdownList class];
+	__xamarin_class_map [200].handle = [WorklabsMx_iOS_ViewElements_CommentCard class];
+	__xamarin_class_map [201].handle = [WorklabsMx_iOS_ViewElements_UIRadioButton class];
+	__xamarin_class_map [202].handle = [WorklabsMx_iOS_Models_PickerModel class];
+	__xamarin_class_map [203].handle = [WorklabsMx_iOS_Models_SucursalesModel class];
+	__xamarin_class_map [204].handle = [WorklabsMx_iOS_Models_CarritoCompras class];
+	__xamarin_class_map [205].handle = [WorklabsMx_iOS_Models_OrdenVentaController class];
+	__xamarin_class_map [206].handle = [WorklabsMx_iOS_Models_OrdenVentaDetalle class];
+	__xamarin_class_map [207].handle = [WorklabsMx_iOS_Styles_STLButton class];
+	__xamarin_class_map [208].handle = [WorklabsMx_iOS_Styles_STLTextField class];
+	__xamarin_class_map [209].handle = [WorklabsMx_iOS_Styles_STLLabel class];
+	__xamarin_class_map [210].handle = [WorklabsMx_iOS_Styles_STLImageLabel class];
+	__xamarin_class_map [211].handle = [WorklabsMx_iOS_Styles_PickerDataModel class];
+	__xamarin_class_map [212].handle = [WorklabsMx_iOS_Styles_STLDropDownList class];
+	__xamarin_class_map [213].handle = [WorklabsMx_iOS_Styles_STLCarritoCompra class];
+	__xamarin_class_map [214].handle = [WorklabsMx_iOS_Styles_STLLine class];
+	__xamarin_class_map [215].handle = [WorklabsMx_iOS_Helpers_LoadingView class];
+	__xamarin_class_map [216].handle = [TKView class];
+	__xamarin_class_map [217].handle = [TKCalendar class];
+	__xamarin_class_map [218].handle = [WorklabsMx_iOS_Helpers_Calendario class];
+	__xamarin_class_map [219].handle = [WorklabsMx_iOS_Helpers_DropDownListSource class];
+	__xamarin_class_map [220].handle = [SplitViewController class];
+	__xamarin_class_map [221].handle = [LoginViewController class];
+	__xamarin_class_map [222].handle = [AccesoController class];
+	__xamarin_class_map [223].handle = [ReporteController class];
+	__xamarin_class_map [224].handle = [PerfilController class];
+	__xamarin_class_map [225].handle = [DatosFacturacionController class];
+	__xamarin_class_map [226].handle = [DirectorioEmpresasController class];
+	__xamarin_class_map [227].handle = [DirectorioUsuarioController class];
+	__xamarin_class_map [228].handle = [CarritoCompraController class];
+	__xamarin_class_map [229].handle = [MisColaboradoresBajaController class];
+	__xamarin_class_map [230].handle = [MisColaboradoresCambiosController class];
+	__xamarin_class_map [231].handle = [MisColaboradoresController class];
+	__xamarin_class_map [232].handle = [ReservaController class];
+	__xamarin_class_map [233].handle = [RegistroInvitadosController class];
+	__xamarin_class_map [234].handle = [TarifasController class];
+	__xamarin_class_map [235].handle = [PaymentController class];
+	__xamarin_class_map [236].handle = [EmpresaMiembroModificaController class];
+	__xamarin_class_map [237].handle = [AboutMeModificaController class];
+	__xamarin_class_map [238].handle = [PublicarPostViewController class];
+	__xamarin_class_map [239].handle = [ComentarPostTableViewController class];
+	__xamarin_class_map [240].handle = [SeccionComentariosTableViewController class];
+	__xamarin_class_map [241].handle = [CarritoProductos class];
+	__xamarin_class_map [242].handle = [TableViewMembresia class];
+	__xamarin_class_map [243].handle = [VentaDetalleTableViewController class];
+	__xamarin_class_map [244].handle = [TabBarDetalleVenta class];
+	__xamarin_class_map [245].handle = [WorklabsMx_iOS_ViewElements_PostCard class];
+	__xamarin_class_map [246].handle = [WorklabsMx_iOS_Styles_STLTableViewSource class];
+	__xamarin_class_map [247].handle = [WorklabsMx_iOS_Styles_STLImageView class];
+	__xamarin_class_map [248].handle = objc_getClass ("__UIGestureRecognizerToken");
+	__xamarin_class_map [249].handle = objc_getClass ("__UIGestureRecognizerParameterlessToken");
+	__xamarin_class_map [250].handle = objc_getClass ("__UIGestureRecognizerParametrizedToken");
+	__xamarin_class_map [251].handle = objc_getClass ("__NSObject_Disposer");
+	__xamarin_class_map [252].handle = objc_getClass ("UIKit_UIImagePickerController__UIImagePickerControllerDelegate");
+	__xamarin_class_map [253].handle = objc_getClass ("UIKit_UIView_UIViewAppearance");
+	__xamarin_class_map [254].handle = objc_getClass ("UIKit_UILabel_UILabelAppearance");
+	__xamarin_class_map [255].handle = objc_getClass ("__UILongPressGestureRecognizer");
+	__xamarin_class_map [256].handle = objc_getClass ("__UIPanGestureRecognizer");
+	__xamarin_class_map [257].handle = objc_getClass ("UIKit_UIControl_UIControlAppearance");
+	__xamarin_class_map [258].handle = objc_getClass ("__UIRotationGestureRecognizer");
+	__xamarin_class_map [259].handle = objc_getClass ("__UITapGestureRecognizer");
+	__xamarin_class_map [260].handle = objc_getClass ("__UIPinchGestureRecognizer");
+	__xamarin_class_map [261].handle = objc_getClass ("__UISwipeGestureRecognizer");
+	__xamarin_class_map [262].handle = objc_getClass ("__UIScreenEdgePanGestureRecognizer");
+	__xamarin_class_map [263].handle = objc_getClass ("UIKit_UIAlertView__UIAlertViewDelegate");
+	__xamarin_class_map [264].handle = objc_getClass ("UIKit_UIBarButtonItem_Callback");
+	__xamarin_class_map [265].handle = objc_getClass ("UIKit_UIButton_UIButtonAppearance");
+	__xamarin_class_map [266].handle = objc_getClass ("UIKit_UIScrollView_UIScrollViewAppearance");
+	__xamarin_class_map [267].handle = objc_getClass ("UIKit_UICollectionView_UICollectionViewAppearance");
+	__xamarin_class_map [268].handle = objc_getClass ("UIKit_UITableView_UITableViewAppearance");
+	__xamarin_class_map [269].handle = objc_getClass ("UIKit_UITableViewCell_UITableViewCellAppearance");
+	__xamarin_class_map [270].handle = objc_getClass ("UIKit_UITextField__UITextFieldDelegate");
+	__xamarin_class_map [271].handle = objc_getClass ("UIKit_UITextField_UITextFieldAppearance");
+	__xamarin_class_map [272].handle = objc_getClass ("UIKit_UIScrollView__UIScrollViewDelegate");
+	__xamarin_class_map [273].handle = objc_getClass ("UIKit_UITextView__UITextViewDelegate");
+	__xamarin_class_map [274].handle = objc_getClass ("UIKit_UICollectionReusableView_UICollectionReusableViewAppearance");
+	__xamarin_class_map [275].handle = objc_getClass ("UIKit_UICollectionViewCell_UICollectionViewCellAppearance");
+	__xamarin_class_map [276].handle = [TKAlert class];
+	__xamarin_class_map [277].handle = [TKAlertAction class];
+	__xamarin_class_map [278].handle = [TKStyleNode class];
+	__xamarin_class_map [279].handle = [TKAlertStyle class];
+	__xamarin_class_map [280].handle = [TKAutoCompleteController class];
+	__xamarin_class_map [281].handle = [TKAutoCompleteToken class];
+	__xamarin_class_map [282].handle = [TKShape class];
+	__xamarin_class_map [283].handle = [TKBalloonShape class];
+	__xamarin_class_map [284].handle = [TKCalendarCellStyle class];
+	__xamarin_class_map [285].handle = [TKCalendarDayCellStyle class];
+	__xamarin_class_map [286].handle = [TKCalendarDayViewAllDayEventCellStyle class];
+	__xamarin_class_map [287].handle = [TKCalendarDayViewAllDayEventsViewStyle class];
+	__xamarin_class_map [288].handle = [TKCalendarDayViewEventCellStyle class];
+	__xamarin_class_map [289].handle = [TKCalendarDayViewEventsLayout class];
+	__xamarin_class_map [290].handle = [TKCalendarDayViewEventsViewStyle class];
+	__xamarin_class_map [291].handle = [TKCalendarDayViewPresenterStyle class];
+	__xamarin_class_map [292].handle = [TKCalendarDayViewTimeLineLayoutAttributes class];
+	__xamarin_class_map [293].handle = [TKCalendarEvent class];
+	__xamarin_class_map [294].handle = [TKCalendarEventKitDataSource class];
+	__xamarin_class_map [295].handle = [TKCalendarFlowPresenter class];
+	__xamarin_class_map [296].handle = [TKCalendarInlineViewTableViewCellStyle class];
+	__xamarin_class_map [297].handle = [TKTheme class];
+	__xamarin_class_map [298].handle = [TKCalendarIPadTheme class];
+	__xamarin_class_map [299].handle = [TKCalendarMonthPresenterStyle class];
+	__xamarin_class_map [300].handle = [TKCalendarMonthViewController class];
+	__xamarin_class_map [301].handle = [TKCalendarYearPresenterStyle class];
+	__xamarin_class_map [302].handle = [TKCalendarYearViewController class];
+	__xamarin_class_map [303].handle = [TKChartSeries class];
+	__xamarin_class_map [304].handle = [TKChartFinancialIndicator class];
+	__xamarin_class_map [305].handle = [TKChartSignalLineIndicator class];
+	__xamarin_class_map [306].handle = [TKChartMACDIndicator class];
+	__xamarin_class_map [307].handle = [TKChartAbsoluteVolumeOscillator class];
+	__xamarin_class_map [308].handle = [TKChartAccumulationDistributionLine class];
+	__xamarin_class_map [309].handle = [TKChartAdaptiveMovingAverageIndicator class];
+	__xamarin_class_map [310].handle = [TKChartAnnotation class];
+	__xamarin_class_map [311].handle = [TKChartAnnotationStyle class];
+	__xamarin_class_map [312].handle = [TKChartLineSeries class];
+	__xamarin_class_map [313].handle = [TKChartAreaSeries class];
+	__xamarin_class_map [314].handle = [TKChartTrueRangeIndicator class];
+	__xamarin_class_map [315].handle = [TKChartAverageTrueRangeIndicator class];
+	__xamarin_class_map [316].handle = [TKChartAxis class];
+	__xamarin_class_map [317].handle = [TKChartLabelStyle class];
+	__xamarin_class_map [318].handle = [TKChartAxisLabelStyle class];
+	__xamarin_class_map [319].handle = [TKChartAxisTickStyle class];
+	__xamarin_class_map [320].handle = [TKChartAxisMajorTickStyle class];
+	__xamarin_class_map [321].handle = [TKChartRender class];
+	__xamarin_class_map [322].handle = [TKChartAxisRender class];
+	__xamarin_class_map [323].handle = [TKChartAxisStyle class];
+	__xamarin_class_map [324].handle = [TKChartAxisTitleStyle class];
+	__xamarin_class_map [325].handle = [TKChartPointAnnotation class];
+	__xamarin_class_map [326].handle = [TKChartBalloonAnnotation class];
+	__xamarin_class_map [327].handle = [TKChartBalloonAnnotationStyle class];
+	__xamarin_class_map [328].handle = [TKChartBandAnnotation class];
+	__xamarin_class_map [329].handle = [TKChartGridLineAnnotationStyle class];
+	__xamarin_class_map [330].handle = [TKChartBandAnnotationStyle class];
+	__xamarin_class_map [331].handle = [TKChartBandIndicator class];
+	__xamarin_class_map [332].handle = [TKChartVisualPoint class];
+	__xamarin_class_map [333].handle = [TKChartBandVisualPoint class];
+	__xamarin_class_map [334].handle = [TKChartBarSeries class];
+	__xamarin_class_map [335].handle = [TKChartBollingerBandIndicator class];
+	__xamarin_class_map [336].handle = [TKChartBubbleDataPoint class];
+	__xamarin_class_map [337].handle = [TKChartScatterSeries class];
+	__xamarin_class_map [338].handle = [TKChartBubbleSeries class];
+	__xamarin_class_map [339].handle = [TKChartBubbleVisualPoint class];
+	__xamarin_class_map [340].handle = [TKChartColumnSeries class];
+	__xamarin_class_map [341].handle = [TKChartOhlcSeries class];
+	__xamarin_class_map [342].handle = [TKChartCandlestickSeries class];
+	__xamarin_class_map [343].handle = [TKChartCategoryAxis class];
+	__xamarin_class_map [344].handle = [TKChartChaikinOscillator class];
+	__xamarin_class_map [345].handle = [TKChartCommodityChannelIndex class];
+	__xamarin_class_map [346].handle = [TKChartCrossLineAnnotation class];
+	__xamarin_class_map [347].handle = [TKChartCrossLineAnnotationStyle class];
+	__xamarin_class_map [348].handle = [TKChartDataPoint class];
+	__xamarin_class_map [349].handle = [TKChartDateTimeAxis class];
+	__xamarin_class_map [350].handle = [TKChartDateTimeCategoryAxis class];
+	__xamarin_class_map [351].handle = [TKChartDetrendedPriceOscillator class];
+	__xamarin_class_map [352].handle = [TKChartPieSeries class];
+	__xamarin_class_map [353].handle = [TKChartDonutSeries class];
+	__xamarin_class_map [354].handle = [TKChartEaseOfMovementIndicator class];
+	__xamarin_class_map [355].handle = [TKChartSimpleMovingAverageIndicator class];
+	__xamarin_class_map [356].handle = [TKChartExponentialMovingAverageIndicator class];
+	__xamarin_class_map [357].handle = [TKChartFastStochasticIndicator class];
+	__xamarin_class_map [358].handle = [TKChartFinancialDataPoint class];
+	__xamarin_class_map [359].handle = [TKChartForceIndexIndicator class];
+	__xamarin_class_map [360].handle = [TKChartSlowStochasticIndicator class];
+	__xamarin_class_map [361].handle = [TKChartFullStochasticIndicator class];
+	__xamarin_class_map [362].handle = [TKChartGridLineAnnotation class];
+	__xamarin_class_map [363].handle = [TKChartGridStyle class];
+	__xamarin_class_map [364].handle = [TKChartLayerAnnotation class];
+	__xamarin_class_map [365].handle = [TKChartLegendItemStyle class];
+	__xamarin_class_map [366].handle = [TKChartLegendStyle class];
+	__xamarin_class_map [367].handle = [TKChartNumericAxis class];
+	__xamarin_class_map [368].handle = [TKChartLogarithmicAxis class];
+	__xamarin_class_map [369].handle = [TKChartMarketFacilitationIndex class];
+	__xamarin_class_map [370].handle = [TKChartMedianPriceIndicator class];
+	__xamarin_class_map [371].handle = [TKChartModifiedMovingAverageIndicator class];
+	__xamarin_class_map [372].handle = [TKChartMoneyFlowIndexIndicator class];
+	__xamarin_class_map [373].handle = [TKChartMovingAverageEnvelopesIndicator class];
+	__xamarin_class_map [374].handle = [TKChartNegativeVolumeIndexIndicator class];
+	__xamarin_class_map [375].handle = [TKChartOnBalanceVolumeIndicator class];
+	__xamarin_class_map [376].handle = [TKChartPalette class];
+	__xamarin_class_map [377].handle = [TKChartPaletteItem class];
+	__xamarin_class_map [378].handle = [TKChartPercentagePriceOscillator class];
+	__xamarin_class_map [379].handle = [TKChartPercentageVolumeOscillator class];
+	__xamarin_class_map [380].handle = [TKChartPieVisualPoint class];
+	__xamarin_class_map [381].handle = [TKChartPointLabel class];
+	__xamarin_class_map [382].handle = [TKChartPointLabelRender class];
+	__xamarin_class_map [383].handle = [TKChartPointLabelStyle class];
+	__xamarin_class_map [384].handle = [TKChartPositiveVolumeIndexIndicator class];
+	__xamarin_class_map [385].handle = [TKChartPriceVolumeTrendIndicator class];
+	__xamarin_class_map [386].handle = [TKChartRangeBarSeries class];
+	__xamarin_class_map [387].handle = [TKChartRangeColumnSeries class];
+	__xamarin_class_map [388].handle = [TKChartRangeDataPoint class];
+	__xamarin_class_map [389].handle = [TKChartRangeVisualPoint class];
+	__xamarin_class_map [390].handle = [TKChartRapidAdaptiveVarianceIndicator class];
+	__xamarin_class_map [391].handle = [TKChartRateOfChangeIndicator class];
+	__xamarin_class_map [392].handle = [TKChartRelativeMomentumIndex class];
+	__xamarin_class_map [393].handle = [TKChartRelativeStrengthIndex class];
+	__xamarin_class_map [394].handle = [TKChartSelectionInfo class];
+	__xamarin_class_map [395].handle = [TKChartSeriesRender class];
+	__xamarin_class_map [396].handle = [TKChartSeriesRenderState class];
+	__xamarin_class_map [397].handle = [TKChartSeriesStyle class];
+	__xamarin_class_map [398].handle = [TKChartSplineAreaSeries class];
+	__xamarin_class_map [399].handle = [TKChartSplineSeries class];
+	__xamarin_class_map [400].handle = [TKChartStackInfo class];
+	__xamarin_class_map [401].handle = [TKChartStandardDeviationIndicator class];
+	__xamarin_class_map [402].handle = [TKChartTitleStyle class];
+	__xamarin_class_map [403].handle = [TKChartTrackball class];
+	__xamarin_class_map [404].handle = [TKChartTrackballLineAnnotation class];
+	__xamarin_class_map [405].handle = [TKChartTrackballTooltipAnnotation class];
+	__xamarin_class_map [406].handle = [TKChartTriangularMovingAverageIndicator class];
+	__xamarin_class_map [407].handle = [TKChartTRIXIndicator class];
+	__xamarin_class_map [408].handle = [TKChartTypicalPriceIndicator class];
+	__xamarin_class_map [409].handle = [TKChartUltimateOscillator class];
+	__xamarin_class_map [410].handle = [TKChartViewAnnotation class];
+	__xamarin_class_map [411].handle = [TKChartViewController class];
+	__xamarin_class_map [412].handle = [TKChartWeightedCloseIndicator class];
+	__xamarin_class_map [413].handle = [TKChartWeightedMovingAverageIndicator class];
+	__xamarin_class_map [414].handle = [TKChartWilliamsPercentIndicator class];
+	__xamarin_class_map [415].handle = [TKCoreLayoutItem class];
+	__xamarin_class_map [416].handle = [TKCoreStackLayout class];
+	__xamarin_class_map [417].handle = [TKDataFormAutocompleteController class];
+	__xamarin_class_map [418].handle = [TKDataFormEditorStyle class];
+	__xamarin_class_map [419].handle = [TKDataFormPropertyValidator class];
+	__xamarin_class_map [420].handle = [TKDataFormEmailValidator class];
+	__xamarin_class_map [421].handle = [TKEntity class];
+	__xamarin_class_map [422].handle = [TKDataFormEntityDataSource class];
+	__xamarin_class_map [423].handle = [TKDataFormGroupTitleStyle class];
+	__xamarin_class_map [424].handle = [TKDataFormMaximumLengthValidator class];
+	__xamarin_class_map [425].handle = [TKDataFormMinimumLengthValidator class];
+	__xamarin_class_map [426].handle = [TKDataFormNonEmptyValidator class];
+	__xamarin_class_map [427].handle = [TKDataFormPhoneValidator class];
+	__xamarin_class_map [428].handle = [TKDataFormRangeValidator class];
+	__xamarin_class_map [429].handle = [TKDataFormViewController class];
+	__xamarin_class_map [430].handle = [TKDataSource class];
+	__xamarin_class_map [431].handle = [TKDataSourceAutoCompleteSettings class];
+	__xamarin_class_map [432].handle = [TKDataSourceCalendarSettings class];
+	__xamarin_class_map [433].handle = [TKDataSourceChartSettings class];
+	__xamarin_class_map [434].handle = [TKDataSourceCollectionViewSettings class];
+	__xamarin_class_map [435].handle = [TKDataSourceFilterDescriptor class];
+	__xamarin_class_map [436].handle = [TKDataSourceGroup class];
+	__xamarin_class_map [437].handle = [TKDataSourceGroupDescriptor class];
+	__xamarin_class_map [438].handle = [TKDataSourceListViewSettings class];
+	__xamarin_class_map [439].handle = [TKDataSourceSettings class];
+	__xamarin_class_map [440].handle = [TKDataSourceSortDescriptor class];
+	__xamarin_class_map [441].handle = [TKDataSourceTableViewSettings class];
+	__xamarin_class_map [442].handle = [TKDateRange class];
+	__xamarin_class_map [443].handle = [TKEntityProperty class];
+	__xamarin_class_map [444].handle = [TKEntityPropertyGroup class];
+	__xamarin_class_map [445].handle = [TKExamplesDetailViewController class];
+	__xamarin_class_map [446].handle = [TKExamplesExampleInfo class];
+	__xamarin_class_map [447].handle = [TKExamplesExampleViewController class];
+	__xamarin_class_map [448].handle = [TKExamplesMasterViewController class];
+	__xamarin_class_map [449].handle = [TKExamplesOptionInfo class];
+	__xamarin_class_map [450].handle = [TKExamplesSectionInfo class];
+	__xamarin_class_map [451].handle = [TKExamplesSplitViewController class];
+	__xamarin_class_map [452].handle = [TKFeedback class];
+	__xamarin_class_map [453].handle = [TKFeedbackController class];
+	__xamarin_class_map [454].handle = [TKFeedbackItem class];
+	__xamarin_class_map [455].handle = [TKFill class];
+	__xamarin_class_map [456].handle = [TKGaugeIndicator class];
+	__xamarin_class_map [457].handle = [TKGaugeLabels class];
+	__xamarin_class_map [458].handle = [TKGaugeScale class];
+	__xamarin_class_map [459].handle = [TKGaugeLinearScale class];
+	__xamarin_class_map [460].handle = [TKGaugeNeedle class];
+	__xamarin_class_map [461].handle = [TKGaugeRadialScale class];
+	__xamarin_class_map [462].handle = [TKGaugeSegment class];
+	__xamarin_class_map [463].handle = [TKGaugeTicks class];
+	__xamarin_class_map [464].handle = [TKGradientFill class];
+	__xamarin_class_map [465].handle = [TKGridLayout class];
+	__xamarin_class_map [466].handle = [TKGridLayoutCellDefinition class];
+	__xamarin_class_map [467].handle = [TKImageFill class];
+	__xamarin_class_map [468].handle = [TKLayer class];
+	__xamarin_class_map [469].handle = [TKLayoutInfo class];
+	__xamarin_class_map [470].handle = [TKLinearGradientFill class];
+	__xamarin_class_map [471].handle = [TKListViewLinearLayout class];
+	__xamarin_class_map [472].handle = [TKListViewGridLayout class];
+	__xamarin_class_map [473].handle = [TKListViewStaggeredLayout class];
+	__xamarin_class_map [474].handle = [TKMutableArray class];
+	__xamarin_class_map [475].handle = [TKPlatformFeedbackSource class];
+	__xamarin_class_map [476].handle = [TKPredefinedShape class];
+	__xamarin_class_map [477].handle = [TKRadialGradientFill class];
+	__xamarin_class_map [478].handle = [TKRange class];
+	__xamarin_class_map [479].handle = [TKSideDrawerController class];
+	__xamarin_class_map [480].handle = [TKSideDrawerItem class];
+	__xamarin_class_map [481].handle = [TKSideDrawerItemStyle class];
+	__xamarin_class_map [482].handle = [TKSideDrawerSection class];
+	__xamarin_class_map [483].handle = [TKSideDrawerStyle class];
+	__xamarin_class_map [484].handle = [TKSideDrawerTransition class];
+	__xamarin_class_map [485].handle = [TKSolidFill class];
+	__xamarin_class_map [486].handle = [TKStackLayout class];
+	__xamarin_class_map [487].handle = [TKStroke class];
+	__xamarin_class_map [488].handle = [TKStyleGroup class];
+	__xamarin_class_map [489].handle = [TKStyleID class];
+	__xamarin_class_map [490].handle = [TKStyleSheet class];
+	__xamarin_class_map [491].handle = [TKWeakReference class];
+	__xamarin_class_map [492].handle = [TelerikUI_TKView_TKViewAppearance class];
+	__xamarin_class_map [493].handle = [TelerikUI_TKAlertButtonsView_TKAlertButtonsViewAppearance class];
+	__xamarin_class_map [494].handle = [TKAlertButtonsView class];
+	__xamarin_class_map [495].handle = [TelerikUI_TKAlertContentView_TKAlertContentViewAppearance class];
+	__xamarin_class_map [496].handle = [TKAlertContentView class];
+	__xamarin_class_map [497].handle = [TelerikUI_TKAlertView_TKAlertViewAppearance class];
+	__xamarin_class_map [498].handle = [TKAlertView class];
+	__xamarin_class_map [499].handle = [TelerikUI_TKAutoCompleteCoverView_TKAutoCompleteCoverViewAppearance class];
+	__xamarin_class_map [500].handle = [TKAutoCompleteCoverView class];
+	__xamarin_class_map [501].handle = [TelerikUI_TKListViewReusableCell_TKListViewReusableCellAppearance class];
+	__xamarin_class_map [502].handle = [TelerikUI_TKListViewCell_TKListViewCellAppearance class];
+	__xamarin_class_map [503].handle = [TelerikUI_TKAutoCompleteSuggestionCell_TKAutoCompleteSuggestionCellAppearance class];
+	__xamarin_class_map [504].handle = [TKListViewReusableCell class];
+	__xamarin_class_map [505].handle = [TKListViewCell class];
+	__xamarin_class_map [506].handle = [TKAutoCompleteSuggestionCell class];
+	__xamarin_class_map [507].handle = [TelerikUI_TKAutoCompleteTextView_TKAutoCompleteTextViewAppearance class];
+	__xamarin_class_map [508].handle = [TKAutoCompleteTextView class];
+	__xamarin_class_map [509].handle = [TelerikUI_TKAutoCompleteTokenHolderView_TKAutoCompleteTokenHolderViewAppearance class];
+	__xamarin_class_map [510].handle = [TKAutoCompleteTokenHolderView class];
+	__xamarin_class_map [511].handle = [TelerikUI_TKAutoCompleteTokenRemoveButton_TKAutoCompleteTokenRemoveButtonAppearance class];
+	__xamarin_class_map [512].handle = [TKAutoCompleteTokenRemoveButton class];
+	__xamarin_class_map [513].handle = [TelerikUI_TKAutoCompleteTokenView_TKAutoCompleteTokenViewAppearance class];
+	__xamarin_class_map [514].handle = [TKAutoCompleteTokenView class];
+	__xamarin_class_map [515].handle = [TelerikUI_TKCalendar_TKCalendarAppearance class];
+	__xamarin_class_map [516].handle = [TelerikUI_TKCalendarCell_TKCalendarCellAppearance class];
+	__xamarin_class_map [517].handle = [TKCalendarCell class];
+	__xamarin_class_map [518].handle = [TelerikUI_TKCalendarDayCell_TKCalendarDayCellAppearance class];
+	__xamarin_class_map [519].handle = [TKCalendarDayCell class];
+	__xamarin_class_map [520].handle = [TelerikUI_TKCalendarDayNameCell_TKCalendarDayNameCellAppearance class];
+	__xamarin_class_map [521].handle = [TKCalendarDayNameCell class];
+	__xamarin_class_map [522].handle = [TelerikUI_TKCalendarDayView_TKCalendarDayViewAppearance class];
+	__xamarin_class_map [523].handle = [TKCalendarDayView class];
+	__xamarin_class_map [524].handle = [TelerikUI_TKCalendarDayViewAllDayEventCell_TKCalendarDayViewAllDayEventCellAppearance class];
+	__xamarin_class_map [525].handle = [TKCalendarDayViewAllDayEventCell class];
+	__xamarin_class_map [526].handle = [TelerikUI_TKCalendarDayViewAllDayEventsView_TKCalendarDayViewAllDayEventsViewAppearance class];
+	__xamarin_class_map [527].handle = [TKCalendarDayViewAllDayEventsView class];
+	__xamarin_class_map [528].handle = [TelerikUI_TKCalendarDayViewEventCell_TKCalendarDayViewEventCellAppearance class];
+	__xamarin_class_map [529].handle = [TKCalendarDayViewEventCell class];
+	__xamarin_class_map [530].handle = [TelerikUI_TKCalendarDayViewEventsView_TKCalendarDayViewEventsViewAppearance class];
+	__xamarin_class_map [531].handle = [TKCalendarDayViewEventsView class];
+	__xamarin_class_map [532].handle = [TelerikUI_TKCalendarPresenterBase_TKCalendarPresenterBaseAppearance class];
+	__xamarin_class_map [533].handle = [TelerikUI_TKCalendarDayViewPresenter_TKCalendarDayViewPresenterAppearance class];
+	__xamarin_class_map [534].handle = [TKCalendarPresenterBase class];
+	__xamarin_class_map [535].handle = [TKCalendarDayViewPresenter class];
+	__xamarin_class_map [536].handle = [TelerikUI_TKCalendarDayViewTimeLine_TKCalendarDayViewTimeLineAppearance class];
+	__xamarin_class_map [537].handle = [TKCalendarDayViewTimeLine class];
+	__xamarin_class_map [538].handle = [TelerikUI_TKCalendarInlineView_TKCalendarInlineViewAppearance class];
+	__xamarin_class_map [539].handle = [TKCalendarInlineView class];
+	__xamarin_class_map [540].handle = [TelerikUI_TKCalendarInlineViewTableViewCell_TKCalendarInlineViewTableViewCellAppearance class];
+	__xamarin_class_map [541].handle = [TKCalendarInlineViewTableViewCell class];
+	__xamarin_class_map [542].handle = [TelerikUI_TKCalendarMonthCell_TKCalendarMonthCellAppearance class];
+	__xamarin_class_map [543].handle = [TKCalendarMonthCell class];
+	__xamarin_class_map [544].handle = [TelerikUI_TKCalendarMonthNameCell_TKCalendarMonthNameCellAppearance class];
+	__xamarin_class_map [545].handle = [TKCalendarMonthNameCell class];
+	__xamarin_class_map [546].handle = [TelerikUI_TKCalendarMonthNamesPresenter_TKCalendarMonthNamesPresenterAppearance class];
+	__xamarin_class_map [547].handle = [TKCalendarMonthNamesPresenter class];
+	__xamarin_class_map [548].handle = [TelerikUI_TKCalendarMonthPresenter_TKCalendarMonthPresenterAppearance class];
+	__xamarin_class_map [549].handle = [TKCalendarMonthPresenter class];
+	__xamarin_class_map [550].handle = [TelerikUI_TKCalendarTitleCell_TKCalendarTitleCellAppearance class];
+	__xamarin_class_map [551].handle = [TelerikUI_TKCalendarMonthTitleCell_TKCalendarMonthTitleCellAppearance class];
+	__xamarin_class_map [552].handle = [TKCalendarTitleCell class];
+	__xamarin_class_map [553].handle = [TKCalendarMonthTitleCell class];
+	__xamarin_class_map [554].handle = [TelerikUI_TKCalendarMonthView_TKCalendarMonthViewAppearance class];
+	__xamarin_class_map [555].handle = [TKCalendarMonthView class];
+	__xamarin_class_map [556].handle = [TelerikUI_TKCalendarWeekDayCell_TKCalendarWeekDayCellAppearance class];
+	__xamarin_class_map [557].handle = [TKCalendarWeekDayCell class];
+	__xamarin_class_map [558].handle = [TelerikUI_TKCalendarWeekNumberCell_TKCalendarWeekNumberCellAppearance class];
+	__xamarin_class_map [559].handle = [TKCalendarWeekNumberCell class];
+	__xamarin_class_map [560].handle = [TelerikUI_TKCalendarWeekPresenter_TKCalendarWeekPresenterAppearance class];
+	__xamarin_class_map [561].handle = [TKCalendarWeekPresenter class];
+	__xamarin_class_map [562].handle = [TelerikUI_TKCalendarYearNumberCell_TKCalendarYearNumberCellAppearance class];
+	__xamarin_class_map [563].handle = [TKCalendarYearNumberCell class];
+	__xamarin_class_map [564].handle = [TelerikUI_TKCalendarYearNumbersPresenter_TKCalendarYearNumbersPresenterAppearance class];
+	__xamarin_class_map [565].handle = [TKCalendarYearNumbersPresenter class];
+	__xamarin_class_map [566].handle = [TelerikUI_TKCalendarYearPresenter_TKCalendarYearPresenterAppearance class];
+	__xamarin_class_map [567].handle = [TKCalendarYearPresenter class];
+	__xamarin_class_map [568].handle = [TelerikUI_TKCalendarYearTitleView_TKCalendarYearTitleViewAppearance class];
+	__xamarin_class_map [569].handle = [TKCalendarYearTitleView class];
+	__xamarin_class_map [570].handle = [TelerikUI_TKChart_TKChartAppearance class];
+	__xamarin_class_map [571].handle = [TKChart class];
+	__xamarin_class_map [572].handle = [TelerikUI_TKCoreStackLayoutView_TKCoreStackLayoutViewAppearance class];
+	__xamarin_class_map [573].handle = [TelerikUI_TKChartLegendContainer_TKChartLegendContainerAppearance class];
+	__xamarin_class_map [574].handle = [TKCoreStackLayoutView class];
+	__xamarin_class_map [575].handle = [TKChartLegendContainer class];
+	__xamarin_class_map [576].handle = [TelerikUI_TKChartLegendItem_TKChartLegendItemAppearance class];
+	__xamarin_class_map [577].handle = [TKChartLegendItem class];
+	__xamarin_class_map [578].handle = [TelerikUI_TKChartLegendView_TKChartLegendViewAppearance class];
+	__xamarin_class_map [579].handle = [TKChartLegendView class];
+	__xamarin_class_map [580].handle = [TelerikUI_TKChartPlotView_TKChartPlotViewAppearance class];
+	__xamarin_class_map [581].handle = [TKChartPlotView class];
+	__xamarin_class_map [582].handle = [TelerikUI_TKChartTitleView_TKChartTitleViewAppearance class];
+	__xamarin_class_map [583].handle = [TKChartTitleView class];
+	__xamarin_class_map [584].handle = [TelerikUI_TKCheckView_TKCheckViewAppearance class];
+	__xamarin_class_map [585].handle = [TKCheckView class];
+	__xamarin_class_map [586].handle = [TelerikUI_TKCollectionViewCell_TKCollectionViewCellAppearance class];
+	__xamarin_class_map [587].handle = [TKCollectionViewCell class];
+	__xamarin_class_map [588].handle = [TelerikUI_TKDataForm_TKDataFormAppearance class];
+	__xamarin_class_map [589].handle = [TKDataForm class];
+	__xamarin_class_map [590].handle = [TelerikUI_TKDataFormAccessoryView_TKDataFormAccessoryViewAppearance class];
+	__xamarin_class_map [591].handle = [TKDataFormAccessoryView class];
+	__xamarin_class_map [592].handle = [TelerikUI_TKDataFormEditor_TKDataFormEditorAppearance class];
+	__xamarin_class_map [593].handle = [TelerikUI_TKDataFormViewControllerEditor_TKDataFormViewControllerEditorAppearance class];
+	__xamarin_class_map [594].handle = [TelerikUI_TKDataFormAutocompleteEditor_TKDataFormAutocompleteEditorAppearance class];
+	__xamarin_class_map [595].handle = [TKDataFormEditor class];
+	__xamarin_class_map [596].handle = [TKDataFormViewControllerEditor class];
+	__xamarin_class_map [597].handle = [TKDataFormAutocompleteEditor class];
+	__xamarin_class_map [598].handle = [TelerikUI_TKDataFormAutoCompleteInlineEditor_TKDataFormAutoCompleteInlineEditorAppearance class];
+	__xamarin_class_map [599].handle = [TKDataFormAutoCompleteInlineEditor class];
+	__xamarin_class_map [600].handle = [TelerikUI_TKDataFormInlineEditor_TKDataFormInlineEditorAppearance class];
+	__xamarin_class_map [601].handle = [TelerikUI_TKDataFormDatePickerEditor_TKDataFormDatePickerEditorAppearance class];
+	__xamarin_class_map [602].handle = [TKDataFormInlineEditor class];
+	__xamarin_class_map [603].handle = [TKDataFormDatePickerEditor class];
+	__xamarin_class_map [604].handle = [TelerikUI_TKDataFormTextFieldEditor_TKDataFormTextFieldEditorAppearance class];
+	__xamarin_class_map [605].handle = [TelerikUI_TKDataFormDecimalEditor_TKDataFormDecimalEditorAppearance class];
+	__xamarin_class_map [606].handle = [TKDataFormTextFieldEditor class];
+	__xamarin_class_map [607].handle = [TKDataFormDecimalEditor class];
+	__xamarin_class_map [608].handle = [TelerikUI_TKDataFormEmailEditor_TKDataFormEmailEditorAppearance class];
+	__xamarin_class_map [609].handle = [TKDataFormEmailEditor class];
+	__xamarin_class_map [610].handle = [TelerikUI_TKDataFormMultilineTextEditor_TKDataFormMultilineTextEditorAppearance class];
+	__xamarin_class_map [611].handle = [TKDataFormMultilineTextEditor class];
+	__xamarin_class_map [612].handle = [TelerikUI_TKDataFormNamePhoneEditor_TKDataFormNamePhoneEditorAppearance class];
+	__xamarin_class_map [613].handle = [TKDataFormNamePhoneEditor class];
+	__xamarin_class_map [614].handle = [TelerikUI_TKDataFormNumberEditor_TKDataFormNumberEditorAppearance class];
+	__xamarin_class_map [615].handle = [TKDataFormNumberEditor class];
+	__xamarin_class_map [616].handle = [TelerikUI_TKDataFormOptionsEditor_TKDataFormOptionsEditorAppearance class];
+	__xamarin_class_map [617].handle = [TKDataFormOptionsEditor class];
+	__xamarin_class_map [618].handle = [TelerikUI_TKDataFormPasswordEditor_TKDataFormPasswordEditorAppearance class];
+	__xamarin_class_map [619].handle = [TKDataFormPasswordEditor class];
+	__xamarin_class_map [620].handle = [TelerikUI_TKDataFormPhoneEditor_TKDataFormPhoneEditorAppearance class];
+	__xamarin_class_map [621].handle = [TKDataFormPhoneEditor class];
+	__xamarin_class_map [622].handle = [TelerikUI_TKDataFormPickerViewEditor_TKDataFormPickerViewEditorAppearance class];
+	__xamarin_class_map [623].handle = [TKDataFormPickerViewEditor class];
+	__xamarin_class_map [624].handle = [TelerikUI_TKDataFormSegmentedEditor_TKDataFormSegmentedEditorAppearance class];
+	__xamarin_class_map [625].handle = [TKDataFormSegmentedEditor class];
+	__xamarin_class_map [626].handle = [TelerikUI_TKDataFormSliderEditor_TKDataFormSliderEditorAppearance class];
+	__xamarin_class_map [627].handle = [TKDataFormSliderEditor class];
+	__xamarin_class_map [628].handle = [TelerikUI_TKDataFormStepperEditor_TKDataFormStepperEditorAppearance class];
+	__xamarin_class_map [629].handle = [TKDataFormStepperEditor class];
+	__xamarin_class_map [630].handle = [TelerikUI_TKDataFormSwitchEditor_TKDataFormSwitchEditorAppearance class];
+	__xamarin_class_map [631].handle = [TKDataFormSwitchEditor class];
+	__xamarin_class_map [632].handle = [TelerikUI_TKDataFormTimePickerEditor_TKDataFormTimePickerEditorAppearance class];
+	__xamarin_class_map [633].handle = [TKDataFormTimePickerEditor class];
+	__xamarin_class_map [634].handle = [TelerikUI_TKEntityPropertyGroupEditorsView_TKEntityPropertyGroupEditorsViewAppearance class];
+	__xamarin_class_map [635].handle = [TKEntityPropertyGroupEditorsView class];
+	__xamarin_class_map [636].handle = [TelerikUI_TKEntityPropertyGroupTitleView_TKEntityPropertyGroupTitleViewAppearance class];
+	__xamarin_class_map [637].handle = [TKEntityPropertyGroupTitleView class];
+	__xamarin_class_map [638].handle = [TelerikUI_TKEntityPropertyGroupTitleViewIndicator_TKEntityPropertyGroupTitleViewIndicatorAppearance class];
+	__xamarin_class_map [639].handle = [TKEntityPropertyGroupTitleViewIndicator class];
+	__xamarin_class_map [640].handle = [TelerikUI_TKEntityPropertyGroupView_TKEntityPropertyGroupViewAppearance class];
+	__xamarin_class_map [641].handle = [TKEntityPropertyGroupView class];
+	__xamarin_class_map [642].handle = [TelerikUI_TKGauge_TKGaugeAppearance class];
+	__xamarin_class_map [643].handle = [TKGauge class];
+	__xamarin_class_map [644].handle = [TelerikUI_TKLabel_TKLabelAppearance class];
+	__xamarin_class_map [645].handle = [TKLabel class];
+	__xamarin_class_map [646].handle = [TelerikUI_TKLinearGauge_TKLinearGaugeAppearance class];
+	__xamarin_class_map [647].handle = [TKLinearGauge class];
+	__xamarin_class_map [648].handle = [TelerikUI_TKListView_TKListViewAppearance class];
+	__xamarin_class_map [649].handle = [TKListView class];
+	__xamarin_class_map [650].handle = [TelerikUI_TKListViewCellBackgroundView_TKListViewCellBackgroundViewAppearance class];
+	__xamarin_class_map [651].handle = [TKListViewCellBackgroundView class];
+	__xamarin_class_map [652].handle = [TelerikUI_TKListViewFooterCell_TKListViewFooterCellAppearance class];
+	__xamarin_class_map [653].handle = [TKListViewFooterCell class];
+	__xamarin_class_map [654].handle = [TelerikUI_TKListViewHeaderCell_TKListViewHeaderCellAppearance class];
+	__xamarin_class_map [655].handle = [TKListViewHeaderCell class];
+	__xamarin_class_map [656].handle = [TelerikUI_TKListViewLoadOnDemandCell_TKListViewLoadOnDemandCellAppearance class];
+	__xamarin_class_map [657].handle = [TKListViewLoadOnDemandCell class];
+	__xamarin_class_map [658].handle = [TelerikUI_TKListViewLoadOnDemandView_TKListViewLoadOnDemandViewAppearance class];
+	__xamarin_class_map [659].handle = [TKListViewLoadOnDemandView class];
+	__xamarin_class_map [660].handle = [TelerikUI_TKListViewPullToRefreshView_TKListViewPullToRefreshViewAppearance class];
+	__xamarin_class_map [661].handle = [TKListViewPullToRefreshView class];
+	__xamarin_class_map [662].handle = [TelerikUI_TKModifiedTextField_TKModifiedTextFieldAppearance class];
+	__xamarin_class_map [663].handle = [TKModifiedTextField class];
+	__xamarin_class_map [664].handle = [TelerikUI_TKRadialGauge_TKRadialGaugeAppearance class];
+	__xamarin_class_map [665].handle = [TKRadialGauge class];
+	__xamarin_class_map [666].handle = [TelerikUI_TKSideDrawer_TKSideDrawerAppearance class];
+	__xamarin_class_map [667].handle = [TKSideDrawer class];
+	__xamarin_class_map [668].handle = [TelerikUI_TKSideDrawerHeader_TKSideDrawerHeaderAppearance class];
+	__xamarin_class_map [669].handle = [TKSideDrawerHeader class];
+	__xamarin_class_map [670].handle = [TelerikUI_TKSideDrawerTableView_TKSideDrawerTableViewAppearance class];
+	__xamarin_class_map [671].handle = [TKSideDrawerTableView class];
+	__xamarin_class_map [672].handle = [TelerikUI_TKSideDrawerTableViewCell_TKSideDrawerTableViewCellAppearance class];
+	__xamarin_class_map [673].handle = [TKSideDrawerTableViewCell class];
+	__xamarin_class_map [674].handle = [TelerikUI_TKSideDrawerView_TKSideDrawerViewAppearance class];
+	__xamarin_class_map [675].handle = [TKSideDrawerView class];
+	__xamarin_class_map [676].handle = [TelerikUI_TKSlideView_TKSlideViewAppearance class];
+	__xamarin_class_map [677].handle = [TKSlideView class];
+	__xamarin_class_map [678].handle = [TelerikUI_TKSuggestionListView_TKSuggestionListViewAppearance class];
+	__xamarin_class_map [679].handle = [TKSuggestionListView class];
+	__xamarin_class_map [680].handle = [TelerikUI_TKTextField_TKTextFieldAppearance class];
+	__xamarin_class_map [681].handle = [TKTextField class];
+	__xamarin_class_map [682].handle = [TelerikUI_TKViewTransition_TKViewTransitionAppearance class];
+	__xamarin_class_map [683].handle = [TKViewTransition class];
+	__xamarin_class_map [684].handle = [BigTed_ProgressHUD class];
 	xamarin_add_registration_map (&__xamarin_registration_map);
 }
 

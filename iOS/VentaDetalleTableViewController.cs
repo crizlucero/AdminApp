@@ -55,12 +55,26 @@ namespace WorklabsMx.iOS
             Storage = SimpleStorage.EditGroup("Login");
             controller = new PickerItemsController();
             datosDescuento = new PromocionModel();
+
+
         }
 
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            membresias = new List<CarritoComprasDetalle>();
+            if (Helpers.InternetConectionHelper.VerificarConexion())
+            {
+                membresias = new List<CarritoComprasDetalle>();
+                foreach (CarritoCompras currentProduct in PreordenProductos)
+                {
+                    membresias.AddRange(controller.GetProductosMembresias(currentProduct.Tipo, currentProduct.Id, currentProduct.Cantidad, currentProduct.Meses, currentProduct.FechaInicio, currentProduct.ListaPrecioId, currentProduct.MonedaId, currentProduct.ImpuestoId, currentProduct.DescuentoId));
+                }
+
+            }
+            else
+            {
+                existeConeccion = false;
+            }
         }
 
         public override UIView GetViewForHeader(UITableView tableView, nint section)
@@ -139,7 +153,7 @@ namespace WorklabsMx.iOS
             if (isShowInformation)
             {
                 var currentProduct = PreordenProductos[indexPath.Row];
-                membresias.AddRange(controller.GetProductosMembresias(currentProduct.Tipo, currentProduct.Id, currentProduct.Cantidad, currentProduct.Meses, currentProduct.FechaInicio, currentProduct.ListaPrecioId, currentProduct.MonedaId, currentProduct.ImpuestoId, currentProduct.DescuentoId));
+                //membresias.AddRange(controller.GetProductosMembresias(currentProduct.Tipo, currentProduct.Id, currentProduct.Cantidad, currentProduct.Meses, currentProduct.FechaInicio, currentProduct.ListaPrecioId, currentProduct.MonedaId, currentProduct.ImpuestoId, currentProduct.DescuentoId));
                 var currentProductCell = (CeldaVentaDetalle)tableView.DequeueReusableCell(IdentificadorCeldaBody, indexPath);
                 currentProductCell.UpdateCell(currentProduct);
                 this.WillDisplay(indexPath.Row);
@@ -193,36 +207,45 @@ namespace WorklabsMx.iOS
             var ConfirmarCompra = UIAlertController.Create("Confirmar compra", "¿Proceder a pagar?", UIAlertControllerStyle.Alert);
             ConfirmarCompra.AddAction(UIAlertAction.Create("Aceptar", UIAlertActionStyle.Default, ((UIAlertAction obj) => 
             {
-
                 if (ordenventa.promocion_id == null)
                 {
                     ordenventa.promocion_id = "0";
                 }
-                int ValorEncabezado = new PagosController().AddOrdenVentaEncabezado(int.Parse(ordenventa.moneda_id), int.Parse(ordenventa.moneda_id), int.Parse(ordenventa.impuesto_id), int.Parse(ordenventa.promocion_id), int.Parse(ordenventa.descuento_id), ordenventa.folio, Convert.ToDecimal(ordenventa.suma), Convert.ToDecimal(ordenventa.porcentajeDecuento), Convert.ToDecimal(ordenventa.descuento), Convert.ToDecimal(ordenventa.subTotal), Convert.ToDecimal(ordenventa.impuesto), Convert.ToDecimal(ordenventa.total), Convert.ToDecimal(ordenventa.pagado), Convert.ToDecimal(ordenventa.facturado));
-                if(ValorEncabezado >= 0)
+
+                if (Helpers.InternetConectionHelper.VerificarConexion())
                 {
-                    foreach(CarritoComprasDetalle membresia in membresias)
+                    int ValorEncabezado = new PagosController().AddOrdenVentaEncabezado(int.Parse(ordenventa.moneda_id), int.Parse(ordenventa.moneda_id), int.Parse(ordenventa.impuesto_id), int.Parse(ordenventa.promocion_id), int.Parse(ordenventa.descuento_id), ordenventa.folio, Convert.ToDecimal(ordenventa.suma), Convert.ToDecimal(ordenventa.porcentajeDecuento), Convert.ToDecimal(ordenventa.descuento), Convert.ToDecimal(ordenventa.subTotal), Convert.ToDecimal(ordenventa.impuesto), Convert.ToDecimal(ordenventa.total), Convert.ToDecimal(ordenventa.pagado), Convert.ToDecimal(ordenventa.facturado));
+                    if (ValorEncabezado >= 0)
                     {
-                        int ValorDetalle = new PagosController().AddOrdenVentaDetalle(ValorEncabezado, membresia.Membresia_Id, membresia.Inscripcion_Membresia_Id, membresia.Lista_Precio_Membresia_Id, membresia.Producto_Id, membresia.Lista_Precio_Producto_Id, membresia.Carrito_Compras_Detalle_Descripcion, int.Parse(membresia.Carrito_Compras_Detalle_Cantidad), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Precio), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Prorrateo), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Suma), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Descuento), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Subtotal), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Impuesto), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Total), membresia.Tipo);
-                        if (ValorDetalle >= 0)
+                        foreach (CarritoComprasDetalle membresia in membresias)
                         {
-                            VentaRealizada = true;
+                            int ValorDetalle = new PagosController().AddOrdenVentaDetalle(ValorEncabezado, membresia.Membresia_Id, membresia.Inscripcion_Membresia_Id, membresia.Lista_Precio_Membresia_Id, membresia.Producto_Id, membresia.Lista_Precio_Producto_Id, membresia.Carrito_Compras_Detalle_Descripcion, int.Parse(membresia.Carrito_Compras_Detalle_Cantidad), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Precio), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Prorrateo), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Suma), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Descuento), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Subtotal), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Impuesto), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Total), membresia.Tipo);
+                            if (ValorDetalle >= 0)
+                            {
+                                VentaRealizada = true;
+                            }
+                            else
+                            {
+                                VentaRealizada = false;
+                            }
                         }
-                        else 
+                        if (VentaRealizada)
                         {
-                            VentaRealizada = false;
+                            new MessageDialog().SendToast("El pago fue realizado exitosamente");
+
                         }
                     }
-                    if (VentaRealizada)
+                    else
                     {
-                        new MessageDialog().SendToast("El pago fue realizado exitosamente");
-
+                        new MessageDialog().SendToast("No se pudo realizar el pago");
                     }
                 }
                 else
                 {
-                    new MessageDialog().SendToast("No se pudo realizar el pago");
+                    new MessageDialog().SendToast("No tienes conexión a internet, intenta mas tarde");
                 }
+
+
             })));
             ConfirmarCompra.AddAction(UIAlertAction.Create("Cancelar", UIAlertActionStyle.Default, null));
             this.PresentViewController(ConfirmarCompra, true, null);

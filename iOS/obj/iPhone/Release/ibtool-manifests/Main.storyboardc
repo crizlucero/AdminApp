@@ -8,6 +8,21 @@
 	<dict/>
 	<key>com.apple.ibtool.document.warnings</key>
 	<dict>
+		<key>10306</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>10306</string>
+				</array>
+				<key>message</key>
+				<string>“Mi Membresia Controller“ is unreachable because it has no entry points, and no identifier for runtime access via -[UIStoryboard instantiateViewControllerWithIdentifier:].</string>
+				<key>type</key>
+				<string>IBUnsupportedConfiguration</string>
+				<key>type-value</key>
+				<integer>9</integer>
+			</dict>
+		</array>
 		<key>308-Y4-fOf</key>
 		<array>
 			<dict>
@@ -68,36 +83,6 @@
 				<integer>7</integer>
 			</dict>
 		</array>
-		<key>Q4l-hq-4Uz</key>
-		<array>
-			<dict>
-				<key>affected-objects</key>
-				<array>
-					<string>Q4l-hq-4Uz</string>
-				</array>
-				<key>message</key>
-				<string>“Seccion Comentarios Table View Controller“ is unreachable because it has no entry points, and no identifier for runtime access via -[UIStoryboard instantiateViewControllerWithIdentifier:].</string>
-				<key>type</key>
-				<string>IBUnsupportedConfiguration</string>
-				<key>type-value</key>
-				<integer>9</integer>
-			</dict>
-		</array>
-		<key>a3U-P2-Yub</key>
-		<array>
-			<dict>
-				<key>affected-objects</key>
-				<array>
-					<string>a3U-P2-Yub</string>
-				</array>
-				<key>message</key>
-				<string>Prototype table cells must have reuse identifiers</string>
-				<key>type</key>
-				<string>IBUnsupportedConfiguration</string>
-				<key>type-value</key>
-				<integer>9</integer>
-			</dict>
-		</array>
 		<key>jlP-VZ-ipH</key>
 		<array>
 			<dict>
@@ -111,21 +96,6 @@
 				<string>IBDeprecated</string>
 				<key>type-value</key>
 				<integer>7</integer>
-			</dict>
-		</array>
-		<key>y7H-c3-sdc</key>
-		<array>
-			<dict>
-				<key>affected-objects</key>
-				<array>
-					<string>y7H-c3-sdc</string>
-				</array>
-				<key>message</key>
-				<string>Prototype table cells must have reuse identifiers</string>
-				<key>type</key>
-				<string>IBUnsupportedConfiguration</string>
-				<key>type-value</key>
-				<integer>9</integer>
 			</dict>
 		</array>
 	</dict>

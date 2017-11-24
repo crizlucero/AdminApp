@@ -3,14 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>get-task-allow</key>
-	<false/>
+	<true/>
 	<key>application-identifier</key>
 	<string>3VMPS2N2KS.com.WorklabsMx.WorklabsMx</string>
 	<key>com.apple.developer.team-identifier</key>
 	<string>3VMPS2N2KS</string>
 	<key>aps-environment</key>
-	<string>production</string>
-	<key>beta-reports-active</key>
-	<true/>
+	<string>development</string>
 </dict>
 </plist>

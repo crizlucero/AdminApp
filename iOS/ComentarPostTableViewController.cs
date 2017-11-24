@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Photos;
 using AVFoundation;
 using WorklabsMx.Helpers;
+using CoreGraphics;
 
 namespace WorklabsMx.iOS
 {
@@ -28,6 +29,8 @@ namespace WorklabsMx.iOS
 
         UIImage SelectedImage;
 
+        nfloat size; 
+
         public ComentarPostTableViewController (IntPtr handle) : base (handle)
         {
             
@@ -41,6 +44,8 @@ namespace WorklabsMx.iOS
              var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
             StyleHelper.Style(vwSeccionComentarios.Layer);
+            size = UIScreen.MainScreen.Bounds.Height - TamañoHeader - 100;
+            this.vwVistaSeccionComentarios.Frame = new CGRect(this.vwVistaSeccionComentarios.Frame.X, this.vwVistaSeccionComentarios.Frame.Y, this.vwVistaSeccionComentarios.Frame.Width, size);
         }
 
         public override void ViewWillDisappear(bool animated)

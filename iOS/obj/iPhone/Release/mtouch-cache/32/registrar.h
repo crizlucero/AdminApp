@@ -57,6 +57,15 @@
 @class EscritorioController;
 @class DetalleVentaViewController;
 @class CanjearCuponController;
+@class cloudViewController;
+@class TelefoniaTableView;
+@class ProductosMiCuentaViewController;
+@class MembresiasMiCuentaViewController;
+@class CuentaProductosCell;
+@class NoInfoCuentaProductosCell;
+@class CuentaMembresiasCell;
+@class NoInfoCuentaMembresiasCell;
+@class MiCuentaViewController;
 @class WorklabsMx_iOS_ViewElements_UICheckBox;
 @class WorklabsMx_iOS_ViewElements_HorarioEventos;
 @class WorklabsMx_iOS_ViewElements_UIDropdownList;
@@ -65,6 +74,8 @@
 @class WorklabsMx_iOS_Models_PickerModel;
 @class WorklabsMx_iOS_Models_SucursalesModel;
 @class WorklabsMx_iOS_Models_CarritoCompras;
+@class WorklabsMx_iOS_Models_OrdenVentaController;
+@class WorklabsMx_iOS_Models_OrdenVentaDetalle;
 @class WorklabsMx_iOS_Styles_STLButton;
 @class WorklabsMx_iOS_Styles_STLTextField;
 @class WorklabsMx_iOS_Styles_STLLabel;
@@ -1197,6 +1208,149 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
+@interface cloudViewController : UITableViewController {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(void) viewDidLoad;
+	-(void) viewWillAppear:(BOOL)p0;
+	-(void) viewDidAppear:(BOOL)p0;
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
+	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1;
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface TelefoniaTableView : UITableViewController {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(void) viewDidLoad;
+	-(void) viewWillAppear:(BOOL)p0;
+	-(void) viewDidAppear:(BOOL)p0;
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
+	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1;
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface ProductosMiCuentaViewController : UITableViewController {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(void) viewDidLoad;
+	-(void) viewWillAppear:(BOOL)p0;
+	-(void) viewDidAppear:(BOOL)p0;
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
+	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1;
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface MembresiasMiCuentaViewController : UITableViewController {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(void) viewDidLoad;
+	-(void) viewWillAppear:(BOOL)p0;
+	-(void) viewDidAppear:(BOOL)p0;
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
+	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1;
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface CuentaProductosCell : UITableViewCell {
+}
+	@property (nonatomic, assign) UIButton * btnAgregar;
+	@property (nonatomic, assign) UILabel * lblCantidad;
+	@property (nonatomic, assign) UILabel * lblFechaVencimiento;
+	@property (nonatomic, assign) UILabel * lblNombreProducto;
+	@property (nonatomic, assign) UIView * vwProductos;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnAgregar;
+	-(void) setBtnAgregar:(UIButton *)p0;
+	-(UILabel *) lblCantidad;
+	-(void) setLblCantidad:(UILabel *)p0;
+	-(UILabel *) lblFechaVencimiento;
+	-(void) setLblFechaVencimiento:(UILabel *)p0;
+	-(UILabel *) lblNombreProducto;
+	-(void) setLblNombreProducto:(UILabel *)p0;
+	-(UIView *) vwProductos;
+	-(void) setVwProductos:(UIView *)p0;
+	-(void) btnAgregar_TouchUpInside:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface NoInfoCuentaProductosCell : UITableViewCell {
+}
+	@property (nonatomic, assign) UILabel * lblMensaje;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UILabel *) lblMensaje;
+	-(void) setLblMensaje:(UILabel *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface CuentaMembresiasCell : UITableViewCell {
+}
+	@property (nonatomic, assign) UIButton * btnRenovar;
+	@property (nonatomic, assign) UILabel * lblCantidad;
+	@property (nonatomic, assign) UILabel * lblFechaVencimiento;
+	@property (nonatomic, assign) UILabel * lblNombreMembresia;
+	@property (nonatomic, assign) UIView * vwMembresias;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnRenovar;
+	-(void) setBtnRenovar:(UIButton *)p0;
+	-(UILabel *) lblCantidad;
+	-(void) setLblCantidad:(UILabel *)p0;
+	-(UILabel *) lblFechaVencimiento;
+	-(void) setLblFechaVencimiento:(UILabel *)p0;
+	-(UILabel *) lblNombreMembresia;
+	-(void) setLblNombreMembresia:(UILabel *)p0;
+	-(UIView *) vwMembresias;
+	-(void) setVwMembresias:(UIView *)p0;
+	-(void) btnRenovar_TouchUPInside:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface NoInfoCuentaMembresiasCell : UITableViewCell {
+}
+	@property (nonatomic, assign) UILabel * lblMensaje;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UILabel *) lblMensaje;
+	-(void) setLblMensaje:(UILabel *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface MiCuentaViewController : UITabBarController {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
 @interface WorklabsMx_iOS_ViewElements_UICheckBox : UIView {
 }
 	-(void) release;
@@ -1271,6 +1425,26 @@
 @end
 
 @interface WorklabsMx_iOS_Models_CarritoCompras : NSObject {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(BOOL) conformsToProtocol:(void *)p0;
+	-(id) init;
+@end
+
+@interface WorklabsMx_iOS_Models_OrdenVentaController : NSObject {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(BOOL) conformsToProtocol:(void *)p0;
+	-(id) init;
+@end
+
+@interface WorklabsMx_iOS_Models_OrdenVentaDetalle : NSObject {
 }
 	-(void) release;
 	-(id) retain;
@@ -1718,10 +1892,16 @@
 
 @interface ComentarPostTableViewController : UITableViewController {
 }
+	@property (nonatomic, assign) UIView * vwSeccionComentarios;
+	@property (nonatomic, assign) UIView * vwVistaSeccionComentarios;
 	-(void) release;
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIView *) vwSeccionComentarios;
+	-(void) setVwSeccionComentarios:(UIView *)p0;
+	-(UIView *) vwVistaSeccionComentarios;
+	-(void) setVwVistaSeccionComentarios:(UIView *)p0;
 	-(void) viewDidLoad;
 	-(void) viewWillDisappear:(BOOL)p0;
 	-(UIView *) tableView:(UITableView *)p0 viewForHeaderInSection:(NSInteger)p1;
@@ -1782,6 +1962,7 @@
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
 	-(void) btnAtras:(UIBarButtonItem *)p0;
+	-(void) btnPagar:(UIBarButtonItem *)p0;
 	-(void) viewDidLoad;
 	-(void) viewWillAppear:(BOOL)p0;
 	-(UIView *) tableView:(UITableView *)p0 viewForHeaderInSection:(NSInteger)p1;
