@@ -70,6 +70,7 @@ namespace WorklabsMx.Droid
             refresher.Refresh += async (sender, e) =>
             {
                 tlComentarios.RemoveAllViews();
+                comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
                 await FillComments();
                 ((SwipeRefreshLayout)sender).Refreshing = false;
             };
@@ -79,10 +80,11 @@ namespace WorklabsMx.Droid
                 System.IO.MemoryStream stream = new System.IO.MemoryStream();
                 bitmap?.Compress(Bitmap.CompressFormat.Png, 0, stream);
                 byte[] bitmapData = stream?.ToArray();
-                if (new EscritorioController().CommentPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), FindViewById<EditText>(Resource.Id.txtComment).Text, bitmapData))
+                if (DashboardController.CommentPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), FindViewById<EditText>(Resource.Id.txtComment).Text, bitmapData))
                 {
                     FindViewById<EditText>(Resource.Id.txtComment).Text = "";
                     FindViewById<EditText>(Resource.Id.txtComment).ClearFocus();
+                    comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
                     await FillComments();
                     svComentarios.ScrollY = svComentarios.Height;
                 }
@@ -133,8 +135,8 @@ namespace WorklabsMx.Droid
 
         async Task FillComments()
         {
-            AndHUD.Shared.Show(this, null, -1, MaskType.Black);
-            await Task.Delay(500);
+            //AndHUD.Shared.Show(this, null, -1, MaskType.Black);
+            //await Task.Delay(500);
 
             comentarios.Skip(page * sizePage).Take(sizePage).ToList().ForEach(comentario =>
             {
@@ -350,7 +352,7 @@ namespace WorklabsMx.Droid
                 row.AddView(glPost);
                 tlComentarios.AddView(row);
             });
-            AndHUD.Shared.Dismiss(this);
+            //AndHUD.Shared.Dismiss(this);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu) => base.OnCreateOptionsMenu(menu);
