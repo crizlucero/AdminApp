@@ -729,6 +729,8 @@
     <Compile Include="MiCuentaViewController.designer.cs">
       <DependentUpon>MiCuentaViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\OrdenVentaController.cs" />
+    <Compile Include="Models\OrdenVentaDetalle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

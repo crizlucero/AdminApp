@@ -10,6 +10,7 @@
       <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="155" Column="1" />
       <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="470" Column="1" />
     </Files>
+>>>>>>> 700b7a72cf68786a09c741dd477f7707ed6bff83
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
