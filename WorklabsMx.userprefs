@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Cloud/cloudViewController.cs">
     <Files>
       <File FileName="iOS/ViewControllers/Cloud/cloudViewController.cs" Line="4" Column="25" />
       <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="34" Column="13" />
