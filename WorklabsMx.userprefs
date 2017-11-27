@@ -1,32 +1,19 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="iOS/ComentarPostTableViewController.cs" Line="11" Column="20" />
-      <File FileName="iOS/ViewControllers/Servicios/CarritoCompraController.cs" Line="14" Column="26" />
-      <File FileName="iOS/ViewControllers/Servicios/TarifasController.cs" Line="243" Column="63" />
-      <File FileName="iOS/MembresiasMiCuentaViewController.cs" Line="41" Column="40" />
-      <File FileName="iOS/ProductosMiCuentaViewController.cs" Line="1" Column="1" />
-      <File FileName="iOS/TabBarDetalleVenta.cs" Line="51" Column="31" />
-      <File FileName="iOS/VentaDetalleTableViewController.cs" Line="16" Column="23" />
-      <File FileName="WorklabsMx/Controllers/PagosController.cs" Line="76" Column="20" />
-      <File FileName="iOS/CarritoProductos.cs" Line="141" Column="43" />
+      <File FileName="iOS/ViewControllers/Cloud/cloudViewController.cs" Line="53" Column="10" />
+      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="34" Column="13" />
+      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="19" Column="27" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>ordenventa</Value>
-          <Value>membresias</Value>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/VentaDetalleTableViewController.cs" relfile="iOS/VentaDetalleTableViewController.cs" line="201" column="36" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/iOS/ViewControllers/Publicar/PublicarPostViewController.cs" relfile="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" line="93" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" identitySerialNumber="583D18CE90225D8C">
-    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
-  </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.81C89FB3-CF65-4489-AC34-27D55C246456" />
   <MultiItemStartupConfigurations />
 </Properties>

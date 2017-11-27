@@ -68,7 +68,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Distribution: Espacio Claro, S.A. de C.V. (3VMPS2N2KS)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -81,7 +81,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
     <MtouchI18n>west</MtouchI18n>
-    <CodesignProvision>WorkLabsMxPP</CodesignProvision>
+    <CodesignProvision></CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -195,9 +195,6 @@
     <ImageAsset Include="Assets.xcassets\ic_business_center.imageset\ic_business_center%402x.png" />
     <ImageAsset Include="Assets.xcassets\ic_business_center.imageset\ic_business_center%403x.png" />
     <ImageAsset Include="Assets.xcassets\ic_call.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_call.imageset\ic_call.png" />
-    <ImageAsset Include="Assets.xcassets\ic_call.imageset\ic_call%402x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_call.imageset\ic_call%403x.png" />
     <ImageAsset Include="Assets.xcassets\ic_public.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_public.imageset\ic_public.png" />
     <ImageAsset Include="Assets.xcassets\ic_public.imageset\ic_public_2x.png" />
@@ -219,9 +216,6 @@
     <ImageAsset Include="Assets.xcassets\ic_place.imageset\ic_place_2x.png" />
     <ImageAsset Include="Assets.xcassets\ic_place.imageset\ic_place_3x.png" />
     <ImageAsset Include="Assets.xcassets\ic_school.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_school.imageset\ic_school.png" />
-    <ImageAsset Include="Assets.xcassets\ic_school.imageset\ic_school_2x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_school.imageset\ic_school_3x.png" />
     <ImageAsset Include="Assets.xcassets\ic_share.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_share.imageset\ic_share.png" />
     <ImageAsset Include="Assets.xcassets\ic_share.imageset\ic_share_2x.png" />
@@ -459,6 +453,58 @@
     <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\Logotipo_500px.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icono_1024.png" />
+    <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Artboard 19.png" />
+    <ImageAsset Include="Assets.xcassets\Camera.imageset\Artboard 15.png" />
+    <ImageAsset Include="Assets.xcassets\ic_call.imageset\icons8-phone-30.png" />
+    <ImageAsset Include="Assets.xcassets\ic_call.imageset\icons8-phone-60.png" />
+    <ImageAsset Include="Assets.xcassets\ic_call.imageset\icons8-phone-90.png" />
+    <ImageAsset Include="Assets.xcassets\ic_school.imageset\icons8-id-card-30.png" />
+    <ImageAsset Include="Assets.xcassets\ic_school.imageset\icons8-id-card-60.png" />
+    <ImageAsset Include="Assets.xcassets\ic_school.imageset\icons8-id-card-90.png" />
+    <ImageAsset Include="Assets.xcassets\Habilidades.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Habilidades.imageset\icons8-analyzing-skill-filled-30.png" />
+    <ImageAsset Include="Assets.xcassets\Habilidades.imageset\icons8-analyzing-skill-filled-60.png" />
+    <ImageAsset Include="Assets.xcassets\Habilidades.imageset\icons8-analyzing-skill-filled-90.png" />
+    <ImageAsset Include="Assets.xcassets\Puesto.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Puesto.imageset\icons8-briefcase-30.png" />
+    <ImageAsset Include="Assets.xcassets\Puesto.imageset\icons8-briefcase-60.png" />
+    <ImageAsset Include="Assets.xcassets\Puesto.imageset\icons8-briefcase-90.png" />
+    <ImageAsset Include="Assets.xcassets\Mail.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Mail.imageset\icons8-email-30.png" />
+    <ImageAsset Include="Assets.xcassets\Mail.imageset\icons8-email-60.png" />
+    <ImageAsset Include="Assets.xcassets\Mail.imageset\icons8-email-90.png" />
+    <ImageAsset Include="Assets.xcassets\Genero.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Genero.imageset\icons8-gender-30.png" />
+    <ImageAsset Include="Assets.xcassets\Genero.imageset\icons8-gender-60.png" />
+    <ImageAsset Include="Assets.xcassets\Genero.imageset\icons8-gender-90.png" />
+    <ImageAsset Include="Assets.xcassets\Profesion.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Profesion.imageset\icons8-id-card-30.png" />
+    <ImageAsset Include="Assets.xcassets\Profesion.imageset\icons8-id-card-60.png" />
+    <ImageAsset Include="Assets.xcassets\Profesion.imageset\icons8-id-card-90.png" />
+    <ImageAsset Include="Assets.xcassets\Telefono.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Telefono.imageset\icons8-phone-30.png" />
+    <ImageAsset Include="Assets.xcassets\Telefono.imageset\icons8-phone-60.png" />
+    <ImageAsset Include="Assets.xcassets\Telefono.imageset\icons8-phone-90.png" />
+    <ImageAsset Include="Assets.xcassets\Celular.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Celular.imageset\icons8-phone-30.png" />
+    <ImageAsset Include="Assets.xcassets\Celular.imageset\icons8-phone-60.png" />
+    <ImageAsset Include="Assets.xcassets\Celular.imageset\icons8-phone-90.png" />
+    <ImageAsset Include="Assets.xcassets\Editar.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Editar.imageset\icons8-edit-30.png" />
+    <ImageAsset Include="Assets.xcassets\Editar.imageset\icons8-edit-60.png" />
+    <ImageAsset Include="Assets.xcassets\Editar.imageset\icons8-edit-90.png" />
+    <ImageAsset Include="Assets.xcassets\Nombre.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Nombre.imageset\icons8-account-30.png" />
+    <ImageAsset Include="Assets.xcassets\Nombre.imageset\icons8-account-60.png" />
+    <ImageAsset Include="Assets.xcassets\Nombre.imageset\icons8-account-90.png" />
+    <ImageAsset Include="Assets.xcassets\Apellidos.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Apellidos.imageset\icons8-account-30 %281%29.png" />
+    <ImageAsset Include="Assets.xcassets\Apellidos.imageset\icons8-account-60 %281%29.png" />
+    <ImageAsset Include="Assets.xcassets\Apellidos.imageset\icons8-account-90 %281%29.png" />
+    <ImageAsset Include="Assets.xcassets\Nacimiento.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Nacimiento.imageset\icons8-birth-date-filled-30.png" />
+    <ImageAsset Include="Assets.xcassets\Nacimiento.imageset\icons8-birth-date-filled-60.png" />
+    <ImageAsset Include="Assets.xcassets\Nacimiento.imageset\icons8-birth-date-filled-90.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -476,10 +522,6 @@
     <Compile Include="ViewControllers\TableViewController.cs" />
     <Compile Include="ViewControllers\TableViewController.designer.cs">
       <DependentUpon>TableViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\DashboardController.cs" />
-    <Compile Include="ViewControllers\DashboardController.designer.cs">
-      <DependentUpon>DashboardController.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ImageGallery.cs" />
     <Compile Include="ViewControllers\AccesoController.cs" />
@@ -510,10 +552,6 @@
     <Compile Include="ViewElements\UIDropdownList.cs" />
     <Compile Include="ViewElements\PostCard.cs" />
     <Compile Include="ViewElements\CommentCard.cs" />
-    <Compile Include="ViewControllers\FacturasController.cs" />
-    <Compile Include="ViewControllers\FacturasController.designer.cs">
-      <DependentUpon>FacturasController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Styles\STLCarritoCompra.cs" />
     <Compile Include="ViewControllers\MiMembresiaController.cs" />
     <Compile Include="ViewControllers\MiMembresiaController.designer.cs">
@@ -600,148 +638,148 @@
     <Compile Include="Styles\STLLine.cs" />
     <Compile Include="Helpers\InternetConectionHelper.cs" />
     <Compile Include="Helpers\StyleHelper.cs" />
-    <Compile Include="ViewControllers\Post\NoComentsCell.cs" />
-    <Compile Include="ViewControllers\Post\NoComentsCell.designer.cs">
-      <DependentUpon>NoComentsCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\Post\ComentariosBodyCell.cs" />
-    <Compile Include="ViewControllers\Post\ComentariosBodyCell.designer.cs">
-      <DependentUpon>ComentariosBodyCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\Post\PublicarPostViewController.cs" />
-    <Compile Include="ViewControllers\Post\PublicarPostViewController.designer.cs">
+    <Compile Include="ViewControllers\Publicar\PublicarPostViewController.cs" />
+    <Compile Include="ViewControllers\Publicar\PublicarPostViewController.designer.cs">
       <DependentUpon>PublicarPostViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ComentarPostTableViewController.cs" />
-    <Compile Include="ComentarPostTableViewController.designer.cs">
-      <DependentUpon>ComentarPostTableViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ComentarPostHeaderCell.cs" />
-    <Compile Include="ComentarPostHeaderCell.designer.cs">
-      <DependentUpon>ComentarPostHeaderCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ComentarioViewCell.designer.cs">
-      <DependentUpon>ComentarioViewCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NoComentariosViewCell.cs" />
-    <Compile Include="NoComentariosViewCell.designer.cs">
-      <DependentUpon>NoComentariosViewCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SeccionComentariosTableViewController.cs" />
-    <Compile Include="SeccionComentariosTableViewController.designer.cs">
-      <DependentUpon>SeccionComentariosTableViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DetailCommentImage.cs" />
-    <Compile Include="DetailCommentImage.designer.cs">
-      <DependentUpon>DetailCommentImage.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CamaraHelper.cs" />
     <Compile Include="Helpers\Settings.cs" />
-    <Compile Include="CarritoProductos.cs" />
-    <Compile Include="CarritoProductos.designer.cs">
-      <DependentUpon>CarritoProductos.cs</DependentUpon>
-    </Compile>
     <Compile Include="HeaderCarritoProductos.cs" />
     <Compile Include="HeaderCarritoProductos.designer.cs">
       <DependentUpon>HeaderCarritoProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="CeldaCarritoProductos.cs" />
-    <Compile Include="CeldaCarritoProductos.designer.cs">
-      <DependentUpon>CeldaCarritoProductos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CeldaNoProductos.cs" />
-    <Compile Include="CeldaNoProductos.designer.cs">
-      <DependentUpon>CeldaNoProductos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TableViewMembresia.cs" />
-    <Compile Include="TableViewMembresia.designer.cs">
-      <DependentUpon>TableViewMembresia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TableViewCellMembresias.cs" />
-    <Compile Include="TableViewCellMembresias.designer.cs">
-      <DependentUpon>TableViewCellMembresias.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TableViewCellNoMembresias.cs" />
-    <Compile Include="TableViewCellNoMembresias.designer.cs">
-      <DependentUpon>TableViewCellNoMembresias.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\SucursalesModel.cs" />
     <Compile Include="Models\CarritoCompras.cs" />
-    <Compile Include="ComentarioViewCell.cs" />
-    <Compile Include="VentaDetalleTableViewController.designer.cs">
-      <DependentUpon>VentaDetalleTableViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CeldaNoDetalleVenta.cs" />
-    <Compile Include="CeldaNoDetalleVenta.designer.cs">
-      <DependentUpon>CeldaNoDetalleVenta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CeldaVentaDetalle.cs" />
-    <Compile Include="VentaDetalleTableViewController.cs" />
-    <Compile Include="CeldaVentaDetalle.designer.cs">
-      <DependentUpon>CeldaVentaDetalle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VentaDetalleHeader.cs" />
-    <Compile Include="VentaDetalleHeader.designer.cs">
-      <DependentUpon>VentaDetalleHeader.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TabBarDetalleVenta.cs" />
-    <Compile Include="TabBarDetalleVenta.designer.cs">
-      <DependentUpon>TabBarDetalleVenta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EscritorioHeaderCell.cs" />
-    <Compile Include="EscritorioHeaderCell.designer.cs">
-      <DependentUpon>EscritorioHeaderCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewElements\EscritorioController.cs" />
-    <Compile Include="ViewElements\EscritorioController.designer.cs">
-      <DependentUpon>EscritorioController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DetalleVentaViewController.cs" />
-    <Compile Include="DetalleVentaViewController.designer.cs">
-      <DependentUpon>DetalleVentaViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CanjearCuponController.cs" />
-    <Compile Include="CanjearCuponController.designer.cs">
-      <DependentUpon>CanjearCuponController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="cloudViewController.cs" />
-    <Compile Include="cloudViewController.designer.cs">
-      <DependentUpon>cloudViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TelefoniaTableView.cs" />
-    <Compile Include="TelefoniaTableView.designer.cs">
-      <DependentUpon>TelefoniaTableView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProductosMiCuentaViewController.cs" />
-    <Compile Include="ProductosMiCuentaViewController.designer.cs">
-      <DependentUpon>ProductosMiCuentaViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MembresiasMiCuentaViewController.cs" />
-    <Compile Include="MembresiasMiCuentaViewController.designer.cs">
-      <DependentUpon>MembresiasMiCuentaViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CuentaProductosCell.cs" />
-    <Compile Include="CuentaProductosCell.designer.cs">
-      <DependentUpon>CuentaProductosCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NoInfoCuentaProductosCell.cs" />
-    <Compile Include="NoInfoCuentaProductosCell.designer.cs">
-      <DependentUpon>NoInfoCuentaProductosCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CuentaMembresiasCell.cs" />
-    <Compile Include="CuentaMembresiasCell.designer.cs">
-      <DependentUpon>CuentaMembresiasCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NoInfoCuentaMembresiasCell.cs" />
-    <Compile Include="NoInfoCuentaMembresiasCell.designer.cs">
-      <DependentUpon>NoInfoCuentaMembresiasCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MiCuentaViewController.cs" />
-    <Compile Include="MiCuentaViewController.designer.cs">
-      <DependentUpon>MiCuentaViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\OrdenVentaController.cs" />
     <Compile Include="Models\OrdenVentaDetalle.cs" />
+    <Compile Include="ViewControllers\Escritorio\ComentariosBodyCell.cs" />
+    <Compile Include="ViewControllers\Escritorio\ComentariosBodyCell.designer.cs">
+      <DependentUpon>ComentariosBodyCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Escritorio\EscritorioController.cs" />
+    <Compile Include="ViewControllers\Escritorio\EscritorioController.designer.cs">
+      <DependentUpon>EscritorioController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Escritorio\EscritorioHeaderCell.cs" />
+    <Compile Include="ViewControllers\Escritorio\EscritorioHeaderCell.designer.cs">
+      <DependentUpon>EscritorioHeaderCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Escritorio\NoComentsCell.cs" />
+    <Compile Include="ViewControllers\Escritorio\NoComentsCell.designer.cs">
+      <DependentUpon>NoComentsCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Comentarios\ComentarPostTableViewController.cs" />
+    <Compile Include="ViewControllers\Comentarios\ComentarPostTableViewController.designer.cs">
+      <DependentUpon>ComentarPostTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Comentarios\ComentarPostHeaderCell.cs" />
+    <Compile Include="ViewControllers\Comentarios\ComentarPostHeaderCell.designer.cs">
+      <DependentUpon>ComentarPostHeaderCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Comentarios\SeccionComentariosTableViewController.cs" />
+    <Compile Include="ViewControllers\Comentarios\SeccionComentariosTableViewController.designer.cs">
+      <DependentUpon>SeccionComentariosTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Comentarios\ComentarioViewCell.cs" />
+    <Compile Include="ViewControllers\Comentarios\ComentarioViewCell.designer.cs">
+      <DependentUpon>ComentarioViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Comentarios\NoComentariosViewCell.cs" />
+    <Compile Include="ViewControllers\Comentarios\NoComentariosViewCell.designer.cs">
+      <DependentUpon>NoComentariosViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiCuenta\MiCuentaViewController.cs" />
+    <Compile Include="ViewControllers\MiCuenta\MiCuentaViewController.designer.cs">
+      <DependentUpon>MiCuentaViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiCuenta\Productos\ProductosMiCuentaViewController.cs" />
+    <Compile Include="ViewControllers\MiCuenta\Productos\ProductosMiCuentaViewController.designer.cs">
+      <DependentUpon>ProductosMiCuentaViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiCuenta\Productos\CuentaProductosCell.cs" />
+    <Compile Include="ViewControllers\MiCuenta\Productos\CuentaProductosCell.designer.cs">
+      <DependentUpon>CuentaProductosCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiCuenta\Productos\NoInfoCuentaProductosCell.cs" />
+    <Compile Include="ViewControllers\MiCuenta\Productos\NoInfoCuentaProductosCell.designer.cs">
+      <DependentUpon>NoInfoCuentaProductosCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiCuenta\Membresias\MembresiasMiCuentaViewController.cs" />
+    <Compile Include="ViewControllers\MiCuenta\Membresias\MembresiasMiCuentaViewController.designer.cs">
+      <DependentUpon>MembresiasMiCuentaViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiCuenta\Membresias\CuentaMembresiasCell.cs" />
+    <Compile Include="ViewControllers\MiCuenta\Membresias\CuentaMembresiasCell.designer.cs">
+      <DependentUpon>CuentaMembresiasCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiCuenta\Membresias\NoInfoCuentaMembresiasCell.cs" />
+    <Compile Include="ViewControllers\MiCuenta\Membresias\NoInfoCuentaMembresiasCell.designer.cs">
+      <DependentUpon>NoInfoCuentaMembresiasCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\TabBarDetalleVenta.cs" />
+    <Compile Include="ViewControllers\Servicios\TabBarDetalleVenta.designer.cs">
+      <DependentUpon>TabBarDetalleVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\Productos\CarritoProductos.cs" />
+    <Compile Include="ViewControllers\Servicios\Productos\CarritoProductos.designer.cs">
+      <DependentUpon>CarritoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\Productos\CeldaCarritoProductos.cs" />
+    <Compile Include="ViewControllers\Servicios\Productos\CeldaCarritoProductos.designer.cs">
+      <DependentUpon>CeldaCarritoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\Productos\CeldaNoProductos.cs" />
+    <Compile Include="ViewControllers\Servicios\Productos\CeldaNoProductos.designer.cs">
+      <DependentUpon>CeldaNoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\Membresias\TableViewMembresia.cs" />
+    <Compile Include="ViewControllers\Servicios\Membresias\TableViewMembresia.designer.cs">
+      <DependentUpon>TableViewMembresia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\Membresias\TableViewCellMembresias.cs" />
+    <Compile Include="ViewControllers\Servicios\Membresias\TableViewCellMembresias.designer.cs">
+      <DependentUpon>TableViewCellMembresias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\Membresias\TableViewCellNoMembresias.cs" />
+    <Compile Include="ViewControllers\Servicios\Membresias\TableViewCellNoMembresias.designer.cs">
+      <DependentUpon>TableViewCellNoMembresias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\VentaDetalleTableViewController.cs" />
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\VentaDetalleTableViewController.designer.cs">
+      <DependentUpon>VentaDetalleTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\VentaDetalleHeader.cs" />
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\VentaDetalleHeader.designer.cs">
+      <DependentUpon>VentaDetalleHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\CeldaVentaDetalle.cs" />
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\CeldaVentaDetalle.designer.cs">
+      <DependentUpon>CeldaVentaDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\CeldaNoDetalleVenta.cs" />
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\CeldaNoDetalleVenta.designer.cs">
+      <DependentUpon>CeldaNoDetalleVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\CanjearCuponController.cs" />
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\CanjearCuponController.designer.cs">
+      <DependentUpon>CanjearCuponController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\DetalleVentaViewController.cs" />
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\DetalleVentaViewController.designer.cs">
+      <DependentUpon>DetalleVentaViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Comentarios\DetailCommentImage.cs" />
+    <Compile Include="ViewControllers\Comentarios\DetailCommentImage.designer.cs">
+      <DependentUpon>DetailCommentImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Cloud\cloudViewController.cs" />
+    <Compile Include="ViewControllers\Cloud\cloudViewController.designer.cs">
+      <DependentUpon>cloudViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Telefonia\TelefoniaTableView.cs" />
+    <Compile Include="ViewControllers\Telefonia\TelefoniaTableView.designer.cs">
+      <DependentUpon>TelefoniaTableView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -777,7 +815,7 @@
     <Folder Include="Assets.xcassets\ic_left_arrow.imageset\" />
     <Folder Include="Assets.xcassets\BackGround.imageset\" />
     <Folder Include="Assets.xcassets\Leyenda.imageset\" />
-    <Folder Include="ViewControllers\Post\" />
+    <Folder Include="ViewControllers\Publicar\" />
     <Folder Include="Assets.xcassets\Profile.imageset\" />
     <Folder Include="Assets.xcassets\Likes.imageset\" />
     <Folder Include="Assets.xcassets\Comments.imageset\" />
@@ -798,6 +836,28 @@
     <Folder Include="Assets.xcassets\shopping.imageset\" />
     <Folder Include="Assets.xcassets\Launch.imageset\" />
     <Folder Include="Assets.xcassets\worklabsLogo.imageset\" />
+    <Folder Include="ViewControllers\Escritorio\" />
+    <Folder Include="ViewControllers\Comentarios\" />
+    <Folder Include="ViewControllers\MiCuenta\" />
+    <Folder Include="ViewControllers\MiCuenta\Productos\" />
+    <Folder Include="ViewControllers\MiCuenta\Membresias\" />
+    <Folder Include="ViewControllers\Nueva carpeta\" />
+    <Folder Include="ViewControllers\Servicios\Productos\" />
+    <Folder Include="ViewControllers\Servicios\Membresias\" />
+    <Folder Include="ViewControllers\Servicios\VentaDetalle\" />
+    <Folder Include="ViewControllers\Cloud\" />
+    <Folder Include="ViewControllers\Telefonia\" />
+    <Folder Include="Assets.xcassets\Habilidades.imageset\" />
+    <Folder Include="Assets.xcassets\Puesto.imageset\" />
+    <Folder Include="Assets.xcassets\Mail.imageset\" />
+    <Folder Include="Assets.xcassets\Genero.imageset\" />
+    <Folder Include="Assets.xcassets\Profesion.imageset\" />
+    <Folder Include="Assets.xcassets\Telefono.imageset\" />
+    <Folder Include="Assets.xcassets\Celular.imageset\" />
+    <Folder Include="Assets.xcassets\Editar.imageset\" />
+    <Folder Include="Assets.xcassets\Nombre.imageset\" />
+    <Folder Include="Assets.xcassets\Apellidos.imageset\" />
+    <Folder Include="Assets.xcassets\Nacimiento.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />
