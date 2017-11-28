@@ -28,6 +28,10 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnGuardarCambios { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView imgPerfil { get; set; }
 
         [Outlet]
@@ -74,6 +78,10 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnFoto_TpuchUpInside (UIKit.UIButton sender);
 
+        [Action ("btnGuardarCambios_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnGuardarCambios_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (btnEditarFecha != null) {
@@ -89,6 +97,11 @@ namespace WorklabsMx.iOS
             if (btnFotografia != null) {
                 btnFotografia.Dispose ();
                 btnFotografia = null;
+            }
+
+            if (btnGuardarCambios != null) {
+                btnGuardarCambios.Dispose ();
+                btnGuardarCambios = null;
             }
 
             if (imgPerfil != null) {
