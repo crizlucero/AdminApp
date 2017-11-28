@@ -57,7 +57,10 @@ namespace WorklabsMx.Droid
                     else if (_tabs.CurrentTab == 1)
                         StartActivity(new Intent(this, typeof(EditEmpresaActivity)));
                     break;
-                default: base.OnBackPressed(); break;
+                default:
+                    StartActivity(new Intent(this, typeof(SubMenuActivity)));
+                    Finish();
+                    break;
             }
             return base.OnOptionsItemSelected(item);
         }

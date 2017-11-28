@@ -60,7 +60,9 @@ namespace WorklabsMx.Droid
                         Toast.MakeText(this, Resource.String.LlenarDatos, ToastLength.Short).Show();
                     break;
                 default:
-                    base.OnBackPressed(); break;
+                    StartActivity(new Intent(this, typeof(MainActivity)));
+                    Finish();
+                    break;
             }
             return base.OnOptionsItemSelected(item);
         }

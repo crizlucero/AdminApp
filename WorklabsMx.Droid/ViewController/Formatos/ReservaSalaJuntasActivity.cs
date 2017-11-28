@@ -1,5 +1,6 @@
 ﻿using System;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
@@ -17,11 +18,11 @@ namespace WorklabsMx.Droid
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ReservaSalaJuntasLayout);
-			Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-			SetActionBar(toolbar);
-			ActionBar.Title = Resources.GetString(Resource.String.ReservaSala);
-			ActionBar.SetDisplayHomeAsUpEnabled(true);
-			//ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            SetActionBar(toolbar);
+            ActionBar.Title = Resources.GetString(Resource.String.ReservaSala);
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
 
             sucursales = FindViewById<Spinner>(Resource.Id.spSucursal);
             sucursales.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, new PickerItemsController().GetSucursales().ToArray());
@@ -29,33 +30,38 @@ namespace WorklabsMx.Droid
             SetCalendarConfig();
         }
 
-        void SetCalendarConfig(){
+        void SetCalendarConfig()
+        {
             calendar = FindViewById<CalendarView>(Resource.Id.cvSalaJuntas);
             try
             {
                 //calendar.MinDate = DateTime.Now.Ticks;
-            }catch(Exception e){
+            }
+            catch (Exception e)
+            {
                 SlackLogs.SendMessage(e.Message);
             }
         }
 
-		public override bool OnCreateOptionsMenu(IMenu menu)
-		{
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
             MenuInflater.Inflate(Resource.Menu.send_menu, menu);
-			return base.OnCreateOptionsMenu(menu);
-		}
+            return base.OnCreateOptionsMenu(menu);
+        }
 
-		public override bool OnOptionsItemSelected(IMenuItem item)
-		{
-			switch (item.ItemId)
-			{
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
                 case Resource.Id.menu_send:
-					//new EmpresaController().UpdateDatosFiscales();
-					break;
-				default:
-					base.OnBackPressed(); break;
-			}
-			return base.OnOptionsItemSelected(item);
-		}
+                    //new EmpresaController().UpdateDatosFiscales();
+                    break;
+                default:
+                    StartActivity(new Intent(this, typeof(MainActivity)));
+                    Finish();
+                    break;
+            }
+            return base.OnOptionsItemSelected(item);
+        }
     }
 }

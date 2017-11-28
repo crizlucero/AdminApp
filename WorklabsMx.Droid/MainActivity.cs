@@ -24,6 +24,8 @@ using System.Threading.Tasks;
 using Android.Support.V4.Widget;
 using WorklabsMx.Models;
 using System.Linq;
+using Android.Text;
+using static Android.App.ActionBar;
 
 namespace WorklabsMx.Droid
 {
@@ -49,6 +51,11 @@ namespace WorklabsMx.Droid
         public MainActivity()
         {
             DashboardController = new EscritorioController();
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -149,8 +156,8 @@ namespace WorklabsMx.Droid
 
         async Task FillPosts()
         {
-            //AndHUD.Shared.Show(this, null, -1, MaskType.Black);
-            //await Task.Delay(500);
+            AndHUD.Shared.Show(this, null, -1, MaskType.Black);
+            await Task.Delay(500);
 
             posts.Skip(page * sizePage).Take(sizePage).ToList().ForEach(post =>
             {
@@ -270,6 +277,7 @@ namespace WorklabsMx.Droid
                     TextSize = 12
                 };
                 param = new GridLayout.LayoutParams();
+                param.RightMargin = 10;
                 param.SetGravity(GravityFlags.Center);
                 param.ColumnSpec = GridLayout.InvokeSpec(1, 4);
                 param.RowSpec = GridLayout.InvokeSpec(i);
@@ -279,11 +287,14 @@ namespace WorklabsMx.Droid
                 TextView txtPost = new TextView(this)
                 {
                     Text = post.Publicacion_Contenido,
-                    TextSize = 10,
+                    TextSize = 12,
+                    InputType = InputTypes.TextFlagMultiLine
                 };
+                txtPost.SetSingleLine(false);
+                txtPost.SetMaxWidth(Convert.ToInt32(Resources.DisplayMetrics.WidthPixels*.911));
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center);
-                param.ColumnSpec = GridLayout.InvokeSpec(1, 4);
+                param.ColumnSpec = GridLayout.InvokeSpec(1, 3);
                 param.RowSpec = GridLayout.InvokeSpec(i);
                 txtPost.LayoutParameters = param;
                 glPost.AddView(txtPost);
@@ -378,7 +389,6 @@ namespace WorklabsMx.Droid
                 {
                     Intent intent = new Intent(this, typeof(CommentsActivity));
                     intent.PutExtra("post_id", post.Publicacion_Id);
-                    intent.PutExtra("comments_total", totalComment);
                     StartActivity(intent);
                 };
                 llComment.Click += delegate
@@ -399,7 +409,7 @@ namespace WorklabsMx.Droid
                 row.AddView(glPost);
                 tlPost.AddView(row);
             });
-            //AndHUD.Shared.Dismiss(this);
+            AndHUD.Shared.Dismiss(this);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -505,7 +515,7 @@ namespace WorklabsMx.Droid
 
         void BtnLogin_Touch(object sender, View.TouchEventArgs e)
         {
-            if (Android.Util.Patterns.EmailAddress.Matcher(txtEmail.Text).Matches())
+            if (Android.Util.Patterns.EmailAddress.Matcher(txtEmail.Text).Matches() && !string.IsNullOrEmpty(txtPassword.Text))
             {
                 //AndHUD.Shared.Show(this, null, -1, MaskType.Black);
                 //await Task.Delay(500);

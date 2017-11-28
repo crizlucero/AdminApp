@@ -39,7 +39,8 @@ namespace WorklabsMx.Droid
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            base.OnBackPressed();
+            StartActivity(new Intent(this, typeof(MainActivity)));
+            Finish();
             return base.OnOptionsItemSelected(item);
         }
 

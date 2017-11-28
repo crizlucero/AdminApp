@@ -16,7 +16,7 @@ namespace WorklabsMx.Droid
             var newIntent = new Intent(this, typeof(MainActivity));
             newIntent.AddFlags(ActivityFlags.ClearTop);
             newIntent.AddFlags(ActivityFlags.SingleTop);
-            AndHUD.Shared.Show(this, null, -1, MaskType.Black);
+            //AndHUD.Shared.Show(this, null, -1, MaskType.Black);
             StartActivity(newIntent);
             Finish();
         }

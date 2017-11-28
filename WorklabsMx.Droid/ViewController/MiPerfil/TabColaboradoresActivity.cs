@@ -52,13 +52,13 @@ namespace WorklabsMx.Droid
         {
             switch (item.ItemId)
             {
-                case Resource.Id.menu_edit:
-                    if (_tabs.CurrentTab == 0)
-                        StartActivity(new Intent(this, typeof(EditPerfilActivity)));
-                    else if (_tabs.CurrentTab == 1)
-                        StartActivity(new Intent(this, typeof(EditEmpresaActivity)));
+                case Resource.Id.menu_add_person:
+                    StartActivity(new Intent(this, typeof(MisColaboradoresCambiosActivity)));
                     break;
-                default: base.OnBackPressed(); break;
+                default:
+                    StartActivity(new Intent(this, typeof(SubMenuActivity)));
+                    Finish();
+                    break;
             }
             return base.OnOptionsItemSelected(item);
         }

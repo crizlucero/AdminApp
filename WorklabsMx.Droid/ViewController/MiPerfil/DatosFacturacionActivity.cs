@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
@@ -18,7 +19,8 @@ namespace WorklabsMx.Droid
         List<string> colonias;
         PickerItemsController items;
         string empresa_id, territorio_id;
-        public DatosFacturacionActivity(){
+        public DatosFacturacionActivity()
+        {
             items = new PickerItemsController();
         }
 
@@ -58,8 +60,8 @@ namespace WorklabsMx.Droid
             Estado.Text = fiscal.Territorio_Estado;
             Municipio.Text = fiscal.Territorio_Municipio;
             colonias = items.GetColonias(fiscal.Territorio_CP);
-			Colonia.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, colonias.ToArray());
-			Colonia.SetSelection(colonias.IndexOf(fiscal.Territorio_Colonia));
+            Colonia.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, colonias.ToArray());
+            Colonia.SetSelection(colonias.IndexOf(fiscal.Territorio_Colonia));
             CodigoPostal.Text = fiscal.Territorio_CP;
             Calle.Text = fiscal.Domicilio_Fiscal_Empresa_Calle;
             NumExterior.Text = fiscal.Domicilio_Fiscal_Empresa_Numero_Exterior;
@@ -68,37 +70,39 @@ namespace WorklabsMx.Droid
 
         }
 
-		void CodigoPostal_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
-		{
-			if (e.Text.ToString().Length == 5)
-			{
-				TerritorioModel territorio = new TerritorioController().GetTerritorio(e.Text.ToString());
+        void CodigoPostal_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
+        {
+            if (e.Text.ToString().Length == 5)
+            {
+                TerritorioModel territorio = new TerritorioController().GetTerritorio(e.Text.ToString());
                 territorio_id = territorio.Territorio_Id;
-				Estado.Text = territorio.Estado;
-				Municipio.Text = territorio.Municipio;
-				colonias = items.GetColonias(territorio.CP);
-				Colonia.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, colonias.ToArray());
-				Colonia.SetSelection(colonias.IndexOf(territorio.Colonia));
-			}
-		}
+                Estado.Text = territorio.Estado;
+                Municipio.Text = territorio.Municipio;
+                colonias = items.GetColonias(territorio.CP);
+                Colonia.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, colonias.ToArray());
+                Colonia.SetSelection(colonias.IndexOf(territorio.Colonia));
+            }
+        }
 
-		public override bool OnCreateOptionsMenu(IMenu menu)
-		{
-			MenuInflater.Inflate(Resource.Menu.save_menu, menu);
-			return base.OnCreateOptionsMenu(menu);
-		}
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.save_menu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
 
-		public override bool OnOptionsItemSelected(IMenuItem item)
-		{
-			switch (item.ItemId)
-			{
-				case Resource.Id.menu_save:
-                    new EmpresaController().UpdateDatosFiscales(empresa_id,storage.Get("Usuario_Id"), territorio_id, Calle.Text,NumExterior.Text,NumInterior.Text,Email.Text);
-					break;
-				default:
-					base.OnBackPressed(); break;
-			}
-			return base.OnOptionsItemSelected(item);
-		}
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.menu_save:
+                    new EmpresaController().UpdateDatosFiscales(empresa_id, storage.Get("Usuario_Id"), territorio_id, Calle.Text, NumExterior.Text, NumInterior.Text, Email.Text);
+                    break;
+                default:
+                    StartActivity(new Intent(this, typeof(SubMenuActivity)));
+                    Finish();
+                    break;
+            }
+            return base.OnOptionsItemSelected(item);
+        }
     }
 }
