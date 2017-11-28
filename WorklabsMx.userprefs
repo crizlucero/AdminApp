@@ -1,50 +1,35 @@
-<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/GeneroViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/FechaNacimientoPickerViewController.cs">
     <Files>
-      <File FileName="iOS/PerfilTableViewController.cs" Line="3" Column="12" />
+      <File FileName="iOS/PerfilTableViewController.cs" Line="219" Column="53" />
+      <File FileName="iOS/GeneroViewController.cs" Line="8" Column="1" />
       <File FileName="iOS/DatosEmpresaTableViewController.cs" Line="25" Column="13" />
       <File FileName="iOS/DireccionEmpresaTableViewController.cs" Line="15" Column="13" />
       <File FileName="iOS/EditarRedesSocialesTableViewController.cs" Line="15" Column="13" />
       <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="17" Column="29" />
       <File FileName="iOS/Main.storyboard" />
-      <File FileName="iOS/FechaNacimientoPickerViewController.cs" Line="25" Column="13" />
-      <File FileName="iOS/GeneroViewController.cs" Line="11" Column="10" />
-      <File FileName="iOS/ViewControllers/Comentarios/ComentarPostTableViewController.cs" Line="31" Column="9" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Comentarios/ComentarPostTableViewController.cs" Line="112" Column="50" NotebookId="1" />
       <File FileName="iOS/ViewControllers/MiPerfil/AboutMeModificaController.cs" Line="69" Column="50" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="65" Column="13" NotebookId="1" />
-=======
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/MainActivity.cs">
-    <Files>
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ColeccionProductosActivity.cs" Line="553" Column="74" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="201" Column="85" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="107" Column="79" />
-      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/MisColaboradoresActivity.cs" Line="405" Column="71" />
-      <File FileName="WorklabsMx.Droid/Resources/menu/add_person_menu.xml" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/SubMenuActivity.cs" Line="71" Column="48" />
-      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/TabColaboradoresActivity.cs" Line="59" Column="74" />
-      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/TabPerfilActivity.cs" Line="61" Column="74" />
-      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/MisColaboradoresCambiosActivity.cs" Line="92" Column="83" />
-      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/MisColaboradoresBajaActivity.cs" Line="375" Column="74" />
-      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/EditPerfilActivity.cs" Line="86" Column="76" />
-      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/EditEmpresaActivity.cs" Line="121" Column="76" />
-      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/DatosFacturacionActivity.cs" Line="101" Column="74" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/ReservaSalaJuntasActivity.cs" Line="60" Column="40" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ProductosActivity.cs" Line="306" Column="74" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/MembresiasActivity.cs" Line="301" Column="74" />
-      <File FileName="WorklabsMx.Droid/ViewController/ReportActivity.cs" Line="185" Column="75" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="115" Column="15" />
->>>>>>> a8cb33e77c9f5adae4a807576962f42ff08a6e9d
+      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="97" Column="32" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="139" Column="54" NotebookId="1" />
+      <File FileName="iOS/FechaNacimientoPickerViewController.cs" Line="11" Column="9" NotebookId="1" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>this.dtpGenero.TextInputMode</Value>
+          <Value>selectedLbl.Text</Value>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/ViewController/MiPerfil/MisColaboradoresActivity.cs" relfile="WorklabsMx.Droid/ViewController/MiPerfil/MisColaboradoresActivity.cs" line="399" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/VentaDetalleTableViewController.cs" relfile="iOS/VentaDetalleTableViewController.cs" line="201" column="36" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="MyTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B4E637BD-60E4-4441-BC72-CF1534A7E0AA" />
   <MultiItemStartupConfigurations />
 </Properties>

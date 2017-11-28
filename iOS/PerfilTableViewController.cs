@@ -15,7 +15,6 @@ namespace WorklabsMx.iOS
     {
         MiembroModel Miembro;
         MiembroModel MiembroClon;
-        SimpleStorage StoregeLocal;
         UIImage ImagenPublicacion;
 
         UIImagePickerController imgPicker;
@@ -35,6 +34,7 @@ namespace WorklabsMx.iOS
             //this.btnGuardarCambios.Enabled = false;
             if (InternetConectionHelper.VerificarConexion())
             {
+                var StoregeLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
                 Miembro = new MiembrosController().GetMemberData(StoregeLocal.Get("Usuario_Id"), StoregeLocal.Get("Usuario_Tipo"));
                 MiembroClon = new MiembrosController().GetMemberData(StoregeLocal.Get("Usuario_Id"), StoregeLocal.Get("Usuario_Tipo"));
                 this.txtEmail.Text = Miembro.Miembro_Correo_Electronico;
@@ -213,5 +213,27 @@ namespace WorklabsMx.iOS
             }
 
         }
+
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            if(segue.Identifier == "toSelectGender")
+            {
+                var postCommentView = (GeneroViewController)segue.DestinationViewController;
+                postCommentView.GeneroSeleccionadoDelegato = this;
+            } 
+        }
+
+
+    }
+
+
+    partial class PerfilTableViewController : GeneroSeleccionado
+    {
+
+        public void GeneroSeleccionado(string Genero)
+        {
+            this.lblGenero.Text = Genero;
+        }
+
     }
 }

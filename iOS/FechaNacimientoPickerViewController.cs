@@ -4,6 +4,12 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface FechaNacimientoSeleccionada
+    {
+        void FechaSeleccionada(DateTime FechaNacimiento);
+    }
+
     public partial class FechaNacimientoPickerViewController : UIViewController
     {
         public FechaNacimientoPickerViewController (IntPtr handle) : base (handle)
@@ -13,7 +19,7 @@ namespace WorklabsMx.iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            var color = new UIColor(1, 0.8f);
+            var color = new UIColor(0, 0.0f);
             this.View.BackgroundColor = color;
         }
 
