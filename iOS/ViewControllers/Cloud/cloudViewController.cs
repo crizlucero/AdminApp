@@ -24,7 +24,6 @@ namespace WorklabsMx.iOS
             
         }
 
-
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();

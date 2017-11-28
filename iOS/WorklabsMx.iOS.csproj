@@ -842,6 +842,26 @@
     <Compile Include="PerfilTableViewController.designer.cs">
       <DependentUpon>PerfilTableViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatosEmpresaTableViewController.cs" />
+    <Compile Include="DatosEmpresaTableViewController.designer.cs">
+      <DependentUpon>DatosEmpresaTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DireccionEmpresaTableViewController.cs" />
+    <Compile Include="DireccionEmpresaTableViewController.designer.cs">
+      <DependentUpon>DireccionEmpresaTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarRedesSocialesTableViewController.cs" />
+    <Compile Include="EditarRedesSocialesTableViewController.designer.cs">
+      <DependentUpon>EditarRedesSocialesTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FechaNacimientoPickerViewController.cs" />
+    <Compile Include="FechaNacimientoPickerViewController.designer.cs">
+      <DependentUpon>FechaNacimientoPickerViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneroViewController.cs" />
+    <Compile Include="GeneroViewController.designer.cs">
+      <DependentUpon>GeneroViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
