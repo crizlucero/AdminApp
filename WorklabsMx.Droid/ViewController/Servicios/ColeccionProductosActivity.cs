@@ -4,6 +4,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Views;
+using Android.Views.InputMethods;
 using Android.Widget;
 using Newtonsoft.Json;
 using PerpetualEngine.Storage;
@@ -20,6 +21,7 @@ namespace WorklabsMx.Droid
         SimpleStorage Storage;
         ArrayAdapter adapter;
         TableRow.LayoutParams param;
+        AlertDialog dialog;
         public ColeccionProductosActivity()
         {
             Storage = SimpleStorage.EditGroup("Login");
@@ -188,6 +190,16 @@ namespace WorklabsMx.Droid
 
                 trMembresia = new TableRow(this);
                 trMembresia.AddView(new TextView(this) { Text = "Fecha de inicio" }, 0);
+
+                dtFechaInicio.Touch += (sender, e) =>
+                {
+                    if (dialog == null || !dialog.IsShowing)
+                    {
+                        InputMethodManager mgr = (InputMethodManager)GetSystemService(Context.InputMethodService);
+                        mgr.HideSoftInputFromWindow(dtFechaInicio.WindowToken, HideSoftInputFlags.None);
+                        ShowCalendarView((EditText)sender);
+                    }
+                };
 
                 dtFechaInicio.TextChanged += delegate
                 {
@@ -432,6 +444,17 @@ namespace WorklabsMx.Droid
                 {
                     trProducto = new TableRow(this);
                     trProducto.AddView(new TextView(this) { Text = "Fecha de inicio" }, 0);
+
+                    dtFechaInicio.Touch += (sender, e) =>
+                    {
+                        if (dialog == null || !dialog.IsShowing)
+                        {
+                            InputMethodManager mgr = (InputMethodManager)GetSystemService(Context.InputMethodService);
+                            mgr.HideSoftInputFromWindow(dtFechaInicio.WindowToken, HideSoftInputFlags.None);
+                            ShowCalendarView((EditText)sender);
+                        }
+                    };
+
                     dtFechaInicio.TextChanged += delegate
                     {
                         if (DateTime.TryParse(dtFechaInicio.Text, out DateTime fecha))
@@ -555,6 +578,28 @@ namespace WorklabsMx.Droid
                     break;
             }
             return base.OnOptionsItemSelected(item);
+        }
+
+        void ShowCalendarView(EditText fecha)
+        {
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            LayoutInflater liView = LayoutInflater;
+
+            View customView = liView.Inflate(Resource.Layout.CalendarioLayout, null, true);
+
+            CalendarView calendar = customView.FindViewById<CalendarView>(Resource.Id.cvCalendario);
+            calendar.MinDate = new Java.Util.Date().Time;
+            calendar.DateChange += (sender, e) =>
+            {
+                fecha.Text = e.DayOfMonth + "/" + e.Month + "/" + e.Year;
+                dialog.Dismiss();
+            };
+            builder.SetView(customView);
+            builder.Create();
+            dialog = builder.Show();
+            dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
         }
     }
 }

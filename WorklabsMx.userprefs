@@ -1,24 +1,7 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/MainActivity.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ColeccionProductosActivity.cs" Line="553" Column="74" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="201" Column="85" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="107" Column="79" />
-      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/MisColaboradoresActivity.cs" Line="405" Column="71" />
-      <File FileName="WorklabsMx.Droid/Resources/menu/add_person_menu.xml" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/SubMenuActivity.cs" Line="71" Column="48" />
-      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/TabColaboradoresActivity.cs" Line="59" Column="74" />
-      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/TabPerfilActivity.cs" Line="61" Column="74" />
-      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/MisColaboradoresCambiosActivity.cs" Line="92" Column="83" />
-      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/MisColaboradoresBajaActivity.cs" Line="375" Column="74" />
-      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/EditPerfilActivity.cs" Line="86" Column="76" />
-      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/EditEmpresaActivity.cs" Line="121" Column="76" />
-      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/DatosFacturacionActivity.cs" Line="101" Column="74" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/ReservaSalaJuntasActivity.cs" Line="60" Column="40" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ProductosActivity.cs" Line="306" Column="74" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/MembresiasActivity.cs" Line="301" Column="74" />
-      <File FileName="WorklabsMx.Droid/ViewController/ReportActivity.cs" Line="185" Column="75" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="115" Column="15" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/RegistroInvitadosActivity.cs" Line="129" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -28,6 +11,6 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="MyTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="MyTheme" />
   <MultiItemStartupConfigurations />
 </Properties>

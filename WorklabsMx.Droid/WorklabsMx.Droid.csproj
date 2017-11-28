@@ -270,6 +270,8 @@
     <AndroidResource Include="Resources\layout\DatePickerLayout.axml" />
     <AndroidResource Include="Resources\layout\MembresiasLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\Icono.png" />
+    <AndroidResource Include="Resources\layout\CalendarioLayout.axml" />
+    <AndroidResource Include="Resources\layout\HorarioPickerLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

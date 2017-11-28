@@ -13,7 +13,7 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "SubMenuActivity")]
+    [Activity(Label = "@string/app_name")]
     public class SubMenuActivity : Activity
     {
         SimpleStorage storage;
