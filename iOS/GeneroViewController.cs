@@ -51,8 +51,8 @@ namespace WorklabsMx.iOS
         {
             static string[] names = new string[] 
             {
-                "Masculino",
-                "Femenino"
+                "MASCULINO",
+                "FEMENINO"
             };
 
             UILabel lbl;

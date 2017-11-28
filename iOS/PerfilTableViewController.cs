@@ -8,6 +8,7 @@ using WorklabsMx.iOS.Helpers;
 using AVFoundation;
 using Photos;
 using WorklabsMx.Helpers;
+using System.Globalization;
 
 namespace WorklabsMx.iOS
 {
@@ -23,8 +24,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.imgPerfil.Layer.MasksToBounds = true;
-            this.imgPerfil.Layer.CornerRadius = this.imgPerfil.Layer.Bounds.Size.Width / 2;
+
             StyleHelper.Style(this.imgPerfil.Layer);
             StyleHelper.Style(this.btnEditarFecha.Layer);
             StyleHelper.Style(this.btnEditarGenero.Layer);
@@ -37,7 +37,7 @@ namespace WorklabsMx.iOS
             {
                 StoregeLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
                 Miembro = new MiembrosController().GetMemberData(StoregeLocal.Get("Usuario_Id"), StoregeLocal.Get("Usuario_Tipo"));
-                MiembroClon = new MiembrosController().GetMemberData(StoregeLocal.Get("Usuario_Id"), StoregeLocal.Get("Usuario_Tipo"));
+                //MiembroClon = new MiembrosController().GetMemberData(StoregeLocal.Get("Usuario_Id"), StoregeLocal.Get("Usuario_Tipo"));
                 this.txtEmail.Text = Miembro.Miembro_Correo_Electronico;
                 this.txtNombre.Text = Miembro.Miembro_Nombre;
                 this.txtApellido.Text = Miembro.Miembro_Apellidos;
@@ -125,8 +125,11 @@ namespace WorklabsMx.iOS
             ImagenPublicacion = image;
             var imageUrl = editingInfo["UIImagePickerControllerReferenceURL"] as NSUrl;
             UrlImage = imageUrl.RelativeString;
+            StyleHelper.Style(this.imgPerfil.Layer);
             this.imgPerfil.Image = image;
-
+            this.imgPerfil.Layer.MasksToBounds = true;
+            this.imgPerfil.Layer.CornerRadius = this.imgPerfil.Layer.Bounds.Size.Width / 2;
+           
             picker.DismissViewController(true, null);
         }
 
@@ -207,7 +210,7 @@ namespace WorklabsMx.iOS
                 DateTime fechaNacimiento = new DateTime();
                 if(this.lblFechaNacimiento.Text != "")
                 {
-                    fechaNacimiento = Convert.ToDateTime(this.lblFechaNacimiento.Text);
+                    fechaNacimiento = DateTime.ParseExact(this.lblFechaNacimiento.Text, "dd/MM/yyyy", CultureInfo.CurrentCulture);
                     if (new MiembrosController().UpdateDataMiembros(Convert.ToInt32(StoregeLocal.Get("Usuario_Id")), txtNombre.Text, txtApellido.Text, txtEmail.Text,
                                                                     txtTelefono.Text, txtTelefono.Text, txtProfesion.Text, txtProfesion.Text, txtHabilidades.Text, fechaNacimiento, ""))
                         new MessageDialog().SendToast("Datos guardados");

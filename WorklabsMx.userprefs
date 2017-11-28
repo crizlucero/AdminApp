@@ -1,25 +1,27 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/PerfilTableViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs">
     <Files>
-      <File FileName="iOS/PerfilTableViewController.cs" Line="207" Column="21" />
-      <File FileName="iOS/GeneroViewController.cs" Line="15" Column="61" />
+      <File FileName="iOS/PerfilTableViewController.cs" Line="24" Column="41" />
+      <File FileName="iOS/GeneroViewController.cs" Line="29" Column="13" />
       <File FileName="iOS/DatosEmpresaTableViewController.cs" Line="25" Column="13" />
       <File FileName="iOS/DireccionEmpresaTableViewController.cs" Line="15" Column="13" />
       <File FileName="iOS/EditarRedesSocialesTableViewController.cs" Line="15" Column="13" />
       <File FileName="iOS/Main.storyboard" />
       <File FileName="iOS/ViewControllers/Servicios/Membresias/TableViewCellMembresias.cs" Line="62" Column="68" />
-      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="192" Column="101" />
+      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="17" Column="29" />
       <File FileName="iOS/ViewControllers/Comentarios/ComentarPostTableViewController.cs" Line="112" Column="50" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/MiPerfil/AboutMeModificaController.cs" Line="69" Column="50" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/MiPerfil/AboutMeModificaController.cs" Line="66" Column="48" NotebookId="1" />
       <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="97" Column="32" NotebookId="1" />
       <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="139" Column="54" NotebookId="1" />
-      <File FileName="iOS/FechaNacimientoPickerViewController.cs" Line="28" Column="81" NotebookId="1" />
+      <File FileName="iOS/FechaNacimientoPickerViewController.cs" Line="27" Column="36" NotebookId="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="88" Column="149" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State>
           <Value>this.dtpGenero.TextInputMode</Value>
           <Value>selectedLbl.Text</Value>
+          <Value>this.lblFechaNacimiento.Text</Value>
         </State>
       </Pad>
     </Pads>
