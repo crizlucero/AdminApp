@@ -1,18 +1,19 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/FechaNacimientoPickerViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/PerfilTableViewController.cs">
     <Files>
-      <File FileName="iOS/PerfilTableViewController.cs" Line="219" Column="53" />
-      <File FileName="iOS/GeneroViewController.cs" Line="8" Column="1" />
+      <File FileName="iOS/PerfilTableViewController.cs" Line="207" Column="21" />
+      <File FileName="iOS/GeneroViewController.cs" Line="15" Column="61" />
       <File FileName="iOS/DatosEmpresaTableViewController.cs" Line="25" Column="13" />
       <File FileName="iOS/DireccionEmpresaTableViewController.cs" Line="15" Column="13" />
       <File FileName="iOS/EditarRedesSocialesTableViewController.cs" Line="15" Column="13" />
-      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="17" Column="29" />
       <File FileName="iOS/Main.storyboard" />
+      <File FileName="iOS/ViewControllers/Servicios/Membresias/TableViewCellMembresias.cs" Line="62" Column="68" />
+      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="192" Column="101" />
       <File FileName="iOS/ViewControllers/Comentarios/ComentarPostTableViewController.cs" Line="112" Column="50" NotebookId="1" />
       <File FileName="iOS/ViewControllers/MiPerfil/AboutMeModificaController.cs" Line="69" Column="50" NotebookId="1" />
       <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="97" Column="32" NotebookId="1" />
       <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="139" Column="54" NotebookId="1" />
-      <File FileName="iOS/FechaNacimientoPickerViewController.cs" Line="11" Column="9" NotebookId="1" />
+      <File FileName="iOS/FechaNacimientoPickerViewController.cs" Line="28" Column="81" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">

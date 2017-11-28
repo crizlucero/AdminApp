@@ -16,8 +16,6 @@ namespace WorklabsMx.iOS
 
         UILabel selectedLbl = new UILabel();
 
-        public string Nombre = "";
-
         public GeneroViewController(IntPtr handle) : base(handle)
         {
         }

@@ -19,7 +19,7 @@ namespace WorklabsMx.iOS
 
         UIImagePickerController imgPicker;
         string UrlImage = "";
-
+        SimpleStorage StoregeLocal;
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -31,10 +31,11 @@ namespace WorklabsMx.iOS
             StyleHelper.Style(this.btnGuardarCambios.Layer);
             imgPicker = new UIImagePickerController();
             imgPicker.Delegate = this;
+
             //this.btnGuardarCambios.Enabled = false;
             if (InternetConectionHelper.VerificarConexion())
             {
-                var StoregeLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
+                StoregeLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
                 Miembro = new MiembrosController().GetMemberData(StoregeLocal.Get("Usuario_Id"), StoregeLocal.Get("Usuario_Tipo"));
                 MiembroClon = new MiembrosController().GetMemberData(StoregeLocal.Get("Usuario_Id"), StoregeLocal.Get("Usuario_Tipo"));
                 this.txtEmail.Text = Miembro.Miembro_Correo_Electronico;
@@ -43,6 +44,8 @@ namespace WorklabsMx.iOS
                 this.txtTelefono.Text = Miembro.Miembro_Telefono;
                 this.txtProfesion.Text = Miembro.Miembro_Profesion;
                 this.txtHabilidades.Text = Miembro.Miembro_Habilidades;
+                this.lblGenero.Text = Miembro.Genero_Descripcion;
+                this.lblFechaNacimiento.Text = Miembro.Miembro_Fecha_Nacimiento;
             }
             else
             {
@@ -201,11 +204,17 @@ namespace WorklabsMx.iOS
         {
             if (InternetConectionHelper.VerificarConexion())
             {
-                /*if (new MiembrosController().UpdateDataMiembros(Convert.ToInt32(StoregeLocal.Get("Usuario_Id")), txtNombre.Text, txtApellido.Text, txtEmail.Text,
-                                                                   txtTelefono.Text, txtTelefono.Text, txtProfesion.Text, txtProfesion.Text, txtHabilidades.Text, (DateTime)dpFechaNacimiento.Date, ""))
-                    new MessageDialog().SendToast("Datos guardados");
-                else
-                    new MessageDialog().SendToast("Hubo un error\nIntente de nuevo");*/
+                DateTime fechaNacimiento = new DateTime();
+                if(this.lblFechaNacimiento.Text != "")
+                {
+                    fechaNacimiento = Convert.ToDateTime(this.lblFechaNacimiento.Text);
+                    if (new MiembrosController().UpdateDataMiembros(Convert.ToInt32(StoregeLocal.Get("Usuario_Id")), txtNombre.Text, txtApellido.Text, txtEmail.Text,
+                                                                    txtTelefono.Text, txtTelefono.Text, txtProfesion.Text, txtProfesion.Text, txtHabilidades.Text, fechaNacimiento, ""))
+                        new MessageDialog().SendToast("Datos guardados");
+                    else
+                         new MessageDialog().SendToast("Hubo un error\nIntente de nuevo");
+                }
+
             }
             else
             {
@@ -218,9 +227,14 @@ namespace WorklabsMx.iOS
         {
             if(segue.Identifier == "toSelectGender")
             {
-                var postCommentView = (GeneroViewController)segue.DestinationViewController;
-                postCommentView.GeneroSeleccionadoDelegato = this;
-            } 
+                var GenderView = (GeneroViewController)segue.DestinationViewController;
+                GenderView.GeneroSeleccionadoDelegato = this;
+            }
+            else if (segue.Identifier == "toSelectDate")
+            {
+                var BirthDateView = (FechaNacimientoPickerViewController)segue.DestinationViewController;
+                BirthDateView.FechaSeleccionadaDelegate = this;
+            }
         }
 
 
@@ -235,5 +249,13 @@ namespace WorklabsMx.iOS
             this.lblGenero.Text = Genero;
         }
 
+    }
+
+    partial class PerfilTableViewController : FechaNacimientoSeleccionada
+    {
+        public void FechaSeleccionada(String FechaNacimiento)
+        {
+            this.lblFechaNacimiento.Text = FechaNacimiento;
+        }
     }
 }
