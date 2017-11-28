@@ -56,10 +56,10 @@ namespace WorklabsMx.Droid
 
         void FillPrices()
         {
-            FindViewById<TextView>(Resource.Id.tvSubtotal).Text = Subtotal.ToString("C");
-            FindViewById<TextView>(Resource.Id.tvDescuento).Text = Descuento.ToString("C");
-            FindViewById<TextView>(Resource.Id.tvIVA).Text = IVATotal.ToString("C");
-            FindViewById<TextView>(Resource.Id.tvTotal).Text = Total.ToString("C");
+            FindViewById<TextView>(Resource.Id.tvSubtotal).Text = Subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
+            FindViewById<TextView>(Resource.Id.tvDescuento).Text = Descuento.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
+            FindViewById<TextView>(Resource.Id.tvIVA).Text = IVATotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
+            FindViewById<TextView>(Resource.Id.tvTotal).Text = Total.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
         }
 
         void AddMembresiaDescripcion()
@@ -83,7 +83,9 @@ namespace WorklabsMx.Droid
                 trDescripcion.AddView(lblDescripcion, 1);
                 TextView lblTotal = new TextView(this)
                 {
-                    Text = Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Suma) != 0 ? precio.Carrito_Compras_Detalle_Importe_Suma_Texto : Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Prorrateo).ToString("C") + "MXN"
+                    Text = Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Suma) != 0 
+                                  ? precio.Carrito_Compras_Detalle_Importe_Suma_Texto : 
+                                  Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Prorrateo).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx")) + "MXN"
                 };
                 trDescripcion.AddView(lblTotal, 2);
                 tlCarrito.AddView(trDescripcion);
@@ -196,7 +198,8 @@ namespace WorklabsMx.Droid
                         Toast.MakeText(this, Resource.String.NoAceptoTerminos, ToastLength.Short).Show();
                     break;
                 default:
-                    base.OnBackPressed();
+                    StartActivity(new Intent(this, typeof(ColeccionProductosActivity)));
+                    Finish();
                     break;
             }
             return base.OnOptionsItemSelected(item);

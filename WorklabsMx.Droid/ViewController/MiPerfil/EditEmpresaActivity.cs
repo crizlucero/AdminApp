@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
@@ -97,7 +98,7 @@ namespace WorklabsMx.Droid
                 Estado.Text = territorio.Estado;
                 Municipio.Text = territorio.Municipio;
                 colonias = items.GetColonias(territorio.CP);
-				Colonia.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, colonias.ToArray());
+                Colonia.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, colonias.ToArray());
                 Colonia.SetSelection(colonias.IndexOf(territorio.Colonia));
             }
         }
@@ -117,7 +118,9 @@ namespace WorklabsMx.Droid
 
                     break;
                 default:
-                    base.OnBackPressed(); break;
+                    StartActivity(new Intent(this, typeof(TabPerfilActivity)));
+                    Finish();
+                    break;
             }
             return base.OnOptionsItemSelected(item);
         }

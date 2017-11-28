@@ -3667,6 +3667,9 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f03003b
 			public const int Icon2 = 2130903099;
 			
+			// aapt resource value: 0x7f03003c
+			public const int Icono = 2130903100;
+			
 			static Mipmap()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

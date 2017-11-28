@@ -182,7 +182,10 @@ namespace WorklabsMx.Droid
                         Toast.MakeText(this, "Seleccione una opción de reporte", ToastLength.Short).Show();
                     break;
                 default:
-                    base.OnBackPressed();
+                    Intent intent = new Intent(this, typeof(CommentsActivity));
+                    intent.PutExtra("post_id", post_id);
+                    StartActivity(intent);
+                    Finish();
                     break;
             }
             return base.OnOptionsItemSelected(item);

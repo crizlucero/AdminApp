@@ -55,10 +55,10 @@ namespace WorklabsMx.Droid
 
         void FillPrices()
         {
-            FindViewById<TextView>(Resource.Id.tvSubtotal).Text = Subtotal.ToString("C");
-            FindViewById<TextView>(Resource.Id.tvDescuento).Text = Descuento.ToString("C");
-            FindViewById<TextView>(Resource.Id.tvIVA).Text = IVATotal.ToString("C");
-            FindViewById<TextView>(Resource.Id.tvTotal).Text = Total.ToString("C");
+            FindViewById<TextView>(Resource.Id.tvSubtotal).Text = Subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
+            FindViewById<TextView>(Resource.Id.tvDescuento).Text = Descuento.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
+            FindViewById<TextView>(Resource.Id.tvIVA).Text = IVATotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
+            FindViewById<TextView>(Resource.Id.tvTotal).Text = Total.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -104,7 +104,8 @@ namespace WorklabsMx.Droid
                     }
                     break;
                 default:
-                    base.OnBackPressed();
+                    StartActivity(new Intent(this, typeof(ShoppingCartActivity)));
+                    Finish();
                     break;
             }
             return base.OnOptionsItemSelected(item);

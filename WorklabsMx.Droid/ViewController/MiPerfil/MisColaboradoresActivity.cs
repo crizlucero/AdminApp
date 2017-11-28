@@ -402,7 +402,8 @@ namespace WorklabsMx.Droid
                     StartActivity(new Intent(this, typeof(MisColaboradoresCambiosActivity)));
                     break;
                 default:
-                    base.OnBackPressed();
+                    StartActivity(new Intent(this, typeof(MainActivity)));
+                    Finish();
                     break;
             }
             return base.OnOptionsItemSelected(item);

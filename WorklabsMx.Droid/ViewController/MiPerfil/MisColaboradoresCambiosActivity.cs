@@ -89,7 +89,8 @@ namespace WorklabsMx.Droid
                                                                        colaborador_id);
                     break;
                 default:
-                    base.OnBackPressed();
+                    StartActivity(new Intent(this, typeof(TabColaboradoresActivity)));
+                    Finish();
                     break;
             }
             return base.OnOptionsItemSelected(item);

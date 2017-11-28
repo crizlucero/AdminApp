@@ -120,9 +120,9 @@ namespace WorklabsMx.Droid
                         Membresias[membresia.Membresia_Id].Membresia_Cantidad = Convert.ToInt32(txtCantidadMembresias.Text);
                         subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
                                     (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
-                        lblProporcional.Text = subtotal.ToString("C");
+                        lblProporcional.Text = subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                         lblTotal.Text = (((membresia.Membresia_Precio_Base_Neto * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base_Neto)
-                                          * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
+                                          * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                     }
                     //else
                     //    Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
@@ -139,9 +139,9 @@ namespace WorklabsMx.Droid
                     txtCantidadMembresias.Text = Membresias[membresia.Membresia_Id].Membresia_Cantidad.ToString();
                     subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
                                 (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
-                    lblProporcional.Text = subtotal.ToString("C");
+                    lblProporcional.Text = subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                     lblTotal.Text = (((membresia.Membresia_Precio_Base_Neto * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base_Neto)
-                                          * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
+                                      * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                 };
 
                 trMembresia.AddView(btnPlus, 2);
@@ -156,9 +156,9 @@ namespace WorklabsMx.Droid
                         txtCantidadMembresias.Text = Membresias[membresia.Membresia_Id].Membresia_Cantidad.ToString();
                         subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
                                     (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
-                        lblProporcional.Text = subtotal.ToString("C");
+                        lblProporcional.Text = subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                         lblTotal.Text = (((membresia.Membresia_Precio_Base_Neto * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base_Neto)
-                                          * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
+                                          * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                     }
                     else
                         Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
@@ -170,13 +170,13 @@ namespace WorklabsMx.Droid
                 trMembresia = new TableRow(this);
                 trMembresia.AddView(new TextView(this) { Text = "Tarifa Mensual" });
 
-                trMembresia.AddView(new TextView(this) { Text = membresia.Membresia_Precio_Base_Neto.ToString("C") }, param);
+                trMembresia.AddView(new TextView(this) { Text = membresia.Membresia_Precio_Base_Neto.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx")) }, param);
 
                 tlMembresias.AddView(trMembresia);
                 trMembresia = new TableRow(this);
                 trMembresia.AddView(new TextView(this) { Text = "Tarifa Inscripción" });
 
-                trMembresia.AddView(new TextView(this) { Text = membresia.Inscripcion_Precio_Base_Neto.ToString("C") }, param);
+                trMembresia.AddView(new TextView(this) { Text = membresia.Inscripcion_Precio_Base_Neto.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx")) }, param);
 
                 tlMembresias.AddView(trMembresia);
 
@@ -189,7 +189,8 @@ namespace WorklabsMx.Droid
                 trMembresia = new TableRow(this);
                 trMembresia.AddView(new TextView(this) { Text = "Fecha de inicio" }, 0);
 
-                dtFechaInicio.TextChanged += delegate {
+                dtFechaInicio.TextChanged += delegate
+                {
                     if (DateTime.TryParse(dtFechaInicio.Text, out DateTime fecha))
                     {
                         if (fecha >= DateTime.Now)
@@ -197,9 +198,9 @@ namespace WorklabsMx.Droid
                             mesMembresia = Convert.ToInt32(txtMesesMembresias.Text);
                             subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
                                     (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
-                            lblProporcional.Text = subtotal.ToString("C");
+                            lblProporcional.Text = subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                             lblTotal.Text = (((membresia.Membresia_Precio_Base_Neto * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal)
-                                              * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
+                                              * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                         }
                     }
                 };
@@ -220,11 +221,11 @@ namespace WorklabsMx.Droid
                         {
                             mesMembresia = Convert.ToInt32(txtMesesMembresias.Text);
                             Membresias[membresia.Membresia_Id].Meses_Adelantados = mesMembresia;
-                        subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
-                                    (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
-                            lblProporcional.Text = subtotal.ToString("C");
+                            subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
+                                        (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
+                            lblProporcional.Text = subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                             lblTotal.Text = (((membresia.Membresia_Precio_Base_Neto * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base_Neto)
-                                          * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
+                                              * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                         }
                         else
                             Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
@@ -242,9 +243,9 @@ namespace WorklabsMx.Droid
                     txtMesesMembresias.Text = mesMembresia.ToString();
                     subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
                                 (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
-                    lblProporcional.Text = subtotal.ToString("C");
+                    lblProporcional.Text = subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                     lblTotal.Text = (((membresia.Membresia_Precio_Base_Neto * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base_Neto)
-                                          * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
+                                      * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                 };
 
                 trMembresia.AddView(btnMesesPlus, 2);
@@ -260,9 +261,9 @@ namespace WorklabsMx.Droid
                         txtMesesMembresias.Text = mesMembresia.ToString();
                         subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
                                     (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
-                        lblProporcional.Text = subtotal.ToString("C");
+                        lblProporcional.Text = subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                         lblTotal.Text = (((membresia.Membresia_Precio_Base_Neto * ((Convert.ToDouble(txtMesesMembresias.Text) - 1)) + subtotal + membresia.Inscripcion_Precio_Base_Neto)
-                                          * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C");
+                                          * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                     }
                     else
                         Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
@@ -276,7 +277,7 @@ namespace WorklabsMx.Droid
                 trMembresia.AddView(new TextView(this) { Text = "Proporcional al mes" });
                 subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
                             (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
-                lblProporcional.Text = 0.ToString("C");
+                lblProporcional.Text = 0.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                 trMembresia.AddView(lblProporcional, param);
 
                 tlMembresias.AddView(trMembresia);
@@ -284,7 +285,7 @@ namespace WorklabsMx.Droid
                 trMembresia = new TableRow(this);
                 trMembresia.AddView(new TextView(this) { Text = "Total" });
 
-                lblTotal.Text = 0.ToString("C");
+                lblTotal.Text = 0.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                 trMembresia.AddView(lblTotal, param);
 
                 tlMembresias.AddView(trMembresia);
@@ -355,13 +356,13 @@ namespace WorklabsMx.Droid
                         {
                             Productos[producto.Producto_Id].Producto_Cantidad = Convert.ToInt32(txtCantidadProductos.Text);
                             if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
-                            subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
-                                        (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
+                                subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
+                                            (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                             else
                                 subtotal = producto.Producto_Precio_Base_Neto;
-                            lblProporcional.Text = subtotal.ToString("C");
+                            lblProporcional.Text = subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                             lblTotal.Text = (((producto.Producto_Precio_Base_Neto * ((Convert.ToDouble(txtMesesProductos.Text) - 1)) + subtotal)
-                                              * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C");
+                                              * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                         }
                 };
 
@@ -381,9 +382,9 @@ namespace WorklabsMx.Droid
                                     (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                     else
                         subtotal = producto.Producto_Precio_Base_Neto;
-                    lblProporcional.Text = subtotal.ToString("C");
+                    lblProporcional.Text = subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                     lblTotal.Text = (((producto.Producto_Precio_Base_Neto * ((Convert.ToDouble(txtMesesProductos.Text) - 1)) + subtotal)
-                                      * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C");
+                                      * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                 };
 
                 trProducto.AddView(btnPlus, 2);
@@ -404,9 +405,9 @@ namespace WorklabsMx.Droid
                                         (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                         else
                             subtotal = producto.Producto_Precio_Base_Neto;
-                        lblProporcional.Text = subtotal.ToString("C");
+                        lblProporcional.Text = subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                         lblTotal.Text = (((producto.Producto_Precio_Base_Neto * ((Convert.ToDouble(txtMesesProductos.Text) - 1)) + subtotal)
-                                          * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C");
+                                          * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                     }
                 };
 
@@ -417,7 +418,7 @@ namespace WorklabsMx.Droid
                 trProducto = new TableRow(this);
                 trProducto.AddView(new TextView(this) { Text = "Tarifa Mensual" });
 
-                trProducto.AddView(new TextView(this) { Text = producto.Producto_Precio_Base_Neto.ToString("C") }, param);
+                trProducto.AddView(new TextView(this) { Text = producto.Producto_Precio_Base_Neto.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx")) }, param);
 
                 tlProductos.AddView(trProducto);
 
@@ -431,7 +432,8 @@ namespace WorklabsMx.Droid
                 {
                     trProducto = new TableRow(this);
                     trProducto.AddView(new TextView(this) { Text = "Fecha de inicio" }, 0);
-                    dtFechaInicio.TextChanged += delegate {
+                    dtFechaInicio.TextChanged += delegate
+                    {
                         if (DateTime.TryParse(dtFechaInicio.Text, out DateTime fecha))
                         {
                             if (fecha >= DateTime.Now)
@@ -439,9 +441,9 @@ namespace WorklabsMx.Droid
                                 mesProducto = Convert.ToInt32(txtMesesProductos.Text);
                                 subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
                                         (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
-                                lblProporcional.Text = subtotal.ToString("C");
+                                lblProporcional.Text = subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                                 lblTotal.Text = (((producto.Producto_Precio_Base * ((Convert.ToDouble(txtMesesProductos.Text) - 1)) + subtotal)
-                                                  * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C");
+                                                  * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                             }
                         }
                     };
@@ -463,9 +465,9 @@ namespace WorklabsMx.Droid
                                 mesProducto = Convert.ToInt32(txtMesesProductos.Text);
                                 subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
                                             (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
-                                lblProporcional.Text = subtotal.ToString("C");
+                                lblProporcional.Text = subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                                 lblTotal.Text = (((producto.Producto_Precio_Base_Neto * ((Convert.ToDouble(txtMesesProductos.Text) - 1)) + subtotal)
-                                                  * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C");
+                                                  * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                             }
                             else
                                 Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
@@ -482,9 +484,9 @@ namespace WorklabsMx.Droid
                         Productos[producto.Producto_Id].Meses_Adelantados = Convert.ToInt32(txtMesesProductos.Text);
                         subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
                                     (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
-                        lblProporcional.Text = subtotal.ToString("C");
+                        lblProporcional.Text = subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                         lblTotal.Text = (((producto.Producto_Precio_Base_Neto * ((Convert.ToDouble(txtMesesProductos.Text) - 1)) + subtotal)
-                                          * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C");
+                                          * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                     };
 
                     trProducto.AddView(btnMesesPlus, 2);
@@ -500,9 +502,9 @@ namespace WorklabsMx.Droid
                             Productos[producto.Producto_Id].Meses_Adelantados = Convert.ToInt32(txtMesesProductos.Text);
                             subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
                                         (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
-                            lblProporcional.Text = subtotal.ToString("C");
+                            lblProporcional.Text = subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                             lblTotal.Text = (((producto.Producto_Precio_Base_Neto * ((Convert.ToDouble(txtMesesProductos.Text) - 1)) + subtotal)
-                                              * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C");
+                                              * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                         }
                         else
                             Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
@@ -516,7 +518,7 @@ namespace WorklabsMx.Droid
                     trProducto.AddView(new TextView(this) { Text = "Proporcional al mes" });
                     subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
                                 (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
-                    lblProporcional.Text = subtotal.ToString("C");
+                    lblProporcional.Text = subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                     trProducto.AddView(lblProporcional, param);
 
                     tlProductos.AddView(trProducto);
@@ -524,7 +526,7 @@ namespace WorklabsMx.Droid
                 trProducto = new TableRow(this);
                 trProducto.AddView(new TextView(this) { Text = "Total" });
 
-                lblTotal.Text = 0.ToString("C");
+                lblTotal.Text = 0.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                 trProducto.AddView(lblTotal, param);
 
                 tlProductos.AddView(trProducto);
@@ -548,7 +550,8 @@ namespace WorklabsMx.Droid
                     StartActivity(intent);
                     break;
                 default:
-                    base.OnBackPressed();
+                    StartActivity(new Intent(this, typeof(SubMenuActivity)));
+                    Finish();
                     break;
             }
             return base.OnOptionsItemSelected(item);

@@ -1,5 +1,6 @@
 ﻿using System;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Webkit;
@@ -45,7 +46,8 @@ namespace WorklabsMx.Droid
                     RefreshAccess();
                     break;
                 default:
-                    base.OnBackPressed();
+                    StartActivity(new Intent(this, typeof(MainActivity)));
+                    Finish();
                     break;
             }
 

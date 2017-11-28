@@ -83,7 +83,9 @@ namespace WorklabsMx.Droid
                         Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
                     break;
                 default:
-                    base.OnBackPressed(); break;
+                    StartActivity(new Intent(this, typeof(TabPerfilActivity)));
+                    Finish();
+                    break;
             }
             return base.OnOptionsItemSelected(item);
         }
