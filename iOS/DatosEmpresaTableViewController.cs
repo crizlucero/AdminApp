@@ -95,9 +95,16 @@ namespace WorklabsMx.iOS
                 GiroId = items.GetGiroId(txtGiroComercial.Text).ToString();
                 if (new EmpresaController().UpdateDataEmpresa(Empresa.Empresa_Miembro_Id, StoregeLocal.Get("Usuario_Id"), GiroId, TerritorioId, txtRazonSocial.Text, txtRFC.Text,
                                                                   txtNombreEmpresa.Text, Empresa.Empresa_Miembro_Calle, Empresa.Empresa_Miembro_Numero_Exterior, Empresa.Empresa_Miembro_Numero_Interior, txtCorreoElectronico.Text, txtTelefono.Text, Empresa.Empresa_Miembro_Pagina_Web, Empresa.Empresa_Miembro_Red_Social_1, Empresa.Empresa_Miembro_Red_Social_2, Empresa.Empresa_Miembro_Red_Social_3, Empresa.Empresa_Miembro_Logotipo))
+                {
                     new MessageDialog().SendToast("Datos guardados");
+                    Empresa = new EmpresaController().GetEmpresaMiembro(StoregeLocal.Get("Usuario_Id"));
+                    this.TableView.ReloadData(); 
+                }
                 else
-                    new MessageDialog().SendToast("Hubo un error\nIntente de nuevo");
+                {
+                    new MessageDialog().SendToast("Hubo un error\nIntente de nuevo"); 
+                }
+                   
             }
             else
             {

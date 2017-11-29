@@ -33,7 +33,7 @@ namespace WorklabsMx.iOS
             this.txtCalle.Text = Empresa.Empresa_Miembro_Calle;
             this.txtEstado.Text = Empresa.Territorio_Estado_Descripcion;
             this.txtMunicipio.Text = Empresa.Territorio_Municipio_Descripcion;
-            this.lblColonia.Text = Empresa.Territorio_Colonia_Descripcion;
+            this.txtColonia.Text = Empresa.Territorio_Colonia_Descripcion;
             this.txtCodigoPostal.Text = Empresa.Territorio_Cp;
             this.txtNumeroExterior.Text = Empresa.Empresa_Miembro_Numero_Exterior;
             this.txtNumeroInterior.Text = Empresa.Empresa_Miembro_Numero_Interior;
@@ -75,6 +75,11 @@ namespace WorklabsMx.iOS
             };
 
             this.txtMunicipio.ShouldReturn += (textField) => {
+                this.txtColonia.BecomeFirstResponder();
+                return true;
+            };
+
+            this.txtColonia.ShouldReturn += (textField) => {
                 this.txtNumeroInterior.BecomeFirstResponder();
                 return true;
             };
@@ -99,9 +104,16 @@ namespace WorklabsMx.iOS
                 //TerritorioId = new TerritorioController().GetTerritorioId(txtCodigoPostal.Text, txtColonia.Text);
                 if (new EmpresaController().UpdateDataEmpresa(Empresa.Empresa_Miembro_Id, StoregeLocal.Get("Usuario_Id"), GiroId, TerritorioId, Empresa.Empresa_Miembro_Razon_Social, Empresa.Empresa_Miembro_Rfc,
                                                                   Empresa.Empresa_Miembro_Nombre, txtCalle.Text, txtNumeroExterior.Text, txtNumeroInterior.Text, Empresa.Empresa_Miembro_Correo_Electronico, Empresa.Empresa_Miembro_Telefono, Empresa.Empresa_Miembro_Pagina_Web, Empresa.Empresa_Miembro_Red_Social_1, Empresa.Empresa_Miembro_Red_Social_2, Empresa.Empresa_Miembro_Red_Social_3, Empresa.Empresa_Miembro_Logotipo))
+                {
                     new MessageDialog().SendToast("Datos guardados");
+                    Empresa = new EmpresaController().GetEmpresaMiembro(StoregeLocal.Get("Usuario_Id"));
+                    this.TableView.ReloadData(); 
+                }
                 else
+                {
                     new MessageDialog().SendToast("Hubo un error\nIntente de nuevo");
+                }
+               
             }
             else
             {
@@ -118,6 +130,10 @@ namespace WorklabsMx.iOS
                 txtEstado.Text = territorio.Estado;
                 txtMunicipio.Text = territorio.Municipio;
                 this.Colonias = Items.GetColonias(territorio.CP);
+                if(this.Colonias.Count != 0)
+                {
+                    this.btnEditarColonia.Enabled = true;
+                }
             }
         }
 
@@ -145,7 +161,7 @@ namespace WorklabsMx.iOS
     {
         public void ColoniaSeleccionada(string Colonia)
         {
-            this.lblColonia.Text = Colonia;
+            this.txtColonia.Text = Colonia;
         }
 
     }
