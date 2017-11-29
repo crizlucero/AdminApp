@@ -862,6 +862,10 @@
     <Compile Include="GeneroViewController.designer.cs">
       <DependentUpon>GeneroViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ColoniaViewController.cs" />
+    <Compile Include="ColoniaViewController.designer.cs">
+      <DependentUpon>ColoniaViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

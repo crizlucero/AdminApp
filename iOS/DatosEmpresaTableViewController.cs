@@ -281,7 +281,7 @@ namespace WorklabsMx.iOS
                 SocialView.TerritorioId = this.TerritorioId;
                 SocialView.GiroId = this.GiroId;
             }
-            else if (segue.Identifier == "EditarDireccion")
+            else if (segue.Identifier == "EditarDIreccion")
             {
                 var DireccioView = (DireccionEmpresaTableViewController)segue.DestinationViewController;
                 DireccioView.Empresa = this.Empresa;

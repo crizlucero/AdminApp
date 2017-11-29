@@ -16,15 +16,19 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnEditarColonia { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblColonia { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtCalle { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtCodigoPostal { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField txtColonia { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -42,6 +46,10 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtNumeroInterior { get; set; }
 
+        [Action ("btnEditarColonia_TouchupInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnEditarColonia_TouchupInside (UIKit.UIButton sender);
+
         [Action ("btnGuardar:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnGuardar (UIKit.UIBarButtonItem sender);
@@ -52,6 +60,16 @@ namespace WorklabsMx.iOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnEditarColonia != null) {
+                btnEditarColonia.Dispose ();
+                btnEditarColonia = null;
+            }
+
+            if (lblColonia != null) {
+                lblColonia.Dispose ();
+                lblColonia = null;
+            }
+
             if (txtCalle != null) {
                 txtCalle.Dispose ();
                 txtCalle = null;
@@ -60,11 +78,6 @@ namespace WorklabsMx.iOS
             if (txtCodigoPostal != null) {
                 txtCodigoPostal.Dispose ();
                 txtCodigoPostal = null;
-            }
-
-            if (txtColonia != null) {
-                txtColonia.Dispose ();
-                txtColonia = null;
             }
 
             if (txtEstado != null) {

@@ -33,11 +33,16 @@ namespace WorklabsMx.iOS
             this.txtCalle.Text = Empresa.Empresa_Miembro_Calle;
             this.txtEstado.Text = Empresa.Territorio_Estado_Descripcion;
             this.txtMunicipio.Text = Empresa.Territorio_Municipio_Descripcion;
-            this.txtColonia.Text = Empresa.Territorio_Colonia_Descripcion;
+            this.lblColonia.Text = Empresa.Territorio_Colonia_Descripcion;
             this.txtCodigoPostal.Text = Empresa.Territorio_Cp;
             this.txtNumeroExterior.Text = Empresa.Empresa_Miembro_Numero_Exterior;
             this.txtNumeroInterior.Text = Empresa.Empresa_Miembro_Numero_Interior;
             Colonias = Items.GetColonias(Empresa.Territorio_Cp);
+
+            if (txtCodigoPostal.Text == "")
+            {
+                this.btnEditarColonia.Enabled = false;
+            }
         }
 
         partial void btnGuardar(UIBarButtonItem sender)
@@ -70,11 +75,6 @@ namespace WorklabsMx.iOS
             };
 
             this.txtMunicipio.ShouldReturn += (textField) => {
-                this.txtColonia.BecomeFirstResponder();
-                return true;
-            };
-
-            this.txtColonia.ShouldReturn += (textField) => {
                 this.txtNumeroInterior.BecomeFirstResponder();
                 return true;
             };
@@ -121,5 +121,33 @@ namespace WorklabsMx.iOS
             }
         }
 
+        partial void btnEditarColonia_TouchupInside(UIButton sender)
+        {
+            
+        }
+
+
+        public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
+        {
+            if (segue.Identifier == "SeleccionarColonia")
+            {
+                var ColoniaView = (ColoniaViewController)segue.DestinationViewController;
+                ColoniaView.ColoniaSeleccionadaDel = this;
+                ColoniaView.Colonias = this.Colonias;
+            }
+        }
+
+
     }
+
+
+    partial class DireccionEmpresaTableViewController : ColoniaSeleccionada
+    {
+        public void ColoniaSeleccionada(string Colonia)
+        {
+            this.lblColonia.Text = Colonia;
+        }
+
+    }
+
 }

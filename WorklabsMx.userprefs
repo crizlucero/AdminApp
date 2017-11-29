@@ -1,11 +1,13 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/DireccionEmpresaTableViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/PerfilTableViewController.cs">
     <Files>
-      <File FileName="iOS/DatosEmpresaTableViewController.cs" Line="68" Column="1" />
-      <File FileName="iOS/PerfilTableViewController.cs" Line="27" Column="12" />
+      <File FileName="iOS/DatosEmpresaTableViewController.cs" Line="1" Column="1" />
       <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="5" Column="1" />
-      <File FileName="iOS/DireccionEmpresaTableViewController.cs" Line="27" Column="43" />
+      <File FileName="iOS/DireccionEmpresaTableViewController.cs" Line="129" Column="17" />
+      <File FileName="iOS/ColoniaViewController.cs" Line="44" Column="10" />
       <File FileName="iOS/EditarRedesSocialesTableViewController.cs" Line="50" Column="10" NotebookId="1" />
+      <File FileName="iOS/GeneroViewController.cs" Line="28" Column="70" NotebookId="1" />
+      <File FileName="iOS/PerfilTableViewController.cs" Line="306" Column="16" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
