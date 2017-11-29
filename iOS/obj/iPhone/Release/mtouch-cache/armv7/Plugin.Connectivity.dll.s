@@ -8192,7 +8192,7 @@ _mono_aot_file_info:
 	.long 304,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 253,146,127,197,117,97,111,122,3,41,229,191,27,77,83,231
+	.byte 238,119,85,131,132,79,7,109,104,243,149,177,218,64,214,71
 	.globl _mono_aot_module_Plugin_Connectivity_info
 	.align 2
 _mono_aot_module_Plugin_Connectivity_info:

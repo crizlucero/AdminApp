@@ -72,6 +72,11 @@ namespace WorklabsMx.iOS
             this.View.EndEditing(true);
         }
 
+        partial void btnTomarFoto_TouchUpInside(UIButton sender)
+        {
+            this.PresentViewController(CrearActionSheet(), true, null);
+        }
+
         partial void btnEditarDireccion_TouchUpInside(UIButton sender)
         {
             

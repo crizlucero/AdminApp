@@ -47,7 +47,7 @@ namespace WorklabsMx.iOS
                 this.txtHabilidades.Text = Miembro.Miembro_Habilidades;
                 this.lblGenero.Text = Miembro.Genero_Descripcion;
                 var arrFecha = Miembro.Miembro_Fecha_Nacimiento.Split('-');
-                this.lblFechaNacimiento.Text = arrFecha[2] + "/" + arrFecha[1] + "/" + arrFecha[0];
+                this.lblFechaNacimiento.Text = arrFecha[2] + "/" + arrFecha[1] + "/" + arrFecha[2];
             }
             else
             {

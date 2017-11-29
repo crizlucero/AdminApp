@@ -70,6 +70,10 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnRedesSociales_TouchUpInside (UIKit.UIButton sender);
 
+        [Action ("btnTomarFoto_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnTomarFoto_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (btnActualizarEmpresa != null) {

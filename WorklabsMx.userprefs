@@ -1,15 +1,32 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/PerfilTableViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Comentarios/SeccionComentariosTableViewController.cs">
     <Files>
-      <File FileName="iOS/DatosEmpresaTableViewController.cs" Line="47" Column="64" />
+      <File FileName="iOS/DatosEmpresaTableViewController.cs" Line="73" Column="10" />
       <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="55" Column="12" />
-      <File FileName="iOS/DireccionEmpresaTableViewController.cs" Line="168" Column="6" />
+      <File FileName="iOS/DireccionEmpresaTableViewController.cs" Line="51" Column="10" />
       <File FileName="iOS/ColoniaViewController.cs" Line="86" Column="1" />
       <File FileName="iOS/ViewControllers/Cloud/cloudViewController.cs" Line="11" Column="44" />
+      <File FileName="iOS/ViewControllers/Comentarios/ComentarPostTableViewController.cs" Line="106" Column="45" />
+      <File FileName="iOS/ViewControllers/Comentarios/SeccionComentariosTableViewController.cs" Line="121" Column="33" />
       <File FileName="iOS/EditarRedesSocialesTableViewController.cs" Line="33" Column="42" NotebookId="1" />
       <File FileName="iOS/GeneroViewController.cs" Line="15" Column="61" NotebookId="1" />
-      <File FileName="iOS/PerfilTableViewController.cs" Line="42" Column="26" NotebookId="1" />
+      <File FileName="iOS/PerfilTableViewController.cs" Line="109" Column="13" NotebookId="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WorklabsMx" expanded="True">
+            <Node name="WorklabsMx.iOS" expanded="True">
+              <Node name="ViewControllers" expanded="True">
+                <Node name="Comentarios" expanded="True">
+                  <Node name="SeccionComentariosTableViewController.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -18,7 +35,7 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.89CCA8BE-0586-4891-9CEC-16532ABD6816" identitySerialNumber="583D18CE90225D8C">
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B290E900-78EE-417F-9249-903E041F6620" identitySerialNumber="583D18CE90225D8C">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
   </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
   <MultiItemStartupConfigurations />

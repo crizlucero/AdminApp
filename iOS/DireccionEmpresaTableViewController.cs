@@ -49,7 +49,7 @@ namespace WorklabsMx.iOS
 
         partial void btnGuardar(UIBarButtonItem sender)
         {
-            
+            this.GuardarCambios();
         }
 
         private void Tapped(UITapGestureRecognizer Recognizer)

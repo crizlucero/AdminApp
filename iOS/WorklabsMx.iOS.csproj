@@ -17,7 +17,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Distribution: Espacio Claro, S.A. de C.V. (3VMPS2N2KS)</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -68,7 +68,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Distribution: Espacio Claro, S.A. de C.V. (3VMPS2N2KS)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -81,7 +81,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
     <MtouchI18n>west</MtouchI18n>
-    <CodesignProvision>WorkLabsMxPP</CodesignProvision>
+    <CodesignProvision></CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -397,7 +397,6 @@
     <ImageAsset Include="Assets.xcassets\worklabs.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\worklabs.imageset\worklabs.png" />
     <ImageAsset Include="Assets.xcassets\qr.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\qr.imageset\ic_qrcode.png" />
     <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Camera.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\delete-image.imageset\Contents.json" />
@@ -547,8 +546,6 @@
     <ImageAsset Include="Assets.xcassets\Instagram.imageset\icons8-instagram-filled-90.png" />
     <ImageAsset Include="Assets.xcassets\PerfilGrande.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\PerfilGrande.imageset\01.png" />
-    <ImageAsset Include="Assets.xcassets\BigQr.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\BigQr.imageset\Custom Size – 17%403x.png" />
     <ImageAsset Include="Assets.xcassets\Likes.imageset\Custom Size – 2.png" />
     <ImageAsset Include="Assets.xcassets\Likes.imageset\Custom Size – 2%402x.png" />
     <ImageAsset Include="Assets.xcassets\Likes.imageset\Custom Size – 2%403x.png" />
@@ -567,6 +564,11 @@
     <ImageAsset Include="Assets.xcassets\Camera.imageset\Custom Size – 22.png" />
     <ImageAsset Include="Assets.xcassets\Camera.imageset\Custom Size – 22%402x.png" />
     <ImageAsset Include="Assets.xcassets\Camera.imageset\Custom Size – 22%403x.png" />
+    <ImageAsset Include="Assets.xcassets\QrBig.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\QrBig.imageset\Custom Size – 17%403x.png" />
+    <ImageAsset Include="Assets.xcassets\qr.imageset\icons8-data-matrix-code-30.png" />
+    <ImageAsset Include="Assets.xcassets\qr.imageset\icons8-data-matrix-code-60.png" />
+    <ImageAsset Include="Assets.xcassets\qr.imageset\icons8-data-matrix-code-90.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -966,6 +968,7 @@
     <Folder Include="Assets.xcassets\Instagram.imageset\" />
     <Folder Include="Assets.xcassets\PerfilGrande.imageset\" />
     <Folder Include="Assets.xcassets\BigQr.imageset\" />
+    <Folder Include="Assets.xcassets\QrBig.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />
