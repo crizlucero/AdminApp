@@ -15,7 +15,6 @@ namespace WorklabsMx.iOS
     public partial class PerfilTableViewController : UITableViewController
     {
         MiembroModel Miembro;
-        MiembroModel MiembroClon;
         UIImage ImagenPublicacion;
 
         UIImagePickerController imgPicker;
@@ -24,7 +23,8 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
+            var Tap = new UITapGestureRecognizer(this.Tapped);
+            this.View.AddGestureRecognizer(Tap);
             StyleHelper.Style(this.imgPerfil.Layer);
             StyleHelper.Style(this.btnEditarFecha.Layer);
             StyleHelper.Style(this.btnEditarGenero.Layer);
@@ -32,12 +32,10 @@ namespace WorklabsMx.iOS
             imgPicker = new UIImagePickerController();
             imgPicker.Delegate = this;
 
-            //this.btnGuardarCambios.Enabled = false;
             if (InternetConectionHelper.VerificarConexion())
             {
                 StoregeLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
                 Miembro = new MiembrosController().GetMemberData(StoregeLocal.Get("Usuario_Id"), StoregeLocal.Get("Usuario_Tipo"));
-                //MiembroClon = new MiembrosController().GetMemberData(StoregeLocal.Get("Usuario_Id"), StoregeLocal.Get("Usuario_Tipo"));
                 this.txtEmail.Text = Miembro.Miembro_Correo_Electronico;
                 this.txtNombre.Text = Miembro.Miembro_Nombre;
                 this.txtApellido.Text = Miembro.Miembro_Apellidos;
@@ -50,8 +48,15 @@ namespace WorklabsMx.iOS
             else
             {
                 new MessageDialog().SendToast("No tienes conexión a internet, intenta mas tarde");
+                this.NavigationController.PopViewController(true);
+
             }
 
+        }
+
+        private void Tapped(UITapGestureRecognizer Recognizer)
+        {
+            this.View.EndEditing(true);
         }
 
         public PerfilTableViewController (IntPtr handle) : base (handle)

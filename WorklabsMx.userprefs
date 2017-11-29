@@ -1,25 +1,24 @@
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench>
+﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/DatosEmpresaTableViewController.cs">
     <Files>
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/RegistroInvitadosActivity.cs" Line="129" Column="1" />
+      <File FileName="iOS/DatosEmpresaTableViewController.cs" Line="78" Column="13" />
+      <File FileName="iOS/PerfilTableViewController.cs" Line="59" Column="40" />
+      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="191" Column="39" />
+      <File FileName="WorklabsMx/Models/EmpresaModel.cs" Line="3" Column="18" />
+      <File FileName="iOS/ViewControllers/Directorio/DirectorioEmpresasController.cs" Line="45" Column="26" />
+      <File FileName="iOS/Helpers/CamaraHelper.cs" Line="6" Column="9" />
+      <File FileName="iOS/Helpers/Calendario.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="222" Column="21" />
+      <File FileName="iOS/ViewControllers/MiPerfil/EmpresaMiembroModificaController.cs" Line="90" Column="22" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>this.dtpGenero.TextInputMode</Value>
-          <Value>selectedLbl.Text</Value>
-          <Value>this.lblFechaNacimiento.Text</Value>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/VentaDetalleTableViewController.cs" relfile="iOS/VentaDetalleTableViewController.cs" line="201" column="36" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorklabsMx/WorklabsMx.Droid/ViewController/MiPerfil/MisColaboradoresActivity.cs" relfile="WorklabsMx.Droid/ViewController/MiPerfil/MisColaboradoresActivity.cs" line="399" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="MyTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.160B3A73-0087-464F-AF0E-BB52948BBAF6" />
   <MultiItemStartupConfigurations />
 </Properties>
