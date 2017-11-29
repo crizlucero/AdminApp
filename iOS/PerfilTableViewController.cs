@@ -23,6 +23,8 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+           
+          
             this.EventosTecladoTextfileds();
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
@@ -44,7 +46,8 @@ namespace WorklabsMx.iOS
                 this.txtProfesion.Text = Miembro.Miembro_Profesion;
                 this.txtHabilidades.Text = Miembro.Miembro_Habilidades;
                 this.lblGenero.Text = Miembro.Genero_Descripcion;
-                this.lblFechaNacimiento.Text = Miembro.Miembro_Fecha_Nacimiento;
+                var arrFecha = Miembro.Miembro_Fecha_Nacimiento.Split('-');
+                this.lblFechaNacimiento.Text = arrFecha[2] + "/" + arrFecha[1] + "/" + arrFecha[0];
             }
             else
             {
@@ -259,6 +262,7 @@ namespace WorklabsMx.iOS
                 DateTime fechaNacimiento = new DateTime();
                 if (this.lblFechaNacimiento.Text != "")
                 {
+                    
                     fechaNacimiento = DateTime.ParseExact(this.lblFechaNacimiento.Text, "dd/MM/yyyy", CultureInfo.CurrentCulture);
                     if (new MiembrosController().UpdateDataMiembros(Convert.ToInt32(StoregeLocal.Get("Usuario_Id")), txtNombre.Text, txtApellido.Text, txtEmail.Text,
                                                                     txtTelefono.Text, txtTelefono.Text, txtProfesion.Text, txtProfesion.Text, txtHabilidades.Text, fechaNacimiento, ""))
