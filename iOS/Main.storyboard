@@ -477,7 +477,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="btnEditarDireccion_TouchUpInside:" destination="ZWk-QM-6Jb" eventType="touchUpInside" id="95884"/>
-                                                        <segue destination="VSm-LE-Gh7" kind="push" id="vpB-cj-unC"/>
+                                                        <segue destination="VSm-LE-Gh7" kind="push" identifier="EditarDIreccion" id="vpB-cj-unC"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvk-Rv-gWA">
@@ -497,7 +497,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="btnRedesSociales_TouchUpInside:" destination="ZWk-QM-6Jb" eventType="touchUpInside" id="95885"/>
-                                                        <segue destination="HOA-KX-jPs" kind="push" id="O8K-D6-pVN"/>
+                                                        <segue destination="HOA-KX-jPs" kind="push" identifier="EditarRedesSociales" id="O8K-D6-pVN"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jK0-Tf-g90">

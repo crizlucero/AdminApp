@@ -219,7 +219,10 @@ namespace WorklabsMx.iOS
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
-           
+            if (segue.Identifier == "EditarRedesSociales")
+            {
+                
+            }
         }
     }
 }
