@@ -23,6 +23,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            this.EventosTecladoTextfileds();
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
             StyleHelper.Style(this.imgPerfil.Layer);
@@ -52,6 +53,43 @@ namespace WorklabsMx.iOS
 
             }
 
+        }
+
+
+        /* Acciona eventos para los textfields de ocultar teclado en patalla cuando se presiona la tecla intro, y en le caso de el textfield de contraseña
+         se procede a iniciar sesion cuando se presiona la tecla intro */
+        private void EventosTecladoTextfileds()
+        {
+            this.txtNombre.ShouldReturn += (textField) => {
+                this.txtApellido.BecomeFirstResponder();
+                return true;
+            };
+
+            this.txtApellido.ShouldReturn += (textField) => {
+                this.txtEmail.BecomeFirstResponder();
+                return true;
+            };
+
+            this.txtEmail.ShouldReturn += (textField) => {
+                this.txtHabilidades.BecomeFirstResponder();
+                return true;
+            };
+
+            this.txtHabilidades.ShouldReturn += (textField) => {
+                this.txtTelefono.BecomeFirstResponder();
+                return true;
+            };
+
+            this.txtTelefono.ShouldReturn += (textField) => {
+                this.txtProfesion.BecomeFirstResponder();
+                return true;
+            };
+
+            this.txtProfesion.ShouldReturn += (textField) => {
+                this.GuardarCambios();
+                textField.ResignFirstResponder();
+                return true;
+            };
         }
 
         private void Tapped(UITapGestureRecognizer Recognizer)
@@ -210,17 +248,23 @@ namespace WorklabsMx.iOS
 
         partial void btnGuardarCambios_TouchUpInside(UIButton sender)
         {
+            this.GuardarCambios();
+        }
+
+
+        private void GuardarCambios()
+        {
             if (InternetConectionHelper.VerificarConexion())
             {
                 DateTime fechaNacimiento = new DateTime();
-                if(this.lblFechaNacimiento.Text != "")
+                if (this.lblFechaNacimiento.Text != "")
                 {
                     fechaNacimiento = DateTime.ParseExact(this.lblFechaNacimiento.Text, "dd/MM/yyyy", CultureInfo.CurrentCulture);
                     if (new MiembrosController().UpdateDataMiembros(Convert.ToInt32(StoregeLocal.Get("Usuario_Id")), txtNombre.Text, txtApellido.Text, txtEmail.Text,
                                                                     txtTelefono.Text, txtTelefono.Text, txtProfesion.Text, txtProfesion.Text, txtHabilidades.Text, fechaNacimiento, ""))
                         new MessageDialog().SendToast("Datos guardados");
                     else
-                         new MessageDialog().SendToast("Hubo un error\nIntente de nuevo");
+                        new MessageDialog().SendToast("Hubo un error\nIntente de nuevo");
                 }
 
             }

@@ -26,7 +26,8 @@ namespace WorklabsMx.iOS
 
         PickerItemsController items;
 
-        string GiroId;
+        string GiroId = "";
+        string TerritorioId = "";
 
         public DatosEmpresaTableViewController (IntPtr handle) : base (handle)
         {
@@ -36,6 +37,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            this.EventosTecladoTextfileds();
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
             items = new PickerItemsController();
@@ -51,7 +53,7 @@ namespace WorklabsMx.iOS
                 this.txtTelefono.Text = Empresa.Empresa_Miembro_Telefono;
                 this.txtRazonSocial.Text = Empresa.Empresa_Miembro_Razon_Social;
                 this.txtGiroComercial.Text = Empresa.Giro_Descripcion;
-                GiroId = items.GetGiroId(txtGiroComercial.Text).ToString();
+
                 this.txtNombreEmpresa.Text = Empresa.Empresa_Miembro_Nombre;
                 this.txtCorreoElectronico.Text = Empresa.Empresa_Miembro_Correo_Electronico;
             }
@@ -80,12 +82,65 @@ namespace WorklabsMx.iOS
 
         partial void btnActualizar_TouchUpInside(UIButton sender)
         {
-            if (new EmpresaController().UpdateDataEmpresa(Empresa.Empresa_Miembro_Id, StoregeLocal.Get("Usuario_Id"), GiroId, "", txtRazonSocial.Text, txtRFC.Text,
-                                                              txtNombreEmpresa.Text, Empresa.Empresa_Miembro_Calle, Empresa.Empresa_Miembro_Numero_Exterior, Empresa.Empresa_Miembro_Numero_Interior, txtCorreoElectronico.Text, txtTelefono.Text, Empresa.Empresa_Miembro_Pagina_Web, Empresa.Empresa_Miembro_Red_Social_1, Empresa.Empresa_Miembro_Red_Social_2,Empresa.Empresa_Miembro_Red_Social_3, Empresa.Empresa_Miembro_Logotipo))
-                new MessageDialog().SendToast("Datos guardados");
-            else
-                new MessageDialog().SendToast("Hubo un error\nIntente de nuevo");
+            
+            this.ActualizarInfo();
         }
+
+
+        private void ActualizarInfo()
+        {
+            if (InternetConectionHelper.VerificarConexion())
+            {
+                TerritorioId = new TerritorioController().GetTerritorioId(Empresa.Territorio_Cp, Empresa.Territorio_Colonia_Descripcion);
+                GiroId = items.GetGiroId(txtGiroComercial.Text).ToString();
+                if (new EmpresaController().UpdateDataEmpresa(Empresa.Empresa_Miembro_Id, StoregeLocal.Get("Usuario_Id"), GiroId, TerritorioId, txtRazonSocial.Text, txtRFC.Text,
+                                                                  txtNombreEmpresa.Text, Empresa.Empresa_Miembro_Calle, Empresa.Empresa_Miembro_Numero_Exterior, Empresa.Empresa_Miembro_Numero_Interior, txtCorreoElectronico.Text, txtTelefono.Text, Empresa.Empresa_Miembro_Pagina_Web, Empresa.Empresa_Miembro_Red_Social_1, Empresa.Empresa_Miembro_Red_Social_2, Empresa.Empresa_Miembro_Red_Social_3, Empresa.Empresa_Miembro_Logotipo))
+                    new MessageDialog().SendToast("Datos guardados");
+                else
+                    new MessageDialog().SendToast("Hubo un error\nIntente de nuevo");
+            }
+            else
+            {
+                new MessageDialog().SendToast("No tienes conexión a internet, intenta mas tarde");
+            }
+        }
+
+        /* Acciona eventos para los textfields de ocultar teclado en patalla cuando se presiona la tecla intro, y en le caso de el textfield de contraseña
+        se procede a iniciar sesion cuando se presiona la tecla intro */
+        private void EventosTecladoTextfileds()
+        {
+            this.txtNombreEmpresa.ShouldReturn += (textField) => {
+                this.txtCorreoElectronico.BecomeFirstResponder();
+                return true;
+            };
+
+            this.txtCorreoElectronico.ShouldReturn += (textField) => {
+                this.txtGiroComercial.BecomeFirstResponder();
+                return true;
+            };
+
+            this.txtGiroComercial.ShouldReturn += (textField) => {
+                this.txtTelefono.BecomeFirstResponder();
+                return true;
+            };
+
+            this.txtTelefono.ShouldReturn += (textField) => {
+                this.txtRFC.BecomeFirstResponder();
+                return true;
+            };
+
+            this.txtRFC.ShouldReturn += (textField) => {
+                this.txtRazonSocial.BecomeFirstResponder();
+                return true;
+            };
+
+            this.txtRazonSocial.ShouldReturn += (textField) => {
+                this.ActualizarInfo();
+                textField.ResignFirstResponder();
+                return true;
+            };
+        }
+
 
         private UIAlertController CrearActionSheet()
         {
@@ -221,7 +276,16 @@ namespace WorklabsMx.iOS
         {
             if (segue.Identifier == "EditarRedesSociales")
             {
-                
+                var SocialView = (EditarRedesSocialesTableViewController)segue.DestinationViewController;
+                SocialView.Empresa = this.Empresa;
+                SocialView.TerritorioId = this.TerritorioId;
+                SocialView.GiroId = this.GiroId;
+            }
+            else if (segue.Identifier == "EditarDireccion")
+            {
+                var DireccioView = (DireccionEmpresaTableViewController)segue.DestinationViewController;
+                DireccioView.Empresa = this.Empresa;
+                DireccioView.GiroId = this.GiroId;
             }
         }
     }

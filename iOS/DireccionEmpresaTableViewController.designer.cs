@@ -46,6 +46,10 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnGuardar (UIKit.UIBarButtonItem sender);
 
+        [Action ("txtCodigoPostal_ValuedChanged:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void txtCodigoPostal_ValuedChanged (UIKit.UITextField sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (txtCalle != null) {
