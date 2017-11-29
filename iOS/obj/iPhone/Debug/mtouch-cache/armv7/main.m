@@ -20,10 +20,6 @@ extern void *mono_aot_module_BTProgressHUD_info;
 extern void *mono_aot_module_Plugin_Connectivity_info;
 extern void *mono_aot_module_Plugin_Connectivity_Abstractions_info;
 extern void *mono_aot_module_I18N_info;
-extern void *mono_aot_module_I18N_CJK_info;
-extern void *mono_aot_module_I18N_MidEast_info;
-extern void *mono_aot_module_I18N_Other_info;
-extern void *mono_aot_module_I18N_Rare_info;
 extern void *mono_aot_module_I18N_West_info;
 
 void xamarin_register_modules_impl ()
@@ -48,10 +44,6 @@ void xamarin_register_modules_impl ()
 	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_info);
 	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_Abstractions_info);
 	mono_aot_register_module (mono_aot_module_I18N_info);
-	mono_aot_register_module (mono_aot_module_I18N_CJK_info);
-	mono_aot_register_module (mono_aot_module_I18N_MidEast_info);
-	mono_aot_register_module (mono_aot_module_I18N_Other_info);
-	mono_aot_register_module (mono_aot_module_I18N_Rare_info);
 	mono_aot_register_module (mono_aot_module_I18N_West_info);
 
 }

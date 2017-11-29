@@ -18,8 +18,4 @@
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Debug/WorklabsMx.iOS.app:/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/mtouch-cache/32/Link/Plugin.Connectivity.dll
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Debug/WorklabsMx.iOS.app:/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/mtouch-cache/32/Link/Plugin.Connectivity.Abstractions.dll
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Debug/WorklabsMx.iOS.app:/Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/I18N.dll
-/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Debug/WorklabsMx.iOS.app:/Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/I18N.CJK.dll
-/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Debug/WorklabsMx.iOS.app:/Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/I18N.MidEast.dll
-/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Debug/WorklabsMx.iOS.app:/Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/I18N.Other.dll
-/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Debug/WorklabsMx.iOS.app:/Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/I18N.Rare.dll
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Debug/WorklabsMx.iOS.app:/Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/I18N.West.dll

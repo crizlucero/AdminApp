@@ -27,7 +27,7 @@
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
-    <MtouchI18n>west</MtouchI18n>
+    <MtouchI18n>cjk,mideast,other,rare,west</MtouchI18n>
     <CodesignProvision></CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
@@ -68,7 +68,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Distribution: Espacio Claro, S.A. de C.V. (3VMPS2N2KS)</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -81,7 +81,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
     <MtouchI18n>west</MtouchI18n>
-    <CodesignProvision></CodesignProvision>
+    <CodesignProvision>WorkLabsMxPP</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -383,7 +383,6 @@
     <ImageAsset Include="Assets.xcassets\Leyenda.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Leyenda.imageset\leyenda.png" />
     <ImageAsset Include="Assets.xcassets\Profile.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Profile.imageset\profile.png" />
     <ImageAsset Include="Assets.xcassets\Likes.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Comments.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\back.imageset\Contents.json" />
@@ -431,30 +430,15 @@
     <ImageAsset Include="Assets.xcassets\BackGround.imageset\Back.jpg" />
     <ImageAsset Include="Assets.xcassets\Launch.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Launch.imageset\Load.jpg" />
-    <ImageAsset Include="Assets.xcassets\Likes.imageset\Artboard 1.png" />
-    <ImageAsset Include="Assets.xcassets\Likes.imageset\Artboard 4.png" />
-    <ImageAsset Include="Assets.xcassets\Likes.imageset\Artboard 5.png" />
-    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Artboard 24.png" />
-    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Artboard 25.png" />
-    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Artboard 26.png" />
     <ImageAsset Include="Assets.xcassets\back.imageset\Artboard 21.png" />
     <ImageAsset Include="Assets.xcassets\back.imageset\Artboard 22.png" />
     <ImageAsset Include="Assets.xcassets\back.imageset\Artboard 23.png" />
     <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Artboard 20.png" />
-    <ImageAsset Include="Assets.xcassets\Camera.imageset\Artboard 17.png" />
-    <ImageAsset Include="Assets.xcassets\Comments.imageset\Artboard 13.png" />
-    <ImageAsset Include="Assets.xcassets\Comments.imageset\Artboard 11.png" />
-    <ImageAsset Include="Assets.xcassets\Comments.imageset\Artboard 10.png" />
-    <ImageAsset Include="Assets.xcassets\Camera.imageset\Artboard 14.png" />
     <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Artboard 18.png" />
-    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\Artboard 30.png" />
-    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\Artboard 29.png" />
-    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\Artboard 27.png" />
     <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\Logotipo_500px.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icono_1024.png" />
     <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Artboard 19.png" />
-    <ImageAsset Include="Assets.xcassets\Camera.imageset\Artboard 15.png" />
     <ImageAsset Include="Assets.xcassets\ic_call.imageset\icons8-phone-30.png" />
     <ImageAsset Include="Assets.xcassets\ic_call.imageset\icons8-phone-60.png" />
     <ImageAsset Include="Assets.xcassets\ic_call.imageset\icons8-phone-90.png" />
@@ -563,6 +547,26 @@
     <ImageAsset Include="Assets.xcassets\Instagram.imageset\icons8-instagram-filled-90.png" />
     <ImageAsset Include="Assets.xcassets\PerfilGrande.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\PerfilGrande.imageset\01.png" />
+    <ImageAsset Include="Assets.xcassets\BigQr.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\BigQr.imageset\Custom Size – 17%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Likes.imageset\Custom Size – 2.png" />
+    <ImageAsset Include="Assets.xcassets\Likes.imageset\Custom Size – 2%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Likes.imageset\Custom Size – 2%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Comments.imageset\Custom Size – 5.png" />
+    <ImageAsset Include="Assets.xcassets\Comments.imageset\Custom Size – 5%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Comments.imageset\Custom Size – 5%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Profile.imageset\Custom Size – 18%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Profile.imageset\Custom Size – 18%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Profile.imageset\Custom Size – 15%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Custom Size – 18.png" />
+    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Custom Size – 18%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Custom Size – 18%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\Custom Size – 14.png" />
+    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\Custom Size – 14%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\Custom Size – 14%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Camera.imageset\Custom Size – 22.png" />
+    <ImageAsset Include="Assets.xcassets\Camera.imageset\Custom Size – 22%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Camera.imageset\Custom Size – 22%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -961,6 +965,7 @@
     <Folder Include="Assets.xcassets\Twitter.imageset\" />
     <Folder Include="Assets.xcassets\Instagram.imageset\" />
     <Folder Include="Assets.xcassets\PerfilGrande.imageset\" />
+    <Folder Include="Assets.xcassets\BigQr.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

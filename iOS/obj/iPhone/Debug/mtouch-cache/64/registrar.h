@@ -28,9 +28,7 @@
 @class UIKit_UIControlEventProxy;
 @class AppDelegate;
 @class TableViewController;
-@class DashboardController;
 @class SubMenuController;
-@class FacturasController;
 @class MiMembresiaController;
 @protocol TKCalendarDataSource;
 @class WorklabsMx_iOS_CalendarDataSource;
@@ -40,33 +38,35 @@
 @class TabBarController;
 @class EmpresaMiembroController;
 @class AboutMeController;
-@class NoComentsCell;
+@class HeaderCarritoProductos;
 @class ComentariosBodyCell;
+@class EscritorioController;
+@class EscritorioHeaderCell;
+@class NoComentsCell;
 @class ComentarPostHeaderCell;
 @class ComentarioViewCell;
 @class NoComentariosViewCell;
-@class DetailCommentImage;
-@class HeaderCarritoProductos;
+@class MiCuentaViewController;
+@class ProductosMiCuentaViewController;
+@class CuentaProductosCell;
+@class NoInfoCuentaProductosCell;
+@class MembresiasMiCuentaViewController;
+@class CuentaMembresiasCell;
+@class NoInfoCuentaMembresiasCell;
 @class CeldaCarritoProductos;
 @class CeldaNoProductos;
 @class TableViewCellMembresias;
 @class TableViewCellNoMembresias;
-@class CeldaNoDetalleVenta;
-@class CeldaVentaDetalle;
 @class VentaDetalleHeader;
-@class EscritorioHeaderCell;
-@class EscritorioController;
-@class DetalleVentaViewController;
+@class CeldaVentaDetalle;
+@class CeldaNoDetalleVenta;
 @class CanjearCuponController;
+@class DetalleVentaViewController;
+@class DetailCommentImage;
 @class cloudViewController;
 @class TelefoniaTableView;
-@class ProductosMiCuentaViewController;
-@class MembresiasMiCuentaViewController;
-@class CuentaProductosCell;
-@class NoInfoCuentaProductosCell;
-@class CuentaMembresiasCell;
-@class NoInfoCuentaMembresiasCell;
-@class MiCuentaViewController;
+@class EditarRedesSocialesTableViewController;
+@class FechaNacimientoPickerViewController;
 @class WorklabsMx_iOS_ViewElements_UICheckBox;
 @class WorklabsMx_iOS_ViewElements_HorarioEventos;
 @class WorklabsMx_iOS_ViewElements_UIDropdownList;
@@ -111,10 +111,17 @@
 @class PublicarPostViewController;
 @class ComentarPostTableViewController;
 @class SeccionComentariosTableViewController;
+@class TabBarDetalleVenta;
 @class CarritoProductos;
 @class TableViewMembresia;
 @class VentaDetalleTableViewController;
-@class TabBarDetalleVenta;
+@class PerfilTableViewController;
+@class DatosEmpresaTableViewController;
+@class DireccionEmpresaTableViewController;
+@class WorklabsMx_iOS_GeneroViewController_StackOverflowModel;
+@class GeneroViewController;
+@class WorklabsMx_iOS_ColoniaViewController_StackOverflowModel;
+@class ColoniaViewController;
 @class WorklabsMx_iOS_ViewElements_PostCard;
 @class WorklabsMx_iOS_Styles_STLTableViewSource;
 @class WorklabsMx_iOS_Styles_STLImageView;
@@ -614,15 +621,6 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface DashboardController : UITableViewController {
-}
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
 @interface SubMenuController : UITableViewController {
 }
 	-(void) release;
@@ -630,15 +628,6 @@
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
 	-(void) viewDidLoad;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
-@interface FacturasController : UIViewController {
-}
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -730,15 +719,18 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface NoComentsCell : UITableViewCell {
+@interface HeaderCarritoProductos : UITableViewCell {
 }
-	@property (nonatomic, assign) UILabel * lblMessageNoComments;
+	@property (nonatomic, assign) UILabel * lblNumeroProductos;
+	@property (nonatomic, assign) UILabel * lblTotalPagar;
 	-(void) release;
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UILabel *) lblMessageNoComments;
-	-(void) setLblMessageNoComments:(UILabel *)p0;
+	-(UILabel *) lblNumeroProductos;
+	-(void) setLblNumeroProductos:(UILabel *)p0;
+	-(UILabel *) lblTotalPagar;
+	-(void) setLblTotalPagar:(UILabel *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -784,6 +776,62 @@
 	-(void) btnComentarPost_TouchUpInside:(UIButton *)p0;
 	-(void) btnImagenComentatio_touchUpInside:(UIButton *)p0;
 	-(void) btnLikes_TouchUpInside:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface EscritorioController : UITableViewController {
+}
+	@property (nonatomic, assign) UIBarButtonItem * btnScanQr;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIBarButtonItem *) btnScanQr;
+	-(void) setBtnScanQr:(UIBarButtonItem *)p0;
+	-(void) viewDidLoad;
+	-(void) viewWillAppear:(BOOL)p0;
+	-(void) viewDidAppear:(BOOL)p0;
+	-(UIView *) tableView:(UITableView *)p0 viewForHeaderInSection:(NSInteger)p1;
+	-(CGFloat) tableView:(UITableView *)p0 heightForHeaderInSection:(NSInteger)p1;
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
+	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1;
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
+	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
+	-(void) btnToScanQr_TouchUpInside:(UIBarButtonItem *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface EscritorioHeaderCell : UITableViewCell {
+}
+	@property (nonatomic, assign) UIImageView * impPublicar;
+	@property (nonatomic, assign) UILabel * lblNombre;
+	@property (nonatomic, assign) UILabel * lblProfesion;
+	@property (nonatomic, assign) UIButton * btnPublicar;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIImageView *) impPublicar;
+	-(void) setImpPublicar:(UIImageView *)p0;
+	-(UILabel *) lblNombre;
+	-(void) setLblNombre:(UILabel *)p0;
+	-(UILabel *) lblProfesion;
+	-(void) setLblProfesion:(UILabel *)p0;
+	-(UIButton *) btnPublicar;
+	-(void) setBtnPublicar:(UIButton *)p0;
+	-(void) btnPublicar_TouchUpInside:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface NoComentsCell : UITableViewCell {
+}
+	@property (nonatomic, assign) UILabel * lblMessageNoComments;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UILabel *) lblMessageNoComments;
+	-(void) setLblMessageNoComments:(UILabel *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -865,38 +913,116 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface DetailCommentImage : UIViewController {
+@interface MiCuentaViewController : UITabBarController {
 }
-	@property (nonatomic, assign) UIButton * btnBack;
-	@property (nonatomic, assign) UIImageView * imgCommnet;
-	@property (nonatomic, assign) UIView * vwImageComment;
 	-(void) release;
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIButton *) btnBack;
-	-(void) setBtnBack:(UIButton *)p0;
-	-(UIImageView *) imgCommnet;
-	-(void) setImgCommnet:(UIImageView *)p0;
-	-(UIView *) vwImageComment;
-	-(void) setVwImageComment:(UIView *)p0;
-	-(void) viewDidLoad;
-	-(void) btnBack_TouchUpInside:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface HeaderCarritoProductos : UITableViewCell {
+@interface ProductosMiCuentaViewController : UITableViewController {
 }
-	@property (nonatomic, assign) UILabel * lblNumeroProductos;
-	@property (nonatomic, assign) UILabel * lblTotalPagar;
 	-(void) release;
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UILabel *) lblNumeroProductos;
-	-(void) setLblNumeroProductos:(UILabel *)p0;
-	-(UILabel *) lblTotalPagar;
-	-(void) setLblTotalPagar:(UILabel *)p0;
+	-(void) viewDidLoad;
+	-(void) viewWillAppear:(BOOL)p0;
+	-(void) viewDidAppear:(BOOL)p0;
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
+	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1;
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface CuentaProductosCell : UITableViewCell {
+}
+	@property (nonatomic, assign) UIButton * btnAgregar;
+	@property (nonatomic, assign) UILabel * lblCantidad;
+	@property (nonatomic, assign) UILabel * lblFechaVencimiento;
+	@property (nonatomic, assign) UILabel * lblNombreProducto;
+	@property (nonatomic, assign) UIView * vwProductos;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnAgregar;
+	-(void) setBtnAgregar:(UIButton *)p0;
+	-(UILabel *) lblCantidad;
+	-(void) setLblCantidad:(UILabel *)p0;
+	-(UILabel *) lblFechaVencimiento;
+	-(void) setLblFechaVencimiento:(UILabel *)p0;
+	-(UILabel *) lblNombreProducto;
+	-(void) setLblNombreProducto:(UILabel *)p0;
+	-(UIView *) vwProductos;
+	-(void) setVwProductos:(UIView *)p0;
+	-(void) btnAgregar_TouchUpInside:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface NoInfoCuentaProductosCell : UITableViewCell {
+}
+	@property (nonatomic, assign) UILabel * lblMensaje;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UILabel *) lblMensaje;
+	-(void) setLblMensaje:(UILabel *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface MembresiasMiCuentaViewController : UITableViewController {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(void) viewDidLoad;
+	-(void) viewWillAppear:(BOOL)p0;
+	-(void) viewDidAppear:(BOOL)p0;
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
+	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1;
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface CuentaMembresiasCell : UITableViewCell {
+}
+	@property (nonatomic, assign) UIButton * btnRenovar;
+	@property (nonatomic, assign) UILabel * lblCantidad;
+	@property (nonatomic, assign) UILabel * lblFechaVencimiento;
+	@property (nonatomic, assign) UILabel * lblNombreMembresia;
+	@property (nonatomic, assign) UIView * vwMembresias;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnRenovar;
+	-(void) setBtnRenovar:(UIButton *)p0;
+	-(UILabel *) lblCantidad;
+	-(void) setLblCantidad:(UILabel *)p0;
+	-(UILabel *) lblFechaVencimiento;
+	-(void) setLblFechaVencimiento:(UILabel *)p0;
+	-(UILabel *) lblNombreMembresia;
+	-(void) setLblNombreMembresia:(UILabel *)p0;
+	-(UIView *) vwMembresias;
+	-(void) setVwMembresias:(UIView *)p0;
+	-(void) btnRenovar_TouchUPInside:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface NoInfoCuentaMembresiasCell : UITableViewCell {
+}
+	@property (nonatomic, assign) UILabel * lblMensaje;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UILabel *) lblMensaje;
+	-(void) setLblMensaje:(UILabel *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -1033,39 +1159,6 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface CeldaNoDetalleVenta : UITableViewCell {
-}
-	@property (nonatomic, assign) UILabel * lblNoInfo;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UILabel *) lblNoInfo;
-	-(void) setLblNoInfo:(UILabel *)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
-@interface CeldaVentaDetalle : UITableViewCell {
-}
-	@property (nonatomic, assign) UILabel * lblCantidad;
-	@property (nonatomic, assign) UILabel * lblNombreProducto;
-	@property (nonatomic, assign) UILabel * lblTotalPagar;
-	@property (nonatomic, assign) UIView * vwVistaDetalleVenta;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UILabel *) lblCantidad;
-	-(void) setLblCantidad:(UILabel *)p0;
-	-(UILabel *) lblNombreProducto;
-	-(void) setLblNombreProducto:(UILabel *)p0;
-	-(UILabel *) lblTotalPagar;
-	-(void) setLblTotalPagar:(UILabel *)p0;
-	-(UIView *) vwVistaDetalleVenta;
-	-(void) setVwVistaDetalleVenta:(UIView *)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
 @interface VentaDetalleHeader : UITableViewCell {
 }
 	@property (nonatomic, assign) UIButton * btnUsarCupon;
@@ -1096,47 +1189,57 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface EscritorioHeaderCell : UITableViewCell {
+@interface CeldaVentaDetalle : UITableViewCell {
 }
-	@property (nonatomic, assign) UIImageView * impPublicar;
-	@property (nonatomic, assign) UILabel * lblNombre;
-	@property (nonatomic, assign) UILabel * lblProfesion;
-	@property (nonatomic, assign) UIButton * btnPublicar;
+	@property (nonatomic, assign) UILabel * lblCantidad;
+	@property (nonatomic, assign) UILabel * lblNombreProducto;
+	@property (nonatomic, assign) UILabel * lblTotalPagar;
+	@property (nonatomic, assign) UIView * vwVistaDetalleVenta;
 	-(void) release;
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIImageView *) impPublicar;
-	-(void) setImpPublicar:(UIImageView *)p0;
-	-(UILabel *) lblNombre;
-	-(void) setLblNombre:(UILabel *)p0;
-	-(UILabel *) lblProfesion;
-	-(void) setLblProfesion:(UILabel *)p0;
-	-(UIButton *) btnPublicar;
-	-(void) setBtnPublicar:(UIButton *)p0;
-	-(void) btnPublicar_TouchUpInside:(UIButton *)p0;
+	-(UILabel *) lblCantidad;
+	-(void) setLblCantidad:(UILabel *)p0;
+	-(UILabel *) lblNombreProducto;
+	-(void) setLblNombreProducto:(UILabel *)p0;
+	-(UILabel *) lblTotalPagar;
+	-(void) setLblTotalPagar:(UILabel *)p0;
+	-(UIView *) vwVistaDetalleVenta;
+	-(void) setVwVistaDetalleVenta:(UIView *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface EscritorioController : UITableViewController {
+@interface CeldaNoDetalleVenta : UITableViewCell {
 }
-	@property (nonatomic, assign) UIBarButtonItem * btnScanQr;
+	@property (nonatomic, assign) UILabel * lblNoInfo;
 	-(void) release;
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIBarButtonItem *) btnScanQr;
-	-(void) setBtnScanQr:(UIBarButtonItem *)p0;
+	-(UILabel *) lblNoInfo;
+	-(void) setLblNoInfo:(UILabel *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface CanjearCuponController : UIViewController {
+}
+	@property (nonatomic, assign) UIButton * btnCanjearCupon;
+	@property (nonatomic, assign) UITextField * txtCupon;
+	@property (nonatomic, assign) UIView * vwCanjearCupon;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnCanjearCupon;
+	-(void) setBtnCanjearCupon:(UIButton *)p0;
+	-(UITextField *) txtCupon;
+	-(void) setTxtCupon:(UITextField *)p0;
+	-(UIView *) vwCanjearCupon;
+	-(void) setVwCanjearCupon:(UIView *)p0;
 	-(void) viewDidLoad;
-	-(void) viewWillAppear:(BOOL)p0;
-	-(void) viewDidAppear:(BOOL)p0;
-	-(UIView *) tableView:(UITableView *)p0 viewForHeaderInSection:(NSInteger)p1;
-	-(CGFloat) tableView:(UITableView *)p0 heightForHeaderInSection:(NSInteger)p1;
-	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
-	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1;
-	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
-	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
-	-(void) btnToScanQr_TouchUpInside:(UIBarButtonItem *)p0;
+	-(void) btnBack_TouchUpInside:(UIButton *)p0;
+	-(void) btnCanjear_TouchUpInside:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -1188,24 +1291,23 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface CanjearCuponController : UIViewController {
+@interface DetailCommentImage : UIViewController {
 }
-	@property (nonatomic, assign) UIButton * btnCanjearCupon;
-	@property (nonatomic, assign) UITextField * txtCupon;
-	@property (nonatomic, assign) UIView * vwCanjearCupon;
+	@property (nonatomic, assign) UIButton * btnBack;
+	@property (nonatomic, assign) UIImageView * imgCommnet;
+	@property (nonatomic, assign) UIView * vwImageComment;
 	-(void) release;
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIButton *) btnCanjearCupon;
-	-(void) setBtnCanjearCupon:(UIButton *)p0;
-	-(UITextField *) txtCupon;
-	-(void) setTxtCupon:(UITextField *)p0;
-	-(UIView *) vwCanjearCupon;
-	-(void) setVwCanjearCupon:(UIView *)p0;
+	-(UIButton *) btnBack;
+	-(void) setBtnBack:(UIButton *)p0;
+	-(UIImageView *) imgCommnet;
+	-(void) setImgCommnet:(UIImageView *)p0;
+	-(UIView *) vwImageComment;
+	-(void) setVwImageComment:(UIView *)p0;
 	-(void) viewDidLoad;
 	-(void) btnBack_TouchUpInside:(UIButton *)p0;
-	-(void) btnCanjear_TouchUpInside:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -1239,116 +1341,49 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface ProductosMiCuentaViewController : UITableViewController {
+@interface EditarRedesSocialesTableViewController : UITableViewController {
 }
+	@property (nonatomic, assign) UITextField * txtPaginaWeb;
+	@property (nonatomic, assign) UITextField * txtUsuarioFacebook;
+	@property (nonatomic, assign) UITextField * txtUsuarioInstagram;
+	@property (nonatomic, assign) UITextField * txtUsuarioTwitter;
 	-(void) release;
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UITextField *) txtPaginaWeb;
+	-(void) setTxtPaginaWeb:(UITextField *)p0;
+	-(UITextField *) txtUsuarioFacebook;
+	-(void) setTxtUsuarioFacebook:(UITextField *)p0;
+	-(UITextField *) txtUsuarioInstagram;
+	-(void) setTxtUsuarioInstagram:(UITextField *)p0;
+	-(UITextField *) txtUsuarioTwitter;
+	-(void) setTxtUsuarioTwitter:(UITextField *)p0;
+	-(void) viewDidLoad;
+	-(void) btnGardar:(UIBarButtonItem *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface FechaNacimientoPickerViewController : UIViewController {
+}
+	@property (nonatomic, assign) UIButton * btnCancelar;
+	@property (nonatomic, assign) UIButton * btnSleccionar;
+	@property (nonatomic, assign) UIDatePicker * dtpFechaNacimiento;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnCancelar;
+	-(void) setBtnCancelar:(UIButton *)p0;
+	-(UIButton *) btnSleccionar;
+	-(void) setBtnSleccionar:(UIButton *)p0;
+	-(UIDatePicker *) dtpFechaNacimiento;
+	-(void) setDtpFechaNacimiento:(UIDatePicker *)p0;
 	-(void) viewDidLoad;
 	-(void) viewWillAppear:(BOOL)p0;
-	-(void) viewDidAppear:(BOOL)p0;
-	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
-	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1;
-	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
-@interface MembresiasMiCuentaViewController : UITableViewController {
-}
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(void) viewDidLoad;
-	-(void) viewWillAppear:(BOOL)p0;
-	-(void) viewDidAppear:(BOOL)p0;
-	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
-	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1;
-	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
-@interface CuentaProductosCell : UITableViewCell {
-}
-	@property (nonatomic, assign) UIButton * btnAgregar;
-	@property (nonatomic, assign) UILabel * lblCantidad;
-	@property (nonatomic, assign) UILabel * lblFechaVencimiento;
-	@property (nonatomic, assign) UILabel * lblNombreProducto;
-	@property (nonatomic, assign) UIView * vwProductos;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIButton *) btnAgregar;
-	-(void) setBtnAgregar:(UIButton *)p0;
-	-(UILabel *) lblCantidad;
-	-(void) setLblCantidad:(UILabel *)p0;
-	-(UILabel *) lblFechaVencimiento;
-	-(void) setLblFechaVencimiento:(UILabel *)p0;
-	-(UILabel *) lblNombreProducto;
-	-(void) setLblNombreProducto:(UILabel *)p0;
-	-(UIView *) vwProductos;
-	-(void) setVwProductos:(UIView *)p0;
-	-(void) btnAgregar_TouchUpInside:(UIButton *)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
-@interface NoInfoCuentaProductosCell : UITableViewCell {
-}
-	@property (nonatomic, assign) UILabel * lblMensaje;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UILabel *) lblMensaje;
-	-(void) setLblMensaje:(UILabel *)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
-@interface CuentaMembresiasCell : UITableViewCell {
-}
-	@property (nonatomic, assign) UIButton * btnRenovar;
-	@property (nonatomic, assign) UILabel * lblCantidad;
-	@property (nonatomic, assign) UILabel * lblFechaVencimiento;
-	@property (nonatomic, assign) UILabel * lblNombreMembresia;
-	@property (nonatomic, assign) UIView * vwMembresias;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIButton *) btnRenovar;
-	-(void) setBtnRenovar:(UIButton *)p0;
-	-(UILabel *) lblCantidad;
-	-(void) setLblCantidad:(UILabel *)p0;
-	-(UILabel *) lblFechaVencimiento;
-	-(void) setLblFechaVencimiento:(UILabel *)p0;
-	-(UILabel *) lblNombreMembresia;
-	-(void) setLblNombreMembresia:(UILabel *)p0;
-	-(UIView *) vwMembresias;
-	-(void) setVwMembresias:(UIView *)p0;
-	-(void) btnRenovar_TouchUPInside:(UIButton *)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
-@interface NoInfoCuentaMembresiasCell : UITableViewCell {
-}
-	@property (nonatomic, assign) UILabel * lblMensaje;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UILabel *) lblMensaje;
-	-(void) setLblMensaje:(UILabel *)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
-@interface MiCuentaViewController : UITabBarController {
-}
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(void) btnCancelar_TouchUpInside:(UIButton *)p0;
+	-(void) btnSeleccionar_TouchUpInside:(UIButton *)p0;
+	-(void) dtpFechaNacimiento_ValueChanged:(UIDatePicker *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -1927,6 +1962,22 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
+@interface TabBarDetalleVenta : UITabBarController {
+}
+	@property (nonatomic, assign) UIBarButtonItem * btnCarrito;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIBarButtonItem *) btnCarrito;
+	-(void) setBtnCarrito:(UIBarButtonItem *)p0;
+	-(void) viewDidLoad;
+	-(void) tabBar:(UITabBar *)p0 didSelectItem:(UITabBarItem *)p1;
+	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
+	-(void) btnCarrito_Touch:(UIBarButtonItem *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
 @interface CarritoProductos : UITableViewController {
 }
 	-(void) release;
@@ -1962,8 +2013,6 @@
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(void) btnAtras:(UIBarButtonItem *)p0;
-	-(void) btnPagar:(UIBarButtonItem *)p0;
 	-(void) viewDidLoad;
 	-(void) viewWillAppear:(BOOL)p0;
 	-(UIView *) tableView:(UITableView *)p0 viewForHeaderInSection:(NSInteger)p1;
@@ -1973,22 +2022,223 @@
 	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
 	-(void) tableView:(UITableView *)p0 didSelectRowAtIndexPath:(NSIndexPath *)p1;
 	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
+	-(void) btnAtras:(UIBarButtonItem *)p0;
+	-(void) btnPagar:(UIBarButtonItem *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface TabBarDetalleVenta : UITabBarController {
+@interface PerfilTableViewController : UITableViewController {
 }
-	@property (nonatomic, assign) UIBarButtonItem * btnCarrito;
+	@property (nonatomic, assign) UIButton * btnEditarFecha;
+	@property (nonatomic, assign) UIButton * btnEditarGenero;
+	@property (nonatomic, assign) UIButton * btnFotografia;
+	@property (nonatomic, assign) UIButton * btnGuardarCambios;
+	@property (nonatomic, assign) UIImageView * imgPerfil;
+	@property (nonatomic, assign) UILabel * lblFechaNacimiento;
+	@property (nonatomic, assign) UILabel * lblGenero;
+	@property (nonatomic, assign) UITextField * txtApellido;
+	@property (nonatomic, assign) UITextField * txtEmail;
+	@property (nonatomic, assign) UITextField * txtHabilidades;
+	@property (nonatomic, assign) UITextField * txtNombre;
+	@property (nonatomic, assign) UITextField * txtProfesion;
+	@property (nonatomic, assign) UITextField * txtTelefono;
 	-(void) release;
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIBarButtonItem *) btnCarrito;
-	-(void) setBtnCarrito:(UIBarButtonItem *)p0;
+	-(UIButton *) btnEditarFecha;
+	-(void) setBtnEditarFecha:(UIButton *)p0;
+	-(UIButton *) btnEditarGenero;
+	-(void) setBtnEditarGenero:(UIButton *)p0;
+	-(UIButton *) btnFotografia;
+	-(void) setBtnFotografia:(UIButton *)p0;
+	-(UIButton *) btnGuardarCambios;
+	-(void) setBtnGuardarCambios:(UIButton *)p0;
+	-(UIImageView *) imgPerfil;
+	-(void) setImgPerfil:(UIImageView *)p0;
+	-(UILabel *) lblFechaNacimiento;
+	-(void) setLblFechaNacimiento:(UILabel *)p0;
+	-(UILabel *) lblGenero;
+	-(void) setLblGenero:(UILabel *)p0;
+	-(UITextField *) txtApellido;
+	-(void) setTxtApellido:(UITextField *)p0;
+	-(UITextField *) txtEmail;
+	-(void) setTxtEmail:(UITextField *)p0;
+	-(UITextField *) txtHabilidades;
+	-(void) setTxtHabilidades:(UITextField *)p0;
+	-(UITextField *) txtNombre;
+	-(void) setTxtNombre:(UITextField *)p0;
+	-(UITextField *) txtProfesion;
+	-(void) setTxtProfesion:(UITextField *)p0;
+	-(UITextField *) txtTelefono;
+	-(void) setTxtTelefono:(UITextField *)p0;
 	-(void) viewDidLoad;
-	-(void) tabBar:(UITabBar *)p0 didSelectItem:(UITabBarItem *)p1;
+	-(void) imagePickerController:(UIImagePickerController *)p0 didFinishPickingImage:(UIImage *)p1 editingInfo:(NSDictionary *)p2;
+	-(void) imagePickerControllerDidCancel:(UIImagePickerController *)p0;
 	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
-	-(void) btnCarrito_Touch:(UIBarButtonItem *)p0;
+	-(void) btnEditarFecha_TouchUpInside:(UIButton *)p0;
+	-(void) btnEditarGenero_TouchUpInside:(UIButton *)p0;
+	-(void) btnFoto_TpuchUpInside:(UIButton *)p0;
+	-(void) btnGuardarCambios_TouchUpInside:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface DatosEmpresaTableViewController : UITableViewController {
+}
+	@property (nonatomic, assign) UIButton * btnActualizarEmpresa;
+	@property (nonatomic, assign) UIButton * btnEditarDireccion;
+	@property (nonatomic, assign) UIButton * btnEditarRedesSociales;
+	@property (nonatomic, assign) UIButton * imgCamara;
+	@property (nonatomic, assign) UIImageView * imgPerfil;
+	@property (nonatomic, assign) UITextField * txtCorreoElectronico;
+	@property (nonatomic, assign) UITextField * txtGiroComercial;
+	@property (nonatomic, assign) UITextField * txtNombreEmpresa;
+	@property (nonatomic, assign) UITextField * txtRazonSocial;
+	@property (nonatomic, assign) UITextField * txtRFC;
+	@property (nonatomic, assign) UITextField * txtTelefono;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnActualizarEmpresa;
+	-(void) setBtnActualizarEmpresa:(UIButton *)p0;
+	-(UIButton *) btnEditarDireccion;
+	-(void) setBtnEditarDireccion:(UIButton *)p0;
+	-(UIButton *) btnEditarRedesSociales;
+	-(void) setBtnEditarRedesSociales:(UIButton *)p0;
+	-(UIButton *) imgCamara;
+	-(void) setImgCamara:(UIButton *)p0;
+	-(UIImageView *) imgPerfil;
+	-(void) setImgPerfil:(UIImageView *)p0;
+	-(UITextField *) txtCorreoElectronico;
+	-(void) setTxtCorreoElectronico:(UITextField *)p0;
+	-(UITextField *) txtGiroComercial;
+	-(void) setTxtGiroComercial:(UITextField *)p0;
+	-(UITextField *) txtNombreEmpresa;
+	-(void) setTxtNombreEmpresa:(UITextField *)p0;
+	-(UITextField *) txtRazonSocial;
+	-(void) setTxtRazonSocial:(UITextField *)p0;
+	-(UITextField *) txtRFC;
+	-(void) setTxtRFC:(UITextField *)p0;
+	-(UITextField *) txtTelefono;
+	-(void) setTxtTelefono:(UITextField *)p0;
+	-(void) viewDidLoad;
+	-(void) imagePickerController:(UIImagePickerController *)p0 didFinishPickingImage:(UIImage *)p1 editingInfo:(NSDictionary *)p2;
+	-(void) imagePickerControllerDidCancel:(UIImagePickerController *)p0;
+	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
+	-(void) btnActualizar_TouchUpInside:(UIButton *)p0;
+	-(void) btnEditarDireccion_TouchUpInside:(UIButton *)p0;
+	-(void) btnRedesSociales_TouchUpInside:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface DireccionEmpresaTableViewController : UITableViewController {
+}
+	@property (nonatomic, assign) UIButton * btnEditarColonia;
+	@property (nonatomic, assign) UITextField * txtCalle;
+	@property (nonatomic, assign) UITextField * txtCodigoPostal;
+	@property (nonatomic, assign) UITextField * txtColonia;
+	@property (nonatomic, assign) UITextField * txtEstado;
+	@property (nonatomic, assign) UITextField * txtMunicipio;
+	@property (nonatomic, assign) UITextField * txtNumeroExterior;
+	@property (nonatomic, assign) UITextField * txtNumeroInterior;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnEditarColonia;
+	-(void) setBtnEditarColonia:(UIButton *)p0;
+	-(UITextField *) txtCalle;
+	-(void) setTxtCalle:(UITextField *)p0;
+	-(UITextField *) txtCodigoPostal;
+	-(void) setTxtCodigoPostal:(UITextField *)p0;
+	-(UITextField *) txtColonia;
+	-(void) setTxtColonia:(UITextField *)p0;
+	-(UITextField *) txtEstado;
+	-(void) setTxtEstado:(UITextField *)p0;
+	-(UITextField *) txtMunicipio;
+	-(void) setTxtMunicipio:(UITextField *)p0;
+	-(UITextField *) txtNumeroExterior;
+	-(void) setTxtNumeroExterior:(UITextField *)p0;
+	-(UITextField *) txtNumeroInterior;
+	-(void) setTxtNumeroInterior:(UITextField *)p0;
+	-(void) viewDidLoad;
+	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
+	-(void) btnEditarColonia_TouchupInside:(UIButton *)p0;
+	-(void) btnGuardar:(UIBarButtonItem *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface WorklabsMx_iOS_GeneroViewController_StackOverflowModel : NSObject<UIPickerViewModel> {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)p0;
+	-(NSInteger) pickerView:(UIPickerView *)p0 numberOfRowsInComponent:(NSInteger)p1;
+	-(NSString *) pickerView:(UIPickerView *)p0 titleForRow:(NSInteger)p1 forComponent:(NSInteger)p2;
+	-(void) pickerView:(UIPickerView *)p0 didSelectRow:(NSInteger)p1 inComponent:(NSInteger)p2;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface GeneroViewController : UIViewController {
+}
+	@property (nonatomic, assign) UIButton * btnCancelar;
+	@property (nonatomic, assign) UIButton * btnSeleccionar;
+	@property (nonatomic, assign) UIPickerView * dtpGenero;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnCancelar;
+	-(void) setBtnCancelar:(UIButton *)p0;
+	-(UIButton *) btnSeleccionar;
+	-(void) setBtnSeleccionar:(UIButton *)p0;
+	-(UIPickerView *) dtpGenero;
+	-(void) setDtpGenero:(UIPickerView *)p0;
+	-(void) viewDidLoad;
+	-(void) viewWillAppear:(BOOL)p0;
+	-(void) btnCancelar_TouchUpInside:(UIButton *)p0;
+	-(void) btnSeleccionar_TouchUpInside:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface WorklabsMx_iOS_ColoniaViewController_StackOverflowModel : NSObject<UIPickerViewModel> {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)p0;
+	-(NSInteger) pickerView:(UIPickerView *)p0 numberOfRowsInComponent:(NSInteger)p1;
+	-(NSString *) pickerView:(UIPickerView *)p0 titleForRow:(NSInteger)p1 forComponent:(NSInteger)p2;
+	-(void) pickerView:(UIPickerView *)p0 didSelectRow:(NSInteger)p1 inComponent:(NSInteger)p2;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface ColoniaViewController : UIViewController {
+}
+	@property (nonatomic, assign) UIButton * btnCancelar;
+	@property (nonatomic, assign) UIButton * btnSeleccionar;
+	@property (nonatomic, assign) UIPickerView * dtpColonia;
+	@property (nonatomic, assign) UIView * vwEditarColonia;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnCancelar;
+	-(void) setBtnCancelar:(UIButton *)p0;
+	-(UIButton *) btnSeleccionar;
+	-(void) setBtnSeleccionar:(UIButton *)p0;
+	-(UIPickerView *) dtpColonia;
+	-(void) setDtpColonia:(UIPickerView *)p0;
+	-(UIView *) vwEditarColonia;
+	-(void) setVwEditarColonia:(UIView *)p0;
+	-(void) viewDidLoad;
+	-(void) viewWillAppear:(BOOL)p0;
+	-(void) btnCancelar_TouchUpInside:(UIButton *)p0;
+	-(void) btnSeleccionar_TouchUpInside:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 

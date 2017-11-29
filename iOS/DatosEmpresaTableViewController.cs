@@ -46,6 +46,8 @@ namespace WorklabsMx.iOS
             StyleHelper.Style(this.btnEditarDireccion.Layer);
             StyleHelper.Style(this.btnActualizarEmpresa.Layer);
             StyleHelper.Style(this.btnEditarRedesSociales.Layer);
+            imgPicker = new UIImagePickerController();
+            imgPicker.Delegate = this;
             if(InternetConectionHelper.VerificarConexion())
             {
                 Empresa = new EmpresaController().GetEmpresaMiembro(StoregeLocal.Get("Usuario_Id"));

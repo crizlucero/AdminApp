@@ -21,7 +21,7 @@ namespace WorklabsMx.iOS
 
         public List<string> Colonias = new List<string>();
 
-        string Colonia = "";
+        UILabel selectedLbl = new UILabel();
       
         public ColoniaViewController (IntPtr handle) : base (handle)
         {
@@ -32,14 +32,21 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             string[] ArrayColonias = Colonias.ToArray();
-            Colonia = ArrayColonias[0];
-            this.dtpColonia.Model = new StackOverflowModel(ArrayColonias, Colonia);
+            selectedLbl.Text = ArrayColonias[0];
+            this.dtpColonia.Model = new StackOverflowModel(ArrayColonias, selectedLbl);
+        }
 
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+            var color = new UIColor(0, 0.0f);
+            this.View.BackgroundColor = color;
         }
 
         partial void btnSeleccionar_TouchUpInside(UIButton sender)
         {
-            this.ColoniaSeleccionadaDel.ColoniaSeleccionada(Colonia);
+            this.ColoniaSeleccionadaDel.ColoniaSeleccionada(selectedLbl.Text);
             this.DismissViewController(true, null);
         }
 
@@ -51,12 +58,12 @@ namespace WorklabsMx.iOS
         public class StackOverflowModel : UIPickerViewModel
         {
             string[] Colonias;
-            string Colonia;
+            UILabel lbl;
 
-            public StackOverflowModel(string[] colonias, string Colonia)
+            public StackOverflowModel(string[] colonias, UILabel Colonia)
             {
                 this.Colonias = colonias;
-                this.Colonia = Colonia;
+                lbl = Colonia;
             }
 
             public override nint GetComponentCount(UIPickerView pickerView)
@@ -76,7 +83,7 @@ namespace WorklabsMx.iOS
 
             public override void Selected(UIPickerView pickerView, nint row, nint component)
             {
-                Colonia = String.Format("{0}", Colonias[pickerView.SelectedRowInComponent(0)]);
+                lbl.Text = String.Format("{0}", Colonias[pickerView.SelectedRowInComponent(0)]);
 
             }
         }

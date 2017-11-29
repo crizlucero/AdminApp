@@ -14,8 +14,6 @@ namespace WorklabsMx.iOS
         const int TamañoCeldaInfo = 70;
         const int TamañoMensajeNoInfo = 600;
 
-        bool isShowInformation = false;
-        bool existeConeccion = true;
 
         public List<ProductoModel> allProducts = new List<ProductoModel>();
 

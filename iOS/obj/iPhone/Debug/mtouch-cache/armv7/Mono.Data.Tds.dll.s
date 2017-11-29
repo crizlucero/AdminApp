@@ -25952,7 +25952,7 @@ _mono_aot_file_info:
 	.long 624,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 61,48,40,130,252,166,170,54,250,73,47,37,32,177,183,235
+	.byte 187,59,73,124,140,178,149,87,37,112,97,196,249,252,214,121
 	.globl _mono_aot_module_Mono_Data_Tds_info
 	.align 2
 _mono_aot_module_Mono_Data_Tds_info:

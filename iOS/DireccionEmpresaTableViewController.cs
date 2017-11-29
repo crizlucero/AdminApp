@@ -27,6 +27,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
             this.EventosTecladoTextfileds();
@@ -35,6 +36,7 @@ namespace WorklabsMx.iOS
             this.txtMunicipio.Text = Empresa.Territorio_Municipio_Descripcion;
             this.txtColonia.Text = Empresa.Territorio_Colonia_Descripcion;
             this.txtCodigoPostal.Text = Empresa.Territorio_Cp;
+            this.LimiteCaracteresTextFields(this.txtCodigoPostal, 5);
             this.txtNumeroExterior.Text = Empresa.Empresa_Miembro_Numero_Exterior;
             this.txtNumeroInterior.Text = Empresa.Empresa_Miembro_Numero_Interior;
             Colonias = Items.GetColonias(Empresa.Territorio_Cp);
@@ -121,20 +123,29 @@ namespace WorklabsMx.iOS
             }
         }
 
-        partial void txtCodigoPostal_ValuedChanged(UITextField sender)
+
+        //Define el limite de caracteres a escribir en cada cuadro de texto de esta pantalla
+        private void LimiteCaracteresTextFields(UITextField TextField, int LongitudMaxima)
         {
-            if (sender.Text.Length == 5)
+            TextField.ShouldChangeCharacters = (textField, range, replacementString) =>
             {
-                TerritorioModel territorio = new TerritorioController().GetTerritorio(sender.Text);
-                TerritorioId = territorio.Territorio_Id;
-                txtEstado.Text = territorio.Estado;
-                txtMunicipio.Text = territorio.Municipio;
-                this.Colonias = Items.GetColonias(territorio.CP);
-                if(this.Colonias.Count != 0)
+                var newLength = textField.Text.Length + replacementString.Length - range.Length;
+                if (newLength == 5)
                 {
-                    this.btnEditarColonia.Enabled = true;
+                    TerritorioModel territorio = new TerritorioController().GetTerritorio(textField.Text + replacementString);
+                    TerritorioId = territorio.Territorio_Id;
+                    txtEstado.Text = territorio.Estado;
+                    txtMunicipio.Text = territorio.Municipio;
+                    this.Colonias = Items.GetColonias(territorio.CP);
+                    if (this.Colonias.Count != 0)
+                    {
+                        this.btnEditarColonia.Enabled = true;
+                        this.txtColonia.Text = this.Colonias[0];
+                    }
+
                 }
-            }
+                return newLength <= LongitudMaxima;
+            };
         }
 
         partial void btnEditarColonia_TouchupInside(UIButton sender)
