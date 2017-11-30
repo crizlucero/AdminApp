@@ -567,10 +567,15 @@ namespace WorklabsMx.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.menu_cart:
-                    Intent intent = new Intent(this, typeof(ShoppingCartActivity));
-                    intent.PutExtra("Productos", JsonConvert.SerializeObject(Productos));
-                    intent.PutExtra("Membresias", JsonConvert.SerializeObject(Membresias));
-                    StartActivity(intent);
+                    if (Productos.Count != 0 || Membresias.Count != 0)
+                    {
+                        Intent intent = new Intent(this, typeof(ShoppingCartActivity));
+                        intent.PutExtra("Productos", JsonConvert.SerializeObject(Productos));
+                        intent.PutExtra("Membresias", JsonConvert.SerializeObject(Membresias));
+                        StartActivity(intent);
+                    }
+                    else
+                        Toast.MakeText(this, "Debe seleccionar algún producto o membresía", ToastLength.Short).Show();
                     break;
                 default:
                     StartActivity(new Intent(this, typeof(SubMenuActivity)));

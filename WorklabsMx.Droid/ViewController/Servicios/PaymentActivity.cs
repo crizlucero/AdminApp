@@ -104,7 +104,7 @@ namespace WorklabsMx.Droid
                     }
                     break;
                 default:
-                    StartActivity(new Intent(this, typeof(ShoppingCartActivity)));
+                    base.OnBackPressed();
                     Finish();
                     break;
             }

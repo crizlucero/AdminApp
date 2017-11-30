@@ -61,6 +61,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Pagos\P.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\HttpRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\XmlSerializador.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\SalasJuntasController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />

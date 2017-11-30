@@ -226,10 +226,9 @@ namespace WorklabsMx.Controllers
             try
             {
                 conn.Open();
-                transaction = conn.BeginTransaction();
+                //transaction = conn.BeginTransaction();
                 command = CreateCommand();
                 command.Connection = conn;
-                command.Transaction = transaction;
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = "sp_cat_Miembros_Empresas";
                 command.Parameters.AddWithValue("@Trasaccion", "MODIFICAR");
@@ -252,14 +251,15 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Empresa_Miembro_Logotipo", logo);
                 command.Parameters.AddWithValue("@Empresa_Miembro_Estatus", 1);
                 command.Parameters.Add("@Empresa_Miembro_Id_Salida", SqlDbType.Int).Direction = ParameterDirection.Output;
-                command.Transaction = transaction;
+
+                //command.Transaction = transaction;
                 command.ExecuteNonQuery();
-                transaction.Commit();
+                //transaction.Commit();
             }
             catch (Exception e)
             {
                 SlackLogs.SendMessage(e.Message);
-                transaction.Rollback();
+                //transaction.Rollback();
                 return false;
             }
             finally { conn.Close(); }
