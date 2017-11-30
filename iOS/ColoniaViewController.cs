@@ -58,7 +58,7 @@ namespace WorklabsMx.iOS
         public class StackOverflowModel : UIPickerViewModel
         {
             string[] Colonias;
-            UILabel lbl;
+            public UILabel lbl;
 
             public StackOverflowModel(string[] colonias, UILabel Colonia)
             {
@@ -84,8 +84,8 @@ namespace WorklabsMx.iOS
             public override void Selected(UIPickerView pickerView, nint row, nint component)
             {
                 lbl.Text = String.Format("{0}", Colonias[pickerView.SelectedRowInComponent(0)]);
-
             }
+
         }
     }
 
