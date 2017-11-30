@@ -262,7 +262,6 @@ namespace WorklabsMx.iOS
                 DateTime fechaNacimiento = new DateTime();
                 if (this.lblFechaNacimiento.Text != "")
                 {
-                    
                     fechaNacimiento = DateTime.ParseExact(this.lblFechaNacimiento.Text, "dd/MM/yyyy", CultureInfo.CurrentCulture);
                     if (new MiembrosController().UpdateDataMiembros(Convert.ToInt32(StoregeLocal.Get("Usuario_Id")), txtNombre.Text, txtApellido.Text, txtEmail.Text,
                                                                     txtTelefono.Text, txtTelefono.Text, txtProfesion.Text, txtProfesion.Text, txtHabilidades.Text, fechaNacimiento, ""))
@@ -293,13 +292,10 @@ namespace WorklabsMx.iOS
             }
         }
 
-
     }
-
 
     partial class PerfilTableViewController : GeneroSeleccionado
     {
-
         public void GeneroSeleccionado(string Genero)
         {
             this.lblGenero.Text = Genero;

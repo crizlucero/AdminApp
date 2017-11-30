@@ -123,7 +123,6 @@ namespace WorklabsMx.iOS
             }
         }
 
-
         //Define el limite de caracteres a escribir en cada cuadro de texto de esta pantalla
         private void LimiteCaracteresTextFields(UITextField TextField, int LongitudMaxima)
         {
