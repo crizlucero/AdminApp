@@ -1,32 +1,14 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Comentarios/SeccionComentariosTableViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Servicios/Membresias/TableViewCellMembresias.cs">
     <Files>
-      <File FileName="iOS/DatosEmpresaTableViewController.cs" Line="73" Column="10" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="55" Column="12" />
-      <File FileName="iOS/DireccionEmpresaTableViewController.cs" Line="51" Column="10" />
-      <File FileName="iOS/ColoniaViewController.cs" Line="86" Column="1" />
-      <File FileName="iOS/ViewControllers/Cloud/cloudViewController.cs" Line="11" Column="44" />
-      <File FileName="iOS/ViewControllers/Comentarios/ComentarPostTableViewController.cs" Line="106" Column="45" />
-      <File FileName="iOS/ViewControllers/Comentarios/SeccionComentariosTableViewController.cs" Line="121" Column="33" />
-      <File FileName="iOS/EditarRedesSocialesTableViewController.cs" Line="33" Column="42" NotebookId="1" />
-      <File FileName="iOS/GeneroViewController.cs" Line="15" Column="61" NotebookId="1" />
-      <File FileName="iOS/PerfilTableViewController.cs" Line="109" Column="13" NotebookId="1" />
+      <File FileName="iOS/GeneroViewController.cs" Line="15" Column="61" />
+      <File FileName="iOS/PerfilTableViewController.cs" Line="183" Column="29" />
+      <File FileName="iOS/Main.storyboard" />
+      <File FileName="iOS/SalaJuntasTableViewController.cs" Line="18" Column="6" />
+      <File FileName="iOS/ViewControllers/Servicios/Membresias/TableViewMembresia.cs" Line="125" Column="53" />
+      <File FileName="iOS/ViewControllers/Servicios/Membresias/TableViewCellMembresias.designer.cs" Line="15" Column="19" />
+      <File FileName="iOS/ViewControllers/Servicios/Membresias/TableViewCellMembresias.cs" Line="38" Column="34" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="WorklabsMx" expanded="True">
-            <Node name="WorklabsMx.iOS" expanded="True">
-              <Node name="ViewControllers" expanded="True">
-                <Node name="Comentarios" expanded="True">
-                  <Node name="SeccionComentariosTableViewController.cs" selected="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
