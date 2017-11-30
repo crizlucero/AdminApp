@@ -20,23 +20,23 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnSleccionar { get; set; }
+        UIKit.UIButton btnSeleccionar { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIPickerView pcvSursales { get; set; }
+        UIKit.UIPickerView pcvSucursales { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwSucursales { get; set; }
 
-        [Action ("btnCancelar_TouchUpInside:")]
+        [Action ("btnCancelar_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnCancelar_TouchUpInside (UIKit.UIButton sender);
+        partial void btnCancelar_Touch (UIKit.UIButton sender);
 
-        [Action ("btnSeleccionar_TouchUpInside:")]
+        [Action ("btnSeleccionar_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnSeleccionar_TouchUpInside (UIKit.UIButton sender);
+        partial void btnSeleccionar_Touch (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -45,14 +45,14 @@ namespace WorklabsMx.iOS
                 btnCancelar = null;
             }
 
-            if (btnSleccionar != null) {
-                btnSleccionar.Dispose ();
-                btnSleccionar = null;
+            if (btnSeleccionar != null) {
+                btnSeleccionar.Dispose ();
+                btnSeleccionar = null;
             }
 
-            if (pcvSursales != null) {
-                pcvSursales.Dispose ();
-                pcvSursales = null;
+            if (pcvSucursales != null) {
+                pcvSucursales.Dispose ();
+                pcvSucursales = null;
             }
 
             if (vwSucursales != null) {

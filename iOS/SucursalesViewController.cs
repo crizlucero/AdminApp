@@ -20,6 +20,7 @@ namespace WorklabsMx.iOS
     public partial class SucursalesViewController : UIViewController
     {
 
+
         public SucursalSeleccionada SucursalSeleccionadaDel;
 
         UILabel selectedLbl = new UILabel();
@@ -35,7 +36,7 @@ namespace WorklabsMx.iOS
             PickerItemsController items = new PickerItemsController();
             string[] arrSucursales = items.GetSucursales().ToArray();
             selectedLbl.Text = arrSucursales[0];
-            pcvSursales.Model = new StackOverflowModel(arrSucursales, selectedLbl);
+            pcvSucursales.Model = new StackOverflowModel(arrSucursales, selectedLbl);
         }
 
         public override void ViewWillAppear(bool animated)
@@ -45,13 +46,13 @@ namespace WorklabsMx.iOS
             this.View.BackgroundColor = color;
         }
 
-        partial void btnSeleccionar_TouchUpInside(UIButton sender)
+        partial void btnSeleccionar_Touch(UIButton sender)
         {
             this.SucursalSeleccionadaDel.SucursalSeleccionada(selectedLbl.Text);
             this.DismissViewController(true, null);
         }
 
-        partial void btnCancelar_TouchUpInside(UIButton sender)
+        partial void btnCancelar_Touch(UIButton sender)
         {
             this.DismissViewController(true, null);
         }

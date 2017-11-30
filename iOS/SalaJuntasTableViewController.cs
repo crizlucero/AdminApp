@@ -1,7 +1,7 @@
 using Foundation;
 using System;
 using UIKit;
-using Softweb.Xamarin.Controls.iOS;
+//using Softweb.Xamarin.Controls.iOS;
 using WorklabsMx.Models;
 using CoreGraphics;
 using WorklabsMx.iOS.Helpers;
@@ -24,7 +24,7 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
 
-            //Create required objects
+           /* //Create required objects
             var calendar = new Calendar();
             var menuView = new CalendarMenuView
             { Frame = new CGRect(0f, 0f, 320f, 40f) };
@@ -55,10 +55,10 @@ namespace WorklabsMx.iOS
 
             //Add the views to the current view
             View.Add(menuView);
-            View.Add(contentView);
+            View.Add(contentView);*/
         }
 
-        public void DateSelected(object sender, DateSelectedEventArgs args)
+        /*public void DateSelected(object sender, DateSelectedEventArgs args)
         {
             Console.WriteLine(String.Format("Selected date is {0}", ((DateTime)args.Date).ToLocalTime().ToString("dd-MMM-yyyy")));
         }
@@ -71,7 +71,7 @@ namespace WorklabsMx.iOS
         public void DidLoadNextPage(object sender, EventArgs args)
         {
             Console.WriteLine("Loaded next page");
-        }
+        }*/
 
         partial void btnEditar_TouchUpInside(UIButton sender)
         {

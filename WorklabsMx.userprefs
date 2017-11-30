@@ -1,13 +1,14 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Formatos/ReservaController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.storyboard">
     <Files>
       <File FileName="iOS/PerfilTableViewController.cs" Line="277" Column="14" />
-      <File FileName="iOS/SalaJuntasTableViewController.cs" Line="42" Column="48" />
-      <File FileName="iOS/Main.storyboard" />
-      <File FileName="iOS/SucursalesViewController.cs" Line="18" Column="6" />
+      <File FileName="iOS/SalaJuntasTableViewController.cs" Line="85" Column="63" />
+      <File FileName="iOS/SucursalesViewController.cs" Line="20" Column="50" />
       <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="251" Column="42" />
       <File FileName="iOS/ViewControllers/MiPerfil/AboutMeModificaController.cs" Line="1" Column="1" />
-      <File FileName="iOS/ViewControllers/Formatos/ReservaController.cs" Line="10" Column="43" />
+      <File FileName="iOS/ViewControllers/Formatos/ReservaController.cs" Line="4" Column="16" />
+      <File FileName="iOS/Main.cs" Line="12" Column="45" />
+      <File FileName="iOS/Main.storyboard" />
       <File FileName="iOS/GeneroViewController.cs" Line="80" Column="42" NotebookId="1" />
       <File FileName="iOS/ColoniaViewController.cs" Line="15" Column="6" NotebookId="1" />
       <File FileName="iOS/DireccionEmpresaTableViewController.cs" Line="124" Column="10" NotebookId="1" />
