@@ -1,29 +1,30 @@
+using Foundation;
 using System;
 using UIKit;
 using WorklabsMx.Models;
-using WorklabsMx.Controllers;
-using PerpetualEngine.Storage;
 using WorklabsMx.iOS.Helpers;
+using WorklabsMx.iOS.Models;
+using WorklabsMx.Helpers;
+using WorklabsMx.Enum;
 using System.Collections.Generic;
+using WorklabsMx.Controllers;
 
 namespace WorklabsMx.iOS
 {
 
-    public interface ColoniaSeleccionada
+    public interface SucursalSeleccionada
     {
-        void ColoniaSeleccionada(string Colonia);
+        void SucursalSeleccionada(string Sucursal);
     }
 
-    public partial class ColoniaViewController : UIViewController
+    public partial class SucursalesViewController : UIViewController
     {
 
-        public ColoniaSeleccionada ColoniaSeleccionadaDel;
-
-        public List<string> Colonias = new List<string>();
+        public SucursalSeleccionada SucursalSeleccionadaDel;
 
         UILabel selectedLbl = new UILabel();
-      
-        public ColoniaViewController (IntPtr handle) : base (handle)
+
+        public SucursalesViewController (IntPtr handle) : base (handle)
         {
             
         }
@@ -31,11 +32,11 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            string[] ArrayColonias = Colonias.ToArray();
-            selectedLbl.Text = ArrayColonias[0];
-            this.dtpColonia.Model = new StackOverflowModel(ArrayColonias, selectedLbl);
+            PickerItemsController items = new PickerItemsController();
+            string[] arrSucursales = items.GetSucursales().ToArray();
+            selectedLbl.Text = arrSucursales[0];
+            pcvSursales.Model = new StackOverflowModel(arrSucursales, selectedLbl);
         }
-
 
         public override void ViewWillAppear(bool animated)
         {
@@ -46,7 +47,7 @@ namespace WorklabsMx.iOS
 
         partial void btnSeleccionar_TouchUpInside(UIButton sender)
         {
-            this.ColoniaSeleccionadaDel.ColoniaSeleccionada(selectedLbl.Text);
+            this.SucursalSeleccionadaDel.SucursalSeleccionada(selectedLbl.Text);
             this.DismissViewController(true, null);
         }
 
@@ -57,12 +58,12 @@ namespace WorklabsMx.iOS
 
         public class StackOverflowModel : UIPickerViewModel
         {
-            string[] Colonias;
+            string[] Sucursales;
             public UILabel lbl;
 
-            public StackOverflowModel(string[] colonias, UILabel Colonia)
+            public StackOverflowModel(string[] Sucursales, UILabel Colonia)
             {
-                this.Colonias = colonias;
+                this.Sucursales = Sucursales;
                 lbl = Colonia;
             }
 
@@ -73,20 +74,22 @@ namespace WorklabsMx.iOS
 
             public override nint GetRowsInComponent(UIPickerView pickerView, nint component)
             {
-                return Colonias.Length;
+                return Sucursales.Length;
             }
 
             public override string GetTitle(UIPickerView pickerView, nint row, nint component)
             {
-                return Colonias[row];
+                return Sucursales[row];
             }
 
             public override void Selected(UIPickerView pickerView, nint row, nint component)
             {
-                lbl.Text = String.Format("{0}", Colonias[pickerView.SelectedRowInComponent(0)]);
+                lbl.Text = String.Format("{0}", Sucursales[pickerView.SelectedRowInComponent(0)]);
             }
 
         }
-    }
 
+
+
+    }
 }

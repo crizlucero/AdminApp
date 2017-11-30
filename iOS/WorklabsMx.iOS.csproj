@@ -568,14 +568,14 @@
     <ImageAsset Include="Assets.xcassets\Camera.imageset\Custom Size – 22%402x.png" />
     <ImageAsset Include="Assets.xcassets\Camera.imageset\Custom Size – 22%403x.png" />
     <ImageAsset Include="Assets.xcassets\QrBig.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\QrBig.imageset\Custom Size – 17%403x.png" />
-    <ImageAsset Include="Assets.xcassets\qr.imageset\icons8-data-matrix-code-30.png" />
-    <ImageAsset Include="Assets.xcassets\qr.imageset\icons8-data-matrix-code-60.png" />
-    <ImageAsset Include="Assets.xcassets\qr.imageset\icons8-data-matrix-code-90.png" />
     <ImageAsset Include="Assets.xcassets\Sucursal.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Sucursal.imageset\icons8-building-30.png" />
     <ImageAsset Include="Assets.xcassets\Sucursal.imageset\icons8-building-60.png" />
     <ImageAsset Include="Assets.xcassets\Sucursal.imageset\icons8-building-90.png" />
+    <ImageAsset Include="Assets.xcassets\qr.imageset\Move Grabber Light-1.png" />
+    <ImageAsset Include="Assets.xcassets\qr.imageset\Move Grabber Light-1%402x.png" />
+    <ImageAsset Include="Assets.xcassets\qr.imageset\Move Grabber Light-1%403x.png" />
+    <ImageAsset Include="Assets.xcassets\QrBig.imageset\Move Grabber Light%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -882,6 +882,10 @@
     <Compile Include="SalaJuntasTableViewController.cs" />
     <Compile Include="SalaJuntasTableViewController.designer.cs">
       <DependentUpon>SalaJuntasTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SucursalesViewController.cs" />
+    <Compile Include="SucursalesViewController.designer.cs">
+      <DependentUpon>SucursalesViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
