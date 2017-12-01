@@ -42,7 +42,7 @@
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/Facades/System.Reflection.Primitives.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/Facades/System.Text.Encoding.Extensions.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/Microsoft.CSharp.dll
-/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/iOS/Telerik.Xamarin.iOS.dll
+/Users/gilberto/Downloads/XCalendar-1.1/lib/ios-unified/XCalendar.dll
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/BTProgressHUD.1.2.0.6/lib/Xamarin.iOS10/BTProgressHUD.dll
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Xam.Plugin.Connectivity.3.0.3/lib/Xamarin.iOS10/Plugin.Connectivity.dll
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Xam.Plugin.Connectivity.3.0.3/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll

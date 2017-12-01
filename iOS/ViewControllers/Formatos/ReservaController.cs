@@ -1,7 +1,7 @@
 using Foundation;
 using System;
 using UIKit;
-using TelerikUI;
+//using TelerikUI;
 using System.Collections.Generic;
 using WorklabsMx.iOS.ViewElements;
 
@@ -9,7 +9,7 @@ namespace WorklabsMx.iOS
 {
     public partial class ReservaController : UIViewController
     {
-        readonly UIScrollView eventView;
+       /* readonly UIScrollView eventView;
         public ReservaController(IntPtr handle) : base(handle)
         {
             eventView = new HorarioEventos();
@@ -116,6 +116,6 @@ namespace WorklabsMx.iOS
         {
             scrollView.Hidden = false;
 
-        }
+        }*/
     }
 }

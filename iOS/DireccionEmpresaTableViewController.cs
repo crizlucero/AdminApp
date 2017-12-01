@@ -21,6 +21,7 @@ namespace WorklabsMx.iOS
 
         public DireccionEmpresaTableViewController (IntPtr handle) : base (handle)
         {
+            StoregeLocal = SimpleStorage.EditGroup("Login");
         }
 
 
@@ -31,6 +32,7 @@ namespace WorklabsMx.iOS
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
             this.EventosTecladoTextfileds();
+            Empresa = new EmpresaController().GetEmpresaMiembro(StoregeLocal.Get("Usuario_Id"));
             this.txtCalle.Text = Empresa.Empresa_Miembro_Calle;
             this.txtEstado.Text = Empresa.Territorio_Estado_Descripcion;
             this.txtMunicipio.Text = Empresa.Territorio_Municipio_Descripcion;
@@ -108,7 +110,7 @@ namespace WorklabsMx.iOS
                                                                   Empresa.Empresa_Miembro_Nombre, txtCalle.Text, txtNumeroExterior.Text, txtNumeroInterior.Text, Empresa.Empresa_Miembro_Correo_Electronico, Empresa.Empresa_Miembro_Telefono, Empresa.Empresa_Miembro_Pagina_Web, Empresa.Empresa_Miembro_Red_Social_1, Empresa.Empresa_Miembro_Red_Social_2, Empresa.Empresa_Miembro_Red_Social_3, Empresa.Empresa_Miembro_Logotipo))
                 {
                     new MessageDialog().SendToast("Datos guardados");
-                    Empresa = new EmpresaController().GetEmpresaMiembro(StoregeLocal.Get("Usuario_Id"));
+                   
                     this.TableView.ReloadData(); 
                 }
                 else

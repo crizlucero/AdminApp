@@ -40153,6 +40153,18 @@
             </remarks>
             <value><c>true</c> if the address parser should allow mailbox addresses without a domain; otherwise, <c>false</c>.</value>
         </member>
+        <member name="P:MimeKit.ParserOptions.MaxAddressGroupDepth">
+            <summary>
+            Gets or sets the maximum address group depth the parser should accept.
+            </summary>
+            <remarks>
+            <para>This option exists in order to define the maximum recursive depth of an rfc822 group address
+            that the parser should accept before bailing out with the assumption that the address is maliciously
+            formed. If the value is set too large, then it is possible that a maliciously formed set of
+            recursive group addresses could cause a stack overflow.</para>
+            </remarks>
+            <value>The max address group depth.</value>
+        </member>
         <member name="P:MimeKit.ParserOptions.ParameterComplianceMode">
             <summary>
             Gets or sets the compliance mode that should be used when parsing Content-Type and Content-Disposition parameters.

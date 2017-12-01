@@ -1,12 +1,5 @@
-using Foundation;
 using System;
 using UIKit;
-using WorklabsMx.Models;
-using WorklabsMx.iOS.Helpers;
-using WorklabsMx.iOS.Models;
-using WorklabsMx.Helpers;
-using WorklabsMx.Enum;
-using System.Collections.Generic;
 using WorklabsMx.Controllers;
 
 namespace WorklabsMx.iOS
@@ -19,8 +12,7 @@ namespace WorklabsMx.iOS
 
     public partial class SucursalesViewController : UIViewController
     {
-
-
+        
         public SucursalSeleccionada SucursalSeleccionadaDel;
 
         UILabel selectedLbl = new UILabel();

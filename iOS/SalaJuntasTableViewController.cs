@@ -1,13 +1,8 @@
 using Foundation;
 using System;
 using UIKit;
-//using Softweb.Xamarin.Controls.iOS;
-using WorklabsMx.Models;
-using CoreGraphics;
+using Factorymind.Components;
 using WorklabsMx.iOS.Helpers;
-using WorklabsMx.Controllers;
-using WorklabsMx.iOS.Styles;
-using WorklabsMx.iOS.ViewElements;
 
 namespace WorklabsMx.iOS
 {
@@ -23,55 +18,58 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            StyleHelper.Style(this.btnComprarHoras.Layer);
+            FMCalendar fmCalendar = new FMCalendar(this.vwCalendarioJuntas.Bounds);
 
-           /* //Create required objects
-            var calendar = new Calendar();
-            var menuView = new CalendarMenuView
-            { Frame = new CGRect(0f, 0f, 320f, 40f) };
-            var contentView = new CalendarContentView
-            { Frame = new CGRect(0f, 45f, 320f, 280f) };
+            this.vwCalendarioJuntas.BackgroundColor = UIColor.White;
 
-            //Customize calendar's appearance
-            var appearance = calendar.CalendarAppearance;
-            appearance.GetNSCalendar().FirstWeekDay = (nuint)3;
-            appearance.DayCircleColorSelected = UIColor.LightGray;
-            appearance.DayCircleRatio = (9f / 10f);
-            appearance.WeekDayFormat = CalendarWeekDayFormat.Single;
+            // Specify selection color
+            fmCalendar.SelectionColor = UIColor.Red;
 
-            //Link the views to the calendar
-            calendar.MenuMonthsView = menuView;
-            calendar.ContentView = contentView;
+            // Specify today circle Color
+            fmCalendar.TodayCircleColor = UIColor.Red;
 
-            calendar.DateSelected += DateSelected;
-            calendar.NextPageLoaded += DidLoadNextPage;
-            calendar.PreviousPageLoaded += DidLoadPreviousPage;
+            // Customizing appearance
+            fmCalendar.LeftArrow = UIImage.FromFile("leftArrow.png");
+            fmCalendar.RightArrow = UIImage.FromFile("rightArrow.png");
 
-            // Pass a function that returns text to display in month label
-            //E.g. "JAN 2014" OR “01/2014"
-            appearance.SetMonthLabelTextCallback(
-                //Full month-name and year. E.g. DECEMBER 2014
-                (NSDate date, Calendar cal) => new NSString(
-                    ((DateTime)date).ToString("MMMM yyyy")));
+            fmCalendar.MonthFormatString = "MMMM yyyy";
 
-            //Add the views to the current view
-            View.Add(menuView);
-            View.Add(contentView);*/
+            // Shows Sunday as last day of the week
+            fmCalendar.SundayFirst = false;
+
+            // Mark with a dot dates that fulfill the predicate
+            fmCalendar.IsDayMarkedDelegate = (date) =>
+            {
+                return date.Day % 2 == 1;
+            };
+
+            // Turn gray dates that fulfill the predicate
+            fmCalendar.IsDateAvailable = (date) =>
+            {
+                return (date >= DateTime.Today);
+            };
+
+            fmCalendar.MonthChanged = (date) =>
+            {
+                Console.WriteLine("Month changed {0}", date.Date);
+            };
+
+            fmCalendar.DateSelected += (date) =>
+            {
+                Console.WriteLine("Date selected: {0}", date);
+            };
+
+            // Add FMCalendar to SuperView
+            fmCalendar.Bounds = this.vwCalendarioJuntas.Bounds;
+            //fmCalendar.Center = this.vwCalendarioJuntas.Center;
+            this.vwCalendarioJuntas.AddSubview(fmCalendar);
         }
 
-        /*public void DateSelected(object sender, DateSelectedEventArgs args)
+        partial void btnSalaJuntas_TouchUpInside(UIButton sender)
         {
-            Console.WriteLine(String.Format("Selected date is {0}", ((DateTime)args.Date).ToLocalTime().ToString("dd-MMM-yyyy")));
+            
         }
-
-        public void DidLoadPreviousPage(object sender, EventArgs args)
-        {
-            Console.WriteLine("Loaded previous page");
-        }
-
-        public void DidLoadNextPage(object sender, EventArgs args)
-        {
-            Console.WriteLine("Loaded next page");
-        }*/
 
         partial void btnEditar_TouchUpInside(UIButton sender)
         {
@@ -86,6 +84,16 @@ namespace WorklabsMx.iOS
                 SucursalesView.SucursalSeleccionadaDel = this;
 
             }
+        }
+
+        partial void comprarHoras_TouchUpInside(UIButton sender)
+        {
+            
+        }
+
+        partial void AgendarSala_TouchUpInside(UIButton sender)
+        {
+            
         }
     }
 
