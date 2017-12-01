@@ -21,7 +21,7 @@ namespace WorklabsMx.Droid
         AutoCompleteTextView CodigoPostal;
         Spinner GiroComercial, Colonia;
         PickerItemsController items;
-        string empresa_id;
+        string empresa_id, territorio_id;
         List<string> colonias, giros;
         public EditEmpresaActivity()
         {
@@ -95,6 +95,7 @@ namespace WorklabsMx.Droid
             if (e.Text.ToString().Length == 5)
             {
                 TerritorioModel territorio = new TerritorioController().GetTerritorio(e.Text.ToString());
+                territorio_id = territorio.Territorio_Id;
                 Estado.Text = territorio.Estado;
                 Municipio.Text = territorio.Municipio;
                 colonias = items.GetColonias(territorio.CP);
@@ -114,14 +115,16 @@ namespace WorklabsMx.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.menu_save:
-                    //new EmpresaController().UpdateDataEmpresa(empresa_id, storage.Get("Usuario_Id"), GiroComercial.SelectedItemPosition + 1,);
+                    if (new EmpresaController().UpdateDataEmpresa(empresa_id, storage.Get("Usuario_Id"), (GiroComercial.SelectedItemPosition + 1).ToString(), territorio_id, RazonSocial.Text, RFC.Text, NombreEmpresa.Text,
+                                                                 Calle.Text, NumExterior.Text, NumInterior.Text, CorreoElectronico.Text, Telefono.Text, PaginaWeb.Text, Facebook.Text, Twitter.Text, Instagram.Text, ""))
+                        Toast.MakeText(this, Resource.String.DatosGuardados, ToastLength.Short).Show();
+                    else
+                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
 
                     break;
-                default:
-                    StartActivity(new Intent(this, typeof(TabPerfilActivity)));
-                    Finish();
-                    break;
             }
+            StartActivity(new Intent(this, typeof(TabPerfilActivity)));
+            Finish();
             return base.OnOptionsItemSelected(item);
         }
     }

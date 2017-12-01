@@ -77,16 +77,14 @@ namespace WorklabsMx.Droid
                 case Resource.Id.menu_save:
                     if (new MiembrosController().UpdateDataMiembros(Convert.ToInt32(storage.Get("Usuario_Id")), nombre.Text, apellidos.Text, email.Text,
                                                                 Telefono.Text, Celular.Text, Profesion.Text, Puesto.Text, Habilidades.Text,
-                                                                   Convert.ToDateTime(fechaNacimiento), ""))
-                        Toast.MakeText(this, Resource.String.DatosGuardados, ToastLength.Short);
+                                                                   Convert.ToDateTime(fechaNacimiento.Text), ""))
+                        Toast.MakeText(this, Resource.String.DatosGuardados, ToastLength.Short).Show();
                     else
-                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
-                    break;
-                default:
-                    StartActivity(new Intent(this, typeof(TabPerfilActivity)));
-                    Finish();
+                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
                     break;
             }
+            StartActivity(new Intent(this, typeof(TabPerfilActivity)));
+            Finish();
             return base.OnOptionsItemSelected(item);
         }
     }
