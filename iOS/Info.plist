@@ -45,8 +45,6 @@
 	<string>Se necesitan permisos para usar su galería fotográfica</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Se necesitan permisos para usar su camara fotográfica</string>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>Se necesitan permisos para usar su galería fotográfica</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -55,8 +53,8 @@
 	<key>NSCalendarsUsageDescription</key>
 	<string>Se necesitan permisos para acceder a el calendario</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.1</string>
+	<string>1.0.2</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.1</string>
+	<string>1.0.2</string>
 </dict>
 </plist>

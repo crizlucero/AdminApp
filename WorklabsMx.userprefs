@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/GeneroViewController.cs">
+    <Files>
+      <File FileName="iOS/PerfilTableViewController.cs" Line="299" Column="54" />
+      <File FileName="iOS/SalaJuntasTableViewController.cs" Line="83" Column="13" />
+      <File FileName="iOS/SucursalesViewController.cs" Line="58" Column="10" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="131" Column="34" />
+      <File FileName="iOS/ViewControllers/Comentarios/ComentarPostTableViewController.cs" Line="79" Column="99" />
+      <File FileName="iOS/HorariosTableViewCell.cs" Line="13" Column="33" />
+      <File FileName="iOS/HorariosTableViewController.cs" Line="46" Column="31" />
+      <File FileName="iOS/ViewControllers/Comentarios/ComentarPostHeaderCell.cs" Line="64" Column="10" />
+      <File FileName="iOS/GeneroViewController.cs" Line="55" Column="26" />
+=======
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
   <MonoDevelop.Ide.Workbench>
     <Files>

@@ -31,7 +31,7 @@
     <CodesignProvision></CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType></DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\iPhone\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
@@ -44,10 +44,10 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
     <CodesignProvision>WorkLabsMxPP</CodesignProvision>
-    <MtouchI18n>west</MtouchI18n>
+    <MtouchI18n>cjk,mideast,other,rare,west</MtouchI18n>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType></DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
@@ -59,6 +59,7 @@
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
+    <MtouchI18n>cjk,mideast,other,rare,west</MtouchI18n>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -122,41 +123,11 @@
     <Reference Include="Plugin.Connectivity">
       <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.3\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.XamarinForms.SkiaSharp">
-      <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\Android\Telerik.XamarinForms.SkiaSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Primitives">
-      <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\Android\Telerik.XamarinForms.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Input">
-      <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\Android\Telerik.XamarinForms.Input.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.DataVisualization">
-      <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\Android\Telerik.XamarinForms.DataVisualization.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.DataGrid">
-      <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\Android\Telerik.XamarinForms.DataGrid.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.DataControls">
-      <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\Android\Telerik.XamarinForms.DataControls.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Common">
-      <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\Android\Telerik.XamarinForms.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Chart">
-      <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\Android\Telerik.XamarinForms.Chart.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Xamarin.iOS">
-      <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\iOS\Telerik.Xamarin.iOS.dll</HintPath>
-    </Reference>
     <Reference Include="BTProgressHUD">
       <HintPath>..\packages\BTProgressHUD.1.2.0.6\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin-Sidebar-Unified">
       <HintPath>..\packages\SidebarNavigation.1.9.4\lib\Xamarin.iOS10\Xamarin-Sidebar-Unified.dll</HintPath>
-    </Reference>
-    <Reference Include="SVProgressHUD">
-      <HintPath>..\packages\SVProgressHUD.2.2.2\lib\Xamarin.iOS10\SVProgressHUD.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.Settings.Abstractions">
       <HintPath>..\packages\Xam.Plugins.Settings.3.1.1\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
@@ -165,16 +136,16 @@
       <HintPath>..\packages\Xam.Plugins.Settings.3.1.1\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
     </Reference>
     <Reference Include="BouncyCastle">
-      <HintPath>..\packages\MimeKit.1.20.0\lib\Xamarin.iOS10\BouncyCastle.dll</HintPath>
+      <HintPath>..\packages\MimeKit.1.22.0\lib\Xamarin.iOS10\BouncyCastle.dll</HintPath>
     </Reference>
     <Reference Include="MimeKit">
-      <HintPath>..\packages\MimeKit.1.20.0\lib\Xamarin.iOS10\MimeKit.dll</HintPath>
+      <HintPath>..\packages\MimeKit.1.22.0\lib\Xamarin.iOS10\MimeKit.dll</HintPath>
     </Reference>
     <Reference Include="MailKit">
-      <HintPath>..\packages\MailKit.1.20.0\lib\Xamarin.iOS10\MailKit.dll</HintPath>
+      <HintPath>..\packages\MailKit.1.22.0\lib\Xamarin.iOS10\MailKit.dll</HintPath>
     </Reference>
-    <Reference Include="XCalendar">
-      <HintPath>..\..\..\..\Downloads\XCalendar-1.1\lib\ios-unified\XCalendar.dll</HintPath>
+    <Reference Include="Factorymind.Components-Unified">
+      <HintPath>..\..\..\..\Downloads\fmcalendar-1.5.4\lib\ios-unified\Factorymind.Components-Unified.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -576,6 +547,10 @@
     <ImageAsset Include="Assets.xcassets\qr.imageset\Move Grabber Light-1%402x.png" />
     <ImageAsset Include="Assets.xcassets\qr.imageset\Move Grabber Light-1%403x.png" />
     <ImageAsset Include="Assets.xcassets\QrBig.imageset\Move Grabber Light%403x.png" />
+    <ImageAsset Include="Assets.xcassets\SalaJuntas.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\SalaJuntas.imageset\icons8-classroom-filled-30.png" />
+    <ImageAsset Include="Assets.xcassets\SalaJuntas.imageset\icons8-classroom-filled-60.png" />
+    <ImageAsset Include="Assets.xcassets\SalaJuntas.imageset\icons8-classroom-filled-90.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -608,7 +583,6 @@
     <Compile Include="Helpers\LoadingView.cs" />
     <Compile Include="Models\PickerModel.cs" />
     <Compile Include="Helpers\DatePickerHelper.cs" />
-    <Compile Include="Helpers\Calendario.cs" />
     <Compile Include="ViewControllers\SubMenuController.cs" />
     <Compile Include="ViewControllers\SubMenuController.designer.cs">
       <DependentUpon>SubMenuController.cs</DependentUpon>
@@ -887,6 +861,14 @@
     <Compile Include="SucursalesViewController.designer.cs">
       <DependentUpon>SucursalesViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="HorariosTableViewController.cs" />
+    <Compile Include="HorariosTableViewController.designer.cs">
+      <DependentUpon>HorariosTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HorariosTableViewCell.cs" />
+    <Compile Include="HorariosTableViewCell.designer.cs">
+      <DependentUpon>HorariosTableViewCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -985,6 +967,7 @@
     <Folder Include="Assets.xcassets\BigQr.imageset\" />
     <Folder Include="Assets.xcassets\QrBig.imageset\" />
     <Folder Include="Assets.xcassets\Sucursal.imageset\" />
+    <Folder Include="Assets.xcassets\SalaJuntas.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

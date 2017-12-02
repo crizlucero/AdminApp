@@ -15,11 +15,15 @@ extern void *mono_aot_module_Newtonsoft_Json_info;
 extern void *mono_aot_module_System_Xml_Linq_info;
 extern void *mono_aot_module_System_Runtime_Serialization_info;
 extern void *mono_aot_module_Microsoft_CSharp_info;
-extern void *mono_aot_module_Telerik_Xamarin_iOS_info;
+extern void *mono_aot_module_XCalendar_info;
 extern void *mono_aot_module_BTProgressHUD_info;
 extern void *mono_aot_module_Plugin_Connectivity_info;
 extern void *mono_aot_module_Plugin_Connectivity_Abstractions_info;
 extern void *mono_aot_module_I18N_info;
+extern void *mono_aot_module_I18N_CJK_info;
+extern void *mono_aot_module_I18N_MidEast_info;
+extern void *mono_aot_module_I18N_Other_info;
+extern void *mono_aot_module_I18N_Rare_info;
 extern void *mono_aot_module_I18N_West_info;
 
 void xamarin_register_modules_impl ()
@@ -39,11 +43,15 @@ void xamarin_register_modules_impl ()
 	mono_aot_register_module (mono_aot_module_System_Xml_Linq_info);
 	mono_aot_register_module (mono_aot_module_System_Runtime_Serialization_info);
 	mono_aot_register_module (mono_aot_module_Microsoft_CSharp_info);
-	mono_aot_register_module (mono_aot_module_Telerik_Xamarin_iOS_info);
+	mono_aot_register_module (mono_aot_module_XCalendar_info);
 	mono_aot_register_module (mono_aot_module_BTProgressHUD_info);
 	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_info);
 	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_Abstractions_info);
 	mono_aot_register_module (mono_aot_module_I18N_info);
+	mono_aot_register_module (mono_aot_module_I18N_CJK_info);
+	mono_aot_register_module (mono_aot_module_I18N_MidEast_info);
+	mono_aot_register_module (mono_aot_module_I18N_Other_info);
+	mono_aot_register_module (mono_aot_module_I18N_Rare_info);
 	mono_aot_register_module (mono_aot_module_I18N_West_info);
 
 }
@@ -51,7 +59,7 @@ void xamarin_register_modules_impl ()
 void xamarin_register_assemblies_impl ()
 {
 	guint32 exception_gchandle = 0;
-	xamarin_open_and_register ("Telerik.Xamarin.iOS.dll", &exception_gchandle);
+	xamarin_open_and_register ("XCalendar.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
 	xamarin_open_and_register ("BTProgressHUD.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);

@@ -8,7 +8,7 @@
 	WorklabsMx.iOS \
 	--linksdkonly \
 	--i18n \
-	west \
+	'cjk,mideast,other,rare,west' \
 	--sdkroot \
 	/Applications/Xcode.app/Contents/Developer \
 	--sdk \
@@ -22,15 +22,15 @@
 	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Release/mtouch-symbols.list \
 	--dsym=no \
 	-r \
-	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/MimeKit.1.20.0/lib/Xamarin.iOS10/BouncyCastle.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/MimeKit.1.22.0/lib/Xamarin.iOS10/BouncyCastle.dll \
 	-r \
 	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/BTProgressHUD.1.2.0.6/lib/Xamarin.iOS10/BTProgressHUD.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/MailKit.1.20.0/lib/Xamarin.iOS10/MailKit.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/MailKit.1.22.0/lib/Xamarin.iOS10/MailKit.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Microsoft.CSharp.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/MimeKit.1.20.0/lib/Xamarin.iOS10/MimeKit.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/MimeKit.1.22.0/lib/Xamarin.iOS10/MimeKit.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Mono.CSharp.dll \
 	-r \
@@ -80,27 +80,11 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Xml.dll \
 	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/iOS/Telerik.Xamarin.iOS.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.XamarinForms.Chart.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.XamarinForms.Common.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.XamarinForms.DataControls.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.XamarinForms.DataGrid.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.XamarinForms.DataVisualization.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.XamarinForms.Input.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.XamarinForms.Primitives.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.XamarinForms.SkiaSharp.dll \
-	-r \
 	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/SidebarNavigation.1.9.4/lib/Xamarin.iOS10/Xamarin-Sidebar-Unified.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Xamarin.iOS.dll \
+	-r \
+	/Users/gilberto/Downloads/XCalendar-1.1/lib/ios-unified/XCalendar.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/Microsoft.Win32.Primitives.dll \
 	-r \
@@ -376,13 +360,13 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Xml.Xsl.Primitives.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/MimeKit.1.20.0/lib/Xamarin.iOS10/BouncyCastle.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/MimeKit.1.22.0/lib/Xamarin.iOS10/BouncyCastle.dll \
 	-r \
 	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/BTProgressHUD.1.2.0.6/lib/Xamarin.iOS10/BTProgressHUD.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/MailKit.1.20.0/lib/Xamarin.iOS10/MailKit.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/MailKit.1.22.0/lib/Xamarin.iOS10/MailKit.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/MimeKit.1.20.0/lib/Xamarin.iOS10/MimeKit.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/MimeKit.1.22.0/lib/Xamarin.iOS10/MimeKit.dll \
 	-r \
 	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Newtonsoft.Json.10.0.3/lib/netstandard1.3/Newtonsoft.Json.dll \
 	-r \
@@ -406,37 +390,9 @@
 	-r \
 	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Microsoft.Net.Http.2.2.29/lib/Xamarin.iOS10/System.Net.Http.Primitives.dll \
 	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/iOS/Telerik.Xamarin.iOS.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.XamarinForms.Chart.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.XamarinForms.Common.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.XamarinForms.DataControls.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.XamarinForms.DataGrid.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.XamarinForms.DataVisualization.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.XamarinForms.Input.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.XamarinForms.Primitives.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.XamarinForms.SkiaSharp.dll \
-	-r \
 	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/SidebarNavigation.1.9.4/lib/Xamarin.iOS10/Xamarin-Sidebar-Unified.dll \
 	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.Xamarin.Android.Primitives.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.Xamarin.Android.Common.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.Xamarin.Android.Input.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.Xamarin.Android.List.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.Xamarin.Android.Data.dll \
-	-r \
-	/Users/gilberto/Downloads/Telerik_UI_for_Xamarin_2017_3_926_1_Trial/Binaries/Android/Telerik.Xamarin.Android.Chart.dll \
+	/Users/gilberto/Downloads/XCalendar-1.1/lib/ios-unified/XCalendar.dll \
 	--target-framework \
 	'Xamarin.iOS,v1.0' \
 	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Release/WorklabsMx.iOS.exe \

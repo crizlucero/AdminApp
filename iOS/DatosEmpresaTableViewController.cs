@@ -298,7 +298,7 @@ namespace WorklabsMx.iOS
             else if (segue.Identifier == "EditarDIreccion")
             {
                 var DireccioView = (DireccionEmpresaTableViewController)segue.DestinationViewController;
-                DireccioView.Empresa = this.Empresa;
+                //DireccioView.Empresa = this.Empresa;
                 DireccioView.GiroId = this.GiroId;
             }
         }
