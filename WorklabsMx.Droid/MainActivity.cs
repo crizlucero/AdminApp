@@ -11,7 +11,6 @@ using Android.Graphics.Drawables;
 using Android.Support.V4.Content;
 using WorklabsMx.Droid.Helpers;
 using Android.Graphics;
-using Android.Views.InputMethods;
 using Android.Net;
 using WorklabsMx.Helpers;
 using AndroidHUD;
@@ -25,7 +24,7 @@ using Android.Support.V4.Widget;
 using WorklabsMx.Models;
 using System.Linq;
 using Android.Text;
-using static Android.App.ActionBar;
+using Android.Support.Design.Widget;
 
 namespace WorklabsMx.Droid
 {
@@ -38,7 +37,6 @@ namespace WorklabsMx.Droid
         ScrollView scroll;
         int page;
         SimpleStorage localStorage;
-        EditText txtEmail, txtPassword;
         EscritorioController DashboardController;
         TableLayout tlPost;
         AlertDialog dialog;
@@ -64,18 +62,9 @@ namespace WorklabsMx.Droid
             try
             {
                 bool isOnline = ((ConnectivityManager)GetSystemService(ConnectivityService)).ActiveNetworkInfo.IsConnected;
-                SimpleStorage.SetContext(ApplicationContext);
 
                 localStorage = SimpleStorage.EditGroup("Login");
-
-                if (localStorage.HasKey("Usuario_Id") && localStorage.HasKey("Usuario_Tipo") && localStorage.HasKey("Empresa_Id"))
-                {
-                    OpenDashboard();
-                }
-                else
-                {
-                    OpenLogin();
-                }
+                OpenDashboard();
             }
             catch (Exception e)
             {
@@ -85,35 +74,6 @@ namespace WorklabsMx.Droid
                 SetActionBar(toolbar);
                 ActionBar.Title = Resources.GetString(Resource.String.NoConnection);
             }
-        }
-
-        void OpenLogin()
-        {
-            SetContentView(Resource.Layout.LoginLayout);
-
-            txtEmail = FindViewById<EditText>(Resource.Id.txtEmail);
-            txtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
-            Button btnLogin = FindViewById<Button>(Resource.Id.btnLogin);
-            txtEmail.EditorAction += (sender, e) =>
-            {
-                if (Android.Util.Patterns.EmailAddress.Matcher(txtEmail.Text).Matches())
-                {
-                    if (e.ActionId == ImeAction.Done || e.ActionId == ImeAction.Next)
-                    {
-                        txtPassword.RequestFocus();
-                    }
-                }
-                else Toast.MakeText(this, Resource.String.FormatoCorreoError, ToastLength.Short).Show();
-            };
-
-            txtPassword.EditorAction += (sender, e) =>
-            {
-                if (e.ActionId == ImeAction.Done)
-                {
-                    btnLogin.CallOnClick();
-                }
-            };
-            btnLogin.Touch += BtnLogin_Touch;
         }
 
         async void OpenDashboard()
@@ -291,7 +251,7 @@ namespace WorklabsMx.Droid
                     InputType = InputTypes.TextFlagMultiLine
                 };
                 txtPost.SetSingleLine(false);
-                txtPost.SetMaxWidth(Convert.ToInt32(Resources.DisplayMetrics.WidthPixels*.911));
+                txtPost.SetMaxWidth(Convert.ToInt32(Resources.DisplayMetrics.WidthPixels * .911));
                 param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center);
                 param.ColumnSpec = GridLayout.InvokeSpec(1, 3);
@@ -385,16 +345,17 @@ namespace WorklabsMx.Droid
                 };
                 lblComment.SetCompoundDrawables(iconComment, null, null, null);
                 lblComment.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 110) / 3);
-                lblComment.Click += delegate
+                /*lblComment.Click += delegate
                 {
                     Intent intent = new Intent(this, typeof(CommentsActivity));
                     intent.PutExtra("post_id", post.Publicacion_Id);
                     StartActivity(intent);
-                };
+                };*/
                 llComment.Click += delegate
                                 {
                                     Intent intent = new Intent(this, typeof(CommentsActivity));
                                     intent.PutExtra("post_id", post.Publicacion_Id);
+                                    intent.PutExtra("comments_total", post.Publicacion_Comentarios_Cantidad);
                                     StartActivity(intent);
                                 };
                 llComment.AddView(lblComment);
@@ -432,6 +393,7 @@ namespace WorklabsMx.Droid
                 case Resource.Id.menu_acceso:
                     StartActivity(new Intent(this, typeof(AccesoActivity)));
                     break;
+
                 default:
                     ScrollView menu_scroll = FindViewById<ScrollView>(Resource.Id.menu_scroll);
                     if (menu_scroll.Visibility == ViewStates.Gone)
@@ -451,7 +413,7 @@ namespace WorklabsMx.Droid
         void FillMenu(TableLayout menuLayout)
         {
             localStorage.Delete("Parent");
-
+            //NavigationView nv = FindViewById<NavigationView>(Resource.Id.nav_home);
             using (TableRow row = new TableRow(this))
             {
                 List<string> data = new MiembrosController().GetMemberName(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
@@ -502,7 +464,8 @@ namespace WorklabsMx.Droid
                             StartActivity(new Intent(this, typeof(SubMenuActivity))); break;
                         case "LogoutActivity":
                             localStorage.Delete("Usuario_Id"); localStorage.Delete("Usuario_Tipo"); localStorage.Delete("Empresa_Id");
-                            OpenLogin();
+                            StartActivity(new Intent(this, typeof(LoginActivity)));
+                            Finish();
                             break;
                         //StartActivity(new Intent(this, typeof(MainActivity))); break;
                         case "ColeccionProductosActivity": StartActivity(new Intent(this, typeof(ColeccionProductosActivity))); break;
@@ -513,34 +476,11 @@ namespace WorklabsMx.Droid
             });
         }
 
-        void BtnLogin_Touch(object sender, View.TouchEventArgs e)
-        {
-            if (Android.Util.Patterns.EmailAddress.Matcher(txtEmail.Text).Matches() && !string.IsNullOrEmpty(txtPassword.Text))
-            {
-                //AndHUD.Shared.Show(this, null, -1, MaskType.Black);
-                //await Task.Delay(500);
-                List<string> MiembrosId = new LoginController().MemberLogin(txtEmail.Text, new PassSecurity().EncodePassword(txtPassword.Text));
-                if (MiembrosId.Count > 0)
-                {
-                    localStorage = SimpleStorage.EditGroup("Login");
-                    localStorage.Put("Usuario_Id", MiembrosId[0]);
-                    localStorage.Put("Usuario_Tipo", MiembrosId[1]);
-                    localStorage.Put("Empresa_Id", MiembrosId[2]);
-                    //AndHUD.Shared.Dismiss(this);
-                    OpenDashboard();
-                }
-                else
-                {
-                    Toast.MakeText(this, Resource.String.LoginError, ToastLength.Short).Show();
-                    //AndHUD.Shared.Dismiss(this);
-                }
-            }
-            else
-                Toast.MakeText(this, Resource.String.FormatoCorreoError, ToastLength.Short).Show();
-        }
+
 
         void ShowPublish()
         {
+            
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
             LayoutInflater liView = LayoutInflater;

@@ -95,7 +95,9 @@ namespace WorklabsMx.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.menu_save:
-                    new EmpresaController().UpdateDatosFiscales(empresa_id, storage.Get("Usuario_Id"), territorio_id, Calle.Text, NumExterior.Text, NumInterior.Text, Email.Text);
+                    if (new EmpresaController().UpdateDatosFiscales(empresa_id, storage.Get("Usuario_Id"), territorio_id, Calle.Text, NumExterior.Text, NumInterior.Text, Email.Text))
+                        Toast.MakeText(this, Resource.String.DatosGuardados,ToastLength.Short).Show();
+                    else Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
                     break;
                 default:
                     StartActivity(new Intent(this, typeof(SubMenuActivity)));

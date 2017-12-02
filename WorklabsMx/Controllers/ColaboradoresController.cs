@@ -12,16 +12,16 @@ namespace WorklabsMx.Controllers
         /// Obtiene los colaboradores de un miembro
         /// </summary>
         /// <returns>Colaboradores de un miembro</returns>
-        /// <param name="miembro_id">Identificador del miembro</param>
+        /// <param name="empresa_id">Identificador de la empresa</param>
         public List<ColaboradorModel> GetColaboradoresMiembro(string empresa_id, int estatus = 1, string nombre = "", string apellido = "", string puesto = "",
                                                               string profesion = "", string habilidades = "",
-                                                              bool disponibilidad = true)
+                                                              string disponibilidad = "N/A")
         {
             List<ColaboradorModel> colaboradores = new List<ColaboradorModel>();
             command = CreateCommand("select * from vw_pro_Usuarios_Directorio " +
                 "WHERE Usuario_Empresa_Id  = @empresa_id AND Usuario_Nombre LIKE @nombre AND Usuario_Apellidos LIKE @apellido " +
                 "AND Usuario_Profesion LIKE @profesion AND Usuario_Puesto LIKE @puesto AND Usuario_Habilidades LIKE @habilidades AND " +
-                                    "Usuario_Puesto LIKE @puesto AND Usuario_Disponibilidad_Trabajo LIKE @disponibilidad AND " +
+                                    "Usuario_Puesto LIKE @puesto AND Usuario_Disponibilidad_Laboral_Descripcion LIKE @disponibilidad AND " +
                                     "Usuario_Estatus = @estatus AND Usuario_Tipo = 2");
             command.Parameters.AddWithValue("@empresa_id", empresa_id);
             command.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
@@ -50,10 +50,9 @@ namespace WorklabsMx.Controllers
                         Colaborador_Profesion = reader["Usuario_Profesion"].ToString(),
                         Colaborador_Puesto = reader["Usuario_Puesto"].ToString(),
                         Colaborador_Habilidades = reader["Usuario_Habilidades"].ToString(),
-                        Colaborador_Llave_Acceso = reader["Usuario_Llave_Acceso"].ToString(),
                         Colaborador_Fotografia = reader["Usuario_Fotografia"].ToString(),
                         Colaborador_Estatus = reader["Usuario_Estatus"].ToString(),
-                        Colaborador_Disponibilidad = reader["Usuario_Disponibilidad_Trabajo"].ToString()
+                        Colaborador_Disponibilidad = reader["Usuario_Disponibilidad_Laboral_Descripcion"].ToString()
                     });
                 }
             }
@@ -97,11 +96,11 @@ namespace WorklabsMx.Controllers
                     colaborador.Colaborador_Profesion = reader["Usuario_Profesion"].ToString();
                     colaborador.Colaborador_Puesto = reader["Usuario_Puesto"].ToString();
                     colaborador.Colaborador_Habilidades = reader["Usuario_Habilidades"].ToString();
-                    colaborador.Colaborador_Llave_Acceso = reader["Usuario_Llave_Acceso"].ToString();
+                    //colaborador.Colaborador_Llave_Acceso = reader["Usuario_Llave_Acceso"].ToString();
                     colaborador.Colaborador_Fotografia = reader["Usuario_Fotografia"].ToString();
                     colaborador.Colaborador_Fecha_Registro = reader["Usuario_Fecha_Registro"].ToString();
                     colaborador.Colaborador_Estatus = reader["Usuario_Estatus"].ToString();
-                    colaborador.Colaborador_Disponibilidad = reader["Usuario_Disponibilidad_Trabajo"].ToString();
+                    colaborador.Colaborador_Disponibilidad = reader["Usuario_Disponibilidad_Laboral_Descripcion"].ToString();
 
                 }
             }

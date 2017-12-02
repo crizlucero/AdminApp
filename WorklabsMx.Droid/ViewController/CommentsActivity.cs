@@ -42,7 +42,7 @@ namespace WorklabsMx.Droid
             localStorage = SimpleStorage.EditGroup("Login");
         }
 
-        protected async override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
@@ -63,42 +63,50 @@ namespace WorklabsMx.Droid
             if (Convert.ToInt32(Intent.GetStringExtra("comments_total")) > 0)
             {
                 tlComentarios.RemoveAllViews();
-                await FillComments();
+                FillComments();
             }
             SwipeRefreshLayout refresher = FindViewById<SwipeRefreshLayout>(Resource.Id.swipe_container);
             refresher.SetColorSchemeColors(Color.Gray, Color.LightGray, Color.Gray, Color.DarkGray, Color.Black, Color.DarkGray);
-            refresher.Refresh += async (sender, e) =>
+            refresher.Refresh += (sender, e) =>
             {
-                tlComentarios.RemoveAllViews();
                 comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
-                await FillComments();
+                if (comentarios.Count != 0)
+                {
+                    tlComentarios.RemoveAllViews();
+                    FillComments();
+                }
                 ((SwipeRefreshLayout)sender).Refreshing = false;
             };
-            FindViewById<ImageButton>(Resource.Id.btnApplyComment).Click += async delegate
+            FindViewById<ImageButton>(Resource.Id.btnApplyComment).Click += delegate
             {
                 AndHUD.Shared.Show(this, null, -1, MaskType.Black);
                 System.IO.MemoryStream stream = new System.IO.MemoryStream();
                 bitmap?.Compress(Bitmap.CompressFormat.Png, 0, stream);
                 byte[] bitmapData = stream?.ToArray();
-                if (DashboardController.CommentPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), FindViewById<EditText>(Resource.Id.txtComment).Text, bitmapData))
+                if (bitmap!= null || FindViewById<EditText>(Resource.Id.txtComment).Text.Trim().Length != 0)
                 {
-                    FindViewById<EditText>(Resource.Id.txtComment).Text = "";
-                    FindViewById<EditText>(Resource.Id.txtComment).ClearFocus();
-                    comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
-                    await FillComments();
-                    svComentarios.ScrollY = svComentarios.Height;
+                    if (DashboardController.CommentPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), FindViewById<EditText>(Resource.Id.txtComment).Text, bitmapData))
+                    {
+                        FindViewById<EditText>(Resource.Id.txtComment).Text = "";
+                        FindViewById<EditText>(Resource.Id.txtComment).ClearFocus();
+                        comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+                        FillComments();
+                        svComentarios.ScrollY = svComentarios.Height;
+                    }
+                    else
+                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
                 }
                 else
-                    Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
+                    Toast.MakeText(this, "Escribe o envía una imagen", ToastLength.Short).Show();
                 AndHUD.Shared.Dismiss(this);
             };
-            svComentarios.ScrollChange += async (sender, e) =>
+            svComentarios.ScrollChange += (sender, e) =>
             {
                 if ((comentarios.Count / (page + 1)) < 10)
                     if ((((ScrollView)sender).ScrollY / (page + 1)) > ((svComentarios.Height) * .4))
                     {
                         ++page;
-                        await FillComments();
+                        FillComments();
                         FindViewById<ImageView>(Resource.Id.imgPicture).Visibility = ViewStates.Gone;
                         FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Gone;
                     }
@@ -133,7 +141,7 @@ namespace WorklabsMx.Droid
             };
         }
 
-        async Task FillComments()
+        void FillComments()
         {
             //AndHUD.Shared.Show(this, null, -1, MaskType.Black);
             //await Task.Delay(500);

@@ -30,7 +30,7 @@ namespace WorklabsMx.Droid
         }
 
         void Directorio(string nombre = "", string apellido = "", string puesto = "", string profesion = "",
-                      string habilidades = "", bool disponibilidad = true)
+                      string habilidades = "", string disponibilidad = "N/A")
         {
             SetContentView(Resource.Layout.ColaboradoresLayout);
             storage = SimpleStorage.EditGroup("Login");
@@ -39,7 +39,7 @@ namespace WorklabsMx.Droid
         }
 
         void FillDirectorioColaboradores(string miembro_id, string nombre, string apellido, string puesto, string profesion, string habilidades,
-                                                        bool disponibilidad)
+                                                        string disponibilidad)
         {
             LinearLayout llDirectorio = new LinearLayout(this)
             {
@@ -421,7 +421,7 @@ namespace WorklabsMx.Droid
             {
                 Directorio(FindViewById<TextView>(Resource.Id.txtNombre).Text, FindViewById<TextView>(Resource.Id.txtApellidos).Text,
                            FindViewById<TextView>(Resource.Id.txtPuesto).Text, FindViewById<TextView>(Resource.Id.txtProfesion).Text,
-                           FindViewById<TextView>(Resource.Id.txtHabilidades).Text, FindViewById<CheckBox>(Resource.Id.cbDisponibilidad).Checked);
+                           FindViewById<TextView>(Resource.Id.txtHabilidades).Text, FindViewById<CheckBox>(Resource.Id.cbDisponibilidad).Checked ? "Disponible" : "No Disponible");
             };
             FindViewById<LinearLayout>(Resource.Id.llLblPais).Visibility = ViewStates.Gone;
             FindViewById<LinearLayout>(Resource.Id.llLblEstado).Visibility = ViewStates.Gone;

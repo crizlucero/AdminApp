@@ -1,6 +1,10 @@
-﻿public enum TiposEstatus : int
+﻿using System;
+namespace WorklabsMx.Enum
 {
-    Inactivo = 0,
-    Activo = 1,
-    Baja = 2
+    public enum TiposEstatus : int
+    {
+        Inactivo = 0,
+        Activo = 1,
+        Baja = 2
+    }
 }
