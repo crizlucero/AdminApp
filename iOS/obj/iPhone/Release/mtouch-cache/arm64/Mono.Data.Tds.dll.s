@@ -44260,7 +44260,7 @@ _mono_aot_file_info:
 	.long 624,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 119,89,203,59,53,4,219,80,45,46,229,251,17,250,246,221
+	.byte 22,147,84,5,76,231,168,198,40,247,22,176,234,210,65,13
 	.globl _mono_aot_module_Mono_Data_Tds_info
 	.align 3
 _mono_aot_module_Mono_Data_Tds_info:

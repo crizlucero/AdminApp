@@ -16,15 +16,7 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnAgendarSala { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnComprarHoras { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnEditar { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -36,43 +28,25 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblSucursal { get; set; }
+        UIKit.UILabel lblSalaJuntas { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwCalendarioJuntas { get; set; }
 
-        [Action ("AgendarSala_TouchUpInside:")]
+        [Action ("btnComprarHoras_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void AgendarSala_TouchUpInside (UIKit.UIButton sender);
+        partial void btnComprarHoras_Touch (UIKit.UIButton sender);
 
-        [Action ("btnEditar_TouchUpInside:")]
+        [Action ("btnEditarSalaJuntas_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnEditar_TouchUpInside (UIKit.UIButton sender);
-
-        [Action ("btnSalaJuntas_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnSalaJuntas_TouchUpInside (UIKit.UIButton sender);
-
-        [Action ("comprarHoras_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void comprarHoras_TouchUpInside (UIKit.UIButton sender);
+        partial void btnEditarSalaJuntas_Touch (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
-            if (btnAgendarSala != null) {
-                btnAgendarSala.Dispose ();
-                btnAgendarSala = null;
-            }
-
             if (btnComprarHoras != null) {
                 btnComprarHoras.Dispose ();
                 btnComprarHoras = null;
-            }
-
-            if (btnEditar != null) {
-                btnEditar.Dispose ();
-                btnEditar = null;
             }
 
             if (btnEditarSalaJuntas != null) {
@@ -85,9 +59,9 @@ namespace WorklabsMx.iOS
                 lblHorasDisponibles = null;
             }
 
-            if (lblSucursal != null) {
-                lblSucursal.Dispose ();
-                lblSucursal = null;
+            if (lblSalaJuntas != null) {
+                lblSalaJuntas.Dispose ();
+                lblSalaJuntas = null;
             }
 
             if (vwCalendarioJuntas != null) {

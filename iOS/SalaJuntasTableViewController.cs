@@ -66,14 +66,15 @@ namespace WorklabsMx.iOS
             this.vwCalendarioJuntas.AddSubview(fmCalendar);
         }
 
-        partial void btnSalaJuntas_TouchUpInside(UIButton sender)
+
+        partial void btnComprarHoras_Touch(UIButton sender)
         {
-            
+           
         }
 
-        partial void btnEditar_TouchUpInside(UIButton sender)
+        partial void btnEditarSalaJuntas_Touch(UIButton sender)
         {
-            
+           
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
@@ -86,15 +87,6 @@ namespace WorklabsMx.iOS
             }
         }
 
-        partial void comprarHoras_TouchUpInside(UIButton sender)
-        {
-            
-        }
-
-        partial void AgendarSala_TouchUpInside(UIButton sender)
-        {
-            
-        }
     }
 
 
@@ -102,7 +94,7 @@ namespace WorklabsMx.iOS
     {
         public void SucursalSeleccionada(string Sucursal)
         {
-            this.lblSucursal.Text = Sucursal;
+            this.lblSalaJuntas.Text = Sucursal;
         }
     }
 }

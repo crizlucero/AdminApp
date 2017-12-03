@@ -62,6 +62,8 @@
 @class TelefoniaTableView;
 @class EditarRedesSocialesTableViewController;
 @class FechaNacimientoPickerViewController;
+@class HorariosTableViewController;
+@class HorariosTableViewCell;
 @class WorklabsMx_iOS_ViewElements_UICheckBox;
 @class WorklabsMx_iOS_ViewElements_HorarioEventos;
 @class WorklabsMx_iOS_ViewElements_UIDropdownList;
@@ -136,15 +138,9 @@
 @class UIKit_UITextField__UITextFieldDelegate;
 @class UIKit_UIScrollView__UIScrollViewDelegate;
 @class UIKit_UITextView__UITextViewDelegate;
-@class EventDetails;
-@protocol JTCalendarDataSource;
-@class CalendarViewController;
-@class JTCalendarMenuView;
-@class JTCalendarContentView;
-@class JTCalendarAppearance;
-@class EventView;
-@class Softweb_Xamarin_Controls_iOS_Calendar__CalendarDataSource;
-@class JTCalendar;
+@class Factorymind_Components_CalendarDayView;
+@class Factorymind_Components_FMCalendar;
+@class Factorymind_Components_MonthGridView;
 @class BigTed_ProgressHUD;
 
 @protocol UIPickerViewModel<UIPickerViewDataSource, UIPickerViewDelegate>
@@ -291,11 +287,11 @@
 	@property (nonatomic, assign) UIImageView * imgComentarios;
 	@property (nonatomic, assign) UIImageView * imgPerfil;
 	@property (nonatomic, assign) UILabel * lblComentarios;
-	@property (nonatomic, assign) UILabel * lblDetalleComentario;
 	@property (nonatomic, assign) UILabel * lblFechaPost;
 	@property (nonatomic, assign) UILabel * lblLikes;
 	@property (nonatomic, assign) UILabel * lblNombre;
 	@property (nonatomic, assign) UILabel * lblOcupacion;
+	@property (nonatomic, assign) UITextView * txtComentario;
 	@property (nonatomic, assign) UIView * vwVistaComentario;
 	-(void) release;
 	-(id) retain;
@@ -311,8 +307,6 @@
 	-(void) setImgPerfil:(UIImageView *)p0;
 	-(UILabel *) lblComentarios;
 	-(void) setLblComentarios:(UILabel *)p0;
-	-(UILabel *) lblDetalleComentario;
-	-(void) setLblDetalleComentario:(UILabel *)p0;
 	-(UILabel *) lblFechaPost;
 	-(void) setLblFechaPost:(UILabel *)p0;
 	-(UILabel *) lblLikes;
@@ -321,10 +315,12 @@
 	-(void) setLblNombre:(UILabel *)p0;
 	-(UILabel *) lblOcupacion;
 	-(void) setLblOcupacion:(UILabel *)p0;
+	-(UITextView *) txtComentario;
+	-(void) setTxtComentario:(UITextView *)p0;
 	-(UIView *) vwVistaComentario;
 	-(void) setVwVistaComentario:(UIView *)p0;
 	-(void) btnComentarPost_TouchUpInside:(UIButton *)p0;
-	-(void) btnImagenComentatio_touchUpInside:(UIButton *)p0;
+	-(void) btnImagenComentatio_Touch:(UIButton *)p0;
 	-(void) btnLikes_TouchUpInside:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
@@ -344,7 +340,6 @@
 	-(UIView *) tableView:(UITableView *)p0 viewForHeaderInSection:(NSInteger)p1;
 	-(CGFloat) tableView:(UITableView *)p0 heightForHeaderInSection:(NSInteger)p1;
 	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
-	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1;
 	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
 	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
 	-(void) btnToScanQr_TouchUpInside:(UIBarButtonItem *)p0;
@@ -934,6 +929,35 @@
 	-(void) btnCancelar_TouchUpInside:(UIButton *)p0;
 	-(void) btnSeleccionar_TouchUpInside:(UIButton *)p0;
 	-(void) dtpFechaNacimiento_ValueChanged:(UIDatePicker *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface HorariosTableViewController : UITableViewController {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(void) viewDidLoad;
+	-(void) viewWillAppear:(BOOL)p0;
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
+	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1;
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface HorariosTableViewCell : UITableViewCell {
+}
+	@property (nonatomic, assign) UILabel * lblDisponibilidad;
+	@property (nonatomic, assign) UILabel * lblHorario;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UILabel *) lblDisponibilidad;
+	-(void) setLblDisponibilidad:(UILabel *)p0;
+	-(UILabel *) lblHorario;
+	-(void) setLblHorario:(UILabel *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -1716,19 +1740,29 @@
 
 @interface SalaJuntasTableViewController : UITableViewController {
 }
-	@property (nonatomic, assign) UIButton * btnEditar;
-	@property (nonatomic, assign) UILabel * lblSucursal;
+	@property (nonatomic, assign) UIButton * btnComprarHoras;
+	@property (nonatomic, assign) UIButton * btnEditarSalaJuntas;
+	@property (nonatomic, assign) UILabel * lblHorasDisponibles;
+	@property (nonatomic, assign) UILabel * lblSalaJuntas;
+	@property (nonatomic, assign) UIView * vwCalendarioJuntas;
 	-(void) release;
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIButton *) btnEditar;
-	-(void) setBtnEditar:(UIButton *)p0;
-	-(UILabel *) lblSucursal;
-	-(void) setLblSucursal:(UILabel *)p0;
+	-(UIButton *) btnComprarHoras;
+	-(void) setBtnComprarHoras:(UIButton *)p0;
+	-(UIButton *) btnEditarSalaJuntas;
+	-(void) setBtnEditarSalaJuntas:(UIButton *)p0;
+	-(UILabel *) lblHorasDisponibles;
+	-(void) setLblHorasDisponibles:(UILabel *)p0;
+	-(UILabel *) lblSalaJuntas;
+	-(void) setLblSalaJuntas:(UILabel *)p0;
+	-(UIView *) vwCalendarioJuntas;
+	-(void) setVwCalendarioJuntas:(UIView *)p0;
 	-(void) viewDidLoad;
 	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
-	-(void) btnEditar_TouchUpInside:(UIButton *)p0;
+	-(void) btnComprarHoras_Touch:(UIButton *)p0;
+	-(void) btnEditarSalaJuntas_Touch:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -1820,123 +1854,16 @@
 	-(void) target:(UIGestureRecognizer *)p0;
 @end
 
-@interface EventDetails : NSObject {
+@interface Factorymind_Components_FMCalendar : UIView {
 }
-	-(NSDate *) endDate;
-	-(void) setEndDate:(NSDate *)p0;
-	-(NSDate *) startDate;
-	-(void) setStartDate:(NSDate *)p0;
-	-(NSString *) title;
-	-(void) setTitle:(NSString *)p0;
-	-(id) init;
-@end
-
-@protocol JTCalendarDataSource
-	@required -(void) calendarDidDateSelected:(id)p0 date:(NSDate *)p1;
-	@required -(void) calendarDidLoadPreviousPage:(id)p0;
-	@required -(void) calendarDidLoadNextPage:(id)p0;
-@end
-
-@interface JTCalendarMenuView : UIScrollView {
-}
-	-(id) init;
-	-(id) initWithCoder:(NSCoder *)p0;
-@end
-
-@interface JTCalendarContentView : UIScrollView {
-}
-	-(id) init;
-	-(id) initWithCoder:(NSCoder *)p0;
-@end
-
-@interface JTCalendarAppearance : NSObject {
-}
-	-(NSCalendar *) calendar;
-	-(void) setDayDotColorForAll:(UIColor *)p0;
-	-(void) setDayTextColorForAll:(UIColor *)p0;
-	-(void) setMonthBlock:(id)p0;
-	-(BOOL) autoChangeMonth;
-	-(void) setAutoChangeMonth:(BOOL)p0;
-	-(UIColor *) dayCircleColorSelected;
-	-(void) setDayCircleColorSelected:(UIColor *)p0;
-	-(UIColor *) dayCircleColorSelectedOtherMonth;
-	-(void) setDayCircleColorSelectedOtherMonth:(UIColor *)p0;
-	-(UIColor *) dayCircleColorToday;
-	-(void) setDayCircleColorToday:(UIColor *)p0;
-	-(UIColor *) dayCircleColorTodayOtherMonth;
-	-(void) setDayCircleColorTodayOtherMonth:(UIColor *)p0;
-	-(CGFloat) dayCircleRatio;
-	-(void) setDayCircleRatio:(CGFloat)p0;
-	-(UIColor *) dayDotColor;
-	-(void) setDayDotColor:(UIColor *)p0;
-	-(UIColor *) dayDotColorOtherMonth;
-	-(void) setDayDotColorOtherMonth:(UIColor *)p0;
-	-(UIColor *) dayDotColorSelected;
-	-(void) setDayDotColorSelected:(UIColor *)p0;
-	-(UIColor *) dayDotColorSelectedOtherMonth;
-	-(void) setDayDotColorSelectedOtherMonth:(UIColor *)p0;
-	-(UIColor *) dayDotColorToday;
-	-(void) setDayDotColorToday:(UIColor *)p0;
-	-(UIColor *) dayDotColorTodayOtherMonth;
-	-(void) setDayDotColorTodayOtherMonth:(UIColor *)p0;
-	-(CGFloat) dayDotRatio;
-	-(void) setDayDotRatio:(CGFloat)p0;
-	-(UIColor *) dayTextColor;
-	-(void) setDayTextColor:(UIColor *)p0;
-	-(UIColor *) dayTextColorOtherMonth;
-	-(void) setDayTextColorOtherMonth:(UIColor *)p0;
-	-(UIColor *) dayTextColorSelected;
-	-(void) setDayTextColorSelected:(UIColor *)p0;
-	-(UIColor *) dayTextColorSelectedOtherMonth;
-	-(void) setDayTextColorSelectedOtherMonth:(UIColor *)p0;
-	-(UIColor *) dayTextColorToday;
-	-(void) setDayTextColorToday:(UIColor *)p0;
-	-(UIColor *) dayTextColorTodayOtherMonth;
-	-(void) setDayTextColorTodayOtherMonth:(UIColor *)p0;
-	-(UIFont *) dayTextFont;
-	-(void) setDayTextFont:(UIFont *)p0;
-	-(BOOL) isWeekMode;
-	-(void) setIsWeekMode:(BOOL)p0;
-	-(UIColor *) menuMonthTextColor;
-	-(void) setMenuMonthTextColor:(UIColor *)p0;
-	-(UIFont *) menuMonthTextFont;
-	-(void) setMenuMonthTextFont:(UIFont *)p0;
-	-(CGFloat) ratioContentMenu;
-	-(void) setRatioContentMenu:(CGFloat)p0;
-	-(BOOL) useCacheSystem;
-	-(void) setUseCacheSystem:(BOOL)p0;
-	-(NSInteger) weekDayFormat;
-	-(void) setWeekDayFormat:(NSInteger)p0;
-	-(UIColor *) weekDayTextColor;
-	-(void) setWeekDayTextColor:(UIColor *)p0;
-	-(UIFont *) weekDayTextFont;
-	-(void) setWeekDayTextFont:(UIFont *)p0;
-	-(id) init;
-@end
-
-@interface EventView : UITableView {
-}
-	-(id) init;
-	-(id) initWithCoder:(NSCoder *)p0;
-@end
-
-@interface JTCalendar : NSObject {
-}
-	-(NSArray *) eventArray;
-	-(void) reloadAppearance;
-	-(void) reloadData;
-	-(void) setEventArray:(NSArray *)p0;
-	-(id) calendarAppearance;
-	-(id) contentView;
-	-(void) setContentView:(id)p0;
-	-(NSDate *) currentDate;
-	-(void) setCurrentDate:(NSDate *)p0;
-	-(id) eventView;
-	-(void) setEventView:(id)p0;
-	-(id) menuMonthsView;
-	-(void) setMenuMonthsView:(id)p0;
-	-(NSObject *) dataSource;
-	-(void) setDataSource:(NSObject *)p0;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(void) setNeedsDisplay;
+	-(void) layoutSubviews;
+	-(void) drawRect:(CGRect)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
 	-(id) init;
 @end
 

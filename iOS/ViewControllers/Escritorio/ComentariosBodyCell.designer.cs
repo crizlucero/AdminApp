@@ -36,10 +36,6 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblDetalleComentario { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblFechaPost { get; set; }
 
         [Outlet]
@@ -56,15 +52,19 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView txtComentario { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwVistaComentario { get; set; }
 
         [Action ("btnComentarPost_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnComentarPost_TouchUpInside (UIKit.UIButton sender);
 
-        [Action ("btnImagenComentatio_touchUpInside:")]
+        [Action ("btnImagenComentatio_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnImagenComentatio_touchUpInside (UIKit.UIButton sender);
+        partial void btnImagenComentatio_Touch (UIKit.UIButton sender);
 
         [Action ("btnLikes_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -97,11 +97,6 @@ namespace WorklabsMx.iOS
                 lblComentarios = null;
             }
 
-            if (lblDetalleComentario != null) {
-                lblDetalleComentario.Dispose ();
-                lblDetalleComentario = null;
-            }
-
             if (lblFechaPost != null) {
                 lblFechaPost.Dispose ();
                 lblFechaPost = null;
@@ -120,6 +115,11 @@ namespace WorklabsMx.iOS
             if (lblOcupacion != null) {
                 lblOcupacion.Dispose ();
                 lblOcupacion = null;
+            }
+
+            if (txtComentario != null) {
+                txtComentario.Dispose ();
+                txtComentario = null;
             }
 
             if (vwVistaComentario != null) {

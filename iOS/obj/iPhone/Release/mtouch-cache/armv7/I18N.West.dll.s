@@ -9600,7 +9600,7 @@ _mono_aot_file_info:
 	.long 160,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 217,0,94,44,89,195,108,25,128,58,221,52,177,25,39,95
+	.byte 6,17,145,187,59,121,48,77,29,28,110,9,172,84,6,45
 	.globl _mono_aot_module_I18N_West_info
 	.align 2
 _mono_aot_module_I18N_West_info:

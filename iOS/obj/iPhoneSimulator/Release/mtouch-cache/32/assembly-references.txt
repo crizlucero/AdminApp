@@ -1,4 +1,4 @@
-/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhoneSimulator/Release/WorklabsMx.iOS.exe
+/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/bin/iPhoneSimulator/Release/WorklabsMx.iOS.exe
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/mscorlib.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/System.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/Mono.Security.dll
@@ -9,8 +9,8 @@
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/System.Transactions.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/Mono.Data.Tds.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/../../32bits/Xamarin.iOS.dll
-/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/SimpleStorage.1.4.2/lib/Xamarin.iOS10/PerpetualEngine.SimpleStorage.iOS-Unified.dll
-/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Newtonsoft.Json.10.0.3/lib/netstandard1.3/Newtonsoft.Json.dll
+/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/SimpleStorage.1.4.2/lib/Xamarin.iOS10/PerpetualEngine.SimpleStorage.iOS-Unified.dll
+/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Newtonsoft.Json.10.0.3/lib/netstandard1.3/Newtonsoft.Json.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/Facades/System.Runtime.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/System.ComponentModel.Composition.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/Facades/System.Resources.ResourceManager.dll
@@ -43,6 +43,6 @@
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/Facades/System.Text.Encoding.Extensions.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/lib/mono/Xamarin.iOS/Microsoft.CSharp.dll
 /Users/gilberto/Downloads/fmcalendar-1.5.4/lib/ios-unified/Factorymind.Components-Unified.dll
-/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/BTProgressHUD.1.2.0.6/lib/Xamarin.iOS10/BTProgressHUD.dll
-/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Xam.Plugin.Connectivity.3.0.3/lib/Xamarin.iOS10/Plugin.Connectivity.dll
-/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Xam.Plugin.Connectivity.3.0.3/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll
+/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/BTProgressHUD.1.2.0.6/lib/Xamarin.iOS10/BTProgressHUD.dll
+/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Xam.Plugin.Connectivity.3.0.3/lib/Xamarin.iOS10/Plugin.Connectivity.dll
+/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Xam.Plugin.Connectivity.3.0.3/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll

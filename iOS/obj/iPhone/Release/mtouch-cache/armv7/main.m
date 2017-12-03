@@ -15,7 +15,7 @@ extern void *mono_aot_module_Newtonsoft_Json_info;
 extern void *mono_aot_module_System_Xml_Linq_info;
 extern void *mono_aot_module_System_Runtime_Serialization_info;
 extern void *mono_aot_module_Microsoft_CSharp_info;
-extern void *mono_aot_module_XCalendar_info;
+extern void *mono_aot_module_Factorymind_Components_Unified_info;
 extern void *mono_aot_module_BTProgressHUD_info;
 extern void *mono_aot_module_Plugin_Connectivity_info;
 extern void *mono_aot_module_Plugin_Connectivity_Abstractions_info;
@@ -43,7 +43,7 @@ void xamarin_register_modules_impl ()
 	mono_aot_register_module (mono_aot_module_System_Xml_Linq_info);
 	mono_aot_register_module (mono_aot_module_System_Runtime_Serialization_info);
 	mono_aot_register_module (mono_aot_module_Microsoft_CSharp_info);
-	mono_aot_register_module (mono_aot_module_XCalendar_info);
+	mono_aot_register_module (mono_aot_module_Factorymind_Components_Unified_info);
 	mono_aot_register_module (mono_aot_module_BTProgressHUD_info);
 	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_info);
 	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_Abstractions_info);
@@ -59,7 +59,7 @@ void xamarin_register_modules_impl ()
 void xamarin_register_assemblies_impl ()
 {
 	guint32 exception_gchandle = 0;
-	xamarin_open_and_register ("XCalendar.dll", &exception_gchandle);
+	xamarin_open_and_register ("Factorymind.Components-Unified.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
 	xamarin_open_and_register ("BTProgressHUD.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);

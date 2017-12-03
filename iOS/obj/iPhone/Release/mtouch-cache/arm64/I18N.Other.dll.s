@@ -6551,7 +6551,7 @@ _mono_aot_file_info:
 	.long 136,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 150,75,85,193,197,187,48,110,120,169,199,79,20,17,134,216
+	.byte 113,128,49,186,56,203,54,239,243,175,141,177,235,45,15,113
 	.globl _mono_aot_module_I18N_Other_info
 	.align 3
 _mono_aot_module_I18N_Other_info:

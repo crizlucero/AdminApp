@@ -48,8 +48,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 			isShowInformation = false;
 			return 1;
         }
-  
-        public override nfloat GetHeightForRow(UITableView tableView, Foundation.NSIndexPath indexPath)
+  /*public override nfloat GetHeightForRow(UITableView tableView, Foundation.NSIndexPath indexPath)
         {
             if (isShowInformation)
             {                  if (allPosts[indexPath.Row].Publicacion_Imagen_Ruta == "")                 {                     return TamañoPublicacion - 50;                 }                 else                  {                     return TamañoPublicacion;                 }
@@ -59,7 +58,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
             {
                 return TamañoMensajeNoInfo;
             }
-        }
+        }*/
 
         public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
         {
