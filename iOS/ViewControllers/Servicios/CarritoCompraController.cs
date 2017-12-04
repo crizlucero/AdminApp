@@ -5,9 +5,10 @@ using CoreGraphics;
 using System.Collections.Generic;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
-using PerpetualEngine.Storage;
+//using PerpetualEngine.Storage;
 using WorklabsMx.Helpers;
 using WorklabsMx.Enum;
+using WorklabsMx.iOS.Helpers;
 
 namespace WorklabsMx.iOS
 {
@@ -22,16 +23,16 @@ namespace WorklabsMx.iOS
         List<UIView> Conceptos;
         decimal Descuento, Subtotal, IVA = 0.16M, Total, IVATotal;
         UILabel txtDescuento, txtSubtotal, txtIva, txtTotal;
-        SimpleStorage Storage;
+        //SimpleStorage Storage;
         public CarritoCompraController(IntPtr handle) : base(handle)
         {
             Descuentos = new List<decimal>();
             Conceptos = new List<UIView>();
             membresias = new Dictionary<string, int>();
             productos = new Dictionary<string, int>();
-            Storage = SimpleStorage.EditGroup("Login");
-            Dictionary<string, CarritoModel> CarritoMembresia = new CarritoController().GetCarrito(Storage.Get("Usuario_Id"), TiposServicios.Membresia);
-            Dictionary<string, CarritoModel> CarritoProducto = new CarritoController().GetCarrito(Storage.Get("Usuario_Id"), TiposServicios.Producto);
+            //Storage = SimpleStorage.EditGroup("Login");
+            Dictionary<string, CarritoModel> CarritoMembresia = new CarritoController().GetCarrito(KeyChainHelper.GetKey("Usuario_Id"), TiposServicios.Membresia);
+            Dictionary<string, CarritoModel> CarritoProducto = new CarritoController().GetCarrito(KeyChainHelper.GetKey("Usuario_Id"), TiposServicios.Producto);
             try
             {
                 foreach (MembresiaModel membresia in new PickerItemsController().GetMembresias())

@@ -2,7 +2,7 @@ using System;
 using UIKit;
 using WorklabsMx.Models;
 using WorklabsMx.Controllers;
-using PerpetualEngine.Storage;
+//using PerpetualEngine.Storage;
 using WorklabsMx.iOS.Helpers;
 using System.Collections.Generic;
 
@@ -15,13 +15,13 @@ namespace WorklabsMx.iOS
         public string TerritorioId = "";
         public string GiroId;
 
-        SimpleStorage StoregeLocal;
+        //SimpleStorage StoregeLocal;
         List<string> Colonias = new List<string>();
         PickerItemsController Items = new PickerItemsController();
 
         public DireccionEmpresaTableViewController (IntPtr handle) : base (handle)
         {
-            StoregeLocal = SimpleStorage.EditGroup("Login");
+            //StoregeLocal = SimpleStorage.EditGroup("Login");
         }
 
 
@@ -32,7 +32,7 @@ namespace WorklabsMx.iOS
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
             this.EventosTecladoTextfileds();
-            Empresa = new EmpresaController().GetEmpresaMiembro(StoregeLocal.Get("Usuario_Id"));
+            Empresa = new EmpresaController().GetEmpresaMiembro(KeyChainHelper.GetKey("Usuario_Id"));
             this.txtCalle.Text = Empresa.Empresa_Miembro_Calle;
             this.txtEstado.Text = Empresa.Territorio_Estado_Descripcion;
             this.txtMunicipio.Text = Empresa.Territorio_Municipio_Descripcion;
@@ -106,7 +106,7 @@ namespace WorklabsMx.iOS
             if (InternetConectionHelper.VerificarConexion())
             {
                 //TerritorioId = new TerritorioController().GetTerritorioId(txtCodigoPostal.Text, txtColonia.Text);
-                if (new EmpresaController().UpdateDataEmpresa(Empresa.Empresa_Miembro_Id, StoregeLocal.Get("Usuario_Id"), GiroId, TerritorioId, Empresa.Empresa_Miembro_Razon_Social, Empresa.Empresa_Miembro_Rfc,
+                if (new EmpresaController().UpdateDataEmpresa(Empresa.Empresa_Miembro_Id, KeyChainHelper.GetKey("Usuario_Id"), GiroId, TerritorioId, Empresa.Empresa_Miembro_Razon_Social, Empresa.Empresa_Miembro_Rfc,
                                                                   Empresa.Empresa_Miembro_Nombre, txtCalle.Text, txtNumeroExterior.Text, txtNumeroInterior.Text, Empresa.Empresa_Miembro_Correo_Electronico, Empresa.Empresa_Miembro_Telefono, Empresa.Empresa_Miembro_Pagina_Web, Empresa.Empresa_Miembro_Red_Social_1, Empresa.Empresa_Miembro_Red_Social_2, Empresa.Empresa_Miembro_Red_Social_3, Empresa.Empresa_Miembro_Logotipo))
                 {
                     new MessageDialog().SendToast("Datos guardados");

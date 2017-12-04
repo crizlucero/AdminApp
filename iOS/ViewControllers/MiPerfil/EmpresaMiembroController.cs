@@ -3,6 +3,7 @@ using UIKit;
 using WorklabsMx.Models;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.ViewElements;
+using WorklabsMx.iOS.Helpers;
 
 namespace WorklabsMx.iOS
 {
@@ -16,8 +17,8 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
-            empresa = new EmpresaController().GetEmpresaMiembro(storageLocal.Get("Usuario_Id"));
+            //var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
+            empresa = new EmpresaController().GetEmpresaMiembro(KeyChainHelper.GetKey("Usuario_Id"));
 
             new InfoEmpresaCard(empresa, View, 60);
         }

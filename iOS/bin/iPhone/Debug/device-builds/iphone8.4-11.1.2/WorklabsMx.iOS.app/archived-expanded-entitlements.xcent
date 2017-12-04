@@ -4,7 +4,7 @@
 <dict>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>3VMPS2N2KS.Login</string>
+		<string>com.WorklabsMx.WorklabsMx</string>
 	</array>
 </dict>
 </plist>

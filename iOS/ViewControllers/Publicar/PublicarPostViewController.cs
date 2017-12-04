@@ -2,7 +2,7 @@ using Foundation;
 using System;
 using UIKit;
 using WorklabsMx.iOS.Helpers;
-using PerpetualEngine.Storage;
+//using PerpetualEngine.Storage;
 using System.Collections.Generic;
 using WorklabsMx.Enum;
 using Photos;
@@ -22,7 +22,7 @@ namespace WorklabsMx.iOS
     public partial class PublicarPostViewController : UIViewController
     {
         
-        SimpleStorage storageLocal;
+        //SimpleStorage storageLocal;
         DateTime FechaActual;
         string Nombre;
         string Ocupacion;
@@ -39,7 +39,7 @@ namespace WorklabsMx.iOS
 
         public PublicarPostViewController(IntPtr handle) : base(handle)
         {
-            storageLocal = SimpleStorage.EditGroup("Login");
+            //storageLocal = SimpleStorage.EditGroup("Login");
         }
 
         public override void ViewDidLoad()
@@ -90,7 +90,7 @@ namespace WorklabsMx.iOS
                 Fotografia = new byte[0];
             }
 
-            if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtPublicacion.Text, Fotografia))
+            if (new Controllers.EscritorioController().SetPost(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), txtPublicacion.Text, Fotografia))
             {
                 this.PostPublicadoDelegate?.PostPublicado();
                 this.DismissViewController(true, null);

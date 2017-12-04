@@ -7,7 +7,7 @@ using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
 using System.Collections.Generic;
 using WorklabsMx.iOS.Models;
-using PerpetualEngine.Storage;
+//using PerpetualEngine.Storage;
 
 namespace WorklabsMx.iOS
 {
@@ -18,13 +18,13 @@ namespace WorklabsMx.iOS
         UITextField txtEstado, txtMunicipio, txtColonia, txtCP, txtGiroComercial;
         string territorio_id, empresa_id, giro_id;
         List<string> colonias;
-        SimpleStorage storageLocal;
+        //SimpleStorage storageLocal;
         PickerItemsController items;
         public EmpresaMiembroModificaController(IntPtr handle) : base(handle)
         {
             items = new PickerItemsController();
-            storageLocal = SimpleStorage.EditGroup("Login");
-            empresa = new EmpresaController().GetEmpresaMiembro(storageLocal.Get("Usuario_Id"));
+            //storageLocal = SimpleStorage.EditGroup("Login");
+            empresa = new EmpresaController().GetEmpresaMiembro(KeyChainHelper.GetKey("Usuario_Id"));
             TerritorioModel territorio = new TerritorioController().GetTerritorio(empresa.Territorio_Cp);
             empresa_id = empresa.Empresa_Miembro_Id;
             territorio_id = territorio.Territorio_Id;
@@ -168,7 +168,7 @@ namespace WorklabsMx.iOS
 
                 NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Actualizar", UIBarButtonItemStyle.Plain, (sender, e) =>
                 {
-                    if (new EmpresaController().UpdateDataEmpresa(empresa.Empresa_Miembro_Id, storageLocal.Get("Usuario_Id"), giro_id, territorio_id, txtRazonSocial.Text, txtRFC.Text,
+                    if (new EmpresaController().UpdateDataEmpresa(empresa.Empresa_Miembro_Id, KeyChainHelper.GetKey("Usuario_Id"), giro_id, territorio_id, txtRazonSocial.Text, txtRFC.Text,
                                                               txtNombre.Text, txtCalle.Text, txtNumExterior.Text, txtNumInterior.Text, txtCorreoElectronico.Text, txtTelefono.Text,
                                                                  txtPaginaWeb.Text, txtFacebook.Text, txtTwitter.Text, txtInstagram.Text, ""))
                         new MessageDialog().SendToast("Datos guardados");

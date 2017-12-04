@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using CoreGraphics;
-using PerpetualEngine.Storage;
+//using PerpetualEngine.Storage;
 using UIKit;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
 using WorklabsMx.Models;
+using WorklabsMx.iOS.Helpers;
 
 namespace WorklabsMx.iOS.ViewElements
 {
@@ -20,7 +21,7 @@ namespace WorklabsMx.iOS.ViewElements
             message = new MessageDialog();
             using (UIView headerView = new UIView(new CGRect(0, initialPosition, UIScreen.MainScreen.Bounds.Width, 100)) { BackgroundColor = UIColor.White })
             {
-                SimpleStorage storage = SimpleStorage.EditGroup("Login");
+                //SimpleStorage storage = SimpleStorage.EditGroup("Login");
                 headerView.AddSubview(new STLLine());
                 lblNombre = new STLButton(miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos)
                 {
@@ -41,9 +42,9 @@ namespace WorklabsMx.iOS.ViewElements
 
                 lblMail.SetTitleColor(UIColor.DarkGray, UIControlState.Normal);
                 headerView.AddSubview(lblMail);
-                if (storage.Get("Usuario_Id") != miembro.Miembro_Id || storage.Get("Usuario_Tipo") != miembro.Miembro_Tipo)
+                if (KeyChainHelper.GetKey("Usuario_Id") != miembro.Miembro_Id || KeyChainHelper.GetKey("Usuario_Tipo") != miembro.Miembro_Tipo)
                 {
-                    KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo);
+                    KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo);
                     UIImage star = UIImage.FromBundle("ic_star_border");
                     if (isFavorite.Value)
                         star = UIImage.FromBundle("ic_star");
@@ -56,7 +57,7 @@ namespace WorklabsMx.iOS.ViewElements
                     {
                         if (isFavorite.Key == 0)
                         {
-                            if (Favorites.AddMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo))
+                            if (Favorites.AddMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo))
                                 btnStar.SetImage(UIImage.FromBundle("ic_star"), UIControlState.Normal);
                             else
                                 message.SendToast("Existió algún error\nIntente nuevamente");
@@ -71,7 +72,7 @@ namespace WorklabsMx.iOS.ViewElements
                                     btnStar.SetImage(UIImage.FromBundle("ic_star"), UIControlState.Normal);
                             }
                         }
-                        isFavorite = Favorites.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo);
+                        isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo);
                     };
                     headerView.AddSubview(btnStar);
                 }

@@ -6,7 +6,7 @@ using WorklabsMx.iOS.ViewElements;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using WorklabsMx.iOS.Helpers;
-using PerpetualEngine.Storage;
+//using PerpetualEngine.Storage;
 using CoreGraphics;
 using WorklabsMx.Helpers;
 using WorklabsMx.iOS.Styles;
@@ -26,7 +26,7 @@ namespace WorklabsMx.iOS
         int postNumber, totalSize = 0;
         static int currentPage = 0;
         ImageGallery selectImage;
-        SimpleStorage storageLocal;
+        //SimpleStorage storageLocal;
         UITextField txtPublish;
         bool endLine = false;
         List<PostCard> AllPost;
@@ -34,14 +34,14 @@ namespace WorklabsMx.iOS
         public PerfilController(IntPtr handle) : base(handle)
         {
             AllPost = new List<PostCard>();
-            storageLocal = SimpleStorage.EditGroup("Login");
+            //storageLocal = SimpleStorage.EditGroup("Login");
         }
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
 
             if (string.IsNullOrEmpty(Usuario))
-                miembro = new MiembrosController().GetMemberData(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
+                miembro = new MiembrosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
             else
                 miembro = new MiembrosController().GetMemberData(Usuario, Tipo);
             new InfoPersonaCard(miembro, View);
@@ -83,7 +83,7 @@ namespace WorklabsMx.iOS
                 #endregion
             });
 
-            if (Usuario != storageLocal.Get("Usuario_Id") || Tipo != storageLocal.Get("Usuario_Tipo"))
+            if (Usuario != KeyChainHelper.GetKey("Usuario_Id") || Tipo != KeyChainHelper.GetKey("Usuario_Tipo"))
             {
                 NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_person_add"), UIBarButtonItemStyle.Plain, (sender, e) =>
                 {
@@ -141,8 +141,8 @@ namespace WorklabsMx.iOS
         async Task AddPostsAsync()
         {
             List<PostModel> posts;
-            posts = new Controllers.EscritorioController().GetPerfilPosts(Usuario ?? storageLocal.Get("Usuario_Id"),
-                                                                          Tipo ?? storageLocal.Get("Usuario_Tipo"));
+            posts = new Controllers.EscritorioController().GetPerfilPosts(Usuario ?? KeyChainHelper.GetKey("Usuario_Id"),
+                                                                          Tipo ?? KeyChainHelper.GetKey("Usuario_Tipo"));
             if (posts.Count > 0)
             {
                 endLine = (posts.Count < 5);
@@ -186,7 +186,7 @@ namespace WorklabsMx.iOS
                         btnComentar.TouchUpInside += async (sender, e) =>
                         {
                             byte[] Fotografia = new byte[0];
-                            if (new Controllers.EscritorioController().CommentPost(post.Publicacion_Id, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), txtComentario.Text, Fotografia))
+                            if (new Controllers.EscritorioController().CommentPost(post.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), txtComentario.Text, Fotografia))
                             {
                                 nfloat scrollPosition = scrollView.ContentOffset.Y;
                                 txtComentario.Text = "";
@@ -240,7 +240,7 @@ namespace WorklabsMx.iOS
                 imagen.Hidden = true;
             }
 
-            if (new Controllers.EscritorioController().SetPost(storageLocal.Get("Usuario_Id"), null, txtPublish.Text, imagen.Image?.AsPNG().ToArray()))
+            if (new Controllers.EscritorioController().SetPost(KeyChainHelper.GetKey("Usuario_Id"), null, txtPublish.Text, imagen.Image?.AsPNG().ToArray()))
             {
                 scrollView.RemoveFromSuperview();
                 totalSize = 0;
@@ -266,7 +266,7 @@ namespace WorklabsMx.iOS
             using (UIScrollView scrollView = new UIScrollView(new CGRect(0, 100, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)))
             {
                 int position = 0;
-                foreach (MiembroModel usuario in new MiembrosController().GetMiembrosFavoritos(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo")))
+                foreach (MiembroModel usuario in new MiembrosController().GetMiembrosFavoritos(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo")))
                 {
                     InfoPersonaCard personaCard = new InfoPersonaCard(usuario, scrollView, position);
                     personaCard.lblMail.TouchUpInside += (sender, e) =>

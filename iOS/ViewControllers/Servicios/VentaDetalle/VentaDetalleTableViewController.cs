@@ -9,11 +9,8 @@ using WorklabsMx.Controllers;
 using WorklabsMx.Models;
 using Foundation;
 using System.Threading.Tasks;
-using CoreGraphics;
-using WorklabsMx.iOS.Styles;
-using PerpetualEngine.Storage;
-using WorklabsMx.Helpers;
-using WorklabsMx.Enum;
+//using PerpetualEngine.Storage;
+using WorklabsMx.iOS.Helpers;
 
 namespace WorklabsMx.iOS
 {
@@ -44,7 +41,7 @@ namespace WorklabsMx.iOS
         Double Subtotal = 0.00, Impuesto = 0.00, Total = 0.00;
         PromocionModel datosDescuento;
 
-        SimpleStorage Storage;
+        //SimpleStorage Storage;
         OrdenVentaController ordenventa = new OrdenVentaController();
 
         bool VentaRealizada = false;
@@ -52,7 +49,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            Storage = SimpleStorage.EditGroup("Login");
+            //Storage = SimpleStorage.EditGroup("Login");
             controller = new PickerItemsController();
             datosDescuento = new PromocionModel();
 
@@ -83,7 +80,7 @@ namespace WorklabsMx.iOS
             this.Total = 0;
             this.Impuesto = 0;
             var headerCell = (VentaDetalleHeader)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
-            ordenventa.empresa_miembro_id = Storage.Get("Usuario_Id");
+            ordenventa.empresa_miembro_id = KeyChainHelper.GetKey("Usuario_Id");
             ordenventa.moneda_id = "1";
             ordenventa.impuesto_id = "1";
             ordenventa.folio = "FWL-38";

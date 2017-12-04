@@ -259,7 +259,7 @@ bl _p_5
 .word 0x910003bf
 .word 0xa8ce7bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
@@ -1191,7 +1191,7 @@ System_Globalization_FormatProvider_Number_TrailingZeros_string_int:
 .word 0x910003bf
 .word 0xa8c37bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
@@ -1332,13 +1332,13 @@ bl _p_13
 .word 0x910003bf
 .word 0xa8c67bfd
 .word 0xd65f03c0
-.word 0xd2801160
+.word 0xd2800dc0
 .word 0xaa1103e1
 bl _p_6
-.word 0xd2801540
+.word 0xd28011a0
 .word 0xaa1103e1
 bl _p_6
-.word 0xd2801ee0
+.word 0xd2801b00
 .word 0xaa1103e1
 bl _p_6
 
@@ -1395,7 +1395,7 @@ System_Globalization_FormatProvider_Number_Int32ToDecChars_char__int__uint_int:
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2801540
+.word 0xd28011a0
 .word 0xaa1103e1
 bl _p_6
 
@@ -2000,7 +2000,7 @@ ldr x0, [x16, #0]
 .word 0xd2800021
 bl _p_24
 .word 0xaa0003e1
-.word 0xd2801760
+.word 0xd28013c0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_25
@@ -2146,7 +2146,7 @@ bl _p_11
 .word 0x910003bf
 .word 0xa8c87bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
@@ -2568,11 +2568,11 @@ bl _p_11
 .word 0xa8ce7bfd
 .word 0xd65f03c0
 .loc 3 879 0
-.word 0xd2801140
+.word 0xd2800da0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_0
 bl _p_25
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
@@ -2695,7 +2695,7 @@ bl _p_11
 .word 0x910003bf
 .word 0xa8c87bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
@@ -3177,7 +3177,7 @@ bl _p_11
 .word 0x910003bf
 .word 0xa8c87bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
@@ -4570,7 +4570,7 @@ bl _p_11
 .word 0x910003bf
 .word 0xa8dc7bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
@@ -4598,7 +4598,7 @@ ldr x2, [x16, #344]
 .word 0xaa0303e0
 .word 0xd2800001
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf940aba3
 .word 0xaa0303e0
@@ -4610,7 +4610,7 @@ ldr x2, [x16, #352]
 .word 0xaa0303e0
 .word 0xd2800021
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf940a7a3
 .word 0xaa0303e0
@@ -4622,7 +4622,7 @@ ldr x2, [x16, #360]
 .word 0xaa0303e0
 .word 0xd2800041
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf940a3a3
 .word 0xaa0303e0
@@ -4634,7 +4634,7 @@ ldr x2, [x16, #368]
 .word 0xaa0303e0
 .word 0xd2800061
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9409fa1
 
@@ -4659,7 +4659,7 @@ ldr x2, [x16, #376]
 .word 0xaa0303e0
 .word 0xd2800001
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9409ba3
 .word 0xaa0303e0
@@ -4671,7 +4671,7 @@ ldr x2, [x16, #384]
 .word 0xaa0303e0
 .word 0xd2800021
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf94097a3
 .word 0xaa0303e0
@@ -4683,7 +4683,7 @@ ldr x2, [x16, #392]
 .word 0xaa0303e0
 .word 0xd2800041
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf94093a3
 .word 0xaa0303e0
@@ -4695,7 +4695,7 @@ ldr x2, [x16, #400]
 .word 0xaa0303e0
 .word 0xd2800061
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9408fa3
 .word 0xaa0303e0
@@ -4707,7 +4707,7 @@ ldr x2, [x16, #408]
 .word 0xaa0303e0
 .word 0xd2800081
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9408ba3
 .word 0xaa0303e0
@@ -4719,7 +4719,7 @@ ldr x2, [x16, #416]
 .word 0xaa0303e0
 .word 0xd28000a1
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf94087a3
 .word 0xaa0303e0
@@ -4731,7 +4731,7 @@ ldr x2, [x16, #424]
 .word 0xaa0303e0
 .word 0xd28000c1
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf94083a3
 .word 0xaa0303e0
@@ -4743,7 +4743,7 @@ ldr x2, [x16, #432]
 .word 0xaa0303e0
 .word 0xd28000e1
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9407fa3
 .word 0xaa0303e0
@@ -4755,7 +4755,7 @@ ldr x2, [x16, #440]
 .word 0xaa0303e0
 .word 0xd2800101
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9407ba3
 .word 0xaa0303e0
@@ -4767,7 +4767,7 @@ ldr x2, [x16, #448]
 .word 0xaa0303e0
 .word 0xd2800121
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf94077a3
 .word 0xaa0303e0
@@ -4779,7 +4779,7 @@ ldr x2, [x16, #456]
 .word 0xaa0303e0
 .word 0xd2800141
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf94073a3
 .word 0xaa0303e0
@@ -4791,7 +4791,7 @@ ldr x2, [x16, #464]
 .word 0xaa0303e0
 .word 0xd2800161
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9406fa3
 .word 0xaa0303e0
@@ -4803,7 +4803,7 @@ ldr x2, [x16, #472]
 .word 0xaa0303e0
 .word 0xd2800181
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9406ba3
 .word 0xaa0303e0
@@ -4815,7 +4815,7 @@ ldr x2, [x16, #480]
 .word 0xaa0303e0
 .word 0xd28001a1
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf94067a3
 .word 0xaa0303e0
@@ -4827,7 +4827,7 @@ ldr x2, [x16, #488]
 .word 0xaa0303e0
 .word 0xd28001c1
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf94063a3
 .word 0xaa0303e0
@@ -4839,7 +4839,7 @@ ldr x2, [x16, #496]
 .word 0xaa0303e0
 .word 0xd28001e1
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9405fa1
 
@@ -4864,7 +4864,7 @@ ldr x2, [x16, #504]
 .word 0xaa0303e0
 .word 0xd2800001
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9405ba3
 .word 0xaa0303e0
@@ -4876,7 +4876,7 @@ ldr x2, [x16, #512]
 .word 0xaa0303e0
 .word 0xd2800021
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf94057a3
 .word 0xaa0303e0
@@ -4888,7 +4888,7 @@ ldr x2, [x16, #520]
 .word 0xaa0303e0
 .word 0xd2800041
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf94053a3
 .word 0xaa0303e0
@@ -4900,7 +4900,7 @@ ldr x2, [x16, #528]
 .word 0xaa0303e0
 .word 0xd2800061
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9404fa1
 
@@ -4925,7 +4925,7 @@ ldr x2, [x16, #536]
 .word 0xaa0303e0
 .word 0xd2800001
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9404ba3
 .word 0xaa0303e0
@@ -4937,7 +4937,7 @@ ldr x2, [x16, #544]
 .word 0xaa0303e0
 .word 0xd2800021
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf94047a3
 .word 0xaa0303e0
@@ -4949,7 +4949,7 @@ ldr x2, [x16, #552]
 .word 0xaa0303e0
 .word 0xd2800041
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf94043a3
 .word 0xaa0303e0
@@ -4961,7 +4961,7 @@ ldr x2, [x16, #560]
 .word 0xaa0303e0
 .word 0xd2800061
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9403fa3
 .word 0xaa0303e0
@@ -4973,7 +4973,7 @@ ldr x2, [x16, #568]
 .word 0xaa0303e0
 .word 0xd2800081
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9403ba3
 .word 0xaa0303e0
@@ -4985,7 +4985,7 @@ ldr x2, [x16, #576]
 .word 0xaa0303e0
 .word 0xd28000a1
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf94037a3
 .word 0xaa0303e0
@@ -4997,7 +4997,7 @@ ldr x2, [x16, #584]
 .word 0xaa0303e0
 .word 0xd28000c1
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf94033a3
 .word 0xaa0303e0
@@ -5009,7 +5009,7 @@ ldr x2, [x16, #592]
 .word 0xaa0303e0
 .word 0xd28000e1
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9402fa3
 .word 0xaa0303e0
@@ -5021,7 +5021,7 @@ ldr x2, [x16, #600]
 .word 0xaa0303e0
 .word 0xd2800101
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9402ba3
 .word 0xaa0303e0
@@ -5033,7 +5033,7 @@ ldr x2, [x16, #608]
 .word 0xaa0303e0
 .word 0xd2800121
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf94027a3
 .word 0xaa0303e0
@@ -5045,7 +5045,7 @@ ldr x2, [x16, #616]
 .word 0xaa0303e0
 .word 0xd2800141
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf94023a3
 .word 0xaa0303e0
@@ -5057,7 +5057,7 @@ ldr x2, [x16, #624]
 .word 0xaa0303e0
 .word 0xd2800161
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9401fa1
 
@@ -5082,7 +5082,7 @@ ldr x2, [x16, #632]
 .word 0xaa0303e0
 .word 0xd2800001
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9401ba3
 .word 0xaa0303e0
@@ -5094,7 +5094,7 @@ ldr x2, [x16, #640]
 .word 0xaa0303e0
 .word 0xd2800021
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf94017a3
 .word 0xaa0303e0
@@ -5106,7 +5106,7 @@ ldr x2, [x16, #648]
 .word 0xaa0303e0
 .word 0xd2800041
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf94013a3
 .word 0xaa0303e0
@@ -5118,7 +5118,7 @@ ldr x2, [x16, #656]
 .word 0xaa0303e0
 .word 0xd2800061
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9400fa3
 .word 0xaa0303e0
@@ -5130,7 +5130,7 @@ ldr x2, [x16, #664]
 .word 0xaa0303e0
 .word 0xd2800081
 .word 0xf9400063
-.word 0xf9408070
+.word 0xf9407870
 .word 0xd63f0200
 .word 0xf9400ba1
 
@@ -5301,7 +5301,7 @@ ldr x2, [x16, #16]
 .word 0x910003bf
 .word 0xa8c27bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
@@ -5467,7 +5467,7 @@ ldr x2, [x16, #16]
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
@@ -5581,587 +5581,13 @@ ldr x2, [x16, #16]
 .word 0x910003bf
 .word 0xa8c27bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
 Lme_1c:
 .text
 ut_29:
-add x0, x0, 16
-b System_Numerics_BigInteger__ctor_single
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigInteger__ctor_single
-System_Numerics_BigInteger__ctor_single:
-.loc 5 129 0 prologue_end
-.word 0xa9be7bfd
-.word 0x910003fd
-.word 0xf9000ba0
-.word 0xbd001ba0
-.word 0xbd401ba0
-.word 0x1e22c000
-.word 0xf9400ba0
-bl _p_37
-.loc 5 131 0
-.word 0x910003bf
-.word 0xa8c27bfd
-.word 0xd65f03c0
-
-Lme_1d:
-.text
-ut_30:
-add x0, x0, 16
-b System_Numerics_BigInteger__ctor_double
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigInteger__ctor_double
-System_Numerics_BigInteger__ctor_double:
-.loc 5 135 0 prologue_end
-.word 0xa9b47bfd
-.word 0x910003fd
-.word 0xa90167b8
-.word 0xf90013ba
-.word 0xaa0003fa
-.word 0xfd0017a0
-.word 0xb90073bf
-.word 0xb9007bbf
-.word 0xf90043bf
-.word 0x390223bf
-.word 0xfd4017a0
-bl _p_38
-.word 0x53001c00
-.word 0x35001fe0
-.loc 5 137 0
-.word 0xfd4017a0
-bl _p_39
-.word 0x53001c00
-.word 0x35001e20
-.loc 5 141 0
-.word 0xb900035f
-.loc 5 142 0
-.word 0xf900075f
-.loc 5 147 0
-.word 0xfd4017a0
-.word 0x9101c3a0
-.word 0x9101e3a1
-.word 0x910203a2
-.word 0x910223a3
-bl _p_40
-.loc 5 150 0
-.word 0xf94043a0
-.word 0xb50003c0
-.loc 5 152 0
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #696]
-.word 0x3980b410
-.word 0xb5000050
-bl _p_1
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #704]
-.word 0xf9400001
-.word 0xf90033a1
-.word 0xf9400400
-.word 0xf90037a0
-.word 0xf94033a0
-.word 0xf9000340
-.word 0x91002341
-.word 0xf94037a0
-.word 0xf9000020
-.word 0xd349fc21
-.word 0xd29ffffe
-.word 0xf2a00ffe
-.word 0x8a1e0021
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x2, [x16, #16]
-.word 0x8b020021
-.word 0xd280003e
-.word 0x3900003e
-.loc 5 153 0
-.word 0x140000c5
-.loc 5 159 0
-.word 0xb9807ba0
-.word 0x6b1f001f
-.word 0x540008ac
-.loc 5 161 0
-.word 0xb9807ba0
-.word 0x928007fe
-.word 0xf2bffffe
-.word 0x6b1e001f
-.word 0x540003cc
-.loc 5 163 0
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #696]
-.word 0x3980b410
-.word 0xb5000050
-bl _p_1
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #704]
-.word 0xf9400001
-.word 0xf9002ba1
-.word 0xf9400400
-.word 0xf9002fa0
-.word 0xf9402ba0
-.word 0xf9000340
-.word 0x91002341
-.word 0xf9402fa0
-.word 0xf9000020
-.word 0xd349fc21
-.word 0xd29ffffe
-.word 0xf2a00ffe
-.word 0x8a1e0021
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x2, [x16, #16]
-.word 0x8b020021
-.word 0xd280003e
-.word 0x3900003e
-.loc 5 164 0
-.word 0x140000a0
-.loc 5 166 0
-.word 0xf94043a0
-.word 0xb9807ba1
-.word 0x4b0103e1
-.word 0xd28007fe
-.word 0xa1e0021
-.word 0x9ac12400
-.word 0x910103a1
-.word 0xf9004ba1
-bl _p_41
-.word 0xf9404bbe
-.word 0xf90003c0
-.word 0xf90007c1
-.word 0xf94023a0
-.word 0xf9000340
-.word 0x91002341
-.word 0xf94027a0
-.word 0xf9000020
-.word 0xd349fc21
-.word 0xd29ffffe
-.word 0xf2a00ffe
-.word 0x8a1e0021
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x2, [x16, #16]
-.word 0x8b020021
-.word 0xd280003e
-.word 0x3900003e
-.loc 5 167 0
-.word 0xb98073a0
-.word 0x6b1f001f
-.word 0x5400104a
-.loc 5 168 0
-.word 0xb9800340
-.word 0x4b0003e0
-.word 0xb9000340
-.loc 5 169 0
-.word 0x1400007e
-.loc 5 170 0
-.word 0xb9807ba0
-.word 0xd280017e
-.word 0x6b1e001f
-.word 0x5400044c
-.loc 5 172 0
-.word 0xf94043a0
-.word 0xb9807ba1
-.word 0xd28007fe
-.word 0xa1e0021
-.word 0x9ac12000
-.word 0x9100c3a1
-.word 0xf9004ba1
-bl _p_41
-.word 0xf9404bbe
-.word 0xf90003c0
-.word 0xf90007c1
-.word 0xf9401ba0
-.word 0xf9000340
-.word 0x91002341
-.word 0xf9401fa0
-.word 0xf9000020
-.word 0xd349fc21
-.word 0xd29ffffe
-.word 0xf2a00ffe
-.word 0x8a1e0021
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x2, [x16, #16]
-.word 0x8b020021
-.word 0xd280003e
-.word 0x3900003e
-.loc 5 173 0
-.word 0xb98073a0
-.word 0x6b1f001f
-.word 0x54000baa
-.loc 5 174 0
-.word 0xb9800340
-.word 0x4b0003e0
-.word 0xb9000340
-.loc 5 175 0
-.word 0x14000059
-.loc 5 180 0
-.word 0xf94043a0
-.word 0xd375d000
-.word 0xf90043a0
-.loc 5 181 0
-.word 0xb9807ba0
-.word 0x51002c00
-.word 0xb9007ba0
-.loc 5 184 0
-.word 0xb9807ba0
-.word 0x51000401
-.word 0x131f7c20
-.word 0x531b7c00
-.word 0xb010000
-.word 0x13057c00
-.word 0x11000419
-.loc 5 185 0
-.word 0xaa1903e0
-.word 0x531b6800
-.word 0xb9807ba1
-.word 0x4b010018
-.loc 5 190 0
-.word 0x11000b21
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #688]
-bl _p_35
-.word 0xf9000740
-.word 0x91002341
-.word 0xd349fc21
-.word 0xd29ffffe
-.word 0xf2a00ffe
-.word 0x8a1e0021
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x2, [x16, #16]
-.word 0x8b020021
-.word 0xd280003e
-.word 0x3900003e
-.loc 5 191 0
-.word 0xf9400740
-.word 0x11000722
-.word 0xf94043a1
-.word 0x11008303
-.word 0xd28007fe
-.word 0xa1e0063
-.word 0x9ac32421
-.word 0xaa0103e1
-.word 0x93407c42
-.word 0xb9801803
-.word 0xeb02007f
-.word 0x10000011
-.word 0x54000869
-.word 0xd37ef442
-.word 0x8b020000
-.word 0x91008000
-.word 0xb9000001
-.loc 5 192 0
-.word 0xf9400740
-.word 0xf94043a1
-.word 0xd28007fe
-.word 0xa1e0302
-.word 0x9ac22421
-.word 0xaa0103e1
-.word 0x93407f22
-.word 0xb9801803
-.word 0xeb02007f
-.word 0x10000011
-.word 0x54000689
-.word 0xd37ef442
-.word 0x8b020000
-.word 0x91008000
-.word 0xb9000001
-.loc 5 193 0
-.word 0x6b1f031f
-.word 0x5400026d
-.loc 5 194 0
-.word 0xf9400740
-.word 0x51000722
-.word 0xf94043a1
-.word 0xaa0103e1
-.word 0xd2800403
-.word 0x4b180063
-.word 0xd28003fe
-.word 0xa1e0063
-.word 0x1ac32021
-.word 0x93407c42
-.word 0xb9801803
-.word 0xeb02007f
-.word 0x10000011
-.word 0x54000409
-.word 0xd37ef442
-.word 0x8b020000
-.word 0x91008000
-.word 0xb9000001
-.loc 5 195 0
-.word 0xb98073a0
-.word 0xb9000340
-.loc 5 199 0
-.word 0xa94167b8
-.word 0xf94013ba
-.word 0x910003bf
-.word 0xa8cc7bfd
-.word 0xd65f03c0
-.loc 5 138 0
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #0]
-.word 0xd2803da1
-bl _p_24
-.word 0xaa0003e1
-.word 0xd2801ee0
-.word 0xf2a04000
-bl _mono_create_corlib_exception_1
-bl _p_25
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #0]
-.loc 5 136 0
-.word 0xd2803421
-bl _p_24
-.word 0xaa0003e1
-.word 0xd2801ee0
-.word 0xf2a04000
-bl _mono_create_corlib_exception_1
-bl _p_25
-.word 0xd2801b80
-.word 0xaa1103e1
-bl _p_6
-
-Lme_1e:
-.text
-ut_31:
-add x0, x0, 16
-b System_Numerics_BigInteger__ctor_System_Decimal
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigInteger__ctor_System_Decimal
-System_Numerics_BigInteger__ctor_System_Decimal:
-.loc 5 204 0 prologue_end
-.word 0xa9b87bfd
-.word 0x910003fd
-.word 0xa90163b7
-.word 0xa9026bb9
-.word 0xaa0003fa
-.word 0xf9001ba1
-.word 0xf9001fa2
-.word 0x910143a0
-.word 0xf90033a0
-.word 0xf9401ba0
-.word 0xf9401fa1
-bl _p_42
-.word 0xf94033be
-.word 0xf90003c0
-.word 0xf90007c1
-.word 0xf9402ba0
-.word 0xf9402fa1
-bl _p_43
-.word 0xaa0003f9
-.loc 5 208 0
-.word 0xd2800078
-.word 0x14000002
-.loc 5 210 0
-.word 0x51000718
-.loc 5 209 0
-.word 0x6b1f031f
-.word 0x5400018d
-.word 0x51000700
-.word 0x93407c00
-.word 0xb9801b21
-.word 0xeb00003f
-.word 0x10000011
-.word 0x54001289
-.word 0xd37ef400
-.word 0x8b000320
-.word 0x91008000
-.word 0xb9800000
-.word 0x34fffe60
-.loc 5 211 0
-.word 0x35000318
-.loc 5 213 0
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #704]
-.word 0xf9400001
-.word 0xf90023a1
-.word 0xf9400400
-.word 0xf90027a0
-.word 0xf94023a0
-.word 0xf9000340
-.word 0x91002341
-.word 0xf94027a0
-.word 0xf9000020
-.word 0xd349fc21
-.word 0xd29ffffe
-.word 0xf2a00ffe
-.word 0x8a1e0021
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x2, [x16, #16]
-.word 0x8b020021
-.word 0xd280003e
-.word 0x3900003e
-.loc 5 214 0
-.word 0x14000072
-.loc 5 215 0
-.word 0xd280003e
-.word 0x6b1e031f
-.word 0x54000461
-.word 0xb9801b20
-.word 0xeb1f001f
-.word 0x10000011
-.word 0x54000e09
-.word 0xb9802320
-.word 0x6b1f001f
-.word 0x5400038d
-.loc 5 219 0
-.word 0xb9801b20
-.word 0xeb1f001f
-.word 0x10000011
-.word 0x54000d29
-.word 0xb9802320
-.word 0xb9000340
-.loc 5 220 0
-.word 0xb9800341
-.word 0xb9801b20
-.word 0xd280007e
-.word 0xeb1e001f
-.word 0x10000011
-.word 0x54000c29
-.word 0xb9802f20
-.word 0x929ffffe
-.word 0xf2b0001e
-.word 0xa1e0000
-.word 0xaa1a03f9
-.word 0xaa0103f8
-.word 0x35000060
-.word 0xd2800037
-.word 0x14000003
-.word 0x92800017
-.word 0xf2bffff7
-.word 0x1b177f00
-.word 0xb9000320
-.loc 5 221 0
-.word 0xf900075f
-.loc 5 222 0
-.word 0x1400004d
-.loc 5 225 0
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #688]
-.word 0xaa1803e1
-bl _p_35
-.word 0xf9000740
-.word 0x91002341
-.word 0xd349fc21
-.word 0xd29ffffe
-.word 0xf2a00ffe
-.word 0x8a1e0021
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x2, [x16, #16]
-.word 0x8b020021
-.word 0xd280003e
-.word 0x3900003e
-.loc 5 229 0
-.word 0xf9400740
-.word 0xb9801b21
-.word 0xeb1f003f
-.word 0x10000011
-.word 0x54000789
-.word 0xb9802321
-.word 0xb9801802
-.word 0xeb1f005f
-.word 0x10000011
-.word 0x540006e9
-.word 0xb9002001
-.loc 5 230 0
-.word 0xd280003e
-.word 0x6b1e031f
-.word 0x540001cd
-.loc 5 231 0
-.word 0xf9400740
-.word 0xb9801b21
-.word 0xd280003e
-.word 0xeb1e003f
-.word 0x10000011
-.word 0x540005a9
-.word 0xb9802721
-.word 0xb9801802
-.word 0xd280003e
-.word 0xeb1e005f
-.word 0x10000011
-.word 0x540004e9
-.word 0xb9002401
-.loc 5 232 0
-.word 0xd280005e
-.word 0x6b1e031f
-.word 0x540001cd
-.loc 5 233 0
-.word 0xf9400740
-.word 0xb9801b21
-.word 0xd280005e
-.word 0xeb1e003f
-.word 0x10000011
-.word 0x540003a9
-.word 0xb9802b21
-.word 0xb9801802
-.word 0xd280005e
-.word 0xeb1e005f
-.word 0x10000011
-.word 0x540002e9
-.word 0xb9002801
-.loc 5 236 0
-.word 0xb9801b20
-.word 0xd280007e
-.word 0xeb1e001f
-.word 0x10000011
-.word 0x54000229
-.word 0xb9802f20
-.word 0x929ffffe
-.word 0xf2b0001e
-.word 0xa1e0000
-.word 0xaa1a03f9
-.word 0x35000060
-.word 0xd2800038
-.word 0x14000003
-.word 0x92800018
-.word 0xf2bffff8
-.word 0xb9000338
-.loc 5 239 0
-.word 0xa94163b7
-.word 0xa9426bb9
-.word 0x910003bf
-.word 0xa8c87bfd
-.word 0xd65f03c0
-.word 0xd2801b80
-.word 0xaa1103e1
-bl _p_6
-
-Lme_1f:
-.text
-ut_32:
 add x0, x0, 16
 b System_Numerics_BigInteger__ctor_byte__
 .text
@@ -6531,7 +5957,7 @@ bl _p_35
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #704]
+ldr x0, [x16, #696]
 .word 0xf9400001
 .word 0xf90043a1
 .word 0xf9400400
@@ -6560,7 +5986,7 @@ ldr x2, [x16, #16]
 .word 0x34001496
 .loc 5 335 0
 .word 0xf94057a0
-bl _p_44
+bl _p_37
 .loc 5 338 0
 .word 0xf94057a0
 .word 0xb980181a
@@ -6608,7 +6034,7 @@ bl _p_44
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #712]
+ldr x0, [x16, #704]
 .word 0xf9400001
 .word 0xf9003ba1
 .word 0xf9400400
@@ -6725,7 +6151,7 @@ ldr x3, [x16, #16]
 .word 0xd2800001
 .word 0xd2800003
 .word 0xaa1a03e4
-bl _p_45
+bl _p_38
 .loc 5 362 0
 .word 0x14000023
 .loc 5 365 0
@@ -6782,20 +6208,20 @@ ldr x2, [x16, #16]
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #0]
-.word 0xd2804461
+.word 0xd2803421
 bl _p_24
 .word 0xaa0003e1
-.word 0xd2801120
+.word 0xd2800d80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_25
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_20:
+Lme_1d:
 .text
-ut_33:
+ut_30:
 add x0, x0, 16
 b System_Numerics_BigInteger__ctor_int_uint__
 .text
@@ -6831,9 +6257,9 @@ ldr x2, [x16, #16]
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_21:
+Lme_1e:
 .text
-ut_34:
+ut_31:
 add x0, x0, 16
 b System_Numerics_BigInteger__ctor_uint___bool
 .text
@@ -6873,7 +6299,7 @@ System_Numerics_BigInteger__ctor_uint___bool:
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #704]
+ldr x0, [x16, #696]
 .word 0xf9400001
 .word 0xf90027a1
 .word 0xf9400400
@@ -6993,7 +6419,7 @@ ldr x2, [x16, #16]
 .word 0xd2800001
 .word 0xd2800003
 .word 0xaa1703e4
-bl _p_45
+bl _p_38
 .loc 5 421 0
 .word 0xa9415fb6
 .word 0xa94267b8
@@ -7006,20 +6432,20 @@ bl _p_45
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #0]
-.word 0xd2804461
+.word 0xd2803421
 bl _p_24
 .word 0xaa0003e1
-.word 0xd2801120
+.word 0xd2800d80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_25
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_22:
+Lme_1f:
 .text
-ut_35:
+ut_32:
 add x0, x0, 16
 b System_Numerics_BigInteger_get_Zero
 .text
@@ -7032,7 +6458,7 @@ System_Numerics_BigInteger_get_Zero:
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #704]
+ldr x0, [x16, #696]
 .word 0xf9400001
 .word 0xf9000ba1
 .word 0xf9400400
@@ -7043,107 +6469,9 @@ ldr x0, [x16, #704]
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_23:
+Lme_20:
 .text
-ut_36:
-add x0, x0, 16
-b System_Numerics_BigInteger_get_IsPowerOfTwo
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigInteger_get_IsPowerOfTwo
-System_Numerics_BigInteger_get_IsPowerOfTwo:
-.loc 5 542 0 prologue_end
-.word 0xa9be7bfd
-.word 0x910003fd
-.word 0xa9016bb9
-.word 0xaa0003fa
-.word 0xf9400740
-.word 0xb5000180
-.loc 5 543 0
-.word 0xb9800340
-.word 0xb9800341
-.word 0x51000421
-.word 0xa010000
-.word 0x350000a0
-.word 0xb9800340
-.word 0x6b1f001f
-.word 0x9a9f97e0
-.word 0x14000038
-.word 0xd2800000
-.word 0x14000036
-.loc 5 545 0
-.word 0xb9800340
-.word 0xd280003e
-.word 0x6b1e001f
-.word 0x54000060
-.loc 5 546 0
-.word 0xd2800000
-.word 0x14000030
-.loc 5 547 0
-.word 0xf9400740
-.word 0xb9801800
-.word 0x51000419
-.loc 5 548 0
-.word 0xf9400740
-.word 0x93407f21
-.word 0xb9801802
-.word 0xeb01005f
-.word 0x10000011
-.word 0x54000569
-.word 0xd37ef421
-.word 0x8b010000
-.word 0x91008000
-.word 0xb9400000
-.word 0xf9400741
-.word 0x93407f22
-.word 0xb9801823
-.word 0xeb02007f
-.word 0x10000011
-.word 0x54000429
-.word 0xd37ef442
-.word 0x8b020021
-.word 0x91008021
-.word 0xb9400021
-.word 0x51000421
-.word 0xa010000
-.word 0x34000200
-.loc 5 549 0
-.word 0xd2800000
-.word 0x14000014
-.loc 5 552 0
-.word 0xf9400740
-.word 0x93407f21
-.word 0xb9801802
-.word 0xeb01005f
-.word 0x10000011
-.word 0x54000249
-.word 0xd37ef421
-.word 0x8b010000
-.word 0x91008000
-.word 0xb9400000
-.word 0x34000060
-.loc 5 553 0
-.word 0xd2800000
-.word 0x14000007
-.loc 5 550 0
-.word 0x51000721
-.word 0xaa0103e0
-.word 0xaa0103f9
-.word 0x6b1f001f
-.word 0x54fffdea
-.loc 5 555 0
-.word 0xd2800020
-.word 0xa9416bb9
-.word 0x910003bf
-.word 0xa8c27bfd
-.word 0xd65f03c0
-.word 0xd2801b80
-.word 0xaa1103e1
-bl _p_6
-
-Lme_24:
-.text
-ut_37:
+ut_33:
 add x0, x0, 16
 b System_Numerics_BigInteger_get_IsZero
 .text
@@ -7162,102 +6490,9 @@ System_Numerics_BigInteger_get_IsZero:
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_25:
+Lme_21:
 .text
-ut_38:
-add x0, x0, 16
-b System_Numerics_BigInteger_get_IsOne
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigInteger_get_IsOne
-System_Numerics_BigInteger_get_IsOne:
-.loc 5 561 0 prologue_end
-.word 0xa9be7bfd
-.word 0x910003fd
-.word 0xf9000ba0
-.word 0xf9400ba0
-.word 0xb9800000
-.word 0xd280003e
-.word 0x6b1e001f
-.word 0x540000c1
-.word 0xf9400ba0
-.word 0xf9400400
-.word 0xeb1f001f
-.word 0x9a9f17e0
-.word 0x14000002
-.word 0xd2800000
-.word 0x910003bf
-.word 0xa8c27bfd
-.word 0xd65f03c0
-
-Lme_26:
-.text
-ut_39:
-add x0, x0, 16
-b System_Numerics_BigInteger_get_IsEven
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigInteger_get_IsEven
-System_Numerics_BigInteger_get_IsEven:
-.loc 5 563 0 prologue_end
-.word 0xa9be7bfd
-.word 0x910003fd
-.word 0xf9000ba0
-.word 0xf9400ba0
-.word 0xf9400400
-.word 0xb40001a0
-.word 0xf9400ba0
-.word 0xf9400400
-.word 0xb9801801
-.word 0xeb1f003f
-.word 0x10000011
-.word 0x54000209
-.word 0xb9402000
-.word 0xd280003e
-.word 0xa1e0000
-.word 0x6b1f001f
-.word 0x9a9f17e0
-.word 0x14000007
-.word 0xf9400ba0
-.word 0xb9800000
-.word 0xd280003e
-.word 0xa1e0000
-.word 0x6b1f001f
-.word 0x9a9f17e0
-.word 0x910003bf
-.word 0xa8c27bfd
-.word 0xd65f03c0
-.word 0xd2801b80
-.word 0xaa1103e1
-bl _p_6
-
-Lme_27:
-.text
-ut_40:
-add x0, x0, 16
-b System_Numerics_BigInteger_get_Sign
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigInteger_get_Sign
-System_Numerics_BigInteger_get_Sign:
-.loc 5 567 0 prologue_end
-.word 0xa9be7bfd
-.word 0x910003fd
-.word 0xf9000ba0
-.word 0xf9400ba1
-.word 0xb9800020
-.word 0x131f7c00
-.word 0xb9800021
-.word 0x4b0103e1
-.word 0x131f7c21
-.word 0x4b010000
-.word 0x910003bf
-.word 0xa8c27bfd
-.word 0xd65f03c0
-
-Lme_28:
-.text
-ut_41:
+ut_34:
 add x0, x0, 16
 b System_Numerics_BigInteger_Parse_string_System_IFormatProvider
 .text
@@ -7270,13 +6505,13 @@ System_Numerics_BigInteger_Parse_string_System_IFormatProvider:
 .word 0xf90013a0
 .word 0xf90017a1
 .word 0xf94017a0
-bl _p_46
+bl _p_39
 .word 0xaa0003e2
 .word 0x910043a0
 .word 0xf9001ba0
 .word 0xf94013a0
 .word 0xd28000e1
-bl _p_47
+bl _p_40
 .word 0xf9401bbe
 .word 0xf90003c0
 .word 0xf90007c1
@@ -7286,9 +6521,9 @@ bl _p_47
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_29:
+Lme_22:
 .text
-ut_42:
+ut_35:
 add x0, x0, 16
 b System_Numerics_BigInteger_Parse_string_System_Globalization_NumberStyles_System_IFormatProvider
 .text
@@ -7302,13 +6537,13 @@ System_Numerics_BigInteger_Parse_string_System_Globalization_NumberStyles_System
 .word 0xf90017a1
 .word 0xf9001ba2
 .word 0xf9401ba0
-bl _p_46
+bl _p_39
 .word 0xaa0003e2
 .word 0x910043a0
 .word 0xf9001fa0
 .word 0xf94013a0
 .word 0xb9802ba1
-bl _p_48
+bl _p_41
 .word 0xf9401fbe
 .word 0xf90003c0
 .word 0xf90007c1
@@ -7318,9 +6553,9 @@ bl _p_48
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_2a:
+Lme_23:
 .text
-ut_43:
+ut_36:
 add x0, x0, 16
 b System_Numerics_BigInteger_GetHashCode
 .text
@@ -7372,13 +6607,13 @@ System_Numerics_BigInteger_GetHashCode:
 .word 0x910003bf
 .word 0xa8c37bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_2b:
+Lme_24:
 .text
-ut_44:
+ut_37:
 add x0, x0, 16
 b System_Numerics_BigInteger_Equals_object
 .text
@@ -7402,7 +6637,7 @@ System_Numerics_BigInteger_Equals_object:
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x1, [x16, #720]
+ldr x1, [x16, #712]
 .word 0xeb01001f
 .word 0x54000040
 .word 0xd2800018
@@ -7421,7 +6656,7 @@ ldr x1, [x16, #720]
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x1, [x16, #720]
+ldr x1, [x16, #712]
 .word 0xeb01001f
 .word 0x10000011
 .word 0x54000201
@@ -7433,112 +6668,20 @@ ldr x1, [x16, #720]
 .word 0xf94013a0
 .word 0xf94017a1
 .word 0xf9401ba2
-bl _p_49
+bl _p_42
 .word 0x53001c00
 .word 0xf9400bb8
 .word 0xf9400fba
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2801c20
+.word 0xd2801860
 .word 0xaa1103e1
 bl _p_6
 
-Lme_2c:
+Lme_25:
 .text
-ut_45:
-add x0, x0, 16
-b System_Numerics_BigInteger_Equals_long
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigInteger_Equals_long
-System_Numerics_BigInteger_Equals_long:
-.loc 5 890 0 prologue_end
-.word 0xa9bd7bfd
-.word 0x910003fd
-.word 0xf9000bb7
-.word 0xa901ebb9
-.word 0xaa0003f9
-.word 0xaa0103fa
-.word 0xf9400720
-.word 0xb50000c0
-.loc 5 891 0
-.word 0xb9800320
-.word 0x93407c00
-.word 0xeb1a001f
-.word 0x9a9f17e0
-.word 0x14000036
-.loc 5 894 0
-.word 0xb9800320
-.word 0x93407c00
-.word 0xca1a0000
-.word 0xeb1f001f
-.word 0x5400010b
-.word 0xf9400720
-.word 0xb9801801
-.word 0xaa0103e0
-.word 0xb9002ba1
-.word 0xd280005e
-.word 0x6b1e001f
-.word 0x5400006d
-.loc 5 895 0
-.word 0xd2800000
-.word 0x14000028
-.loc 5 897 0
-.word 0xeb1f035f
-.word 0x5400006b
-.word 0xaa1a03f7
-.word 0x14000002
-.word 0xcb1a03f7
-.word 0xaa1703fa
-.loc 5 898 0
-.word 0xb9802ba0
-.word 0xd280003e
-.word 0x6b1e001f
-.word 0x54000161
-.loc 5 899 0
-.word 0xf9400720
-.word 0xb9801801
-.word 0xeb1f003f
-.word 0x10000011
-.word 0x540003c9
-.word 0xb9402000
-.word 0x2a0003e0
-.word 0xeb1a001f
-.word 0x9a9f17e0
-.word 0x14000014
-.loc 5 901 0
-.word 0xf9400720
-.word 0xb9801801
-.word 0xd280003e
-.word 0xeb1e003f
-.word 0x10000011
-.word 0x54000269
-.word 0xb9402400
-.word 0xf9400721
-.word 0xb9801822
-.word 0xeb1f005f
-.word 0x10000011
-.word 0x540001a9
-.word 0xb9402021
-.word 0x2a0003e0
-.word 0xd3607c00
-.word 0x2a0103e1
-.word 0xaa010000
-.word 0xeb1a001f
-.word 0x9a9f17e0
-.word 0xf9400bb7
-.word 0xa941ebb9
-.word 0x910003bf
-.word 0xa8c37bfd
-.word 0xd65f03c0
-.word 0xd2801b80
-.word 0xaa1103e1
-bl _p_6
-
-Lme_2d:
-.text
-ut_46:
+ut_38:
 add x0, x0, 16
 b System_Numerics_BigInteger_Equals_System_Numerics_BigInteger
 .text
@@ -7611,7 +6754,7 @@ System_Numerics_BigInteger_Equals_System_Numerics_BigInteger:
 .word 0xf9001fa1
 .word 0xf9401fa1
 .word 0xaa1903e2
-bl _p_50
+bl _p_43
 .word 0x93407c00
 .loc 5 939 0
 .word 0x6b1f001f
@@ -7621,9 +6764,9 @@ bl _p_50
 .word 0xa8c87bfd
 .word 0xd65f03c0
 
-Lme_2e:
+Lme_26:
 .text
-ut_47:
+ut_39:
 add x0, x0, 16
 b System_Numerics_BigInteger_CompareTo_long
 .text
@@ -7736,13 +6879,13 @@ System_Numerics_BigInteger_CompareTo_long:
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_2f:
+Lme_27:
 .text
-ut_48:
+ut_40:
 add x0, x0, 16
 b System_Numerics_BigInteger_CompareTo_System_Numerics_BigInteger
 .text
@@ -7856,7 +6999,7 @@ System_Numerics_BigInteger_CompareTo_System_Numerics_BigInteger:
 .word 0xf90027a1
 .word 0xf94027a1
 .word 0xaa1903e2
-bl _p_50
+bl _p_43
 .word 0x93407c00
 .word 0xaa0003f9
 .loc 5 997 0
@@ -7902,13 +7045,13 @@ bl _p_50
 .word 0x910003bf
 .word 0xa8cd7bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_30:
+Lme_28:
 .text
-ut_49:
+ut_41:
 add x0, x0, 16
 b System_Numerics_BigInteger_CompareTo_object
 .text
@@ -7937,7 +7080,7 @@ System_Numerics_BigInteger_CompareTo_object:
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x1, [x16, #720]
+ldr x1, [x16, #712]
 .word 0xeb01001f
 .word 0x54000040
 .word 0xd2800018
@@ -7953,7 +7096,7 @@ ldr x1, [x16, #720]
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x1, [x16, #720]
+ldr x1, [x16, #712]
 .word 0xeb01001f
 .word 0x10000011
 .word 0x54000421
@@ -7965,7 +7108,7 @@ ldr x1, [x16, #720]
 .word 0xf94013a0
 .word 0xf94017a1
 .word 0xf9401ba2
-bl _p_51
+bl _p_44
 .word 0x93407c00
 .word 0xf9400bb8
 .word 0xf9400fba
@@ -7977,28 +7120,28 @@ bl _p_51
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #0]
-.word 0xd28045e1
+.word 0xd28035a1
 bl _p_24
 .word 0xf90023a0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #0]
-.word 0xd2804ee1
+.word 0xd2803ea1
 bl _p_24
 .word 0xaa0003e2
 .word 0xf94023a1
-.word 0xd2801100
+.word 0xd2800d60
 .word 0xf2a04000
 bl _mono_create_corlib_exception_2
 bl _p_25
-.word 0xd2801c20
+.word 0xd2801860
 .word 0xaa1103e1
 bl _p_6
 
-Lme_31:
+Lme_29:
 .text
-ut_50:
+ut_42:
 add x0, x0, 16
 b System_Numerics_BigInteger_ToByteArray
 .text
@@ -8021,7 +7164,7 @@ System_Numerics_BigInteger_ToByteArray:
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #728]
+ldr x0, [x16, #720]
 .word 0xd2800021
 bl _p_35
 .word 0x140000e9
@@ -8172,7 +7315,7 @@ bl _p_35
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #728]
+ldr x0, [x16, #720]
 bl _p_35
 .word 0xf9003ba0
 .loc 5 1097 0
@@ -8184,7 +7327,7 @@ bl _p_35
 .word 0x10000011
 .word 0x54000ee6
 .word 0xd2800080
-bl _p_52
+bl _p_45
 .word 0x93407c00
 .word 0x2b140000
 .word 0x10000011
@@ -8207,7 +7350,7 @@ bl _p_52
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #728]
+ldr x0, [x16, #720]
 bl _p_35
 .word 0xf9003ba0
 .loc 5 1102 0
@@ -8317,209 +7460,16 @@ bl _p_35
 .word 0x910003bf
 .word 0xa8c87bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
-.word 0xd2801ee0
+.word 0xd2801b00
 .word 0xaa1103e1
 bl _p_6
 
-Lme_32:
+Lme_2a:
 .text
-ut_51:
-add x0, x0, 16
-b System_Numerics_BigInteger_ToUInt32Array
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigInteger_ToUInt32Array
-System_Numerics_BigInteger_ToUInt32Array:
-.loc 5 1140 0 prologue_end
-.word 0xa9bc7bfd
-.word 0x910003fd
-.word 0xa9015bb5
-.word 0xa90263b7
-.word 0xa9036bb9
-.word 0xaa0003fa
-.word 0xf9400740
-.word 0xb5000120
-.word 0xb9800340
-.word 0x350000e0
-.loc 5 1141 0
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #688]
-.word 0xd2800021
-bl _p_35
-.word 0x14000083
-.loc 5 1146 0
-.word 0xf9400740
-.word 0xb5000300
-.loc 5 1148 0
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #688]
-.word 0xd2800021
-bl _p_35
-.word 0xaa0003e1
-.word 0xaa0103e0
-.word 0xb9800342
-.word 0xb9801823
-.word 0xeb1f007f
-.word 0x10000011
-.word 0x54000f69
-.word 0xb9002022
-.word 0xaa0003f9
-.loc 5 1149 0
-.word 0xb9800340
-.word 0x6b1f001f
-.word 0x5400006b
-.word 0xd2800016
-.word 0x14000003
-.word 0x92800016
-.word 0xf2bffff6
-.word 0xaa1603fa
-.loc 5 1150 0
-.word 0x14000028
-.loc 5 1151 0
-.word 0xb9800340
-.word 0x9280001e
-.word 0xf2bffffe
-.word 0x6b1e001f
-.word 0x54000421
-.loc 5 1153 0
-.word 0xf9400741
-.word 0xaa0103e0
-.word 0xf940003e
-bl _p_53
-.word 0xaa0003fa
-.word 0xb40002ba
-.word 0xf9400340
-.word 0xf9400000
-.word 0x39406801
-.word 0xd280003e
-.word 0xeb1e003f
-.word 0x10000011
-.word 0x54000c21
-.word 0xf9400400
-.word 0xf9400800
-.word 0xf9400800
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x1, [x16, #736]
-.word 0xeb01001f
-.word 0x10000011
-.word 0x54000b01
-.word 0xf9400b40
-.word 0xeb1f001f
-.word 0x10000011
-.word 0x54000a81
-.word 0xaa1a03f9
-.loc 5 1154 0
-.word 0xaa1a03e0
-bl _p_44
-.loc 5 1155 0
-.word 0x9280001a
-.word 0xf2bffffa
-.loc 5 1156 0
-.word 0x14000003
-.loc 5 1159 0
-.word 0xf9400759
-.loc 5 1160 0
-.word 0xd280001a
-.loc 5 1165 0
-.word 0xb9801b20
-.word 0x51000418
-.word 0x1400000d
-.loc 5 1167 0
-.word 0x93407f00
-.word 0xb9801b21
-.word 0xeb00003f
-.word 0x10000011
-.word 0x54000829
-.word 0xd37ef400
-.word 0x8b000320
-.word 0x91008000
-.word 0xb9400000
-.word 0x6b1a001f
-.word 0x54000081
-.loc 5 1165 0
-.word 0x51000718
-.word 0x6b1f031f
-.word 0x54fffe6c
-.loc 5 1170 0
-.word 0x93407f00
-.word 0xb9801b21
-.word 0xeb00003f
-.word 0x10000011
-.word 0x54000669
-.word 0xd37ef400
-.word 0x8b000320
-.word 0x91008000
-.word 0xb9400000
-.word 0x929ffffe
-.word 0xf2b0001e
-.word 0xa1e0000
-.word 0x929ffffe
-.word 0xf2b0001e
-.word 0xa1e0341
-.word 0x6b01001f
-.word 0x9a9f17e0
-.word 0x6b1f001f
-.word 0x9a9f17f7
-.loc 5 1172 0
-.word 0x11000716
-.word 0x35000077
-.word 0xd2800015
-.word 0x14000002
-.word 0xd2800035
-.word 0xb1502c1
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #688]
-bl _p_35
-.word 0xaa0003f6
-.loc 5 1173 0
-.word 0x11000704
-.word 0xaa1903e0
-.word 0xd2800001
-.word 0xaa1603e2
-.word 0xd2800003
-bl _p_45
-.loc 5 1175 0
-.word 0x34000197
-.word 0xb9801ac0
-.word 0x51000400
-.word 0x93407c00
-.word 0xb9801ac1
-.word 0xeb00003f
-.word 0x10000011
-.word 0x54000189
-.word 0xd37ef400
-.word 0x8b0002c0
-.word 0x91008000
-.word 0xb900001a
-.loc 5 1176 0
-.word 0xaa1603e0
-.word 0xa9415bb5
-.word 0xa94263b7
-.word 0xa9436bb9
-.word 0x910003bf
-.word 0xa8c47bfd
-.word 0xd65f03c0
-.word 0xd2801b80
-.word 0xaa1103e1
-bl _p_6
-.word 0xd2801c20
-.word 0xaa1103e1
-bl _p_6
-
-Lme_33:
-.text
-ut_52:
+ut_43:
 add x0, x0, 16
 b System_Numerics_BigInteger_ToString
 .text
@@ -8535,49 +7485,19 @@ System_Numerics_BigInteger_ToString:
 .word 0xf9000fa1
 .word 0xf9400400
 .word 0xf90013a0
-bl _p_54
+bl _p_46
 .word 0xaa0003e3
 .word 0xf9400fa0
 .word 0xf94013a1
 .word 0xd2800002
-bl _p_55
+bl _p_47
 .word 0x910003bf
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_34:
+Lme_2b:
 .text
-ut_53:
-add x0, x0, 16
-b System_Numerics_BigInteger_ToString_System_IFormatProvider
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigInteger_ToString_System_IFormatProvider
-System_Numerics_BigInteger_ToString_System_IFormatProvider:
-.loc 5 1186 0 prologue_end
-.word 0xa9bd7bfd
-.word 0x910003fd
-.word 0xf9000ba0
-.word 0xf9000fa1
-.word 0xf9400ba0
-.word 0xf9400001
-.word 0xf90013a1
-.word 0xf9400400
-.word 0xf90017a0
-.word 0xf9400fa0
-bl _p_46
-.word 0xaa0003e3
-.word 0xf94013a0
-.word 0xf94017a1
-.word 0xd2800002
-bl _p_55
-.word 0x910003bf
-.word 0xa8c37bfd
-.word 0xd65f03c0
-
-Lme_35:
-.text
-ut_54:
+ut_44:
 add x0, x0, 16
 b System_Numerics_BigInteger_ToString_string_System_IFormatProvider
 .text
@@ -8596,19 +7516,19 @@ System_Numerics_BigInteger_ToString_string_System_IFormatProvider:
 .word 0xf9400400
 .word 0xf9001ba0
 .word 0xf94013a0
-bl _p_46
+bl _p_39
 .word 0xaa0003e3
 .word 0xf94017a0
 .word 0xf9401ba1
 .word 0xf9400fa2
-bl _p_55
+bl _p_47
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_36:
+Lme_2c:
 .text
-ut_55:
+ut_45:
 add x0, x0, 16
 b System_Numerics_BigInteger_Add_uint___int_uint___int
 .text
@@ -8640,7 +7560,7 @@ System_Numerics_BigInteger_Add_uint___int_uint___int:
 .word 0x8b010000
 .word 0x9100e3a1
 .word 0xf9004ba1
-bl _p_56
+bl _p_48
 .word 0xf9404bbe
 .word 0xf90003c0
 .word 0xf90007c1
@@ -8652,7 +7572,7 @@ bl _p_56
 .word 0x4a010300
 .word 0x4b010001
 .word 0xaa1903e0
-bl _p_57
+bl _p_49
 .word 0xaa0003e1
 .loc 5 1212 0
 .word 0x6b1f031f
@@ -8661,7 +7581,7 @@ bl _p_57
 .word 0xf90043a0
 .word 0xf90047a0
 .word 0x910203a0
-bl _p_58
+bl _p_50
 .word 0xf94043a0
 .word 0xf9001fa0
 .word 0xf94047a0
@@ -8675,7 +7595,7 @@ bl _p_58
 .word 0x4a010000
 .word 0x4b010001
 .word 0xaa1703e0
-bl _p_57
+bl _p_49
 .word 0xaa0003e1
 .loc 5 1218 0
 .word 0x6b1f031f
@@ -8684,7 +7604,7 @@ bl _p_57
 .word 0xf9003ba0
 .word 0xf9003fa0
 .word 0x9101c3a0
-bl _p_58
+bl _p_50
 .word 0xf9403ba0
 .word 0xf9001fa0
 .word 0xf9403fa0
@@ -8698,7 +7618,7 @@ bl _p_58
 .loc 5 1223 0
 .word 0xaa1903e0
 .word 0xaa1703e1
-bl _p_59
+bl _p_51
 .word 0xaa0003e1
 .loc 5 1224 0
 .word 0x6b1f031f
@@ -8707,7 +7627,7 @@ bl _p_59
 .word 0xf90033a0
 .word 0xf90037a0
 .word 0x910183a0
-bl _p_58
+bl _p_50
 .word 0xf94033a0
 .word 0xf9001fa0
 .word 0xf94037a0
@@ -8716,7 +7636,7 @@ bl _p_58
 .loc 5 1228 0
 .word 0xaa1703e0
 .word 0xaa1903e1
-bl _p_59
+bl _p_51
 .word 0xaa0003e1
 .loc 5 1229 0
 .word 0x6b1f031f
@@ -8725,7 +7645,7 @@ bl _p_59
 .word 0xf9002ba0
 .word 0xf9002fa0
 .word 0x910143a0
-bl _p_58
+bl _p_50
 .word 0xf9402ba0
 .word 0xf9001fa0
 .word 0xf9402fa0
@@ -8739,103 +7659,9 @@ bl _p_58
 .word 0xa8cb7bfd
 .word 0xd65f03c0
 
-Lme_37:
+Lme_2d:
 .text
-ut_56:
-add x0, x0, 16
-b System_Numerics_BigInteger_op_Subtraction_System_Numerics_BigInteger_System_Numerics_BigInteger
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigInteger_op_Subtraction_System_Numerics_BigInteger_System_Numerics_BigInteger
-System_Numerics_BigInteger_op_Subtraction_System_Numerics_BigInteger_System_Numerics_BigInteger:
-.loc 5 1238 0 prologue_end
-.word 0xa9b17bfd
-.word 0x910003fd
-.word 0xf90013a0
-.word 0xf90017a1
-.word 0xf9001ba2
-.word 0xf9001fa3
-.word 0xf94013a0
-.word 0xf9006ba0
-.word 0xf94017a0
-.word 0xf9006fa0
-.word 0xb980d3a0
-.word 0x6b1f001f
-.word 0x9a9fa7e0
-.word 0xf9401ba1
-.word 0xf90063a1
-.word 0xf9401fa1
-.word 0xf90067a1
-.word 0xb980c3a1
-.word 0x6b1f003f
-.word 0x9a9fa7e1
-.word 0x6b01001f
-.word 0x540003a0
-.loc 5 1239 0
-.word 0xf94013a0
-.word 0xf9005ba0
-.word 0xf94017a0
-.word 0xf9005fa0
-.word 0xf9405fa0
-.word 0xf94013a1
-.word 0xf90053a1
-.word 0xf94017a1
-.word 0xf90057a1
-.word 0xb980a3a1
-.word 0xf9401ba2
-.word 0xf9004ba2
-.word 0xf9401fa2
-.word 0xf9004fa2
-.word 0xf9404fa2
-.word 0xf9401ba3
-.word 0xf90043a3
-.word 0xf9401fa3
-.word 0xf90047a3
-.word 0xb98083a3
-.word 0x4b0303e3
-.word 0x910043a4
-.word 0xf90073a4
-bl _p_60
-.word 0xf94073be
-.word 0xf90003c0
-.word 0xf90007c1
-.word 0x1400001b
-.loc 5 1240 0
-.word 0xf94013a0
-.word 0xf9003ba0
-.word 0xf94017a0
-.word 0xf9003fa0
-.word 0xf9403fa0
-.word 0xf94013a1
-.word 0xf90033a1
-.word 0xf94017a1
-.word 0xf90037a1
-.word 0xb98063a1
-.word 0xf9401ba2
-.word 0xf9002ba2
-.word 0xf9401fa2
-.word 0xf9002fa2
-.word 0xf9402fa2
-.word 0xf9401ba3
-.word 0xf90023a3
-.word 0xf9401fa3
-.word 0xf90027a3
-.word 0xb98043a3
-.word 0x910043a4
-.word 0xf90073a4
-bl _p_61
-.word 0xf94073be
-.word 0xf90003c0
-.word 0xf90007c1
-.word 0xf9400ba0
-.word 0xf9400fa1
-.word 0x910003bf
-.word 0xa8cf7bfd
-.word 0xd65f03c0
-
-Lme_38:
-.text
-ut_57:
+ut_46:
 add x0, x0, 16
 b System_Numerics_BigInteger_Subtract_uint___int_uint___int
 .text
@@ -8867,7 +7693,7 @@ System_Numerics_BigInteger_Subtract_uint___int_uint___int:
 .word 0xcb010000
 .word 0x9100e3a1
 .word 0xf9004ba1
-bl _p_56
+bl _p_48
 .word 0xf9404bbe
 .word 0xf90003c0
 .word 0xf90007c1
@@ -8879,7 +7705,7 @@ bl _p_56
 .word 0x4a010300
 .word 0x4b010001
 .word 0xaa1903e0
-bl _p_62
+bl _p_52
 .word 0xaa0003e1
 .loc 5 1256 0
 .word 0x6b1f031f
@@ -8890,7 +7716,7 @@ bl _p_62
 .word 0xf90043a0
 .word 0xf90047a0
 .word 0x910203a0
-bl _p_58
+bl _p_50
 .word 0xf94043a0
 .word 0xf9001fa0
 .word 0xf94047a0
@@ -8904,7 +7730,7 @@ bl _p_58
 .word 0x4a010000
 .word 0x4b010001
 .word 0xaa1703e0
-bl _p_62
+bl _p_52
 .word 0xaa0003e1
 .loc 5 1262 0
 .word 0x6b1f031f
@@ -8913,7 +7739,7 @@ bl _p_62
 .word 0xf9003ba0
 .word 0xf9003fa0
 .word 0x9101c3a0
-bl _p_58
+bl _p_50
 .word 0xf9403ba0
 .word 0xf9001fa0
 .word 0xf9403fa0
@@ -8922,14 +7748,14 @@ bl _p_58
 .loc 5 1265 0
 .word 0xaa1703e0
 .word 0xaa1903e1
-bl _p_63
+bl _p_53
 .word 0x93407c00
 .word 0x6b1f001f
 .word 0x5400026a
 .loc 5 1267 0
 .word 0xaa1903e0
 .word 0xaa1703e1
-bl _p_64
+bl _p_54
 .word 0xaa0003e1
 .loc 5 1268 0
 .word 0x6b1f031f
@@ -8940,7 +7766,7 @@ bl _p_64
 .word 0xf90033a0
 .word 0xf90037a0
 .word 0x910183a0
-bl _p_58
+bl _p_50
 .word 0xf94033a0
 .word 0xf9001fa0
 .word 0xf94037a0
@@ -8949,7 +7775,7 @@ bl _p_58
 .loc 5 1272 0
 .word 0xaa1703e0
 .word 0xaa1903e1
-bl _p_64
+bl _p_54
 .word 0xaa0003e1
 .loc 5 1273 0
 .word 0x6b1f031f
@@ -8958,7 +7784,7 @@ bl _p_64
 .word 0xf9002ba0
 .word 0xf9002fa0
 .word 0x910143a0
-bl _p_58
+bl _p_50
 .word 0xf9402ba0
 .word 0xf9001fa0
 .word 0xf9402fa0
@@ -8972,9 +7798,9 @@ bl _p_58
 .word 0xa8cb7bfd
 .word 0xd65f03c0
 
-Lme_39:
+Lme_2e:
 .text
-ut_58:
+ut_47:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Implicit_byte
 .text
@@ -8990,7 +7816,7 @@ System_Numerics_BigInteger_op_Implicit_byte:
 .word 0xf9001ba0
 .word 0x9100a3a0
 .word 0x394083a1
-bl _p_65
+bl _p_55
 .word 0xf94017a0
 .word 0xf9000ba0
 .word 0xf9401ba0
@@ -9001,9 +7827,9 @@ bl _p_65
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_3a:
+Lme_2f:
 .text
-ut_59:
+ut_48:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Implicit_sbyte
 .text
@@ -9019,7 +7845,7 @@ System_Numerics_BigInteger_op_Implicit_sbyte:
 .word 0xf9001ba0
 .word 0x9100a3a0
 .word 0x398083a1
-bl _p_65
+bl _p_55
 .word 0xf94017a0
 .word 0xf9000ba0
 .word 0xf9401ba0
@@ -9030,9 +7856,9 @@ bl _p_65
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_3b:
+Lme_30:
 .text
-ut_60:
+ut_49:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Implicit_int16
 .text
@@ -9048,7 +7874,7 @@ System_Numerics_BigInteger_op_Implicit_int16:
 .word 0xf9001ba0
 .word 0x9100a3a0
 .word 0x798043a1
-bl _p_65
+bl _p_55
 .word 0xf94017a0
 .word 0xf9000ba0
 .word 0xf9401ba0
@@ -9059,9 +7885,9 @@ bl _p_65
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_3c:
+Lme_31:
 .text
-ut_61:
+ut_50:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Implicit_uint16
 .text
@@ -9077,7 +7903,7 @@ System_Numerics_BigInteger_op_Implicit_uint16:
 .word 0xf9001ba0
 .word 0x9100a3a0
 .word 0x794043a1
-bl _p_65
+bl _p_55
 .word 0xf94017a0
 .word 0xf9000ba0
 .word 0xf9401ba0
@@ -9088,9 +7914,9 @@ bl _p_65
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_3d:
+Lme_32:
 .text
-ut_62:
+ut_51:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Implicit_int
 .text
@@ -9106,7 +7932,7 @@ System_Numerics_BigInteger_op_Implicit_int:
 .word 0xf9001ba0
 .word 0x9100a3a0
 .word 0xb98023a1
-bl _p_65
+bl _p_55
 .word 0xf94017a0
 .word 0xf9000ba0
 .word 0xf9401ba0
@@ -9117,9 +7943,9 @@ bl _p_65
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_3e:
+Lme_33:
 .text
-ut_63:
+ut_52:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Implicit_uint
 .text
@@ -9135,7 +7961,7 @@ System_Numerics_BigInteger_op_Implicit_uint:
 .word 0xf9001ba0
 .word 0x9100a3a0
 .word 0xb94023a1
-bl _p_66
+bl _p_56
 .word 0xf94017a0
 .word 0xf9000ba0
 .word 0xf9401ba0
@@ -9146,9 +7972,9 @@ bl _p_66
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_3f:
+Lme_34:
 .text
-ut_64:
+ut_53:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Implicit_long
 .text
@@ -9164,7 +7990,7 @@ System_Numerics_BigInteger_op_Implicit_long:
 .word 0xf9001ba0
 .word 0x9100a3a0
 .word 0xf94013a1
-bl _p_67
+bl _p_57
 .word 0xf94017a0
 .word 0xf9000ba0
 .word 0xf9401ba0
@@ -9175,9 +8001,9 @@ bl _p_67
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_40:
+Lme_35:
 .text
-ut_65:
+ut_54:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Implicit_ulong
 .text
@@ -9193,7 +8019,7 @@ System_Numerics_BigInteger_op_Implicit_ulong:
 .word 0xf9001ba0
 .word 0x9100a3a0
 .word 0xf94013a1
-bl _p_68
+bl _p_58
 .word 0xf94017a0
 .word 0xf9000ba0
 .word 0xf9401ba0
@@ -9204,9 +8030,9 @@ bl _p_68
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_41:
+Lme_36:
 .text
-ut_66:
+ut_55:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger
 .text
@@ -9220,7 +8046,7 @@ System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger:
 .word 0xf9000fa1
 .word 0xf9400ba0
 .word 0xf9400fa1
-bl _p_69
+bl _p_59
 .word 0x93407c00
 .word 0xd2801ffe
 .word 0xeb1e001f
@@ -9231,13 +8057,13 @@ bl _p_69
 .word 0x910003bf
 .word 0xa8c27bfd
 .word 0xd65f03c0
-.word 0xd2801ee0
+.word 0xd2801b00
 .word 0xaa1103e1
 bl _p_6
 
-Lme_42:
+Lme_37:
 .text
-ut_67:
+ut_56:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_0
 .text
@@ -9251,7 +8077,7 @@ System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_0:
 .word 0xf9000fa1
 .word 0xf9400ba0
 .word 0xf9400fa1
-bl _p_69
+bl _p_59
 .word 0x93407c00
 .word 0xd2800ffe
 .word 0x6b1e001f
@@ -9266,13 +8092,13 @@ bl _p_69
 .word 0x910003bf
 .word 0xa8c27bfd
 .word 0xd65f03c0
-.word 0xd2801ee0
+.word 0xd2801b00
 .word 0xaa1103e1
 bl _p_6
 
-Lme_43:
+Lme_38:
 .text
-ut_68:
+ut_57:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_1
 .text
@@ -9286,7 +8112,7 @@ System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_1:
 .word 0xf9000fa1
 .word 0xf9400ba0
 .word 0xf9400fa1
-bl _p_69
+bl _p_59
 .word 0x93407c00
 .word 0xd28ffffe
 .word 0x6b1e001f
@@ -9301,13 +8127,13 @@ bl _p_69
 .word 0x910003bf
 .word 0xa8c27bfd
 .word 0xd65f03c0
-.word 0xd2801ee0
+.word 0xd2801b00
 .word 0xaa1103e1
 bl _p_6
 
-Lme_44:
+Lme_39:
 .text
-ut_69:
+ut_58:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_2
 .text
@@ -9321,7 +8147,7 @@ System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_2:
 .word 0xf9000fa1
 .word 0xf9400ba0
 .word 0xf9400fa1
-bl _p_69
+bl _p_59
 .word 0x93407c00
 .word 0xd29ffffe
 .word 0x6b1e001f
@@ -9332,13 +8158,13 @@ bl _p_69
 .word 0x910003bf
 .word 0xa8c27bfd
 .word 0xd65f03c0
-.word 0xd2801ee0
+.word 0xd2801b00
 .word 0xaa1103e1
 bl _p_6
 
-Lme_45:
+Lme_3a:
 .text
-ut_70:
+ut_59:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_3
 .text
@@ -9431,10 +8257,10 @@ System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_3:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #0]
-.word 0xd2804fe1
+.word 0xd2803fa1
 bl _p_24
 .word 0xaa0003e1
-.word 0xd2801ee0
+.word 0xd2801b00
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_25
@@ -9443,23 +8269,23 @@ bl _p_25
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #0]
-.word 0xd2804fe1
+.word 0xd2803fa1
 bl _p_24
 .word 0xaa0003e1
-.word 0xd2801ee0
+.word 0xd2801b00
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_25
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
-.word 0xd2801ee0
+.word 0xd2801b00
 .word 0xaa1103e1
 bl _p_6
 
-Lme_46:
+Lme_3b:
 .text
-ut_71:
+ut_60:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_4
 .text
@@ -9523,23 +8349,23 @@ System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_4:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #0]
-.word 0xd2805d61
+.word 0xd2804d21
 bl _p_24
 .word 0xaa0003e1
-.word 0xd2801ee0
+.word 0xd2801b00
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_25
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
-.word 0xd2801ee0
+.word 0xd2801b00
 .word 0xaa1103e1
 bl _p_6
 
-Lme_47:
+Lme_3c:
 .text
-ut_72:
+ut_61:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_5
 .text
@@ -9661,10 +8487,10 @@ System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_5:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #0]
-.word 0xd2806ae1
+.word 0xd2805aa1
 bl _p_24
 .word 0xaa0003e1
-.word 0xd2801ee0
+.word 0xd2801b00
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_25
@@ -9677,20 +8503,20 @@ bl _p_25
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #0]
-.word 0xd2806ae1
+.word 0xd2805aa1
 bl _p_24
 .word 0xaa0003e1
-.word 0xd2801ee0
+.word 0xd2801b00
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_25
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_48:
+Lme_3d:
 .text
-ut_73:
+ut_62:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_6
 .text
@@ -9791,23 +8617,23 @@ System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_6:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #0]
-.word 0xd2807861
+.word 0xd2806821
 bl _p_24
 .word 0xaa0003e1
-.word 0xd2801ee0
+.word 0xd2801b00
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_25
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
-.word 0xd2801ee0
+.word 0xd2801b00
 .word 0xaa1103e1
 bl _p_6
 
-Lme_49:
+Lme_3e:
 .text
-ut_74:
+ut_63:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_7
 .text
@@ -9821,15 +8647,15 @@ System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_7:
 .word 0xf9000fa1
 .word 0xf9400ba0
 .word 0xf9400fa1
-bl _p_70
+bl _p_60
 .word 0x1e624000
 .word 0x910003bf
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_4a:
+Lme_3f:
 .text
-ut_75:
+ut_64:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_8
 .text
@@ -9931,7 +8757,7 @@ System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_8:
 .word 0x2a1603f9
 .loc 5 1489 0
 .word 0xaa1703e0
-bl _p_71
+bl _p_61
 .word 0x93407c00
 .word 0xaa0003f6
 .loc 5 1491 0
@@ -9958,20 +8784,20 @@ bl _p_71
 .word 0xaa1a03e0
 .word 0xaa1803e1
 .word 0xaa1903e2
-bl _p_72
+bl _p_62
 .word 0xa9415fb6
 .word 0xa94267b8
 .word 0xf9401bba
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_4b:
+Lme_40:
 .text
-ut_76:
+ut_65:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_9
 .text
@@ -9999,7 +8825,7 @@ System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_9:
 .word 0xb980b3a0
 .word 0x9100c3a1
 .word 0xf9006ba1
-bl _p_73
+bl _p_63
 .word 0xf9406bbe
 .word 0xf90003c0
 .word 0xf90007c1
@@ -10079,7 +8905,7 @@ bl _p_73
 .word 0xaa1803e2
 .word 0xaa1703e3
 .word 0xd2800005
-bl _p_74
+bl _p_64
 .word 0xf9402ba0
 .word 0xf9001ba0
 .word 0xf9402fa0
@@ -10096,20 +8922,20 @@ bl _p_74
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #0]
-.word 0xd28085e1
+.word 0xd28075a1
 bl _p_24
 .word 0xaa0003e1
-.word 0xd2801ee0
+.word 0xd2801b00
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_25
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_4c:
+Lme_41:
 .text
-ut_77:
+ut_66:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_UnaryNegation_System_Numerics_BigInteger
 .text
@@ -10160,9 +8986,9 @@ ldr x2, [x16, #16]
 .word 0xa8c67bfd
 .word 0xd65f03c0
 
-Lme_4d:
+Lme_42:
 .text
-ut_78:
+ut_67:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Addition_System_Numerics_BigInteger_System_Numerics_BigInteger
 .text
@@ -10216,7 +9042,7 @@ System_Numerics_BigInteger_op_Addition_System_Numerics_BigInteger_System_Numeric
 .word 0x4b0303e3
 .word 0x910043a4
 .word 0xf90073a4
-bl _p_61
+bl _p_65
 .word 0xf94073be
 .word 0xf90003c0
 .word 0xf90007c1
@@ -10244,7 +9070,7 @@ bl _p_61
 .word 0xb98043a3
 .word 0x910043a4
 .word 0xf90073a4
-bl _p_60
+bl _p_66
 .word 0xf94073be
 .word 0xf90003c0
 .word 0xf90007c1
@@ -10254,9 +9080,9 @@ bl _p_60
 .word 0xa8cf7bfd
 .word 0xd65f03c0
 
-Lme_4e:
+Lme_43:
 .text
-ut_79:
+ut_68:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_Multiply_System_Numerics_BigInteger_System_Numerics_BigInteger
 .text
@@ -10309,7 +9135,7 @@ System_Numerics_BigInteger_op_Multiply_System_Numerics_BigInteger_System_Numeric
 .word 0x9b017c00
 .word 0x910083a1
 .word 0xf9012ba1
-bl _p_56
+bl _p_48
 .word 0xf9412bbe
 .word 0xf90003c0
 .word 0xf90007c1
@@ -10330,7 +9156,7 @@ bl _p_56
 .word 0x131f7c22
 .word 0x4a020021
 .word 0x4b020021
-bl _p_75
+bl _p_67
 .word 0xaa0003e1
 .word 0xf9401ba0
 .word 0xf900f3a0
@@ -10352,7 +9178,7 @@ bl _p_75
 .word 0xf900e3a0
 .word 0xf900e7a0
 .word 0x910703a0
-bl _p_58
+bl _p_50
 .word 0xf940e3a0
 .word 0xf90013a0
 .word 0xf940e7a0
@@ -10374,7 +9200,7 @@ bl _p_58
 .word 0x131f7c22
 .word 0x4a020021
 .word 0x4b020021
-bl _p_75
+bl _p_67
 .word 0xaa0003e1
 .word 0xf9401ba0
 .word 0xf900cba0
@@ -10396,7 +9222,7 @@ bl _p_75
 .word 0xf900bba0
 .word 0xf900bfa0
 .word 0x9105c3a0
-bl _p_58
+bl _p_50
 .word 0xf940bba0
 .word 0xf90013a0
 .word 0xf940bfa0
@@ -10421,7 +9247,7 @@ bl _p_58
 .word 0xf9401fa0
 .word 0xf900a7a0
 .word 0xf940a7a0
-bl _p_76
+bl _p_68
 .word 0xaa0003e1
 .word 0xf9401ba0
 .word 0xf9009ba0
@@ -10443,7 +9269,7 @@ bl _p_76
 .word 0xf9008ba0
 .word 0xf9008fa0
 .word 0x910443a0
-bl _p_58
+bl _p_50
 .word 0xf9408ba0
 .word 0xf90013a0
 .word 0xf9408fa0
@@ -10475,7 +9301,7 @@ bl _p_58
 .word 0xf9401fa1
 .word 0xf9006fa1
 .word 0xf9406fa1
-bl _p_77
+bl _p_69
 .word 0xaa0003e1
 .word 0xf9401ba0
 .word 0xf90063a0
@@ -10497,7 +9323,7 @@ bl _p_77
 .word 0xf90053a0
 .word 0xf90057a0
 .word 0x910283a0
-bl _p_58
+bl _p_50
 .word 0xf94053a0
 .word 0xf90013a0
 .word 0xf94057a0
@@ -10514,7 +9340,7 @@ bl _p_58
 .word 0xf94027a1
 .word 0xf90047a1
 .word 0xf94047a1
-bl _p_77
+bl _p_69
 .word 0xaa0003e1
 .word 0xf9401ba0
 .word 0xf9003ba0
@@ -10536,7 +9362,7 @@ bl _p_77
 .word 0xf9002ba0
 .word 0xf9002fa0
 .word 0x910143a0
-bl _p_58
+bl _p_50
 .word 0xf9402ba0
 .word 0xf90013a0
 .word 0xf9402fa0
@@ -10552,426 +9378,9 @@ bl _p_58
 .word 0x9100023f
 .word 0xd65f03c0
 
-Lme_4f:
+Lme_44:
 .text
-ut_80:
-add x0, x0, 16
-b System_Numerics_BigInteger_op_Division_System_Numerics_BigInteger_System_Numerics_BigInteger
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigInteger_op_Division_System_Numerics_BigInteger_System_Numerics_BigInteger
-System_Numerics_BigInteger_op_Division_System_Numerics_BigInteger_System_Numerics_BigInteger:
-.loc 5 1775 0 prologue_end
-.word 0xa9a97bfd
-.word 0x910003fd
-.word 0xa9016bb9
-.word 0xf9001ba0
-.word 0xf9001fa1
-.word 0xf90023a2
-.word 0xf90027a3
-.word 0xf9401ba0
-.word 0xf900a3a0
-.word 0xf9401fa0
-.word 0xf900a7a0
-.word 0xf940a7a0
-.word 0xeb1f001f
-.word 0x9a9f17fa
-.loc 5 1776 0
-.word 0xf94023a0
-.word 0xf9009ba0
-.word 0xf94027a0
-.word 0xf9009fa0
-.word 0xf9409fa0
-.word 0xeb1f001f
-.word 0x9a9f17f9
-.loc 5 1778 0
-.word 0xa190340
-.word 0x34000640
-.loc 5 1780 0
-.word 0xf9401ba0
-.word 0xf90093a0
-.word 0xf9401fa0
-.word 0xf90097a0
-.word 0xb98123a0
-.word 0xf94023a1
-.word 0xf9008ba1
-.word 0xf94027a1
-.word 0xf9008fa1
-.word 0xb98113a1
-.word 0x6b1f003f
-.word 0x10000011
-.word 0x54001340
-.word 0x9280001e
-.word 0xf2bffffe
-.word 0x6b1e003f
-.word 0x9a9f17e2
-.word 0x929ffffe
-.word 0xf2b0001e
-.word 0x6b1e001f
-.word 0x9a9f17e3
-.word 0xa030042
-.word 0xd280003e
-.word 0x6b1e005f
-.word 0x10000011
-.word 0x54001140
-.word 0xf100003f
-.word 0x10000011
-.word 0x54001140
-.word 0x929ffff0
-.word 0xf2b00010
-.word 0xeb10001f
-.word 0x9a9f17f1
-.word 0x92800010
-.word 0xf2bffff0
-.word 0xeb10003f
-.word 0x9a9f17f0
-.word 0x8a110210
-.word 0xf100061f
-.word 0x10000011
-.word 0x54000f60
-.word 0x1ac10c00
-.word 0x910083a1
-.word 0xf900aba1
-bl _p_78
-.word 0xf940abbe
-.word 0xf90003c0
-.word 0xf90007c1
-.word 0x1400006d
-.loc 5 1783 0
-.word 0x3400013a
-.loc 5 1787 0
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #704]
-.word 0xf9400001
-.word 0xf90013a1
-.word 0xf9400400
-.word 0xf90017a0
-.word 0x14000064
-.loc 5 1790 0
-.word 0x34000539
-.loc 5 1792 0
-.word 0xf9401ba0
-.word 0xf90083a0
-.word 0xf9401fa0
-.word 0xf90087a0
-.word 0xf94087a0
-.word 0xf94023a1
-.word 0xf9007ba1
-.word 0xf94027a1
-.word 0xf9007fa1
-.word 0xb980f3a1
-.word 0x131f7c22
-.word 0x4a020021
-.word 0x4b020021
-bl _p_79
-.word 0xaa0003e1
-.word 0xf9401ba0
-.word 0xf90073a0
-.word 0xf9401fa0
-.word 0xf90077a0
-.loc 5 1793 0
-.word 0xb980e3a0
-.word 0x6b1f001f
-.word 0x9a9fa7e0
-.word 0xf94023a2
-.word 0xf9006ba2
-.word 0xf94027a2
-.word 0xf9006fa2
-.word 0xb980d3a2
-.word 0x6b1f005f
-.word 0x9a9fa7e2
-.word 0x4a020002
-.word 0xd2800000
-.word 0xf90063a0
-.word 0xf90067a0
-.word 0x910303a0
-bl _p_58
-.word 0xf94063a0
-.word 0xf90013a0
-.word 0xf94067a0
-.word 0xf90017a0
-.word 0x1400003b
-.loc 5 1796 0
-.word 0xf9401ba0
-.word 0xf9005ba0
-.word 0xf9401fa0
-.word 0xf9005fa0
-.word 0xf9405fa0
-.word 0xb9801800
-.word 0xf94023a1
-.word 0xf90053a1
-.word 0xf94027a1
-.word 0xf90057a1
-.word 0xf94057a1
-.word 0xb9801821
-.word 0x6b01001f
-.word 0x5400012a
-.loc 5 1798 0
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #704]
-.word 0xf9400001
-.word 0xf90013a1
-.word 0xf9400400
-.word 0xf90017a0
-.word 0x14000025
-.loc 5 1802 0
-.word 0xf9401ba0
-.word 0xf9004ba0
-.word 0xf9401fa0
-.word 0xf9004fa0
-.word 0xf9404fa0
-.word 0xf94023a1
-.word 0xf90043a1
-.word 0xf94027a1
-.word 0xf90047a1
-.word 0xf94047a1
-bl _p_80
-.word 0xaa0003e1
-.word 0xf9401ba0
-.word 0xf9003ba0
-.word 0xf9401fa0
-.word 0xf9003fa0
-.loc 5 1803 0
-.word 0xb98073a0
-.word 0x6b1f001f
-.word 0x9a9fa7e0
-.word 0xf94023a2
-.word 0xf90033a2
-.word 0xf94027a2
-.word 0xf90037a2
-.word 0xb98063a2
-.word 0x6b1f005f
-.word 0x9a9fa7e2
-.word 0x4a020002
-.word 0xd2800000
-.word 0xf9002ba0
-.word 0xf9002fa0
-.word 0x910143a0
-bl _p_58
-.word 0xf9402ba0
-.word 0xf90013a0
-.word 0xf9402fa0
-.word 0xf90017a0
-.word 0xa9416bb9
-.word 0xf94013a0
-.word 0xf94017a1
-.word 0x910003bf
-.word 0xa8d77bfd
-.word 0xd65f03c0
-.word 0xd2801ee0
-.word 0xaa1103e1
-bl _p_6
-.word 0xd2801540
-.word 0xaa1103e1
-bl _p_6
-
-Lme_50:
-.text
-ut_81:
-add x0, x0, 16
-b System_Numerics_BigInteger_op_Modulus_System_Numerics_BigInteger_System_Numerics_BigInteger
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigInteger_op_Modulus_System_Numerics_BigInteger_System_Numerics_BigInteger
-System_Numerics_BigInteger_op_Modulus_System_Numerics_BigInteger_System_Numerics_BigInteger:
-.loc 5 1812 0 prologue_end
-.word 0xa9ab7bfd
-.word 0x910003fd
-.word 0xa9016bb9
-.word 0xf9001ba0
-.word 0xf9001fa1
-.word 0xf90023a2
-.word 0xf90027a3
-.word 0xf9401ba0
-.word 0xf9008ba0
-.word 0xf9401fa0
-.word 0xf9008fa0
-.word 0xf9408fa0
-.word 0xeb1f001f
-.word 0x9a9f17fa
-.loc 5 1813 0
-.word 0xf94023a0
-.word 0xf90083a0
-.word 0xf94027a0
-.word 0xf90087a0
-.word 0xf94087a0
-.word 0xeb1f001f
-.word 0x9a9f17f9
-.loc 5 1815 0
-.word 0xa190340
-.word 0x34000660
-.loc 5 1817 0
-.word 0xf9401ba0
-.word 0xf9007ba0
-.word 0xf9401fa0
-.word 0xf9007fa0
-.word 0xb980f3a0
-.word 0xf94023a1
-.word 0xf90073a1
-.word 0xf94027a1
-.word 0xf90077a1
-.word 0xb980e3a1
-.word 0x6b1f003f
-.word 0x10000011
-.word 0x54001160
-.word 0x9280001e
-.word 0xf2bffffe
-.word 0x6b1e003f
-.word 0x9a9f17e2
-.word 0x929ffffe
-.word 0xf2b0001e
-.word 0x6b1e001f
-.word 0x9a9f17e3
-.word 0xa030042
-.word 0xd280003e
-.word 0x6b1e005f
-.word 0x10000011
-.word 0x54000f60
-.word 0xf100003f
-.word 0x10000011
-.word 0x54000f60
-.word 0x929ffff0
-.word 0xf2b00010
-.word 0xeb10001f
-.word 0x9a9f17f1
-.word 0x92800010
-.word 0xf2bffff0
-.word 0xeb10003f
-.word 0x9a9f17f0
-.word 0x8a110210
-.word 0xf100061f
-.word 0x10000011
-.word 0x54000d80
-.word 0x1ac10c1e
-.word 0x1b0183c0
-.word 0x910083a1
-.word 0xf90093a1
-bl _p_78
-.word 0xf94093be
-.word 0xf90003c0
-.word 0xf90007c1
-.word 0x1400005d
-.loc 5 1820 0
-.word 0x340000da
-.loc 5 1824 0
-.word 0xf9401ba0
-.word 0xf90013a0
-.word 0xf9401fa0
-.word 0xf90017a0
-.word 0x14000057
-.loc 5 1827 0
-.word 0x340004f9
-.loc 5 1829 0
-.word 0xf9401ba0
-.word 0xf9006ba0
-.word 0xf9401fa0
-.word 0xf9006fa0
-.word 0xf9406fa0
-.word 0xf94023a1
-.word 0xf90063a1
-.word 0xf94027a1
-.word 0xf90067a1
-.word 0xb980c3a1
-.word 0x131f7c22
-.word 0x4a020021
-.word 0x4b020021
-bl _p_81
-.word 0xaa0003fa
-.loc 5 1830 0
-.word 0xf9401ba0
-.word 0xf9005ba0
-.word 0xf9401fa0
-.word 0xf9005fa0
-.word 0xb980b3a0
-.word 0x6b1f001f
-.word 0x5400006b
-.word 0x2a1a03fa
-.word 0x14000007
-.word 0xd29fffe0
-.word 0xf2bfffe0
-.word 0xf2dfffe0
-.word 0xf2ffffe0
-.word 0x2a1a03e1
-.word 0x9b017c1a
-.word 0x910083a0
-.word 0xf90093a0
-.word 0xaa1a03e0
-bl _p_56
-.word 0xf94093be
-.word 0xf90003c0
-.word 0xf90007c1
-.word 0x14000030
-.loc 5 1833 0
-.word 0xf9401ba0
-.word 0xf90053a0
-.word 0xf9401fa0
-.word 0xf90057a0
-.word 0xf94057a0
-.word 0xb9801800
-.word 0xf94023a1
-.word 0xf9004ba1
-.word 0xf94027a1
-.word 0xf9004fa1
-.word 0xf9404fa1
-.word 0xb9801821
-.word 0x6b01001f
-.word 0x540000ca
-.loc 5 1835 0
-.word 0xf9401ba0
-.word 0xf90013a0
-.word 0xf9401fa0
-.word 0xf90017a0
-.word 0x1400001d
-.loc 5 1837 0
-.word 0xf9401ba0
-.word 0xf90043a0
-.word 0xf9401fa0
-.word 0xf90047a0
-.word 0xf94047a0
-.word 0xf94023a1
-.word 0xf9003ba1
-.word 0xf94027a1
-.word 0xf9003fa1
-.word 0xf9403fa1
-bl _p_82
-.word 0xaa0003e1
-.word 0xf9401ba0
-.word 0xf90033a0
-.word 0xf9401fa0
-.word 0xf90037a0
-.loc 5 1838 0
-.word 0xb98063a0
-.word 0x6b1f001f
-.word 0x9a9fa7e2
-.word 0xd2800000
-.word 0xf9002ba0
-.word 0xf9002fa0
-.word 0x910143a0
-bl _p_58
-.word 0xf9402ba0
-.word 0xf90013a0
-.word 0xf9402fa0
-.word 0xf90017a0
-.word 0xa9416bb9
-.word 0xf94013a0
-.word 0xf94017a1
-.word 0x910003bf
-.word 0xa8d57bfd
-.word 0xd65f03c0
-.word 0xd2801ee0
-.word 0xaa1103e1
-bl _p_6
-.word 0xd2801540
-.word 0xaa1103e1
-bl _p_6
-
-Lme_51:
-.text
-ut_82:
+ut_69:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_LessThanOrEqual_System_Numerics_BigInteger_System_Numerics_BigInteger
 .text
@@ -10988,7 +9397,7 @@ System_Numerics_BigInteger_op_LessThanOrEqual_System_Numerics_BigInteger_System_
 .word 0x910043a0
 .word 0xf94013a1
 .word 0xf94017a2
-bl _p_51
+bl _p_44
 .word 0x93407c00
 .word 0x6b1f001f
 .word 0x9a9fd7e0
@@ -10998,36 +9407,9 @@ bl _p_51
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_52:
+Lme_45:
 .text
-ut_83:
-add x0, x0, 16
-b System_Numerics_BigInteger_op_Inequality_System_Numerics_BigInteger_System_Numerics_BigInteger
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigInteger_op_Inequality_System_Numerics_BigInteger_System_Numerics_BigInteger
-System_Numerics_BigInteger_op_Inequality_System_Numerics_BigInteger_System_Numerics_BigInteger:
-.loc 5 1867 0 prologue_end
-.word 0xa9bd7bfd
-.word 0x910003fd
-.word 0xf9000ba0
-.word 0xf9000fa1
-.word 0xf90013a2
-.word 0xf90017a3
-.word 0x910043a0
-.word 0xf94013a1
-.word 0xf94017a2
-bl _p_49
-.word 0x53001c00
-.word 0x6b1f001f
-.word 0x9a9f17e0
-.word 0x910003bf
-.word 0xa8c37bfd
-.word 0xd65f03c0
-
-Lme_53:
-.text
-ut_84:
+ut_70:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_LessThan_System_Numerics_BigInteger_long
 .text
@@ -11042,7 +9424,7 @@ System_Numerics_BigInteger_op_LessThan_System_Numerics_BigInteger_long:
 .word 0xf90013a2
 .word 0x910043a0
 .word 0xf94013a1
-bl _p_83
+bl _p_70
 .word 0x93407c00
 .word 0x6b1f001f
 .word 0x9a9fa7e0
@@ -11050,9 +9432,9 @@ bl _p_83
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_54:
+Lme_46:
 .text
-ut_85:
+ut_71:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_LessThanOrEqual_System_Numerics_BigInteger_long
 .text
@@ -11067,7 +9449,7 @@ System_Numerics_BigInteger_op_LessThanOrEqual_System_Numerics_BigInteger_long:
 .word 0xf90013a2
 .word 0x910043a0
 .word 0xf94013a1
-bl _p_83
+bl _p_70
 .word 0x93407c00
 .word 0x6b1f001f
 .word 0x9a9fd7e0
@@ -11077,57 +9459,9 @@ bl _p_83
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_55:
+Lme_47:
 .text
-ut_86:
-add x0, x0, 16
-b System_Numerics_BigInteger_op_Equality_System_Numerics_BigInteger_long
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigInteger_op_Equality_System_Numerics_BigInteger_long
-System_Numerics_BigInteger_op_Equality_System_Numerics_BigInteger_long:
-.loc 5 1892 0 prologue_end
-.word 0xa9bd7bfd
-.word 0x910003fd
-.word 0xf9000ba0
-.word 0xf9000fa1
-.word 0xf90013a2
-.word 0x910043a0
-.word 0xf94013a1
-bl _p_84
-.word 0x53001c00
-.word 0x910003bf
-.word 0xa8c37bfd
-.word 0xd65f03c0
-
-Lme_56:
-.text
-ut_87:
-add x0, x0, 16
-b System_Numerics_BigInteger_op_Inequality_System_Numerics_BigInteger_long
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigInteger_op_Inequality_System_Numerics_BigInteger_long
-System_Numerics_BigInteger_op_Inequality_System_Numerics_BigInteger_long:
-.loc 5 1897 0 prologue_end
-.word 0xa9bd7bfd
-.word 0x910003fd
-.word 0xf9000ba0
-.word 0xf9000fa1
-.word 0xf90013a2
-.word 0x910043a0
-.word 0xf94013a1
-bl _p_84
-.word 0x53001c00
-.word 0x6b1f001f
-.word 0x9a9f17e0
-.word 0x910003bf
-.word 0xa8c37bfd
-.word 0xd65f03c0
-
-Lme_57:
-.text
-ut_88:
+ut_72:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_LessThan_long_System_Numerics_BigInteger
 .text
@@ -11142,7 +9476,7 @@ System_Numerics_BigInteger_op_LessThan_long_System_Numerics_BigInteger:
 .word 0xf90013a2
 .word 0x910063a0
 .word 0xf9400ba1
-bl _p_83
+bl _p_70
 .word 0x93407c00
 .word 0x6b1f001f
 .word 0x9a9fd7e0
@@ -11150,9 +9484,9 @@ bl _p_83
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_58:
+Lme_48:
 .text
-ut_89:
+ut_73:
 add x0, x0, 16
 b System_Numerics_BigInteger_op_LessThanOrEqual_long_System_Numerics_BigInteger
 .text
@@ -11167,7 +9501,7 @@ System_Numerics_BigInteger_op_LessThanOrEqual_long_System_Numerics_BigInteger:
 .word 0xf90013a2
 .word 0x910063a0
 .word 0xf9400ba1
-bl _p_83
+bl _p_70
 .word 0x93407c00
 .word 0x6b1f001f
 .word 0x9a9fa7e0
@@ -11177,9 +9511,9 @@ bl _p_83
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_59:
+Lme_49:
 .text
-ut_90:
+ut_74:
 add x0, x0, 16
 b System_Numerics_BigInteger_GetDiffLength_uint___uint___int
 .text
@@ -11233,33 +9567,13 @@ System_Numerics_BigInteger_GetDiffLength_uint___uint___int:
 .word 0x910003bf
 .word 0xa8c37bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_5a:
+Lme_4a:
 .text
-ut_91:
-add x0, x0, 16
-b System_Numerics_BigInteger_AssertValid
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigInteger_AssertValid
-System_Numerics_BigInteger_AssertValid:
-.loc 5 2049 0 prologue_end
-.word 0xa9be7bfd
-.word 0x910003fd
-.word 0xf9000ba0
-.word 0xf9400ba0
-.word 0xf9400400
-.loc 5 2065 0
-.word 0x910003bf
-.word 0xa8c27bfd
-.word 0xd65f03c0
-
-Lme_5b:
-.text
-ut_92:
+ut_75:
 add x0, x0, 16
 b System_Numerics_BigInteger__cctor
 .text
@@ -11334,7 +9648,7 @@ ldr x2, [x16, #16]
 .word 0xf9003fa0
 .word 0x9101c3a0
 .word 0xd2800021
-bl _p_65
+bl _p_55
 .word 0xf9403ba0
 .word 0xf9001ba0
 .word 0xf9403fa0
@@ -11342,7 +9656,7 @@ bl _p_65
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #744]
+ldr x0, [x16, #728]
 .word 0xf9401ba1
 .word 0xf9000001
 .word 0x91002001
@@ -11365,7 +9679,7 @@ ldr x2, [x16, #16]
 .word 0xf90037a0
 .word 0x910183a0
 .word 0xd2800001
-bl _p_65
+bl _p_55
 .word 0xf94033a0
 .word 0xf90013a0
 .word 0xf94037a0
@@ -11373,7 +9687,7 @@ bl _p_65
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #704]
+ldr x0, [x16, #696]
 .word 0xf94013a1
 .word 0xf9000001
 .word 0x91002001
@@ -11397,7 +9711,7 @@ ldr x2, [x16, #16]
 .word 0x910143a0
 .word 0x92800001
 .word 0xf2bfffe1
-bl _p_65
+bl _p_55
 .word 0xf9402ba0
 .word 0xf9000ba0
 .word 0xf9402fa0
@@ -11405,7 +9719,7 @@ bl _p_65
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #712]
+ldr x0, [x16, #704]
 .word 0xf9400ba1
 .word 0xf9000001
 .word 0x91002001
@@ -11425,11 +9739,11 @@ ldr x2, [x16, #16]
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_5c:
+Lme_4b:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigIntegerCalculator_Add_uint___uint
@@ -11522,11 +9836,11 @@ bl _p_35
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_5d:
+Lme_4c:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigIntegerCalculator_Add_uint___uint__
@@ -11598,7 +9912,7 @@ bl _p_35
 .word 0xaa1703e0
 .word 0xaa1603e2
 .word 0xaa1503e4
-bl _p_85
+bl _p_71
 .word 0xd2800000
 .word 0x2a0003f7
 .word 0xd2800000
@@ -11613,11 +9927,11 @@ bl _p_85
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_5e:
+Lme_4d:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigIntegerCalculator_Add_uint__int_uint__int_uint__int
@@ -11705,7 +10019,7 @@ System_Numerics_BigIntegerCalculator_Add_uint__int_uint__int_uint__int:
 .word 0xa8c57bfd
 .word 0xd65f03c0
 
-Lme_5f:
+Lme_4e:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigIntegerCalculator_AddSelf_uint__int_uint__int
@@ -11783,7 +10097,7 @@ System_Numerics_BigIntegerCalculator_AddSelf_uint__int_uint__int:
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_60:
+Lme_4f:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigIntegerCalculator_Subtract_uint___uint
@@ -11862,11 +10176,11 @@ bl _p_35
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_61:
+Lme_50:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigIntegerCalculator_Subtract_uint___uint__
@@ -11944,7 +10258,7 @@ bl _p_35
 .word 0xaa1703e0
 .word 0xaa1603e2
 .word 0xaa1503e4
-bl _p_86
+bl _p_72
 .word 0xd2800000
 .word 0x2a0003f7
 .word 0xd2800000
@@ -11959,11 +10273,11 @@ bl _p_86
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_62:
+Lme_51:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigIntegerCalculator_Subtract_uint__int_uint__int_uint__int
@@ -12044,7 +10358,7 @@ System_Numerics_BigIntegerCalculator_Subtract_uint__int_uint__int_uint__int:
 .word 0xa8c57bfd
 .word 0xd65f03c0
 
-Lme_63:
+Lme_52:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigIntegerCalculator_Compare_uint___uint__
@@ -12136,833 +10450,17 @@ System_Numerics_BigIntegerCalculator_Compare_uint___uint__:
 .word 0x910003bf
 .word 0xa8c37bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_64:
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigIntegerCalculator_Divide_uint___uint
-System_Numerics_BigIntegerCalculator_Divide_uint___uint:
-.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Numerics/BigIntegerCalculator.DivRem.cs"
-.loc 7 44 0 prologue_end
-.word 0xa9bc7bfd
-.word 0x910003fd
-.word 0xa9015fb6
-.word 0xa90267b8
-.word 0xf9001bba
-.word 0xaa0003f9
-.word 0xaa0103fa
-.word 0xb9801b21
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #688]
-bl _p_35
-.word 0xaa0003f8
-.loc 7 46 0
-.word 0xd2800017
-.loc 7 47 0
-.word 0xb9801b20
-.word 0x51000416
-.word 0x14000024
-.loc 7 49 0
-.word 0xd3607ee0
-.word 0x93407ec1
-.word 0xb9801b22
-.word 0xeb01005f
-.word 0x10000011
-.word 0x540004e9
-.word 0xd37ef421
-.word 0x8b010321
-.word 0x91008021
-.word 0xb9400021
-.word 0x2a0103e1
-.word 0xaa010001
-.loc 7 50 0
-.word 0xaa0103e0
-.word 0x2a1a03e2
-.word 0xeb1f005f
-.word 0x10000011
-.word 0x540003e0
-.word 0xf100005f
-.word 0x10000011
-.word 0x54000380
-.word 0x9ac20837
-.loc 7 51 0
-.word 0xaa1703e2
-.word 0x93407ec1
-.word 0xb9801b03
-.word 0xeb01007f
-.word 0x10000011
-.word 0x54000249
-.word 0xd37ef421
-.word 0x8b010301
-.word 0x91008021
-.word 0xb9000022
-.loc 7 52 0
-.word 0x2a1a03e1
-.word 0x9b017ee1
-.word 0xcb010017
-.loc 7 47 0
-.word 0x510006d6
-.word 0x6b1f02df
-.word 0x54fffb8a
-.loc 7 55 0
-.word 0xaa1803e0
-.word 0xa9415fb6
-.word 0xa94267b8
-.word 0xf9401bba
-.word 0x910003bf
-.word 0xa8c47bfd
-.word 0xd65f03c0
-.word 0xd2801b80
-.word 0xaa1103e1
-bl _p_6
-.word 0xd2801540
-.word 0xaa1103e1
-bl _p_6
-
-Lme_65:
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigIntegerCalculator_Remainder_uint___uint
-System_Numerics_BigIntegerCalculator_Remainder_uint___uint:
-.loc 7 65 0 prologue_end
-.word 0xa9bd7bfd
-.word 0x910003fd
-.word 0xa90163b7
-.word 0xa9026bb9
-.word 0xaa0003f9
-.word 0xaa0103fa
-.word 0xd2800018
-.loc 7 66 0
-.word 0xb9801b20
-.word 0x51000417
-.word 0x14000017
-.loc 7 68 0
-.word 0xd3607f00
-.word 0x93407ee1
-.word 0xb9801b22
-.word 0xeb01005f
-.word 0x10000011
-.word 0x54000389
-.word 0xd37ef421
-.word 0x8b010321
-.word 0x91008021
-.word 0xb9400021
-.word 0x2a0103e1
-.word 0xaa010000
-.loc 7 69 0
-.word 0x2a1a03e1
-.word 0xeb1f003f
-.word 0x10000011
-.word 0x540001e0
-.word 0xf100003f
-.word 0x10000011
-.word 0x54000180
-.word 0x9ac1081e
-.word 0x9b0183d8
-.loc 7 66 0
-.word 0x510006f7
-.word 0x6b1f02ff
-.word 0x54fffd2a
-.loc 7 72 0
-.word 0xaa1803e0
-.word 0xa94163b7
-.word 0xa9426bb9
-.word 0x910003bf
-.word 0xa8c37bfd
-.word 0xd65f03c0
-.word 0xd2801540
-.word 0xaa1103e1
-bl _p_6
-.word 0xd2801b80
-.word 0xaa1103e1
-bl _p_6
-
-Lme_66:
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigIntegerCalculator_Divide_uint___uint__
-System_Numerics_BigIntegerCalculator_Divide_uint___uint__:
-.loc 7 118 0 prologue_end
-.word 0xa9bd7bfd
-.word 0x910003fd
-.word 0xf9000bba
-.word 0xf9000fa0
-.word 0xaa0103fa
-.word 0xf9400fa0
-bl _p_87
-.word 0xf90017a0
-.loc 7 119 0
-.word 0xf9400fa0
-.word 0xb9801800
-.word 0xb9801b41
-.word 0x4b010000
-.word 0x11000401
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #688]
-bl _p_35
-.word 0xaa0003e5
-.word 0xf94017a1
-.loc 7 121 0
-.word 0xd2800000
-.word 0x93407c00
-.word 0xb9801822
-.word 0xeb00005f
-.word 0x10000011
-.word 0x54000409
-.word 0xd37ef400
-.word 0x8b000020
-.word 0x91008000
-.word 0xd2800002
-.word 0x93407c42
-.word 0xb9801b43
-.word 0xeb02007f
-.word 0x10000011
-.word 0x540002e9
-.word 0xd37ef442
-.word 0x8b020342
-.word 0x91008042
-.word 0xd2800003
-.word 0x93407c63
-.word 0xb98018a4
-.word 0xeb03009f
-.word 0x10000011
-.word 0x540001c9
-.word 0xd37ef463
-.word 0x8b0300a3
-.word 0x91008064
-.loc 7 123 0
-.word 0xb9801821
-.word 0xb9801b43
-.word 0xf90013a5
-.word 0xb98018a5
-bl _p_88
-.word 0xf94013a0
-.loc 7 128 0
-.word 0xf9400bba
-.word 0x910003bf
-.word 0xa8c37bfd
-.word 0xd65f03c0
-.word 0xd2801b80
-.word 0xaa1103e1
-bl _p_6
-
-Lme_67:
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigIntegerCalculator_Remainder_uint___uint__
-System_Numerics_BigIntegerCalculator_Remainder_uint___uint__:
-.loc 7 144 0 prologue_end
-.word 0xa9bd7bfd
-.word 0x910003fd
-.word 0xf9000ba0
-.word 0xf9000fa1
-.word 0xf9400ba0
-bl _p_87
-.word 0xaa0003e1
-.loc 7 146 0
-.word 0xaa0103e0
-.word 0xd2800002
-.word 0x93407c42
-.word 0xb9801803
-.word 0xeb02007f
-.word 0x10000011
-.word 0x54000329
-.word 0xd37ef442
-.word 0x8b020000
-.word 0x91008000
-.word 0xd2800002
-.word 0x93407c42
-.word 0xf9400fa3
-.word 0xb9801864
-.word 0xeb02009f
-.word 0x10000011
-.word 0x540001e9
-.word 0xd37ef442
-.word 0x8b020062
-.word 0x91008042
-.loc 7 148 0
-.word 0xf90013a1
-.word 0xb9801821
-.word 0xb9801863
-.word 0xd2800004
-.word 0x2a0403e4
-.word 0xd2800005
-bl _p_88
-.word 0xf94013a0
-.loc 7 153 0
-.word 0x910003bf
-.word 0xa8c37bfd
-.word 0xd65f03c0
-.word 0xd2801b80
-.word 0xaa1103e1
-bl _p_6
-
-Lme_68:
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigIntegerCalculator_Divide_uint__int_uint__int_uint__int
-System_Numerics_BigIntegerCalculator_Divide_uint__int_uint__int_uint__int:
-.loc 7 172 0 prologue_end
-.word 0xa9b67bfd
-.word 0x910003fd
-.word 0xa90153b3
-.word 0xa9025bb5
-.word 0xa90363b7
-.word 0xa9046bb9
-.word 0xaa0003f5
-.word 0xaa0103f6
-.word 0xf9002ba2
-.word 0xf9002fa3
-.word 0xf90033a4
-.word 0xf90037a5
-.word 0xb9805ba0
-.word 0x51000401
-.word 0x93407c21
-.word 0xd2800082
-.word 0x9b027c22
-.word 0xf9402ba1
-.word 0x8b020021
-.word 0xb9400034
-.loc 7 173 0
-.word 0xd280003e
-.word 0x6b1e001f
-.word 0x5400006c
-.word 0xd2800013
-.word 0x14000009
-.word 0xb9805ba0
-.word 0x51000800
-.word 0x93407c00
-.word 0xd2800081
-.word 0x9b017c01
-.word 0xf9402ba0
-.word 0x8b010000
-.word 0xb9400013
-.word 0xb90073b3
-.loc 7 176 0
-.word 0xaa1403e0
-bl _p_89
-.word 0x93407c00
-.word 0xaa0003fa
-.loc 7 177 0
-.word 0xd2800400
-.word 0x4b1a0000
-.word 0xb9007ba0
-.loc 7 180 0
-.word 0x6b1f035f
-.word 0x5400042d
-.loc 7 182 0
-.word 0xb9805ba0
-.word 0xd280005e
-.word 0x6b1e001f
-.word 0x5400006c
-.word 0xd2800013
-.word 0x14000009
-.word 0xb9805ba0
-.word 0x51000c00
-.word 0x93407c00
-.word 0xd2800081
-.word 0x9b017c01
-.word 0xf9402ba0
-.word 0x8b010000
-.word 0xb9400013
-.word 0xaa1303f9
-.loc 7 184 0
-.word 0xd28003fe
-.word 0xa1e0340
-.word 0x1ac02282
-.word 0xb9807ba1
-.word 0xd28003fe
-.word 0xa1e0023
-.word 0xb94073a0
-.word 0x1ac32403
-.word 0x2a030054
-.loc 7 185 0
-.word 0xd28003fe
-.word 0xa1e0342
-.word 0x1ac22000
-.word 0xd28003fe
-.word 0xa1e0021
-.word 0x1ac12661
-.word 0x2a010000
-.word 0xb90073a0
-.loc 7 190 0
-.word 0xaa1603f9
-.word 0x14000089
-.loc 7 192 0
-.word 0xb9805ba0
-.word 0x4b000320
-.word 0xb90083a0
-.loc 7 193 0
-.word 0x6b16033f
-.word 0x5400006b
-.word 0xd2800013
-.word 0x14000006
-.word 0x93407f20
-.word 0xd2800081
-.word 0x9b017c00
-.word 0x8b0002a0
-.word 0xb9400013
-.word 0xaa1303f8
-.loc 7 195 0
-.word 0x2a1303e0
-.word 0xd3607c00
-.word 0x51000721
-.word 0x93407c21
-.word 0xd2800082
-.word 0x9b027c21
-.word 0x8b0102a1
-.word 0xb9400021
-.word 0x2a0103e1
-.word 0xaa010000
-.word 0xf90047a0
-.loc 7 196 0
-.word 0xd280003e
-.word 0x6b1e033f
-.word 0x5400006c
-.word 0xd2800013
-.word 0x14000007
-.word 0x51000b20
-.word 0x93407c00
-.word 0xd2800081
-.word 0x9b017c00
-.word 0x8b0002a0
-.word 0xb9400013
-.word 0xaa1303f7
-.loc 7 199 0
-.word 0x6b1f035f
-.word 0x540003ed
-.loc 7 201 0
-.word 0xd280005e
-.word 0x6b1e033f
-.word 0x5400006c
-.word 0xd2800013
-.word 0x14000007
-.word 0x51000f20
-.word 0x93407c00
-.word 0xd2800081
-.word 0x9b017c00
-.word 0x8b0002a0
-.word 0xb9400013
-.word 0xb90093b3
-.loc 7 203 0
-.word 0xd28007fe
-.word 0xa1e0341
-.word 0xf94047a0
-.word 0x9ac12000
-.word 0xb9807ba1
-.word 0xd28003fe
-.word 0xa1e0022
-.word 0x1ac226e2
-.word 0x2a0203e2
-.word 0xaa020000
-.word 0xf90047a0
-.loc 7 204 0
-.word 0xd28003fe
-.word 0xa1e0340
-.word 0x1ac022e0
-.word 0xd28003fe
-.word 0xa1e0021
-.word 0x1ac12661
-.word 0x2a010017
-.loc 7 209 0
-.word 0x2a1403e1
-.word 0xeb1f003f
-.word 0x10000011
-.word 0x54000960
-.word 0xf94047a0
-.word 0xf100003f
-.word 0x10000011
-.word 0x540008e0
-.word 0x9ac10813
-.loc 7 210 0
-.word 0xaa1303e0
-.word 0xd29fffe1
-.word 0xf2bfffe1
-.word 0xeb01001f
-.word 0x540000a9
-.loc 7 211 0
-.word 0xd29ffff3
-.word 0xf2bffff3
-.word 0x14000002
-.loc 7 215 0
-.word 0xd1000673
-.loc 7 214 0
-.word 0xaa1303e0
-.word 0xf94047a1
-.word 0xaa1703e2
-.word 0xaa1403e3
-.word 0xb94073a4
-bl _p_90
-.word 0x53001c00
-.word 0x35ffff00
-.loc 7 217 0
-.word 0xeb1f027f
-.word 0x540002e9
-.loc 7 220 0
-.word 0xb98083a1
-.word 0x93407c20
-.word 0xd2800082
-.word 0x9b027c00
-.word 0x8b0002a0
-.word 0x4b0102c1
-.word 0xf9402ba2
-.word 0xb9805ba3
-.word 0xaa1303e4
-bl _p_91
-.loc 7 222 0
-.word 0x6b18001f
-.word 0x54000160
-.loc 7 227 0
-.word 0xb98083a1
-.word 0x93407c20
-.word 0xd2800082
-.word 0x9b027c00
-.word 0x8b0002a0
-.word 0x4b0102c1
-.word 0xf9402ba2
-.word 0xb9805ba3
-bl _p_92
-.loc 7 229 0
-.word 0xd1000673
-.loc 7 236 0
-.word 0xb9806ba0
-.word 0x34000120
-.loc 7 237 0
-.word 0xb98083a0
-.word 0x93407c00
-.word 0xd2800081
-.word 0x9b017c01
-.word 0xf94033a0
-.word 0x8b010000
-.word 0xaa1303e1
-.word 0xb9000001
-.loc 7 238 0
-.word 0x6b16033f
-.word 0x540000ca
-.loc 7 239 0
-.word 0x93407f20
-.word 0xd2800081
-.word 0x9b017c00
-.word 0x8b0002a0
-.word 0xb900001f
-.loc 7 190 0
-.word 0x51000739
-.word 0xb9805ba0
-.word 0x6b00033f
-.word 0x54ffeeca
-.loc 7 241 0
-.word 0xa94153b3
-.word 0xa9425bb5
-.word 0xa94363b7
-.word 0xa9446bb9
-.word 0x910003bf
-.word 0xa8ca7bfd
-.word 0xd65f03c0
-.word 0xd2801540
-.word 0xaa1103e1
-bl _p_6
-
-Lme_69:
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigIntegerCalculator_AddDivisor_uint__int_uint__int
-System_Numerics_BigIntegerCalculator_AddDivisor_uint__int_uint__int:
-.loc 7 253 0 prologue_end
-.word 0xa9bc7bfd
-.word 0x910003fd
-.word 0xa9015fb6
-.word 0xa90267b8
-.word 0xf9001bba
-.word 0xaa0003f8
-.word 0xf9001fa1
-.word 0xaa0203f9
-.word 0xaa0303fa
-.word 0xd2800017
-.loc 7 255 0
-.word 0xd2800016
-.word 0x14000017
-.loc 7 257 0
-.word 0x93407ec0
-.word 0xd2800081
-.word 0x9b017c00
-.word 0x8b000300
-.word 0xb9400000
-.word 0x2a0003e0
-.word 0x8b170000
-.word 0x93407ec1
-.word 0xd2800082
-.word 0x9b027c21
-.word 0x8b010321
-.word 0xb9400021
-.word 0x2a0103e1
-.word 0x8b010017
-.loc 7 258 0
-.word 0x93407ec0
-.word 0xd2800081
-.word 0x9b017c00
-.word 0x8b000300
-.word 0xaa1703e1
-.word 0xb9000001
-.loc 7 259 0
-.word 0xd360fef7
-.loc 7 255 0
-.word 0x110006d6
-.word 0x6b1a02df
-.word 0x54fffd2b
-.loc 7 262 0
-.word 0xaa1703e0
-.word 0xa9415fb6
-.word 0xa94267b8
-.word 0xf9401bba
-.word 0x910003bf
-.word 0xa8c47bfd
-.word 0xd65f03c0
-
-Lme_6a:
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigIntegerCalculator_SubtractDivisor_uint__int_uint__int_ulong
-System_Numerics_BigIntegerCalculator_SubtractDivisor_uint__int_uint__int_ulong:
-.loc 7 278 0 prologue_end
-.word 0xa9bb7bfd
-.word 0x910003fd
-.word 0xa90157b4
-.word 0xa9025fb6
-.word 0xa90367b8
-.word 0xf90023ba
-.word 0xaa0003f7
-.word 0xf90027a1
-.word 0xaa0203f8
-.word 0xaa0303f9
-.word 0xaa0403fa
-.word 0xd2800016
-.loc 7 280 0
-.word 0xd2800015
-.word 0x14000020
-.loc 7 282 0
-.word 0x93407ea0
-.word 0xd2800081
-.word 0x9b017c00
-.word 0x8b000300
-.word 0xb9400000
-.word 0x2a0003e0
-.word 0x9b1a7c00
-.word 0x8b0002d6
-.loc 7 283 0
-.word 0xaa1603e0
-.word 0xaa0003f4
-.loc 7 284 0
-.word 0xd360fed6
-.loc 7 285 0
-.word 0x93407ea0
-.word 0xd2800081
-.word 0x9b017c00
-.word 0x8b0002e0
-.word 0xb9400000
-.word 0x6b14001f
-.word 0x54000042
-.loc 7 286 0
-.word 0x910006d6
-.loc 7 287 0
-.word 0x93407ea0
-.word 0xd2800081
-.word 0x9b017c00
-.word 0x8b0002e0
-.word 0x93407ea1
-.word 0xd2800082
-.word 0x9b027c21
-.word 0x8b0102e1
-.word 0xb9400021
-.word 0x4b140021
-.word 0xb9000001
-.loc 7 280 0
-.word 0x110006b5
-.word 0x6b1902bf
-.word 0x54fffc0b
-.loc 7 290 0
-.word 0xaa1603e0
-.word 0xa94157b4
-.word 0xa9425fb6
-.word 0xa94367b8
-.word 0xf94023ba
-.word 0x910003bf
-.word 0xa8c57bfd
-.word 0xd65f03c0
-
-Lme_6b:
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigIntegerCalculator_DivideGuessTooBig_ulong_ulong_uint_uint_uint
-System_Numerics_BigIntegerCalculator_DivideGuessTooBig_ulong_ulong_uint_uint_uint:
-.loc 7 303 0 prologue_end
-.word 0xa9bc7bfd
-.word 0x910003fd
-.word 0xa9016bb9
-.word 0xf90013a0
-.word 0xf90017a1
-.word 0xf9001ba2
-.word 0xaa0303f9
-.word 0xaa0403fa
-.word 0x2a1903e0
-.word 0xf94013a1
-.word 0x9b017c19
-.loc 7 304 0
-.word 0x2a1a03e0
-.word 0x9b017c1a
-.loc 7 306 0
-.word 0xd360ff40
-.word 0x8b000339
-.loc 7 307 0
-.word 0xd29fffe0
-.word 0xf2bfffe0
-.word 0x8a00035a
-.loc 7 309 0
-.word 0xf94017a0
-.word 0xeb00033f
-.word 0x54000062
-.loc 7 310 0
-.word 0xd2800000
-.word 0x14000013
-.loc 7 311 0
-.word 0xf94017a0
-.word 0xeb00033f
-.word 0x54000069
-.loc 7 312 0
-.word 0xd2800020
-.word 0x1400000e
-.loc 7 314 0
-.word 0xb94033a0
-.word 0x2a0003e0
-.word 0xeb00035f
-.word 0x54000062
-.loc 7 315 0
-.word 0xd2800000
-.word 0x14000008
-.loc 7 316 0
-.word 0xb94033a0
-.word 0x2a0003e0
-.word 0xeb00035f
-.word 0x54000069
-.loc 7 317 0
-.word 0xd2800020
-.word 0x14000002
-.loc 7 319 0
-.word 0xd2800000
-.word 0xa9416bb9
-.word 0x910003bf
-.word 0xa8c47bfd
-.word 0xd65f03c0
-
-Lme_6c:
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigIntegerCalculator_CreateCopy_uint__
-System_Numerics_BigIntegerCalculator_CreateCopy_uint__:
-.loc 7 327 0 prologue_end
-.word 0xa9bd7bfd
-.word 0x910003fd
-.word 0xf9000ba0
-.word 0xf9400ba0
-.word 0xb9801801
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #688]
-bl _p_35
-.word 0xaa0003e2
-.loc 7 328 0
-.word 0xb9801844
-.word 0xf9400ba0
-.word 0xd2800001
-.word 0xf90013a2
-.word 0xd2800003
-bl _p_45
-.word 0xf94013a0
-.loc 7 329 0
-.word 0x910003bf
-.word 0xa8c37bfd
-.word 0xd65f03c0
-
-Lme_6d:
-.text
-	.align 4
-	.no_dead_strip System_Numerics_BigIntegerCalculator_LeadingZeros_uint
-System_Numerics_BigIntegerCalculator_LeadingZeros_uint:
-.loc 7 334 0 prologue_end
-.word 0xa9be7bfd
-.word 0x910003fd
-.word 0xa9016bb9
-.word 0xaa0003fa
-.word 0x3500007a
-.loc 7 335 0
-.word 0xd2800400
-.word 0x14000020
-.loc 7 337 0
-.word 0xd2800019
-.loc 7 338 0
-.word 0x929ffffe
-.word 0xf2bffffe
-.word 0xa1e0340
-.word 0x35000060
-.loc 7 340 0
-.word 0x11004339
-.loc 7 341 0
-.word 0x53103f5a
-.loc 7 343 0
-.word 0x929ffffe
-.word 0xf2bfe01e
-.word 0xa1e0340
-.word 0x35000060
-.loc 7 345 0
-.word 0x11002339
-.loc 7 346 0
-.word 0x53185f5a
-.loc 7 348 0
-.word 0x929ffffe
-.word 0xf2be001e
-.word 0xa1e0340
-.word 0x35000060
-.loc 7 350 0
-.word 0x11001339
-.loc 7 351 0
-.word 0x531c6f5a
-.loc 7 353 0
-.word 0x929ffffe
-.word 0xf2b8001e
-.word 0xa1e0340
-.word 0x35000060
-.loc 7 355 0
-.word 0x11000b39
-.loc 7 356 0
-.word 0x531e775a
-.loc 7 358 0
-.word 0x929ffffe
-.word 0xf2b0001e
-.word 0xa1e0340
-.word 0x35000040
-.loc 7 360 0
-.word 0x11000739
-.loc 7 363 0
-.word 0xaa1903e0
-.word 0xa9416bb9
-.word 0x910003bf
-.word 0xa8c27bfd
-.word 0xd65f03c0
-
-Lme_6e:
+Lme_53:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigIntegerCalculator_Square_uint__
 System_Numerics_BigIntegerCalculator_Square_uint__:
-.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Numerics/BigIntegerCalculator.SquMul.cs"
-.loc 8 20 0 prologue_end
+.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Numerics/BigIntegerCalculator.SquMul.cs"
+.loc 7 20 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
 .word 0xa90163b7
@@ -12977,7 +10475,7 @@ add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #688]
 bl _p_35
 .word 0xaa0003f9
-.loc 8 22 0
+.loc 7 22 0
 .word 0xaa1a03f8
 .word 0xb400007a
 .word 0xb9801b00
@@ -13010,33 +10508,33 @@ bl _p_35
 .word 0xd37ef400
 .word 0x8b0002e0
 .word 0x91008017
-.loc 8 24 0
+.loc 7 24 0
 .word 0xb9801b41
 .word 0xb9801b23
 .word 0xaa1803e0
 .word 0xaa1703e2
-bl _p_93
+bl _p_73
 .word 0xd2800000
 .word 0x2a0003f8
 .word 0xd2800000
 .word 0x2a0003f7
-.loc 8 28 0
+.loc 7 28 0
 .word 0xaa1903e0
 .word 0xa94163b7
 .word 0xa9426bb9
 .word 0x910003bf
 .word 0xa8c37bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_6f:
+Lme_54:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigIntegerCalculator_Square_uint__int_uint__int
 System_Numerics_BigIntegerCalculator_Square_uint__int_uint__int:
-.loc 8 51 0 prologue_end
+.loc 7 51 0 prologue_end
 .word 0xa9b57bfd
 .word 0x910003fd
 .word 0xa90153b3
@@ -13050,19 +10548,19 @@ System_Numerics_BigIntegerCalculator_Square_uint__int_uint__int:
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #752]
+ldr x0, [x16, #736]
 .word 0xb9800000
 .word 0x6b00031f
 .word 0x5400098a
-.loc 8 65 0
+.loc 7 65 0
 .word 0xd280001a
 .word 0x14000047
-.loc 8 67 0
+.loc 7 67 0
 .word 0xd2800016
-.loc 8 68 0
+.loc 7 68 0
 .word 0xd2800015
 .word 0x14000023
-.loc 8 70 0
+.loc 7 70 0
 .word 0xb150340
 .word 0x93407c00
 .word 0xd2800081
@@ -13071,7 +10569,7 @@ ldr x0, [x16, #752]
 .word 0xb9400000
 .word 0x2a0003e0
 .word 0x8b160014
-.loc 8 71 0
+.loc 7 71 0
 .word 0x93407ea0
 .word 0xd2800081
 .word 0x9b017c00
@@ -13085,7 +10583,7 @@ ldr x0, [x16, #752]
 .word 0xb9400021
 .word 0x2a0103e1
 .word 0x9b017c16
-.loc 8 72 0
+.loc 7 72 0
 .word 0xb150340
 .word 0x93407c00
 .word 0xd2800081
@@ -13095,15 +10593,15 @@ ldr x0, [x16, #752]
 .word 0x8b010281
 .word 0xaa0103e1
 .word 0xb9000001
-.loc 8 73 0
+.loc 7 73 0
 .word 0xd341fe80
 .word 0x8b0002c0
 .word 0xd35ffc16
-.loc 8 68 0
+.loc 7 68 0
 .word 0x110006b5
 .word 0x6b1a02bf
 .word 0x54fffbab
-.loc 8 75 0
+.loc 7 75 0
 .word 0x93407f40
 .word 0xd2800081
 .word 0x9b017c00
@@ -13118,7 +10616,7 @@ ldr x0, [x16, #752]
 .word 0x2a0103e1
 .word 0x9b017c00
 .word 0x8b160015
-.loc 8 76 0
+.loc 7 76 0
 .word 0xb1a0340
 .word 0x93407c00
 .word 0xd2800081
@@ -13126,7 +10624,7 @@ ldr x0, [x16, #752]
 .word 0x8b000320
 .word 0xaa1503e1
 .word 0xb9000001
-.loc 8 77 0
+.loc 7 77 0
 .word 0xb1a0340
 .word 0x11000400
 .word 0x93407c00
@@ -13136,69 +10634,69 @@ ldr x0, [x16, #752]
 .word 0xd360fea1
 .word 0xaa0103e1
 .word 0xb9000001
-.loc 8 65 0
+.loc 7 65 0
 .word 0x1100075a
 .word 0x6b18035f
 .word 0x54fff72b
 .word 0x140000d5
-.loc 8 94 0
+.loc 7 94 0
 .word 0x13017f16
-.loc 8 95 0
+.loc 7 95 0
 .word 0xaa1603e0
 .word 0x531f7815
-.loc 8 98 0
+.loc 7 98 0
 .word 0xaa1703f4
-.loc 8 99 0
+.loc 7 99 0
 .word 0xaa1603f3
-.loc 8 100 0
+.loc 7 100 0
 .word 0x93407ec0
 .word 0xd2800081
 .word 0x9b017c00
 .word 0x8b0002e0
 .word 0xf9002fa0
-.loc 8 101 0
+.loc 7 101 0
 .word 0x4b16031a
-.loc 8 104 0
+.loc 7 104 0
 .word 0xaa1903f8
-.loc 8 105 0
+.loc 7 105 0
 .word 0xb90063b5
-.loc 8 106 0
+.loc 7 106 0
 .word 0x93407ea0
 .word 0xd2800081
 .word 0x9b017c00
 .word 0x8b000320
 .word 0xf90037a0
-.loc 8 107 0
+.loc 7 107 0
 .word 0xb98053a0
 .word 0x4b150000
 .word 0xb90073a0
-.loc 8 110 0
+.loc 7 110 0
 .word 0xaa1703e0
 .word 0xaa1603e1
 .word 0xaa1903e2
 .word 0xaa1503e3
-bl _p_93
-.loc 8 114 0
+bl _p_73
+.loc 7 114 0
 .word 0xf9402fa0
 .word 0xaa1a03e1
 .word 0xf94037a2
 .word 0xb98073a3
-bl _p_93
-.loc 8 117 0
+bl _p_73
+.loc 7 117 0
 .word 0x11000757
-.loc 8 118 0
+.loc 7 118 0
 .word 0xaa1703e0
 .word 0xb170015
-.loc 8 120 0
+.loc 7 120 0
 .word 0xaa1503e0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x1, [x16, #760]
+ldr x1, [x16, #744]
 .word 0xb9800021
 .word 0x6b01001f
 .word 0x54000a8a
-.loc 8 122 0
+.loc 7 122 0
 .word 0x2a1703e0
 .word 0xd2800081
 .word 0x93407c21
@@ -13226,7 +10724,7 @@ bl _p_27
 .word 0xf9004ba0
 .word 0xf9404ba0
 .word 0xf90043a0
-.loc 8 123 0
+.loc 7 123 0
 .word 0x2a1503e0
 .word 0xd2800081
 .word 0x93407c21
@@ -13254,29 +10752,29 @@ bl _p_27
 .word 0xf90053a0
 .word 0xf94053a0
 .word 0xf9004fa0
-.loc 8 126 0
+.loc 7 126 0
 .word 0xf9402fa0
 .word 0xaa1a03e1
 .word 0xaa1403e2
 .word 0xaa1303e3
 .word 0xf94043a4
 .word 0xaa1703e5
-bl _p_85
-.loc 8 131 0
+bl _p_71
+.loc 7 131 0
 .word 0xf94043a0
 .word 0xaa1703e1
 .word 0xf94053a2
 .word 0xaa1503e3
-bl _p_93
-.loc 8 133 0
+bl _p_73
+.loc 7 133 0
 .word 0xf94037a0
 .word 0xb98073a1
 .word 0xaa1803e2
 .word 0xb98063a3
 .word 0xf94053a4
 .word 0xaa1503e5
-bl _p_94
-.loc 8 138 0
+bl _p_74
+.loc 7 138 0
 .word 0x93407ec0
 .word 0xd2800081
 .word 0x9b017c00
@@ -13285,10 +10783,10 @@ bl _p_94
 .word 0x4b160021
 .word 0xf94053a2
 .word 0xaa1503e3
-bl _p_95
-.loc 8 139 0
+bl _p_75
+.loc 7 139 0
 .word 0x14000059
-.loc 8 142 0
+.loc 7 142 0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
@@ -13317,7 +10815,7 @@ bl _p_35
 .word 0x8b010000
 .word 0x91008000
 .word 0xf90043a0
-.loc 8 143 0
+.loc 7 143 0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
@@ -13346,29 +10844,29 @@ bl _p_35
 .word 0x8b010000
 .word 0x91008000
 .word 0xf9004ba0
-.loc 8 146 0
+.loc 7 146 0
 .word 0xf9402fa0
 .word 0xaa1a03e1
 .word 0xaa1403e2
 .word 0xaa1303e3
 .word 0xf94043a4
 .word 0xaa1703e5
-bl _p_85
-.loc 8 151 0
+bl _p_71
+.loc 7 151 0
 .word 0xf94043a0
 .word 0xaa1703e1
 .word 0xf9404ba2
 .word 0xaa1503e3
-bl _p_93
-.loc 8 153 0
+bl _p_73
+.loc 7 153 0
 .word 0xf94037a0
 .word 0xb98073a1
 .word 0xaa1803e2
 .word 0xb98063a3
 .word 0xf9404ba4
 .word 0xaa1503e5
-bl _p_94
-.loc 8 158 0
+bl _p_74
+.loc 7 158 0
 .word 0x93407ec0
 .word 0xd2800081
 .word 0x9b017c00
@@ -13377,14 +10875,14 @@ bl _p_94
 .word 0x4b160021
 .word 0xf9404ba2
 .word 0xaa1503e3
-bl _p_95
+bl _p_75
 .word 0xd2800000
 .word 0x2a0003e0
 .word 0xf90043a0
 .word 0xd2800000
 .word 0x2a0003e0
 .word 0xf9004ba0
-.loc 8 162 0
+.loc 7 162 0
 .word 0xa94153b3
 .word 0xa9425bb5
 .word 0xa94363b7
@@ -13392,16 +10890,16 @@ bl _p_95
 .word 0x910003bf
 .word 0xa8cb7bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_70:
+Lme_55:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigIntegerCalculator_Multiply_uint___uint
 System_Numerics_BigIntegerCalculator_Multiply_uint___uint:
-.loc 8 173 0 prologue_end
+.loc 7 173 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xa9015bb5
@@ -13410,9 +10908,9 @@ System_Numerics_BigIntegerCalculator_Multiply_uint___uint:
 .word 0xaa0003f9
 .word 0xaa0103fa
 .word 0xd2800018
-.loc 8 174 0
+.loc 7 174 0
 .word 0xd2800017
-.loc 8 175 0
+.loc 7 175 0
 .word 0xb9801b20
 .word 0x11000401
 
@@ -13422,7 +10920,7 @@ ldr x0, [x16, #688]
 bl _p_35
 .word 0xaa0003f6
 .word 0x1400001a
-.loc 8 179 0
+.loc 7 179 0
 .word 0x93407f00
 .word 0xb9801b21
 .word 0xeb00003f
@@ -13436,7 +10934,7 @@ bl _p_35
 .word 0x2a1a03e1
 .word 0x9b017c00
 .word 0x8b170015
-.loc 8 180 0
+.loc 7 180 0
 .word 0xaa1503e1
 .word 0x93407f00
 .word 0xb9801ac2
@@ -13447,14 +10945,14 @@ bl _p_35
 .word 0x8b0002c0
 .word 0x91008000
 .word 0xb9000001
-.loc 8 181 0
+.loc 7 181 0
 .word 0xd360feb7
-.loc 8 177 0
+.loc 7 177 0
 .word 0x11000718
 .word 0xb9801b20
 .word 0x6b00031f
 .word 0x54fffcab
-.loc 8 183 0
+.loc 7 183 0
 .word 0xaa1703e1
 .word 0x93407f00
 .word 0xb9801ac2
@@ -13465,7 +10963,7 @@ bl _p_35
 .word 0x8b0002c0
 .word 0x91008000
 .word 0xb9000001
-.loc 8 185 0
+.loc 7 185 0
 .word 0xaa1603e0
 .word 0xa9415bb5
 .word 0xa94263b7
@@ -13473,16 +10971,16 @@ bl _p_35
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_71:
+Lme_56:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigIntegerCalculator_Multiply_uint___uint__
 System_Numerics_BigIntegerCalculator_Multiply_uint___uint__:
-.loc 8 198 0 prologue_end
+.loc 7 198 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xa9015bb5
@@ -13499,7 +10997,7 @@ add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #688]
 bl _p_35
 .word 0xaa0003f8
-.loc 8 200 0
+.loc 7 200 0
 .word 0xaa1903f7
 .word 0xb4000079
 .word 0xb9801ae0
@@ -13548,21 +11046,21 @@ bl _p_35
 .word 0xd37ef400
 .word 0x8b0002a0
 .word 0x91008015
-.loc 8 202 0
+.loc 7 202 0
 .word 0xb9801b21
 .word 0xb9801b43
 .word 0xb9801b05
 .word 0xaa1703e0
 .word 0xaa1603e2
 .word 0xaa1503e4
-bl _p_96
+bl _p_76
 .word 0xd2800000
 .word 0x2a0003f7
 .word 0xd2800000
 .word 0x2a0003f6
 .word 0xd2800000
 .word 0x2a0003f5
-.loc 8 207 0
+.loc 7 207 0
 .word 0xaa1803e0
 .word 0xa9415bb5
 .word 0xa94263b7
@@ -13570,16 +11068,16 @@ bl _p_96
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_72:
+Lme_57:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigIntegerCalculator_Multiply_uint__int_uint__int_uint__int
 System_Numerics_BigIntegerCalculator_Multiply_uint__int_uint__int_uint__int:
-.loc 8 232 0 prologue_end
+.loc 7 232 0 prologue_end
 .word 0xa9b17bfd
 .word 0x910003fd
 .word 0xa90153b3
@@ -13595,19 +11093,19 @@ System_Numerics_BigIntegerCalculator_Multiply_uint__int_uint__int_uint__int:
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #768]
+ldr x0, [x16, #752]
 .word 0xb9800000
 .word 0x6b00031f
 .word 0x5400064a
-.loc 8 241 0
+.loc 7 241 0
 .word 0xd280001a
 .word 0x1400002d
-.loc 8 243 0
+.loc 7 243 0
 .word 0xd2800014
-.loc 8 244 0
+.loc 7 244 0
 .word 0xd2800013
 .word 0x14000020
-.loc 8 246 0
+.loc 7 246 0
 .word 0xb130340
 .word 0x93407c00
 .word 0xd2800081
@@ -13630,7 +11128,7 @@ ldr x0, [x16, #768]
 .word 0x2a0203e2
 .word 0x9b027c21
 .word 0x8b010014
-.loc 8 248 0
+.loc 7 248 0
 .word 0xb130340
 .word 0x93407c00
 .word 0xd2800081
@@ -13638,13 +11136,13 @@ ldr x0, [x16, #768]
 .word 0x8b000320
 .word 0xaa1403e1
 .word 0xb9000001
-.loc 8 249 0
+.loc 7 249 0
 .word 0xd360fe94
-.loc 8 244 0
+.loc 7 244 0
 .word 0x11000673
 .word 0x6b16027f
 .word 0x54fffc0b
-.loc 8 251 0
+.loc 7 251 0
 .word 0xb160340
 .word 0x93407c00
 .word 0xd2800081
@@ -13652,88 +11150,88 @@ ldr x0, [x16, #768]
 .word 0x8b000320
 .word 0xaa1403e1
 .word 0xb9000001
-.loc 8 241 0
+.loc 7 241 0
 .word 0x1100075a
 .word 0x6b18035f
 .word 0x54fffa6b
 .word 0x1400012e
-.loc 8 268 0
+.loc 7 268 0
 .word 0x13017f14
-.loc 8 269 0
+.loc 7 269 0
 .word 0xaa1403e0
 .word 0x531f7813
-.loc 8 272 0
+.loc 7 272 0
 .word 0xf9002fb5
-.loc 8 273 0
+.loc 7 273 0
 .word 0xb90063b4
-.loc 8 274 0
+.loc 7 274 0
 .word 0x93407e80
 .word 0xd2800081
 .word 0x9b017c00
 .word 0x8b0002a0
 .word 0xf90037a0
-.loc 8 275 0
+.loc 7 275 0
 .word 0x4b1402da
-.loc 8 278 0
+.loc 7 278 0
 .word 0xaa1703f6
-.loc 8 279 0
+.loc 7 279 0
 .word 0xb90073b4
-.loc 8 280 0
+.loc 7 280 0
 .word 0x93407e80
 .word 0xd2800081
 .word 0x9b017c00
 .word 0x8b0002e0
 .word 0xf9003fa0
-.loc 8 281 0
+.loc 7 281 0
 .word 0x4b140300
 .word 0xb90083a0
-.loc 8 284 0
+.loc 7 284 0
 .word 0xaa1903f8
-.loc 8 285 0
+.loc 7 285 0
 .word 0xb9008bb3
-.loc 8 286 0
+.loc 7 286 0
 .word 0x93407e60
 .word 0xd2800081
 .word 0x9b017c00
 .word 0x8b000320
 .word 0xf9004ba0
-.loc 8 287 0
+.loc 7 287 0
 .word 0xb98053a0
 .word 0x4b130000
 .word 0xb9009ba0
-.loc 8 290 0
+.loc 7 290 0
 .word 0xaa1503e0
 .word 0xaa1403e1
 .word 0xaa1703e2
 .word 0xaa1403e3
 .word 0xaa1903e4
 .word 0xaa1303e5
-bl _p_96
-.loc 8 295 0
+bl _p_76
+.loc 7 295 0
 .word 0xf94037a0
 .word 0xaa1a03e1
 .word 0xf9403fa2
 .word 0xb98083a3
 .word 0xf9404ba4
 .word 0xb9809ba5
-bl _p_96
-.loc 8 299 0
+bl _p_76
+.loc 7 299 0
 .word 0x11000757
-.loc 8 300 0
+.loc 7 300 0
 .word 0xb98083a0
 .word 0x11000415
-.loc 8 301 0
+.loc 7 301 0
 .word 0xb1502f3
-.loc 8 303 0
+.loc 7 303 0
 .word 0xaa1303e0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x1, [x16, #760]
+ldr x1, [x16, #744]
 .word 0xb9800021
 .word 0x6b01001f
 .word 0x54000f0a
-.loc 8 305 0
+.loc 7 305 0
 .word 0x2a1703e0
 .word 0xd2800081
 .word 0x93407c21
@@ -13761,7 +11259,7 @@ bl _p_27
 .word 0xf9005fa0
 .word 0xf9405fa0
 .word 0xf90057a0
-.loc 8 306 0
+.loc 7 306 0
 .word 0x2a1503e0
 .word 0xd2800081
 .word 0x93407c21
@@ -13789,7 +11287,7 @@ bl _p_27
 .word 0xf9006ba0
 .word 0xf9406ba0
 .word 0xf90067a0
-.loc 8 307 0
+.loc 7 307 0
 .word 0x2a1303e0
 .word 0xd2800081
 .word 0x93407c21
@@ -13817,39 +11315,39 @@ bl _p_27
 .word 0xf90073a0
 .word 0xf94073a0
 .word 0xf9006fa0
-.loc 8 310 0
+.loc 7 310 0
 .word 0xf94037a0
 .word 0xaa1a03e1
 .word 0xf9402fa2
 .word 0xb98063a3
 .word 0xf94057a4
 .word 0xaa1703e5
-bl _p_85
-.loc 8 315 0
+bl _p_71
+.loc 7 315 0
 .word 0xf9403fa0
 .word 0xb98083a1
 .word 0xaa1603e2
 .word 0xb98073a3
 .word 0xf94067a4
 .word 0xaa1503e5
-bl _p_85
-.loc 8 320 0
+bl _p_71
+.loc 7 320 0
 .word 0xf94057a0
 .word 0xaa1703e1
 .word 0xf94067a2
 .word 0xaa1503e3
 .word 0xf94073a4
 .word 0xaa1303e5
-bl _p_96
-.loc 8 323 0
+bl _p_76
+.loc 7 323 0
 .word 0xf9404ba0
 .word 0xb9809ba1
 .word 0xaa1803e2
 .word 0xb9808ba3
 .word 0xf94073a4
 .word 0xaa1303e5
-bl _p_94
-.loc 8 328 0
+bl _p_74
+.loc 7 328 0
 .word 0x93407e80
 .word 0xd2800081
 .word 0x9b017c00
@@ -13858,10 +11356,10 @@ bl _p_94
 .word 0x4b140021
 .word 0xf94073a2
 .word 0xaa1303e3
-bl _p_95
-.loc 8 329 0
+bl _p_75
+.loc 7 329 0
 .word 0x14000080
-.loc 8 332 0
+.loc 7 332 0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
@@ -13890,7 +11388,7 @@ bl _p_35
 .word 0x8b010000
 .word 0x91008000
 .word 0xf90057a0
-.loc 8 333 0
+.loc 7 333 0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
@@ -13919,7 +11417,7 @@ bl _p_35
 .word 0x8b010000
 .word 0x91008000
 .word 0xf9005fa0
-.loc 8 334 0
+.loc 7 334 0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
@@ -13948,39 +11446,39 @@ bl _p_35
 .word 0x8b010000
 .word 0x91008000
 .word 0xf90067a0
-.loc 8 337 0
+.loc 7 337 0
 .word 0xf94037a0
 .word 0xaa1a03e1
 .word 0xf9402fa2
 .word 0xb98063a3
 .word 0xf94057a4
 .word 0xaa1703e5
-bl _p_85
-.loc 8 342 0
+bl _p_71
+.loc 7 342 0
 .word 0xf9403fa0
 .word 0xb98083a1
 .word 0xaa1603e2
 .word 0xb98073a3
 .word 0xf9405fa4
 .word 0xaa1503e5
-bl _p_85
-.loc 8 347 0
+bl _p_71
+.loc 7 347 0
 .word 0xf94057a0
 .word 0xaa1703e1
 .word 0xf9405fa2
 .word 0xaa1503e3
 .word 0xf94067a4
 .word 0xaa1303e5
-bl _p_96
-.loc 8 350 0
+bl _p_76
+.loc 7 350 0
 .word 0xf9404ba0
 .word 0xb9809ba1
 .word 0xaa1803e2
 .word 0xb9808ba3
 .word 0xf94067a4
 .word 0xaa1303e5
-bl _p_94
-.loc 8 355 0
+bl _p_74
+.loc 7 355 0
 .word 0x93407e80
 .word 0xd2800081
 .word 0x9b017c00
@@ -13989,7 +11487,7 @@ bl _p_94
 .word 0x4b140021
 .word 0xf94067a2
 .word 0xaa1303e3
-bl _p_95
+bl _p_75
 .word 0xd2800000
 .word 0x2a0003e0
 .word 0xf90057a0
@@ -13999,7 +11497,7 @@ bl _p_95
 .word 0xd2800000
 .word 0x2a0003e0
 .word 0xf90067a0
-.loc 8 359 0
+.loc 7 359 0
 .word 0xa94153b3
 .word 0xa9425bb5
 .word 0xa94363b7
@@ -14007,16 +11505,16 @@ bl _p_95
 .word 0x910003bf
 .word 0xa8cf7bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_73:
+Lme_58:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigIntegerCalculator_SubtractCore_uint__int_uint__int_uint__int
 System_Numerics_BigIntegerCalculator_SubtractCore_uint__int_uint__int_uint__int:
-.loc 8 379 0 prologue_end
+.loc 7 379 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
 .word 0xa90153b3
@@ -14030,10 +11528,10 @@ System_Numerics_BigIntegerCalculator_SubtractCore_uint__int_uint__int_uint__int:
 .word 0xaa0403f9
 .word 0xaa0503fa
 .word 0xd2800014
-.loc 8 380 0
+.loc 7 380 0
 .word 0xd2800013
 .word 0x1400001e
-.loc 8 384 0
+.loc 7 384 0
 .word 0x93407e80
 .word 0xd2800081
 .word 0x9b017c00
@@ -14055,21 +11553,21 @@ System_Numerics_BigIntegerCalculator_SubtractCore_uint__int_uint__int_uint__int:
 .word 0xb9400021
 .word 0x2a0103e1
 .word 0xcb010013
-.loc 8 385 0
+.loc 7 385 0
 .word 0x93407e80
 .word 0xd2800081
 .word 0x9b017c00
 .word 0x8b000320
 .word 0xaa1303e1
 .word 0xb9000001
-.loc 8 386 0
+.loc 7 386 0
 .word 0x9360fe73
-.loc 8 382 0
+.loc 7 382 0
 .word 0x11000694
 .word 0x6b18029f
 .word 0x54fffc4b
 .word 0x14000017
-.loc 8 390 0
+.loc 7 390 0
 .word 0x93407e80
 .word 0xd2800081
 .word 0x9b017c00
@@ -14084,21 +11582,21 @@ System_Numerics_BigIntegerCalculator_SubtractCore_uint__int_uint__int_uint__int:
 .word 0xb9400021
 .word 0x2a0103e1
 .word 0xcb010018
-.loc 8 391 0
+.loc 7 391 0
 .word 0x93407e80
 .word 0xd2800081
 .word 0x9b017c00
 .word 0x8b000320
 .word 0xaa1803e1
 .word 0xb9000001
-.loc 8 392 0
+.loc 7 392 0
 .word 0x9360ff13
-.loc 8 388 0
+.loc 7 388 0
 .word 0x11000694
 .word 0x6b16029f
 .word 0x54fffd2b
 .word 0x14000010
-.loc 8 396 0
+.loc 7 396 0
 .word 0x93407e80
 .word 0xd2800081
 .word 0x9b017c00
@@ -14106,21 +11604,21 @@ System_Numerics_BigIntegerCalculator_SubtractCore_uint__int_uint__int_uint__int:
 .word 0xb9400000
 .word 0x2a0003e0
 .word 0x8b130018
-.loc 8 397 0
+.loc 7 397 0
 .word 0x93407e80
 .word 0xd2800081
 .word 0x9b017c00
 .word 0x8b000320
 .word 0xaa1803e1
 .word 0xb9000001
-.loc 8 398 0
+.loc 7 398 0
 .word 0x9360ff13
-.loc 8 394 0
+.loc 7 394 0
 .word 0x11000694
 .word 0xb4000073
 .word 0x6b1a029f
 .word 0x54fffdeb
-.loc 8 400 0
+.loc 7 400 0
 .word 0xa94153b3
 .word 0xa9425bb5
 .word 0xa94363b7
@@ -14129,52 +11627,52 @@ System_Numerics_BigIntegerCalculator_SubtractCore_uint__int_uint__int_uint__int:
 .word 0xa8c57bfd
 .word 0xd65f03c0
 
-Lme_74:
+Lme_59:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigIntegerCalculator__cctor
 System_Numerics_BigIntegerCalculator__cctor:
-.loc 8 229 0 prologue_end
+.loc 7 229 0 prologue_end
 .word 0xa9bf7bfd
 .word 0x910003fd
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #776]
+ldr x0, [x16, #760]
 .word 0xd280041e
 .word 0xb900001e
-.loc 8 32 0
+.loc 7 32 0
+
+adrp x16, mono_aot_System_Numerics_got@PAGE+0
+add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
+ldr x0, [x16, #736]
+.word 0xd280041e
+.word 0xb900001e
+.loc 7 33 0
+
+adrp x16, mono_aot_System_Numerics_got@PAGE+0
+add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
+ldr x0, [x16, #744]
+.word 0xd280201e
+.word 0xb900001e
+.loc 7 211 0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #752]
 .word 0xd280041e
 .word 0xb900001e
-.loc 8 33 0
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #760]
-.word 0xd280201e
-.word 0xb900001e
-.loc 8 211 0
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #768]
-.word 0xd280041e
-.word 0xb900001e
 .word 0x910003bf
 .word 0xa8c17bfd
 .word 0xd65f03c0
 
-Lme_75:
+Lme_5a:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigNumber_TryValidateParseStyleInteger_System_Globalization_NumberStyles_System_ArgumentException_
 System_Numerics_BigNumber_TryValidateParseStyleInteger_System_Globalization_NumberStyles_System_ArgumentException_:
-.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Numerics/BigNumber.cs"
-.loc 9 308 0 prologue_end
+.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Numerics/BigNumber.cs"
+.loc 8 308 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
 .word 0xf9000bba
@@ -14185,26 +11683,26 @@ System_Numerics_BigNumber_TryValidateParseStyleInteger_System_Globalization_Numb
 .word 0xf2bffffe
 .word 0xa1e0000
 .word 0x340003e0
-.loc 9 310 0
+.loc 8 310 0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #784]
+ldr x0, [x16, #768]
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x1, [x16, #792]
-bl _p_97
+ldr x1, [x16, #776]
+bl _p_77
 .word 0xf90027a0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #800]
+ldr x0, [x16, #784]
 .word 0xd2801201
 bl _p_14
 .word 0xf94027a1
 .word 0xf90023a0
-bl _p_98
+bl _p_78
 .word 0xf94023a0
 .word 0xf9000340
 .word 0xd349ff41
@@ -14218,35 +11716,35 @@ ldr x2, [x16, #16]
 .word 0x8b020021
 .word 0xd280003e
 .word 0x3900003e
-.loc 9 311 0
+.loc 8 311 0
 .word 0xd2800000
 .word 0x14000026
-.loc 9 313 0
+.loc 8 313 0
 .word 0xb9801ba0
 .word 0xd280401e
 .word 0xa1e0000
 .word 0x34000400
-.loc 9 315 0
+.loc 8 315 0
 .word 0xb9801ba0
 .word 0x9280407e
 .word 0xf2bffffe
 .word 0xa1e0000
 .word 0x34000360
-.loc 9 317 0
+.loc 8 317 0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #808]
+ldr x0, [x16, #792]
 .word 0xf90027a0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #800]
+ldr x0, [x16, #784]
 .word 0xd2801201
 bl _p_14
 .word 0xf94027a1
 .word 0xf90023a0
-bl _p_98
+bl _p_78
 .word 0xf94023a0
 .word 0xf9000340
 .word 0xd349ff41
@@ -14260,24 +11758,24 @@ ldr x2, [x16, #16]
 .word 0x8b020021
 .word 0xd280003e
 .word 0x3900003e
-.loc 9 318 0
+.loc 8 318 0
 .word 0xd2800000
 .word 0x14000003
-.loc 9 321 0
+.loc 8 321 0
 .word 0xf900035f
-.loc 9 322 0
+.loc 8 322 0
 .word 0xd2800020
 .word 0xf9400bba
 .word 0x910003bf
 .word 0xa8c57bfd
 .word 0xd65f03c0
 
-Lme_76:
+Lme_5b:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigNumber_TryParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo_System_Numerics_BigInteger_
 System_Numerics_BigNumber_TryParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo_System_Numerics_BigInteger_:
-.loc 9 330 0 prologue_end
+.loc 8 330 0 prologue_end
 .word 0xa9b87bfd
 .word 0x910003fd
 .word 0xf9000ba0
@@ -14292,14 +11790,14 @@ System_Numerics_BigNumber_TryParseBigInteger_string_System_Globalization_NumberS
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #696]
+ldr x0, [x16, #800]
 .word 0x3980b410
 .word 0xb5000050
 bl _p_1
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #704]
+ldr x0, [x16, #696]
 .word 0xf9400001
 .word 0xf9001ba1
 .word 0xf9400400
@@ -14322,16 +11820,16 @@ ldr x2, [x16, #16]
 .word 0x8b020021
 .word 0xd280003e
 .word 0x3900003e
-.loc 9 332 0
+.loc 8 332 0
 .word 0x9101c3a1
 .word 0xb9801ba0
-bl _p_99
+bl _p_79
 .word 0x53001c00
 .word 0x340005c0
-.loc 9 335 0
+.loc 8 335 0
 .word 0x910163a8
-bl _p_100
-.loc 9 336 0
+bl _p_80
+.loc 8 336 0
 .word 0xf9402fa0
 .word 0xf90023a0
 .word 0xf94033a0
@@ -14348,50 +11846,50 @@ bl _p_100
 .word 0xf9400ba0
 .word 0xb9801ba1
 .word 0xf94013a2
-bl _p_101
+bl _p_81
 .word 0x53001c00
 .word 0x35000060
-.loc 9 337 0
+.loc 8 337 0
 .word 0xd2800000
 .word 0x14000014
-.loc 9 339 0
+.loc 8 339 0
 .word 0xb9801ba0
 .word 0xd280401e
 .word 0xa1e0000
 .word 0x34000100
-.loc 9 341 0
+.loc 8 341 0
 .word 0x910163a0
 .word 0xf94017a1
-bl _p_102
+bl _p_82
 .word 0x53001c00
 .word 0x35000140
-.loc 9 343 0
+.loc 8 343 0
 .word 0xd2800000
 .word 0x14000009
-.loc 9 348 0
+.loc 8 348 0
 .word 0x910163a0
 .word 0xf94017a1
-bl _p_103
+bl _p_83
 .word 0x53001c00
 .word 0x35000060
-.loc 9 350 0
+.loc 8 350 0
 .word 0xd2800000
 .word 0x14000002
-.loc 9 353 0
+.loc 8 353 0
 .word 0xd2800020
 .word 0x910003bf
 .word 0xa8c87bfd
 .word 0xd65f03c0
-.loc 9 333 0
+.loc 8 333 0
 .word 0xf9403ba0
 bl _p_25
 
-Lme_77:
+Lme_5c:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigNumber_ParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo
 System_Numerics_BigNumber_ParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo:
-.loc 9 359 0 prologue_end
+.loc 8 359 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
 .word 0xf90013a0
@@ -14403,37 +11901,37 @@ System_Numerics_BigNumber_ParseBigInteger_string_System_Globalization_NumberStyl
 .word 0xf90023a0
 .word 0xf94013a0
 .word 0xb40005e0
-.loc 9 363 0
+.loc 8 363 0
 .word 0x910123a1
 .word 0xb9802ba0
-bl _p_99
+bl _p_79
 .word 0x53001c00
 .word 0x340003c0
-.loc 9 366 0
+.loc 8 366 0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #696]
+ldr x0, [x16, #800]
 .word 0x3980b410
 .word 0xb5000050
 bl _p_1
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #704]
+ldr x0, [x16, #696]
 .word 0xf9400001
 .word 0xf9001fa1
 .word 0xf9400400
 .word 0xf90023a0
-.loc 9 367 0
+.loc 8 367 0
 .word 0x9100e3a3
 .word 0xf94013a0
 .word 0xb9802ba1
 .word 0xf9401ba2
-bl _p_104
+bl _p_84
 .word 0x53001c00
 .word 0x34000180
-.loc 9 371 0
+.loc 8 371 0
 .word 0xf9401fa0
 .word 0xf9000ba0
 .word 0xf94023a0
@@ -14443,18 +11941,18 @@ bl _p_104
 .word 0x910003bf
 .word 0xa8c57bfd
 .word 0xd65f03c0
-.loc 9 364 0
+.loc 8 364 0
 .word 0xf94027a0
 bl _p_25
-.loc 9 369 0
+.loc 8 369 0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #0]
-.word 0xd280ca41
+.word 0xd280ba01
 bl _p_24
 .word 0xaa0003e1
-.word 0xd2801760
+.word 0xd28013c0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_25
@@ -14462,21 +11960,21 @@ bl _p_25
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #0]
-.loc 9 360 0
-.word 0xd2804461
+.loc 8 360 0
+.word 0xd2803421
 bl _p_24
 .word 0xaa0003e1
-.word 0xd2801120
+.word 0xd2800d80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_25
 
-Lme_78:
+Lme_5d:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigNumber_HexNumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_
 System_Numerics_BigNumber_HexNumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_:
-.loc 9 376 0 prologue_end
+.loc 8 376 0 prologue_end
 .word 0xa9b87bfd
 .word 0x910003fd
 .word 0xa90153b3
@@ -14494,10 +11992,10 @@ System_Numerics_BigNumber_HexNumberToBigInteger_System_Numerics_BigNumber_BigNum
 .word 0xb9802021
 .word 0xb010000
 .word 0x35000060
-.loc 9 377 0
+.loc 8 377 0
 .word 0xd2800000
 .word 0x1400008a
-.loc 9 379 0
+.loc 8 379 0
 .word 0xf9400321
 .word 0xaa0103e0
 .word 0xf940001e
@@ -14505,7 +12003,7 @@ System_Numerics_BigNumber_HexNumberToBigInteger_System_Numerics_BigNumber_BigNum
 .word 0xb9802021
 .word 0xb010000
 .word 0x51000418
-.loc 9 380 0
+.loc 8 380 0
 .word 0xaa1803e1
 .word 0x531f7c20
 .word 0xb010000
@@ -14519,26 +12017,26 @@ System_Numerics_BigNumber_HexNumberToBigInteger_System_Numerics_BigNumber_BigNum
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #728]
+ldr x0, [x16, #720]
 bl _p_35
 .word 0xaa0003f7
-.loc 9 382 0
+.loc 8 382 0
 .word 0xd2800016
-.loc 9 383 0
+.loc 8 383 0
 .word 0xd2800015
-.loc 9 384 0
+.loc 8 384 0
 .word 0xd2800014
-.loc 9 391 0
+.loc 8 391 0
 .word 0x51000713
 .word 0x1400004f
-.loc 9 393 0
+.loc 8 393 0
 .word 0xf9400322
 .word 0xaa0203e0
 .word 0xaa1303e1
 .word 0xf940005e
-bl _p_105
+bl _p_85
 .word 0x53003c18
-.loc 9 396 0
+.loc 8 396 0
 .word 0xaa1803e0
 .word 0xd280061e
 .word 0x6b1e001f
@@ -14546,42 +12044,42 @@ bl _p_105
 .word 0xd280073e
 .word 0x6b1e031f
 .word 0x5400008c
-.loc 9 398 0
+.loc 8 398 0
 .word 0x5100c300
 .word 0x53001c18
-.loc 9 399 0
+.loc 8 399 0
 .word 0x14000010
-.loc 9 400 0
+.loc 8 400 0
 .word 0xd280083e
 .word 0x6b1e031f
 .word 0x5400012b
 .word 0xd28008de
 .word 0x6b1e031f
 .word 0x540000cc
-.loc 9 402 0
+.loc 8 402 0
 .word 0x928006de
 .word 0xf2bffffe
 .word 0xb1e0300
 .word 0x53001c18
-.loc 9 403 0
+.loc 8 403 0
 .word 0x14000005
-.loc 9 407 0
+.loc 8 407 0
 .word 0x92800ade
 .word 0xf2bffffe
 .word 0xb1e0300
 .word 0x53001c18
-.loc 9 409 0
+.loc 8 409 0
 .word 0x350000f3
 .word 0xd280011e
 .word 0xa1e0300
 .word 0xd280011e
 .word 0x6b1e001f
 .word 0x54000041
-.loc 9 410 0
+.loc 8 410 0
 .word 0xd2800035
-.loc 9 412 0
+.loc 8 412 0
 .word 0x340002b6
-.loc 9 414 0
+.loc 8 414 0
 .word 0x93407e80
 .word 0xb9801ae1
 .word 0xeb00003f
@@ -14600,11 +12098,11 @@ bl _p_105
 .word 0x8b0002e0
 .word 0x91008000
 .word 0x39000001
-.loc 9 415 0
+.loc 8 415 0
 .word 0x11000694
-.loc 9 416 0
+.loc 8 416 0
 .word 0x14000011
-.loc 9 419 0
+.loc 8 419 0
 .word 0xf9003fb7
 .word 0xaa1403fa
 .word 0x35000055
@@ -14621,22 +12119,22 @@ bl _p_105
 .word 0x8b010000
 .word 0x91008000
 .word 0x39000018
-.loc 9 421 0
+.loc 8 421 0
 .word 0x6b1f02df
 .word 0x9a9f17f6
-.loc 9 391 0
+.loc 8 391 0
 .word 0x51000673
 .word 0x9280001e
 .word 0xf2bffffe
 .word 0x6b1e027f
 .word 0x54fff5ec
-.loc 9 424 0
+.loc 8 424 0
 .word 0xd2800000
 .word 0xf90037a0
 .word 0xf9003ba0
 .word 0x9101a3a0
 .word 0xaa1703e1
-bl _p_106
+bl _p_86
 .word 0xf94037a0
 .word 0xf9002fa0
 .word 0xf9403ba0
@@ -14659,7 +12157,7 @@ ldr x2, [x16, #16]
 .word 0x8b020021
 .word 0xd280003e
 .word 0x3900003e
-.loc 9 425 0
+.loc 8 425 0
 .word 0xd2800020
 .word 0xa94153b3
 .word 0xa9425bb5
@@ -14668,16 +12166,16 @@ ldr x2, [x16, #16]
 .word 0x910003bf
 .word 0xa8c87bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_79:
+Lme_5e:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigNumber_NumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_
 System_Numerics_BigNumber_NumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_:
-.loc 9 430 0 prologue_end
+.loc 8 430 0 prologue_end
 .word 0xa9ad7bfd
 .word 0x910003fd
 .word 0xa90163b7
@@ -14685,21 +12183,21 @@ System_Numerics_BigNumber_NumberToBigInteger_System_Numerics_BigNumber_BigNumber
 .word 0xaa0003f9
 .word 0xaa0103fa
 .word 0xb9800f38
-.loc 9 431 0
+.loc 8 431 0
 .word 0xd2800017
-.loc 9 433 0
+.loc 8 433 0
 .word 0x910383a0
 .word 0xf9007ba0
 .word 0xd2800140
-bl _p_78
+bl _p_87
 .word 0xf9407bbe
 .word 0xf90003c0
 .word 0xf90007c1
-.loc 9 434 0
+.loc 8 434 0
 .word 0x910283a0
 .word 0xf9007ba0
 .word 0xd2800000
-bl _p_78
+bl _p_87
 .word 0xf9407bbe
 .word 0xf90003c0
 .word 0xf90007c1
@@ -14720,7 +12218,7 @@ ldr x2, [x16, #16]
 .word 0xd280003e
 .word 0x3900003e
 .word 0x14000050
-.loc 9 437 0
+.loc 8 437 0
 .word 0xf9400340
 .word 0xf9004ba0
 .word 0xf9400740
@@ -14731,7 +12229,7 @@ ldr x2, [x16, #16]
 .word 0xf9404fa1
 .word 0xf94073a2
 .word 0xf94077a3
-bl _p_107
+bl _p_88
 .word 0xf9407bbe
 .word 0xf90003c0
 .word 0xf90007c1
@@ -14751,15 +12249,15 @@ ldr x2, [x16, #16]
 .word 0x8b020021
 .word 0xd280003e
 .word 0x3900003e
-.loc 9 438 0
+.loc 8 438 0
 .word 0xf9400322
 .word 0xaa0203e0
 .word 0xaa1703e1
 .word 0xf940005e
-bl _p_105
+bl _p_85
 .word 0x53003c00
 .word 0x34000580
-.loc 9 440 0
+.loc 8 440 0
 .word 0xf9400340
 .word 0xf9003ba0
 .word 0xf9400740
@@ -14769,12 +12267,12 @@ bl _p_105
 .word 0x110006f7
 .word 0xaa0203e0
 .word 0xf940005e
-bl _p_105
+bl _p_85
 .word 0x53003c00
 .word 0x5100c000
 .word 0x910183a1
 .word 0xf9007ba1
-bl _p_78
+bl _p_87
 .word 0xf9407bbe
 .word 0xf90003c0
 .word 0xf90007c1
@@ -14784,7 +12282,7 @@ bl _p_78
 .word 0xf9403fa1
 .word 0xf94033a2
 .word 0xf94037a3
-bl _p_108
+bl _p_89
 .word 0xf9407bbe
 .word 0xf90003c0
 .word 0xf90007c1
@@ -14804,38 +12302,38 @@ ldr x2, [x16, #16]
 .word 0x8b020021
 .word 0xd280003e
 .word 0x3900003e
-.loc 9 435 0
+.loc 8 435 0
 .word 0x51000701
 .word 0xaa0103e0
 .word 0xaa0103f8
 .word 0x6b1f001f
 .word 0x54fff5aa
 .word 0x1400000d
-.loc 9 445 0
+.loc 8 445 0
 .word 0xf9400322
 .word 0xaa1703e1
 .word 0x110006f7
 .word 0xaa0203e0
 .word 0xf940005e
-bl _p_105
+bl _p_85
 .word 0x53003c00
 .word 0xd280061e
 .word 0x6b1e001f
 .word 0x54000060
 .word 0xd2800000
 .word 0x1400003e
-.loc 9 443 0
+.loc 8 443 0
 .word 0xf9400322
 .word 0xaa0203e0
 .word 0xaa1703e1
 .word 0xf940005e
-bl _p_105
+bl _p_85
 .word 0x53003c00
 .word 0x35fffdc0
-.loc 9 447 0
+.loc 8 447 0
 .word 0x39404320
 .word 0x34000680
-.loc 9 449 0
+.loc 8 449 0
 .word 0xf9400340
 .word 0xf90023a0
 .word 0xf9400740
@@ -14889,7 +12387,7 @@ ldr x2, [x16, #16]
 .word 0x8b020021
 .word 0xd280003e
 .word 0x3900003e
-.loc 9 451 0
+.loc 8 451 0
 .word 0xd2800020
 .word 0xa94163b7
 .word 0xa9426bb9
@@ -14897,12 +12395,12 @@ ldr x2, [x16, #16]
 .word 0xa8d37bfd
 .word 0xd65f03c0
 
-Lme_7a:
+Lme_5f:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigNumber_ParseFormatSpecifier_string_int_
 System_Numerics_BigNumber_ParseFormatSpecifier_string_int_:
-.loc 9 457 0 prologue_end
+.loc 8 457 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xa9015fb6
@@ -14913,7 +12411,7 @@ System_Numerics_BigNumber_ParseFormatSpecifier_string_int_:
 .word 0x9280001e
 .word 0xf2bffffe
 .word 0xb900001e
-.loc 9 458 0
+.loc 8 458 0
 .word 0xaa1903f8
 .word 0xb40000b9
 .word 0xb9801300
@@ -14922,12 +12420,12 @@ System_Numerics_BigNumber_ParseFormatSpecifier_string_int_:
 .word 0x14000002
 .word 0xd2800038
 .word 0x34000078
-.loc 9 460 0
+.loc 8 460 0
 .word 0xd2800a40
 .word 0x1400007c
-.loc 9 463 0
+.loc 8 463 0
 .word 0xd2800018
-.loc 9 464 0
+.loc 8 464 0
 .word 0xd2800000
 .word 0x93407c00
 .word 0xb9801321
@@ -14937,7 +12435,7 @@ System_Numerics_BigNumber_ParseFormatSpecifier_string_int_:
 .word 0xd37ff800
 .word 0x8b190000
 .word 0x79402817
-.loc 9 465 0
+.loc 8 465 0
 .word 0xaa1703e0
 .word 0xd280083e
 .word 0x6b1e001f
@@ -14951,12 +12449,12 @@ System_Numerics_BigNumber_ParseFormatSpecifier_string_int_:
 .word 0xd2800f5e
 .word 0x6b1e02ff
 .word 0x54000c8c
-.loc 9 467 0
+.loc 8 467 0
 .word 0x11000718
-.loc 9 468 0
+.loc 8 468 0
 .word 0x92800016
 .word 0xf2bffff6
-.loc 9 470 0
+.loc 8 470 0
 .word 0xb9801320
 .word 0x6b00031f
 .word 0x540009ca
@@ -14982,7 +12480,7 @@ System_Numerics_BigNumber_ParseFormatSpecifier_string_int_:
 .word 0xd280073e
 .word 0x6b1e001f
 .word 0x5400070c
-.loc 9 472 0
+.loc 8 472 0
 .word 0xaa1803e0
 .word 0x11000718
 .word 0x93407c00
@@ -14995,7 +12493,7 @@ System_Numerics_BigNumber_ParseFormatSpecifier_string_int_:
 .word 0x79402800
 .word 0x5100c016
 .word 0x14000013
-.loc 9 475 0
+.loc 8 475 0
 .word 0xd280015e
 .word 0x1b1e7ec0
 .word 0xaa1803e1
@@ -15010,12 +12508,12 @@ System_Numerics_BigNumber_ParseFormatSpecifier_string_int_:
 .word 0x79402821
 .word 0x5100c021
 .word 0xb010016
-.loc 9 476 0
+.loc 8 476 0
 .word 0xaa1603e0
 .word 0xd280015e
 .word 0x6b1e001f
 .word 0x5400034a
-.loc 9 473 0
+.loc 8 473 0
 .word 0xb9801320
 .word 0x6b00031f
 .word 0x540002ea
@@ -15041,7 +12539,7 @@ System_Numerics_BigNumber_ParseFormatSpecifier_string_int_:
 .word 0xd280073e
 .word 0x6b1e001f
 .word 0x54fffacd
-.loc 9 480 0
+.loc 8 480 0
 .word 0xb9801320
 .word 0x6b00031f
 .word 0x5400014a
@@ -15054,29 +12552,29 @@ System_Numerics_BigNumber_ParseFormatSpecifier_string_int_:
 .word 0x8b190000
 .word 0x79402800
 .word 0x350000a0
-.loc 9 482 0
+.loc 8 482 0
 .word 0xf9401ba0
 .word 0xb9000016
-.loc 9 483 0
+.loc 8 483 0
 .word 0xaa1703e0
 .word 0x14000002
-.loc 9 486 0
+.loc 8 486 0
 .word 0xd2800000
 .word 0xa9415fb6
 .word 0xa94267b8
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_7b:
+Lme_60:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigNumber_FormatBigIntegerToHexString_System_Numerics_BigInteger_char_int_System_Globalization_NumberFormatInfo
 System_Numerics_BigNumber_FormatBigIntegerToHexString_System_Numerics_BigInteger_char_int_System_Globalization_NumberFormatInfo:
-.loc 9 491 0 prologue_end
+.loc 8 491 0 prologue_end
 .word 0xa9b47bfd
 .word 0x910003fd
 .word 0xa90157b4
@@ -15096,25 +12594,25 @@ ldr x0, [x16, #216]
 .word 0xd2800601
 bl _p_14
 .word 0xf9005ba0
-bl _p_109
+bl _p_90
 .word 0xf9405ba0
 .word 0xaa0003f7
-.loc 9 492 0
+.loc 8 492 0
 .word 0x910103a0
-bl _p_110
+bl _p_91
 .word 0xaa0003f6
-.loc 9 494 0
+.loc 8 494 0
 .word 0xb9801ac0
 .word 0x51000415
-.loc 9 496 0
+.loc 8 496 0
 .word 0xaa1503e0
 .word 0x9280001e
 .word 0xf2bffffe
 .word 0x6b1e001f
 .word 0x5400078d
-.loc 9 501 0
+.loc 8 501 0
 .word 0xd2800014
-.loc 9 502 0
+.loc 8 502 0
 .word 0x93407ea0
 .word 0xb9801ac1
 .word 0xeb00003f
@@ -15124,25 +12622,25 @@ bl _p_110
 .word 0x91008000
 .word 0x39400000
 .word 0x3901a3a0
-.loc 9 503 0
+.loc 8 503 0
 .word 0x3941a3a0
 .word 0xd2801efe
 .word 0x6b1e001f
 .word 0x540000ad
-.loc 9 505 0
+.loc 8 505 0
 .word 0x3941a3a0
 .word 0x5103c000
 .word 0x3901a3a0
-.loc 9 506 0
+.loc 8 506 0
 .word 0xd2800034
-.loc 9 508 0
+.loc 8 508 0
 .word 0x3941a3a0
 .word 0xd280011e
 .word 0x6b1e001f
 .word 0x9a9fa7e0
 .word 0x2a140000
 .word 0x34000480
-.loc 9 512 0
+.loc 8 512 0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
@@ -15159,12 +12657,12 @@ ldr x0, [x16, #208]
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #816]
+ldr x0, [x16, #808]
 .word 0xf9005fa0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #824]
+ldr x0, [x16, #816]
 .word 0xd2800241
 bl _p_14
 .word 0xaa0003e2
@@ -15173,23 +12671,23 @@ bl _p_14
 .word 0x79002058
 bl _p_2
 .word 0xaa0003f4
-.loc 9 513 0
+.loc 8 513 0
 .word 0x9101a3a0
 .word 0xaa1403e1
 .word 0xaa1a03e2
-bl _p_111
+bl _p_92
 .word 0xaa0003e1
 .word 0xaa1703e0
 .word 0xf94002fe
 bl _p_18
-.loc 9 514 0
+.loc 8 514 0
 .word 0x510006b5
-.loc 9 517 0
+.loc 8 517 0
 .word 0x9280001e
 .word 0xf2bffffe
 .word 0x6b1e02bf
 .word 0x5400060d
-.loc 9 519 0
+.loc 8 519 0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
@@ -15206,12 +12704,12 @@ ldr x0, [x16, #208]
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #832]
+ldr x0, [x16, #824]
 .word 0xf9005fa0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #824]
+ldr x0, [x16, #816]
 .word 0xd2800241
 bl _p_14
 .word 0xaa0003e2
@@ -15221,7 +12719,7 @@ bl _p_14
 bl _p_2
 .word 0xaa0003f4
 .word 0x14000011
-.loc 9 522 0
+.loc 8 522 0
 .word 0xaa1503e0
 .word 0x510006b5
 .word 0x93407c00
@@ -15233,17 +12731,17 @@ bl _p_2
 .word 0x91008000
 .word 0xaa1403e1
 .word 0xaa1a03e2
-bl _p_111
+bl _p_92
 .word 0xaa0003e1
 .word 0xaa1703e0
 .word 0xf94002fe
 bl _p_18
-.loc 9 520 0
+.loc 8 520 0
 .word 0x9280001e
 .word 0xf2bffffe
 .word 0x6b1e02bf
 .word 0x54fffdac
-.loc 9 525 0
+.loc 8 525 0
 .word 0xb98053a0
 .word 0x6b1f001f
 .word 0x5400054d
@@ -15254,7 +12752,7 @@ bl _p_18
 .word 0xb98053a0
 .word 0x6b01001f
 .word 0x5400046d
-.loc 9 528 0
+.loc 8 528 0
 .word 0xf94023a0
 .word 0xf9002fa0
 .word 0xf94027a0
@@ -15270,17 +12768,17 @@ bl _p_18
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x24, [x16, #840]
+ldr x24, [x16, #832]
 .word 0x14000008
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x24, [x16, #848]
+ldr x24, [x16, #840]
 .word 0x14000004
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x24, [x16, #856]
+ldr x24, [x16, #848]
 .word 0xf94002fe
 .word 0xb98026e0
 .word 0xb98022e1
@@ -15291,8 +12789,8 @@ ldr x24, [x16, #856]
 .word 0xaa1603e1
 .word 0xaa1803e2
 .word 0xf940035e
-bl _p_112
-.loc 9 530 0
+bl _p_93
+.loc 8 530 0
 .word 0xaa1703e0
 .word 0xf94002e1
 .word 0xf9402030
@@ -15304,16 +12802,16 @@ bl _p_112
 .word 0x910003bf
 .word 0xa8cc7bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_7c:
+Lme_61:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigNumber_FormatBigInteger_System_Numerics_BigInteger_string_System_Globalization_NumberFormatInfo
 System_Numerics_BigNumber_FormatBigInteger_System_Numerics_BigInteger_string_System_Globalization_NumberFormatInfo:
-.loc 9 536 0 prologue_end
+.loc 8 536 0 prologue_end
 .word 0xa9a47bfd
 .word 0x910003fd
 .word 0xa90153b3
@@ -15331,12 +12829,12 @@ System_Numerics_BigNumber_FormatBigInteger_System_Numerics_BigInteger_string_Sys
 .word 0xf9007fbf
 .word 0xf90083bf
 .word 0xb900dbbf
-.loc 9 537 0
+.loc 8 537 0
 .word 0x910363a1
 .word 0xaa1903e0
-bl _p_113
+bl _p_94
 .word 0x53003c18
-.loc 9 538 0
+.loc 8 538 0
 .word 0xaa1803e0
 .word 0xd2800f1e
 .word 0x6b1e001f
@@ -15344,15 +12842,15 @@ bl _p_113
 .word 0xd2800b1e
 .word 0x6b1e031f
 .word 0x54000101
-.loc 9 539 0
+.loc 8 539 0
 .word 0xb980dba3
 .word 0xf9402ba0
 .word 0xf9402fa1
 .word 0xaa1803e2
 .word 0xf94033a4
-bl _p_114
+bl _p_95
 .word 0x14000210
-.loc 9 541 0
+.loc 8 541 0
 .word 0xd2800cfe
 .word 0x6b1e031f
 .word 0x54000220
@@ -15374,14 +12872,14 @@ bl _p_114
 .word 0x14000002
 .word 0xd2800037
 .word 0xaa1703f6
-.loc 9 543 0
+.loc 8 543 0
 .word 0xf9402ba0
 .word 0xf90067a0
 .word 0xf9402fa0
 .word 0xf9006ba0
 .word 0xf9406ba0
 .word 0xb5000820
-.loc 9 545 0
+.loc 8 545 0
 .word 0xd2800cfe
 .word 0x6b1e031f
 .word 0x54000140
@@ -15394,11 +12892,11 @@ bl _p_114
 .word 0xd2800a5e
 .word 0x6b1e031f
 .word 0x54000541
-.loc 9 547 0
+.loc 8 547 0
 .word 0xb980dba0
 .word 0x6b1f001f
 .word 0x5400048d
-.loc 9 548 0
+.loc 8 548 0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
@@ -15415,7 +12913,7 @@ ldr x0, [x16, #208]
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #864]
+ldr x0, [x16, #856]
 .word 0xf900d7a0
 .word 0x910363a0
 .word 0xf900dba0
@@ -15432,19 +12930,19 @@ adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x1, [x16, #208]
 .word 0xf9400021
-bl _p_115
+bl _p_96
 .word 0xaa0003e2
 .word 0xf940d3a0
 .word 0xf940d7a1
 bl _p_2
 .word 0xaa0003f9
 .word 0x14000004
-.loc 9 550 0
+.loc 8 550 0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x25, [x16, #872]
-.loc 9 552 0
+ldr x25, [x16, #864]
+.loc 8 552 0
 .word 0xf9402ba0
 .word 0xf9005fa0
 .word 0xf9402fa0
@@ -15454,19 +12952,19 @@ ldr x25, [x16, #872]
 .word 0x910383a0
 .word 0xaa1903e1
 .word 0xf94033a2
-bl _p_116
+bl _p_97
 .word 0x140001b5
-.loc 9 560 0
+.loc 8 560 0
 .word 0xf9402ba0
 .word 0xf90057a0
 .word 0xf9402fa0
 .word 0xf9005ba0
 .word 0xf9405ba0
 .word 0xb9801818
-.loc 9 564 0
+.loc 8 564 0
 .word 0xaa1803e0
 .word 0xd2800141
-bl _p_52
+bl _p_45
 .word 0x93407c00
 .word 0xd291c721
 .word 0xf2a71c61
@@ -15480,30 +12978,30 @@ bl _p_52
 .word 0x10000011
 .word 0x540035a6
 .word 0xaa0003f7
-.loc 9 565 0
+.loc 8 565 0
 .word 0x14000014
 .word 0xf9008fa0
 .word 0xf9408fa0
-.loc 9 566 0
+.loc 8 566 0
 .word 0xf90077a0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #0]
-.word 0xd280d7c1
+.word 0xd280c781
 bl _p_24
 .word 0xf900d7a0
 .word 0xf94077a0
 .word 0xf900dba0
-.word 0xd2801760
-bl _p_117
+.word 0xd28013c0
+bl _p_98
 .word 0xf940d7a1
 .word 0xf940dba2
 .word 0xf900d3a0
-bl _p_118
+bl _p_99
 .word 0xf940d3a0
 bl _p_25
-.loc 9 567 0
+.loc 8 567 0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
@@ -15511,12 +13009,12 @@ ldr x0, [x16, #688]
 .word 0xaa1703e1
 bl _p_35
 .word 0xaa0003f7
-.loc 9 568 0
+.loc 8 568 0
 .word 0xd2800015
-.loc 9 570 0
+.loc 8 570 0
 .word 0xaa1803f4
 .word 0x14000066
-.loc 9 572 0
+.loc 8 572 0
 .word 0xf9402ba0
 .word 0xf9004fa0
 .word 0xf9402fa0
@@ -15531,10 +13029,10 @@ bl _p_35
 .word 0x8b010000
 .word 0x91008000
 .word 0xb9400018
-.loc 9 573 0
+.loc 8 573 0
 .word 0xd2800013
 .word 0x1400002d
-.loc 9 576 0
+.loc 8 576 0
 .word 0x93407e60
 .word 0xb9801ae1
 .word 0xeb00003f
@@ -15548,7 +13046,7 @@ bl _p_35
 .word 0xd3607c00
 .word 0x2a1803e1
 .word 0xaa010018
-.loc 9 577 0
+.loc 8 577 0
 .word 0xd2994000
 .word 0xf2a77340
 .word 0xeb1f001f
@@ -15569,7 +13067,7 @@ bl _p_35
 .word 0x8b0002e0
 .word 0x91008000
 .word 0xb9000001
-.loc 9 578 0
+.loc 8 578 0
 .word 0xd2994000
 .word 0xf2a77340
 .word 0xeb1f001f
@@ -15580,13 +13078,13 @@ bl _p_35
 .word 0x54002a60
 .word 0x9ac00b00
 .word 0xaa0003f8
-.loc 9 573 0
+.loc 8 573 0
 .word 0x11000673
 .word 0x6b15027f
 .word 0x54fffa6b
-.loc 9 580 0
+.loc 8 580 0
 .word 0x340004f8
-.loc 9 582 0
+.loc 8 582 0
 .word 0xaa1503e0
 .word 0x110006b5
 .word 0xd2994001
@@ -15605,7 +13103,7 @@ bl _p_35
 .word 0x8b0002e0
 .word 0x91008000
 .word 0xb9000001
-.loc 9 583 0
+.loc 8 583 0
 .word 0xd297d060
 .word 0xf2a25c00
 .word 0x2a1803e1
@@ -15613,10 +13111,10 @@ bl _p_35
 .word 0xd360fc00
 .word 0x8b010000
 .word 0xd35efc18
-.loc 9 584 0
+.loc 8 584 0
 .word 0xaa1803e0
 .word 0x34000180
-.loc 9 585 0
+.loc 8 585 0
 .word 0xaa1503e0
 .word 0x110006b5
 .word 0x93407c00
@@ -15628,53 +13126,53 @@ bl _p_35
 .word 0x8b0002e0
 .word 0x91008000
 .word 0xb9000018
-.loc 9 570 0
+.loc 8 570 0
 .word 0x51000681
 .word 0xaa0103e0
 .word 0xaa0103f4
 .word 0x6b1f001f
 .word 0x54fff2ea
-.loc 9 593 0
+.loc 8 593 0
 .word 0xaa1503e0
 .word 0xd2800121
-bl _p_52
+bl _p_45
 .word 0x93407c00
 .word 0xaa0003f8
-.loc 9 594 0
+.loc 8 594 0
 .word 0x14000014
 .word 0xf90093a0
 .word 0xf94093a0
-.loc 9 595 0
+.loc 8 595 0
 .word 0xf9007ba0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #0]
-.word 0xd280d7c1
+.word 0xd280c781
 bl _p_24
 .word 0xf900d7a0
 .word 0xf9407ba0
 .word 0xf900dba0
-.word 0xd2801760
-bl _p_117
+.word 0xd28013c0
+bl _p_98
 .word 0xf940d7a1
 .word 0xf940dba2
 .word 0xf900d3a0
-bl _p_118
+bl _p_99
 .word 0xf940d3a0
 bl _p_25
-.loc 9 597 0
+.loc 8 597 0
 .word 0x34000576
-.loc 9 599 0
+.loc 8 599 0
 .word 0xb980dba0
 .word 0x6b1f001f
 .word 0x540000ad
 .word 0xb980dba0
 .word 0x6b18001f
 .word 0x5400004d
-.loc 9 600 0
+.loc 8 600 0
 .word 0xb980dbb8
-.loc 9 601 0
+.loc 8 601 0
 .word 0xf9402ba0
 .word 0xf90047a0
 .word 0xf9402fa0
@@ -15682,7 +13180,7 @@ bl _p_25
 .word 0xb9808ba0
 .word 0x6b1f001f
 .word 0x540003aa
-.loc 9 606 0
+.loc 8 606 0
 .word 0xf94033a0
 .word 0xf940001e
 .word 0xf9401800
@@ -15691,72 +13189,72 @@ bl _p_25
 .word 0x10000011
 .word 0x54001ec6
 .word 0xaa0003f8
-.loc 9 607 0
+.loc 8 607 0
 .word 0x14000014
 .word 0xf90097a0
 .word 0xf94097a0
-.loc 9 608 0
+.loc 8 608 0
 .word 0xf9007fa0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #0]
-.word 0xd280d7c1
+.word 0xd280c781
 bl _p_24
 .word 0xf900d7a0
 .word 0xf9407fa0
 .word 0xf900dba0
-.word 0xd2801760
-bl _p_117
+.word 0xd28013c0
+bl _p_98
 .word 0xf940d7a1
 .word 0xf940dba2
 .word 0xf900d3a0
-bl _p_118
+bl _p_99
 .word 0xf940d3a0
 bl _p_25
-.loc 9 618 0
+.loc 8 618 0
 .word 0xd2800020
 .word 0x2b000300
 .word 0x10000011
 .word 0x54001ba6
 .word 0xaa0003f4
-.loc 9 619 0
+.loc 8 619 0
 .word 0x14000014
 .word 0xf9009ba0
 .word 0xf9409ba0
-.loc 9 620 0
+.loc 8 620 0
 .word 0xf90083a0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x0, [x16, #0]
-.word 0xd280d7c1
+.word 0xd280c781
 bl _p_24
 .word 0xf900d7a0
 .word 0xf94083a0
 .word 0xf900dba0
-.word 0xd2801760
-bl _p_117
+.word 0xd28013c0
+bl _p_98
 .word 0xf940d7a1
 .word 0xf940dba2
 .word 0xf900d3a0
-bl _p_118
+bl _p_99
 .word 0xf940d3a0
 bl _p_25
-.loc 9 622 0
+.loc 8 622 0
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #880]
+ldr x0, [x16, #872]
 .word 0xaa1403e1
 bl _p_35
 .word 0xaa0003f4
-.loc 9 624 0
+.loc 8 624 0
 .word 0xaa1803f3
-.loc 9 626 0
+.loc 8 626 0
 .word 0xb9010bbf
 .word 0x14000030
-.loc 9 628 0
+.loc 8 628 0
 .word 0xb9810ba0
 .word 0x93407c00
 .word 0xb9801ae1
@@ -15768,10 +13266,10 @@ bl _p_35
 .word 0x91008000
 .word 0xb9400000
 .word 0xb90113a0
-.loc 9 630 0
+.loc 8 630 0
 .word 0xd280013a
 .word 0x1400001b
-.loc 9 632 0
+.loc 8 632 0
 .word 0x51000660
 .word 0xaa0003e1
 .word 0xaa0003f3
@@ -15792,20 +13290,20 @@ bl _p_35
 .word 0x8b010281
 .word 0x91008021
 .word 0x79000022
-.loc 9 633 0
+.loc 8 633 0
 .word 0xd29999a1
 .word 0xf2b99981
 .word 0x2a0003e0
 .word 0x9b017c00
 .word 0xd363fc00
 .word 0xb90113a0
-.loc 9 630 0
+.loc 8 630 0
 .word 0x51000741
 .word 0xaa0103e0
 .word 0xaa0103fa
 .word 0x6b1f001f
 .word 0x54fffc4a
-.loc 9 626 0
+.loc 8 626 0
 .word 0xb9810ba0
 .word 0x11000400
 .word 0xb9010ba0
@@ -15813,7 +13311,7 @@ bl _p_35
 .word 0xb9810ba0
 .word 0x6b01001f
 .word 0x54fff9cb
-.loc 9 636 0
+.loc 8 636 0
 .word 0x510006a0
 .word 0x93407c00
 .word 0xb9801ae1
@@ -15825,7 +13323,7 @@ bl _p_35
 .word 0x91008000
 .word 0xb940001a
 .word 0x14000019
-.loc 9 638 0
+.loc 8 638 0
 .word 0x51000661
 .word 0xaa0103e0
 .word 0xaa0103f3
@@ -15845,17 +13343,17 @@ bl _p_35
 .word 0x8b000280
 .word 0x91008000
 .word 0x79000001
-.loc 9 639 0
+.loc 8 639 0
 .word 0xd29999a1
 .word 0xf2b99981
 .word 0x2a1a03e0
 .word 0x9b017c00
 .word 0xd363fc1a
-.loc 9 636 0
+.loc 8 636 0
 .word 0x35fffd1a
-.loc 9 642 0
+.loc 8 642 0
 .word 0x35000256
-.loc 9 645 0
+.loc 8 645 0
 .word 0xf9402ba0
 .word 0xf9003fa0
 .word 0xf9402fa0
@@ -15863,9 +13361,9 @@ bl _p_35
 .word 0xb9807ba0
 .word 0x6b1f001f
 .word 0x9a9fa7fa
-.loc 9 648 0
+.loc 8 648 0
 .word 0x4b130317
-.loc 9 650 0
+.loc 8 650 0
 .word 0xaa1703e1
 .word 0xd28003a0
 .word 0xaa1a03e2
@@ -15873,12 +13371,12 @@ bl _p_35
 .word 0xf94033a4
 .word 0xaa1403e5
 .word 0xaa1303e6
-bl _p_119
+bl _p_100
 .word 0x14000049
-.loc 9 659 0
+.loc 8 659 0
 .word 0x4b13031a
 .word 0x14000011
-.loc 9 663 0
+.loc 8 663 0
 .word 0x51000661
 .word 0xaa0103e0
 .word 0xaa0103f3
@@ -15892,18 +13390,18 @@ bl _p_119
 .word 0x91008000
 .word 0xd280061e
 .word 0x7900001e
-.loc 9 664 0
+.loc 8 664 0
 .word 0xb980dba0
 .word 0x51000400
 .word 0xb900dba0
-.loc 9 660 0
+.loc 8 660 0
 .word 0xb980dba0
 .word 0x6b1f001f
 .word 0x5400008d
 .word 0xb980dba0
 .word 0x6b1a001f
 .word 0x54fffd6c
-.loc 9 666 0
+.loc 8 666 0
 .word 0xf9402ba0
 .word 0xf90037a0
 .word 0xf9402fa0
@@ -15911,17 +13409,17 @@ bl _p_119
 .word 0xb9806ba0
 .word 0x6b1f001f
 .word 0x540004aa
-.loc 9 668 0
+.loc 8 668 0
 .word 0xf94033a0
 .word 0xf940001e
 .word 0xf9401801
-.loc 9 669 0
+.loc 8 669 0
 .word 0xf940001e
 .word 0xf9401800
 .word 0xb9801000
 .word 0x5100041a
 .word 0x14000019
-.loc 9 670 0
+.loc 8 670 0
 .word 0x51000661
 .word 0xaa0103e0
 .word 0xaa0103f3
@@ -15945,18 +13443,18 @@ bl _p_119
 .word 0x8b000280
 .word 0x91008000
 .word 0x79000001
-.loc 9 669 0
+.loc 8 669 0
 .word 0x5100075a
 .word 0x9280001e
 .word 0xf2bffffe
 .word 0x6b1e035f
 .word 0x54fffcac
-.loc 9 672 0
+.loc 8 672 0
 .word 0x4b130303
 .word 0xd2800000
 .word 0xaa1403e1
 .word 0xaa1303e2
-bl _p_120
+bl _p_101
 .word 0xa94153b3
 .word 0xa9425bb5
 .word 0xa94363b7
@@ -15964,26 +13462,26 @@ bl _p_120
 .word 0x910003bf
 .word 0xa8dc7bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
-.word 0xd2801540
+.word 0xd28011a0
 .word 0xaa1103e1
 bl _p_6
-.word 0xd2801ee0
+.word 0xd2801b00
 .word 0xaa1103e1
 bl _p_6
 
-Lme_7d:
+Lme_62:
 .text
-ut_126:
+ut_99:
 add x0, x0, 16
 b System_Numerics_BigNumber_BigNumberBuffer_Create
 .text
 	.align 4
 	.no_dead_strip System_Numerics_BigNumber_BigNumberBuffer_Create
 System_Numerics_BigNumber_BigNumberBuffer_Create:
-.loc 9 298 0 prologue_end
+.loc 8 298 0 prologue_end
 .word 0xa9ba7bfd
 .word 0x910003fd
 .word 0xf9000ba8
@@ -15995,7 +13493,7 @@ System_Numerics_BigNumber_BigNumberBuffer_Create:
 .word 0xf9001ba0
 .word 0xf9001fa0
 .word 0xf90023a0
-.loc 9 299 0
+.loc 8 299 0
 .word 0x9100c3a0
 .word 0xf9002fa0
 
@@ -16005,7 +13503,7 @@ ldr x0, [x16, #216]
 .word 0xd2800601
 bl _p_14
 .word 0xf9002ba0
-bl _p_109
+bl _p_90
 .word 0xf9402ba0
 .word 0xf9402fa1
 .word 0xf9001ba0
@@ -16020,7 +13518,7 @@ ldr x2, [x16, #16]
 .word 0x8b020021
 .word 0xd280003e
 .word 0x3900003e
-.loc 9 300 0
+.loc 8 300 0
 .word 0xf9401ba0
 .word 0xf9000fa0
 .word 0xf9401fa0
@@ -16051,114 +13549,13 @@ ldr x3, [x16, #16]
 .word 0xa8c67bfd
 .word 0xd65f03c0
 
-Lme_7e:
-.text
-	.align 4
-	.no_dead_strip System_Numerics_NumericsHelpers_GetDoubleParts_double_int__int__ulong__bool_
-System_Numerics_NumericsHelpers_GetDoubleParts_double_int__int__ulong__bool_:
-.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Numerics/NumericsHelpers.cs"
-.loc 10 29 0 prologue_end
-.word 0xa9ba7bfd
-.word 0x910003fd
-.word 0xa90167b8
-.word 0xfd0013a0
-.word 0xf90017a0
-.word 0xaa0103f8
-.word 0xaa0203f9
-.word 0xf9001ba3
-.word 0xf9002bbf
-.word 0xd2800000
-.word 0xf9002ba0
-.loc 10 30 0
-.word 0xfd4013a0
-.word 0xfd002ba0
-.loc 10 32 0
-.word 0xd2800020
-.word 0xf9402ba1
-.word 0xf90027a1
-.word 0xf94027a1
-.word 0xd37efc21
-.word 0x93407c21
-.word 0xd280005e
-.word 0xa1e0021
-.word 0x4b010001
-.word 0xf94017a0
-.word 0xb9000001
-.loc 10 33 0
-.word 0xf9402ba0
-.word 0xf90023a0
-.word 0xf94023a0
-.word 0xd29fffe1
-.word 0xf2bfffe1
-.word 0xf2dfffe1
-.word 0xf2e001e1
-.word 0x8a010000
-.word 0xf9000320
-.loc 10 34 0
-.word 0xf9402ba0
-.word 0xf9001fa0
-.word 0xf9401fa0
-.word 0xd374fc00
-.word 0x93407c00
-.word 0xd280fffe
-.word 0xa1e0000
-.word 0xb9000300
-.loc 10 35 0
-.word 0xb9800300
-.word 0x35000140
-.loc 10 38 0
-.word 0xf9401ba0
-.word 0xd280003e
-.word 0x3900001e
-.loc 10 39 0
-.word 0xf9400320
-.word 0xb4000340
-.loc 10 40 0
-.word 0x9280863e
-.word 0xf2bffffe
-.word 0xb900031e
-.loc 10 41 0
-.word 0x14000016
-.loc 10 42 0
-.word 0xb9800300
-.word 0xd280fffe
-.word 0x6b1e001f
-.word 0x540000e1
-.loc 10 45 0
-.word 0xf9401ba0
-.word 0x3900001f
-.loc 10 46 0
-.word 0xd29ffffe
-.word 0xf2affffe
-.word 0xb900031e
-.loc 10 47 0
-.word 0x1400000c
-.loc 10 50 0
-.word 0xf9401ba0
-.word 0xd280003e
-.word 0x3900001e
-.loc 10 51 0
-.word 0xf9400320
-.word 0xd2800001
-.word 0xf2e00201
-.word 0xaa010000
-.word 0xf9000320
-.loc 10 52 0
-.word 0xb9800300
-.word 0x5110cc00
-.word 0xb9000300
-.loc 10 54 0
-.word 0xa94167b8
-.word 0x910003bf
-.word 0xa8c67bfd
-.word 0xd65f03c0
-
-Lme_7f:
+Lme_63:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_NumericsHelpers_GetDoubleFromParts_int_int_ulong
 System_Numerics_NumericsHelpers_GetDoubleFromParts_int_int_ulong:
-.loc 10 59 0 prologue_end
+.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Numerics/NumericsHelpers.cs"
+.loc 9 59 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xf9000bb7
@@ -16169,72 +13566,72 @@ System_Numerics_NumericsHelpers_GetDoubleFromParts_int_int_ulong:
 .word 0xf9001fbf
 .word 0x9e6703e0
 .word 0xfd001fa0
-.loc 10 61 0
+.loc 9 61 0
 .word 0xb500009a
-.loc 10 62 0
+.loc 9 62 0
 .word 0xd2800000
 .word 0xf9001fa0
 .word 0x14000035
-.loc 10 66 0
+.loc 9 66 0
 .word 0xaa1a03e0
-bl _p_121
+bl _p_102
 .word 0x93407c00
 .word 0x51002c17
-.loc 10 67 0
+.loc 9 67 0
 .word 0xaa1703e0
 .word 0x6b1f001f
 .word 0x540000ca
-.loc 10 68 0
+.loc 9 68 0
 .word 0x4b1703e0
 .word 0xd28007fe
 .word 0xa1e0000
 .word 0x9ac0275a
 .word 0x14000004
-.loc 10 70 0
+.loc 9 70 0
 .word 0xd28007fe
 .word 0xa1e02e0
 .word 0x9ac0235a
-.loc 10 71 0
+.loc 9 71 0
 .word 0x4b170339
-.loc 10 76 0
+.loc 9 76 0
 .word 0xaa1903e0
 .word 0x1110cc19
-.loc 10 78 0
+.loc 9 78 0
 .word 0xaa1903e0
 .word 0xd280fffe
 .word 0x6b1e001f
 .word 0x540000ab
-.loc 10 81 0
+.loc 9 81 0
 .word 0xd2800000
 .word 0xf2effe00
 .word 0xf9001fa0
-.loc 10 82 0
+.loc 9 82 0
 .word 0x1400001b
-.loc 10 83 0
+.loc 9 83 0
 .word 0x6b1f033f
 .word 0x5400020c
-.loc 10 86 0
+.loc 9 86 0
 .word 0x51000739
-.loc 10 87 0
+.loc 9 87 0
 .word 0xaa1903e0
 .word 0x9280067e
 .word 0xf2bffffe
 .word 0x6b1e001f
 .word 0x5400008a
-.loc 10 90 0
+.loc 9 90 0
 .word 0xd2800000
 .word 0xf9001fa0
-.loc 10 91 0
+.loc 9 91 0
 .word 0x14000010
-.loc 10 94 0
+.loc 9 94 0
 .word 0x4b1903e0
 .word 0xd28007fe
 .word 0xa1e0000
 .word 0x9ac02740
 .word 0xf9001fa0
-.loc 10 97 0
+.loc 9 97 0
 .word 0x1400000a
-.loc 10 101 0
+.loc 9 101 0
 .word 0xd29fffe0
 .word 0xf2bfffe0
 .word 0xf2dfffe0
@@ -16244,17 +13641,17 @@ bl _p_121
 .word 0xd34c2c21
 .word 0xaa010000
 .word 0xf9001fa0
-.loc 10 105 0
+.loc 9 105 0
 .word 0xb9802ba0
 .word 0x6b1f001f
 .word 0x540000ca
-.loc 10 106 0
+.loc 9 106 0
 .word 0xf9401fa0
 .word 0xd2800001
 .word 0xf2f00001
 .word 0xaa010000
 .word 0xf9001fa0
-.loc 10 108 0
+.loc 9 108 0
 .word 0xf9401fa0
 .word 0xf9001ba0
 .word 0xfd401ba0
@@ -16264,12 +13661,12 @@ bl _p_121
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_80:
+Lme_64:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_NumericsHelpers_DangerousMakeTwosComplement_uint__
 System_Numerics_NumericsHelpers_DangerousMakeTwosComplement_uint__:
-.loc 10 115 0 prologue_end
+.loc 9 115 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
 .word 0xa9016bb9
@@ -16277,7 +13674,7 @@ System_Numerics_NumericsHelpers_DangerousMakeTwosComplement_uint__:
 .word 0xb400099a
 .word 0xb9801b40
 .word 0x34000940
-.loc 10 117 0
+.loc 9 117 0
 .word 0xb9801b40
 .word 0xeb1f001f
 .word 0x10000011
@@ -16290,10 +13687,10 @@ System_Numerics_NumericsHelpers_DangerousMakeTwosComplement_uint__:
 .word 0x10000011
 .word 0x54000869
 .word 0xb9002340
-.loc 10 119 0
+.loc 9 119 0
 .word 0xd2800039
 .word 0x14000016
-.loc 10 123 0
+.loc 9 123 0
 .word 0x93407f20
 .word 0xb9801b41
 .word 0xeb00003f
@@ -16314,7 +13711,7 @@ System_Numerics_NumericsHelpers_DangerousMakeTwosComplement_uint__:
 .word 0x8b000340
 .word 0x91008000
 .word 0xb9000001
-.loc 10 121 0
+.loc 9 121 0
 .word 0x11000739
 .word 0x51000720
 .word 0x93407c00
@@ -16331,7 +13728,7 @@ System_Numerics_NumericsHelpers_DangerousMakeTwosComplement_uint__:
 .word 0x6b00033f
 .word 0x54fffbcb
 .word 0x14000015
-.loc 10 128 0
+.loc 9 128 0
 .word 0x93407f20
 .word 0xb9801b41
 .word 0xeb00003f
@@ -16351,26 +13748,26 @@ System_Numerics_NumericsHelpers_DangerousMakeTwosComplement_uint__:
 .word 0x8b000340
 .word 0x91008000
 .word 0xb9000001
-.loc 10 126 0
+.loc 9 126 0
 .word 0x11000739
 .word 0xb9801b40
 .word 0x6b00033f
 .word 0x54fffd4b
-.loc 10 131 0
+.loc 9 131 0
 .word 0xa9416bb9
 .word 0x910003bf
 .word 0xa8c27bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_6
 
-Lme_81:
+Lme_65:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_NumericsHelpers_MakeUlong_uint_uint
 System_Numerics_NumericsHelpers_MakeUlong_uint_uint:
-.loc 10 135 0 prologue_end
+.loc 9 135 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
 .word 0xf9000ba0
@@ -16385,30 +13782,30 @@ System_Numerics_NumericsHelpers_MakeUlong_uint_uint:
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_82:
+Lme_66:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_NumericsHelpers_Abs_int
 System_Numerics_NumericsHelpers_Abs_int:
-.loc 10 142 0 prologue_end
+.loc 9 142 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
 .word 0xf9000ba0
 .word 0xb98013a0
 .word 0x131f7c01
-.loc 10 143 0
+.loc 9 143 0
 .word 0x4a010000
 .word 0x4b010000
 .word 0x910003bf
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_83:
+Lme_67:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_NumericsHelpers_CombineHash_uint_uint
 System_Numerics_NumericsHelpers_CombineHash_uint_uint:
-.loc 10 149 0 prologue_end
+.loc 9 149 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
 .word 0xf9000ba0
@@ -16423,12 +13820,12 @@ System_Numerics_NumericsHelpers_CombineHash_uint_uint:
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_84:
+Lme_68:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_NumericsHelpers_CombineHash_int_int
 System_Numerics_NumericsHelpers_CombineHash_int_int:
-.loc 10 154 0 prologue_end
+.loc 9 154 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
 .word 0xf9000ba0
@@ -16443,78 +13840,78 @@ System_Numerics_NumericsHelpers_CombineHash_int_int:
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_85:
+Lme_69:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_NumericsHelpers_CbitHighZero_uint
 System_Numerics_NumericsHelpers_CbitHighZero_uint:
-.loc 10 159 0 prologue_end
+.loc 9 159 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
 .word 0xa9016bb9
 .word 0xaa0003fa
 .word 0x3500007a
-.loc 10 160 0
+.loc 9 160 0
 .word 0xd2800400
 .word 0x14000020
-.loc 10 162 0
+.loc 9 162 0
 .word 0xd2800019
-.loc 10 163 0
+.loc 9 163 0
 .word 0x929ffffe
 .word 0xf2bffffe
 .word 0xa1e0340
 .word 0x35000060
-.loc 10 165 0
+.loc 9 165 0
 .word 0x11004339
-.loc 10 166 0
+.loc 9 166 0
 .word 0x53103f5a
-.loc 10 168 0
+.loc 9 168 0
 .word 0x929ffffe
 .word 0xf2bfe01e
 .word 0xa1e0340
 .word 0x35000060
-.loc 10 170 0
+.loc 9 170 0
 .word 0x11002339
-.loc 10 171 0
+.loc 9 171 0
 .word 0x53185f5a
-.loc 10 173 0
+.loc 9 173 0
 .word 0x929ffffe
 .word 0xf2be001e
 .word 0xa1e0340
 .word 0x35000060
-.loc 10 175 0
+.loc 9 175 0
 .word 0x11001339
-.loc 10 176 0
+.loc 9 176 0
 .word 0x531c6f5a
-.loc 10 178 0
+.loc 9 178 0
 .word 0x929ffffe
 .word 0xf2b8001e
 .word 0xa1e0340
 .word 0x35000060
-.loc 10 180 0
+.loc 9 180 0
 .word 0x11000b39
-.loc 10 181 0
+.loc 9 181 0
 .word 0x531e775a
-.loc 10 183 0
+.loc 9 183 0
 .word 0x929ffffe
 .word 0xf2b0001e
 .word 0xa1e0340
 .word 0x35000040
-.loc 10 184 0
+.loc 9 184 0
 .word 0x11000739
-.loc 10 185 0
+.loc 9 185 0
 .word 0xaa1903e0
 .word 0xa9416bb9
 .word 0x910003bf
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_86:
+Lme_6a:
 .text
 	.align 4
 	.no_dead_strip System_Numerics_NumericsHelpers_CbitHighZero_ulong
 System_Numerics_NumericsHelpers_CbitHighZero_ulong:
-.loc 10 190 0 prologue_end
+.loc 9 190 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
 .word 0xf9000ba0
@@ -16524,262 +13921,26 @@ System_Numerics_NumericsHelpers_CbitHighZero_ulong:
 .word 0xf9400ba0
 .word 0x8a010000
 .word 0xb50000e0
-.loc 10 191 0
+.loc 9 191 0
 .word 0xf9400ba0
 .word 0xaa0003e0
-bl _p_71
+bl _p_61
 .word 0x93407c00
 .word 0x11008000
 .word 0x14000006
-.loc 10 192 0
+.loc 9 192 0
 .word 0xf9400ba0
 .word 0xd360fc00
 .word 0xaa0003e0
-bl _p_71
+bl _p_61
 .word 0x93407c00
 .word 0x910003bf
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_87:
+Lme_6b:
 .text
-	.align 4
-	.no_dead_strip wrapper_unknown_uint___Get_int
-wrapper_unknown_uint___Get_int:
-.word 0xa9be7bfd
-.word 0x910003fd
-.word 0xf9000ba0
-.word 0xf9000fa1
-.word 0xb9801ba0
-.word 0x93407c01
-.word 0xf9400ba0
-.word 0xb9801802
-.word 0xeb01005f
-.word 0x10000011
-.word 0x54000109
-.word 0xd37ef421
-.word 0x8b010000
-.word 0x91008000
-.word 0xb9400000
-.word 0x910003bf
-.word 0xa8c27bfd
-.word 0xd65f03c0
-.word 0xd2801b80
-.word 0xaa1103e1
-bl _p_6
-
-Lme_8b:
-.text
-	.align 4
-	.no_dead_strip wrapper_runtime_invoke__Module_runtime_invoke_uint__this___int_object_intptr_intptr_intptr
-wrapper_runtime_invoke__Module_runtime_invoke_uint__this___int_object_intptr_intptr_intptr:
-.word 0xa9b87bfd
-.word 0x910003fd
-.word 0xf9000bb7
-.word 0xf9000fa0
-.word 0xf90013a1
-.word 0xf90017a2
-.word 0xf9001ba3
-.word 0xf9001fbf
-.word 0xf90023bf
-.word 0xf94017a0
-.word 0xb40005c0
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #888]
-.word 0xb9400000
-.word 0x340000c0
-bl _p_122
-.word 0xaa0003f7
-.word 0xb4000060
-.word 0xaa1703e0
-bl _p_25
-.word 0xf94013a0
-.word 0xf9400000
-.word 0xb9800001
-.word 0xf9400fa0
-.word 0xf9401ba2
-.word 0xd63f0040
-.word 0xf9003ba0
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #896]
-.word 0xd2800281
-bl _p_14
-.word 0xf9403ba1
-.word 0xb9001001
-.word 0xf9001fa0
-.word 0x14000012
-.word 0xf90027a0
-.word 0xf94027a0
-.word 0xf90023a0
-.word 0xf94017a1
-.word 0xf94023a0
-.word 0xf9000020
-.word 0xd349fc21
-.word 0xd29ffffe
-.word 0xf2a00ffe
-.word 0x8a1e0021
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x2, [x16, #16]
-.word 0x8b020021
-.word 0xd280003e
-.word 0x3900003e
-.word 0x14000001
-.word 0xf9401fa0
-.word 0x14000017
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #888]
-.word 0xb9400000
-.word 0x350002c0
-.word 0x14000001
-.word 0xf94013a0
-.word 0xf9400000
-.word 0xb9800001
-.word 0xf9400fa0
-.word 0xf9401ba2
-.word 0xd63f0040
-.word 0xf9003ba0
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #896]
-.word 0xd2800281
-bl _p_14
-.word 0xf9403ba1
-.word 0xb9001001
-.word 0xf9001fa0
-.word 0xf9401fa0
-.word 0xf9400bb7
-.word 0x910003bf
-.word 0xa8c87bfd
-.word 0xd65f03c0
-bl _p_122
-.word 0xaa0003f7
-.word 0xb4fffd40
-.word 0xaa1703e0
-bl _p_25
-
-Lme_8c:
-.text
-	.align 4
-	.no_dead_strip wrapper_unknown_uint___Set_int_uint
-wrapper_unknown_uint___Set_int_uint:
-.word 0xa9bd7bfd
-.word 0x910003fd
-.word 0xf9000ba0
-.word 0xf9000fa1
-.word 0xf90013a2
-.word 0xb9801ba0
-.word 0x93407c01
-.word 0xf9400ba0
-.word 0xb9801802
-.word 0xeb01005f
-.word 0x10000011
-.word 0x54000129
-.word 0xd37ef421
-.word 0x8b010000
-.word 0x91008000
-.word 0xb94023a1
-.word 0xb9000001
-.word 0x910003bf
-.word 0xa8c37bfd
-.word 0xd65f03c0
-.word 0xd2801b80
-.word 0xaa1103e1
-bl _p_6
-
-Lme_8d:
-.text
-	.align 4
-	.no_dead_strip wrapper_runtime_invoke__Module_runtime_invoke_void__this___int_uint_object_intptr_intptr_intptr
-wrapper_runtime_invoke__Module_runtime_invoke_void__this___int_uint_object_intptr_intptr_intptr:
-.word 0xa9b97bfd
-.word 0x910003fd
-.word 0xf9000bb7
-.word 0xf9000fb9
-.word 0xf90013a0
-.word 0xaa0103f9
-.word 0xf90017a2
-.word 0xf9001ba3
-.word 0xf9001fbf
-.word 0xf90023bf
-.word 0xf94017a0
-.word 0xb40004c0
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #888]
-.word 0xb9400000
-.word 0x340000c0
-bl _p_122
-.word 0xaa0003f7
-.word 0xb4000060
-.word 0xaa1703e0
-bl _p_25
-.word 0xf9400320
-.word 0xb9800001
-.word 0xf9400720
-.word 0xb9400002
-.word 0xf94013a0
-.word 0xf9401ba3
-.word 0xd63f0060
-.word 0x14000012
-.word 0xf90027a0
-.word 0xf94027a0
-.word 0xf90023a0
-.word 0xf94017a1
-.word 0xf94023a0
-.word 0xf9000020
-.word 0xd349fc21
-.word 0xd29ffffe
-.word 0xf2a00ffe
-.word 0x8a1e0021
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x2, [x16, #16]
-.word 0x8b020021
-.word 0xd280003e
-.word 0x3900003e
-.word 0x14000001
-.word 0xf9401fa0
-.word 0x1400000f
-
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x0, [x16, #888]
-.word 0xb9400000
-.word 0x350001e0
-.word 0x14000001
-.word 0xf9400320
-.word 0xb9800001
-.word 0xf9400720
-.word 0xb9400002
-.word 0xf94013a0
-.word 0xf9401ba3
-.word 0xd63f0060
-.word 0xf9401fa0
-.word 0xf9400bb7
-.word 0xf9400fb9
-.word 0x910003bf
-.word 0xa8c77bfd
-.word 0xd65f03c0
-bl _p_122
-.word 0xaa0003f7
-.word 0xb4fffe20
-.word 0xaa1703e0
-bl _p_25
-
-Lme_8e:
-.text
-ut_143:
+ut_111:
 add x0, x0, 16
 b wrapper_unknown_System_Globalization_FormatProvider_Number_NumberBuffer_StructureToPtr_object_intptr_bool
 .text
@@ -16812,9 +13973,9 @@ wrapper_unknown_System_Globalization_FormatProvider_Number_NumberBuffer_Structur
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_8f:
+Lme_6f:
 .text
-ut_144:
+ut_112:
 add x0, x0, 16
 b wrapper_unknown_System_Globalization_FormatProvider_Number_NumberBuffer_PtrToStructure_intptr_object
 .text
@@ -16837,7 +13998,7 @@ wrapper_unknown_System_Globalization_FormatProvider_Number_NumberBuffer_PtrToStr
 
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x1, [x16, #904]
+ldr x1, [x16, #880]
 .word 0xeb01001f
 .word 0x10000011
 .word 0x540003e1
@@ -16871,13 +14032,13 @@ ldr x1, [x16, #904]
 .word 0x910003bf
 .word 0xa8c37bfd
 .word 0xd65f03c0
-.word 0xd2801c20
+.word 0xd2801860
 .word 0xaa1103e1
 bl _p_6
 
-Lme_90:
+Lme_70:
 .text
-ut_145:
+ut_113:
 add x0, x0, 16
 b wrapper_unknown_System_Numerics_DoubleUlong_StructureToPtr_object_intptr_bool
 .text
@@ -16897,9 +14058,9 @@ wrapper_unknown_System_Numerics_DoubleUlong_StructureToPtr_object_intptr_bool:
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_91:
+Lme_71:
 .text
-ut_146:
+ut_114:
 add x0, x0, 16
 b wrapper_unknown_System_Numerics_DoubleUlong_PtrToStructure_intptr_object
 .text
@@ -16919,13 +14080,13 @@ wrapper_unknown_System_Numerics_DoubleUlong_PtrToStructure_intptr_object:
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_92:
+Lme_72:
 .text
 	.align 4
 	.no_dead_strip System_Array_Resize_T_INT_T_INT____int
 System_Array_Resize_T_INT_T_INT____int:
-.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/src/mono/mcs/class/corlib/corert/Array.Portable.cs"
-.loc 11 55 0 prologue_end
+.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/src/mono/mcs/class/corlib/corert/Array.Portable.cs"
+.loc 10 55 0 prologue_end
 .word 0xa9b97bfd
 .word 0x910003fd
 .word 0xa90163b7
@@ -16935,14 +14096,14 @@ System_Array_Resize_T_INT_T_INT____int:
 .word 0xaa0103fa
 .word 0x6b1f035f
 .word 0x5400078b
-.loc 11 58 0
+.loc 10 58 0
 .word 0xf9400338
-.loc 11 59 0
+.loc 10 59 0
 .word 0xaa1803e0
 .word 0xb5000220
-.loc 11 61 0
+.loc 10 61 0
 .word 0xf9401ba0
-bl _p_123
+bl _p_103
 .word 0xaa1a03e1
 bl _p_35
 .word 0xf9000320
@@ -16957,19 +14118,19 @@ ldr x2, [x16, #16]
 .word 0x8b020021
 .word 0xd280003e
 .word 0x3900003e
-.loc 11 62 0
+.loc 10 62 0
 .word 0x14000024
-.loc 11 65 0
+.loc 10 65 0
 .word 0xb9801b00
 .word 0x6b1a001f
 .word 0x54000420
-.loc 11 67 0
+.loc 10 67 0
 .word 0xf9401ba0
-bl _p_123
+bl _p_103
 .word 0xaa1a03e1
 bl _p_35
 .word 0xaa0003f7
-.loc 11 68 0
+.loc 10 68 0
 .word 0xb9801b00
 .word 0xf9001fb8
 .word 0xb90043bf
@@ -16985,8 +14146,8 @@ bl _p_35
 .word 0xf94027a2
 .word 0xb98053a3
 .word 0xaa1803e4
-bl _p_45
-.loc 11 69 0
+bl _p_38
+.loc 10 69 0
 .word 0xf9000337
 .word 0xd349ff20
 .word 0xd29ffffe
@@ -16999,26 +14160,26 @@ ldr x1, [x16, #16]
 .word 0x8b010000
 .word 0xd280003e
 .word 0x3900001e
-.loc 11 71 0
+.loc 10 71 0
 .word 0xa94163b7
 .word 0xa9426bb9
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.loc 11 56 0
-.word 0xd29ab640
-bl _p_124
+.loc 10 56 0
+.word 0xd29673e0
+bl _p_104
 .word 0xf90033a0
-.word 0xd286c7c0
-bl _p_124
+.word 0xd284d760
+bl _p_104
 .word 0xaa0003e2
 .word 0xf94033a1
-.word 0xd2801140
+.word 0xd2800da0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_2
 bl _p_25
 
-Lme_93:
+Lme_73:
 .text
 	.align 3
 jit_code_end:
@@ -17057,34 +14218,23 @@ bl System_Numerics_BigInteger__ctor_int
 bl System_Numerics_BigInteger__ctor_uint
 bl System_Numerics_BigInteger__ctor_long
 bl System_Numerics_BigInteger__ctor_ulong
-bl System_Numerics_BigInteger__ctor_single
-bl System_Numerics_BigInteger__ctor_double
-bl System_Numerics_BigInteger__ctor_System_Decimal
 bl System_Numerics_BigInteger__ctor_byte__
 bl System_Numerics_BigInteger__ctor_int_uint__
 bl System_Numerics_BigInteger__ctor_uint___bool
 bl System_Numerics_BigInteger_get_Zero
-bl System_Numerics_BigInteger_get_IsPowerOfTwo
 bl System_Numerics_BigInteger_get_IsZero
-bl System_Numerics_BigInteger_get_IsOne
-bl System_Numerics_BigInteger_get_IsEven
-bl System_Numerics_BigInteger_get_Sign
 bl System_Numerics_BigInteger_Parse_string_System_IFormatProvider
 bl System_Numerics_BigInteger_Parse_string_System_Globalization_NumberStyles_System_IFormatProvider
 bl System_Numerics_BigInteger_GetHashCode
 bl System_Numerics_BigInteger_Equals_object
-bl System_Numerics_BigInteger_Equals_long
 bl System_Numerics_BigInteger_Equals_System_Numerics_BigInteger
 bl System_Numerics_BigInteger_CompareTo_long
 bl System_Numerics_BigInteger_CompareTo_System_Numerics_BigInteger
 bl System_Numerics_BigInteger_CompareTo_object
 bl System_Numerics_BigInteger_ToByteArray
-bl System_Numerics_BigInteger_ToUInt32Array
 bl System_Numerics_BigInteger_ToString
-bl System_Numerics_BigInteger_ToString_System_IFormatProvider
 bl System_Numerics_BigInteger_ToString_string_System_IFormatProvider
 bl System_Numerics_BigInteger_Add_uint___int_uint___int
-bl System_Numerics_BigInteger_op_Subtraction_System_Numerics_BigInteger_System_Numerics_BigInteger
 bl System_Numerics_BigInteger_Subtract_uint___int_uint___int
 bl System_Numerics_BigInteger_op_Implicit_byte
 bl System_Numerics_BigInteger_op_Implicit_sbyte
@@ -17108,18 +14258,12 @@ bl System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_9
 bl System_Numerics_BigInteger_op_UnaryNegation_System_Numerics_BigInteger
 bl System_Numerics_BigInteger_op_Addition_System_Numerics_BigInteger_System_Numerics_BigInteger
 bl System_Numerics_BigInteger_op_Multiply_System_Numerics_BigInteger_System_Numerics_BigInteger
-bl System_Numerics_BigInteger_op_Division_System_Numerics_BigInteger_System_Numerics_BigInteger
-bl System_Numerics_BigInteger_op_Modulus_System_Numerics_BigInteger_System_Numerics_BigInteger
 bl System_Numerics_BigInteger_op_LessThanOrEqual_System_Numerics_BigInteger_System_Numerics_BigInteger
-bl System_Numerics_BigInteger_op_Inequality_System_Numerics_BigInteger_System_Numerics_BigInteger
 bl System_Numerics_BigInteger_op_LessThan_System_Numerics_BigInteger_long
 bl System_Numerics_BigInteger_op_LessThanOrEqual_System_Numerics_BigInteger_long
-bl System_Numerics_BigInteger_op_Equality_System_Numerics_BigInteger_long
-bl System_Numerics_BigInteger_op_Inequality_System_Numerics_BigInteger_long
 bl System_Numerics_BigInteger_op_LessThan_long_System_Numerics_BigInteger
 bl System_Numerics_BigInteger_op_LessThanOrEqual_long_System_Numerics_BigInteger
 bl System_Numerics_BigInteger_GetDiffLength_uint___uint___int
-bl System_Numerics_BigInteger_AssertValid
 bl System_Numerics_BigInteger__cctor
 bl System_Numerics_BigIntegerCalculator_Add_uint___uint
 bl System_Numerics_BigIntegerCalculator_Add_uint___uint__
@@ -17129,16 +14273,6 @@ bl System_Numerics_BigIntegerCalculator_Subtract_uint___uint
 bl System_Numerics_BigIntegerCalculator_Subtract_uint___uint__
 bl System_Numerics_BigIntegerCalculator_Subtract_uint__int_uint__int_uint__int
 bl System_Numerics_BigIntegerCalculator_Compare_uint___uint__
-bl System_Numerics_BigIntegerCalculator_Divide_uint___uint
-bl System_Numerics_BigIntegerCalculator_Remainder_uint___uint
-bl System_Numerics_BigIntegerCalculator_Divide_uint___uint__
-bl System_Numerics_BigIntegerCalculator_Remainder_uint___uint__
-bl System_Numerics_BigIntegerCalculator_Divide_uint__int_uint__int_uint__int
-bl System_Numerics_BigIntegerCalculator_AddDivisor_uint__int_uint__int
-bl System_Numerics_BigIntegerCalculator_SubtractDivisor_uint__int_uint__int_ulong
-bl System_Numerics_BigIntegerCalculator_DivideGuessTooBig_ulong_ulong_uint_uint_uint
-bl System_Numerics_BigIntegerCalculator_CreateCopy_uint__
-bl System_Numerics_BigIntegerCalculator_LeadingZeros_uint
 bl System_Numerics_BigIntegerCalculator_Square_uint__
 bl System_Numerics_BigIntegerCalculator_Square_uint__int_uint__int
 bl System_Numerics_BigIntegerCalculator_Multiply_uint___uint
@@ -17155,7 +14289,6 @@ bl System_Numerics_BigNumber_ParseFormatSpecifier_string_int_
 bl System_Numerics_BigNumber_FormatBigIntegerToHexString_System_Numerics_BigInteger_char_int_System_Globalization_NumberFormatInfo
 bl System_Numerics_BigNumber_FormatBigInteger_System_Numerics_BigInteger_string_System_Globalization_NumberFormatInfo
 bl System_Numerics_BigNumber_BigNumberBuffer_Create
-bl System_Numerics_NumericsHelpers_GetDoubleParts_double_int__int__ulong__bool_
 bl System_Numerics_NumericsHelpers_GetDoubleFromParts_int_int_ulong
 bl System_Numerics_NumericsHelpers_DangerousMakeTwosComplement_uint__
 bl System_Numerics_NumericsHelpers_MakeUlong_uint_uint
@@ -17167,10 +14300,6 @@ bl System_Numerics_NumericsHelpers_CbitHighZero_ulong
 bl method_addresses
 bl method_addresses
 bl method_addresses
-bl wrapper_unknown_uint___Get_int
-bl wrapper_runtime_invoke__Module_runtime_invoke_uint__this___int_object_intptr_intptr_intptr
-bl wrapper_unknown_uint___Set_int_uint
-bl wrapper_runtime_invoke__Module_runtime_invoke_void__this___int_uint_object_intptr_intptr_intptr
 bl wrapper_unknown_System_Globalization_FormatProvider_Number_NumberBuffer_StructureToPtr_object_intptr_bool
 bl wrapper_unknown_System_Globalization_FormatProvider_Number_NumberBuffer_PtrToStructure_intptr_object
 bl wrapper_unknown_System_Numerics_DoubleUlong_StructureToPtr_object_intptr_bool
@@ -17188,10 +14317,8 @@ unbox_trampolines:
 	.long 48,49,50,51,52,53,54,55
 	.long 56,57,58,59,60,61,62,63
 	.long 64,65,66,67,68,69,70,71
-	.long 72,73,74,75,76,77,78,79
-	.long 80,81,82,83,84,85,86,87
-	.long 88,89,90,91,92,126,143,144
-	.long 145,146
+	.long 72,73,74,75,99,111,112,113
+	.long 114
 unbox_trampolines_end:
 
 	.long 0
@@ -17250,28 +14377,11 @@ bl ut_72
 bl ut_73
 bl ut_74
 bl ut_75
-bl ut_76
-bl ut_77
-bl ut_78
-bl ut_79
-bl ut_80
-bl ut_81
-bl ut_82
-bl ut_83
-bl ut_84
-bl ut_85
-bl ut_86
-bl ut_87
-bl ut_88
-bl ut_89
-bl ut_90
-bl ut_91
-bl ut_92
-bl ut_126
-bl ut_143
-bl ut_144
-bl ut_145
-bl ut_146
+bl ut_99
+bl ut_111
+bl ut_112
+bl ut_113
+bl ut_114
 
 	.long 0
 .section __TEXT, __const
@@ -17294,40 +14404,32 @@ unwind_info:
 	.byte 31,0,68,14,48,157,6,158,5,68,13,29,68,151,4,152,3,68,153,2,154,1,34,12,31,0,68,14,192,3,157,56
 	.byte 158,55,68,13,29,68,147,54,148,53,68,149,52,150,51,68,151,50,152,49,68,153,48,154,47,14,12,31,0,68,14,224
 	.byte 2,157,44,158,43,68,13,29,13,12,31,0,68,14,48,157,6,158,5,68,13,29,16,12,31,0,68,14,32,157,4,158
-	.byte 3,68,13,29,68,153,2,21,12,31,0,68,14,64,157,8,158,7,68,13,29,68,152,6,153,5,68,154,4,22,12,31
-	.byte 0,68,14,192,1,157,24,158,23,68,13,29,68,152,22,153,21,68,154,20,24,12,31,0,68,14,128,1,157,16,158,15
-	.byte 68,13,29,68,151,14,152,13,68,153,12,154,11,34,12,31,0,68,14,192,1,157,24,158,23,68,13,29,68,147,22,148
-	.byte 21,68,149,20,150,19,68,151,18,152,17,68,153,16,154,15,26,12,31,0,68,14,96,157,12,158,11,68,13,29,68,150
-	.byte 10,151,9,68,152,8,153,7,68,154,6,21,12,31,0,68,14,48,157,6,158,5,68,13,29,68,152,4,153,3,68,154
-	.byte 2,19,12,31,0,68,14,64,157,8,158,7,68,13,29,68,152,6,68,154,5,21,12,31,0,68,14,48,157,6,158,5
-	.byte 68,13,29,68,151,4,68,153,3,154,2,19,12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,153,14,154,13,23
-	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,151,6,152,5,68,153,4,154,3,19,12,31,0,68,14,208,1,157
-	.byte 26,158,25,68,13,29,68,153,24,154,23,19,12,31,0,68,14,80,157,10,158,9,68,13,29,68,152,8,68,154,7,34
-	.byte 12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,147,14,148,13,68,149,12,150,11,68,151,10,152,9,68,153,8
-	.byte 154,7,28,12,31,0,68,14,64,157,8,158,7,68,13,29,68,149,6,150,5,68,151,4,152,3,68,153,2,154,1,27
-	.byte 12,31,0,68,14,176,1,157,22,158,21,68,13,29,68,149,20,150,19,68,151,18,152,17,68,153,16,14,12,31,0,68
-	.byte 14,240,1,157,30,158,29,68,13,29,14,12,31,0,68,14,144,1,157,18,158,17,68,13,29,13,12,31,0,68,14,112
-	.byte 157,14,158,13,68,13,29,19,12,31,0,68,14,192,1,157,24,158,23,68,13,29,68,153,22,154,21,14,12,31,0,68
-	.byte 14,160,1,157,20,158,19,68,13,29,26,12,31,0,68,14,112,157,14,158,13,68,13,29,68,150,12,151,11,68,152,10
-	.byte 153,9,68,154,8,24,12,31,0,68,14,240,1,157,30,158,29,68,13,29,68,151,28,152,27,68,153,26,154,25,13,12
-	.byte 31,0,68,14,96,157,12,158,11,68,13,29,19,12,31,0,84,14,240,4,157,78,158,77,68,13,29,68,153,76,154,75
-	.byte 19,12,31,0,68,14,240,2,157,46,158,45,68,13,29,68,153,44,154,43,19,12,31,0,68,14,208,2,157,42,158,41
-	.byte 68,13,29,68,153,40,154,39,21,12,31,0,68,14,48,157,6,158,5,68,13,29,68,151,4,152,3,68,153,2,26,12
-	.byte 31,0,68,14,64,157,8,158,7,68,13,29,68,149,6,150,5,68,151,4,152,3,68,153,2,31,12,31,0,68,14,80
-	.byte 157,10,158,9,68,13,29,68,148,8,149,7,68,150,6,151,5,68,152,4,153,3,68,154,2,16,12,31,0,68,14,48
-	.byte 157,6,158,5,68,13,29,68,154,4,34,12,31,0,68,14,160,1,157,20,158,19,68,13,29,68,147,18,148,17,68,149
-	.byte 16,150,15,68,151,14,152,13,68,153,12,154,11,18,12,31,0,68,14,64,157,8,158,7,68,13,29,68,153,6,154,5
-	.byte 34,12,31,0,68,14,176,1,157,22,158,21,68,13,29,68,147,20,148,19,68,149,18,150,17,68,151,16,152,15,68,153
-	.byte 14,154,13,34,12,31,0,68,14,240,1,157,30,158,29,68,13,29,68,147,28,148,27,68,149,26,150,25,68,151,24,152
-	.byte 23,68,153,22,154,21,33,12,31,0,68,14,80,157,10,158,9,68,13,29,68,147,8,148,7,68,149,6,150,5,68,151
-	.byte 4,152,3,68,153,2,154,1,13,12,31,0,68,14,16,157,2,158,1,68,13,29,16,12,31,0,68,14,80,157,10,158
-	.byte 9,68,13,29,68,154,8,14,12,31,0,68,14,128,1,157,16,158,15,68,13,29,13,12,31,0,68,14,80,157,10,158
-	.byte 9,68,13,29,24,12,31,0,68,14,176,2,157,38,158,37,68,13,29,68,151,36,152,35,68,153,34,154,33,30,12,31
-	.byte 0,68,14,192,1,157,24,158,23,68,13,29,68,148,22,149,21,68,150,20,151,19,68,152,18,68,154,17,18,12,31,0
-	.byte 68,14,96,157,12,158,11,68,13,29,68,152,10,153,9,21,12,31,0,68,14,64,157,8,158,7,68,13,29,68,151,6
-	.byte 68,153,5,154,4,17,12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,151,14,19,12,31,0,68,14,112,157,14
-	.byte 158,13,68,13,29,68,151,12,68,153,11,23,12,31,0,68,14,112,157,14,158,13,68,13,29,68,151,12,152,11,68,153
-	.byte 10,154,9
+	.byte 3,68,13,29,68,153,2,21,12,31,0,68,14,64,157,8,158,7,68,13,29,68,152,6,153,5,68,154,4,34,12,31
+	.byte 0,68,14,192,1,157,24,158,23,68,13,29,68,147,22,148,21,68,149,20,150,19,68,151,18,152,17,68,153,16,154,15
+	.byte 26,12,31,0,68,14,96,157,12,158,11,68,13,29,68,150,10,151,9,68,152,8,153,7,68,154,6,21,12,31,0,68
+	.byte 14,48,157,6,158,5,68,13,29,68,152,4,153,3,68,154,2,19,12,31,0,68,14,64,157,8,158,7,68,13,29,68
+	.byte 152,6,68,154,5,19,12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,153,14,154,13,23,12,31,0,68,14,64
+	.byte 157,8,158,7,68,13,29,68,151,6,152,5,68,153,4,154,3,19,12,31,0,68,14,208,1,157,26,158,25,68,13,29
+	.byte 68,153,24,154,23,19,12,31,0,68,14,80,157,10,158,9,68,13,29,68,152,8,68,154,7,34,12,31,0,68,14,128
+	.byte 1,157,16,158,15,68,13,29,68,147,14,148,13,68,149,12,150,11,68,151,10,152,9,68,153,8,154,7,27,12,31,0
+	.byte 68,14,176,1,157,22,158,21,68,13,29,68,149,20,150,19,68,151,18,152,17,68,153,16,14,12,31,0,68,14,144,1
+	.byte 157,18,158,17,68,13,29,13,12,31,0,68,14,112,157,14,158,13,68,13,29,19,12,31,0,68,14,192,1,157,24,158
+	.byte 23,68,13,29,68,153,22,154,21,14,12,31,0,68,14,160,1,157,20,158,19,68,13,29,26,12,31,0,68,14,112,157
+	.byte 14,158,13,68,13,29,68,150,12,151,11,68,152,10,153,9,68,154,8,24,12,31,0,68,14,240,1,157,30,158,29,68
+	.byte 13,29,68,151,28,152,27,68,153,26,154,25,13,12,31,0,68,14,96,157,12,158,11,68,13,29,14,12,31,0,68,14
+	.byte 240,1,157,30,158,29,68,13,29,19,12,31,0,84,14,240,4,157,78,158,77,68,13,29,68,153,76,154,75,21,12,31
+	.byte 0,68,14,48,157,6,158,5,68,13,29,68,151,4,152,3,68,153,2,26,12,31,0,68,14,64,157,8,158,7,68,13
+	.byte 29,68,149,6,150,5,68,151,4,152,3,68,153,2,31,12,31,0,68,14,80,157,10,158,9,68,13,29,68,148,8,149
+	.byte 7,68,150,6,151,5,68,152,4,153,3,68,154,2,28,12,31,0,68,14,64,157,8,158,7,68,13,29,68,149,6,150
+	.byte 5,68,151,4,152,3,68,153,2,154,1,34,12,31,0,68,14,176,1,157,22,158,21,68,13,29,68,147,20,148,19,68
+	.byte 149,18,150,17,68,151,16,152,15,68,153,14,154,13,34,12,31,0,68,14,240,1,157,30,158,29,68,13,29,68,147,28
+	.byte 148,27,68,149,26,150,25,68,151,24,152,23,68,153,22,154,21,33,12,31,0,68,14,80,157,10,158,9,68,13,29,68
+	.byte 147,8,148,7,68,149,6,150,5,68,151,4,152,3,68,153,2,154,1,13,12,31,0,68,14,16,157,2,158,1,68,13
+	.byte 29,16,12,31,0,68,14,80,157,10,158,9,68,13,29,68,154,8,14,12,31,0,68,14,128,1,157,16,158,15,68,13
+	.byte 29,13,12,31,0,68,14,80,157,10,158,9,68,13,29,24,12,31,0,68,14,176,2,157,38,158,37,68,13,29,68,151
+	.byte 36,152,35,68,153,34,154,33,30,12,31,0,68,14,192,1,157,24,158,23,68,13,29,68,148,22,149,21,68,150,20,151
+	.byte 19,68,152,18,68,154,17,21,12,31,0,68,14,64,157,8,158,7,68,13,29,68,151,6,68,153,5,154,4,23,12,31
+	.byte 0,68,14,112,157,14,158,13,68,13,29,68,151,12,152,11,68,153,10,154,9
 
 .text
 	.align 4
@@ -17338,997 +14440,837 @@ plt__jit_icall_mono_generic_class_init:
 _p_1:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #920]
+ldr x16, [x16, #896]
 br x16
-.word 1538
+.word 1322
 	.no_dead_strip plt_string_Format_System_IFormatProvider_string_object
 plt_string_Format_System_IFormatProvider_string_object:
 _p_2:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #928]
+ldr x16, [x16, #904]
 br x16
-.word 1564
+.word 1348
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_ParseFormatSpecifier_string_int_
 plt_System_Globalization_FormatProvider_Number_ParseFormatSpecifier_string_int_:
 _p_3:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #936]
+ldr x16, [x16, #912]
 br x16
-.word 1569
+.word 1353
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_NumberToString_System_Globalization_FormatProvider_Number_NumberBuffer_char_int_System_Globalization_NumberFormatInfo_bool
 plt_System_Globalization_FormatProvider_Number_NumberToString_System_Globalization_FormatProvider_Number_NumberBuffer_char_int_System_Globalization_NumberFormatInfo_bool:
 _p_4:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #944]
+ldr x16, [x16, #920]
 br x16
-.word 1571
+.word 1355
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_NumberToStringFormat_System_Globalization_FormatProvider_Number_NumberBuffer_string_System_Globalization_NumberFormatInfo
 plt_System_Globalization_FormatProvider_Number_NumberToStringFormat_System_Globalization_FormatProvider_Number_NumberBuffer_string_System_Globalization_NumberFormatInfo:
 _p_5:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #952]
+ldr x16, [x16, #928]
 br x16
-.word 1573
+.word 1357
 	.no_dead_strip plt__jit_icall_mono_arch_throw_corlib_exception
 plt__jit_icall_mono_arch_throw_corlib_exception:
 _p_6:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #960]
+ldr x16, [x16, #936]
 br x16
-.word 1575
+.word 1359
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_TryStringToNumber_string_System_Globalization_NumberStyles_System_Globalization_FormatProvider_Number_NumberBuffer__System_Text_StringBuilder_System_Globalization_NumberFormatInfo_bool
 plt_System_Globalization_FormatProvider_Number_TryStringToNumber_string_System_Globalization_NumberStyles_System_Globalization_FormatProvider_Number_NumberBuffer__System_Text_StringBuilder_System_Globalization_NumberFormatInfo_bool:
 _p_7:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #968]
+ldr x16, [x16, #944]
 br x16
-.word 1610
+.word 1394
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_MatchChars_char__char_
 plt_System_Globalization_FormatProvider_Number_MatchChars_char__char_:
 _p_8:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #976]
+ldr x16, [x16, #952]
 br x16
-.word 1612
+.word 1396
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_IsWhite_char
 plt_System_Globalization_FormatProvider_Number_IsWhite_char:
 _p_9:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #984]
+ldr x16, [x16, #960]
 br x16
-.word 1614
+.word 1398
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_MatchChars_char__string
 plt_System_Globalization_FormatProvider_Number_MatchChars_char__string:
 _p_10:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #992]
+ldr x16, [x16, #968]
 br x16
-.word 1616
+.word 1400
 	.no_dead_strip plt_System_Text_StringBuilder_Append_char
 plt_System_Text_StringBuilder_Append_char:
 _p_11:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1000]
+ldr x16, [x16, #976]
 br x16
-.word 1618
+.word 1402
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_ParseNumber_char___System_Globalization_NumberStyles_System_Globalization_FormatProvider_Number_NumberBuffer__System_Text_StringBuilder_System_Globalization_NumberFormatInfo_bool
 plt_System_Globalization_FormatProvider_Number_ParseNumber_char___System_Globalization_NumberStyles_System_Globalization_FormatProvider_Number_NumberBuffer__System_Text_StringBuilder_System_Globalization_NumberFormatInfo_bool:
 _p_12:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1008]
+ldr x16, [x16, #984]
 br x16
-.word 1623
+.word 1407
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_TrailingZeros_string_int
 plt_System_Globalization_FormatProvider_Number_TrailingZeros_string_int:
 _p_13:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1016]
+ldr x16, [x16, #992]
 br x16
-.word 1625
+.word 1409
 	.no_dead_strip plt_wrapper_alloc_object_AllocSmall_intptr_intptr
 plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
 _p_14:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1024]
+ldr x16, [x16, #1000]
 br x16
-.word 1627
+.word 1411
 	.no_dead_strip plt_System_Text_StringBuilder__ctor_int
 plt_System_Text_StringBuilder__ctor_int:
 _p_15:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1032]
+ldr x16, [x16, #1008]
 br x16
-.word 1635
+.word 1419
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_RoundNumber_System_Globalization_FormatProvider_Number_NumberBuffer__int
 plt_System_Globalization_FormatProvider_Number_RoundNumber_System_Globalization_FormatProvider_Number_NumberBuffer__int:
 _p_16:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1040]
+ldr x16, [x16, #1016]
 br x16
-.word 1640
+.word 1424
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_FormatCurrency_System_Text_StringBuilder_System_Globalization_FormatProvider_Number_NumberBuffer_int_int_System_Globalization_NumberFormatInfo
 plt_System_Globalization_FormatProvider_Number_FormatCurrency_System_Text_StringBuilder_System_Globalization_FormatProvider_Number_NumberBuffer_int_int_System_Globalization_NumberFormatInfo:
 _p_17:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1048]
+ldr x16, [x16, #1024]
 br x16
-.word 1642
+.word 1426
 	.no_dead_strip plt_System_Text_StringBuilder_Append_string
 plt_System_Text_StringBuilder_Append_string:
 _p_18:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1056]
+ldr x16, [x16, #1032]
 br x16
-.word 1644
+.word 1428
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_FormatFixed_System_Text_StringBuilder_System_Globalization_FormatProvider_Number_NumberBuffer_int_int_System_Globalization_NumberFormatInfo_int___string_string
 plt_System_Globalization_FormatProvider_Number_FormatFixed_System_Text_StringBuilder_System_Globalization_FormatProvider_Number_NumberBuffer_int_int_System_Globalization_NumberFormatInfo_int___string_string:
 _p_19:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1064]
+ldr x16, [x16, #1040]
 br x16
-.word 1649
+.word 1433
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_FormatNumber_System_Text_StringBuilder_System_Globalization_FormatProvider_Number_NumberBuffer_int_int_System_Globalization_NumberFormatInfo
 plt_System_Globalization_FormatProvider_Number_FormatNumber_System_Text_StringBuilder_System_Globalization_FormatProvider_Number_NumberBuffer_int_int_System_Globalization_NumberFormatInfo:
 _p_20:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1072]
+ldr x16, [x16, #1048]
 br x16
-.word 1651
+.word 1435
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_FormatScientific_System_Text_StringBuilder_System_Globalization_FormatProvider_Number_NumberBuffer_int_int_System_Globalization_NumberFormatInfo_char
 plt_System_Globalization_FormatProvider_Number_FormatScientific_System_Text_StringBuilder_System_Globalization_FormatProvider_Number_NumberBuffer_int_int_System_Globalization_NumberFormatInfo_char:
 _p_21:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1080]
+ldr x16, [x16, #1056]
 br x16
-.word 1653
+.word 1437
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_FormatGeneral_System_Text_StringBuilder_System_Globalization_FormatProvider_Number_NumberBuffer_int_int_System_Globalization_NumberFormatInfo_char_bool
 plt_System_Globalization_FormatProvider_Number_FormatGeneral_System_Text_StringBuilder_System_Globalization_FormatProvider_Number_NumberBuffer_int_int_System_Globalization_NumberFormatInfo_char_bool:
 _p_22:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1088]
+ldr x16, [x16, #1064]
 br x16
-.word 1655
+.word 1439
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_FormatPercent_System_Text_StringBuilder_System_Globalization_FormatProvider_Number_NumberBuffer_int_int_System_Globalization_NumberFormatInfo
 plt_System_Globalization_FormatProvider_Number_FormatPercent_System_Text_StringBuilder_System_Globalization_FormatProvider_Number_NumberBuffer_int_int_System_Globalization_NumberFormatInfo:
 _p_23:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1096]
+ldr x16, [x16, #1072]
 br x16
-.word 1657
+.word 1441
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr
 plt__jit_icall_mono_helper_ldstr:
 _p_24:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1104]
+ldr x16, [x16, #1080]
 br x16
-.word 1659
+.word 1443
 	.no_dead_strip plt__jit_icall_mono_arch_throw_exception
 plt__jit_icall_mono_arch_throw_exception:
 _p_25:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1112]
+ldr x16, [x16, #1088]
 br x16
-.word 1679
+.word 1463
 	.no_dead_strip plt_System_Globalization_NumberFormatInfo_get_CurrencyGroupSizes
 plt_System_Globalization_NumberFormatInfo_get_CurrencyGroupSizes:
 _p_26:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1120]
+ldr x16, [x16, #1096]
 br x16
-.word 1707
+.word 1491
 	.no_dead_strip plt__jit_icall___emul_lmul_ovf_un
 plt__jit_icall___emul_lmul_ovf_un:
 _p_27:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1128]
+ldr x16, [x16, #1104]
 br x16
-.word 1712
+.word 1496
 	.no_dead_strip plt_System_Text_StringBuilder_Append_char__int
 plt_System_Text_StringBuilder_Append_char__int:
 _p_28:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1136]
+ldr x16, [x16, #1112]
 br x16
-.word 1733
+.word 1517
 	.no_dead_strip plt_System_Text_StringBuilder_Append_char_int
 plt_System_Text_StringBuilder_Append_char_int:
 _p_29:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1144]
+ldr x16, [x16, #1120]
 br x16
-.word 1738
+.word 1522
 	.no_dead_strip plt_System_Globalization_NumberFormatInfo_get_NumberGroupSizes
 plt_System_Globalization_NumberFormatInfo_get_NumberGroupSizes:
 _p_30:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1152]
+ldr x16, [x16, #1128]
 br x16
-.word 1743
+.word 1527
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_FormatExponent_System_Text_StringBuilder_System_Globalization_NumberFormatInfo_int_char_int_bool
 plt_System_Globalization_FormatProvider_Number_FormatExponent_System_Text_StringBuilder_System_Globalization_NumberFormatInfo_int_char_int_bool:
 _p_31:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1160]
+ldr x16, [x16, #1136]
 br x16
-.word 1748
+.word 1532
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_Int32ToDecChars_char__int__uint_int
 plt_System_Globalization_FormatProvider_Number_Int32ToDecChars_char__int__uint_int:
 _p_32:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1168]
+ldr x16, [x16, #1144]
 br x16
-.word 1750
+.word 1534
 	.no_dead_strip plt_System_Globalization_NumberFormatInfo_get_PercentGroupSizes
 plt_System_Globalization_NumberFormatInfo_get_PercentGroupSizes:
 _p_33:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1176]
+ldr x16, [x16, #1152]
 br x16
-.word 1752
+.word 1536
 	.no_dead_strip plt_System_Globalization_FormatProvider_Number_FindSection_string_int
 plt_System_Globalization_FormatProvider_Number_FindSection_string_int:
 _p_34:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1184]
+ldr x16, [x16, #1160]
 br x16
-.word 1757
+.word 1541
 	.no_dead_strip plt_wrapper_alloc_object_AllocVector_intptr_intptr
 plt_wrapper_alloc_object_AllocVector_intptr_intptr:
 _p_35:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1192]
+ldr x16, [x16, #1168]
 br x16
-.word 1759
+.word 1543
 	.no_dead_strip plt_System_Array_Resize_int_int____int
 plt_System_Array_Resize_int_int____int:
 _p_36:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
+ldr x16, [x16, #1176]
+br x16
+.word 1551
+	.no_dead_strip plt_System_Numerics_NumericsHelpers_DangerousMakeTwosComplement_uint__
+plt_System_Numerics_NumericsHelpers_DangerousMakeTwosComplement_uint__:
+_p_37:
+adrp x16, mono_aot_System_Numerics_got@PAGE+0
+add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
+ldr x16, [x16, #1184]
+br x16
+.word 1563
+	.no_dead_strip plt_System_Array_Copy_System_Array_int_System_Array_int_int
+plt_System_Array_Copy_System_Array_int_System_Array_int_int:
+_p_38:
+adrp x16, mono_aot_System_Numerics_got@PAGE+0
+add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
+ldr x16, [x16, #1192]
+br x16
+.word 1565
+	.no_dead_strip plt_System_Globalization_NumberFormatInfo_GetInstance_System_IFormatProvider
+plt_System_Globalization_NumberFormatInfo_GetInstance_System_IFormatProvider:
+_p_39:
+adrp x16, mono_aot_System_Numerics_got@PAGE+0
+add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1200]
 br x16
-.word 1767
-	.no_dead_strip plt_System_Numerics_BigInteger__ctor_double
-plt_System_Numerics_BigInteger__ctor_double:
-_p_37:
+.word 1570
+	.no_dead_strip plt_System_Numerics_BigInteger_Parse_string_System_Globalization_NumberStyles_System_IFormatProvider
+plt_System_Numerics_BigInteger_Parse_string_System_Globalization_NumberStyles_System_IFormatProvider:
+_p_40:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1208]
 br x16
-.word 1779
-	.no_dead_strip plt_double_IsInfinity_double
-plt_double_IsInfinity_double:
-_p_38:
+.word 1575
+	.no_dead_strip plt_System_Numerics_BigNumber_ParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo
+plt_System_Numerics_BigNumber_ParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo:
+_p_41:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1216]
 br x16
-.word 1781
-	.no_dead_strip plt_double_IsNaN_double
-plt_double_IsNaN_double:
-_p_39:
+.word 1577
+	.no_dead_strip plt_System_Numerics_BigInteger_Equals_System_Numerics_BigInteger
+plt_System_Numerics_BigInteger_Equals_System_Numerics_BigInteger:
+_p_42:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1224]
 br x16
-.word 1786
-	.no_dead_strip plt_System_Numerics_NumericsHelpers_GetDoubleParts_double_int__int__ulong__bool_
-plt_System_Numerics_NumericsHelpers_GetDoubleParts_double_int__int__ulong__bool_:
-_p_40:
+.word 1579
+	.no_dead_strip plt_System_Numerics_BigInteger_GetDiffLength_uint___uint___int
+plt_System_Numerics_BigInteger_GetDiffLength_uint___uint___int:
+_p_43:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1232]
 br x16
-.word 1791
-	.no_dead_strip plt_System_Numerics_BigInteger_op_Implicit_ulong
-plt_System_Numerics_BigInteger_op_Implicit_ulong:
-_p_41:
+.word 1581
+	.no_dead_strip plt_System_Numerics_BigInteger_CompareTo_System_Numerics_BigInteger
+plt_System_Numerics_BigInteger_CompareTo_System_Numerics_BigInteger:
+_p_44:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1240]
 br x16
-.word 1794
-	.no_dead_strip plt_System_Decimal_Truncate_System_Decimal
-plt_System_Decimal_Truncate_System_Decimal:
-_p_42:
+.word 1583
+	.no_dead_strip plt__jit_icall___emul_op_imul_ovf
+plt__jit_icall___emul_op_imul_ovf:
+_p_45:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1248]
 br x16
-.word 1796
-	.no_dead_strip plt_System_Decimal_GetBits_System_Decimal
-plt_System_Decimal_GetBits_System_Decimal:
-_p_43:
+.word 1585
+	.no_dead_strip plt_System_Globalization_NumberFormatInfo_get_CurrentInfo
+plt_System_Globalization_NumberFormatInfo_get_CurrentInfo:
+_p_46:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1256]
 br x16
-.word 1801
-	.no_dead_strip plt_System_Numerics_NumericsHelpers_DangerousMakeTwosComplement_uint__
-plt_System_Numerics_NumericsHelpers_DangerousMakeTwosComplement_uint__:
-_p_44:
+.word 1606
+	.no_dead_strip plt_System_Numerics_BigNumber_FormatBigInteger_System_Numerics_BigInteger_string_System_Globalization_NumberFormatInfo
+plt_System_Numerics_BigNumber_FormatBigInteger_System_Numerics_BigInteger_string_System_Globalization_NumberFormatInfo:
+_p_47:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1264]
 br x16
-.word 1806
-	.no_dead_strip plt_System_Array_Copy_System_Array_int_System_Array_int_int
-plt_System_Array_Copy_System_Array_int_System_Array_int_int:
-_p_45:
+.word 1611
+	.no_dead_strip plt_System_Numerics_BigInteger_op_Implicit_long
+plt_System_Numerics_BigInteger_op_Implicit_long:
+_p_48:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1272]
 br x16
-.word 1809
-	.no_dead_strip plt_System_Globalization_NumberFormatInfo_GetInstance_System_IFormatProvider
-plt_System_Globalization_NumberFormatInfo_GetInstance_System_IFormatProvider:
-_p_46:
+.word 1613
+	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Add_uint___uint
+plt_System_Numerics_BigIntegerCalculator_Add_uint___uint:
+_p_49:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1280]
 br x16
-.word 1814
-	.no_dead_strip plt_System_Numerics_BigInteger_Parse_string_System_Globalization_NumberStyles_System_IFormatProvider
-plt_System_Numerics_BigInteger_Parse_string_System_Globalization_NumberStyles_System_IFormatProvider:
-_p_47:
+.word 1615
+	.no_dead_strip plt_System_Numerics_BigInteger__ctor_uint___bool
+plt_System_Numerics_BigInteger__ctor_uint___bool:
+_p_50:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1288]
 br x16
-.word 1819
-	.no_dead_strip plt_System_Numerics_BigNumber_ParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo
-plt_System_Numerics_BigNumber_ParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo:
-_p_48:
+.word 1617
+	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Add_uint___uint__
+plt_System_Numerics_BigIntegerCalculator_Add_uint___uint__:
+_p_51:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1296]
 br x16
-.word 1821
-	.no_dead_strip plt_System_Numerics_BigInteger_Equals_System_Numerics_BigInteger
-plt_System_Numerics_BigInteger_Equals_System_Numerics_BigInteger:
-_p_49:
+.word 1619
+	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Subtract_uint___uint
+plt_System_Numerics_BigIntegerCalculator_Subtract_uint___uint:
+_p_52:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1304]
 br x16
-.word 1823
-	.no_dead_strip plt_System_Numerics_BigInteger_GetDiffLength_uint___uint___int
-plt_System_Numerics_BigInteger_GetDiffLength_uint___uint___int:
-_p_50:
+.word 1621
+	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Compare_uint___uint__
+plt_System_Numerics_BigIntegerCalculator_Compare_uint___uint__:
+_p_53:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1312]
 br x16
-.word 1825
-	.no_dead_strip plt_System_Numerics_BigInteger_CompareTo_System_Numerics_BigInteger
-plt_System_Numerics_BigInteger_CompareTo_System_Numerics_BigInteger:
-_p_51:
+.word 1623
+	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Subtract_uint___uint__
+plt_System_Numerics_BigIntegerCalculator_Subtract_uint___uint__:
+_p_54:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1320]
 br x16
-.word 1827
-	.no_dead_strip plt__jit_icall___emul_op_imul_ovf
-plt__jit_icall___emul_op_imul_ovf:
-_p_52:
+.word 1625
+	.no_dead_strip plt_System_Numerics_BigInteger__ctor_int
+plt_System_Numerics_BigInteger__ctor_int:
+_p_55:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1328]
 br x16
-.word 1829
-	.no_dead_strip plt_System_Array_Clone
-plt_System_Array_Clone:
-_p_53:
+.word 1627
+	.no_dead_strip plt_System_Numerics_BigInteger__ctor_uint
+plt_System_Numerics_BigInteger__ctor_uint:
+_p_56:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1336]
 br x16
-.word 1850
-	.no_dead_strip plt_System_Globalization_NumberFormatInfo_get_CurrentInfo
-plt_System_Globalization_NumberFormatInfo_get_CurrentInfo:
-_p_54:
+.word 1629
+	.no_dead_strip plt_System_Numerics_BigInteger__ctor_long
+plt_System_Numerics_BigInteger__ctor_long:
+_p_57:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1344]
 br x16
-.word 1855
-	.no_dead_strip plt_System_Numerics_BigNumber_FormatBigInteger_System_Numerics_BigInteger_string_System_Globalization_NumberFormatInfo
-plt_System_Numerics_BigNumber_FormatBigInteger_System_Numerics_BigInteger_string_System_Globalization_NumberFormatInfo:
-_p_55:
+.word 1631
+	.no_dead_strip plt_System_Numerics_BigInteger__ctor_ulong
+plt_System_Numerics_BigInteger__ctor_ulong:
+_p_58:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1352]
 br x16
-.word 1860
-	.no_dead_strip plt_System_Numerics_BigInteger_op_Implicit_long
-plt_System_Numerics_BigInteger_op_Implicit_long:
-_p_56:
+.word 1633
+	.no_dead_strip plt_System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger
+plt_System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger:
+_p_59:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1360]
 br x16
-.word 1862
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Add_uint___uint
-plt_System_Numerics_BigIntegerCalculator_Add_uint___uint:
-_p_57:
+.word 1635
+	.no_dead_strip plt_System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_0
+plt_System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_0:
+_p_60:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1368]
 br x16
-.word 1864
-	.no_dead_strip plt_System_Numerics_BigInteger__ctor_uint___bool
-plt_System_Numerics_BigInteger__ctor_uint___bool:
-_p_58:
+.word 1637
+	.no_dead_strip plt_System_Numerics_NumericsHelpers_CbitHighZero_uint
+plt_System_Numerics_NumericsHelpers_CbitHighZero_uint:
+_p_61:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1376]
 br x16
-.word 1866
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Add_uint___uint__
-plt_System_Numerics_BigIntegerCalculator_Add_uint___uint__:
-_p_59:
+.word 1639
+	.no_dead_strip plt_System_Numerics_NumericsHelpers_GetDoubleFromParts_int_int_ulong
+plt_System_Numerics_NumericsHelpers_GetDoubleFromParts_int_int_ulong:
+_p_62:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1384]
 br x16
-.word 1868
-	.no_dead_strip plt_System_Numerics_BigInteger_Add_uint___int_uint___int
-plt_System_Numerics_BigInteger_Add_uint___int_uint___int:
-_p_60:
+.word 1641
+	.no_dead_strip plt_System_Decimal_op_Implicit_int
+plt_System_Decimal_op_Implicit_int:
+_p_63:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1392]
 br x16
-.word 1870
-	.no_dead_strip plt_System_Numerics_BigInteger_Subtract_uint___int_uint___int
-plt_System_Numerics_BigInteger_Subtract_uint___int_uint___int:
-_p_61:
+.word 1643
+	.no_dead_strip plt_System_Decimal__ctor_int_int_int_bool_byte
+plt_System_Decimal__ctor_int_int_int_bool_byte:
+_p_64:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1400]
 br x16
-.word 1872
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Subtract_uint___uint
-plt_System_Numerics_BigIntegerCalculator_Subtract_uint___uint:
-_p_62:
+.word 1648
+	.no_dead_strip plt_System_Numerics_BigInteger_Subtract_uint___int_uint___int
+plt_System_Numerics_BigInteger_Subtract_uint___int_uint___int:
+_p_65:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1408]
 br x16
-.word 1874
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Compare_uint___uint__
-plt_System_Numerics_BigIntegerCalculator_Compare_uint___uint__:
-_p_63:
+.word 1653
+	.no_dead_strip plt_System_Numerics_BigInteger_Add_uint___int_uint___int
+plt_System_Numerics_BigInteger_Add_uint___int_uint___int:
+_p_66:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1416]
 br x16
-.word 1876
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Subtract_uint___uint__
-plt_System_Numerics_BigIntegerCalculator_Subtract_uint___uint__:
-_p_64:
+.word 1655
+	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Multiply_uint___uint
+plt_System_Numerics_BigIntegerCalculator_Multiply_uint___uint:
+_p_67:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1424]
 br x16
-.word 1878
-	.no_dead_strip plt_System_Numerics_BigInteger__ctor_int
-plt_System_Numerics_BigInteger__ctor_int:
-_p_65:
+.word 1657
+	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Square_uint__
+plt_System_Numerics_BigIntegerCalculator_Square_uint__:
+_p_68:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1432]
 br x16
-.word 1880
-	.no_dead_strip plt_System_Numerics_BigInteger__ctor_uint
-plt_System_Numerics_BigInteger__ctor_uint:
-_p_66:
+.word 1659
+	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Multiply_uint___uint__
+plt_System_Numerics_BigIntegerCalculator_Multiply_uint___uint__:
+_p_69:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1440]
 br x16
-.word 1882
-	.no_dead_strip plt_System_Numerics_BigInteger__ctor_long
-plt_System_Numerics_BigInteger__ctor_long:
-_p_67:
+.word 1661
+	.no_dead_strip plt_System_Numerics_BigInteger_CompareTo_long
+plt_System_Numerics_BigInteger_CompareTo_long:
+_p_70:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1448]
 br x16
-.word 1884
-	.no_dead_strip plt_System_Numerics_BigInteger__ctor_ulong
-plt_System_Numerics_BigInteger__ctor_ulong:
-_p_68:
+.word 1663
+	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Add_uint__int_uint__int_uint__int
+plt_System_Numerics_BigIntegerCalculator_Add_uint__int_uint__int_uint__int:
+_p_71:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1456]
 br x16
-.word 1886
-	.no_dead_strip plt_System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger
-plt_System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger:
-_p_69:
+.word 1665
+	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Subtract_uint__int_uint__int_uint__int
+plt_System_Numerics_BigIntegerCalculator_Subtract_uint__int_uint__int_uint__int:
+_p_72:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1464]
 br x16
-.word 1888
-	.no_dead_strip plt_System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_0
-plt_System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_0:
-_p_70:
+.word 1667
+	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Square_uint__int_uint__int
+plt_System_Numerics_BigIntegerCalculator_Square_uint__int_uint__int:
+_p_73:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1472]
 br x16
-.word 1890
-	.no_dead_strip plt_System_Numerics_NumericsHelpers_CbitHighZero_uint
-plt_System_Numerics_NumericsHelpers_CbitHighZero_uint:
-_p_71:
+.word 1669
+	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_SubtractCore_uint__int_uint__int_uint__int
+plt_System_Numerics_BigIntegerCalculator_SubtractCore_uint__int_uint__int_uint__int:
+_p_74:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1480]
 br x16
-.word 1892
-	.no_dead_strip plt_System_Numerics_NumericsHelpers_GetDoubleFromParts_int_int_ulong
-plt_System_Numerics_NumericsHelpers_GetDoubleFromParts_int_int_ulong:
-_p_72:
+.word 1671
+	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_AddSelf_uint__int_uint__int
+plt_System_Numerics_BigIntegerCalculator_AddSelf_uint__int_uint__int:
+_p_75:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1488]
 br x16
-.word 1895
-	.no_dead_strip plt_System_Decimal_op_Implicit_int
-plt_System_Decimal_op_Implicit_int:
-_p_73:
+.word 1673
+	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Multiply_uint__int_uint__int_uint__int
+plt_System_Numerics_BigIntegerCalculator_Multiply_uint__int_uint__int_uint__int:
+_p_76:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1496]
 br x16
-.word 1898
-	.no_dead_strip plt_System_Decimal__ctor_int_int_int_bool_byte
-plt_System_Decimal__ctor_int_int_int_bool_byte:
-_p_74:
+.word 1675
+	.no_dead_strip plt_SR_Format_string_object
+plt_SR_Format_string_object:
+_p_77:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1504]
 br x16
-.word 1903
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Multiply_uint___uint
-plt_System_Numerics_BigIntegerCalculator_Multiply_uint___uint:
-_p_75:
+.word 1677
+	.no_dead_strip plt_System_ArgumentException__ctor_string
+plt_System_ArgumentException__ctor_string:
+_p_78:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1512]
 br x16
-.word 1908
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Square_uint__
-plt_System_Numerics_BigIntegerCalculator_Square_uint__:
-_p_76:
+.word 1679
+	.no_dead_strip plt_System_Numerics_BigNumber_TryValidateParseStyleInteger_System_Globalization_NumberStyles_System_ArgumentException_
+plt_System_Numerics_BigNumber_TryValidateParseStyleInteger_System_Globalization_NumberStyles_System_ArgumentException_:
+_p_79:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1520]
 br x16
-.word 1910
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Multiply_uint___uint__
-plt_System_Numerics_BigIntegerCalculator_Multiply_uint___uint__:
-_p_77:
+.word 1684
+	.no_dead_strip plt_System_Numerics_BigNumber_BigNumberBuffer_Create
+plt_System_Numerics_BigNumber_BigNumberBuffer_Create:
+_p_80:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1528]
 br x16
-.word 1912
-	.no_dead_strip plt_System_Numerics_BigInteger_op_Implicit_int
-plt_System_Numerics_BigInteger_op_Implicit_int:
-_p_78:
+.word 1686
+	.no_dead_strip plt_System_Globalization_FormatProvider_TryStringToBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo_System_Text_StringBuilder_int__int__bool_
+plt_System_Globalization_FormatProvider_TryStringToBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo_System_Text_StringBuilder_int__int__bool_:
+_p_81:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1536]
 br x16
-.word 1914
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Divide_uint___uint
-plt_System_Numerics_BigIntegerCalculator_Divide_uint___uint:
-_p_79:
+.word 1688
+	.no_dead_strip plt_System_Numerics_BigNumber_HexNumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_
+plt_System_Numerics_BigNumber_HexNumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_:
+_p_82:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1544]
 br x16
-.word 1916
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Divide_uint___uint__
-plt_System_Numerics_BigIntegerCalculator_Divide_uint___uint__:
-_p_80:
+.word 1690
+	.no_dead_strip plt_System_Numerics_BigNumber_NumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_
+plt_System_Numerics_BigNumber_NumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_:
+_p_83:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1552]
 br x16
-.word 1918
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Remainder_uint___uint
-plt_System_Numerics_BigIntegerCalculator_Remainder_uint___uint:
-_p_81:
+.word 1692
+	.no_dead_strip plt_System_Numerics_BigNumber_TryParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo_System_Numerics_BigInteger_
+plt_System_Numerics_BigNumber_TryParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo_System_Numerics_BigInteger_:
+_p_84:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1560]
 br x16
-.word 1920
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Remainder_uint___uint__
-plt_System_Numerics_BigIntegerCalculator_Remainder_uint___uint__:
-_p_82:
+.word 1694
+	.no_dead_strip plt_System_Text_StringBuilder_get_Chars_int
+plt_System_Text_StringBuilder_get_Chars_int:
+_p_85:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1568]
 br x16
-.word 1922
-	.no_dead_strip plt_System_Numerics_BigInteger_CompareTo_long
-plt_System_Numerics_BigInteger_CompareTo_long:
-_p_83:
+.word 1696
+	.no_dead_strip plt_System_Numerics_BigInteger__ctor_byte__
+plt_System_Numerics_BigInteger__ctor_byte__:
+_p_86:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1576]
 br x16
-.word 1924
-	.no_dead_strip plt_System_Numerics_BigInteger_Equals_long
-plt_System_Numerics_BigInteger_Equals_long:
-_p_84:
+.word 1701
+	.no_dead_strip plt_System_Numerics_BigInteger_op_Implicit_int
+plt_System_Numerics_BigInteger_op_Implicit_int:
+_p_87:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1584]
 br x16
-.word 1926
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Add_uint__int_uint__int_uint__int
-plt_System_Numerics_BigIntegerCalculator_Add_uint__int_uint__int_uint__int:
-_p_85:
+.word 1703
+	.no_dead_strip plt_System_Numerics_BigInteger_op_Multiply_System_Numerics_BigInteger_System_Numerics_BigInteger
+plt_System_Numerics_BigInteger_op_Multiply_System_Numerics_BigInteger_System_Numerics_BigInteger:
+_p_88:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1592]
 br x16
-.word 1928
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Subtract_uint__int_uint__int_uint__int
-plt_System_Numerics_BigIntegerCalculator_Subtract_uint__int_uint__int_uint__int:
-_p_86:
+.word 1705
+	.no_dead_strip plt_System_Numerics_BigInteger_op_Addition_System_Numerics_BigInteger_System_Numerics_BigInteger
+plt_System_Numerics_BigInteger_op_Addition_System_Numerics_BigInteger_System_Numerics_BigInteger:
+_p_89:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1600]
 br x16
-.word 1930
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_CreateCopy_uint__
-plt_System_Numerics_BigIntegerCalculator_CreateCopy_uint__:
-_p_87:
+.word 1707
+	.no_dead_strip plt_System_Text_StringBuilder__ctor
+plt_System_Text_StringBuilder__ctor:
+_p_90:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1608]
 br x16
-.word 1932
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Divide_uint__int_uint__int_uint__int
-plt_System_Numerics_BigIntegerCalculator_Divide_uint__int_uint__int_uint__int:
-_p_88:
+.word 1709
+	.no_dead_strip plt_System_Numerics_BigInteger_ToByteArray
+plt_System_Numerics_BigInteger_ToByteArray:
+_p_91:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1616]
 br x16
-.word 1934
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_LeadingZeros_uint
-plt_System_Numerics_BigIntegerCalculator_LeadingZeros_uint:
-_p_89:
+.word 1714
+	.no_dead_strip plt_byte_ToString_string_System_IFormatProvider
+plt_byte_ToString_string_System_IFormatProvider:
+_p_92:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1624]
 br x16
-.word 1936
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_DivideGuessTooBig_ulong_ulong_uint_uint_uint
-plt_System_Numerics_BigIntegerCalculator_DivideGuessTooBig_ulong_ulong_uint_uint_uint:
-_p_90:
+.word 1716
+	.no_dead_strip plt_System_Text_StringBuilder_Insert_int_string_int
+plt_System_Text_StringBuilder_Insert_int_string_int:
+_p_93:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1632]
 br x16
-.word 1938
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_SubtractDivisor_uint__int_uint__int_ulong
-plt_System_Numerics_BigIntegerCalculator_SubtractDivisor_uint__int_uint__int_ulong:
-_p_91:
+.word 1721
+	.no_dead_strip plt_System_Numerics_BigNumber_ParseFormatSpecifier_string_int_
+plt_System_Numerics_BigNumber_ParseFormatSpecifier_string_int_:
+_p_94:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1640]
 br x16
-.word 1940
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_AddDivisor_uint__int_uint__int
-plt_System_Numerics_BigIntegerCalculator_AddDivisor_uint__int_uint__int:
-_p_92:
+.word 1726
+	.no_dead_strip plt_System_Numerics_BigNumber_FormatBigIntegerToHexString_System_Numerics_BigInteger_char_int_System_Globalization_NumberFormatInfo
+plt_System_Numerics_BigNumber_FormatBigIntegerToHexString_System_Numerics_BigInteger_char_int_System_Globalization_NumberFormatInfo:
+_p_95:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1648]
 br x16
-.word 1942
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Square_uint__int_uint__int
-plt_System_Numerics_BigIntegerCalculator_Square_uint__int_uint__int:
-_p_93:
+.word 1728
+	.no_dead_strip plt_int_ToString_System_IFormatProvider
+plt_int_ToString_System_IFormatProvider:
+_p_96:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1656]
 br x16
-.word 1944
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_SubtractCore_uint__int_uint__int_uint__int
-plt_System_Numerics_BigIntegerCalculator_SubtractCore_uint__int_uint__int_uint__int:
-_p_94:
+.word 1730
+	.no_dead_strip plt_int_ToString_string_System_IFormatProvider
+plt_int_ToString_string_System_IFormatProvider:
+_p_97:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1664]
 br x16
-.word 1946
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_AddSelf_uint__int_uint__int
-plt_System_Numerics_BigIntegerCalculator_AddSelf_uint__int_uint__int:
-_p_95:
+.word 1735
+	.no_dead_strip plt__jit_icall_mono_helper_newobj_mscorlib
+plt__jit_icall_mono_helper_newobj_mscorlib:
+_p_98:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1672]
 br x16
-.word 1948
-	.no_dead_strip plt_System_Numerics_BigIntegerCalculator_Multiply_uint__int_uint__int_uint__int
-plt_System_Numerics_BigIntegerCalculator_Multiply_uint__int_uint__int_uint__int:
-_p_96:
+.word 1740
+	.no_dead_strip plt_System_FormatException__ctor_string_System_Exception
+plt_System_FormatException__ctor_string_System_Exception:
+_p_99:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1680]
 br x16
-.word 1950
-	.no_dead_strip plt_SR_Format_string_object
-plt_SR_Format_string_object:
-_p_97:
+.word 1770
+	.no_dead_strip plt_System_Globalization_FormatProvider_FormatBigInteger_int_int_bool_string_System_Globalization_NumberFormatInfo_char___int
+plt_System_Globalization_FormatProvider_FormatBigInteger_int_int_bool_string_System_Globalization_NumberFormatInfo_char___int:
+_p_100:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1688]
 br x16
-.word 1952
-	.no_dead_strip plt_System_ArgumentException__ctor_string
-plt_System_ArgumentException__ctor_string:
-_p_98:
+.word 1775
+	.no_dead_strip plt_string__ctor_char___int_int
+plt_string__ctor_char___int_int:
+_p_101:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1696]
 br x16
-.word 1954
-	.no_dead_strip plt_System_Numerics_BigNumber_TryValidateParseStyleInteger_System_Globalization_NumberStyles_System_ArgumentException_
-plt_System_Numerics_BigNumber_TryValidateParseStyleInteger_System_Globalization_NumberStyles_System_ArgumentException_:
-_p_99:
+.word 1777
+	.no_dead_strip plt_System_Numerics_NumericsHelpers_CbitHighZero_ulong
+plt_System_Numerics_NumericsHelpers_CbitHighZero_ulong:
+_p_102:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1704]
 br x16
-.word 1959
-	.no_dead_strip plt_System_Numerics_BigNumber_BigNumberBuffer_Create
-plt_System_Numerics_BigNumber_BigNumberBuffer_Create:
-_p_100:
+.word 1782
+	.no_dead_strip plt__rgctx_fetch_0
+plt__rgctx_fetch_0:
+_p_103:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1712]
 br x16
-.word 1961
-	.no_dead_strip plt_System_Globalization_FormatProvider_TryStringToBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo_System_Text_StringBuilder_int__int__bool_
-plt_System_Globalization_FormatProvider_TryStringToBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo_System_Text_StringBuilder_int__int__bool_:
-_p_101:
+.word 1803
+	.no_dead_strip plt__jit_icall_mono_helper_ldstr_mscorlib
+plt__jit_icall_mono_helper_ldstr_mscorlib:
+_p_104:
 adrp x16, mono_aot_System_Numerics_got@PAGE+0
 add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
 ldr x16, [x16, #1720]
 br x16
-.word 1963
-	.no_dead_strip plt_System_Numerics_BigNumber_HexNumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_
-plt_System_Numerics_BigNumber_HexNumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_:
-_p_102:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1728]
-br x16
-.word 1965
-	.no_dead_strip plt_System_Numerics_BigNumber_NumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_
-plt_System_Numerics_BigNumber_NumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_:
-_p_103:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1736]
-br x16
-.word 1967
-	.no_dead_strip plt_System_Numerics_BigNumber_TryParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo_System_Numerics_BigInteger_
-plt_System_Numerics_BigNumber_TryParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo_System_Numerics_BigInteger_:
-_p_104:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1744]
-br x16
-.word 1969
-	.no_dead_strip plt_System_Text_StringBuilder_get_Chars_int
-plt_System_Text_StringBuilder_get_Chars_int:
-_p_105:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1752]
-br x16
-.word 1971
-	.no_dead_strip plt_System_Numerics_BigInteger__ctor_byte__
-plt_System_Numerics_BigInteger__ctor_byte__:
-_p_106:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1760]
-br x16
-.word 1976
-	.no_dead_strip plt_System_Numerics_BigInteger_op_Multiply_System_Numerics_BigInteger_System_Numerics_BigInteger
-plt_System_Numerics_BigInteger_op_Multiply_System_Numerics_BigInteger_System_Numerics_BigInteger:
-_p_107:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1768]
-br x16
-.word 1978
-	.no_dead_strip plt_System_Numerics_BigInteger_op_Addition_System_Numerics_BigInteger_System_Numerics_BigInteger
-plt_System_Numerics_BigInteger_op_Addition_System_Numerics_BigInteger_System_Numerics_BigInteger:
-_p_108:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1776]
-br x16
-.word 1980
-	.no_dead_strip plt_System_Text_StringBuilder__ctor
-plt_System_Text_StringBuilder__ctor:
-_p_109:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1784]
-br x16
-.word 1982
-	.no_dead_strip plt_System_Numerics_BigInteger_ToByteArray
-plt_System_Numerics_BigInteger_ToByteArray:
-_p_110:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1792]
-br x16
-.word 1987
-	.no_dead_strip plt_byte_ToString_string_System_IFormatProvider
-plt_byte_ToString_string_System_IFormatProvider:
-_p_111:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1800]
-br x16
-.word 1989
-	.no_dead_strip plt_System_Text_StringBuilder_Insert_int_string_int
-plt_System_Text_StringBuilder_Insert_int_string_int:
-_p_112:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1808]
-br x16
-.word 1994
-	.no_dead_strip plt_System_Numerics_BigNumber_ParseFormatSpecifier_string_int_
-plt_System_Numerics_BigNumber_ParseFormatSpecifier_string_int_:
-_p_113:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1816]
-br x16
-.word 1999
-	.no_dead_strip plt_System_Numerics_BigNumber_FormatBigIntegerToHexString_System_Numerics_BigInteger_char_int_System_Globalization_NumberFormatInfo
-plt_System_Numerics_BigNumber_FormatBigIntegerToHexString_System_Numerics_BigInteger_char_int_System_Globalization_NumberFormatInfo:
-_p_114:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1824]
-br x16
-.word 2001
-	.no_dead_strip plt_int_ToString_System_IFormatProvider
-plt_int_ToString_System_IFormatProvider:
-_p_115:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1832]
-br x16
-.word 2003
-	.no_dead_strip plt_int_ToString_string_System_IFormatProvider
-plt_int_ToString_string_System_IFormatProvider:
-_p_116:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1840]
-br x16
-.word 2008
-	.no_dead_strip plt__jit_icall_mono_helper_newobj_mscorlib
-plt__jit_icall_mono_helper_newobj_mscorlib:
-_p_117:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1848]
-br x16
-.word 2013
-	.no_dead_strip plt_System_FormatException__ctor_string_System_Exception
-plt_System_FormatException__ctor_string_System_Exception:
-_p_118:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1856]
-br x16
-.word 2043
-	.no_dead_strip plt_System_Globalization_FormatProvider_FormatBigInteger_int_int_bool_string_System_Globalization_NumberFormatInfo_char___int
-plt_System_Globalization_FormatProvider_FormatBigInteger_int_int_bool_string_System_Globalization_NumberFormatInfo_char___int:
-_p_119:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1864]
-br x16
-.word 2048
-	.no_dead_strip plt_string__ctor_char___int_int
-plt_string__ctor_char___int_int:
-_p_120:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1872]
-br x16
-.word 2050
-	.no_dead_strip plt_System_Numerics_NumericsHelpers_CbitHighZero_ulong
-plt_System_Numerics_NumericsHelpers_CbitHighZero_ulong:
-_p_121:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1880]
-br x16
-.word 2055
-	.no_dead_strip plt__jit_icall_mono_thread_force_interruption_checkpoint_noraise
-plt__jit_icall_mono_thread_force_interruption_checkpoint_noraise:
-_p_122:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1888]
-br x16
-.word 2058
-	.no_dead_strip plt__rgctx_fetch_0
-plt__rgctx_fetch_0:
-_p_123:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1896]
-br x16
-.word 2129
-	.no_dead_strip plt__jit_icall_mono_helper_ldstr_mscorlib
-plt__jit_icall_mono_helper_ldstr_mscorlib:
-_p_124:
-adrp x16, mono_aot_System_Numerics_got@PAGE+0
-add x16, x16, mono_aot_System_Numerics_got@PAGEOFF
-ldr x16, [x16, #1904]
-br x16
-.word 2139
+.word 1813
 plt_end:
 .section __DATA, __bss
 	.align 3
-.lcomm mono_aot_System_Numerics_got, 1912
+.lcomm mono_aot_System_Numerics_got, 1728
 got_end:
 .section __TEXT, __const
 	.align 3
@@ -18436,13 +15378,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 114,1912,125,148,66,391195135,0,30565
-	.long 128,8,8,10,0,25,31944,1368
-	.long 1176,576,0,832,1136,664,0,480
-	.long 216,0,0,0,0,0,0,0
+	.long 111,1728,105,116,66,391195135,0,25758
+	.long 128,8,8,10,0,25,26904,1136
+	.long 944,408,0,664,904,496,0,344
+	.long 176,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 168,152,93,115,1,229,111,36,153,39,34,235,70,137,32,61
+	.byte 43,28,222,16,41,161,103,191,82,219,162,247,125,163,39,65
 	.globl _mono_aot_module_System_Numerics_info
 	.align 3
 _mono_aot_module_System_Numerics_info:
@@ -20987,217 +17929,6 @@ LDIFF_SYM383=Lme_1c - System_Numerics_BigInteger__ctor_ulong
 Lfde28_end:
 
 .section __DWARF, __debug_info,regular,debug
-LTDIE_13:
-
-	.byte 5
-	.asciz "System_Single"
-
-	.byte 20,16
-LDIFF_SYM384=LTDIE_2 - Ldebug_info_start
-	.long LDIFF_SYM384
-	.byte 2,35,0,6
-	.asciz "m_value"
-
-LDIFF_SYM385=LDIE_R4 - Ldebug_info_start
-	.long LDIFF_SYM385
-	.byte 2,35,16,0,7
-	.asciz "System_Single"
-
-LDIFF_SYM386=LTDIE_13 - Ldebug_info_start
-	.long LDIFF_SYM386
-LTDIE_13_POINTER:
-
-	.byte 13
-LDIFF_SYM387=LTDIE_13 - Ldebug_info_start
-	.long LDIFF_SYM387
-LTDIE_13_REFERENCE:
-
-	.byte 14
-LDIFF_SYM388=LTDIE_13 - Ldebug_info_start
-	.long LDIFF_SYM388
-	.byte 2
-	.asciz "System.Numerics.BigInteger:.ctor"
-	.asciz "System_Numerics_BigInteger__ctor_single"
-
-	.byte 5,129,1
-	.quad System_Numerics_BigInteger__ctor_single
-	.quad Lme_1d
-
-	.byte 2,118,16,3
-	.asciz "this"
-
-LDIFF_SYM389=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM389
-	.byte 2,141,16,3
-	.asciz "value"
-
-LDIFF_SYM390=LDIE_R4 - Ldebug_info_start
-	.long LDIFF_SYM390
-	.byte 2,141,24,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM391=Lfde29_end - Lfde29_start
-	.long LDIFF_SYM391
-Lfde29_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigInteger__ctor_single
-
-LDIFF_SYM392=Lme_1d - System_Numerics_BigInteger__ctor_single
-	.long LDIFF_SYM392
-	.long 0
-	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
-	.align 3
-Lfde29_end:
-
-.section __DWARF, __debug_info,regular,debug
-LTDIE_14:
-
-	.byte 5
-	.asciz "System_Double"
-
-	.byte 24,16
-LDIFF_SYM393=LTDIE_2 - Ldebug_info_start
-	.long LDIFF_SYM393
-	.byte 2,35,0,6
-	.asciz "m_value"
-
-LDIFF_SYM394=LDIE_R8 - Ldebug_info_start
-	.long LDIFF_SYM394
-	.byte 2,35,16,0,7
-	.asciz "System_Double"
-
-LDIFF_SYM395=LTDIE_14 - Ldebug_info_start
-	.long LDIFF_SYM395
-LTDIE_14_POINTER:
-
-	.byte 13
-LDIFF_SYM396=LTDIE_14 - Ldebug_info_start
-	.long LDIFF_SYM396
-LTDIE_14_REFERENCE:
-
-	.byte 14
-LDIFF_SYM397=LTDIE_14 - Ldebug_info_start
-	.long LDIFF_SYM397
-	.byte 2
-	.asciz "System.Numerics.BigInteger:.ctor"
-	.asciz "System_Numerics_BigInteger__ctor_double"
-
-	.byte 5,135,1
-	.quad System_Numerics_BigInteger__ctor_double
-	.quad Lme_1e
-
-	.byte 2,118,16,3
-	.asciz "this"
-
-LDIFF_SYM398=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM398
-	.byte 1,106,3
-	.asciz "value"
-
-LDIFF_SYM399=LDIE_R8 - Ldebug_info_start
-	.long LDIFF_SYM399
-	.byte 2,141,40,11
-	.asciz "sign"
-
-LDIFF_SYM400=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM400
-	.byte 3,141,240,0,11
-	.asciz "exp"
-
-LDIFF_SYM401=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM401
-	.byte 3,141,248,0,11
-	.asciz "man"
-
-LDIFF_SYM402=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM402
-	.byte 3,141,128,1,11
-	.asciz "fFinite"
-
-LDIFF_SYM403=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM403
-	.byte 3,141,136,1,11
-	.asciz "cu"
-
-LDIFF_SYM404=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM404
-	.byte 1,105,11
-	.asciz "cbit"
-
-LDIFF_SYM405=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM405
-	.byte 1,104,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM406=Lfde30_end - Lfde30_start
-	.long LDIFF_SYM406
-Lfde30_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigInteger__ctor_double
-
-LDIFF_SYM407=Lme_1e - System_Numerics_BigInteger__ctor_double
-	.long LDIFF_SYM407
-	.long 0
-	.byte 12,31,0,68,14,192,1,157,24,158,23,68,13,29,68,152,22,153,21,68,154,20
-	.align 3
-Lfde30_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigInteger:.ctor"
-	.asciz "System_Numerics_BigInteger__ctor_System_Decimal"
-
-	.byte 5,204,1
-	.quad System_Numerics_BigInteger__ctor_System_Decimal
-	.quad Lme_1f
-
-	.byte 2,118,16,3
-	.asciz "this"
-
-LDIFF_SYM408=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM408
-	.byte 1,106,3
-	.asciz "value"
-
-LDIFF_SYM409=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM409
-	.byte 2,141,48,11
-	.asciz "bits"
-
-LDIFF_SYM410=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM410
-	.byte 1,105,11
-	.asciz "size"
-
-LDIFF_SYM411=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM411
-	.byte 1,104,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM412=Lfde31_end - Lfde31_start
-	.long LDIFF_SYM412
-Lfde31_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigInteger__ctor_System_Decimal
-
-LDIFF_SYM413=Lme_1f - System_Numerics_BigInteger__ctor_System_Decimal
-	.long LDIFF_SYM413
-	.long 0
-	.byte 12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,151,14,152,13,68,153,12,154,11
-	.align 3
-Lfde31_end:
-
-.section __DWARF, __debug_info,regular,debug
 
 	.byte 2
 	.asciz "System.Numerics.BigInteger:.ctor"
@@ -21205,92 +17936,92 @@ Lfde31_end:
 
 	.byte 5,248,1
 	.quad System_Numerics_BigInteger__ctor_byte__
-	.quad Lme_20
+	.quad Lme_1d
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM414=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM414
+LDIFF_SYM384=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM384
 	.byte 3,141,208,0,3
 	.asciz "value"
 
-LDIFF_SYM415=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM415
+LDIFF_SYM385=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM385
 	.byte 3,141,216,0,11
 	.asciz "byteCount"
 
-LDIFF_SYM416=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM416
+LDIFF_SYM386=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM386
 	.byte 1,104,11
 	.asciz "isNegative"
 
-LDIFF_SYM417=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM417
+LDIFF_SYM387=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM387
 	.byte 1,102,11
 	.asciz "i"
 
-LDIFF_SYM418=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM418
+LDIFF_SYM388=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM388
 	.byte 1,106,11
 	.asciz "unalignedBytes"
 
-LDIFF_SYM419=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM419
+LDIFF_SYM389=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM389
 	.byte 1,101,11
 	.asciz "dwordCount"
 
-LDIFF_SYM420=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM420
+LDIFF_SYM390=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM390
 	.byte 1,99,11
 	.asciz "isZero"
 
-LDIFF_SYM421=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM421
+LDIFF_SYM391=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM391
 	.byte 3,141,160,1,11
 	.asciz "val"
 
-LDIFF_SYM422=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM422
+LDIFF_SYM392=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM392
 	.byte 3,141,168,1,11
 	.asciz "curDword"
 
-LDIFF_SYM423=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM423
+LDIFF_SYM393=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM393
 	.byte 3,141,176,1,11
 	.asciz "curByte"
 
-LDIFF_SYM424=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM424
+LDIFF_SYM394=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM394
 	.byte 1,106,11
 	.asciz "byteInDword"
 
-LDIFF_SYM425=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM425
+LDIFF_SYM395=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM395
 	.byte 1,105,11
 	.asciz "len"
 
-LDIFF_SYM426=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM426
+LDIFF_SYM396=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM396
 	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM427=Lfde32_end - Lfde32_start
-	.long LDIFF_SYM427
-Lfde32_start:
+LDIFF_SYM397=Lfde29_end - Lfde29_start
+	.long LDIFF_SYM397
+Lfde29_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger__ctor_byte__
 
-LDIFF_SYM428=Lme_20 - System_Numerics_BigInteger__ctor_byte__
-	.long LDIFF_SYM428
+LDIFF_SYM398=Lme_1d - System_Numerics_BigInteger__ctor_byte__
+	.long LDIFF_SYM398
 	.long 0
 	.byte 12,31,0,68,14,192,1,157,24,158,23,68,13,29,68,147,22,148,21,68,149,20,150,19,68,151,18,152,17,68,153,16
 	.byte 154,15
 	.align 3
-Lfde32_end:
+Lfde29_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -21300,41 +18031,41 @@ Lfde32_end:
 
 	.byte 5,252,2
 	.quad System_Numerics_BigInteger__ctor_int_uint__
-	.quad Lme_21
+	.quad Lme_1e
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM429=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM429
+LDIFF_SYM399=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM399
 	.byte 2,141,16,3
 	.asciz "n"
 
-LDIFF_SYM430=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM430
+LDIFF_SYM400=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM400
 	.byte 2,141,24,3
 	.asciz "rgu"
 
-LDIFF_SYM431=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM431
+LDIFF_SYM401=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM401
 	.byte 2,141,32,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM432=Lfde33_end - Lfde33_start
-	.long LDIFF_SYM432
-Lfde33_start:
+LDIFF_SYM402=Lfde30_end - Lfde30_start
+	.long LDIFF_SYM402
+Lfde30_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger__ctor_int_uint__
 
-LDIFF_SYM433=Lme_21 - System_Numerics_BigInteger__ctor_int_uint__
-	.long LDIFF_SYM433
+LDIFF_SYM403=Lme_1e - System_Numerics_BigInteger__ctor_int_uint__
+	.long LDIFF_SYM403
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
-Lfde33_end:
+Lfde30_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -21344,46 +18075,46 @@ Lfde33_end:
 
 	.byte 5,137,3
 	.quad System_Numerics_BigInteger__ctor_uint___bool
-	.quad Lme_22
+	.quad Lme_1f
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM434=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM434
+LDIFF_SYM404=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM404
 	.byte 1,104,3
 	.asciz "value"
 
-LDIFF_SYM435=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM435
+LDIFF_SYM405=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM405
 	.byte 1,105,3
 	.asciz "negative"
 
-LDIFF_SYM436=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM436
+LDIFF_SYM406=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM406
 	.byte 1,106,11
 	.asciz "len"
 
-LDIFF_SYM437=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM437
+LDIFF_SYM407=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM407
 	.byte 1,103,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM438=Lfde34_end - Lfde34_start
-	.long LDIFF_SYM438
-Lfde34_start:
+LDIFF_SYM408=Lfde31_end - Lfde31_start
+	.long LDIFF_SYM408
+Lfde31_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger__ctor_uint___bool
 
-LDIFF_SYM439=Lme_22 - System_Numerics_BigInteger__ctor_uint___bool
-	.long LDIFF_SYM439
+LDIFF_SYM409=Lme_1f - System_Numerics_BigInteger__ctor_uint___bool
+	.long LDIFF_SYM409
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,150,10,151,9,68,152,8,153,7,68,154,6
 	.align 3
-Lfde34_end:
+Lfde31_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -21393,65 +18124,26 @@ Lfde34_end:
 
 	.byte 5,146,4
 	.quad System_Numerics_BigInteger_get_Zero
-	.quad Lme_23
+	.quad Lme_20
 
 	.byte 2,118,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM440=Lfde35_end - Lfde35_start
-	.long LDIFF_SYM440
-Lfde35_start:
+LDIFF_SYM410=Lfde32_end - Lfde32_start
+	.long LDIFF_SYM410
+Lfde32_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_get_Zero
 
-LDIFF_SYM441=Lme_23 - System_Numerics_BigInteger_get_Zero
-	.long LDIFF_SYM441
+LDIFF_SYM411=Lme_20 - System_Numerics_BigInteger_get_Zero
+	.long LDIFF_SYM411
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde35_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigInteger:get_IsPowerOfTwo"
-	.asciz "System_Numerics_BigInteger_get_IsPowerOfTwo"
-
-	.byte 5,158,4
-	.quad System_Numerics_BigInteger_get_IsPowerOfTwo
-	.quad Lme_24
-
-	.byte 2,118,16,3
-	.asciz "this"
-
-LDIFF_SYM442=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM442
-	.byte 1,106,11
-	.asciz "iu"
-
-LDIFF_SYM443=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM443
-	.byte 1,105,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM444=Lfde36_end - Lfde36_start
-	.long LDIFF_SYM444
-Lfde36_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigInteger_get_IsPowerOfTwo
-
-LDIFF_SYM445=Lme_24 - System_Numerics_BigInteger_get_IsPowerOfTwo
-	.long LDIFF_SYM445
-	.long 0
-	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29,68,153,2,154,1
-	.align 3
-Lfde36_end:
+Lfde32_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -21461,136 +18153,34 @@ Lfde36_end:
 
 	.byte 5,175,4
 	.quad System_Numerics_BigInteger_get_IsZero
-	.quad Lme_25
+	.quad Lme_21
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM446=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM446
+LDIFF_SYM412=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM412
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM447=Lfde37_end - Lfde37_start
-	.long LDIFF_SYM447
-Lfde37_start:
+LDIFF_SYM413=Lfde33_end - Lfde33_start
+	.long LDIFF_SYM413
+Lfde33_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_get_IsZero
 
-LDIFF_SYM448=Lme_25 - System_Numerics_BigInteger_get_IsZero
-	.long LDIFF_SYM448
+LDIFF_SYM414=Lme_21 - System_Numerics_BigInteger_get_IsZero
+	.long LDIFF_SYM414
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde37_end:
+Lfde33_end:
 
 .section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigInteger:get_IsOne"
-	.asciz "System_Numerics_BigInteger_get_IsOne"
-
-	.byte 5,177,4
-	.quad System_Numerics_BigInteger_get_IsOne
-	.quad Lme_26
-
-	.byte 2,118,16,3
-	.asciz "this"
-
-LDIFF_SYM449=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM449
-	.byte 2,141,16,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM450=Lfde38_end - Lfde38_start
-	.long LDIFF_SYM450
-Lfde38_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigInteger_get_IsOne
-
-LDIFF_SYM451=Lme_26 - System_Numerics_BigInteger_get_IsOne
-	.long LDIFF_SYM451
-	.long 0
-	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
-	.align 3
-Lfde38_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigInteger:get_IsEven"
-	.asciz "System_Numerics_BigInteger_get_IsEven"
-
-	.byte 5,179,4
-	.quad System_Numerics_BigInteger_get_IsEven
-	.quad Lme_27
-
-	.byte 2,118,16,3
-	.asciz "this"
-
-LDIFF_SYM452=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM452
-	.byte 2,141,16,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM453=Lfde39_end - Lfde39_start
-	.long LDIFF_SYM453
-Lfde39_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigInteger_get_IsEven
-
-LDIFF_SYM454=Lme_27 - System_Numerics_BigInteger_get_IsEven
-	.long LDIFF_SYM454
-	.long 0
-	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
-	.align 3
-Lfde39_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigInteger:get_Sign"
-	.asciz "System_Numerics_BigInteger_get_Sign"
-
-	.byte 5,183,4
-	.quad System_Numerics_BigInteger_get_Sign
-	.quad Lme_28
-
-	.byte 2,118,16,3
-	.asciz "this"
-
-LDIFF_SYM455=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM455
-	.byte 2,141,16,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM456=Lfde40_end - Lfde40_start
-	.long LDIFF_SYM456
-Lfde40_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigInteger_get_Sign
-
-LDIFF_SYM457=Lme_28 - System_Numerics_BigInteger_get_Sign
-	.long LDIFF_SYM457
-	.long 0
-	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
-	.align 3
-Lfde40_end:
-
-.section __DWARF, __debug_info,regular,debug
-LTDIE_15:
+LTDIE_13:
 
 	.byte 17
 	.asciz "System_IFormatProvider"
@@ -21598,54 +18188,54 @@ LTDIE_15:
 	.byte 16,7
 	.asciz "System_IFormatProvider"
 
-LDIFF_SYM458=LTDIE_15 - Ldebug_info_start
-	.long LDIFF_SYM458
-LTDIE_15_POINTER:
+LDIFF_SYM415=LTDIE_13 - Ldebug_info_start
+	.long LDIFF_SYM415
+LTDIE_13_POINTER:
 
 	.byte 13
-LDIFF_SYM459=LTDIE_15 - Ldebug_info_start
-	.long LDIFF_SYM459
-LTDIE_15_REFERENCE:
+LDIFF_SYM416=LTDIE_13 - Ldebug_info_start
+	.long LDIFF_SYM416
+LTDIE_13_REFERENCE:
 
 	.byte 14
-LDIFF_SYM460=LTDIE_15 - Ldebug_info_start
-	.long LDIFF_SYM460
+LDIFF_SYM417=LTDIE_13 - Ldebug_info_start
+	.long LDIFF_SYM417
 	.byte 2
 	.asciz "System.Numerics.BigInteger:Parse"
 	.asciz "System_Numerics_BigInteger_Parse_string_System_IFormatProvider"
 
 	.byte 5,198,4
 	.quad System_Numerics_BigInteger_Parse_string_System_IFormatProvider
-	.quad Lme_29
+	.quad Lme_22
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM461=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM461
+LDIFF_SYM418=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM418
 	.byte 2,141,32,3
 	.asciz "provider"
 
-LDIFF_SYM462=LTDIE_15_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM462
+LDIFF_SYM419=LTDIE_13_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM419
 	.byte 2,141,40,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM463=Lfde41_end - Lfde41_start
-	.long LDIFF_SYM463
-Lfde41_start:
+LDIFF_SYM420=Lfde34_end - Lfde34_start
+	.long LDIFF_SYM420
+Lfde34_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_Parse_string_System_IFormatProvider
 
-LDIFF_SYM464=Lme_29 - System_Numerics_BigInteger_Parse_string_System_IFormatProvider
-	.long LDIFF_SYM464
+LDIFF_SYM421=Lme_22 - System_Numerics_BigInteger_Parse_string_System_IFormatProvider
+	.long LDIFF_SYM421
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
-Lfde41_end:
+Lfde34_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -21655,41 +18245,41 @@ Lfde41_end:
 
 	.byte 5,203,4
 	.quad System_Numerics_BigInteger_Parse_string_System_Globalization_NumberStyles_System_IFormatProvider
-	.quad Lme_2a
+	.quad Lme_23
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM465=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM465
+LDIFF_SYM422=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM422
 	.byte 2,141,32,3
 	.asciz "style"
 
-LDIFF_SYM466=LTDIE_6 - Ldebug_info_start
-	.long LDIFF_SYM466
+LDIFF_SYM423=LTDIE_6 - Ldebug_info_start
+	.long LDIFF_SYM423
 	.byte 2,141,40,3
 	.asciz "provider"
 
-LDIFF_SYM467=LTDIE_15_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM467
+LDIFF_SYM424=LTDIE_13_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM424
 	.byte 2,141,48,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM468=Lfde42_end - Lfde42_start
-	.long LDIFF_SYM468
-Lfde42_start:
+LDIFF_SYM425=Lfde35_end - Lfde35_start
+	.long LDIFF_SYM425
+Lfde35_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_Parse_string_System_Globalization_NumberStyles_System_IFormatProvider
 
-LDIFF_SYM469=Lme_2a - System_Numerics_BigInteger_Parse_string_System_Globalization_NumberStyles_System_IFormatProvider
-	.long LDIFF_SYM469
+LDIFF_SYM426=Lme_23 - System_Numerics_BigInteger_Parse_string_System_Globalization_NumberStyles_System_IFormatProvider
+	.long LDIFF_SYM426
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
-Lfde42_end:
+Lfde35_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -21699,41 +18289,41 @@ Lfde42_end:
 
 	.byte 5,229,6
 	.quad System_Numerics_BigInteger_GetHashCode
-	.quad Lme_2b
+	.quad Lme_24
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM470=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM470
+LDIFF_SYM427=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM427
 	.byte 1,106,11
 	.asciz "hash"
 
-LDIFF_SYM471=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM471
+LDIFF_SYM428=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM428
 	.byte 1,105,11
 	.asciz "iv"
 
-LDIFF_SYM472=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM472
+LDIFF_SYM429=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM429
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM473=Lfde43_end - Lfde43_start
-	.long LDIFF_SYM473
-Lfde43_start:
+LDIFF_SYM430=Lfde36_end - Lfde36_start
+	.long LDIFF_SYM430
+Lfde36_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_GetHashCode
 
-LDIFF_SYM474=Lme_2b - System_Numerics_BigInteger_GetHashCode
-	.long LDIFF_SYM474
+LDIFF_SYM431=Lme_24 - System_Numerics_BigInteger_GetHashCode
+	.long LDIFF_SYM431
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29,68,152,4,153,3,68,154,2
 	.align 3
-Lfde43_end:
+Lfde36_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -21743,85 +18333,36 @@ Lfde43_end:
 
 	.byte 5,241,6
 	.quad System_Numerics_BigInteger_Equals_object
-	.quad Lme_2c
+	.quad Lme_25
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM475=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM475
+LDIFF_SYM432=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM432
 	.byte 2,141,32,3
 	.asciz "obj"
 
-LDIFF_SYM476=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM476
+LDIFF_SYM433=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM433
 	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM477=Lfde44_end - Lfde44_start
-	.long LDIFF_SYM477
-Lfde44_start:
+LDIFF_SYM434=Lfde37_end - Lfde37_start
+	.long LDIFF_SYM434
+Lfde37_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_Equals_object
 
-LDIFF_SYM478=Lme_2c - System_Numerics_BigInteger_Equals_object
-	.long LDIFF_SYM478
+LDIFF_SYM435=Lme_25 - System_Numerics_BigInteger_Equals_object
+	.long LDIFF_SYM435
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,152,6,68,154,5
 	.align 3
-Lfde44_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigInteger:Equals"
-	.asciz "System_Numerics_BigInteger_Equals_long"
-
-	.byte 5,250,6
-	.quad System_Numerics_BigInteger_Equals_long
-	.quad Lme_2d
-
-	.byte 2,118,16,3
-	.asciz "this"
-
-LDIFF_SYM479=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM479
-	.byte 1,105,3
-	.asciz "other"
-
-LDIFF_SYM480=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM480
-	.byte 1,106,11
-	.asciz "cu"
-
-LDIFF_SYM481=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM481
-	.byte 2,141,40,11
-	.asciz "uu"
-
-LDIFF_SYM482=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM482
-	.byte 1,106,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM483=Lfde45_end - Lfde45_start
-	.long LDIFF_SYM483
-Lfde45_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigInteger_Equals_long
-
-LDIFF_SYM484=Lme_2d - System_Numerics_BigInteger_Equals_long
-	.long LDIFF_SYM484
-	.long 0
-	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29,68,151,4,68,153,3,154,2
-	.align 3
-Lfde45_end:
+Lfde37_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -21831,41 +18372,41 @@ Lfde45_end:
 
 	.byte 5,159,7
 	.quad System_Numerics_BigInteger_Equals_System_Numerics_BigInteger
-	.quad Lme_2e
+	.quad Lme_26
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM485=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM485
+LDIFF_SYM436=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM436
 	.byte 1,106,3
 	.asciz "other"
 
-LDIFF_SYM486=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM486
+LDIFF_SYM437=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM437
 	.byte 2,141,32,11
 	.asciz "cu"
 
-LDIFF_SYM487=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM487
+LDIFF_SYM438=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM438
 	.byte 1,105,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM488=Lfde46_end - Lfde46_start
-	.long LDIFF_SYM488
-Lfde46_start:
+LDIFF_SYM439=Lfde38_end - Lfde38_start
+	.long LDIFF_SYM439
+Lfde38_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_Equals_System_Numerics_BigInteger
 
-LDIFF_SYM489=Lme_2e - System_Numerics_BigInteger_Equals_System_Numerics_BigInteger
-	.long LDIFF_SYM489
+LDIFF_SYM440=Lme_26 - System_Numerics_BigInteger_Equals_System_Numerics_BigInteger
+	.long LDIFF_SYM440
 	.long 0
 	.byte 12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,153,14,154,13
 	.align 3
-Lfde46_end:
+Lfde38_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -21875,56 +18416,56 @@ Lfde46_end:
 
 	.byte 5,178,7
 	.quad System_Numerics_BigInteger_CompareTo_long
-	.quad Lme_2f
+	.quad Lme_27
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM490=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM490
+LDIFF_SYM441=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM441
 	.byte 1,105,3
 	.asciz "other"
 
-LDIFF_SYM491=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM491
+LDIFF_SYM442=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM442
 	.byte 1,106,11
 	.asciz "cu"
 
-LDIFF_SYM492=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM492
+LDIFF_SYM443=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM443
 	.byte 1,104,11
 	.asciz "uu"
 
-LDIFF_SYM493=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM493
+LDIFF_SYM444=LDIE_U8 - Ldebug_info_start
+	.long LDIFF_SYM444
 	.byte 1,106,11
 	.asciz "uuTmp"
 
-LDIFF_SYM494=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM494
+LDIFF_SYM445=LDIE_U8 - Ldebug_info_start
+	.long LDIFF_SYM445
 	.byte 2,141,48,11
 	.asciz "V_3"
 
-LDIFF_SYM495=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM495
+LDIFF_SYM446=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM446
 	.byte 2,141,56,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM496=Lfde47_end - Lfde47_start
-	.long LDIFF_SYM496
-Lfde47_start:
+LDIFF_SYM447=Lfde39_end - Lfde39_start
+	.long LDIFF_SYM447
+Lfde39_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_CompareTo_long
 
-LDIFF_SYM497=Lme_2f - System_Numerics_BigInteger_CompareTo_long
-	.long LDIFF_SYM497
+LDIFF_SYM448=Lme_27 - System_Numerics_BigInteger_CompareTo_long
+	.long LDIFF_SYM448
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,151,6,152,5,68,153,4,154,3
 	.align 3
-Lfde47_end:
+Lfde39_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -21934,51 +18475,51 @@ Lfde47_end:
 
 	.byte 5,209,7
 	.quad System_Numerics_BigInteger_CompareTo_System_Numerics_BigInteger
-	.quad Lme_30
+	.quad Lme_28
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM498=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM498
+LDIFF_SYM449=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM449
 	.byte 1,106,3
 	.asciz "other"
 
-LDIFF_SYM499=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM499
+LDIFF_SYM450=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM450
 	.byte 2,141,32,11
 	.asciz "cuThis"
 
-LDIFF_SYM500=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM500
+LDIFF_SYM451=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM451
 	.byte 1,105,11
 	.asciz "cuOther"
 
-LDIFF_SYM501=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM501
+LDIFF_SYM452=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM452
 	.byte 3,141,192,1,11
 	.asciz "cuDiff"
 
-LDIFF_SYM502=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM502
+LDIFF_SYM453=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM453
 	.byte 1,105,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM503=Lfde48_end - Lfde48_start
-	.long LDIFF_SYM503
-Lfde48_start:
+LDIFF_SYM454=Lfde40_end - Lfde40_start
+	.long LDIFF_SYM454
+Lfde40_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_CompareTo_System_Numerics_BigInteger
 
-LDIFF_SYM504=Lme_30 - System_Numerics_BigInteger_CompareTo_System_Numerics_BigInteger
-	.long LDIFF_SYM504
+LDIFF_SYM455=Lme_28 - System_Numerics_BigInteger_CompareTo_System_Numerics_BigInteger
+	.long LDIFF_SYM455
 	.long 0
 	.byte 12,31,0,68,14,208,1,157,26,158,25,68,13,29,68,153,24,154,23
 	.align 3
-Lfde48_end:
+Lfde40_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -21988,227 +18529,168 @@ Lfde48_end:
 
 	.byte 5,236,7
 	.quad System_Numerics_BigInteger_CompareTo_object
-	.quad Lme_31
+	.quad Lme_29
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM505=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM505
+LDIFF_SYM456=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM456
 	.byte 2,141,32,3
 	.asciz "obj"
 
-LDIFF_SYM506=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM506
+LDIFF_SYM457=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM457
 	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM507=Lfde49_end - Lfde49_start
-	.long LDIFF_SYM507
-Lfde49_start:
+LDIFF_SYM458=Lfde41_end - Lfde41_start
+	.long LDIFF_SYM458
+Lfde41_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_CompareTo_object
 
-LDIFF_SYM508=Lme_31 - System_Numerics_BigInteger_CompareTo_object
-	.long LDIFF_SYM508
+LDIFF_SYM459=Lme_29 - System_Numerics_BigInteger_CompareTo_object
+	.long LDIFF_SYM459
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,152,8,68,154,7
 	.align 3
-Lfde49_end:
+Lfde41_end:
 
 .section __DWARF, __debug_info,regular,debug
-LTDIE_16:
+LTDIE_14:
 
 	.byte 5
 	.asciz "System_Byte"
 
 	.byte 17,16
-LDIFF_SYM509=LTDIE_2 - Ldebug_info_start
-	.long LDIFF_SYM509
+LDIFF_SYM460=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM460
 	.byte 2,35,0,6
 	.asciz "m_value"
 
-LDIFF_SYM510=LDIE_U1 - Ldebug_info_start
-	.long LDIFF_SYM510
+LDIFF_SYM461=LDIE_U1 - Ldebug_info_start
+	.long LDIFF_SYM461
 	.byte 2,35,16,0,7
 	.asciz "System_Byte"
 
-LDIFF_SYM511=LTDIE_16 - Ldebug_info_start
-	.long LDIFF_SYM511
-LTDIE_16_POINTER:
+LDIFF_SYM462=LTDIE_14 - Ldebug_info_start
+	.long LDIFF_SYM462
+LTDIE_14_POINTER:
 
 	.byte 13
-LDIFF_SYM512=LTDIE_16 - Ldebug_info_start
-	.long LDIFF_SYM512
-LTDIE_16_REFERENCE:
+LDIFF_SYM463=LTDIE_14 - Ldebug_info_start
+	.long LDIFF_SYM463
+LTDIE_14_REFERENCE:
 
 	.byte 14
-LDIFF_SYM513=LTDIE_16 - Ldebug_info_start
-	.long LDIFF_SYM513
+LDIFF_SYM464=LTDIE_14 - Ldebug_info_start
+	.long LDIFF_SYM464
 	.byte 2
 	.asciz "System.Numerics.BigInteger:ToByteArray"
 	.asciz "System_Numerics_BigInteger_ToByteArray"
 
 	.byte 5,251,7
 	.quad System_Numerics_BigInteger_ToByteArray
-	.quad Lme_32
+	.quad Lme_2a
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM514=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM514
+LDIFF_SYM465=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM465
 	.byte 1,106,11
 	.asciz "sign"
 
-LDIFF_SYM515=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM515
+LDIFF_SYM466=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM466
 	.byte 3,141,208,0,11
 	.asciz "highByte"
 
-LDIFF_SYM516=LDIE_U1 - Ldebug_info_start
-	.long LDIFF_SYM516
+LDIFF_SYM467=LDIE_U1 - Ldebug_info_start
+	.long LDIFF_SYM467
 	.byte 1,106,11
 	.asciz "nonZeroDwordIndex"
 
-LDIFF_SYM517=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM517
+LDIFF_SYM468=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM468
 	.byte 3,141,216,0,11
 	.asciz "highDword"
 
-LDIFF_SYM518=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM518
+LDIFF_SYM469=LDIE_U4 - Ldebug_info_start
+	.long LDIFF_SYM469
 	.byte 1,102,11
 	.asciz "bits"
 
-LDIFF_SYM519=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM519
+LDIFF_SYM470=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM470
 	.byte 1,103,11
 	.asciz "msb"
 
-LDIFF_SYM520=LDIE_U1 - Ldebug_info_start
-	.long LDIFF_SYM520
+LDIFF_SYM471=LDIE_U1 - Ldebug_info_start
+	.long LDIFF_SYM471
 	.byte 1,101,11
 	.asciz "msbIndex"
 
-LDIFF_SYM521=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM521
+LDIFF_SYM472=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM472
 	.byte 1,100,11
 	.asciz "needExtraByte"
 
-LDIFF_SYM522=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM522
+LDIFF_SYM473=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM473
 	.byte 1,101,11
 	.asciz "bytes"
 
-LDIFF_SYM523=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM523
+LDIFF_SYM474=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM474
 	.byte 3,141,240,0,11
 	.asciz "curByte"
 
-LDIFF_SYM524=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM524
+LDIFF_SYM475=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM475
 	.byte 1,99,11
 	.asciz "i"
 
-LDIFF_SYM525=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM525
+LDIFF_SYM476=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM476
 	.byte 1,105,11
 	.asciz "dword"
 
-LDIFF_SYM526=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM526
+LDIFF_SYM477=LDIE_U4 - Ldebug_info_start
+	.long LDIFF_SYM477
 	.byte 3,141,248,0,11
 	.asciz "j"
 
-LDIFF_SYM527=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM527
+LDIFF_SYM478=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM478
 	.byte 1,104,11
 	.asciz "j"
 
-LDIFF_SYM528=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM528
+LDIFF_SYM479=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM479
 	.byte 1,105,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM529=Lfde50_end - Lfde50_start
-	.long LDIFF_SYM529
-Lfde50_start:
+LDIFF_SYM480=Lfde42_end - Lfde42_start
+	.long LDIFF_SYM480
+Lfde42_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_ToByteArray
 
-LDIFF_SYM530=Lme_32 - System_Numerics_BigInteger_ToByteArray
-	.long LDIFF_SYM530
+LDIFF_SYM481=Lme_2a - System_Numerics_BigInteger_ToByteArray
+	.long LDIFF_SYM481
 	.long 0
 	.byte 12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,147,14,148,13,68,149,12,150,11,68,151,10,152,9,68,153,8
 	.byte 154,7
 	.align 3
-Lfde50_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigInteger:ToUInt32Array"
-	.asciz "System_Numerics_BigInteger_ToUInt32Array"
-
-	.byte 5,244,8
-	.quad System_Numerics_BigInteger_ToUInt32Array
-	.quad Lme_33
-
-	.byte 2,118,16,3
-	.asciz "this"
-
-LDIFF_SYM531=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM531
-	.byte 1,106,11
-	.asciz "dwords"
-
-LDIFF_SYM532=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM532
-	.byte 1,105,11
-	.asciz "highDWord"
-
-LDIFF_SYM533=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM533
-	.byte 1,106,11
-	.asciz "msb"
-
-LDIFF_SYM534=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM534
-	.byte 1,104,11
-	.asciz "needExtraByte"
-
-LDIFF_SYM535=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM535
-	.byte 1,103,11
-	.asciz "trimmed"
-
-LDIFF_SYM536=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM536
-	.byte 1,102,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM537=Lfde51_end - Lfde51_start
-	.long LDIFF_SYM537
-Lfde51_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigInteger_ToUInt32Array
-
-LDIFF_SYM538=Lme_33 - System_Numerics_BigInteger_ToUInt32Array
-	.long LDIFF_SYM538
-	.long 0
-	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,149,6,150,5,68,151,4,152,3,68,153,2,154,1
-	.align 3
-Lfde51_end:
+Lfde42_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -22218,70 +18700,31 @@ Lfde51_end:
 
 	.byte 5,157,9
 	.quad System_Numerics_BigInteger_ToString
-	.quad Lme_34
+	.quad Lme_2b
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM539=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM539
+LDIFF_SYM482=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM482
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM540=Lfde52_end - Lfde52_start
-	.long LDIFF_SYM540
-Lfde52_start:
+LDIFF_SYM483=Lfde43_end - Lfde43_start
+	.long LDIFF_SYM483
+Lfde43_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_ToString
 
-LDIFF_SYM541=Lme_34 - System_Numerics_BigInteger_ToString
-	.long LDIFF_SYM541
+LDIFF_SYM484=Lme_2b - System_Numerics_BigInteger_ToString
+	.long LDIFF_SYM484
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
-Lfde52_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigInteger:ToString"
-	.asciz "System_Numerics_BigInteger_ToString_System_IFormatProvider"
-
-	.byte 5,162,9
-	.quad System_Numerics_BigInteger_ToString_System_IFormatProvider
-	.quad Lme_35
-
-	.byte 2,118,16,3
-	.asciz "this"
-
-LDIFF_SYM542=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM542
-	.byte 2,141,16,3
-	.asciz "provider"
-
-LDIFF_SYM543=LTDIE_15_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM543
-	.byte 2,141,24,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM544=Lfde53_end - Lfde53_start
-	.long LDIFF_SYM544
-Lfde53_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigInteger_ToString_System_IFormatProvider
-
-LDIFF_SYM545=Lme_35 - System_Numerics_BigInteger_ToString_System_IFormatProvider
-	.long LDIFF_SYM545
-	.long 0
-	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
-	.align 3
-Lfde53_end:
+Lfde43_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -22291,41 +18734,41 @@ Lfde53_end:
 
 	.byte 5,172,9
 	.quad System_Numerics_BigInteger_ToString_string_System_IFormatProvider
-	.quad Lme_36
+	.quad Lme_2c
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM546=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM546
+LDIFF_SYM485=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM485
 	.byte 2,141,16,3
 	.asciz "format"
 
-LDIFF_SYM547=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM547
+LDIFF_SYM486=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM486
 	.byte 2,141,24,3
 	.asciz "provider"
 
-LDIFF_SYM548=LTDIE_15_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM548
+LDIFF_SYM487=LTDIE_13_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM487
 	.byte 2,141,32,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM549=Lfde54_end - Lfde54_start
-	.long LDIFF_SYM549
-Lfde54_start:
+LDIFF_SYM488=Lfde44_end - Lfde44_start
+	.long LDIFF_SYM488
+Lfde44_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_ToString_string_System_IFormatProvider
 
-LDIFF_SYM550=Lme_36 - System_Numerics_BigInteger_ToString_string_System_IFormatProvider
-	.long LDIFF_SYM550
+LDIFF_SYM489=Lme_2c - System_Numerics_BigInteger_ToString_string_System_IFormatProvider
+	.long LDIFF_SYM489
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
-Lfde54_end:
+Lfde44_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -22335,95 +18778,56 @@ Lfde54_end:
 
 	.byte 5,177,9
 	.quad System_Numerics_BigInteger_Add_uint___int_uint___int
-	.quad Lme_37
+	.quad Lme_2d
 
 	.byte 2,118,16,3
 	.asciz "leftBits"
 
-LDIFF_SYM551=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM551
+LDIFF_SYM490=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM490
 	.byte 1,103,3
 	.asciz "leftSign"
 
-LDIFF_SYM552=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM552
+LDIFF_SYM491=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM491
 	.byte 1,104,3
 	.asciz "rightBits"
 
-LDIFF_SYM553=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM553
+LDIFF_SYM492=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM492
 	.byte 1,105,3
 	.asciz "rightSign"
 
-LDIFF_SYM554=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM554
+LDIFF_SYM493=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM493
 	.byte 3,141,200,0,11
 	.asciz "trivialLeft"
 
-LDIFF_SYM555=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM555
+LDIFF_SYM494=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM494
 	.byte 1,102,11
 	.asciz "trivialRight"
 
-LDIFF_SYM556=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM556
+LDIFF_SYM495=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM495
 	.byte 1,101,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM557=Lfde55_end - Lfde55_start
-	.long LDIFF_SYM557
-Lfde55_start:
+LDIFF_SYM496=Lfde45_end - Lfde45_start
+	.long LDIFF_SYM496
+Lfde45_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_Add_uint___int_uint___int
 
-LDIFF_SYM558=Lme_37 - System_Numerics_BigInteger_Add_uint___int_uint___int
-	.long LDIFF_SYM558
+LDIFF_SYM497=Lme_2d - System_Numerics_BigInteger_Add_uint___int_uint___int
+	.long LDIFF_SYM497
 	.long 0
 	.byte 12,31,0,68,14,176,1,157,22,158,21,68,13,29,68,149,20,150,19,68,151,18,152,17,68,153,16
 	.align 3
-Lfde55_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigInteger:op_Subtraction"
-	.asciz "System_Numerics_BigInteger_op_Subtraction_System_Numerics_BigInteger_System_Numerics_BigInteger"
-
-	.byte 5,214,9
-	.quad System_Numerics_BigInteger_op_Subtraction_System_Numerics_BigInteger_System_Numerics_BigInteger
-	.quad Lme_38
-
-	.byte 2,118,16,3
-	.asciz "left"
-
-LDIFF_SYM559=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM559
-	.byte 2,141,32,3
-	.asciz "right"
-
-LDIFF_SYM560=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM560
-	.byte 2,141,48,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM561=Lfde56_end - Lfde56_start
-	.long LDIFF_SYM561
-Lfde56_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigInteger_op_Subtraction_System_Numerics_BigInteger_System_Numerics_BigInteger
-
-LDIFF_SYM562=Lme_38 - System_Numerics_BigInteger_op_Subtraction_System_Numerics_BigInteger_System_Numerics_BigInteger
-	.long LDIFF_SYM562
-	.long 0
-	.byte 12,31,0,68,14,240,1,157,30,158,29,68,13,29
-	.align 3
-Lfde56_end:
+Lfde45_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -22433,56 +18837,56 @@ Lfde56_end:
 
 	.byte 5,221,9
 	.quad System_Numerics_BigInteger_Subtract_uint___int_uint___int
-	.quad Lme_39
+	.quad Lme_2e
 
 	.byte 2,118,16,3
 	.asciz "leftBits"
 
-LDIFF_SYM563=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM563
+LDIFF_SYM498=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM498
 	.byte 1,103,3
 	.asciz "leftSign"
 
-LDIFF_SYM564=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM564
+LDIFF_SYM499=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM499
 	.byte 1,104,3
 	.asciz "rightBits"
 
-LDIFF_SYM565=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM565
+LDIFF_SYM500=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM500
 	.byte 1,105,3
 	.asciz "rightSign"
 
-LDIFF_SYM566=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM566
+LDIFF_SYM501=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM501
 	.byte 3,141,200,0,11
 	.asciz "trivialLeft"
 
-LDIFF_SYM567=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM567
+LDIFF_SYM502=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM502
 	.byte 1,102,11
 	.asciz "trivialRight"
 
-LDIFF_SYM568=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM568
+LDIFF_SYM503=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM503
 	.byte 1,101,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM569=Lfde57_end - Lfde57_start
-	.long LDIFF_SYM569
-Lfde57_start:
+LDIFF_SYM504=Lfde46_end - Lfde46_start
+	.long LDIFF_SYM504
+Lfde46_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_Subtract_uint___int_uint___int
 
-LDIFF_SYM570=Lme_39 - System_Numerics_BigInteger_Subtract_uint___int_uint___int
-	.long LDIFF_SYM570
+LDIFF_SYM505=Lme_2e - System_Numerics_BigInteger_Subtract_uint___int_uint___int
+	.long LDIFF_SYM505
 	.long 0
 	.byte 12,31,0,68,14,176,1,157,22,158,21,68,13,29,68,149,20,150,19,68,151,18,152,17,68,153,16
 	.align 3
-Lfde57_end:
+Lfde46_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -22492,214 +18896,214 @@ Lfde57_end:
 
 	.byte 5,255,9
 	.quad System_Numerics_BigInteger_op_Implicit_byte
-	.quad Lme_3a
+	.quad Lme_2f
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM571=LDIE_U1 - Ldebug_info_start
-	.long LDIFF_SYM571
+LDIFF_SYM506=LDIE_U1 - Ldebug_info_start
+	.long LDIFF_SYM506
 	.byte 2,141,32,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM572=Lfde58_end - Lfde58_start
-	.long LDIFF_SYM572
-Lfde58_start:
+LDIFF_SYM507=Lfde47_end - Lfde47_start
+	.long LDIFF_SYM507
+Lfde47_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Implicit_byte
 
-LDIFF_SYM573=Lme_3a - System_Numerics_BigInteger_op_Implicit_byte
-	.long LDIFF_SYM573
+LDIFF_SYM508=Lme_2f - System_Numerics_BigInteger_op_Implicit_byte
+	.long LDIFF_SYM508
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
-Lfde58_end:
+Lfde47_end:
 
 .section __DWARF, __debug_info,regular,debug
-LTDIE_17:
+LTDIE_15:
 
 	.byte 5
 	.asciz "System_SByte"
 
 	.byte 17,16
-LDIFF_SYM574=LTDIE_2 - Ldebug_info_start
-	.long LDIFF_SYM574
+LDIFF_SYM509=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM509
 	.byte 2,35,0,6
 	.asciz "m_value"
 
-LDIFF_SYM575=LDIE_I1 - Ldebug_info_start
-	.long LDIFF_SYM575
+LDIFF_SYM510=LDIE_I1 - Ldebug_info_start
+	.long LDIFF_SYM510
 	.byte 2,35,16,0,7
 	.asciz "System_SByte"
 
-LDIFF_SYM576=LTDIE_17 - Ldebug_info_start
-	.long LDIFF_SYM576
-LTDIE_17_POINTER:
+LDIFF_SYM511=LTDIE_15 - Ldebug_info_start
+	.long LDIFF_SYM511
+LTDIE_15_POINTER:
 
 	.byte 13
-LDIFF_SYM577=LTDIE_17 - Ldebug_info_start
-	.long LDIFF_SYM577
-LTDIE_17_REFERENCE:
+LDIFF_SYM512=LTDIE_15 - Ldebug_info_start
+	.long LDIFF_SYM512
+LTDIE_15_REFERENCE:
 
 	.byte 14
-LDIFF_SYM578=LTDIE_17 - Ldebug_info_start
-	.long LDIFF_SYM578
+LDIFF_SYM513=LTDIE_15 - Ldebug_info_start
+	.long LDIFF_SYM513
 	.byte 2
 	.asciz "System.Numerics.BigInteger:op_Implicit"
 	.asciz "System_Numerics_BigInteger_op_Implicit_sbyte"
 
 	.byte 5,133,10
 	.quad System_Numerics_BigInteger_op_Implicit_sbyte
-	.quad Lme_3b
+	.quad Lme_30
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM579=LDIE_I1 - Ldebug_info_start
-	.long LDIFF_SYM579
+LDIFF_SYM514=LDIE_I1 - Ldebug_info_start
+	.long LDIFF_SYM514
 	.byte 2,141,32,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM580=Lfde59_end - Lfde59_start
-	.long LDIFF_SYM580
-Lfde59_start:
+LDIFF_SYM515=Lfde48_end - Lfde48_start
+	.long LDIFF_SYM515
+Lfde48_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Implicit_sbyte
 
-LDIFF_SYM581=Lme_3b - System_Numerics_BigInteger_op_Implicit_sbyte
-	.long LDIFF_SYM581
+LDIFF_SYM516=Lme_30 - System_Numerics_BigInteger_op_Implicit_sbyte
+	.long LDIFF_SYM516
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
-Lfde59_end:
+Lfde48_end:
 
 .section __DWARF, __debug_info,regular,debug
-LTDIE_18:
+LTDIE_16:
 
 	.byte 5
 	.asciz "System_Int16"
 
 	.byte 18,16
-LDIFF_SYM582=LTDIE_2 - Ldebug_info_start
-	.long LDIFF_SYM582
+LDIFF_SYM517=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM517
 	.byte 2,35,0,6
 	.asciz "m_value"
 
-LDIFF_SYM583=LDIE_I2 - Ldebug_info_start
-	.long LDIFF_SYM583
+LDIFF_SYM518=LDIE_I2 - Ldebug_info_start
+	.long LDIFF_SYM518
 	.byte 2,35,16,0,7
 	.asciz "System_Int16"
 
-LDIFF_SYM584=LTDIE_18 - Ldebug_info_start
-	.long LDIFF_SYM584
-LTDIE_18_POINTER:
+LDIFF_SYM519=LTDIE_16 - Ldebug_info_start
+	.long LDIFF_SYM519
+LTDIE_16_POINTER:
 
 	.byte 13
-LDIFF_SYM585=LTDIE_18 - Ldebug_info_start
-	.long LDIFF_SYM585
-LTDIE_18_REFERENCE:
+LDIFF_SYM520=LTDIE_16 - Ldebug_info_start
+	.long LDIFF_SYM520
+LTDIE_16_REFERENCE:
 
 	.byte 14
-LDIFF_SYM586=LTDIE_18 - Ldebug_info_start
-	.long LDIFF_SYM586
+LDIFF_SYM521=LTDIE_16 - Ldebug_info_start
+	.long LDIFF_SYM521
 	.byte 2
 	.asciz "System.Numerics.BigInteger:op_Implicit"
 	.asciz "System_Numerics_BigInteger_op_Implicit_int16"
 
 	.byte 5,138,10
 	.quad System_Numerics_BigInteger_op_Implicit_int16
-	.quad Lme_3c
+	.quad Lme_31
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM587=LDIE_I2 - Ldebug_info_start
-	.long LDIFF_SYM587
+LDIFF_SYM522=LDIE_I2 - Ldebug_info_start
+	.long LDIFF_SYM522
 	.byte 2,141,32,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM588=Lfde60_end - Lfde60_start
-	.long LDIFF_SYM588
-Lfde60_start:
+LDIFF_SYM523=Lfde49_end - Lfde49_start
+	.long LDIFF_SYM523
+Lfde49_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Implicit_int16
 
-LDIFF_SYM589=Lme_3c - System_Numerics_BigInteger_op_Implicit_int16
-	.long LDIFF_SYM589
+LDIFF_SYM524=Lme_31 - System_Numerics_BigInteger_op_Implicit_int16
+	.long LDIFF_SYM524
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
-Lfde60_end:
+Lfde49_end:
 
 .section __DWARF, __debug_info,regular,debug
-LTDIE_19:
+LTDIE_17:
 
 	.byte 5
 	.asciz "System_UInt16"
 
 	.byte 18,16
-LDIFF_SYM590=LTDIE_2 - Ldebug_info_start
-	.long LDIFF_SYM590
+LDIFF_SYM525=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM525
 	.byte 2,35,0,6
 	.asciz "m_value"
 
-LDIFF_SYM591=LDIE_U2 - Ldebug_info_start
-	.long LDIFF_SYM591
+LDIFF_SYM526=LDIE_U2 - Ldebug_info_start
+	.long LDIFF_SYM526
 	.byte 2,35,16,0,7
 	.asciz "System_UInt16"
 
-LDIFF_SYM592=LTDIE_19 - Ldebug_info_start
-	.long LDIFF_SYM592
-LTDIE_19_POINTER:
+LDIFF_SYM527=LTDIE_17 - Ldebug_info_start
+	.long LDIFF_SYM527
+LTDIE_17_POINTER:
 
 	.byte 13
-LDIFF_SYM593=LTDIE_19 - Ldebug_info_start
-	.long LDIFF_SYM593
-LTDIE_19_REFERENCE:
+LDIFF_SYM528=LTDIE_17 - Ldebug_info_start
+	.long LDIFF_SYM528
+LTDIE_17_REFERENCE:
 
 	.byte 14
-LDIFF_SYM594=LTDIE_19 - Ldebug_info_start
-	.long LDIFF_SYM594
+LDIFF_SYM529=LTDIE_17 - Ldebug_info_start
+	.long LDIFF_SYM529
 	.byte 2
 	.asciz "System.Numerics.BigInteger:op_Implicit"
 	.asciz "System_Numerics_BigInteger_op_Implicit_uint16"
 
 	.byte 5,144,10
 	.quad System_Numerics_BigInteger_op_Implicit_uint16
-	.quad Lme_3d
+	.quad Lme_32
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM595=LDIE_U2 - Ldebug_info_start
-	.long LDIFF_SYM595
+LDIFF_SYM530=LDIE_U2 - Ldebug_info_start
+	.long LDIFF_SYM530
 	.byte 2,141,32,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM596=Lfde61_end - Lfde61_start
-	.long LDIFF_SYM596
-Lfde61_start:
+LDIFF_SYM531=Lfde50_end - Lfde50_start
+	.long LDIFF_SYM531
+Lfde50_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Implicit_uint16
 
-LDIFF_SYM597=Lme_3d - System_Numerics_BigInteger_op_Implicit_uint16
-	.long LDIFF_SYM597
+LDIFF_SYM532=Lme_32 - System_Numerics_BigInteger_op_Implicit_uint16
+	.long LDIFF_SYM532
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
-Lfde61_end:
+Lfde50_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -22709,31 +19113,31 @@ Lfde61_end:
 
 	.byte 5,149,10
 	.quad System_Numerics_BigInteger_op_Implicit_int
-	.quad Lme_3e
+	.quad Lme_33
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM598=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM598
+LDIFF_SYM533=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM533
 	.byte 2,141,32,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM599=Lfde62_end - Lfde62_start
-	.long LDIFF_SYM599
-Lfde62_start:
+LDIFF_SYM534=Lfde51_end - Lfde51_start
+	.long LDIFF_SYM534
+Lfde51_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Implicit_int
 
-LDIFF_SYM600=Lme_3e - System_Numerics_BigInteger_op_Implicit_int
-	.long LDIFF_SYM600
+LDIFF_SYM535=Lme_33 - System_Numerics_BigInteger_op_Implicit_int
+	.long LDIFF_SYM535
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
-Lfde62_end:
+Lfde51_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -22743,31 +19147,31 @@ Lfde62_end:
 
 	.byte 5,155,10
 	.quad System_Numerics_BigInteger_op_Implicit_uint
-	.quad Lme_3f
+	.quad Lme_34
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM601=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM601
+LDIFF_SYM536=LDIE_U4 - Ldebug_info_start
+	.long LDIFF_SYM536
 	.byte 2,141,32,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM602=Lfde63_end - Lfde63_start
-	.long LDIFF_SYM602
-Lfde63_start:
+LDIFF_SYM537=Lfde52_end - Lfde52_start
+	.long LDIFF_SYM537
+Lfde52_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Implicit_uint
 
-LDIFF_SYM603=Lme_3f - System_Numerics_BigInteger_op_Implicit_uint
-	.long LDIFF_SYM603
+LDIFF_SYM538=Lme_34 - System_Numerics_BigInteger_op_Implicit_uint
+	.long LDIFF_SYM538
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
-Lfde63_end:
+Lfde52_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -22777,31 +19181,31 @@ Lfde63_end:
 
 	.byte 5,160,10
 	.quad System_Numerics_BigInteger_op_Implicit_long
-	.quad Lme_40
+	.quad Lme_35
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM604=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM604
+LDIFF_SYM539=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM539
 	.byte 2,141,32,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM605=Lfde64_end - Lfde64_start
-	.long LDIFF_SYM605
-Lfde64_start:
+LDIFF_SYM540=Lfde53_end - Lfde53_start
+	.long LDIFF_SYM540
+Lfde53_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Implicit_long
 
-LDIFF_SYM606=Lme_40 - System_Numerics_BigInteger_op_Implicit_long
-	.long LDIFF_SYM606
+LDIFF_SYM541=Lme_35 - System_Numerics_BigInteger_op_Implicit_long
+	.long LDIFF_SYM541
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
-Lfde64_end:
+Lfde53_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -22811,31 +19215,31 @@ Lfde64_end:
 
 	.byte 5,166,10
 	.quad System_Numerics_BigInteger_op_Implicit_ulong
-	.quad Lme_41
+	.quad Lme_36
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM607=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM607
+LDIFF_SYM542=LDIE_U8 - Ldebug_info_start
+	.long LDIFF_SYM542
 	.byte 2,141,32,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM608=Lfde65_end - Lfde65_start
-	.long LDIFF_SYM608
-Lfde65_start:
+LDIFF_SYM543=Lfde54_end - Lfde54_start
+	.long LDIFF_SYM543
+Lfde54_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Implicit_ulong
 
-LDIFF_SYM609=Lme_41 - System_Numerics_BigInteger_op_Implicit_ulong
-	.long LDIFF_SYM609
+LDIFF_SYM544=Lme_36 - System_Numerics_BigInteger_op_Implicit_ulong
+	.long LDIFF_SYM544
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
-Lfde65_end:
+Lfde54_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -22845,31 +19249,31 @@ Lfde65_end:
 
 	.byte 5,186,10
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger
-	.quad Lme_42
+	.quad Lme_37
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM610=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM610
+LDIFF_SYM545=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM545
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM611=Lfde66_end - Lfde66_start
-	.long LDIFF_SYM611
-Lfde66_start:
+LDIFF_SYM546=Lfde55_end - Lfde55_start
+	.long LDIFF_SYM546
+Lfde55_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger
 
-LDIFF_SYM612=Lme_42 - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger
-	.long LDIFF_SYM612
+LDIFF_SYM547=Lme_37 - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger
+	.long LDIFF_SYM547
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde66_end:
+Lfde55_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -22879,31 +19283,31 @@ Lfde66_end:
 
 	.byte 5,192,10
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_0
-	.quad Lme_43
+	.quad Lme_38
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM613=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM613
+LDIFF_SYM548=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM548
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM614=Lfde67_end - Lfde67_start
-	.long LDIFF_SYM614
-Lfde67_start:
+LDIFF_SYM549=Lfde56_end - Lfde56_start
+	.long LDIFF_SYM549
+Lfde56_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_0
 
-LDIFF_SYM615=Lme_43 - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_0
-	.long LDIFF_SYM615
+LDIFF_SYM550=Lme_38 - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_0
+	.long LDIFF_SYM550
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde67_end:
+Lfde56_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -22913,31 +19317,31 @@ Lfde67_end:
 
 	.byte 5,197,10
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_1
-	.quad Lme_44
+	.quad Lme_39
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM616=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM616
+LDIFF_SYM551=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM551
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM617=Lfde68_end - Lfde68_start
-	.long LDIFF_SYM617
-Lfde68_start:
+LDIFF_SYM552=Lfde57_end - Lfde57_start
+	.long LDIFF_SYM552
+Lfde57_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_1
 
-LDIFF_SYM618=Lme_44 - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_1
-	.long LDIFF_SYM618
+LDIFF_SYM553=Lme_39 - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_1
+	.long LDIFF_SYM553
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde68_end:
+Lfde57_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -22947,31 +19351,31 @@ Lfde68_end:
 
 	.byte 5,203,10
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_2
-	.quad Lme_45
+	.quad Lme_3a
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM619=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM619
+LDIFF_SYM554=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM554
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM620=Lfde69_end - Lfde69_start
-	.long LDIFF_SYM620
-Lfde69_start:
+LDIFF_SYM555=Lfde58_end - Lfde58_start
+	.long LDIFF_SYM555
+Lfde58_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_2
 
-LDIFF_SYM621=Lme_45 - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_2
-	.long LDIFF_SYM621
+LDIFF_SYM556=Lme_3a - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_2
+	.long LDIFF_SYM556
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde69_end:
+Lfde58_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -22981,31 +19385,31 @@ Lfde69_end:
 
 	.byte 5,209,10
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_3
-	.quad Lme_46
+	.quad Lme_3b
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM622=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM622
+LDIFF_SYM557=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM557
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM623=Lfde70_end - Lfde70_start
-	.long LDIFF_SYM623
-Lfde70_start:
+LDIFF_SYM558=Lfde59_end - Lfde59_start
+	.long LDIFF_SYM558
+Lfde59_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_3
 
-LDIFF_SYM624=Lme_46 - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_3
-	.long LDIFF_SYM624
+LDIFF_SYM559=Lme_3b - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_3
+	.long LDIFF_SYM559
 	.long 0
 	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29
 	.align 3
-Lfde70_end:
+Lfde59_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -23015,31 +19419,31 @@ Lfde70_end:
 
 	.byte 5,234,10
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_4
-	.quad Lme_47
+	.quad Lme_3c
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM625=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM625
+LDIFF_SYM560=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM560
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM626=Lfde71_end - Lfde71_start
-	.long LDIFF_SYM626
-Lfde71_start:
+LDIFF_SYM561=Lfde60_end - Lfde60_start
+	.long LDIFF_SYM561
+Lfde60_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_4
 
-LDIFF_SYM627=Lme_47 - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_4
-	.long LDIFF_SYM627
+LDIFF_SYM562=Lme_3c - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_4
+	.long LDIFF_SYM562
 	.long 0
 	.byte 12,31,0,68,14,112,157,14,158,13,68,13,29
 	.align 3
-Lfde71_end:
+Lfde60_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -23049,41 +19453,41 @@ Lfde71_end:
 
 	.byte 5,251,10
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_5
-	.quad Lme_48
+	.quad Lme_3d
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM628=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM628
+LDIFF_SYM563=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM563
 	.byte 2,141,32,11
 	.asciz "uu"
 
-LDIFF_SYM629=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM629
+LDIFF_SYM564=LDIE_U8 - Ldebug_info_start
+	.long LDIFF_SYM564
 	.byte 1,106,11
 	.asciz "ll"
 
-LDIFF_SYM630=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM630
+LDIFF_SYM565=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM565
 	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM631=Lfde72_end - Lfde72_start
-	.long LDIFF_SYM631
-Lfde72_start:
+LDIFF_SYM566=Lfde61_end - Lfde61_start
+	.long LDIFF_SYM566
+Lfde61_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_5
 
-LDIFF_SYM632=Lme_48 - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_5
-	.long LDIFF_SYM632
+LDIFF_SYM567=Lme_3d - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_5
+	.long LDIFF_SYM567
 	.long 0
 	.byte 12,31,0,68,14,192,1,157,24,158,23,68,13,29,68,153,22,154,21
 	.align 3
-Lfde72_end:
+Lfde61_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -23093,31 +19497,31 @@ Lfde72_end:
 
 	.byte 5,157,11
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_6
-	.quad Lme_49
+	.quad Lme_3e
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM633=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM633
+LDIFF_SYM568=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM568
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM634=Lfde73_end - Lfde73_start
-	.long LDIFF_SYM634
-Lfde73_start:
+LDIFF_SYM569=Lfde62_end - Lfde62_start
+	.long LDIFF_SYM569
+Lfde62_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_6
 
-LDIFF_SYM635=Lme_49 - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_6
-	.long LDIFF_SYM635
+LDIFF_SYM570=Lme_3e - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_6
+	.long LDIFF_SYM570
 	.long 0
 	.byte 12,31,0,68,14,160,1,157,20,158,19,68,13,29
 	.align 3
-Lfde73_end:
+Lfde62_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -23127,31 +19531,31 @@ Lfde73_end:
 
 	.byte 5,177,11
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_7
-	.quad Lme_4a
+	.quad Lme_3f
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM636=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM636
+LDIFF_SYM571=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM571
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM637=Lfde74_end - Lfde74_start
-	.long LDIFF_SYM637
-Lfde74_start:
+LDIFF_SYM572=Lfde63_end - Lfde63_start
+	.long LDIFF_SYM572
+Lfde63_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_7
 
-LDIFF_SYM638=Lme_4a - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_7
-	.long LDIFF_SYM638
+LDIFF_SYM573=Lme_3f - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_7
+	.long LDIFF_SYM573
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde74_end:
+Lfde63_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -23161,71 +19565,71 @@ Lfde74_end:
 
 	.byte 5,184,11
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_8
-	.quad Lme_4b
+	.quad Lme_40
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM639=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM639
+LDIFF_SYM574=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM574
 	.byte 2,141,56,11
 	.asciz "sign"
 
-LDIFF_SYM640=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM640
+LDIFF_SYM575=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM575
 	.byte 1,106,11
 	.asciz "bits"
 
-LDIFF_SYM641=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM641
+LDIFF_SYM576=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM576
 	.byte 1,105,11
 	.asciz "length"
 
-LDIFF_SYM642=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM642
+LDIFF_SYM577=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM577
 	.byte 1,104,11
 	.asciz "m"
 
-LDIFF_SYM643=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM643
+LDIFF_SYM578=LDIE_U8 - Ldebug_info_start
+	.long LDIFF_SYM578
 	.byte 3,141,232,0,11
 	.asciz "l"
 
-LDIFF_SYM644=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM644
+LDIFF_SYM579=LDIE_U8 - Ldebug_info_start
+	.long LDIFF_SYM579
 	.byte 1,105,11
 	.asciz "z"
 
-LDIFF_SYM645=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM645
+LDIFF_SYM580=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM580
 	.byte 1,102,11
 	.asciz "exp"
 
-LDIFF_SYM646=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM646
+LDIFF_SYM581=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM581
 	.byte 1,104,11
 	.asciz "man"
 
-LDIFF_SYM647=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM647
+LDIFF_SYM582=LDIE_U8 - Ldebug_info_start
+	.long LDIFF_SYM582
 	.byte 1,105,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM648=Lfde75_end - Lfde75_start
-	.long LDIFF_SYM648
-Lfde75_start:
+LDIFF_SYM583=Lfde64_end - Lfde64_start
+	.long LDIFF_SYM583
+Lfde64_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_8
 
-LDIFF_SYM649=Lme_4b - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_8
-	.long LDIFF_SYM649
+LDIFF_SYM584=Lme_40 - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_8
+	.long LDIFF_SYM584
 	.long 0
 	.byte 12,31,0,68,14,112,157,14,158,13,68,13,29,68,150,12,151,11,68,152,10,153,9,68,154,8
 	.align 3
-Lfde75_end:
+Lfde64_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -23235,46 +19639,46 @@ Lfde75_end:
 
 	.byte 5,220,11
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_9
-	.quad Lme_4c
+	.quad Lme_41
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM650=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM650
+LDIFF_SYM585=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM585
 	.byte 3,141,192,0,11
 	.asciz "lo"
 
-LDIFF_SYM651=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM651
+LDIFF_SYM586=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM586
 	.byte 1,105,11
 	.asciz "mi"
 
-LDIFF_SYM652=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM652
+LDIFF_SYM587=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM587
 	.byte 1,104,11
 	.asciz "hi"
 
-LDIFF_SYM653=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM653
+LDIFF_SYM588=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM588
 	.byte 1,103,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM654=Lfde76_end - Lfde76_start
-	.long LDIFF_SYM654
-Lfde76_start:
+LDIFF_SYM589=Lfde65_end - Lfde65_start
+	.long LDIFF_SYM589
+Lfde65_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_9
 
-LDIFF_SYM655=Lme_4c - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_9
-	.long LDIFF_SYM655
+LDIFF_SYM590=Lme_41 - System_Numerics_BigInteger_op_Explicit_System_Numerics_BigInteger_9
+	.long LDIFF_SYM590
 	.long 0
 	.byte 12,31,0,68,14,240,1,157,30,158,29,68,13,29,68,151,28,152,27,68,153,26,154,25
 	.align 3
-Lfde76_end:
+Lfde65_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -23284,31 +19688,31 @@ Lfde76_end:
 
 	.byte 5,162,13
 	.quad System_Numerics_BigInteger_op_UnaryNegation_System_Numerics_BigInteger
-	.quad Lme_4d
+	.quad Lme_42
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM656=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM656
+LDIFF_SYM591=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM591
 	.byte 2,141,32,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM657=Lfde77_end - Lfde77_start
-	.long LDIFF_SYM657
-Lfde77_start:
+LDIFF_SYM592=Lfde66_end - Lfde66_start
+	.long LDIFF_SYM592
+Lfde66_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_UnaryNegation_System_Numerics_BigInteger
 
-LDIFF_SYM658=Lme_4d - System_Numerics_BigInteger_op_UnaryNegation_System_Numerics_BigInteger
-	.long LDIFF_SYM658
+LDIFF_SYM593=Lme_42 - System_Numerics_BigInteger_op_UnaryNegation_System_Numerics_BigInteger
+	.long LDIFF_SYM593
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29
 	.align 3
-Lfde77_end:
+Lfde66_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -23318,36 +19722,36 @@ Lfde77_end:
 
 	.byte 5,186,13
 	.quad System_Numerics_BigInteger_op_Addition_System_Numerics_BigInteger_System_Numerics_BigInteger
-	.quad Lme_4e
+	.quad Lme_43
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM659=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM659
+LDIFF_SYM594=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM594
 	.byte 2,141,32,3
 	.asciz "right"
 
-LDIFF_SYM660=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM660
+LDIFF_SYM595=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM595
 	.byte 2,141,48,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM661=Lfde78_end - Lfde78_start
-	.long LDIFF_SYM661
-Lfde78_start:
+LDIFF_SYM596=Lfde67_end - Lfde67_start
+	.long LDIFF_SYM596
+Lfde67_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Addition_System_Numerics_BigInteger_System_Numerics_BigInteger
 
-LDIFF_SYM662=Lme_4e - System_Numerics_BigInteger_op_Addition_System_Numerics_BigInteger_System_Numerics_BigInteger
-	.long LDIFF_SYM662
+LDIFF_SYM597=Lme_43 - System_Numerics_BigInteger_op_Addition_System_Numerics_BigInteger_System_Numerics_BigInteger
+	.long LDIFF_SYM597
 	.long 0
 	.byte 12,31,0,68,14,240,1,157,30,158,29,68,13,29
 	.align 3
-Lfde78_end:
+Lfde67_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -23357,149 +19761,46 @@ Lfde78_end:
 
 	.byte 5,196,13
 	.quad System_Numerics_BigInteger_op_Multiply_System_Numerics_BigInteger_System_Numerics_BigInteger
-	.quad Lme_4f
+	.quad Lme_44
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM663=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM663
+LDIFF_SYM598=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM598
 	.byte 2,141,48,3
 	.asciz "right"
 
-LDIFF_SYM664=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM664
+LDIFF_SYM599=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM599
 	.byte 3,141,192,0,11
 	.asciz "trivialLeft"
 
-LDIFF_SYM665=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM665
+LDIFF_SYM600=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM600
 	.byte 1,106,11
 	.asciz "trivialRight"
 
-LDIFF_SYM666=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM666
+LDIFF_SYM601=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM601
 	.byte 1,105,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM667=Lfde79_end - Lfde79_start
-	.long LDIFF_SYM667
-Lfde79_start:
+LDIFF_SYM602=Lfde68_end - Lfde68_start
+	.long LDIFF_SYM602
+Lfde68_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_Multiply_System_Numerics_BigInteger_System_Numerics_BigInteger
 
-LDIFF_SYM668=Lme_4f - System_Numerics_BigInteger_op_Multiply_System_Numerics_BigInteger_System_Numerics_BigInteger
-	.long LDIFF_SYM668
+LDIFF_SYM603=Lme_44 - System_Numerics_BigInteger_op_Multiply_System_Numerics_BigInteger_System_Numerics_BigInteger
+	.long LDIFF_SYM603
 	.long 0
 	.byte 12,31,0,84,14,240,4,157,78,158,77,68,13,29,68,153,76,154,75
 	.align 3
-Lfde79_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigInteger:op_Division"
-	.asciz "System_Numerics_BigInteger_op_Division_System_Numerics_BigInteger_System_Numerics_BigInteger"
-
-	.byte 5,239,13
-	.quad System_Numerics_BigInteger_op_Division_System_Numerics_BigInteger_System_Numerics_BigInteger
-	.quad Lme_50
-
-	.byte 2,118,16,3
-	.asciz "dividend"
-
-LDIFF_SYM669=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM669
-	.byte 2,141,48,3
-	.asciz "divisor"
-
-LDIFF_SYM670=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM670
-	.byte 3,141,192,0,11
-	.asciz "trivialDividend"
-
-LDIFF_SYM671=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM671
-	.byte 1,106,11
-	.asciz "trivialDivisor"
-
-LDIFF_SYM672=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM672
-	.byte 1,105,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM673=Lfde80_end - Lfde80_start
-	.long LDIFF_SYM673
-Lfde80_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigInteger_op_Division_System_Numerics_BigInteger_System_Numerics_BigInteger
-
-LDIFF_SYM674=Lme_50 - System_Numerics_BigInteger_op_Division_System_Numerics_BigInteger_System_Numerics_BigInteger
-	.long LDIFF_SYM674
-	.long 0
-	.byte 12,31,0,68,14,240,2,157,46,158,45,68,13,29,68,153,44,154,43
-	.align 3
-Lfde80_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigInteger:op_Modulus"
-	.asciz "System_Numerics_BigInteger_op_Modulus_System_Numerics_BigInteger_System_Numerics_BigInteger"
-
-	.byte 5,148,14
-	.quad System_Numerics_BigInteger_op_Modulus_System_Numerics_BigInteger_System_Numerics_BigInteger
-	.quad Lme_51
-
-	.byte 2,118,16,3
-	.asciz "dividend"
-
-LDIFF_SYM675=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM675
-	.byte 2,141,48,3
-	.asciz "divisor"
-
-LDIFF_SYM676=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM676
-	.byte 3,141,192,0,11
-	.asciz "trivialDividend"
-
-LDIFF_SYM677=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM677
-	.byte 1,106,11
-	.asciz "trivialDivisor"
-
-LDIFF_SYM678=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM678
-	.byte 1,105,11
-	.asciz "remainder"
-
-LDIFF_SYM679=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM679
-	.byte 1,106,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM680=Lfde81_end - Lfde81_start
-	.long LDIFF_SYM680
-Lfde81_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigInteger_op_Modulus_System_Numerics_BigInteger_System_Numerics_BigInteger
-
-LDIFF_SYM681=Lme_51 - System_Numerics_BigInteger_op_Modulus_System_Numerics_BigInteger_System_Numerics_BigInteger
-	.long LDIFF_SYM681
-	.long 0
-	.byte 12,31,0,68,14,208,2,157,42,158,41,68,13,29,68,153,40,154,39
-	.align 3
-Lfde81_end:
+Lfde68_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -23509,75 +19810,36 @@ Lfde81_end:
 
 	.byte 5,184,14
 	.quad System_Numerics_BigInteger_op_LessThanOrEqual_System_Numerics_BigInteger_System_Numerics_BigInteger
-	.quad Lme_52
+	.quad Lme_45
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM682=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM682
+LDIFF_SYM604=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM604
 	.byte 2,141,16,3
 	.asciz "right"
 
-LDIFF_SYM683=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM683
+LDIFF_SYM605=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM605
 	.byte 2,141,32,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM684=Lfde82_end - Lfde82_start
-	.long LDIFF_SYM684
-Lfde82_start:
+LDIFF_SYM606=Lfde69_end - Lfde69_start
+	.long LDIFF_SYM606
+Lfde69_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_LessThanOrEqual_System_Numerics_BigInteger_System_Numerics_BigInteger
 
-LDIFF_SYM685=Lme_52 - System_Numerics_BigInteger_op_LessThanOrEqual_System_Numerics_BigInteger_System_Numerics_BigInteger
-	.long LDIFF_SYM685
+LDIFF_SYM607=Lme_45 - System_Numerics_BigInteger_op_LessThanOrEqual_System_Numerics_BigInteger_System_Numerics_BigInteger
+	.long LDIFF_SYM607
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
-Lfde82_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigInteger:op_Inequality"
-	.asciz "System_Numerics_BigInteger_op_Inequality_System_Numerics_BigInteger_System_Numerics_BigInteger"
-
-	.byte 5,203,14
-	.quad System_Numerics_BigInteger_op_Inequality_System_Numerics_BigInteger_System_Numerics_BigInteger
-	.quad Lme_53
-
-	.byte 2,118,16,3
-	.asciz "left"
-
-LDIFF_SYM686=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM686
-	.byte 2,141,16,3
-	.asciz "right"
-
-LDIFF_SYM687=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM687
-	.byte 2,141,32,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM688=Lfde83_end - Lfde83_start
-	.long LDIFF_SYM688
-Lfde83_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigInteger_op_Inequality_System_Numerics_BigInteger_System_Numerics_BigInteger
-
-LDIFF_SYM689=Lme_53 - System_Numerics_BigInteger_op_Inequality_System_Numerics_BigInteger_System_Numerics_BigInteger
-	.long LDIFF_SYM689
-	.long 0
-	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
-	.align 3
-Lfde83_end:
+Lfde69_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -23587,36 +19849,36 @@ Lfde83_end:
 
 	.byte 5,208,14
 	.quad System_Numerics_BigInteger_op_LessThan_System_Numerics_BigInteger_long
-	.quad Lme_54
+	.quad Lme_46
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM690=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM690
+LDIFF_SYM608=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM608
 	.byte 2,141,16,3
 	.asciz "right"
 
-LDIFF_SYM691=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM691
+LDIFF_SYM609=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM609
 	.byte 2,141,32,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM692=Lfde84_end - Lfde84_start
-	.long LDIFF_SYM692
-Lfde84_start:
+LDIFF_SYM610=Lfde70_end - Lfde70_start
+	.long LDIFF_SYM610
+Lfde70_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_LessThan_System_Numerics_BigInteger_long
 
-LDIFF_SYM693=Lme_54 - System_Numerics_BigInteger_op_LessThan_System_Numerics_BigInteger_long
-	.long LDIFF_SYM693
+LDIFF_SYM611=Lme_46 - System_Numerics_BigInteger_op_LessThan_System_Numerics_BigInteger_long
+	.long LDIFF_SYM611
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
-Lfde84_end:
+Lfde70_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -23626,114 +19888,36 @@ Lfde84_end:
 
 	.byte 5,213,14
 	.quad System_Numerics_BigInteger_op_LessThanOrEqual_System_Numerics_BigInteger_long
-	.quad Lme_55
+	.quad Lme_47
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM694=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM694
+LDIFF_SYM612=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM612
 	.byte 2,141,16,3
 	.asciz "right"
 
-LDIFF_SYM695=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM695
+LDIFF_SYM613=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM613
 	.byte 2,141,32,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM696=Lfde85_end - Lfde85_start
-	.long LDIFF_SYM696
-Lfde85_start:
+LDIFF_SYM614=Lfde71_end - Lfde71_start
+	.long LDIFF_SYM614
+Lfde71_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_LessThanOrEqual_System_Numerics_BigInteger_long
 
-LDIFF_SYM697=Lme_55 - System_Numerics_BigInteger_op_LessThanOrEqual_System_Numerics_BigInteger_long
-	.long LDIFF_SYM697
+LDIFF_SYM615=Lme_47 - System_Numerics_BigInteger_op_LessThanOrEqual_System_Numerics_BigInteger_long
+	.long LDIFF_SYM615
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
-Lfde85_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigInteger:op_Equality"
-	.asciz "System_Numerics_BigInteger_op_Equality_System_Numerics_BigInteger_long"
-
-	.byte 5,228,14
-	.quad System_Numerics_BigInteger_op_Equality_System_Numerics_BigInteger_long
-	.quad Lme_56
-
-	.byte 2,118,16,3
-	.asciz "left"
-
-LDIFF_SYM698=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM698
-	.byte 2,141,16,3
-	.asciz "right"
-
-LDIFF_SYM699=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM699
-	.byte 2,141,32,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM700=Lfde86_end - Lfde86_start
-	.long LDIFF_SYM700
-Lfde86_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigInteger_op_Equality_System_Numerics_BigInteger_long
-
-LDIFF_SYM701=Lme_56 - System_Numerics_BigInteger_op_Equality_System_Numerics_BigInteger_long
-	.long LDIFF_SYM701
-	.long 0
-	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
-	.align 3
-Lfde86_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigInteger:op_Inequality"
-	.asciz "System_Numerics_BigInteger_op_Inequality_System_Numerics_BigInteger_long"
-
-	.byte 5,233,14
-	.quad System_Numerics_BigInteger_op_Inequality_System_Numerics_BigInteger_long
-	.quad Lme_57
-
-	.byte 2,118,16,3
-	.asciz "left"
-
-LDIFF_SYM702=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM702
-	.byte 2,141,16,3
-	.asciz "right"
-
-LDIFF_SYM703=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM703
-	.byte 2,141,32,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM704=Lfde87_end - Lfde87_start
-	.long LDIFF_SYM704
-Lfde87_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigInteger_op_Inequality_System_Numerics_BigInteger_long
-
-LDIFF_SYM705=Lme_57 - System_Numerics_BigInteger_op_Inequality_System_Numerics_BigInteger_long
-	.long LDIFF_SYM705
-	.long 0
-	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
-	.align 3
-Lfde87_end:
+Lfde71_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -23743,36 +19927,36 @@ Lfde87_end:
 
 	.byte 5,238,14
 	.quad System_Numerics_BigInteger_op_LessThan_long_System_Numerics_BigInteger
-	.quad Lme_58
+	.quad Lme_48
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM706=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM706
+LDIFF_SYM616=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM616
 	.byte 2,141,16,3
 	.asciz "right"
 
-LDIFF_SYM707=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM707
+LDIFF_SYM617=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM617
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM708=Lfde88_end - Lfde88_start
-	.long LDIFF_SYM708
-Lfde88_start:
+LDIFF_SYM618=Lfde72_end - Lfde72_start
+	.long LDIFF_SYM618
+Lfde72_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_LessThan_long_System_Numerics_BigInteger
 
-LDIFF_SYM709=Lme_58 - System_Numerics_BigInteger_op_LessThan_long_System_Numerics_BigInteger
-	.long LDIFF_SYM709
+LDIFF_SYM619=Lme_48 - System_Numerics_BigInteger_op_LessThan_long_System_Numerics_BigInteger
+	.long LDIFF_SYM619
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
-Lfde88_end:
+Lfde72_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -23782,36 +19966,36 @@ Lfde88_end:
 
 	.byte 5,243,14
 	.quad System_Numerics_BigInteger_op_LessThanOrEqual_long_System_Numerics_BigInteger
-	.quad Lme_59
+	.quad Lme_49
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM710=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM710
+LDIFF_SYM620=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM620
 	.byte 2,141,16,3
 	.asciz "right"
 
-LDIFF_SYM711=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM711
+LDIFF_SYM621=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM621
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM712=Lfde89_end - Lfde89_start
-	.long LDIFF_SYM712
-Lfde89_start:
+LDIFF_SYM622=Lfde73_end - Lfde73_start
+	.long LDIFF_SYM622
+Lfde73_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_op_LessThanOrEqual_long_System_Numerics_BigInteger
 
-LDIFF_SYM713=Lme_59 - System_Numerics_BigInteger_op_LessThanOrEqual_long_System_Numerics_BigInteger
-	.long LDIFF_SYM713
+LDIFF_SYM623=Lme_49 - System_Numerics_BigInteger_op_LessThanOrEqual_long_System_Numerics_BigInteger
+	.long LDIFF_SYM623
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
-Lfde89_end:
+Lfde73_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -23821,80 +20005,46 @@ Lfde89_end:
 
 	.byte 5,246,15
 	.quad System_Numerics_BigInteger_GetDiffLength_uint___uint___int
-	.quad Lme_5a
+	.quad Lme_4a
 
 	.byte 2,118,16,3
 	.asciz "rgu1"
 
-LDIFF_SYM714=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM714
+LDIFF_SYM624=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM624
 	.byte 1,104,3
 	.asciz "rgu2"
 
-LDIFF_SYM715=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM715
+LDIFF_SYM625=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM625
 	.byte 1,105,3
 	.asciz "cu"
 
-LDIFF_SYM716=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM716
+LDIFF_SYM626=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM626
 	.byte 2,141,40,11
 	.asciz "iv"
 
-LDIFF_SYM717=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM717
+LDIFF_SYM627=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM627
 	.byte 1,103,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM718=Lfde90_end - Lfde90_start
-	.long LDIFF_SYM718
-Lfde90_start:
+LDIFF_SYM628=Lfde74_end - Lfde74_start
+	.long LDIFF_SYM628
+Lfde74_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger_GetDiffLength_uint___uint___int
 
-LDIFF_SYM719=Lme_5a - System_Numerics_BigInteger_GetDiffLength_uint___uint___int
-	.long LDIFF_SYM719
+LDIFF_SYM629=Lme_4a - System_Numerics_BigInteger_GetDiffLength_uint___uint___int
+	.long LDIFF_SYM629
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29,68,151,4,152,3,68,153,2
 	.align 3
-Lfde90_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigInteger:AssertValid"
-	.asciz "System_Numerics_BigInteger_AssertValid"
-
-	.byte 5,129,16
-	.quad System_Numerics_BigInteger_AssertValid
-	.quad Lme_5b
-
-	.byte 2,118,16,3
-	.asciz "this"
-
-LDIFF_SYM720=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM720
-	.byte 2,141,16,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM721=Lfde91_end - Lfde91_start
-	.long LDIFF_SYM721
-Lfde91_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigInteger_AssertValid
-
-LDIFF_SYM722=Lme_5b - System_Numerics_BigInteger_AssertValid
-	.long LDIFF_SYM722
-	.long 0
-	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
-	.align 3
-Lfde91_end:
+Lfde74_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -23904,26 +20054,26 @@ Lfde91_end:
 
 	.byte 5,29
 	.quad System_Numerics_BigInteger__cctor
-	.quad Lme_5c
+	.quad Lme_4b
 
 	.byte 2,118,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM723=Lfde92_end - Lfde92_start
-	.long LDIFF_SYM723
-Lfde92_start:
+LDIFF_SYM630=Lfde75_end - Lfde75_start
+	.long LDIFF_SYM630
+Lfde75_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigInteger__cctor
 
-LDIFF_SYM724=Lme_5c - System_Numerics_BigInteger__cctor
-	.long LDIFF_SYM724
+LDIFF_SYM631=Lme_4b - System_Numerics_BigInteger__cctor
+	.long LDIFF_SYM631
 	.long 0
 	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29
 	.align 3
-Lfde92_end:
+Lfde75_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -23933,56 +20083,56 @@ Lfde92_end:
 
 	.byte 6,21
 	.quad System_Numerics_BigIntegerCalculator_Add_uint___uint
-	.quad Lme_5d
+	.quad Lme_4c
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM725=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM725
+LDIFF_SYM632=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM632
 	.byte 1,105,3
 	.asciz "right"
 
-LDIFF_SYM726=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM726
+LDIFF_SYM633=LDIE_U4 - Ldebug_info_start
+	.long LDIFF_SYM633
 	.byte 1,106,11
 	.asciz "bits"
 
-LDIFF_SYM727=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM727
+LDIFF_SYM634=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM634
 	.byte 1,104,11
 	.asciz "digit"
 
-LDIFF_SYM728=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM728
+LDIFF_SYM635=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM635
 	.byte 1,106,11
 	.asciz "carry"
 
-LDIFF_SYM729=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM729
+LDIFF_SYM636=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM636
 	.byte 1,103,11
 	.asciz "i"
 
-LDIFF_SYM730=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM730
+LDIFF_SYM637=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM637
 	.byte 1,102,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM731=Lfde93_end - Lfde93_start
-	.long LDIFF_SYM731
-Lfde93_start:
+LDIFF_SYM638=Lfde76_end - Lfde76_start
+	.long LDIFF_SYM638
+Lfde76_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigIntegerCalculator_Add_uint___uint
 
-LDIFF_SYM732=Lme_5d - System_Numerics_BigIntegerCalculator_Add_uint___uint
-	.long LDIFF_SYM732
+LDIFF_SYM639=Lme_4c - System_Numerics_BigIntegerCalculator_Add_uint___uint
+	.long LDIFF_SYM639
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,150,6,151,5,68,152,4,153,3,68,154,2
 	.align 3
-Lfde93_end:
+Lfde76_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -23992,66 +20142,66 @@ Lfde93_end:
 
 	.byte 6,48
 	.quad System_Numerics_BigIntegerCalculator_Add_uint___uint__
-	.quad Lme_5e
+	.quad Lme_4d
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM733=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM733
+LDIFF_SYM640=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM640
 	.byte 1,105,3
 	.asciz "right"
 
-LDIFF_SYM734=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM734
+LDIFF_SYM641=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM641
 	.byte 2,141,56,11
 	.asciz "bits"
 
-LDIFF_SYM735=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM735
+LDIFF_SYM642=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM642
 	.byte 1,104,11
 	.asciz "l"
 
-LDIFF_SYM736=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM736
+LDIFF_SYM643=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM643
 	.byte 1,103,11
 	.asciz "r"
 
-LDIFF_SYM737=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM737
+LDIFF_SYM644=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM644
 	.byte 1,102,11
 	.asciz "b"
 
-LDIFF_SYM738=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM738
+LDIFF_SYM645=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM645
 	.byte 1,101,11
 	.asciz "V_4"
 
-LDIFF_SYM739=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM739
+LDIFF_SYM646=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM646
 	.byte 1,103,11
 	.asciz "V_5"
 
-LDIFF_SYM740=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM740
+LDIFF_SYM647=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM647
 	.byte 1,102,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM741=Lfde94_end - Lfde94_start
-	.long LDIFF_SYM741
-Lfde94_start:
+LDIFF_SYM648=Lfde77_end - Lfde77_start
+	.long LDIFF_SYM648
+Lfde77_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigIntegerCalculator_Add_uint___uint__
 
-LDIFF_SYM742=Lme_5e - System_Numerics_BigIntegerCalculator_Add_uint___uint__
-	.long LDIFF_SYM742
+LDIFF_SYM649=Lme_4d - System_Numerics_BigIntegerCalculator_Add_uint___uint__
+	.long LDIFF_SYM649
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,149,6,150,5,68,151,4,152,3,68,153,2
 	.align 3
-Lfde94_end:
+Lfde77_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -24061,76 +20211,76 @@ Lfde94_end:
 
 	.byte 6,75
 	.quad System_Numerics_BigIntegerCalculator_Add_uint__int_uint__int_uint__int
-	.quad Lme_5f
+	.quad Lme_4e
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM743=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM743
+LDIFF_SYM650=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM650
 	.byte 1,102,3
 	.asciz "leftLength"
 
-LDIFF_SYM744=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM744
+LDIFF_SYM651=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM651
 	.byte 1,103,3
 	.asciz "right"
 
-LDIFF_SYM745=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM745
+LDIFF_SYM652=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM652
 	.byte 1,104,3
 	.asciz "rightLength"
 
-LDIFF_SYM746=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM746
+LDIFF_SYM653=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM653
 	.byte 1,105,3
 	.asciz "bits"
 
-LDIFF_SYM747=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM747
+LDIFF_SYM654=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM654
 	.byte 1,106,3
 	.asciz "bitsLength"
 
-LDIFF_SYM748=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM748
+LDIFF_SYM655=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM655
 	.byte 0,11
 	.asciz "i"
 
-LDIFF_SYM749=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM749
+LDIFF_SYM656=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM656
 	.byte 1,101,11
 	.asciz "carry"
 
-LDIFF_SYM750=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM750
+LDIFF_SYM657=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM657
 	.byte 1,100,11
 	.asciz "digit"
 
-LDIFF_SYM751=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM751
+LDIFF_SYM658=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM658
 	.byte 1,100,11
 	.asciz "digit"
 
-LDIFF_SYM752=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM752
+LDIFF_SYM659=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM659
 	.byte 1,105,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM753=Lfde95_end - Lfde95_start
-	.long LDIFF_SYM753
-Lfde95_start:
+LDIFF_SYM660=Lfde78_end - Lfde78_start
+	.long LDIFF_SYM660
+Lfde78_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigIntegerCalculator_Add_uint__int_uint__int_uint__int
 
-LDIFF_SYM754=Lme_5f - System_Numerics_BigIntegerCalculator_Add_uint__int_uint__int_uint__int
-	.long LDIFF_SYM754
+LDIFF_SYM661=Lme_4e - System_Numerics_BigIntegerCalculator_Add_uint__int_uint__int_uint__int
+	.long LDIFF_SYM661
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,148,8,149,7,68,150,6,151,5,68,152,4,153,3,68,154,2
 	.align 3
-Lfde95_end:
+Lfde78_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -24140,66 +20290,66 @@ Lfde95_end:
 
 	.byte 6,105
 	.quad System_Numerics_BigIntegerCalculator_AddSelf_uint__int_uint__int
-	.quad Lme_60
+	.quad Lme_4f
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM755=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM755
+LDIFF_SYM662=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM662
 	.byte 1,103,3
 	.asciz "leftLength"
 
-LDIFF_SYM756=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM756
+LDIFF_SYM663=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM663
 	.byte 1,104,3
 	.asciz "right"
 
-LDIFF_SYM757=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM757
+LDIFF_SYM664=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM664
 	.byte 1,105,3
 	.asciz "rightLength"
 
-LDIFF_SYM758=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM758
+LDIFF_SYM665=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM665
 	.byte 1,106,11
 	.asciz "i"
 
-LDIFF_SYM759=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM759
+LDIFF_SYM666=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM666
 	.byte 1,102,11
 	.asciz "carry"
 
-LDIFF_SYM760=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM760
+LDIFF_SYM667=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM667
 	.byte 1,101,11
 	.asciz "digit"
 
-LDIFF_SYM761=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM761
+LDIFF_SYM668=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM668
 	.byte 1,101,11
 	.asciz "digit"
 
-LDIFF_SYM762=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM762
+LDIFF_SYM669=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM669
 	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM763=Lfde96_end - Lfde96_start
-	.long LDIFF_SYM763
-Lfde96_start:
+LDIFF_SYM670=Lfde79_end - Lfde79_start
+	.long LDIFF_SYM670
+Lfde79_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigIntegerCalculator_AddSelf_uint__int_uint__int
 
-LDIFF_SYM764=Lme_60 - System_Numerics_BigIntegerCalculator_AddSelf_uint__int_uint__int
-	.long LDIFF_SYM764
+LDIFF_SYM671=Lme_4f - System_Numerics_BigIntegerCalculator_AddSelf_uint__int_uint__int
+	.long LDIFF_SYM671
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,149,6,150,5,68,151,4,152,3,68,153,2,154,1
 	.align 3
-Lfde96_end:
+Lfde79_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -24209,56 +20359,56 @@ Lfde96_end:
 
 	.byte 6,134,1
 	.quad System_Numerics_BigIntegerCalculator_Subtract_uint___uint
-	.quad Lme_61
+	.quad Lme_50
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM765=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM765
+LDIFF_SYM672=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM672
 	.byte 1,105,3
 	.asciz "right"
 
-LDIFF_SYM766=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM766
+LDIFF_SYM673=LDIE_U4 - Ldebug_info_start
+	.long LDIFF_SYM673
 	.byte 1,106,11
 	.asciz "bits"
 
-LDIFF_SYM767=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM767
+LDIFF_SYM674=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM674
 	.byte 1,104,11
 	.asciz "digit"
 
-LDIFF_SYM768=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM768
+LDIFF_SYM675=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM675
 	.byte 1,106,11
 	.asciz "carry"
 
-LDIFF_SYM769=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM769
+LDIFF_SYM676=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM676
 	.byte 1,103,11
 	.asciz "i"
 
-LDIFF_SYM770=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM770
+LDIFF_SYM677=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM677
 	.byte 1,102,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM771=Lfde97_end - Lfde97_start
-	.long LDIFF_SYM771
-Lfde97_start:
+LDIFF_SYM678=Lfde80_end - Lfde80_start
+	.long LDIFF_SYM678
+Lfde80_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigIntegerCalculator_Subtract_uint___uint
 
-LDIFF_SYM772=Lme_61 - System_Numerics_BigIntegerCalculator_Subtract_uint___uint
-	.long LDIFF_SYM772
+LDIFF_SYM679=Lme_50 - System_Numerics_BigIntegerCalculator_Subtract_uint___uint
+	.long LDIFF_SYM679
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,150,6,151,5,68,152,4,153,3,68,154,2
 	.align 3
-Lfde97_end:
+Lfde80_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -24268,71 +20418,71 @@ Lfde97_end:
 
 	.byte 6,161,1
 	.quad System_Numerics_BigIntegerCalculator_Subtract_uint___uint__
-	.quad Lme_62
+	.quad Lme_51
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM773=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM773
+LDIFF_SYM680=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM680
 	.byte 1,105,3
 	.asciz "right"
 
-LDIFF_SYM774=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM774
+LDIFF_SYM681=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM681
 	.byte 2,141,56,11
 	.asciz "bits"
 
-LDIFF_SYM775=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM775
+LDIFF_SYM682=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM682
 	.byte 1,104,11
 	.asciz "l"
 
-LDIFF_SYM776=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM776
+LDIFF_SYM683=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM683
 	.byte 1,103,11
 	.asciz "r"
 
-LDIFF_SYM777=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM777
+LDIFF_SYM684=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM684
 	.byte 1,102,11
 	.asciz "b"
 
-LDIFF_SYM778=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM778
+LDIFF_SYM685=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM685
 	.byte 1,101,11
 	.asciz "V_4"
 
-LDIFF_SYM779=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM779
+LDIFF_SYM686=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM686
 	.byte 1,103,11
 	.asciz "V_5"
 
-LDIFF_SYM780=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM780
+LDIFF_SYM687=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM687
 	.byte 1,102,11
 	.asciz "V_6"
 
-LDIFF_SYM781=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM781
+LDIFF_SYM688=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM688
 	.byte 1,101,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM782=Lfde98_end - Lfde98_start
-	.long LDIFF_SYM782
-Lfde98_start:
+LDIFF_SYM689=Lfde81_end - Lfde81_start
+	.long LDIFF_SYM689
+Lfde81_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigIntegerCalculator_Subtract_uint___uint__
 
-LDIFF_SYM783=Lme_62 - System_Numerics_BigIntegerCalculator_Subtract_uint___uint__
-	.long LDIFF_SYM783
+LDIFF_SYM690=Lme_51 - System_Numerics_BigIntegerCalculator_Subtract_uint___uint__
+	.long LDIFF_SYM690
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,149,6,150,5,68,151,4,152,3,68,153,2
 	.align 3
-Lfde98_end:
+Lfde81_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -24342,76 +20492,76 @@ Lfde98_end:
 
 	.byte 6,189,1
 	.quad System_Numerics_BigIntegerCalculator_Subtract_uint__int_uint__int_uint__int
-	.quad Lme_63
+	.quad Lme_52
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM784=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM784
+LDIFF_SYM691=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM691
 	.byte 1,102,3
 	.asciz "leftLength"
 
-LDIFF_SYM785=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM785
+LDIFF_SYM692=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM692
 	.byte 1,103,3
 	.asciz "right"
 
-LDIFF_SYM786=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM786
+LDIFF_SYM693=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM693
 	.byte 1,104,3
 	.asciz "rightLength"
 
-LDIFF_SYM787=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM787
+LDIFF_SYM694=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM694
 	.byte 1,105,3
 	.asciz "bits"
 
-LDIFF_SYM788=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM788
+LDIFF_SYM695=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM695
 	.byte 1,106,3
 	.asciz "bitsLength"
 
-LDIFF_SYM789=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM789
+LDIFF_SYM696=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM696
 	.byte 0,11
 	.asciz "i"
 
-LDIFF_SYM790=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM790
+LDIFF_SYM697=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM697
 	.byte 1,101,11
 	.asciz "carry"
 
-LDIFF_SYM791=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM791
+LDIFF_SYM698=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM698
 	.byte 1,100,11
 	.asciz "digit"
 
-LDIFF_SYM792=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM792
+LDIFF_SYM699=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM699
 	.byte 1,100,11
 	.asciz "digit"
 
-LDIFF_SYM793=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM793
+LDIFF_SYM700=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM700
 	.byte 1,105,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM794=Lfde99_end - Lfde99_start
-	.long LDIFF_SYM794
-Lfde99_start:
+LDIFF_SYM701=Lfde82_end - Lfde82_start
+	.long LDIFF_SYM701
+Lfde82_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigIntegerCalculator_Subtract_uint__int_uint__int_uint__int
 
-LDIFF_SYM795=Lme_63 - System_Numerics_BigIntegerCalculator_Subtract_uint__int_uint__int_uint__int
-	.long LDIFF_SYM795
+LDIFF_SYM702=Lme_52 - System_Numerics_BigIntegerCalculator_Subtract_uint__int_uint__int_uint__int
+	.long LDIFF_SYM702
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,148,8,149,7,68,150,6,151,5,68,152,4,153,3,68,154,2
 	.align 3
-Lfde99_end:
+Lfde82_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -24421,662 +20571,41 @@ Lfde99_end:
 
 	.byte 6,245,1
 	.quad System_Numerics_BigIntegerCalculator_Compare_uint___uint__
-	.quad Lme_64
+	.quad Lme_53
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM796=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM796
+LDIFF_SYM703=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM703
 	.byte 1,105,3
 	.asciz "right"
 
-LDIFF_SYM797=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM797
+LDIFF_SYM704=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM704
 	.byte 1,106,11
 	.asciz "i"
 
-LDIFF_SYM798=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM798
+LDIFF_SYM705=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM705
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM799=Lfde100_end - Lfde100_start
-	.long LDIFF_SYM799
-Lfde100_start:
+LDIFF_SYM706=Lfde83_end - Lfde83_start
+	.long LDIFF_SYM706
+Lfde83_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigIntegerCalculator_Compare_uint___uint__
 
-LDIFF_SYM800=Lme_64 - System_Numerics_BigIntegerCalculator_Compare_uint___uint__
-	.long LDIFF_SYM800
+LDIFF_SYM707=Lme_53 - System_Numerics_BigIntegerCalculator_Compare_uint___uint__
+	.long LDIFF_SYM707
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29,68,152,4,153,3,68,154,2
 	.align 3
-Lfde100_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigIntegerCalculator:Divide"
-	.asciz "System_Numerics_BigIntegerCalculator_Divide_uint___uint"
-
-	.byte 7,44
-	.quad System_Numerics_BigIntegerCalculator_Divide_uint___uint
-	.quad Lme_65
-
-	.byte 2,118,16,3
-	.asciz "left"
-
-LDIFF_SYM801=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM801
-	.byte 1,105,3
-	.asciz "right"
-
-LDIFF_SYM802=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM802
-	.byte 1,106,11
-	.asciz "quotient"
-
-LDIFF_SYM803=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM803
-	.byte 1,104,11
-	.asciz "carry"
-
-LDIFF_SYM804=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM804
-	.byte 1,103,11
-	.asciz "i"
-
-LDIFF_SYM805=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM805
-	.byte 1,102,11
-	.asciz "digit"
-
-LDIFF_SYM806=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM806
-	.byte 1,103,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM807=Lfde101_end - Lfde101_start
-	.long LDIFF_SYM807
-Lfde101_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigIntegerCalculator_Divide_uint___uint
-
-LDIFF_SYM808=Lme_65 - System_Numerics_BigIntegerCalculator_Divide_uint___uint
-	.long LDIFF_SYM808
-	.long 0
-	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,150,6,151,5,68,152,4,153,3,68,154,2
-	.align 3
-Lfde101_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigIntegerCalculator:Remainder"
-	.asciz "System_Numerics_BigIntegerCalculator_Remainder_uint___uint"
-
-	.byte 7,65
-	.quad System_Numerics_BigIntegerCalculator_Remainder_uint___uint
-	.quad Lme_66
-
-	.byte 2,118,16,3
-	.asciz "left"
-
-LDIFF_SYM809=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM809
-	.byte 1,105,3
-	.asciz "right"
-
-LDIFF_SYM810=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM810
-	.byte 1,106,11
-	.asciz "carry"
-
-LDIFF_SYM811=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM811
-	.byte 1,104,11
-	.asciz "i"
-
-LDIFF_SYM812=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM812
-	.byte 1,103,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM813=Lfde102_end - Lfde102_start
-	.long LDIFF_SYM813
-Lfde102_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigIntegerCalculator_Remainder_uint___uint
-
-LDIFF_SYM814=Lme_66 - System_Numerics_BigIntegerCalculator_Remainder_uint___uint
-	.long LDIFF_SYM814
-	.long 0
-	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29,68,151,4,152,3,68,153,2,154,1
-	.align 3
-Lfde102_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigIntegerCalculator:Divide"
-	.asciz "System_Numerics_BigIntegerCalculator_Divide_uint___uint__"
-
-	.byte 7,118
-	.quad System_Numerics_BigIntegerCalculator_Divide_uint___uint__
-	.quad Lme_67
-
-	.byte 2,118,16,3
-	.asciz "left"
-
-LDIFF_SYM815=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM815
-	.byte 2,141,24,3
-	.asciz "right"
-
-LDIFF_SYM816=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM816
-	.byte 1,106,11
-	.asciz "localLeft"
-
-LDIFF_SYM817=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM817
-	.byte 0,11
-	.asciz "bits"
-
-LDIFF_SYM818=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM818
-	.byte 0,11
-	.asciz "l"
-
-LDIFF_SYM819=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM819
-	.byte 0,11
-	.asciz "r"
-
-LDIFF_SYM820=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM820
-	.byte 0,11
-	.asciz "b"
-
-LDIFF_SYM821=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM821
-	.byte 0,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM822=Lfde103_end - Lfde103_start
-	.long LDIFF_SYM822
-Lfde103_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigIntegerCalculator_Divide_uint___uint__
-
-LDIFF_SYM823=Lme_67 - System_Numerics_BigIntegerCalculator_Divide_uint___uint__
-	.long LDIFF_SYM823
-	.long 0
-	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29,68,154,4
-	.align 3
-Lfde103_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigIntegerCalculator:Remainder"
-	.asciz "System_Numerics_BigIntegerCalculator_Remainder_uint___uint__"
-
-	.byte 7,144,1
-	.quad System_Numerics_BigIntegerCalculator_Remainder_uint___uint__
-	.quad Lme_68
-
-	.byte 2,118,16,3
-	.asciz "left"
-
-LDIFF_SYM824=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM824
-	.byte 2,141,16,3
-	.asciz "right"
-
-LDIFF_SYM825=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM825
-	.byte 2,141,24,11
-	.asciz "localLeft"
-
-LDIFF_SYM826=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM826
-	.byte 0,11
-	.asciz "l"
-
-LDIFF_SYM827=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM827
-	.byte 0,11
-	.asciz "r"
-
-LDIFF_SYM828=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM828
-	.byte 0,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM829=Lfde104_end - Lfde104_start
-	.long LDIFF_SYM829
-Lfde104_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigIntegerCalculator_Remainder_uint___uint__
-
-LDIFF_SYM830=Lme_68 - System_Numerics_BigIntegerCalculator_Remainder_uint___uint__
-	.long LDIFF_SYM830
-	.long 0
-	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
-	.align 3
-Lfde104_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigIntegerCalculator:Divide"
-	.asciz "System_Numerics_BigIntegerCalculator_Divide_uint__int_uint__int_uint__int"
-
-	.byte 7,172,1
-	.quad System_Numerics_BigIntegerCalculator_Divide_uint__int_uint__int_uint__int
-	.quad Lme_69
-
-	.byte 2,118,16,3
-	.asciz "left"
-
-LDIFF_SYM831=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM831
-	.byte 1,101,3
-	.asciz "leftLength"
-
-LDIFF_SYM832=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM832
-	.byte 1,102,3
-	.asciz "right"
-
-LDIFF_SYM833=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM833
-	.byte 3,141,208,0,3
-	.asciz "rightLength"
-
-LDIFF_SYM834=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM834
-	.byte 3,141,216,0,3
-	.asciz "bits"
-
-LDIFF_SYM835=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM835
-	.byte 3,141,224,0,3
-	.asciz "bitsLength"
-
-LDIFF_SYM836=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM836
-	.byte 3,141,232,0,11
-	.asciz "divHi"
-
-LDIFF_SYM837=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM837
-	.byte 1,100,11
-	.asciz "divLo"
-
-LDIFF_SYM838=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM838
-	.byte 3,141,240,0,11
-	.asciz "shift"
-
-LDIFF_SYM839=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM839
-	.byte 1,106,11
-	.asciz "backShift"
-
-LDIFF_SYM840=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM840
-	.byte 3,141,248,0,11
-	.asciz "divNx"
-
-LDIFF_SYM841=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM841
-	.byte 1,105,11
-	.asciz "i"
-
-LDIFF_SYM842=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM842
-	.byte 1,105,11
-	.asciz "n"
-
-LDIFF_SYM843=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM843
-	.byte 3,141,128,1,11
-	.asciz "t"
-
-LDIFF_SYM844=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM844
-	.byte 1,104,11
-	.asciz "valHi"
-
-LDIFF_SYM845=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM845
-	.byte 3,141,136,1,11
-	.asciz "valLo"
-
-LDIFF_SYM846=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM846
-	.byte 1,103,11
-	.asciz "digit"
-
-LDIFF_SYM847=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM847
-	.byte 1,99,11
-	.asciz "valNx"
-
-LDIFF_SYM848=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM848
-	.byte 3,141,144,1,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM849=Lfde105_end - Lfde105_start
-	.long LDIFF_SYM849
-Lfde105_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigIntegerCalculator_Divide_uint__int_uint__int_uint__int
-
-LDIFF_SYM850=Lme_69 - System_Numerics_BigIntegerCalculator_Divide_uint__int_uint__int_uint__int
-	.long LDIFF_SYM850
-	.long 0
-	.byte 12,31,0,68,14,160,1,157,20,158,19,68,13,29,68,147,18,148,17,68,149,16,150,15,68,151,14,152,13,68,153,12
-	.byte 154,11
-	.align 3
-Lfde105_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigIntegerCalculator:AddDivisor"
-	.asciz "System_Numerics_BigIntegerCalculator_AddDivisor_uint__int_uint__int"
-
-	.byte 7,253,1
-	.quad System_Numerics_BigIntegerCalculator_AddDivisor_uint__int_uint__int
-	.quad Lme_6a
-
-	.byte 2,118,16,3
-	.asciz "left"
-
-LDIFF_SYM851=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM851
-	.byte 1,104,3
-	.asciz "leftLength"
-
-LDIFF_SYM852=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM852
-	.byte 0,3
-	.asciz "right"
-
-LDIFF_SYM853=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM853
-	.byte 1,105,3
-	.asciz "rightLength"
-
-LDIFF_SYM854=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM854
-	.byte 1,106,11
-	.asciz "carry"
-
-LDIFF_SYM855=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM855
-	.byte 1,103,11
-	.asciz "i"
-
-LDIFF_SYM856=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM856
-	.byte 1,102,11
-	.asciz "digit"
-
-LDIFF_SYM857=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM857
-	.byte 1,103,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM858=Lfde106_end - Lfde106_start
-	.long LDIFF_SYM858
-Lfde106_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigIntegerCalculator_AddDivisor_uint__int_uint__int
-
-LDIFF_SYM859=Lme_6a - System_Numerics_BigIntegerCalculator_AddDivisor_uint__int_uint__int
-	.long LDIFF_SYM859
-	.long 0
-	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,150,6,151,5,68,152,4,153,3,68,154,2
-	.align 3
-Lfde106_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigIntegerCalculator:SubtractDivisor"
-	.asciz "System_Numerics_BigIntegerCalculator_SubtractDivisor_uint__int_uint__int_ulong"
-
-	.byte 7,150,2
-	.quad System_Numerics_BigIntegerCalculator_SubtractDivisor_uint__int_uint__int_ulong
-	.quad Lme_6b
-
-	.byte 2,118,16,3
-	.asciz "left"
-
-LDIFF_SYM860=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM860
-	.byte 1,103,3
-	.asciz "leftLength"
-
-LDIFF_SYM861=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM861
-	.byte 0,3
-	.asciz "right"
-
-LDIFF_SYM862=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM862
-	.byte 1,104,3
-	.asciz "rightLength"
-
-LDIFF_SYM863=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM863
-	.byte 1,105,3
-	.asciz "q"
-
-LDIFF_SYM864=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM864
-	.byte 1,106,11
-	.asciz "carry"
-
-LDIFF_SYM865=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM865
-	.byte 1,102,11
-	.asciz "i"
-
-LDIFF_SYM866=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM866
-	.byte 1,101,11
-	.asciz "digit"
-
-LDIFF_SYM867=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM867
-	.byte 1,100,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM868=Lfde107_end - Lfde107_start
-	.long LDIFF_SYM868
-Lfde107_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigIntegerCalculator_SubtractDivisor_uint__int_uint__int_ulong
-
-LDIFF_SYM869=Lme_6b - System_Numerics_BigIntegerCalculator_SubtractDivisor_uint__int_uint__int_ulong
-	.long LDIFF_SYM869
-	.long 0
-	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,148,8,149,7,68,150,6,151,5,68,152,4,153,3,68,154,2
-	.align 3
-Lfde107_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigIntegerCalculator:DivideGuessTooBig"
-	.asciz "System_Numerics_BigIntegerCalculator_DivideGuessTooBig_ulong_ulong_uint_uint_uint"
-
-	.byte 7,175,2
-	.quad System_Numerics_BigIntegerCalculator_DivideGuessTooBig_ulong_ulong_uint_uint_uint
-	.quad Lme_6c
-
-	.byte 2,118,16,3
-	.asciz "q"
-
-LDIFF_SYM870=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM870
-	.byte 2,141,32,3
-	.asciz "valHi"
-
-LDIFF_SYM871=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM871
-	.byte 2,141,40,3
-	.asciz "valLo"
-
-LDIFF_SYM872=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM872
-	.byte 2,141,48,3
-	.asciz "divHi"
-
-LDIFF_SYM873=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM873
-	.byte 1,105,3
-	.asciz "divLo"
-
-LDIFF_SYM874=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM874
-	.byte 1,106,11
-	.asciz "chkHi"
-
-LDIFF_SYM875=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM875
-	.byte 1,105,11
-	.asciz "chkLo"
-
-LDIFF_SYM876=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM876
-	.byte 1,106,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM877=Lfde108_end - Lfde108_start
-	.long LDIFF_SYM877
-Lfde108_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigIntegerCalculator_DivideGuessTooBig_ulong_ulong_uint_uint_uint
-
-LDIFF_SYM878=Lme_6c - System_Numerics_BigIntegerCalculator_DivideGuessTooBig_ulong_ulong_uint_uint_uint
-	.long LDIFF_SYM878
-	.long 0
-	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,153,6,154,5
-	.align 3
-Lfde108_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigIntegerCalculator:CreateCopy"
-	.asciz "System_Numerics_BigIntegerCalculator_CreateCopy_uint__"
-
-	.byte 7,199,2
-	.quad System_Numerics_BigIntegerCalculator_CreateCopy_uint__
-	.quad Lme_6d
-
-	.byte 2,118,16,3
-	.asciz "value"
-
-LDIFF_SYM879=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM879
-	.byte 2,141,16,11
-	.asciz "bits"
-
-LDIFF_SYM880=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM880
-	.byte 0,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM881=Lfde109_end - Lfde109_start
-	.long LDIFF_SYM881
-Lfde109_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigIntegerCalculator_CreateCopy_uint__
-
-LDIFF_SYM882=Lme_6d - System_Numerics_BigIntegerCalculator_CreateCopy_uint__
-	.long LDIFF_SYM882
-	.long 0
-	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
-	.align 3
-Lfde109_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.BigIntegerCalculator:LeadingZeros"
-	.asciz "System_Numerics_BigIntegerCalculator_LeadingZeros_uint"
-
-	.byte 7,206,2
-	.quad System_Numerics_BigIntegerCalculator_LeadingZeros_uint
-	.quad Lme_6e
-
-	.byte 2,118,16,3
-	.asciz "value"
-
-LDIFF_SYM883=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM883
-	.byte 1,106,11
-	.asciz "count"
-
-LDIFF_SYM884=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM884
-	.byte 1,105,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM885=Lfde110_end - Lfde110_start
-	.long LDIFF_SYM885
-Lfde110_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_BigIntegerCalculator_LeadingZeros_uint
-
-LDIFF_SYM886=Lme_6e - System_Numerics_BigIntegerCalculator_LeadingZeros_uint
-	.long LDIFF_SYM886
-	.long 0
-	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29,68,153,2,154,1
-	.align 3
-Lfde110_end:
+Lfde83_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -25084,58 +20613,58 @@ Lfde110_end:
 	.asciz "System.Numerics.BigIntegerCalculator:Square"
 	.asciz "System_Numerics_BigIntegerCalculator_Square_uint__"
 
-	.byte 8,20
+	.byte 7,20
 	.quad System_Numerics_BigIntegerCalculator_Square_uint__
-	.quad Lme_6f
+	.quad Lme_54
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM887=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM887
+LDIFF_SYM708=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM708
 	.byte 1,106,11
 	.asciz "bits"
 
-LDIFF_SYM888=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM888
+LDIFF_SYM709=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM709
 	.byte 1,105,11
 	.asciz "v"
 
-LDIFF_SYM889=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM889
+LDIFF_SYM710=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM710
 	.byte 1,104,11
 	.asciz "b"
 
-LDIFF_SYM890=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM890
+LDIFF_SYM711=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM711
 	.byte 1,103,11
 	.asciz "V_3"
 
-LDIFF_SYM891=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM891
+LDIFF_SYM712=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM712
 	.byte 1,104,11
 	.asciz "V_4"
 
-LDIFF_SYM892=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM892
+LDIFF_SYM713=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM713
 	.byte 1,103,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM893=Lfde111_end - Lfde111_start
-	.long LDIFF_SYM893
-Lfde111_start:
+LDIFF_SYM714=Lfde84_end - Lfde84_start
+	.long LDIFF_SYM714
+Lfde84_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigIntegerCalculator_Square_uint__
 
-LDIFF_SYM894=Lme_6f - System_Numerics_BigIntegerCalculator_Square_uint__
-	.long LDIFF_SYM894
+LDIFF_SYM715=Lme_54 - System_Numerics_BigIntegerCalculator_Square_uint__
+	.long LDIFF_SYM715
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29,68,151,4,152,3,68,153,2,154,1
 	.align 3
-Lfde111_end:
+Lfde84_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -25143,169 +20672,169 @@ Lfde111_end:
 	.asciz "System.Numerics.BigIntegerCalculator:Square"
 	.asciz "System_Numerics_BigIntegerCalculator_Square_uint__int_uint__int"
 
-	.byte 8,51
+	.byte 7,51
 	.quad System_Numerics_BigIntegerCalculator_Square_uint__int_uint__int
-	.quad Lme_70
+	.quad Lme_55
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM895=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM895
+LDIFF_SYM716=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM716
 	.byte 1,103,3
 	.asciz "valueLength"
 
-LDIFF_SYM896=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM896
+LDIFF_SYM717=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM717
 	.byte 1,104,3
 	.asciz "bits"
 
-LDIFF_SYM897=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM897
+LDIFF_SYM718=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM718
 	.byte 1,105,3
 	.asciz "bitsLength"
 
-LDIFF_SYM898=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM898
+LDIFF_SYM719=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM719
 	.byte 3,141,208,0,11
 	.asciz "i"
 
-LDIFF_SYM899=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM899
+LDIFF_SYM720=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM720
 	.byte 1,106,11
 	.asciz "carry"
 
-LDIFF_SYM900=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM900
+LDIFF_SYM721=LDIE_U8 - Ldebug_info_start
+	.long LDIFF_SYM721
 	.byte 1,102,11
 	.asciz "digits"
 
-LDIFF_SYM901=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM901
+LDIFF_SYM722=LDIE_U8 - Ldebug_info_start
+	.long LDIFF_SYM722
 	.byte 1,101,11
 	.asciz "j"
 
-LDIFF_SYM902=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM902
+LDIFF_SYM723=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM723
 	.byte 1,101,11
 	.asciz "digit1"
 
-LDIFF_SYM903=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM903
+LDIFF_SYM724=LDIE_U8 - Ldebug_info_start
+	.long LDIFF_SYM724
 	.byte 1,100,11
 	.asciz "digit2"
 
-LDIFF_SYM904=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM904
+LDIFF_SYM725=LDIE_U8 - Ldebug_info_start
+	.long LDIFF_SYM725
 	.byte 1,102,11
 	.asciz "n"
 
-LDIFF_SYM905=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM905
+LDIFF_SYM726=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM726
 	.byte 1,102,11
 	.asciz "n2"
 
-LDIFF_SYM906=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM906
+LDIFF_SYM727=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM727
 	.byte 1,101,11
 	.asciz "valueLow"
 
-LDIFF_SYM907=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM907
+LDIFF_SYM728=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM728
 	.byte 1,100,11
 	.asciz "valueLowLength"
 
-LDIFF_SYM908=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM908
+LDIFF_SYM729=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM729
 	.byte 1,99,11
 	.asciz "valueHigh"
 
-LDIFF_SYM909=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM909
+LDIFF_SYM730=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM730
 	.byte 3,141,216,0,11
 	.asciz "valueHighLength"
 
-LDIFF_SYM910=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM910
+LDIFF_SYM731=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM731
 	.byte 1,106,11
 	.asciz "bitsLow"
 
-LDIFF_SYM911=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM911
+LDIFF_SYM732=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM732
 	.byte 1,104,11
 	.asciz "bitsLowLength"
 
-LDIFF_SYM912=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM912
+LDIFF_SYM733=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM733
 	.byte 3,141,224,0,11
 	.asciz "bitsHigh"
 
-LDIFF_SYM913=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM913
+LDIFF_SYM734=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM734
 	.byte 3,141,232,0,11
 	.asciz "bitsHighLength"
 
-LDIFF_SYM914=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM914
+LDIFF_SYM735=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM735
 	.byte 3,141,240,0,11
 	.asciz "foldLength"
 
-LDIFF_SYM915=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM915
+LDIFF_SYM736=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM736
 	.byte 1,103,11
 	.asciz "coreLength"
 
-LDIFF_SYM916=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM916
+LDIFF_SYM737=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM737
 	.byte 1,101,11
 	.asciz "fold"
 
-LDIFF_SYM917=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM917
+LDIFF_SYM738=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM738
 	.byte 3,141,128,1,11
 	.asciz "core"
 
-LDIFF_SYM918=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM918
+LDIFF_SYM739=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM739
 	.byte 3,141,152,1,11
 	.asciz "fold"
 
-LDIFF_SYM919=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM919
+LDIFF_SYM740=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM740
 	.byte 3,141,128,1,11
 	.asciz "core"
 
-LDIFF_SYM920=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM920
+LDIFF_SYM741=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM741
 	.byte 3,141,144,1,11
 	.asciz "V_22"
 
-LDIFF_SYM921=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM921
+LDIFF_SYM742=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM742
 	.byte 3,141,248,0,11
 	.asciz "V_23"
 
-LDIFF_SYM922=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM922
+LDIFF_SYM743=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM743
 	.byte 3,141,136,1,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM923=Lfde112_end - Lfde112_start
-	.long LDIFF_SYM923
-Lfde112_start:
+LDIFF_SYM744=Lfde85_end - Lfde85_start
+	.long LDIFF_SYM744
+Lfde85_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigIntegerCalculator_Square_uint__int_uint__int
 
-LDIFF_SYM924=Lme_70 - System_Numerics_BigIntegerCalculator_Square_uint__int_uint__int
-	.long LDIFF_SYM924
+LDIFF_SYM745=Lme_55 - System_Numerics_BigIntegerCalculator_Square_uint__int_uint__int
+	.long LDIFF_SYM745
 	.long 0
 	.byte 12,31,0,68,14,176,1,157,22,158,21,68,13,29,68,147,20,148,19,68,149,18,150,17,68,151,16,152,15,68,153,14
 	.byte 154,13
 	.align 3
-Lfde112_end:
+Lfde85_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -25313,58 +20842,58 @@ Lfde112_end:
 	.asciz "System.Numerics.BigIntegerCalculator:Multiply"
 	.asciz "System_Numerics_BigIntegerCalculator_Multiply_uint___uint"
 
-	.byte 8,173,1
+	.byte 7,173,1
 	.quad System_Numerics_BigIntegerCalculator_Multiply_uint___uint
-	.quad Lme_71
+	.quad Lme_56
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM925=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM925
+LDIFF_SYM746=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM746
 	.byte 1,105,3
 	.asciz "right"
 
-LDIFF_SYM926=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM926
+LDIFF_SYM747=LDIE_U4 - Ldebug_info_start
+	.long LDIFF_SYM747
 	.byte 1,106,11
 	.asciz "i"
 
-LDIFF_SYM927=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM927
+LDIFF_SYM748=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM748
 	.byte 1,104,11
 	.asciz "carry"
 
-LDIFF_SYM928=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM928
+LDIFF_SYM749=LDIE_U8 - Ldebug_info_start
+	.long LDIFF_SYM749
 	.byte 1,103,11
 	.asciz "bits"
 
-LDIFF_SYM929=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM929
+LDIFF_SYM750=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM750
 	.byte 1,102,11
 	.asciz "digits"
 
-LDIFF_SYM930=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM930
+LDIFF_SYM751=LDIE_U8 - Ldebug_info_start
+	.long LDIFF_SYM751
 	.byte 1,101,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM931=Lfde113_end - Lfde113_start
-	.long LDIFF_SYM931
-Lfde113_start:
+LDIFF_SYM752=Lfde86_end - Lfde86_start
+	.long LDIFF_SYM752
+Lfde86_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigIntegerCalculator_Multiply_uint___uint
 
-LDIFF_SYM932=Lme_71 - System_Numerics_BigIntegerCalculator_Multiply_uint___uint
-	.long LDIFF_SYM932
+LDIFF_SYM753=Lme_56 - System_Numerics_BigIntegerCalculator_Multiply_uint___uint
+	.long LDIFF_SYM753
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,149,6,150,5,68,151,4,152,3,68,153,2,154,1
 	.align 3
-Lfde113_end:
+Lfde86_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -25372,73 +20901,73 @@ Lfde113_end:
 	.asciz "System.Numerics.BigIntegerCalculator:Multiply"
 	.asciz "System_Numerics_BigIntegerCalculator_Multiply_uint___uint__"
 
-	.byte 8,198,1
+	.byte 7,198,1
 	.quad System_Numerics_BigIntegerCalculator_Multiply_uint___uint__
-	.quad Lme_72
+	.quad Lme_57
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM933=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM933
+LDIFF_SYM754=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM754
 	.byte 1,105,3
 	.asciz "right"
 
-LDIFF_SYM934=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM934
+LDIFF_SYM755=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM755
 	.byte 1,106,11
 	.asciz "bits"
 
-LDIFF_SYM935=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM935
+LDIFF_SYM756=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM756
 	.byte 1,104,11
 	.asciz "l"
 
-LDIFF_SYM936=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM936
+LDIFF_SYM757=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM757
 	.byte 1,103,11
 	.asciz "r"
 
-LDIFF_SYM937=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM937
+LDIFF_SYM758=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM758
 	.byte 1,102,11
 	.asciz "b"
 
-LDIFF_SYM938=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM938
+LDIFF_SYM759=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM759
 	.byte 1,101,11
 	.asciz "V_4"
 
-LDIFF_SYM939=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM939
+LDIFF_SYM760=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM760
 	.byte 1,103,11
 	.asciz "V_5"
 
-LDIFF_SYM940=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM940
+LDIFF_SYM761=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM761
 	.byte 1,102,11
 	.asciz "V_6"
 
-LDIFF_SYM941=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM941
+LDIFF_SYM762=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM762
 	.byte 1,101,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM942=Lfde114_end - Lfde114_start
-	.long LDIFF_SYM942
-Lfde114_start:
+LDIFF_SYM763=Lfde87_end - Lfde87_start
+	.long LDIFF_SYM763
+Lfde87_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigIntegerCalculator_Multiply_uint___uint__
 
-LDIFF_SYM943=Lme_72 - System_Numerics_BigIntegerCalculator_Multiply_uint___uint__
-	.long LDIFF_SYM943
+LDIFF_SYM764=Lme_57 - System_Numerics_BigIntegerCalculator_Multiply_uint___uint__
+	.long LDIFF_SYM764
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,149,6,150,5,68,151,4,152,3,68,153,2,154,1
 	.align 3
-Lfde114_end:
+Lfde87_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -25446,209 +20975,209 @@ Lfde114_end:
 	.asciz "System.Numerics.BigIntegerCalculator:Multiply"
 	.asciz "System_Numerics_BigIntegerCalculator_Multiply_uint__int_uint__int_uint__int"
 
-	.byte 8,232,1
+	.byte 7,232,1
 	.quad System_Numerics_BigIntegerCalculator_Multiply_uint__int_uint__int_uint__int
-	.quad Lme_73
+	.quad Lme_58
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM944=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM944
+LDIFF_SYM765=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM765
 	.byte 1,101,3
 	.asciz "leftLength"
 
-LDIFF_SYM945=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM945
+LDIFF_SYM766=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM766
 	.byte 1,102,3
 	.asciz "right"
 
-LDIFF_SYM946=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM946
+LDIFF_SYM767=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM767
 	.byte 1,103,3
 	.asciz "rightLength"
 
-LDIFF_SYM947=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM947
+LDIFF_SYM768=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM768
 	.byte 1,104,3
 	.asciz "bits"
 
-LDIFF_SYM948=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM948
+LDIFF_SYM769=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM769
 	.byte 1,105,3
 	.asciz "bitsLength"
 
-LDIFF_SYM949=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM949
+LDIFF_SYM770=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM770
 	.byte 3,141,208,0,11
 	.asciz "i"
 
-LDIFF_SYM950=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM950
+LDIFF_SYM771=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM771
 	.byte 1,106,11
 	.asciz "carry"
 
-LDIFF_SYM951=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM951
+LDIFF_SYM772=LDIE_U8 - Ldebug_info_start
+	.long LDIFF_SYM772
 	.byte 1,100,11
 	.asciz "j"
 
-LDIFF_SYM952=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM952
+LDIFF_SYM773=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM773
 	.byte 1,99,11
 	.asciz "digits"
 
-LDIFF_SYM953=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM953
+LDIFF_SYM774=LDIE_U8 - Ldebug_info_start
+	.long LDIFF_SYM774
 	.byte 1,100,11
 	.asciz "n"
 
-LDIFF_SYM954=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM954
+LDIFF_SYM775=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM775
 	.byte 1,100,11
 	.asciz "n2"
 
-LDIFF_SYM955=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM955
+LDIFF_SYM776=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM776
 	.byte 1,99,11
 	.asciz "leftLow"
 
-LDIFF_SYM956=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM956
+LDIFF_SYM777=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM777
 	.byte 3,141,216,0,11
 	.asciz "leftLowLength"
 
-LDIFF_SYM957=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM957
+LDIFF_SYM778=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM778
 	.byte 3,141,224,0,11
 	.asciz "leftHigh"
 
-LDIFF_SYM958=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM958
+LDIFF_SYM779=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM779
 	.byte 3,141,232,0,11
 	.asciz "leftHighLength"
 
-LDIFF_SYM959=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM959
+LDIFF_SYM780=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM780
 	.byte 1,106,11
 	.asciz "rightLow"
 
-LDIFF_SYM960=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM960
+LDIFF_SYM781=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM781
 	.byte 1,102,11
 	.asciz "rightLowLength"
 
-LDIFF_SYM961=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM961
+LDIFF_SYM782=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM782
 	.byte 3,141,240,0,11
 	.asciz "rightHigh"
 
-LDIFF_SYM962=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM962
+LDIFF_SYM783=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM783
 	.byte 3,141,248,0,11
 	.asciz "rightHighLength"
 
-LDIFF_SYM963=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM963
+LDIFF_SYM784=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM784
 	.byte 3,141,128,1,11
 	.asciz "bitsLow"
 
-LDIFF_SYM964=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM964
+LDIFF_SYM785=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM785
 	.byte 1,104,11
 	.asciz "bitsLowLength"
 
-LDIFF_SYM965=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM965
+LDIFF_SYM786=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM786
 	.byte 3,141,136,1,11
 	.asciz "bitsHigh"
 
-LDIFF_SYM966=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM966
+LDIFF_SYM787=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM787
 	.byte 3,141,144,1,11
 	.asciz "bitsHighLength"
 
-LDIFF_SYM967=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM967
+LDIFF_SYM788=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM788
 	.byte 3,141,152,1,11
 	.asciz "leftFoldLength"
 
-LDIFF_SYM968=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM968
+LDIFF_SYM789=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM789
 	.byte 1,103,11
 	.asciz "rightFoldLength"
 
-LDIFF_SYM969=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM969
+LDIFF_SYM790=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM790
 	.byte 1,101,11
 	.asciz "coreLength"
 
-LDIFF_SYM970=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM970
+LDIFF_SYM791=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM791
 	.byte 1,99,11
 	.asciz "leftFold"
 
-LDIFF_SYM971=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM971
+LDIFF_SYM792=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM792
 	.byte 3,141,168,1,11
 	.asciz "rightFold"
 
-LDIFF_SYM972=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM972
+LDIFF_SYM793=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM793
 	.byte 3,141,200,1,11
 	.asciz "core"
 
-LDIFF_SYM973=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM973
+LDIFF_SYM794=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM794
 	.byte 3,141,216,1,11
 	.asciz "leftFold"
 
-LDIFF_SYM974=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM974
+LDIFF_SYM795=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM795
 	.byte 3,141,168,1,11
 	.asciz "rightFold"
 
-LDIFF_SYM975=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM975
+LDIFF_SYM796=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM796
 	.byte 3,141,184,1,11
 	.asciz "core"
 
-LDIFF_SYM976=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM976
+LDIFF_SYM797=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM797
 	.byte 3,141,200,1,11
 	.asciz "V_27"
 
-LDIFF_SYM977=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM977
+LDIFF_SYM798=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM798
 	.byte 3,141,160,1,11
 	.asciz "V_28"
 
-LDIFF_SYM978=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM978
+LDIFF_SYM799=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM799
 	.byte 3,141,176,1,11
 	.asciz "V_29"
 
-LDIFF_SYM979=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM979
+LDIFF_SYM800=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM800
 	.byte 3,141,192,1,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM980=Lfde115_end - Lfde115_start
-	.long LDIFF_SYM980
-Lfde115_start:
+LDIFF_SYM801=Lfde88_end - Lfde88_start
+	.long LDIFF_SYM801
+Lfde88_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigIntegerCalculator_Multiply_uint__int_uint__int_uint__int
 
-LDIFF_SYM981=Lme_73 - System_Numerics_BigIntegerCalculator_Multiply_uint__int_uint__int_uint__int
-	.long LDIFF_SYM981
+LDIFF_SYM802=Lme_58 - System_Numerics_BigIntegerCalculator_Multiply_uint__int_uint__int_uint__int
+	.long LDIFF_SYM802
 	.long 0
 	.byte 12,31,0,68,14,240,1,157,30,158,29,68,13,29,68,147,28,148,27,68,149,26,150,25,68,151,24,152,23,68,153,22
 	.byte 154,21
 	.align 3
-Lfde115_end:
+Lfde88_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -25656,84 +21185,84 @@ Lfde115_end:
 	.asciz "System.Numerics.BigIntegerCalculator:SubtractCore"
 	.asciz "System_Numerics_BigIntegerCalculator_SubtractCore_uint__int_uint__int_uint__int"
 
-	.byte 8,251,2
+	.byte 7,251,2
 	.quad System_Numerics_BigIntegerCalculator_SubtractCore_uint__int_uint__int_uint__int
-	.quad Lme_74
+	.quad Lme_59
 
 	.byte 2,118,16,3
 	.asciz "left"
 
-LDIFF_SYM982=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM982
+LDIFF_SYM803=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM803
 	.byte 1,101,3
 	.asciz "leftLength"
 
-LDIFF_SYM983=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM983
+LDIFF_SYM804=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM804
 	.byte 1,102,3
 	.asciz "right"
 
-LDIFF_SYM984=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM984
+LDIFF_SYM805=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM805
 	.byte 1,103,3
 	.asciz "rightLength"
 
-LDIFF_SYM985=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM985
+LDIFF_SYM806=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM806
 	.byte 1,104,3
 	.asciz "core"
 
-LDIFF_SYM986=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM986
+LDIFF_SYM807=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM807
 	.byte 1,105,3
 	.asciz "coreLength"
 
-LDIFF_SYM987=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM987
+LDIFF_SYM808=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM808
 	.byte 1,106,11
 	.asciz "i"
 
-LDIFF_SYM988=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM988
+LDIFF_SYM809=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM809
 	.byte 1,100,11
 	.asciz "carry"
 
-LDIFF_SYM989=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM989
+LDIFF_SYM810=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM810
 	.byte 1,99,11
 	.asciz "digit"
 
-LDIFF_SYM990=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM990
+LDIFF_SYM811=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM811
 	.byte 1,99,11
 	.asciz "digit"
 
-LDIFF_SYM991=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM991
+LDIFF_SYM812=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM812
 	.byte 1,104,11
 	.asciz "digit"
 
-LDIFF_SYM992=LDIE_I8 - Ldebug_info_start
-	.long LDIFF_SYM992
+LDIFF_SYM813=LDIE_I8 - Ldebug_info_start
+	.long LDIFF_SYM813
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM993=Lfde116_end - Lfde116_start
-	.long LDIFF_SYM993
-Lfde116_start:
+LDIFF_SYM814=Lfde89_end - Lfde89_start
+	.long LDIFF_SYM814
+Lfde89_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigIntegerCalculator_SubtractCore_uint__int_uint__int_uint__int
 
-LDIFF_SYM994=Lme_74 - System_Numerics_BigIntegerCalculator_SubtractCore_uint__int_uint__int_uint__int
-	.long LDIFF_SYM994
+LDIFF_SYM815=Lme_59 - System_Numerics_BigIntegerCalculator_SubtractCore_uint__int_uint__int_uint__int
+	.long LDIFF_SYM815
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,147,8,148,7,68,149,6,150,5,68,151,4,152,3,68,153,2,154
 	.byte 1
 	.align 3
-Lfde116_end:
+Lfde89_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -25741,997 +21270,557 @@ Lfde116_end:
 	.asciz "System.Numerics.BigIntegerCalculator:.cctor"
 	.asciz "System_Numerics_BigIntegerCalculator__cctor"
 
-	.byte 8,229,1
+	.byte 7,229,1
 	.quad System_Numerics_BigIntegerCalculator__cctor
-	.quad Lme_75
+	.quad Lme_5a
 
 	.byte 2,118,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM995=Lfde117_end - Lfde117_start
-	.long LDIFF_SYM995
-Lfde117_start:
+LDIFF_SYM816=Lfde90_end - Lfde90_start
+	.long LDIFF_SYM816
+Lfde90_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigIntegerCalculator__cctor
 
-LDIFF_SYM996=Lme_75 - System_Numerics_BigIntegerCalculator__cctor
-	.long LDIFF_SYM996
+LDIFF_SYM817=Lme_5a - System_Numerics_BigIntegerCalculator__cctor
+	.long LDIFF_SYM817
 	.long 0
 	.byte 12,31,0,68,14,16,157,2,158,1,68,13,29
 	.align 3
-Lfde117_end:
+Lfde90_end:
 
 .section __DWARF, __debug_info,regular,debug
+LTDIE_21:
+
+	.byte 17
+	.asciz "System_Collections_IDictionary"
+
+	.byte 16,7
+	.asciz "System_Collections_IDictionary"
+
+LDIFF_SYM818=LTDIE_21 - Ldebug_info_start
+	.long LDIFF_SYM818
+LTDIE_21_POINTER:
+
+	.byte 13
+LDIFF_SYM819=LTDIE_21 - Ldebug_info_start
+	.long LDIFF_SYM819
+LTDIE_21_REFERENCE:
+
+	.byte 14
+LDIFF_SYM820=LTDIE_21 - Ldebug_info_start
+	.long LDIFF_SYM820
 LTDIE_23:
 
 	.byte 17
-	.asciz "System_Collections_IDictionary"
+	.asciz "System_Collections_Generic_IList`1"
 
 	.byte 16,7
-	.asciz "System_Collections_IDictionary"
+	.asciz "System_Collections_Generic_IList`1"
 
-LDIFF_SYM997=LTDIE_23 - Ldebug_info_start
-	.long LDIFF_SYM997
+LDIFF_SYM821=LTDIE_23 - Ldebug_info_start
+	.long LDIFF_SYM821
 LTDIE_23_POINTER:
 
 	.byte 13
-LDIFF_SYM998=LTDIE_23 - Ldebug_info_start
-	.long LDIFF_SYM998
+LDIFF_SYM822=LTDIE_23 - Ldebug_info_start
+	.long LDIFF_SYM822
 LTDIE_23_REFERENCE:
 
 	.byte 14
-LDIFF_SYM999=LTDIE_23 - Ldebug_info_start
-	.long LDIFF_SYM999
-LTDIE_25:
-
-	.byte 17
-	.asciz "System_Collections_Generic_IList`1"
-
-	.byte 16,7
-	.asciz "System_Collections_Generic_IList`1"
-
-LDIFF_SYM1000=LTDIE_25 - Ldebug_info_start
-	.long LDIFF_SYM1000
-LTDIE_25_POINTER:
-
-	.byte 13
-LDIFF_SYM1001=LTDIE_25 - Ldebug_info_start
-	.long LDIFF_SYM1001
-LTDIE_25_REFERENCE:
-
-	.byte 14
-LDIFF_SYM1002=LTDIE_25 - Ldebug_info_start
-	.long LDIFF_SYM1002
-LTDIE_28:
-
-	.byte 17
-	.asciz "System_Collections_Generic_IEqualityComparer`1"
-
-	.byte 16,7
-	.asciz "System_Collections_Generic_IEqualityComparer`1"
-
-LDIFF_SYM1003=LTDIE_28 - Ldebug_info_start
-	.long LDIFF_SYM1003
-LTDIE_28_POINTER:
-
-	.byte 13
-LDIFF_SYM1004=LTDIE_28 - Ldebug_info_start
-	.long LDIFF_SYM1004
-LTDIE_28_REFERENCE:
-
-	.byte 14
-LDIFF_SYM1005=LTDIE_28 - Ldebug_info_start
-	.long LDIFF_SYM1005
+LDIFF_SYM823=LTDIE_23 - Ldebug_info_start
+	.long LDIFF_SYM823
 LTDIE_29:
 
 	.byte 5
-	.asciz "_KeyCollection"
+	.asciz "System_Reflection_MemberInfo"
 
-	.byte 24,16
-LDIFF_SYM1006=LTDIE_0 - Ldebug_info_start
-	.long LDIFF_SYM1006
-	.byte 2,35,0,6
-	.asciz "dictionary"
+	.byte 16,16
+LDIFF_SYM824=LTDIE_0 - Ldebug_info_start
+	.long LDIFF_SYM824
+	.byte 2,35,0,0,7
+	.asciz "System_Reflection_MemberInfo"
 
-LDIFF_SYM1007=LTDIE_27_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1007
-	.byte 2,35,16,0,7
-	.asciz "_KeyCollection"
-
-LDIFF_SYM1008=LTDIE_29 - Ldebug_info_start
-	.long LDIFF_SYM1008
+LDIFF_SYM825=LTDIE_29 - Ldebug_info_start
+	.long LDIFF_SYM825
 LTDIE_29_POINTER:
 
 	.byte 13
-LDIFF_SYM1009=LTDIE_29 - Ldebug_info_start
-	.long LDIFF_SYM1009
+LDIFF_SYM826=LTDIE_29 - Ldebug_info_start
+	.long LDIFF_SYM826
 LTDIE_29_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1010=LTDIE_29 - Ldebug_info_start
-	.long LDIFF_SYM1010
-LTDIE_30:
+LDIFF_SYM827=LTDIE_29 - Ldebug_info_start
+	.long LDIFF_SYM827
+LTDIE_28:
 
 	.byte 5
-	.asciz "_ValueCollection"
+	.asciz "System_Reflection_MethodBase"
 
-	.byte 24,16
-LDIFF_SYM1011=LTDIE_0 - Ldebug_info_start
-	.long LDIFF_SYM1011
-	.byte 2,35,0,6
-	.asciz "dictionary"
+	.byte 16,16
+LDIFF_SYM828=LTDIE_29 - Ldebug_info_start
+	.long LDIFF_SYM828
+	.byte 2,35,0,0,7
+	.asciz "System_Reflection_MethodBase"
 
-LDIFF_SYM1012=LTDIE_27_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1012
-	.byte 2,35,16,0,7
-	.asciz "_ValueCollection"
-
-LDIFF_SYM1013=LTDIE_30 - Ldebug_info_start
-	.long LDIFF_SYM1013
-LTDIE_30_POINTER:
+LDIFF_SYM829=LTDIE_28 - Ldebug_info_start
+	.long LDIFF_SYM829
+LTDIE_28_POINTER:
 
 	.byte 13
-LDIFF_SYM1014=LTDIE_30 - Ldebug_info_start
-	.long LDIFF_SYM1014
-LTDIE_30_REFERENCE:
+LDIFF_SYM830=LTDIE_28 - Ldebug_info_start
+	.long LDIFF_SYM830
+LTDIE_28_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1015=LTDIE_30 - Ldebug_info_start
-	.long LDIFF_SYM1015
+LDIFF_SYM831=LTDIE_28 - Ldebug_info_start
+	.long LDIFF_SYM831
 LTDIE_27:
 
 	.byte 5
-	.asciz "System_Collections_Generic_Dictionary`2"
+	.asciz "System_Reflection_MethodInfo"
 
-	.byte 80,16
-LDIFF_SYM1016=LTDIE_0 - Ldebug_info_start
-	.long LDIFF_SYM1016
-	.byte 2,35,0,6
-	.asciz "buckets"
+	.byte 16,16
+LDIFF_SYM832=LTDIE_28 - Ldebug_info_start
+	.long LDIFF_SYM832
+	.byte 2,35,0,0,7
+	.asciz "System_Reflection_MethodInfo"
 
-LDIFF_SYM1017=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM1017
-	.byte 2,35,16,6
-	.asciz "entries"
-
-LDIFF_SYM1018=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM1018
-	.byte 2,35,24,6
-	.asciz "count"
-
-LDIFF_SYM1019=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1019
-	.byte 2,35,64,6
-	.asciz "version"
-
-LDIFF_SYM1020=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1020
-	.byte 2,35,68,6
-	.asciz "freeList"
-
-LDIFF_SYM1021=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1021
-	.byte 2,35,72,6
-	.asciz "freeCount"
-
-LDIFF_SYM1022=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1022
-	.byte 2,35,76,6
-	.asciz "comparer"
-
-LDIFF_SYM1023=LTDIE_28_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1023
-	.byte 2,35,32,6
-	.asciz "keys"
-
-LDIFF_SYM1024=LTDIE_29_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1024
-	.byte 2,35,40,6
-	.asciz "values"
-
-LDIFF_SYM1025=LTDIE_30_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1025
-	.byte 2,35,48,6
-	.asciz "_syncRoot"
-
-LDIFF_SYM1026=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1026
-	.byte 2,35,56,0,7
-	.asciz "System_Collections_Generic_Dictionary`2"
-
-LDIFF_SYM1027=LTDIE_27 - Ldebug_info_start
-	.long LDIFF_SYM1027
+LDIFF_SYM833=LTDIE_27 - Ldebug_info_start
+	.long LDIFF_SYM833
 LTDIE_27_POINTER:
 
 	.byte 13
-LDIFF_SYM1028=LTDIE_27 - Ldebug_info_start
-	.long LDIFF_SYM1028
+LDIFF_SYM834=LTDIE_27 - Ldebug_info_start
+	.long LDIFF_SYM834
 LTDIE_27_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1029=LTDIE_27 - Ldebug_info_start
-	.long LDIFF_SYM1029
+LDIFF_SYM835=LTDIE_27 - Ldebug_info_start
+	.long LDIFF_SYM835
 LTDIE_31:
-
-	.byte 17
-	.asciz "System_Runtime_Serialization_IFormatterConverter"
-
-	.byte 16,7
-	.asciz "System_Runtime_Serialization_IFormatterConverter"
-
-LDIFF_SYM1030=LTDIE_31 - Ldebug_info_start
-	.long LDIFF_SYM1030
-LTDIE_31_POINTER:
-
-	.byte 13
-LDIFF_SYM1031=LTDIE_31 - Ldebug_info_start
-	.long LDIFF_SYM1031
-LTDIE_31_REFERENCE:
-
-	.byte 14
-LDIFF_SYM1032=LTDIE_31 - Ldebug_info_start
-	.long LDIFF_SYM1032
-LTDIE_33:
-
-	.byte 5
-	.asciz "System_Reflection_MemberInfo"
-
-	.byte 16,16
-LDIFF_SYM1033=LTDIE_0 - Ldebug_info_start
-	.long LDIFF_SYM1033
-	.byte 2,35,0,0,7
-	.asciz "System_Reflection_MemberInfo"
-
-LDIFF_SYM1034=LTDIE_33 - Ldebug_info_start
-	.long LDIFF_SYM1034
-LTDIE_33_POINTER:
-
-	.byte 13
-LDIFF_SYM1035=LTDIE_33 - Ldebug_info_start
-	.long LDIFF_SYM1035
-LTDIE_33_REFERENCE:
-
-	.byte 14
-LDIFF_SYM1036=LTDIE_33 - Ldebug_info_start
-	.long LDIFF_SYM1036
-LTDIE_32:
 
 	.byte 5
 	.asciz "System_Type"
 
 	.byte 24,16
-LDIFF_SYM1037=LTDIE_33 - Ldebug_info_start
-	.long LDIFF_SYM1037
+LDIFF_SYM836=LTDIE_29 - Ldebug_info_start
+	.long LDIFF_SYM836
 	.byte 2,35,0,6
 	.asciz "_impl"
 
-LDIFF_SYM1038=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1038
+LDIFF_SYM837=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM837
 	.byte 2,35,16,0,7
 	.asciz "System_Type"
 
-LDIFF_SYM1039=LTDIE_32 - Ldebug_info_start
-	.long LDIFF_SYM1039
-LTDIE_32_POINTER:
+LDIFF_SYM838=LTDIE_31 - Ldebug_info_start
+	.long LDIFF_SYM838
+LTDIE_31_POINTER:
 
 	.byte 13
-LDIFF_SYM1040=LTDIE_32 - Ldebug_info_start
-	.long LDIFF_SYM1040
-LTDIE_32_REFERENCE:
+LDIFF_SYM839=LTDIE_31 - Ldebug_info_start
+	.long LDIFF_SYM839
+LTDIE_31_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1041=LTDIE_32 - Ldebug_info_start
-	.long LDIFF_SYM1041
-LTDIE_26:
-
-	.byte 5
-	.asciz "System_Runtime_Serialization_SerializationInfo"
-
-	.byte 88,16
-LDIFF_SYM1042=LTDIE_0 - Ldebug_info_start
-	.long LDIFF_SYM1042
-	.byte 2,35,0,6
-	.asciz "m_members"
-
-LDIFF_SYM1043=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM1043
-	.byte 2,35,16,6
-	.asciz "m_data"
-
-LDIFF_SYM1044=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM1044
-	.byte 2,35,24,6
-	.asciz "m_types"
-
-LDIFF_SYM1045=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM1045
-	.byte 2,35,32,6
-	.asciz "m_nameToIndex"
-
-LDIFF_SYM1046=LTDIE_27_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1046
-	.byte 2,35,40,6
-	.asciz "m_currMember"
-
-LDIFF_SYM1047=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1047
-	.byte 2,35,80,6
-	.asciz "m_converter"
-
-LDIFF_SYM1048=LTDIE_31_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1048
-	.byte 2,35,48,6
-	.asciz "m_fullTypeName"
-
-LDIFF_SYM1049=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1049
-	.byte 2,35,56,6
-	.asciz "m_assemName"
-
-LDIFF_SYM1050=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1050
-	.byte 2,35,64,6
-	.asciz "objectType"
-
-LDIFF_SYM1051=LTDIE_32_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1051
-	.byte 2,35,72,6
-	.asciz "isFullTypeNameSetExplicit"
-
-LDIFF_SYM1052=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM1052
-	.byte 2,35,84,6
-	.asciz "isAssemblyNameSetExplicit"
-
-LDIFF_SYM1053=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM1053
-	.byte 2,35,85,6
-	.asciz "requireSameTokenInPartialTrust"
-
-LDIFF_SYM1054=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM1054
-	.byte 2,35,86,0,7
-	.asciz "System_Runtime_Serialization_SerializationInfo"
-
-LDIFF_SYM1055=LTDIE_26 - Ldebug_info_start
-	.long LDIFF_SYM1055
-LTDIE_26_POINTER:
-
-	.byte 13
-LDIFF_SYM1056=LTDIE_26 - Ldebug_info_start
-	.long LDIFF_SYM1056
-LTDIE_26_REFERENCE:
-
-	.byte 14
-LDIFF_SYM1057=LTDIE_26 - Ldebug_info_start
-	.long LDIFF_SYM1057
-LTDIE_35:
-
-	.byte 5
-	.asciz "System_Reflection_TypeInfo"
-
-	.byte 24,16
-LDIFF_SYM1058=LTDIE_32 - Ldebug_info_start
-	.long LDIFF_SYM1058
-	.byte 2,35,0,0,7
-	.asciz "System_Reflection_TypeInfo"
-
-LDIFF_SYM1059=LTDIE_35 - Ldebug_info_start
-	.long LDIFF_SYM1059
-LTDIE_35_POINTER:
-
-	.byte 13
-LDIFF_SYM1060=LTDIE_35 - Ldebug_info_start
-	.long LDIFF_SYM1060
-LTDIE_35_REFERENCE:
-
-	.byte 14
-LDIFF_SYM1061=LTDIE_35 - Ldebug_info_start
-	.long LDIFF_SYM1061
-LTDIE_40:
-
-	.byte 5
-	.asciz "System_Reflection_MethodBase"
-
-	.byte 16,16
-LDIFF_SYM1062=LTDIE_33 - Ldebug_info_start
-	.long LDIFF_SYM1062
-	.byte 2,35,0,0,7
-	.asciz "System_Reflection_MethodBase"
-
-LDIFF_SYM1063=LTDIE_40 - Ldebug_info_start
-	.long LDIFF_SYM1063
-LTDIE_40_POINTER:
-
-	.byte 13
-LDIFF_SYM1064=LTDIE_40 - Ldebug_info_start
-	.long LDIFF_SYM1064
-LTDIE_40_REFERENCE:
-
-	.byte 14
-LDIFF_SYM1065=LTDIE_40 - Ldebug_info_start
-	.long LDIFF_SYM1065
-LTDIE_39:
-
-	.byte 5
-	.asciz "System_Reflection_ConstructorInfo"
-
-	.byte 16,16
-LDIFF_SYM1066=LTDIE_40 - Ldebug_info_start
-	.long LDIFF_SYM1066
-	.byte 2,35,0,0,7
-	.asciz "System_Reflection_ConstructorInfo"
-
-LDIFF_SYM1067=LTDIE_39 - Ldebug_info_start
-	.long LDIFF_SYM1067
-LTDIE_39_POINTER:
-
-	.byte 13
-LDIFF_SYM1068=LTDIE_39 - Ldebug_info_start
-	.long LDIFF_SYM1068
-LTDIE_39_REFERENCE:
-
-	.byte 14
-LDIFF_SYM1069=LTDIE_39 - Ldebug_info_start
-	.long LDIFF_SYM1069
-LTDIE_38:
-
-	.byte 5
-	.asciz "System_Reflection_RuntimeConstructorInfo"
-
-	.byte 16,16
-LDIFF_SYM1070=LTDIE_39 - Ldebug_info_start
-	.long LDIFF_SYM1070
-	.byte 2,35,0,0,7
-	.asciz "System_Reflection_RuntimeConstructorInfo"
-
-LDIFF_SYM1071=LTDIE_38 - Ldebug_info_start
-	.long LDIFF_SYM1071
-LTDIE_38_POINTER:
-
-	.byte 13
-LDIFF_SYM1072=LTDIE_38 - Ldebug_info_start
-	.long LDIFF_SYM1072
-LTDIE_38_REFERENCE:
-
-	.byte 14
-LDIFF_SYM1073=LTDIE_38 - Ldebug_info_start
-	.long LDIFF_SYM1073
-LTDIE_37:
-
-	.byte 5
-	.asciz "System_Reflection_MonoCMethod"
-
-	.byte 40,16
-LDIFF_SYM1074=LTDIE_38 - Ldebug_info_start
-	.long LDIFF_SYM1074
-	.byte 2,35,0,6
-	.asciz "mhandle"
-
-LDIFF_SYM1075=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1075
-	.byte 2,35,16,6
-	.asciz "name"
-
-LDIFF_SYM1076=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1076
-	.byte 2,35,24,6
-	.asciz "reftype"
-
-LDIFF_SYM1077=LTDIE_32_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1077
-	.byte 2,35,32,0,7
-	.asciz "System_Reflection_MonoCMethod"
-
-LDIFF_SYM1078=LTDIE_37 - Ldebug_info_start
-	.long LDIFF_SYM1078
-LTDIE_37_POINTER:
-
-	.byte 13
-LDIFF_SYM1079=LTDIE_37 - Ldebug_info_start
-	.long LDIFF_SYM1079
-LTDIE_37_REFERENCE:
-
-	.byte 14
-LDIFF_SYM1080=LTDIE_37 - Ldebug_info_start
-	.long LDIFF_SYM1080
-LTDIE_36:
-
-	.byte 5
-	.asciz "System_MonoTypeInfo"
-
-	.byte 32,16
-LDIFF_SYM1081=LTDIE_0 - Ldebug_info_start
-	.long LDIFF_SYM1081
-	.byte 2,35,0,6
-	.asciz "full_name"
-
-LDIFF_SYM1082=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1082
-	.byte 2,35,16,6
-	.asciz "default_ctor"
-
-LDIFF_SYM1083=LTDIE_37_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1083
-	.byte 2,35,24,0,7
-	.asciz "System_MonoTypeInfo"
-
-LDIFF_SYM1084=LTDIE_36 - Ldebug_info_start
-	.long LDIFF_SYM1084
-LTDIE_36_POINTER:
-
-	.byte 13
-LDIFF_SYM1085=LTDIE_36 - Ldebug_info_start
-	.long LDIFF_SYM1085
-LTDIE_36_REFERENCE:
-
-	.byte 14
-LDIFF_SYM1086=LTDIE_36 - Ldebug_info_start
-	.long LDIFF_SYM1086
-LTDIE_34:
-
-	.byte 5
-	.asciz "System_RuntimeType"
-
-	.byte 48,16
-LDIFF_SYM1087=LTDIE_35 - Ldebug_info_start
-	.long LDIFF_SYM1087
-	.byte 2,35,0,6
-	.asciz "type_info"
-
-LDIFF_SYM1088=LTDIE_36_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1088
-	.byte 2,35,24,6
-	.asciz "GenericCache"
-
-LDIFF_SYM1089=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1089
-	.byte 2,35,32,6
-	.asciz "m_serializationCtor"
-
-LDIFF_SYM1090=LTDIE_38_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1090
-	.byte 2,35,40,0,7
-	.asciz "System_RuntimeType"
-
-LDIFF_SYM1091=LTDIE_34 - Ldebug_info_start
-	.long LDIFF_SYM1091
-LTDIE_34_POINTER:
-
-	.byte 13
-LDIFF_SYM1092=LTDIE_34 - Ldebug_info_start
-	.long LDIFF_SYM1092
-LTDIE_34_REFERENCE:
-
-	.byte 14
-LDIFF_SYM1093=LTDIE_34 - Ldebug_info_start
-	.long LDIFF_SYM1093
-LTDIE_44:
-
-	.byte 5
-	.asciz "System_Reflection_MethodInfo"
-
-	.byte 16,16
-LDIFF_SYM1094=LTDIE_40 - Ldebug_info_start
-	.long LDIFF_SYM1094
-	.byte 2,35,0,0,7
-	.asciz "System_Reflection_MethodInfo"
-
-LDIFF_SYM1095=LTDIE_44 - Ldebug_info_start
-	.long LDIFF_SYM1095
-LTDIE_44_POINTER:
-
-	.byte 13
-LDIFF_SYM1096=LTDIE_44 - Ldebug_info_start
-	.long LDIFF_SYM1096
-LTDIE_44_REFERENCE:
-
-	.byte 14
-LDIFF_SYM1097=LTDIE_44 - Ldebug_info_start
-	.long LDIFF_SYM1097
-LTDIE_45:
+LDIFF_SYM840=LTDIE_31 - Ldebug_info_start
+	.long LDIFF_SYM840
+LTDIE_30:
 
 	.byte 5
 	.asciz "System_DelegateData"
 
 	.byte 40,16
-LDIFF_SYM1098=LTDIE_0 - Ldebug_info_start
-	.long LDIFF_SYM1098
+LDIFF_SYM841=LTDIE_0 - Ldebug_info_start
+	.long LDIFF_SYM841
 	.byte 2,35,0,6
 	.asciz "target_type"
 
-LDIFF_SYM1099=LTDIE_32_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1099
+LDIFF_SYM842=LTDIE_31_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM842
 	.byte 2,35,16,6
 	.asciz "method_name"
 
-LDIFF_SYM1100=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1100
+LDIFF_SYM843=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM843
 	.byte 2,35,24,6
 	.asciz "curried_first_arg"
 
-LDIFF_SYM1101=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM1101
+LDIFF_SYM844=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM844
 	.byte 2,35,32,0,7
 	.asciz "System_DelegateData"
 
-LDIFF_SYM1102=LTDIE_45 - Ldebug_info_start
-	.long LDIFF_SYM1102
-LTDIE_45_POINTER:
+LDIFF_SYM845=LTDIE_30 - Ldebug_info_start
+	.long LDIFF_SYM845
+LTDIE_30_POINTER:
 
 	.byte 13
-LDIFF_SYM1103=LTDIE_45 - Ldebug_info_start
-	.long LDIFF_SYM1103
-LTDIE_45_REFERENCE:
+LDIFF_SYM846=LTDIE_30 - Ldebug_info_start
+	.long LDIFF_SYM846
+LTDIE_30_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1104=LTDIE_45 - Ldebug_info_start
-	.long LDIFF_SYM1104
-LTDIE_43:
+LDIFF_SYM847=LTDIE_30 - Ldebug_info_start
+	.long LDIFF_SYM847
+LTDIE_26:
 
 	.byte 5
 	.asciz "System_Delegate"
 
 	.byte 104,16
-LDIFF_SYM1105=LTDIE_0 - Ldebug_info_start
-	.long LDIFF_SYM1105
+LDIFF_SYM848=LTDIE_0 - Ldebug_info_start
+	.long LDIFF_SYM848
 	.byte 2,35,0,6
 	.asciz "method_ptr"
 
-LDIFF_SYM1106=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1106
+LDIFF_SYM849=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM849
 	.byte 2,35,16,6
 	.asciz "invoke_impl"
 
-LDIFF_SYM1107=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1107
+LDIFF_SYM850=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM850
 	.byte 2,35,24,6
 	.asciz "m_target"
 
-LDIFF_SYM1108=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1108
+LDIFF_SYM851=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM851
 	.byte 2,35,32,6
 	.asciz "method"
 
-LDIFF_SYM1109=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1109
+LDIFF_SYM852=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM852
 	.byte 2,35,40,6
 	.asciz "delegate_trampoline"
 
-LDIFF_SYM1110=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1110
+LDIFF_SYM853=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM853
 	.byte 2,35,48,6
 	.asciz "extra_arg"
 
-LDIFF_SYM1111=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1111
+LDIFF_SYM854=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM854
 	.byte 2,35,56,6
 	.asciz "method_code"
 
-LDIFF_SYM1112=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1112
+LDIFF_SYM855=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM855
 	.byte 2,35,64,6
 	.asciz "method_info"
 
-LDIFF_SYM1113=LTDIE_44_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1113
+LDIFF_SYM856=LTDIE_27_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM856
 	.byte 2,35,72,6
 	.asciz "original_method_info"
 
-LDIFF_SYM1114=LTDIE_44_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1114
+LDIFF_SYM857=LTDIE_27_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM857
 	.byte 2,35,80,6
 	.asciz "data"
 
-LDIFF_SYM1115=LTDIE_45_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1115
+LDIFF_SYM858=LTDIE_30_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM858
 	.byte 2,35,88,6
 	.asciz "method_is_virtual"
 
-LDIFF_SYM1116=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM1116
+LDIFF_SYM859=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM859
 	.byte 2,35,96,0,7
 	.asciz "System_Delegate"
 
-LDIFF_SYM1117=LTDIE_43 - Ldebug_info_start
-	.long LDIFF_SYM1117
-LTDIE_43_POINTER:
+LDIFF_SYM860=LTDIE_26 - Ldebug_info_start
+	.long LDIFF_SYM860
+LTDIE_26_POINTER:
 
 	.byte 13
-LDIFF_SYM1118=LTDIE_43 - Ldebug_info_start
-	.long LDIFF_SYM1118
-LTDIE_43_REFERENCE:
+LDIFF_SYM861=LTDIE_26 - Ldebug_info_start
+	.long LDIFF_SYM861
+LTDIE_26_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1119=LTDIE_43 - Ldebug_info_start
-	.long LDIFF_SYM1119
-LTDIE_42:
+LDIFF_SYM862=LTDIE_26 - Ldebug_info_start
+	.long LDIFF_SYM862
+LTDIE_25:
 
 	.byte 5
 	.asciz "System_MulticastDelegate"
 
 	.byte 112,16
-LDIFF_SYM1120=LTDIE_43 - Ldebug_info_start
-	.long LDIFF_SYM1120
+LDIFF_SYM863=LTDIE_26 - Ldebug_info_start
+	.long LDIFF_SYM863
 	.byte 2,35,0,6
 	.asciz "delegates"
 
-LDIFF_SYM1121=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM1121
+LDIFF_SYM864=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM864
 	.byte 2,35,104,0,7
 	.asciz "System_MulticastDelegate"
 
-LDIFF_SYM1122=LTDIE_42 - Ldebug_info_start
-	.long LDIFF_SYM1122
-LTDIE_42_POINTER:
+LDIFF_SYM865=LTDIE_25 - Ldebug_info_start
+	.long LDIFF_SYM865
+LTDIE_25_POINTER:
 
 	.byte 13
-LDIFF_SYM1123=LTDIE_42 - Ldebug_info_start
-	.long LDIFF_SYM1123
-LTDIE_42_REFERENCE:
+LDIFF_SYM866=LTDIE_25 - Ldebug_info_start
+	.long LDIFF_SYM866
+LTDIE_25_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1124=LTDIE_42 - Ldebug_info_start
-	.long LDIFF_SYM1124
-LTDIE_41:
+LDIFF_SYM867=LTDIE_25 - Ldebug_info_start
+	.long LDIFF_SYM867
+LTDIE_24:
 
 	.byte 5
 	.asciz "System_EventHandler`1"
 
 	.byte 112,16
-LDIFF_SYM1125=LTDIE_42 - Ldebug_info_start
-	.long LDIFF_SYM1125
+LDIFF_SYM868=LTDIE_25 - Ldebug_info_start
+	.long LDIFF_SYM868
 	.byte 2,35,0,0,7
 	.asciz "System_EventHandler`1"
 
-LDIFF_SYM1126=LTDIE_41 - Ldebug_info_start
-	.long LDIFF_SYM1126
-LTDIE_41_POINTER:
-
-	.byte 13
-LDIFF_SYM1127=LTDIE_41 - Ldebug_info_start
-	.long LDIFF_SYM1127
-LTDIE_41_REFERENCE:
-
-	.byte 14
-LDIFF_SYM1128=LTDIE_41 - Ldebug_info_start
-	.long LDIFF_SYM1128
-LTDIE_24:
-
-	.byte 5
-	.asciz "System_Runtime_Serialization_SafeSerializationManager"
-
-	.byte 56,16
-LDIFF_SYM1129=LTDIE_0 - Ldebug_info_start
-	.long LDIFF_SYM1129
-	.byte 2,35,0,6
-	.asciz "m_serializedStates"
-
-LDIFF_SYM1130=LTDIE_25_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1130
-	.byte 2,35,16,6
-	.asciz "m_savedSerializationInfo"
-
-LDIFF_SYM1131=LTDIE_26_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1131
-	.byte 2,35,24,6
-	.asciz "m_realObject"
-
-LDIFF_SYM1132=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1132
-	.byte 2,35,32,6
-	.asciz "m_realType"
-
-LDIFF_SYM1133=LTDIE_34_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1133
-	.byte 2,35,40,6
-	.asciz "SerializeObjectState"
-
-LDIFF_SYM1134=LTDIE_41_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1134
-	.byte 2,35,48,0,7
-	.asciz "System_Runtime_Serialization_SafeSerializationManager"
-
-LDIFF_SYM1135=LTDIE_24 - Ldebug_info_start
-	.long LDIFF_SYM1135
+LDIFF_SYM869=LTDIE_24 - Ldebug_info_start
+	.long LDIFF_SYM869
 LTDIE_24_POINTER:
 
 	.byte 13
-LDIFF_SYM1136=LTDIE_24 - Ldebug_info_start
-	.long LDIFF_SYM1136
+LDIFF_SYM870=LTDIE_24 - Ldebug_info_start
+	.long LDIFF_SYM870
 LTDIE_24_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1137=LTDIE_24 - Ldebug_info_start
-	.long LDIFF_SYM1137
+LDIFF_SYM871=LTDIE_24 - Ldebug_info_start
+	.long LDIFF_SYM871
 LTDIE_22:
 
 	.byte 5
-	.asciz "System_Exception"
+	.asciz "System_Runtime_Serialization_SafeSerializationManager"
 
-	.byte 136,1,16
-LDIFF_SYM1138=LTDIE_0 - Ldebug_info_start
-	.long LDIFF_SYM1138
+	.byte 40,16
+LDIFF_SYM872=LTDIE_0 - Ldebug_info_start
+	.long LDIFF_SYM872
 	.byte 2,35,0,6
-	.asciz "_className"
+	.asciz "m_serializedStates"
 
-LDIFF_SYM1139=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1139
+LDIFF_SYM873=LTDIE_23_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM873
 	.byte 2,35,16,6
-	.asciz "_message"
+	.asciz "m_realObject"
 
-LDIFF_SYM1140=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1140
+LDIFF_SYM874=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM874
 	.byte 2,35,24,6
-	.asciz "_data"
+	.asciz "SerializeObjectState"
 
-LDIFF_SYM1141=LTDIE_23_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1141
-	.byte 2,35,32,6
-	.asciz "_innerException"
+LDIFF_SYM875=LTDIE_24_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM875
+	.byte 2,35,32,0,7
+	.asciz "System_Runtime_Serialization_SafeSerializationManager"
 
-LDIFF_SYM1142=LTDIE_22_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1142
-	.byte 2,35,40,6
-	.asciz "_helpURL"
-
-LDIFF_SYM1143=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1143
-	.byte 2,35,48,6
-	.asciz "_stackTrace"
-
-LDIFF_SYM1144=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1144
-	.byte 2,35,56,6
-	.asciz "_stackTraceString"
-
-LDIFF_SYM1145=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1145
-	.byte 2,35,64,6
-	.asciz "_remoteStackTraceString"
-
-LDIFF_SYM1146=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1146
-	.byte 2,35,72,6
-	.asciz "_remoteStackIndex"
-
-LDIFF_SYM1147=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1147
-	.byte 2,35,80,6
-	.asciz "_dynamicMethods"
-
-LDIFF_SYM1148=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1148
-	.byte 2,35,88,6
-	.asciz "_HResult"
-
-LDIFF_SYM1149=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1149
-	.byte 2,35,96,6
-	.asciz "_source"
-
-LDIFF_SYM1150=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1150
-	.byte 2,35,104,6
-	.asciz "_safeSerializationManager"
-
-LDIFF_SYM1151=LTDIE_24_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1151
-	.byte 2,35,112,6
-	.asciz "captured_traces"
-
-LDIFF_SYM1152=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM1152
-	.byte 2,35,120,6
-	.asciz "native_trace_ips"
-
-LDIFF_SYM1153=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM1153
-	.byte 3,35,128,1,0,7
-	.asciz "System_Exception"
-
-LDIFF_SYM1154=LTDIE_22 - Ldebug_info_start
-	.long LDIFF_SYM1154
+LDIFF_SYM876=LTDIE_22 - Ldebug_info_start
+	.long LDIFF_SYM876
 LTDIE_22_POINTER:
 
 	.byte 13
-LDIFF_SYM1155=LTDIE_22 - Ldebug_info_start
-	.long LDIFF_SYM1155
+LDIFF_SYM877=LTDIE_22 - Ldebug_info_start
+	.long LDIFF_SYM877
 LTDIE_22_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1156=LTDIE_22 - Ldebug_info_start
-	.long LDIFF_SYM1156
-LTDIE_21:
+LDIFF_SYM878=LTDIE_22 - Ldebug_info_start
+	.long LDIFF_SYM878
+LTDIE_20:
+
+	.byte 5
+	.asciz "System_Exception"
+
+	.byte 136,1,16
+LDIFF_SYM879=LTDIE_0 - Ldebug_info_start
+	.long LDIFF_SYM879
+	.byte 2,35,0,6
+	.asciz "_className"
+
+LDIFF_SYM880=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM880
+	.byte 2,35,16,6
+	.asciz "_message"
+
+LDIFF_SYM881=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM881
+	.byte 2,35,24,6
+	.asciz "_data"
+
+LDIFF_SYM882=LTDIE_21_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM882
+	.byte 2,35,32,6
+	.asciz "_innerException"
+
+LDIFF_SYM883=LTDIE_20_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM883
+	.byte 2,35,40,6
+	.asciz "_helpURL"
+
+LDIFF_SYM884=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM884
+	.byte 2,35,48,6
+	.asciz "_stackTrace"
+
+LDIFF_SYM885=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM885
+	.byte 2,35,56,6
+	.asciz "_stackTraceString"
+
+LDIFF_SYM886=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM886
+	.byte 2,35,64,6
+	.asciz "_remoteStackTraceString"
+
+LDIFF_SYM887=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM887
+	.byte 2,35,72,6
+	.asciz "_remoteStackIndex"
+
+LDIFF_SYM888=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM888
+	.byte 2,35,80,6
+	.asciz "_dynamicMethods"
+
+LDIFF_SYM889=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM889
+	.byte 2,35,88,6
+	.asciz "_HResult"
+
+LDIFF_SYM890=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM890
+	.byte 2,35,96,6
+	.asciz "_source"
+
+LDIFF_SYM891=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM891
+	.byte 2,35,104,6
+	.asciz "_safeSerializationManager"
+
+LDIFF_SYM892=LTDIE_22_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM892
+	.byte 2,35,112,6
+	.asciz "captured_traces"
+
+LDIFF_SYM893=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM893
+	.byte 2,35,120,6
+	.asciz "native_trace_ips"
+
+LDIFF_SYM894=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM894
+	.byte 3,35,128,1,0,7
+	.asciz "System_Exception"
+
+LDIFF_SYM895=LTDIE_20 - Ldebug_info_start
+	.long LDIFF_SYM895
+LTDIE_20_POINTER:
+
+	.byte 13
+LDIFF_SYM896=LTDIE_20 - Ldebug_info_start
+	.long LDIFF_SYM896
+LTDIE_20_REFERENCE:
+
+	.byte 14
+LDIFF_SYM897=LTDIE_20 - Ldebug_info_start
+	.long LDIFF_SYM897
+LTDIE_19:
 
 	.byte 5
 	.asciz "System_SystemException"
 
 	.byte 136,1,16
-LDIFF_SYM1157=LTDIE_22 - Ldebug_info_start
-	.long LDIFF_SYM1157
+LDIFF_SYM898=LTDIE_20 - Ldebug_info_start
+	.long LDIFF_SYM898
 	.byte 2,35,0,0,7
 	.asciz "System_SystemException"
 
-LDIFF_SYM1158=LTDIE_21 - Ldebug_info_start
-	.long LDIFF_SYM1158
-LTDIE_21_POINTER:
+LDIFF_SYM899=LTDIE_19 - Ldebug_info_start
+	.long LDIFF_SYM899
+LTDIE_19_POINTER:
 
 	.byte 13
-LDIFF_SYM1159=LTDIE_21 - Ldebug_info_start
-	.long LDIFF_SYM1159
-LTDIE_21_REFERENCE:
+LDIFF_SYM900=LTDIE_19 - Ldebug_info_start
+	.long LDIFF_SYM900
+LTDIE_19_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1160=LTDIE_21 - Ldebug_info_start
-	.long LDIFF_SYM1160
-LTDIE_20:
+LDIFF_SYM901=LTDIE_19 - Ldebug_info_start
+	.long LDIFF_SYM901
+LTDIE_18:
 
 	.byte 5
 	.asciz "System_ArgumentException"
 
 	.byte 144,1,16
-LDIFF_SYM1161=LTDIE_21 - Ldebug_info_start
-	.long LDIFF_SYM1161
+LDIFF_SYM902=LTDIE_19 - Ldebug_info_start
+	.long LDIFF_SYM902
 	.byte 2,35,0,6
 	.asciz "m_paramName"
 
-LDIFF_SYM1162=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1162
+LDIFF_SYM903=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM903
 	.byte 3,35,136,1,0,7
 	.asciz "System_ArgumentException"
 
-LDIFF_SYM1163=LTDIE_20 - Ldebug_info_start
-	.long LDIFF_SYM1163
-LTDIE_20_POINTER:
+LDIFF_SYM904=LTDIE_18 - Ldebug_info_start
+	.long LDIFF_SYM904
+LTDIE_18_POINTER:
 
 	.byte 13
-LDIFF_SYM1164=LTDIE_20 - Ldebug_info_start
-	.long LDIFF_SYM1164
-LTDIE_20_REFERENCE:
+LDIFF_SYM905=LTDIE_18 - Ldebug_info_start
+	.long LDIFF_SYM905
+LTDIE_18_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1165=LTDIE_20 - Ldebug_info_start
-	.long LDIFF_SYM1165
+LDIFF_SYM906=LTDIE_18 - Ldebug_info_start
+	.long LDIFF_SYM906
 	.byte 2
 	.asciz "System.Numerics.BigNumber:TryValidateParseStyleInteger"
 	.asciz "System_Numerics_BigNumber_TryValidateParseStyleInteger_System_Globalization_NumberStyles_System_ArgumentException_"
 
-	.byte 9,180,2
+	.byte 8,180,2
 	.quad System_Numerics_BigNumber_TryValidateParseStyleInteger_System_Globalization_NumberStyles_System_ArgumentException_
-	.quad Lme_76
+	.quad Lme_5b
 
 	.byte 2,118,16,3
 	.asciz "style"
 
-LDIFF_SYM1166=LTDIE_6 - Ldebug_info_start
-	.long LDIFF_SYM1166
+LDIFF_SYM907=LTDIE_6 - Ldebug_info_start
+	.long LDIFF_SYM907
 	.byte 2,141,24,3
 	.asciz "e"
 
-LDIFF_SYM1167=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1167
+LDIFF_SYM908=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM908
 	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1168=Lfde118_end - Lfde118_start
-	.long LDIFF_SYM1168
-Lfde118_start:
+LDIFF_SYM909=Lfde91_end - Lfde91_start
+	.long LDIFF_SYM909
+Lfde91_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigNumber_TryValidateParseStyleInteger_System_Globalization_NumberStyles_System_ArgumentException_
 
-LDIFF_SYM1169=Lme_76 - System_Numerics_BigNumber_TryValidateParseStyleInteger_System_Globalization_NumberStyles_System_ArgumentException_
-	.long LDIFF_SYM1169
+LDIFF_SYM910=Lme_5b - System_Numerics_BigNumber_TryValidateParseStyleInteger_System_Globalization_NumberStyles_System_ArgumentException_
+	.long LDIFF_SYM910
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,154,8
 	.align 3
-Lfde118_end:
+Lfde91_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -26739,58 +21828,58 @@ Lfde118_end:
 	.asciz "System.Numerics.BigNumber:TryParseBigInteger"
 	.asciz "System_Numerics_BigNumber_TryParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo_System_Numerics_BigInteger_"
 
-	.byte 9,202,2
+	.byte 8,202,2
 	.quad System_Numerics_BigNumber_TryParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo_System_Numerics_BigInteger_
-	.quad Lme_77
+	.quad Lme_5c
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM1170=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1170
+LDIFF_SYM911=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM911
 	.byte 2,141,16,3
 	.asciz "style"
 
-LDIFF_SYM1171=LTDIE_6 - Ldebug_info_start
-	.long LDIFF_SYM1171
+LDIFF_SYM912=LTDIE_6 - Ldebug_info_start
+	.long LDIFF_SYM912
 	.byte 2,141,24,3
 	.asciz "info"
 
-LDIFF_SYM1172=LTDIE_4_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1172
+LDIFF_SYM913=LTDIE_4_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM913
 	.byte 2,141,32,3
 	.asciz "result"
 
-LDIFF_SYM1173=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1173
+LDIFF_SYM914=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM914
 	.byte 2,141,40,11
 	.asciz "e"
 
-LDIFF_SYM1174=LTDIE_20_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1174
+LDIFF_SYM915=LTDIE_18_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM915
 	.byte 3,141,240,0,11
 	.asciz "bignumber"
 
-LDIFF_SYM1175=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1175
+LDIFF_SYM916=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM916
 	.byte 3,141,216,0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1176=Lfde119_end - Lfde119_start
-	.long LDIFF_SYM1176
-Lfde119_start:
+LDIFF_SYM917=Lfde92_end - Lfde92_start
+	.long LDIFF_SYM917
+Lfde92_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigNumber_TryParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo_System_Numerics_BigInteger_
 
-LDIFF_SYM1177=Lme_77 - System_Numerics_BigNumber_TryParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo_System_Numerics_BigInteger_
-	.long LDIFF_SYM1177
+LDIFF_SYM918=Lme_5c - System_Numerics_BigNumber_TryParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo_System_Numerics_BigInteger_
+	.long LDIFF_SYM918
 	.long 0
 	.byte 12,31,0,68,14,128,1,157,16,158,15,68,13,29
 	.align 3
-Lfde119_end:
+Lfde92_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -26798,175 +21887,175 @@ Lfde119_end:
 	.asciz "System.Numerics.BigNumber:ParseBigInteger"
 	.asciz "System_Numerics_BigNumber_ParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo"
 
-	.byte 9,231,2
+	.byte 8,231,2
 	.quad System_Numerics_BigNumber_ParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo
-	.quad Lme_78
+	.quad Lme_5d
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM1178=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1178
+LDIFF_SYM919=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM919
 	.byte 2,141,32,3
 	.asciz "style"
 
-LDIFF_SYM1179=LTDIE_6 - Ldebug_info_start
-	.long LDIFF_SYM1179
+LDIFF_SYM920=LTDIE_6 - Ldebug_info_start
+	.long LDIFF_SYM920
 	.byte 2,141,40,3
 	.asciz "info"
 
-LDIFF_SYM1180=LTDIE_4_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1180
+LDIFF_SYM921=LTDIE_4_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM921
 	.byte 2,141,48,11
 	.asciz "e"
 
-LDIFF_SYM1181=LTDIE_20_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1181
+LDIFF_SYM922=LTDIE_18_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM922
 	.byte 3,141,200,0,11
 	.asciz "result"
 
-LDIFF_SYM1182=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1182
+LDIFF_SYM923=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM923
 	.byte 2,141,56,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1183=Lfde120_end - Lfde120_start
-	.long LDIFF_SYM1183
-Lfde120_start:
+LDIFF_SYM924=Lfde93_end - Lfde93_start
+	.long LDIFF_SYM924
+Lfde93_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigNumber_ParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo
 
-LDIFF_SYM1184=Lme_78 - System_Numerics_BigNumber_ParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo
-	.long LDIFF_SYM1184
+LDIFF_SYM925=Lme_5d - System_Numerics_BigNumber_ParseBigInteger_string_System_Globalization_NumberStyles_System_Globalization_NumberFormatInfo
+	.long LDIFF_SYM925
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
-Lfde120_end:
+Lfde93_end:
 
 .section __DWARF, __debug_info,regular,debug
-LTDIE_46:
+LTDIE_32:
 
 	.byte 5
 	.asciz "_BigNumberBuffer"
 
 	.byte 40,16
-LDIFF_SYM1185=LTDIE_2 - Ldebug_info_start
-	.long LDIFF_SYM1185
+LDIFF_SYM926=LTDIE_2 - Ldebug_info_start
+	.long LDIFF_SYM926
 	.byte 2,35,0,6
 	.asciz "digits"
 
-LDIFF_SYM1186=LTDIE_7_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1186
+LDIFF_SYM927=LTDIE_7_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM927
 	.byte 2,35,0,6
 	.asciz "precision"
 
-LDIFF_SYM1187=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1187
+LDIFF_SYM928=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM928
 	.byte 2,35,8,6
 	.asciz "scale"
 
-LDIFF_SYM1188=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1188
+LDIFF_SYM929=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM929
 	.byte 2,35,12,6
 	.asciz "sign"
 
-LDIFF_SYM1189=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM1189
+LDIFF_SYM930=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM930
 	.byte 2,35,16,0,7
 	.asciz "_BigNumberBuffer"
 
-LDIFF_SYM1190=LTDIE_46 - Ldebug_info_start
-	.long LDIFF_SYM1190
-LTDIE_46_POINTER:
+LDIFF_SYM931=LTDIE_32 - Ldebug_info_start
+	.long LDIFF_SYM931
+LTDIE_32_POINTER:
 
 	.byte 13
-LDIFF_SYM1191=LTDIE_46 - Ldebug_info_start
-	.long LDIFF_SYM1191
-LTDIE_46_REFERENCE:
+LDIFF_SYM932=LTDIE_32 - Ldebug_info_start
+	.long LDIFF_SYM932
+LTDIE_32_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1192=LTDIE_46 - Ldebug_info_start
-	.long LDIFF_SYM1192
+LDIFF_SYM933=LTDIE_32 - Ldebug_info_start
+	.long LDIFF_SYM933
 	.byte 2
 	.asciz "System.Numerics.BigNumber:HexNumberToBigInteger"
 	.asciz "System_Numerics_BigNumber_HexNumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_"
 
-	.byte 9,248,2
+	.byte 8,248,2
 	.quad System_Numerics_BigNumber_HexNumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_
-	.quad Lme_79
+	.quad Lme_5e
 
 	.byte 2,118,16,3
 	.asciz "number"
 
-LDIFF_SYM1193=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1193
+LDIFF_SYM934=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM934
 	.byte 1,105,3
 	.asciz "value"
 
-LDIFF_SYM1194=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1194
+LDIFF_SYM935=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM935
 	.byte 3,141,208,0,11
 	.asciz "len"
 
-LDIFF_SYM1195=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1195
+LDIFF_SYM936=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM936
 	.byte 1,104,11
 	.asciz "bits"
 
-LDIFF_SYM1196=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM1196
+LDIFF_SYM937=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM937
 	.byte 1,103,11
 	.asciz "shift"
 
-LDIFF_SYM1197=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM1197
+LDIFF_SYM938=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM938
 	.byte 1,102,11
 	.asciz "isNegative"
 
-LDIFF_SYM1198=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM1198
+LDIFF_SYM939=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM939
 	.byte 1,101,11
 	.asciz "bitIndex"
 
-LDIFF_SYM1199=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1199
+LDIFF_SYM940=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM940
 	.byte 1,100,11
 	.asciz "i"
 
-LDIFF_SYM1200=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1200
+LDIFF_SYM941=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM941
 	.byte 1,99,11
 	.asciz "c"
 
-LDIFF_SYM1201=LDIE_CHAR - Ldebug_info_start
-	.long LDIFF_SYM1201
+LDIFF_SYM942=LDIE_CHAR - Ldebug_info_start
+	.long LDIFF_SYM942
 	.byte 1,104,11
 	.asciz "b"
 
-LDIFF_SYM1202=LDIE_U1 - Ldebug_info_start
-	.long LDIFF_SYM1202
+LDIFF_SYM943=LDIE_U1 - Ldebug_info_start
+	.long LDIFF_SYM943
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1203=Lfde121_end - Lfde121_start
-	.long LDIFF_SYM1203
-Lfde121_start:
+LDIFF_SYM944=Lfde94_end - Lfde94_start
+	.long LDIFF_SYM944
+Lfde94_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigNumber_HexNumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_
 
-LDIFF_SYM1204=Lme_79 - System_Numerics_BigNumber_HexNumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_
-	.long LDIFF_SYM1204
+LDIFF_SYM945=Lme_5e - System_Numerics_BigNumber_HexNumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_
+	.long LDIFF_SYM945
 	.long 0
 	.byte 12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,147,14,148,13,68,149,12,150,11,68,151,10,152,9,68,153,8
 	.byte 154,7
 	.align 3
-Lfde121_end:
+Lfde94_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -26974,53 +22063,53 @@ Lfde121_end:
 	.asciz "System.Numerics.BigNumber:NumberToBigInteger"
 	.asciz "System_Numerics_BigNumber_NumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_"
 
-	.byte 9,174,3
+	.byte 8,174,3
 	.quad System_Numerics_BigNumber_NumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_
-	.quad Lme_7a
+	.quad Lme_5f
 
 	.byte 2,118,16,3
 	.asciz "number"
 
-LDIFF_SYM1205=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1205
+LDIFF_SYM946=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM946
 	.byte 1,105,3
 	.asciz "value"
 
-LDIFF_SYM1206=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1206
+LDIFF_SYM947=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM947
 	.byte 1,106,11
 	.asciz "i"
 
-LDIFF_SYM1207=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1207
+LDIFF_SYM948=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM948
 	.byte 1,104,11
 	.asciz "cur"
 
-LDIFF_SYM1208=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1208
+LDIFF_SYM949=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM949
 	.byte 1,103,11
 	.asciz "ten"
 
-LDIFF_SYM1209=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1209
+LDIFF_SYM950=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM950
 	.byte 3,141,224,1,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1210=Lfde122_end - Lfde122_start
-	.long LDIFF_SYM1210
-Lfde122_start:
+LDIFF_SYM951=Lfde95_end - Lfde95_start
+	.long LDIFF_SYM951
+Lfde95_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigNumber_NumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_
 
-LDIFF_SYM1211=Lme_7a - System_Numerics_BigNumber_NumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_
-	.long LDIFF_SYM1211
+LDIFF_SYM952=Lme_5f - System_Numerics_BigNumber_NumberToBigInteger_System_Numerics_BigNumber_BigNumberBuffer__System_Numerics_BigInteger_
+	.long LDIFF_SYM952
 	.long 0
 	.byte 12,31,0,68,14,176,2,157,38,158,37,68,13,29,68,151,36,152,35,68,153,34,154,33
 	.align 3
-Lfde122_end:
+Lfde95_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -27028,53 +22117,53 @@ Lfde122_end:
 	.asciz "System.Numerics.BigNumber:ParseFormatSpecifier"
 	.asciz "System_Numerics_BigNumber_ParseFormatSpecifier_string_int_"
 
-	.byte 9,201,3
+	.byte 8,201,3
 	.quad System_Numerics_BigNumber_ParseFormatSpecifier_string_int_
-	.quad Lme_7b
+	.quad Lme_60
 
 	.byte 2,118,16,3
 	.asciz "format"
 
-LDIFF_SYM1212=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1212
+LDIFF_SYM953=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM953
 	.byte 1,105,3
 	.asciz "digits"
 
-LDIFF_SYM1213=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1213
+LDIFF_SYM954=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM954
 	.byte 2,141,48,11
 	.asciz "i"
 
-LDIFF_SYM1214=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1214
+LDIFF_SYM955=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM955
 	.byte 1,104,11
 	.asciz "ch"
 
-LDIFF_SYM1215=LDIE_CHAR - Ldebug_info_start
-	.long LDIFF_SYM1215
+LDIFF_SYM956=LDIE_CHAR - Ldebug_info_start
+	.long LDIFF_SYM956
 	.byte 1,103,11
 	.asciz "n"
 
-LDIFF_SYM1216=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1216
+LDIFF_SYM957=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM957
 	.byte 1,102,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1217=Lfde123_end - Lfde123_start
-	.long LDIFF_SYM1217
-Lfde123_start:
+LDIFF_SYM958=Lfde96_end - Lfde96_start
+	.long LDIFF_SYM958
+Lfde96_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigNumber_ParseFormatSpecifier_string_int_
 
-LDIFF_SYM1218=Lme_7b - System_Numerics_BigNumber_ParseFormatSpecifier_string_int_
-	.long LDIFF_SYM1218
+LDIFF_SYM959=Lme_60 - System_Numerics_BigNumber_ParseFormatSpecifier_string_int_
+	.long LDIFF_SYM959
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,150,6,151,5,68,152,4,153,3
 	.align 3
-Lfde123_end:
+Lfde96_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -27082,308 +22171,308 @@ Lfde123_end:
 	.asciz "System.Numerics.BigNumber:FormatBigIntegerToHexString"
 	.asciz "System_Numerics_BigNumber_FormatBigIntegerToHexString_System_Numerics_BigInteger_char_int_System_Globalization_NumberFormatInfo"
 
-	.byte 9,235,3
+	.byte 8,235,3
 	.quad System_Numerics_BigNumber_FormatBigIntegerToHexString_System_Numerics_BigInteger_char_int_System_Globalization_NumberFormatInfo
-	.quad Lme_7c
+	.quad Lme_61
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM1219=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1219
+LDIFF_SYM960=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM960
 	.byte 3,141,192,0,3
 	.asciz "format"
 
-LDIFF_SYM1220=LDIE_CHAR - Ldebug_info_start
-	.long LDIFF_SYM1220
+LDIFF_SYM961=LDIE_CHAR - Ldebug_info_start
+	.long LDIFF_SYM961
 	.byte 1,104,3
 	.asciz "digits"
 
-LDIFF_SYM1221=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1221
+LDIFF_SYM962=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM962
 	.byte 3,141,208,0,3
 	.asciz "info"
 
-LDIFF_SYM1222=LTDIE_4_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1222
+LDIFF_SYM963=LTDIE_4_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM963
 	.byte 1,106,11
 	.asciz "sb"
 
-LDIFF_SYM1223=LTDIE_7_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1223
+LDIFF_SYM964=LTDIE_7_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM964
 	.byte 1,103,11
 	.asciz "bits"
 
-LDIFF_SYM1224=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM1224
+LDIFF_SYM965=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM965
 	.byte 1,102,11
 	.asciz "fmt"
 
-LDIFF_SYM1225=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1225
+LDIFF_SYM966=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM966
 	.byte 1,100,11
 	.asciz "cur"
 
-LDIFF_SYM1226=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1226
+LDIFF_SYM967=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM967
 	.byte 1,101,11
 	.asciz "clearHighF"
 
-LDIFF_SYM1227=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM1227
+LDIFF_SYM968=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM968
 	.byte 1,100,11
 	.asciz "head"
 
-LDIFF_SYM1228=LDIE_U1 - Ldebug_info_start
-	.long LDIFF_SYM1228
+LDIFF_SYM969=LDIE_U1 - Ldebug_info_start
+	.long LDIFF_SYM969
 	.byte 3,141,232,0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1229=Lfde124_end - Lfde124_start
-	.long LDIFF_SYM1229
-Lfde124_start:
+LDIFF_SYM970=Lfde97_end - Lfde97_start
+	.long LDIFF_SYM970
+Lfde97_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigNumber_FormatBigIntegerToHexString_System_Numerics_BigInteger_char_int_System_Globalization_NumberFormatInfo
 
-LDIFF_SYM1230=Lme_7c - System_Numerics_BigNumber_FormatBigIntegerToHexString_System_Numerics_BigInteger_char_int_System_Globalization_NumberFormatInfo
-	.long LDIFF_SYM1230
+LDIFF_SYM971=Lme_61 - System_Numerics_BigNumber_FormatBigIntegerToHexString_System_Numerics_BigInteger_char_int_System_Globalization_NumberFormatInfo
+	.long LDIFF_SYM971
 	.long 0
 	.byte 12,31,0,68,14,192,1,157,24,158,23,68,13,29,68,148,22,149,21,68,150,20,151,19,68,152,18,68,154,17
 	.align 3
-Lfde124_end:
+Lfde97_end:
 
 .section __DWARF, __debug_info,regular,debug
-LTDIE_48:
+LTDIE_34:
 
 	.byte 5
 	.asciz "System_ArithmeticException"
 
 	.byte 136,1,16
-LDIFF_SYM1231=LTDIE_21 - Ldebug_info_start
-	.long LDIFF_SYM1231
+LDIFF_SYM972=LTDIE_19 - Ldebug_info_start
+	.long LDIFF_SYM972
 	.byte 2,35,0,0,7
 	.asciz "System_ArithmeticException"
 
-LDIFF_SYM1232=LTDIE_48 - Ldebug_info_start
-	.long LDIFF_SYM1232
-LTDIE_48_POINTER:
+LDIFF_SYM973=LTDIE_34 - Ldebug_info_start
+	.long LDIFF_SYM973
+LTDIE_34_POINTER:
 
 	.byte 13
-LDIFF_SYM1233=LTDIE_48 - Ldebug_info_start
-	.long LDIFF_SYM1233
-LTDIE_48_REFERENCE:
+LDIFF_SYM974=LTDIE_34 - Ldebug_info_start
+	.long LDIFF_SYM974
+LTDIE_34_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1234=LTDIE_48 - Ldebug_info_start
-	.long LDIFF_SYM1234
-LTDIE_47:
+LDIFF_SYM975=LTDIE_34 - Ldebug_info_start
+	.long LDIFF_SYM975
+LTDIE_33:
 
 	.byte 5
 	.asciz "System_OverflowException"
 
 	.byte 136,1,16
-LDIFF_SYM1235=LTDIE_48 - Ldebug_info_start
-	.long LDIFF_SYM1235
+LDIFF_SYM976=LTDIE_34 - Ldebug_info_start
+	.long LDIFF_SYM976
 	.byte 2,35,0,0,7
 	.asciz "System_OverflowException"
 
-LDIFF_SYM1236=LTDIE_47 - Ldebug_info_start
-	.long LDIFF_SYM1236
-LTDIE_47_POINTER:
+LDIFF_SYM977=LTDIE_33 - Ldebug_info_start
+	.long LDIFF_SYM977
+LTDIE_33_POINTER:
 
 	.byte 13
-LDIFF_SYM1237=LTDIE_47 - Ldebug_info_start
-	.long LDIFF_SYM1237
-LTDIE_47_REFERENCE:
+LDIFF_SYM978=LTDIE_33 - Ldebug_info_start
+	.long LDIFF_SYM978
+LTDIE_33_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1238=LTDIE_47 - Ldebug_info_start
-	.long LDIFF_SYM1238
+LDIFF_SYM979=LTDIE_33 - Ldebug_info_start
+	.long LDIFF_SYM979
 	.byte 2
 	.asciz "System.Numerics.BigNumber:FormatBigInteger"
 	.asciz "System_Numerics_BigNumber_FormatBigInteger_System_Numerics_BigInteger_string_System_Globalization_NumberFormatInfo"
 
-	.byte 9,152,4
+	.byte 8,152,4
 	.quad System_Numerics_BigNumber_FormatBigInteger_System_Numerics_BigInteger_string_System_Globalization_NumberFormatInfo
-	.quad Lme_7d
+	.quad Lme_62
 
 	.byte 2,118,16,3
 	.asciz "value"
 
-LDIFF_SYM1239=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1239
+LDIFF_SYM980=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM980
 	.byte 3,141,208,0,3
 	.asciz "format"
 
-LDIFF_SYM1240=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1240
+LDIFF_SYM981=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM981
 	.byte 1,105,3
 	.asciz "info"
 
-LDIFF_SYM1241=LTDIE_4_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1241
+LDIFF_SYM982=LTDIE_4_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM982
 	.byte 3,141,224,0,11
 	.asciz "digits"
 
-LDIFF_SYM1242=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1242
+LDIFF_SYM983=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM983
 	.byte 3,141,216,1,11
 	.asciz "fmt"
 
-LDIFF_SYM1243=LDIE_CHAR - Ldebug_info_start
-	.long LDIFF_SYM1243
+LDIFF_SYM984=LDIE_CHAR - Ldebug_info_start
+	.long LDIFF_SYM984
 	.byte 1,104,11
 	.asciz "decimalFmt"
 
-LDIFF_SYM1244=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM1244
+LDIFF_SYM985=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM985
 	.byte 1,102,11
 	.asciz "cuSrc"
 
-LDIFF_SYM1245=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1245
+LDIFF_SYM986=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM986
 	.byte 1,104,11
 	.asciz "cuMax"
 
-LDIFF_SYM1246=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1246
+LDIFF_SYM987=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM987
 	.byte 1,103,11
 	.asciz "rguDst"
 
-LDIFF_SYM1247=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM1247
+LDIFF_SYM988=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM988
 	.byte 1,103,11
 	.asciz "cuDst"
 
-LDIFF_SYM1248=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1248
+LDIFF_SYM989=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM989
 	.byte 1,101,11
 	.asciz "cchMax"
 
-LDIFF_SYM1249=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1249
+LDIFF_SYM990=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM990
 	.byte 1,104,11
 	.asciz "rgchBufSize"
 
-LDIFF_SYM1250=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1250
+LDIFF_SYM991=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM991
 	.byte 1,100,11
 	.asciz "rgch"
 
-LDIFF_SYM1251=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM1251
+LDIFF_SYM992=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM992
 	.byte 1,100,11
 	.asciz "ichDst"
 
-LDIFF_SYM1252=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1252
+LDIFF_SYM993=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM993
 	.byte 1,99,11
 	.asciz "numDigitsPrinted"
 
-LDIFF_SYM1253=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1253
+LDIFF_SYM994=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM994
 	.byte 1,106,11
 	.asciz "V_12"
 
-LDIFF_SYM1254=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1254
+LDIFF_SYM995=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM995
 	.byte 3,141,224,1,11
 	.asciz "e"
 
-LDIFF_SYM1255=LTDIE_47_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1255
+LDIFF_SYM996=LTDIE_33_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM996
 	.byte 3,141,232,1,11
 	.asciz "iuSrc"
 
-LDIFF_SYM1256=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1256
+LDIFF_SYM997=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM997
 	.byte 1,100,11
 	.asciz "uCarry"
 
-LDIFF_SYM1257=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM1257
+LDIFF_SYM998=LDIE_U4 - Ldebug_info_start
+	.long LDIFF_SYM998
 	.byte 1,104,11
 	.asciz "iuDst"
 
-LDIFF_SYM1258=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1258
+LDIFF_SYM999=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM999
 	.byte 1,99,11
 	.asciz "uuRes"
 
-LDIFF_SYM1259=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM1259
+LDIFF_SYM1000=LDIE_U8 - Ldebug_info_start
+	.long LDIFF_SYM1000
 	.byte 1,104,11
 	.asciz "e"
 
-LDIFF_SYM1260=LTDIE_47_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1260
+LDIFF_SYM1001=LTDIE_33_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1001
 	.byte 3,141,240,1,11
 	.asciz "e"
 
-LDIFF_SYM1261=LTDIE_47_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1261
+LDIFF_SYM1002=LTDIE_33_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1002
 	.byte 3,141,248,1,11
 	.asciz "e"
 
-LDIFF_SYM1262=LTDIE_47_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1262
+LDIFF_SYM1003=LTDIE_33_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1003
 	.byte 3,141,128,2,11
 	.asciz "iuDst"
 
-LDIFF_SYM1263=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1263
+LDIFF_SYM1004=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1004
 	.byte 3,141,136,2,11
 	.asciz "uDig"
 
-LDIFF_SYM1264=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM1264
+LDIFF_SYM1005=LDIE_U4 - Ldebug_info_start
+	.long LDIFF_SYM1005
 	.byte 3,141,144,2,11
 	.asciz "cch"
 
-LDIFF_SYM1265=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1265
+LDIFF_SYM1006=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1006
 	.byte 1,106,11
 	.asciz "uDig"
 
-LDIFF_SYM1266=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM1266
+LDIFF_SYM1007=LDIE_U4 - Ldebug_info_start
+	.long LDIFF_SYM1007
 	.byte 1,106,11
 	.asciz "sign"
 
-LDIFF_SYM1267=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM1267
+LDIFF_SYM1008=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM1008
 	.byte 1,106,11
 	.asciz "scale"
 
-LDIFF_SYM1268=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1268
+LDIFF_SYM1009=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1009
 	.byte 1,103,11
 	.asciz "i"
 
-LDIFF_SYM1269=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1269
+LDIFF_SYM1010=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1010
 	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1270=Lfde125_end - Lfde125_start
-	.long LDIFF_SYM1270
-Lfde125_start:
+LDIFF_SYM1011=Lfde98_end - Lfde98_start
+	.long LDIFF_SYM1011
+Lfde98_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigNumber_FormatBigInteger_System_Numerics_BigInteger_string_System_Globalization_NumberFormatInfo
 
-LDIFF_SYM1271=Lme_7d - System_Numerics_BigNumber_FormatBigInteger_System_Numerics_BigInteger_string_System_Globalization_NumberFormatInfo
-	.long LDIFF_SYM1271
+LDIFF_SYM1012=Lme_62 - System_Numerics_BigNumber_FormatBigInteger_System_Numerics_BigInteger_string_System_Globalization_NumberFormatInfo
+	.long LDIFF_SYM1012
 	.long 0
 	.byte 12,31,0,68,14,192,3,157,56,158,55,68,13,29,68,147,54,148,53,68,149,52,150,51,68,151,50,152,49,68,153,48
 	.byte 154,47
 	.align 3
-Lfde125_end:
+Lfde98_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -27391,92 +22480,33 @@ Lfde125_end:
 	.asciz "System.Numerics.BigNumber/BigNumberBuffer:Create"
 	.asciz "System_Numerics_BigNumber_BigNumberBuffer_Create"
 
-	.byte 9,170,2
+	.byte 8,170,2
 	.quad System_Numerics_BigNumber_BigNumberBuffer_Create
-	.quad Lme_7e
+	.quad Lme_63
 
 	.byte 2,118,16,11
 	.asciz "number"
 
-LDIFF_SYM1272=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1272
+LDIFF_SYM1013=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1013
 	.byte 2,141,48,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1273=Lfde126_end - Lfde126_start
-	.long LDIFF_SYM1273
-Lfde126_start:
+LDIFF_SYM1014=Lfde99_end - Lfde99_start
+	.long LDIFF_SYM1014
+Lfde99_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_BigNumber_BigNumberBuffer_Create
 
-LDIFF_SYM1274=Lme_7e - System_Numerics_BigNumber_BigNumberBuffer_Create
-	.long LDIFF_SYM1274
+LDIFF_SYM1015=Lme_63 - System_Numerics_BigNumber_BigNumberBuffer_Create
+	.long LDIFF_SYM1015
 	.long 0
 	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29
 	.align 3
-Lfde126_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "System.Numerics.NumericsHelpers:GetDoubleParts"
-	.asciz "System_Numerics_NumericsHelpers_GetDoubleParts_double_int__int__ulong__bool_"
-
-	.byte 10,29
-	.quad System_Numerics_NumericsHelpers_GetDoubleParts_double_int__int__ulong__bool_
-	.quad Lme_7f
-
-	.byte 2,118,16,3
-	.asciz "dbl"
-
-LDIFF_SYM1275=LDIE_R8 - Ldebug_info_start
-	.long LDIFF_SYM1275
-	.byte 2,141,32,3
-	.asciz "sign"
-
-LDIFF_SYM1276=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1276
-	.byte 2,141,40,3
-	.asciz "exp"
-
-LDIFF_SYM1277=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1277
-	.byte 1,104,3
-	.asciz "man"
-
-LDIFF_SYM1278=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1278
-	.byte 1,105,3
-	.asciz "fFinite"
-
-LDIFF_SYM1279=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1279
-	.byte 2,141,48,11
-	.asciz "du"
-
-LDIFF_SYM1280=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1280
-	.byte 3,141,208,0,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM1281=Lfde127_end - Lfde127_start
-	.long LDIFF_SYM1281
-Lfde127_start:
-
-	.long 0
-	.align 3
-	.quad System_Numerics_NumericsHelpers_GetDoubleParts_double_int__int__ulong__bool_
-
-LDIFF_SYM1282=Lme_7f - System_Numerics_NumericsHelpers_GetDoubleParts_double_int__int__ulong__bool_
-	.long LDIFF_SYM1282
-	.long 0
-	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,152,10,153,9
-	.align 3
-Lfde127_end:
+Lfde99_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -27484,53 +22514,53 @@ Lfde127_end:
 	.asciz "System.Numerics.NumericsHelpers:GetDoubleFromParts"
 	.asciz "System_Numerics_NumericsHelpers_GetDoubleFromParts_int_int_ulong"
 
-	.byte 10,59
+	.byte 9,59
 	.quad System_Numerics_NumericsHelpers_GetDoubleFromParts_int_int_ulong
-	.quad Lme_80
+	.quad Lme_64
 
 	.byte 2,118,16,3
 	.asciz "sign"
 
-LDIFF_SYM1283=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1283
+LDIFF_SYM1016=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1016
 	.byte 2,141,40,3
 	.asciz "exp"
 
-LDIFF_SYM1284=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1284
+LDIFF_SYM1017=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1017
 	.byte 1,105,3
 	.asciz "man"
 
-LDIFF_SYM1285=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM1285
+LDIFF_SYM1018=LDIE_U8 - Ldebug_info_start
+	.long LDIFF_SYM1018
 	.byte 1,106,11
 	.asciz "du"
 
-LDIFF_SYM1286=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1286
+LDIFF_SYM1019=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1019
 	.byte 2,141,56,11
 	.asciz "cbitShift"
 
-LDIFF_SYM1287=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1287
+LDIFF_SYM1020=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1020
 	.byte 1,103,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1288=Lfde128_end - Lfde128_start
-	.long LDIFF_SYM1288
-Lfde128_start:
+LDIFF_SYM1021=Lfde100_end - Lfde100_start
+	.long LDIFF_SYM1021
+Lfde100_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_NumericsHelpers_GetDoubleFromParts_int_int_ulong
 
-LDIFF_SYM1289=Lme_80 - System_Numerics_NumericsHelpers_GetDoubleFromParts_int_int_ulong
-	.long LDIFF_SYM1289
+LDIFF_SYM1022=Lme_64 - System_Numerics_NumericsHelpers_GetDoubleFromParts_int_int_ulong
+	.long LDIFF_SYM1022
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,151,6,68,153,5,154,4
 	.align 3
-Lfde128_end:
+Lfde100_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -27538,38 +22568,38 @@ Lfde128_end:
 	.asciz "System.Numerics.NumericsHelpers:DangerousMakeTwosComplement"
 	.asciz "System_Numerics_NumericsHelpers_DangerousMakeTwosComplement_uint__"
 
-	.byte 10,115
+	.byte 9,115
 	.quad System_Numerics_NumericsHelpers_DangerousMakeTwosComplement_uint__
-	.quad Lme_81
+	.quad Lme_65
 
 	.byte 2,118,16,3
 	.asciz "d"
 
-LDIFF_SYM1290=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM1290
+LDIFF_SYM1023=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM1023
 	.byte 1,106,11
 	.asciz "i"
 
-LDIFF_SYM1291=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1291
+LDIFF_SYM1024=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1024
 	.byte 1,105,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1292=Lfde129_end - Lfde129_start
-	.long LDIFF_SYM1292
-Lfde129_start:
+LDIFF_SYM1025=Lfde101_end - Lfde101_start
+	.long LDIFF_SYM1025
+Lfde101_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_NumericsHelpers_DangerousMakeTwosComplement_uint__
 
-LDIFF_SYM1293=Lme_81 - System_Numerics_NumericsHelpers_DangerousMakeTwosComplement_uint__
-	.long LDIFF_SYM1293
+LDIFF_SYM1026=Lme_65 - System_Numerics_NumericsHelpers_DangerousMakeTwosComplement_uint__
+	.long LDIFF_SYM1026
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29,68,153,2,154,1
 	.align 3
-Lfde129_end:
+Lfde101_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -27577,38 +22607,38 @@ Lfde129_end:
 	.asciz "System.Numerics.NumericsHelpers:MakeUlong"
 	.asciz "System_Numerics_NumericsHelpers_MakeUlong_uint_uint"
 
-	.byte 10,135,1
+	.byte 9,135,1
 	.quad System_Numerics_NumericsHelpers_MakeUlong_uint_uint
-	.quad Lme_82
+	.quad Lme_66
 
 	.byte 2,118,16,3
 	.asciz "uHi"
 
-LDIFF_SYM1294=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM1294
+LDIFF_SYM1027=LDIE_U4 - Ldebug_info_start
+	.long LDIFF_SYM1027
 	.byte 2,141,16,3
 	.asciz "uLo"
 
-LDIFF_SYM1295=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM1295
+LDIFF_SYM1028=LDIE_U4 - Ldebug_info_start
+	.long LDIFF_SYM1028
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1296=Lfde130_end - Lfde130_start
-	.long LDIFF_SYM1296
-Lfde130_start:
+LDIFF_SYM1029=Lfde102_end - Lfde102_start
+	.long LDIFF_SYM1029
+Lfde102_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_NumericsHelpers_MakeUlong_uint_uint
 
-LDIFF_SYM1297=Lme_82 - System_Numerics_NumericsHelpers_MakeUlong_uint_uint
-	.long LDIFF_SYM1297
+LDIFF_SYM1030=Lme_66 - System_Numerics_NumericsHelpers_MakeUlong_uint_uint
+	.long LDIFF_SYM1030
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde130_end:
+Lfde102_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -27616,38 +22646,38 @@ Lfde130_end:
 	.asciz "System.Numerics.NumericsHelpers:Abs"
 	.asciz "System_Numerics_NumericsHelpers_Abs_int"
 
-	.byte 10,142,1
+	.byte 9,142,1
 	.quad System_Numerics_NumericsHelpers_Abs_int
-	.quad Lme_83
+	.quad Lme_67
 
 	.byte 2,118,16,3
 	.asciz "a"
 
-LDIFF_SYM1298=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1298
+LDIFF_SYM1031=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1031
 	.byte 2,141,16,11
 	.asciz "mask"
 
-LDIFF_SYM1299=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1299
+LDIFF_SYM1032=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1032
 	.byte 0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1300=Lfde131_end - Lfde131_start
-	.long LDIFF_SYM1300
-Lfde131_start:
+LDIFF_SYM1033=Lfde103_end - Lfde103_start
+	.long LDIFF_SYM1033
+Lfde103_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_NumericsHelpers_Abs_int
 
-LDIFF_SYM1301=Lme_83 - System_Numerics_NumericsHelpers_Abs_int
-	.long LDIFF_SYM1301
+LDIFF_SYM1034=Lme_67 - System_Numerics_NumericsHelpers_Abs_int
+	.long LDIFF_SYM1034
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde131_end:
+Lfde103_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -27655,38 +22685,38 @@ Lfde131_end:
 	.asciz "System.Numerics.NumericsHelpers:CombineHash"
 	.asciz "System_Numerics_NumericsHelpers_CombineHash_uint_uint"
 
-	.byte 10,149,1
+	.byte 9,149,1
 	.quad System_Numerics_NumericsHelpers_CombineHash_uint_uint
-	.quad Lme_84
+	.quad Lme_68
 
 	.byte 2,118,16,3
 	.asciz "u1"
 
-LDIFF_SYM1302=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM1302
+LDIFF_SYM1035=LDIE_U4 - Ldebug_info_start
+	.long LDIFF_SYM1035
 	.byte 2,141,16,3
 	.asciz "u2"
 
-LDIFF_SYM1303=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM1303
+LDIFF_SYM1036=LDIE_U4 - Ldebug_info_start
+	.long LDIFF_SYM1036
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1304=Lfde132_end - Lfde132_start
-	.long LDIFF_SYM1304
-Lfde132_start:
+LDIFF_SYM1037=Lfde104_end - Lfde104_start
+	.long LDIFF_SYM1037
+Lfde104_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_NumericsHelpers_CombineHash_uint_uint
 
-LDIFF_SYM1305=Lme_84 - System_Numerics_NumericsHelpers_CombineHash_uint_uint
-	.long LDIFF_SYM1305
+LDIFF_SYM1038=Lme_68 - System_Numerics_NumericsHelpers_CombineHash_uint_uint
+	.long LDIFF_SYM1038
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde132_end:
+Lfde104_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -27694,38 +22724,38 @@ Lfde132_end:
 	.asciz "System.Numerics.NumericsHelpers:CombineHash"
 	.asciz "System_Numerics_NumericsHelpers_CombineHash_int_int"
 
-	.byte 10,154,1
+	.byte 9,154,1
 	.quad System_Numerics_NumericsHelpers_CombineHash_int_int
-	.quad Lme_85
+	.quad Lme_69
 
 	.byte 2,118,16,3
 	.asciz "n1"
 
-LDIFF_SYM1306=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1306
+LDIFF_SYM1039=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1039
 	.byte 2,141,16,3
 	.asciz "n2"
 
-LDIFF_SYM1307=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1307
+LDIFF_SYM1040=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1040
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1308=Lfde133_end - Lfde133_start
-	.long LDIFF_SYM1308
-Lfde133_start:
+LDIFF_SYM1041=Lfde105_end - Lfde105_start
+	.long LDIFF_SYM1041
+Lfde105_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_NumericsHelpers_CombineHash_int_int
 
-LDIFF_SYM1309=Lme_85 - System_Numerics_NumericsHelpers_CombineHash_int_int
-	.long LDIFF_SYM1309
+LDIFF_SYM1042=Lme_69 - System_Numerics_NumericsHelpers_CombineHash_int_int
+	.long LDIFF_SYM1042
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde133_end:
+Lfde105_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -27733,38 +22763,38 @@ Lfde133_end:
 	.asciz "System.Numerics.NumericsHelpers:CbitHighZero"
 	.asciz "System_Numerics_NumericsHelpers_CbitHighZero_uint"
 
-	.byte 10,159,1
+	.byte 9,159,1
 	.quad System_Numerics_NumericsHelpers_CbitHighZero_uint
-	.quad Lme_86
+	.quad Lme_6a
 
 	.byte 2,118,16,3
 	.asciz "u"
 
-LDIFF_SYM1310=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM1310
+LDIFF_SYM1043=LDIE_U4 - Ldebug_info_start
+	.long LDIFF_SYM1043
 	.byte 1,106,11
 	.asciz "cbit"
 
-LDIFF_SYM1311=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1311
+LDIFF_SYM1044=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1044
 	.byte 1,105,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1312=Lfde134_end - Lfde134_start
-	.long LDIFF_SYM1312
-Lfde134_start:
+LDIFF_SYM1045=Lfde106_end - Lfde106_start
+	.long LDIFF_SYM1045
+Lfde106_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_NumericsHelpers_CbitHighZero_uint
 
-LDIFF_SYM1313=Lme_86 - System_Numerics_NumericsHelpers_CbitHighZero_uint
-	.long LDIFF_SYM1313
+LDIFF_SYM1046=Lme_6a - System_Numerics_NumericsHelpers_CbitHighZero_uint
+	.long LDIFF_SYM1046
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29,68,153,2,154,1
 	.align 3
-Lfde134_end:
+Lfde106_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -27772,234 +22802,33 @@ Lfde134_end:
 	.asciz "System.Numerics.NumericsHelpers:CbitHighZero"
 	.asciz "System_Numerics_NumericsHelpers_CbitHighZero_ulong"
 
-	.byte 10,190,1
+	.byte 9,190,1
 	.quad System_Numerics_NumericsHelpers_CbitHighZero_ulong
-	.quad Lme_87
+	.quad Lme_6b
 
 	.byte 2,118,16,3
 	.asciz "uu"
 
-LDIFF_SYM1314=LDIE_U8 - Ldebug_info_start
-	.long LDIFF_SYM1314
+LDIFF_SYM1047=LDIE_U8 - Ldebug_info_start
+	.long LDIFF_SYM1047
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1315=Lfde135_end - Lfde135_start
-	.long LDIFF_SYM1315
-Lfde135_start:
+LDIFF_SYM1048=Lfde107_end - Lfde107_start
+	.long LDIFF_SYM1048
+Lfde107_start:
 
 	.long 0
 	.align 3
 	.quad System_Numerics_NumericsHelpers_CbitHighZero_ulong
 
-LDIFF_SYM1316=Lme_87 - System_Numerics_NumericsHelpers_CbitHighZero_ulong
-	.long LDIFF_SYM1316
+LDIFF_SYM1049=Lme_6b - System_Numerics_NumericsHelpers_CbitHighZero_ulong
+	.long LDIFF_SYM1049
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde135_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "(wrapper_unknown)_uint[]:Get"
-	.asciz "wrapper_unknown_uint___Get_int"
-
-	.byte 0,0
-	.quad wrapper_unknown_uint___Get_int
-	.quad Lme_8b
-
-	.byte 2,118,16,3
-	.asciz "this"
-
-LDIFF_SYM1317=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM1317
-	.byte 2,141,16,3
-	.asciz "param0"
-
-LDIFF_SYM1318=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1318
-	.byte 2,141,24,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM1319=Lfde136_end - Lfde136_start
-	.long LDIFF_SYM1319
-Lfde136_start:
-
-	.long 0
-	.align 3
-	.quad wrapper_unknown_uint___Get_int
-
-LDIFF_SYM1320=Lme_8b - wrapper_unknown_uint___Get_int
-	.long LDIFF_SYM1320
-	.long 0
-	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
-	.align 3
-Lfde136_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "(wrapper_runtime-invoke)_<Module>:runtime_invoke_uint__this___int"
-	.asciz "wrapper_runtime_invoke__Module_runtime_invoke_uint__this___int_object_intptr_intptr_intptr"
-
-	.byte 0,0
-	.quad wrapper_runtime_invoke__Module_runtime_invoke_uint__this___int_object_intptr_intptr_intptr
-	.quad Lme_8c
-
-	.byte 2,118,16,3
-	.asciz "this"
-
-LDIFF_SYM1321=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1321
-	.byte 2,141,24,3
-	.asciz "params"
-
-LDIFF_SYM1322=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1322
-	.byte 2,141,32,3
-	.asciz "exc"
-
-LDIFF_SYM1323=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1323
-	.byte 2,141,40,3
-	.asciz "method"
-
-LDIFF_SYM1324=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1324
-	.byte 2,141,48,11
-	.asciz "V_0"
-
-LDIFF_SYM1325=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1325
-	.byte 2,141,56,11
-	.asciz "V_1"
-
-LDIFF_SYM1326=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1326
-	.byte 3,141,192,0,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM1327=Lfde137_end - Lfde137_start
-	.long LDIFF_SYM1327
-Lfde137_start:
-
-	.long 0
-	.align 3
-	.quad wrapper_runtime_invoke__Module_runtime_invoke_uint__this___int_object_intptr_intptr_intptr
-
-LDIFF_SYM1328=Lme_8c - wrapper_runtime_invoke__Module_runtime_invoke_uint__this___int_object_intptr_intptr_intptr
-	.long LDIFF_SYM1328
-	.long 0
-	.byte 12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,151,14
-	.align 3
-Lfde137_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "(wrapper_unknown)_uint[]:Set"
-	.asciz "wrapper_unknown_uint___Set_int_uint"
-
-	.byte 0,0
-	.quad wrapper_unknown_uint___Set_int_uint
-	.quad Lme_8d
-
-	.byte 2,118,16,3
-	.asciz "this"
-
-LDIFF_SYM1329=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM1329
-	.byte 2,141,16,3
-	.asciz "param0"
-
-LDIFF_SYM1330=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1330
-	.byte 2,141,24,3
-	.asciz "param1"
-
-LDIFF_SYM1331=LDIE_U4 - Ldebug_info_start
-	.long LDIFF_SYM1331
-	.byte 2,141,32,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM1332=Lfde138_end - Lfde138_start
-	.long LDIFF_SYM1332
-Lfde138_start:
-
-	.long 0
-	.align 3
-	.quad wrapper_unknown_uint___Set_int_uint
-
-LDIFF_SYM1333=Lme_8d - wrapper_unknown_uint___Set_int_uint
-	.long LDIFF_SYM1333
-	.long 0
-	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
-	.align 3
-Lfde138_end:
-
-.section __DWARF, __debug_info,regular,debug
-
-	.byte 2
-	.asciz "(wrapper_runtime-invoke)_<Module>:runtime_invoke_void__this___int_uint"
-	.asciz "wrapper_runtime_invoke__Module_runtime_invoke_void__this___int_uint_object_intptr_intptr_intptr"
-
-	.byte 0,0
-	.quad wrapper_runtime_invoke__Module_runtime_invoke_void__this___int_uint_object_intptr_intptr_intptr
-	.quad Lme_8e
-
-	.byte 2,118,16,3
-	.asciz "this"
-
-LDIFF_SYM1334=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1334
-	.byte 2,141,32,3
-	.asciz "params"
-
-LDIFF_SYM1335=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1335
-	.byte 1,105,3
-	.asciz "exc"
-
-LDIFF_SYM1336=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1336
-	.byte 2,141,40,3
-	.asciz "method"
-
-LDIFF_SYM1337=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1337
-	.byte 2,141,48,11
-	.asciz "V_0"
-
-LDIFF_SYM1338=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1338
-	.byte 2,141,56,11
-	.asciz "V_1"
-
-LDIFF_SYM1339=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1339
-	.byte 3,141,192,0,0
-
-.section __DWARF, __debug_frame,regular,debug
-
-LDIFF_SYM1340=Lfde139_end - Lfde139_start
-	.long LDIFF_SYM1340
-Lfde139_start:
-
-	.long 0
-	.align 3
-	.quad wrapper_runtime_invoke__Module_runtime_invoke_void__this___int_uint_object_intptr_intptr_intptr
-
-LDIFF_SYM1341=Lme_8e - wrapper_runtime_invoke__Module_runtime_invoke_void__this___int_uint_object_intptr_intptr_intptr
-	.long LDIFF_SYM1341
-	.long 0
-	.byte 12,31,0,68,14,112,157,14,158,13,68,13,29,68,151,12,68,153,11
-	.align 3
-Lfde139_end:
+Lfde107_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -28009,66 +22838,66 @@ Lfde139_end:
 
 	.byte 0,0
 	.quad wrapper_unknown_System_Globalization_FormatProvider_Number_NumberBuffer_StructureToPtr_object_intptr_bool
-	.quad Lme_8f
+	.quad Lme_6f
 
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM1342=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1342
+LDIFF_SYM1050=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM1050
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM1343=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1343
+LDIFF_SYM1051=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM1051
 	.byte 2,141,24,3
 	.asciz "param2"
 
-LDIFF_SYM1344=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1344
+LDIFF_SYM1052=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1052
 	.byte 0,11
 	.asciz "V_0"
 
-LDIFF_SYM1345=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1345
+LDIFF_SYM1053=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1053
 	.byte 0,11
 	.asciz "V_1"
 
-LDIFF_SYM1346=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1346
+LDIFF_SYM1054=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1054
 	.byte 0,11
 	.asciz "V_2"
 
-LDIFF_SYM1347=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1347
+LDIFF_SYM1055=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1055
 	.byte 0,11
 	.asciz "V_3"
 
-LDIFF_SYM1348=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1348
+LDIFF_SYM1056=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1056
 	.byte 0,11
 	.asciz "V_4"
 
-LDIFF_SYM1349=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1349
+LDIFF_SYM1057=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1057
 	.byte 0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1350=Lfde140_end - Lfde140_start
-	.long LDIFF_SYM1350
-Lfde140_start:
+LDIFF_SYM1058=Lfde108_end - Lfde108_start
+	.long LDIFF_SYM1058
+Lfde108_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_unknown_System_Globalization_FormatProvider_Number_NumberBuffer_StructureToPtr_object_intptr_bool
 
-LDIFF_SYM1351=Lme_8f - wrapper_unknown_System_Globalization_FormatProvider_Number_NumberBuffer_StructureToPtr_object_intptr_bool
-	.long LDIFF_SYM1351
+LDIFF_SYM1059=Lme_6f - wrapper_unknown_System_Globalization_FormatProvider_Number_NumberBuffer_StructureToPtr_object_intptr_bool
+	.long LDIFF_SYM1059
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
-Lfde140_end:
+Lfde108_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -28078,56 +22907,56 @@ Lfde140_end:
 
 	.byte 0,0
 	.quad wrapper_unknown_System_Globalization_FormatProvider_Number_NumberBuffer_PtrToStructure_intptr_object
-	.quad Lme_90
+	.quad Lme_70
 
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM1352=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1352
+LDIFF_SYM1060=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM1060
 	.byte 1,105,3
 	.asciz "param1"
 
-LDIFF_SYM1353=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1353
+LDIFF_SYM1061=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM1061
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM1354=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1354
+LDIFF_SYM1062=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM1062
 	.byte 1,106,11
 	.asciz "V_1"
 
-LDIFF_SYM1355=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1355
+LDIFF_SYM1063=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM1063
 	.byte 1,104,11
 	.asciz "V_2"
 
-LDIFF_SYM1356=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1356
+LDIFF_SYM1064=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM1064
 	.byte 1,105,11
 	.asciz "V_3"
 
-LDIFF_SYM1357=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1357
+LDIFF_SYM1065=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM1065
 	.byte 2,141,40,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1358=Lfde141_end - Lfde141_start
-	.long LDIFF_SYM1358
-Lfde141_start:
+LDIFF_SYM1066=Lfde109_end - Lfde109_start
+	.long LDIFF_SYM1066
+Lfde109_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_unknown_System_Globalization_FormatProvider_Number_NumberBuffer_PtrToStructure_intptr_object
 
-LDIFF_SYM1359=Lme_90 - wrapper_unknown_System_Globalization_FormatProvider_Number_NumberBuffer_PtrToStructure_intptr_object
-	.long LDIFF_SYM1359
+LDIFF_SYM1067=Lme_70 - wrapper_unknown_System_Globalization_FormatProvider_Number_NumberBuffer_PtrToStructure_intptr_object
+	.long LDIFF_SYM1067
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29,68,152,4,153,3,68,154,2
 	.align 3
-Lfde141_end:
+Lfde109_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -28137,41 +22966,41 @@ Lfde141_end:
 
 	.byte 0,0
 	.quad wrapper_unknown_System_Numerics_DoubleUlong_StructureToPtr_object_intptr_bool
-	.quad Lme_91
+	.quad Lme_71
 
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM1360=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1360
+LDIFF_SYM1068=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM1068
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM1361=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1361
+LDIFF_SYM1069=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM1069
 	.byte 2,141,24,3
 	.asciz "param2"
 
-LDIFF_SYM1362=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1362
+LDIFF_SYM1070=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1070
 	.byte 0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1363=Lfde142_end - Lfde142_start
-	.long LDIFF_SYM1363
-Lfde142_start:
+LDIFF_SYM1071=Lfde110_end - Lfde110_start
+	.long LDIFF_SYM1071
+Lfde110_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_unknown_System_Numerics_DoubleUlong_StructureToPtr_object_intptr_bool
 
-LDIFF_SYM1364=Lme_91 - wrapper_unknown_System_Numerics_DoubleUlong_StructureToPtr_object_intptr_bool
-	.long LDIFF_SYM1364
+LDIFF_SYM1072=Lme_71 - wrapper_unknown_System_Numerics_DoubleUlong_StructureToPtr_object_intptr_bool
+	.long LDIFF_SYM1072
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
-Lfde142_end:
+Lfde110_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -28181,36 +23010,36 @@ Lfde142_end:
 
 	.byte 0,0
 	.quad wrapper_unknown_System_Numerics_DoubleUlong_PtrToStructure_intptr_object
-	.quad Lme_92
+	.quad Lme_72
 
 	.byte 2,118,16,3
 	.asciz "param0"
 
-LDIFF_SYM1365=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1365
+LDIFF_SYM1073=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM1073
 	.byte 2,141,16,3
 	.asciz "param1"
 
-LDIFF_SYM1366=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1366
+LDIFF_SYM1074=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM1074
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1367=Lfde143_end - Lfde143_start
-	.long LDIFF_SYM1367
-Lfde143_start:
+LDIFF_SYM1075=Lfde111_end - Lfde111_start
+	.long LDIFF_SYM1075
+Lfde111_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_unknown_System_Numerics_DoubleUlong_PtrToStructure_intptr_object
 
-LDIFF_SYM1368=Lme_92 - wrapper_unknown_System_Numerics_DoubleUlong_PtrToStructure_intptr_object
-	.long LDIFF_SYM1368
+LDIFF_SYM1076=Lme_72 - wrapper_unknown_System_Numerics_DoubleUlong_PtrToStructure_intptr_object
+	.long LDIFF_SYM1076
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde143_end:
+Lfde111_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -28218,48 +23047,48 @@ Lfde143_end:
 	.asciz "System.Array:Resize<T_INT>"
 	.asciz "System_Array_Resize_T_INT_T_INT____int"
 
-	.byte 11,55
+	.byte 10,55
 	.quad System_Array_Resize_T_INT_T_INT____int
-	.quad Lme_93
+	.quad Lme_73
 
 	.byte 2,118,16,3
 	.asciz "array"
 
-LDIFF_SYM1369=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1369
+LDIFF_SYM1077=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM1077
 	.byte 1,105,3
 	.asciz "newSize"
 
-LDIFF_SYM1370=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1370
+LDIFF_SYM1078=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1078
 	.byte 1,106,11
 	.asciz "larray"
 
-LDIFF_SYM1371=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM1371
+LDIFF_SYM1079=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM1079
 	.byte 1,104,11
 	.asciz "newArray"
 
-LDIFF_SYM1372=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM1372
+LDIFF_SYM1080=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM1080
 	.byte 1,103,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1373=Lfde144_end - Lfde144_start
-	.long LDIFF_SYM1373
-Lfde144_start:
+LDIFF_SYM1081=Lfde112_end - Lfde112_start
+	.long LDIFF_SYM1081
+Lfde112_start:
 
 	.long 0
 	.align 3
 	.quad System_Array_Resize_T_INT_T_INT____int
 
-LDIFF_SYM1374=Lme_93 - System_Array_Resize_T_INT_T_INT____int
-	.long LDIFF_SYM1374
+LDIFF_SYM1082=Lme_73 - System_Array_Resize_T_INT_T_INT____int
+	.long LDIFF_SYM1082
 	.long 0
 	.byte 12,31,0,68,14,112,157,14,158,13,68,13,29,68,151,12,152,11,68,153,10,154,9
 	.align 3
-Lfde144_end:
+Lfde112_end:
 
 .section __DWARF, __debug_info,regular,debug
 

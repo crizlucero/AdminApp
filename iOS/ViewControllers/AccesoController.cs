@@ -1,6 +1,6 @@
 using System;
 using UIKit;
-using PerpetualEngine.Storage;
+//using PerpetualEngine.Storage;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
@@ -19,9 +19,9 @@ namespace WorklabsMx.iOS
             
             base.ViewDidLoad();
             imgQr.Image = ImageGallery.LoadImageUrl(strAcceso);
-            var storageLocal = SimpleStorage.EditGroup("Login");
+            //var storageLocal = SimpleStorage.EditGroup("Login");
 
-            strAcceso = new MiembrosController().GetLlaveAcceso(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
+            strAcceso = new MiembrosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
 
             UIButton btnRefresh = new STLButton("")
             {
@@ -36,9 +36,8 @@ namespace WorklabsMx.iOS
 
         void RefreshAccess()
         {
-            
-            var storageLocal = SimpleStorage.EditGroup("Login");
-            string newAcceso = new MiembrosController().GetLlaveAcceso(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
+            //var storageLocal = SimpleStorage.EditGroup("Login");
+            string newAcceso = new MiembrosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
             if (!strAcceso.Equals(newAcceso))
             {
                 LoadingView loadPop = new LoadingView(UIScreen.MainScreen.Bounds);

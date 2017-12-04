@@ -59,7 +59,7 @@ namespace WorklabsMx.iOS
 
         partial void btnLikes_TouchUpInside(UIButton sender)
         {
-            var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
+            //var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
             if (PostLocal.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
             {
                 transaccion = "BAJA";
@@ -69,7 +69,7 @@ namespace WorklabsMx.iOS
                 transaccion = "MODIFICAR";
             }
 
-            if (new Controllers.EscritorioController().PostLike(PostLocal.Publicacion_Id, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), transaccion))
+            if (new Controllers.EscritorioController().PostLike(PostLocal.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), transaccion))
             {
                 lblLikes.Text = new Controllers.EscritorioController().GetLikesPublish(PostLocal.Publicacion_Id) + " LIKES";
 

@@ -395,10 +395,10 @@ ldr x1, [x16, #16]
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801e00
+.word 0xd2801a40
 .word 0xaa1103e1
 bl _p_2
-.word 0xd2801c20
+.word 0xd2801860
 .word 0xaa1103e1
 bl _p_2
 
@@ -542,10 +542,10 @@ ldr x1, [x16, #16]
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801e00
+.word 0xd2801a40
 .word 0xaa1103e1
 bl _p_2
-.word 0xd2801c20
+.word 0xd2801860
 .word 0xaa1103e1
 bl _p_2
 
@@ -689,10 +689,10 @@ ldr x1, [x16, #16]
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801e00
+.word 0xd2801a40
 .word 0xaa1103e1
 bl _p_2
-.word 0xd2801c20
+.word 0xd2801860
 .word 0xaa1103e1
 bl _p_2
 
@@ -836,10 +836,10 @@ ldr x1, [x16, #16]
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801e00
+.word 0xd2801a40
 .word 0xaa1103e1
 bl _p_2
-.word 0xd2801c20
+.word 0xd2801860
 .word 0xaa1103e1
 bl _p_2
 
@@ -1761,13 +1761,13 @@ ldr x16, [x16, #400]
 .word 0xf9408a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd29aefa0
-.word 0xd29aefa0
+.word 0xd296ad40
+.word 0xd296ad40
 bl _p_7
 .word 0xaa0003e1
-.word 0xd2801c40
+.word 0xd2801880
 .word 0xf2a04000
-.word 0xd2801c40
+.word 0xd2801880
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_8
@@ -1789,13 +1789,13 @@ bl _p_8
 .word 0xf940f231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd29afa60
-.word 0xd29afa60
+.word 0xd296b800
+.word 0xd296b800
 bl _p_7
 .word 0xaa0003e1
-.word 0xd2801c40
+.word 0xd2801880
 .word 0xf2a04000
-.word 0xd2801c40
+.word 0xd2801880
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_8
@@ -2284,7 +2284,7 @@ bl _p_8
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_2
 
@@ -2743,7 +2743,7 @@ bl _p_8
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd28017e0
 .word 0xaa1103e1
 bl _p_2
 
@@ -2940,13 +2940,13 @@ ldr x16, [x16, #480]
 .word 0xf9409e31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd28187e0
-.word 0xd28187e0
+.word 0xd2813c00
+.word 0xd2813c00
 bl _p_7
 .word 0xaa0003e1
-.word 0xd2801140
+.word 0xd2800da0
 .word 0xf2a04000
-.word 0xd2801140
+.word 0xd2800da0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_8
@@ -3093,7 +3093,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #496]
 br x16
-.word 732
+.word 730
 	.no_dead_strip plt__jit_icall_mono_arch_throw_corlib_exception
 plt__jit_icall_mono_arch_throw_corlib_exception:
 _p_2:
@@ -3101,7 +3101,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #504]
 br x16
-.word 735
+.word 733
 	.no_dead_strip plt_System_Delegate_Remove_System_Delegate_System_Delegate
 plt_System_Delegate_Remove_System_Delegate_System_Delegate:
 _p_3:
@@ -3109,7 +3109,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #512]
 br x16
-.word 770
+.word 768
 	.no_dead_strip plt_System_GC_SuppressFinalize_object
 plt_System_GC_SuppressFinalize_object:
 _p_4:
@@ -3117,7 +3117,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #520]
 br x16
-.word 773
+.word 771
 	.no_dead_strip plt_object_Finalize
 plt_object_Finalize:
 _p_5:
@@ -3125,7 +3125,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #528]
 br x16
-.word 776
+.word 774
 	.no_dead_strip plt_System_EventArgs__ctor
 plt_System_EventArgs__ctor:
 _p_6:
@@ -3133,7 +3133,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #536]
 br x16
-.word 779
+.word 777
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr_mscorlib
 plt__jit_icall_mono_helper_ldstr_mscorlib:
 _p_7:
@@ -3141,7 +3141,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #544]
 br x16
-.word 782
+.word 780
 	.no_dead_strip plt__jit_icall_mono_arch_throw_exception
 plt__jit_icall_mono_arch_throw_exception:
 _p_8:
@@ -3149,7 +3149,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #552]
 br x16
-.word 811
+.word 809
 	.no_dead_strip plt__rgctx_fetch_0
 plt__rgctx_fetch_0:
 _p_9:
@@ -3157,7 +3157,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #560]
 br x16
-.word 855
+.word 853
 	.no_dead_strip plt__rgctx_fetch_1
 plt__rgctx_fetch_1:
 _p_10:
@@ -3165,7 +3165,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #568]
 br x16
-.word 877
+.word 875
 	.no_dead_strip plt__rgctx_fetch_2
 plt__rgctx_fetch_2:
 _p_11:
@@ -3173,7 +3173,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #576]
 br x16
-.word 915
+.word 913
 	.no_dead_strip plt__rgctx_fetch_3
 plt__rgctx_fetch_3:
 _p_12:
@@ -3181,7 +3181,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #584]
 br x16
-.word 922
+.word 920
 	.no_dead_strip plt__rgctx_fetch_4
 plt__rgctx_fetch_4:
 _p_13:
@@ -3189,7 +3189,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #592]
 br x16
-.word 943
+.word 941
 	.no_dead_strip plt_wrapper_alloc_object_AllocSmall_intptr_intptr
 plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
 _p_14:
@@ -3197,7 +3197,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #600]
 br x16
-.word 950
+.word 948
 	.no_dead_strip plt__rgctx_fetch_5
 plt__rgctx_fetch_5:
 _p_15:
@@ -3205,7 +3205,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #608]
 br x16
-.word 984
+.word 982
 	.no_dead_strip plt__rgctx_fetch_6
 plt__rgctx_fetch_6:
 _p_16:
@@ -3213,7 +3213,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #616]
 br x16
-.word 992
+.word 990
 	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
 plt__jit_icall_mono_thread_interruption_checkpoint:
 _p_17:
@@ -3221,7 +3221,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #624]
 br x16
-.word 1015
+.word 1013
 	.no_dead_strip plt__jit_icall_mono_delegate_begin_invoke
 plt__jit_icall_mono_delegate_begin_invoke:
 _p_18:
@@ -3229,7 +3229,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #632]
 br x16
-.word 1053
+.word 1051
 	.no_dead_strip plt__jit_icall_mono_delegate_end_invoke
 plt__jit_icall_mono_delegate_end_invoke:
 _p_19:
@@ -3237,7 +3237,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #640]
 br x16
-.word 1082
+.word 1080
 	.no_dead_strip plt__rgctx_fetch_7
 plt__rgctx_fetch_7:
 _p_20:
@@ -3245,7 +3245,7 @@ adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #648]
 br x16
-.word 1127
+.word 1125
 plt_end:
 .section __DATA, __bss
 	.align 3
@@ -3357,13 +3357,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 61,656,21,55,70,391195135,0,5045
-	.long 128,8,8,10,0,25,6096,1040
+	.long 61,656,21,55,70,391195135,0,5035
+	.long 128,8,8,10,0,25,6088,1040
 	.long 848,512,0,704,816,600,0,392
 	.long 96,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 66,116,71,37,82,209,32,44,4,9,142,122,69,36,4,228
+	.byte 36,169,236,8,96,24,70,133,111,115,231,195,214,24,37,67
 	.globl _mono_aot_module_Plugin_Connectivity_Abstractions_info
 	.align 3
 _mono_aot_module_Plugin_Connectivity_Abstractions_info:

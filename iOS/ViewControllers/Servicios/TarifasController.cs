@@ -4,10 +4,11 @@ using UIKit;
 using CoreGraphics;
 using WorklabsMx.iOS.Styles;
 using WorklabsMx.iOS.ViewElements;
+using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Controllers;
 using System.Collections.Generic;
 using WorklabsMx.Models;
-using PerpetualEngine.Storage;
+//using PerpetualEngine.Storage;
 using WorklabsMx.Helpers;
 using WorklabsMx.Enum;
 
@@ -19,12 +20,12 @@ namespace WorklabsMx.iOS
         int size;
         readonly Dictionary<string, CarritoModel> Carrito, Membresias;
         bool CanPay, Changed;
-        readonly SimpleStorage Storage;
+        //readonly SimpleStorage Storage;
         public TarifasController(IntPtr handle) : base(handle)
         {
-            Storage = SimpleStorage.EditGroup("Login");
+            //Storage = SimpleStorage.EditGroup("Login");
             Membresias = new Dictionary<string, CarritoModel>();
-            Carrito = new CarritoController().GetCarrito(Storage.Get("Usuario_Id"), TiposServicios.Membresia);
+            Carrito = new CarritoController().GetCarrito(KeyChainHelper.GetKey("Usuario_Id"), TiposServicios.Membresia);
             CanPay = false;
         }
 
@@ -238,7 +239,7 @@ namespace WorklabsMx.iOS
             NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_shopping_cart"), UIBarButtonItemStyle.Plain, (sender, e) =>
             {
                 if (CanPay)
-                    if (new CarritoController().AddCarrito(Membresias, TiposServicios.Membresia, Storage.Get("Usuario_Id")))
+                if (new CarritoController().AddCarrito(Membresias, TiposServicios.Membresia, KeyChainHelper.GetKey("Usuario_Id")))
                     {
                         CarritoCompraController controller = (CarritoCompraController)Storyboard.InstantiateViewController("CarritoCompraController");
                         controller.Title = "Confirmación de compra";
@@ -253,7 +254,7 @@ namespace WorklabsMx.iOS
             {
                 if (Changed)
                 {
-                    if (new CarritoController().AddCarrito(Membresias, TiposServicios.Membresia, Storage.Get("Usuario_Id")))
+                    if (new CarritoController().AddCarrito(Membresias, TiposServicios.Membresia, KeyChainHelper.GetKey("Usuario_Id")))
                     {
                         NavigationController.PopViewController(true);
                     }

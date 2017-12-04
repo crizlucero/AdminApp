@@ -113,9 +113,6 @@
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="PerpetualEngine.SimpleStorage.iOS-Unified">
-      <HintPath>..\packages\SimpleStorage.1.4.2\lib\Xamarin.iOS10\PerpetualEngine.SimpleStorage.iOS-Unified.dll</HintPath>
-    </Reference>
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="MonoTouch.NUnitLite" />
     <Reference Include="Mono.Security" />
@@ -149,8 +146,14 @@
     <Reference Include="MailKit">
       <HintPath>..\packages\MailKit.1.22.0\lib\Xamarin.iOS10\MailKit.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.KeyChain.Abstractions">
+      <HintPath>..\packages\Plugin.KeyChain.2.2.0\lib\Xamarin.iOS10\Plugin.KeyChain.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.KeyChain">
+      <HintPath>..\packages\Plugin.KeyChain.2.2.0\lib\Xamarin.iOS10\Plugin.KeyChain.dll</HintPath>
+    </Reference>
     <Reference Include="Factorymind.Components-Unified">
-      <HintPath>..\..\..\..\..\Downloads\fmcalendar-1.5.4\lib\ios-unified\Factorymind.Components-Unified.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\fmcalendar-1.5.4\lib\ios-unified\Factorymind.Components-Unified.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -874,6 +877,7 @@
     <Compile Include="HorariosTableViewCell.designer.cs">
       <DependentUpon>HorariosTableViewCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\KeyChainHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
