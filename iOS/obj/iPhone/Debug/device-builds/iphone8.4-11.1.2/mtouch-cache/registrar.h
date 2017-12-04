@@ -25,7 +25,6 @@
 @class __MonoMac_NSAsyncActionDispatcher;
 @class MessageUI_Mono_MFMailComposeViewControllerDelegate;
 @class UIKit_UIControlEventProxy;
-@class AppDelegate;
 @class TableViewController;
 @class SubMenuController;
 @class MiMembresiaController;
@@ -87,6 +86,7 @@
 @class WorklabsMx_iOS_Helpers_DropDownListSource;
 @class SplitViewController;
 @class LoginViewController;
+@class AppDelegate;
 @class AccesoController;
 @class ReporteController;
 @class PerfilController;
@@ -145,24 +145,6 @@
 @class BigTed_ProgressHUD;
 
 @protocol UIPickerViewModel<UIPickerViewDataSource, UIPickerViewDelegate>
-@end
-
-@interface AppDelegate : NSObject<UIApplicationDelegate> {
-}
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIWindow *) window;
-	-(void) setWindow:(UIWindow *)p0;
-	-(BOOL) application:(UIApplication *)p0 didFinishLaunchingWithOptions:(NSDictionary *)p1;
-	-(void) applicationWillResignActive:(UIApplication *)p0;
-	-(void) applicationDidEnterBackground:(UIApplication *)p0;
-	-(void) applicationWillEnterForeground:(UIApplication *)p0;
-	-(void) applicationDidBecomeActive:(UIApplication *)p0;
-	-(void) applicationWillTerminate:(UIApplication *)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
-	-(id) init;
 @end
 
 @interface TableViewController : UITableViewController {
@@ -1209,6 +1191,24 @@
 	-(void) BtnRegistro_TouchUpInside:(UIButton *)p0;
 	-(void) BtnRestaurar_TouchUpInside:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface AppDelegate : NSObject<UIApplicationDelegate> {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIWindow *) window;
+	-(void) setWindow:(UIWindow *)p0;
+	-(BOOL) application:(UIApplication *)p0 didFinishLaunchingWithOptions:(NSDictionary *)p1;
+	-(void) applicationWillResignActive:(UIApplication *)p0;
+	-(void) applicationDidEnterBackground:(UIApplication *)p0;
+	-(void) applicationWillEnterForeground:(UIApplication *)p0;
+	-(void) applicationDidBecomeActive:(UIApplication *)p0;
+	-(void) applicationWillTerminate:(UIApplication *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+	-(id) init;
 @end
 
 @interface AccesoController : UIViewController {
