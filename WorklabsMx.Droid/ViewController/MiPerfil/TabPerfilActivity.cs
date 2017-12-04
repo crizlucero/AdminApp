@@ -58,7 +58,7 @@ namespace WorklabsMx.Droid
                         StartActivity(new Intent(this, typeof(EditEmpresaActivity)));
                     break;
                 default:
-                    StartActivity(new Intent(this, typeof(SubMenuActivity)));
+                    StartActivity(new Intent(this, typeof(MainActivity)));
                     Finish();
                     break;
             }

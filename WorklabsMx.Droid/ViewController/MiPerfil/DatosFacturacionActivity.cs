@@ -100,7 +100,7 @@ namespace WorklabsMx.Droid
                     else Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
                     break;
                 default:
-                    StartActivity(new Intent(this, typeof(SubMenuActivity)));
+                    StartActivity(new Intent(this, typeof(MainActivity)));
                     Finish();
                     break;
             }

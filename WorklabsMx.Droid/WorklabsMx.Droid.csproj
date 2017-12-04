@@ -279,6 +279,7 @@
     <AndroidResource Include="Resources\mipmap-hdpi\Icono.png" />
     <AndroidResource Include="Resources\layout\CalendarioLayout.axml" />
     <AndroidResource Include="Resources\layout\HorarioPickerLayout.axml" />
+    <AndroidResource Include="Resources\layout\nav_header.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

@@ -1,4 +1,4 @@
-﻿using Android.App;
+﻿
 using Android.Widget;
 using Android.OS;
 using PerpetualEngine.Storage;
@@ -25,6 +25,8 @@ using WorklabsMx.Models;
 using System.Linq;
 using Android.Text;
 using Android.Support.Design.Widget;
+using Android.Support.V7.App;
+using Android.App;
 
 namespace WorklabsMx.Droid
 {
@@ -39,16 +41,20 @@ namespace WorklabsMx.Droid
         SimpleStorage localStorage;
         EscritorioController DashboardController;
         TableLayout tlPost;
-        AlertDialog dialog;
+        Android.Support.V7.App.AlertDialog dialog;
         string nombre, puesto, foto, imgPublish, imagePath;
         File _file, _dir;
         Bitmap bitmap;
         View customView;
         List<PostModel> posts;
+        List<ItemsMenu> ListMenu;
+        List<string> DataUsuario;
         readonly int sizePage = 10, PickImageId = 1000, TakePicture = 500;
         public MainActivity()
         {
             DashboardController = new EscritorioController();
+            DataUsuario = new List<string>();
+
         }
 
         protected override void OnPause()
@@ -64,6 +70,8 @@ namespace WorklabsMx.Droid
                 bool isOnline = ((ConnectivityManager)GetSystemService(ConnectivityService)).ActiveNetworkInfo.IsConnected;
 
                 localStorage = SimpleStorage.EditGroup("Login");
+                ListMenu = DashboardController.GetMenuAndroid(Convert.ToInt32(localStorage.Get("Usuario_Tipo")));
+                localStorage.Delete("Parent");
                 OpenDashboard();
             }
             catch (Exception e)
@@ -185,7 +193,7 @@ namespace WorklabsMx.Droid
                 btnClear.SetMaxHeight(20);
                 btnClear.Click += delegate
                 {
-                    AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                    Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(this);
                     if (Usuario_Id == localStorage.Get("Usuario_Id") && post.Usuario_Tipo == localStorage.Get("Usuario_Tipo"))
                     {
                         alert.SetTitle(Resources.GetString(Resource.String.BorrarPost));
@@ -395,15 +403,23 @@ namespace WorklabsMx.Droid
                     break;
 
                 default:
-                    ScrollView menu_scroll = FindViewById<ScrollView>(Resource.Id.menu_scroll);
-                    if (menu_scroll.Visibility == ViewStates.Gone)
+                    if (!localStorage.HasKey("Parent"))
                     {
-                        menu_scroll.LayoutParameters.Height = Window.Attributes.Height;
-                        menu_scroll.Visibility = ViewStates.Visible;
+                        ScrollView menu_scroll = FindViewById<ScrollView>(Resource.Id.menu_scroll);
+                        if (menu_scroll.Visibility == ViewStates.Gone)
+                        {
+                            menu_scroll.LayoutParameters.Height = Window.Attributes.Height;
+                            menu_scroll.Visibility = ViewStates.Visible;
+                        }
+                        else
+                        {
+                            menu_scroll.Visibility = ViewStates.Gone;
+                        }
                     }
                     else
                     {
-                        menu_scroll.Visibility = ViewStates.Gone;
+                        localStorage.Delete("Parent");
+                        FillMenu(FindViewById<TableLayout>(Resource.Id.menu_layout));
                     }
                     break;
             }
@@ -412,14 +428,15 @@ namespace WorklabsMx.Droid
 
         void FillMenu(TableLayout menuLayout)
         {
-            localStorage.Delete("Parent");
             //NavigationView nv = FindViewById<NavigationView>(Resource.Id.nav_home);
+            menuLayout.RemoveAllViews();
             using (TableRow row = new TableRow(this))
             {
-                List<string> data = new MiembrosController().GetMemberName(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
-                nombre = data[(int)CamposMiembro.Usuario_Nombre];
-                foto = data[(int)CamposMiembro.Usuario_Fotografia];
-                puesto = data[(int)CamposMiembro.Usuario_Puesto];
+                if (DataUsuario.Count == 0)
+                    DataUsuario = new MiembrosController().GetMemberName(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+                nombre = DataUsuario[(int)CamposMiembro.Usuario_Nombre];
+                foto = DataUsuario[(int)CamposMiembro.Usuario_Fotografia];
+                puesto = DataUsuario[(int)CamposMiembro.Usuario_Puesto];
                 ImageView image = new ImageView(this);
                 image.SetImageBitmap(ImagesHelper.GetImageBitmapFromUrl(foto));
                 Drawable icon = image.Drawable;
@@ -439,7 +456,7 @@ namespace WorklabsMx.Droid
                 row.AddView(btnMenu);
                 menuLayout.AddView(row);
             }
-            DashboardController.GetMenuAndroid(Convert.ToInt32(localStorage.Get("Usuario_Tipo"))).ForEach((menu) =>
+            ListMenu.Where((ItemsMenu arg) => arg.Menu_Padre_Id == (localStorage.Get("Parent") ?? "")).ToList().ForEach(menu =>
             {
                 TableRow row = new TableRow(this);
                 Drawable icon = ContextCompat.GetDrawable(this, Resources.GetIdentifier(menu.Image, "mipmap", PackageName));
@@ -461,14 +478,22 @@ namespace WorklabsMx.Droid
                         case "MyMembershipActivity": StartActivity(new Intent(this, typeof(MyMembershipActivity))); break;
                         case "SubMenuActivity":
                             localStorage.Put("Parent", menu.Menu_Id);
-                            StartActivity(new Intent(this, typeof(SubMenuActivity))); break;
+                            //StartActivity(new Intent(this, typeof(SubMenuActivity))); break;
+                            FillMenu(menuLayout);
+                            break;
                         case "LogoutActivity":
                             localStorage.Delete("Usuario_Id"); localStorage.Delete("Usuario_Tipo"); localStorage.Delete("Empresa_Id");
                             StartActivity(new Intent(this, typeof(LoginActivity)));
                             Finish();
                             break;
-                        //StartActivity(new Intent(this, typeof(MainActivity))); break;
                         case "ColeccionProductosActivity": StartActivity(new Intent(this, typeof(ColeccionProductosActivity))); break;
+                        case "ReservaSalaJuntasActivity": StartActivity(new Intent(this, typeof(ReservaSalaJuntasActivity))); break;
+                        case "RegistroInvitadosActivity": StartActivity(new Intent(this, typeof(RegistroInvitadosActivity))); break;
+                        case "PerfilActivity": StartActivity(new Intent(this, typeof(TabPerfilActivity))); break;
+                        case "DatosFacturacionActivity": StartActivity(new Intent(this, typeof(DatosFacturacionActivity))); break;
+                        case "MisColaboradoresActivity": StartActivity(new Intent(this, typeof(TabColaboradoresActivity))); break;
+                        case "DirectorioUsuarioActivity": StartActivity(new Intent(this, typeof(DirectorioUsuariosActivity))); break;
+                        case "DirectorioEmpresasActivity": StartActivity(new Intent(this, typeof(DirectorioEmpresaActivity))); break;
                     }
                 };
                 row.AddView(btnMenu);
@@ -480,8 +505,8 @@ namespace WorklabsMx.Droid
 
         void ShowPublish()
         {
-            
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this);
 
             LayoutInflater liView = LayoutInflater;
 

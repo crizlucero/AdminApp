@@ -56,7 +56,7 @@ namespace WorklabsMx.Droid
                     StartActivity(new Intent(this, typeof(MisColaboradoresCambiosActivity)));
                     break;
                 default:
-                    StartActivity(new Intent(this, typeof(SubMenuActivity)));
+                    StartActivity(new Intent(this, typeof(MainActivity)));
                     Finish();
                     break;
             }

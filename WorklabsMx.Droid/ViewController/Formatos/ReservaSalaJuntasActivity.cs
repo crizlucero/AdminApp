@@ -73,7 +73,7 @@ namespace WorklabsMx.Droid
                     
                     break;
                 default:
-                    StartActivity(new Intent(this, typeof(SubMenuActivity)));
+                    StartActivity(new Intent(this, typeof(MainActivity)));
                     Finish();
                     break;
             }
