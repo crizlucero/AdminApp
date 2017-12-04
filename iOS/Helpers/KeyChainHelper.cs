@@ -43,10 +43,8 @@ namespace WorklabsMx.iOS.Helpers
             var query = new SecRecord(SecKind.GenericPassword);
             query.Service = serviceId;
             query.Account = keyName;
-
             SecStatusCode statusCode;
             var record = SecKeyChain.QueryAsRecord(query, out statusCode);
-
             return statusCode == SecStatusCode.Success ? Uri.UnescapeDataString(record.Generic.ToString()) : "";
         }
 
