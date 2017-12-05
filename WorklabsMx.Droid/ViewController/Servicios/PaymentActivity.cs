@@ -14,7 +14,7 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "PaymentActivity")]
+    [Activity(Label = "@string/app_name")]
     public class PaymentActivity : Activity
     {
         List<CarritoComprasDetalle> membresias = null, productos = null;

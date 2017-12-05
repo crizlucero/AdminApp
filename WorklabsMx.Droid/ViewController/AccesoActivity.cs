@@ -10,7 +10,7 @@ using WorklabsMx.Controllers;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "AccesoActivity")]
+    [Activity(Label = "@string/app_name")]
     public class AccesoActivity : Activity
     {
         string strAcceso = string.Empty;

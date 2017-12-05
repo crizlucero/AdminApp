@@ -5,9 +5,20 @@
       android:drawable="@mipmap/ic_log_background"/>
 
   <item>
-    <bitmap
-        android:gravity="center"
-        android:src="@mipmap/ic_worklabs_title"/>
+    <shape>
+        <gradient
+            android:type="linear"
+            android:centerX="73%"
+            android:startColor="#FF919191"
+            android:centerColor="#FF000000"
+            android:endColor="#FF000000"
+            android:angle="225"/>
+    </shape>
   </item>
+    <item>
+        <bitmap 
+        android:gravity="fill_horizontal|center"
+        android:src="@mipmap/worklabs_title"/>
+    </item>
 
 </layer-list>

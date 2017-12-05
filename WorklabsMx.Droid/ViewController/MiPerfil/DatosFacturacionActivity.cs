@@ -10,7 +10,7 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "DatosFacturacionActivity")]
+    [Activity(Label = "@string/app_name")]
     public class DatosFacturacionActivity : Activity
     {
         SimpleStorage storage;

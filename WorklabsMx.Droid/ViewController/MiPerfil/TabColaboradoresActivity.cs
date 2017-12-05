@@ -7,7 +7,7 @@ using Android.Widget;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "TabColaboradoresActivity")]
+    [Activity(Label = "@string/app_name")]
     public class TabColaboradoresActivity : ActivityGroup
     {
         static TabHost _tabs;

@@ -11,7 +11,7 @@ using WorklabsMx.Helpers;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "ReservaSalaJuntasActivity")]
+    [Activity(Label = "@string/app_name")]
     public class ReservaSalaJuntasActivity : Activity
     {
         CalendarView calendar;

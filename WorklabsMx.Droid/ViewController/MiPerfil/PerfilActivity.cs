@@ -25,7 +25,7 @@ using static Android.Provider.MediaStore.Images;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "PerfilActivity")]
+    [Activity(Label = "@string/app_name")]
     public class PerfilActivity : Activity
     {
         SimpleStorage storage;

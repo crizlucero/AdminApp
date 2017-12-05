@@ -4,9 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
-    android:minHeight="25px">
+    android:minHeight="25px"
+    android:background="#FFF">
     <CalendarView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/cvCalendario" />
+        android:id="@+id/cvCalendario"
+        android:background="#999" />
 </LinearLayout>

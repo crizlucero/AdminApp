@@ -16,7 +16,7 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "EditPerfilActivity")]
+    [Activity(Label = "@string/app_name")]
     public class EditPerfilActivity : Activity
     {
         SimpleStorage storage;

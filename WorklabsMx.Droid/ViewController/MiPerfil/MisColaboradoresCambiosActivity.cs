@@ -14,7 +14,7 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "MisColaboradoresCambiosActivity")]
+    [Activity(Label = "@string/app_name")]
     public class MisColaboradoresCambiosActivity : Activity
     {
         string colaborador_id, colaborador_tipo;

@@ -8,6 +8,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V7.App;
 using Android.Views;
 using Android.Views.InputMethods;
 using Android.Widget;
@@ -16,8 +17,8 @@ using WorklabsMx.Controllers;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "LoginActivity")]
-    public class LoginActivity : Activity
+    [Activity(Label = "@string/app_name")]
+    public class LoginActivity : AppCompatActivity
     {
         EditText txtEmail, txtPassword;
         SimpleStorage localStorage;

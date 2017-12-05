@@ -129,40 +129,18 @@ namespace WorklabsMx.Droid
 
             posts.Skip(page * sizePage).Take(sizePage).ToList().ForEach(post =>
             {
+                LayoutInflater liView = LayoutInflater;
+                View PostView = liView.Inflate(Resource.Layout.PostLayout, null, true);
+
                 string Usuario_Id = !string.IsNullOrEmpty(post.Miembro_Id) ? post.Miembro_Id : post.Colaborador_Empresa_Id;
-                int i = 0;
-                TableRow row = new TableRow(this);
-                row.SetBackgroundResource(Resource.Drawable.CornerBorderLine);
-                row.TranslationZ = 20;
-                TableLayout.LayoutParams layoutParams = new TableLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent);
-                layoutParams.SetMargins(5, 15, 5, 15);
-                row.LayoutParameters = layoutParams;
-                GridLayout glPost = new GridLayout(this)
-                {
-                    ColumnCount = 5,
-                    RowCount = 5
-                };
 
-                glPost.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels);
+                ImageButton imgPerfil = PostView.FindViewById<ImageButton>(Resource.Id.imgPerfil);
+                imgPerfil.SetImageURI(ImagesHelper.GetPerfilImagen(post.Usuario_Fotografia_Ruta));
+                imgPerfil.Click += (sender, e) => AndHUD.Shared.ShowImage(this, Resources.GetDrawable(Resource.Mipmap.ic_work, null), null, MaskType.Black);
 
-                ImageButton ibFotoPostUsuario = new ImageButton(this);
-                ibFotoPostUsuario.SetMinimumWidth(150);
-                ibFotoPostUsuario.SetMinimumHeight(150);
-                ibFotoPostUsuario.SetImageURI(ImagesHelper.GetPerfilImagen(post.Usuario_Fotografia_Ruta));
-                GridLayout.LayoutParams param = new GridLayout.LayoutParams();
-                param.SetGravity(GravityFlags.Center);
-                param.ColumnSpec = GridLayout.InvokeSpec(0);
-                param.RowSpec = GridLayout.InvokeSpec(i, 3);
-                ibFotoPostUsuario.LayoutParameters = param;
-                ibFotoPostUsuario.Click += (sender, e) => AndHUD.Shared.ShowImage(this, Resources.GetDrawable(Resource.Mipmap.ic_work, null), null, MaskType.Black);
-                glPost.AddView(ibFotoPostUsuario);
-
-                TextView txtNombre = new TextView(this)
-                {
-                    Text = post.Usuario_Nombre,
-                    TextSize = 14,
-                };
-                txtNombre.Click += delegate
+                TextView lblNombre = PostView.FindViewById<TextView>(Resource.Id.lblNombre);
+                lblNombre.Text = post.Usuario_Nombre;
+                lblNombre.Click += delegate
                 {
                     if (localStorage.Get("Usuario_Id") != Usuario_Id || localStorage.Get("Usuario_Tipo") != post.Usuario_Tipo)
                     {
@@ -174,13 +152,59 @@ namespace WorklabsMx.Droid
                     else
                         StartActivity(new Intent(this, typeof(TabPerfilActivity)));
                 };
-                param = new GridLayout.LayoutParams();
-                param.SetGravity(GravityFlags.Center);
-                param.ColumnSpec = GridLayout.InvokeSpec(1, 2);
-                param.RowSpec = GridLayout.InvokeSpec(i);
-                txtNombre.LayoutParameters = param;
-                glPost.AddView(txtNombre);
 
+                TextView lblPuesto = PostView.FindViewById<TextView>(Resource.Id.lblPuesto);
+                lblPuesto.Text = post.Usuario_Puesto;
+
+                TextView lblFecha = PostView.FindViewById<TextView>(Resource.Id.lblFecha);
+                lblFecha.Text = post.Publicacion_Fecha;
+
+                TextView lblPost = PostView.FindViewById<TextView>(Resource.Id.lblPost);
+                lblPost.Text = post.Publicacion_Contenido;
+
+                TextView lblLike = PostView.FindViewById<TextView>(Resource.Id.lblLikes);
+                lblLike.Text = post.Publicacion_Me_Gustan_Cantidad + " " + Resources.GetString(Resource.String.Likes);
+                lblLike.Click += delegate
+                {
+                    string transaccion = "ALTA";
+                    if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
+                        transaccion = "BAJA";
+                    else if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Baja).ToString())
+                        transaccion = "MODIFICAR";
+                    if (new EscritorioController().PostLike(post.Publicacion_Id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), transaccion))
+                    {
+                        lblLike.Text = new EscritorioController().GetLikesPublish(post.Publicacion_Id) + " Like(s)";
+                        if (transaccion == "BAJA")
+                        {
+                            post.Publicacion_Me_Gusta_Usuario = "0";
+                            lblLike.SetTextColor(Color.Black);
+                        }
+                        else
+                        {
+                            post.Publicacion_Me_Gusta_Usuario = "1";
+                            lblLike.SetTextColor(Color.Rgb(57, 87, 217));
+                        }
+                    }
+                };
+                if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
+                {
+                    lblLike.SetTextColor(Color.Rgb(57, 87, 217));
+                }
+
+                TextView lblComentario = PostView.FindViewById<TextView>(Resource.Id.lblLikes);
+                lblComentario.Text = post.Publicacion_Comentarios_Cantidad + " " + Resources.GetString(Resource.String.Comentarios);
+                lblComentario.Click += delegate
+                {
+                    Intent intent = new Intent(this, typeof(CommentsActivity));
+                    intent.PutExtra("post_id", post.Publicacion_Id);
+                    intent.PutExtra("comments_total", post.Publicacion_Comentarios_Cantidad);
+                    StartActivity(intent);
+                };
+
+                TableRow row = new TableRow(this);
+                row.AddView(PostView);
+
+                /*
                 LinearLayout llButton = new LinearLayout(this);
                 llButton.SetMinimumWidth(20);
                 llButton.SetMinimumHeight(20);
@@ -239,34 +263,6 @@ namespace WorklabsMx.Droid
                 llButton.AddView(btnClear);
                 //glPost.AddView(llButton);
                 ++i;
-                TextView txtPuesto = new TextView(this)
-                {
-                    Text = post.Usuario_Puesto,
-                    TextSize = 12
-                };
-                param = new GridLayout.LayoutParams();
-                param.RightMargin = 10;
-                param.SetGravity(GravityFlags.Center);
-                param.ColumnSpec = GridLayout.InvokeSpec(1, 4);
-                param.RowSpec = GridLayout.InvokeSpec(i);
-                txtPuesto.LayoutParameters = param;
-                glPost.AddView(txtPuesto);
-                ++i;
-                TextView txtPost = new TextView(this)
-                {
-                    Text = post.Publicacion_Contenido,
-                    TextSize = 12,
-                    InputType = InputTypes.TextFlagMultiLine
-                };
-                txtPost.SetSingleLine(false);
-                txtPost.SetMaxWidth(Convert.ToInt32(Resources.DisplayMetrics.WidthPixels * .911));
-                param = new GridLayout.LayoutParams();
-                param.SetGravity(GravityFlags.Center);
-                param.ColumnSpec = GridLayout.InvokeSpec(1, 3);
-                param.RowSpec = GridLayout.InvokeSpec(i);
-                txtPost.LayoutParameters = param;
-                glPost.AddView(txtPost);
-                ++i;
                 if (!string.IsNullOrEmpty(post.Publicacion_Imagen_Ruta))
                 {
                     Android.Net.Uri url = Android.Net.Uri.Parse("http://desarrolloworklabs.com/Dashboard_Client/" + post.Publicacion_Imagen_Ruta);
@@ -286,96 +282,7 @@ namespace WorklabsMx.Droid
                     imgPost.LayoutParameters = param;
                     glPost.AddView(imgPost);
                     ++i;
-                }
-                TextView txtFecha = new TextView(this)
-                {
-                    Text = post.Publicacion_Fecha.Substring(0, post.Publicacion_Fecha.Length - 6),
-                    TextSize = 10,
-                };
-                txtFecha.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 150) / 2);
-                param = new GridLayout.LayoutParams();
-                param.SetGravity(GravityFlags.Center);
-                param.ColumnSpec = GridLayout.InvokeSpec(1);
-                param.RowSpec = GridLayout.InvokeSpec(i);
-                txtFecha.LayoutParameters = param;
-                glPost.AddView(txtFecha);
-
-                LinearLayout llLike = new LinearLayout(this);
-                Drawable icon = ContextCompat.GetDrawable(this, Resource.Mipmap.ic_star_like);
-                icon.SetBounds(0, 0, 20, 20);
-                TextView lblLike = new TextView(this)
-                {
-                    Text = post.Publicacion_Me_Gustan_Cantidad + " Like(s)",
-                    TextSize = 10
-                };
-                lblLike.SetCompoundDrawables(icon, null, null, null);
-                lblLike.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 130) / 5);
-                lblLike.Click += delegate
-                {
-                    string transaccion = "ALTA";
-                    if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
-                        transaccion = "BAJA";
-                    else if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Baja).ToString())
-                        transaccion = "MODIFICAR";
-                    if (new EscritorioController().PostLike(post.Publicacion_Id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), transaccion))
-                    {
-                        lblLike.Text = new EscritorioController().GetLikesPublish(post.Publicacion_Id) + " Like(s)";
-                        if (transaccion == "BAJA")
-                        {
-                            post.Publicacion_Me_Gusta_Usuario = "0";
-                            lblLike.SetTextColor(Color.Black);
-                        }
-                        else
-                        {
-                            post.Publicacion_Me_Gusta_Usuario = "1";
-                            lblLike.SetTextColor(Color.Rgb(57, 87, 217));
-                        }
-                    }
-                };
-                if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
-                    lblLike.SetTextColor(Color.Rgb(57, 87, 217));
-                llLike.AddView(lblLike);
-                param = new GridLayout.LayoutParams();
-                param.SetGravity(GravityFlags.Center | GravityFlags.Left);
-                param.ColumnSpec = GridLayout.InvokeSpec(2);
-                param.RowSpec = GridLayout.InvokeSpec(i);
-                llLike.LayoutParameters = param;
-                glPost.AddView(llLike);
-
-                LinearLayout llComment = new LinearLayout(this);
-                Drawable iconComment = ContextCompat.GetDrawable(this, Resource.Mipmap.ic_mode_comment);
-                iconComment.SetBounds(0, 0, 20, 20);
-                string totalComment = post.Publicacion_Comentarios_Cantidad;
-                TextView lblComment = new TextView(this)
-                {
-                    Text = totalComment + " " + Resources.GetString(Resource.String.Comentarios),
-                    TextSize = 10
-                };
-                lblComment.SetCompoundDrawables(iconComment, null, null, null);
-                lblComment.SetMinWidth((Resources.DisplayMetrics.WidthPixels - 110) / 3);
-                /*lblComment.Click += delegate
-                {
-                    Intent intent = new Intent(this, typeof(CommentsActivity));
-                    intent.PutExtra("post_id", post.Publicacion_Id);
-                    StartActivity(intent);
-                };*/
-                llComment.Click += delegate
-                                {
-                                    Intent intent = new Intent(this, typeof(CommentsActivity));
-                                    intent.PutExtra("post_id", post.Publicacion_Id);
-                                    intent.PutExtra("comments_total", post.Publicacion_Comentarios_Cantidad);
-                                    StartActivity(intent);
-                                };
-                llComment.AddView(lblComment);
-                param = new GridLayout.LayoutParams();
-                param.LeftMargin = -30;
-                param.SetGravity(GravityFlags.Center | GravityFlags.Left);
-                param.ColumnSpec = GridLayout.InvokeSpec(3, 2);
-                param.RowSpec = GridLayout.InvokeSpec(i);
-                llComment.LayoutParameters = param;
-                glPost.AddView(llComment);
-
-                row.AddView(glPost);
+                }*/
                 tlPost.AddView(row);
             });
             AndHUD.Shared.Dismiss(this);
@@ -447,6 +354,7 @@ namespace WorklabsMx.Droid
                     Text = nombre,
                     TextAlignment = TextAlignment.ViewStart
                 };
+                btnMenu.SetTextColor(Color.Black);
                 btnMenu.SetWidth(Resources.DisplayMetrics.WidthPixels);
                 btnMenu.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
                 btnMenu.SetBackgroundColor(Color.White);
@@ -466,6 +374,7 @@ namespace WorklabsMx.Droid
                     Text = menu.Label,
                     TextAlignment = TextAlignment.ViewStart
                 };
+                btnMenu.SetTextColor(Color.Black);
                 btnMenu.SetWidth(Resources.DisplayMetrics.WidthPixels);
                 btnMenu.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
                 btnMenu.SetBackgroundColor(Color.White);

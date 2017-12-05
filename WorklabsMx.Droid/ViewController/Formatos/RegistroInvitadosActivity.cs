@@ -10,7 +10,7 @@ using WorklabsMx.Controllers;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "RegistroInvitadosActivity")]
+    [Activity(Label = "@string/app_name")]
     public class RegistroInvitadosActivity : Activity
     {
         SimpleStorage storage;

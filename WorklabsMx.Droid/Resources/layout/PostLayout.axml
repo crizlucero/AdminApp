@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
-    android:id="@+id/fragmentPost">
+    android:id="@+id/fragmentPost"
+    android:background="#FFF">
     <GridLayout
         android:id="@+id/gridLayout1"
         android:columnCount="6"

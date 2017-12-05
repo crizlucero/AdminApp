@@ -10,7 +10,7 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "DirectorioEmpresaActivity")]
+    [Activity(Label = "@string/app_name")]
     public class DirectorioEmpresaActivity : Activity
     {
         ScrollView svDirectorio;
