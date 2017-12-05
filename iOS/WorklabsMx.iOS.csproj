@@ -29,7 +29,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
     <MtouchI18n>cjk,mideast,other,rare,west</MtouchI18n>
-    <CodesignProvision></CodesignProvision>
+    <CodesignProvision>WorkLabsMxPP</CodesignProvision>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
@@ -46,7 +46,7 @@
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>WorkLabsMxPP</CodesignProvision>
+    <CodesignProvision>WorkLabs</CodesignProvision>
     <MtouchI18n>cjk,mideast,other,rare,west</MtouchI18n>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -152,9 +152,6 @@
     </Reference>
     <Reference Include="Plugin.KeyChain">
       <HintPath>..\packages\Plugin.KeyChain.2.2.0\lib\Xamarin.iOS10\Plugin.KeyChain.dll</HintPath>
-    </Reference>
-    <Reference Include="Factorymind.Components-Unified">
-      <HintPath>..\..\..\..\Downloads\fmcalendar-1.5.4\lib\ios-unified\Factorymind.Components-Unified.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

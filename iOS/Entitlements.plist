@@ -4,7 +4,7 @@
 <dict>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>com.WorklabsMx.WorklabsMx</string>
+		<string>$(AppIdentifierPrefix)com.WorklabsMx.WorklabsMx</string>
 	</array>
 </dict>
 </plist>
