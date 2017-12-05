@@ -7,7 +7,7 @@ using Android.Widget;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "TabColaboradoresActivity")]
+    [Activity(Label = "@string/app_name")]
     public class TabColaboradoresActivity : ActivityGroup
     {
         static TabHost _tabs;
@@ -56,7 +56,7 @@ namespace WorklabsMx.Droid
                     StartActivity(new Intent(this, typeof(MisColaboradoresCambiosActivity)));
                     break;
                 default:
-                    StartActivity(new Intent(this, typeof(SubMenuActivity)));
+                    StartActivity(new Intent(this, typeof(MainActivity)));
                     Finish();
                     break;
             }

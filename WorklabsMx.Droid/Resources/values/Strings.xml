@@ -5,7 +5,7 @@
 	<string name="Password">Contraseña</string>
 	<string name="Login">Iniciar Sesión</string>
 	<string name="Recovery">Recuperar Contraseña</string>
-	<string name="Register">Registrar</string>
+	<string name="Register">Registrarse</string>
 	<string name="LoginError">Correo Electrónico y/o Constraseña incorrectos</string>
 	<string name="open_drawer">Open drawer</string>
 	<string name="close_drawer">Close drawer</string>

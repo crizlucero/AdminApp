@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace WorklabsMx.Droid.ViewController
 {
-    [Activity(Label = "PerfilesActivity")]
+    [Activity(Label = "@string/app_name")]
     public class PerfilesActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

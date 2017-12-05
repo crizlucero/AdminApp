@@ -2,6 +2,7 @@
 using Android.Content;
 using Android.OS;
 using Android.Support.V7.App;
+using Android.Widget;
 using AndroidHUD;
 using PerpetualEngine.Storage;
 
@@ -29,7 +30,6 @@ namespace WorklabsMx.Droid
                 newIntent.AddFlags(ActivityFlags.ClearTop);
                 newIntent.AddFlags(ActivityFlags.SingleTop);
             }
-
             //AndHUD.Shared.Show(this, null, -1, MaskType.Black);
             StartActivity(newIntent);
             Finish();

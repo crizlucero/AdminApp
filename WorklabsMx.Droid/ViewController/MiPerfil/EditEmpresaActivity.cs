@@ -11,7 +11,7 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "EditEmpresaActivity")]
+    [Activity(Label = "@string/app_name")]
     public class EditEmpresaActivity : Activity
     {
         SimpleStorage storage;

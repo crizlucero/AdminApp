@@ -10,7 +10,7 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "DatosFacturacionActivity")]
+    [Activity(Label = "@string/app_name")]
     public class DatosFacturacionActivity : Activity
     {
         SimpleStorage storage;
@@ -100,7 +100,7 @@ namespace WorklabsMx.Droid
                     else Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
                     break;
                 default:
-                    StartActivity(new Intent(this, typeof(SubMenuActivity)));
+                    StartActivity(new Intent(this, typeof(MainActivity)));
                     Finish();
                     break;
             }

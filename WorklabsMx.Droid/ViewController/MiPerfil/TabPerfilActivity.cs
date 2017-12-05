@@ -7,7 +7,7 @@ using Android.Widget;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "TabPerfilActivity")]
+    [Activity(Label = "@string/app_name")]
     public class TabPerfilActivity : ActivityGroup
     {
         static TabHost _tabs;
@@ -58,7 +58,7 @@ namespace WorklabsMx.Droid
                         StartActivity(new Intent(this, typeof(EditEmpresaActivity)));
                     break;
                 default:
-                    StartActivity(new Intent(this, typeof(SubMenuActivity)));
+                    StartActivity(new Intent(this, typeof(MainActivity)));
                     Finish();
                     break;
             }

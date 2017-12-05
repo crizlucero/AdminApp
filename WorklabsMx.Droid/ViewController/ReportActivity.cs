@@ -16,7 +16,7 @@ using AndroidHUD;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "ReportActivity")]
+    [Activity(Label = "@string/app_name")]
     public class ReportActivity : Activity
     {
         string post_id, comment_id;

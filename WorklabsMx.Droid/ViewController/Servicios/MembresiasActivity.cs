@@ -15,7 +15,7 @@ using WorklabsMx.Enum;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "MembresiasActivity")]
+    [Activity(Label = "@string/app_name")]
     public class MembresiasActivity : Activity
     {
         SimpleStorage Storage;

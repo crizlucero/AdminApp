@@ -10,7 +10,7 @@ using WorklabsMx.Controllers;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "RegistroInvitadosActivity")]
+    [Activity(Label = "@string/app_name")]
     public class RegistroInvitadosActivity : Activity
     {
         SimpleStorage storage;
@@ -86,7 +86,7 @@ namespace WorklabsMx.Droid
                         Toast.MakeText(this, Resource.String.LlenarDatos, ToastLength.Short).Show();
                     break;
                 default:
-                    StartActivity(new Intent(this, typeof(SubMenuActivity)));
+                    StartActivity(new Intent(this, typeof(MainActivity)));
                     Finish();
                     break;
             }

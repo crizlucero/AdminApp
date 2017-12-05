@@ -11,7 +11,7 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "MisColaboradoresBajaActivity")]
+    [Activity(Label = "@string/app_name")]
     public class MisColaboradoresBajaActivity : Activity
     {
         ScrollView svDirectorio;

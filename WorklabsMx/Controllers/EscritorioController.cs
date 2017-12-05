@@ -247,7 +247,7 @@ namespace WorklabsMx.Controllers
         public List<ItemsMenu> GetMenuAndroid(int tipo, string menu_id = null)
         {
             List<ItemsMenu> menus = new List<ItemsMenu>();
-            string query = "SELECT * FROM cat_Menu WHERE Menu_Padre_Id " + (string.IsNullOrEmpty(menu_id) ? " IS NULL " : " = @menu_id ") + " AND Menu_Estatus = 1 ORDER BY Menu_Orden_Aparicion ASC";
+            string query = "select * from cat_Menu Where Menu_Estatus = 1 ORDER BY Menu_Orden_Aparicion";
             if (tipo == (int)TiposUsuarios.Colaborador)
             {
                 query += " AND Menu_Solo_Admin = 0";
@@ -269,7 +269,8 @@ namespace WorklabsMx.Controllers
                         Controller = reader["Menu_Controller_Android"].ToString(),
                         Admin = Convert.ToBoolean(reader["Menu_Solo_Admin"]),
                         Image = reader["Menu_Imagen_Android"].ToString(),
-                        Principal = false
+                        Principal = false,
+                        Menu_Padre_Id = reader["Menu_Padre_Id"].ToString()
                     });
                 }
             }
