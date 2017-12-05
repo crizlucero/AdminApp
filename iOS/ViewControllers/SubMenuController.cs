@@ -3,6 +3,7 @@ using UIKit;
 using System.Collections.Generic;
 using WorklabsMx.Models;
 using WorklabsMx.iOS.Styles;
+using WorklabsMx.iOS.Helpers;
 
 namespace WorklabsMx.iOS
 {
@@ -18,10 +19,10 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
             table = new UITableView(View.Bounds);
             List<ItemsMenu> tableItems = new List<ItemsMenu>();
-            var localStorage = PerpetualEngine.Storage.SimpleStorage.EditGroup("Menu");
-            var loginStorage = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
+            //var localStorage = PerpetualEngine.Storage.SimpleStorage.EditGroup("Menu");
+            //var loginStorage = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
 
-            foreach (ItemsMenu submenu in new Controllers.EscritorioController().GetMenuiOS(Convert.ToInt32(loginStorage.Get("Usuario_Tipo")), localStorage.Get("Menu_Id")))
+            foreach (ItemsMenu submenu in new Controllers.EscritorioController().GetMenuiOS(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Tipo")), KeyChainHelper.GetKey("Menu_Id")))
             {
                 tableItems.Add(submenu);
             }

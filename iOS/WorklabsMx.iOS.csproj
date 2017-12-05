@@ -1,4 +1,4 @@
-﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
@@ -8,6 +8,7 @@
     <RootNamespace>WorklabsMx.iOS</RootNamespace>
     <AssemblyName>WorklabsMx.iOS</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,6 +30,8 @@
     <PlatformTarget>x86</PlatformTarget>
     <MtouchI18n>cjk,mideast,other,rare,west</MtouchI18n>
     <CodesignProvision></CodesignProvision>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType></DebugType>
@@ -45,6 +48,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <CodesignProvision>WorkLabsMxPP</CodesignProvision>
     <MtouchI18n>cjk,mideast,other,rare,west</MtouchI18n>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType></DebugType>
@@ -60,6 +64,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
     <MtouchI18n>cjk,mideast,other,rare,west</MtouchI18n>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -69,7 +74,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Distribution: Espacio Claro, S.A. de C.V. (3VMPS2N2KS)</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -82,7 +87,8 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
     <MtouchI18n>west</MtouchI18n>
-    <CodesignProvision></CodesignProvision>
+    <CodesignProvision>WorkLabsMxPP</CodesignProvision>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -108,9 +114,6 @@
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="PerpetualEngine.SimpleStorage.iOS-Unified">
-      <HintPath>..\packages\SimpleStorage.1.4.2\lib\Xamarin.iOS10\PerpetualEngine.SimpleStorage.iOS-Unified.dll</HintPath>
-    </Reference>
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="MonoTouch.NUnitLite" />
     <Reference Include="Mono.Security" />
@@ -143,6 +146,12 @@
     </Reference>
     <Reference Include="MailKit">
       <HintPath>..\packages\MailKit.1.22.0\lib\Xamarin.iOS10\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.KeyChain.Abstractions">
+      <HintPath>..\packages\Plugin.KeyChain.2.2.0\lib\Xamarin.iOS10\Plugin.KeyChain.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.KeyChain">
+      <HintPath>..\packages\Plugin.KeyChain.2.2.0\lib\Xamarin.iOS10\Plugin.KeyChain.dll</HintPath>
     </Reference>
     <Reference Include="Factorymind.Components-Unified">
       <HintPath>..\..\..\..\Downloads\fmcalendar-1.5.4\lib\ios-unified\Factorymind.Components-Unified.dll</HintPath>
@@ -869,6 +878,7 @@
     <Compile Include="HorariosTableViewCell.designer.cs">
       <DependentUpon>HorariosTableViewCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\KeyChainHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

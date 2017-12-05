@@ -1,8 +1,9 @@
 using System;
 using UIKit;
 using WorklabsMx.Models;
-using PerpetualEngine.Storage;
+//using PerpetualEngine.Storage;
 using BigTed;
+using WorklabsMx.iOS.Helpers;
 
 namespace WorklabsMx.iOS
 {
@@ -84,7 +85,7 @@ namespace WorklabsMx.iOS
         partial void btnComentar_TouchUpInside(UIButton sender)
         {
             BTProgressHUD.Show();
-            var localStorage = SimpleStorage.EditGroup("Login");
+            //var localStorage = SimpleStorage.EditGroup("Login");
 
             byte[] Fotografia;
 
@@ -97,7 +98,7 @@ namespace WorklabsMx.iOS
                 Fotografia = new byte[0];
             }
 
-            if (new Controllers.EscritorioController().CommentPost(LocalPost.Publicacion_Id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), txtComentarPost.Text, Fotografia))
+            if (new Controllers.EscritorioController().CommentPost(LocalPost.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), txtComentarPost.Text, Fotografia))
             {
                 if (PostComentado != null)
                 {

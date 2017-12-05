@@ -13,7 +13,7 @@ namespace WorklabsMx.iOS
         internal void UpdateCell(string Hora)
         {
             this.lblHorario.Text = Hora;
-            this.lblDisponibilidad.Text = "Disponoble";
+            this.lblDisponibilidad.Text = "Disponible";
         }
     }
 }

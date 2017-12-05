@@ -2,6 +2,7 @@ using System;
 using UIKit;
 using WorklabsMx.Models;
 using WorklabsMx.Controllers;
+using WorklabsMx.iOS.Helpers;
 
 namespace WorklabsMx.iOS
 {
@@ -15,8 +16,8 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
-            miembro = new MiembrosController().GetMemberData(storageLocal.Get("Usuario_Id"),storageLocal.Get("Usuario_Tipo"));
+            //var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
+            miembro = new MiembrosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"),KeyChainHelper.GetKey("Usuario_Tipo"));
             FillData();
             btnEditar.BackgroundColor = UIColor.FromRGB(101, 216, 250);
             btnEditar.SetTitleColor(UIColor.Black, UIControlState.Normal);

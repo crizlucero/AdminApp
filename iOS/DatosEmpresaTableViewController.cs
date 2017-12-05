@@ -3,7 +3,7 @@ using System;
 using UIKit;
 using WorklabsMx.Models;
 using WorklabsMx.Controllers;
-using PerpetualEngine.Storage;
+//using PerpetualEngine.Storage;
 using WorklabsMx.iOS.Helpers;
 using AVFoundation;
 using Photos;
@@ -15,7 +15,7 @@ namespace WorklabsMx.iOS
     public partial class DatosEmpresaTableViewController : UITableViewController
     {
 
-        SimpleStorage StoregeLocal;
+        //SimpleStorage StoregeLocal;
 
         UIImage ImagenPublicacion;
 
@@ -41,7 +41,7 @@ namespace WorklabsMx.iOS
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
             items = new PickerItemsController();
-            StoregeLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
+            //StoregeLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
             StyleHelper.Style(this.imgPerfil.Layer);
             StyleHelper.Style(this.btnEditarDireccion.Layer);
             StyleHelper.Style(this.btnActualizarEmpresa.Layer);
@@ -50,7 +50,7 @@ namespace WorklabsMx.iOS
             imgPicker.Delegate = this;
             if(InternetConectionHelper.VerificarConexion())
             {
-                Empresa = new EmpresaController().GetEmpresaMiembro(StoregeLocal.Get("Usuario_Id"));
+                Empresa = new EmpresaController().GetEmpresaMiembro(KeyChainHelper.GetKey("Usuario_Id"));
                 this.txtRFC.Text = Empresa.Empresa_Miembro_Rfc;
                 this.txtTelefono.Text = Empresa.Empresa_Miembro_Telefono;
                 this.txtRazonSocial.Text = Empresa.Empresa_Miembro_Razon_Social;
@@ -100,11 +100,11 @@ namespace WorklabsMx.iOS
             {
                 TerritorioId = new TerritorioController().GetTerritorioId(Empresa.Territorio_Cp, Empresa.Territorio_Colonia_Descripcion);
                 GiroId = items.GetGiroId(txtGiroComercial.Text).ToString();
-                if (new EmpresaController().UpdateDataEmpresa(Empresa.Empresa_Miembro_Id, StoregeLocal.Get("Usuario_Id"), GiroId, TerritorioId, txtRazonSocial.Text, txtRFC.Text,
+                if (new EmpresaController().UpdateDataEmpresa(Empresa.Empresa_Miembro_Id, KeyChainHelper.GetKey("Usuario_Id"), GiroId, TerritorioId, txtRazonSocial.Text, txtRFC.Text,
                                                                   txtNombreEmpresa.Text, Empresa.Empresa_Miembro_Calle, Empresa.Empresa_Miembro_Numero_Exterior, Empresa.Empresa_Miembro_Numero_Interior, txtCorreoElectronico.Text, txtTelefono.Text, Empresa.Empresa_Miembro_Pagina_Web, Empresa.Empresa_Miembro_Red_Social_1, Empresa.Empresa_Miembro_Red_Social_2, Empresa.Empresa_Miembro_Red_Social_3, Empresa.Empresa_Miembro_Logotipo))
                 {
                     new MessageDialog().SendToast("Datos guardados");
-                    Empresa = new EmpresaController().GetEmpresaMiembro(StoregeLocal.Get("Usuario_Id"));
+                    Empresa = new EmpresaController().GetEmpresaMiembro(KeyChainHelper.GetKey("Usuario_Id"));
                     this.TableView.ReloadData(); 
                 }
                 else

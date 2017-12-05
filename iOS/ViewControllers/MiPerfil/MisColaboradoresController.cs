@@ -4,23 +4,24 @@ using WorklabsMx.Models;
 using CoreGraphics;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
-using PerpetualEngine.Storage;
+//using PerpetualEngine.Storage;
+using WorklabsMx.iOS.Helpers;
 
 namespace WorklabsMx.iOS
 {
     public partial class MisColaboradoresController : UIViewController
     {
         UIScrollView scrollView;
-        SimpleStorage storageLocal;
+        //SimpleStorage storageLocal;
         public MisColaboradoresController(IntPtr handle) : base(handle)
         {
-            storageLocal = SimpleStorage.EditGroup("Login");
+            //storageLocal = SimpleStorage.EditGroup("Login");
         }
 
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
-            FillColaboradores(storageLocal.Get("Usuario_Id"));
+            FillColaboradores(KeyChainHelper.GetKey("Usuario_Id"));
         }
 
         public override void ViewDidLoad()
@@ -29,7 +30,7 @@ namespace WorklabsMx.iOS
 
             View.ClearsContextBeforeDrawing = true;
 
-            FillColaboradores(storageLocal.Get("Usuario_Id"));
+            FillColaboradores(KeyChainHelper.GetKey("Usuario_Id"));
         }
 
         public void FillColaboradores(string miembro_id)
@@ -79,7 +80,7 @@ namespace WorklabsMx.iOS
 
                 btnModificar.TouchUpInside += (sender, e) =>
                 {
-                    storageLocal.Put("Colaborador_Id", colaborador.Colaborador_Id);
+                    KeyChainHelper.SetKey("Colaborador_Id", colaborador.Colaborador_Id);
                     UIViewController controller = this.Storyboard.InstantiateViewController("MisColaboradoresCambiosController");
                     controller.Title = "Modifica Colaborador";
                     this.NavigationController.PushViewController(controller, true);

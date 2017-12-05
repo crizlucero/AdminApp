@@ -4,8 +4,8 @@ using CoreGraphics;
 using WorklabsMx.iOS.Styles;
 using WorklabsMx.Models;
 using WorklabsMx.Controllers;
-using PerpetualEngine.Storage;
-using WorklabsMx.iOS.ViewElements;
+//using PerpetualEngine.Storage;
+using WorklabsMx.iOS.Helpers;
 using System.Collections.Generic;
 
 namespace WorklabsMx.iOS
@@ -18,13 +18,13 @@ namespace WorklabsMx.iOS
         List<string> colonias;
         UITextField txtEstado, txtMunicipio, txtColonia, txtCP;
         readonly PickerItemsController items;
-        SimpleStorage storage;
+        //SimpleStorage storage;
         UIScrollView scrollView;
         public DatosFacturacionController(IntPtr handle) : base(handle)
         {
             items = new PickerItemsController();
-            storage = SimpleStorage.EditGroup("Login");
-            datosfiscales = new EmpresaController().GetDatosFiscales(storage.Get("Usuario_Id"));
+            //storage = SimpleStorage.EditGroup("Login");
+            datosfiscales = new EmpresaController().GetDatosFiscales(KeyChainHelper.GetKey("Usuario_Id"));
             TerritorioModel territorio = new TerritorioController().GetTerritorio(datosfiscales.Territorio_CP);
             empresa_id = datosfiscales.Domicilio_Fiscal_Empresa_Id;
             territorio_id = territorio.Territorio_Id;
@@ -105,7 +105,7 @@ namespace WorklabsMx.iOS
                 View.Add(scrollView);
                 NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_send"), UIBarButtonItemStyle.Plain, (sender, e) =>
                 {
-                    if (new EmpresaController().UpdateDatosFiscales(empresa_id, storage.Get("Usuario_Id"), territorio_id, txtCalle.Text, txtNumExterior.Text, txtNumInterior.Text, ""))
+                    if (new EmpresaController().UpdateDatosFiscales(empresa_id, KeyChainHelper.GetKey("Usuario_Id"), territorio_id, txtCalle.Text, txtNumExterior.Text, txtNumInterior.Text, ""))
                         new MessageDialog().SendToast("Datos guardados");
                     else
                         new MessageDialog().SendToast("Hubo un error\nIntente de nuevo");

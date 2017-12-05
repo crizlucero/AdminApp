@@ -20,8 +20,8 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
-            miembro = new MiembrosController().GetMemberData(storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
+            //var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
+            miembro = new MiembrosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
             Title = "Mi Perfil";
 
             using (UIScrollView scrollView = new UIScrollView(new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)))
@@ -96,7 +96,7 @@ namespace WorklabsMx.iOS
 
                 this.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Actualizar", UIBarButtonItemStyle.Plain, (sender, e) =>
                 {
-                    if (new MiembrosController().UpdateDataMiembros(Convert.ToInt32(storageLocal.Get("Usuario_Id")), txtNombre.Text, txtApellidos.Text, txtEmail.Text,
+                    if (new MiembrosController().UpdateDataMiembros(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Id")), txtNombre.Text, txtApellidos.Text, txtEmail.Text,
                                                                    txtTelefono.Text, txtCelular.Text, txtProfesion.Text, txtPuesto.Text, txtHabilidades.Text, (DateTime)dpFechaNacimiento.Date, ""))
                         new MessageDialog().SendToast("Datos guardados");
                     else

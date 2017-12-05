@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using Foundation;
-using PerpetualEngine.Storage;
+//using PerpetualEngine.Storage;
 using UIKit;
 using WorklabsMx.Models;
 using BigTed;
 using System.Threading.Tasks;
+using WorklabsMx.iOS.Helpers;
 using SidebarNavigation;
 
 namespace WorklabsMx.iOS.Styles
@@ -63,8 +64,9 @@ namespace WorklabsMx.iOS.Styles
 
                     BTProgressHUD.Show();
                     await Task.Delay(500);
-                    var localStorage = SimpleStorage.EditGroup("Menu");
-                    localStorage.Put("Menu_Id", TableItems[indexPath.Row].Menu_Id);
+                    //var localStorage = SimpleStorage.EditGroup("Menu");
+
+                    KeyChainHelper.SetKey("Menu_Id", TableItems[indexPath.Row].Menu_Id);
                     UIViewController controller = owner.Storyboard.InstantiateViewController(TableItems[indexPath.Row].Controller);
 
                     controller.Title = TableItems[indexPath.Row].Label;
@@ -79,8 +81,8 @@ namespace WorklabsMx.iOS.Styles
                     UIApplication.SharedApplication.Windows[0].RootViewController = controller;
                 }
             }else if(indexPath.Row == 0){
-				var localStorage = SimpleStorage.EditGroup("Menu");
-				localStorage.Put("Menu_Id", TableItems[indexPath.Row].Menu_Id);
+				//var localStorage = SimpleStorage.EditGroup("Menu");
+				KeyChainHelper.SetKey("Menu_Id", TableItems[indexPath.Row].Menu_Id);
                 UIViewController controller = owner.Storyboard.InstantiateViewController("PerfilController");
 
 				controller.Title = TableItems[indexPath.Row].Label;

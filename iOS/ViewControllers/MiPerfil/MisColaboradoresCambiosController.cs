@@ -22,10 +22,10 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
 
             Title = "Agregar Colaborador";
-            var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
-            if (!string.IsNullOrEmpty(storageLocal.Get("Colaborador_Id")))
+            //var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
+            if (!string.IsNullOrEmpty(KeyChainHelper.GetKey("Colaborador_Id")))
             {
-                colaborador = new ColaboradoresController().GetColaborador(storageLocal.Get("Colaborador_Id"));
+                colaborador = new ColaboradoresController().GetColaborador(KeyChainHelper.GetKey("Colaborador_Id"));
                 Title = "Modificar Colaborador";
             }
 

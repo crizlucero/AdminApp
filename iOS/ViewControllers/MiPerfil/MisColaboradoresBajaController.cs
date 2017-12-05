@@ -5,23 +5,25 @@ using WorklabsMx.iOS.Styles;
 using WorklabsMx.Controllers;
 using System.Collections.Generic;
 using WorklabsMx.Models;
-using PerpetualEngine.Storage;
+using WorklabsMx.iOS.Helpers;
+//using PerpetualEngine.Storage;
 
 namespace WorklabsMx.iOS
 {
     public partial class MisColaboradoresBajaController : UIViewController
     {
         UIScrollView scrollView;
-        SimpleStorage storageLocal;
+        //SimpleStorage storageLocal;
         public MisColaboradoresBajaController(IntPtr handle) : base(handle)
         {
-            storageLocal = SimpleStorage.EditGroup("Login");
+            //storageLocal = SimpleStorage.EditGroup("Login");
         }
 
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
-            FillColaboradores(storageLocal.Get("Usuario_Id"));
+
+            FillColaboradores(KeyChainHelper.GetKey("Usuario_Id"));
         }
 
         public override void ViewDidLoad()
@@ -29,7 +31,7 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
             View.ClearsContextBeforeDrawing = true;
 
-            FillColaboradores(storageLocal.Get("Usuario_Id"));
+            FillColaboradores(KeyChainHelper.GetKey("Usuario_Id"));
         }
 
         public void FillColaboradores(string miembro_id)

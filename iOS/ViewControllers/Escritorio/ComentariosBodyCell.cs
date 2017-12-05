@@ -32,25 +32,26 @@ namespace WorklabsMx.iOS
             lblFechaPost.Text = post.Publicacion_Fecha;
             lblComentarios.Text = post.Publicacion_Comentarios_Cantidad + " COMENTARIOS";
 
-            lblDetalleComentario.LineBreakMode = UILineBreakMode.WordWrap;
-            lblDetalleComentario.Lines = 0;
-            lblDetalleComentario.Text = post.Publicacion_Contenido;
+            txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
+            txtComentario.ScrollEnabled = false;
+
+            txtComentario.Text = post.Publicacion_Contenido;
 
             StyleHelper.Style(vwVistaComentario.Layer);
 
             imgPerfil.Image = currentImageProfile;
-
             if (post.Publicacion_Imagen_Ruta != "")
             {
+                btnImagenComentatio.TranslatesAutoresizingMaskIntoConstraints = false;
                 btnImagenComentatio.ImageView.Image = currentImagePost;
                 btnImagenComentatio.Hidden = false;
                 btnImagenComentatio.Enabled = true;
+                btnImagenComentatio.Frame = new CGRect(btnImagenComentatio.Frame.X, btnImagenComentatio.Frame.Y, btnImagenComentatio.Frame.Width, btnImagenComentatio.Frame.Width); 
             }
             else
             {
                 btnImagenComentatio.Hidden = true;
                 btnImagenComentatio.Enabled = false;
-                btnImagenComentatio.Frame = new CGRect(btnImagenComentatio.Frame.X, btnImagenComentatio.Frame.Y, btnImagenComentatio.Frame.Width, 0);
             }
 
             PostLocal = post;
@@ -58,7 +59,7 @@ namespace WorklabsMx.iOS
 
         partial void btnLikes_TouchUpInside(UIButton sender)
         {
-            var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
+            //var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
             if (PostLocal.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
             {
                 transaccion = "BAJA";
@@ -68,7 +69,7 @@ namespace WorklabsMx.iOS
                 transaccion = "MODIFICAR";
             }
 
-            if (new Controllers.EscritorioController().PostLike(PostLocal.Publicacion_Id, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), transaccion))
+            if (new Controllers.EscritorioController().PostLike(PostLocal.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), transaccion))
             {
                 lblLikes.Text = new Controllers.EscritorioController().GetLikesPublish(PostLocal.Publicacion_Id) + " LIKES";
 
@@ -87,13 +88,6 @@ namespace WorklabsMx.iOS
 
         }
 
-        partial void btnImagenComentatio_touchUpInside(UIButton sender)
-        {
-            if (MostrarImagenEnGrande != null)
-            {
-                MostrarImagenEnGrande(sender.ImageView, EventArgs.Empty);
-            }
-        }
 
         partial void btnComentarPost_TouchUpInside(UIButton sender)
         {
@@ -101,7 +95,14 @@ namespace WorklabsMx.iOS
             {
                 ComentarPost(PostLocal, EventArgs.Empty);
             }
-        }    
-    
+        }
+
+        partial void btnImagenComentatio_Touch(UIButton sender)
+        {
+            if (MostrarImagenEnGrande != null)
+            {
+                MostrarImagenEnGrande(sender.ImageView, EventArgs.Empty);
+            }
+        }
     }
 }

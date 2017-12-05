@@ -6,7 +6,7 @@ using WorklabsMx.Models;
 using WorklabsMx.iOS.Styles;
 using CoreGraphics;
 using WorklabsMx.iOS.Helpers;
-using PerpetualEngine.Storage;
+//using PerpetualEngine.Storage;
 
 namespace WorklabsMx.iOS
 {
@@ -28,15 +28,15 @@ namespace WorklabsMx.iOS
 
             NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIBarButtonSystemItem.Done, (sender, e) =>
             {
-                SimpleStorage storage = SimpleStorage.EditGroup("Login");
+                //SimpleStorage storage = SimpleStorage.EditGroup("Login");
                 UIRadioButton radioSelected = radios.Find(radio => radio.IsChecked);
                 if (radioSelected != null)
                 {
                     bool report = false;
                     if (string.IsNullOrEmpty(post_id))
-                        report = ctrlEscritorio.ReportarPost(post_id, storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), radioSelected.IDRadio);
+                        report = ctrlEscritorio.ReportarPost(post_id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), radioSelected.IDRadio);
                     else
-                        report = ctrlEscritorio.ReportarComment(comment_id, storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), radioSelected.IDRadio);
+                        report = ctrlEscritorio.ReportarComment(comment_id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), radioSelected.IDRadio);
 
                     if (report)
                     {

@@ -4,7 +4,7 @@ using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Models;
 using System.Collections.Generic;
 using BigTed;
-using PerpetualEngine.Storage;
+//using PerpetualEngine.Storage;
 using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
@@ -22,7 +22,7 @@ namespace WorklabsMx.iOS
 		bool isShowInformation = false;
 		bool existeConeccion = true;
 
-        SimpleStorage storageLocal;
+        //SimpleStorage storageLocal;
 
         PostModel PostLocal;
 
@@ -119,11 +119,11 @@ namespace WorklabsMx.iOS
 		{
             BTProgressHUD.Show(status: "Cargando comentarios");
             await Task.Delay(500);
-            storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
+            //storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
             if (InternetConectionHelper.VerificarConexion())
             {
                 PostLocal = Post;
-                this.comentarios = new Controllers.EscritorioController().GetComentariosPost(Post.Publicacion_Id,storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
+                this.comentarios = new Controllers.EscritorioController().GetComentariosPost(Post.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
                 foreach(ComentarioModel comentario in this.comentarios)
                 {
                     allCommentImages.Add(ImageGallery.LoadImage(comentario.Comentario_Imagen_Ruta));

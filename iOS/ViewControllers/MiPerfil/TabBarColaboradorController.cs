@@ -1,5 +1,6 @@
 using System;
 using UIKit;
+using WorklabsMx.iOS.Helpers;
 
 namespace WorklabsMx.iOS
 {
@@ -14,7 +15,8 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
             NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_person_add"), UIBarButtonItemStyle.Plain, (sender, e) =>
             {
-                PerpetualEngine.Storage.SimpleStorage.EditGroup("Login").Delete("Colaborador_Id");
+                //PerpetualEngine.Storage.SimpleStorage.EditGroup("Login").Delete("Colaborador_Id");
+                KeyChainHelper.DeleteKey("Colaborador_Id");
                 UIViewController controller = Storyboard.InstantiateViewController("MisColaboradoresCambiosController");
                 controller.Title = "Modifica Colaborador";
                 NavigationController.PushViewController(controller, true);

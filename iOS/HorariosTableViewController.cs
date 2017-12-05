@@ -8,7 +8,7 @@ namespace WorklabsMx.iOS
     {
 
         List<String> Horarios = new List<string>();
-        int TamañoCelda = 45;
+        int TamañoCelda = 30;
         const string identificadorCeld = "Horarios";
 
         public HorariosTableViewController (IntPtr handle) : base (handle)

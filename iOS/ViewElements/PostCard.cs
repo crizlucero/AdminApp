@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using CoreGraphics;
-using PerpetualEngine.Storage;
+//using PerpetualEngine.Storage;
 using UIKit;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.iOS.Styles;
@@ -15,13 +15,13 @@ namespace WorklabsMx.iOS.ViewElements
         public List<CommentCard> PostComments;
         public int totalSize, comentarioCount, comentarioSize, usrTipo;
         public UIButton lblNombre, btnDelete;
-        SimpleStorage storageLocal;
+        //SimpleStorage storageLocal;
         UIViewController owner;
         public bool image = false;
         public PostCard(PostModel post, UIViewController owner)
         {
             this.owner = owner;
-            storageLocal = SimpleStorage.EditGroup("Login");
+            //storageLocal = SimpleStorage.EditGroup("Login");
             PostComments = new List<CommentCard>();
             AddSubview(new STLLine(2));
             UIButton pstImage = new UIButton
@@ -82,7 +82,7 @@ namespace WorklabsMx.iOS.ViewElements
                      {
                          transaccion = "MODIFICAR";
                      }
-                    if (new Controllers.EscritorioController().PostLike(post.Publicacion_Id, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"), transaccion))
+                    if (new Controllers.EscritorioController().PostLike(post.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), transaccion))
                      {
                         //lblLikes.Text = new Controllers.EscritorioController().GetLikesPublish(post.Publicacion_Id) + " LIKES";
                          if (transaccion == "BAJA")
@@ -142,7 +142,7 @@ namespace WorklabsMx.iOS.ViewElements
 
         void AddComentarios(PostModel post)
         {
-            List<ComentarioModel> comentarios = new Controllers.EscritorioController().GetComentariosPost(post.Publicacion_Id, storageLocal.Get("Usuario_Id"), storageLocal.Get("Usuario_Tipo"));
+            List<ComentarioModel> comentarios = new Controllers.EscritorioController().GetComentariosPost(post.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
             if (comentarios.Count > 0)
             {
                 int commentSize = 0;
@@ -166,7 +166,7 @@ namespace WorklabsMx.iOS.ViewElements
                     };
                     btnCommentDelete.TouchUpInside += (sender, e) =>
                     {
-                        if (comentario.Miembro_Id == storageLocal.Get("Usuario_Id") && comentario.Usuario_Tipo == storageLocal.Get("Usuario_Tipo"))
+                        if (comentario.Miembro_Id == KeyChainHelper.GetKey("Usuario_Id") && comentario.Usuario_Tipo == KeyChainHelper.GetKey("Usuario_Tipo"))
                         {
                             new MessageDialog().SendConfirmation("Se eliminará el comentario", "Borrar comentario", (obj) =>
                            {

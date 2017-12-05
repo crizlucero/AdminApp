@@ -3,7 +3,7 @@ using System;
 using UIKit;
 using WorklabsMx.Models;
 using WorklabsMx.Controllers;
-using PerpetualEngine.Storage;
+//using PerpetualEngine.Storage;
 using WorklabsMx.iOS.Helpers;
 using AVFoundation;
 using Photos;
@@ -19,7 +19,7 @@ namespace WorklabsMx.iOS
 
         UIImagePickerController imgPicker;
         string UrlImage = "";
-        SimpleStorage StoregeLocal;
+        //SimpleStorage StoregeLocal;
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -37,8 +37,8 @@ namespace WorklabsMx.iOS
 
             if (InternetConectionHelper.VerificarConexion())
             {
-                StoregeLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
-                Miembro = new MiembrosController().GetMemberData(StoregeLocal.Get("Usuario_Id"), StoregeLocal.Get("Usuario_Tipo"));
+                //StoregeLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
+                Miembro = new MiembrosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
                 this.txtEmail.Text = Miembro.Miembro_Correo_Electronico;
                 this.txtNombre.Text = Miembro.Miembro_Nombre;
                 this.txtApellido.Text = Miembro.Miembro_Apellidos;
@@ -263,7 +263,7 @@ namespace WorklabsMx.iOS
                 if (this.lblFechaNacimiento.Text != "")
                 {
                     fechaNacimiento = DateTime.ParseExact(this.lblFechaNacimiento.Text, "dd/MM/yyyy", CultureInfo.CurrentCulture);
-                    if (new MiembrosController().UpdateDataMiembros(Convert.ToInt32(StoregeLocal.Get("Usuario_Id")), txtNombre.Text, txtApellido.Text, txtEmail.Text,
+                    if (new MiembrosController().UpdateDataMiembros(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Id")), txtNombre.Text, txtApellido.Text, txtEmail.Text,
                                                                     txtTelefono.Text, txtTelefono.Text, txtProfesion.Text, txtProfesion.Text, txtHabilidades.Text, fechaNacimiento, ""))
                         new MessageDialog().SendToast("Datos guardados");
                     else
