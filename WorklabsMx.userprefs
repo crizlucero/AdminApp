@@ -1,33 +1,20 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AppDelegate.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Entitlements.plist">
     <Files>
-      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.designer.cs" Line="27" Column="41" NotebookId="1" />
-      <File FileName="iOS/Entitlements.plist" NotebookId="1" />
-      <File FileName="iOS/AppDelegate.cs" Line="30" Column="13" NotebookId="1" />
+      <File FileName="iOS/AppDelegate.cs" Line="4" Column="33" />
+      <File FileName="iOS/SalaJuntasTableViewController.cs" Line="41" Column="27" />
+      <File FileName="iOS/Info.plist" />
+      <File FileName="iOS/Entitlements.plist" />
     </Files>
-    <FloatingWindows>
-      <FloatingWindow WindowId="1" X="1216" Y="23" Width="832" Height="1026">
-        <Files>
-          <File FileName="iOS/Helpers/KeyChainHelper.cs" Line="21" Column="14" />
-        </Files>
-      </FloatingWindow>
-    </FloatingWindows>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="WorklabsMx" expanded="True">
-            <Node name="WorklabsMx.iOS" expanded="True" selected="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="63" column="38" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B4E637BD-60E4-4441-BC72-CF1534A7E0AA" identitySerialNumber="583D18CE90225D8C">
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" automaticSigning="False">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
   </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
   <MultiItemStartupConfigurations />

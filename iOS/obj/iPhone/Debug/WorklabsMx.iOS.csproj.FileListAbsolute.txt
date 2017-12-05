@@ -113,11 +113,9 @@
 /Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/bin/iPhone/Debug/WorklabsMx.iOS.pdb
 /Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/bin/iPhone/Debug/BouncyCastle.dll
 /Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/bin/iPhone/Debug/BTProgressHUD.dll
-/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/bin/iPhone/Debug/Factorymind.Components-Unified.dll
 /Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/bin/iPhone/Debug/MailKit.dll
 /Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/bin/iPhone/Debug/MimeKit.dll
 /Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/bin/iPhone/Debug/Newtonsoft.Json.dll
-/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/bin/iPhone/Debug/PerpetualEngine.SimpleStorage.iOS-Unified.dll
 /Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/bin/iPhone/Debug/Plugin.Connectivity.Abstractions.dll
 /Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/bin/iPhone/Debug/Plugin.Connectivity.dll
 /Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/bin/iPhone/Debug/Plugin.Settings.Abstractions.dll
@@ -159,3 +157,5 @@
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/actool/_PartialAppManifest.items
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/actool/_BundleResourceWithLogicalName.items
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/optimized/
+/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/bin/iPhone/Debug/Plugin.KeyChain.Abstractions.dll
+/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/bin/iPhone/Debug/Plugin.KeyChain.dll

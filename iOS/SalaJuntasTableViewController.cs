@@ -1,7 +1,7 @@
 using Foundation;
 using System;
 using UIKit;
-using Factorymind.Components;
+//using Factorymind.Components;
 using WorklabsMx.iOS.Helpers;
 
 namespace WorklabsMx.iOS
@@ -19,7 +19,7 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             StyleHelper.Style(this.btnComprarHoras.Layer);
-            FMCalendar fmCalendar = new FMCalendar(this.vwCalendarioJuntas.Bounds);
+            /*FMCalendar fmCalendar = new FMCalendar(this.vwCalendarioJuntas.Bounds);
 
             this.vwCalendarioJuntas.BackgroundColor = UIColor.White;
 
@@ -63,7 +63,7 @@ namespace WorklabsMx.iOS
             // Add FMCalendar to SuperView
             fmCalendar.Bounds = this.vwCalendarioJuntas.Bounds;
             //fmCalendar.Center = this.vwCalendarioJuntas.Center;
-            this.vwCalendarioJuntas.AddSubview(fmCalendar);
+            this.vwCalendarioJuntas.AddSubview(fmCalendar);*/
         }
 
 

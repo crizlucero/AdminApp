@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.2.0 (tarball Tue Oct 31 22:22:00 EDT 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Wed Nov  8 17:08:32 EST 2017)"
 	.asciz "Factorymind.Components-Unified.dll"
 	.asciz ""
 
@@ -130,7 +130,7 @@ Factorymind_Components_CalendarDayView__ctor:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #200]
+ldr x16, [x16, #192]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -242,7 +242,7 @@ Factorymind_Components_CalendarDayView_get_Date:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #208]
+ldr x16, [x16, #200]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -297,7 +297,7 @@ Factorymind_Components_CalendarDayView_set_Date_System_DateTime:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #216]
+ldr x16, [x16, #208]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -346,7 +346,7 @@ Factorymind_Components_CalendarDayView_get_Available:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #224]
+ldr x16, [x16, #216]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -396,7 +396,7 @@ Factorymind_Components_CalendarDayView_set_Available_bool:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #232]
+ldr x16, [x16, #224]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -453,7 +453,7 @@ Factorymind_Components_CalendarDayView_get_Text:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #240]
+ldr x16, [x16, #232]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -503,7 +503,7 @@ Factorymind_Components_CalendarDayView_set_Text_string:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #248]
+ldr x16, [x16, #240]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -572,7 +572,7 @@ Factorymind_Components_CalendarDayView_get_Active:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #256]
+ldr x16, [x16, #248]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -622,7 +622,7 @@ Factorymind_Components_CalendarDayView_set_Active_bool:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #264]
+ldr x16, [x16, #256]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -679,7 +679,7 @@ Factorymind_Components_CalendarDayView_get_Today:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #272]
+ldr x16, [x16, #264]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -729,7 +729,7 @@ Factorymind_Components_CalendarDayView_set_Today_bool:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #280]
+ldr x16, [x16, #272]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -786,7 +786,7 @@ Factorymind_Components_CalendarDayView_get_Selected:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #288]
+ldr x16, [x16, #280]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -836,7 +836,7 @@ Factorymind_Components_CalendarDayView_set_Selected_bool:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #296]
+ldr x16, [x16, #288]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -893,7 +893,7 @@ Factorymind_Components_CalendarDayView_get_Marked:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #304]
+ldr x16, [x16, #296]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -943,7 +943,7 @@ Factorymind_Components_CalendarDayView_set_Marked_bool:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #312]
+ldr x16, [x16, #304]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -1000,7 +1000,7 @@ Factorymind_Components_CalendarDayView_get_SelectionColor:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #320]
+ldr x16, [x16, #312]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -1049,7 +1049,7 @@ Factorymind_Components_CalendarDayView_set_SelectionColor_UIKit_UIColor:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #328]
+ldr x16, [x16, #320]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -1104,7 +1104,7 @@ Factorymind_Components_CalendarDayView_get_TodayCircleColor:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #336]
+ldr x16, [x16, #328]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -1153,7 +1153,7 @@ Factorymind_Components_CalendarDayView_set_TodayCircleColor_UIKit_UIColor:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #344]
+ldr x16, [x16, #336]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -1212,7 +1212,7 @@ Factorymind_Components_CalendarDayView_Draw_CoreGraphics_CGRect:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #352]
+ldr x16, [x16, #344]
 .word 0xf9002fb0
 .word 0xf9400a11
 .word 0xf90033b1
@@ -1265,7 +1265,7 @@ Factorymind_Components_CalendarDayView_PerformDraw:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #360]
+ldr x16, [x16, #352]
 .word 0xf9001fb0
 .word 0xf9400a11
 .word 0xf90023b1
@@ -2724,7 +2724,7 @@ Factorymind_Components_FMCalendar__ctor:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #368]
+ldr x16, [x16, #360]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -2839,7 +2839,7 @@ Factorymind_Components_FMCalendar__ctor_CoreGraphics_CGRect:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #376]
+ldr x16, [x16, #368]
 .word 0xf9002fb0
 .word 0xf9400a11
 .word 0xf90033b1
@@ -2973,7 +2973,7 @@ Factorymind_Components_FMCalendar__ctor_CoreGraphics_CGRect_CoreGraphics_CGRect:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #384]
+ldr x16, [x16, #376]
 .word 0xf9004fb0
 .word 0xf9400a11
 .word 0xf90053b1
@@ -3099,7 +3099,7 @@ Factorymind_Components_FMCalendar_get_CurrentSelectedDate:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #392]
+ldr x16, [x16, #384]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -3158,7 +3158,7 @@ Factorymind_Components_FMCalendar_get_CurrentDate:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #400]
+ldr x16, [x16, #392]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -3213,7 +3213,7 @@ Factorymind_Components_FMCalendar_set_CurrentDate_System_DateTime:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #408]
+ldr x16, [x16, #400]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -3262,7 +3262,7 @@ Factorymind_Components_FMCalendar_get_SelectedDate:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #416]
+ldr x16, [x16, #408]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -3317,7 +3317,7 @@ Factorymind_Components_FMCalendar_set_SelectedDate_System_DateTime:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #424]
+ldr x16, [x16, #416]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -3366,7 +3366,7 @@ Factorymind_Components_FMCalendar_get_SundayFirst:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #432]
+ldr x16, [x16, #424]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -3415,7 +3415,7 @@ Factorymind_Components_FMCalendar_set_SundayFirst_bool:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #440]
+ldr x16, [x16, #432]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -3458,7 +3458,7 @@ Factorymind_Components_FMCalendar_get_MonthFormatString:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #448]
+ldr x16, [x16, #440]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -3507,7 +3507,7 @@ Factorymind_Components_FMCalendar_set_MonthFormatString_string:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #456]
+ldr x16, [x16, #448]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -3562,7 +3562,7 @@ Factorymind_Components_FMCalendar_get_SelectionColor:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #464]
+ldr x16, [x16, #456]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -3611,7 +3611,7 @@ Factorymind_Components_FMCalendar_set_SelectionColor_UIKit_UIColor:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #472]
+ldr x16, [x16, #464]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -3666,7 +3666,7 @@ Factorymind_Components_FMCalendar_get_TodayCircleColor:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #480]
+ldr x16, [x16, #472]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -3715,7 +3715,7 @@ Factorymind_Components_FMCalendar_set_TodayCircleColor_UIKit_UIColor:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #488]
+ldr x16, [x16, #480]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -3770,7 +3770,7 @@ Factorymind_Components_FMCalendar_get_MonthBackgroundColor:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #496]
+ldr x16, [x16, #488]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -3819,7 +3819,7 @@ Factorymind_Components_FMCalendar_set_MonthBackgroundColor_UIKit_UIColor:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #504]
+ldr x16, [x16, #496]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -3874,7 +3874,7 @@ Factorymind_Components_FMCalendar_get_LeftArrow:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #512]
+ldr x16, [x16, #504]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -3923,7 +3923,7 @@ Factorymind_Components_FMCalendar_set_LeftArrow_UIKit_UIImage:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #520]
+ldr x16, [x16, #512]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -3978,7 +3978,7 @@ Factorymind_Components_FMCalendar_get_RightArrow:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #528]
+ldr x16, [x16, #520]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -4027,7 +4027,7 @@ Factorymind_Components_FMCalendar_set_RightArrow_UIKit_UIImage:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #536]
+ldr x16, [x16, #528]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -4082,7 +4082,7 @@ Factorymind_Components_FMCalendar_get_TopBar:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #544]
+ldr x16, [x16, #536]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -4131,7 +4131,7 @@ Factorymind_Components_FMCalendar_set_TopBar_UIKit_UIImage:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #552]
+ldr x16, [x16, #544]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -4186,7 +4186,7 @@ Factorymind_Components_FMCalendar_get_HeaderViewSize:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #560]
+ldr x16, [x16, #552]
 .word 0xf9002fb0
 .word 0xf9400a11
 .word 0xf90033b1
@@ -4259,7 +4259,7 @@ Factorymind_Components_FMCalendar_set_HeaderViewSize_CoreGraphics_CGRect:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #568]
+ldr x16, [x16, #560]
 .word 0xf9002fb0
 .word 0xf9400a11
 .word 0xf90033b1
@@ -4320,7 +4320,7 @@ Factorymind_Components_FMCalendar_get_MainViewSize:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #576]
+ldr x16, [x16, #568]
 .word 0xf9002fb0
 .word 0xf9400a11
 .word 0xf90033b1
@@ -4393,7 +4393,7 @@ Factorymind_Components_FMCalendar_set_MainViewSize_CoreGraphics_CGRect:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #584]
+ldr x16, [x16, #576]
 .word 0xf9002fb0
 .word 0xf9400a11
 .word 0xf90033b1
@@ -4455,7 +4455,7 @@ Factorymind_Components_FMCalendar_get_HeaderMiddleY:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #592]
+ldr x16, [x16, #584]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -4583,7 +4583,7 @@ Factorymind_Components_FMCalendar_get_HeaderElementSize:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #600]
+ldr x16, [x16, #592]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -4739,7 +4739,7 @@ Factorymind_Components_FMCalendar_get_HeaderBorderOffset:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #608]
+ldr x16, [x16, #600]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -4788,7 +4788,7 @@ Factorymind_Components_FMCalendar_get_DayNameHeight:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #616]
+ldr x16, [x16, #608]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -4837,7 +4837,7 @@ Factorymind_Components_FMCalendar_get_DayCellWidth:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #624]
+ldr x16, [x16, #616]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -4943,7 +4943,7 @@ Factorymind_Components_FMCalendar_get_DayCellHeight:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #632]
+ldr x16, [x16, #624]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -5050,7 +5050,7 @@ Factorymind_Components_FMCalendar_Initialize:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #640]
+ldr x16, [x16, #632]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -5220,7 +5220,7 @@ bl _p_50
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x1, [x16, #648]
+ldr x1, [x16, #640]
 .word 0xaa1a03e0
 bl _p_51
 .word 0xf9400fb1
@@ -5289,7 +5289,7 @@ bl _p_54
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #656]
+ldr x0, [x16, #648]
 bl _p_55
 .word 0xf90053a0
 .word 0xf9400fb1
@@ -5311,7 +5311,7 @@ bl _p_56
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #664]
+ldr x0, [x16, #656]
 bl _p_55
 .word 0xf9004fa0
 .word 0xf9400fb1
@@ -5373,7 +5373,7 @@ Factorymind_Components_FMCalendar_SetNeedsDisplay:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #672]
+ldr x16, [x16, #664]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -5461,7 +5461,7 @@ Factorymind_Components_FMCalendar_LayoutSubviews:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #680]
+ldr x16, [x16, #672]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -5725,7 +5725,7 @@ bl _p_22
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #688]
+ldr x0, [x16, #680]
 bl _p_62
 .word 0xf901bba0
 .word 0x9101a3a1
@@ -6113,7 +6113,7 @@ Factorymind_Components_FMCalendar_DeselectDate:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #696]
+ldr x16, [x16, #688]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -6179,7 +6179,7 @@ Factorymind_Components_FMCalendar_LoadButtons:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #704]
+ldr x16, [x16, #696]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -6238,7 +6238,7 @@ ldr x2, [x16, #16]
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #712]
+ldr x0, [x16, #704]
 .word 0xd2800e01
 .word 0xd2800e01
 bl _p_69
@@ -6260,17 +6260,17 @@ ldr x3, [x16, #16]
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #720]
+ldr x0, [x16, #712]
 .word 0xf9001420
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #728]
+ldr x0, [x16, #720]
 .word 0xf9002020
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #736]
+ldr x0, [x16, #728]
 .word 0xf9401403
 .word 0xf9000c23
 .word 0xf9401000
@@ -6573,7 +6573,7 @@ ldr x2, [x16, #16]
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #712]
+ldr x0, [x16, #704]
 .word 0xd2800e01
 .word 0xd2800e01
 bl _p_69
@@ -6595,17 +6595,17 @@ ldr x3, [x16, #16]
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #744]
+ldr x0, [x16, #736]
 .word 0xf9001420
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #752]
+ldr x0, [x16, #744]
 .word 0xf9002020
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #760]
+ldr x0, [x16, #752]
 .word 0xf9401403
 .word 0xf9000c23
 .word 0xf9401000
@@ -6946,7 +6946,7 @@ bl _p_22
 .word 0x8b100231
 .word 0x9100023f
 .word 0xd65f03c0
-.word 0xd2800d60
+.word 0xd2800ec0
 .word 0xaa1103e1
 bl _p_76
 
@@ -6964,7 +6964,7 @@ Factorymind_Components_FMCalendar_HandlePreviousMonthTouch_object_System_EventAr
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #768]
+ldr x16, [x16, #760]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -7016,7 +7016,7 @@ Factorymind_Components_FMCalendar_HandleNextMonthTouch_object_System_EventArgs:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #776]
+ldr x16, [x16, #768]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -7076,7 +7076,7 @@ Factorymind_Components_FMCalendar_MoveCalendarMonths_bool_bool:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #784]
+ldr x16, [x16, #776]
 .word 0xf9002fb0
 .word 0xf9400a11
 .word 0xf90033b1
@@ -7528,7 +7528,7 @@ bl _p_83
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #792]
+ldr x0, [x16, #784]
 bl _p_84
 .word 0xf9402fb1
 .word 0xf9475e31
@@ -8145,7 +8145,7 @@ bl _p_60
 .word 0x8b100231
 .word 0x9100023f
 .word 0xd65f03c0
-.word 0xd2801a40
+.word 0xd2801ba0
 .word 0xaa1103e1
 bl _p_76
 
@@ -8169,7 +8169,7 @@ Factorymind_Components_FMCalendar_GoToDate_System_DateTime:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #800]
+ldr x16, [x16, #792]
 .word 0xf90027b0
 .word 0xf9400a11
 .word 0xf9002bb1
@@ -9204,7 +9204,7 @@ Factorymind_Components_FMCalendar_AdjustBackgroundColor:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #808]
+ldr x16, [x16, #800]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -9301,7 +9301,7 @@ Factorymind_Components_FMCalendar_CreateNewGrid_System_DateTime:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #816]
+ldr x16, [x16, #808]
 .word 0xf9001bb0
 .word 0xf9400a11
 .word 0xf9001fb1
@@ -9326,7 +9326,7 @@ ldr x16, [x16, #816]
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #824]
+ldr x0, [x16, #816]
 bl _p_62
 .word 0xf9004fa0
 .word 0xaa1a03e1
@@ -9453,7 +9453,7 @@ Factorymind_Components_FMCalendar_LoadInitialGrids:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #832]
+ldr x16, [x16, #824]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -10059,7 +10059,7 @@ Factorymind_Components_FMCalendar_Draw_CoreGraphics_CGRect:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #840]
+ldr x16, [x16, #832]
 .word 0xf9002fb0
 .word 0xf9400a11
 .word 0xf90033b1
@@ -10233,7 +10233,7 @@ Factorymind_Components_FMCalendar_DrawMonthLabel_CoreGraphics_CGRect:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #848]
+ldr x16, [x16, #840]
 .word 0xf9002fb0
 .word 0xf9400a11
 .word 0xf90033b1
@@ -10504,7 +10504,7 @@ bl _p_103
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #856]
+ldr x0, [x16, #848]
 .word 0xd2801a01
 .word 0xd2801a01
 bl _p_69
@@ -10586,7 +10586,7 @@ bl _p_27
 .word 0x8b100231
 .word 0x9100023f
 .word 0xd65f03c0
-.word 0xd2801a40
+.word 0xd2801ba0
 .word 0xaa1103e1
 bl _p_76
 
@@ -10614,7 +10614,7 @@ Factorymind_Components_FMCalendar_DrawDayLabels_CoreGraphics_CGRect:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #864]
+ldr x16, [x16, #856]
 .word 0xf9004bb0
 .word 0xf9400a11
 .word 0xf9004fb1
@@ -10743,7 +10743,7 @@ bl _p_103
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #856]
+ldr x0, [x16, #848]
 .word 0xd2801a01
 .word 0xd2801a01
 bl _p_69
@@ -11180,7 +11180,7 @@ bl _p_113
 .word 0x8b100231
 .word 0x9100023f
 .word 0xd65f03c0
-.word 0xd28017e0
+.word 0xd2801940
 .word 0xaa1103e1
 bl _p_76
 
@@ -11199,7 +11199,7 @@ Factorymind_Components_MonthGridView__ctor_Factorymind_Components_FMCalendar_Sys
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #872]
+ldr x16, [x16, #864]
 .word 0xf9001bb0
 .word 0xf9400a11
 .word 0xf9001fb1
@@ -11219,7 +11219,7 @@ ldr x16, [x16, #872]
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #880]
+ldr x0, [x16, #872]
 .word 0xd2800401
 .word 0xd2800401
 bl _p_69
@@ -11341,7 +11341,7 @@ Factorymind_Components_MonthGridView_get_CurrentDate:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #888]
+ldr x16, [x16, #880]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -11396,7 +11396,7 @@ Factorymind_Components_MonthGridView_set_CurrentDate_System_DateTime:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #896]
+ldr x16, [x16, #888]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -11445,7 +11445,7 @@ Factorymind_Components_MonthGridView_get_SelectedDate:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #904]
+ldr x16, [x16, #896]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -11507,7 +11507,7 @@ Factorymind_Components_MonthGridView_get_Lines:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #912]
+ldr x16, [x16, #904]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -11553,7 +11553,7 @@ Factorymind_Components_MonthGridView_get_SelectedDayView:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #920]
+ldr x16, [x16, #912]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -11602,7 +11602,7 @@ Factorymind_Components_MonthGridView_set_SelectedDayView_Factorymind_Components_
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #928]
+ldr x16, [x16, #920]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -11657,7 +11657,7 @@ Factorymind_Components_MonthGridView_get_Marks:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #936]
+ldr x16, [x16, #928]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -11706,7 +11706,7 @@ Factorymind_Components_MonthGridView_set_Marks_System_Collections_Generic_IList_
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #944]
+ldr x16, [x16, #936]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -11761,7 +11761,7 @@ Factorymind_Components_MonthGridView_get_WeekDayWidth:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #952]
+ldr x16, [x16, #944]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -11820,7 +11820,7 @@ Factorymind_Components_MonthGridView_get_WeekDayHeigth:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #960]
+ldr x16, [x16, #952]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -11880,7 +11880,7 @@ Factorymind_Components_MonthGridView_Update:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #968]
+ldr x16, [x16, #960]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -11905,8 +11905,8 @@ ldr x16, [x16, #968]
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x15, [x16, #976]
-.word 0x928008f0
+ldr x15, [x16, #968]
+.word 0x928012f0
 .word 0xf2bffff0
 .word 0xf8706830
 .word 0xd63f0200
@@ -11940,8 +11940,8 @@ ldr x15, [x16, #976]
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x15, [x16, #984]
-.word 0x928008f0
+ldr x15, [x16, #976]
+.word 0x92800bf0
 .word 0xf2bffff0
 .word 0xf8706830
 .word 0xd63f0200
@@ -11980,7 +11980,7 @@ bl _p_115
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x15, [x16, #992]
+ldr x15, [x16, #984]
 .word 0x92800ef0
 .word 0xf2bffff0
 .word 0xf8706830
@@ -12024,7 +12024,7 @@ ldr x15, [x16, #992]
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x15, [x16, #1000]
+ldr x15, [x16, #992]
 .word 0x928004f0
 .word 0xf2bffff0
 .word 0xf8706830
@@ -12088,7 +12088,7 @@ Factorymind_Components_MonthGridView_UpdateDayView_Factorymind_Components_Calend
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1008]
+ldr x16, [x16, #1000]
 .word 0xf9001bb0
 .word 0xf9400a11
 .word 0xf9001fb1
@@ -12243,7 +12243,7 @@ Factorymind_Components_MonthGridView_WeekDayIndex_System_DayOfWeek:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1016]
+ldr x16, [x16, #1008]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -12350,7 +12350,7 @@ Factorymind_Components_MonthGridView_BuildGrid:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1024]
+ldr x16, [x16, #1016]
 .word 0xf9002bb0
 .word 0xf9400a11
 .word 0xf9002fb1
@@ -12609,7 +12609,7 @@ bl _p_49
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #1032]
+ldr x0, [x16, #1024]
 bl _p_62
 .word 0xf901cba0
 bl _p_122
@@ -12875,7 +12875,7 @@ bl _p_129
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x15, [x16, #1040]
+ldr x15, [x16, #1032]
 .word 0x928012f0
 .word 0xf2bffff0
 .word 0xf8706850
@@ -12981,7 +12981,7 @@ bl _p_49
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #1032]
+ldr x0, [x16, #1024]
 bl _p_62
 .word 0xf9020fa0
 bl _p_122
@@ -13463,7 +13463,7 @@ bl _p_136
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x15, [x16, #1040]
+ldr x15, [x16, #1032]
 .word 0x928012f0
 .word 0xf2bffff0
 .word 0xf8706850
@@ -13587,7 +13587,7 @@ bl _p_49
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #1032]
+ldr x0, [x16, #1024]
 bl _p_62
 .word 0xf901d3a0
 bl _p_122
@@ -13878,7 +13878,7 @@ bl _p_115
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x15, [x16, #1040]
+ldr x15, [x16, #1032]
 .word 0x928012f0
 .word 0xf2bffff0
 .word 0xf8706850
@@ -14133,7 +14133,7 @@ bl _p_137
 .word 0x8b100231
 .word 0x9100023f
 .word 0xd65f03c0
-.word 0xd2801a40
+.word 0xd2801ba0
 .word 0xaa1103e1
 bl _p_76
 
@@ -14152,7 +14152,7 @@ Factorymind_Components_MonthGridView_TouchesBegan_Foundation_NSSet_UIKit_UIEvent
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1048]
+ldr x16, [x16, #1040]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -14219,7 +14219,7 @@ Factorymind_Components_MonthGridView_TouchesMoved_Foundation_NSSet_UIKit_UIEvent
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1056]
+ldr x16, [x16, #1048]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -14286,7 +14286,7 @@ Factorymind_Components_MonthGridView_TouchesEnded_Foundation_NSSet_UIKit_UIEvent
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1064]
+ldr x16, [x16, #1056]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -14499,7 +14499,7 @@ bl _p_134
 .word 0x910003bf
 .word 0xa8ca7bfd
 .word 0xd65f03c0
-.word 0xd2801a40
+.word 0xd2801ba0
 .word 0xaa1103e1
 bl _p_76
 
@@ -14518,7 +14518,7 @@ Factorymind_Components_MonthGridView_DispatchDateSelection_Foundation_NSSet:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1072]
+ldr x16, [x16, #1064]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -14553,7 +14553,7 @@ ldr x16, [x16, #1072]
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x1, [x16, #1080]
+ldr x1, [x16, #1072]
 .word 0xeb01001f
 .word 0x10000011
 .word 0x54001321
@@ -14706,10 +14706,10 @@ bl _p_134
 .word 0x910003bf
 .word 0xa8ca7bfd
 .word 0xd65f03c0
-.word 0xd2801a40
+.word 0xd2801ba0
 .word 0xaa1103e1
 bl _p_76
-.word 0xd2801860
+.word 0xd28019c0
 .word 0xaa1103e1
 bl _p_76
 
@@ -14729,7 +14729,7 @@ Factorymind_Components_MonthGridView_SelectDayView_UIKit_UITouch:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1088]
+ldr x16, [x16, #1080]
 .word 0xf9001fb0
 .word 0xf9400a11
 .word 0xf90023b1
@@ -14886,7 +14886,7 @@ bl _p_41
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x15, [x16, #1096]
+ldr x15, [x16, #1088]
 .word 0x928012f0
 .word 0xf2bffff0
 .word 0xf8706830
@@ -14932,8 +14932,8 @@ ldr x15, [x16, #1096]
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x15, [x16, #1104]
-.word 0x92800bf0
+ldr x15, [x16, #1096]
+.word 0x928003f0
 .word 0xf2bffff0
 .word 0xf8706850
 .word 0xd63f0200
@@ -15310,7 +15310,7 @@ bl _p_136
 .word 0x910003bf
 .word 0xa8cf7bfd
 .word 0xd65f03c0
-.word 0xd2801a40
+.word 0xd2801ba0
 .word 0xaa1103e1
 bl _p_76
 
@@ -15327,7 +15327,7 @@ Factorymind_Components_MonthGridView_DeselectDayView:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1112]
+ldr x16, [x16, #1104]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -15435,7 +15435,7 @@ wrapper_delegate_invoke_System_Action_1_System_DateTime_invoke_void_T_System_Dat
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1120]
+ldr x16, [x16, #1112]
 .word 0xf90033b0
 .word 0xf9400a11
 .word 0xf90037b1
@@ -15451,7 +15451,7 @@ ldr x16, [x16, #1120]
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #1128]
+ldr x0, [x16, #1120]
 .word 0xb9400000
 .word 0x34000160
 bl _p_144
@@ -15562,7 +15562,7 @@ bl _p_145
 .word 0x910003bf
 .word 0xa8ca7bfd
 .word 0xd65f03c0
-.word 0xd28017e0
+.word 0xd2801940
 .word 0xaa1103e1
 bl _p_76
 
@@ -15571,7 +15571,7 @@ Lme_68:
 	.align 4
 	.no_dead_strip System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF
 System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/src/mono/mcs/class/corlib/System/Array.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/corlib/System/Array.cs"
 .loc 2 71 0 prologue_end
 .word 0xa9b97bfd
 .word 0x910003fd
@@ -15580,7 +15580,7 @@ System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1136]
+ldr x16, [x16, #1128]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -15664,7 +15664,7 @@ System_Array_InternalArray__ICollection_get_Count:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1144]
+ldr x16, [x16, #1136]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -15708,7 +15708,7 @@ System_Array_InternalArray__ICollection_get_IsReadOnly:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1152]
+ldr x16, [x16, #1144]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -15746,7 +15746,7 @@ System_Array_InternalArray__ICollection_Clear:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1160]
+ldr x16, [x16, #1152]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -15762,13 +15762,13 @@ ldr x16, [x16, #1160]
 .word 0xf9405231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd295cca0
-.word 0xd295cca0
+.word 0xd283a560
+.word 0xd283a560
 bl _p_148
 .word 0xaa0003e1
-.word 0xd2801a20
+.word 0xd2801b80
 .word 0xf2a04000
-.word 0xd2801a20
+.word 0xd2801b80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_145
@@ -15794,7 +15794,7 @@ System_Array_InternalArray__ICollection_Add_T_REF_T_REF:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1168]
+ldr x16, [x16, #1160]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -15810,13 +15810,13 @@ ldr x16, [x16, #1168]
 .word 0xf9405a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd295d2a0
-.word 0xd295d2a0
+.word 0xd283ab60
+.word 0xd283ab60
 bl _p_148
 .word 0xaa0003e1
-.word 0xd2801a20
+.word 0xd2801b80
 .word 0xf2a04000
-.word 0xd2801a20
+.word 0xd2801b80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_145
@@ -15842,7 +15842,7 @@ System_Array_InternalArray__ICollection_Remove_T_REF_T_REF:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1176]
+ldr x16, [x16, #1168]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -15858,13 +15858,13 @@ ldr x16, [x16, #1176]
 .word 0xf9405a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd295d2a0
-.word 0xd295d2a0
+.word 0xd283ab60
+.word 0xd283ab60
 bl _p_148
 .word 0xaa0003e1
-.word 0xd2801a20
+.word 0xd2801b80
 .word 0xf2a04000
-.word 0xd2801a20
+.word 0xd2801b80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_145
@@ -15892,7 +15892,7 @@ System_Array_InternalArray__ICollection_Contains_T_REF_T_REF:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1184]
+ldr x16, [x16, #1176]
 .word 0xf9001bb0
 .word 0xf9400a11
 .word 0xf9001fb1
@@ -15929,8 +15929,8 @@ ldr x16, [x16, #1184]
 .word 0xf940b231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd295da20
-.word 0xd295da20
+.word 0xd283b2e0
+.word 0xd283b2e0
 bl _p_148
 bl _p_149
 .word 0xf90033a0
@@ -15939,9 +15939,9 @@ bl _p_149
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94033a1
-.word 0xd2801ba0
+.word 0xd2801d00
 .word 0xf2a04000
-.word 0xd2801ba0
+.word 0xd2801d00
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_145
@@ -16090,7 +16090,7 @@ System_Array_InternalArray__ICollection_CopyTo_T_REF_T_REF___int:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1192]
+ldr x16, [x16, #1184]
 .word 0xf9001fb0
 .word 0xf9400a11
 .word 0xf90023b1
@@ -16167,7 +16167,7 @@ wrapper_delegate_invoke_System_Predicate_1_Factorymind_Components_CalendarDayVie
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1200]
+ldr x16, [x16, #1192]
 .word 0xf9002bb0
 .word 0xf9400a11
 .word 0xf9002fb1
@@ -16184,7 +16184,7 @@ ldr x16, [x16, #1200]
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #1128]
+ldr x0, [x16, #1120]
 .word 0xb9400000
 .word 0x34000140
 bl _p_144
@@ -16290,7 +16290,7 @@ bl _p_145
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd28017e0
+.word 0xd2801940
 .word 0xaa1103e1
 bl _p_76
 
@@ -16311,7 +16311,7 @@ wrapper_delegate_invoke_System_Comparison_1_Factorymind_Components_CalendarDayVi
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1208]
+ldr x16, [x16, #1200]
 .word 0xf9002bb0
 .word 0xf9400a11
 .word 0xf9002fb1
@@ -16328,7 +16328,7 @@ ldr x16, [x16, #1208]
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #1128]
+ldr x0, [x16, #1120]
 .word 0xb9400000
 .word 0x34000140
 bl _p_144
@@ -16440,7 +16440,7 @@ bl _p_145
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd28017e0
+.word 0xd2801940
 .word 0xaa1103e1
 bl _p_76
 
@@ -16460,7 +16460,7 @@ wrapper_delegate_invoke_System_Func_2_System_DateTime_bool_invoke_TResult_T_Syst
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1216]
+ldr x16, [x16, #1208]
 .word 0xf90033b0
 .word 0xf9400a11
 .word 0xf90037b1
@@ -16477,7 +16477,7 @@ ldr x16, [x16, #1216]
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #1128]
+ldr x0, [x16, #1120]
 .word 0xb9400000
 .word 0x34000140
 bl _p_144
@@ -16595,7 +16595,7 @@ bl _p_145
 .word 0x910003bf
 .word 0xa8cb7bfd
 .word 0xd65f03c0
-.word 0xd28017e0
+.word 0xd2801940
 .word 0xaa1103e1
 bl _p_76
 
@@ -16614,7 +16614,7 @@ System_Array_InternalArray__Insert_T_REF_int_T_REF:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1224]
+ldr x16, [x16, #1216]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
@@ -16630,13 +16630,13 @@ ldr x16, [x16, #1224]
 .word 0xf9405e31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd295d2a0
-.word 0xd295d2a0
+.word 0xd283ab60
+.word 0xd283ab60
 bl _p_148
 .word 0xaa0003e1
-.word 0xd2801a20
+.word 0xd2801b80
 .word 0xf2a04000
-.word 0xd2801a20
+.word 0xd2801b80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_145
@@ -16661,7 +16661,7 @@ System_Array_InternalArray__RemoveAt_int:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1232]
+ldr x16, [x16, #1224]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -16677,13 +16677,13 @@ ldr x16, [x16, #1232]
 .word 0xf9405631
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd295d2a0
-.word 0xd295d2a0
+.word 0xd283ab60
+.word 0xd283ab60
 bl _p_148
 .word 0xaa0003e1
-.word 0xd2801a20
+.word 0xd2801b80
 .word 0xf2a04000
-.word 0xd2801a20
+.word 0xd2801b80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_145
@@ -16712,7 +16712,7 @@ System_Array_InternalArray__IndexOf_T_REF_T_REF:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1240]
+ldr x16, [x16, #1232]
 .word 0xf90023b0
 .word 0xf9400a11
 .word 0xf90027b1
@@ -16749,8 +16749,8 @@ ldr x16, [x16, #1240]
 .word 0xf940b631
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd295da20
-.word 0xd295da20
+.word 0xd283b2e0
+.word 0xd283b2e0
 bl _p_148
 bl _p_149
 .word 0xf90053a0
@@ -16759,9 +16759,9 @@ bl _p_149
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94053a1
-.word 0xd2801ba0
+.word 0xd2801d00
 .word 0xf2a04000
-.word 0xd2801ba0
+.word 0xd2801d00
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_145
@@ -16959,7 +16959,7 @@ System_Array_InternalArray__get_Item_T_REF_int:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1248]
+ldr x16, [x16, #1240]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -16996,9 +16996,9 @@ ldr x16, [x16, #1248]
 .word 0xd2813c00
 bl _p_148
 .word 0xaa0003e1
-.word 0xd2800da0
+.word 0xd2800f00
 .word 0xf2a04000
-.word 0xd2800da0
+.word 0xd2800f00
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_145
@@ -17052,7 +17052,7 @@ System_Array_InternalArray__set_Item_T_REF_int_T_REF:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1256]
+ldr x16, [x16, #1248]
 .word 0xf9002bb0
 .word 0xf9400a11
 .word 0xf9002fb1
@@ -17089,9 +17089,9 @@ ldr x16, [x16, #1256]
 .word 0xd2813c00
 bl _p_148
 .word 0xaa0003e1
-.word 0xd2800da0
+.word 0xd2800f00
 .word 0xf2a04000
-.word 0xd2800da0
+.word 0xd2800f00
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_145
@@ -17117,13 +17117,13 @@ bl _p_145
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x1, [x16, #1264]
+ldr x1, [x16, #1256]
 .word 0xeb01001f
 .word 0x540000e1
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #1272]
+ldr x0, [x16, #1264]
 .word 0xeb00029f
 .word 0x54000040
 .word 0xd2800016
@@ -17213,7 +17213,7 @@ System_Array_InternalArray__Insert_System_DateTime_int_System_DateTime:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1280]
+ldr x16, [x16, #1272]
 .word 0xf9001bb0
 .word 0xf9400a11
 .word 0xf9001fb1
@@ -17229,13 +17229,13 @@ ldr x16, [x16, #1280]
 .word 0xf9405a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd295d2a0
-.word 0xd295d2a0
+.word 0xd283ab60
+.word 0xd283ab60
 bl _p_148
 .word 0xaa0003e1
-.word 0xd2801a20
+.word 0xd2801b80
 .word 0xf2a04000
-.word 0xd2801a20
+.word 0xd2801b80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_145
@@ -17264,7 +17264,7 @@ System_Array_InternalArray__IndexOf_System_DateTime_System_DateTime:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1288]
+ldr x16, [x16, #1280]
 .word 0xf9002bb0
 .word 0xf9400a11
 .word 0xf9002fb1
@@ -17302,8 +17302,8 @@ ldr x16, [x16, #1288]
 .word 0xf940ba31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd295da20
-.word 0xd295da20
+.word 0xd283b2e0
+.word 0xd283b2e0
 bl _p_148
 bl _p_149
 .word 0xf90063a0
@@ -17312,9 +17312,9 @@ bl _p_149
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94063a1
-.word 0xd2801ba0
+.word 0xd2801d00
 .word 0xf2a04000
-.word 0xd2801ba0
+.word 0xd2801d00
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_145
@@ -17350,7 +17350,7 @@ bl _p_145
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #1296]
+ldr x0, [x16, #1288]
 .word 0x93407f00
 .word 0xd37df000
 .word 0x8b000340
@@ -17421,7 +17421,7 @@ ldr x0, [x16, #1296]
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #1304]
+ldr x0, [x16, #1296]
 .word 0xd2800301
 .word 0xd2800301
 bl _p_69
@@ -17535,7 +17535,7 @@ System_Array_InternalArray__get_Item_System_DateTime_int:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1312]
+ldr x16, [x16, #1304]
 .word 0xf9001bb0
 .word 0xf9400a11
 .word 0xf9001fb1
@@ -17573,9 +17573,9 @@ ldr x16, [x16, #1312]
 .word 0xd2813c00
 bl _p_148
 .word 0xaa0003e1
-.word 0xd2800da0
+.word 0xd2800f00
 .word 0xf2a04000
-.word 0xd2800da0
+.word 0xd2800f00
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_145
@@ -17590,7 +17590,7 @@ bl _p_145
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #1296]
+ldr x0, [x16, #1288]
 .word 0x93407f40
 .word 0xd37df000
 .word 0x8b000320
@@ -17643,7 +17643,7 @@ System_Array_InternalArray__set_Item_System_DateTime_int_System_DateTime:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1320]
+ldr x16, [x16, #1312]
 .word 0xf9002fb0
 .word 0xf9400a11
 .word 0xf90033b1
@@ -17680,9 +17680,9 @@ ldr x16, [x16, #1320]
 .word 0xd2813c00
 bl _p_148
 .word 0xaa0003e1
-.word 0xd2800da0
+.word 0xd2800f00
 .word 0xf2a04000
-.word 0xd2800da0
+.word 0xd2800f00
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_145
@@ -17708,13 +17708,13 @@ bl _p_145
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x1, [x16, #1264]
+ldr x1, [x16, #1256]
 .word 0xeb01001f
 .word 0x540000e1
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #1272]
+ldr x0, [x16, #1264]
 .word 0xeb00029f
 .word 0x54000040
 .word 0xd2800016
@@ -17741,7 +17741,7 @@ ldr x0, [x16, #1272]
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #1304]
+ldr x0, [x16, #1296]
 .word 0xd2800301
 .word 0xd2800301
 bl _p_69
@@ -17772,7 +17772,7 @@ bl _p_69
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #1328]
+ldr x0, [x16, #1320]
 .word 0x93407f40
 .word 0xd37df000
 .word 0x8b000320
@@ -17819,7 +17819,7 @@ wrapper_delegate_invoke__Module_invoke_void_DateTime_System_DateTime:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1336]
+ldr x16, [x16, #1328]
 .word 0xf90033b0
 .word 0xf9400a11
 .word 0xf90037b1
@@ -17843,7 +17843,7 @@ ldr x16, [x16, #1336]
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x0, [x16, #1128]
+ldr x0, [x16, #1120]
 .word 0xb9400000
 .word 0x34000260
 .word 0xf94033b1
@@ -18030,7 +18030,7 @@ bl _p_145
 .word 0x910003bf
 .word 0xa8ca7bfd
 .word 0xd65f03c0
-.word 0xd28017e0
+.word 0xd2801940
 .word 0xaa1103e1
 bl _p_76
 
@@ -18051,7 +18051,7 @@ wrapper_delegate_begin_invoke__Module_begin_invoke_IAsyncResult__this___DateTime
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1344]
+ldr x16, [x16, #1336]
 .word 0xf9002fb0
 .word 0xf9400a11
 .word 0xf90033b1
@@ -18177,7 +18177,7 @@ wrapper_delegate_end_invoke__Module_end_invoke_void__this___IAsyncResult_System_
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1352]
+ldr x16, [x16, #1344]
 .word 0xf90023b0
 .word 0xf9400a11
 .word 0xf90027b1
@@ -18276,7 +18276,7 @@ System_Array_InternalEnumerator_1_T_REF__ctor_System_Array:
 
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1360]
+ldr x16, [x16, #1352]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -18543,1261 +18543,1261 @@ plt_UIKit_UIView__ctor:
 _p_1:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1376]
+ldr x16, [x16, #1368]
 br x16
-.word 1596
+.word 1551
 	.no_dead_strip plt_UIKit_UIColor_get_White
 plt_UIKit_UIColor_get_White:
 _p_2:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1384]
+ldr x16, [x16, #1376]
 br x16
-.word 1601
+.word 1556
 	.no_dead_strip plt_UIKit_UIColor_get_Red
 plt_UIKit_UIColor_get_Red:
 _p_3:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1392]
+ldr x16, [x16, #1384]
 br x16
-.word 1606
+.word 1561
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_set_TodayCircleColor_UIKit_UIColor
 plt_Factorymind_Components_CalendarDayView_set_TodayCircleColor_UIKit_UIColor:
 _p_4:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1400]
+ldr x16, [x16, #1392]
 br x16
-.word 1611
+.word 1566
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_set_SelectionColor_UIKit_UIColor
 plt_Factorymind_Components_CalendarDayView_set_SelectionColor_UIKit_UIColor:
 _p_5:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1408]
+ldr x16, [x16, #1400]
 br x16
-.word 1616
+.word 1571
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_PerformDraw
 plt_Factorymind_Components_CalendarDayView_PerformDraw:
 _p_6:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1416]
+ldr x16, [x16, #1408]
 br x16
-.word 1621
+.word 1576
 	.no_dead_strip plt_UIKit_UIColor_get_Black
 plt_UIKit_UIColor_get_Black:
 _p_7:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1424]
+ldr x16, [x16, #1416]
 br x16
-.word 1626
+.word 1581
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_get_Active
 plt_Factorymind_Components_CalendarDayView_get_Active:
 _p_8:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1432]
+ldr x16, [x16, #1424]
 br x16
-.word 1631
+.word 1586
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_get_Available
 plt_Factorymind_Components_CalendarDayView_get_Available:
 _p_9:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1440]
+ldr x16, [x16, #1432]
 br x16
-.word 1636
+.word 1591
 	.no_dead_strip plt_UIKit_UIColor_get_LightGray
 plt_UIKit_UIColor_get_LightGray:
 _p_10:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1448]
+ldr x16, [x16, #1440]
 br x16
-.word 1641
+.word 1596
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_get_Selected
 plt_Factorymind_Components_CalendarDayView_get_Selected:
 _p_11:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1456]
+ldr x16, [x16, #1448]
 br x16
-.word 1646
+.word 1601
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_get_Today
 plt_Factorymind_Components_CalendarDayView_get_Today:
 _p_12:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1464]
+ldr x16, [x16, #1456]
 br x16
-.word 1651
+.word 1606
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_get_SelectionColor
 plt_Factorymind_Components_CalendarDayView_get_SelectionColor:
 _p_13:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1472]
+ldr x16, [x16, #1464]
 br x16
-.word 1656
+.word 1611
 	.no_dead_strip plt_UIKit_UIGraphics_GetCurrentContext
 plt_UIKit_UIGraphics_GetCurrentContext:
 _p_14:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1480]
+ldr x16, [x16, #1472]
 br x16
-.word 1661
+.word 1616
 	.no_dead_strip plt_CoreGraphics_CGRect_get_Height
 plt_CoreGraphics_CGRect_get_Height:
 _p_15:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1488]
+ldr x16, [x16, #1480]
 br x16
-.word 1666
+.word 1621
 	.no_dead_strip plt_CoreGraphics_CGRect_get_Width
 plt_CoreGraphics_CGRect_get_Width:
 _p_16:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1496]
+ldr x16, [x16, #1488]
 br x16
-.word 1671
+.word 1626
 	.no_dead_strip plt_System_Math_Min_double_double
 plt_System_Math_Min_double_double:
 _p_17:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1504]
+ldr x16, [x16, #1496]
 br x16
-.word 1676
+.word 1631
 	.no_dead_strip plt_System_Math_Min_single_single
 plt_System_Math_Min_single_single:
 _p_18:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1512]
+ldr x16, [x16, #1504]
 br x16
-.word 1679
+.word 1634
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_get_TodayCircleColor
 plt_Factorymind_Components_CalendarDayView_get_TodayCircleColor:
 _p_19:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1520]
+ldr x16, [x16, #1512]
 br x16
-.word 1682
+.word 1637
 	.no_dead_strip plt_System_nfloat_op_Implicit_int
 plt_System_nfloat_op_Implicit_int:
 _p_20:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1528]
+ldr x16, [x16, #1520]
 br x16
-.word 1687
+.word 1642
 	.no_dead_strip plt_CoreGraphics_CGContext_SetLineWidth_System_nfloat
 plt_CoreGraphics_CGContext_SetLineWidth_System_nfloat:
 _p_21:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1536]
+ldr x16, [x16, #1528]
 br x16
-.word 1692
+.word 1647
 	.no_dead_strip plt_CoreGraphics_CGRect__ctor_System_nfloat_System_nfloat_System_nfloat_System_nfloat
 plt_CoreGraphics_CGRect__ctor_System_nfloat_System_nfloat_System_nfloat_System_nfloat:
 _p_22:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1544]
+ldr x16, [x16, #1536]
 br x16
-.word 1697
+.word 1652
 	.no_dead_strip plt_CoreGraphics_CGContext_AddEllipseInRect_CoreGraphics_CGRect
 plt_CoreGraphics_CGContext_AddEllipseInRect_CoreGraphics_CGRect:
 _p_23:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1552]
+ldr x16, [x16, #1544]
 br x16
-.word 1702
+.word 1657
 	.no_dead_strip plt_CoreGraphics_CGContext_FillPath
 plt_CoreGraphics_CGContext_FillPath:
 _p_24:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1560]
+ldr x16, [x16, #1552]
 br x16
-.word 1707
+.word 1662
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_get_Text
 plt_Factorymind_Components_CalendarDayView_get_Text:
 _p_25:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1568]
+ldr x16, [x16, #1560]
 br x16
-.word 1712
+.word 1667
 	.no_dead_strip plt_UIKit_UIFont_SystemFontOfSize_System_nfloat
 plt_UIKit_UIFont_SystemFontOfSize_System_nfloat:
 _p_26:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1576]
+ldr x16, [x16, #1568]
 br x16
-.word 1717
+.word 1672
 	.no_dead_strip plt_UIKit_UIStringDrawing_DrawString_string_CoreGraphics_CGRect_UIKit_UIFont_UIKit_UILineBreakMode_UIKit_UITextAlignment
 plt_UIKit_UIStringDrawing_DrawString_string_CoreGraphics_CGRect_UIKit_UIFont_UIKit_UILineBreakMode_UIKit_UITextAlignment:
 _p_27:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1584]
+ldr x16, [x16, #1576]
 br x16
-.word 1722
+.word 1677
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_get_Marked
 plt_Factorymind_Components_CalendarDayView_get_Marked:
 _p_28:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1592]
+ldr x16, [x16, #1584]
 br x16
-.word 1727
+.word 1682
 	.no_dead_strip plt_CoreGraphics_CGRect_get_Size
 plt_CoreGraphics_CGRect_get_Size:
 _p_29:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1600]
+ldr x16, [x16, #1592]
 br x16
-.word 1732
+.word 1687
 	.no_dead_strip plt_CoreGraphics_CGSize_get_Width
 plt_CoreGraphics_CGSize_get_Width:
 _p_30:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1608]
+ldr x16, [x16, #1600]
 br x16
-.word 1737
+.word 1692
 	.no_dead_strip plt_Factorymind_Components_FMCalendar__ctor_CoreGraphics_CGRect
 plt_Factorymind_Components_FMCalendar__ctor_CoreGraphics_CGRect:
 _p_31:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1616]
+ldr x16, [x16, #1608]
 br x16
-.word 1742
+.word 1697
 	.no_dead_strip plt_Factorymind_Components_FMCalendar__ctor_CoreGraphics_CGRect_CoreGraphics_CGRect
 plt_Factorymind_Components_FMCalendar__ctor_CoreGraphics_CGRect_CoreGraphics_CGRect:
 _p_32:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1624]
+ldr x16, [x16, #1616]
 br x16
-.word 1747
+.word 1702
 	.no_dead_strip plt_UIKit_UIView__ctor_CoreGraphics_CGRect
 plt_UIKit_UIView__ctor_CoreGraphics_CGRect:
 _p_33:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1632]
+ldr x16, [x16, #1624]
 br x16
-.word 1752
+.word 1707
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_set_MainViewSize_CoreGraphics_CGRect
 plt_Factorymind_Components_FMCalendar_set_MainViewSize_CoreGraphics_CGRect:
 _p_34:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1640]
+ldr x16, [x16, #1632]
 br x16
-.word 1757
+.word 1712
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_set_HeaderViewSize_CoreGraphics_CGRect
 plt_Factorymind_Components_FMCalendar_set_HeaderViewSize_CoreGraphics_CGRect:
 _p_35:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1648]
+ldr x16, [x16, #1640]
 br x16
-.word 1762
+.word 1717
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_Initialize
 plt_Factorymind_Components_FMCalendar_Initialize:
 _p_36:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1656]
+ldr x16, [x16, #1648]
 br x16
-.word 1767
+.word 1722
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_get_SelectedDate
 plt_Factorymind_Components_FMCalendar_get_SelectedDate:
 _p_37:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1664]
+ldr x16, [x16, #1656]
 br x16
-.word 1772
+.word 1727
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_get_HeaderViewSize
 plt_Factorymind_Components_FMCalendar_get_HeaderViewSize:
 _p_38:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1672]
+ldr x16, [x16, #1664]
 br x16
-.word 1777
+.word 1732
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_get_HeaderElementSize
 plt_Factorymind_Components_FMCalendar_get_HeaderElementSize:
 _p_39:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1680]
+ldr x16, [x16, #1672]
 br x16
-.word 1782
+.word 1737
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_get_MainViewSize
 plt_Factorymind_Components_FMCalendar_get_MainViewSize:
 _p_40:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1688]
+ldr x16, [x16, #1680]
 br x16
-.word 1787
+.word 1742
 	.no_dead_strip plt_System_nfloat_op_Explicit_System_nfloat
 plt_System_nfloat_op_Explicit_System_nfloat:
 _p_41:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1696]
+ldr x16, [x16, #1688]
 br x16
-.word 1792
+.word 1747
 	.no_dead_strip plt_System_DateTime_get_Now
 plt_System_DateTime_get_Now:
 _p_42:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1704]
+ldr x16, [x16, #1696]
 br x16
-.word 1797
+.word 1752
 	.no_dead_strip plt_System_DateTime_get_Date
 plt_System_DateTime_get_Date:
 _p_43:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1712]
+ldr x16, [x16, #1704]
 br x16
-.word 1800
+.word 1755
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_set_CurrentDate_System_DateTime
 plt_Factorymind_Components_FMCalendar_set_CurrentDate_System_DateTime:
 _p_44:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1720]
+ldr x16, [x16, #1712]
 br x16
-.word 1803
+.word 1758
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_get_CurrentDate
 plt_Factorymind_Components_FMCalendar_get_CurrentDate:
 _p_45:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1728]
+ldr x16, [x16, #1720]
 br x16
-.word 1808
+.word 1763
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_set_SelectedDate_System_DateTime
 plt_Factorymind_Components_FMCalendar_set_SelectedDate_System_DateTime:
 _p_46:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1736]
+ldr x16, [x16, #1728]
 br x16
-.word 1813
+.word 1768
 	.no_dead_strip plt_System_DateTime_get_Year
 plt_System_DateTime_get_Year:
 _p_47:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1744]
+ldr x16, [x16, #1736]
 br x16
-.word 1818
+.word 1773
 	.no_dead_strip plt_System_DateTime_get_Month
 plt_System_DateTime_get_Month:
 _p_48:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1752]
+ldr x16, [x16, #1744]
 br x16
-.word 1821
+.word 1776
 	.no_dead_strip plt_System_DateTime__ctor_int_int_int
 plt_System_DateTime__ctor_int_int_int:
 _p_49:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1760]
+ldr x16, [x16, #1752]
 br x16
-.word 1824
+.word 1779
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_set_SundayFirst_bool
 plt_Factorymind_Components_FMCalendar_set_SundayFirst_bool:
 _p_50:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1768]
+ldr x16, [x16, #1760]
 br x16
-.word 1827
+.word 1782
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_set_MonthFormatString_string
 plt_Factorymind_Components_FMCalendar_set_MonthFormatString_string:
 _p_51:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1776]
+ldr x16, [x16, #1768]
 br x16
-.word 1832
+.word 1787
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_set_MonthBackgroundColor_UIKit_UIColor
 plt_Factorymind_Components_FMCalendar_set_MonthBackgroundColor_UIKit_UIColor:
 _p_52:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1784]
+ldr x16, [x16, #1776]
 br x16
-.word 1837
+.word 1792
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_set_SelectionColor_UIKit_UIColor
 plt_Factorymind_Components_FMCalendar_set_SelectionColor_UIKit_UIColor:
 _p_53:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1792]
+ldr x16, [x16, #1784]
 br x16
-.word 1842
+.word 1797
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_set_TodayCircleColor_UIKit_UIColor
 plt_Factorymind_Components_FMCalendar_set_TodayCircleColor_UIKit_UIColor:
 _p_54:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1800]
+ldr x16, [x16, #1792]
 br x16
-.word 1847
+.word 1802
 	.no_dead_strip plt_UIKit_UIImage_FromFile_string
 plt_UIKit_UIImage_FromFile_string:
 _p_55:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1808]
+ldr x16, [x16, #1800]
 br x16
-.word 1852
+.word 1807
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_set_LeftArrow_UIKit_UIImage
 plt_Factorymind_Components_FMCalendar_set_LeftArrow_UIKit_UIImage:
 _p_56:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1816]
+ldr x16, [x16, #1808]
 br x16
-.word 1857
+.word 1812
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_set_RightArrow_UIKit_UIImage
 plt_Factorymind_Components_FMCalendar_set_RightArrow_UIKit_UIImage:
 _p_57:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1824]
+ldr x16, [x16, #1816]
 br x16
-.word 1862
+.word 1817
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_get_MonthBackgroundColor
 plt_Factorymind_Components_FMCalendar_get_MonthBackgroundColor:
 _p_58:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1832]
+ldr x16, [x16, #1824]
 br x16
-.word 1867
+.word 1822
 	.no_dead_strip plt_UIKit_UIView_SetNeedsDisplay
 plt_UIKit_UIView_SetNeedsDisplay:
 _p_59:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1840]
+ldr x16, [x16, #1832]
 br x16
-.word 1872
+.word 1827
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_AdjustBackgroundColor
 plt_Factorymind_Components_FMCalendar_AdjustBackgroundColor:
 _p_60:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1848]
+ldr x16, [x16, #1840]
 br x16
-.word 1877
+.word 1832
 	.no_dead_strip plt_Factorymind_Components_MonthGridView_Update
 plt_Factorymind_Components_MonthGridView_Update:
 _p_61:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1856]
+ldr x16, [x16, #1848]
 br x16
-.word 1882
+.word 1837
 	.no_dead_strip plt__jit_icall_ves_icall_object_new_specific
 plt__jit_icall_ves_icall_object_new_specific:
 _p_62:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1864]
+ldr x16, [x16, #1856]
 br x16
-.word 1887
+.word 1842
 	.no_dead_strip plt_UIKit_UIScrollView__ctor_CoreGraphics_CGRect
 plt_UIKit_UIScrollView__ctor_CoreGraphics_CGRect:
 _p_63:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1872]
+ldr x16, [x16, #1864]
 br x16
-.word 1919
+.word 1874
 	.no_dead_strip plt_CoreGraphics_CGSize__ctor_System_nfloat_System_nfloat
 plt_CoreGraphics_CGSize__ctor_System_nfloat_System_nfloat:
 _p_64:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1880]
+ldr x16, [x16, #1872]
 br x16
-.word 1924
+.word 1879
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_LoadButtons
 plt_Factorymind_Components_FMCalendar_LoadButtons:
 _p_65:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1888]
+ldr x16, [x16, #1880]
 br x16
-.word 1929
+.word 1884
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_LoadInitialGrids
 plt_Factorymind_Components_FMCalendar_LoadInitialGrids:
 _p_66:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1896]
+ldr x16, [x16, #1888]
 br x16
-.word 1934
+.word 1889
 	.no_dead_strip plt_Factorymind_Components_MonthGridView_DeselectDayView
 plt_Factorymind_Components_MonthGridView_DeselectDayView:
 _p_67:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1904]
+ldr x16, [x16, #1896]
 br x16
-.word 1939
+.word 1894
 	.no_dead_strip plt_UIKit_UIButton_FromType_UIKit_UIButtonType
 plt_UIKit_UIButton_FromType_UIKit_UIButtonType:
 _p_68:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1912]
+ldr x16, [x16, #1904]
 br x16
-.word 1944
+.word 1899
 	.no_dead_strip plt_wrapper_alloc_object_AllocSmall_intptr_intptr
 plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
 _p_69:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1920]
+ldr x16, [x16, #1912]
 br x16
-.word 1949
+.word 1904
 	.no_dead_strip plt_UIKit_UIControl_add_TouchUpInside_System_EventHandler
 plt_UIKit_UIControl_add_TouchUpInside_System_EventHandler:
 _p_70:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1928]
+ldr x16, [x16, #1920]
 br x16
-.word 1957
+.word 1912
 	.no_dead_strip plt_UIKit_UIEdgeInsets__ctor_System_nfloat_System_nfloat_System_nfloat_System_nfloat
 plt_UIKit_UIEdgeInsets__ctor_System_nfloat_System_nfloat_System_nfloat_System_nfloat:
 _p_71:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1936]
+ldr x16, [x16, #1928]
 br x16
-.word 1962
+.word 1917
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_get_LeftArrow
 plt_Factorymind_Components_FMCalendar_get_LeftArrow:
 _p_72:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1944]
+ldr x16, [x16, #1936]
 br x16
-.word 1967
+.word 1922
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_get_HeaderBorderOffset
 plt_Factorymind_Components_FMCalendar_get_HeaderBorderOffset:
 _p_73:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1952]
+ldr x16, [x16, #1944]
 br x16
-.word 1972
+.word 1927
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_get_HeaderMiddleY
 plt_Factorymind_Components_FMCalendar_get_HeaderMiddleY:
 _p_74:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1960]
+ldr x16, [x16, #1952]
 br x16
-.word 1977
+.word 1932
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_get_RightArrow
 plt_Factorymind_Components_FMCalendar_get_RightArrow:
 _p_75:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1968]
+ldr x16, [x16, #1960]
 br x16
-.word 1982
+.word 1937
 	.no_dead_strip plt__jit_icall_mono_arch_throw_corlib_exception
 plt__jit_icall_mono_arch_throw_corlib_exception:
 _p_76:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1976]
+ldr x16, [x16, #1968]
 br x16
-.word 1987
+.word 1942
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_MoveCalendarMonths_bool_bool
 plt_Factorymind_Components_FMCalendar_MoveCalendarMonths_bool_bool:
 _p_77:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1984]
+ldr x16, [x16, #1976]
 br x16
-.word 2022
+.word 1977
 	.no_dead_strip plt_System_DateTime_AddMonths_int
 plt_System_DateTime_AddMonths_int:
 _p_78:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #1992]
+ldr x16, [x16, #1984]
 br x16
-.word 2027
+.word 1982
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_CreateNewGrid_System_DateTime
 plt_Factorymind_Components_FMCalendar_CreateNewGrid_System_DateTime:
 _p_79:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2000]
+ldr x16, [x16, #1992]
 br x16
-.word 2030
+.word 1985
 	.no_dead_strip plt_Factorymind_Components_MonthGridView_get_Lines
 plt_Factorymind_Components_MonthGridView_get_Lines:
 _p_80:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2008]
+ldr x16, [x16, #2000]
 br x16
-.word 2035
+.word 1990
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_get_DayCellHeight
 plt_Factorymind_Components_FMCalendar_get_DayCellHeight:
 _p_81:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2016]
+ldr x16, [x16, #2008]
 br x16
-.word 2040
+.word 1995
 	.no_dead_strip plt_CoreGraphics_CGPoint__ctor_System_nfloat_System_nfloat
 plt_CoreGraphics_CGPoint__ctor_System_nfloat_System_nfloat:
 _p_82:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2024]
+ldr x16, [x16, #2016]
 br x16
-.word 2045
+.word 2000
 	.no_dead_strip plt_CoreGraphics_CGRect__ctor_CoreGraphics_CGPoint_CoreGraphics_CGSize
 plt_CoreGraphics_CGRect__ctor_CoreGraphics_CGPoint_CoreGraphics_CGSize:
 _p_83:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2032]
+ldr x16, [x16, #2024]
 br x16
-.word 2050
+.word 2005
 	.no_dead_strip plt_UIKit_UIView_BeginAnimations_string
 plt_UIKit_UIView_BeginAnimations_string:
 _p_84:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2040]
+ldr x16, [x16, #2032]
 br x16
-.word 2055
+.word 2010
 	.no_dead_strip plt_UIKit_UIView_SetAnimationDuration_double
 plt_UIKit_UIView_SetAnimationDuration_double:
 _p_85:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2048]
+ldr x16, [x16, #2040]
 br x16
-.word 2060
+.word 2015
 	.no_dead_strip plt_UIKit_UIView_SetAnimationDelay_double
 plt_UIKit_UIView_SetAnimationDelay_double:
 _p_86:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2056]
+ldr x16, [x16, #2048]
 br x16
-.word 2065
+.word 2020
 	.no_dead_strip plt_UIKit_UIView_SetAnimationCurve_UIKit_UIViewAnimationCurve
 plt_UIKit_UIView_SetAnimationCurve_UIKit_UIViewAnimationCurve:
 _p_87:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2064]
+ldr x16, [x16, #2056]
 br x16
-.word 2070
+.word 2025
 	.no_dead_strip plt_CoreGraphics_CGPoint_get_X
 plt_CoreGraphics_CGPoint_get_X:
 _p_88:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2072]
+ldr x16, [x16, #2064]
 br x16
-.word 2075
+.word 2030
 	.no_dead_strip plt_CoreGraphics_CGPoint_get_Y
 plt_CoreGraphics_CGPoint_get_Y:
 _p_89:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2080]
+ldr x16, [x16, #2072]
 br x16
-.word 2080
+.word 2035
 	.no_dead_strip plt_CoreGraphics_CGRect_get_Location
 plt_CoreGraphics_CGRect_get_Location:
 _p_90:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2088]
+ldr x16, [x16, #2080]
 br x16
-.word 2085
+.word 2040
 	.no_dead_strip plt_UIKit_UIView_CommitAnimations
 plt_UIKit_UIView_CommitAnimations:
 _p_91:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2096]
+ldr x16, [x16, #2088]
 br x16
-.word 2090
+.word 2045
 	.no_dead_strip plt_System_DateTime_op_GreaterThanOrEqual_System_DateTime_System_DateTime
 plt_System_DateTime_op_GreaterThanOrEqual_System_DateTime_System_DateTime:
 _p_92:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2104]
+ldr x16, [x16, #2096]
 br x16
-.word 2095
+.word 2050
 	.no_dead_strip plt_Factorymind_Components_MonthGridView__ctor_Factorymind_Components_FMCalendar_System_DateTime
 plt_Factorymind_Components_MonthGridView__ctor_Factorymind_Components_FMCalendar_System_DateTime:
 _p_93:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2112]
+ldr x16, [x16, #2104]
 br x16
-.word 2098
+.word 2053
 	.no_dead_strip plt_Factorymind_Components_MonthGridView_set_CurrentDate_System_DateTime
 plt_Factorymind_Components_MonthGridView_set_CurrentDate_System_DateTime:
 _p_94:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2120]
+ldr x16, [x16, #2112]
 br x16
-.word 2103
+.word 2058
 	.no_dead_strip plt_Factorymind_Components_MonthGridView_BuildGrid
 plt_Factorymind_Components_MonthGridView_BuildGrid:
 _p_95:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2128]
+ldr x16, [x16, #2120]
 br x16
-.word 2108
+.word 2063
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_get_TopBar
 plt_Factorymind_Components_FMCalendar_get_TopBar:
 _p_96:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2136]
+ldr x16, [x16, #2128]
 br x16
-.word 2113
+.word 2068
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_DrawDayLabels_CoreGraphics_CGRect
 plt_Factorymind_Components_FMCalendar_DrawDayLabels_CoreGraphics_CGRect:
 _p_97:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2144]
+ldr x16, [x16, #2136]
 br x16
-.word 2118
+.word 2073
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_DrawMonthLabel_CoreGraphics_CGRect
 plt_Factorymind_Components_FMCalendar_DrawMonthLabel_CoreGraphics_CGRect:
 _p_98:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2152]
+ldr x16, [x16, #2144]
 br x16
-.word 2123
+.word 2078
 	.no_dead_strip plt_CoreGraphics_CGSize_set_Width_System_nfloat
 plt_CoreGraphics_CGSize_set_Width_System_nfloat:
 _p_99:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2160]
+ldr x16, [x16, #2152]
 br x16
-.word 2128
+.word 2083
 	.no_dead_strip plt_CoreGraphics_CGSize_set_Height_System_nfloat
 plt_CoreGraphics_CGSize_set_Height_System_nfloat:
 _p_100:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2168]
+ldr x16, [x16, #2160]
 br x16
-.word 2133
+.word 2088
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_get_MonthFormatString
 plt_Factorymind_Components_FMCalendar_get_MonthFormatString:
 _p_101:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2176]
+ldr x16, [x16, #2168]
 br x16
-.word 2138
+.word 2093
 	.no_dead_strip plt_Foundation_NSLocale_get_CurrentLocale
 plt_Foundation_NSLocale_get_CurrentLocale:
 _p_102:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2184]
+ldr x16, [x16, #2176]
 br x16
-.word 2143
+.word 2098
 	.no_dead_strip plt_Foundation_NSLocale_get_LanguageCode
 plt_Foundation_NSLocale_get_LanguageCode:
 _p_103:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2192]
+ldr x16, [x16, #2184]
 br x16
-.word 2148
+.word 2103
 	.no_dead_strip plt_System_Globalization_CultureInfo__ctor_string
 plt_System_Globalization_CultureInfo__ctor_string:
 _p_104:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2200]
+ldr x16, [x16, #2192]
 br x16
-.word 2153
+.word 2108
 	.no_dead_strip plt_System_DateTime_ToString_string_System_IFormatProvider
 plt_System_DateTime_ToString_string_System_IFormatProvider:
 _p_105:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2208]
+ldr x16, [x16, #2200]
 br x16
-.word 2156
+.word 2111
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_get_DayNameHeight
 plt_Factorymind_Components_FMCalendar_get_DayNameHeight:
 _p_106:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2216]
+ldr x16, [x16, #2208]
 br x16
-.word 2159
+.word 2114
 	.no_dead_strip plt_CoreGraphics_CGContext_SaveState
 plt_CoreGraphics_CGContext_SaveState:
 _p_107:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2224]
+ldr x16, [x16, #2216]
 br x16
-.word 2164
+.word 2119
 	.no_dead_strip plt_System_Globalization_DateTimeFormatInfo_set_FirstDayOfWeek_System_DayOfWeek
 plt_System_Globalization_DateTimeFormatInfo_set_FirstDayOfWeek_System_DayOfWeek:
 _p_108:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2232]
+ldr x16, [x16, #2224]
 br x16
-.word 2169
+.word 2124
 	.no_dead_strip plt_System_Globalization_DateTimeFormatInfo_get_DayNames
 plt_System_Globalization_DateTimeFormatInfo_get_DayNames:
 _p_109:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2240]
+ldr x16, [x16, #2232]
 br x16
-.word 2172
+.word 2127
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_get_SundayFirst
 plt_Factorymind_Components_FMCalendar_get_SundayFirst:
 _p_110:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2248]
+ldr x16, [x16, #2240]
 br x16
-.word 2175
+.word 2130
 	.no_dead_strip plt_string_Substring_int_int
 plt_string_Substring_int_int:
 _p_111:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2256]
+ldr x16, [x16, #2248]
 br x16
-.word 2180
+.word 2135
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_get_DayCellWidth
 plt_Factorymind_Components_FMCalendar_get_DayCellWidth:
 _p_112:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2264]
+ldr x16, [x16, #2256]
 br x16
-.word 2183
+.word 2138
 	.no_dead_strip plt_CoreGraphics_CGContext_RestoreState
 plt_CoreGraphics_CGContext_RestoreState:
 _p_113:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2272]
+ldr x16, [x16, #2264]
 br x16
-.word 2188
+.word 2143
 	.no_dead_strip plt_System_Collections_Generic_List_1_Factorymind_Components_CalendarDayView__ctor
 plt_System_Collections_Generic_List_1_Factorymind_Components_CalendarDayView__ctor:
 _p_114:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2280]
+ldr x16, [x16, #2272]
 br x16
-.word 2193
+.word 2148
 	.no_dead_strip plt_Factorymind_Components_MonthGridView_UpdateDayView_Factorymind_Components_CalendarDayView
 plt_Factorymind_Components_MonthGridView_UpdateDayView_Factorymind_Components_CalendarDayView:
 _p_115:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2288]
+ldr x16, [x16, #2280]
 br x16
-.word 2204
+.word 2159
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_get_Date
 plt_Factorymind_Components_CalendarDayView_get_Date:
 _p_116:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2296]
+ldr x16, [x16, #2288]
 br x16
-.word 2209
+.word 2164
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_set_Marked_bool
 plt_Factorymind_Components_CalendarDayView_set_Marked_bool:
 _p_117:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2304]
+ldr x16, [x16, #2296]
 br x16
-.word 2214
+.word 2169
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_set_Available_bool
 plt_Factorymind_Components_CalendarDayView_set_Available_bool:
 _p_118:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2312]
+ldr x16, [x16, #2304]
 br x16
-.word 2219
+.word 2174
 	.no_dead_strip plt_System_DateTime_DaysInMonth_int_int
 plt_System_DateTime_DaysInMonth_int_int:
 _p_119:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2320]
+ldr x16, [x16, #2312]
 br x16
-.word 2224
+.word 2179
 	.no_dead_strip plt_System_DateTime_get_DayOfWeek
 plt_System_DateTime_get_DayOfWeek:
 _p_120:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2328]
+ldr x16, [x16, #2320]
 br x16
-.word 2227
+.word 2182
 	.no_dead_strip plt_Factorymind_Components_MonthGridView_WeekDayIndex_System_DayOfWeek
 plt_Factorymind_Components_MonthGridView_WeekDayIndex_System_DayOfWeek:
 _p_121:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2336]
+ldr x16, [x16, #2328]
 br x16
-.word 2230
+.word 2185
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView__ctor
 plt_Factorymind_Components_CalendarDayView__ctor:
 _p_122:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2344]
+ldr x16, [x16, #2336]
 br x16
-.word 2235
+.word 2190
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_get_SelectionColor
 plt_Factorymind_Components_FMCalendar_get_SelectionColor:
 _p_123:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2352]
+ldr x16, [x16, #2344]
 br x16
-.word 2240
+.word 2195
 	.no_dead_strip plt_Factorymind_Components_FMCalendar_get_TodayCircleColor
 plt_Factorymind_Components_FMCalendar_get_TodayCircleColor:
 _p_124:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2360]
+ldr x16, [x16, #2352]
 br x16
-.word 2245
+.word 2200
 	.no_dead_strip plt_Factorymind_Components_MonthGridView_get_WeekDayWidth
 plt_Factorymind_Components_MonthGridView_get_WeekDayWidth:
 _p_125:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2368]
+ldr x16, [x16, #2360]
 br x16
-.word 2250
+.word 2205
 	.no_dead_strip plt_Factorymind_Components_MonthGridView_get_WeekDayHeigth
 plt_Factorymind_Components_MonthGridView_get_WeekDayHeigth:
 _p_126:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2376]
+ldr x16, [x16, #2368]
 br x16
-.word 2255
+.word 2210
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_set_Date_System_DateTime
 plt_Factorymind_Components_CalendarDayView_set_Date_System_DateTime:
 _p_127:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2384]
+ldr x16, [x16, #2376]
 br x16
-.word 2260
+.word 2215
 	.no_dead_strip plt_int_ToString
 plt_int_ToString:
 _p_128:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2392]
+ldr x16, [x16, #2384]
 br x16
-.word 2265
+.word 2220
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_set_Text_string
 plt_Factorymind_Components_CalendarDayView_set_Text_string:
 _p_129:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2400]
+ldr x16, [x16, #2392]
 br x16
-.word 2268
+.word 2223
 	.no_dead_strip plt_Factorymind_Components_MonthGridView_get_CurrentDate
 plt_Factorymind_Components_MonthGridView_get_CurrentDate:
 _p_130:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2408]
+ldr x16, [x16, #2400]
 br x16
-.word 2273
+.word 2228
 	.no_dead_strip plt_System_DateTime_op_Equality_System_DateTime_System_DateTime
 plt_System_DateTime_op_Equality_System_DateTime_System_DateTime:
 _p_131:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2416]
+ldr x16, [x16, #2408]
 br x16
-.word 2278
+.word 2233
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_set_Today_bool
 plt_Factorymind_Components_CalendarDayView_set_Today_bool:
 _p_132:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2424]
+ldr x16, [x16, #2416]
 br x16
-.word 2281
+.word 2236
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_set_Active_bool
 plt_Factorymind_Components_CalendarDayView_set_Active_bool:
 _p_133:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2432]
+ldr x16, [x16, #2424]
 br x16
-.word 2286
+.word 2241
 	.no_dead_strip plt_Factorymind_Components_MonthGridView_get_SelectedDate
 plt_Factorymind_Components_MonthGridView_get_SelectedDate:
 _p_134:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2440]
+ldr x16, [x16, #2432]
 br x16
-.word 2291
+.word 2246
 	.no_dead_strip plt_Factorymind_Components_CalendarDayView_set_Selected_bool
 plt_Factorymind_Components_CalendarDayView_set_Selected_bool:
 _p_135:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2448]
+ldr x16, [x16, #2440]
 br x16
-.word 2296
+.word 2251
 	.no_dead_strip plt_Factorymind_Components_MonthGridView_set_SelectedDayView_Factorymind_Components_CalendarDayView
 plt_Factorymind_Components_MonthGridView_set_SelectedDayView_Factorymind_Components_CalendarDayView:
 _p_136:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2456]
+ldr x16, [x16, #2448]
 br x16
-.word 2301
+.word 2256
 	.no_dead_strip plt_Factorymind_Components_MonthGridView_get_SelectedDayView
 plt_Factorymind_Components_MonthGridView_get_SelectedDayView:
 _p_137:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2464]
+ldr x16, [x16, #2456]
 br x16
-.word 2306
+.word 2261
 	.no_dead_strip plt_UIKit_UIResponder_TouchesBegan_Foundation_NSSet_UIKit_UIEvent
 plt_UIKit_UIResponder_TouchesBegan_Foundation_NSSet_UIKit_UIEvent:
 _p_138:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2472]
+ldr x16, [x16, #2464]
 br x16
-.word 2311
+.word 2266
 	.no_dead_strip plt_Factorymind_Components_MonthGridView_DispatchDateSelection_Foundation_NSSet
 plt_Factorymind_Components_MonthGridView_DispatchDateSelection_Foundation_NSSet:
 _p_139:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2480]
+ldr x16, [x16, #2472]
 br x16
-.word 2316
+.word 2271
 	.no_dead_strip plt_UIKit_UIResponder_TouchesMoved_Foundation_NSSet_UIKit_UIEvent
 plt_UIKit_UIResponder_TouchesMoved_Foundation_NSSet_UIKit_UIEvent:
 _p_140:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2488]
+ldr x16, [x16, #2480]
 br x16
-.word 2321
+.word 2276
 	.no_dead_strip plt_UIKit_UIResponder_TouchesEnded_Foundation_NSSet_UIKit_UIEvent
 plt_UIKit_UIResponder_TouchesEnded_Foundation_NSSet_UIKit_UIEvent:
 _p_141:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2496]
+ldr x16, [x16, #2488]
 br x16
-.word 2326
+.word 2281
 	.no_dead_strip plt_Factorymind_Components_MonthGridView_SelectDayView_UIKit_UITouch
 plt_Factorymind_Components_MonthGridView_SelectDayView_UIKit_UITouch:
 _p_142:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2504]
+ldr x16, [x16, #2496]
 br x16
-.word 2331
+.word 2286
 	.no_dead_strip plt_int_Parse_string
 plt_int_Parse_string:
 _p_143:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2512]
+ldr x16, [x16, #2504]
 br x16
-.word 2336
+.word 2291
 	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
 plt__jit_icall_mono_thread_interruption_checkpoint:
 _p_144:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2520]
+ldr x16, [x16, #2512]
 br x16
-.word 2339
+.word 2294
 	.no_dead_strip plt__jit_icall_mono_arch_throw_exception
 plt__jit_icall_mono_arch_throw_exception:
 _p_145:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2528]
+ldr x16, [x16, #2520]
 br x16
-.word 2377
+.word 2332
 	.no_dead_strip plt__rgctx_fetch_0
 plt__rgctx_fetch_0:
 _p_146:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2536]
+ldr x16, [x16, #2528]
 br x16
-.word 2431
+.word 2384
 	.no_dead_strip plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
 plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array:
 _p_147:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2544]
+ldr x16, [x16, #2536]
 br x16
-.word 2439
+.word 2392
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr_mscorlib
 plt__jit_icall_mono_helper_ldstr_mscorlib:
 _p_148:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2552]
+ldr x16, [x16, #2544]
 br x16
-.word 2458
+.word 2411
 	.no_dead_strip plt_Locale_GetText_string
 plt_Locale_GetText_string:
 _p_149:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2560]
+ldr x16, [x16, #2552]
 br x16
-.word 2487
+.word 2440
 	.no_dead_strip plt__rgctx_fetch_1
 plt__rgctx_fetch_1:
 _p_150:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2568]
+ldr x16, [x16, #2560]
 br x16
-.word 2507
+.word 2459
 	.no_dead_strip plt_System_Array_Copy_System_Array_int_System_Array_int_int
 plt_System_Array_Copy_System_Array_int_System_Array_int_int:
 _p_151:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2576]
+ldr x16, [x16, #2568]
 br x16
-.word 2530
+.word 2481
 	.no_dead_strip plt__rgctx_fetch_2
 plt__rgctx_fetch_2:
 _p_152:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2584]
+ldr x16, [x16, #2576]
 br x16
-.word 2551
+.word 2501
 	.no_dead_strip plt__rgctx_fetch_3
 plt__rgctx_fetch_3:
 _p_153:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2592]
+ldr x16, [x16, #2584]
 br x16
-.word 2592
+.word 2540
 	.no_dead_strip plt__rgctx_fetch_4
 plt__rgctx_fetch_4:
 _p_154:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2600]
+ldr x16, [x16, #2592]
 br x16
-.word 2633
+.word 2579
 	.no_dead_strip plt_System_DateTime_Equals_object
 plt_System_DateTime_Equals_object:
 _p_155:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2608]
+ldr x16, [x16, #2600]
 br x16
-.word 2656
+.word 2601
 	.no_dead_strip plt__jit_icall_mono_delegate_begin_invoke
 plt__jit_icall_mono_delegate_begin_invoke:
 _p_156:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2616]
+ldr x16, [x16, #2608]
 br x16
-.word 2659
+.word 2604
 	.no_dead_strip plt__jit_icall_mono_delegate_end_invoke
 plt__jit_icall_mono_delegate_end_invoke:
 _p_157:
 adrp x16, mono_aot_Factorymind_Components_Unified_got@PAGE+0
 add x16, x16, mono_aot_Factorymind_Components_Unified_got@PAGEOFF
-ldr x16, [x16, #2624]
+ldr x16, [x16, #2616]
 br x16
-.word 2688
+.word 2633
 plt_end:
 .section __DATA, __bss
 	.align 3
-.lcomm mono_aot_Factorymind_Components_Unified_got, 2632
+.lcomm mono_aot_Factorymind_Components_Unified_got, 2624
 got_end:
 .section __TEXT, __const
 	.align 3
@@ -19905,13 +19905,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 171,2632,158,138,70,391195135,0,27231
-	.long 128,8,8,10,0,25,29168,1928
-	.long 1648,1048,0,1352,1616,1104,0,736
+	.long 170,2624,158,138,70,391195135,0,27167
+	.long 128,8,8,10,0,24,29096,1920
+	.long 1640,1048,0,1344,1608,1104,0,736
 	.long 208,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 234,122,91,223,205,212,91,148,175,189,25,246,168,196,251,239
+	.byte 108,223,124,235,242,160,167,133,97,113,156,203,220,254,93,176
 	.globl _mono_aot_module_Factorymind_Components_Unified_info
 	.align 3
 _mono_aot_module_Factorymind_Components_Unified_info:

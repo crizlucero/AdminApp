@@ -1,0 +1,22 @@
+Function=xamarin_timezone_get_data
+	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhone/Release/mtouch-cache/32/Link/mscorlib.dll
+Function=xamarin_GetFolderPath
+	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhone/Release/mtouch-cache/32/Link/mscorlib.dll
+Function=xamarin_log
+	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhone/Release/mtouch-cache/32/Link/mscorlib.dll
+Function=CreateZStream
+	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.dll
+Function=CloseZStream
+	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.dll
+Function=Flush
+	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.dll
+Function=ReadZStream
+	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.dll
+Function=WriteZStream
+	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.dll
+Function=xamarin_start_wwan
+	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhone/Release/mtouch-cache/32/Link/System.dll
+Function=xamarin_get_block_descriptor
+	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhone/Release/mtouch-cache/32/Link/Xamarin.iOS.dll
+Function=UIApplicationMain
+	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhone/Release/mtouch-cache/32/Link/Xamarin.iOS.dll
