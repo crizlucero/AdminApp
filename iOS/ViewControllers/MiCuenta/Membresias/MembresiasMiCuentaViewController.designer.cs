@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("MembresiasMiCuentaViewController")]
     partial class MembresiasMiCuentaViewController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

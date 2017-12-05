@@ -876,6 +876,22 @@
       <DependentUpon>HorariosTableViewCell.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\KeyChainHelper.cs" />
+    <Compile Include="comentarTableView.cs" />
+    <Compile Include="comentarTableView.designer.cs">
+      <DependentUpon>comentarTableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeaderComentarTableView.cs" />
+    <Compile Include="HeaderComentarTableView.designer.cs">
+      <DependentUpon>HeaderComentarTableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BodyComentarTableView.cs" />
+    <Compile Include="BodyComentarTableView.designer.cs">
+      <DependentUpon>BodyComentarTableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComentarNoInfoCell.cs" />
+    <Compile Include="ComentarNoInfoCell.designer.cs">
+      <DependentUpon>ComentarNoInfoCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

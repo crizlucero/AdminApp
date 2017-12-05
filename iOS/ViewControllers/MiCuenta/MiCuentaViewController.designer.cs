@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("MiCuentaViewController")]
     partial class MiCuentaViewController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

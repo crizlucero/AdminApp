@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("TelefoniaTableView")]
     partial class TelefoniaTableView
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

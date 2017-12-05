@@ -10,9 +10,11 @@
 	<string>3VMPS2N2KS</string>
 	<key>aps-environment</key>
 	<string>production</string>
+	<key>beta-reports-active</key>
+	<true/>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>com.WorklabsMx.WorklabsMx</string>
+		<string>3VMPS2N2KS.com.WorklabsMx.WorklabsMx</string>
 	</array>
 </dict>
 </plist>

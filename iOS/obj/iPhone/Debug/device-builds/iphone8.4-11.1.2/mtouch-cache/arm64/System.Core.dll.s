@@ -8927,7 +8927,7 @@ _mono_aot_file_info:
 	.long 152,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 97,210,94,66,92,63,80,105,108,195,139,93,14,126,7,144
+	.byte 192,127,56,229,17,203,240,27,69,34,234,138,78,232,154,108
 	.globl _mono_aot_module_System_Core_info
 	.align 3
 _mono_aot_module_System_Core_info:

@@ -44789,7 +44789,7 @@ _mono_aot_file_info:
 	.long 600,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 145,78,151,144,210,9,175,32,231,245,65,65,22,46,196,144
+	.byte 235,6,14,90,168,69,39,230,91,58,252,163,18,99,235,123
 	.globl _mono_aot_module_Mono_Data_Tds_info
 	.align 3
 _mono_aot_module_Mono_Data_Tds_info:

@@ -62,11 +62,11 @@ namespace WorklabsMx.iOS
             base.ViewWillAppear(animated);
             this.lblNombre.Text = Nombre;
             this.lblOcupacion.Text = Ocupacion;
-            var color = new UIColor(1, 0.8f);
+            var color = new UIColor(0, 0.55f);
             this.View.BackgroundColor = color;
             StyleHelper.Style(btnPublicar.Layer);
             StyleHelper.Style(vwVistaComentar.Layer);
-            this.btnPublicar.Layer.Opacity = opacity;
+            //this.btnPublicar.Layer.Opacity = opacity;
             this.txtPublicacion.Changed += HandleTextMessageChanged;
             FechaActual = DateTime.Now;
             lblFechaPublicacion.Text = String.Format("{0:dddd, d MMMM, yyyy}", FechaActual);

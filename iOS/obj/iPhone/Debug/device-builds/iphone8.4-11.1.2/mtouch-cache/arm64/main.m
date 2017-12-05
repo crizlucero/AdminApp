@@ -10,7 +10,6 @@ extern void *mono_aot_module_System_Numerics_info;
 extern void *mono_aot_module_System_Core_info;
 extern void *mono_aot_module_Mono_Data_Tds_info;
 extern void *mono_aot_module_Xamarin_iOS_info;
-extern void *mono_aot_module_Factorymind_Components_Unified_info;
 extern void *mono_aot_module_BTProgressHUD_info;
 extern void *mono_aot_module_Plugin_Connectivity_info;
 extern void *mono_aot_module_Plugin_Connectivity_Abstractions_info;
@@ -29,7 +28,6 @@ void xamarin_register_modules_impl ()
 	mono_aot_register_module (mono_aot_module_System_Core_info);
 	mono_aot_register_module (mono_aot_module_Mono_Data_Tds_info);
 	mono_aot_register_module (mono_aot_module_Xamarin_iOS_info);
-	mono_aot_register_module (mono_aot_module_Factorymind_Components_Unified_info);
 	mono_aot_register_module (mono_aot_module_BTProgressHUD_info);
 	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_info);
 	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_Abstractions_info);
@@ -41,8 +39,6 @@ void xamarin_register_modules_impl ()
 void xamarin_register_assemblies_impl ()
 {
 	guint32 exception_gchandle = 0;
-	xamarin_open_and_register ("Factorymind.Components-Unified.dll", &exception_gchandle);
-	xamarin_process_managed_exception_gchandle (exception_gchandle);
 	xamarin_open_and_register ("BTProgressHUD.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
 

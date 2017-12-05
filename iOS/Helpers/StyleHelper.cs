@@ -9,10 +9,10 @@ namespace WorklabsMx.iOS.Helpers
     {
         public static void Style(CALayer layer)
         {
-			var frame = new CGSize(0, 5);
+			var frame = new CGSize(0, 3);
 			layer.MasksToBounds = false;				
             layer.ShadowColor = UIColor.Gray.CGColor;
-			layer.ShadowOpacity = 0.2F;
+			layer.ShadowOpacity = 0.3F;
 			layer.ShadowRadius = 2.0F;
 			layer.ShadowOffset = frame;		
         }

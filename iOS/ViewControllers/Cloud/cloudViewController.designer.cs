@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("cloudViewController")]
     partial class cloudViewController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

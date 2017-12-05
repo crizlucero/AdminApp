@@ -150,7 +150,6 @@
 /Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.exe
 /Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.pdb
 /Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhone/Debug/WorklabsMx.iOS.csprojResolveAssemblyReference.cache
-/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Debug/Factorymind.Components-Unified.dll
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Debug/Plugin.KeyChain.Abstractions.dll
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Debug/Plugin.KeyChain.dll
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool/_BundleResourceWithLogicalName.items

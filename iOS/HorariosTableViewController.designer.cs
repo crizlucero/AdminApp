@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("HorariosTableViewController")]
     partial class HorariosTableViewController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

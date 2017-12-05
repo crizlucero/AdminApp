@@ -63,6 +63,7 @@
 @class TelefoniaTableView;
 @class EditarRedesSocialesTableViewController;
 @class FechaNacimientoPickerViewController;
+@class SalaJuntasTableViewController;
 @class HorariosTableViewController;
 @class HorariosTableViewCell;
 @class WorklabsMx_iOS_ViewElements_UICheckBox;
@@ -116,7 +117,6 @@
 @class GeneroViewController;
 @class WorklabsMx_iOS_ColoniaViewController_StackOverflowModel;
 @class ColoniaViewController;
-@class SalaJuntasTableViewController;
 @class WorklabsMx_iOS_SucursalesViewController_StackOverflowModel;
 @class SucursalesViewController;
 @class WorklabsMx_iOS_ViewElements_PostCard;
@@ -139,9 +139,6 @@
 @class UIKit_UIScrollView__UIScrollViewDelegate;
 @class UIKit_UITextField__UITextFieldDelegate;
 @class UIKit_UITextView__UITextViewDelegate;
-@class Factorymind_Components_CalendarDayView;
-@class Factorymind_Components_FMCalendar;
-@class Factorymind_Components_MonthGridView;
 @class BigTed_ProgressHUD;
 
 @protocol UIPickerViewModel<UIPickerViewDataSource, UIPickerViewDelegate>
@@ -930,6 +927,34 @@
 	-(void) btnCancelar_TouchUpInside:(UIButton *)p0;
 	-(void) btnSeleccionar_TouchUpInside:(UIButton *)p0;
 	-(void) dtpFechaNacimiento_ValueChanged:(UIDatePicker *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface SalaJuntasTableViewController : UITableViewController {
+}
+	@property (nonatomic, assign) UIButton * btnComprarHoras;
+	@property (nonatomic, assign) UIButton * btnEditarSalaJuntas;
+	@property (nonatomic, assign) UILabel * lblHorasDisponibles;
+	@property (nonatomic, assign) UILabel * lblSalaJuntas;
+	@property (nonatomic, assign) UIView * vwCalendarioJuntas;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnComprarHoras;
+	-(void) setBtnComprarHoras:(UIButton *)p0;
+	-(UIButton *) btnEditarSalaJuntas;
+	-(void) setBtnEditarSalaJuntas:(UIButton *)p0;
+	-(UILabel *) lblHorasDisponibles;
+	-(void) setLblHorasDisponibles:(UILabel *)p0;
+	-(UILabel *) lblSalaJuntas;
+	-(void) setLblSalaJuntas:(UILabel *)p0;
+	-(UIView *) vwCalendarioJuntas;
+	-(void) setVwCalendarioJuntas:(UIView *)p0;
+	-(void) viewDidLoad;
+	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
+	-(void) btnComprarHoras_Touch:(UIButton *)p0;
+	-(void) btnEditarSalaJuntas_Touch:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -1739,34 +1764,6 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface SalaJuntasTableViewController : UITableViewController {
-}
-	@property (nonatomic, assign) UIButton * btnComprarHoras;
-	@property (nonatomic, assign) UIButton * btnEditarSalaJuntas;
-	@property (nonatomic, assign) UILabel * lblHorasDisponibles;
-	@property (nonatomic, assign) UILabel * lblSalaJuntas;
-	@property (nonatomic, assign) UIView * vwCalendarioJuntas;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIButton *) btnComprarHoras;
-	-(void) setBtnComprarHoras:(UIButton *)p0;
-	-(UIButton *) btnEditarSalaJuntas;
-	-(void) setBtnEditarSalaJuntas:(UIButton *)p0;
-	-(UILabel *) lblHorasDisponibles;
-	-(void) setLblHorasDisponibles:(UILabel *)p0;
-	-(UILabel *) lblSalaJuntas;
-	-(void) setLblSalaJuntas:(UILabel *)p0;
-	-(UIView *) vwCalendarioJuntas;
-	-(void) setVwCalendarioJuntas:(UIView *)p0;
-	-(void) viewDidLoad;
-	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
-	-(void) btnComprarHoras_Touch:(UIButton *)p0;
-	-(void) btnEditarSalaJuntas_Touch:(UIButton *)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
 @interface WorklabsMx_iOS_SucursalesViewController_StackOverflowModel : NSObject<UIPickerViewModel> {
 }
 	-(void) release;
@@ -1853,19 +1850,6 @@
 @interface __UIGestureRecognizerParametrizedToken : __UIGestureRecognizerToken {
 }
 	-(void) target:(UIGestureRecognizer *)p0;
-@end
-
-@interface Factorymind_Components_FMCalendar : UIView {
-}
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(void) setNeedsDisplay;
-	-(void) layoutSubviews;
-	-(void) drawRect:(CGRect)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
-	-(id) init;
 @end
 
 @interface BigTed_ProgressHUD : UIView {

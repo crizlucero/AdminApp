@@ -18,7 +18,7 @@ namespace WorklabsMx.iOS
 
         internal void UpdateCell(List<string> miembro)
         {
-            StyleHelper.Style(this.btnPublicar.Layer);
+            //StyleHelper.Style(this.btnPublicar.Layer);
             if (miembro != null)
             {
                 lblNombre.Text = miembro[(int)CamposMiembro.Usuario_Nombre];
