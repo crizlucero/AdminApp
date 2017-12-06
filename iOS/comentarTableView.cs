@@ -22,6 +22,7 @@ namespace WorklabsMx.iOS
         const string IdentificadorCeldaNoInfo = "NoInfo";
 
         const int TamañoMensajeNoInfo = 400;
+        const int TamañoHeader = 162;
 
         bool isShowInformation = false;
         bool existeConeccion = true;
@@ -50,6 +51,7 @@ namespace WorklabsMx.iOS
                 existeConeccion = false;
                 isShowInformation = false;
             }
+            BTProgressHUD.Dismiss();
            
         }
 
@@ -64,12 +66,16 @@ namespace WorklabsMx.iOS
             this.PerformSegue("ToViewImageFromComment", (UIImageView)sender);
         }
 
-
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
             var headerCell = (HeaderComentarTableView)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
             headerCell.UpdateCell(currentPost, currentProfileImage, currentPostImage);
             return headerCell;
+        }
+
+        public override nfloat GetHeightForHeader(UITableView tableView, nint section)
+        {
+            return TamañoHeader;
         }
 
 

@@ -13,6 +13,7 @@ namespace WorklabsMx.iOS
 {
     public partial class HeaderComentarTableView : UITableViewCell
     {
+
         public HeaderComentarTableView (IntPtr handle) : base (handle)
         {
         }
@@ -31,7 +32,7 @@ namespace WorklabsMx.iOS
             lblComentarios.Text = Publicacion.Publicacion_Comentarios_Cantidad + " COMENTARIOS";
 
             txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
-            txtComentario.ScrollEnabled = false;
+            txtComentario.ScrollEnabled = true;
 
             txtComentario.Text = Publicacion.Publicacion_Contenido;
 
@@ -60,9 +61,5 @@ namespace WorklabsMx.iOS
             
         }
 
-        partial void btnComentar_TouchUpInside(UIButton sender)
-        {
-            
-        }
     }
 }

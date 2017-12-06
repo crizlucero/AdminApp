@@ -25,18 +25,22 @@ namespace WorklabsMx.iOS
             lblLikes.Text = comentario.Comentario_Me_Gustan_Cantidad + " LIKES";
             lblFecha.Text = comentario.Comentario_Fecha;
             //lblPuesto.Text = comentario.USUARIO_PUESTO;
+
+            txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
+            txtComentario.ScrollEnabled = false;
             txtComentario.Text = comentario.Comentario_Contenido;
 
             imgPerfil.Image = currentImageProfile;
             if (comentario.Comentario_Imagen_Ruta != "")
             {
+                btnImagen.TranslatesAutoresizingMaskIntoConstraints = false;
                 btnImagen.ImageView.Image = currentImageComments;
                 btnImagen.Hidden = false;
                 btnImagen.Enabled = true;
+                btnImagen.Frame = new CGRect(btnImagen.Frame.X, btnImagen.Frame.Y, btnImagen.Frame.Width, btnImagen.Frame.Width);
             }
             else
             {
-                btnImagen.Frame = new CGRect(btnImagen.Frame.X, btnImagen.Frame.Y, btnImagen.Frame.Width, 0);
                 btnImagen.Hidden = true;
                 btnImagen.Enabled = false;
             }

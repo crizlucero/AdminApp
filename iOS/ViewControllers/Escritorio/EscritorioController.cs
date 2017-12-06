@@ -1,4 +1,4 @@
-using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.Models; using System.Collections.Generic; using WorklabsMx.Controllers; using BigTed; using WorklabsMx.Helpers;  namespace WorklabsMx.iOS {     public partial class EscritorioController : UITableViewController
+using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.Models; using System.Collections.Generic; using WorklabsMx.Controllers; using BigTed; using WorklabsMx.Helpers; using System.Threading.Tasks;  namespace WorklabsMx.iOS {     public partial class EscritorioController : UITableViewController
     {
         const string IdentificadorCeldaHeader = "Header";
         const string IdentificadorCeldaPost = "Post";
@@ -27,7 +27,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         {
             base.ViewDidAppear(animated);
         }
-         void MostrarImagenEnGrande(object sender, EventArgs e)         {             this.PerformSegue("toShowImageFromPost", (UIImageView)sender);         }          void ComentarPost(object sender, EventArgs e)         {             CurrentPost = (PostModel)sender;              currentProfileImage = ImageGallery.LoadImage(CurrentPost.Usuario_Fotografia_Ruta);             currentPostImage = ImageGallery.LoadImage(CurrentPost.Publicacion_Imagen_Ruta);             this.PerformSegue("comentar", null);         }          public override UIView GetViewForHeader(UITableView tableView, nint section)
+         void MostrarImagenEnGrande(object sender, EventArgs e)         {             this.PerformSegue("toShowImageFromPost", (UIImageView)sender);         }          async void ComentarPost(object sender, EventArgs e)         {             CurrentPost = (PostModel)sender;             BTProgressHUD.Show(status: "Cargando Comentarios");             await Task.Delay(2000);             currentProfileImage = ImageGallery.LoadImage(CurrentPost.Usuario_Fotografia_Ruta);             currentPostImage = ImageGallery.LoadImage(CurrentPost.Publicacion_Imagen_Ruta);             //this.PerformSegue("comentar", null);         }          public override UIView GetViewForHeader(UITableView tableView, nint section)
         {             var headerCell = (EscritorioHeaderCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);             headerCell.UpdateCell(miembro);             this.ImagenPerfil = headerCell.getImagenPerfil();             StyleHelper.Style(headerCell.Layer);
             return headerCell;
         }

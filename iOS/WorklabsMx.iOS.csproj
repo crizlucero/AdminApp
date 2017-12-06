@@ -160,7 +160,6 @@
     <ImageAsset Include="Assets.xcassets\First.imageset\tab_feed.png" />
     <ImageAsset Include="Assets.xcassets\First.imageset\tab_feed%402x.png" />
     <ImageAsset Include="Assets.xcassets\First.imageset\tab_feed%403x.png" />
-    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Second.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Second.imageset\tab_about.png" />
     <ImageAsset Include="Assets.xcassets\Second.imageset\tab_about%402x.png" />
@@ -362,7 +361,6 @@
     <ImageAsset Include="Assets.xcassets\BackGround.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Leyenda.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Leyenda.imageset\leyenda.png" />
-    <ImageAsset Include="Assets.xcassets\Profile.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Likes.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Comments.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\back.imageset\Contents.json" />
@@ -524,20 +522,6 @@
     <ImageAsset Include="Assets.xcassets\Instagram.imageset\icons8-instagram-filled-30.png" />
     <ImageAsset Include="Assets.xcassets\Instagram.imageset\icons8-instagram-filled-60.png" />
     <ImageAsset Include="Assets.xcassets\Instagram.imageset\icons8-instagram-filled-90.png" />
-    <ImageAsset Include="Assets.xcassets\PerfilGrande.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\PerfilGrande.imageset\01.png" />
-    <ImageAsset Include="Assets.xcassets\Likes.imageset\Custom Size – 2.png" />
-    <ImageAsset Include="Assets.xcassets\Likes.imageset\Custom Size – 2%402x.png" />
-    <ImageAsset Include="Assets.xcassets\Likes.imageset\Custom Size – 2%403x.png" />
-    <ImageAsset Include="Assets.xcassets\Comments.imageset\Custom Size – 5.png" />
-    <ImageAsset Include="Assets.xcassets\Comments.imageset\Custom Size – 5%402x.png" />
-    <ImageAsset Include="Assets.xcassets\Comments.imageset\Custom Size – 5%403x.png" />
-    <ImageAsset Include="Assets.xcassets\Profile.imageset\Custom Size – 18%402x.png" />
-    <ImageAsset Include="Assets.xcassets\Profile.imageset\Custom Size – 18%403x.png" />
-    <ImageAsset Include="Assets.xcassets\Profile.imageset\Custom Size – 15%403x.png" />
-    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Custom Size – 18.png" />
-    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Custom Size – 18%402x.png" />
-    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Custom Size – 18%403x.png" />
     <ImageAsset Include="Assets.xcassets\ic_qr.imageset\Custom Size – 14.png" />
     <ImageAsset Include="Assets.xcassets\ic_qr.imageset\Custom Size – 14%402x.png" />
     <ImageAsset Include="Assets.xcassets\ic_qr.imageset\Custom Size – 14%403x.png" />
@@ -557,6 +541,12 @@
     <ImageAsset Include="Assets.xcassets\SalaJuntas.imageset\icons8-classroom-filled-30.png" />
     <ImageAsset Include="Assets.xcassets\SalaJuntas.imageset\icons8-classroom-filled-60.png" />
     <ImageAsset Include="Assets.xcassets\SalaJuntas.imageset\icons8-classroom-filled-90.png" />
+    <ImageAsset Include="Assets.xcassets\Likes.imageset\Group 1.png" />
+    <ImageAsset Include="Assets.xcassets\Likes.imageset\Group 20%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Likes.imageset\Group 1%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Comments.imageset\Path 1.png" />
+    <ImageAsset Include="Assets.xcassets\Comments.imageset\Path 29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Comments.imageset\Path 1%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -892,6 +882,10 @@
     <Compile Include="ComentarNoInfoCell.designer.cs">
       <DependentUpon>ComentarNoInfoCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComentarviewController.cs" />
+    <Compile Include="ComentarviewController.designer.cs">
+      <DependentUpon>ComentarviewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -900,7 +894,7 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
-    <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="ViewControllers\Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\ic_facebook.imageset\" />
@@ -991,6 +985,8 @@
     <Folder Include="Assets.xcassets\QrBig.imageset\" />
     <Folder Include="Assets.xcassets\Sucursal.imageset\" />
     <Folder Include="Assets.xcassets\SalaJuntas.imageset\" />
+    <Folder Include="Assets.xcassets\PerfilEscritorio.imageset\" />
+    <Folder Include="Assets.xcassets\PerfilEscritorio.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />
