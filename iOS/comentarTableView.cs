@@ -38,20 +38,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            if (InternetConectionHelper.VerificarConexion())
-            {
-                this.comentarios = new Controllers.EscritorioController().GetComentariosPost(currentPost.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
-                foreach (ComentarioModel comentario in this.comentarios)
-                {
-                    allCommentImages.Add(ImageGallery.LoadImage(comentario.Comentario_Imagen_Ruta));
-                    allProfileImages.Add(ImageGallery.LoadImage(comentario.Usuario_Fotografia_Ruta));
-                }
-            } else
-            {
-                existeConeccion = false;
-                isShowInformation = false;
-            }
-            BTProgressHUD.Dismiss();
+            this.ReloadData();
            
         }
 
@@ -120,6 +107,28 @@ namespace WorklabsMx.iOS
 
         }
 
+        private void ReloadData()
+        {
+            allCommentImages = new List<UIImage>();
+            allProfileImages = new List<UIImage>();
+            if (InternetConectionHelper.VerificarConexion())
+            {
+                this.comentarios = new Controllers.EscritorioController().GetComentariosPost(currentPost.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+                foreach (ComentarioModel comentario in this.comentarios)
+                {
+                    allCommentImages.Add(ImageGallery.LoadImage(comentario.Comentario_Imagen_Ruta));
+                    allProfileImages.Add(ImageGallery.LoadImage(comentario.Usuario_Fotografia_Ruta));
+                }
+            }
+            else
+            {
+                existeConeccion = false;
+                isShowInformation = false;
+            }
+            BTProgressHUD.Dismiss();
+            this.TableView.ReloadData();
+        }
+
         private void WillDisplay(int Row)
         {
             int LastRow = this.comentarios.Count - 1;
@@ -129,6 +138,33 @@ namespace WorklabsMx.iOS
             }
         }
 
+        public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
+        {
+            if (segue.Identifier == "comentarpublicacion")
+            {
+                var ComentarioView = (ComentarviewController)segue.DestinationViewController;
+                ComentarioView.ComentarioDelegate = this;
+            }
+        }
 
+    }
+
+    partial class comentarTableView : ComentarioRealizado
+    {
+        public void ComentarioRealizado(String Comentario)
+        {
+            byte[] Fotografia = new byte[0];
+
+            /*if (ImagenPublicacion != null)
+            {
+                Fotografia = ImagenPublicacion?.AsPNG().ToArray();
+            }*/
+
+
+            if (new Controllers.EscritorioController().CommentPost(currentPost.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Comentario, Fotografia))
+            {
+                this.ReloadData();
+            }
+        }
     }
 }

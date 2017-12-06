@@ -1,15 +1,17 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Comentarios/ComentarioViewCell.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="25" Column="13" />
-      <File FileName="iOS/comentarTableView.cs" Line="84" Column="37" />
-      <File FileName="iOS/BodyComentarTableView.cs" Line="27" Column="58" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="119" Column="12" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="125" Column="25" />
-      <File FileName="iOS/HeaderComentarTableView.cs" Line="52" Column="14" />
-      <File FileName="iOS/ComentarNoInfoCell.cs" Line="18" Column="14" />
-      <File FileName="iOS/ComentarviewController.cs" Line="18" Column="1" />
-      <File FileName="iOS/FechaNacimientoPickerViewController.cs" Line="35" Column="22" />
+      <File FileName="iOS/BodyComentarTableView.cs" Line="64" Column="32" />
+      <File FileName="iOS/ViewControllers/Comentarios/ComentarioViewCell.cs" Line="10" Column="26" />
+      <File FileName="iOS/comentarTableView.cs" Line="93" Column="51" />
+      <File FileName="iOS/HeaderComentarTableView.cs" Line="50" Column="51" />
+      <File FileName="iOS/ComentarviewController.cs" Line="37" Column="10" />
+      <File FileName="iOS/ViewControllers/Comentarios/ComentarPostTableViewController.cs" Line="77" Column="36" />
+      <File FileName="iOS/ViewControllers/Comentarios/ComentarPostHeaderCell.cs" Line="11" Column="26" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="202" Column="14" />
+      <File FileName="iOS/ViewControllers/Main.storyboard" />
+      <File FileName="iOS/ComentarNoInfoCell.cs" Line="23" Column="10" />
+      <File FileName="iOS/ViewControllers/Comentarios/SeccionComentariosTableViewController.cs" Line="87" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />

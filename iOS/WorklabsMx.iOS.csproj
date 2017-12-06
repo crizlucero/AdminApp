@@ -547,6 +547,10 @@
     <ImageAsset Include="Assets.xcassets\Comments.imageset\Path 1.png" />
     <ImageAsset Include="Assets.xcassets\Comments.imageset\Path 29%403x.png" />
     <ImageAsset Include="Assets.xcassets\Comments.imageset\Path 1%403x.png" />
+    <ImageAsset Include="Assets.xcassets\PerfilEscritorio.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\PerfilEscritorio.imageset\Group 1%403x.png" />
+    <ImageAsset Include="Assets.xcassets\PerfilEscritorio.imageset\Group 5%403x.png" />
+    <ImageAsset Include="Assets.xcassets\PerfilEscritorio.imageset\Group 1%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -985,6 +989,7 @@
     <Folder Include="Assets.xcassets\QrBig.imageset\" />
     <Folder Include="Assets.xcassets\Sucursal.imageset\" />
     <Folder Include="Assets.xcassets\SalaJuntas.imageset\" />
+    <Folder Include="Assets.xcassets\PerfilEscritorio.imageset\" />
     <Folder Include="Assets.xcassets\PerfilEscritorio.imageset\" />
     <Folder Include="Assets.xcassets\PerfilEscritorio.imageset\" />
   </ItemGroup>

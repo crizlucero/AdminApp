@@ -4,8 +4,17 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface ComentarioRealizado
+    {
+        void ComentarioRealizado(String Comentario);
+    }
+
     public partial class ComentarviewController : UIViewController
     {
+
+        public ComentarioRealizado ComentarioDelegate;
+
         public ComentarviewController (IntPtr handle) : base (handle)
         {
         }
@@ -27,12 +36,14 @@ namespace WorklabsMx.iOS
         {
         }
 
-        partial void btnComentar_TouchUpInside(UIButton sender)
-        {
-        }
-
         partial void btnClose_TouchUpInside(UIButton sender)
         {
+            this.DismissViewController(true, null);
+        }
+
+        partial void btnComentar_TouchUpInside(UIButton sender)
+        {
+            this.ComentarioDelegate.ComentarioRealizado(this.txtComentario.Text);
             this.DismissViewController(true, null);
         }
     }

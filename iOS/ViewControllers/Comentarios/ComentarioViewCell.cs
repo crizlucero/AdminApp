@@ -45,7 +45,7 @@ namespace WorklabsMx.iOS
 
 		}
 
-        /*partial void btnLikes_TouchUpInside(UIButton sender)
+        partial void btnLikes_TouchUpInside(UIButton sender)
         {
             //var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
             string transaccion = "ALTA";
@@ -73,7 +73,7 @@ namespace WorklabsMx.iOS
                 }
             }
 
-        }*/
+        }
 
         partial void btnImagenComentario_TouchUpInside(UIButton sender)
         {
