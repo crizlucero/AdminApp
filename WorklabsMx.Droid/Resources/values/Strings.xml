@@ -128,4 +128,5 @@
 	<string name="NoAceptoTerminos">No ha aceptado los terminos y condiciones</string>
 	<string name="TotalHoras">Total de horas</string>
 	<string name="PasswordIncorrecto">Escriba su password</string>
+    <string name="InfoGeneral">Información General</string>
 </resources>

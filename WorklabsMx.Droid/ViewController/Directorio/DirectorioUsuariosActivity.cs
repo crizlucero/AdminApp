@@ -35,10 +35,10 @@ namespace WorklabsMx.Droid
             MembersController = new MiembrosController();
             storage = SimpleStorage.EditGroup("Login");
             FillDirectorioUsuario(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
-            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            /*Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.DirectorioUsuario);
-            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            ActionBar.SetDisplayHomeAsUpEnabled(true);*/
             //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
 
         }
@@ -54,7 +54,21 @@ namespace WorklabsMx.Droid
             };
             MembersController.GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio).ForEach((miembro) =>
             {
-                RelativeLayout llNombre = new RelativeLayout(this)
+                LayoutInflater liView = LayoutInflater;
+
+                View PersonaCard = liView.Inflate(Resource.Layout.PreViewListLayout, null, true);
+
+                ImageButton ibProfile = PersonaCard.FindViewById<ImageButton>(Resource.Id.ibProfile);
+
+                TextView lblNombre = PersonaCard.FindViewById<TextView>(Resource.Id.lblTitle);
+
+                lblNombre.Text = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos;
+
+                TextView lblEmpresa = PersonaCard.FindViewById<TextView>(Resource.Id.lblSubTitle);
+                lblEmpresa.Text = miembro.Miembro_Empresa;
+
+                llDirectorio.AddView(PersonaCard);
+                /*RelativeLayout llNombre = new RelativeLayout(this)
                 {
                     LayoutParameters = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent)
                 };
@@ -388,8 +402,8 @@ namespace WorklabsMx.Droid
                 llInfo.AddView(llCelular);
                 #endregion
 
-                svInfo.AddView(llInfo);
-                llDirectorio.AddView(svInfo);
+                svInfo.AddView(llInfo);*/
+                //llDirectorio.AddView(svInfo);
             });
             svDirectorio.AddView(llDirectorio);
         }

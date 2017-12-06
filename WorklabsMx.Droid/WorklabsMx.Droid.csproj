@@ -145,6 +145,9 @@
     <Compile Include="SplashActivity.cs" />
     <Compile Include="ViewController\Servicios\ColeccionProductosActivity.cs" />
     <Compile Include="ViewController\LoginActivity.cs" />
+    <Compile Include="Fragments\DirectorioComunidadFragment.cs" />
+    <Compile Include="ViewController\Directorio\DirectorioActivity.cs" />
+    <Compile Include="ViewController\Directorio\DirectorioFavoritosActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -284,6 +287,8 @@
     <AndroidResource Include="Resources\layout\SplashLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_like.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\ic_profile_empty.png" />
+    <AndroidResource Include="Resources\layout\PreViewListLayout.axml" />
+    <AndroidResource Include="Resources\layout\PerfilCardLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

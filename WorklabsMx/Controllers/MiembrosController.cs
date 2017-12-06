@@ -125,11 +125,7 @@ namespace WorklabsMx.Controllers
         {
             List<MiembroModel> usuarios = new List<MiembroModel>();
 
-            command = CreateCommand("select * from vw_pro_Usuarios_Directorio WHERE Usuario_Nombre IS NOT NULL AND Usuario_Estatus = 1 AND " +
-                "Usuario_Nombre LIKE @nombre AND Usuario_Apellidos LIKE @apellido AND " +
-                "Usuario_Profesion LIKE @profesion AND Usuario_Puesto LIKE @puesto AND " +
-                "Usuario_Habilidades LIKE @habilidades AND Usuario_Empresa_Pais_Descripcion LIKE @pais AND " +
-                "Usuario_Empresa_Estado_Descripcion LIKE @estado and Usuario_Empresa_Municipio_Descripcion LIKE @municipio --AND Usuario_Disponibilidad_Trabajo LIKE @disponibilidad");
+            command = CreateCommand("select * from vw_pro_Usuarios_Directorio WHERE Usuario_Nombre IS NOT NULL AND Usuario_Estatus = 1 ORDER BY Usuario_Nombre, Usuario_Apellidos");
             command.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
             command.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
             command.Parameters.AddWithValue("@profesion", "%" + profesion + "%");

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Comentarios/ComentarioViewCell.cs">
     <Files>
@@ -12,13 +13,29 @@
       <File FileName="iOS/ViewControllers/Main.storyboard" />
       <File FileName="iOS/ComentarNoInfoCell.cs" Line="23" Column="10" />
       <File FileName="iOS/ViewControllers/Comentarios/SeccionComentariosTableViewController.cs" Line="87" Column="37" />
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/Resources/values/Strings.xml">
+    <Files>
+      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioUsuariosActivity.cs" Line="55" Column="46" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="397" Column="60" />
+      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioEmpresaActivity.cs" Line="63" Column="17" />
+      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="128" Column="178" />
+      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioActivity.cs" Line="17" Column="40" />
+      <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="131" Column="30" />
+>>>>>>> 75de910380d94cb455a9e4ef8f60204434a422fc
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="63" column="38" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.89CCA8BE-0586-4891-9CEC-16532ABD6816" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" automaticSigning="False">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
+  </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>
