@@ -18,7 +18,7 @@ namespace WorklabsMx.iOS
             }
             else
             {
-                lblNoInfo.Text = "No se pudieron mostras los comentario, verifica tu conexión a internet";
+                lblNoInfo.Text = "No se pudieron mostrar los comentarios, verifica tu conexión a internet";
             }
         }
     }
