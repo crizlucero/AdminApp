@@ -16,7 +16,9 @@
         android:rowCount="5"
         android:background="#EBEBEB"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp">
+        android:layout_marginBottom="5dp"
+        android:translationZ="7dp"
+        android:elevation="3dp">
         <ImageButton
             android:src="@mipmap/ic_profile_empty"
             android:id="@+id/imgPerfil"
@@ -24,17 +26,17 @@
             android:layout_height="50dp"
             android:layout_width="50dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblNombre"
             android:text="@string/Nombre"
             android:layout_columnSpan="4"
             android:textColor="#000"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_width="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblPuesto"
@@ -44,7 +46,6 @@
             android:textColor="#ff616161"
             android:text="@string/Puesto"
             android:layout_width="wrap_content"
-            android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
@@ -53,19 +54,21 @@
             android:textColor="#ff9e9e9e"
             android:layout_columnSpan="4"
             android:layout_width="wrap_content"
-            android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp" />
         <TextView
             android:id="@+id/lblPost"
             android:layout_columnSpan="5"
-            android:layout_margin="10dp"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent"
             android:textColor="#000"
-            android:text="post"
             android:layout_column="0"
             android:layout_row="3"
-            android:layout_columnWeight="5" />
+            android:layout_columnWeight="5"
+            android:text="este es un texto sin sentido... bla bla bla bla este es un texto sin sentido... bla bla bla bla este es un texto sin sentido... bla bla bla bla este es un texto sin sentido... bla bla bla bla"
+            android:autoText="true"
+            android:linksClickable="true"
+            android:textAlignment="inherit"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp" />
         <TextView
             android:id="@+id/lblLikes"
             android:text="@string/Likes"
@@ -76,7 +79,9 @@
             android:gravity="center"
             android:layout_height="wrap_content"
             android:layout_column="0"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginLeft="10dp"
+            android:layout_columnSpan="2"
+            android:layout_marginBottom="10dp" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblComments"
@@ -85,8 +90,10 @@
             android:drawableLeft="@mipmap/ic_mode_comment"
             android:textColor="#000"
             android:gravity="center"
-            android:layout_column="1"
-            android:layout_columnSpan="4"
-            android:layout_marginLeft="20dp" />
+            android:layout_column="2"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="left"
+            android:layout_columnSpan="3"
+            android:layout_marginBottom="10dp" />
     </GridLayout>
 </LinearLayout>

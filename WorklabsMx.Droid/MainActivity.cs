@@ -160,6 +160,7 @@ namespace WorklabsMx.Droid
                 lblFecha.Text = post.Publicacion_Fecha;
 
                 TextView lblPost = PostView.FindViewById<TextView>(Resource.Id.lblPost);
+                lblPost.SetMaxWidth(Convert.ToInt32(Resources.DisplayMetrics.WidthPixels * .911));
                 lblPost.Text = post.Publicacion_Contenido;
 
                 TextView lblLike = PostView.FindViewById<TextView>(Resource.Id.lblLikes);
@@ -313,6 +314,7 @@ namespace WorklabsMx.Droid
                     if (!localStorage.HasKey("Parent"))
                     {
                         ScrollView menu_scroll = FindViewById<ScrollView>(Resource.Id.menu_scroll);
+                        //menu_scroll.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels * 3 / 4);
                         if (menu_scroll.Visibility == ViewStates.Gone)
                         {
                             menu_scroll.LayoutParameters.Height = Window.Attributes.Height;
@@ -337,6 +339,7 @@ namespace WorklabsMx.Droid
         {
             //NavigationView nv = FindViewById<NavigationView>(Resource.Id.nav_home);
             menuLayout.RemoveAllViews();
+            menuLayout.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels);
             using (TableRow row = new TableRow(this))
             {
                 if (DataUsuario.Count == 0)
@@ -345,7 +348,11 @@ namespace WorklabsMx.Droid
                 foto = DataUsuario[(int)CamposMiembro.Usuario_Fotografia];
                 puesto = DataUsuario[(int)CamposMiembro.Usuario_Puesto];
                 ImageView image = new ImageView(this);
-                image.SetImageBitmap(ImagesHelper.GetImageBitmapFromUrl(foto));
+                Bitmap bmFoto = ImagesHelper.GetImageBitmapFromUrl(foto);
+                if (bmFoto != null)
+                    image.SetImageBitmap(bmFoto);
+                else
+                    image.SetImageResource(Resource.Mipmap.ic_profile_empty);
                 Drawable icon = image.Drawable;
                 icon.SetBounds(0, 0, 30, 30);
 
@@ -354,10 +361,11 @@ namespace WorklabsMx.Droid
                     Text = nombre,
                     TextAlignment = TextAlignment.ViewStart
                 };
-                btnMenu.SetTextColor(Color.Black);
-                btnMenu.SetWidth(Resources.DisplayMetrics.WidthPixels);
+                btnMenu.SetTextColor(Color.White);
+                //btnMenu.SetWidth(Resources.DisplayMetrics.WidthPixels );
                 btnMenu.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
-                btnMenu.SetBackgroundColor(Color.White);
+                btnMenu.SetBackgroundColor(Color.Transparent);
+                btnMenu.SetCompoundDrawables(icon, null, null, null);
                 btnMenu.Click += (sender, e) =>
                     StartActivity(new Intent(this, typeof(TabPerfilActivity)));
 
@@ -368,16 +376,18 @@ namespace WorklabsMx.Droid
             {
                 TableRow row = new TableRow(this);
                 Drawable icon = ContextCompat.GetDrawable(this, Resources.GetIdentifier(menu.Image, "mipmap", PackageName));
-                icon.SetBounds(0, 0, 30, 30);
+                icon.SetColorFilter(Color.White,PorterDuff.Mode.Multiply);
+                icon.SetTint(Resource.Color.material_grey_900);
+                icon.SetBounds(0, 0, 50, 50);
                 Button btnMenu = new Button(this)
                 {
                     Text = menu.Label,
                     TextAlignment = TextAlignment.ViewStart
                 };
-                btnMenu.SetTextColor(Color.Black);
-                btnMenu.SetWidth(Resources.DisplayMetrics.WidthPixels);
+                btnMenu.SetTextColor(Color.White);
+                //btnMenu.SetWidth(Resources.DisplayMetrics.WidthPixels );
                 btnMenu.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
-                btnMenu.SetBackgroundColor(Color.White);
+                btnMenu.SetBackgroundColor(Color.Transparent);
                 btnMenu.SetCompoundDrawables(icon, null, null, null);
                 btnMenu.Click += delegate
                 {
@@ -401,8 +411,8 @@ namespace WorklabsMx.Droid
                         case "PerfilActivity": StartActivity(new Intent(this, typeof(TabPerfilActivity))); break;
                         case "DatosFacturacionActivity": StartActivity(new Intent(this, typeof(DatosFacturacionActivity))); break;
                         case "MisColaboradoresActivity": StartActivity(new Intent(this, typeof(TabColaboradoresActivity))); break;
-                        case "DirectorioUsuarioActivity": StartActivity(new Intent(this, typeof(DirectorioUsuariosActivity))); break;
-                        case "DirectorioEmpresasActivity": StartActivity(new Intent(this, typeof(DirectorioEmpresaActivity))); break;
+                        case "DirectorioUsuarioActivity": StartActivity(new Intent(this, typeof(DirectorioActivity))); break;
+                        case "DirectorioEmpresasActivity": StartActivity(new Intent(this, typeof(DirectorioActivity))); break;
                     }
                 };
                 row.AddView(btnMenu);

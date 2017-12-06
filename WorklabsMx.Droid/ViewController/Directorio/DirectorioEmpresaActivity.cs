@@ -34,10 +34,10 @@ namespace WorklabsMx.Droid
             svDirectorio = FindViewById<ScrollView>(Resource.Id.svDirectorio);
             FillDirectorioUsuario(nombre, pais, estado, municipio, giro);
 
-            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            /*Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.DirectorioEmpresas);
-            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            ActionBar.SetDisplayHomeAsUpEnabled(true);*/
             //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
         }
 
@@ -50,7 +50,20 @@ namespace WorklabsMx.Droid
             };
             CompanyController.GetDirectorioEmpresas(nombre, pais, estado, municipio, giro).ForEach((empresa) =>
             {
-                LinearLayout llNombre = new LinearLayout(this)
+                LayoutInflater liView = LayoutInflater;
+
+                View PersonaCard = liView.Inflate(Resource.Layout.PreViewListLayout, null, true);
+
+                ImageButton ibProfile = PersonaCard.FindViewById<ImageButton>(Resource.Id.ibProfile);
+
+                TextView lblNombre = PersonaCard.FindViewById<TextView>(Resource.Id.lblTitle);
+
+                lblNombre.Text = empresa.Empresa_Miembro_Nombre;
+
+
+
+                llDirectorio.AddView(PersonaCard);
+                /*LinearLayout llNombre = new LinearLayout(this)
                 {
                     LayoutParameters = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent)
                 };
@@ -365,7 +378,7 @@ namespace WorklabsMx.Droid
                 #endregion
 
                 svInfo.AddView(llInfo);
-                llDirectorio.AddView(svInfo);
+                llDirectorio.AddView(svInfo);*/
             });
             svDirectorio.AddView(llDirectorio);
         }
