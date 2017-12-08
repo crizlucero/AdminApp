@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
     android:background="#CCC">
@@ -72,7 +72,6 @@
         <TextView
             android:id="@+id/lblLikes"
             android:text="@string/Likes"
-            android:drawableLeft="@mipmap/ic_like"
             android:textSize="8dp"
             android:textColor="#000"
             android:layout_gravity="center"
@@ -81,7 +80,8 @@
             android:layout_column="0"
             android:layout_marginLeft="10dp"
             android:layout_columnSpan="2"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@mipmap/ic_like" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblComments"
@@ -93,7 +93,19 @@
             android:layout_column="2"
             android:layout_marginLeft="20dp"
             android:layout_gravity="left"
-            android:layout_columnSpan="3"
+            android:layout_columnSpan="2"
             android:layout_marginBottom="10dp" />
+        <Button
+            android:id="@+id/btnComentar"
+            android:layout_column="4"
+            android:text="@string/Comentar"
+            android:textColor="@android:color/white"
+            android:background="#95D6FF"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:visibility="invisible" />
     </GridLayout>
 </LinearLayout>

@@ -1,14 +1,7 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Support.V7.App;
 using Android.Views;
 using Android.Views.InputMethods;
 using Android.Widget;
@@ -17,8 +10,8 @@ using WorklabsMx.Controllers;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "@string/app_name")]
-    public class LoginActivity : AppCompatActivity
+    [Activity(Label = "@string/app_name", Theme = "@style/Theme.AppCompat")]
+    public class LoginActivity : Activity
     {
         EditText txtEmail, txtPassword;
         SimpleStorage localStorage;

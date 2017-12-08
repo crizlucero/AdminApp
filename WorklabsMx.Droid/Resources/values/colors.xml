@@ -4,4 +4,7 @@
     <color name="primaryDark">#494949</color>
     <color name="accent">#96d1ff</color>
     <color name="window_background">#F5F5F5</color>
+    <color name="like_heart_pressed">#ED4949</color>
+    <color name="comment_pressed">#95D6FF</color>
+    <color name="button_unpressed">#C7C7C7</color>
 </resources>

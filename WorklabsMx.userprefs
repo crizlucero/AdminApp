@@ -1,41 +1,16 @@
-<<<<<<< HEAD
-﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Comentarios/ComentarioViewCell.cs">
-    <Files>
-      <File FileName="iOS/BodyComentarTableView.cs" Line="64" Column="32" />
-      <File FileName="iOS/ViewControllers/Comentarios/ComentarioViewCell.cs" Line="10" Column="26" />
-      <File FileName="iOS/comentarTableView.cs" Line="93" Column="51" />
-      <File FileName="iOS/HeaderComentarTableView.cs" Line="50" Column="51" />
-      <File FileName="iOS/ComentarviewController.cs" Line="37" Column="10" />
-      <File FileName="iOS/ViewControllers/Comentarios/ComentarPostTableViewController.cs" Line="77" Column="36" />
-      <File FileName="iOS/ViewControllers/Comentarios/ComentarPostHeaderCell.cs" Line="11" Column="26" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="202" Column="14" />
-      <File FileName="iOS/ViewControllers/Main.storyboard" />
-      <File FileName="iOS/ComentarNoInfoCell.cs" Line="23" Column="10" />
-      <File FileName="iOS/ViewControllers/Comentarios/SeccionComentariosTableViewController.cs" Line="87" Column="37" />
-=======
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/Resources/values/Strings.xml">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioUsuariosActivity.cs" Line="55" Column="46" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="397" Column="60" />
-      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioEmpresaActivity.cs" Line="63" Column="17" />
-      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="128" Column="178" />
-      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioActivity.cs" Line="17" Column="40" />
-      <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="131" Column="30" />
->>>>>>> 75de910380d94cb455a9e4ef8f60204434a422fc
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="67" Column="54" />
+      <File FileName="WorklabsMx.Droid/SplashActivity.cs" Line="11" Column="43" />
+      <File FileName="WorklabsMx.Droid/ViewController/LoginActivity.cs" Line="13" Column="76" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="63" column="38" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" automaticSigning="False">
-    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
-  </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="Theme.DeviceDefault" />
   <MultiItemStartupConfigurations />
 </Properties>

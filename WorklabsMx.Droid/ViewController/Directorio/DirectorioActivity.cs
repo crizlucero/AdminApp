@@ -1,14 +1,7 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Graphics.Drawables;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
@@ -36,9 +29,8 @@ namespace WorklabsMx.Droid
             SetContentView(Resource.Layout.TabsLayout);
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
-            ActionBar.Title = Resources.GetString(Resource.String.MiPerfil);
+            ActionBar.Title = Resources.GetString(Resource.String.Directorio);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
 
             _tabs = FindViewById<TabHost>(Resource.Id.tabHostProfile);
             _tabs.Setup(LocalActivityManager);
@@ -49,27 +41,13 @@ namespace WorklabsMx.Droid
 
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater.Inflate(Resource.Menu.edit_menu, menu);
-            return base.OnCreateOptionsMenu(menu);
-        }
+        public override bool OnCreateOptionsMenu(IMenu menu) => base.OnCreateOptionsMenu(menu);
+
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            switch (item.ItemId)
-            {
-                case Resource.Id.menu_edit:
-                    if (_tabs.CurrentTab == 0)
-                        StartActivity(new Intent(this, typeof(EditPerfilActivity)));
-                    else if (_tabs.CurrentTab == 1)
-                        StartActivity(new Intent(this, typeof(EditEmpresaActivity)));
-                    break;
-                default:
-                    StartActivity(new Intent(this, typeof(MainActivity)));
-                    Finish();
-                    break;
-            }
+            StartActivity(new Intent(this, typeof(MainActivity)));
+            Finish();
             return base.OnOptionsItemSelected(item);
         }
     }

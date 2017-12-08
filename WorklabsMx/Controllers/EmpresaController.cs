@@ -131,7 +131,7 @@ namespace WorklabsMx.Controllers
                 "Territorio_Municipio_Descripcion, Territorio_Colonia_Descripcion, Territorio_Cp, Empresa_Miembro_Logotipo " +
                 "FROM vw_cat_Miembros_Empresas WHERE Empresa_Miembro_Nombre LIKE @nombre AND Territorio_Pais_Descripcion like @pais " +
                 "AND Territorio_Estado_Descripcion LIKE @estado AND Territorio_Municipio_Descripcion LIKE @municipio " +
-                "AND Giro_Descripcion LIKE @giro";
+                "AND Giro_Descripcion LIKE @giro ORDER BY Empresa_Miembro_Nombre";
             command = CreateCommand(query);
             command.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
             command.Parameters.AddWithValue("@pais", "%" + pais + "%");
