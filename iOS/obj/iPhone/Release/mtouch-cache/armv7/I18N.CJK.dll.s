@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 4,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Wed Nov  8 17:08:36 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 21:00:42 EST 2017)"
 	.asciz "I18N.CJK.dll"
 	.asciz ""
 
@@ -121,7 +121,7 @@ jit_code_start:
 	.align 2
 	.no_dead_strip I18N_CJK_CP51932__ctor
 I18N_CJK_CP51932__ctor:
-.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/CP51932.cs"
+.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/CP51932.cs"
 .loc 1 73 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,0,0,157,229,220,26,12,227,233,47,160,227
@@ -1184,7 +1184,7 @@ Lme_1a:
 	.align 2
 	.no_dead_strip I18N_CJK_CP932__ctor
 I18N_CJK_CP932__ctor:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/CP932.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/CP932.cs"
 .loc 2 48 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,0,0,157,229,233,31,160,227
@@ -2309,7 +2309,7 @@ Lme_32:
 	.align 2
 	.no_dead_strip I18N_CJK_CP936__ctor
 I18N_CJK_CP936__ctor:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/CP936.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/CP936.cs"
 .loc 3 23 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,0,0,157,229,234,31,160,227
@@ -2800,7 +2800,7 @@ Lme_48:
 	.align 2
 	.no_dead_strip I18N_CJK_CP949__ctor
 I18N_CJK_CP949__ctor:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/CP949.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/CP949.cs"
 .loc 4 22 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,0,0,157,229,181,19,0,227,64,35,160,227
@@ -3545,7 +3545,7 @@ Lme_60:
 	.align 2
 	.no_dead_strip I18N_CJK_CP950__ctor
 I18N_CJK_CP950__ctor:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/CP950.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/CP950.cs"
 .loc 5 22 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,0,0,157,229,182,19,0,227
@@ -4020,7 +4020,7 @@ Lme_70:
 	.align 2
 	.no_dead_strip I18N_CJK_CodeTable__ctor_string
 I18N_CJK_CodeTable__ctor_string:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/CodeTable.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/CodeTable.cs"
 .loc 6 51 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,64,1,45,233,6,223,77,226,0,96,160,225,16,16,141,229
@@ -4148,7 +4148,7 @@ Lme_73:
 	.align 2
 	.no_dead_strip I18N_CJK_DbcsConvert__ctor_string
 I18N_CJK_DbcsConvert__ctor_string:
-.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/DbcsConvert.cs"
+.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/DbcsConvert.cs"
 .loc 7 25 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,64,9,45,233,9,223,77,226,13,176,160,225,0,96,160,225,16,16,139,229,0,15,160,227
@@ -4243,7 +4243,7 @@ Lme_75:
 	.align 2
 	.no_dead_strip I18N_CJK_DbcsEncoding__ctor_int
 I18N_CJK_DbcsEncoding__ctor_int:
-.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/DbcsEncoding.cs"
+.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/DbcsEncoding.cs"
 .loc 8 22 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,4,16,141,229,0,0,157,229,4,16,157,229
@@ -4776,7 +4776,7 @@ Lme_84:
 	.align 2
 	.no_dead_strip I18N_CJK_ENCgb18030__ctor
 I18N_CJK_ENCgb18030__ctor:
-.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/GB18030Encoding.cs"
+.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/GB18030Encoding.cs"
 .loc 9 22 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,0,0,157,229
@@ -5694,7 +5694,7 @@ Lme_9f:
 	.align 2
 	.no_dead_strip I18N_CJK_GB18030Source__ctor
 I18N_CJK_GB18030Source__ctor:
-.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/GB18030Source.cs"
+.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/GB18030Source.cs"
 .loc 10 42 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,3,223,141,226,0,1,189,232,128,128,189,232
@@ -6522,7 +6522,7 @@ Lme_aa:
 	.align 2
 	.no_dead_strip I18N_CJK_CP50220__ctor
 I18N_CJK_CP50220__ctor:
-.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/ISO2022JP.cs"
+.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/ISO2022JP.cs"
 .loc 11 22 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,3,223,77,226,0,0,141,229,0,0,157,229,44,20,12,227,0,47,160,227
@@ -7684,7 +7684,7 @@ Lme_cb:
 	.align 2
 	.no_dead_strip I18N_CJK_JISConvert__ctor
 I18N_CJK_JISConvert__ctor:
-.file 12 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/JISConvert.cs"
+.file 12 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/JISConvert.cs"
 .loc 12 63 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,5,45,233,8,223,77,226,0,160,160,225,0,0,159,229,0,0,0,234
@@ -8469,7 +8469,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "8ED31E1E-6328-49B2-AED7-16F361D27A77"
+	.asciz "712812BC-4278-4658-B617-D4D5D9DCDF79"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -8552,7 +8552,7 @@ _mono_aot_file_info:
 	.long 288,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 199,97,26,78,1,18,42,196,16,92,170,2,37,191,48,167
+	.byte 39,240,184,192,240,38,228,202,36,98,198,21,234,126,211,151
 	.globl _mono_aot_module_I18N_CJK_info
 	.align 2
 _mono_aot_module_I18N_CJK_info:

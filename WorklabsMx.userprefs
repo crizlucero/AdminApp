@@ -1,50 +1,27 @@
-<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Comentarios/comentarTableView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AppDelegate.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="46" Column="9" />
-      <File FileName="iOS/ViewControllers/Comentarios/BodyComentarTableView.cs" Line="20" Column="9" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="294" Column="21" />
-      <File FileName="iOS/ViewControllers/Comentarios/ComentarviewController.cs" Line="8" Column="11" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Comentarios/comentarTableView.cs" Line="68" Column="10" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="34" Column="26" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Comentarios/HeaderComentarTableView.cs" Line="33" Column="26" NotebookId="1" />
-=======
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench>
-    <Files>
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="67" Column="54" />
-      <File FileName="WorklabsMx.Droid/SplashActivity.cs" Line="11" Column="43" />
-      <File FileName="WorklabsMx.Droid/ViewController/LoginActivity.cs" Line="13" Column="76" />
->>>>>>> 55b8d59f26afbfee299a1528355e8af309d1b040
+      <File FileName="iOS/ViewControllers/Comentarios/comentarTableView.cs" Line="27" Column="38" />
+      <File FileName="iOS/ViewControllers/Comentarios/ComentarviewController.cs" Line="44" Column="10" />
+      <File FileName="iOS/Info.plist" />
+      <File FileName="iOS/ViewControllers/SplitViewController.cs" Line="1" Column="1" />
+      <File FileName="iOS/ViewControllers/SubMenuController.cs" Line="27" Column="27" />
+      <File FileName="iOS/ViewControllers/TableViewController.cs" Line="40" Column="38" />
+      <File FileName="iOS/ViewControllers/AccesoController.cs" Line="1" Column="1" />
+      <File FileName="iOS/Styles/STLTableViewSource.cs" Line="78" Column="21" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="117" Column="40" />
+      <File FileName="iOS/AppDelegate.cs" Line="62" Column="25" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>btnImagenComentatio.Frame.X</Value>
-          <Value>btnImagenComentatio.Frame.Y</Value>
-          <Value>btnImagenComentatio.Frame.Width</Value>
-          <Value>btnImagenComentatio.Frame.Width</Value>
-          <Value>post</Value>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-<<<<<<< HEAD
     <BreakpointStore>
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/HeaderComentarTableView.cs" relfile="iOS/HeaderComentarTableView.cs" line="39" column="50" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Comentarios/BodyComentarTableView.cs" relfile="iOS/ViewControllers/Comentarios/BodyComentarTableView.cs" line="68" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/Styles/STLTableViewSource.cs" relfile="iOS/Styles/STLTableViewSource.cs" line="60" column="27" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B4E637BD-60E4-4441-BC72-CF1534A7E0AA" />
-=======
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="Theme.DeviceDefault" />
->>>>>>> 55b8d59f26afbfee299a1528355e8af309d1b040
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" automaticSigning="False">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
+  </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
   <MultiItemStartupConfigurations />
 </Properties>

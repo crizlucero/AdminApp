@@ -22,6 +22,8 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            var Tap = new UITapGestureRecognizer(this.Tapped);
+            this.View.AddGestureRecognizer(Tap);
         }
 
 
@@ -45,6 +47,11 @@ namespace WorklabsMx.iOS
         {
             this.ComentarioDelegate.ComentarioRealizado(this.txtComentario.Text);
             this.DismissViewController(true, null);
+        }
+
+        private void Tapped(UITapGestureRecognizer Recognizer)
+        {
+            this.View.EndEditing(true);
         }
     }
 }

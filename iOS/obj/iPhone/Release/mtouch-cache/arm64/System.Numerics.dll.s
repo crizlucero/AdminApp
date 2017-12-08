@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Wed Nov  8 17:08:32 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 20:59:09 EST 2017)"
 	.asciz "System.Numerics.dll"
 	.asciz ""
 
@@ -121,7 +121,7 @@ jit_code_start:
 	.align 4
 	.no_dead_strip SR_Format_string_object
 SR_Format_string_object:
-.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/build/common/SR.cs"
+.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/build/common/SR.cs"
 .loc 1 36 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -162,7 +162,7 @@ LDIFF_SYM3=ut_end - ut_1
 	.align 4
 	.no_dead_strip System_Numerics_BigInteger__ctor_int
 System_Numerics_BigInteger__ctor_int:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Numerics/BigInteger.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Numerics/BigInteger.cs"
 .loc 2 39 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -4727,7 +4727,7 @@ Lme_33:
 	.align 4
 	.no_dead_strip System_Numerics_BigIntegerCalculator_Add_uint___uint
 System_Numerics_BigIntegerCalculator_Add_uint___uint:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Numerics/BigIntegerCalculator.AddSub.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Numerics/BigIntegerCalculator.AddSub.cs"
 .loc 3 21 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -5438,7 +5438,7 @@ Lme_3b:
 	.align 4
 	.no_dead_strip System_Numerics_BigIntegerCalculator_Square_uint__
 System_Numerics_BigIntegerCalculator_Square_uint__:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Numerics/BigIntegerCalculator.SquMul.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Numerics/BigIntegerCalculator.SquMul.cs"
 .loc 4 20 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -6650,7 +6650,7 @@ Lme_42:
 	.align 4
 	.no_dead_strip System_Numerics_BigNumber_TryValidateParseStyleInteger_System_Globalization_NumberStyles_System_ArgumentException_
 System_Numerics_BigNumber_TryValidateParseStyleInteger_System_Globalization_NumberStyles_System_ArgumentException_:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Numerics/BigNumber.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Numerics/BigNumber.cs"
 .loc 5 308 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
@@ -8533,7 +8533,7 @@ Lme_4b:
 	.align 4
 	.no_dead_strip System_Numerics_NumericsHelpers_GetDoubleFromParts_int_int_ulong
 System_Numerics_NumericsHelpers_GetDoubleFromParts_int_int_ulong:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Numerics/NumericsHelpers.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Numerics/NumericsHelpers.cs"
 .loc 6 59 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -8922,7 +8922,7 @@ Lme_53:
 	.align 4
 	.no_dead_strip System_Globalization_FormatProvider_FormatBigInteger_int_int_bool_string_System_Globalization_NumberFormatInfo_char___int
 System_Globalization_FormatProvider_FormatBigInteger_int_int_bool_string_System_Globalization_NumberFormatInfo_char___int:
-.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Globalization/FormatProvider.BigInteger.cs"
+.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Globalization/FormatProvider.BigInteger.cs"
 .loc 7 18 0 prologue_end
 .word 0xa9b27bfd
 .word 0x910003fd
@@ -9124,7 +9124,7 @@ Lme_55:
 	.align 4
 	.no_dead_strip System_Globalization_FormatProvider_Number_IsWhite_char
 System_Globalization_FormatProvider_Number_IsWhite_char:
-.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/external/corefx/src/Common/src/System/Globalization/FormatProvider.Number.cs"
+.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/Common/src/System/Globalization/FormatProvider.Number.cs"
 .loc 8 296 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -13932,7 +13932,7 @@ b System_Globalization_FormatProvider_Number_NumberBuffer_get_digits
 	.align 4
 	.no_dead_strip System_Globalization_FormatProvider_Number_NumberBuffer_get_digits
 System_Globalization_FormatProvider_Number_NumberBuffer_get_digits:
-.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Globalization/FormatProvider.NumberBuffer.cs"
+.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Runtime.Numerics/src/System/Globalization/FormatProvider.NumberBuffer.cs"
 .loc 9 26 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -14090,7 +14090,7 @@ Lme_72:
 	.align 4
 	.no_dead_strip System_Array_Resize_T_INT_T_INT____int
 System_Array_Resize_T_INT_T_INT____int:
-.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/external/corert/src/System.Private.CoreLib/src/System/Array.cs"
+.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corert/src/System.Private.CoreLib/src/System/Array.cs"
 .loc 10 52 0 prologue_end
 .word 0xa9b97bfd
 .word 0x910003fd
@@ -14986,7 +14986,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "6C8817C0-9468-4F69-B362-D926F4E4C777"
+	.asciz "175406F5-CFCF-4D63-9819-D39DFAE5C17D"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -15069,7 +15069,7 @@ _mono_aot_file_info:
 	.long 176,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 135,226,208,144,150,146,101,230,182,108,138,116,146,62,68,191
+	.byte 201,53,181,18,174,191,112,215,208,181,2,255,86,90,55,223
 	.globl _mono_aot_module_System_Numerics_info
 	.align 3
 _mono_aot_module_System_Numerics_info:

@@ -31,7 +31,7 @@ namespace WorklabsMx.iOS
         const string IdentificadorCeldaNoInfo = "NoInfo";
 
         const int TamañoMensajeNoInfo = 400;
-        const int TamañoHeader = 207;
+        const int TamañoHeader = 185;
 
         bool isShowInformation = false;
         bool existeConeccion = true;

@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Wed Nov  8 17:08:32 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 20:59:09 EST 2017)"
 	.asciz "BTProgressHUD.dll"
 	.asciz ""
 
@@ -9054,7 +9054,7 @@ Lme_74:
 	.align 4
 	.no_dead_strip System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF
 System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/corlib/System/Array.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System/Array.cs"
 .loc 2 71 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
@@ -9829,7 +9829,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1112]
 br x16
-.word 1654
+.word 1653
 	.no_dead_strip plt_BigTed_ProgressHUD_Show_string_single_BigTed_ProgressHUD_MaskType_double
 plt_BigTed_ProgressHUD_Show_string_single_BigTed_ProgressHUD_MaskType_double:
 _p_2:
@@ -9837,7 +9837,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1120]
 br x16
-.word 1656
+.word 1655
 	.no_dead_strip plt_BigTed_ProgressHUD_Show_string_System_Action_string_single_BigTed_ProgressHUD_MaskType_double
 plt_BigTed_ProgressHUD_Show_string_System_Action_string_single_BigTed_ProgressHUD_MaskType_double:
 _p_3:
@@ -9845,7 +9845,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1128]
 br x16
-.word 1658
+.word 1657
 	.no_dead_strip plt_BigTed_ProgressHUD_ShowContinuousProgress_string_BigTed_ProgressHUD_MaskType_double_UIKit_UIImage
 plt_BigTed_ProgressHUD_ShowContinuousProgress_string_BigTed_ProgressHUD_MaskType_double_UIKit_UIImage:
 _p_4:
@@ -9853,7 +9853,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1136]
 br x16
-.word 1660
+.word 1659
 	.no_dead_strip plt_BigTed_ProgressHUD_ShowToast_string_BigTed_ProgressHUD_MaskType_BigTed_ProgressHUD_ToastPosition_double
 plt_BigTed_ProgressHUD_ShowToast_string_BigTed_ProgressHUD_MaskType_BigTed_ProgressHUD_ToastPosition_double:
 _p_5:
@@ -9861,7 +9861,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1144]
 br x16
-.word 1662
+.word 1661
 	.no_dead_strip plt_BigTed_ProgressHUD_SetStatus_string
 plt_BigTed_ProgressHUD_SetStatus_string:
 _p_6:
@@ -9869,7 +9869,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1152]
 br x16
-.word 1664
+.word 1663
 	.no_dead_strip plt_BigTed_ProgressHUD_ShowSuccessWithStatus_string_double
 plt_BigTed_ProgressHUD_ShowSuccessWithStatus_string_double:
 _p_7:
@@ -9877,7 +9877,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1160]
 br x16
-.word 1666
+.word 1665
 	.no_dead_strip plt_BigTed_ProgressHUD_ShowErrorWithStatus_string_double
 plt_BigTed_ProgressHUD_ShowErrorWithStatus_string_double:
 _p_8:
@@ -9885,7 +9885,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1168]
 br x16
-.word 1668
+.word 1667
 	.no_dead_strip plt_BigTed_ProgressHUD_ShowImage_UIKit_UIImage_string_double
 plt_BigTed_ProgressHUD_ShowImage_UIKit_UIImage_string_double:
 _p_9:
@@ -9893,7 +9893,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1176]
 br x16
-.word 1670
+.word 1669
 	.no_dead_strip plt_BigTed_ProgressHUD_Dismiss
 plt_BigTed_ProgressHUD_Dismiss:
 _p_10:
@@ -9901,7 +9901,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1184]
 br x16
-.word 1672
+.word 1671
 	.no_dead_strip plt_BigTed_ProgressHUD_get_IsVisible
 plt_BigTed_ProgressHUD_get_IsVisible:
 _p_11:
@@ -9909,7 +9909,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1192]
 br x16
-.word 1674
+.word 1673
 	.no_dead_strip plt_BigTed_ProgressHUD_get_ForceiOS6LookAndFeel
 plt_BigTed_ProgressHUD_get_ForceiOS6LookAndFeel:
 _p_12:
@@ -9917,7 +9917,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1200]
 br x16
-.word 1676
+.word 1675
 	.no_dead_strip plt_BigTed_ProgressHUD_set_ForceiOS6LookAndFeel_bool
 plt_BigTed_ProgressHUD_set_ForceiOS6LookAndFeel_bool:
 _p_13:
@@ -9925,7 +9925,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1208]
 br x16
-.word 1678
+.word 1677
 	.no_dead_strip plt_BigTed_NSObjectExtensions_object_getClassName_intptr
 plt_BigTed_NSObjectExtensions_object_getClassName_intptr:
 _p_14:
@@ -9933,7 +9933,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1216]
 br x16
-.word 1680
+.word 1679
 	.no_dead_strip plt_System_Runtime_InteropServices_Marshal_PtrToStringAuto_intptr
 plt_System_Runtime_InteropServices_Marshal_PtrToStringAuto_intptr:
 _p_15:
@@ -9941,7 +9941,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1224]
 br x16
-.word 1682
+.word 1681
 	.no_dead_strip plt__jit_icall_ves_icall_object_new_specific
 plt__jit_icall_ves_icall_object_new_specific:
 _p_16:
@@ -9949,7 +9949,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1232]
 br x16
-.word 1687
+.word 1686
 	.no_dead_strip plt_Foundation_NSObject__ctor
 plt_Foundation_NSObject__ctor:
 _p_17:
@@ -9957,7 +9957,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1240]
 br x16
-.word 1719
+.word 1718
 	.no_dead_strip plt_ObjCRuntime_Class_GetHandle_string
 plt_ObjCRuntime_Class_GetHandle_string:
 _p_18:
@@ -9965,7 +9965,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1248]
 br x16
-.word 1724
+.word 1723
 	.no_dead_strip plt_intptr_op_Inequality_intptr_intptr
 plt_intptr_op_Inequality_intptr_intptr:
 _p_19:
@@ -9973,7 +9973,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1256]
 br x16
-.word 1729
+.word 1728
 	.no_dead_strip plt_wrapper_alloc_object_AllocSmall_intptr_intptr
 plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
 _p_20:
@@ -9981,7 +9981,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1264]
 br x16
-.word 1734
+.word 1733
 	.no_dead_strip plt_UIKit_UIScreen_get_MainScreen
 plt_UIKit_UIScreen_get_MainScreen:
 _p_21:
@@ -9989,7 +9989,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1272]
 br x16
-.word 1742
+.word 1741
 	.no_dead_strip plt_UIKit_UIScreen_get_Bounds
 plt_UIKit_UIScreen_get_Bounds:
 _p_22:
@@ -9997,7 +9997,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1280]
 br x16
-.word 1747
+.word 1746
 	.no_dead_strip plt_BigTed_ProgressHUD__ctor_CoreGraphics_CGRect
 plt_BigTed_ProgressHUD__ctor_CoreGraphics_CGRect:
 _p_23:
@@ -10005,7 +10005,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1288]
 br x16
-.word 1752
+.word 1751
 	.no_dead_strip plt_UIKit_UIColor_FromWhiteAlpha_System_nfloat_System_nfloat
 plt_UIKit_UIColor_FromWhiteAlpha_System_nfloat_System_nfloat:
 _p_24:
@@ -10013,7 +10013,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1296]
 br x16
-.word 1754
+.word 1753
 	.no_dead_strip plt_UIKit_UIColor_get_White
 plt_UIKit_UIColor_get_White:
 _p_25:
@@ -10021,7 +10021,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1304]
 br x16
-.word 1759
+.word 1758
 	.no_dead_strip plt_UIKit_UIColor_get_Black
 plt_UIKit_UIColor_get_Black:
 _p_26:
@@ -10029,7 +10029,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1312]
 br x16
-.word 1764
+.word 1763
 	.no_dead_strip plt_UIKit_UIColor_get_Clear
 plt_UIKit_UIColor_get_Clear:
 _p_27:
@@ -10037,7 +10037,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1320]
 br x16
-.word 1769
+.word 1768
 	.no_dead_strip plt_UIKit_UIFont_BoldSystemFontOfSize_System_nfloat
 plt_UIKit_UIFont_BoldSystemFontOfSize_System_nfloat:
 _p_28:
@@ -10045,7 +10045,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1328]
 br x16
-.word 1774
+.word 1773
 	.no_dead_strip plt_UIKit_UIView__ctor_CoreGraphics_CGRect
 plt_UIKit_UIView__ctor_CoreGraphics_CGRect:
 _p_29:
@@ -10053,7 +10053,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1336]
 br x16
-.word 1779
+.word 1778
 	.no_dead_strip plt_UIKit_UIView_set_UserInteractionEnabled_bool
 plt_UIKit_UIView_set_UserInteractionEnabled_bool:
 _p_30:
@@ -10061,7 +10061,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1344]
 br x16
-.word 1784
+.word 1783
 	.no_dead_strip plt_UIKit_UIView_set_Alpha_System_nfloat
 plt_UIKit_UIView_set_Alpha_System_nfloat:
 _p_31:
@@ -10069,7 +10069,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1352]
 br x16
-.word 1789
+.word 1788
 	.no_dead_strip plt_UIKit_UIView_set_AutoresizingMask_UIKit_UIViewAutoresizing
 plt_UIKit_UIView_set_AutoresizingMask_UIKit_UIViewAutoresizing:
 _p_32:
@@ -10077,7 +10077,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1360]
 br x16
-.word 1794
+.word 1793
 	.no_dead_strip plt_BigTed_ProgressHUD_SetOSSpecificLookAndFeel
 plt_BigTed_ProgressHUD_SetOSSpecificLookAndFeel:
 _p_33:
@@ -10085,7 +10085,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1368]
 br x16
-.word 1799
+.word 1798
 	.no_dead_strip plt_BigTed_ProgressHUD_get_IsiOS7ForLookAndFeel
 plt_BigTed_ProgressHUD_get_IsiOS7ForLookAndFeel:
 _p_34:
@@ -10093,7 +10093,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1376]
 br x16
-.word 1801
+.word 1800
 	.no_dead_strip plt_UIKit_UIColor_ColorWithAlpha_System_nfloat
 plt_UIKit_UIColor_ColorWithAlpha_System_nfloat:
 _p_35:
@@ -10101,7 +10101,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1384]
 br x16
-.word 1803
+.word 1802
 	.no_dead_strip plt_Foundation_NSObject_InvokeOnMainThread_System_Action
 plt_Foundation_NSObject_InvokeOnMainThread_System_Action:
 _p_36:
@@ -10109,7 +10109,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1392]
 br x16
-.word 1808
+.word 1807
 	.no_dead_strip plt__jit_icall_mono_arch_throw_corlib_exception
 plt__jit_icall_mono_arch_throw_corlib_exception:
 _p_37:
@@ -10117,7 +10117,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1400]
 br x16
-.word 1813
+.word 1812
 	.no_dead_strip plt_BigTed_ProgressHUD_get_SuccessImage
 plt_BigTed_ProgressHUD_get_SuccessImage:
 _p_38:
@@ -10125,7 +10125,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1408]
 br x16
-.word 1848
+.word 1847
 	.no_dead_strip plt_BigTed_ProgressHUD_get_ErrorImage
 plt_BigTed_ProgressHUD_get_ErrorImage:
 _p_39:
@@ -10133,7 +10133,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1416]
 br x16
-.word 1850
+.word 1849
 	.no_dead_strip plt_UIKit_UIImage_FromBundle_string
 plt_UIKit_UIImage_FromBundle_string:
 _p_40:
@@ -10141,7 +10141,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1424]
 br x16
-.word 1852
+.word 1851
 	.no_dead_strip plt_UIKit_UIView_get_Alpha
 plt_UIKit_UIView_get_Alpha:
 _p_41:
@@ -10149,7 +10149,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1432]
 br x16
-.word 1857
+.word 1856
 	.no_dead_strip plt__jit_icall_mono_generic_class_init
 plt__jit_icall_mono_generic_class_init:
 _p_42:
@@ -10157,7 +10157,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1440]
 br x16
-.word 1862
+.word 1861
 	.no_dead_strip plt_UIKit_UIApplication_EnsureUIThread
 plt_UIKit_UIApplication_EnsureUIThread:
 _p_43:
@@ -10165,7 +10165,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1448]
 br x16
-.word 1888
+.word 1887
 	.no_dead_strip plt_UIKit_UIGraphics_GetCurrentContext
 plt_UIKit_UIGraphics_GetCurrentContext:
 _p_44:
@@ -10173,7 +10173,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1456]
 br x16
-.word 1893
+.word 1892
 	.no_dead_strip plt_UIKit_UIColor_SetColor
 plt_UIKit_UIColor_SetColor:
 _p_45:
@@ -10181,7 +10181,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1464]
 br x16
-.word 1898
+.word 1897
 	.no_dead_strip plt_UIKit_UIView_get_Bounds
 plt_UIKit_UIView_get_Bounds:
 _p_46:
@@ -10189,7 +10189,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1472]
 br x16
-.word 1903
+.word 1902
 	.no_dead_strip plt_CoreGraphics_CGContext_FillRect_CoreGraphics_CGRect
 plt_CoreGraphics_CGContext_FillRect_CoreGraphics_CGRect:
 _p_47:
@@ -10197,7 +10197,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1480]
 br x16
-.word 1908
+.word 1907
 	.no_dead_strip plt_wrapper_alloc_object_AllocVector_intptr_intptr
 plt_wrapper_alloc_object_AllocVector_intptr_intptr:
 _p_48:
@@ -10205,7 +10205,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1488]
 br x16
-.word 1913
+.word 1912
 	.no_dead_strip plt_CoreGraphics_CGColorSpace_CreateDeviceRGB
 plt_CoreGraphics_CGColorSpace_CreateDeviceRGB:
 _p_49:
@@ -10213,7 +10213,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1496]
 br x16
-.word 1921
+.word 1920
 	.no_dead_strip plt_CoreGraphics_CGGradient__ctor_CoreGraphics_CGColorSpace_System_nfloat___System_nfloat__
 plt_CoreGraphics_CGGradient__ctor_CoreGraphics_CGColorSpace_System_nfloat___System_nfloat__:
 _p_50:
@@ -10221,7 +10221,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1504]
 br x16
-.word 1926
+.word 1925
 	.no_dead_strip plt_CoreGraphics_CGContext_DrawRadialGradient_CoreGraphics_CGGradient_CoreGraphics_CGPoint_System_nfloat_CoreGraphics_CGPoint_System_nfloat_CoreGraphics_CGGradientDrawingOptions
 plt_CoreGraphics_CGContext_DrawRadialGradient_CoreGraphics_CGGradient_CoreGraphics_CGPoint_System_nfloat_CoreGraphics_CGPoint_System_nfloat_CoreGraphics_CGGradientDrawingOptions:
 _p_51:
@@ -10229,7 +10229,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1512]
 br x16
-.word 1931
+.word 1930
 	.no_dead_strip plt_UIKit_UIView_get_TintColor
 plt_UIKit_UIView_get_TintColor:
 _p_52:
@@ -10237,7 +10237,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1520]
 br x16
-.word 1936
+.word 1935
 	.no_dead_strip plt_BigTed_ProgressHUD_get_OverlayView
 plt_BigTed_ProgressHUD_get_OverlayView:
 _p_53:
@@ -10245,7 +10245,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1528]
 br x16
-.word 1941
+.word 1940
 	.no_dead_strip plt_UIKit_UIView_get_Superview
 plt_UIKit_UIView_get_Superview:
 _p_54:
@@ -10253,7 +10253,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1536]
 br x16
-.word 1943
+.word 1942
 	.no_dead_strip plt_UIKit_UIApplication_get_SharedApplication
 plt_UIKit_UIApplication_get_SharedApplication:
 _p_55:
@@ -10261,7 +10261,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1544]
 br x16
-.word 1948
+.word 1947
 	.no_dead_strip plt_UIKit_UIApplication_get_Windows
 plt_UIKit_UIApplication_get_Windows:
 _p_56:
@@ -10269,7 +10269,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1552]
 br x16
-.word 1953
+.word 1952
 	.no_dead_strip plt_System_Array_Reverse_System_Array
 plt_System_Array_Reverse_System_Array:
 _p_57:
@@ -10277,7 +10277,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1560]
 br x16
-.word 1958
+.word 1957
 	.no_dead_strip plt_UIKit_UIWindow_get_WindowLevel
 plt_UIKit_UIWindow_get_WindowLevel:
 _p_58:
@@ -10285,7 +10285,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1568]
 br x16
-.word 1963
+.word 1962
 	.no_dead_strip plt_UIKit_UIWindowLevel_get_Normal
 plt_UIKit_UIWindowLevel_get_Normal:
 _p_59:
@@ -10293,7 +10293,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1576]
 br x16
-.word 1968
+.word 1967
 	.no_dead_strip plt_UIKit_UIView_get_Hidden
 plt_UIKit_UIView_get_Hidden:
 _p_60:
@@ -10301,7 +10301,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1584]
 br x16
-.word 1973
+.word 1972
 	.no_dead_strip plt_UIKit_UIWindow_get_IsKeyWindow
 plt_UIKit_UIWindow_get_IsKeyWindow:
 _p_61:
@@ -10309,7 +10309,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1592]
 br x16
-.word 1978
+.word 1977
 	.no_dead_strip plt_UIKit_UIView_AddSubview_UIKit_UIView
 plt_UIKit_UIView_AddSubview_UIKit_UIView:
 _p_62:
@@ -10317,7 +10317,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1600]
 br x16
-.word 1983
+.word 1982
 	.no_dead_strip plt_BigTed_ProgressHUD_get_ImageView
 plt_BigTed_ProgressHUD_get_ImageView:
 _p_63:
@@ -10325,7 +10325,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1608]
 br x16
-.word 1988
+.word 1987
 	.no_dead_strip plt_UIKit_UIView_set_Hidden_bool
 plt_UIKit_UIView_set_Hidden_bool:
 _p_64:
@@ -10333,7 +10333,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1616]
 br x16
-.word 1990
+.word 1989
 	.no_dead_strip plt_BigTed_ProgressHUD_get_StringLabel
 plt_BigTed_ProgressHUD_get_StringLabel:
 _p_65:
@@ -10341,7 +10341,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1624]
 br x16
-.word 1995
+.word 1994
 	.no_dead_strip plt_UIKit_UILabel_set_Text_string
 plt_UIKit_UILabel_set_Text_string:
 _p_66:
@@ -10349,7 +10349,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1632]
 br x16
-.word 1997
+.word 1996
 	.no_dead_strip plt_BigTed_ProgressHUD_get_CancelHudButton
 plt_BigTed_ProgressHUD_get_CancelHudButton:
 _p_67:
@@ -10357,7 +10357,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1640]
 br x16
-.word 2002
+.word 2001
 	.no_dead_strip plt_UIKit_UIButton_SetTitle_string_UIKit_UIControlState
 plt_UIKit_UIButton_SetTitle_string_UIKit_UIControlState:
 _p_68:
@@ -10365,7 +10365,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1648]
 br x16
-.word 2004
+.word 2003
 	.no_dead_strip plt_UIKit_UIControl_add_TouchUpInside_System_EventHandler
 plt_UIKit_UIControl_add_TouchUpInside_System_EventHandler:
 _p_69:
@@ -10373,7 +10373,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1656]
 br x16
-.word 2009
+.word 2008
 	.no_dead_strip plt_BigTed_ProgressHUD_UpdatePosition_bool
 plt_BigTed_ProgressHUD_UpdatePosition_bool:
 _p_70:
@@ -10381,7 +10381,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1664]
 br x16
-.word 2014
+.word 2013
 	.no_dead_strip plt_UIKit_UIImageView_set_Image_UIKit_UIImage
 plt_UIKit_UIImageView_set_Image_UIKit_UIImage:
 _p_71:
@@ -10389,7 +10389,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1672]
 br x16
-.word 2016
+.word 2015
 	.no_dead_strip plt_BigTed_ProgressHUD_get_RingLayer
 plt_BigTed_ProgressHUD_get_RingLayer:
 _p_72:
@@ -10397,7 +10397,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1680]
 br x16
-.word 2021
+.word 2020
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer_set_StrokeEnd_System_nfloat
 plt_CoreAnimation_CAShapeLayer_set_StrokeEnd_System_nfloat:
 _p_73:
@@ -10405,7 +10405,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1688]
 br x16
-.word 2023
+.word 2022
 	.no_dead_strip plt_System_TimeSpan_FromMilliseconds_double
 plt_System_TimeSpan_FromMilliseconds_double:
 _p_74:
@@ -10413,7 +10413,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1696]
 br x16
-.word 2028
+.word 2027
 	.no_dead_strip plt_BigTed_ProgressHUD_StartProgressTimer_System_TimeSpan
 plt_BigTed_ProgressHUD_StartProgressTimer_System_TimeSpan:
 _p_75:
@@ -10421,7 +10421,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1704]
 br x16
-.word 2033
+.word 2032
 	.no_dead_strip plt_BigTed_ProgressHUD_get_SpinnerView
 plt_BigTed_ProgressHUD_get_SpinnerView:
 _p_76:
@@ -10429,7 +10429,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1712]
 br x16
-.word 2035
+.word 2034
 	.no_dead_strip plt_UIKit_UIActivityIndicatorView_StopAnimating
 plt_UIKit_UIActivityIndicatorView_StopAnimating:
 _p_77:
@@ -10437,7 +10437,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1720]
 br x16
-.word 2037
+.word 2036
 	.no_dead_strip plt_BigTed_ProgressHUD_CancelRingLayerAnimation
 plt_BigTed_ProgressHUD_CancelRingLayerAnimation:
 _p_78:
@@ -10445,7 +10445,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1728]
 br x16
-.word 2042
+.word 2041
 	.no_dead_strip plt_UIKit_UIActivityIndicatorView_StartAnimating
 plt_UIKit_UIActivityIndicatorView_StartAnimating:
 _p_79:
@@ -10453,7 +10453,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1736]
 br x16
-.word 2044
+.word 2043
 	.no_dead_strip plt_UIKit_UIView_IsDescendantOfView_UIKit_UIView
 plt_UIKit_UIView_IsDescendantOfView_UIKit_UIView:
 _p_80:
@@ -10461,7 +10461,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1744]
 br x16
-.word 2049
+.word 2048
 	.no_dead_strip plt_BigTed_ProgressHUD_PositionHUD_Foundation_NSNotification
 plt_BigTed_ProgressHUD_PositionHUD_Foundation_NSNotification:
 _p_81:
@@ -10469,7 +10469,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1752]
 br x16
-.word 2054
+.word 2053
 	.no_dead_strip plt_BigTed_ProgressHUD_RegisterNotifications
 plt_BigTed_ProgressHUD_RegisterNotifications:
 _p_82:
@@ -10477,7 +10477,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1760]
 br x16
-.word 2056
+.word 2055
 	.no_dead_strip plt_BigTed_ProgressHUD_get_HudView
 plt_BigTed_ProgressHUD_get_HudView:
 _p_83:
@@ -10485,7 +10485,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1768]
 br x16
-.word 2058
+.word 2057
 	.no_dead_strip plt_UIKit_UIView_get_Transform
 plt_UIKit_UIView_get_Transform:
 _p_84:
@@ -10493,7 +10493,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1776]
 br x16
-.word 2060
+.word 2059
 	.no_dead_strip plt_CoreGraphics_CGAffineTransform_Scale_System_nfloat_System_nfloat
 plt_CoreGraphics_CGAffineTransform_Scale_System_nfloat_System_nfloat:
 _p_85:
@@ -10501,7 +10501,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1784]
 br x16
-.word 2065
+.word 2064
 	.no_dead_strip plt_BigTed_ProgressHUD_get_isClear
 plt_BigTed_ProgressHUD_get_isClear:
 _p_86:
@@ -10509,7 +10509,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1792]
 br x16
-.word 2070
+.word 2069
 	.no_dead_strip plt_UIKit_UIView_Animate_double_double_UIKit_UIViewAnimationOptions_System_Action_System_Action
 plt_UIKit_UIView_Animate_double_double_UIKit_UIViewAnimationOptions_System_Action_System_Action:
 _p_87:
@@ -10517,7 +10517,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1800]
 br x16
-.word 2072
+.word 2071
 	.no_dead_strip plt_UIKit_UIView_SetNeedsDisplay
 plt_UIKit_UIView_SetNeedsDisplay:
 _p_88:
@@ -10525,7 +10525,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1808]
 br x16
-.word 2077
+.word 2076
 	.no_dead_strip plt_UIKit_UIView_RemoveFromSuperview
 plt_UIKit_UIView_RemoveFromSuperview:
 _p_89:
@@ -10533,7 +10533,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1816]
 br x16
-.word 2082
+.word 2081
 	.no_dead_strip plt_BigTed_ProgressHUD_StartDismissTimer_System_TimeSpan
 plt_BigTed_ProgressHUD_StartDismissTimer_System_TimeSpan:
 _p_90:
@@ -10541,7 +10541,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1824]
 br x16
-.word 2087
+.word 2086
 	.no_dead_strip plt_Foundation_NSTimer_CreateTimer_System_TimeSpan_System_Action_1_Foundation_NSTimer
 plt_Foundation_NSTimer_CreateTimer_System_TimeSpan_System_Action_1_Foundation_NSTimer:
 _p_91:
@@ -10549,7 +10549,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1832]
 br x16
-.word 2089
+.word 2088
 	.no_dead_strip plt_Foundation_NSRunLoop_get_Main
 plt_Foundation_NSRunLoop_get_Main:
 _p_92:
@@ -10557,7 +10557,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1840]
 br x16
-.word 2094
+.word 2093
 	.no_dead_strip plt_Foundation_NSRunLoop_AddTimer_Foundation_NSTimer_Foundation_NSRunLoopMode
 plt_Foundation_NSRunLoop_AddTimer_Foundation_NSTimer_Foundation_NSRunLoopMode:
 _p_93:
@@ -10565,7 +10565,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1848]
 br x16
-.word 2099
+.word 2098
 	.no_dead_strip plt_Foundation_NSTimer_CreateRepeatingTimer_System_TimeSpan_System_Action_1_Foundation_NSTimer
 plt_Foundation_NSTimer_CreateRepeatingTimer_System_TimeSpan_System_Action_1_Foundation_NSTimer:
 _p_94:
@@ -10573,7 +10573,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1856]
 br x16
-.word 2104
+.word 2103
 	.no_dead_strip plt_Foundation_NSRunLoop_get_Current
 plt_Foundation_NSRunLoop_get_Current:
 _p_95:
@@ -10581,7 +10581,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1864]
 br x16
-.word 2109
+.word 2108
 	.no_dead_strip plt_Foundation_NSTimer_Invalidate
 plt_Foundation_NSTimer_Invalidate:
 _p_96:
@@ -10589,7 +10589,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1872]
 br x16
-.word 2114
+.word 2113
 	.no_dead_strip plt_CoreAnimation_CATransaction_Begin
 plt_CoreAnimation_CATransaction_Begin:
 _p_97:
@@ -10597,7 +10597,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1880]
 br x16
-.word 2119
+.word 2118
 	.no_dead_strip plt_CoreAnimation_CATransaction_set_DisableActions_bool
 plt_CoreAnimation_CATransaction_set_DisableActions_bool:
 _p_98:
@@ -10605,7 +10605,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1888]
 br x16
-.word 2124
+.word 2123
 	.no_dead_strip plt_UIKit_UIView_get_Layer
 plt_UIKit_UIView_get_Layer:
 _p_99:
@@ -10613,7 +10613,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1896]
 br x16
-.word 2129
+.word 2128
 	.no_dead_strip plt_CoreAnimation_CALayer_RemoveAllAnimations
 plt_CoreAnimation_CALayer_RemoveAllAnimations:
 _p_100:
@@ -10621,7 +10621,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1904]
 br x16
-.word 2134
+.word 2133
 	.no_dead_strip plt_CoreAnimation_CALayer_get_SuperLayer
 plt_CoreAnimation_CALayer_get_SuperLayer:
 _p_101:
@@ -10629,7 +10629,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1912]
 br x16
-.word 2139
+.word 2138
 	.no_dead_strip plt_CoreAnimation_CALayer_RemoveFromSuperLayer
 plt_CoreAnimation_CALayer_RemoveFromSuperLayer:
 _p_102:
@@ -10637,7 +10637,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1920]
 br x16
-.word 2144
+.word 2143
 	.no_dead_strip plt_BigTed_ProgressHUD_set_RingLayer_CoreAnimation_CAShapeLayer
 plt_BigTed_ProgressHUD_set_RingLayer_CoreAnimation_CAShapeLayer:
 _p_103:
@@ -10645,7 +10645,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1928]
 br x16
-.word 2149
+.word 2148
 	.no_dead_strip plt_BigTed_ProgressHUD_get_BackgroundRingLayer
 plt_BigTed_ProgressHUD_get_BackgroundRingLayer:
 _p_104:
@@ -10653,7 +10653,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1936]
 br x16
-.word 2151
+.word 2150
 	.no_dead_strip plt_BigTed_ProgressHUD_set_BackgroundRingLayer_CoreAnimation_CAShapeLayer
 plt_BigTed_ProgressHUD_set_BackgroundRingLayer_CoreAnimation_CAShapeLayer:
 _p_105:
@@ -10661,7 +10661,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1944]
 br x16
-.word 2153
+.word 2152
 	.no_dead_strip plt_CoreAnimation_CATransaction_Commit
 plt_CoreAnimation_CATransaction_Commit:
 _p_106:
@@ -10669,7 +10669,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1952]
 br x16
-.word 2155
+.word 2154
 	.no_dead_strip plt_UIKit_UIView_get_Frame
 plt_UIKit_UIView_get_Frame:
 _p_107:
@@ -10677,7 +10677,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1960]
 br x16
-.word 2160
+.word 2159
 	.no_dead_strip plt_BigTed_ProgressHUD_CreateRingLayer_CoreGraphics_CGPoint_single_single_UIKit_UIColor
 plt_BigTed_ProgressHUD_CreateRingLayer_CoreGraphics_CGPoint_single_single_UIKit_UIColor:
 _p_108:
@@ -10685,7 +10685,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1968]
 br x16
-.word 2165
+.word 2164
 	.no_dead_strip plt_CoreAnimation_CALayer_AddSublayer_CoreAnimation_CALayer
 plt_CoreAnimation_CALayer_AddSublayer_CoreAnimation_CALayer:
 _p_109:
@@ -10693,7 +10693,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1976]
 br x16
-.word 2167
+.word 2166
 	.no_dead_strip plt_System_Math_Cos_double
 plt_System_Math_Cos_double:
 _p_110:
@@ -10701,7 +10701,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1984]
 br x16
-.word 2172
+.word 2171
 	.no_dead_strip plt_System_Math_Sin_double
 plt_System_Math_Sin_double:
 _p_111:
@@ -10709,7 +10709,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #1992]
 br x16
-.word 2177
+.word 2176
 	.no_dead_strip plt_CoreGraphics_CGPoint__ctor_single_single
 plt_CoreGraphics_CGPoint__ctor_single_single:
 _p_112:
@@ -10717,7 +10717,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2000]
 br x16
-.word 2182
+.word 2181
 	.no_dead_strip plt_UIKit_UIBezierPath__ctor
 plt_UIKit_UIBezierPath__ctor:
 _p_113:
@@ -10725,7 +10725,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2008]
 br x16
-.word 2187
+.word 2186
 	.no_dead_strip plt_BigTed_ProgressHUD_PointOnCircle_CoreGraphics_CGPoint_single_single
 plt_BigTed_ProgressHUD_PointOnCircle_CoreGraphics_CGPoint_single_single:
 _p_114:
@@ -10733,7 +10733,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2016]
 br x16
-.word 2192
+.word 2191
 	.no_dead_strip plt_UIKit_UIBezierPath_MoveTo_CoreGraphics_CGPoint
 plt_UIKit_UIBezierPath_MoveTo_CoreGraphics_CGPoint:
 _p_115:
@@ -10741,7 +10741,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2024]
 br x16
-.word 2194
+.word 2193
 	.no_dead_strip plt_UIKit_UIBezierPath_AddLineTo_CoreGraphics_CGPoint
 plt_UIKit_UIBezierPath_AddLineTo_CoreGraphics_CGPoint:
 _p_116:
@@ -10749,7 +10749,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2032]
 br x16
-.word 2199
+.word 2198
 	.no_dead_strip plt_BigTed_ProgressHUD_CreateCirclePath_CoreGraphics_CGPoint_single_int
 plt_BigTed_ProgressHUD_CreateCirclePath_CoreGraphics_CGPoint_single_int:
 _p_117:
@@ -10757,7 +10757,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2040]
 br x16
-.word 2204
+.word 2203
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer__ctor
 plt_CoreAnimation_CAShapeLayer__ctor:
 _p_118:
@@ -10765,7 +10765,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2048]
 br x16
-.word 2206
+.word 2205
 	.no_dead_strip plt_CoreGraphics_CGRect__ctor_System_nfloat_System_nfloat_System_nfloat_System_nfloat
 plt_CoreGraphics_CGRect__ctor_System_nfloat_System_nfloat_System_nfloat_System_nfloat:
 _p_119:
@@ -10773,7 +10773,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2056]
 br x16
-.word 2211
+.word 2210
 	.no_dead_strip plt_CoreAnimation_CALayer_set_Frame_CoreGraphics_CGRect
 plt_CoreAnimation_CALayer_set_Frame_CoreGraphics_CGRect:
 _p_120:
@@ -10781,7 +10781,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2064]
 br x16
-.word 2216
+.word 2215
 	.no_dead_strip plt_UIKit_UIColor_get_CGColor
 plt_UIKit_UIColor_get_CGColor:
 _p_121:
@@ -10789,7 +10789,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2072]
 br x16
-.word 2221
+.word 2220
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer_set_FillColor_CoreGraphics_CGColor
 plt_CoreAnimation_CAShapeLayer_set_FillColor_CoreGraphics_CGColor:
 _p_122:
@@ -10797,7 +10797,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2080]
 br x16
-.word 2226
+.word 2225
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer_set_StrokeColor_CoreGraphics_CGColor
 plt_CoreAnimation_CAShapeLayer_set_StrokeColor_CoreGraphics_CGColor:
 _p_123:
@@ -10805,7 +10805,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2088]
 br x16
-.word 2231
+.word 2230
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer_set_LineWidth_System_nfloat
 plt_CoreAnimation_CAShapeLayer_set_LineWidth_System_nfloat:
 _p_124:
@@ -10813,7 +10813,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2096]
 br x16
-.word 2236
+.word 2235
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer_get_JoinBevel
 plt_CoreAnimation_CAShapeLayer_get_JoinBevel:
 _p_125:
@@ -10821,7 +10821,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2104]
 br x16
-.word 2241
+.word 2240
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer_set_LineCap_Foundation_NSString
 plt_CoreAnimation_CAShapeLayer_set_LineCap_Foundation_NSString:
 _p_126:
@@ -10829,7 +10829,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2112]
 br x16
-.word 2246
+.word 2245
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer_set_LineJoin_Foundation_NSString
 plt_CoreAnimation_CAShapeLayer_set_LineJoin_Foundation_NSString:
 _p_127:
@@ -10837,7 +10837,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2120]
 br x16
-.word 2251
+.word 2250
 	.no_dead_strip plt_UIKit_UIBezierPath_get_CGPath
 plt_UIKit_UIBezierPath_get_CGPath:
 _p_128:
@@ -10845,7 +10845,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2128]
 br x16
-.word 2256
+.word 2255
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer_set_Path_CoreGraphics_CGPath
 plt_CoreAnimation_CAShapeLayer_set_Path_CoreGraphics_CGPath:
 _p_129:
@@ -10853,7 +10853,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2136]
 br x16
-.word 2261
+.word 2260
 	.no_dead_strip plt_UIKit_UIView_set_AccessibilityViewIsModal_bool
 plt_UIKit_UIView_set_AccessibilityViewIsModal_bool:
 _p_130:
@@ -10861,7 +10861,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2144]
 br x16
-.word 2266
+.word 2265
 	.no_dead_strip plt_UIKit_UIToolbar__ctor
 plt_UIKit_UIToolbar__ctor:
 _p_131:
@@ -10869,7 +10869,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2152]
 br x16
-.word 2271
+.word 2270
 	.no_dead_strip plt_UIKit_UIToolbar_set_Translucent_bool
 plt_UIKit_UIToolbar_set_Translucent_bool:
 _p_132:
@@ -10877,7 +10877,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2160]
 br x16
-.word 2276
+.word 2275
 	.no_dead_strip plt_UIKit_UIToolbar_set_BarTintColor_UIKit_UIColor
 plt_UIKit_UIToolbar_set_BarTintColor_UIKit_UIColor:
 _p_133:
@@ -10885,7 +10885,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2168]
 br x16
-.word 2281
+.word 2280
 	.no_dead_strip plt_UIKit_UIView__ctor
 plt_UIKit_UIView__ctor:
 _p_134:
@@ -10893,7 +10893,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2176]
 br x16
-.word 2286
+.word 2285
 	.no_dead_strip plt_CoreAnimation_CALayer_set_CornerRadius_System_nfloat
 plt_CoreAnimation_CALayer_set_CornerRadius_System_nfloat:
 _p_135:
@@ -10901,7 +10901,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2184]
 br x16
-.word 2291
+.word 2290
 	.no_dead_strip plt_CoreAnimation_CALayer_set_MasksToBounds_bool
 plt_CoreAnimation_CALayer_set_MasksToBounds_bool:
 _p_136:
@@ -10909,7 +10909,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2192]
 br x16
-.word 2296
+.word 2295
 	.no_dead_strip plt_UIKit_UILabel__ctor
 plt_UIKit_UILabel__ctor:
 _p_137:
@@ -10917,7 +10917,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2200]
 br x16
-.word 2301
+.word 2300
 	.no_dead_strip plt_UIKit_UILabel_set_AdjustsFontSizeToFitWidth_bool
 plt_UIKit_UILabel_set_AdjustsFontSizeToFitWidth_bool:
 _p_138:
@@ -10925,7 +10925,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2208]
 br x16
-.word 2306
+.word 2305
 	.no_dead_strip plt_UIKit_UILabel_set_TextAlignment_UIKit_UITextAlignment
 plt_UIKit_UILabel_set_TextAlignment_UIKit_UITextAlignment:
 _p_139:
@@ -10933,7 +10933,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2216]
 br x16
-.word 2311
+.word 2310
 	.no_dead_strip plt_UIKit_UILabel_set_BaselineAdjustment_UIKit_UIBaselineAdjustment
 plt_UIKit_UILabel_set_BaselineAdjustment_UIKit_UIBaselineAdjustment:
 _p_140:
@@ -10941,7 +10941,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2224]
 br x16
-.word 2316
+.word 2315
 	.no_dead_strip plt_UIKit_UILabel_set_TextColor_UIKit_UIColor
 plt_UIKit_UILabel_set_TextColor_UIKit_UIColor:
 _p_141:
@@ -10949,7 +10949,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2232]
 br x16
-.word 2321
+.word 2320
 	.no_dead_strip plt_UIKit_UILabel_set_Font_UIKit_UIFont
 plt_UIKit_UILabel_set_Font_UIKit_UIFont:
 _p_142:
@@ -10957,7 +10957,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2240]
 br x16
-.word 2326
+.word 2325
 	.no_dead_strip plt_UIKit_UILabel_set_ShadowColor_UIKit_UIColor
 plt_UIKit_UILabel_set_ShadowColor_UIKit_UIColor:
 _p_143:
@@ -10965,7 +10965,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2248]
 br x16
-.word 2331
+.word 2330
 	.no_dead_strip plt_CoreGraphics_CGSize__ctor_single_single
 plt_CoreGraphics_CGSize__ctor_single_single:
 _p_144:
@@ -10973,7 +10973,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2256]
 br x16
-.word 2336
+.word 2335
 	.no_dead_strip plt_UIKit_UILabel_set_ShadowOffset_CoreGraphics_CGSize
 plt_UIKit_UILabel_set_ShadowOffset_CoreGraphics_CGSize:
 _p_145:
@@ -10981,7 +10981,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2264]
 br x16
-.word 2341
+.word 2340
 	.no_dead_strip plt_UIKit_UILabel_set_Lines_System_nint
 plt_UIKit_UILabel_set_Lines_System_nint:
 _p_146:
@@ -10989,7 +10989,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2272]
 br x16
-.word 2346
+.word 2345
 	.no_dead_strip plt_UIKit_UIButton__ctor
 plt_UIKit_UIButton__ctor:
 _p_147:
@@ -10997,7 +10997,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2280]
 br x16
-.word 2351
+.word 2350
 	.no_dead_strip plt_UIKit_UIButton_SetTitleColor_UIKit_UIColor_UIKit_UIControlState
 plt_UIKit_UIButton_SetTitleColor_UIKit_UIColor_UIKit_UIControlState:
 _p_148:
@@ -11005,7 +11005,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2288]
 br x16
-.word 2356
+.word 2355
 	.no_dead_strip plt_UIKit_UIButton_set_Font_UIKit_UIFont
 plt_UIKit_UIButton_set_Font_UIKit_UIFont:
 _p_149:
@@ -11013,7 +11013,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2296]
 br x16
-.word 2361
+.word 2360
 	.no_dead_strip plt_CoreGraphics_CGRect__ctor_single_single_single_single
 plt_CoreGraphics_CGRect__ctor_single_single_single_single:
 _p_150:
@@ -11021,7 +11021,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2304]
 br x16
-.word 2366
+.word 2365
 	.no_dead_strip plt_UIKit_UIImageView__ctor_CoreGraphics_CGRect
 plt_UIKit_UIImageView__ctor_CoreGraphics_CGRect:
 _p_151:
@@ -11029,7 +11029,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2312]
 br x16
-.word 2371
+.word 2370
 	.no_dead_strip plt_UIKit_UIActivityIndicatorView__ctor_UIKit_UIActivityIndicatorViewStyle
 plt_UIKit_UIActivityIndicatorView__ctor_UIKit_UIActivityIndicatorViewStyle:
 _p_152:
@@ -11037,7 +11037,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2320]
 br x16
-.word 2376
+.word 2375
 	.no_dead_strip plt_UIKit_UIActivityIndicatorView_set_HidesWhenStopped_bool
 plt_UIKit_UIActivityIndicatorView_set_HidesWhenStopped_bool:
 _p_153:
@@ -11045,7 +11045,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2328]
 br x16
-.word 2381
+.word 2380
 	.no_dead_strip plt_UIKit_UIView_set_Bounds_CoreGraphics_CGRect
 plt_UIKit_UIView_set_Bounds_CoreGraphics_CGRect:
 _p_154:
@@ -11053,7 +11053,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2336]
 br x16
-.word 2386
+.word 2385
 	.no_dead_strip plt_UIKit_UIActivityIndicatorView_set_Color_UIKit_UIColor
 plt_UIKit_UIActivityIndicatorView_set_Color_UIKit_UIColor:
 _p_155:
@@ -11061,7 +11061,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2344]
 br x16
-.word 2391
+.word 2390
 	.no_dead_strip plt_Foundation_NSObject_get_Class
 plt_Foundation_NSObject_get_Class:
 _p_156:
@@ -11069,7 +11069,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2352]
 br x16
-.word 2396
+.word 2395
 	.no_dead_strip plt_UIKit_UIView_get_Subviews
 plt_UIKit_UIView_get_Subviews:
 _p_157:
@@ -11077,7 +11077,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2360]
 br x16
-.word 2401
+.word 2400
 	.no_dead_strip plt_Foundation_NSObject_IsKindOfClass_ObjCRuntime_Class
 plt_Foundation_NSObject_IsKindOfClass_ObjCRuntime_Class:
 _p_158:
@@ -11085,7 +11085,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2368]
 br x16
-.word 2406
+.word 2405
 	.no_dead_strip plt_BigTed_ProgressHUD_SetFadeoutTimer_Foundation_NSTimer
 plt_BigTed_ProgressHUD_SetFadeoutTimer_Foundation_NSTimer:
 _p_159:
@@ -11093,7 +11093,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2376]
 br x16
-.word 2411
+.word 2410
 	.no_dead_strip plt_BigTed_ProgressHUD_SetProgressTimer_Foundation_NSTimer
 plt_BigTed_ProgressHUD_SetProgressTimer_Foundation_NSTimer:
 _p_160:
@@ -11101,7 +11101,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2384]
 br x16
-.word 2413
+.word 2412
 	.no_dead_strip plt_Foundation_NSNotificationCenter_get_DefaultCenter
 plt_Foundation_NSNotificationCenter_get_DefaultCenter:
 _p_161:
@@ -11109,7 +11109,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2392]
 br x16
-.word 2415
+.word 2414
 	.no_dead_strip plt_UIKit_UIApplication_get_DidChangeStatusBarOrientationNotification
 plt_UIKit_UIApplication_get_DidChangeStatusBarOrientationNotification:
 _p_162:
@@ -11117,7 +11117,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2400]
 br x16
-.word 2420
+.word 2419
 	.no_dead_strip plt_Foundation_NSNotificationCenter_AddObserver_Foundation_NSString_System_Action_1_Foundation_NSNotification
 plt_Foundation_NSNotificationCenter_AddObserver_Foundation_NSString_System_Action_1_Foundation_NSNotification:
 _p_163:
@@ -11125,7 +11125,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2408]
 br x16
-.word 2425
+.word 2424
 	.no_dead_strip plt_System_Collections_Generic_List_1_Foundation_NSObject_Add_Foundation_NSObject
 plt_System_Collections_Generic_List_1_Foundation_NSObject_Add_Foundation_NSObject:
 _p_164:
@@ -11133,7 +11133,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2416]
 br x16
-.word 2430
+.word 2429
 	.no_dead_strip plt_UIKit_UIKeyboard_get_WillHideNotification
 plt_UIKit_UIKeyboard_get_WillHideNotification:
 _p_165:
@@ -11141,7 +11141,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2424]
 br x16
-.word 2441
+.word 2440
 	.no_dead_strip plt_UIKit_UIKeyboard_get_DidHideNotification
 plt_UIKit_UIKeyboard_get_DidHideNotification:
 _p_166:
@@ -11149,7 +11149,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2432]
 br x16
-.word 2446
+.word 2445
 	.no_dead_strip plt_UIKit_UIKeyboard_get_WillShowNotification
 plt_UIKit_UIKeyboard_get_WillShowNotification:
 _p_167:
@@ -11157,7 +11157,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2440]
 br x16
-.word 2451
+.word 2450
 	.no_dead_strip plt_UIKit_UIKeyboard_get_DidShowNotification
 plt_UIKit_UIKeyboard_get_DidShowNotification:
 _p_168:
@@ -11165,7 +11165,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2448]
 br x16
-.word 2456
+.word 2455
 	.no_dead_strip plt_Foundation_NSNotificationCenter_RemoveObservers_System_Collections_Generic_IEnumerable_1_Foundation_NSObject
 plt_Foundation_NSNotificationCenter_RemoveObservers_System_Collections_Generic_IEnumerable_1_Foundation_NSObject:
 _p_169:
@@ -11173,7 +11173,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2456]
 br x16
-.word 2461
+.word 2460
 	.no_dead_strip plt_System_Collections_Generic_List_1_Foundation_NSObject_Clear
 plt_System_Collections_Generic_List_1_Foundation_NSObject_Clear:
 _p_170:
@@ -11181,7 +11181,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2464]
 br x16
-.word 2466
+.word 2465
 	.no_dead_strip plt_CoreGraphics_CGAffineTransform_MakeRotation_System_nfloat
 plt_CoreGraphics_CGAffineTransform_MakeRotation_System_nfloat:
 _p_171:
@@ -11189,7 +11189,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2472]
 br x16
-.word 2477
+.word 2476
 	.no_dead_strip plt_UIKit_UIView_set_Transform_CoreGraphics_CGAffineTransform
 plt_UIKit_UIView_set_Transform_CoreGraphics_CGAffineTransform:
 _p_172:
@@ -11197,7 +11197,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2480]
 br x16
-.word 2482
+.word 2481
 	.no_dead_strip plt_UIKit_UIView_set_Center_CoreGraphics_CGPoint
 plt_UIKit_UIView_set_Center_CoreGraphics_CGPoint:
 _p_173:
@@ -11205,7 +11205,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2488]
 br x16
-.word 2487
+.word 2486
 	.no_dead_strip plt_UIKit_UIView_set_Frame_CoreGraphics_CGRect
 plt_UIKit_UIView_set_Frame_CoreGraphics_CGRect:
 _p_174:
@@ -11213,7 +11213,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2496]
 br x16
-.word 2492
+.word 2491
 	.no_dead_strip plt_UIKit_UIApplication_get_StatusBarOrientation
 plt_UIKit_UIApplication_get_StatusBarOrientation:
 _p_175:
@@ -11221,7 +11221,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2504]
 br x16
-.word 2497
+.word 2496
 	.no_dead_strip plt_UIKit_UIDevice_get_CurrentDevice
 plt_UIKit_UIDevice_get_CurrentDevice:
 _p_176:
@@ -11229,7 +11229,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2512]
 br x16
-.word 2502
+.word 2501
 	.no_dead_strip plt_UIKit_UIDevice_CheckSystemVersion_int_int
 plt_UIKit_UIDevice_CheckSystemVersion_int_int:
 _p_177:
@@ -11237,7 +11237,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2520]
 br x16
-.word 2507
+.word 2506
 	.no_dead_strip plt_UIKit_UIKeyboard_FrameEndFromNotification_Foundation_NSNotification
 plt_UIKit_UIKeyboard_FrameEndFromNotification_Foundation_NSNotification:
 _p_178:
@@ -11245,7 +11245,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2528]
 br x16
-.word 2512
+.word 2511
 	.no_dead_strip plt_UIKit_UIKeyboard_AnimationDurationFromNotification_Foundation_NSNotification
 plt_UIKit_UIKeyboard_AnimationDurationFromNotification_Foundation_NSNotification:
 _p_179:
@@ -11253,7 +11253,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2536]
 br x16
-.word 2517
+.word 2516
 	.no_dead_strip plt_Foundation_NSNotification_get_Name
 plt_Foundation_NSNotification_get_Name:
 _p_180:
@@ -11261,7 +11261,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2544]
 br x16
-.word 2522
+.word 2521
 	.no_dead_strip plt_Foundation_NSString_op_Implicit_Foundation_NSString
 plt_Foundation_NSString_op_Implicit_Foundation_NSString:
 _p_181:
@@ -11269,7 +11269,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2552]
 br x16
-.word 2527
+.word 2526
 	.no_dead_strip plt_string_op_Equality_string_string
 plt_string_op_Equality_string_string:
 _p_182:
@@ -11277,7 +11277,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2560]
 br x16
-.word 2532
+.word 2531
 	.no_dead_strip plt_BigTed_ProgressHUD_IsPortrait_UIKit_UIInterfaceOrientation
 plt_BigTed_ProgressHUD_IsPortrait_UIKit_UIInterfaceOrientation:
 _p_183:
@@ -11285,7 +11285,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2568]
 br x16
-.word 2537
+.word 2536
 	.no_dead_strip plt_BigTed_ProgressHUD_get_VisibleKeyboardHeight
 plt_BigTed_ProgressHUD_get_VisibleKeyboardHeight:
 _p_184:
@@ -11293,7 +11293,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2576]
 br x16
-.word 2539
+.word 2538
 	.no_dead_strip plt_UIKit_UIApplication_get_KeyWindow
 plt_UIKit_UIApplication_get_KeyWindow:
 _p_185:
@@ -11301,7 +11301,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2584]
 br x16
-.word 2541
+.word 2540
 	.no_dead_strip plt_UIKit_UIApplication_get_StatusBarFrame
 plt_UIKit_UIApplication_get_StatusBarFrame:
 _p_186:
@@ -11309,7 +11309,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2592]
 br x16
-.word 2546
+.word 2545
 	.no_dead_strip plt_BigTed_ProgressHUD_IsLandscape_UIKit_UIInterfaceOrientation
 plt_BigTed_ProgressHUD_IsLandscape_UIKit_UIInterfaceOrientation:
 _p_187:
@@ -11317,7 +11317,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2600]
 br x16
-.word 2551
+.word 2550
 	.no_dead_strip plt_CoreGraphics_CGRect_set_Size_CoreGraphics_CGSize
 plt_CoreGraphics_CGRect_set_Size_CoreGraphics_CGSize:
 _p_188:
@@ -11325,7 +11325,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2608]
 br x16
-.word 2553
+.word 2552
 	.no_dead_strip plt_System_Math_Floor_double
 plt_System_Math_Floor_double:
 _p_189:
@@ -11333,7 +11333,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2616]
 br x16
-.word 2558
+.word 2557
 	.no_dead_strip plt_BigTed_ProgressHUD_MoveToPoint_CoreGraphics_CGPoint_single
 plt_BigTed_ProgressHUD_MoveToPoint_CoreGraphics_CGPoint_single:
 _p_190:
@@ -11341,7 +11341,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2624]
 br x16
-.word 2563
+.word 2562
 	.no_dead_strip plt_BigTed_ProgressHUD_StopProgressTimer
 plt_BigTed_ProgressHUD_StopProgressTimer:
 _p_191:
@@ -11349,7 +11349,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2632]
 br x16
-.word 2565
+.word 2564
 	.no_dead_strip plt_UIKit_UILabel_get_Text
 plt_UIKit_UILabel_get_Text:
 _p_192:
@@ -11357,7 +11357,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2640]
 br x16
-.word 2567
+.word 2566
 	.no_dead_strip plt_UIKit_UIImageView_get_Image
 plt_UIKit_UIImageView_get_Image:
 _p_193:
@@ -11365,7 +11365,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2648]
 br x16
-.word 2572
+.word 2571
 	.no_dead_strip plt_string_Split_char__
 plt_string_Split_char__:
 _p_194:
@@ -11373,7 +11373,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2656]
 br x16
-.word 2577
+.word 2576
 	.no_dead_strip plt_BigTed_ProgressHUD_get_IsIOS7OrNewer
 plt_BigTed_ProgressHUD_get_IsIOS7OrNewer:
 _p_195:
@@ -11381,7 +11381,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2664]
 br x16
-.word 2582
+.word 2581
 	.no_dead_strip plt_Foundation_NSString__ctor_string
 plt_Foundation_NSString__ctor_string:
 _p_196:
@@ -11389,7 +11389,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2672]
 br x16
-.word 2584
+.word 2583
 	.no_dead_strip plt_UIKit_UIStringAttributes__ctor
 plt_UIKit_UIStringAttributes__ctor:
 _p_197:
@@ -11397,7 +11397,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2680]
 br x16
-.word 2589
+.word 2588
 	.no_dead_strip plt_UIKit_UILabel_get_Font
 plt_UIKit_UILabel_get_Font:
 _p_198:
@@ -11405,7 +11405,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2688]
 br x16
-.word 2594
+.word 2593
 	.no_dead_strip plt_UIKit_UIStringAttributes_set_Font_UIKit_UIFont
 plt_UIKit_UIStringAttributes_set_Font_UIKit_UIFont:
 _p_199:
@@ -11413,7 +11413,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2696]
 br x16
-.word 2599
+.word 2598
 	.no_dead_strip plt_UIKit_NSExtendedStringDrawing_GetBoundingRect_Foundation_NSString_CoreGraphics_CGSize_Foundation_NSStringDrawingOptions_UIKit_UIStringAttributes_Foundation_NSStringDrawingContext
 plt_UIKit_NSExtendedStringDrawing_GetBoundingRect_Foundation_NSString_CoreGraphics_CGSize_Foundation_NSStringDrawingOptions_UIKit_UIStringAttributes_Foundation_NSStringDrawingContext:
 _p_200:
@@ -11421,7 +11421,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2704]
 br x16
-.word 2604
+.word 2603
 	.no_dead_strip plt_UIKit_UIStringDrawing_StringSize_Foundation_NSString_UIKit_UIFont_CoreGraphics_CGSize
 plt_UIKit_UIStringDrawing_StringSize_Foundation_NSString_UIKit_UIFont_CoreGraphics_CGSize:
 _p_201:
@@ -11429,7 +11429,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2712]
 br x16
-.word 2609
+.word 2608
 	.no_dead_strip plt_System_Math_Ceiling_double
 plt_System_Math_Ceiling_double:
 _p_202:
@@ -11437,7 +11437,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2720]
 br x16
-.word 2614
+.word 2613
 	.no_dead_strip plt_UIKit_UIButton_Title_UIKit_UIControlState
 plt_UIKit_UIButton_Title_UIKit_UIControlState:
 _p_203:
@@ -11445,7 +11445,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2728]
 br x16
-.word 2619
+.word 2618
 	.no_dead_strip plt_BigTed_ProgressHUD_DismissWorker
 plt_BigTed_ProgressHUD_DismissWorker:
 _p_204:
@@ -11453,7 +11453,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2736]
 br x16
-.word 2624
+.word 2623
 	.no_dead_strip plt_BigTed_ProgressHUD_UpdateProgress
 plt_BigTed_ProgressHUD_UpdateProgress:
 _p_205:
@@ -11461,7 +11461,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2744]
 br x16
-.word 2626
+.word 2625
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer_get_StrokeEnd
 plt_CoreAnimation_CAShapeLayer_get_StrokeEnd:
 _p_206:
@@ -11469,7 +11469,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2752]
 br x16
-.word 2628
+.word 2627
 	.no_dead_strip plt_BigTed_ProgressHUD_UnRegisterNotifications
 plt_BigTed_ProgressHUD_UnRegisterNotifications:
 _p_207:
@@ -11477,7 +11477,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2760]
 br x16
-.word 2633
+.word 2632
 	.no_dead_strip plt_Foundation_NSNotificationCenter_RemoveObserver_Foundation_NSObject
 plt_Foundation_NSNotificationCenter_RemoveObserver_Foundation_NSObject:
 _p_208:
@@ -11485,7 +11485,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2768]
 br x16
-.word 2635
+.word 2634
 	.no_dead_strip plt_BigTed_ProgressHUD_set_StringLabel_UIKit_UILabel
 plt_BigTed_ProgressHUD_set_StringLabel_UIKit_UILabel:
 _p_209:
@@ -11493,7 +11493,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2776]
 br x16
-.word 2640
+.word 2639
 	.no_dead_strip plt_BigTed_ProgressHUD_set_SpinnerView_UIKit_UIActivityIndicatorView
 plt_BigTed_ProgressHUD_set_SpinnerView_UIKit_UIActivityIndicatorView:
 _p_210:
@@ -11501,7 +11501,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2784]
 br x16
-.word 2642
+.word 2641
 	.no_dead_strip plt_BigTed_ProgressHUD_set_ImageView_UIKit_UIImageView
 plt_BigTed_ProgressHUD_set_ImageView_UIKit_UIImageView:
 _p_211:
@@ -11509,7 +11509,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2792]
 br x16
-.word 2644
+.word 2643
 	.no_dead_strip plt_BigTed_ProgressHUD_set_HudView_UIKit_UIView
 plt_BigTed_ProgressHUD_set_HudView_UIKit_UIView:
 _p_212:
@@ -11517,7 +11517,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2800]
 br x16
-.word 2646
+.word 2645
 	.no_dead_strip plt_BigTed_ProgressHUD_set_OverlayView_UIKit_UIView
 plt_BigTed_ProgressHUD_set_OverlayView_UIKit_UIView:
 _p_213:
@@ -11525,7 +11525,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2808]
 br x16
-.word 2648
+.word 2647
 	.no_dead_strip plt_UIKit_UIWindow_get_RootViewController
 plt_UIKit_UIWindow_get_RootViewController:
 _p_214:
@@ -11533,7 +11533,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2816]
 br x16
-.word 2650
+.word 2649
 	.no_dead_strip plt_UIKit_UIViewController_SetNeedsStatusBarAppearanceUpdate
 plt_UIKit_UIViewController_SetNeedsStatusBarAppearanceUpdate:
 _p_215:
@@ -11541,7 +11541,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2824]
 br x16
-.word 2655
+.word 2654
 	.no_dead_strip plt_UIKit_UIColor_get_DarkGray
 plt_UIKit_UIColor_get_DarkGray:
 _p_216:
@@ -11549,7 +11549,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2832]
 br x16
-.word 2660
+.word 2659
 	.no_dead_strip plt_BigTed_ProgressHUD_ShowProgressWorker_single_string_BigTed_ProgressHUD_MaskType_bool_BigTed_ProgressHUD_ToastPosition_string_System_Action_double_bool_UIKit_UIImage
 plt_BigTed_ProgressHUD_ShowProgressWorker_single_string_BigTed_ProgressHUD_MaskType_bool_BigTed_ProgressHUD_ToastPosition_string_System_Action_double_bool_UIKit_UIImage:
 _p_217:
@@ -11557,7 +11557,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2840]
 br x16
-.word 2665
+.word 2664
 	.no_dead_strip plt_BigTed_ProgressHUD_SetStatusWorker_string
 plt_BigTed_ProgressHUD_SetStatusWorker_string:
 _p_218:
@@ -11565,7 +11565,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2848]
 br x16
-.word 2667
+.word 2666
 	.no_dead_strip plt_BigTed_ProgressHUD_ShowImageWorker_UIKit_UIImage_string_System_TimeSpan
 plt_BigTed_ProgressHUD_ShowImageWorker_UIKit_UIImage_string_System_TimeSpan:
 _p_219:
@@ -11573,7 +11573,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2856]
 br x16
-.word 2669
+.word 2668
 	.no_dead_strip plt_System_Delegate_DynamicInvoke_object__
 plt_System_Delegate_DynamicInvoke_object__:
 _p_220:
@@ -11581,7 +11581,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2864]
 br x16
-.word 2671
+.word 2670
 	.no_dead_strip plt__jit_icall_mono_arch_throw_exception
 plt__jit_icall_mono_arch_throw_exception:
 _p_221:
@@ -11589,7 +11589,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2872]
 br x16
-.word 2676
+.word 2675
 	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
 plt__jit_icall_mono_thread_interruption_checkpoint:
 _p_222:
@@ -11597,7 +11597,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2880]
 br x16
-.word 2704
+.word 2703
 	.no_dead_strip plt__rgctx_fetch_0
 plt__rgctx_fetch_0:
 _p_223:
@@ -11605,7 +11605,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2888]
 br x16
-.word 2768
+.word 2767
 	.no_dead_strip plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
 plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array:
 _p_224:
@@ -11613,7 +11613,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2896]
 br x16
-.word 2776
+.word 2775
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr_mscorlib
 plt__jit_icall_mono_helper_ldstr_mscorlib:
 _p_225:
@@ -11621,7 +11621,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2904]
 br x16
-.word 2795
+.word 2794
 	.no_dead_strip plt__rgctx_fetch_1
 plt__rgctx_fetch_1:
 _p_226:
@@ -11629,7 +11629,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2912]
 br x16
-.word 2842
+.word 2841
 	.no_dead_strip plt_System_Array_Copy_System_Array_int_System_Array_int_int
 plt_System_Array_Copy_System_Array_int_System_Array_int_int:
 _p_227:
@@ -11637,7 +11637,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2920]
 br x16
-.word 2865
+.word 2864
 	.no_dead_strip plt__icall_native_BigTed_NSObjectExtensions_object_getClassName_intptr
 plt__icall_native_BigTed_NSObjectExtensions_object_getClassName_intptr:
 _p_228:
@@ -11645,7 +11645,7 @@ adrp x16, mono_aot_BTProgressHUD_got@PAGE+0
 add x16, x16, mono_aot_BTProgressHUD_got@PAGEOFF
 ldr x16, [x16, #2928]
 br x16
-.word 2870
+.word 2869
 plt_end:
 .section __DATA, __bss
 	.align 3
@@ -11757,13 +11757,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 138,2936,229,130,66,391195135,0,4480
+	.long 138,2936,229,130,66,391195135,0,4479
 	.long 128,8,8,10,0,24,6152,1664
 	.long 1400,776,0,1152,1352,952,0,656
 	.long 192,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 230,10,77,188,251,170,33,49,14,87,215,120,147,195,128,238
+	.byte 241,129,255,145,182,29,188,95,16,109,93,180,18,87,192,222
 	.globl _mono_aot_module_BTProgressHUD_info
 	.align 3
 _mono_aot_module_BTProgressHUD_info:

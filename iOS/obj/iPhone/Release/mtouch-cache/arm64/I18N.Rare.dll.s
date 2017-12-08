@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Wed Nov  8 17:08:32 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 20:59:09 EST 2017)"
 	.asciz "I18N.Rare.dll"
 	.asciz ""
 
@@ -121,7 +121,7 @@ jit_code_start:
 	.align 4
 	.no_dead_strip I18N_Rare_CP1026__ctor
 I18N_Rare_CP1026__ctor:
-.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP1026.cs"
+.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP1026.cs"
 .loc 1 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -1101,7 +1101,7 @@ Lme_6:
 	.align 4
 	.no_dead_strip I18N_Rare_CP1047__ctor
 I18N_Rare_CP1047__ctor:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP1047.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP1047.cs"
 .loc 2 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -2081,7 +2081,7 @@ Lme_d:
 	.align 4
 	.no_dead_strip I18N_Rare_CP1140__ctor
 I18N_Rare_CP1140__ctor:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP1140.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP1140.cs"
 .loc 3 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -3068,7 +3068,7 @@ Lme_14:
 	.align 4
 	.no_dead_strip I18N_Rare_CP1141__ctor
 I18N_Rare_CP1141__ctor:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP1141.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP1141.cs"
 .loc 4 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -4055,7 +4055,7 @@ Lme_1b:
 	.align 4
 	.no_dead_strip I18N_Rare_CP1142__ctor
 I18N_Rare_CP1142__ctor:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP1142.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP1142.cs"
 .loc 5 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -5042,7 +5042,7 @@ Lme_22:
 	.align 4
 	.no_dead_strip I18N_Rare_CP1143__ctor
 I18N_Rare_CP1143__ctor:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP1143.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP1143.cs"
 .loc 6 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -6029,7 +6029,7 @@ Lme_29:
 	.align 4
 	.no_dead_strip I18N_Rare_CP1144__ctor
 I18N_Rare_CP1144__ctor:
-.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP1144.cs"
+.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP1144.cs"
 .loc 7 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -7016,7 +7016,7 @@ Lme_30:
 	.align 4
 	.no_dead_strip I18N_Rare_CP1145__ctor
 I18N_Rare_CP1145__ctor:
-.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP1145.cs"
+.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP1145.cs"
 .loc 8 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -8003,7 +8003,7 @@ Lme_37:
 	.align 4
 	.no_dead_strip I18N_Rare_CP1146__ctor
 I18N_Rare_CP1146__ctor:
-.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP1146.cs"
+.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP1146.cs"
 .loc 9 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -8990,7 +8990,7 @@ Lme_3e:
 	.align 4
 	.no_dead_strip I18N_Rare_CP1147__ctor
 I18N_Rare_CP1147__ctor:
-.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP1147.cs"
+.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP1147.cs"
 .loc 10 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -9977,7 +9977,7 @@ Lme_45:
 	.align 4
 	.no_dead_strip I18N_Rare_CP1148__ctor
 I18N_Rare_CP1148__ctor:
-.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP1148.cs"
+.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP1148.cs"
 .loc 11 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -10964,7 +10964,7 @@ Lme_4c:
 	.align 4
 	.no_dead_strip I18N_Rare_CP1149__ctor
 I18N_Rare_CP1149__ctor:
-.file 12 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP1149.cs"
+.file 12 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP1149.cs"
 .loc 12 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -11951,7 +11951,7 @@ Lme_53:
 	.align 4
 	.no_dead_strip I18N_Rare_CP20273__ctor
 I18N_Rare_CP20273__ctor:
-.file 13 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP20273.cs"
+.file 13 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP20273.cs"
 .loc 13 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -12934,7 +12934,7 @@ Lme_5a:
 	.align 4
 	.no_dead_strip I18N_Rare_CP20277__ctor
 I18N_Rare_CP20277__ctor:
-.file 14 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP20277.cs"
+.file 14 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP20277.cs"
 .loc 14 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -13917,7 +13917,7 @@ Lme_61:
 	.align 4
 	.no_dead_strip I18N_Rare_CP20278__ctor
 I18N_Rare_CP20278__ctor:
-.file 15 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP20278.cs"
+.file 15 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP20278.cs"
 .loc 15 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -14900,7 +14900,7 @@ Lme_68:
 	.align 4
 	.no_dead_strip I18N_Rare_CP20280__ctor
 I18N_Rare_CP20280__ctor:
-.file 16 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP20280.cs"
+.file 16 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP20280.cs"
 .loc 16 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -15883,7 +15883,7 @@ Lme_6f:
 	.align 4
 	.no_dead_strip I18N_Rare_CP20284__ctor
 I18N_Rare_CP20284__ctor:
-.file 17 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP20284.cs"
+.file 17 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP20284.cs"
 .loc 17 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -16866,7 +16866,7 @@ Lme_76:
 	.align 4
 	.no_dead_strip I18N_Rare_CP20285__ctor
 I18N_Rare_CP20285__ctor:
-.file 18 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP20285.cs"
+.file 18 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP20285.cs"
 .loc 18 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -17849,7 +17849,7 @@ Lme_7d:
 	.align 4
 	.no_dead_strip I18N_Rare_CP20290__ctor
 I18N_Rare_CP20290__ctor:
-.file 19 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP20290.cs"
+.file 19 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP20290.cs"
 .loc 19 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -18621,7 +18621,7 @@ Lme_84:
 	.align 4
 	.no_dead_strip I18N_Rare_CP20297__ctor
 I18N_Rare_CP20297__ctor:
-.file 20 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP20297.cs"
+.file 20 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP20297.cs"
 .loc 20 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -19604,7 +19604,7 @@ Lme_8b:
 	.align 4
 	.no_dead_strip I18N_Rare_CP20420__ctor
 I18N_Rare_CP20420__ctor:
-.file 21 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP20420.cs"
+.file 21 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP20420.cs"
 .loc 21 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -20762,7 +20762,7 @@ Lme_92:
 	.align 4
 	.no_dead_strip I18N_Rare_CP20424__ctor
 I18N_Rare_CP20424__ctor:
-.file 22 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP20424.cs"
+.file 22 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP20424.cs"
 .loc 22 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -21582,7 +21582,7 @@ Lme_99:
 	.align 4
 	.no_dead_strip I18N_Rare_CP20871__ctor
 I18N_Rare_CP20871__ctor:
-.file 23 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP20871.cs"
+.file 23 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP20871.cs"
 .loc 23 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -22565,7 +22565,7 @@ Lme_a0:
 	.align 4
 	.no_dead_strip I18N_Rare_CP21025__ctor
 I18N_Rare_CP21025__ctor:
-.file 24 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP21025.cs"
+.file 24 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP21025.cs"
 .loc 24 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -23495,7 +23495,7 @@ Lme_a7:
 	.align 4
 	.no_dead_strip I18N_Rare_CP37__ctor
 I18N_Rare_CP37__ctor:
-.file 25 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP37.cs"
+.file 25 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP37.cs"
 .loc 25 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -24478,7 +24478,7 @@ Lme_ae:
 	.align 4
 	.no_dead_strip I18N_Rare_CP500__ctor
 I18N_Rare_CP500__ctor:
-.file 26 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP500.cs"
+.file 26 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP500.cs"
 .loc 26 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -25461,7 +25461,7 @@ Lme_b5:
 	.align 4
 	.no_dead_strip I18N_Rare_CP708__ctor
 I18N_Rare_CP708__ctor:
-.file 27 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP708.cs"
+.file 27 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP708.cs"
 .loc 27 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -26240,7 +26240,7 @@ Lme_bc:
 	.align 4
 	.no_dead_strip I18N_Rare_CP852__ctor
 I18N_Rare_CP852__ctor:
-.file 28 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP852.cs"
+.file 28 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP852.cs"
 .loc 28 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -27349,7 +27349,7 @@ Lme_c3:
 	.align 4
 	.no_dead_strip I18N_Rare_CP855__ctor
 I18N_Rare_CP855__ctor:
-.file 29 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP855.cs"
+.file 29 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP855.cs"
 .loc 29 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -28457,7 +28457,7 @@ Lme_ca:
 	.align 4
 	.no_dead_strip I18N_Rare_CP857__ctor
 I18N_Rare_CP857__ctor:
-.file 30 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP857.cs"
+.file 30 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP857.cs"
 .loc 30 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -29539,7 +29539,7 @@ Lme_d1:
 	.align 4
 	.no_dead_strip I18N_Rare_CP858__ctor
 I18N_Rare_CP858__ctor:
-.file 31 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP858.cs"
+.file 31 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP858.cs"
 .loc 31 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -30641,7 +30641,7 @@ Lme_d8:
 	.align 4
 	.no_dead_strip I18N_Rare_CP862__ctor
 I18N_Rare_CP862__ctor:
-.file 32 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP862.cs"
+.file 32 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP862.cs"
 .loc 32 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -31744,7 +31744,7 @@ Lme_df:
 	.align 4
 	.no_dead_strip I18N_Rare_CP864__ctor
 I18N_Rare_CP864__ctor:
-.file 33 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP864.cs"
+.file 33 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP864.cs"
 .loc 33 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -32955,7 +32955,7 @@ Lme_e6:
 	.align 4
 	.no_dead_strip I18N_Rare_CP866__ctor
 I18N_Rare_CP866__ctor:
-.file 34 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP866.cs"
+.file 34 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP866.cs"
 .loc 34 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -33856,7 +33856,7 @@ Lme_ed:
 	.align 4
 	.no_dead_strip I18N_Rare_CP869__ctor
 I18N_Rare_CP869__ctor:
-.file 35 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP869.cs"
+.file 35 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP869.cs"
 .loc 35 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -34880,7 +34880,7 @@ Lme_f4:
 	.align 4
 	.no_dead_strip I18N_Rare_CP870__ctor
 I18N_Rare_CP870__ctor:
-.file 36 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP870.cs"
+.file 36 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP870.cs"
 .loc 36 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -35880,7 +35880,7 @@ Lme_fb:
 	.align 4
 	.no_dead_strip I18N_Rare_CP875__ctor
 I18N_Rare_CP875__ctor:
-.file 37 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Rare/CP875.cs"
+.file 37 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Rare/CP875.cs"
 .loc 37 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -37422,7 +37422,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "7379C114-B3C1-4907-ACCB-774CB2AA3B99"
+	.asciz "77ACE492-7BC2-405A-A770-7974165B8567"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -37505,7 +37505,7 @@ _mono_aot_file_info:
 	.long 360,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 70,83,191,72,121,121,232,118,190,151,106,22,136,15,15,128
+	.byte 109,131,66,216,206,162,32,191,99,200,197,60,67,227,193,76
 	.globl _mono_aot_module_I18N_Rare_info
 	.align 3
 _mono_aot_module_I18N_Rare_info:

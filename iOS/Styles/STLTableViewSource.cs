@@ -75,6 +75,17 @@ namespace WorklabsMx.iOS.Styles
                 }
                 else
                 {
+                    KeyChainHelper.DeleteKey("EmailRegex");
+                    KeyChainHelper.DeleteKey("LongitudEmail");
+                    KeyChainHelper.DeleteKey("PasswordRegex");
+                    KeyChainHelper.DeleteKey("LongitudPassword");
+                    KeyChainHelper.DeleteKey("LongitudEmail");
+                    KeyChainHelper.DeleteKey("Usuario_Id");
+                    KeyChainHelper.DeleteKey("Usuario_Tipo");
+                    KeyChainHelper.DeleteKey("Empresa_Id");
+                    KeyChainHelper.DeleteKey("Colaborador_Id");
+                    KeyChainHelper.DeleteKey("Menu_Id");
+
                     var controller = UIStoryboard.FromName("Main", null)
                         .InstantiateViewController("LoginViewController");
                     controller.Title = "Iniciar Sesión";

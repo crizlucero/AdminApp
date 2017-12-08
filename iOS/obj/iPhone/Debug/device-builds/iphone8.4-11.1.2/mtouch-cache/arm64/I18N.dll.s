@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Wed Nov  8 17:08:32 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 20:59:09 EST 2017)"
 	.asciz "I18N.dll"
 	.asciz ""
 
@@ -121,7 +121,7 @@ jit_code_start:
 	.align 4
 	.no_dead_strip I18N_Common_ByteEncoding__ctor_int_char___string_string_string_string_bool_bool_bool_bool_int
 I18N_Common_ByteEncoding__ctor_int_char___string_string_string_string_bool_bool_bool_bool_int:
-.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Common/ByteEncoding.cs"
+.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Common/ByteEncoding.cs"
 .loc 1 62 0 prologue_end
 .word 0xa9b97bfd
 .word 0x910003fd
@@ -3055,7 +3055,7 @@ Lme_16:
 	.align 4
 	.no_dead_strip I18N_Common_ByteSafeEncoding__ctor_int_char___string_string_string_string_bool_bool_bool_bool_int
 I18N_Common_ByteSafeEncoding__ctor_int_char___string_string_string_string_bool_bool_bool_bool_int:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Common/ByteSafeEncoding.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Common/ByteSafeEncoding.cs"
 .loc 2 65 0 prologue_end
 .word 0xa9b97bfd
 .word 0x910003fd
@@ -6474,7 +6474,7 @@ Lme_30:
 	.align 4
 	.no_dead_strip I18N_Common_ReferenceSourceDefaultEncoder__ctor_System_Text_Encoding
 I18N_Common_ReferenceSourceDefaultEncoder__ctor_System_Text_Encoding:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Common/DefaultEncoder.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Common/DefaultEncoder.cs"
 .loc 3 27 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -7058,7 +7058,7 @@ Lme_37:
 	.align 4
 	.no_dead_strip I18N_Common_Handlers_GetAlias_string
 I18N_Common_Handlers_GetAlias_string:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Common/Handlers.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Common/Handlers.cs"
 .loc 4 216 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -11511,7 +11511,7 @@ Lme_3b:
 	.align 4
 	.no_dead_strip I18N_Common_Manager__ctor
 I18N_Common_Manager__ctor:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Common/Manager.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Common/Manager.cs"
 .loc 5 53 0 prologue_end
 .word 0xa9ba7bfd
 .word 0x910003fd
@@ -14108,7 +14108,7 @@ Lme_46:
 	.align 4
 	.no_dead_strip I18N_Common_MonoEncoding__ctor_int
 I18N_Common_MonoEncoding__ctor_int:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Common/MonoEncoding.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Common/MonoEncoding.cs"
 .loc 6 21 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -17764,7 +17764,7 @@ Lme_5f:
 	.align 4
 	.no_dead_strip I18N_Common_MonoSafeEncoding__ctor_int
 I18N_Common_MonoSafeEncoding__ctor_int:
-.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Common/MonoSafeEncoding.cs"
+.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Common/MonoSafeEncoding.cs"
 .loc 7 24 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -18572,7 +18572,7 @@ Lme_66:
 	.align 4
 	.no_dead_strip I18N_Common_Strings_GetString_string
 I18N_Common_Strings_GetString_string:
-.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Common/Strings.cs"
+.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Common/Strings.cs"
 .loc 8 43 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -18832,7 +18832,7 @@ LDIFF_SYM3=ut_end - ut_107
 	.align 4
 	.no_dead_strip System_Array_InternalEnumerator_1_T_INST__ctor_System_Array
 System_Array_InternalEnumerator_1_T_INST__ctor_System_Array:
-.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/corlib/System/Array.cs"
+.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System/Array.cs"
 .loc 9 215 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -20415,7 +20415,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "E96F7D6A-E702-481B-B495-99AC6EB55DD6"
+	.asciz "DF249179-BB1B-442A-9ACD-35613A6CE3DB"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -20498,7 +20498,7 @@ _mono_aot_file_info:
 	.long 192,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 105,98,217,129,95,169,179,74,161,12,200,84,70,62,50,207
+	.byte 153,94,56,36,252,64,2,45,14,15,144,223,220,2,243,219
 	.globl _mono_aot_module_I18N_info
 	.align 3
 _mono_aot_module_I18N_info:

@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Wed Nov  8 17:08:32 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 20:59:09 EST 2017)"
 	.asciz "I18N.MidEast.dll"
 	.asciz ""
 
@@ -121,7 +121,7 @@ jit_code_start:
 	.align 4
 	.no_dead_strip I18N_MidEast_CP1254__ctor
 I18N_MidEast_CP1254__ctor:
-.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/MidEast/CP1254.cs"
+.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/MidEast/CP1254.cs"
 .loc 1 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -627,7 +627,7 @@ Lme_6:
 	.align 4
 	.no_dead_strip I18N_MidEast_CP1255__ctor
 I18N_MidEast_CP1255__ctor:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/MidEast/CP1255.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/MidEast/CP1255.cs"
 .loc 2 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -1130,7 +1130,7 @@ Lme_d:
 	.align 4
 	.no_dead_strip I18N_MidEast_CP1256__ctor
 I18N_MidEast_CP1256__ctor:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/MidEast/CP1256.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/MidEast/CP1256.cs"
 .loc 3 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -2314,7 +2314,7 @@ Lme_14:
 	.align 4
 	.no_dead_strip I18N_MidEast_CP28596__ctor
 I18N_MidEast_CP28596__ctor:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/MidEast/CP28596.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/MidEast/CP28596.cs"
 .loc 4 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -3679,7 +3679,7 @@ Lme_1b:
 	.align 4
 	.no_dead_strip I18N_MidEast_CP28598__ctor
 I18N_MidEast_CP28598__ctor:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/MidEast/CP28598.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/MidEast/CP28598.cs"
 .loc 5 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -4058,7 +4058,7 @@ Lme_22:
 	.align 4
 	.no_dead_strip I18N_MidEast_CP28599__ctor
 I18N_MidEast_CP28599__ctor:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/MidEast/CP28599.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/MidEast/CP28599.cs"
 .loc 6 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -4431,7 +4431,7 @@ Lme_29:
 	.align 4
 	.no_dead_strip I18N_MidEast_CP38598__ctor
 I18N_MidEast_CP38598__ctor:
-.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/MidEast/CP38598.cs"
+.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/MidEast/CP38598.cs"
 .loc 7 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -5020,7 +5020,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "020F5224-1169-404E-B72A-012B2010538D"
+	.asciz "52ABC9D5-7BC9-445A-8EB8-2DDDCBECD7A4"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -5103,7 +5103,7 @@ _mono_aot_file_info:
 	.long 88,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 20,9,223,2,237,149,255,124,95,144,118,26,230,24,2,33
+	.byte 232,24,113,69,199,212,68,62,223,211,214,152,193,179,16,191
 	.globl _mono_aot_module_I18N_MidEast_info
 	.align 3
 _mono_aot_module_I18N_MidEast_info:

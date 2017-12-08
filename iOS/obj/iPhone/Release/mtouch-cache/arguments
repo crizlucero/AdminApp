@@ -1,9 +1,9 @@
-# Version: 11.4.0.214 (d15-5: c4240f3f)
+# Version: 11.6.1.2 (xcode9.2: 6857dfcc)
 # [first argument, ignore] # --cache
-/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/lib/mtouch/mtouch.exe \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhone/Release/mtouch-cache \
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/lib/mtouch/mtouch.exe \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Release/mtouch-cache \
 	--dev \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/bin/iPhone/Release/WorklabsMx.iOS.app \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Release/WorklabsMx.iOS.app \
 	--executable \
 	WorklabsMx.iOS \
 	--linksdkonly \
@@ -12,25 +12,25 @@
 	--sdkroot \
 	/Applications/Xcode.app/Contents/Developer \
 	--sdk \
-	11.1 \
+	11.2 \
 	--targetver \
 	8.0 \
 	--aot-options=-O=float32 \
 	--http-message-handler=HttpClientHandler \
 	'--abi=armv7,arm64' \
 	--symbollist \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhone/Release/mtouch-symbols.list \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Release/mtouch-symbols.list \
 	--dsym=no \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/MimeKit.1.22.0/lib/Xamarin.iOS10/BouncyCastle.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/MimeKit.1.22.0/lib/Xamarin.iOS10/BouncyCastle.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/BTProgressHUD.1.2.0.6/lib/Xamarin.iOS10/BTProgressHUD.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/BTProgressHUD.1.2.0.6/lib/Xamarin.iOS10/BTProgressHUD.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/MailKit.1.22.0/lib/Xamarin.iOS10/MailKit.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/MailKit.1.22.0/lib/Xamarin.iOS10/MailKit.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Microsoft.CSharp.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/MimeKit.1.22.0/lib/Xamarin.iOS10/MimeKit.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/MimeKit.1.22.0/lib/Xamarin.iOS10/MimeKit.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Mono.CSharp.dll \
 	-r \
@@ -46,23 +46,23 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Newtonsoft.Json.10.0.3/lib/netstandard1.3/Newtonsoft.Json.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Newtonsoft.Json.10.0.3/lib/netstandard1.3/Newtonsoft.Json.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Xam.Plugin.Connectivity.3.0.3/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Xam.Plugin.Connectivity.3.0.3/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Xam.Plugin.Connectivity.3.0.3/lib/Xamarin.iOS10/Plugin.Connectivity.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Xam.Plugin.Connectivity.3.0.3/lib/Xamarin.iOS10/Plugin.Connectivity.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Plugin.KeyChain.2.2.0/lib/Xamarin.iOS10/Plugin.KeyChain.Abstractions.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Plugin.KeyChain.2.2.0/lib/Xamarin.iOS10/Plugin.KeyChain.Abstractions.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Plugin.KeyChain.2.2.0/lib/Xamarin.iOS10/Plugin.KeyChain.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Plugin.KeyChain.2.2.0/lib/Xamarin.iOS10/Plugin.KeyChain.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Xam.Plugins.Settings.3.1.1/lib/Xamarin.iOS10/Plugin.Settings.Abstractions.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Xam.Plugins.Settings.3.1.1/lib/Xamarin.iOS10/Plugin.Settings.Abstractions.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Xam.Plugins.Settings.3.1.1/lib/Xamarin.iOS10/Plugin.Settings.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Xam.Plugins.Settings.3.1.1/lib/Xamarin.iOS10/Plugin.Settings.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.Abstractions.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.Abstractions.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Core.dll \
 	-r \
@@ -74,13 +74,13 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Net.Http.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Microsoft.Net.Http.2.2.29/lib/Xamarin.iOS10/System.Net.Http.Extensions.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Microsoft.Net.Http.2.2.29/lib/Xamarin.iOS10/System.Net.Http.Extensions.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Microsoft.Net.Http.2.2.29/lib/Xamarin.iOS10/System.Net.Http.Primitives.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Microsoft.Net.Http.2.2.29/lib/Xamarin.iOS10/System.Net.Http.Primitives.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Xml.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/SidebarNavigation.1.9.4/lib/Xamarin.iOS10/Xamarin-Sidebar-Unified.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/SidebarNavigation.1.9.4/lib/Xamarin.iOS10/Xamarin-Sidebar-Unified.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Xamarin.iOS.dll \
 	-r \
@@ -358,37 +358,37 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Xml.Xsl.Primitives.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/MimeKit.1.22.0/lib/Xamarin.iOS10/BouncyCastle.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/MimeKit.1.22.0/lib/Xamarin.iOS10/BouncyCastle.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/BTProgressHUD.1.2.0.6/lib/Xamarin.iOS10/BTProgressHUD.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/BTProgressHUD.1.2.0.6/lib/Xamarin.iOS10/BTProgressHUD.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/MailKit.1.22.0/lib/Xamarin.iOS10/MailKit.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/MailKit.1.22.0/lib/Xamarin.iOS10/MailKit.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/MimeKit.1.22.0/lib/Xamarin.iOS10/MimeKit.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/MimeKit.1.22.0/lib/Xamarin.iOS10/MimeKit.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Newtonsoft.Json.10.0.3/lib/netstandard1.3/Newtonsoft.Json.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Newtonsoft.Json.10.0.3/lib/netstandard1.3/Newtonsoft.Json.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Xam.Plugin.Connectivity.3.0.3/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Xam.Plugin.Connectivity.3.0.3/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Xam.Plugin.Connectivity.3.0.3/lib/Xamarin.iOS10/Plugin.Connectivity.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Xam.Plugin.Connectivity.3.0.3/lib/Xamarin.iOS10/Plugin.Connectivity.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Plugin.KeyChain.2.2.0/lib/Xamarin.iOS10/Plugin.KeyChain.Abstractions.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Plugin.KeyChain.2.2.0/lib/Xamarin.iOS10/Plugin.KeyChain.Abstractions.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Plugin.KeyChain.2.2.0/lib/Xamarin.iOS10/Plugin.KeyChain.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Plugin.KeyChain.2.2.0/lib/Xamarin.iOS10/Plugin.KeyChain.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Xam.Plugins.Settings.3.1.1/lib/Xamarin.iOS10/Plugin.Settings.Abstractions.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Xam.Plugins.Settings.3.1.1/lib/Xamarin.iOS10/Plugin.Settings.Abstractions.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Xam.Plugins.Settings.3.1.1/lib/Xamarin.iOS10/Plugin.Settings.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Xam.Plugins.Settings.3.1.1/lib/Xamarin.iOS10/Plugin.Settings.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.Abstractions.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.Abstractions.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Microsoft.Net.Http.2.2.29/lib/Xamarin.iOS10/System.Net.Http.Extensions.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Microsoft.Net.Http.2.2.29/lib/Xamarin.iOS10/System.Net.Http.Extensions.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/Microsoft.Net.Http.2.2.29/lib/Xamarin.iOS10/System.Net.Http.Primitives.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/Microsoft.Net.Http.2.2.29/lib/Xamarin.iOS10/System.Net.Http.Primitives.dll \
 	-r \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/packages/SidebarNavigation.1.9.4/lib/Xamarin.iOS10/Xamarin-Sidebar-Unified.dll \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/packages/SidebarNavigation.1.9.4/lib/Xamarin.iOS10/Xamarin-Sidebar-Unified.dll \
 	--target-framework \
 	'Xamarin.iOS,v1.0' \
-	/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/bin/iPhone/Release/WorklabsMx.iOS.exe \
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhone/Release/WorklabsMx.iOS.exe \

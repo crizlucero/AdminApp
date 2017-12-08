@@ -401,16 +401,6 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/MEw-Wf-Jks-view-Ltv-S3-pHu.nib/objects-11.0+.nib">
-      <LogicalName>Main.storyboardc/MEw-Wf-Jks-view-Ltv-S3-pHu.nib/objects-11.0+.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/MEw-Wf-Jks-view-Ltv-S3-pHu.nib/runtime.nib">
-      <LogicalName>Main.storyboardc/MEw-Wf-Jks-view-Ltv-S3-pHu.nib/runtime.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/McC-wT-P9R-view-5v0-mq-NCw.nib/objects-11.0+.nib">
       <LogicalName>Main.storyboardc/McC-wT-P9R-view-5v0-mq-NCw.nib/objects-11.0+.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -498,16 +488,6 @@
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/PerfilIndividualController.nib/runtime.nib">
       <LogicalName>Main.storyboardc/PerfilIndividualController.nib/runtime.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/Q4l-hq-4Uz-view-heM-u3-Pwa.nib/objects-11.0+.nib">
-      <LogicalName>Main.storyboardc/Q4l-hq-4Uz-view-heM-u3-Pwa.nib/objects-11.0+.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/Q4l-hq-4Uz-view-heM-u3-Pwa.nib/runtime.nib">
-      <LogicalName>Main.storyboardc/Q4l-hq-4Uz-view-heM-u3-Pwa.nib/runtime.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
@@ -601,26 +581,6 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/UITableViewController-MEw-Wf-Jks.nib/objects-11.0+.nib">
-      <LogicalName>Main.storyboardc/UITableViewController-MEw-Wf-Jks.nib/objects-11.0+.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/UITableViewController-MEw-Wf-Jks.nib/runtime.nib">
-      <LogicalName>Main.storyboardc/UITableViewController-MEw-Wf-Jks.nib/runtime.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/UITableViewController-Q4l-hq-4Uz.nib/objects-11.0+.nib">
-      <LogicalName>Main.storyboardc/UITableViewController-Q4l-hq-4Uz.nib/objects-11.0+.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/UITableViewController-Q4l-hq-4Uz.nib/runtime.nib">
-      <LogicalName>Main.storyboardc/UITableViewController-Q4l-hq-4Uz.nib/runtime.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/UITableViewController-VSm-LE-Gh7.nib/objects-11.0+.nib">
       <LogicalName>Main.storyboardc/UITableViewController-VSm-LE-Gh7.nib/objects-11.0+.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -628,6 +588,16 @@
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/UITableViewController-VSm-LE-Gh7.nib/runtime.nib">
       <LogicalName>Main.storyboardc/UITableViewController-VSm-LE-Gh7.nib/runtime.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/UITableViewController-kDe-xg-nSj.nib/objects-11.0+.nib">
+      <LogicalName>Main.storyboardc/UITableViewController-kDe-xg-nSj.nib/objects-11.0+.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/UITableViewController-kDe-xg-nSj.nib/runtime.nib">
+      <LogicalName>Main.storyboardc/UITableViewController-kDe-xg-nSj.nib/runtime.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
@@ -741,6 +711,16 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/UIViewController-i9j-Hi-YoB.nib/objects-11.0+.nib">
+      <LogicalName>Main.storyboardc/UIViewController-i9j-Hi-YoB.nib/objects-11.0+.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/UIViewController-i9j-Hi-YoB.nib/runtime.nib">
+      <LogicalName>Main.storyboardc/UIViewController-i9j-Hi-YoB.nib/runtime.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/UIViewController-j9e-Zd-ZbT.nib/objects-11.0+.nib">
       <LogicalName>Main.storyboardc/UIViewController-j9e-Zd-ZbT.nib/objects-11.0+.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -821,6 +801,16 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/i9j-Hi-YoB-view-da5-wM-hpx.nib/objects-11.0+.nib">
+      <LogicalName>Main.storyboardc/i9j-Hi-YoB-view-da5-wM-hpx.nib/objects-11.0+.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/i9j-Hi-YoB-view-da5-wM-hpx.nib/runtime.nib">
+      <LogicalName>Main.storyboardc/i9j-Hi-YoB-view-da5-wM-hpx.nib/runtime.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/j9e-Zd-ZbT-view-wj6-JX-hBV.nib/objects-11.0+.nib">
       <LogicalName>Main.storyboardc/j9e-Zd-ZbT-view-wj6-JX-hBV.nib/objects-11.0+.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -828,6 +818,16 @@
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/j9e-Zd-ZbT-view-wj6-JX-hBV.nib/runtime.nib">
       <LogicalName>Main.storyboardc/j9e-Zd-ZbT-view-wj6-JX-hBV.nib/runtime.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/kDe-xg-nSj-view-iaj-Ub-6PP.nib/objects-11.0+.nib">
+      <LogicalName>Main.storyboardc/kDe-xg-nSj-view-iaj-Ub-6PP.nib/objects-11.0+.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc/kDe-xg-nSj-view-iaj-Ub-6PP.nib/runtime.nib">
+      <LogicalName>Main.storyboardc/kDe-xg-nSj-view-iaj-Ub-6PP.nib/runtime.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone8.4-11.1.2/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>

@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 4,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Wed Nov  8 17:08:36 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 21:00:42 EST 2017)"
 	.asciz "Plugin.Connectivity.Abstractions.dll"
 	.asciz ""
 
@@ -396,7 +396,7 @@ LDIFF_SYM3=ut_end - ut_42
 	.align 2
 	.no_dead_strip System_Array_InternalEnumerator_1_T_INT__ctor_System_Array
 System_Array_InternalEnumerator_1_T_INT__ctor_System_Array:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/corlib/System/Array.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System/Array.cs"
 .loc 2 215 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,64,1,45,233,2,223,77,226,0,128,141,229,0,96,160,225,4,16,141,229,4,0,157,229
@@ -1037,7 +1037,7 @@ _mono_aot_file_info:
 	.long 96,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 67,123,186,163,232,6,149,112,110,232,109,78,11,120,150,13
+	.byte 161,233,95,42,85,251,86,159,252,82,66,233,96,253,238,218
 	.globl _mono_aot_module_Plugin_Connectivity_Abstractions_info
 	.align 2
 _mono_aot_module_Plugin_Connectivity_Abstractions_info:

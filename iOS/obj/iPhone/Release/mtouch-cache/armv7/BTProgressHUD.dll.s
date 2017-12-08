@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 4,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Wed Nov  8 17:08:36 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 21:00:42 EST 2017)"
 	.asciz "BTProgressHUD.dll"
 	.asciz ""
 
@@ -4166,7 +4166,7 @@ Lme_74:
 	.align 2
 	.no_dead_strip System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF
 System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/corlib/System/Array.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System/Array.cs"
 .loc 2 71 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,9,223,77,226,0,128,141,229,20,0,141,229,0,15,160,227,4,0,141,229
@@ -4737,1375 +4737,1375 @@ plt_BigTed_ProgressHUD_get_Shared:
 _p_1:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 552,1653
+	.long mono_aot_BTProgressHUD_got - . + 552,1652
 	.no_dead_strip plt_BigTed_ProgressHUD_Show_string_single_BigTed_ProgressHUD_MaskType_double
 plt_BigTed_ProgressHUD_Show_string_single_BigTed_ProgressHUD_MaskType_double:
 _p_2:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 556,1655
+	.long mono_aot_BTProgressHUD_got - . + 556,1654
 	.no_dead_strip plt_BigTed_ProgressHUD_Show_string_System_Action_string_single_BigTed_ProgressHUD_MaskType_double
 plt_BigTed_ProgressHUD_Show_string_System_Action_string_single_BigTed_ProgressHUD_MaskType_double:
 _p_3:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 560,1657
+	.long mono_aot_BTProgressHUD_got - . + 560,1656
 	.no_dead_strip plt_BigTed_ProgressHUD_ShowContinuousProgress_string_BigTed_ProgressHUD_MaskType_double_UIKit_UIImage
 plt_BigTed_ProgressHUD_ShowContinuousProgress_string_BigTed_ProgressHUD_MaskType_double_UIKit_UIImage:
 _p_4:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 564,1659
+	.long mono_aot_BTProgressHUD_got - . + 564,1658
 	.no_dead_strip plt_BigTed_ProgressHUD_ShowToast_string_BigTed_ProgressHUD_MaskType_BigTed_ProgressHUD_ToastPosition_double
 plt_BigTed_ProgressHUD_ShowToast_string_BigTed_ProgressHUD_MaskType_BigTed_ProgressHUD_ToastPosition_double:
 _p_5:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 568,1661
+	.long mono_aot_BTProgressHUD_got - . + 568,1660
 	.no_dead_strip plt_BigTed_ProgressHUD_SetStatus_string
 plt_BigTed_ProgressHUD_SetStatus_string:
 _p_6:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 572,1663
+	.long mono_aot_BTProgressHUD_got - . + 572,1662
 	.no_dead_strip plt_BigTed_ProgressHUD_ShowSuccessWithStatus_string_double
 plt_BigTed_ProgressHUD_ShowSuccessWithStatus_string_double:
 _p_7:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 576,1665
+	.long mono_aot_BTProgressHUD_got - . + 576,1664
 	.no_dead_strip plt_BigTed_ProgressHUD_ShowErrorWithStatus_string_double
 plt_BigTed_ProgressHUD_ShowErrorWithStatus_string_double:
 _p_8:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 580,1667
+	.long mono_aot_BTProgressHUD_got - . + 580,1666
 	.no_dead_strip plt_BigTed_ProgressHUD_ShowImage_UIKit_UIImage_string_double
 plt_BigTed_ProgressHUD_ShowImage_UIKit_UIImage_string_double:
 _p_9:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 584,1669
+	.long mono_aot_BTProgressHUD_got - . + 584,1668
 	.no_dead_strip plt_BigTed_ProgressHUD_Dismiss
 plt_BigTed_ProgressHUD_Dismiss:
 _p_10:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 588,1671
+	.long mono_aot_BTProgressHUD_got - . + 588,1670
 	.no_dead_strip plt_BigTed_ProgressHUD_get_IsVisible
 plt_BigTed_ProgressHUD_get_IsVisible:
 _p_11:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 592,1673
+	.long mono_aot_BTProgressHUD_got - . + 592,1672
 	.no_dead_strip plt_BigTed_ProgressHUD_get_ForceiOS6LookAndFeel
 plt_BigTed_ProgressHUD_get_ForceiOS6LookAndFeel:
 _p_12:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 596,1675
+	.long mono_aot_BTProgressHUD_got - . + 596,1674
 	.no_dead_strip plt_BigTed_ProgressHUD_set_ForceiOS6LookAndFeel_bool
 plt_BigTed_ProgressHUD_set_ForceiOS6LookAndFeel_bool:
 _p_13:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 600,1677
+	.long mono_aot_BTProgressHUD_got - . + 600,1676
 	.no_dead_strip plt_BigTed_NSObjectExtensions_object_getClassName_intptr
 plt_BigTed_NSObjectExtensions_object_getClassName_intptr:
 _p_14:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 604,1679
+	.long mono_aot_BTProgressHUD_got - . + 604,1678
 	.no_dead_strip plt_System_Runtime_InteropServices_Marshal_PtrToStringAuto_intptr
 plt_System_Runtime_InteropServices_Marshal_PtrToStringAuto_intptr:
 _p_15:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 608,1681
+	.long mono_aot_BTProgressHUD_got - . + 608,1680
 	.no_dead_strip plt__jit_icall_ves_icall_object_new_specific
 plt__jit_icall_ves_icall_object_new_specific:
 _p_16:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 612,1686
+	.long mono_aot_BTProgressHUD_got - . + 612,1685
 	.no_dead_strip plt_Foundation_NSObject__ctor
 plt_Foundation_NSObject__ctor:
 _p_17:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 616,1718
+	.long mono_aot_BTProgressHUD_got - . + 616,1717
 	.no_dead_strip plt_ObjCRuntime_Class_GetHandle_string
 plt_ObjCRuntime_Class_GetHandle_string:
 _p_18:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 620,1723
+	.long mono_aot_BTProgressHUD_got - . + 620,1722
 	.no_dead_strip plt_intptr_op_Inequality_intptr_intptr
 plt_intptr_op_Inequality_intptr_intptr:
 _p_19:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 624,1728
+	.long mono_aot_BTProgressHUD_got - . + 624,1727
 	.no_dead_strip plt_wrapper_alloc_object_AllocSmall_intptr_intptr
 plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
 _p_20:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 628,1733
+	.long mono_aot_BTProgressHUD_got - . + 628,1732
 	.no_dead_strip plt_UIKit_UIScreen_get_MainScreen
 plt_UIKit_UIScreen_get_MainScreen:
 _p_21:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 632,1741
+	.long mono_aot_BTProgressHUD_got - . + 632,1740
 	.no_dead_strip plt_UIKit_UIScreen_get_Bounds
 plt_UIKit_UIScreen_get_Bounds:
 _p_22:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 636,1746
+	.long mono_aot_BTProgressHUD_got - . + 636,1745
 	.no_dead_strip plt_BigTed_ProgressHUD__ctor_CoreGraphics_CGRect
 plt_BigTed_ProgressHUD__ctor_CoreGraphics_CGRect:
 _p_23:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 640,1751
+	.long mono_aot_BTProgressHUD_got - . + 640,1750
 	.no_dead_strip plt_UIKit_UIColor_FromWhiteAlpha_System_nfloat_System_nfloat
 plt_UIKit_UIColor_FromWhiteAlpha_System_nfloat_System_nfloat:
 _p_24:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 644,1753
+	.long mono_aot_BTProgressHUD_got - . + 644,1752
 	.no_dead_strip plt_UIKit_UIColor_get_White
 plt_UIKit_UIColor_get_White:
 _p_25:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 648,1758
+	.long mono_aot_BTProgressHUD_got - . + 648,1757
 	.no_dead_strip plt_UIKit_UIColor_get_Black
 plt_UIKit_UIColor_get_Black:
 _p_26:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 652,1763
+	.long mono_aot_BTProgressHUD_got - . + 652,1762
 	.no_dead_strip plt_UIKit_UIColor_get_Clear
 plt_UIKit_UIColor_get_Clear:
 _p_27:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 656,1768
+	.long mono_aot_BTProgressHUD_got - . + 656,1767
 	.no_dead_strip plt_UIKit_UIFont_BoldSystemFontOfSize_System_nfloat
 plt_UIKit_UIFont_BoldSystemFontOfSize_System_nfloat:
 _p_28:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 660,1773
+	.long mono_aot_BTProgressHUD_got - . + 660,1772
 	.no_dead_strip plt_UIKit_UIView__ctor_CoreGraphics_CGRect
 plt_UIKit_UIView__ctor_CoreGraphics_CGRect:
 _p_29:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 664,1778
+	.long mono_aot_BTProgressHUD_got - . + 664,1777
 	.no_dead_strip plt_UIKit_UIView_set_UserInteractionEnabled_bool
 plt_UIKit_UIView_set_UserInteractionEnabled_bool:
 _p_30:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 668,1783
+	.long mono_aot_BTProgressHUD_got - . + 668,1782
 	.no_dead_strip plt_UIKit_UIView_set_Alpha_System_nfloat
 plt_UIKit_UIView_set_Alpha_System_nfloat:
 _p_31:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 672,1788
+	.long mono_aot_BTProgressHUD_got - . + 672,1787
 	.no_dead_strip plt_UIKit_UIView_set_AutoresizingMask_UIKit_UIViewAutoresizing
 plt_UIKit_UIView_set_AutoresizingMask_UIKit_UIViewAutoresizing:
 _p_32:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 676,1793
+	.long mono_aot_BTProgressHUD_got - . + 676,1792
 	.no_dead_strip plt_BigTed_ProgressHUD_SetOSSpecificLookAndFeel
 plt_BigTed_ProgressHUD_SetOSSpecificLookAndFeel:
 _p_33:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 680,1798
+	.long mono_aot_BTProgressHUD_got - . + 680,1797
 	.no_dead_strip plt_BigTed_ProgressHUD_get_IsiOS7ForLookAndFeel
 plt_BigTed_ProgressHUD_get_IsiOS7ForLookAndFeel:
 _p_34:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 684,1800
+	.long mono_aot_BTProgressHUD_got - . + 684,1799
 	.no_dead_strip plt_UIKit_UIColor_ColorWithAlpha_System_nfloat
 plt_UIKit_UIColor_ColorWithAlpha_System_nfloat:
 _p_35:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 688,1802
+	.long mono_aot_BTProgressHUD_got - . + 688,1801
 	.no_dead_strip plt_Foundation_NSObject_InvokeOnMainThread_System_Action
 plt_Foundation_NSObject_InvokeOnMainThread_System_Action:
 _p_36:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 692,1807
+	.long mono_aot_BTProgressHUD_got - . + 692,1806
 	.no_dead_strip plt__jit_icall_mono_arch_throw_corlib_exception
 plt__jit_icall_mono_arch_throw_corlib_exception:
 _p_37:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 696,1812
+	.long mono_aot_BTProgressHUD_got - . + 696,1811
 	.no_dead_strip plt_BigTed_ProgressHUD_get_SuccessImage
 plt_BigTed_ProgressHUD_get_SuccessImage:
 _p_38:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 700,1847
+	.long mono_aot_BTProgressHUD_got - . + 700,1846
 	.no_dead_strip plt_BigTed_ProgressHUD_get_ErrorImage
 plt_BigTed_ProgressHUD_get_ErrorImage:
 _p_39:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 704,1849
+	.long mono_aot_BTProgressHUD_got - . + 704,1848
 	.no_dead_strip plt_UIKit_UIImage_FromBundle_string
 plt_UIKit_UIImage_FromBundle_string:
 _p_40:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 708,1851
+	.long mono_aot_BTProgressHUD_got - . + 708,1850
 	.no_dead_strip plt_UIKit_UIView_get_Alpha
 plt_UIKit_UIView_get_Alpha:
 _p_41:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 712,1856
+	.long mono_aot_BTProgressHUD_got - . + 712,1855
 	.no_dead_strip plt__jit_icall_mono_generic_class_init
 plt__jit_icall_mono_generic_class_init:
 _p_42:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 716,1861
+	.long mono_aot_BTProgressHUD_got - . + 716,1860
 	.no_dead_strip plt_UIKit_UIApplication_EnsureUIThread
 plt_UIKit_UIApplication_EnsureUIThread:
 _p_43:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 720,1887
+	.long mono_aot_BTProgressHUD_got - . + 720,1886
 	.no_dead_strip plt_UIKit_UIGraphics_GetCurrentContext
 plt_UIKit_UIGraphics_GetCurrentContext:
 _p_44:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 724,1892
+	.long mono_aot_BTProgressHUD_got - . + 724,1891
 	.no_dead_strip plt_UIKit_UIColor_SetColor
 plt_UIKit_UIColor_SetColor:
 _p_45:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 728,1897
+	.long mono_aot_BTProgressHUD_got - . + 728,1896
 	.no_dead_strip plt_UIKit_UIView_get_Bounds
 plt_UIKit_UIView_get_Bounds:
 _p_46:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 732,1902
+	.long mono_aot_BTProgressHUD_got - . + 732,1901
 	.no_dead_strip plt_CoreGraphics_CGContext_FillRect_CoreGraphics_CGRect
 plt_CoreGraphics_CGContext_FillRect_CoreGraphics_CGRect:
 _p_47:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 736,1907
+	.long mono_aot_BTProgressHUD_got - . + 736,1906
 	.no_dead_strip plt_wrapper_alloc_object_AllocVector_intptr_intptr
 plt_wrapper_alloc_object_AllocVector_intptr_intptr:
 _p_48:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 740,1912
+	.long mono_aot_BTProgressHUD_got - . + 740,1911
 	.no_dead_strip plt_CoreGraphics_CGColorSpace_CreateDeviceRGB
 plt_CoreGraphics_CGColorSpace_CreateDeviceRGB:
 _p_49:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 744,1920
+	.long mono_aot_BTProgressHUD_got - . + 744,1919
 	.no_dead_strip plt_CoreGraphics_CGGradient__ctor_CoreGraphics_CGColorSpace_System_nfloat___System_nfloat__
 plt_CoreGraphics_CGGradient__ctor_CoreGraphics_CGColorSpace_System_nfloat___System_nfloat__:
 _p_50:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 748,1925
+	.long mono_aot_BTProgressHUD_got - . + 748,1924
 	.no_dead_strip plt_CoreGraphics_CGContext_DrawRadialGradient_CoreGraphics_CGGradient_CoreGraphics_CGPoint_System_nfloat_CoreGraphics_CGPoint_System_nfloat_CoreGraphics_CGGradientDrawingOptions
 plt_CoreGraphics_CGContext_DrawRadialGradient_CoreGraphics_CGGradient_CoreGraphics_CGPoint_System_nfloat_CoreGraphics_CGPoint_System_nfloat_CoreGraphics_CGGradientDrawingOptions:
 _p_51:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 752,1930
+	.long mono_aot_BTProgressHUD_got - . + 752,1929
 	.no_dead_strip plt_UIKit_UIView_get_TintColor
 plt_UIKit_UIView_get_TintColor:
 _p_52:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 756,1935
+	.long mono_aot_BTProgressHUD_got - . + 756,1934
 	.no_dead_strip plt_BigTed_ProgressHUD_get_OverlayView
 plt_BigTed_ProgressHUD_get_OverlayView:
 _p_53:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 760,1940
+	.long mono_aot_BTProgressHUD_got - . + 760,1939
 	.no_dead_strip plt_UIKit_UIView_get_Superview
 plt_UIKit_UIView_get_Superview:
 _p_54:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 764,1942
+	.long mono_aot_BTProgressHUD_got - . + 764,1941
 	.no_dead_strip plt_UIKit_UIApplication_get_SharedApplication
 plt_UIKit_UIApplication_get_SharedApplication:
 _p_55:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 768,1947
+	.long mono_aot_BTProgressHUD_got - . + 768,1946
 	.no_dead_strip plt_UIKit_UIApplication_get_Windows
 plt_UIKit_UIApplication_get_Windows:
 _p_56:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 772,1952
+	.long mono_aot_BTProgressHUD_got - . + 772,1951
 	.no_dead_strip plt_System_Array_Reverse_System_Array
 plt_System_Array_Reverse_System_Array:
 _p_57:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 776,1957
+	.long mono_aot_BTProgressHUD_got - . + 776,1956
 	.no_dead_strip plt_UIKit_UIWindow_get_WindowLevel
 plt_UIKit_UIWindow_get_WindowLevel:
 _p_58:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 780,1962
+	.long mono_aot_BTProgressHUD_got - . + 780,1961
 	.no_dead_strip plt_UIKit_UIWindowLevel_get_Normal
 plt_UIKit_UIWindowLevel_get_Normal:
 _p_59:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 784,1967
+	.long mono_aot_BTProgressHUD_got - . + 784,1966
 	.no_dead_strip plt_UIKit_UIView_get_Hidden
 plt_UIKit_UIView_get_Hidden:
 _p_60:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 788,1972
+	.long mono_aot_BTProgressHUD_got - . + 788,1971
 	.no_dead_strip plt_UIKit_UIWindow_get_IsKeyWindow
 plt_UIKit_UIWindow_get_IsKeyWindow:
 _p_61:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 792,1977
+	.long mono_aot_BTProgressHUD_got - . + 792,1976
 	.no_dead_strip plt_UIKit_UIView_AddSubview_UIKit_UIView
 plt_UIKit_UIView_AddSubview_UIKit_UIView:
 _p_62:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 796,1982
+	.long mono_aot_BTProgressHUD_got - . + 796,1981
 	.no_dead_strip plt_BigTed_ProgressHUD_get_ImageView
 plt_BigTed_ProgressHUD_get_ImageView:
 _p_63:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 800,1987
+	.long mono_aot_BTProgressHUD_got - . + 800,1986
 	.no_dead_strip plt_UIKit_UIView_set_Hidden_bool
 plt_UIKit_UIView_set_Hidden_bool:
 _p_64:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 804,1989
+	.long mono_aot_BTProgressHUD_got - . + 804,1988
 	.no_dead_strip plt_BigTed_ProgressHUD_get_StringLabel
 plt_BigTed_ProgressHUD_get_StringLabel:
 _p_65:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 808,1994
+	.long mono_aot_BTProgressHUD_got - . + 808,1993
 	.no_dead_strip plt_UIKit_UILabel_set_Text_string
 plt_UIKit_UILabel_set_Text_string:
 _p_66:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 812,1996
+	.long mono_aot_BTProgressHUD_got - . + 812,1995
 	.no_dead_strip plt_BigTed_ProgressHUD_get_CancelHudButton
 plt_BigTed_ProgressHUD_get_CancelHudButton:
 _p_67:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 816,2001
+	.long mono_aot_BTProgressHUD_got - . + 816,2000
 	.no_dead_strip plt_UIKit_UIButton_SetTitle_string_UIKit_UIControlState
 plt_UIKit_UIButton_SetTitle_string_UIKit_UIControlState:
 _p_68:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 820,2003
+	.long mono_aot_BTProgressHUD_got - . + 820,2002
 	.no_dead_strip plt_UIKit_UIControl_add_TouchUpInside_System_EventHandler
 plt_UIKit_UIControl_add_TouchUpInside_System_EventHandler:
 _p_69:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 824,2008
+	.long mono_aot_BTProgressHUD_got - . + 824,2007
 	.no_dead_strip plt_BigTed_ProgressHUD_UpdatePosition_bool
 plt_BigTed_ProgressHUD_UpdatePosition_bool:
 _p_70:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 828,2013
+	.long mono_aot_BTProgressHUD_got - . + 828,2012
 	.no_dead_strip plt_UIKit_UIImageView_set_Image_UIKit_UIImage
 plt_UIKit_UIImageView_set_Image_UIKit_UIImage:
 _p_71:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 832,2015
+	.long mono_aot_BTProgressHUD_got - . + 832,2014
 	.no_dead_strip plt_BigTed_ProgressHUD_get_RingLayer
 plt_BigTed_ProgressHUD_get_RingLayer:
 _p_72:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 836,2020
+	.long mono_aot_BTProgressHUD_got - . + 836,2019
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer_set_StrokeEnd_System_nfloat
 plt_CoreAnimation_CAShapeLayer_set_StrokeEnd_System_nfloat:
 _p_73:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 840,2022
+	.long mono_aot_BTProgressHUD_got - . + 840,2021
 	.no_dead_strip plt_System_TimeSpan_FromMilliseconds_double
 plt_System_TimeSpan_FromMilliseconds_double:
 _p_74:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 844,2027
+	.long mono_aot_BTProgressHUD_got - . + 844,2026
 	.no_dead_strip plt_BigTed_ProgressHUD_StartProgressTimer_System_TimeSpan
 plt_BigTed_ProgressHUD_StartProgressTimer_System_TimeSpan:
 _p_75:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 848,2032
+	.long mono_aot_BTProgressHUD_got - . + 848,2031
 	.no_dead_strip plt_BigTed_ProgressHUD_get_SpinnerView
 plt_BigTed_ProgressHUD_get_SpinnerView:
 _p_76:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 852,2034
+	.long mono_aot_BTProgressHUD_got - . + 852,2033
 	.no_dead_strip plt_UIKit_UIActivityIndicatorView_StopAnimating
 plt_UIKit_UIActivityIndicatorView_StopAnimating:
 _p_77:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 856,2036
+	.long mono_aot_BTProgressHUD_got - . + 856,2035
 	.no_dead_strip plt_BigTed_ProgressHUD_CancelRingLayerAnimation
 plt_BigTed_ProgressHUD_CancelRingLayerAnimation:
 _p_78:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 860,2041
+	.long mono_aot_BTProgressHUD_got - . + 860,2040
 	.no_dead_strip plt_UIKit_UIActivityIndicatorView_StartAnimating
 plt_UIKit_UIActivityIndicatorView_StartAnimating:
 _p_79:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 864,2043
+	.long mono_aot_BTProgressHUD_got - . + 864,2042
 	.no_dead_strip plt_UIKit_UIView_IsDescendantOfView_UIKit_UIView
 plt_UIKit_UIView_IsDescendantOfView_UIKit_UIView:
 _p_80:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 868,2048
+	.long mono_aot_BTProgressHUD_got - . + 868,2047
 	.no_dead_strip plt_BigTed_ProgressHUD_PositionHUD_Foundation_NSNotification
 plt_BigTed_ProgressHUD_PositionHUD_Foundation_NSNotification:
 _p_81:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 872,2053
+	.long mono_aot_BTProgressHUD_got - . + 872,2052
 	.no_dead_strip plt_BigTed_ProgressHUD_RegisterNotifications
 plt_BigTed_ProgressHUD_RegisterNotifications:
 _p_82:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 876,2055
+	.long mono_aot_BTProgressHUD_got - . + 876,2054
 	.no_dead_strip plt_BigTed_ProgressHUD_get_HudView
 plt_BigTed_ProgressHUD_get_HudView:
 _p_83:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 880,2057
+	.long mono_aot_BTProgressHUD_got - . + 880,2056
 	.no_dead_strip plt_UIKit_UIView_get_Transform
 plt_UIKit_UIView_get_Transform:
 _p_84:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 884,2059
+	.long mono_aot_BTProgressHUD_got - . + 884,2058
 	.no_dead_strip plt_CoreGraphics_CGAffineTransform_Scale_System_nfloat_System_nfloat
 plt_CoreGraphics_CGAffineTransform_Scale_System_nfloat_System_nfloat:
 _p_85:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 888,2064
+	.long mono_aot_BTProgressHUD_got - . + 888,2063
 	.no_dead_strip plt_BigTed_ProgressHUD_get_isClear
 plt_BigTed_ProgressHUD_get_isClear:
 _p_86:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 892,2069
+	.long mono_aot_BTProgressHUD_got - . + 892,2068
 	.no_dead_strip plt_UIKit_UIView_Animate_double_double_UIKit_UIViewAnimationOptions_System_Action_System_Action
 plt_UIKit_UIView_Animate_double_double_UIKit_UIViewAnimationOptions_System_Action_System_Action:
 _p_87:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 896,2071
+	.long mono_aot_BTProgressHUD_got - . + 896,2070
 	.no_dead_strip plt_UIKit_UIView_SetNeedsDisplay
 plt_UIKit_UIView_SetNeedsDisplay:
 _p_88:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 900,2076
+	.long mono_aot_BTProgressHUD_got - . + 900,2075
 	.no_dead_strip plt_UIKit_UIView_RemoveFromSuperview
 plt_UIKit_UIView_RemoveFromSuperview:
 _p_89:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 904,2081
+	.long mono_aot_BTProgressHUD_got - . + 904,2080
 	.no_dead_strip plt_BigTed_ProgressHUD_StartDismissTimer_System_TimeSpan
 plt_BigTed_ProgressHUD_StartDismissTimer_System_TimeSpan:
 _p_90:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 908,2086
+	.long mono_aot_BTProgressHUD_got - . + 908,2085
 	.no_dead_strip plt_Foundation_NSTimer_CreateTimer_System_TimeSpan_System_Action_1_Foundation_NSTimer
 plt_Foundation_NSTimer_CreateTimer_System_TimeSpan_System_Action_1_Foundation_NSTimer:
 _p_91:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 912,2088
+	.long mono_aot_BTProgressHUD_got - . + 912,2087
 	.no_dead_strip plt_Foundation_NSRunLoop_get_Main
 plt_Foundation_NSRunLoop_get_Main:
 _p_92:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 916,2093
+	.long mono_aot_BTProgressHUD_got - . + 916,2092
 	.no_dead_strip plt_Foundation_NSRunLoop_AddTimer_Foundation_NSTimer_Foundation_NSRunLoopMode
 plt_Foundation_NSRunLoop_AddTimer_Foundation_NSTimer_Foundation_NSRunLoopMode:
 _p_93:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 920,2098
+	.long mono_aot_BTProgressHUD_got - . + 920,2097
 	.no_dead_strip plt_Foundation_NSTimer_CreateRepeatingTimer_System_TimeSpan_System_Action_1_Foundation_NSTimer
 plt_Foundation_NSTimer_CreateRepeatingTimer_System_TimeSpan_System_Action_1_Foundation_NSTimer:
 _p_94:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 924,2103
+	.long mono_aot_BTProgressHUD_got - . + 924,2102
 	.no_dead_strip plt_Foundation_NSRunLoop_get_Current
 plt_Foundation_NSRunLoop_get_Current:
 _p_95:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 928,2108
+	.long mono_aot_BTProgressHUD_got - . + 928,2107
 	.no_dead_strip plt_Foundation_NSTimer_Invalidate
 plt_Foundation_NSTimer_Invalidate:
 _p_96:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 932,2113
+	.long mono_aot_BTProgressHUD_got - . + 932,2112
 	.no_dead_strip plt_CoreAnimation_CATransaction_Begin
 plt_CoreAnimation_CATransaction_Begin:
 _p_97:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 936,2118
+	.long mono_aot_BTProgressHUD_got - . + 936,2117
 	.no_dead_strip plt_CoreAnimation_CATransaction_set_DisableActions_bool
 plt_CoreAnimation_CATransaction_set_DisableActions_bool:
 _p_98:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 940,2123
+	.long mono_aot_BTProgressHUD_got - . + 940,2122
 	.no_dead_strip plt_UIKit_UIView_get_Layer
 plt_UIKit_UIView_get_Layer:
 _p_99:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 944,2128
+	.long mono_aot_BTProgressHUD_got - . + 944,2127
 	.no_dead_strip plt_CoreAnimation_CALayer_RemoveAllAnimations
 plt_CoreAnimation_CALayer_RemoveAllAnimations:
 _p_100:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 948,2133
+	.long mono_aot_BTProgressHUD_got - . + 948,2132
 	.no_dead_strip plt_CoreAnimation_CALayer_get_SuperLayer
 plt_CoreAnimation_CALayer_get_SuperLayer:
 _p_101:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 952,2138
+	.long mono_aot_BTProgressHUD_got - . + 952,2137
 	.no_dead_strip plt_CoreAnimation_CALayer_RemoveFromSuperLayer
 plt_CoreAnimation_CALayer_RemoveFromSuperLayer:
 _p_102:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 956,2143
+	.long mono_aot_BTProgressHUD_got - . + 956,2142
 	.no_dead_strip plt_BigTed_ProgressHUD_set_RingLayer_CoreAnimation_CAShapeLayer
 plt_BigTed_ProgressHUD_set_RingLayer_CoreAnimation_CAShapeLayer:
 _p_103:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 960,2148
+	.long mono_aot_BTProgressHUD_got - . + 960,2147
 	.no_dead_strip plt_BigTed_ProgressHUD_get_BackgroundRingLayer
 plt_BigTed_ProgressHUD_get_BackgroundRingLayer:
 _p_104:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 964,2150
+	.long mono_aot_BTProgressHUD_got - . + 964,2149
 	.no_dead_strip plt_BigTed_ProgressHUD_set_BackgroundRingLayer_CoreAnimation_CAShapeLayer
 plt_BigTed_ProgressHUD_set_BackgroundRingLayer_CoreAnimation_CAShapeLayer:
 _p_105:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 968,2152
+	.long mono_aot_BTProgressHUD_got - . + 968,2151
 	.no_dead_strip plt_CoreAnimation_CATransaction_Commit
 plt_CoreAnimation_CATransaction_Commit:
 _p_106:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 972,2154
+	.long mono_aot_BTProgressHUD_got - . + 972,2153
 	.no_dead_strip plt_UIKit_UIView_get_Frame
 plt_UIKit_UIView_get_Frame:
 _p_107:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 976,2159
+	.long mono_aot_BTProgressHUD_got - . + 976,2158
 	.no_dead_strip plt_BigTed_ProgressHUD_CreateRingLayer_CoreGraphics_CGPoint_single_single_UIKit_UIColor
 plt_BigTed_ProgressHUD_CreateRingLayer_CoreGraphics_CGPoint_single_single_UIKit_UIColor:
 _p_108:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 980,2164
+	.long mono_aot_BTProgressHUD_got - . + 980,2163
 	.no_dead_strip plt_CoreAnimation_CALayer_AddSublayer_CoreAnimation_CALayer
 plt_CoreAnimation_CALayer_AddSublayer_CoreAnimation_CALayer:
 _p_109:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 984,2166
+	.long mono_aot_BTProgressHUD_got - . + 984,2165
 	.no_dead_strip plt_System_Math_Cos_double
 plt_System_Math_Cos_double:
 _p_110:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 988,2171
+	.long mono_aot_BTProgressHUD_got - . + 988,2170
 	.no_dead_strip plt_System_Math_Sin_double
 plt_System_Math_Sin_double:
 _p_111:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 992,2176
+	.long mono_aot_BTProgressHUD_got - . + 992,2175
 	.no_dead_strip plt_CoreGraphics_CGPoint__ctor_single_single
 plt_CoreGraphics_CGPoint__ctor_single_single:
 _p_112:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 996,2181
+	.long mono_aot_BTProgressHUD_got - . + 996,2180
 	.no_dead_strip plt_UIKit_UIBezierPath__ctor
 plt_UIKit_UIBezierPath__ctor:
 _p_113:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1000,2186
+	.long mono_aot_BTProgressHUD_got - . + 1000,2185
 	.no_dead_strip plt_BigTed_ProgressHUD_PointOnCircle_CoreGraphics_CGPoint_single_single
 plt_BigTed_ProgressHUD_PointOnCircle_CoreGraphics_CGPoint_single_single:
 _p_114:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1004,2191
+	.long mono_aot_BTProgressHUD_got - . + 1004,2190
 	.no_dead_strip plt_UIKit_UIBezierPath_MoveTo_CoreGraphics_CGPoint
 plt_UIKit_UIBezierPath_MoveTo_CoreGraphics_CGPoint:
 _p_115:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1008,2193
+	.long mono_aot_BTProgressHUD_got - . + 1008,2192
 	.no_dead_strip plt__jit_icall___emul_op_idiv
 plt__jit_icall___emul_op_idiv:
 _p_116:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1012,2198
+	.long mono_aot_BTProgressHUD_got - . + 1012,2197
 	.no_dead_strip plt_UIKit_UIBezierPath_AddLineTo_CoreGraphics_CGPoint
 plt_UIKit_UIBezierPath_AddLineTo_CoreGraphics_CGPoint:
 _p_117:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1016,2215
+	.long mono_aot_BTProgressHUD_got - . + 1016,2214
 	.no_dead_strip plt_BigTed_ProgressHUD_CreateCirclePath_CoreGraphics_CGPoint_single_int
 plt_BigTed_ProgressHUD_CreateCirclePath_CoreGraphics_CGPoint_single_int:
 _p_118:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1020,2220
+	.long mono_aot_BTProgressHUD_got - . + 1020,2219
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer__ctor
 plt_CoreAnimation_CAShapeLayer__ctor:
 _p_119:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1024,2222
+	.long mono_aot_BTProgressHUD_got - . + 1024,2221
 	.no_dead_strip plt_CoreGraphics_CGRect__ctor_System_nfloat_System_nfloat_System_nfloat_System_nfloat
 plt_CoreGraphics_CGRect__ctor_System_nfloat_System_nfloat_System_nfloat_System_nfloat:
 _p_120:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1028,2227
+	.long mono_aot_BTProgressHUD_got - . + 1028,2226
 	.no_dead_strip plt_CoreAnimation_CALayer_set_Frame_CoreGraphics_CGRect
 plt_CoreAnimation_CALayer_set_Frame_CoreGraphics_CGRect:
 _p_121:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1032,2232
+	.long mono_aot_BTProgressHUD_got - . + 1032,2231
 	.no_dead_strip plt_UIKit_UIColor_get_CGColor
 plt_UIKit_UIColor_get_CGColor:
 _p_122:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1036,2237
+	.long mono_aot_BTProgressHUD_got - . + 1036,2236
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer_set_FillColor_CoreGraphics_CGColor
 plt_CoreAnimation_CAShapeLayer_set_FillColor_CoreGraphics_CGColor:
 _p_123:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1040,2242
+	.long mono_aot_BTProgressHUD_got - . + 1040,2241
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer_set_StrokeColor_CoreGraphics_CGColor
 plt_CoreAnimation_CAShapeLayer_set_StrokeColor_CoreGraphics_CGColor:
 _p_124:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1044,2247
+	.long mono_aot_BTProgressHUD_got - . + 1044,2246
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer_set_LineWidth_System_nfloat
 plt_CoreAnimation_CAShapeLayer_set_LineWidth_System_nfloat:
 _p_125:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1048,2252
+	.long mono_aot_BTProgressHUD_got - . + 1048,2251
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer_get_JoinBevel
 plt_CoreAnimation_CAShapeLayer_get_JoinBevel:
 _p_126:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1052,2257
+	.long mono_aot_BTProgressHUD_got - . + 1052,2256
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer_set_LineCap_Foundation_NSString
 plt_CoreAnimation_CAShapeLayer_set_LineCap_Foundation_NSString:
 _p_127:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1056,2262
+	.long mono_aot_BTProgressHUD_got - . + 1056,2261
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer_set_LineJoin_Foundation_NSString
 plt_CoreAnimation_CAShapeLayer_set_LineJoin_Foundation_NSString:
 _p_128:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1060,2267
+	.long mono_aot_BTProgressHUD_got - . + 1060,2266
 	.no_dead_strip plt_UIKit_UIBezierPath_get_CGPath
 plt_UIKit_UIBezierPath_get_CGPath:
 _p_129:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1064,2272
+	.long mono_aot_BTProgressHUD_got - . + 1064,2271
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer_set_Path_CoreGraphics_CGPath
 plt_CoreAnimation_CAShapeLayer_set_Path_CoreGraphics_CGPath:
 _p_130:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1068,2277
+	.long mono_aot_BTProgressHUD_got - . + 1068,2276
 	.no_dead_strip plt_UIKit_UIView_set_AccessibilityViewIsModal_bool
 plt_UIKit_UIView_set_AccessibilityViewIsModal_bool:
 _p_131:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1072,2282
+	.long mono_aot_BTProgressHUD_got - . + 1072,2281
 	.no_dead_strip plt_UIKit_UIToolbar__ctor
 plt_UIKit_UIToolbar__ctor:
 _p_132:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1076,2287
+	.long mono_aot_BTProgressHUD_got - . + 1076,2286
 	.no_dead_strip plt_UIKit_UIToolbar_set_Translucent_bool
 plt_UIKit_UIToolbar_set_Translucent_bool:
 _p_133:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1080,2292
+	.long mono_aot_BTProgressHUD_got - . + 1080,2291
 	.no_dead_strip plt_UIKit_UIToolbar_set_BarTintColor_UIKit_UIColor
 plt_UIKit_UIToolbar_set_BarTintColor_UIKit_UIColor:
 _p_134:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1084,2297
+	.long mono_aot_BTProgressHUD_got - . + 1084,2296
 	.no_dead_strip plt_UIKit_UIView__ctor
 plt_UIKit_UIView__ctor:
 _p_135:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1088,2302
+	.long mono_aot_BTProgressHUD_got - . + 1088,2301
 	.no_dead_strip plt_CoreAnimation_CALayer_set_CornerRadius_System_nfloat
 plt_CoreAnimation_CALayer_set_CornerRadius_System_nfloat:
 _p_136:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1092,2307
+	.long mono_aot_BTProgressHUD_got - . + 1092,2306
 	.no_dead_strip plt_CoreAnimation_CALayer_set_MasksToBounds_bool
 plt_CoreAnimation_CALayer_set_MasksToBounds_bool:
 _p_137:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1096,2312
+	.long mono_aot_BTProgressHUD_got - . + 1096,2311
 	.no_dead_strip plt_UIKit_UILabel__ctor
 plt_UIKit_UILabel__ctor:
 _p_138:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1100,2317
+	.long mono_aot_BTProgressHUD_got - . + 1100,2316
 	.no_dead_strip plt_UIKit_UILabel_set_AdjustsFontSizeToFitWidth_bool
 plt_UIKit_UILabel_set_AdjustsFontSizeToFitWidth_bool:
 _p_139:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1104,2322
+	.long mono_aot_BTProgressHUD_got - . + 1104,2321
 	.no_dead_strip plt_UIKit_UILabel_set_TextAlignment_UIKit_UITextAlignment
 plt_UIKit_UILabel_set_TextAlignment_UIKit_UITextAlignment:
 _p_140:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1108,2327
+	.long mono_aot_BTProgressHUD_got - . + 1108,2326
 	.no_dead_strip plt_UIKit_UILabel_set_BaselineAdjustment_UIKit_UIBaselineAdjustment
 plt_UIKit_UILabel_set_BaselineAdjustment_UIKit_UIBaselineAdjustment:
 _p_141:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1112,2332
+	.long mono_aot_BTProgressHUD_got - . + 1112,2331
 	.no_dead_strip plt_UIKit_UILabel_set_TextColor_UIKit_UIColor
 plt_UIKit_UILabel_set_TextColor_UIKit_UIColor:
 _p_142:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1116,2337
+	.long mono_aot_BTProgressHUD_got - . + 1116,2336
 	.no_dead_strip plt_UIKit_UILabel_set_Font_UIKit_UIFont
 plt_UIKit_UILabel_set_Font_UIKit_UIFont:
 _p_143:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1120,2342
+	.long mono_aot_BTProgressHUD_got - . + 1120,2341
 	.no_dead_strip plt_UIKit_UILabel_set_ShadowColor_UIKit_UIColor
 plt_UIKit_UILabel_set_ShadowColor_UIKit_UIColor:
 _p_144:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1124,2347
+	.long mono_aot_BTProgressHUD_got - . + 1124,2346
 	.no_dead_strip plt_CoreGraphics_CGSize__ctor_single_single
 plt_CoreGraphics_CGSize__ctor_single_single:
 _p_145:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1128,2352
+	.long mono_aot_BTProgressHUD_got - . + 1128,2351
 	.no_dead_strip plt_UIKit_UILabel_set_ShadowOffset_CoreGraphics_CGSize
 plt_UIKit_UILabel_set_ShadowOffset_CoreGraphics_CGSize:
 _p_146:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1132,2357
+	.long mono_aot_BTProgressHUD_got - . + 1132,2356
 	.no_dead_strip plt_UIKit_UILabel_set_Lines_System_nint
 plt_UIKit_UILabel_set_Lines_System_nint:
 _p_147:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1136,2362
+	.long mono_aot_BTProgressHUD_got - . + 1136,2361
 	.no_dead_strip plt_UIKit_UIButton__ctor
 plt_UIKit_UIButton__ctor:
 _p_148:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1140,2367
+	.long mono_aot_BTProgressHUD_got - . + 1140,2366
 	.no_dead_strip plt_UIKit_UIButton_SetTitleColor_UIKit_UIColor_UIKit_UIControlState
 plt_UIKit_UIButton_SetTitleColor_UIKit_UIColor_UIKit_UIControlState:
 _p_149:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1144,2372
+	.long mono_aot_BTProgressHUD_got - . + 1144,2371
 	.no_dead_strip plt_UIKit_UIButton_set_Font_UIKit_UIFont
 plt_UIKit_UIButton_set_Font_UIKit_UIFont:
 _p_150:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1148,2377
+	.long mono_aot_BTProgressHUD_got - . + 1148,2376
 	.no_dead_strip plt_CoreGraphics_CGRect__ctor_single_single_single_single
 plt_CoreGraphics_CGRect__ctor_single_single_single_single:
 _p_151:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1152,2382
+	.long mono_aot_BTProgressHUD_got - . + 1152,2381
 	.no_dead_strip plt_UIKit_UIImageView__ctor_CoreGraphics_CGRect
 plt_UIKit_UIImageView__ctor_CoreGraphics_CGRect:
 _p_152:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1156,2387
+	.long mono_aot_BTProgressHUD_got - . + 1156,2386
 	.no_dead_strip plt_UIKit_UIActivityIndicatorView__ctor_UIKit_UIActivityIndicatorViewStyle
 plt_UIKit_UIActivityIndicatorView__ctor_UIKit_UIActivityIndicatorViewStyle:
 _p_153:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1160,2392
+	.long mono_aot_BTProgressHUD_got - . + 1160,2391
 	.no_dead_strip plt_UIKit_UIActivityIndicatorView_set_HidesWhenStopped_bool
 plt_UIKit_UIActivityIndicatorView_set_HidesWhenStopped_bool:
 _p_154:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1164,2397
+	.long mono_aot_BTProgressHUD_got - . + 1164,2396
 	.no_dead_strip plt_UIKit_UIView_set_Bounds_CoreGraphics_CGRect
 plt_UIKit_UIView_set_Bounds_CoreGraphics_CGRect:
 _p_155:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1168,2402
+	.long mono_aot_BTProgressHUD_got - . + 1168,2401
 	.no_dead_strip plt_UIKit_UIActivityIndicatorView_set_Color_UIKit_UIColor
 plt_UIKit_UIActivityIndicatorView_set_Color_UIKit_UIColor:
 _p_156:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1172,2407
+	.long mono_aot_BTProgressHUD_got - . + 1172,2406
 	.no_dead_strip plt_Foundation_NSObject_get_Class
 plt_Foundation_NSObject_get_Class:
 _p_157:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1176,2412
+	.long mono_aot_BTProgressHUD_got - . + 1176,2411
 	.no_dead_strip plt_UIKit_UIView_get_Subviews
 plt_UIKit_UIView_get_Subviews:
 _p_158:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1180,2417
+	.long mono_aot_BTProgressHUD_got - . + 1180,2416
 	.no_dead_strip plt_Foundation_NSObject_IsKindOfClass_ObjCRuntime_Class
 plt_Foundation_NSObject_IsKindOfClass_ObjCRuntime_Class:
 _p_159:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1184,2422
+	.long mono_aot_BTProgressHUD_got - . + 1184,2421
 	.no_dead_strip plt_BigTed_ProgressHUD_SetFadeoutTimer_Foundation_NSTimer
 plt_BigTed_ProgressHUD_SetFadeoutTimer_Foundation_NSTimer:
 _p_160:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1188,2427
+	.long mono_aot_BTProgressHUD_got - . + 1188,2426
 	.no_dead_strip plt_BigTed_ProgressHUD_SetProgressTimer_Foundation_NSTimer
 plt_BigTed_ProgressHUD_SetProgressTimer_Foundation_NSTimer:
 _p_161:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1192,2429
+	.long mono_aot_BTProgressHUD_got - . + 1192,2428
 	.no_dead_strip plt_Foundation_NSNotificationCenter_get_DefaultCenter
 plt_Foundation_NSNotificationCenter_get_DefaultCenter:
 _p_162:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1196,2431
+	.long mono_aot_BTProgressHUD_got - . + 1196,2430
 	.no_dead_strip plt_UIKit_UIApplication_get_DidChangeStatusBarOrientationNotification
 plt_UIKit_UIApplication_get_DidChangeStatusBarOrientationNotification:
 _p_163:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1200,2436
+	.long mono_aot_BTProgressHUD_got - . + 1200,2435
 	.no_dead_strip plt_Foundation_NSNotificationCenter_AddObserver_Foundation_NSString_System_Action_1_Foundation_NSNotification
 plt_Foundation_NSNotificationCenter_AddObserver_Foundation_NSString_System_Action_1_Foundation_NSNotification:
 _p_164:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1204,2441
+	.long mono_aot_BTProgressHUD_got - . + 1204,2440
 	.no_dead_strip plt_System_Collections_Generic_List_1_Foundation_NSObject_Add_Foundation_NSObject
 plt_System_Collections_Generic_List_1_Foundation_NSObject_Add_Foundation_NSObject:
 _p_165:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1208,2446
+	.long mono_aot_BTProgressHUD_got - . + 1208,2445
 	.no_dead_strip plt_UIKit_UIKeyboard_get_WillHideNotification
 plt_UIKit_UIKeyboard_get_WillHideNotification:
 _p_166:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1212,2457
+	.long mono_aot_BTProgressHUD_got - . + 1212,2456
 	.no_dead_strip plt_UIKit_UIKeyboard_get_DidHideNotification
 plt_UIKit_UIKeyboard_get_DidHideNotification:
 _p_167:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1216,2462
+	.long mono_aot_BTProgressHUD_got - . + 1216,2461
 	.no_dead_strip plt_UIKit_UIKeyboard_get_WillShowNotification
 plt_UIKit_UIKeyboard_get_WillShowNotification:
 _p_168:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1220,2467
+	.long mono_aot_BTProgressHUD_got - . + 1220,2466
 	.no_dead_strip plt_UIKit_UIKeyboard_get_DidShowNotification
 plt_UIKit_UIKeyboard_get_DidShowNotification:
 _p_169:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1224,2472
+	.long mono_aot_BTProgressHUD_got - . + 1224,2471
 	.no_dead_strip plt_Foundation_NSNotificationCenter_RemoveObservers_System_Collections_Generic_IEnumerable_1_Foundation_NSObject
 plt_Foundation_NSNotificationCenter_RemoveObservers_System_Collections_Generic_IEnumerable_1_Foundation_NSObject:
 _p_170:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1228,2477
+	.long mono_aot_BTProgressHUD_got - . + 1228,2476
 	.no_dead_strip plt_System_Collections_Generic_List_1_Foundation_NSObject_Clear
 plt_System_Collections_Generic_List_1_Foundation_NSObject_Clear:
 _p_171:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1232,2482
+	.long mono_aot_BTProgressHUD_got - . + 1232,2481
 	.no_dead_strip plt_CoreGraphics_CGAffineTransform_MakeRotation_System_nfloat
 plt_CoreGraphics_CGAffineTransform_MakeRotation_System_nfloat:
 _p_172:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1236,2493
+	.long mono_aot_BTProgressHUD_got - . + 1236,2492
 	.no_dead_strip plt_UIKit_UIView_set_Transform_CoreGraphics_CGAffineTransform
 plt_UIKit_UIView_set_Transform_CoreGraphics_CGAffineTransform:
 _p_173:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1240,2498
+	.long mono_aot_BTProgressHUD_got - . + 1240,2497
 	.no_dead_strip plt_UIKit_UIView_set_Center_CoreGraphics_CGPoint
 plt_UIKit_UIView_set_Center_CoreGraphics_CGPoint:
 _p_174:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1244,2503
+	.long mono_aot_BTProgressHUD_got - . + 1244,2502
 	.no_dead_strip plt_UIKit_UIView_set_Frame_CoreGraphics_CGRect
 plt_UIKit_UIView_set_Frame_CoreGraphics_CGRect:
 _p_175:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1248,2508
+	.long mono_aot_BTProgressHUD_got - . + 1248,2507
 	.no_dead_strip plt_UIKit_UIApplication_get_StatusBarOrientation
 plt_UIKit_UIApplication_get_StatusBarOrientation:
 _p_176:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1252,2513
+	.long mono_aot_BTProgressHUD_got - . + 1252,2512
 	.no_dead_strip plt_UIKit_UIDevice_get_CurrentDevice
 plt_UIKit_UIDevice_get_CurrentDevice:
 _p_177:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1256,2518
+	.long mono_aot_BTProgressHUD_got - . + 1256,2517
 	.no_dead_strip plt_UIKit_UIDevice_CheckSystemVersion_int_int
 plt_UIKit_UIDevice_CheckSystemVersion_int_int:
 _p_178:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1260,2523
+	.long mono_aot_BTProgressHUD_got - . + 1260,2522
 	.no_dead_strip plt_UIKit_UIKeyboard_FrameEndFromNotification_Foundation_NSNotification
 plt_UIKit_UIKeyboard_FrameEndFromNotification_Foundation_NSNotification:
 _p_179:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1264,2528
+	.long mono_aot_BTProgressHUD_got - . + 1264,2527
 	.no_dead_strip plt_UIKit_UIKeyboard_AnimationDurationFromNotification_Foundation_NSNotification
 plt_UIKit_UIKeyboard_AnimationDurationFromNotification_Foundation_NSNotification:
 _p_180:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1268,2533
+	.long mono_aot_BTProgressHUD_got - . + 1268,2532
 	.no_dead_strip plt_Foundation_NSNotification_get_Name
 plt_Foundation_NSNotification_get_Name:
 _p_181:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1272,2538
+	.long mono_aot_BTProgressHUD_got - . + 1272,2537
 	.no_dead_strip plt_Foundation_NSString_op_Implicit_Foundation_NSString
 plt_Foundation_NSString_op_Implicit_Foundation_NSString:
 _p_182:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1276,2543
+	.long mono_aot_BTProgressHUD_got - . + 1276,2542
 	.no_dead_strip plt_string_op_Equality_string_string
 plt_string_op_Equality_string_string:
 _p_183:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1280,2548
+	.long mono_aot_BTProgressHUD_got - . + 1280,2547
 	.no_dead_strip plt_BigTed_ProgressHUD_IsPortrait_UIKit_UIInterfaceOrientation
 plt_BigTed_ProgressHUD_IsPortrait_UIKit_UIInterfaceOrientation:
 _p_184:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1284,2553
+	.long mono_aot_BTProgressHUD_got - . + 1284,2552
 	.no_dead_strip plt_BigTed_ProgressHUD_get_VisibleKeyboardHeight
 plt_BigTed_ProgressHUD_get_VisibleKeyboardHeight:
 _p_185:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1288,2555
+	.long mono_aot_BTProgressHUD_got - . + 1288,2554
 	.no_dead_strip plt_UIKit_UIApplication_get_KeyWindow
 plt_UIKit_UIApplication_get_KeyWindow:
 _p_186:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1292,2557
+	.long mono_aot_BTProgressHUD_got - . + 1292,2556
 	.no_dead_strip plt_UIKit_UIApplication_get_StatusBarFrame
 plt_UIKit_UIApplication_get_StatusBarFrame:
 _p_187:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1296,2562
+	.long mono_aot_BTProgressHUD_got - . + 1296,2561
 	.no_dead_strip plt_BigTed_ProgressHUD_IsLandscape_UIKit_UIInterfaceOrientation
 plt_BigTed_ProgressHUD_IsLandscape_UIKit_UIInterfaceOrientation:
 _p_188:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1300,2567
+	.long mono_aot_BTProgressHUD_got - . + 1300,2566
 	.no_dead_strip plt_CoreGraphics_CGRect_set_Size_CoreGraphics_CGSize
 plt_CoreGraphics_CGRect_set_Size_CoreGraphics_CGSize:
 _p_189:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1304,2569
+	.long mono_aot_BTProgressHUD_got - . + 1304,2568
 	.no_dead_strip plt_System_Math_Floor_double
 plt_System_Math_Floor_double:
 _p_190:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1308,2574
+	.long mono_aot_BTProgressHUD_got - . + 1308,2573
 	.no_dead_strip plt_BigTed_ProgressHUD_MoveToPoint_CoreGraphics_CGPoint_single
 plt_BigTed_ProgressHUD_MoveToPoint_CoreGraphics_CGPoint_single:
 _p_191:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1312,2579
+	.long mono_aot_BTProgressHUD_got - . + 1312,2578
 	.no_dead_strip plt_BigTed_ProgressHUD_StopProgressTimer
 plt_BigTed_ProgressHUD_StopProgressTimer:
 _p_192:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1316,2581
+	.long mono_aot_BTProgressHUD_got - . + 1316,2580
 	.no_dead_strip plt_UIKit_UILabel_get_Text
 plt_UIKit_UILabel_get_Text:
 _p_193:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1320,2583
+	.long mono_aot_BTProgressHUD_got - . + 1320,2582
 	.no_dead_strip plt_UIKit_UIImageView_get_Image
 plt_UIKit_UIImageView_get_Image:
 _p_194:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1324,2588
+	.long mono_aot_BTProgressHUD_got - . + 1324,2587
 	.no_dead_strip plt_string_Split_char__
 plt_string_Split_char__:
 _p_195:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1328,2593
+	.long mono_aot_BTProgressHUD_got - . + 1328,2592
 	.no_dead_strip plt_BigTed_ProgressHUD_get_IsIOS7OrNewer
 plt_BigTed_ProgressHUD_get_IsIOS7OrNewer:
 _p_196:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1332,2598
+	.long mono_aot_BTProgressHUD_got - . + 1332,2597
 	.no_dead_strip plt_Foundation_NSString__ctor_string
 plt_Foundation_NSString__ctor_string:
 _p_197:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1336,2600
+	.long mono_aot_BTProgressHUD_got - . + 1336,2599
 	.no_dead_strip plt_UIKit_UIStringAttributes__ctor
 plt_UIKit_UIStringAttributes__ctor:
 _p_198:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1340,2605
+	.long mono_aot_BTProgressHUD_got - . + 1340,2604
 	.no_dead_strip plt_UIKit_UILabel_get_Font
 plt_UIKit_UILabel_get_Font:
 _p_199:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1344,2610
+	.long mono_aot_BTProgressHUD_got - . + 1344,2609
 	.no_dead_strip plt_UIKit_UIStringAttributes_set_Font_UIKit_UIFont
 plt_UIKit_UIStringAttributes_set_Font_UIKit_UIFont:
 _p_200:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1348,2615
+	.long mono_aot_BTProgressHUD_got - . + 1348,2614
 	.no_dead_strip plt_UIKit_NSExtendedStringDrawing_GetBoundingRect_Foundation_NSString_CoreGraphics_CGSize_Foundation_NSStringDrawingOptions_UIKit_UIStringAttributes_Foundation_NSStringDrawingContext
 plt_UIKit_NSExtendedStringDrawing_GetBoundingRect_Foundation_NSString_CoreGraphics_CGSize_Foundation_NSStringDrawingOptions_UIKit_UIStringAttributes_Foundation_NSStringDrawingContext:
 _p_201:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1352,2620
+	.long mono_aot_BTProgressHUD_got - . + 1352,2619
 	.no_dead_strip plt_UIKit_UIStringDrawing_StringSize_Foundation_NSString_UIKit_UIFont_CoreGraphics_CGSize
 plt_UIKit_UIStringDrawing_StringSize_Foundation_NSString_UIKit_UIFont_CoreGraphics_CGSize:
 _p_202:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1356,2625
+	.long mono_aot_BTProgressHUD_got - . + 1356,2624
 	.no_dead_strip plt_System_Math_Ceiling_double
 plt_System_Math_Ceiling_double:
 _p_203:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1360,2630
+	.long mono_aot_BTProgressHUD_got - . + 1360,2629
 	.no_dead_strip plt_UIKit_UIButton_Title_UIKit_UIControlState
 plt_UIKit_UIButton_Title_UIKit_UIControlState:
 _p_204:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1364,2635
+	.long mono_aot_BTProgressHUD_got - . + 1364,2634
 	.no_dead_strip plt_BigTed_ProgressHUD_DismissWorker
 plt_BigTed_ProgressHUD_DismissWorker:
 _p_205:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1368,2640
+	.long mono_aot_BTProgressHUD_got - . + 1368,2639
 	.no_dead_strip plt_BigTed_ProgressHUD_UpdateProgress
 plt_BigTed_ProgressHUD_UpdateProgress:
 _p_206:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1372,2642
+	.long mono_aot_BTProgressHUD_got - . + 1372,2641
 	.no_dead_strip plt_CoreAnimation_CAShapeLayer_get_StrokeEnd
 plt_CoreAnimation_CAShapeLayer_get_StrokeEnd:
 _p_207:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1376,2644
+	.long mono_aot_BTProgressHUD_got - . + 1376,2643
 	.no_dead_strip plt_BigTed_ProgressHUD_UnRegisterNotifications
 plt_BigTed_ProgressHUD_UnRegisterNotifications:
 _p_208:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1380,2649
+	.long mono_aot_BTProgressHUD_got - . + 1380,2648
 	.no_dead_strip plt_Foundation_NSNotificationCenter_RemoveObserver_Foundation_NSObject
 plt_Foundation_NSNotificationCenter_RemoveObserver_Foundation_NSObject:
 _p_209:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1384,2651
+	.long mono_aot_BTProgressHUD_got - . + 1384,2650
 	.no_dead_strip plt_BigTed_ProgressHUD_set_StringLabel_UIKit_UILabel
 plt_BigTed_ProgressHUD_set_StringLabel_UIKit_UILabel:
 _p_210:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1388,2656
+	.long mono_aot_BTProgressHUD_got - . + 1388,2655
 	.no_dead_strip plt_BigTed_ProgressHUD_set_SpinnerView_UIKit_UIActivityIndicatorView
 plt_BigTed_ProgressHUD_set_SpinnerView_UIKit_UIActivityIndicatorView:
 _p_211:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1392,2658
+	.long mono_aot_BTProgressHUD_got - . + 1392,2657
 	.no_dead_strip plt_BigTed_ProgressHUD_set_ImageView_UIKit_UIImageView
 plt_BigTed_ProgressHUD_set_ImageView_UIKit_UIImageView:
 _p_212:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1396,2660
+	.long mono_aot_BTProgressHUD_got - . + 1396,2659
 	.no_dead_strip plt_BigTed_ProgressHUD_set_HudView_UIKit_UIView
 plt_BigTed_ProgressHUD_set_HudView_UIKit_UIView:
 _p_213:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1400,2662
+	.long mono_aot_BTProgressHUD_got - . + 1400,2661
 	.no_dead_strip plt_BigTed_ProgressHUD_set_OverlayView_UIKit_UIView
 plt_BigTed_ProgressHUD_set_OverlayView_UIKit_UIView:
 _p_214:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1404,2664
+	.long mono_aot_BTProgressHUD_got - . + 1404,2663
 	.no_dead_strip plt_UIKit_UIWindow_get_RootViewController
 plt_UIKit_UIWindow_get_RootViewController:
 _p_215:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1408,2666
+	.long mono_aot_BTProgressHUD_got - . + 1408,2665
 	.no_dead_strip plt_UIKit_UIViewController_SetNeedsStatusBarAppearanceUpdate
 plt_UIKit_UIViewController_SetNeedsStatusBarAppearanceUpdate:
 _p_216:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1412,2671
+	.long mono_aot_BTProgressHUD_got - . + 1412,2670
 	.no_dead_strip plt_UIKit_UIColor_get_DarkGray
 plt_UIKit_UIColor_get_DarkGray:
 _p_217:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1416,2676
+	.long mono_aot_BTProgressHUD_got - . + 1416,2675
 	.no_dead_strip plt_BigTed_ProgressHUD_ShowProgressWorker_single_string_BigTed_ProgressHUD_MaskType_bool_BigTed_ProgressHUD_ToastPosition_string_System_Action_double_bool_UIKit_UIImage
 plt_BigTed_ProgressHUD_ShowProgressWorker_single_string_BigTed_ProgressHUD_MaskType_bool_BigTed_ProgressHUD_ToastPosition_string_System_Action_double_bool_UIKit_UIImage:
 _p_218:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1420,2681
+	.long mono_aot_BTProgressHUD_got - . + 1420,2680
 	.no_dead_strip plt_BigTed_ProgressHUD_SetStatusWorker_string
 plt_BigTed_ProgressHUD_SetStatusWorker_string:
 _p_219:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1424,2683
+	.long mono_aot_BTProgressHUD_got - . + 1424,2682
 	.no_dead_strip plt_BigTed_ProgressHUD_ShowImageWorker_UIKit_UIImage_string_System_TimeSpan
 plt_BigTed_ProgressHUD_ShowImageWorker_UIKit_UIImage_string_System_TimeSpan:
 _p_220:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1428,2685
+	.long mono_aot_BTProgressHUD_got - . + 1428,2684
 	.no_dead_strip plt_System_Delegate_DynamicInvoke_object__
 plt_System_Delegate_DynamicInvoke_object__:
 _p_221:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1432,2687
+	.long mono_aot_BTProgressHUD_got - . + 1432,2686
 	.no_dead_strip plt__jit_icall_mono_arch_throw_exception
 plt__jit_icall_mono_arch_throw_exception:
 _p_222:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1436,2692
+	.long mono_aot_BTProgressHUD_got - . + 1436,2691
 	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
 plt__jit_icall_mono_thread_interruption_checkpoint:
 _p_223:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1440,2720
+	.long mono_aot_BTProgressHUD_got - . + 1440,2719
 	.no_dead_strip plt__rgctx_fetch_0
 plt__rgctx_fetch_0:
 _p_224:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1444,2784
+	.long mono_aot_BTProgressHUD_got - . + 1444,2783
 	.no_dead_strip plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
 plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array:
 _p_225:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1448,2792
+	.long mono_aot_BTProgressHUD_got - . + 1448,2791
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr_mscorlib
 plt__jit_icall_mono_helper_ldstr_mscorlib:
 _p_226:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1452,2811
+	.long mono_aot_BTProgressHUD_got - . + 1452,2810
 	.no_dead_strip plt__rgctx_fetch_1
 plt__rgctx_fetch_1:
 _p_227:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1456,2858
+	.long mono_aot_BTProgressHUD_got - . + 1456,2857
 	.no_dead_strip plt_System_Array_Copy_System_Array_int_System_Array_int_int
 plt_System_Array_Copy_System_Array_int_System_Array_int_int:
 _p_228:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1460,2881
+	.long mono_aot_BTProgressHUD_got - . + 1460,2880
 	.no_dead_strip plt__icall_native_BigTed_NSObjectExtensions_object_getClassName_intptr
 plt__icall_native_BigTed_NSObjectExtensions_object_getClassName_intptr:
 _p_229:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_BTProgressHUD_got - . + 1464,2886
+	.long mono_aot_BTProgressHUD_got - . + 1464,2885
 plt_end:
 .section __DATA, __bss
 	.align 3
@@ -6217,13 +6217,13 @@ _mono_aot_file_info:
 	.align 2
 	.long unbox_trampoline_addresses
 
-	.long 138,1472,230,130,66,391195135,0,4579
-	.long 128,4,4,10,0,24,6256,1664
+	.long 138,1472,230,130,66,391195135,0,4578
+	.long 128,4,4,10,0,24,6248,1664
 	.long 1400,776,0,1152,1352,952,0,656
 	.long 192,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 64,199,30,239,246,19,148,188,178,254,81,69,58,110,151,101
+	.byte 183,58,148,145,78,112,2,17,232,209,51,97,120,25,230,103
 	.globl _mono_aot_module_BTProgressHUD_info
 	.align 2
 _mono_aot_module_BTProgressHUD_info:

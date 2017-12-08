@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Wed Nov  8 17:08:32 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 20:59:09 EST 2017)"
 	.asciz "Mono.Data.Tds.dll"
 	.asciz ""
 
@@ -121,7 +121,7 @@ jit_code_start:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_TdsCollation_LCID_byte__
 Mono_Data_Tds_TdsCollation_LCID_byte__:
-.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsCollation.cs"
+.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsCollation.cs"
 .loc 1 42 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -6785,7 +6785,7 @@ Lme_7:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_TdsMetaParameter__ctor_string_Mono_Data_Tds_FrameworkValueGetter
 Mono_Data_Tds_TdsMetaParameter__ctor_string_Mono_Data_Tds_FrameworkValueGetter:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds/TdsMetaParameter.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds/TdsMetaParameter.cs"
 .loc 2 69 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -9664,7 +9664,7 @@ Lme_2b:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_TdsMetaParameterCollection__ctor
 Mono_Data_Tds_TdsMetaParameterCollection__ctor:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds/TdsMetaParameterCollection.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds/TdsMetaParameterCollection.cs"
 .loc 3 45 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -9866,7 +9866,7 @@ Lme_33:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_Protocol_Tds_get_Charset
 Mono_Data_Tds_Protocol_Tds_get_Charset:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/Tds.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/Tds.cs"
 .loc 4 120 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -18422,7 +18422,7 @@ Lme_95:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_Protocol_Tds42__ctor_string_int_int_int
 Mono_Data_Tds_Protocol_Tds42__ctor_string_int_int_int:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/Tds42.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/Tds42.cs"
 .loc 5 51 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -19495,7 +19495,7 @@ Lme_99:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_Protocol_Tds50__ctor_string_int_int_int
 Mono_Data_Tds_Protocol_Tds50__ctor_string_int_int_int:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/Tds50.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/Tds50.cs"
 .loc 6 57 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -23180,7 +23180,7 @@ Lme_a8:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_Protocol_Tds70__ctor_string_int_int_int_int
 Mono_Data_Tds_Protocol_Tds70__ctor_string_int_int_int_int:
-.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/Tds70.cs"
+.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/Tds70.cs"
 .loc 7 82 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -29277,7 +29277,7 @@ Lme_c4:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_Protocol_Tds80__ctor_string_int_int_int_int
 Mono_Data_Tds_Protocol_Tds80__ctor_string_int_int_int_int:
-.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/Tds80.cs"
+.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/Tds80.cs"
 .loc 8 65 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -30475,7 +30475,7 @@ Lme_cd:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_Protocol_TdsBigDecimal__ctor_byte_byte_bool_int__
 Mono_Data_Tds_Protocol_TdsBigDecimal__ctor_byte_byte_bool_int__:
-.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsBigDecimal.cs"
+.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsBigDecimal.cs"
 .loc 9 47 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -30579,7 +30579,7 @@ Lme_d2:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_Protocol_TdsComm__ctor_string_int_int_int_Mono_Data_Tds_Protocol_TdsVersion
 Mono_Data_Tds_Protocol_TdsComm__ctor_string_int_int_int_Mono_Data_Tds_Protocol_TdsVersion:
-.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsComm.cs"
+.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsComm.cs"
 .loc 10 65 0 prologue_end
 .word 0xa9ac7bfd
 .word 0x910003fd
@@ -34589,7 +34589,7 @@ Lme_104:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_Protocol_TdsConnectionParameters__ctor
 Mono_Data_Tds_Protocol_TdsConnectionParameters__ctor:
-.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsConnectionParameters.cs"
+.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsConnectionParameters.cs"
 .loc 11 56 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -34838,7 +34838,7 @@ Lme_106:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_Protocol_TdsConnectionPoolManager__ctor_Mono_Data_Tds_Protocol_TdsVersion
 Mono_Data_Tds_Protocol_TdsConnectionPoolManager__ctor_Mono_Data_Tds_Protocol_TdsVersion:
-.file 12 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsConnectionPool.cs"
+.file 12 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsConnectionPool.cs"
 .loc 12 42 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -36047,7 +36047,7 @@ Lme_10f:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_Protocol_TdsDataColumn__ctor
 Mono_Data_Tds_Protocol_TdsDataColumn__ctor:
-.file 13 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsDataColumn.cs"
+.file 13 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsDataColumn.cs"
 .loc 13 41 0 prologue_end
 .word 0xa9b97bfd
 .word 0x910003fd
@@ -36769,7 +36769,7 @@ Lme_12d:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_Protocol_TdsDataColumnCollection__ctor
 Mono_Data_Tds_Protocol_TdsDataColumnCollection__ctor:
-.file 14 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsDataColumnCollection.cs"
+.file 14 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsDataColumnCollection.cs"
 .loc 14 47 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -36968,7 +36968,7 @@ Lme_133:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_Protocol_TdsDataRow__ctor
 Mono_Data_Tds_Protocol_TdsDataRow__ctor:
-.file 15 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsDataRow.cs"
+.file 15 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsDataRow.cs"
 .loc 15 48 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -37392,7 +37392,7 @@ Lme_145:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_Protocol_TdsInternalError__ctor_byte_int_string_int_string_string_string_byte
 Mono_Data_Tds_Protocol_TdsInternalError__ctor_byte_int_string_int_string_string_string_byte:
-.file 16 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsInternalError.cs"
+.file 16 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsInternalError.cs"
 .loc 16 53 0 prologue_end
 .word 0xa9ba7bfd
 .word 0x910003fd
@@ -37594,7 +37594,7 @@ Lme_14d:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_Protocol_TdsInternalErrorCollection__ctor
 Mono_Data_Tds_Protocol_TdsInternalErrorCollection__ctor:
-.file 17 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsInternalErrorCollection.cs"
+.file 17 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsInternalErrorCollection.cs"
 .loc 17 47 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -37768,7 +37768,7 @@ Lme_153:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_Protocol_TdsInternalErrorMessageEventArgs__ctor_Mono_Data_Tds_Protocol_TdsInternalError
 Mono_Data_Tds_Protocol_TdsInternalErrorMessageEventArgs__ctor_Mono_Data_Tds_Protocol_TdsInternalError:
-.file 18 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsInternalErrorMessageEventArgs.cs"
+.file 18 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsInternalErrorMessageEventArgs.cs"
 .loc 18 39 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -37787,7 +37787,7 @@ Lme_154:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_Protocol_TdsInternalException__ctor_string_System_Exception
 Mono_Data_Tds_Protocol_TdsInternalException__ctor_string_System_Exception:
-.file 19 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsInternalException.cs"
+.file 19 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsInternalException.cs"
 .loc 19 57 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -37998,7 +37998,7 @@ Lme_161:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_Protocol_TdsInternalInfoMessageEventArgs__ctor_Mono_Data_Tds_Protocol_TdsInternalErrorCollection
 Mono_Data_Tds_Protocol_TdsInternalInfoMessageEventArgs__ctor_Mono_Data_Tds_Protocol_TdsInternalErrorCollection:
-.file 20 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsInternalInfoMessageEventArgs.cs"
+.file 20 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsInternalInfoMessageEventArgs.cs"
 .loc 20 46 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -38288,7 +38288,7 @@ Lme_16b:
 	.align 4
 	.no_dead_strip Mono_Data_Tds_Protocol_TdsTimeoutException__ctor_byte_int_string_int_string_string_string_byte
 Mono_Data_Tds_Protocol_TdsTimeoutException__ctor_byte_int_string_int_string_string_string_byte:
-.file 21 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsTimeoutException.cs"
+.file 21 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/Mono.Data.Tds/Mono.Data.Tds.Protocol/TdsTimeoutException.cs"
 .loc 21 37 0 prologue_end
 .word 0xa9ba7bfd
 .word 0x910003fd
@@ -38381,7 +38381,7 @@ LDIFF_SYM3=ut_end - ut_371
 	.align 4
 	.no_dead_strip System_Nullable_1_Mono_Data_Tds_Protocol_TdsColumnType__ctor_Mono_Data_Tds_Protocol_TdsColumnType
 System_Nullable_1_Mono_Data_Tds_Protocol_TdsColumnType__ctor_Mono_Data_Tds_Protocol_TdsColumnType:
-.file 22 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/corlib/System/Nullable.cs"
+.file 22 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System/Nullable.cs"
 .loc 22 94 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -44706,7 +44706,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "C08AE081-0D73-455D-BC6E-9A697C8B8562"
+	.asciz "066A7FDC-DCD4-49D3-83FF-A88130E49521"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -44789,7 +44789,7 @@ _mono_aot_file_info:
 	.long 600,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 235,6,14,90,168,69,39,230,91,58,252,163,18,99,235,123
+	.byte 192,137,147,171,63,127,248,227,129,61,94,231,181,69,68,18
 	.globl _mono_aot_module_Mono_Data_Tds_info
 	.align 3
 _mono_aot_module_Mono_Data_Tds_info:

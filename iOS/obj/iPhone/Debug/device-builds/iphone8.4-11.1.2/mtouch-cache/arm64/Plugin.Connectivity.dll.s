@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Wed Nov  8 17:08:32 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 20:59:09 EST 2017)"
 	.asciz "Plugin.Connectivity.dll"
 	.asciz ""
 
@@ -8282,7 +8282,7 @@ b System_Array_InternalEnumerator_1_T_INT__ctor_System_Array
 	.align 4
 	.no_dead_strip System_Array_InternalEnumerator_1_T_INT__ctor_System_Array
 System_Array_InternalEnumerator_1_T_INT__ctor_System_Array:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/corlib/System/Array.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System/Array.cs"
 .loc 2 215 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -8997,7 +8997,7 @@ b System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_TResult_BOOL_Create
 	.align 4
 	.no_dead_strip System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_TResult_BOOL_Create
 System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_TResult_BOOL_Create:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/referencesource/mscorlib/system/runtime/compilerservices/AsyncMethodBuilder.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/runtime/compilerservices/AsyncMethodBuilder.cs"
 .loc 3 444 0 prologue_end
 .word 0xa9b97bfd
 .word 0x910003fd
@@ -10835,7 +10835,7 @@ Lme_4a:
 	.align 4
 	.no_dead_strip System_Threading_Tasks_Task_1_TResult_BOOL__ctor
 System_Threading_Tasks_Task_1_TResult_BOOL__ctor:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/referencesource/mscorlib/system/threading/Tasks/Future.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/threading/Tasks/Future.cs"
 .loc 4 91 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -12870,7 +12870,7 @@ Lme_60:
 	.align 4
 	.no_dead_strip System_Threading_Tasks_TaskFactory_1_TResult_BOOL__ctor
 System_Threading_Tasks_TaskFactory_1_TResult_BOOL__ctor:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/referencesource/mscorlib/system/threading/Tasks/FutureFactory.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/threading/Tasks/FutureFactory.cs"
 .loc 5 93 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
@@ -15916,7 +15916,7 @@ Lme_7a:
 	.align 4
 	.no_dead_strip System_Collections_Generic_EqualityComparer_1_T_INT_get_Default
 System_Collections_Generic_EqualityComparer_1_T_INT_get_Default:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/equalitycomparer.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/equalitycomparer.cs"
 .loc 6 32 0 prologue_end
 .word 0xa9b97bfd
 .word 0x910003fd
@@ -17864,7 +17864,7 @@ b System_Runtime_CompilerServices_TaskAwaiter_1_TResult_BOOL__ctor_System_Thread
 	.align 4
 	.no_dead_strip System_Runtime_CompilerServices_TaskAwaiter_1_TResult_BOOL__ctor_System_Threading_Tasks_Task_1_TResult_BOOL
 System_Runtime_CompilerServices_TaskAwaiter_1_TResult_BOOL__ctor_System_Threading_Tasks_Task_1_TResult_BOOL:
-.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/referencesource/mscorlib/system/runtime/compilerservices/TaskAwaiter.cs"
+.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/runtime/compilerservices/TaskAwaiter.cs"
 .loc 7 317 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -18662,7 +18662,7 @@ Lme_9f:
 	.align 4
 	.no_dead_strip System_Linq_Enumerable_ToArray_TSource_INT_System_Collections_Generic_IEnumerable_1_TSource_INT
 System_Linq_Enumerable_ToArray_TSource_INT_System_Collections_Generic_IEnumerable_1_TSource_INT:
-.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/external/corefx/src/System.Linq/src/System/Linq/ToCollection.cs"
+.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/ToCollection.cs"
 .loc 8 13 0 prologue_end
 .word 0xa9ba7bfd
 .word 0x910003fd
@@ -19098,7 +19098,7 @@ Lme_a3:
 	.align 4
 	.no_dead_strip System_Collections_Generic_List_1_T_INT_Add_T_INT
 System_Collections_Generic_List_1_T_INT_Add_T_INT:
-.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/list.cs"
+.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/collections/generic/list.cs"
 .loc 9 228 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
@@ -20116,7 +20116,7 @@ Lme_a8:
 	.align 4
 	.no_dead_strip System_Threading_Tasks_Task_Run_TResult_BOOL_System_Func_1_TResult_BOOL
 System_Threading_Tasks_Task_Run_TResult_BOOL_System_Func_1_TResult_BOOL:
-.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/referencesource/mscorlib/system/threading/Tasks/Task.cs"
+.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/mscorlib/system/threading/Tasks/Task.cs"
 .loc 10 5665 0 prologue_end
 .word 0xa9b87bfd
 .word 0x910003fd
@@ -20579,7 +20579,7 @@ Lme_af:
 	.align 4
 	.no_dead_strip System_Runtime_CompilerServices_JitHelpers_UnsafeEnumCast_T_INT_T_INT
 System_Runtime_CompilerServices_JitHelpers_UnsafeEnumCast_T_INT_T_INT:
-.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/corlib/ReferenceSources/JitHelpers.cs"
+.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/ReferenceSources/JitHelpers.cs"
 .loc 11 14 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
@@ -20624,7 +20624,7 @@ Lme_b0:
 	.align 4
 	.no_dead_strip System_Collections_Generic_EnumerableHelpers_ToArray_T_INT_System_Collections_Generic_IEnumerable_1_T_INT
 System_Collections_Generic_EnumerableHelpers_ToArray_T_INT_System_Collections_Generic_IEnumerable_1_T_INT:
-.file 12 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/external/corefx/src/Common/src/System/Collections/Generic/EnumerableHelpers.cs"
+.file 12 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/Common/src/System/Collections/Generic/EnumerableHelpers.cs"
 .loc 12 71 0 prologue_end
 .word 0xa9b37bfd
 .word 0x910003fd
@@ -21049,7 +21049,7 @@ b System_Collections_Generic_LargeArrayBuilder_1_T_INT_ToArray
 	.align 4
 	.no_dead_strip System_Collections_Generic_LargeArrayBuilder_1_T_INT_ToArray
 System_Collections_Generic_LargeArrayBuilder_1_T_INT_ToArray:
-.file 13 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/external/corefx/src/Common/src/System/Collections/Generic/LargeArrayBuilder.cs"
+.file 13 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/Common/src/System/Collections/Generic/LargeArrayBuilder.cs"
 .loc 13 270 0 prologue_end
 .word 0xa9ba7bfd
 .word 0x910003fd
@@ -25537,7 +25537,7 @@ _mono_aot_file_info:
 	.long 304,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 79,45,196,41,116,50,111,49,77,0,157,238,22,91,137,223
+	.byte 247,217,123,118,35,98,25,197,202,84,138,217,33,51,82,83
 	.globl _mono_aot_module_Plugin_Connectivity_info
 	.align 3
 _mono_aot_module_Plugin_Connectivity_info:

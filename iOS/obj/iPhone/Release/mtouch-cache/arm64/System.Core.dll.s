@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Wed Nov  8 17:08:32 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 20:59:09 EST 2017)"
 	.asciz "System.Core.dll"
 	.asciz ""
 
@@ -121,7 +121,7 @@ jit_code_start:
 	.align 4
 	.no_dead_strip SR_GetString_string
 SR_GetString_string:
-.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/build/common/SR.cs"
+.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/build/common/SR.cs"
 .loc 1 17 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -148,7 +148,7 @@ Lme_1:
 	.align 4
 	.no_dead_strip System_Threading_ReaderWriterLockSlim_InitializeThreadCounts
 System_Threading_ReaderWriterLockSlim_InitializeThreadCounts:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/referencesource/System.Core/System/threading/ReaderWriterLockSlim/ReaderWriterLockSlim.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/referencesource/System.Core/System/threading/ReaderWriterLockSlim/ReaderWriterLockSlim.cs"
 .loc 2 138 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -4538,7 +4538,7 @@ Lme_2f:
 	.align 4
 	.no_dead_strip System_Linq_Error_ArgumentNull_string
 System_Linq_Error_ArgumentNull_string:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/external/corefx/src/System.Linq/src/System/Linq/Errors.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/Errors.cs"
 .loc 3 9 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -4562,7 +4562,7 @@ Lme_30:
 	.align 4
 	.no_dead_strip System_Linq_Enumerable_ToArray_TSource_REF_System_Collections_Generic_IEnumerable_1_TSource_REF
 System_Linq_Enumerable_ToArray_TSource_REF_System_Collections_Generic_IEnumerable_1_TSource_REF:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/external/corefx/src/System.Linq/src/System/Linq/ToCollection.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/System.Linq/src/System/Linq/ToCollection.cs"
 .loc 4 13 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -4620,7 +4620,7 @@ b System_Collections_Generic_ArrayBuilder_1_T_REF_get_Capacity
 	.align 4
 	.no_dead_strip System_Collections_Generic_ArrayBuilder_1_T_REF_get_Capacity
 System_Collections_Generic_ArrayBuilder_1_T_REF_get_Capacity:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/external/corefx/src/Common/src/System/Collections/Generic/ArrayBuilder.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/Common/src/System/Collections/Generic/ArrayBuilder.cs"
 .loc 5 38 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -4881,7 +4881,7 @@ Lme_38:
 	.align 4
 	.no_dead_strip System_Collections_Generic_EnumerableHelpers_ToArray_T_REF_System_Collections_Generic_IEnumerable_1_T_REF
 System_Collections_Generic_EnumerableHelpers_ToArray_T_REF_System_Collections_Generic_IEnumerable_1_T_REF:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/external/corefx/src/Common/src/System/Collections/Generic/EnumerableHelpers.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/Common/src/System/Collections/Generic/EnumerableHelpers.cs"
 .loc 6 71 0 prologue_end
 .word 0xa9b87bfd
 .word 0x910003fd
@@ -4993,7 +4993,7 @@ b System_Collections_Generic_LargeArrayBuilder_1_T_REF__ctor_bool
 	.align 4
 	.no_dead_strip System_Collections_Generic_LargeArrayBuilder_1_T_REF__ctor_bool
 System_Collections_Generic_LargeArrayBuilder_1_T_REF__ctor_bool:
-.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/external/corefx/src/Common/src/System/Collections/Generic/LargeArrayBuilder.cs"
+.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/external/corefx/src/Common/src/System/Collections/Generic/LargeArrayBuilder.cs"
 .loc 7 72 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -5569,7 +5569,7 @@ Lme_41:
 	.align 4
 	.no_dead_strip System_Security_Cryptography_AesManaged__ctor
 System_Security_Cryptography_AesManaged__ctor:
-.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/corlib/CommonCrypto/AesManaged.g.cs"
+.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/CommonCrypto/AesManaged.g.cs"
 .loc 8 18 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -8658,7 +8658,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "33DA90DB-789C-4EE1-97EE-080A10D72499"
+	.asciz "3CCACAFC-6C3A-4450-9D20-50A54B68CC48"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -8741,7 +8741,7 @@ _mono_aot_file_info:
 	.long 152,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 29,226,98,18,94,237,158,47,75,213,44,232,126,197,165,57
+	.byte 231,54,138,155,155,141,204,211,71,255,40,132,108,9,108,249
 	.globl _mono_aot_module_System_Core_info
 	.align 3
 _mono_aot_module_System_Core_info:

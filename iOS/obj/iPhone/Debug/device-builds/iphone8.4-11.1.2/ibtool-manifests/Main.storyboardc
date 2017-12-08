@@ -98,6 +98,36 @@
 				<integer>9</integer>
 			</dict>
 		</array>
+		<key>6es-Mh-Nzf</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>6es-Mh-Nzf</string>
+				</array>
+				<key>message</key>
+				<string>“Table View Controller“ is unreachable because it has no entry points, and no identifier for runtime access via -[UIStoryboard instantiateViewControllerWithIdentifier:].</string>
+				<key>type</key>
+				<string>IBUnsupportedConfiguration</string>
+				<key>type-value</key>
+				<integer>9</integer>
+			</dict>
+		</array>
+		<key>9ZY-6U-eQM</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>9ZY-6U-eQM</string>
+				</array>
+				<key>message</key>
+				<string>Leading or Trailing horizontal alignment before iOS 11.0</string>
+				<key>type</key>
+				<string>IBAttributeUnavailable</string>
+				<key>type-value</key>
+				<integer>5</integer>
+			</dict>
+		</array>
 		<key>II4-wf-bSs</key>
 		<array>
 			<dict>
@@ -128,6 +158,33 @@
 				<integer>7</integer>
 			</dict>
 		</array>
+		<key>fit-9T-3tY</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>fit-9T-3tY</string>
+				</array>
+				<key>message</key>
+				<string>Automatically Adjusts Font before iOS 10.0</string>
+				<key>type</key>
+				<string>IBAttributeUnavailable</string>
+				<key>type-value</key>
+				<integer>5</integer>
+			</dict>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>fit-9T-3tY</string>
+				</array>
+				<key>message</key>
+				<string>Automatically Adjusts Font requires using a Dynamic Type text style</string>
+				<key>type</key>
+				<string>IBUnsupportedConfiguration</string>
+				<key>type-value</key>
+				<integer>9</integer>
+			</dict>
+		</array>
 		<key>gGu-Zp-q3w</key>
 		<array>
 			<dict>
@@ -143,21 +200,6 @@
 				<integer>5</integer>
 			</dict>
 		</array>
-		<key>jlP-VZ-ipH</key>
-		<array>
-			<dict>
-				<key>affected-objects</key>
-				<array>
-					<string>jlP-VZ-ipH</string>
-				</array>
-				<key>message</key>
-				<string>Push segues are deprecated since iOS 8.0</string>
-				<key>type</key>
-				<string>IBDeprecated</string>
-				<key>type-value</key>
-				<integer>7</integer>
-			</dict>
-		</array>
 		<key>vpB-cj-unC</key>
 		<array>
 			<dict>
@@ -171,6 +213,21 @@
 				<string>IBDeprecated</string>
 				<key>type-value</key>
 				<integer>7</integer>
+			</dict>
+		</array>
+		<key>zBj-od-d8v</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>zBj-od-d8v</string>
+				</array>
+				<key>message</key>
+				<string>Leading or Trailing horizontal alignment before iOS 11.0</string>
+				<key>type</key>
+				<string>IBAttributeUnavailable</string>
+				<key>type-value</key>
+				<integer>5</integer>
 			</dict>
 		</array>
 	</dict>

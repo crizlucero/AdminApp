@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 4,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Wed Nov  8 17:08:36 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 21:00:42 EST 2017)"
 	.asciz "I18N.West.dll"
 	.asciz ""
 
@@ -121,7 +121,7 @@ jit_code_start:
 	.align 2
 	.no_dead_strip I18N_West_CP10000__ctor
 I18N_West_CP10000__ctor:
-.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/West/CP10000.cs"
+.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/West/CP10000.cs"
 .loc 1 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -716,7 +716,7 @@ Lme_6:
 	.align 2
 	.no_dead_strip I18N_West_CP10079__ctor
 I18N_West_CP10079__ctor:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/West/CP10079.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/West/CP10079.cs"
 .loc 2 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -1286,7 +1286,7 @@ Lme_d:
 	.align 2
 	.no_dead_strip I18N_West_CP1250__ctor
 I18N_West_CP1250__ctor:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/West/CP1250.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/West/CP1250.cs"
 .loc 3 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -1719,7 +1719,7 @@ Lme_14:
 	.align 2
 	.no_dead_strip I18N_West_CP1252__ctor
 I18N_West_CP1252__ctor:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/West/CP1252.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/West/CP1252.cs"
 .loc 4 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -2004,7 +2004,7 @@ Lme_1b:
 	.align 2
 	.no_dead_strip I18N_West_CP1253__ctor
 I18N_West_CP1253__ctor:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/West/CP1253.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/West/CP1253.cs"
 .loc 5 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -2300,7 +2300,7 @@ Lme_22:
 	.align 2
 	.no_dead_strip I18N_West_CP28592__ctor
 I18N_West_CP28592__ctor:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/West/CP28592.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/West/CP28592.cs"
 .loc 6 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -2915,7 +2915,7 @@ Lme_29:
 	.align 2
 	.no_dead_strip I18N_West_CP28593__ctor
 I18N_West_CP28593__ctor:
-.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/West/CP28593.cs"
+.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/West/CP28593.cs"
 .loc 7 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -3198,7 +3198,7 @@ Lme_30:
 	.align 2
 	.no_dead_strip I18N_West_CP28597__ctor
 I18N_West_CP28597__ctor:
-.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/West/CP28597.cs"
+.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/West/CP28597.cs"
 .loc 8 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -3433,7 +3433,7 @@ Lme_37:
 	.align 2
 	.no_dead_strip I18N_West_CP28605__ctor
 I18N_West_CP28605__ctor:
-.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/West/CP28605.cs"
+.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/West/CP28605.cs"
 .loc 9 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -3654,7 +3654,7 @@ Lme_3e:
 	.align 2
 	.no_dead_strip I18N_West_CP437__ctor
 I18N_West_CP437__ctor:
-.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/West/CP437.cs"
+.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/West/CP437.cs"
 .loc 10 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -5432,7 +5432,7 @@ Lme_45:
 	.align 2
 	.no_dead_strip I18N_West_CP850__ctor
 I18N_West_CP850__ctor:
-.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/West/CP850.cs"
+.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/West/CP850.cs"
 .loc 11 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -6175,7 +6175,7 @@ Lme_4c:
 	.align 2
 	.no_dead_strip I18N_West_CP860__ctor
 I18N_West_CP860__ctor:
-.file 12 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/West/CP860.cs"
+.file 12 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/West/CP860.cs"
 .loc 12 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -6929,7 +6929,7 @@ Lme_53:
 	.align 2
 	.no_dead_strip I18N_West_CP861__ctor
 I18N_West_CP861__ctor:
-.file 13 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/West/CP861.cs"
+.file 13 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/West/CP861.cs"
 .loc 13 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -7687,7 +7687,7 @@ Lme_5a:
 	.align 2
 	.no_dead_strip I18N_West_CP863__ctor
 I18N_West_CP863__ctor:
-.file 14 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/West/CP863.cs"
+.file 14 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/West/CP863.cs"
 .loc 14 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -8441,7 +8441,7 @@ Lme_61:
 	.align 2
 	.no_dead_strip I18N_West_CP865__ctor
 I18N_West_CP865__ctor:
-.file 15 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/West/CP865.cs"
+.file 15 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/West/CP865.cs"
 .loc 15 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -9517,7 +9517,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "4A46344D-F7D2-45F0-9C77-642056E050E9"
+	.asciz "430CBF12-6224-4A07-9812-F4FEC965B645"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -9600,7 +9600,7 @@ _mono_aot_file_info:
 	.long 160,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 149,235,185,0,224,23,90,235,154,228,255,142,50,188,85,209
+	.byte 198,33,231,60,221,189,142,249,32,137,22,61,75,51,143,105
 	.globl _mono_aot_module_I18N_West_info
 	.align 2
 _mono_aot_module_I18N_West_info:

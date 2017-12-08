@@ -7,21 +7,21 @@
 #include <objc/message.h>
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <Photos/Photos.h>
-#import <Contacts/Contacts.h>
-#import <QuartzCore/QuartzCore.h>
 #import <MessageUI/MessageUI.h>
+#import <Contacts/Contacts.h>
+#import <Photos/Photos.h>
 #import <CloudKit/CloudKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import <ContactsUI/ContactsUI.h>
 #import <Intents/Intents.h>
 #import <AVFoundation/AVFoundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 
 @protocol UIPickerViewModel;
+@class Foundation_InternalNSNotificationHandler;
 @class __MonoMac_NSActionDispatcher;
 @class __Xamarin_NSTimerActionDispatcher;
 @class __MonoMac_NSAsyncActionDispatcher;
-@class Foundation_InternalNSNotificationHandler;
 @class MessageUI_Mono_MFMailComposeViewControllerDelegate;
 @class UIKit_UIControlEventProxy;
 @class AppDelegate;
@@ -35,12 +35,8 @@
 @class AboutMeController;
 @class HeaderCarritoProductos;
 @class ComentariosBodyCell;
-@class EscritorioController;
 @class EscritorioHeaderCell;
 @class NoComentsCell;
-@class ComentarPostHeaderCell;
-@class ComentarioViewCell;
-@class NoComentariosViewCell;
 @class MiCuentaViewController;
 @class ProductosMiCuentaViewController;
 @class CuentaProductosCell;
@@ -65,6 +61,11 @@
 @class SalaJuntasTableViewController;
 @class HorariosTableViewController;
 @class HorariosTableViewCell;
+@class comentarTableView;
+@class HeaderComentarTableView;
+@class ComentarNoInfoCell;
+@class ComentarviewController;
+@class BodyComentarTableView;
 @class WorklabsMx_iOS_ViewElements_UICheckBox;
 @class WorklabsMx_iOS_ViewElements_HorarioEventos;
 @class WorklabsMx_iOS_ViewElements_UIDropdownList;
@@ -103,8 +104,7 @@
 @class EmpresaMiembroModificaController;
 @class AboutMeModificaController;
 @class PublicarPostViewController;
-@class ComentarPostTableViewController;
-@class SeccionComentariosTableViewController;
+@class EscritorioController;
 @class TabBarDetalleVenta;
 @class CarritoProductos;
 @class TableViewMembresia;
@@ -121,18 +121,20 @@
 @class WorklabsMx_iOS_ViewElements_PostCard;
 @class WorklabsMx_iOS_Styles_STLTableViewSource;
 @class WorklabsMx_iOS_Styles_STLImageView;
-@class __NSObject_Disposer;
 @class __UIGestureRecognizerToken;
 @class __UIGestureRecognizerParameterlessToken;
 @class __UIGestureRecognizerParametrizedToken;
+@class __NSObject_Disposer;
 @class UIKit_UIImagePickerController__UIImagePickerControllerDelegate;
 @class __UILongPressGestureRecognizer;
+@class UIKit_UIView_UIViewAppearance;
+@class UIKit_UINavigationBar_UINavigationBarAppearance;
 @class __UIPanGestureRecognizer;
-@class __UIPinchGestureRecognizer;
-@class UIKit_UIAlertView__UIAlertViewDelegate;
 @class UIKit_UIBarButtonItem_Callback;
+@class UIKit_UIAlertView__UIAlertViewDelegate;
 @class __UIRotationGestureRecognizer;
 @class __UITapGestureRecognizer;
+@class __UIPinchGestureRecognizer;
 @class __UISwipeGestureRecognizer;
 @class __UIScreenEdgePanGestureRecognizer;
 @class UIKit_UITextField__UITextFieldDelegate;
@@ -322,27 +324,6 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface EscritorioController : UITableViewController {
-}
-	@property (nonatomic, assign) UIBarButtonItem * btnScanQr;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIBarButtonItem *) btnScanQr;
-	-(void) setBtnScanQr:(UIBarButtonItem *)p0;
-	-(void) viewDidLoad;
-	-(void) viewWillAppear:(BOOL)p0;
-	-(void) viewDidAppear:(BOOL)p0;
-	-(UIView *) tableView:(UITableView *)p0 viewForHeaderInSection:(NSInteger)p1;
-	-(CGFloat) tableView:(UITableView *)p0 heightForHeaderInSection:(NSInteger)p1;
-	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
-	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
-	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
-	-(void) btnToScanQr_TouchUpInside:(UIBarButtonItem *)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
 @interface EscritorioHeaderCell : UITableViewCell {
 }
 	@property (nonatomic, assign) UIImageView * impPublicar;
@@ -374,84 +355,6 @@
 	-(void) xamarinSetGCHandle: (int) gchandle;
 	-(UILabel *) lblMessageNoComments;
 	-(void) setLblMessageNoComments:(UILabel *)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
-@interface ComentarPostHeaderCell : UITableViewCell {
-}
-	@property (nonatomic, assign) UIButton * btnBorrarFoto;
-	@property (nonatomic, assign) UIButton * btnFotografia;
-	@property (nonatomic, assign) UIButton * btnPublicar;
-	@property (nonatomic, assign) UIButton * btnSeleccionarImagen;
-	@property (nonatomic, assign) UITextView * txtComentarPost;
-	@property (nonatomic, assign) UIView * vwComentarPost;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIButton *) btnBorrarFoto;
-	-(void) setBtnBorrarFoto:(UIButton *)p0;
-	-(UIButton *) btnFotografia;
-	-(void) setBtnFotografia:(UIButton *)p0;
-	-(UIButton *) btnPublicar;
-	-(void) setBtnPublicar:(UIButton *)p0;
-	-(UIButton *) btnSeleccionarImagen;
-	-(void) setBtnSeleccionarImagen:(UIButton *)p0;
-	-(UITextView *) txtComentarPost;
-	-(void) setTxtComentarPost:(UITextView *)p0;
-	-(UIView *) vwComentarPost;
-	-(void) setVwComentarPost:(UIView *)p0;
-	-(void) btnBorrarFoto_TouchUpInside:(UIButton *)p0;
-	-(void) btnComentar_TouchUpInside:(UIButton *)p0;
-	-(void) btnFotografia_TouchUpInside:(UIButton *)p0;
-	-(void) btnSleccionarImagen_TouchUpInside:(UIButton *)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
-@interface ComentarioViewCell : UITableViewCell {
-}
-	@property (nonatomic, assign) UIButton * btnImagenComentario;
-	@property (nonatomic, assign) UIButton * btnLikes;
-	@property (nonatomic, assign) UIImageView * imgPerfil;
-	@property (nonatomic, assign) UILabel * lblContenido;
-	@property (nonatomic, assign) UILabel * lblFechaPost;
-	@property (nonatomic, assign) UILabel * lblLikes;
-	@property (nonatomic, assign) UILabel * lblNombre;
-	@property (nonatomic, assign) UILabel * lblPuesto;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIButton *) btnImagenComentario;
-	-(void) setBtnImagenComentario:(UIButton *)p0;
-	-(UIButton *) btnLikes;
-	-(void) setBtnLikes:(UIButton *)p0;
-	-(UIImageView *) imgPerfil;
-	-(void) setImgPerfil:(UIImageView *)p0;
-	-(UILabel *) lblContenido;
-	-(void) setLblContenido:(UILabel *)p0;
-	-(UILabel *) lblFechaPost;
-	-(void) setLblFechaPost:(UILabel *)p0;
-	-(UILabel *) lblLikes;
-	-(void) setLblLikes:(UILabel *)p0;
-	-(UILabel *) lblNombre;
-	-(void) setLblNombre:(UILabel *)p0;
-	-(UILabel *) lblPuesto;
-	-(void) setLblPuesto:(UILabel *)p0;
-	-(void) btnImagenComentario_TouchUpInside:(UIButton *)p0;
-	-(void) btnLikes_TouchUpInside:(UIButton *)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
-@interface NoComentariosViewCell : UITableViewCell {
-}
-	@property (nonatomic, assign) UILabel * lblNoComentariosInfo;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UILabel *) lblNoComentariosInfo;
-	-(void) setLblNoComentariosInfo:(UILabel *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -986,6 +889,145 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
+@interface comentarTableView : UITableViewController {
+}
+	@property (nonatomic, assign) UIBarButtonItem * btnBack;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIBarButtonItem *) btnBack;
+	-(void) setBtnBack:(UIBarButtonItem *)p0;
+	-(void) viewDidLoad;
+	-(void) viewWillAppear:(BOOL)p0;
+	-(void) viewWillDisappear:(BOOL)p0;
+	-(UIView *) tableView:(UITableView *)p0 viewForHeaderInSection:(NSInteger)p1;
+	-(CGFloat) tableView:(UITableView *)p0 heightForHeaderInSection:(NSInteger)p1;
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
+	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
+	-(void) btnBack_TouchUpInside:(UIBarButtonItem *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface HeaderComentarTableView : UITableViewCell {
+}
+	@property (nonatomic, assign) UIButton * btnComentarios;
+	@property (nonatomic, assign) UIButton * btnImagenComentario;
+	@property (nonatomic, assign) UIButton * btnLikes;
+	@property (nonatomic, assign) UIImageView * imgComentarios;
+	@property (nonatomic, assign) UIImageView * imgPerfil;
+	@property (nonatomic, assign) UILabel * lblComentarios;
+	@property (nonatomic, assign) UILabel * lblFechaComentario;
+	@property (nonatomic, assign) UILabel * lblLikes;
+	@property (nonatomic, assign) UILabel * lblNombre;
+	@property (nonatomic, assign) UILabel * lblProfesion;
+	@property (nonatomic, assign) UITextView * txtComentario;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnComentarios;
+	-(void) setBtnComentarios:(UIButton *)p0;
+	-(UIButton *) btnImagenComentario;
+	-(void) setBtnImagenComentario:(UIButton *)p0;
+	-(UIButton *) btnLikes;
+	-(void) setBtnLikes:(UIButton *)p0;
+	-(UIImageView *) imgComentarios;
+	-(void) setImgComentarios:(UIImageView *)p0;
+	-(UIImageView *) imgPerfil;
+	-(void) setImgPerfil:(UIImageView *)p0;
+	-(UILabel *) lblComentarios;
+	-(void) setLblComentarios:(UILabel *)p0;
+	-(UILabel *) lblFechaComentario;
+	-(void) setLblFechaComentario:(UILabel *)p0;
+	-(UILabel *) lblLikes;
+	-(void) setLblLikes:(UILabel *)p0;
+	-(UILabel *) lblNombre;
+	-(void) setLblNombre:(UILabel *)p0;
+	-(UILabel *) lblProfesion;
+	-(void) setLblProfesion:(UILabel *)p0;
+	-(UITextView *) txtComentario;
+	-(void) setTxtComentario:(UITextView *)p0;
+	-(void) btnComentarios_TouchUpInside:(UIButton *)p0;
+	-(void) btnImagenComentarios_TouchUpInside:(UIButton *)p0;
+	-(void) btnLikes_TouchUpInSide:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface ComentarNoInfoCell : UITableViewCell {
+}
+	@property (nonatomic, assign) UILabel * lblNoInfo;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UILabel *) lblNoInfo;
+	-(void) setLblNoInfo:(UILabel *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface ComentarviewController : UIViewController {
+}
+	@property (nonatomic, assign) UIButton * btnCamara;
+	@property (nonatomic, assign) UIButton * btnComentar;
+	@property (nonatomic, assign) UITextView * txtComentario;
+	@property (nonatomic, assign) UIView * vwVistaComentar;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnCamara;
+	-(void) setBtnCamara:(UIButton *)p0;
+	-(UIButton *) btnComentar;
+	-(void) setBtnComentar:(UIButton *)p0;
+	-(UITextView *) txtComentario;
+	-(void) setTxtComentario:(UITextView *)p0;
+	-(UIView *) vwVistaComentar;
+	-(void) setVwVistaComentar:(UIView *)p0;
+	-(void) viewDidLoad;
+	-(void) viewWillAppear:(BOOL)p0;
+	-(void) btnCamara_TouchUpInside:(UIButton *)p0;
+	-(void) btnClose_TouchUpInside:(UIButton *)p0;
+	-(void) btnComentar_TouchUpInside:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface BodyComentarTableView : UITableViewCell {
+}
+	@property (nonatomic, assign) UIButton * btnImagen;
+	@property (nonatomic, assign) UIButton * btnLikes;
+	@property (nonatomic, assign) UIImageView * imgPerfil;
+	@property (nonatomic, assign) UILabel * lblFecha;
+	@property (nonatomic, assign) UILabel * lblLikes;
+	@property (nonatomic, assign) UILabel * lblNombre;
+	@property (nonatomic, assign) UILabel * lblProfesion;
+	@property (nonatomic, assign) UITextView * txtComentario;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnImagen;
+	-(void) setBtnImagen:(UIButton *)p0;
+	-(UIButton *) btnLikes;
+	-(void) setBtnLikes:(UIButton *)p0;
+	-(UIImageView *) imgPerfil;
+	-(void) setImgPerfil:(UIImageView *)p0;
+	-(UILabel *) lblFecha;
+	-(void) setLblFecha:(UILabel *)p0;
+	-(UILabel *) lblLikes;
+	-(void) setLblLikes:(UILabel *)p0;
+	-(UILabel *) lblNombre;
+	-(void) setLblNombre:(UILabel *)p0;
+	-(UILabel *) lblProfesion;
+	-(void) setLblProfesion:(UILabel *)p0;
+	-(UITextView *) txtComentario;
+	-(void) setTxtComentario:(UITextView *)p0;
+	-(void) btnImagen_TouchUpInside:(UIButton *)p0;
+	-(void) btnLikes_TouchUpInside:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
 @interface WorklabsMx_iOS_ViewElements_UICheckBox : UIView {
 }
 	-(void) release;
@@ -1446,39 +1488,24 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface ComentarPostTableViewController : UITableViewController {
+@interface EscritorioController : UITableViewController {
 }
-	@property (nonatomic, assign) UIView * vwSeccionComentarios;
-	@property (nonatomic, assign) UIView * vwVistaSeccionComentarios;
+	@property (nonatomic, assign) UIBarButtonItem * btnScanQr;
 	-(void) release;
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIView *) vwSeccionComentarios;
-	-(void) setVwSeccionComentarios:(UIView *)p0;
-	-(UIView *) vwVistaSeccionComentarios;
-	-(void) setVwVistaSeccionComentarios:(UIView *)p0;
+	-(UIBarButtonItem *) btnScanQr;
+	-(void) setBtnScanQr:(UIBarButtonItem *)p0;
 	-(void) viewDidLoad;
-	-(void) viewWillDisappear:(BOOL)p0;
+	-(void) viewWillAppear:(BOOL)p0;
+	-(void) viewDidAppear:(BOOL)p0;
 	-(UIView *) tableView:(UITableView *)p0 viewForHeaderInSection:(NSInteger)p1;
 	-(CGFloat) tableView:(UITableView *)p0 heightForHeaderInSection:(NSInteger)p1;
-	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
-	-(void) imagePickerController:(UIImagePickerController *)p0 didFinishPickingImage:(UIImage *)p1 editingInfo:(NSDictionary *)p2;
-	-(void) imagePickerControllerDidCancel:(UIImagePickerController *)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
-@interface SeccionComentariosTableViewController : UITableViewController {
-}
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(void) viewDidLoad;
 	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
-	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1;
 	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
 	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
+	-(void) btnToScanQr_TouchUpInside:(UIBarButtonItem *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -1849,6 +1876,24 @@
 @interface __UIGestureRecognizerParametrizedToken : __UIGestureRecognizerToken {
 }
 	-(void) target:(UIGestureRecognizer *)p0;
+@end
+
+@interface UIKit_UIView_UIViewAppearance : NSObject {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(void) setBackgroundColor:(UIColor *)p0;
+	-(void) setTintColor:(UIColor *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface UIKit_UINavigationBar_UINavigationBarAppearance : UIKit_UIView_UIViewAppearance {
+}
+	-(void) setBarTintColor:(UIColor *)p0;
+	-(void) setTranslucent:(BOOL)p0;
+	-(void) setTitleTextAttributes:(NSDictionary *)p0;
 @end
 
 @interface BigTed_ProgressHUD : UIView {

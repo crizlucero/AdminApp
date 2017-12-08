@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Wed Nov  8 17:08:32 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 20:59:09 EST 2017)"
 	.asciz "I18N.CJK.dll"
 	.asciz ""
 
@@ -121,7 +121,7 @@ jit_code_start:
 	.align 4
 	.no_dead_strip I18N_CJK_CP51932__ctor
 I18N_CJK_CP51932__ctor:
-.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/CP51932.cs"
+.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/CP51932.cs"
 .loc 1 73 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -1995,7 +1995,7 @@ Lme_1a:
 	.align 4
 	.no_dead_strip I18N_CJK_CP932__ctor
 I18N_CJK_CP932__ctor:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/CP932.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/CP932.cs"
 .loc 2 48 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -4266,7 +4266,7 @@ Lme_32:
 	.align 4
 	.no_dead_strip I18N_CJK_CP936__ctor
 I18N_CJK_CP936__ctor:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/CP936.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/CP936.cs"
 .loc 3 23 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -5157,7 +5157,7 @@ Lme_48:
 	.align 4
 	.no_dead_strip I18N_CJK_CP949__ctor
 I18N_CJK_CP949__ctor:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/CP949.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/CP949.cs"
 .loc 4 22 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -6617,7 +6617,7 @@ Lme_60:
 	.align 4
 	.no_dead_strip I18N_CJK_CP950__ctor
 I18N_CJK_CP950__ctor:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/CP950.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/CP950.cs"
 .loc 5 22 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -7521,7 +7521,7 @@ Lme_70:
 	.align 4
 	.no_dead_strip I18N_CJK_CodeTable__ctor_string
 I18N_CJK_CodeTable__ctor_string:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/CodeTable.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/CodeTable.cs"
 .loc 6 51 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -7766,7 +7766,7 @@ Lme_73:
 	.align 4
 	.no_dead_strip I18N_CJK_DbcsConvert__ctor_string
 I18N_CJK_DbcsConvert__ctor_string:
-.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/DbcsConvert.cs"
+.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/DbcsConvert.cs"
 .loc 7 25 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
@@ -7927,7 +7927,7 @@ Lme_75:
 	.align 4
 	.no_dead_strip I18N_CJK_DbcsEncoding__ctor_int
 I18N_CJK_DbcsEncoding__ctor_int:
-.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/DbcsEncoding.cs"
+.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/DbcsEncoding.cs"
 .loc 8 22 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -8724,7 +8724,7 @@ Lme_84:
 	.align 4
 	.no_dead_strip I18N_CJK_ENCgb18030__ctor
 I18N_CJK_ENCgb18030__ctor:
-.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/GB18030Encoding.cs"
+.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/GB18030Encoding.cs"
 .loc 9 22 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -10350,7 +10350,7 @@ Lme_9f:
 	.align 4
 	.no_dead_strip I18N_CJK_GB18030Source__ctor
 I18N_CJK_GB18030Source__ctor:
-.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/GB18030Source.cs"
+.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/GB18030Source.cs"
 .loc 10 42 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -12133,7 +12133,7 @@ Lme_aa:
 	.align 4
 	.no_dead_strip I18N_CJK_CP50220__ctor
 I18N_CJK_CP50220__ctor:
-.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/ISO2022JP.cs"
+.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/ISO2022JP.cs"
 .loc 11 22 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -14430,7 +14430,7 @@ Lme_cb:
 	.align 4
 	.no_dead_strip I18N_CJK_JISConvert__ctor
 I18N_CJK_JISConvert__ctor:
-.file 12 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/CJK/JISConvert.cs"
+.file 12 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/CJK/JISConvert.cs"
 .loc 12 63 0 prologue_end
 .word 0xa9ba7bfd
 .word 0x910003fd
@@ -15282,7 +15282,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "8ED31E1E-6328-49B2-AED7-16F361D27A77"
+	.asciz "712812BC-4278-4658-B617-D4D5D9DCDF79"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -15365,7 +15365,7 @@ _mono_aot_file_info:
 	.long 288,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 62,29,113,28,232,215,117,52,114,63,116,209,128,41,189,33
+	.byte 25,57,173,51,206,102,31,245,10,41,235,197,221,161,162,163
 	.globl _mono_aot_module_I18N_CJK_info
 	.align 3
 _mono_aot_module_I18N_CJK_info:

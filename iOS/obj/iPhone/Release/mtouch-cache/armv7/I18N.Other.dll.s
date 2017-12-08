@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 4,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Wed Nov  8 17:08:36 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 21:00:42 EST 2017)"
 	.asciz "I18N.Other.dll"
 	.asciz ""
 
@@ -121,7 +121,7 @@ jit_code_start:
 	.align 2
 	.no_dead_strip I18N_Other_CP1251__ctor
 I18N_Other_CP1251__ctor:
-.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Other/CP1251.cs"
+.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Other/CP1251.cs"
 .loc 1 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -474,7 +474,7 @@ Lme_6:
 	.align 2
 	.no_dead_strip I18N_Other_CP1257__ctor
 I18N_Other_CP1257__ctor:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Other/CP1257.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Other/CP1257.cs"
 .loc 2 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -922,7 +922,7 @@ Lme_d:
 	.align 2
 	.no_dead_strip I18N_Other_CP1258__ctor
 I18N_Other_CP1258__ctor:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Other/CP1258.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Other/CP1258.cs"
 .loc 3 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -1242,7 +1242,7 @@ Lme_14:
 	.align 2
 	.no_dead_strip I18N_Other_CP20866__ctor
 I18N_Other_CP20866__ctor:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Other/CP20866.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Other/CP20866.cs"
 .loc 4 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -1727,7 +1727,7 @@ Lme_1b:
 	.align 2
 	.no_dead_strip I18N_Other_CP21866__ctor
 I18N_Other_CP21866__ctor:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Other/CP21866.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Other/CP21866.cs"
 .loc 5 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -2244,7 +2244,7 @@ Lme_22:
 	.align 2
 	.no_dead_strip I18N_Other_CP28594__ctor
 I18N_Other_CP28594__ctor:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Other/CP28594.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Other/CP28594.cs"
 .loc 6 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -2608,7 +2608,7 @@ Lme_29:
 	.align 2
 	.no_dead_strip I18N_Other_CP28595__ctor
 I18N_Other_CP28595__ctor:
-.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Other/CP28595.cs"
+.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Other/CP28595.cs"
 .loc 7 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -2832,7 +2832,7 @@ Lme_30:
 	.align 2
 	.no_dead_strip I18N_Other_ISCIIEncoding__ctor_int_int_string_string
 I18N_Other_ISCIIEncoding__ctor_int_int_string_string:
-.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Other/CP57002.cs"
+.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Other/CP57002.cs"
 .loc 8 53 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,13,45,233,5,223,77,226,13,176,160,225,0,160,160,225,0,16,139,229,4,32,139,229
@@ -3697,7 +3697,7 @@ Lme_51:
 	.align 2
 	.no_dead_strip I18N_Other_CP874__ctor
 I18N_Other_CP874__ctor:
-.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Other/CP874.cs"
+.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Other/CP874.cs"
 .loc 9 41 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,12,223,77,226,13,176,160,225,32,0,139,229,0,0,159,229,0,0,0,234
@@ -4263,7 +4263,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "7AD57B23-C0DF-4C51-9EFA-13691F53FADB"
+	.asciz "79C205D2-BEC1-44BA-B687-79939B29CA93"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -4346,7 +4346,7 @@ _mono_aot_file_info:
 	.long 136,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 251,89,78,251,83,233,181,76,32,182,252,153,37,13,25,42
+	.byte 20,30,72,165,41,54,114,233,46,45,197,36,115,91,178,255
 	.globl _mono_aot_module_I18N_Other_info
 	.align 2
 _mono_aot_module_I18N_Other_info:

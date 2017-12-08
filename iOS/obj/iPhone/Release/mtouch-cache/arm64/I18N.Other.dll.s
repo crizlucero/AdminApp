@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.4.0 (tarball Wed Nov  8 17:08:32 EST 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 20:59:09 EST 2017)"
 	.asciz "I18N.Other.dll"
 	.asciz ""
 
@@ -121,7 +121,7 @@ jit_code_start:
 	.align 4
 	.no_dead_strip I18N_Other_CP1251__ctor
 I18N_Other_CP1251__ctor:
-.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Other/CP1251.cs"
+.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Other/CP1251.cs"
 .loc 1 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -661,7 +661,7 @@ Lme_6:
 	.align 4
 	.no_dead_strip I18N_Other_CP1257__ctor
 I18N_Other_CP1257__ctor:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Other/CP1257.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Other/CP1257.cs"
 .loc 2 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -1384,7 +1384,7 @@ Lme_d:
 	.align 4
 	.no_dead_strip I18N_Other_CP1258__ctor
 I18N_Other_CP1258__ctor:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Other/CP1258.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Other/CP1258.cs"
 .loc 3 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -1935,7 +1935,7 @@ Lme_14:
 	.align 4
 	.no_dead_strip I18N_Other_CP20866__ctor
 I18N_Other_CP20866__ctor:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Other/CP20866.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Other/CP20866.cs"
 .loc 4 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -2692,7 +2692,7 @@ Lme_1b:
 	.align 4
 	.no_dead_strip I18N_Other_CP21866__ctor
 I18N_Other_CP21866__ctor:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Other/CP21866.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Other/CP21866.cs"
 .loc 5 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -3481,7 +3481,7 @@ Lme_22:
 	.align 4
 	.no_dead_strip I18N_Other_CP28594__ctor
 I18N_Other_CP28594__ctor:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Other/CP28594.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Other/CP28594.cs"
 .loc 6 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -4078,7 +4078,7 @@ Lme_29:
 	.align 4
 	.no_dead_strip I18N_Other_CP28595__ctor
 I18N_Other_CP28595__ctor:
-.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Other/CP28595.cs"
+.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Other/CP28595.cs"
 .loc 7 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -4448,7 +4448,7 @@ Lme_30:
 	.align 4
 	.no_dead_strip I18N_Other_ISCIIEncoding__ctor_int_int_string_string
 I18N_Other_ISCIIEncoding__ctor_int_int_string_string:
-.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Other/CP57002.cs"
+.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Other/CP57002.cs"
 .loc 8 53 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -5732,7 +5732,7 @@ Lme_51:
 	.align 4
 	.no_dead_strip I18N_Other_CP874__ctor
 I18N_Other_CP874__ctor:
-.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.4.0.214/src/mono/mcs/class/I18N/Other/CP874.cs"
+.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/I18N/Other/CP874.cs"
 .loc 9 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -6468,7 +6468,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "7AD57B23-C0DF-4C51-9EFA-13691F53FADB"
+	.asciz "79C205D2-BEC1-44BA-B687-79939B29CA93"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -6551,7 +6551,7 @@ _mono_aot_file_info:
 	.long 136,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 254,105,50,214,43,158,204,243,47,9,160,220,186,160,0,91
+	.byte 106,169,121,41,30,144,33,154,3,239,120,30,33,76,233,53
 	.globl _mono_aot_module_I18N_Other_info
 	.align 3
 _mono_aot_module_I18N_Other_info:
