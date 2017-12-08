@@ -7,43 +7,51 @@ using CoreGraphics;
 
 namespace WorklabsMx.iOS
 {
-    public partial class ComentarioViewCell : UITableViewCell
+    public partial class BodyComentarTableView : UITableViewCell
     {
 
         ComentarioModel comentarioLocal;
 
-        public event EventHandler MostrarImagenEnGrande;
+        public event EventHandler MostrarImagenEnGrandes;
 
-
-        public ComentarioViewCell (IntPtr handle) : base (handle)
+        public BodyComentarTableView (IntPtr handle) : base (handle)
         {
         }
 
-        internal void UpdateCell(ComentarioModel comentario, UIImage currentImageProfile, UIImage currentImageComments)
-		{
-            lblNombre.Text = comentario.Usuario_Nombre;
-			lblLikes.Text = comentario.Comentario_Me_Gustan_Cantidad + " LIKES";
-            lblFechaPost.Text = comentario.Comentario_Fecha;
-            //lblPuesto.Text = comentario.USUARIO_PUESTO;
-			lblContenido.Text = comentario.Comentario_Contenido;
 
-            imgPerfil.Image = currentImageProfile;
+        internal void UpdateCell(ComentarioModel comentario, UIImage currentImageProfile, UIImage currentImageComments)
+        {
+            lblNombre.Text = comentario.Usuario_Nombre;
+            lblLikes.Text = comentario.Comentario_Me_Gustan_Cantidad + " LIKES";
+            lblFecha.Text = comentario.Comentario_Fecha;
+            //lblPuesto.Text = comentario.USUARIO_PUESTO;
+
+            txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
+            txtComentario.ScrollEnabled = false;
+            txtComentario.Text = comentario.Comentario_Contenido;
+
+            imgPerfil.Image = currentImageProfile ?? UIImage.FromBundle("PerfilEscritorio");
+            imgPerfil.Image = currentImageProfile ?? UIImage.FromBundle("PerfilEscritorio");
             if (comentario.Comentario_Imagen_Ruta != "")
             {
-                btnImagenComentario.ImageView.Image = currentImageComments;
-                btnImagenComentario.Hidden = false;
-                btnImagenComentario.Enabled = true;
+                btnImagen.SetBackgroundImage(currentImageComments, UIControlState.Normal);
             }
-            else 
+            else
             {
-                btnImagenComentario.Frame = new CGRect(btnImagenComentario.Frame.X, btnImagenComentario.Frame.Y, btnImagenComentario.Frame.Width, 0);
-                btnImagenComentario.Hidden = true;
-                btnImagenComentario.Enabled = false;
+                btnImagen = new UIButton(new CGRect(0, 0, 0, 0));
             }
 
             comentarioLocal = comentario;
 
-		}
+        }
+
+        partial void btnImagen_TouchUpInside(UIButton sender)
+        {
+            if (MostrarImagenEnGrandes != null)
+            {
+                MostrarImagenEnGrandes(sender.ImageView, EventArgs.Empty);
+            }
+        }
 
         partial void btnLikes_TouchUpInside(UIButton sender)
         {
@@ -71,15 +79,6 @@ namespace WorklabsMx.iOS
                     comentarioLocal.Comentario_Me_Gusta_Usuario = "1";
                     lblLikes.TextColor = (UIColor.FromRGB(57, 87, 217));
                 }
-            }
-
-        }
-
-        partial void btnImagenComentario_TouchUpInside(UIButton sender)
-        {
-            if (MostrarImagenEnGrande != null)
-            {
-                MostrarImagenEnGrande(sender.ImageView, EventArgs.Empty);
             }
         }
     }

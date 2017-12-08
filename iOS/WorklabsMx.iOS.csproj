@@ -1,4 +1,4 @@
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
@@ -551,6 +551,14 @@
     <ImageAsset Include="Assets.xcassets\PerfilEscritorio.imageset\Group 1%403x.png" />
     <ImageAsset Include="Assets.xcassets\PerfilEscritorio.imageset\Group 5%403x.png" />
     <ImageAsset Include="Assets.xcassets\PerfilEscritorio.imageset\Group 1%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Cerrar.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Cerrar.imageset\icons8-cancel-30.png" />
+    <ImageAsset Include="Assets.xcassets\Cerrar.imageset\icons8-cancel-60.png" />
+    <ImageAsset Include="Assets.xcassets\Cerrar.imageset\icons8-cancel-90.png" />
+    <ImageAsset Include="Assets.xcassets\Atras.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Atras.imageset\icons8-back-filled-30.png" />
+    <ImageAsset Include="Assets.xcassets\Atras.imageset\icons8-back-filled-60.png" />
+    <ImageAsset Include="Assets.xcassets\Atras.imageset\icons8-back-filled-90.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -698,10 +706,10 @@
     <Compile Include="Models\OrdenVentaController.cs" />
     <Compile Include="Models\OrdenVentaDetalle.cs" />
     <Compile Include="ViewControllers\Escritorio\ComentariosBodyCell.cs" />
+    <Compile Include="ViewControllers\Escritorio\EscritorioController.cs" />
     <Compile Include="ViewControllers\Escritorio\ComentariosBodyCell.designer.cs">
       <DependentUpon>ComentariosBodyCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\Escritorio\EscritorioController.cs" />
     <Compile Include="ViewControllers\Escritorio\EscritorioController.designer.cs">
       <DependentUpon>EscritorioController.cs</DependentUpon>
     </Compile>
@@ -712,26 +720,6 @@
     <Compile Include="ViewControllers\Escritorio\NoComentsCell.cs" />
     <Compile Include="ViewControllers\Escritorio\NoComentsCell.designer.cs">
       <DependentUpon>NoComentsCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\Comentarios\ComentarPostTableViewController.cs" />
-    <Compile Include="ViewControllers\Comentarios\ComentarPostTableViewController.designer.cs">
-      <DependentUpon>ComentarPostTableViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\Comentarios\ComentarPostHeaderCell.cs" />
-    <Compile Include="ViewControllers\Comentarios\ComentarPostHeaderCell.designer.cs">
-      <DependentUpon>ComentarPostHeaderCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\Comentarios\SeccionComentariosTableViewController.cs" />
-    <Compile Include="ViewControllers\Comentarios\SeccionComentariosTableViewController.designer.cs">
-      <DependentUpon>SeccionComentariosTableViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\Comentarios\ComentarioViewCell.cs" />
-    <Compile Include="ViewControllers\Comentarios\ComentarioViewCell.designer.cs">
-      <DependentUpon>ComentarioViewCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\Comentarios\NoComentariosViewCell.cs" />
-    <Compile Include="ViewControllers\Comentarios\NoComentariosViewCell.designer.cs">
-      <DependentUpon>NoComentariosViewCell.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewControllers\MiCuenta\MiCuentaViewController.cs" />
     <Compile Include="ViewControllers\MiCuenta\MiCuentaViewController.designer.cs">
@@ -870,25 +858,25 @@
       <DependentUpon>HorariosTableViewCell.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\KeyChainHelper.cs" />
-    <Compile Include="comentarTableView.cs" />
-    <Compile Include="comentarTableView.designer.cs">
+    <Compile Include="ViewControllers\Comentarios\comentarTableView.cs" />
+    <Compile Include="ViewControllers\Comentarios\comentarTableView.designer.cs">
       <DependentUpon>comentarTableView.cs</DependentUpon>
     </Compile>
-    <Compile Include="HeaderComentarTableView.cs" />
-    <Compile Include="HeaderComentarTableView.designer.cs">
+    <Compile Include="ViewControllers\Comentarios\HeaderComentarTableView.cs" />
+    <Compile Include="ViewControllers\Comentarios\HeaderComentarTableView.designer.cs">
       <DependentUpon>HeaderComentarTableView.cs</DependentUpon>
     </Compile>
-    <Compile Include="BodyComentarTableView.cs" />
-    <Compile Include="BodyComentarTableView.designer.cs">
-      <DependentUpon>BodyComentarTableView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ComentarNoInfoCell.cs" />
-    <Compile Include="ComentarNoInfoCell.designer.cs">
+    <Compile Include="ViewControllers\Comentarios\ComentarNoInfoCell.cs" />
+    <Compile Include="ViewControllers\Comentarios\ComentarNoInfoCell.designer.cs">
       <DependentUpon>ComentarNoInfoCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="ComentarviewController.cs" />
-    <Compile Include="ComentarviewController.designer.cs">
+    <Compile Include="ViewControllers\Comentarios\ComentarviewController.cs" />
+    <Compile Include="ViewControllers\Comentarios\ComentarviewController.designer.cs">
       <DependentUpon>ComentarviewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Comentarios\BodyComentarTableView.cs" />
+    <Compile Include="ViewControllers\Comentarios\BodyComentarTableView.designer.cs">
+      <DependentUpon>BodyComentarTableView.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -992,6 +980,8 @@
     <Folder Include="Assets.xcassets\PerfilEscritorio.imageset\" />
     <Folder Include="Assets.xcassets\PerfilEscritorio.imageset\" />
     <Folder Include="Assets.xcassets\PerfilEscritorio.imageset\" />
+    <Folder Include="Assets.xcassets\Cerrar.imageset\" />
+    <Folder Include="Assets.xcassets\Atras.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

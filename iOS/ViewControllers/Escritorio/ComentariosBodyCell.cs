@@ -31,27 +31,19 @@ namespace WorklabsMx.iOS
             lblLikes.Text = post.Publicacion_Me_Gustan_Cantidad + " LIKES";
             lblFechaPost.Text = post.Publicacion_Fecha;
             lblComentarios.Text = post.Publicacion_Comentarios_Cantidad + " COMENTARIOS";
-
-            txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
             txtComentario.ScrollEnabled = false;
-
             txtComentario.Text = post.Publicacion_Contenido;
 
             StyleHelper.Style(vwVistaComentario.Layer);
 
-            imgPerfil.Image = currentImageProfile;
+            imgPerfil.Image = currentImageProfile ?? UIImage.FromBundle("PerfilEscritorio");
             if (post.Publicacion_Imagen_Ruta != "")
             {
-                btnImagenComentatio.TranslatesAutoresizingMaskIntoConstraints = false;
-                btnImagenComentatio.ImageView.Image = currentImagePost;
-                btnImagenComentatio.Hidden = false;
-                btnImagenComentatio.Enabled = true;
-                btnImagenComentatio.Frame = new CGRect(btnImagenComentatio.Frame.X, btnImagenComentatio.Frame.Y, btnImagenComentatio.Frame.Width, btnImagenComentatio.Frame.Width); 
+                btnImagenComentatio.SetBackgroundImage(currentImagePost, UIControlState.Normal);
             }
             else
             {
-                btnImagenComentatio.Hidden = true;
-                btnImagenComentatio.Enabled = false;
+                btnImagenComentatio = new UIButton(new CGRect(0, 0, 0, 0));
             }
 
             PostLocal = post;
@@ -75,12 +67,12 @@ namespace WorklabsMx.iOS
 
                 if (transaccion == "BAJA")
                 {
-                    PostLocal.Publicacion_Me_Gusta_Usuario = "0";
+                    PostLocal.Publicacion_Me_Gusta_Usuario = (int.Parse(PostLocal.Publicacion_Me_Gusta_Usuario) - 1).ToString();
                     lblLikes.TextColor = UIColor.Black;
                 }
                 else
                 {
-                    PostLocal.Publicacion_Me_Gusta_Usuario = "1";
+                    PostLocal.Publicacion_Me_Gusta_Usuario = (int.Parse(PostLocal.Publicacion_Me_Gusta_Usuario) + 1).ToString();
                     lblLikes.TextColor = (UIColor.FromRGB(57, 87, 217));
                 }
             }

@@ -18,12 +18,11 @@ namespace WorklabsMx.iOS
 
         internal void UpdateCell(List<string> miembro)
         {
-            //StyleHelper.Style(this.btnPublicar.Layer);
             if (miembro != null)
             {
                 lblNombre.Text = miembro[(int)CamposMiembro.Usuario_Nombre];
                 lblProfesion.Text = miembro[(int)CamposMiembro.Usuario_Puesto];
-                impPublicar.Image = ImageGallery.LoadImage(miembro[(int)CamposMiembro.Usuario_Fotografia]);
+                impPublicar.Image = ImageGallery.LoadImage(miembro[(int)CamposMiembro.Usuario_Fotografia]) ?? UIImage.FromBundle("PerfilEscritorio");
             }
         }
 

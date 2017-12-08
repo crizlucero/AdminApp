@@ -20,5 +20,6 @@
         public string Publicacion_Fecha_Modificacion { get; set; }
         public string Publicacion_Fecha_Baja { get; set; }
         public string Publicacion_Me_Gusta_Usuario { get; set; }
+
     }
 }

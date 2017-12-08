@@ -6,11 +6,20 @@ using System.Collections.Generic;
 using WorklabsMx.Controllers;
 using BigTed;
 using WorklabsMx.Helpers;
+using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
+
+    /*public interface BackWindow
+    {
+        void BackWindow();
+    }*/
+
     public partial class comentarTableView : UITableViewController
     {
+
+        //public BackWindow BackWindowDelegate;
 
         public PostModel currentPost;
 
@@ -22,7 +31,7 @@ namespace WorklabsMx.iOS
         const string IdentificadorCeldaNoInfo = "NoInfo";
 
         const int TamañoMensajeNoInfo = 400;
-        const int TamañoHeader = 162;
+        const int TamañoHeader = 207;
 
         bool isShowInformation = false;
         bool existeConeccion = true;
@@ -39,13 +48,18 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             this.ReloadData();
-           
         }
 
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+        }
 
+        public override void ViewWillDisappear(bool animated)
+        {
+            base.ViewWillDisappear(animated);
+            //await Task.Delay(2000);
+            BTProgressHUD.Show(status: "Cargando Comentarios");
         }
 
         void MostrarImagenEnGrandes(object sender, EventArgs e)
@@ -65,7 +79,6 @@ namespace WorklabsMx.iOS
             return TamañoHeader;
         }
 
-
         public override nint RowsInSection(UITableView tableView, nint section)
         {
             if (comentarios == null)
@@ -84,9 +97,14 @@ namespace WorklabsMx.iOS
             }
         }
 
+        partial void btnBack_TouchUpInside(UIBarButtonItem sender)
+        {
+            //this.BackWindowDelegate.BackWindow();
+            this.NavigationController.PopViewController(true);
+        }
+
         public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
         {
-
             if (isShowInformation)
             {
                 var currentComment = comentarios[indexPath.Row];

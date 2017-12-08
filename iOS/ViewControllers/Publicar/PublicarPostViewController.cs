@@ -27,7 +27,7 @@ namespace WorklabsMx.iOS
         string Nombre;
         string Ocupacion;
         string ImagenPerfil;
-        float opacity = 0.5f;
+        //float opacity = 0.5f;
 
         UIImagePickerController imgPicker;
 
@@ -166,7 +166,7 @@ namespace WorklabsMx.iOS
             this.btnImageComment.SetImage(image, UIControlState.Normal);
             this.btnDeleteImge.Hidden = false;
             this.btnPublicar.Enabled = true;
-            opacity = 1f;
+            //opacity = 1f;
             this.btnImageComment.ContentMode = UIViewContentMode.ScaleAspectFit;
             this.btnImageComment.Enabled = true;
             picker.DismissViewController(true, null);
