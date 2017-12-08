@@ -246,7 +246,6 @@
     <AndroidResource Include="Resources\layout\ColaboradorCambioLayout.axml" />
     <AndroidResource Include="Resources\layout\OfflineAppLayout.axml" />
     <AndroidResource Include="Resources\menu\refresh_menu.xml" />
-    <AndroidResource Include="Resources\layout\LoginLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_worklabs_title.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_logo_mini.png" />
     <AndroidResource Include="Resources\layout\DashboardLayout.axml" />
@@ -289,6 +288,9 @@
     <AndroidResource Include="Resources\mipmap-mdpi\ic_profile_empty.png" />
     <AndroidResource Include="Resources\layout\PreViewListLayout.axml" />
     <AndroidResource Include="Resources\layout\PerfilCardLayout.axml" />
+    <AndroidResource Include="Resources\drawable\button_shadow_radius_dark.xml" />
+    <AndroidResource Include="Resources\drawable\button_shadow_radius_clear.xml" />
+    <AndroidResource Include="Resources\layout\LoginLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
