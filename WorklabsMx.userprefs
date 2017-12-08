@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Comentarios/comentarTableView.cs">
     <Files>
@@ -8,6 +9,14 @@
       <File FileName="iOS/ViewControllers/Comentarios/comentarTableView.cs" Line="68" Column="10" NotebookId="1" />
       <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="34" Column="26" NotebookId="1" />
       <File FileName="iOS/ViewControllers/Comentarios/HeaderComentarTableView.cs" Line="33" Column="26" NotebookId="1" />
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="67" Column="54" />
+      <File FileName="WorklabsMx.Droid/SplashActivity.cs" Line="11" Column="43" />
+      <File FileName="WorklabsMx.Droid/ViewController/LoginActivity.cs" Line="13" Column="76" />
+>>>>>>> 55b8d59f26afbfee299a1528355e8af309d1b040
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
@@ -21,8 +30,9 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
+<<<<<<< HEAD
     <BreakpointStore>
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/HeaderComentarTableView.cs" relfile="iOS/HeaderComentarTableView.cs" line="39" column="50" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Comentarios/BodyComentarTableView.cs" relfile="iOS/ViewControllers/Comentarios/BodyComentarTableView.cs" line="68" column="1" />
@@ -30,5 +40,11 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B4E637BD-60E4-4441-BC72-CF1534A7E0AA" />
+=======
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="Theme.DeviceDefault" />
+>>>>>>> 55b8d59f26afbfee299a1528355e8af309d1b040
   <MultiItemStartupConfigurations />
 </Properties>

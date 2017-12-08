@@ -31,26 +31,26 @@
         android:layout_width="match_parent"
         android:layout_height="76.0dp"
         android:id="@+id/linearLayout2">
-        <android.support.design.widget.TextInputLayout
+    <!--<android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
-            <EditText
-                android:inputType="textEmailAddress"
-                android:layout_width="match_parent"
-                android:layout_weight="0.7"
-                android:layout_height="match_parent"
-                android:id="@+id/txtEmail"
-                android:hint="@string/CorreoElectronico"
-                android:background="#82FFFFFF"
-                android:layout_gravity="center"
-                android:paddingLeft="10dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp" />
-        </android.support.design.widget.TextInputLayout>
+            android:layout_marginRight="10dp">-->
+        <EditText
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_weight="0.7"
+            android:layout_height="match_parent"
+            android:id="@+id/txtEmail"
+            android:hint="@string/CorreoElectronico"
+            android:background="#82FFFFFF"
+            android:layout_gravity="center"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
+    <!--</android.support.design.widget.TextInputLayout>-->
     </LinearLayout>
     <Space
         android:layout_width="match_parent"
@@ -63,26 +63,26 @@
         android:layout_width="match_parent"
         android:layout_height="76.0dp"
         android:id="@+id/linearLayout3">
-        <android.support.design.widget.TextInputLayout
+    <!--<android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
-            <EditText
-                android:inputType="textPassword"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/txtPassword"
-                android:hint="@string/Password"
-                android:maxLength="8"
-                android:background="#82FFFFFF"
-                android:layout_gravity="center"
-                android:paddingLeft="10dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp" />
-        </android.support.design.widget.TextInputLayout>
+            android:layout_marginRight="10dp">-->
+        <EditText
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/txtPassword"
+            android:hint="@string/Password"
+            android:maxLength="8"
+            android:background="#82FFFFFF"
+            android:layout_gravity="center"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
+    <!--</android.support.design.widget.TextInputLayout>-->
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"

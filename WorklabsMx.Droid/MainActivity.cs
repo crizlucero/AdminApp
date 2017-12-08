@@ -1,5 +1,4 @@
-﻿
-using Android.Widget;
+﻿using Android.Widget;
 using Android.OS;
 using PerpetualEngine.Storage;
 using System.Collections.Generic;
@@ -23,8 +22,6 @@ using System.Threading.Tasks;
 using Android.Support.V4.Widget;
 using WorklabsMx.Models;
 using System.Linq;
-using Android.Text;
-using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.App;
 
@@ -87,7 +84,6 @@ namespace WorklabsMx.Droid
         async void OpenDashboard()
         {
             SetContentView(Resource.Layout.DashboardLayout);
-
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.Escritorio);
@@ -131,39 +127,35 @@ namespace WorklabsMx.Droid
             {
                 LayoutInflater liView = LayoutInflater;
                 View PostView = liView.Inflate(Resource.Layout.PostLayout, null, true);
-
+                PostView.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels);
                 string Usuario_Id = !string.IsNullOrEmpty(post.Miembro_Id) ? post.Miembro_Id : post.Colaborador_Empresa_Id;
 
                 ImageButton imgPerfil = PostView.FindViewById<ImageButton>(Resource.Id.imgPerfil);
                 imgPerfil.SetImageURI(ImagesHelper.GetPerfilImagen(post.Usuario_Fotografia_Ruta));
-                imgPerfil.Click += (sender, e) => AndHUD.Shared.ShowImage(this, Resources.GetDrawable(Resource.Mipmap.ic_work, null), null, MaskType.Black);
+                imgPerfil.Click += (sender, e) => ShowPerfilCard(new MiembrosController().GetMemberData(Usuario_Id, post.Usuario_Tipo));
 
                 TextView lblNombre = PostView.FindViewById<TextView>(Resource.Id.lblNombre);
                 lblNombre.Text = post.Usuario_Nombre;
-                lblNombre.Click += delegate
-                {
-                    if (localStorage.Get("Usuario_Id") != Usuario_Id || localStorage.Get("Usuario_Tipo") != post.Usuario_Tipo)
-                    {
-                        Intent perfil = new Intent(this, typeof(PerfilActivity));
-                        perfil.PutExtra("usuario_id", Usuario_Id);
-                        perfil.PutExtra("usuario_tipo", post.Usuario_Tipo);
-                        StartActivity(perfil);
-                    }
-                    else
-                        StartActivity(new Intent(this, typeof(TabPerfilActivity)));
-                };
+                lblNombre.Click += (sender, e) => ShowPerfilCard(new MiembrosController().GetMemberData(Usuario_Id, post.Usuario_Tipo));
 
                 TextView lblPuesto = PostView.FindViewById<TextView>(Resource.Id.lblPuesto);
                 lblPuesto.Text = post.Usuario_Puesto;
+                lblPuesto.Click += (sender, e) => ShowPerfilCard(new MiembrosController().GetMemberData(Usuario_Id, post.Usuario_Tipo));
 
                 TextView lblFecha = PostView.FindViewById<TextView>(Resource.Id.lblFecha);
                 lblFecha.Text = post.Publicacion_Fecha;
+                lblFecha.Click += (sender, e) => ShowPerfilCard(new MiembrosController().GetMemberData(Usuario_Id, post.Usuario_Tipo));
 
                 TextView lblPost = PostView.FindViewById<TextView>(Resource.Id.lblPost);
                 lblPost.SetMaxWidth(Convert.ToInt32(Resources.DisplayMetrics.WidthPixels * .911));
                 lblPost.Text = post.Publicacion_Contenido;
 
                 TextView lblLike = PostView.FindViewById<TextView>(Resource.Id.lblLikes);
+                Drawable icLike = ContextCompat.GetDrawable(this, Resource.Mipmap.ic_like);
+                icLike.SetTintList(GetColorStateList(Resource.Color.button_unpressed));
+                //icon.SetTint(Resource.Color.like_heart_unpressed);
+                icLike.SetBounds(0, 0, 50, 50);
+                lblLike.SetCompoundDrawables(icLike, null, null, null);
                 lblLike.Text = post.Publicacion_Me_Gustan_Cantidad + " " + Resources.GetString(Resource.String.Likes);
                 lblLike.Click += delegate
                 {
@@ -174,15 +166,21 @@ namespace WorklabsMx.Droid
                         transaccion = "MODIFICAR";
                     if (new EscritorioController().PostLike(post.Publicacion_Id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), transaccion))
                     {
-                        lblLike.Text = new EscritorioController().GetLikesPublish(post.Publicacion_Id) + " Like(s)";
+                        lblLike.Text = new EscritorioController().GetLikesPublish(post.Publicacion_Id) + " " + Resources.GetString(Resource.String.Likes);
                         if (transaccion == "BAJA")
                         {
+
                             post.Publicacion_Me_Gusta_Usuario = "0";
                             lblLike.SetTextColor(Color.Black);
+
+                            icLike.SetTintList(GetColorStateList(Resource.Color.button_unpressed));
+                            //lblLike.SetCompoundDrawables(icLike, null, null, null);
                         }
                         else
                         {
                             post.Publicacion_Me_Gusta_Usuario = "1";
+                            icLike.SetTintList(GetColorStateList(Resource.Color.like_heart_pressed));
+                            //lblLike.SetCompoundDrawables(icLike, null, null, null);
                             lblLike.SetTextColor(Color.Rgb(57, 87, 217));
                         }
                     }
@@ -190,10 +188,19 @@ namespace WorklabsMx.Droid
                 if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
                 {
                     lblLike.SetTextColor(Color.Rgb(57, 87, 217));
+                    icLike.SetTintList(GetColorStateList(Resource.Color.like_heart_pressed));
+                    //lblLike.SetCompoundDrawables(icon, null, null, null);
                 }
 
-                TextView lblComentario = PostView.FindViewById<TextView>(Resource.Id.lblLikes);
+                TextView lblComentario = PostView.FindViewById<TextView>(Resource.Id.lblComments);
                 lblComentario.Text = post.Publicacion_Comentarios_Cantidad + " " + Resources.GetString(Resource.String.Comentarios);
+
+                Drawable icComentario = ContextCompat.GetDrawable(this, Resource.Mipmap.ic_mode_comment);
+                icComentario.SetTintList(GetColorStateList(Resource.Color.button_unpressed));
+                //icon.SetTint(Resource.Color.like_heart_unpressed);
+                icComentario.SetBounds(0, 0, 50, 50);
+                lblComentario.SetCompoundDrawables(icComentario, null, null, null);
+
                 lblComentario.Click += delegate
                 {
                     Intent intent = new Intent(this, typeof(CommentsActivity));
@@ -201,21 +208,13 @@ namespace WorklabsMx.Droid
                     intent.PutExtra("comments_total", post.Publicacion_Comentarios_Cantidad);
                     StartActivity(intent);
                 };
-
+                if(post.Publicacion_Comentarios_Cantidad != "0"){
+                    icComentario.SetTintList(GetColorStateList(Resource.Color.comment_pressed));
+                }
                 TableRow row = new TableRow(this);
                 row.AddView(PostView);
 
                 /*
-                LinearLayout llButton = new LinearLayout(this);
-                llButton.SetMinimumWidth(20);
-                llButton.SetMinimumHeight(20);
-                ImageButton btnClear = new ImageButton(this);
-                btnClear.SetBackgroundColor(Color.White);
-                btnClear.SetImageResource(Resource.Mipmap.ic_clear);
-                btnClear.SetMinimumWidth(15);
-                btnClear.SetMinimumHeight(15);
-                btnClear.SetMaxWidth(20);
-                btnClear.SetMaxHeight(20);
                 btnClear.Click += delegate
                 {
                     Android.Support.V7.App.AlertDialog.Builder alert = new Android.Support.V7.App.AlertDialog.Builder(this);
@@ -253,16 +252,7 @@ namespace WorklabsMx.Droid
                     alert.Create();
                     alert.Show();
                 };
-                param = new GridLayout.LayoutParams();
-                param.Width = 30;
-                param.Height = 30;
-                param.LeftMargin = (Resources.DisplayMetrics.WidthPixels / 7);
-                param.TopMargin = 20;
-                param.ColumnSpec = GridLayout.InvokeSpec(3);
-                param.RowSpec = GridLayout.InvokeSpec(i, 3);
-                llButton.LayoutParameters = param;
-                llButton.AddView(btnClear);
-                //glPost.AddView(llButton);
+
                 ++i;
                 if (!string.IsNullOrEmpty(post.Publicacion_Imagen_Ruta))
                 {
@@ -362,7 +352,6 @@ namespace WorklabsMx.Droid
                     TextAlignment = TextAlignment.ViewStart
                 };
                 btnMenu.SetTextColor(Color.White);
-                //btnMenu.SetWidth(Resources.DisplayMetrics.WidthPixels );
                 btnMenu.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
                 btnMenu.SetBackgroundColor(Color.Transparent);
                 btnMenu.SetCompoundDrawables(icon, null, null, null);
@@ -376,7 +365,7 @@ namespace WorklabsMx.Droid
             {
                 TableRow row = new TableRow(this);
                 Drawable icon = ContextCompat.GetDrawable(this, Resources.GetIdentifier(menu.Image, "mipmap", PackageName));
-                icon.SetColorFilter(Color.White,PorterDuff.Mode.Multiply);
+                icon.SetColorFilter(Color.White, PorterDuff.Mode.Multiply);
                 icon.SetTint(Resource.Color.material_grey_900);
                 icon.SetBounds(0, 0, 50, 50);
                 Button btnMenu = new Button(this)
@@ -385,7 +374,6 @@ namespace WorklabsMx.Droid
                     TextAlignment = TextAlignment.ViewStart
                 };
                 btnMenu.SetTextColor(Color.White);
-                //btnMenu.SetWidth(Resources.DisplayMetrics.WidthPixels );
                 btnMenu.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
                 btnMenu.SetBackgroundColor(Color.Transparent);
                 btnMenu.SetCompoundDrawables(icon, null, null, null);
@@ -397,7 +385,6 @@ namespace WorklabsMx.Droid
                         case "MyMembershipActivity": StartActivity(new Intent(this, typeof(MyMembershipActivity))); break;
                         case "SubMenuActivity":
                             localStorage.Put("Parent", menu.Menu_Id);
-                            //StartActivity(new Intent(this, typeof(SubMenuActivity))); break;
                             FillMenu(menuLayout);
                             break;
                         case "LogoutActivity":
@@ -411,8 +398,7 @@ namespace WorklabsMx.Droid
                         case "PerfilActivity": StartActivity(new Intent(this, typeof(TabPerfilActivity))); break;
                         case "DatosFacturacionActivity": StartActivity(new Intent(this, typeof(DatosFacturacionActivity))); break;
                         case "MisColaboradoresActivity": StartActivity(new Intent(this, typeof(TabColaboradoresActivity))); break;
-                        case "DirectorioUsuarioActivity": StartActivity(new Intent(this, typeof(DirectorioActivity))); break;
-                        case "DirectorioEmpresasActivity": StartActivity(new Intent(this, typeof(DirectorioActivity))); break;
+                        case "DirectorioActivity": StartActivity(new Intent(this, typeof(DirectorioActivity))); break;
                     }
                 };
                 row.AddView(btnMenu);
@@ -420,7 +406,32 @@ namespace WorklabsMx.Droid
             });
         }
 
+        void ShowPerfilCard(MiembroModel miembro)
+        {
+            Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this);
 
+            LayoutInflater liView = LayoutInflater;
+
+            View customView = liView.Inflate(Resource.Layout.PerfilCardLayout, null, true);
+
+            customView.FindViewById<ImageButton>(Resource.Id.ibCerrar).Click += (sender, e) => dialog.Dismiss();
+
+            customView.FindViewById<TextView>(Resource.Id.lblNombre).Text = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos;
+            customView.FindViewById<TextView>(Resource.Id.lblEmpresa).Text = miembro.Miembro_Empresa;
+            customView.FindViewById<TextView>(Resource.Id.lblPuesto).Text = miembro.Miembro_Puesto;
+            customView.FindViewById<TextView>(Resource.Id.lblProfesion).Text = miembro.Miembro_Profesion;
+            customView.FindViewById<TextView>(Resource.Id.lblFechaNacimiento).Text = miembro.Miembro_Fecha_Nacimiento;
+            customView.FindViewById<TextView>(Resource.Id.lblContacto).Text = miembro.Miembro_Telefono;
+            customView.FindViewById<TextView>(Resource.Id.lblCorreo).Text = miembro.Miembro_Correo_Electronico;
+            customView.FindViewById<TextView>(Resource.Id.lblFacebook).Text = "";
+            customView.FindViewById<TextView>(Resource.Id.lblInstagram).Text = "";
+            customView.FindViewById<TextView>(Resource.Id.lblTwitter).Text = "";
+
+            builder.SetView(customView);
+            builder.Create();
+            dialog = builder.Show();
+            dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
+        }
 
         void ShowPublish()
         {
