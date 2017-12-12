@@ -130,4 +130,9 @@
 	<string name="TotalHoras">Total de horas</string>
 	<string name="PasswordIncorrecto">Escriba su password</string>
     <string name="InfoGeneral">Información General</string>
+    <string name="TarifaMensual">Tarifa Mensual</string>
+    <string name="TarifaInscripcion">Tarifa de Inscripción</string>
+    <string name="FechaInicio">Fecha de inicio</string>
+    <string name="CantidadMeses">Cantidad de meses</string>
+    <string name="Proporcional">Proporcional</string>
 </resources>

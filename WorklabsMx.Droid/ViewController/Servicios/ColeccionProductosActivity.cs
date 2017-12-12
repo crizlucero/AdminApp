@@ -66,18 +66,16 @@ namespace WorklabsMx.Droid
             TableLayout tlMembresias = FindViewById<TableLayout>(Resource.Id.tlProductos);
             new PickerItemsController().GetMembresias().ForEach(membresia =>
             {
-                double subtotal = membresia.Membresia_Precio_Base_Neto;
-                int mesMembresia = 1;
-                TextView lblProporcional = new TextView(this), lblTotal = new TextView(this);
-                EditText txtMesesMembresias = new EditText(this)
-                {
-                    TextSize = 14,
-                    InputType = Android.Text.InputTypes.NumberFlagSigned
-                }, dtFechaInicio = new EditText(this)
-                {
-                    Text = DateTime.Now.ToString("d"),
-                    InputType = Android.Text.InputTypes.DatetimeVariationDate
-                };
+
+                LayoutInflater liView = LayoutInflater;
+
+                View CarritoView = liView.Inflate(Resource.Layout.CarritoMembresiaLayout, null, true);
+
+                CarritoView.FindViewById<TextView>(Resource.Id.lblProducto).Text=membresia.Membresia_Descripcion;
+                TextView lblProporcional = CarritoView.FindViewById<TextView>(Resource.Id.txtProporcional), 
+                lblTotal = CarritoView.FindViewById<TextView>(Resource.Id.lblTotal);
+                EditText txtMesesMembresias = CarritoView.FindViewById<EditText>(Resource.Id.txtCantidadMeses),
+                dtFechaInicio = CarritoView.FindViewById<EditText>(Resource.Id.txtFechaInicio);
                 if (!Membresias.ContainsKey(membresia.Membresia_Id))
                     Membresias.Add(membresia.Membresia_Id, new CarritoModel
                     {
@@ -90,31 +88,18 @@ namespace WorklabsMx.Droid
                         Impuesto_Id = membresia.Impuesto_Id
                     });
 
-                TableRow trMembresia = new TableRow(this);
-                View line = new View(this);
-                line.SetBackgroundColor(Android.Graphics.Color.Cyan);
-                line.LayoutParameters = new TableRow.LayoutParams(ViewGroup.LayoutParams.MatchParent, 5);
 
-                trMembresia.AddView(line);
-                tlMembresias.AddView(trMembresia, param);
+                TableRow row = new TableRow(this);
 
-                trMembresia = new TableRow(this);
-                TextView lblNombre = new TextView(this)
-                {
-                    Text = membresia.Membresia_Descripcion,
-                    TextSize = 14
-                };
-                lblNombre.SetMaxWidth(Resources.DisplayMetrics.WidthPixels * 2 / 3);
-                trMembresia.AddView(lblNombre, 0);
+                row.AddView(CarritoView);
+                tlMembresias.AddView(row);
 
-                EditText txtCantidadMembresias = new EditText(this)
-                {
-                    Text = Membresias[membresia.Membresia_Id].Membresia_Cantidad.ToString(),
-                    TextSize = 14,
-                    InputType = Android.Text.InputTypes.NumberFlagSigned
-                };
-                txtCantidadMembresias.SetMaxWidth(70);
-                txtCantidadMembresias.SetFadingEdgeLength(2);
+
+                double subtotal = membresia.Membresia_Precio_Base_Neto;
+                int mesMembresia = 1;
+
+                EditText txtCantidadMembresias = CarritoView.FindViewById<EditText>(Resource.Id.txtCantidad);
+                txtCantidadMembresias.Text = Membresias[membresia.Membresia_Id].Membresia_Cantidad.ToString();
                 txtCantidadMembresias.TextChanged += (sender, e) =>
                 {
                     if (!string.IsNullOrEmpty(txtCantidadMembresias.Text))
@@ -130,10 +115,7 @@ namespace WorklabsMx.Droid
                     //    Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
                 };
 
-                trMembresia.AddView(txtCantidadMembresias, 1);
-
-                ImageButton btnPlus = new ImageButton(this);
-                btnPlus.SetImageResource(Resource.Mipmap.ic_add);
+                ImageButton btnPlus = CarritoView.FindViewById<ImageButton>(Resource.Id.btnAddCantidad);
                 btnPlus.Click += (sender, e) =>
                 {
                     ++Membresias[membresia.Membresia_Id].Membresia_Cantidad;
@@ -146,10 +128,7 @@ namespace WorklabsMx.Droid
                                       * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                 };
 
-                trMembresia.AddView(btnPlus, 2);
-
-                ImageButton btnLess = new ImageButton(this);
-                btnLess.SetImageResource(Resource.Mipmap.ic_remove);
+                ImageButton btnLess = CarritoView.FindViewById<ImageButton>(Resource.Id.btnRemoveCantidad);
                 btnLess.Click += (sender, e) =>
                 {
                     if (Membresias[membresia.Membresia_Id].Membresia_Cantidad > 0)
@@ -166,30 +145,10 @@ namespace WorklabsMx.Droid
                         Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
                 };
 
-                trMembresia.AddView(btnLess, 3);
-
-                tlMembresias.AddView(trMembresia);
-                trMembresia = new TableRow(this);
-                trMembresia.AddView(new TextView(this) { Text = "Tarifa Mensual" });
-
-                trMembresia.AddView(new TextView(this) { Text = membresia.Membresia_Precio_Base_Neto.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx")) }, param);
-
-                tlMembresias.AddView(trMembresia);
-                trMembresia = new TableRow(this);
-                trMembresia.AddView(new TextView(this) { Text = "Tarifa Inscripción" });
-
-                trMembresia.AddView(new TextView(this) { Text = membresia.Inscripcion_Precio_Base_Neto.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx")) }, param);
-
-                tlMembresias.AddView(trMembresia);
-
-                trMembresia = new TableRow(this);
-                Spinner spSucursales = new Spinner(this);
+                CarritoView.FindViewById<TextView>(Resource.Id.lblTarifaMensual).Text = membresia.Membresia_Precio_Base_Neto.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
+                CarritoView.FindViewById<TextView>(Resource.Id.lblTarifaInscripcion).Text = membresia.Inscripcion_Precio_Base_Neto.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
+                Spinner spSucursales = CarritoView.FindViewById<Spinner>(Resource.Id.spSucursal);
                 spSucursales.Adapter = adapter;
-                trMembresia.AddView(spSucursales);
-                tlMembresias.AddView(trMembresia);
-
-                trMembresia = new TableRow(this);
-                trMembresia.AddView(new TextView(this) { Text = "Fecha de inicio" }, 0);
 
                 dtFechaInicio.Touch += (sender, e) =>
                 {
@@ -217,12 +176,6 @@ namespace WorklabsMx.Droid
                     }
                 };
 
-                trMembresia.AddView(dtFechaInicio, 1, param);
-                tlMembresias.AddView(trMembresia);
-
-                trMembresia = new TableRow(this);
-                trMembresia.AddView(new TextView(this) { Text = "Cantidad de meses" }, 0);
-
                 txtMesesMembresias.Text = "1";
                 txtMesesMembresias.SetMaxWidth(70);
                 txtMesesMembresias.SetFadingEdgeLength(2);
@@ -243,9 +196,7 @@ namespace WorklabsMx.Droid
                             Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
                 };
 
-                trMembresia.AddView(txtMesesMembresias, 1);
-
-                ImageButton btnMesesPlus = new ImageButton(this);
+                ImageButton btnMesesPlus = CarritoView.FindViewById<ImageButton>(Resource.Id.btnAddMeses);
                 btnMesesPlus.SetImageResource(Resource.Mipmap.ic_add);
                 btnMesesPlus.Click += (sender, e) =>
                 {
@@ -260,9 +211,7 @@ namespace WorklabsMx.Droid
                                       * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                 };
 
-                trMembresia.AddView(btnMesesPlus, 2);
-
-                ImageButton btnMesesLess = new ImageButton(this);
+                ImageButton btnMesesLess = CarritoView.FindViewById<ImageButton>(Resource.Id.btnRemoveMeses);
                 btnMesesLess.SetImageResource(Resource.Mipmap.ic_remove);
                 btnMesesLess.Click += (sender, e) =>
                 {
@@ -280,27 +229,13 @@ namespace WorklabsMx.Droid
                     else
                         Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
                 };
-
-                trMembresia.AddView(btnMesesLess, 3);
-
-                tlMembresias.AddView(trMembresia);
-
-                trMembresia = new TableRow(this);
-                trMembresia.AddView(new TextView(this) { Text = "Proporcional al mes" });
                 subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
                             (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                 lblProporcional.Text = 0.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
-                trMembresia.AddView(lblProporcional, param);
-
-                tlMembresias.AddView(trMembresia);
-
-                trMembresia = new TableRow(this);
-                trMembresia.AddView(new TextView(this) { Text = "Total" });
 
                 lblTotal.Text = 0.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
-                trMembresia.AddView(lblTotal, param);
 
-                tlMembresias.AddView(trMembresia);
+                tlMembresias.AddView(row);
             });
         }
 

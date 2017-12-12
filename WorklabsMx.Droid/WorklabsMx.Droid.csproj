@@ -291,6 +291,9 @@
     <AndroidResource Include="Resources\drawable\button_shadow_radius_dark.xml" />
     <AndroidResource Include="Resources\drawable\button_shadow_radius_clear.xml" />
     <AndroidResource Include="Resources\layout\LoginLayout.axml" />
+    <AndroidResource Include="Resources\layout\CarritoRecurrenteLayout.axml" />
+    <AndroidResource Include="Resources\layout\CarritoUnicoLayout.axml" />
+    <AndroidResource Include="Resources\layout\CarritoMembresiaLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

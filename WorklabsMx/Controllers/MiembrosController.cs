@@ -65,7 +65,7 @@ namespace WorklabsMx.Controllers
         public List<string> GetMemberName(string miembro_id, string tipo)
         {
             List<string> data = new List<string>();
-            command = CreateCommand("select Concat(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia, Usuario_Puesto from vw_pro_Usuarios_Directorio " +
+            command = CreateCommand("select Concat(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia, Usuario_Puesto, Usuario_Empresa_Nombre from vw_pro_Usuarios_Directorio " +
                 "where Usuario_Id = @miembro_id AND Usuario_Tipo = @tipo");
             command.Parameters.AddWithValue("@miembro_id", miembro_id);
             command.Parameters.AddWithValue("@tipo", tipo);
@@ -78,7 +78,9 @@ namespace WorklabsMx.Controllers
                     data = new List<string> {
                         reader["Nombre"].ToString(),
                         reader["Usuario_Fotografia"].ToString().Replace(@"\", "/"),
-                        reader["Usuario_Puesto"].ToString()};
+                        reader["Usuario_Puesto"].ToString(),
+                        reader["Usuario_Empresa_Nombre"].ToString()
+                    };
                 }
             }
             catch (Exception e)

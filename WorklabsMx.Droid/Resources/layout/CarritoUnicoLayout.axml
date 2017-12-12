@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFF"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gridLayout1"
+        android:rowCount="7"
+        android:columnCount="4"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/textView1"
+            android:text="Producto"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_vertical" />
+        <EditText
+            android:inputType="numberSigned"
+            android:id="@+id/txtCantidad"
+            android:text="0"
+            android:textColor="#000"
+            android:textColorHint="#CCC"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="50dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp" />
+        <ImageButton
+            android:src="@mipmap/ic_add"
+            android:id="@+id/btnAddCantidad"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp" />
+        <ImageButton
+            android:src="@mipmap/ic_remove"
+            android:id="@+id/btnRemoveCantidad"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/textView2"
+            android:layout_marginLeft="10dp"
+            android:text="@string/TarifaMensual"
+            android:layout_gravity="center_vertical" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/lblTarifaMensual"
+            android:layout_columnSpan="3"
+            android:layout_gravity="right"
+            android:text="$0.00"
+            android:layout_marginRight="10dp" />
+        <Spinner
+            android:id="@+id/spSucursal"
+            android:layout_columnSpan="4"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:spinnerMode="dialog" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/textView6"
+            android:text="@string/Total"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/lblTotal"
+            android:layout_columnSpan="3"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:text="$0.00" />
+    </GridLayout>
+</LinearLayout>
