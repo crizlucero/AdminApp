@@ -66,13 +66,12 @@ namespace WorklabsMx.Droid
             TableLayout tlMembresias = FindViewById<TableLayout>(Resource.Id.tlProductos);
             new PickerItemsController().GetMembresias().ForEach(membresia =>
             {
-
                 LayoutInflater liView = LayoutInflater;
 
                 View CarritoView = liView.Inflate(Resource.Layout.CarritoMembresiaLayout, null, true);
 
-                CarritoView.FindViewById<TextView>(Resource.Id.lblProducto).Text=membresia.Membresia_Descripcion;
-                TextView lblProporcional = CarritoView.FindViewById<TextView>(Resource.Id.txtProporcional), 
+                CarritoView.FindViewById<TextView>(Resource.Id.lblProducto).Text = membresia.Membresia_Descripcion;
+                TextView lblProporcional = CarritoView.FindViewById<TextView>(Resource.Id.txtProporcional),
                 lblTotal = CarritoView.FindViewById<TextView>(Resource.Id.lblTotal);
                 EditText txtMesesMembresias = CarritoView.FindViewById<EditText>(Resource.Id.txtCantidadMeses),
                 dtFechaInicio = CarritoView.FindViewById<EditText>(Resource.Id.txtFechaInicio);
@@ -87,13 +86,6 @@ namespace WorklabsMx.Droid
                         Moneda_Id = membresia.Moneda_Id,
                         Impuesto_Id = membresia.Impuesto_Id
                     });
-
-
-                TableRow row = new TableRow(this);
-
-                row.AddView(CarritoView);
-                tlMembresias.AddView(row);
-
 
                 double subtotal = membresia.Membresia_Precio_Base_Neto;
                 int mesMembresia = 1;
@@ -150,6 +142,7 @@ namespace WorklabsMx.Droid
                 Spinner spSucursales = CarritoView.FindViewById<Spinner>(Resource.Id.spSucursal);
                 spSucursales.Adapter = adapter;
 
+                dtFechaInicio.Text = DateTime.Now.ToString("d");
                 dtFechaInicio.Touch += (sender, e) =>
                 {
                     if (dialog == null || !dialog.IsShowing)
@@ -234,7 +227,9 @@ namespace WorklabsMx.Droid
                 lblProporcional.Text = 0.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
 
                 lblTotal.Text = 0.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
+                TableRow row = new TableRow(this);
 
+                row.AddView(CarritoView);
                 tlMembresias.AddView(row);
             });
         }
@@ -244,19 +239,21 @@ namespace WorklabsMx.Droid
             TableLayout tlProductos = FindViewById<TableLayout>(Resource.Id.tlProductos);
             new PickerItemsController().GetProductos().ForEach((producto) =>
             {
+                LayoutInflater liView = LayoutInflater;
+
+                View CarritoView;
+                if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
+                    CarritoView = liView.Inflate(Resource.Layout.CarritoRecurrenteLayout, null, true);
+                else
+                    CarritoView = liView.Inflate(Resource.Layout.CarritoUnicoLayout, null, true);
+
+                CarritoView.FindViewById<TextView>(Resource.Id.lblProducto).Text = producto.Producto_Descripcion;
+                TextView lblProporcional = CarritoView.FindViewById<TextView>(Resource.Id.txtProporcional),
+                lblTotal = CarritoView.FindViewById<TextView>(Resource.Id.lblTotal);
+                EditText txtMesesProductos = CarritoView.FindViewById<EditText>(Resource.Id.txtCantidadMeses),
+                    dtFechaInicio = CarritoView.FindViewById<EditText>(Resource.Id.txtFechaInicio);
                 double subtotal = producto.Producto_Precio_Base_Neto;
                 int mesProducto = 1;
-                TextView lblProporcional = new TextView(this), lblTotal = new TextView(this);
-                EditText txtMesesProductos = new EditText(this)
-                {
-                    Text = "1",
-                    TextSize = 14,
-                    InputType = Android.Text.InputTypes.NumberFlagSigned
-                }, dtFechaInicio = new EditText(this)
-                {
-                    Text = DateTime.Now.ToString("d"),
-                    InputType = Android.Text.InputTypes.DatetimeVariationDate
-                };
                 if (!Productos.ContainsKey(producto.Producto_Id))
                     Productos.Add(producto.Producto_Id, new CarritoModel
                     {
@@ -270,32 +267,9 @@ namespace WorklabsMx.Droid
                         Tipo = producto.Producto_Disponibilidad
                     });
 
-                TableRow trProducto = new TableRow(this);
-                View line = new View(this);
-                line.SetBackgroundColor(Android.Graphics.Color.Cyan);
-                line.LayoutParameters = new TableRow.LayoutParams(ViewGroup.LayoutParams.MatchParent, 5);
+                TableRow row = new TableRow(this);
 
-                trProducto.AddView(line);
-                tlProductos.AddView(trProducto);
-
-                trProducto = new TableRow(this);
-
-                TextView lblNombre = new TextView(this)
-                {
-                    Text = producto.Producto_Descripcion,
-                    TextSize = 14
-                };
-                lblNombre.SetMaxWidth(Resources.DisplayMetrics.WidthPixels * 2 / 3);
-                trProducto.AddView(lblNombre, 0);
-
-                EditText txtCantidadProductos = new EditText(this)
-                {
-                    Text = Productos[producto.Producto_Id].Producto_Cantidad.ToString(),
-                    TextSize = 14,
-                    InputType = Android.Text.InputTypes.NumberFlagSigned
-                };
-                txtCantidadProductos.SetMaxWidth(70);
-                txtCantidadProductos.SetFadingEdgeLength(2);
+                EditText txtCantidadProductos = CarritoView.FindViewById<EditText>(Resource.Id.txtCantidad);
                 txtCantidadProductos.TextChanged += (sender, e) =>
                 {
                     if (!string.IsNullOrEmpty(txtCantidadProductos.Text))
@@ -313,12 +287,7 @@ namespace WorklabsMx.Droid
                         }
                 };
 
-                trProducto.AddView(txtCantidadProductos, 1);
-
-                ImageButton btnPlus = new ImageButton(this)
-                {
-                };
-                btnPlus.SetImageResource(Resource.Mipmap.ic_add);
+                ImageButton btnPlus = CarritoView.FindViewById<ImageButton>(Resource.Id.btnAddCantidad);
                 btnPlus.Click += (sender, e) =>
                 {
                     ++Productos[producto.Producto_Id].Producto_Cantidad;
@@ -334,12 +303,8 @@ namespace WorklabsMx.Droid
                                       * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                 };
 
-                trProducto.AddView(btnPlus, 2);
 
-                ImageButton btnLess = new ImageButton(this)
-                {
-
-                };
+                ImageButton btnLess = CarritoView.FindViewById<ImageButton>(Resource.Id.btnRemoveCantidad);;
                 btnLess.SetImageResource(Resource.Mipmap.ic_remove);
                 btnLess.Click += (sender, e) =>
                 {
@@ -358,28 +323,14 @@ namespace WorklabsMx.Droid
                     }
                 };
 
-                trProducto.AddView(btnLess, 3);
+                CarritoView.FindViewById<TextView>(Resource.Id.lblTarifaMensual).Text = producto.Producto_Precio_Base_Neto.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
 
-                tlProductos.AddView(trProducto);
-
-                trProducto = new TableRow(this);
-                trProducto.AddView(new TextView(this) { Text = "Tarifa Mensual" });
-
-                trProducto.AddView(new TextView(this) { Text = producto.Producto_Precio_Base_Neto.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx")) }, param);
-
-                tlProductos.AddView(trProducto);
-
-                trProducto = new TableRow(this);
-                Spinner spSucursales = new Spinner(this);
+                Spinner spSucursales = CarritoView.FindViewById<Spinner>(Resource.Id.spSucursal);
                 spSucursales.Adapter = adapter;
-                trProducto.AddView(spSucursales);
-                tlProductos.AddView(trProducto);
 
                 if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
                 {
-                    trProducto = new TableRow(this);
-                    trProducto.AddView(new TextView(this) { Text = "Fecha de inicio" }, 0);
-
+                    dtFechaInicio.Text = DateTime.Now.ToString("d");
                     dtFechaInicio.Touch += (sender, e) =>
                     {
                         if (dialog == null || !dialog.IsShowing)
@@ -405,15 +356,7 @@ namespace WorklabsMx.Droid
                             }
                         }
                     };
-                    trProducto.AddView(dtFechaInicio, 1, param);
-                    tlProductos.AddView(trProducto);
 
-                    trProducto = new TableRow(this);
-                    trProducto.AddView(new TextView(this) { Text = "Cantidad de meses" }, 0);
-
-                    txtMesesProductos.Text = "1";
-                    txtMesesProductos.SetMaxWidth(70);
-                    txtMesesProductos.SetFadingEdgeLength(2);
                     txtMesesProductos.TextChanged += (sender, e) =>
                     {
                         if (!string.IsNullOrEmpty(txtMesesProductos.Text))
@@ -431,10 +374,7 @@ namespace WorklabsMx.Droid
                                 Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
                     };
 
-                    trProducto.AddView(txtMesesProductos, 1);
-
-                    ImageButton btnMesesPlus = new ImageButton(this);
-                    btnMesesPlus.SetImageResource(Resource.Mipmap.ic_add);
+                    ImageButton btnMesesPlus = CarritoView.FindViewById<ImageButton>(Resource.Id.btnAddMeses);
                     btnMesesPlus.Click += (sender, e) =>
                     {
                         ++mesProducto;
@@ -447,10 +387,7 @@ namespace WorklabsMx.Droid
                                           * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                     };
 
-                    trProducto.AddView(btnMesesPlus, 2);
-
-                    ImageButton btnMesesLess = new ImageButton(this);
-                    btnMesesLess.SetImageResource(Resource.Mipmap.ic_remove);
+                    ImageButton btnMesesLess = CarritoView.FindViewById<ImageButton>(Resource.Id.btnRemoveMeses);
                     btnMesesLess.Click += (sender, e) =>
                     {
                         if (mesProducto > 1)
@@ -467,27 +404,15 @@ namespace WorklabsMx.Droid
                         else
                             Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
                     };
-
-                    trProducto.AddView(btnMesesLess, 3);
-
-                    tlProductos.AddView(trProducto);
-
-                    trProducto = new TableRow(this);
-                    trProducto.AddView(new TextView(this) { Text = "Proporcional al mes" });
                     subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
                                 (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                     lblProporcional.Text = subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
-                    trProducto.AddView(lblProporcional, param);
 
-                    tlProductos.AddView(trProducto);
                 }
-                trProducto = new TableRow(this);
-                trProducto.AddView(new TextView(this) { Text = "Total" });
 
                 lblTotal.Text = 0.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
-                trProducto.AddView(lblTotal, param);
-
-                tlProductos.AddView(trProducto);
+                row.AddView(CarritoView);
+                tlProductos.AddView(row);
             });
         }
 

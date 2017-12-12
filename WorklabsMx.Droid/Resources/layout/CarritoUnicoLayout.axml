@@ -10,16 +10,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/gridLayout1"
-        android:rowCount="7"
+        android:rowCount="5"
         android:columnCount="4"
         android:layout_marginBottom="10dp">
         <TextView
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/textView1"
+            android:id="@+id/lblProducto"
             android:text="Producto"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:minWidth="170dp"
+            android:maxWidth="170dp" />
         <EditText
             android:inputType="numberSigned"
             android:id="@+id/txtCantidad"
@@ -50,7 +52,9 @@
             android:id="@+id/textView2"
             android:layout_marginLeft="10dp"
             android:text="@string/TarifaMensual"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:minWidth="170dp"
+            android:maxWidth="170dp" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblTarifaMensual"
@@ -70,7 +74,9 @@
             android:id="@+id/textView6"
             android:text="@string/Total"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:minWidth="170dp"
+            android:maxWidth="170dp" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/lblTotal"
@@ -79,5 +85,11 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
             android:text="$0.00" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ff000000"
+            android:layout_columnSpan="4"
+            android:layout_marginTop="5dp" />
     </GridLayout>
 </LinearLayout>
