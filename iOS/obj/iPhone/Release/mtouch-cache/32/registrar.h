@@ -319,7 +319,6 @@
 	-(UIView *) vwVistaComentario;
 	-(void) setVwVistaComentario:(UIView *)p0;
 	-(void) btnComentarPost_TouchUpInside:(UIButton *)p0;
-	-(void) btnImagenComentatio_Touch:(UIButton *)p0;
 	-(void) btnLikes_TouchUpInside:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end

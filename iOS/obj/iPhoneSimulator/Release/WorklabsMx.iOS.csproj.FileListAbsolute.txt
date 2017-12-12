@@ -2,11 +2,9 @@
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhoneSimulator/Release/WorklabsMx.iOS.exe
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhoneSimulator/Release/BouncyCastle.dll
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhoneSimulator/Release/BTProgressHUD.dll
-/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhoneSimulator/Release/Factorymind.Components-Unified.dll
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhoneSimulator/Release/MailKit.dll
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhoneSimulator/Release/MimeKit.dll
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhoneSimulator/Release/Newtonsoft.Json.dll
-/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhoneSimulator/Release/PerpetualEngine.SimpleStorage.iOS-Unified.dll
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhoneSimulator/Release/Plugin.Connectivity.Abstractions.dll
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhoneSimulator/Release/Plugin.Connectivity.dll
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhoneSimulator/Release/Plugin.Settings.Abstractions.dll
@@ -81,3 +79,6 @@
 /Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhoneSimulator/Release/WorklabsMx.iOS.csproj.WorklabsMx.iOS.exe.config
 /Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhoneSimulator/Release/WorklabsMx.iOS.csproj.CoreCompileInputs.cache
 /Users/gilberto/Documents/WorkLabs/WorkLabs1.0.2/WorklabsMx/iOS/obj/iPhoneSimulator/Release/WorklabsMx.iOS.exe
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhoneSimulator/Release/Plugin.KeyChain.Abstractions.dll
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/bin/iPhoneSimulator/Release/Plugin.KeyChain.dll
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/WorklabsMx.iOS.csprojResolveAssemblyReference.cache

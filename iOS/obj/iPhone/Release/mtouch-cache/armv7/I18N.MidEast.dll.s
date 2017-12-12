@@ -3638,7 +3638,7 @@ _mono_aot_file_info:
 	.long 88,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 195,213,117,104,75,54,150,107,118,34,40,43,195,226,173,189
+	.byte 63,232,50,77,168,166,195,9,76,154,82,192,177,82,191,211
 	.globl _mono_aot_module_I18N_MidEast_info
 	.align 2
 _mono_aot_module_I18N_MidEast_info:

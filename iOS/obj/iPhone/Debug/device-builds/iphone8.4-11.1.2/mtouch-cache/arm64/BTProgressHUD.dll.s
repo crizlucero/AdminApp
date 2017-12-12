@@ -13486,7 +13486,7 @@ bl _p_69
 .word 0xf941cba1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9410430
+.word 0xf9410830
 .word 0xd63f0200
 .word 0xf901c7a0
 .word 0xf9402bb1
@@ -13534,7 +13534,7 @@ bl _p_69
 .word 0xf901b7a0
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9410030
+.word 0xf9410430
 .word 0xd63f0200
 .word 0xf941b7be
 .word 0xfd0003c0
@@ -19443,7 +19443,7 @@ bl _p_69
 .word 0xf94037a1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9410430
+.word 0xf9410830
 .word 0xd63f0200
 .word 0xf90033a0
 .word 0xf9401fb1
@@ -24073,7 +24073,7 @@ _mono_aot_file_info:
 	.long 192,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 140,32,186,205,223,104,195,34,133,55,78,93,156,211,125,77
+	.byte 199,25,69,138,6,56,148,58,201,40,89,227,203,8,25,58
 	.globl _mono_aot_module_BTProgressHUD_info
 	.align 3
 _mono_aot_module_BTProgressHUD_info:

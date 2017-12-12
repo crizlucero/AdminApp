@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 4,1
-	.asciz "Mono AOT Compiler 5.2.0 (tarball Tue Oct 31 22:22:56 EDT 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 21:00:42 EST 2017)"
 	.asciz "Plugin.Connectivity.Abstractions.dll"
 	.asciz ""
 
@@ -125,7 +125,7 @@ Plugin_Connectivity_Abstractions_BaseConnectivity_OnConnectivityChanged_Plugin_C
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,48,1,45,233,5,223,77,226,8,0,141,229,12,16,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 88
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 84
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,68,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,96,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,8,0,157,229,8,0,144,229,0,80,160,225,5,16,160,225,0,64,160,225,0,15,85,227,6,0,0,26
@@ -142,7 +142,7 @@ Plugin_Connectivity_Abstractions_BaseConnectivity_OnConnectivityTypeChanged_Plug
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,48,1,45,233,5,223,77,226,8,0,141,229,12,16,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 92
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 88
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,68,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,96,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,8,0,157,229,12,0,144,229,0,80,160,225,5,16,160,225,0,64,160,225,0,15,85,227,6,0,0,26
@@ -159,7 +159,7 @@ Plugin_Connectivity_Abstractions_BaseConnectivity_add_ConnectivityChanged_Plugin
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,112,13,45,233,6,223,77,226,0,96,160,225,12,16,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 96
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 92
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,95,160,227,0,79,160,227,0,191,160,227
 	.byte 0,224,157,229,80,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229
 	.byte 108,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,6,0,160,225,8,0,150,229,0,80,160,225,4,224,157,229
@@ -169,11 +169,11 @@ bl _p_1
 
 	.byte 0,160,160,225,0,224,157,229,216,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,0,15,90,227,9,0,0,10
 	.byte 0,0,154,229,0,0,144,229,8,0,144,229,12,0,144,229,0,16,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 100
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 96
 	.byte 1,16,159,231,1,0,80,225,71,0,0,27,10,0,160,225,10,176,160,225,0,224,157,229,36,225,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,6,0,160,225,0,15,86,227,57,0,0,11,2,15,134,226,10,16,160,225,4,16,160,225
 	.byte 0,16,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 104
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 100
 	.byte 1,16,159,231,8,192,141,229,95,240,127,245,159,239,144,225,4,0,94,225,2,0,0,26,154,207,128,225,0,0,92,227
 	.byte 249,255,255,26,95,240,127,245,8,192,157,229,14,16,160,225,20,16,141,229,160,4,160,225,0,16,159,229,0,0,0,234
 	.long mono_aot_Plugin_Connectivity_Abstractions_got - . -4
@@ -184,10 +184,10 @@ bl _p_1
 	.byte 6,223,141,226,112,13,189,232,128,128,189,232,14,16,160,225,0,0,159,229
 bl _p_2
 
-	.byte 240,0,0,0,14,16,160,225,0,0,159,229
+	.byte 221,0,0,0,14,16,160,225,0,0,159,229
 bl _p_2
 
-	.byte 225,0,0,0
+	.byte 206,0,0,0
 
 Lme_7:
 .text
@@ -197,7 +197,7 @@ Plugin_Connectivity_Abstractions_BaseConnectivity_remove_ConnectivityChanged_Plu
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,112,13,45,233,6,223,77,226,0,96,160,225,12,16,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 108
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 104
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,95,160,227,0,79,160,227,0,191,160,227
 	.byte 0,224,157,229,80,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229
 	.byte 108,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,6,0,160,225,8,0,150,229,0,80,160,225,4,224,157,229
@@ -207,11 +207,11 @@ bl _p_3
 
 	.byte 0,160,160,225,0,224,157,229,216,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,0,15,90,227,9,0,0,10
 	.byte 0,0,154,229,0,0,144,229,8,0,144,229,12,0,144,229,0,16,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 100
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 96
 	.byte 1,16,159,231,1,0,80,225,71,0,0,27,10,0,160,225,10,176,160,225,0,224,157,229,36,225,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,6,0,160,225,0,15,86,227,57,0,0,11,2,15,134,226,10,16,160,225,4,16,160,225
 	.byte 0,16,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 104
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 100
 	.byte 1,16,159,231,8,192,141,229,95,240,127,245,159,239,144,225,4,0,94,225,2,0,0,26,154,207,128,225,0,0,92,227
 	.byte 249,255,255,26,95,240,127,245,8,192,157,229,14,16,160,225,20,16,141,229,160,4,160,225,0,16,159,229,0,0,0,234
 	.long mono_aot_Plugin_Connectivity_Abstractions_got - . -4
@@ -222,10 +222,10 @@ bl _p_3
 	.byte 6,223,141,226,112,13,189,232,128,128,189,232,14,16,160,225,0,0,159,229
 bl _p_2
 
-	.byte 240,0,0,0,14,16,160,225,0,0,159,229
+	.byte 221,0,0,0,14,16,160,225,0,0,159,229
 bl _p_2
 
-	.byte 225,0,0,0
+	.byte 206,0,0,0
 
 Lme_8:
 .text
@@ -235,7 +235,7 @@ Plugin_Connectivity_Abstractions_BaseConnectivity_add_ConnectivityTypeChanged_Pl
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,112,13,45,233,6,223,77,226,0,96,160,225,12,16,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 112
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 108
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,95,160,227,0,79,160,227,0,191,160,227
 	.byte 0,224,157,229,80,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229
 	.byte 108,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,6,0,160,225,12,0,150,229,0,80,160,225,4,224,157,229
@@ -245,11 +245,11 @@ bl _p_1
 
 	.byte 0,160,160,225,0,224,157,229,216,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,0,15,90,227,9,0,0,10
 	.byte 0,0,154,229,0,0,144,229,8,0,144,229,12,0,144,229,0,16,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 116
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 112
 	.byte 1,16,159,231,1,0,80,225,71,0,0,27,10,0,160,225,10,176,160,225,0,224,157,229,36,225,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,6,0,160,225,0,15,86,227,57,0,0,11,3,15,134,226,10,16,160,225,4,16,160,225
 	.byte 0,16,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 120
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 116
 	.byte 1,16,159,231,8,192,141,229,95,240,127,245,159,239,144,225,4,0,94,225,2,0,0,26,154,207,128,225,0,0,92,227
 	.byte 249,255,255,26,95,240,127,245,8,192,157,229,14,16,160,225,20,16,141,229,160,4,160,225,0,16,159,229,0,0,0,234
 	.long mono_aot_Plugin_Connectivity_Abstractions_got - . -4
@@ -260,10 +260,10 @@ bl _p_1
 	.byte 6,223,141,226,112,13,189,232,128,128,189,232,14,16,160,225,0,0,159,229
 bl _p_2
 
-	.byte 240,0,0,0,14,16,160,225,0,0,159,229
+	.byte 221,0,0,0,14,16,160,225,0,0,159,229
 bl _p_2
 
-	.byte 225,0,0,0
+	.byte 206,0,0,0
 
 Lme_9:
 .text
@@ -273,7 +273,7 @@ Plugin_Connectivity_Abstractions_BaseConnectivity_remove_ConnectivityTypeChanged
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,112,13,45,233,6,223,77,226,0,96,160,225,12,16,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 124
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 120
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,95,160,227,0,79,160,227,0,191,160,227
 	.byte 0,224,157,229,80,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229
 	.byte 108,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,6,0,160,225,12,0,150,229,0,80,160,225,4,224,157,229
@@ -283,11 +283,11 @@ bl _p_3
 
 	.byte 0,160,160,225,0,224,157,229,216,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,0,15,90,227,9,0,0,10
 	.byte 0,0,154,229,0,0,144,229,8,0,144,229,12,0,144,229,0,16,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 116
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 112
 	.byte 1,16,159,231,1,0,80,225,71,0,0,27,10,0,160,225,10,176,160,225,0,224,157,229,36,225,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,6,0,160,225,0,15,86,227,57,0,0,11,3,15,134,226,10,16,160,225,4,16,160,225
 	.byte 0,16,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 120
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 116
 	.byte 1,16,159,231,8,192,141,229,95,240,127,245,159,239,144,225,4,0,94,225,2,0,0,26,154,207,128,225,0,0,92,227
 	.byte 249,255,255,26,95,240,127,245,8,192,157,229,14,16,160,225,20,16,141,229,160,4,160,225,0,16,159,229,0,0,0,234
 	.long mono_aot_Plugin_Connectivity_Abstractions_got - . -4
@@ -298,10 +298,10 @@ bl _p_3
 	.byte 6,223,141,226,112,13,189,232,128,128,189,232,14,16,160,225,0,0,159,229
 bl _p_2
 
-	.byte 240,0,0,0,14,16,160,225,0,0,159,229
+	.byte 221,0,0,0,14,16,160,225,0,0,159,229
 bl _p_2
 
-	.byte 225,0,0,0
+	.byte 206,0,0,0
 
 Lme_a:
 .text
@@ -311,7 +311,7 @@ Plugin_Connectivity_Abstractions_BaseConnectivity_Dispose:
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,8,0,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 128
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 124
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,64,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,92,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,8,32,157,229,64,3,160,227,2,0,160,225,64,19,160,227,0,32,146,229,15,224,160,225,92,240,146,229
@@ -331,7 +331,7 @@ Plugin_Connectivity_Abstractions_BaseConnectivity_Finalize:
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,9,45,233,6,223,77,226,13,176,160,225,20,0,139,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 132
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 128
 	.byte 0,0,159,231,0,0,139,229,0,224,155,229,0,224,158,229,4,224,139,229,0,224,155,229,68,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,155,229,0,224,158,229,0,224,155,229,96,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,20,32,155,229,0,15,160,227,2,0,160,225,0,31,160,227,0,32,146,229,15,224,160,225,92,240,146,229
@@ -353,7 +353,7 @@ Plugin_Connectivity_Abstractions_BaseConnectivity_Dispose_bool:
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,8,0,141,229,12,16,205,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 136
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 132
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,68,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,96,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,8,0,157,229,16,0,208,229,0,15,80,227,14,0,0,26,0,224,157,229,132,224,158,229,0,0,94,227
@@ -370,7 +370,7 @@ Plugin_Connectivity_Abstractions_BaseConnectivity__ctor:
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,8,0,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 140
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 136
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,64,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,92,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,8,0,157,229,0,224,157,229,116,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,0,224,157,229
@@ -385,7 +385,7 @@ Plugin_Connectivity_Abstractions_ConnectivityChangedEventArgs_get_IsConnected:
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,7,223,77,226,8,0,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 144
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 140
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,64,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,92,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,8,0,157,229,8,0,208,229,16,0,141,229,4,224,157,229,0,224,158,229,0,224,157,229,132,224,158,229
@@ -400,7 +400,7 @@ Plugin_Connectivity_Abstractions_ConnectivityChangedEventArgs_set_IsConnected_bo
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,8,0,141,229,12,16,205,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 148
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 144
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,68,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,96,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,8,0,157,229,12,16,221,229,8,16,192,229,0,224,157,229,128,224,158,229,0,0,94,227,0,224,158,21
@@ -415,7 +415,7 @@ Plugin_Connectivity_Abstractions_ConnectivityChangedEventArgs__ctor:
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,8,0,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 152
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 148
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,64,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,92,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,8,0,157,229
@@ -433,7 +433,7 @@ Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventArgs_get_IsConnecte
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,7,223,77,226,8,0,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 156
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 152
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,64,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,92,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,8,0,157,229,12,0,208,229,16,0,141,229,4,224,157,229,0,224,158,229,0,224,157,229,132,224,158,229
@@ -448,7 +448,7 @@ Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventArgs_set_IsConnecte
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,8,0,141,229,12,16,205,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 160
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 156
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,68,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,96,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,8,0,157,229,12,16,221,229,12,16,192,229,0,224,157,229,128,224,158,229,0,0,94,227,0,224,158,21
@@ -463,7 +463,7 @@ Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventArgs_get_Connection
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,7,223,77,226,8,0,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 164
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 160
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,64,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,92,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,8,0,157,229,8,0,144,229,16,0,141,229,4,224,157,229,0,224,158,229,0,224,157,229,132,224,158,229
@@ -478,7 +478,7 @@ Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventArgs_set_Connection
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,8,0,141,229,12,16,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 168
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 164
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,68,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,96,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,8,16,157,229,12,0,157,229,8,0,129,229,2,31,129,226,161,20,160,225,0,32,159,229,0,0,0,234
@@ -495,7 +495,7 @@ Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventArgs__ctor:
 .loc 1 1 0
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,8,0,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 172
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 168
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,64,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,92,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,8,0,157,229
@@ -523,12 +523,12 @@ LDIFF_SYM3=ut_end - ut_42
 	.align 2
 	.no_dead_strip System_Array_InternalEnumerator_1_T_INT__ctor_System_Array
 System_Array_InternalEnumerator_1_T_INT__ctor_System_Array:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/src/mono/mcs/class/corlib/System/Array.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System/Array.cs"
 .loc 2 215 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,7,223,77,226,8,128,141,229,12,0,141,229,16,16,141,229,0,0,159,229
 	.byte 0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 176
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 172
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,72,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,100,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,12,16,157,229,16,0,157,229,0,0,129,229,1,32,160,225,161,20,160,225,0,32,159,229,0,0,0,234
@@ -557,7 +557,7 @@ System_Array_InternalEnumerator_1_T_INT_Dispose:
 .loc 2 221 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,8,128,141,229,12,0,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 180
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 176
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,68,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,96,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,12,0,157,229,64,19,224,227,64,19,224,227,4,16,128,229
@@ -580,7 +580,7 @@ System_Array_InternalEnumerator_1_T_INT_MoveNext:
 .loc 2 226 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,64,5,45,233,7,223,77,226,8,128,141,229,0,160,160,225,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 184
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 180
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,111,160,227,0,224,157,229,72,224,158,229
 	.byte 0,0,94,227,0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,100,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,10,0,160,225,4,0,154,229,64,19,224,227,64,19,224,227,1,0,80,225,16,0,0,26
@@ -611,16 +611,16 @@ System_Array_InternalEnumerator_1_T_INT_get_Current:
 .loc 2 234 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,5,45,233,10,223,77,226,8,128,141,229,0,160,160,225,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 188
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 184
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,68,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,96,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,10,0,160,225,4,0,154,229,64,19,224,227,64,19,224,227,1,0,80,225,14,0,0,26
 .loc 2 235 0
 
-	.byte 0,224,157,229,140,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,125,7,13,227,125,7,13,227
+	.byte 0,224,157,229,140,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,9,3,2,227,9,3,2,227
 bl _p_7
 
-	.byte 0,16,160,225,226,0,0,227,0,2,64,227,226,0,0,227,0,2,64,227
+	.byte 0,16,160,225,207,0,0,227,0,2,64,227,207,0,0,227,0,2,64,227
 bl _mono_create_corlib_exception_1
 bl _p_8
 .loc 2 236 0
@@ -629,10 +629,10 @@ bl _p_8
 	.byte 0,31,224,227,1,0,80,225,14,0,0,26
 .loc 2 237 0
 
-	.byte 0,224,157,229,244,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,211,7,13,227,211,7,13,227
+	.byte 0,224,157,229,244,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,95,3,2,227,95,3,2,227
 bl _p_7
 
-	.byte 0,16,160,225,226,0,0,227,0,2,64,227,226,0,0,227,0,2,64,227
+	.byte 0,16,160,225,207,0,0,227,0,2,64,227,207,0,0,227,0,2,64,227
 bl _mono_create_corlib_exception_1
 bl _p_8
 .loc 2 239 0
@@ -663,7 +663,7 @@ System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_Reset:
 .loc 2 245 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,5,223,77,226,8,128,141,229,12,0,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 192
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 188
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,68,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,96,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,12,0,157,229,64,19,224,227,64,19,224,227,4,16,128,229
@@ -686,7 +686,7 @@ System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_get_Curre
 .loc 2 250 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,9,223,77,226,8,128,141,229,12,0,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 196
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 192
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,68,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,96,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,12,0,157,229,28,0,141,229,8,0,157,229
@@ -713,7 +713,7 @@ System_Array_InternalArray__IEnumerable_GetEnumerator_T_INT:
 .loc 2 71 0 prologue_end
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,13,223,77,226,8,128,141,229,28,0,141,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 200
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 196
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,224,157,229,68,224,158,229,0,0,94,227
 	.byte 0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,96,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,28,0,157,229,36,0,141,229,3,15,141,226,0,15,160,227,0,15,160,227,12,0,141,229,0,15,160,227
@@ -745,12 +745,12 @@ wrapper_delegate_invoke__Module_invoke_void_object_ConnectivityChangedEventArgs_
 
 	.byte 128,64,45,233,13,112,160,225,112,13,45,233,10,223,77,226,0,80,160,225,20,16,141,229,24,32,141,229,0,0,159,229
 	.byte 0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 204
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 200
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,79,160,227,0,191,160,227,0,175,160,227
 	.byte 0,111,160,227,0,15,160,227,8,0,141,229,0,224,157,229,96,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225
 	.byte 4,224,157,229,0,224,158,229,0,224,157,229,124,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,0,0,159,229
 	.byte 0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 208
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 204
 	.byte 0,0,159,231,0,0,144,229,0,15,80,227,19,0,0,10,0,224,157,229,172,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,0,224,157,229,192,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225
 bl _p_17
@@ -781,7 +781,7 @@ bl _p_8
 	.byte 10,223,141,226,112,13,189,232,128,128,189,232,14,16,160,225,0,0,159,229
 bl _p_2
 
-	.byte 220,0,0,0
+	.byte 202,0,0,0
 
 Lme_31:
 .text
@@ -792,7 +792,7 @@ wrapper_delegate_begin_invoke__Module_begin_invoke_IAsyncResult__this___object_C
 
 	.byte 128,64,45,233,13,112,160,225,112,13,45,233,10,223,77,226,13,176,160,225,8,0,139,229,12,16,139,229,16,32,139,229
 	.byte 20,48,139,229,72,224,157,229,24,224,139,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 212
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 208
 	.byte 0,0,159,231,0,0,139,229,0,224,155,229,0,224,158,229,4,224,139,229,0,111,160,227,0,95,160,227,0,224,155,229
 	.byte 96,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,4,224,155,229,0,224,158,229,0,224,155,229,124,224,158,229
 	.byte 0,0,94,227,0,224,158,21,0,0,160,225,5,79,160,227,0,15,84,227,1,0,0,26,0,175,160,227,8,0,0,234
@@ -822,7 +822,7 @@ wrapper_delegate_end_invoke__Module_end_invoke_void__this___IAsyncResult_System_
 
 	.byte 128,64,45,233,13,112,160,225,112,13,45,233,4,223,77,226,13,176,160,225,8,0,139,229,12,16,139,229,0,0,159,229
 	.byte 0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 216
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 212
 	.byte 0,0,159,231,0,0,139,229,0,224,155,229,0,224,158,229,4,224,139,229,0,111,160,227,0,95,160,227,0,224,155,229
 	.byte 80,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,4,224,155,229,0,224,158,229,0,224,155,229,108,224,158,229
 	.byte 0,0,94,227,0,224,158,21,0,0,160,225,2,79,160,227,0,15,84,227,1,0,0,26,0,175,160,227,8,0,0,234
@@ -845,12 +845,12 @@ wrapper_delegate_invoke__Module_invoke_void_object_ConnectivityTypeChangedEventA
 
 	.byte 128,64,45,233,13,112,160,225,112,13,45,233,10,223,77,226,0,80,160,225,20,16,141,229,24,32,141,229,0,0,159,229
 	.byte 0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 220
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 216
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,79,160,227,0,191,160,227,0,175,160,227
 	.byte 0,111,160,227,0,15,160,227,8,0,141,229,0,224,157,229,96,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225
 	.byte 4,224,157,229,0,224,158,229,0,224,157,229,124,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,0,0,159,229
 	.byte 0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 208
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 204
 	.byte 0,0,159,231,0,0,144,229,0,15,80,227,19,0,0,10,0,224,157,229,172,224,158,229,0,0,94,227,0,224,158,21
 	.byte 0,0,160,225,0,224,157,229,192,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225
 bl _p_17
@@ -881,7 +881,7 @@ bl _p_8
 	.byte 10,223,141,226,112,13,189,232,128,128,189,232,14,16,160,225,0,0,159,229
 bl _p_2
 
-	.byte 220,0,0,0
+	.byte 202,0,0,0
 
 Lme_34:
 .text
@@ -892,7 +892,7 @@ wrapper_delegate_begin_invoke__Module_begin_invoke_IAsyncResult__this___object_C
 
 	.byte 128,64,45,233,13,112,160,225,112,13,45,233,10,223,77,226,13,176,160,225,8,0,139,229,12,16,139,229,16,32,139,229
 	.byte 20,48,139,229,72,224,157,229,24,224,139,229,0,0,159,229,0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 224
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 220
 	.byte 0,0,159,231,0,0,139,229,0,224,155,229,0,224,158,229,4,224,139,229,0,111,160,227,0,95,160,227,0,224,155,229
 	.byte 96,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,4,224,155,229,0,224,158,229,0,224,155,229,124,224,158,229
 	.byte 0,0,94,227,0,224,158,21,0,0,160,225,5,79,160,227,0,15,84,227,1,0,0,26,0,175,160,227,8,0,0,234
@@ -922,7 +922,7 @@ System_Array_InternalArray__get_Item_T_INT_int:
 
 	.byte 128,64,45,233,13,112,160,225,0,1,45,233,9,223,77,226,12,128,141,229,16,0,141,229,20,16,141,229,0,0,159,229
 	.byte 0,0,0,234
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 228
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 224
 	.byte 0,0,159,231,0,0,141,229,0,224,157,229,0,224,158,229,4,224,141,229,0,15,160,227,8,0,141,229,0,224,157,229
 	.byte 80,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,4,224,157,229,0,224,158,229,0,224,157,229,108,224,158,229
 	.byte 0,0,94,227,0,224,158,21,0,0,160,225,20,0,157,229,24,0,141,229,16,0,157,229,12,0,144,229,28,0,141,229
@@ -930,10 +930,10 @@ System_Array_InternalArray__get_Item_T_INT_int:
 	.byte 14,0,0,58
 .loc 2 174 0
 
-	.byte 0,224,157,229,184,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,63,12,0,227,63,12,0,227
+	.byte 0,224,157,229,184,224,158,229,0,0,94,227,0,224,158,21,0,0,160,225,158,14,160,227,158,14,160,227
 bl _p_7
 
-	.byte 0,16,160,225,138,0,0,227,0,2,64,227,138,0,0,227,0,2,64,227
+	.byte 0,16,160,225,120,0,0,227,0,2,64,227,120,0,0,227,0,2,64,227
 bl _mono_create_corlib_exception_1
 bl _p_8
 .loc 2 177 0
@@ -1073,125 +1073,125 @@ plt_System_Delegate_Combine_System_Delegate_System_Delegate:
 _p_1:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 244,732
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 240,699
 	.no_dead_strip plt__jit_icall_mono_arch_throw_corlib_exception
 plt__jit_icall_mono_arch_throw_corlib_exception:
 _p_2:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 248,735
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 244,702
 	.no_dead_strip plt_System_Delegate_Remove_System_Delegate_System_Delegate
 plt_System_Delegate_Remove_System_Delegate_System_Delegate:
 _p_3:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 252,770
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 248,737
 	.no_dead_strip plt_System_GC_SuppressFinalize_object
 plt_System_GC_SuppressFinalize_object:
 _p_4:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 256,773
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 252,740
 	.no_dead_strip plt_object_Finalize
 plt_object_Finalize:
 _p_5:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 260,776
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 256,743
 	.no_dead_strip plt_System_EventArgs__ctor
 plt_System_EventArgs__ctor:
 _p_6:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 264,779
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 260,746
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr_mscorlib
 plt__jit_icall_mono_helper_ldstr_mscorlib:
 _p_7:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 268,782
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 264,749
 	.no_dead_strip plt__jit_icall_mono_arch_throw_exception
 plt__jit_icall_mono_arch_throw_exception:
 _p_8:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 272,811
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 268,778
 	.no_dead_strip plt__rgctx_fetch_0
 plt__rgctx_fetch_0:
 _p_9:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 276,855
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 272,822
 	.no_dead_strip plt__rgctx_fetch_1
 plt__rgctx_fetch_1:
 _p_10:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 280,877
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 276,843
 	.no_dead_strip plt__rgctx_fetch_2
 plt__rgctx_fetch_2:
 _p_11:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 284,915
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 280,880
 	.no_dead_strip plt__rgctx_fetch_3
 plt__rgctx_fetch_3:
 _p_12:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 288,922
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 284,887
 	.no_dead_strip plt__rgctx_fetch_4
 plt__rgctx_fetch_4:
 _p_13:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 292,943
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 288,908
 	.no_dead_strip plt_wrapper_alloc_object_AllocSmall_intptr_intptr
 plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
 _p_14:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 296,950
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 292,915
 	.no_dead_strip plt__rgctx_fetch_5
 plt__rgctx_fetch_5:
 _p_15:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 300,984
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 296,947
 	.no_dead_strip plt__rgctx_fetch_6
 plt__rgctx_fetch_6:
 _p_16:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 304,992
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 300,955
 	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
 plt__jit_icall_mono_thread_interruption_checkpoint:
 _p_17:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 308,1015
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 304,978
 	.no_dead_strip plt__jit_icall_mono_delegate_begin_invoke
 plt__jit_icall_mono_delegate_begin_invoke:
 _p_18:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 312,1053
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 308,1016
 	.no_dead_strip plt__jit_icall_mono_delegate_end_invoke
 plt__jit_icall_mono_delegate_end_invoke:
 _p_19:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 316,1082
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 312,1045
 	.no_dead_strip plt__rgctx_fetch_7
 plt__rgctx_fetch_7:
 _p_20:
 
 	.byte 0,192,159,229,12,240,159,231
-	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 320,1127
+	.long mono_aot_Plugin_Connectivity_Abstractions_got - . + 316,1089
 plt_end:
 .section __DATA, __bss
 	.align 3
-.lcomm mono_aot_Plugin_Connectivity_Abstractions_got, 328
+.lcomm mono_aot_Plugin_Connectivity_Abstractions_got, 324
 got_end:
 .section __TEXT, __const
 	.align 3
@@ -1299,13 +1299,13 @@ _mono_aot_file_info:
 	.align 2
 	.long unbox_trampoline_addresses
 
-	.long 61,328,21,55,70,391195135,0,4891
-	.long 128,4,4,10,0,25,5944,1040
-	.long 848,512,0,704,816,600,0,392
+	.long 60,324,21,55,70,391195135,0,4842
+	.long 128,4,4,10,0,24,5880,1032
+	.long 840,512,0,696,808,600,0,392
 	.long 96,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 201,171,28,160,171,50,22,108,129,153,83,213,180,21,74,182
+	.byte 106,205,103,125,68,4,147,75,156,168,50,79,120,132,73,219
 	.globl _mono_aot_module_Plugin_Connectivity_Abstractions_info
 	.align 2
 _mono_aot_module_Plugin_Connectivity_Abstractions_info:

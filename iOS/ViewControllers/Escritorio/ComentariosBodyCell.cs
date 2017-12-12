@@ -4,6 +4,7 @@ using WorklabsMx.Models;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Enum;
 using CoreGraphics;
+using System.Collections.Generic;
 
 namespace WorklabsMx.iOS
 {
@@ -17,8 +18,9 @@ namespace WorklabsMx.iOS
 
         public event EventHandler ComentarPost;
 
-        string transaccion = "ALTA";
+        public event EventHandler InfoUserPost;
 
+        string transaccion = "ALTA";
 
         public ComentariosBodyCell (IntPtr handle) : base (handle)
         {
@@ -31,21 +33,18 @@ namespace WorklabsMx.iOS
             lblLikes.Text = post.Publicacion_Me_Gustan_Cantidad + " LIKES";
             lblFechaPost.Text = post.Publicacion_Fecha;
             lblComentarios.Text = post.Publicacion_Comentarios_Cantidad + " COMENTARIOS";
+            txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
             txtComentario.ScrollEnabled = false;
             txtComentario.Text = post.Publicacion_Contenido;
 
-            StyleHelper.Style(vwVistaComentario.Layer);
+            //post.Miembro_Id, post.Colaborador_Empresa_Id, post.Usuario_Tipo
 
-            imgPerfil.Image = currentImageProfile ?? UIImage.FromBundle("PerfilEscritorio");
-            if (post.Publicacion_Imagen_Ruta != "")
+            StyleHelper.Style(vwVistaComentario.Layer);
+            btnImgPerfil.SetBackgroundImage(currentImageProfile ?? UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
+            if (post.Publicacion_Imagen_Ruta != "" && currentImagePost != null)
             {
                 btnImagenComentatio.SetBackgroundImage(currentImagePost, UIControlState.Normal);
             }
-            else
-            {
-                btnImagenComentatio = new UIButton(new CGRect(0, 0, 0, 0));
-            }
-
             PostLocal = post;
         }
 
@@ -89,12 +88,26 @@ namespace WorklabsMx.iOS
             }
         }
 
-        partial void btnImagenComentatio_Touch(UIButton sender)
+        private void btnImagenComentario_Touch(UIImage ImagenComentario)
         {
             if (MostrarImagenEnGrande != null)
             {
-                MostrarImagenEnGrande(sender.ImageView, EventArgs.Empty);
+                MostrarImagenEnGrande(ImagenComentario, EventArgs.Empty);
             }
+        }
+
+        partial void btnImgPerfil_Touch(UIButton sender)
+        {
+            if (InfoUserPost != null)
+            {
+                //string[] ArrayUserPost = { PostLocal.Miembro_Id, PostLocal.Colaborador_Empresa_Id, PostLocal.Usuario_Tipo};
+                List<String> listaUser = new List<string>();
+                listaUser.Add(PostLocal.Miembro_Id);
+                listaUser.Add(PostLocal.Colaborador_Empresa_Id);
+                listaUser.Add(PostLocal.Usuario_Tipo);
+                InfoUserPost(listaUser, EventArgs.Empty);
+            }
+            
         }
     }
 }

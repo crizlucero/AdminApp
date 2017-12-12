@@ -5,17 +5,17 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "Custom Size – 5.png",
+      "filename" : "Path 1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Custom Size – 5@2x.png",
+      "filename" : "Path 29@3x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Custom Size – 5@3x.png",
+      "filename" : "Path 1@3x.png",
       "scale" : "3x"
     },
     {
@@ -60,19 +60,12 @@
       "scale" : "2x"
     },
     {
-      "idiom" : "watch"
-    },
-    {
       "idiom" : "watch",
       "screen-width" : "<=145"
     },
     {
       "idiom" : "watch",
       "screen-width" : ">145"
-    },
-    {
-      "idiom" : "watch",
-      "scale" : "2x"
     },
     {
       "idiom" : "watch",
@@ -93,6 +86,12 @@
     },
     {
       "idiom" : "mac",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "watch",
+      "unassigned" : true,
+      "screen-width" : ">145",
       "scale" : "2x"
     }
   ],

@@ -20,15 +20,15 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnImgPerfil { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnLikes { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView imgComentarios { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIImageView imgPerfil { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -66,6 +66,10 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnImagenComentatio_Touch (UIKit.UIButton sender);
 
+        [Action ("btnImgPerfil_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnImgPerfil_Touch (UIKit.UIButton sender);
+
         [Action ("btnLikes_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnLikes_TouchUpInside (UIKit.UIButton sender);
@@ -77,6 +81,11 @@ namespace WorklabsMx.iOS
                 btnImagenComentatio = null;
             }
 
+            if (btnImgPerfil != null) {
+                btnImgPerfil.Dispose ();
+                btnImgPerfil = null;
+            }
+
             if (btnLikes != null) {
                 btnLikes.Dispose ();
                 btnLikes = null;
@@ -85,11 +94,6 @@ namespace WorklabsMx.iOS
             if (imgComentarios != null) {
                 imgComentarios.Dispose ();
                 imgComentarios = null;
-            }
-
-            if (imgPerfil != null) {
-                imgPerfil.Dispose ();
-                imgPerfil = null;
             }
 
             if (lblComentarios != null) {

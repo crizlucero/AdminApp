@@ -29,7 +29,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
     <MtouchI18n>cjk,mideast,other,rare,west</MtouchI18n>
-    <CodesignProvision>WorkLabsMxPP</CodesignProvision>
+    <CodesignProvision>WorkLabsDev</CodesignProvision>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
@@ -46,7 +46,7 @@
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>WorkLabs</CodesignProvision>
+    <CodesignProvision>WorkLabsDist</CodesignProvision>
     <MtouchI18n>cjk,mideast,other,rare,west</MtouchI18n>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -87,7 +87,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
     <MtouchI18n>west</MtouchI18n>
-    <CodesignProvision>iOS Team Provisioning Profile: com.WorklabsMx.WorklabsMx</CodesignProvision>
+    <CodesignProvision>WorkLabsDev</CodesignProvision>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
@@ -559,6 +559,23 @@
     <ImageAsset Include="Assets.xcassets\Atras.imageset\icons8-back-filled-30.png" />
     <ImageAsset Include="Assets.xcassets\Atras.imageset\icons8-back-filled-60.png" />
     <ImageAsset Include="Assets.xcassets\Atras.imageset\icons8-back-filled-90.png" />
+    <ImageAsset Include="Assets.xcassets\PerfilComentarios.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\PerfilComentarios.imageset\Path 135%403x.png" />
+    <ImageAsset Include="Assets.xcassets\PerfilComentarios.imageset\Path 135%402x.png" />
+    <ImageAsset Include="Assets.xcassets\PerfilComentarios.imageset\Path 135.png" />
+    <ImageAsset Include="Assets.xcassets\PerfilPublicaciones.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\PerfilPublicaciones.imageset\Group 1%403x.png" />
+    <ImageAsset Include="Assets.xcassets\PerfilPublicaciones.imageset\Group 1%402x.png" />
+    <ImageAsset Include="Assets.xcassets\PerfilPublicaciones.imageset\Group 5%402x.png" />
+    <ImageAsset Include="Assets.xcassets\PerfilFavoritos.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\PerfilFavoritos.imageset\Group 2%403x.png" />
+    <ImageAsset Include="Assets.xcassets\PerfilFavoritos.imageset\Group 2%402x.png" />
+    <ImageAsset Include="Assets.xcassets\PerfilFavoritos.imageset\Group 2.png" />
+    <ImageAsset Include="Assets.xcassets\ImagenPerfilFondo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ImagenPerfilFondo.imageset\Gradient.jpg" />
+    <ImageAsset Include="Assets.xcassets\PerfilGrande.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\PerfilGrande.imageset\Group 1%403x.png" />
+    <ImageAsset Include="Assets.xcassets\PerfilGrande.imageset\Group 5%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -878,6 +895,10 @@
     <Compile Include="ViewControllers\Comentarios\BodyComentarTableView.designer.cs">
       <DependentUpon>BodyComentarTableView.cs</DependentUpon>
     </Compile>
+    <Compile Include="InfoPerfilViewController.cs" />
+    <Compile Include="InfoPerfilViewController.designer.cs">
+      <DependentUpon>InfoPerfilViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -982,6 +1003,11 @@
     <Folder Include="Assets.xcassets\PerfilEscritorio.imageset\" />
     <Folder Include="Assets.xcassets\Cerrar.imageset\" />
     <Folder Include="Assets.xcassets\Atras.imageset\" />
+    <Folder Include="Assets.xcassets\PerfilComentarios.imageset\" />
+    <Folder Include="Assets.xcassets\PerfilPublicaciones.imageset\" />
+    <Folder Include="Assets.xcassets\PerfilFavoritos.imageset\" />
+    <Folder Include="Assets.xcassets\ImagenPerfilFondo.imageset\" />
+    <Folder Include="Assets.xcassets\PerfilGrande.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

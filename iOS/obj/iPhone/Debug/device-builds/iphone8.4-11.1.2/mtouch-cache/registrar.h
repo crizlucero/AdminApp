@@ -67,6 +67,7 @@
 @class ComentarNoInfoCell;
 @class ComentarviewController;
 @class BodyComentarTableView;
+@class InfoPerfilViewController;
 @class WorklabsMx_iOS_ViewElements_UICheckBox;
 @class WorklabsMx_iOS_ViewElements_HorarioEventos;
 @class WorklabsMx_iOS_ViewElements_UIDropdownList;
@@ -283,9 +284,9 @@
 @interface ComentariosBodyCell : UITableViewCell {
 }
 	@property (nonatomic, assign) UIButton * btnImagenComentatio;
+	@property (nonatomic, assign) UIButton * btnImgPerfil;
 	@property (nonatomic, assign) UIButton * btnLikes;
 	@property (nonatomic, assign) UIImageView * imgComentarios;
-	@property (nonatomic, assign) UIImageView * imgPerfil;
 	@property (nonatomic, assign) UILabel * lblComentarios;
 	@property (nonatomic, assign) UILabel * lblFechaPost;
 	@property (nonatomic, assign) UILabel * lblLikes;
@@ -299,12 +300,12 @@
 	-(void) xamarinSetGCHandle: (int) gchandle;
 	-(UIButton *) btnImagenComentatio;
 	-(void) setBtnImagenComentatio:(UIButton *)p0;
+	-(UIButton *) btnImgPerfil;
+	-(void) setBtnImgPerfil:(UIButton *)p0;
 	-(UIButton *) btnLikes;
 	-(void) setBtnLikes:(UIButton *)p0;
 	-(UIImageView *) imgComentarios;
 	-(void) setImgComentarios:(UIImageView *)p0;
-	-(UIImageView *) imgPerfil;
-	-(void) setImgPerfil:(UIImageView *)p0;
 	-(UILabel *) lblComentarios;
 	-(void) setLblComentarios:(UILabel *)p0;
 	-(UILabel *) lblFechaPost;
@@ -320,7 +321,7 @@
 	-(UIView *) vwVistaComentario;
 	-(void) setVwVistaComentario:(UIView *)p0;
 	-(void) btnComentarPost_TouchUpInside:(UIButton *)p0;
-	-(void) btnImagenComentatio_Touch:(UIButton *)p0;
+	-(void) btnImgPerfil_Touch:(UIButton *)p0;
 	-(void) btnLikes_TouchUpInside:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
@@ -1026,6 +1027,74 @@
 	-(void) setTxtComentario:(UITextView *)p0;
 	-(void) btnImagen_TouchUpInside:(UIButton *)p0;
 	-(void) btnLikes_TouchUpInside:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface InfoPerfilViewController : UITableViewController {
+}
+	@property (nonatomic, assign) UIImageView * imgComentarios;
+	@property (nonatomic, assign) UIImageView * imgFavoritos;
+	@property (nonatomic, assign) UIImageView * imgPerfil;
+	@property (nonatomic, assign) UIImageView * imgPublicaciones;
+	@property (nonatomic, assign) NSLayoutConstraint * lblComentarios;
+	@property (nonatomic, assign) UILabel * lblCorreo;
+	@property (nonatomic, assign) UILabel * lblEmpresa;
+	@property (nonatomic, assign) UILabel * lblFacebook;
+	@property (nonatomic, assign) UILabel * lblFavoritos;
+	@property (nonatomic, assign) UILabel * lblFechaNacimiento;
+	@property (nonatomic, assign) UILabel * lblInstagram;
+	@property (nonatomic, assign) UILabel * lblLinkedin;
+	@property (nonatomic, assign) UILabel * lblNombre;
+	@property (nonatomic, assign) UILabel * lblProfesion;
+	@property (nonatomic, assign) UILabel * lblPublicaciones;
+	@property (nonatomic, assign) UILabel * lblPuesto;
+	@property (nonatomic, assign) UILabel * lblTelContacto;
+	@property (nonatomic, assign) UILabel * lblTwitter;
+	@property (nonatomic, assign) UIView * vwInfoGeneral;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIImageView *) imgComentarios;
+	-(void) setImgComentarios:(UIImageView *)p0;
+	-(UIImageView *) imgFavoritos;
+	-(void) setImgFavoritos:(UIImageView *)p0;
+	-(UIImageView *) imgPerfil;
+	-(void) setImgPerfil:(UIImageView *)p0;
+	-(UIImageView *) imgPublicaciones;
+	-(void) setImgPublicaciones:(UIImageView *)p0;
+	-(NSLayoutConstraint *) lblComentarios;
+	-(void) setLblComentarios:(NSLayoutConstraint *)p0;
+	-(UILabel *) lblCorreo;
+	-(void) setLblCorreo:(UILabel *)p0;
+	-(UILabel *) lblEmpresa;
+	-(void) setLblEmpresa:(UILabel *)p0;
+	-(UILabel *) lblFacebook;
+	-(void) setLblFacebook:(UILabel *)p0;
+	-(UILabel *) lblFavoritos;
+	-(void) setLblFavoritos:(UILabel *)p0;
+	-(UILabel *) lblFechaNacimiento;
+	-(void) setLblFechaNacimiento:(UILabel *)p0;
+	-(UILabel *) lblInstagram;
+	-(void) setLblInstagram:(UILabel *)p0;
+	-(UILabel *) lblLinkedin;
+	-(void) setLblLinkedin:(UILabel *)p0;
+	-(UILabel *) lblNombre;
+	-(void) setLblNombre:(UILabel *)p0;
+	-(UILabel *) lblProfesion;
+	-(void) setLblProfesion:(UILabel *)p0;
+	-(UILabel *) lblPublicaciones;
+	-(void) setLblPublicaciones:(UILabel *)p0;
+	-(UILabel *) lblPuesto;
+	-(void) setLblPuesto:(UILabel *)p0;
+	-(UILabel *) lblTelContacto;
+	-(void) setLblTelContacto:(UILabel *)p0;
+	-(UILabel *) lblTwitter;
+	-(void) setLblTwitter:(UILabel *)p0;
+	-(UIView *) vwInfoGeneral;
+	-(void) setVwInfoGeneral:(UIView *)p0;
+	-(void) viewDidLoad;
+	-(void) btnClose_Touch:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
@@ -1885,7 +1954,6 @@
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(void) setBackgroundColor:(UIColor *)p0;
 	-(void) setTintColor:(UIColor *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end

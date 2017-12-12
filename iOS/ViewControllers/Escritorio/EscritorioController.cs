@@ -1,4 +1,4 @@
-using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.Models; using System.Collections.Generic; using WorklabsMx.Controllers; using BigTed; using WorklabsMx.Helpers; using System.Threading.Tasks;  namespace WorklabsMx.iOS {     public partial class EscritorioController : UITableViewController
+using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.Models; using System.Collections.Generic; using WorklabsMx.Controllers; using BigTed; using WorklabsMx.Helpers; using System.Threading.Tasks; using Foundation;  namespace WorklabsMx.iOS {     public partial class EscritorioController : UITableViewController
     {
         const string IdentificadorCeldaHeader = "Header";
         const string IdentificadorCeldaPost = "Post";
@@ -10,7 +10,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 
         bool isShowInformation = false;
         bool existeConeccion = true;
-         List<PostModel> allPosts = new List<PostModel>();         List<UIImage> allProfileImages = new List<UIImage>();         List<UIImage> allPostImages = new List<UIImage>();         List<string> miembro;          PostModel CurrentPost = new PostModel();         UIImage currentProfileImage = new UIImage();         UIImage currentPostImage = new UIImage();         UIImageView ImagenPerfil;         int ContadorComentar; 
+         List<PostModel> allPosts = new List<PostModel>();         List<UIImage> allProfileImages = new List<UIImage>();         List<UIImage> allPostImages = new List<UIImage>();         List<string> miembro;          List<string> ListUser = new List<string>();          PostModel CurrentPost = new PostModel();         UIImage currentProfileImage = new UIImage();         UIImage currentPostImage = new UIImage();         UIImageView ImagenPerfil;         int ContadorComentar; 
         public EscritorioController(IntPtr handle) : base(handle)         {             
         }
 
@@ -26,7 +26,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         {
             base.ViewDidAppear(animated);
         }
-         void MostrarImagenEnGrande(object sender, EventArgs e)         {             this.PerformSegue("toShowImageFromPost", (UIImageView)sender);         }          async void ComentarPost(object sender, EventArgs e)         {             CurrentPost = (PostModel)sender;             ContadorComentar = ContadorComentar + 1;             if(ContadorComentar <= 1)             {                 BTProgressHUD.Show(status: "Cargando Comentarios");                 await Task.Delay(2000);                 currentProfileImage = ImageGallery.LoadImage(CurrentPost.Usuario_Fotografia_Ruta);                 currentPostImage = ImageGallery.LoadImage(CurrentPost.Publicacion_Imagen_Ruta);                 this.PerformSegue("comentar", null);             }          }          public override UIView GetViewForHeader(UITableView tableView, nint section)
+         void MostrarImagenEnGrande(object sender, EventArgs e)         {             this.PerformSegue("toShowImageFromPost", (UIImageView)sender);         }          async void ComentarPost(object sender, EventArgs e)         {             CurrentPost = (PostModel)sender;             ContadorComentar = ContadorComentar + 1;             if(ContadorComentar <= 1)             {                 BTProgressHUD.Show(status: "Cargando Comentarios");                 await Task.Delay(2000);                 currentProfileImage = ImageGallery.LoadImage(CurrentPost.Usuario_Fotografia_Ruta);                 currentPostImage = ImageGallery.LoadImage(CurrentPost.Publicacion_Imagen_Ruta);                 this.PerformSegue("comentar", null);             }          }           void InfoUserPost(object sender, EventArgs e)         {             ListUser = (List<string>)sender;             this.PerformSegue("DetallarPerfil", null);         }          public override UIView GetViewForHeader(UITableView tableView, nint section)
         {             var headerCell = (EscritorioHeaderCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);             headerCell.UpdateCell(miembro);             this.ImagenPerfil = headerCell.getImagenPerfil();             StyleHelper.Style(headerCell.Layer);
             return headerCell;
         }
@@ -64,7 +64,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
             {
                 var current = allPosts[indexPath.Row];
                 var currentPostCell = (ComentariosBodyCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);                 var currentImageProfile = allProfileImages[indexPath.Row];                 var currentImagePost = allPostImages[indexPath.Row];
-                currentPostCell.UpdateCell(current, currentImageProfile, currentImagePost);                 currentPostCell.MostrarImagenEnGrande += MostrarImagenEnGrande;                 currentPostCell.ComentarPost += ComentarPost;                 this.WillDisplay(indexPath.Row);
+                currentPostCell.UpdateCell(current, currentImageProfile, currentImagePost);                 currentPostCell.MostrarImagenEnGrande += MostrarImagenEnGrande;                 currentPostCell.ComentarPost += ComentarPost;                 currentPostCell.InfoUserPost += InfoUserPost;                 this.WillDisplay(indexPath.Row);
                 return currentPostCell;
             }
             else
@@ -73,11 +73,11 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
                 noPostCell.UpdateCell(this.existeConeccion);
                 return noPostCell;
             }
-        }          public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
+        }          public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             if(segue.Identifier == "toShowPostView")             {                 var postCommentView = (PublicarPostViewController)segue.DestinationViewController;                 postCommentView.PostPublicadoDelegate = this;                 postCommentView.setInfoPublicacion(miembro);             }              else if(segue.Identifier == "comentar")             {
 				var CommentView = (comentarTableView)segue.DestinationViewController;
-                CommentView.currentPost = CurrentPost;                 CommentView.currentPostImage = currentPostImage;                 CommentView.currentProfileImage = currentProfileImage;                 //CommentView.BackWindowDelegate = this;             }             else if(segue.Identifier == "toShowImageFromPost")             {                 var ImageView = (DetailCommentImage)segue.DestinationViewController;                 ImageView.ImagenPost = (UIImageView)sender;             }
+                CommentView.currentPost = CurrentPost;                 CommentView.currentPostImage = currentPostImage;                 CommentView.currentProfileImage = currentProfileImage;                 //CommentView.BackWindowDelegate = this;             }             else if(segue.Identifier == "toShowImageFromPost")             {                 var ImageView = (DetailCommentImage)segue.DestinationViewController;                 ImageView.ImagenPost = (UIImageView)sender;             }              else if(segue.Identifier == "DetallarPerfil")             {                 var PerfilView = (InfoPerfilViewController)segue.DestinationViewController;                 PerfilView.ListUser = ListUser;             }
         }          private void WillDisplay(int Row)         {             int LastRow = allPosts.Count - 1;             if ((Row == LastRow))             {                 BTProgressHUD.Dismiss();
             }         }          private void CargarInfo()         {             try             {                 if (InternetConectionHelper.VerificarConexion())                 {                     allPosts = new Controllers.EscritorioController().GetMuroPosts(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));                      foreach (PostModel currentPost in allPosts)                     {                         allPostImages.Add(ImageGallery.LoadImage(currentPost.Publicacion_Imagen_Ruta));                         allProfileImages.Add(ImageGallery.LoadImage(currentPost.Usuario_Fotografia_Ruta));                     }                     miembro = new MiembrosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));                }                 else                 {                     this.btnScanQr.Title = "";                     this.btnScanQr.Enabled = false;                     isShowInformation = false;                     existeConeccion = false;                 }             }             catch(Exception e)             {                 SlackLogs.SendMessage(e.Message);             }                     } 
         partial void btnToScanQr_TouchUpInside(UIBarButtonItem sender)

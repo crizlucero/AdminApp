@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.2.0 (tarball Tue Oct 31 22:22:00 EDT 2017)"
+	.asciz "Mono AOT Compiler 5.4.0 (tarball Mon Dec  4 20:59:09 EST 2017)"
 	.asciz "Plugin.Connectivity.Abstractions.dll"
 	.asciz ""
 
@@ -132,7 +132,7 @@ Plugin_Connectivity_Abstractions_BaseConnectivity_OnConnectivityChanged_Plugin_C
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #200]
+ldr x16, [x16, #192]
 .word 0xf9001bb0
 .word 0xf9400a11
 .word 0xf9001fb1
@@ -201,7 +201,7 @@ Plugin_Connectivity_Abstractions_BaseConnectivity_OnConnectivityTypeChanged_Plug
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #208]
+ldr x16, [x16, #200]
 .word 0xf9001bb0
 .word 0xf9400a11
 .word 0xf9001fb1
@@ -271,7 +271,7 @@ Plugin_Connectivity_Abstractions_BaseConnectivity_add_ConnectivityChanged_Plugin
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #216]
+ldr x16, [x16, #208]
 .word 0xf90023b0
 .word 0xf9400a11
 .word 0xf90027b1
@@ -325,7 +325,7 @@ bl _p_1
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x1, [x16, #224]
+ldr x1, [x16, #216]
 .word 0xeb01001f
 .word 0x10000011
 .word 0x54000881
@@ -345,7 +345,7 @@ ldr x1, [x16, #224]
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x1, [x16, #232]
+ldr x1, [x16, #224]
 .word 0xc85f7c10
 .word 0xeb17021f
 .word 0x54000061
@@ -395,10 +395,10 @@ ldr x1, [x16, #16]
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801e00
+.word 0xd2801ba0
 .word 0xaa1103e1
 bl _p_2
-.word 0xd2801c20
+.word 0xd28019c0
 .word 0xaa1103e1
 bl _p_2
 
@@ -407,6 +407,153 @@ Lme_7:
 	.align 4
 	.no_dead_strip Plugin_Connectivity_Abstractions_BaseConnectivity_remove_ConnectivityChanged_Plugin_Connectivity_Abstractions_ConnectivityChangedEventHandler
 Plugin_Connectivity_Abstractions_BaseConnectivity_remove_ConnectivityChanged_Plugin_Connectivity_Abstractions_ConnectivityChangedEventHandler:
+.loc 1 1 0
+.word 0xa9b97bfd
+.word 0x910003fd
+.word 0xa9015bb5
+.word 0xa90263b7
+.word 0xa9036bb9
+.word 0xaa0003f9
+.word 0xaa0103fa
+
+adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
+ldr x16, [x16, #232]
+.word 0xf90023b0
+.word 0xf9400a11
+.word 0xf90027b1
+.word 0xd2800018
+.word 0xd2800017
+.word 0xd2800016
+.word 0xf94023b1
+.word 0xf9404e31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94027b1
+.word 0xf9400231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94023b1
+.word 0xf9406e31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xaa1903e0
+.word 0xf9400b20
+.word 0xaa0003f8
+.word 0xf94027b1
+.word 0xf9400231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94023b1
+.word 0xf9409a31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xaa1803e0
+.word 0xaa1803f7
+.word 0xf94023b1
+.word 0xf940b231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xaa1803e0
+.word 0xaa1a03e0
+.word 0xaa1803e0
+.word 0xaa1a03e1
+bl _p_3
+.word 0xaa0003f5
+.word 0xf94023b1
+.word 0xf940da31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xb4000175
+.word 0xf94002a0
+.word 0xf9400000
+.word 0xf9400800
+.word 0xf9400c00
+
+adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
+ldr x1, [x16, #216]
+.word 0xeb01001f
+.word 0x10000011
+.word 0x54000881
+.word 0xaa1503e0
+.word 0xaa1503f6
+.word 0xf94023b1
+.word 0xf9411e31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xaa1903e0
+.word 0xeb1f033f
+.word 0x10000011
+.word 0x540006e0
+.word 0x91004320
+.word 0xaa1503e1
+.word 0xaa1703e1
+
+adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
+ldr x1, [x16, #224]
+.word 0xc85f7c10
+.word 0xeb17021f
+.word 0x54000061
+.word 0xc811fc15
+.word 0x35ffff91
+.word 0xd50330bf
+.word 0xaa1003e1
+.word 0xf90037a1
+.word 0xd349fc00
+.word 0xd29ffffe
+.word 0xf2a00ffe
+.word 0x8a1e0000
+
+adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
+ldr x1, [x16, #16]
+.word 0x8b010000
+.word 0xd280003e
+.word 0x3900001e
+.word 0xf94023b1
+.word 0xf9419e31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94037a0
+.word 0xf90033a0
+.word 0xaa0003f8
+.word 0xf94023b1
+.word 0xf941ba31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94033a0
+.word 0xaa0003e1
+.word 0xaa1703e1
+.word 0xeb17001f
+.word 0x54fff581
+.word 0xf94023b1
+.word 0xf941de31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94023b1
+.word 0xf941ee31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xa9415bb5
+.word 0xa94263b7
+.word 0xa9436bb9
+.word 0x910003bf
+.word 0xa8c77bfd
+.word 0xd65f03c0
+.word 0xd2801ba0
+.word 0xaa1103e1
+bl _p_2
+.word 0xd28019c0
+.word 0xaa1103e1
+bl _p_2
+
+Lme_8:
+.text
+	.align 4
+	.no_dead_strip Plugin_Connectivity_Abstractions_BaseConnectivity_add_ConnectivityTypeChanged_Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventHandler
+Plugin_Connectivity_Abstractions_BaseConnectivity_add_ConnectivityTypeChanged_Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventHandler:
 .loc 1 1 0
 .word 0xa9b97bfd
 .word 0x910003fd
@@ -438,153 +585,6 @@ ldr x16, [x16, #240]
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xaa1903e0
-.word 0xf9400b20
-.word 0xaa0003f8
-.word 0xf94027b1
-.word 0xf9400231
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xf94023b1
-.word 0xf9409a31
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xaa1803e0
-.word 0xaa1803f7
-.word 0xf94023b1
-.word 0xf940b231
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xaa1803e0
-.word 0xaa1a03e0
-.word 0xaa1803e0
-.word 0xaa1a03e1
-bl _p_3
-.word 0xaa0003f5
-.word 0xf94023b1
-.word 0xf940da31
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xb4000175
-.word 0xf94002a0
-.word 0xf9400000
-.word 0xf9400800
-.word 0xf9400c00
-
-adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
-add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x1, [x16, #224]
-.word 0xeb01001f
-.word 0x10000011
-.word 0x54000881
-.word 0xaa1503e0
-.word 0xaa1503f6
-.word 0xf94023b1
-.word 0xf9411e31
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xaa1903e0
-.word 0xeb1f033f
-.word 0x10000011
-.word 0x540006e0
-.word 0x91004320
-.word 0xaa1503e1
-.word 0xaa1703e1
-
-adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
-add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x1, [x16, #232]
-.word 0xc85f7c10
-.word 0xeb17021f
-.word 0x54000061
-.word 0xc811fc15
-.word 0x35ffff91
-.word 0xd50330bf
-.word 0xaa1003e1
-.word 0xf90037a1
-.word 0xd349fc00
-.word 0xd29ffffe
-.word 0xf2a00ffe
-.word 0x8a1e0000
-
-adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
-add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x1, [x16, #16]
-.word 0x8b010000
-.word 0xd280003e
-.word 0x3900001e
-.word 0xf94023b1
-.word 0xf9419e31
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xf94037a0
-.word 0xf90033a0
-.word 0xaa0003f8
-.word 0xf94023b1
-.word 0xf941ba31
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xf94033a0
-.word 0xaa0003e1
-.word 0xaa1703e1
-.word 0xeb17001f
-.word 0x54fff581
-.word 0xf94023b1
-.word 0xf941de31
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xf94023b1
-.word 0xf941ee31
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xa9415bb5
-.word 0xa94263b7
-.word 0xa9436bb9
-.word 0x910003bf
-.word 0xa8c77bfd
-.word 0xd65f03c0
-.word 0xd2801e00
-.word 0xaa1103e1
-bl _p_2
-.word 0xd2801c20
-.word 0xaa1103e1
-bl _p_2
-
-Lme_8:
-.text
-	.align 4
-	.no_dead_strip Plugin_Connectivity_Abstractions_BaseConnectivity_add_ConnectivityTypeChanged_Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventHandler
-Plugin_Connectivity_Abstractions_BaseConnectivity_add_ConnectivityTypeChanged_Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventHandler:
-.loc 1 1 0
-.word 0xa9b97bfd
-.word 0x910003fd
-.word 0xa9015bb5
-.word 0xa90263b7
-.word 0xa9036bb9
-.word 0xaa0003f9
-.word 0xaa0103fa
-
-adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
-add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #248]
-.word 0xf90023b0
-.word 0xf9400a11
-.word 0xf90027b1
-.word 0xd2800018
-.word 0xd2800017
-.word 0xd2800016
-.word 0xf94023b1
-.word 0xf9404e31
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xf94027b1
-.word 0xf9400231
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xf94023b1
-.word 0xf9406e31
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xaa1903e0
 .word 0xf9400f20
 .word 0xaa0003f8
 .word 0xf94027b1
@@ -619,7 +619,7 @@ bl _p_1
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x1, [x16, #256]
+ldr x1, [x16, #248]
 .word 0xeb01001f
 .word 0x10000011
 .word 0x54000881
@@ -639,7 +639,7 @@ ldr x1, [x16, #256]
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x1, [x16, #264]
+ldr x1, [x16, #256]
 .word 0xc85f7c10
 .word 0xeb17021f
 .word 0x54000061
@@ -689,10 +689,10 @@ ldr x1, [x16, #16]
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801e00
+.word 0xd2801ba0
 .word 0xaa1103e1
 bl _p_2
-.word 0xd2801c20
+.word 0xd28019c0
 .word 0xaa1103e1
 bl _p_2
 
@@ -712,7 +712,7 @@ Plugin_Connectivity_Abstractions_BaseConnectivity_remove_ConnectivityTypeChanged
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #272]
+ldr x16, [x16, #264]
 .word 0xf90023b0
 .word 0xf9400a11
 .word 0xf90027b1
@@ -766,7 +766,7 @@ bl _p_3
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x1, [x16, #256]
+ldr x1, [x16, #248]
 .word 0xeb01001f
 .word 0x10000011
 .word 0x54000881
@@ -786,7 +786,7 @@ ldr x1, [x16, #256]
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x1, [x16, #264]
+ldr x1, [x16, #256]
 .word 0xc85f7c10
 .word 0xeb17021f
 .word 0x54000061
@@ -836,10 +836,10 @@ ldr x1, [x16, #16]
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801e00
+.word 0xd2801ba0
 .word 0xaa1103e1
 bl _p_2
-.word 0xd2801c20
+.word 0xd28019c0
 .word 0xaa1103e1
 bl _p_2
 
@@ -856,7 +856,7 @@ Plugin_Connectivity_Abstractions_BaseConnectivity_Dispose:
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #280]
+ldr x16, [x16, #272]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -919,7 +919,7 @@ Plugin_Connectivity_Abstractions_BaseConnectivity_Finalize:
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #288]
+ldr x16, [x16, #280]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -1000,7 +1000,7 @@ Plugin_Connectivity_Abstractions_BaseConnectivity_Dispose_bool:
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #296]
+ldr x16, [x16, #288]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -1061,7 +1061,7 @@ Plugin_Connectivity_Abstractions_BaseConnectivity__ctor:
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #304]
+ldr x16, [x16, #296]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -1106,7 +1106,7 @@ Plugin_Connectivity_Abstractions_ConnectivityChangedEventArgs_get_IsConnected:
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #312]
+ldr x16, [x16, #304]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -1155,7 +1155,7 @@ Plugin_Connectivity_Abstractions_ConnectivityChangedEventArgs_set_IsConnected_bo
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #320]
+ldr x16, [x16, #312]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -1198,7 +1198,7 @@ Plugin_Connectivity_Abstractions_ConnectivityChangedEventArgs__ctor:
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #328]
+ldr x16, [x16, #320]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -1244,7 +1244,7 @@ Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventArgs_get_IsConnecte
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #336]
+ldr x16, [x16, #328]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -1293,7 +1293,7 @@ Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventArgs_set_IsConnecte
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #344]
+ldr x16, [x16, #336]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -1336,7 +1336,7 @@ Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventArgs_get_Connection
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #352]
+ldr x16, [x16, #344]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -1385,7 +1385,7 @@ Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventArgs_set_Connection
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #360]
+ldr x16, [x16, #352]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -1440,7 +1440,7 @@ Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventArgs__ctor:
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #368]
+ldr x16, [x16, #360]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -1490,7 +1490,7 @@ LDIFF_SYM3=ut_end - ut_42
 	.align 4
 	.no_dead_strip System_Array_InternalEnumerator_1_T_INT__ctor_System_Array
 System_Array_InternalEnumerator_1_T_INT__ctor_System_Array:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.3.0.47/src/mono/mcs/class/corlib/System/Array.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.2/src/mono/mcs/class/corlib/System/Array.cs"
 .loc 2 215 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -1501,7 +1501,7 @@ System_Array_InternalEnumerator_1_T_INT__ctor_System_Array:
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #376]
+ldr x16, [x16, #368]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -1574,7 +1574,7 @@ System_Array_InternalEnumerator_1_T_INT_Dispose:
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #384]
+ldr x16, [x16, #376]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -1627,7 +1627,7 @@ System_Array_InternalEnumerator_1_T_INT_MoveNext:
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #392]
+ldr x16, [x16, #384]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -1732,7 +1732,7 @@ System_Array_InternalEnumerator_1_T_INT_get_Current:
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #400]
+ldr x16, [x16, #392]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -1761,13 +1761,13 @@ ldr x16, [x16, #400]
 .word 0xf9408a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd29aefa0
-.word 0xd29aefa0
+.word 0xd2846120
+.word 0xd2846120
 bl _p_7
 .word 0xaa0003e1
-.word 0xd2801c40
+.word 0xd28019e0
 .word 0xf2a04000
-.word 0xd2801c40
+.word 0xd28019e0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_8
@@ -1789,13 +1789,13 @@ bl _p_8
 .word 0xf940f231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd29afa60
-.word 0xd29afa60
+.word 0xd2846be0
+.word 0xd2846be0
 bl _p_7
 .word 0xaa0003e1
-.word 0xd2801c40
+.word 0xd28019e0
 .word 0xf2a04000
-.word 0xd2801c40
+.word 0xd28019e0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_8
@@ -1869,7 +1869,7 @@ System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_Reset:
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #408]
+ldr x16, [x16, #400]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -1921,7 +1921,7 @@ System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_get_Curre
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #416]
+ldr x16, [x16, #408]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -1986,7 +1986,7 @@ System_Array_InternalArray__IEnumerable_GetEnumerator_T_INT:
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #424]
+ldr x16, [x16, #416]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -2080,7 +2080,7 @@ wrapper_delegate_invoke__Module_invoke_void_object_ConnectivityChangedEventArgs_
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #432]
+ldr x16, [x16, #424]
 .word 0xf9002bb0
 .word 0xf9400a11
 .word 0xf9002fb1
@@ -2104,7 +2104,7 @@ ldr x16, [x16, #432]
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x0, [x16, #440]
+ldr x0, [x16, #432]
 .word 0xb9400000
 .word 0x34000240
 .word 0xf9402bb1
@@ -2284,7 +2284,7 @@ bl _p_8
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd2801940
 .word 0xaa1103e1
 bl _p_2
 
@@ -2306,7 +2306,7 @@ wrapper_delegate_begin_invoke__Module_begin_invoke_IAsyncResult__this___object_C
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #448]
+ldr x16, [x16, #440]
 .word 0xf9002fb0
 .word 0xf9400a11
 .word 0xf90033b1
@@ -2448,7 +2448,7 @@ wrapper_delegate_end_invoke__Module_end_invoke_void__this___IAsyncResult_System_
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #456]
+ldr x16, [x16, #448]
 .word 0xf90023b0
 .word 0xf9400a11
 .word 0xf90027b1
@@ -2539,7 +2539,7 @@ wrapper_delegate_invoke__Module_invoke_void_object_ConnectivityTypeChangedEventA
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #464]
+ldr x16, [x16, #456]
 .word 0xf9002bb0
 .word 0xf9400a11
 .word 0xf9002fb1
@@ -2563,7 +2563,7 @@ ldr x16, [x16, #464]
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x0, [x16, #440]
+ldr x0, [x16, #432]
 .word 0xb9400000
 .word 0x34000240
 .word 0xf9402bb1
@@ -2743,7 +2743,7 @@ bl _p_8
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd2801b80
+.word 0xd2801940
 .word 0xaa1103e1
 bl _p_2
 
@@ -2765,7 +2765,7 @@ wrapper_delegate_begin_invoke__Module_begin_invoke_IAsyncResult__this___object_C
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #472]
+ldr x16, [x16, #464]
 .word 0xf9002fb0
 .word 0xf9400a11
 .word 0xf90033b1
@@ -2907,7 +2907,7 @@ System_Array_InternalArray__get_Item_T_INT_int:
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #480]
+ldr x16, [x16, #472]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -2940,13 +2940,13 @@ ldr x16, [x16, #480]
 .word 0xf9409e31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd28187e0
-.word 0xd28187e0
+.word 0xd2813c00
+.word 0xd2813c00
 bl _p_7
 .word 0xaa0003e1
-.word 0xd2801140
+.word 0xd2800f00
 .word 0xf2a04000
-.word 0xd2801140
+.word 0xd2800f00
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_8
@@ -3091,165 +3091,165 @@ plt_System_Delegate_Combine_System_Delegate_System_Delegate:
 _p_1:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #496]
+ldr x16, [x16, #488]
 br x16
-.word 732
+.word 699
 	.no_dead_strip plt__jit_icall_mono_arch_throw_corlib_exception
 plt__jit_icall_mono_arch_throw_corlib_exception:
 _p_2:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #504]
+ldr x16, [x16, #496]
 br x16
-.word 735
+.word 702
 	.no_dead_strip plt_System_Delegate_Remove_System_Delegate_System_Delegate
 plt_System_Delegate_Remove_System_Delegate_System_Delegate:
 _p_3:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #512]
+ldr x16, [x16, #504]
 br x16
-.word 770
+.word 737
 	.no_dead_strip plt_System_GC_SuppressFinalize_object
 plt_System_GC_SuppressFinalize_object:
 _p_4:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #520]
+ldr x16, [x16, #512]
 br x16
-.word 773
+.word 740
 	.no_dead_strip plt_object_Finalize
 plt_object_Finalize:
 _p_5:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #528]
+ldr x16, [x16, #520]
 br x16
-.word 776
+.word 743
 	.no_dead_strip plt_System_EventArgs__ctor
 plt_System_EventArgs__ctor:
 _p_6:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #536]
+ldr x16, [x16, #528]
 br x16
-.word 779
+.word 746
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr_mscorlib
 plt__jit_icall_mono_helper_ldstr_mscorlib:
 _p_7:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #544]
+ldr x16, [x16, #536]
 br x16
-.word 782
+.word 749
 	.no_dead_strip plt__jit_icall_mono_arch_throw_exception
 plt__jit_icall_mono_arch_throw_exception:
 _p_8:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #552]
+ldr x16, [x16, #544]
 br x16
-.word 811
+.word 778
 	.no_dead_strip plt__rgctx_fetch_0
 plt__rgctx_fetch_0:
 _p_9:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #560]
+ldr x16, [x16, #552]
 br x16
-.word 855
+.word 822
 	.no_dead_strip plt__rgctx_fetch_1
 plt__rgctx_fetch_1:
 _p_10:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #568]
+ldr x16, [x16, #560]
 br x16
-.word 877
+.word 843
 	.no_dead_strip plt__rgctx_fetch_2
 plt__rgctx_fetch_2:
 _p_11:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #576]
+ldr x16, [x16, #568]
 br x16
-.word 915
+.word 880
 	.no_dead_strip plt__rgctx_fetch_3
 plt__rgctx_fetch_3:
 _p_12:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #584]
+ldr x16, [x16, #576]
 br x16
-.word 922
+.word 887
 	.no_dead_strip plt__rgctx_fetch_4
 plt__rgctx_fetch_4:
 _p_13:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #592]
+ldr x16, [x16, #584]
 br x16
-.word 943
+.word 908
 	.no_dead_strip plt_wrapper_alloc_object_AllocSmall_intptr_intptr
 plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
 _p_14:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #600]
+ldr x16, [x16, #592]
 br x16
-.word 950
+.word 915
 	.no_dead_strip plt__rgctx_fetch_5
 plt__rgctx_fetch_5:
 _p_15:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #608]
+ldr x16, [x16, #600]
 br x16
-.word 984
+.word 947
 	.no_dead_strip plt__rgctx_fetch_6
 plt__rgctx_fetch_6:
 _p_16:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #616]
+ldr x16, [x16, #608]
 br x16
-.word 992
+.word 955
 	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
 plt__jit_icall_mono_thread_interruption_checkpoint:
 _p_17:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #624]
+ldr x16, [x16, #616]
 br x16
-.word 1015
+.word 978
 	.no_dead_strip plt__jit_icall_mono_delegate_begin_invoke
 plt__jit_icall_mono_delegate_begin_invoke:
 _p_18:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #632]
+ldr x16, [x16, #624]
 br x16
-.word 1053
+.word 1016
 	.no_dead_strip plt__jit_icall_mono_delegate_end_invoke
 plt__jit_icall_mono_delegate_end_invoke:
 _p_19:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #640]
+ldr x16, [x16, #632]
 br x16
-.word 1082
+.word 1045
 	.no_dead_strip plt__rgctx_fetch_7
 plt__rgctx_fetch_7:
 _p_20:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
-ldr x16, [x16, #648]
+ldr x16, [x16, #640]
 br x16
-.word 1127
+.word 1089
 plt_end:
 .section __DATA, __bss
 	.align 3
-.lcomm mono_aot_Plugin_Connectivity_Abstractions_got, 656
+.lcomm mono_aot_Plugin_Connectivity_Abstractions_got, 648
 got_end:
 .section __TEXT, __const
 	.align 3
@@ -3357,13 +3357,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 61,656,21,55,70,391195135,0,5045
-	.long 128,8,8,10,0,25,6096,1040
-	.long 848,512,0,704,816,600,0,392
+	.long 60,648,21,55,70,391195135,0,4996
+	.long 128,8,8,10,0,24,6040,1032
+	.long 840,512,0,696,808,600,0,392
 	.long 96,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 197,4,184,80,145,52,139,186,239,254,125,59,30,74,239,179
+	.byte 114,121,155,173,225,62,79,136,241,62,28,203,12,36,110,253
 	.globl _mono_aot_module_Plugin_Connectivity_Abstractions_info
 	.align 3
 _mono_aot_module_Plugin_Connectivity_Abstractions_info:
