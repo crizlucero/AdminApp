@@ -899,6 +899,7 @@
     <Compile Include="InfoPerfilViewController.designer.cs">
       <DependentUpon>InfoPerfilViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Extensions\UIColorExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -1008,6 +1009,7 @@
     <Folder Include="Assets.xcassets\PerfilFavoritos.imageset\" />
     <Folder Include="Assets.xcassets\ImagenPerfilFondo.imageset\" />
     <Folder Include="Assets.xcassets\PerfilGrande.imageset\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

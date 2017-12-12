@@ -6,6 +6,12 @@ using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
 using CoreGraphics;
 using System.Threading.Tasks;
+//using PerpetualEngine.Storage;
+using System.Collections.Generic;
+using Foundation;
+using System.Text.RegularExpressions;
+using BigTed;
+using System.Timers;
 
 namespace WorklabsMx.iOS
 {
@@ -13,14 +19,14 @@ namespace WorklabsMx.iOS
     {
         string strAcceso = string.Empty;
         public AccesoController(IntPtr handle) : base(handle) { }
-
+        private Timer timer1; 
         public override void ViewDidLoad()
         {
             
             base.ViewDidLoad();
-            imgQr.Image = ImageGallery.LoadImageUrl(strAcceso);
-            //var storageLocal = SimpleStorage.EditGroup("Login");
-
+  
+            this.RefreshAccess();
+            this.InitTimer();
             strAcceso = new MiembrosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
 
             UIButton btnRefresh = new STLButton("")
@@ -30,35 +36,46 @@ namespace WorklabsMx.iOS
 
             NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_refresh"), UIBarButtonItemStyle.Plain, async (sender, e) =>
             {
-                await RunRefreshAccess();
+                BTProgressHUD.Show(status: "Actualizando QR");
+                await Task.Delay(2000);
+                this.RefreshAccess();
             }), true);
         }
 
-        void RefreshAccess()
+        private void RefreshAccess()
         {
-            //var storageLocal = SimpleStorage.EditGroup("Login");
-            string newAcceso = new MiembrosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
-            if (!strAcceso.Equals(newAcceso))
+            if(InternetConectionHelper.VerificarConexion())
             {
-                LoadingView loadPop = new LoadingView(UIScreen.MainScreen.Bounds);
-                View.Add(loadPop);
-                strAcceso = newAcceso;
-                imgQr.Image = ImageGallery.LoadImageUrl(newAcceso);
-                loadPop.Hide();
+                string newAcceso = new MiembrosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+                if (!strAcceso.Equals(newAcceso))
+                {
+                    LoadingView loadPop = new LoadingView(UIScreen.MainScreen.Bounds);
+                    View.Add(loadPop);
+                    strAcceso = newAcceso;
+                    imgQr.Image = ImageGallery.LoadImageUrl(newAcceso);
+                    loadPop.Hide();
+                }
+                else
+                {
+                    Console.WriteLine(newAcceso);
+                }
             }
-            else
-                Console.WriteLine(newAcceso);
+            BTProgressHUD.Dismiss();
         }
 
-        async Task RunRefreshAccess()
+        public void InitTimer()
         {
-
-            while (true)
-            {
-                await Task.Delay(30000);
-
-                RefreshAccess();
-            }
+            timer1 = new Timer();
+            timer1.Elapsed += new ElapsedEventHandler(timer1_Tick);
+            timer1.Interval = 300000; // in miliseconds
+            timer1.Start();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            RefreshAccess();
+        }
+
+      
     }
 }

@@ -1,40 +1,18 @@
-<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/InfoPerfilViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/LoginViewController.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="37" Column="18" />
-      <File FileName="iOS/InfoPerfilViewController.cs" Line="25" Column="99" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="3" Column="1" />
-      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="62" Column="43" />
-      <File FileName="iOS/PerfilTableViewController.cs" Line="41" Column="16" />
-      <File FileName="iOS/ViewControllers/Comentarios/comentarTableView.cs" Line="110" Column="49" />
+      <File FileName="iOS/PerfilTableViewController.cs" Line="50" Column="100" />
+      <File FileName="iOS/ViewControllers/AccesoController.cs" Line="63" Column="13" />
+      <File FileName="iOS/InfoPerfilViewController.cs" Line="30" Column="14" />
+      <File FileName="iOS/Extensions/UIColorExtensions.cs" Line="12" Column="50" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="108" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
-=======
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/Resources/values/styles.xml">
-    <Files>
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="129" Column="17" />
-      <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="134" Column="59" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ColeccionProductosActivity.cs" Line="42" Column="13" />
-      <File FileName="WorklabsMx.Droid/SplashActivity.cs" Line="17" Column="44" />
-      <File FileName="WorklabsMx.Droid/Resources/values/styles.xml" Line="51" Column="55" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
->>>>>>> 966c3bdf75c1b1c3972812d3fec19cca20f34122
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" automaticSigning="False">
-    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
-  </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
-=======
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D3D00818-B828-45D1-ACAA-A06B2D1C1EA8" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
->>>>>>> 966c3bdf75c1b1c3972812d3fec19cca20f34122
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.DB462123-12A0-4935-B180-CC2A80E75493" />
   <MultiItemStartupConfigurations />
 </Properties>
