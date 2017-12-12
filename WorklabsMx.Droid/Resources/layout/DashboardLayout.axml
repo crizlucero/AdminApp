@@ -10,18 +10,10 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbarlayout" />
-    <ScrollView
-        android:id="@+id/menu_scroll"
-        android:visibility="gone"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:background="#82000000">
-        <TableLayout
-            android:id="@+id/menu_layout"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:background="#000" />
-    </ScrollView>
+    <include
+        android:id="@+id/menu"
+        layout="@layout/menulayout"
+        android:visibility="gone" />
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="66.0dp"

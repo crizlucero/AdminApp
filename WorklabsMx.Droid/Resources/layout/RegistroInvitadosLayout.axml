@@ -4,19 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:descendantFocusability="beforeDescendants"
-    android:focusableInTouchMode="true"
-    android:background="#FFF">
+    android:focusableInTouchMode="true">
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbarlayout" />
     <ScrollView
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#fff">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="#fff">
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -42,7 +43,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtNombreInvitado"
-                    android:hint="@string/Nombre" />
+                    android:hint="@string/Nombre"
+                    android:textColorHint="#ffCCCCCC"
+                    android:textColor="#000" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -68,7 +71,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtAsuntoInvitado"
-                    android:hint="@string/Asunto" />
+                    android:hint="@string/Asunto"
+                    android:textColor="#ff000000"
+                    android:textColorHint="#ffCCCCCC" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -94,7 +99,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="40.0dp"
                     android:id="@+id/txtCorreoInvitado"
-                    android:hint="@string/CorreoElectronico" />
+                    android:hint="@string/CorreoElectronico"
+                    android:textColor="#ff000000"
+                    android:textColorHint="#ffCCCCCC" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -120,61 +127,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="40.5dp"
                     android:id="@+id/txtCCInvitado"
-                    android:hint="@string/CC" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="25.0dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
-                <TextView
-                    android:text="@string/HoraEntrada"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:minWidth="25px"
-                android:minHeight="25px"
-                android:layout_width="match_parent"
-                android:layout_height="37.5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
-                <EditText
-                    android:inputType="time"
-                    android:layout_width="match_parent"
-                    android:layout_height="39.5dp"
-                    android:id="@+id/txtHoraEntradaInvitado"
-                    android:hint="@string/HoraEntrada" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="25.0dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
-                <TextView
-                    android:text="@string/HoraSalida"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:minWidth="25px"
-                android:minHeight="25px"
-                android:layout_width="match_parent"
-                android:layout_height="37.5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
-                <EditText
-                    android:inputType="time"
-                    android:layout_width="match_parent"
-                    android:layout_height="41.5dp"
-                    android:id="@+id/txtHoraSalidaInvitado"
-                    android:hint="@string/HoraSalida" />
+                    android:hint="@string/CC"
+                    android:textColorHint="#ffCCCCCC"
+                    android:textColor="#000" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -201,8 +156,55 @@
                     android:layout_width="match_parent"
                     android:layout_height="41.0dp"
                     android:id="@+id/txtFechaInvitado"
-                    android:hint="@string/Fecha" />
+                    android:hint="@string/Fecha"
+                    android:textColorHint="#ffCCCCCC"
+                    android:textColor="#000" />
             </LinearLayout>
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:rowCount="2">
+                <TextView
+                    android:text="@string/HoraEntrada"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lblHoraEntrada"
+                    android:layout_column="0"
+                    android:layout_gravity="center" />
+                <TextView
+                    android:text="@string/HoraSalida"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_gravity="center" />
+                <EditText
+                    android:inputType="time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="39.5dp"
+                    android:id="@+id/txtHoraEntradaInvitado"
+                    android:hint="@string/HoraEntrada"
+                    android:layout_column="0"
+                    android:layout_row="1"
+                    android:layout_gravity="center"
+                    android:textColorHint="#ffCCCCCC"
+                    android:textColor="#000" />
+                <EditText
+                    android:inputType="time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41.5dp"
+                    android:id="@+id/txtHoraSalidaInvitado"
+                    android:hint="@string/HoraSalida"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:layout_gravity="center"
+                    android:textColorHint="#ffCCCCCC"
+                    android:textColor="#000" />
+            </GridLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

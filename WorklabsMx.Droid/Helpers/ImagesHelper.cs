@@ -29,7 +29,9 @@ namespace WorklabsMx.Droid.Helpers
                             imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
                         }
                     }
-                    catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+                    catch (Exception e)
+                    { //SlackLogs.SendMessage(e.Message); 
+                    }
                 }
                 return imageBitmap;
             }

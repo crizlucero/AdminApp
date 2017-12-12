@@ -5,6 +5,7 @@ namespace WorklabsMx.Enum
     {
         Usuario_Nombre = 0,
         Usuario_Fotografia = 1,
-        Usuario_Puesto = 2
+        Usuario_Puesto = 2, 
+        Usuario_Empresa_Nombre = 3
     }
 }
