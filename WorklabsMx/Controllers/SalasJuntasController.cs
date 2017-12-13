@@ -45,6 +45,7 @@ namespace WorklabsMx.Controllers
             List<SalaJuntasModel> salas = new List<SalaJuntasModel>();
             try
             {
+                conn.Open();
                 string query = "SELECT * FROM vw_cat_Salas_Juntas WHERE Sala_Estatus = 1 AND Sucursal_Estatus = 1";
                 command = CreateCommand(query);
                 reader = command.ExecuteReader();
@@ -55,6 +56,8 @@ namespace WorklabsMx.Controllers
                         Sala_Descripcion = reader["Sala_Descripcion"].ToString(),
                         Sala_Id = reader["Sala_Id"].ToString(),
                         Sala_Estatus = reader["Sala_Descripcion"].ToString(),
+                        Sala_Capacidad = reader["Sala_Capacidad"].ToString(),
+                        Sala_Nivel = reader["Sala_Nivel"].ToString(),
                         Sucursal = new SucursalModel
                         {
                             Sucursal_Id = reader["Sucursal_Id"].ToString(),

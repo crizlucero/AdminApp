@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,22 +9,11 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbarlayout" />
-    <LinearLayout
-        android:orientation="vertical"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="38.0dp"
-        android:id="@+id/linearLayout1">
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/spSucursal" />
-    </LinearLayout>
     <android.support.v4.view.ViewPager
         android:id="@+id/vpSucursal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="250dp"
+        android:layout_marginBottom="10dp">
         <android.support.v4.view.PagerTabStrip
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,60 +22,288 @@
             android:paddingTop="10dp"
             android:textColor="#fff" />
     </android.support.v4.view.ViewPager>
-    <CalendarView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/cvSalaJuntas"
-        android:layout_marginBottom="0.0dp"
-        android:layout_gravity="center"
-        android:datePickerMode="calendar" />
-    <TableLayout
+        android:layout_gravity="center">
+        <TextView
+            android:id="@+id/txtSeleccionarFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/SeleccionarFecha"
+            android:drawableRight="@mipmap/ic_arrow_down" />
+    </LinearLayout>
+    <HorizontalScrollView
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TableRow>
-            <TextView
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_column="0"
-                android:id="@+id/textView4"
-                android:text="@string/TotalHoras"
-                android:layout_width="255.0dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp" />
-            <TextView
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_column="1"
-                android:id="@+id/textView5"
-                android:text="0"
-                android:layout_width="109.0dp"
-                android:layout_marginTop="10dp" />
-        </TableRow>
-        <TableRow>
-            <Button
-                android:layout_column="1"
-                android:id="@+id/button1"
-                android:text="@string/Comprar" />
-        </TableRow>
-    </TableLayout>
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:visibility="invisible"
-        android:layout_marginTop="-100dp">
-        <ScrollView
+        android:layout_height="75dp"
+        android:id="@+id/hsvHorario">
+        <LinearLayout
+            android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/scrollView1">
-            <TableLayout
-                android:minWidth="25px"
-                android:minHeight="25px"
+            android:id="@+id/llhHorario">
+            <GridLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/tlHoras" />
-        </ScrollView>
-    </android.support.v4.widget.SwipeRefreshLayout>
+                android:layout_height="wrap_content"
+                android:id="@+id/gridLayout1"
+                android:rowCount="3"
+                android:columnCount="1"
+                android:background="#FFF">
+                <TextView
+                    android:id="@+id/lblHora"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_gravity="right"
+                    android:text="0" />
+                <View
+                    android:layout_row="1"
+                    android:layout_rowSpan="2"
+                    android:layout_column="0"
+                    android:layout_gravity="right"
+                    android:background="#95989A"
+                    android:layout_width="1dp"
+                    android:layout_height="60dp" />
+            </GridLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="6"
+        android:layout_marginBottom="10dp"
+        android:rowCount="1"
+        android:layout_gravity="center_horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:src="@mipmap/ic_square"
+            android:tint="#555" />
+        <TextView
+            android:layout_column="1"
+            android:text="Ocupado"
+            android:layout_gravity="center" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:src="@mipmap/ic_square"
+            android:tint="#E1FCC3" />
+        <TextView
+            android:layout_column="3"
+            android:text="Disponible"
+            android:layout_gravity="center" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:src="@mipmap/ic_square"
+            android:tint="#A2DBFF" />
+        <TextView
+            android:layout_column="5"
+            android:text="Tu Selección"
+            android:layout_gravity="center" />
+    </GridLayout>
+    <GridLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:rowCount="1"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center_horizontal">
+        <GridLayout
+            android:layout_column="0"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:id="@+id/gridLayout2"
+            android:rowCount="3"
+            android:columnCount="2"
+            android:paddingRight="10dp"
+            android:paddingLeft="5dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp">
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_gravity="top"
+                android:src="@mipmap/ic_calendar"
+                android:id="@+id/imageView1"
+                android:layout_height="10dp" />
+            <TextView
+                android:id="@+id/lblDiaFecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:text="LUN"
+                android:layout_gravity="center_horizontal" />
+            <TextView
+                android:id="@+id/lblDiaNumero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="1"
+                android:text="11"
+                android:textColor="@android:color/white"
+                android:background="#555"
+                android:layout_gravity="center_horizontal"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp" />
+        </GridLayout>
+        <GridLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:id="@+id/gridLayout2"
+            android:layout_column="1"
+            android:rowCount="3"
+            android:columnCount="2"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp">
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_gravity="top"
+                android:src="@mipmap/ic_clock"
+                android:id="@+id/imageView1"
+                android:layout_height="10dp" />
+            <TextView
+                android:id="@+id/lblHorasTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:text="1"
+                android:layout_gravity="center_horizontal" />
+            <TextView
+                android:id="@+id/lblDiaNumero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="1"
+                android:textColor="#555"
+                android:layout_gravity="center_horizontal"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text="HRS" />
+        </GridLayout>
+        <GridLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:id="@+id/gridLayout2"
+            android:layout_column="2"
+            android:rowCount="3"
+            android:columnCount="2"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp">
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_gravity="top"
+                android:src="@mipmap/ic_clock"
+                android:id="@+id/imageView1"
+                android:layout_height="10dp" />
+            <TextView
+                android:id="@+id/lblCreditosDisponibles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:text="1"
+                android:layout_gravity="center_horizontal" />
+            <TextView
+                android:id="@+id/lblDiaNumero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="1"
+                android:textColor="#555"
+                android:layout_gravity="center_horizontal"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text="CTOS" />
+        </GridLayout>
+        <GridLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:id="@+id/gridLayout2"
+            android:layout_column="3"
+            android:rowCount="3"
+            android:columnCount="2"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp">
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_gravity="top"
+                android:src="@mipmap/ic_clock"
+                android:id="@+id/imageView1"
+                android:layout_height="10dp" />
+            <TextView
+                android:id="@+id/lblCreditosUsados"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:text="1"
+                android:layout_gravity="center_horizontal" />
+            <TextView
+                android:id="@+id/lblDiaNumero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="1"
+                android:textColor="#555"
+                android:layout_gravity="center_horizontal"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text="CTOS" />
+        </GridLayout>
+    </GridLayout>
+    <RelativeLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:background="#D8A96E"
+        android:layout_gravity="bottom"
+        android:gravity="bottom"
+        android:paddingBottom="10dp">
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblAgendar"
+            android:text="Agendar"
+            android:paddingTop="5dp"
+            android:textColor="@android:color/white"
+            android:layout_centerInParent="true"
+            android:paddingBottom="5dp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_arrow_right"
+            android:layout_toRightOf="@id/lblAgendar"
+            android:tint="#FFF"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="140dp"
+            android:paddingTop="10dp" />
+    </RelativeLayout>
 </LinearLayout>

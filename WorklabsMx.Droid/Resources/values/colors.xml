@@ -7,4 +7,6 @@
     <color name="like_heart_pressed">#ED4949</color>
     <color name="comment_pressed">#95D6FF</color>
     <color name="button_unpressed">#C7C7C7</color>
+    <color name="hour_selected">#A2DBFF</color>
+    <color name="hour_unselected">#E1FCC3</color>
 </resources>

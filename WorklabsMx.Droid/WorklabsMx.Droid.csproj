@@ -56,9 +56,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="System.Configuration.ConfigurationManager">
-      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.0\lib\netstandard2.0\System.Configuration.ConfigurationManager.dll</HintPath>
-    </Reference>
     <Reference Include="AndHUD">
       <HintPath>..\packages\AndHUD.1.2.0\lib\MonoAndroid\AndHUD.dll</HintPath>
     </Reference>
@@ -109,6 +106,9 @@
     </Reference>
     <Reference Include="FortySevenDeg.SwipeListView">
       <HintPath>..\packages\FortySevenDeg.SwipeListView.2.0.0.2\lib\FortySevenDeg.SwipeListView.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.ConfigurationManager">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\netstandard2.0\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -299,6 +299,8 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_square.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_calendar.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_clock.png" />
+    <AndroidResource Include="Resources\layout\HorarioItemLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_diagonal_lines.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

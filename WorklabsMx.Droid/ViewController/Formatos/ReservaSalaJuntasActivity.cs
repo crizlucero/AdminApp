@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Views;
 using Android.Widget;
+using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 
 namespace WorklabsMx.Droid
@@ -11,9 +12,10 @@ namespace WorklabsMx.Droid
     [Activity(Label = "@string/app_name")]
     public class ReservaSalaJuntasActivity : Activity
     {
-        CalendarView calendar;
         Spinner sucursales;
         SwipeRefreshLayout refresher;
+        SimpleStorage storage;
+        AlertDialog dialog;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -27,38 +29,11 @@ namespace WorklabsMx.Droid
             sucursales = FindViewById<Spinner>(Resource.Id.spSucursal);
             sucursales.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, new PickerItemsController().GetSucursales().ToArray());
 
-            SetCalendarConfig();
-        }
-
-        void SetCalendarConfig()
-        {
-            calendar = FindViewById<CalendarView>(Resource.Id.cvSalaJuntas);
-            calendar.MinDate = new Java.Util.Date().Time;
-            calendar.DateChange += (sender, e) =>
-            {
-                AddHours();
-                refresher.Visibility = ViewStates.Visible;
-            };
-        }
-
-        void AddHours()
-        {
-            TableLayout tlHoras = FindViewById<TableLayout>(Resource.Id.tlHoras);
-            for (int i = 0; i < 24; i++)
-            {
-                TableRow trHora = new TableRow(this);
-                TextView lblHora = new TextView(this)
-                {
-                    Text = i.ToString("00") + ":00"
-                };
-                trHora.AddView(lblHora);
-                tlHoras.AddView(trHora);
-            }
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            MenuInflater.Inflate(Resource.Menu.send_menu, menu);
+            //MenuInflater.Inflate(Resource.Menu.send_menu, menu);
             return base.OnCreateOptionsMenu(menu);
         }
 
@@ -77,6 +52,46 @@ namespace WorklabsMx.Droid
             return base.OnOptionsItemSelected(item);
         }
 
+        void ShowCalendarView(EditText fecha)
+        {
 
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            LayoutInflater liView = LayoutInflater;
+
+            View customView = liView.Inflate(Resource.Layout.CalendarioLayout, null, true);
+
+            CalendarView calendar = customView.FindViewById<CalendarView>(Resource.Id.cvCalendario);
+            calendar.MinDate = new Java.Util.Date().Time;
+            calendar.DateChange += (sender, e) =>
+            {
+                fecha.Text = e.DayOfMonth + "/" + e.Month + "/" + e.Year;
+                dialog.Dismiss();
+            };
+            builder.SetView(customView);
+            builder.Create();
+            dialog = builder.Show();
+            dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
+        }
+
+        void ShowHorarioPicker(EditText hora)
+        {
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            LayoutInflater liView = LayoutInflater;
+
+            View customView = liView.Inflate(Resource.Layout.HorarioPickerLayout, null, true);
+
+            TimePicker horario = customView.FindViewById<TimePicker>(Resource.Id.tpHorario);
+            horario.TimeChanged += (sender, e) =>
+            {
+                hora.Text = e.HourOfDay.ToString("00") + ":" + e.Minute.ToString("00");
+            };
+            builder.SetView(customView);
+            builder.Create();
+            dialog = builder.Show();
+            dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
+        }
     }
 }
