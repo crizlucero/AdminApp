@@ -37505,7 +37505,7 @@ _mono_aot_file_info:
 	.long 360,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 174,133,232,237,38,113,204,148,80,172,198,75,204,158,91,27
+	.byte 225,227,46,124,160,22,104,114,165,208,174,122,17,2,16,249
 	.globl _mono_aot_module_I18N_Rare_info
 	.align 3
 _mono_aot_module_I18N_Rare_info:

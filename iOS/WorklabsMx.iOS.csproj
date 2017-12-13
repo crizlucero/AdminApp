@@ -18,7 +18,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: Tomas Peterson (Q7BW62ZW3L)</CodesignKey>
+    <CodesignKey>iPhone Distribution: Espacio Claro, S.A. de C.V. (3VMPS2N2KS)</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -29,7 +29,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
     <MtouchI18n>cjk,mideast,other,rare,west</MtouchI18n>
-    <CodesignProvision>WorkLabsDev</CodesignProvision>
+    <CodesignProvision>WorkLabsDist</CodesignProvision>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
@@ -56,7 +56,7 @@
     <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: Tomas Peterson (Q7BW62ZW3L)</CodesignKey>
+    <CodesignKey>iPhone Distribution: Espacio Claro, S.A. de C.V. (3VMPS2N2KS)</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchLink>None</MtouchLink>
@@ -65,6 +65,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <MtouchI18n>cjk,mideast,other,rare,west</MtouchI18n>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <CodesignProvision>WorkLabsDist</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -900,6 +901,22 @@
       <DependentUpon>InfoPerfilViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensions\UIColorExtensions.cs" />
+    <Compile Include="HistorialReservacionesViewController.cs" />
+    <Compile Include="HistorialReservacionesViewController.designer.cs">
+      <DependentUpon>HistorialReservacionesViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeaderCell.cs" />
+    <Compile Include="HeaderCell.designer.cs">
+      <DependentUpon>HeaderCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReservacionesCell.cs" />
+    <Compile Include="ReservacionesCell.designer.cs">
+      <DependentUpon>ReservacionesCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoInfoCell.cs" />
+    <Compile Include="NoInfoCell.designer.cs">
+      <DependentUpon>NoInfoCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -908,7 +925,7 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
-    <InterfaceDefinition Include="ViewControllers\Main.storyboard" />
+    <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\ic_facebook.imageset\" />

@@ -38,6 +38,21 @@
 				<integer>7</integer>
 			</dict>
 		</array>
+		<key>3zd-fq-Nfh</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>3zd-fq-Nfh</string>
+				</array>
+				<key>message</key>
+				<string>Prototype table cells must have reuse identifiers</string>
+				<key>type</key>
+				<string>IBUnsupportedConfiguration</string>
+				<key>type-value</key>
+				<integer>9</integer>
+			</dict>
+		</array>
 		<key>4277</key>
 		<array>
 			<dict>
@@ -83,6 +98,21 @@
 				<integer>9</integer>
 			</dict>
 		</array>
+		<key>5oa-AU-zJ0</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>5oa-AU-zJ0</string>
+				</array>
+				<key>message</key>
+				<string>“Collection View Controller“ is unreachable because it has no entry points, and no identifier for runtime access via -[UIStoryboard instantiateViewControllerWithIdentifier:].</string>
+				<key>type</key>
+				<string>IBUnsupportedConfiguration</string>
+				<key>type-value</key>
+				<integer>9</integer>
+			</dict>
+		</array>
 		<key>6021</key>
 		<array>
 			<dict>
@@ -92,21 +122,6 @@
 				</array>
 				<key>message</key>
 				<string>Prototype table cells must have reuse identifiers</string>
-				<key>type</key>
-				<string>IBUnsupportedConfiguration</string>
-				<key>type-value</key>
-				<integer>9</integer>
-			</dict>
-		</array>
-		<key>6es-Mh-Nzf</key>
-		<array>
-			<dict>
-				<key>affected-objects</key>
-				<array>
-					<string>6es-Mh-Nzf</string>
-				</array>
-				<key>message</key>
-				<string>“Table View Controller“ is unreachable because it has no entry points, and no identifier for runtime access via -[UIStoryboard instantiateViewControllerWithIdentifier:].</string>
 				<key>type</key>
 				<string>IBUnsupportedConfiguration</string>
 				<key>type-value</key>
@@ -143,6 +158,21 @@
 				<integer>7</integer>
 			</dict>
 		</array>
+		<key>K4T-oV-kCH</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>K4T-oV-kCH</string>
+				</array>
+				<key>message</key>
+				<string>Prototype collection view cells must have reuse identifiers</string>
+				<key>type</key>
+				<string>IBUnsupportedConfiguration</string>
+				<key>type-value</key>
+				<integer>9</integer>
+			</dict>
+		</array>
 		<key>O8K-D6-pVN</key>
 		<array>
 			<dict>
@@ -156,6 +186,36 @@
 				<string>IBDeprecated</string>
 				<key>type-value</key>
 				<integer>7</integer>
+			</dict>
+		</array>
+		<key>Urz-q0-yGF</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>Urz-q0-yGF</string>
+				</array>
+				<key>message</key>
+				<string>“Table View Controller“ is unreachable because it has no entry points, and no identifier for runtime access via -[UIStoryboard instantiateViewControllerWithIdentifier:].</string>
+				<key>type</key>
+				<string>IBUnsupportedConfiguration</string>
+				<key>type-value</key>
+				<integer>9</integer>
+			</dict>
+		</array>
+		<key>aLz-ks-JmZ</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>aLz-ks-JmZ</string>
+				</array>
+				<key>message</key>
+				<string>Prototype table cells must have reuse identifiers</string>
+				<key>type</key>
+				<string>IBUnsupportedConfiguration</string>
+				<key>type-value</key>
+				<integer>9</integer>
 			</dict>
 		</array>
 		<key>fit-9T-3tY</key>
@@ -228,6 +288,21 @@
 				<string>IBAttributeUnavailable</string>
 				<key>type-value</key>
 				<integer>5</integer>
+			</dict>
+		</array>
+		<key>zLJ-bo-aPR</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>zLJ-bo-aPR</string>
+				</array>
+				<key>message</key>
+				<string>Prototype table cells must have reuse identifiers</string>
+				<key>type</key>
+				<string>IBUnsupportedConfiguration</string>
+				<key>type-value</key>
+				<integer>9</integer>
 			</dict>
 		</array>
 	</dict>

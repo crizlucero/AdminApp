@@ -1,11 +1,9 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/LoginViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ReservacionesCell.cs">
     <Files>
-      <File FileName="iOS/PerfilTableViewController.cs" Line="50" Column="100" />
-      <File FileName="iOS/ViewControllers/AccesoController.cs" Line="63" Column="13" />
-      <File FileName="iOS/InfoPerfilViewController.cs" Line="30" Column="14" />
-      <File FileName="iOS/Extensions/UIColorExtensions.cs" Line="12" Column="50" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="108" Column="17" />
+      <File FileName="iOS/ColoniaViewController.cs" Line="1" Column="1" />
+      <File FileName="iOS/Main.storyboard" />
+      <File FileName="iOS/ReservacionesCell.cs" Line="13" Column="54" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
@@ -13,6 +11,8 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.DB462123-12A0-4935-B180-CC2A80E75493" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.DB462123-12A0-4935-B180-CC2A80E75493" automaticSigning="False">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
+  </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
   <MultiItemStartupConfigurations />
 </Properties>
