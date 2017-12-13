@@ -39,3 +39,4 @@
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Release/WorklabsMx.iOS.csproj.WorklabsMx.iOS.exe.config
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Release/WorklabsMx.iOS.csproj.CoreCompileInputs.cache
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Release/WorklabsMx.iOS.exe
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Release/WorklabsMx.iOS.csprojResolveAssemblyReference.cache
