@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/gridLayout1"
-        android:rowCount="7"
+        android:rowCount="8"
         android:columnCount="4"
         android:layout_marginBottom="10dp">
         <TextView
@@ -19,7 +19,9 @@
             android:text="Producto"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:maxWidth="170dp"
+            android:minWidth="170dp" />
         <EditText
             android:inputType="numberSigned"
             android:id="@+id/txtCantidad"
@@ -50,7 +52,9 @@
             android:id="@+id/textView2"
             android:layout_marginLeft="10dp"
             android:text="@string/TarifaMensual"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:minWidth="170dp"
+            android:maxWidth="170dp" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblTarifaMensual"
@@ -69,7 +73,9 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_marginLeft="10dp"
             android:text="@string/FechaInicio"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:minWidth="170dp"
+            android:maxWidth="170dp" />
         <EditText
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/txtFechaInicio"
@@ -77,13 +83,17 @@
             android:layout_columnSpan="3"
             android:layout_marginRight="10dp"
             android:inputType="date"
-            android:hint="DD/MM/YYYY" />
+            android:hint="DD/MM/YYYY"
+            android:textColor="#000"
+            android:textColorHint="#CCC" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/textView4"
             android:text="@string/CantidadMeses"
             android:layout_marginLeft="10dp"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:minWidth="170dp"
+            android:maxWidth="170dp" />
         <EditText
             android:inputType="numberSigned"
             android:id="@+id/txtCantidadMeses"
@@ -97,14 +107,14 @@
             android:layout_marginRight="10dp" />
         <ImageButton
             android:src="@mipmap/ic_add"
-            android:id="@+id/btnAddCantidad"
+            android:id="@+id/btnAddMeses"
             android:background="@android:color/transparent"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp" />
         <ImageButton
             android:src="@mipmap/ic_remove"
-            android:id="@+id/btnRemoveCantidad"
+            android:id="@+id/btnRemoveMeses"
             android:background="@android:color/transparent"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="10dp"
@@ -114,7 +124,9 @@
             android:id="@+id/textView5"
             android:text="@string/Proporcional"
             android:layout_marginLeft="10dp"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:minWidth="170dp"
+            android:maxWidth="170dp" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/txtProporcional"
@@ -126,7 +138,9 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/Total"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:minWidth="170dp"
+            android:maxWidth="170dp" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/lblTotal"
@@ -135,5 +149,11 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
             android:text="$0.00" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ff000000"
+            android:layout_columnSpan="4"
+            android:layout_marginTop="5dp" />
     </GridLayout>
 </LinearLayout>

@@ -135,4 +135,5 @@
     <string name="FechaInicio">Fecha de inicio</string>
     <string name="CantidadMeses">Cantidad de meses</string>
     <string name="Proporcional">Proporcional</string>
+    <string name="SeleccionarFecha">Seleccionar Fecha</string>
 </resources>

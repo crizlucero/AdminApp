@@ -1,0 +1,11 @@
+﻿using System;
+namespace WorklabsMx.Models
+{
+    public class SalaJuntasModel
+    {
+        public string Sala_Id { get; set; }
+        public string Sala_Descripcion { get; set; }
+        public string Sala_Estatus { get; set; }
+        public SucursalModel Sucursal{ get; set; }
+    }
+}

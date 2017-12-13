@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
@@ -7,7 +8,7 @@ namespace WorklabsMx.Controllers
 {
     public class SalasJuntasController : DataBaseModel
     {
-        public bool AsignarSalaJuntas()
+        public int AsignarSalaJuntas(string transaccion, string sala_id, string usuario_id, string usuario_tipo, string fecha, string hora_inicio, string hora_fin, string reservacion_id = null)
         {
             try
             {
@@ -15,31 +16,57 @@ namespace WorklabsMx.Controllers
                 transaction = conn.BeginTransaction();
                 command = CreateCommand();
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "sp_cat_Miembros_Empresas_Domicilios_Fiscales";
+                command.CommandText = "sp_pro_Salas_Juntas_Reservacion";
                 command.Connection = conn;
-                command.Parameters.AddWithValue("@Trasaccion", "ALTA");
-                /*command.Parameters.AddWithValue("@Domicilio_Fiscal_Empresa_Id", Domicilio_Fiscal_Empresa_Id);
-                command.Parameters.AddWithValue("@Empresa_Miembro_Id", empresa_miembro_id);
-                command.Parameters.AddWithValue("@Territorio_Id", territorio_id);
-                command.Parameters.AddWithValue("@Domicilio_Fiscal_Empresa_Calle", calle);
-                command.Parameters.AddWithValue("@Domicilio_Fiscal_Empresa_Numero_Exterior", numExterior);
-                command.Parameters.AddWithValue("@Domicilio_Fiscal_Empresa_Numero_Interior", numInterior);
-                command.Parameters.AddWithValue("@Domicilio_Fiscal_Empresa_Correo_Electronico", correo);
-                command.Parameters.AddWithValue("@Domicilio_Fiscal_Empresa_Estatus", 1);
-                command.Parameters.Add("@Domicilio_Fiscal_Empresa_Id_Salida", SqlDbType.Int).Direction = ParameterDirection.Output;*/
+                command.Parameters.AddWithValue("@Trasaccion", transaccion);
+                command.Parameters.AddWithValue("@Sala_Junta_Id", sala_id);
+                command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
+                command.Parameters.AddWithValue("@Usuario_Tipo", usuario_tipo);
+                command.Parameters.AddWithValue("@Sala_Junta_Fecha", fecha);
+                command.Parameters.AddWithValue("@Sala_Junta_Hora_Inicio", hora_inicio);
+                command.Parameters.AddWithValue("@Sala_Junta_Hora_Fin", hora_fin);
+                command.Parameters.AddWithValue("@Sala_Junta_Reservacion_Id", reservacion_id).Direction = ParameterDirection.InputOutput;
 
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();
                 transaction.Commit();
-
-
+                return Convert.ToInt32(command.Parameters["@Sala_Junta_Reservacion_Id"].Value);
             }
             catch (Exception e)
             {
                 SlackLogs.SendMessage(e.Message);
+                return -1;
             }
             finally { conn.Close(); }
-            return true;
+        }
+
+        public List<SalaJuntasModel> GetSalaJuntas()
+        {
+            List<SalaJuntasModel> salas = new List<SalaJuntasModel>();
+            try
+            {
+                string query = "SELECT * FROM vw_cat_Salas_Juntas WHERE Sala_Estatus = 1 AND Sucursal_Estatus = 1";
+                command = CreateCommand(query);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    salas.Add(new SalaJuntasModel
+                    {
+                        Sala_Descripcion = reader["Sala_Descripcion"].ToString(),
+                        Sala_Id = reader["Sala_Id"].ToString(),
+                        Sala_Estatus = reader["Sala_Descripcion"].ToString(),
+                        Sucursal = new SucursalModel
+                        {
+                            Sucursal_Id = reader["Sucursal_Id"].ToString(),
+                            Sucursal_Descripcion = reader["Sucursal_Id"].ToString(),
+                            Sucursal_Estatus = reader["Sucursal_Estatus"].ToString()
+                        }
+                    });
+                }
+            }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            finally { conn.Close(); }
+            return salas;
         }
     }
 }

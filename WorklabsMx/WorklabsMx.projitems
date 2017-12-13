@@ -63,6 +63,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\XmlSerializador.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\SalasJuntasController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enum\TiposDisponibilidadLaboral.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\SalaJuntasModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />
