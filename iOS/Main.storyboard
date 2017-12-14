@@ -1656,7 +1656,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bJ3-aE-w0v">
-                            <size key="itemSize" width="160" height="289"/>
+                            <size key="itemSize" width="160" height="303"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1665,7 +1665,7 @@
                             <rect key="frame" x="0.0" y="-64" width="375" height="667"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ubicaciones" translatesAutoresizingMaskIntoConstraints="NO" id="ZOq-Se-0vQ">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Ubicaciones" translatesAutoresizingMaskIntoConstraints="NO" id="ZOq-Se-0vQ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 </imageView>
                             </subviews>
@@ -1679,16 +1679,16 @@
                         </view>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" layoutMarginsFollowReadableWidth="YES" reuseIdentifier="Sucursales" id="K4T-oV-kCH" customClass="CeldaSucursales">
-                                <rect key="frame" x="0.0" y="0.0" width="160" height="289"/>
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="303"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="160" height="289"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="303"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ImagenSucursal" translatesAutoresizingMaskIntoConstraints="NO" id="g1h-GX-4ev">
-                                            <rect key="frame" x="0.0" y="0.0" width="535" height="738"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImagenSucursal" translatesAutoresizingMaskIntoConstraints="NO" id="g1h-GX-4ev">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="222"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="205" id="QDe-R2-Zcf"/>
+                                                <constraint firstAttribute="height" constant="222" id="QDe-R2-Zcf"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -1697,14 +1697,14 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="AV. HIDALGO # 1995, COL. LADRON DE GUEVARA" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YV4-fH-ANF">
-                                            <rect key="frame" x="0.0" y="0.0" width="292.5" height="14.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AV. HIDALGO # 1995, COL. LADRON DE GUEVARA" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YV4-fH-ANF">
+                                            <rect key="frame" x="0.0" y="261" width="160" height="42"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="HIDALGO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0P-aX-C72">
-                                            <rect key="frame" x="0.0" y="0.0" width="67.5" height="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HIDALGO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0P-aX-C72">
+                                            <rect key="frame" x="0.0" y="242" width="160" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18" id="ydI-wn-oPj"/>
                                             </constraints>
@@ -1719,11 +1719,11 @@
                                     <constraint firstItem="YV4-fH-ANF" firstAttribute="leading" secondItem="K4T-oV-kCH" secondAttribute="leading" id="2wX-cT-XMf"/>
                                     <constraint firstAttribute="trailing" secondItem="g1h-GX-4ev" secondAttribute="trailing" id="7Wv-JH-YLV"/>
                                     <constraint firstItem="I0P-aX-C72" firstAttribute="leading" secondItem="K4T-oV-kCH" secondAttribute="leading" id="9yg-iZ-Va1"/>
-                                    <constraint firstItem="YV4-fH-ANF" firstAttribute="top" secondItem="I0P-aX-C72" secondAttribute="bottom" constant="8" id="N4l-0X-29t"/>
+                                    <constraint firstItem="YV4-fH-ANF" firstAttribute="top" secondItem="I0P-aX-C72" secondAttribute="bottom" constant="1" id="N4l-0X-29t"/>
                                     <constraint firstAttribute="bottom" secondItem="YV4-fH-ANF" secondAttribute="bottom" id="Zeu-68-YOI"/>
                                     <constraint firstAttribute="trailing" secondItem="YV4-fH-ANF" secondAttribute="trailing" id="fH0-bG-PFH"/>
                                     <constraint firstItem="g1h-GX-4ev" firstAttribute="leading" secondItem="K4T-oV-kCH" secondAttribute="leading" id="igX-Me-VFM"/>
-                                    <constraint firstItem="I0P-aX-C72" firstAttribute="top" secondItem="g1h-GX-4ev" secondAttribute="bottom" constant="14" id="s4H-o6-spl"/>
+                                    <constraint firstItem="I0P-aX-C72" firstAttribute="top" secondItem="g1h-GX-4ev" secondAttribute="bottom" constant="20" id="s4H-o6-spl"/>
                                     <constraint firstAttribute="trailing" secondItem="I0P-aX-C72" secondAttribute="trailing" id="sJE-2h-Vgg"/>
                                 </constraints>
                                 <connections>
@@ -1752,7 +1752,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNr-tS-ITS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4581.6000000000004" y="2914.0929999999998"/>
+            <point key="canvasLocation" x="-4581.6000000000004" y="2914.0929535232385"/>
         </scene>
         <!--Sucursales View Controller-->
         <scene sceneID="krJ-ZV-yMy">
