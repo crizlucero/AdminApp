@@ -43,5 +43,31 @@ namespace WorklabsMx.Controllers
             finally { conn.Close(); }
             return -1;
         }
+
+        public List<SucursalModel> GetSucursales()
+        {
+            List<SucursalModel> sucursales = new List<SucursalModel>();
+            string query = "SELECT Sucursal_Domicilio, Sucursal_Descripcion, Sucursal_Imagen FROM vw_cat_Sucursales";
+            try
+            {
+                conn.Open();
+                command = CreateCommand(query);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    sucursales.Add(new SucursalModel
+                    {
+                        Sucursal_Domicilio = reader["Sucursal_Domicilio"].ToString(),
+                        Sucursal_Descripcion = reader["Sucursal_Descripcion"].ToString(),    
+                        Sucursal_Imagen = reader["Sucursal_Imagen"].ToString()                                               
+                    });
+
+                }
+            }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            finally { conn.Close(); }
+            return sucursales;
+        }
+
     }
 }

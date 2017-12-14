@@ -20,11 +20,11 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblDia { get; set; }
+        UIKit.UILabel lblCapacidadSala { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblDiaNumero { get; set; }
+        UIKit.UILabel lblDia { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -45,14 +45,14 @@ namespace WorklabsMx.iOS
                 btnFlecha = null;
             }
 
+            if (lblCapacidadSala != null) {
+                lblCapacidadSala.Dispose ();
+                lblCapacidadSala = null;
+            }
+
             if (lblDia != null) {
                 lblDia.Dispose ();
                 lblDia = null;
-            }
-
-            if (lblDiaNumero != null) {
-                lblDiaNumero.Dispose ();
-                lblDiaNumero = null;
             }
 
             if (lblFecha != null) {

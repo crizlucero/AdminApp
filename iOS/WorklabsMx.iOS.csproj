@@ -577,6 +577,28 @@
     <ImageAsset Include="Assets.xcassets\PerfilGrande.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\PerfilGrande.imageset\Group 1%403x.png" />
     <ImageAsset Include="Assets.xcassets\PerfilGrande.imageset\Group 5%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ImagenSala.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ImagenSala.imageset\RENDER PLANTA TIPO 2.png" />
+    <ImageAsset Include="Assets.xcassets\Arrow.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Arrow.imageset\icons8-forward-filled-30.png" />
+    <ImageAsset Include="Assets.xcassets\Arrow.imageset\icons8-forward-filled-60.png" />
+    <ImageAsset Include="Assets.xcassets\Arrow.imageset\icons8-forward-filled-90.png" />
+    <ImageAsset Include="Assets.xcassets\Plus.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Plus.imageset\icons8-plus-math-filled-25.png" />
+    <ImageAsset Include="Assets.xcassets\Plus.imageset\icons8-plus-math-filled-50.png" />
+    <ImageAsset Include="Assets.xcassets\Plus.imageset\icons8-plus-math-filled-75.png" />
+    <ImageAsset Include="Assets.xcassets\ImagenSucursal.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Ubicaciones.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Ubicaciones.imageset\Salas_de_Reuniones.png" />
+    <ImageAsset Include="Assets.xcassets\Ubicaciones.imageset\Salas_de_Reuniones%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Ubicaciones.imageset\Salas_de_Reuniones%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ImagenSucursal.imageset\RENDER LOBBY.png" />
+    <ImageAsset Include="Assets.xcassets\ImagenSucursal.imageset\RENDER LOBBY%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ImagenSucursal.imageset\RENDER LOBBY%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AtrasBlanco.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AtrasBlanco.imageset\icons8-back-filled-30 %281%29.png" />
+    <ImageAsset Include="Assets.xcassets\AtrasBlanco.imageset\icons8-back-filled-60 %281%29.png" />
+    <ImageAsset Include="Assets.xcassets\AtrasBlanco.imageset\icons8-back-filled-90 %281%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -859,21 +881,9 @@
     <Compile Include="ColoniaViewController.designer.cs">
       <DependentUpon>ColoniaViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SalaJuntasTableViewController.cs" />
-    <Compile Include="SalaJuntasTableViewController.designer.cs">
-      <DependentUpon>SalaJuntasTableViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="SucursalesViewController.cs" />
     <Compile Include="SucursalesViewController.designer.cs">
       <DependentUpon>SucursalesViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HorariosTableViewController.cs" />
-    <Compile Include="HorariosTableViewController.designer.cs">
-      <DependentUpon>HorariosTableViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HorariosTableViewCell.cs" />
-    <Compile Include="HorariosTableViewCell.designer.cs">
-      <DependentUpon>HorariosTableViewCell.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\KeyChainHelper.cs" />
     <Compile Include="ViewControllers\Comentarios\comentarTableView.cs" />
@@ -901,14 +911,6 @@
       <DependentUpon>InfoPerfilViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensions\UIColorExtensions.cs" />
-    <Compile Include="HistorialReservacionesViewController.cs" />
-    <Compile Include="HistorialReservacionesViewController.designer.cs">
-      <DependentUpon>HistorialReservacionesViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HeaderCell.cs" />
-    <Compile Include="HeaderCell.designer.cs">
-      <DependentUpon>HeaderCell.cs</DependentUpon>
-    </Compile>
     <Compile Include="ReservacionesCell.cs" />
     <Compile Include="ReservacionesCell.designer.cs">
       <DependentUpon>ReservacionesCell.cs</DependentUpon>
@@ -916,6 +918,31 @@
     <Compile Include="NoInfoCell.cs" />
     <Compile Include="NoInfoCell.designer.cs">
       <DependentUpon>NoInfoCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReservacionSalaModel.cs" />
+    <Compile Include="ViewControllers\SalaJuntas\HeaderReservaciones.cs" />
+    <Compile Include="ViewControllers\SalaJuntas\HeaderReservaciones.designer.cs">
+      <DependentUpon>HeaderReservaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SalaJuntas\HistorialReservaciones.cs" />
+    <Compile Include="ViewControllers\SalaJuntas\HistorialReservaciones.designer.cs">
+      <DependentUpon>HistorialReservaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SalaJuntas\NoInfoReservacionesCell.cs" />
+    <Compile Include="ViewControllers\SalaJuntas\NoInfoReservacionesCell.designer.cs">
+      <DependentUpon>NoInfoReservacionesCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SalaJuntas\ReservacionesSalaCell.cs" />
+    <Compile Include="ViewControllers\SalaJuntas\ReservacionesSalaCell.designer.cs">
+      <DependentUpon>ReservacionesSalaCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColeccionSucursales.cs" />
+    <Compile Include="ColeccionSucursales.designer.cs">
+      <DependentUpon>ColeccionSucursales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaSucursales.cs" />
+    <Compile Include="CeldaSucursales.designer.cs">
+      <DependentUpon>CeldaSucursales.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -978,7 +1005,7 @@
     <Folder Include="ViewControllers\MiCuenta\" />
     <Folder Include="ViewControllers\MiCuenta\Productos\" />
     <Folder Include="ViewControllers\MiCuenta\Membresias\" />
-    <Folder Include="ViewControllers\Nueva carpeta\" />
+    <Folder Include="ViewControllers\SalaJuntas\" />
     <Folder Include="ViewControllers\Servicios\Productos\" />
     <Folder Include="ViewControllers\Servicios\Membresias\" />
     <Folder Include="ViewControllers\Servicios\VentaDetalle\" />
@@ -1027,6 +1054,13 @@
     <Folder Include="Assets.xcassets\ImagenPerfilFondo.imageset\" />
     <Folder Include="Assets.xcassets\PerfilGrande.imageset\" />
     <Folder Include="Extensions\" />
+    <Folder Include="ViewControllers\SalaJuntas\" />
+    <Folder Include="Assets.xcassets\ImagenSala.imageset\" />
+    <Folder Include="Assets.xcassets\Arrow.imageset\" />
+    <Folder Include="Assets.xcassets\Plus.imageset\" />
+    <Folder Include="Assets.xcassets\ImagenSucursal.imageset\" />
+    <Folder Include="Assets.xcassets\Ubicaciones.imageset\" />
+    <Folder Include="Assets.xcassets\AtrasBlanco.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

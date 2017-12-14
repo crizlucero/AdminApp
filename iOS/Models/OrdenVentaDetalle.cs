@@ -1,5 +1,4 @@
-﻿using WorklabsMx.Enum;
-using Foundation;
+﻿using Foundation;
 
 namespace WorklabsMx.iOS.Models
 {
