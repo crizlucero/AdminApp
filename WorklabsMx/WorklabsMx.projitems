@@ -64,6 +64,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\SalasJuntasController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enum\TiposDisponibilidadLaboral.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\SalaJuntasModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\SalaJuntasReservacionModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enum\TiposReservacion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />

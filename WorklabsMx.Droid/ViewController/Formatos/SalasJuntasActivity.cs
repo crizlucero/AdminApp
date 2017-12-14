@@ -11,6 +11,7 @@ using Android.Support.V4.View;
 using Android.Views;
 using Android.Widget;
 using Java.Lang;
+using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Models;
 
@@ -20,13 +21,14 @@ namespace WorklabsMx.Droid
     public class SalasJuntasActivity : FragmentActivity
     {
         ViewPager _viewPager;
-        List<int> HorasSeleccionadas;
-        List<int> HorasNoDisponibles;
-
+        List<int> HorasSeleccionadas, HorasNoDisponibles;
+        string  fecha_seleccionada;
+        SimpleStorage storage;
         public SalasJuntasActivity()
         {
             HorasSeleccionadas = new List<int>();
             HorasNoDisponibles = new List<int> { 12, 14, 10 };
+            storage = SimpleStorage.EditGroup("Login");
         }
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -38,8 +40,18 @@ namespace WorklabsMx.Droid
             ActionBar.Title = Resources.GetString(Resource.String.ReservaSala);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             _viewPager = FindViewById<ViewPager>(Resource.Id.vpSucursal);
-            List<SalaJuntasModel> salas = new SalasJuntasController().GetSalaJuntas();
+            List<SalaJuntasModel> salas = new SalasJuntasController().GetSalaJuntas(Intent.GetStringExtra("sucursal_id"));
             _viewPager.Adapter = new SalaJuntasAdapter(this, salas);
+
+            FindViewById<RelativeLayout>(Resource.Id.rlAgendar).Click += delegate
+            {
+                Console.WriteLine(salas[_viewPager.CurrentItem].Sala_Id);
+                HorasSeleccionadas.ForEach(hora =>
+                {
+                    //new SalasJuntasController().AsignarSalaJuntas("Alta", salas[_viewPager.CurrentItem].Sala_Id, storage.Get("Usuario_Id"), 
+                    //                                              storage.Get("Usuario_Tipo"), fecha_seleccionada, hora.ToString(), (hora + 1).ToString());
+                });
+            };
             FillHorario();
         }
 
@@ -55,7 +67,8 @@ namespace WorklabsMx.Droid
                 else
                     HorarioView.FindViewById<TextView>(Resource.Id.lblHora).Text = "0";
                 ImageView horario = HorarioView.FindViewById<ImageView>(Resource.Id.ivHora);
-                if(HorasNoDisponibles.Contains(i)){
+                if (HorasNoDisponibles.Contains(i))
+                {
                     horario.SetBackgroundColor(Color.Rgb(85, 85, 85));
                     horario.SetImageResource(Resource.Mipmap.ic_diagonal_lines);
                 }
@@ -81,7 +94,7 @@ namespace WorklabsMx.Droid
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            StartActivity(new Intent(this, typeof(MainActivity)));
+            StartActivity(new Intent(this, typeof(SalasJuntasSucursalActivity)));
             Finish();
             return base.OnOptionsItemSelected(item);
         }

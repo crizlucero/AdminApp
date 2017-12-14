@@ -146,6 +146,9 @@
     <Compile Include="ViewController\Directorio\DirectorioActivity.cs" />
     <Compile Include="ViewController\Directorio\DirectorioFavoritosActivity.cs" />
     <Compile Include="ViewController\Formatos\SalasJuntasActivity.cs" />
+    <Compile Include="ViewController\Formatos\SalasJuntasHistorialActivity.cs" />
+    <Compile Include="ViewController\Formatos\TabSalasJuntasHistorialActivity.cs" />
+    <Compile Include="ViewController\Formatos\SalasJuntasSucursalActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -301,6 +304,12 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_clock.png" />
     <AndroidResource Include="Resources\layout\HorarioItemLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_diagonal_lines.png" />
+    <AndroidResource Include="Resources\menu\add_element_menu.xml" />
+    <AndroidResource Include="Resources\layout\SalasJuntasSucursalesLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_ubicacion_background.png" />
+    <AndroidResource Include="Resources\layout\SucursalInfoLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\suc_hidalgo_prueba.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\suc_metropark_prueba.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

@@ -1,27 +1,17 @@
-﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ColeccionSucursales.cs">
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs">
     <Files>
-      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="1" Column="1" />
-      <File FileName="iOS/Models/ReservacionSalaModel.cs" Line="11" Column="46" />
-      <File FileName="iOS/ViewControllers/SalaJuntas/HeaderReservaciones.cs" Line="15" Column="9" />
-      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="81" Column="9" />
-      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="108" Column="68" />
-      <File FileName="iOS/ViewControllers/SalaJuntas/ReservacionesSalaCell.cs" Line="14" Column="44" />
-      <File FileName="iOS/ViewControllers/Escritorio/NoComentsCell.cs" Line="20" Column="4" />
-      <File FileName="iOS/ViewControllers/SalaJuntas/NoInfoReservacionesCell.cs" Line="16" Column="33" />
-      <File FileName="iOS/ColeccionSucursales.cs" Line="34" Column="43" />
-      <File FileName="WorklabsMx/Controllers/SucursalController.cs" Line="52" Column="14" />
-      <File FileName="WorklabsMx/Models/SucursalModel.cs" Line="4" Column="18" />
-      <File FileName="iOS/CeldaSucursales.cs" Line="13" Column="9" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasHistorialActivity.cs" Line="15" Column="25" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/TabSalasJuntasHistorialActivity.cs" Line="18" Column="40" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasSucursalActivity.cs" Line="20" Column="40" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="41" Column="81" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.DB462123-12A0-4935-B180-CC2A80E75493" automaticSigning="False">
-    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
-  </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>

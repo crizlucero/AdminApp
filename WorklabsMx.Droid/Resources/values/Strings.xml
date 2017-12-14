@@ -136,4 +136,9 @@
     <string name="CantidadMeses">Cantidad de meses</string>
     <string name="Proporcional">Proporcional</string>
     <string name="SeleccionarFecha">Seleccionar Fecha</string>
+    <string name="Historico">Histórico</string>
+    <string name="Recientes">Recientes</string>
+    <string name="Canceladas">Canceladas</string>
+    <string name="Sucursales">Sucursales</string>
+    <string name="SalasJuntas">Salas de Juntas</string>
 </resources>

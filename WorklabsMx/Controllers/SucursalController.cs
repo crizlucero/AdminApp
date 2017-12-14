@@ -47,7 +47,7 @@ namespace WorklabsMx.Controllers
         public List<SucursalModel> GetSucursales()
         {
             List<SucursalModel> sucursales = new List<SucursalModel>();
-            string query = "SELECT Sucursal_Domicilio, Sucursal_Descripcion FROM vw_cat_Sucursales";
+            string query = "SELECT Sucursal_Id, Sucursal_Domicilio, Sucursal_Descripcion FROM vw_cat_Sucursales";
             try
             {
                 conn.Open();
@@ -57,11 +57,11 @@ namespace WorklabsMx.Controllers
                 {
                     sucursales.Add(new SucursalModel
                     {
+                        Sucursal_Id = reader["Sucursal_Id"].ToString(),
                         Sucursal_Domicilio = reader["Sucursal_Domicilio"].ToString(),
-                        Sucursal_Descripcion = reader["Sucursal_Descripcion"].ToString()    
+                        Sucursal_Descripcion = reader["Sucursal_Descripcion"].ToString()
                         //Sucursal_Imagen = reader["Sucursal_Imagen"].ToString()                                               
                     });
-
                 }
             }
             catch (Exception e) { SlackLogs.SendMessage(e.Message); }
