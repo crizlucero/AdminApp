@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench>
     <Files>
@@ -14,6 +15,19 @@
       <File FileName="WorklabsMx/Models/SucursalModel.cs" Line="4" Column="18" />
       <File FileName="iOS/CeldaSucursales.cs" Line="13" Column="9" />
       <File FileName="iOS/Main.storyboard" />
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/SucursalController.cs">
+    <Files>
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="60" Column="31" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/ReservaSalaJuntasActivity.cs" Line="26" Column="55" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/RegistroInvitadosActivity.cs" Line="118" Column="9" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/AccesoActivity.cs" Line="35" Column="9" />
+      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="53" Column="18" />
+      <File FileName="WorklabsMx.Droid/Resources/values/colors.xml" Line="11" Column="36" />
+      <File FileName="WorklabsMx/Controllers/SucursalController.cs" Line="13" Column="52" />
+>>>>>>> 1cf7c67bf6ee86ecbf8b253536419077c7317d8e
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
