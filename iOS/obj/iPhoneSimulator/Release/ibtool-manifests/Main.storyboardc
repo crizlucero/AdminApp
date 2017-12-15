@@ -23,6 +23,21 @@
 				<integer>9</integer>
 			</dict>
 		</array>
+		<key>1OJ-MZ-I97</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>1OJ-MZ-I97</string>
+				</array>
+				<key>message</key>
+				<string>“Sucursales View Controller“ is unreachable because it has no entry points, and no identifier for runtime access via -[UIStoryboard instantiateViewControllerWithIdentifier:].</string>
+				<key>type</key>
+				<string>IBUnsupportedConfiguration</string>
+				<key>type-value</key>
+				<integer>9</integer>
+			</dict>
+		</array>
 		<key>308-Y4-fOf</key>
 		<array>
 			<dict>
@@ -126,6 +141,21 @@
 				<string>IBDeprecated</string>
 				<key>type-value</key>
 				<integer>7</integer>
+			</dict>
+		</array>
+		<key>M1N-5u-4Xs</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>M1N-5u-4Xs</string>
+				</array>
+				<key>message</key>
+				<string>Segues initiated directly from view controllers must have an identifier</string>
+				<key>type</key>
+				<string>IBUnsupportedConfiguration</string>
+				<key>type-value</key>
+				<integer>9</integer>
 			</dict>
 		</array>
 		<key>O8K-D6-pVN</key>

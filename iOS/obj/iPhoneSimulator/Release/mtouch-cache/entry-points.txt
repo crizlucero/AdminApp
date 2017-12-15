@@ -8,19 +8,9 @@ Function=xamarin_log
 	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/mtouch-cache/32/Link/mscorlib.dll
 Function=xamarin_get_locale_country_code
 	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/mtouch-cache/32/Link/mscorlib.dll
-Function=CreateZStream
-	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/mtouch-cache/32/Link/System.dll
-Function=CloseZStream
-	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/mtouch-cache/32/Link/System.dll
-Function=Flush
-	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/mtouch-cache/32/Link/System.dll
-Function=ReadZStream
-	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/mtouch-cache/32/Link/System.dll
-Function=WriteZStream
-	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/mtouch-cache/32/Link/System.dll
 Function=xamarin_start_wwan
-	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/mtouch-cache/32/Link/System.dll
 	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/mtouch-cache/32/Link/Xamarin.iOS.dll
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/mtouch-cache/32/Link/System.dll
 Function=xamarin_localized_string_format
 	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/mtouch-cache/32/Link/Xamarin.iOS.dll
 Function=xamarin_localized_string_format_1
@@ -939,6 +929,16 @@ Function=xamarin_simd__Vector2_objc_msgSend_stret_nint
 	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/mtouch-cache/32/Link/Xamarin.iOS.dll
 Function=xamarin_simd__Vector2_objc_msgSendSuper_stret_nint
 	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/mtouch-cache/32/Link/Xamarin.iOS.dll
+Function=CreateZStream
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/mtouch-cache/32/Link/System.dll
+Function=CloseZStream
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/mtouch-cache/32/Link/System.dll
+Function=Flush
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/mtouch-cache/32/Link/System.dll
+Function=ReadZStream
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/mtouch-cache/32/Link/System.dll
+Function=WriteZStream
+	/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhoneSimulator/Release/mtouch-cache/32/Link/System.dll
 Function=xamarin_dyn_objc_msgSend
 Function=xamarin_dyn_objc_msgSendSuper
 Function=xamarin_dyn_objc_msgSend_stret

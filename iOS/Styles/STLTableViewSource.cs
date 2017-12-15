@@ -8,6 +8,7 @@ using BigTed;
 using System.Threading.Tasks;
 using WorklabsMx.iOS.Helpers;
 using SidebarNavigation;
+using Plugin.Connectivity;
 
 namespace WorklabsMx.iOS.Styles
 {
@@ -39,15 +40,20 @@ namespace WorklabsMx.iOS.Styles
             {
                 using (var url = new NSUrl(TableItems[indexPath.Row].Image))
                 {
-                    using (var data = NSData.FromUrl(url))
+                    var reach = CrossConnectivity.Current.IsReachable("http://desarrolloworklabs.com");
+                    if (reach.Wait(4000))
                     {
-                        if (data != null)
+                        using (var data = NSData.FromUrl(url))
                         {
-                            cell.ImageView.Image = UIImage.LoadFromData(data);
-                            cell.ImageView.Layer.MasksToBounds = true;
-                            cell.ImageView.Layer.CornerRadius = 20;
+                            if (data != null)
+                            {
+                                cell.ImageView.Image = UIImage.LoadFromData(data);
+                                cell.ImageView.Layer.MasksToBounds = true;
+                                cell.ImageView.Layer.CornerRadius = 20;
+                            }
                         }
                     }
+                   
                 }
             }
             return cell;

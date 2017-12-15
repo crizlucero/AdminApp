@@ -5,6 +5,7 @@ using WorklabsMx.Helpers;
 using WorklabsMx.iOS.Styles;
 using System.Net;
 using System.IO;
+using Plugin.Connectivity;
 
 namespace WorklabsMx.iOS.Helpers
 {
@@ -69,14 +70,20 @@ namespace WorklabsMx.iOS.Helpers
         public static UIImage LoadImage(string imagen)
         {
             if (imagen != null)
-                using (var url = new NSUrl("http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + imagen.Replace("\\", "/")))
+            {
+                var reach = CrossConnectivity.Current.IsReachable("http://desarrolloworklabs.com");
+                if (reach.Wait(4000))
                 {
-                    using (var data = NSData.FromUrl(url))
+                    using (var url = new NSUrl("http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + imagen.Replace("\\", "/")))
                     {
-                        if (data != null)
-                            return UIImage.LoadFromData(data);
+                        using (var data = NSData.FromUrl(url))
+                        {
+                            if (data != null)
+                                return UIImage.LoadFromData(data);
+                        }
                     }
                 }
+            }
             return UIImage.FromBundle("ProfileImage");
         }
 

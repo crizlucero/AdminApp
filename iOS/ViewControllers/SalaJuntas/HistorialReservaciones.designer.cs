@@ -14,6 +14,10 @@ namespace WorklabsMx.iOS
     [Register ("HistorialReservaciones")]
     partial class HistorialReservaciones
     {
+        [Action ("btnBack:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnBack (UIKit.UIBarButtonItem sender);
+
         void ReleaseDesignerOutlets ()
         {
         }

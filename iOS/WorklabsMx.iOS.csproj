@@ -599,6 +599,26 @@
     <ImageAsset Include="Assets.xcassets\AtrasBlanco.imageset\icons8-back-filled-30 %281%29.png" />
     <ImageAsset Include="Assets.xcassets\AtrasBlanco.imageset\icons8-back-filled-60 %281%29.png" />
     <ImageAsset Include="Assets.xcassets\AtrasBlanco.imageset\icons8-back-filled-90 %281%29.png" />
+    <ImageAsset Include="Assets.xcassets\FlechaAbajo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\User.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\User.imageset\userBlue.png" />
+    <ImageAsset Include="Assets.xcassets\User.imageset\userBlue%402x.png" />
+    <ImageAsset Include="Assets.xcassets\User.imageset\userBlue%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Calendar.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Calendar.imageset\calendar.png" />
+    <ImageAsset Include="Assets.xcassets\Calendar.imageset\calendar%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Calendar.imageset\calendar%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Clock.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Clock.imageset\Clock.png" />
+    <ImageAsset Include="Assets.xcassets\Clock.imageset\Clock%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Clock.imageset\Clock%403x.png" />
+    <ImageAsset Include="Assets.xcassets\WL.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\WL.imageset\WL.png" />
+    <ImageAsset Include="Assets.xcassets\WL.imageset\WL%402x.png" />
+    <ImageAsset Include="Assets.xcassets\WL.imageset\WL%403x.png" />
+    <ImageAsset Include="Assets.xcassets\FlechaAbajo.imageset\Group 14%402x.png" />
+    <ImageAsset Include="Assets.xcassets\FlechaAbajo.imageset\Group 13%402x.png" />
+    <ImageAsset Include="Assets.xcassets\FlechaAbajo.imageset\Group 14%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -936,13 +956,21 @@
     <Compile Include="ViewControllers\SalaJuntas\ReservacionesSalaCell.designer.cs">
       <DependentUpon>ReservacionesSalaCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="ColeccionSucursales.cs" />
-    <Compile Include="ColeccionSucursales.designer.cs">
+    <Compile Include="ViewControllers\VistaSucursales\CeldaSucursales.cs" />
+    <Compile Include="ViewControllers\VistaSucursales\CeldaSucursales.designer.cs">
+      <DependentUpon>CeldaSucursales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\VistaSucursales\ColeccionSucursales.cs" />
+    <Compile Include="ViewControllers\VistaSucursales\ColeccionSucursales.designer.cs">
       <DependentUpon>ColeccionSucursales.cs</DependentUpon>
     </Compile>
-    <Compile Include="CeldaSucursales.cs" />
-    <Compile Include="CeldaSucursales.designer.cs">
-      <DependentUpon>CeldaSucursales.cs</DependentUpon>
+    <Compile Include="ReservarSalaJuntasViewController.cs" />
+    <Compile Include="ReservarSalaJuntasViewController.designer.cs">
+      <DependentUpon>ReservarSalaJuntasViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FechaReservacionPickerViewController.cs" />
+    <Compile Include="FechaReservacionPickerViewController.designer.cs">
+      <DependentUpon>FechaReservacionPickerViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1061,6 +1089,12 @@
     <Folder Include="Assets.xcassets\ImagenSucursal.imageset\" />
     <Folder Include="Assets.xcassets\Ubicaciones.imageset\" />
     <Folder Include="Assets.xcassets\AtrasBlanco.imageset\" />
+    <Folder Include="ViewControllers\VistaSucursales\" />
+    <Folder Include="Assets.xcassets\FlechaAbajo.imageset\" />
+    <Folder Include="Assets.xcassets\User.imageset\" />
+    <Folder Include="Assets.xcassets\Calendar.imageset\" />
+    <Folder Include="Assets.xcassets\Clock.imageset\" />
+    <Folder Include="Assets.xcassets\WL.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

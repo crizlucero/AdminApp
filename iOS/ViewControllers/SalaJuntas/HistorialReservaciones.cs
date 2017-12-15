@@ -151,6 +151,10 @@ namespace WorklabsMx.iOS
             return "Cancelar";
         }
 
+        partial void btnBack(UIBarButtonItem sender)
+        {
+            this.NavigationController.PopViewController(true);
+        }
 
 
         private void WillDisplay(int Row)
