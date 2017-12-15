@@ -59,10 +59,9 @@ namespace WorklabsMx.Controllers
                     {
                         Sucursal_Id = reader["Sucursal_Id"].ToString(),
                         Sucursal_Domicilio = reader["Sucursal_Domicilio"].ToString(),
-                        Sucursal_Descripcion = reader["Sucursal_Descripcion"].ToString()    
+                        Sucursal_Descripcion = reader["Sucursal_Descripcion"].ToString()
                         //Sucursal_Imagen = reader["Sucursal_Imagen"].ToString()                                               
                     });
-
                 }
             }
             catch (Exception e) { SlackLogs.SendMessage(e.Message); }

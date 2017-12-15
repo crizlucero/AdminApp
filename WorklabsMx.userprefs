@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ReservarSalaJuntasViewController.cs">
     <Files>
@@ -11,6 +12,15 @@
       <File FileName="iOS/Main.storyboard" />
       <File FileName="iOS/FechaNacimientoPickerViewController.cs" Line="16" Column="16" />
       <File FileName="iOS/PerfilTableViewController.cs" Line="287" Column="14" />
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs">
+    <Files>
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasHistorialActivity.cs" Line="15" Column="25" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/TabSalasJuntasHistorialActivity.cs" Line="18" Column="40" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasSucursalActivity.cs" Line="20" Column="40" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="41" Column="81" />
+>>>>>>> 2e465507104617d391c0ee3f1f05e465b8cd7c36
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -18,6 +28,10 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+<<<<<<< HEAD
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.DB462123-12A0-4935-B180-CC2A80E75493" />
+=======
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
+>>>>>>> 2e465507104617d391c0ee3f1f05e465b8cd7c36
   <MultiItemStartupConfigurations />
 </Properties>
