@@ -616,9 +616,9 @@
     <ImageAsset Include="Assets.xcassets\WL.imageset\WL.png" />
     <ImageAsset Include="Assets.xcassets\WL.imageset\WL%402x.png" />
     <ImageAsset Include="Assets.xcassets\WL.imageset\WL%403x.png" />
+    <ImageAsset Include="Assets.xcassets\FlechaAbajo.imageset\Group 15%403x.png" />
+    <ImageAsset Include="Assets.xcassets\FlechaAbajo.imageset\Group 13.png" />
     <ImageAsset Include="Assets.xcassets\FlechaAbajo.imageset\Group 14%402x.png" />
-    <ImageAsset Include="Assets.xcassets\FlechaAbajo.imageset\Group 13%402x.png" />
-    <ImageAsset Include="Assets.xcassets\FlechaAbajo.imageset\Group 14%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />

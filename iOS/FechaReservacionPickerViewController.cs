@@ -23,7 +23,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.dtpFechaReservacion.MaximumDate = NSDate.Now;
+            this.dtpFechaReservacion.MinimumDate = NSDate.Now;
             dateFormat.DateFormat = "dd/MM/yyyy";
             this.FechaReservacion = dateFormat.ToString(this.dtpFechaReservacion.Date);
         }
