@@ -68,11 +68,19 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIScrollView scvHorarios { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwBotonFecha { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwInfoReservacion { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwVista { get; set; }
 
         [Action ("btnAgendar_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -157,6 +165,11 @@ namespace WorklabsMx.iOS
                 lblPisoSala = null;
             }
 
+            if (scvHorarios != null) {
+                scvHorarios.Dispose ();
+                scvHorarios = null;
+            }
+
             if (vwBotonFecha != null) {
                 vwBotonFecha.Dispose ();
                 vwBotonFecha = null;
@@ -165,6 +178,11 @@ namespace WorklabsMx.iOS
             if (vwInfoReservacion != null) {
                 vwInfoReservacion.Dispose ();
                 vwInfoReservacion = null;
+            }
+
+            if (vwVista != null) {
+                vwVista.Dispose ();
+                vwVista = null;
             }
         }
     }

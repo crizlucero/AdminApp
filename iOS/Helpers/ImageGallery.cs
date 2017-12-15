@@ -72,7 +72,7 @@ namespace WorklabsMx.iOS.Helpers
             if (imagen != null)
             {
                 var reach = CrossConnectivity.Current.IsReachable("http://desarrolloworklabs.com");
-                if (reach.Wait(4000))
+                if (reach.Wait(1000))
                 {
                     using (var url = new NSUrl("http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + imagen.Replace("\\", "/")))
                     {
