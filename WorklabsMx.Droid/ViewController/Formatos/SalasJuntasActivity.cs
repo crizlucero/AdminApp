@@ -22,13 +22,15 @@ namespace WorklabsMx.Droid
     {
         ViewPager _viewPager;
         List<int> HorasSeleccionadas, HorasNoDisponibles;
-        string  fecha_seleccionada;
+        string fecha_seleccionada;
         SimpleStorage storage;
+        AlertDialog dialog;
         public SalasJuntasActivity()
         {
             HorasSeleccionadas = new List<int>();
             HorasNoDisponibles = new List<int> { 12, 14, 10 };
             storage = SimpleStorage.EditGroup("Login");
+            fecha_seleccionada = DateTime.Now.ToString("d");
         }
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -43,14 +45,25 @@ namespace WorklabsMx.Droid
             List<SalaJuntasModel> salas = new SalasJuntasController().GetSalaJuntas(Intent.GetStringExtra("sucursal_id"));
             _viewPager.Adapter = new SalaJuntasAdapter(this, salas);
 
+            FindViewById<LinearLayout>(Resource.Id.llSeleccionarFecha).Click += (sender, e) => ShowCalendarView();
+            FindViewById<TextView>(Resource.Id.lblDiaFecha).Text = DateTime.Parse(fecha_seleccionada).DayOfWeek.ToString().Substring(0, 3);
+            FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = DateTime.Parse(fecha_seleccionada).Day.ToString();
+            FindViewById<TextView>(Resource.Id.lblHorasTotal).Text = HorasSeleccionadas.Count.ToString();
+
             FindViewById<RelativeLayout>(Resource.Id.rlAgendar).Click += delegate
             {
-                Console.WriteLine(salas[_viewPager.CurrentItem].Sala_Id);
                 HorasSeleccionadas.ForEach(hora =>
                 {
                     //new SalasJuntasController().AsignarSalaJuntas("Alta", salas[_viewPager.CurrentItem].Sala_Id, storage.Get("Usuario_Id"), 
                     //                                              storage.Get("Usuario_Tipo"), fecha_seleccionada, hora.ToString(), (hora + 1).ToString());
                 });
+                SetContentView(Resource.Layout.SalasJuntasConfirmacionLayout);
+
+                FindViewById<Button>(Resource.Id.btnContinuar).Click += delegate
+                {
+                    StartActivity(new Intent(this, typeof(TabSalasJuntasHistorialActivity)));
+                    Finish();
+                };
             };
             FillHorario();
         }
@@ -58,35 +71,45 @@ namespace WorklabsMx.Droid
         void FillHorario()
         {
             LinearLayout llhHorario = FindViewById<LinearLayout>(Resource.Id.llhHorario);
+            List<int> horas = new List<int>();
+
             for (int i = 1; i < 25; i++)
+            {
+                if (i < 24)
+                    horas.Add(i);
+                else
+                    horas.Add(0);
+            }
+            horas.ForEach(hora =>
             {
                 LayoutInflater liView = LayoutInflater;
                 View HorarioView = liView.Inflate(Resource.Layout.HorarioItemLayout, null, true);
-                if (i < 24)
-                    HorarioView.FindViewById<TextView>(Resource.Id.lblHora).Text = i.ToString();
+                if (hora < 24)
+                    HorarioView.FindViewById<TextView>(Resource.Id.lblHora).Text = hora.ToString();
                 else
                     HorarioView.FindViewById<TextView>(Resource.Id.lblHora).Text = "0";
                 ImageView horario = HorarioView.FindViewById<ImageView>(Resource.Id.ivHora);
-                if (HorasNoDisponibles.Contains(i))
+                if (HorasNoDisponibles.Contains(hora))
                 {
                     horario.SetBackgroundColor(Color.Rgb(85, 85, 85));
                     horario.SetImageResource(Resource.Mipmap.ic_diagonal_lines);
                 }
-                HorarioView.FindViewById<ImageView>(Resource.Id.ivHora).Click += (sender, e) =>
+                HorarioView.Click += delegate
                 {
-                    if (!HorasSeleccionadas.Contains(i))
+                    if (!HorasSeleccionadas.Contains(hora) && !HorasNoDisponibles.Contains(hora))
                     {
-                        ((ImageView)sender).SetBackgroundColor(Color.Rgb(162, 219, 255));
-                        HorasSeleccionadas.Add(i);
+                        horario.SetBackgroundColor(Color.Rgb(162, 219, 255));
+                        HorasSeleccionadas.Add(hora);
                     }
                     else
                     {
-                        ((ImageView)sender).SetBackgroundColor(Color.Rgb(225, 252, 195));
-                        HorasSeleccionadas.Remove(i);
+                        horario.SetBackgroundColor(Color.Rgb(225, 252, 195));
+                        HorasSeleccionadas.Remove(hora);
                     }
+                    FindViewById<TextView>(Resource.Id.lblHorasTotal).Text = HorasSeleccionadas.Count.ToString();
                 };
                 llhHorario.AddView(HorarioView);
-            }
+            });
             FindViewById<HorizontalScrollView>(Resource.Id.hsvHorario).ScrollTo(DateTime.Now.Hour * 100, 0);
         }
 
@@ -97,6 +120,29 @@ namespace WorklabsMx.Droid
             StartActivity(new Intent(this, typeof(SalasJuntasSucursalActivity)));
             Finish();
             return base.OnOptionsItemSelected(item);
+        }
+        void ShowCalendarView()
+        {
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            LayoutInflater liView = LayoutInflater;
+
+            View customView = liView.Inflate(Resource.Layout.CalendarioLayout, null, true);
+
+            CalendarView calendar = customView.FindViewById<CalendarView>(Resource.Id.cvCalendario);
+            calendar.MinDate = new Java.Util.Date().Time;
+            calendar.DateChange += (sender, e) =>
+            {
+                fecha_seleccionada = e.DayOfMonth + "/" + e.Month + "/" + e.Year;
+                FindViewById<TextView>(Resource.Id.lblDiaFecha).Text = DateTime.Parse(fecha_seleccionada).DayOfWeek.ToString().Substring(0, 3);
+                FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = DateTime.Parse(fecha_seleccionada).Day.ToString();
+                dialog.Dismiss();
+            };
+            builder.SetView(customView);
+            builder.Create();
+            dialog = builder.Show();
+            dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
         }
     }
 

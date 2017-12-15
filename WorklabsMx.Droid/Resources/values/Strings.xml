@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">WorklabsMx</string>
+	<string name="app_name">Worklabs</string>
 	<string name="CorreoElectronico">Correo Electrónico</string>
 	<string name="Password">Contraseña</string>
 	<string name="Login">Iniciar Sesión</string>
@@ -48,7 +48,7 @@
 	<string name="AsuntoCorreo">Contacto desde Worklabs</string>
 	<string name="AplicationNotFound">No tiene la aplicación instalada necesaria</string>
 	<string name="DatosGuardados">Datos guardados exitosamente</string>
-	<string name="ErrorAlGuardar">Existió un error en la petición</string>
+	<string name="ErrorAlGuardar">Existió un error en la petición</string> 
 	<string name="RegistroInvitados">Registro de invitados</string>
 	<string name="Actualizar">Actualizar</string>
     <string name="LlenarDatos">Llene todos los datos</string>
@@ -141,4 +141,7 @@
     <string name="Canceladas">Canceladas</string>
     <string name="Sucursales">Sucursales</string>
     <string name="SalasJuntas">Salas de Juntas</string>
+    <string name="Continuar">Continuar</string>
+    <string name="Excelente">¡Excelente!</string>
+    <string name="ConfirmacionSala">Tu reservación se ha generado con éxito. No dudes en ponerte en contacto con el Staff para cualquier duda, será un gusto poder apoyarte.</string>
 </resources>

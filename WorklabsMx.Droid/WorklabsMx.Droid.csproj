@@ -310,6 +310,7 @@
     <AndroidResource Include="Resources\layout\SucursalInfoLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\suc_hidalgo_prueba.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\suc_metropark_prueba.png" />
+    <AndroidResource Include="Resources\layout\SalasJuntasConfirmacionLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
