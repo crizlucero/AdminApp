@@ -82,7 +82,7 @@ namespace WorklabsMx.iOS
         {
             if (segue.Identifier == "ReservarSalaJuntas")
             {
-                var ReservarView = (ReservarSalaJuntasViewController)segue.DestinationViewController;
+                var ReservarView = (ReservarSalaJuntasViewTableController)segue.DestinationViewController;
                 ReservarView.SucursalId = this.SucursalId;
             }
         }

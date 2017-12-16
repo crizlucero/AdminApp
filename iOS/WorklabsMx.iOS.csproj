@@ -964,13 +964,13 @@
     <Compile Include="ViewControllers\VistaSucursales\ColeccionSucursales.designer.cs">
       <DependentUpon>ColeccionSucursales.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReservarSalaJuntasViewController.cs" />
-    <Compile Include="ReservarSalaJuntasViewController.designer.cs">
-      <DependentUpon>ReservarSalaJuntasViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="FechaReservacionPickerViewController.cs" />
     <Compile Include="FechaReservacionPickerViewController.designer.cs">
       <DependentUpon>FechaReservacionPickerViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReservarSalaJuntasViewTableController.cs" />
+    <Compile Include="ReservarSalaJuntasViewTableController.designer.cs">
+      <DependentUpon>ReservarSalaJuntasViewTableController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
