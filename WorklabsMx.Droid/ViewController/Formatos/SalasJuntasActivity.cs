@@ -5,6 +5,7 @@ using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
+using Android.Provider;
 using Android.Runtime;
 using Android.Support.V4.App;
 using Android.Support.V4.View;
@@ -13,6 +14,7 @@ using Android.Widget;
 using Java.Lang;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
+using WorklabsMx.Droid.Helpers;
 using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
@@ -54,6 +56,18 @@ namespace WorklabsMx.Droid
             {
                 HorasSeleccionadas.ForEach(hora =>
                 {
+                    ContentValues eventValues = new ContentValues();
+                    eventValues.Put(CalendarContract.Events.InterfaceConsts.CalendarId, 1);
+                    eventValues.Put(CalendarContract.Events.InterfaceConsts.Id, 1);
+                    eventValues.Put(CalendarContract.Events.InterfaceConsts.Title, "Reunión en Worklabs " + salas[_viewPager.CurrentItem].Sucursal_Descripcion);
+                    eventValues.Put(CalendarContract.Events.InterfaceConsts.Description, "Tiene una reunión pendiente en la sala " + salas[_viewPager.CurrentItem].Sala_Descripcion);
+                    DateTime fecha = DateTime.Parse(fecha_seleccionada);
+                    eventValues.Put(CalendarContract.Events.InterfaceConsts.Dtstart, new CalendarHelper().GetDateTimeMS(fecha.Year, fecha.Month, fecha.Day, hora, 0));
+                    eventValues.Put(CalendarContract.Events.InterfaceConsts.Dtend, new CalendarHelper().GetDateTimeMS(fecha.Year, fecha.Month, fecha.Day, hora + 1, 0));
+                    eventValues.Put(CalendarContract.Events.InterfaceConsts.EventTimezone, "UTC");
+                    eventValues.Put(CalendarContract.Events.InterfaceConsts.EventEndTimezone, "UTC");
+
+                    var uri = ContentResolver.Insert(CalendarContract.Events.ContentUri, eventValues);
                     //new SalasJuntasController().AsignarSalaJuntas("Alta", salas[_viewPager.CurrentItem].Sala_Id, storage.Get("Usuario_Id"), 
                     //                                              storage.Get("Usuario_Tipo"), fecha_seleccionada, hora.ToString(), (hora + 1).ToString());
                 });
@@ -96,15 +110,18 @@ namespace WorklabsMx.Droid
                 }
                 HorarioView.Click += delegate
                 {
-                    if (!HorasSeleccionadas.Contains(hora) && !HorasNoDisponibles.Contains(hora))
+                    if (!HorasNoDisponibles.Contains(hora))
                     {
-                        horario.SetBackgroundColor(Color.Rgb(162, 219, 255));
-                        HorasSeleccionadas.Add(hora);
-                    }
-                    else
-                    {
-                        horario.SetBackgroundColor(Color.Rgb(225, 252, 195));
-                        HorasSeleccionadas.Remove(hora);
+                        if (!HorasSeleccionadas.Contains(hora))
+                        {
+                            horario.SetBackgroundColor(Color.Rgb(162, 219, 255));
+                            HorasSeleccionadas.Add(hora);
+                        }
+                        else
+                        {
+                            horario.SetBackgroundColor(Color.Rgb(225, 252, 195));
+                            HorasSeleccionadas.Remove(hora);
+                        }
                     }
                     FindViewById<TextView>(Resource.Id.lblHorasTotal).Text = HorasSeleccionadas.Count.ToString();
                 };

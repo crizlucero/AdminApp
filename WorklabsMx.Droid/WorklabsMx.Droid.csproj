@@ -149,6 +149,7 @@
     <Compile Include="ViewController\Formatos\SalasJuntasHistorialActivity.cs" />
     <Compile Include="ViewController\Formatos\TabSalasJuntasHistorialActivity.cs" />
     <Compile Include="ViewController\Formatos\SalasJuntasSucursalActivity.cs" />
+    <Compile Include="Helpers\CalendarHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
