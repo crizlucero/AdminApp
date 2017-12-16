@@ -1,17 +1,9 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using System.Linq;
-using System.Text;
-
+﻿using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Java.Lang;
 using WorklabsMx.Controllers;
 using WorklabsMx.Models;
 
@@ -23,8 +15,8 @@ namespace WorklabsMx.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
             SetContentView(Resource.Layout.SalasJuntasSucursalesLayout);
+
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.Sucursales);
@@ -73,9 +65,11 @@ namespace WorklabsMx.Droid
         {
             LayoutInflater inflater = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
             View SucursalView = inflater.Inflate(Resource.Layout.SucursalInfoLayout, null, false);
-            SucursalView.Click += delegate {
+            SucursalView.SetMinimumWidth(context.Resources.DisplayMetrics.WidthPixels / 2);
+            SucursalView.Click += delegate
+            {
                 Intent intent = new Intent(context, typeof(SalasJuntasActivity));
-                intent.PutExtra("sucursal_id",sucursales[position].Sucursal_Id);
+                intent.PutExtra("sucursal_id", sucursales[position].Sucursal_Id);
                 context.StartActivity(intent);
             };
             SucursalView.FindViewById<TextView>(Resource.Id.lblNombre).Text = sucursales[position].Sucursal_Descripcion;
