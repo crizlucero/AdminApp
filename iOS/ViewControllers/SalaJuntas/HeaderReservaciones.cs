@@ -13,8 +13,9 @@ namespace WorklabsMx.iOS
         {
         }
 
-        public void UpdateCell()
+        public void UpdateCell(int CampoSeleccionado)
         {
+            this.sgcReservacion.SelectedSegment = CampoSeleccionado;
             sgcReservacion.ValueChanged += (sender, e) => {
                 this.sgcReservacionTouch();
             };

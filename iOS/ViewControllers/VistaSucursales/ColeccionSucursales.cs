@@ -77,7 +77,8 @@ namespace WorklabsMx.iOS
         {
             return new CGSize(this.CollectionView.Frame.Size.Width, 60);
         }
-          
+
+       
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             if (segue.Identifier == "ReservarSalaJuntas")

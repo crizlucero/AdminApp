@@ -1,33 +1,24 @@
-<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/FechaReservacionPickerViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/SeleccionarSalaJuntasViewController.cs">
     <Files>
-      <File FileName="iOS/ReservarSalaJuntasViewController.cs" Line="46" Column="10" />
-      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="41" Column="6" />
-      <File FileName="iOS/FechaReservacionPickerViewController.cs" Line="17" Column="33" />
-      <File FileName="iOS/Helpers/ImageGallery.cs" Line="75" Column="21" />
-      <File FileName="iOS/Main.cs" Line="12" Column="1" />
-      <File FileName="iOS/ViewControllers/MiPerfil/AboutMeModificaController.cs" Line="27" Column="133" />
-      <File FileName="iOS/ViewControllers/Servicios/CarritoCompraController.cs" Line="66" Column="23" />
-      <File FileName="iOS/ViewControllers/VistaSucursales/ColeccionSucursales.cs" Line="35" Column="1" />
-      <File FileName="iOS/ViewControllers/VistaSucursales/CeldaSucursales.cs" Line="27" Column="1" />
-=======
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs">
-    <Files>
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/TabSalasJuntasHistorialActivity.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="125" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="70" Column="52" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/ReservaSalaJuntasActivity.cs" Line="18" Column="9" />
-      <File FileName="WorklabsMx.Droid/Helpers/CalendarHelper.cs" Line="2" Column="1" />
->>>>>>> a1ebc2d071ed89e11d8d211c5c6e87fa52f2619b
+      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="50" Column="30" />
+      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="196" Column="14" />
+      <File FileName="iOS/ViewControllers/VistaSucursales/ColeccionSucursales.cs" Line="64" Column="10" />
+      <File FileName="iOS/SucursalesViewController.cs" Line="1" Column="1" />
+      <File FileName="iOS/FechaNacimientoPickerViewController.cs" Line="1" Column="1" />
+      <File FileName="iOS/SeleccionarSalaJuntasViewController.cs" Line="4" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D7E2B916-5B2E-4E4E-B1D8-ECFE69E20425" />
   <MultiItemStartupConfigurations />
 </Properties>
