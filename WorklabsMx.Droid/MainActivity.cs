@@ -51,7 +51,6 @@ namespace WorklabsMx.Droid
         {
             DashboardController = new EscritorioController();
             DataUsuario = new List<string>();
-
         }
 
         protected override void OnPause()
