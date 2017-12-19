@@ -9,6 +9,7 @@ using BigTed;
 using WorklabsMx.Helpers;
 using System.Threading.Tasks;
 using Foundation;
+using CoreGraphics;
 
 namespace WorklabsMx.iOS
 {
@@ -28,6 +29,17 @@ namespace WorklabsMx.iOS
 
         List<ReservacionSalaModel> Reservaciones = new List<ReservacionSalaModel>();
 
+        int SeccionSeleccionada = 0;
+
+        UIScrollView scrollView;
+        List<UIImageView> ImagesViews = new List<UIImageView>();
+
+
+        nfloat h = 50.0f;
+        nfloat w = 50.0f;
+        nfloat padding = 10.0f;
+        nint n = 5;
+
         public HistorialReservaciones(IntPtr handle) : base(handle)
         {
         }
@@ -38,6 +50,7 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
             var reservacion1 = new ReservacionSalaModel();
             this.Reservaciones.Add(reservacion1);
+            this.CreateScrollView();
         }
 
         public override void ViewWillAppear(bool animated)
@@ -52,14 +65,28 @@ namespace WorklabsMx.iOS
 
         void MostrarTipoReservacion(object sender, EventArgs e)
         {
-            //this.Reservaciones = //consulta para traer reservaciones con el filtro
-            this.TableView.ReloadData();
+            var TipoReservaciones = int.Parse(sender.ToString());
+            this.Reservaciones = new List<ReservacionSalaModel>();
+
+            if(TipoReservaciones == 0)
+            {
+                //this.Reservaciones = //consulta para traer reservaciones con el filtro de pendientes o a realizar
+                //simulacion que se tiene una reservacion pendiente
+                var reservacion1 = new ReservacionSalaModel();
+                this.Reservaciones.Add(reservacion1);
+            }
+            else
+            {
+                //this.Reservaciones = //consulta para traer reservaciones con el filtro de canceladas o realizadas
+
+            }
+            this.ActualizarTabla(TipoReservaciones);
         }
 
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
             var headerCell = (HeaderReservaciones)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
-            headerCell.UpdateCell();
+            headerCell.UpdateCell(this.SeccionSeleccionada);
             headerCell.MostrarTipoReservacion += MostrarTipoReservacion;
             return headerCell;
         }
@@ -111,20 +138,6 @@ namespace WorklabsMx.iOS
             }
         }
 
-
-       /* public override UITableViewRowAction[] EditActionsForRow(UITableView tableView, NSIndexPath indexPath)
-        {
-            UITableViewRowAction CancelButton = UITableViewRowAction.Create(
-                UITableViewRowActionStyle.Default,
-                "Cancelar",
-                delegate {
-                    //consulta para eliminar reservacion
-                    this.TableView.ReloadData();
-                });
-            return new UITableViewRowAction[] { CancelButton };
-        }*/
-
-
         public override void CommitEditingStyle(UITableView tableView, UITableViewCellEditingStyle editingStyle, Foundation.NSIndexPath indexPath)
         {
             switch (editingStyle)
@@ -141,6 +154,7 @@ namespace WorklabsMx.iOS
                     break;
             }
         }
+
         public override bool CanEditRow(UITableView tableView, NSIndexPath indexPath)
         {
             return true; // return false if you wish to disable editing for a specific indexPath or for all rows
@@ -164,6 +178,38 @@ namespace WorklabsMx.iOS
             {
                 BTProgressHUD.Dismiss();
             }
+        }
+
+
+        private async void ActualizarTabla(int CampoSeleccionado)
+        {
+            BTProgressHUD.Show();
+            await Task.Delay(2000);
+            this.SeccionSeleccionada = CampoSeleccionado;
+            this.TableView.ReloadData();
+        }
+
+
+        private void CreateScrollView()
+        {
+           /* scrollView = new UIScrollView
+            {
+                Frame = new CGRect(0, 200, View.Frame.Width, h + 2 * padding),
+                ContentSize = new CGSize((w + padding) * n, h),
+                BackgroundColor = UIColor.White,
+                AutoresizingMask = UIViewAutoresizing.FlexibleWidth
+            };
+
+            for (int i = 0; i < n; i++)
+            {
+                var imageView = new UIImageView();
+                imageView.Image = UIImage.FromBundle("ImagenSala");
+                imageView.Frame = new CGRect(padding * (i + 1) + (i * w), padding, View.Frame.Width, h);
+                scrollView.AddSubview(imageView);
+                ImagesViews.Add(imageView);
+            }
+
+            View.AddSubview(scrollView);*/
         }
 
 

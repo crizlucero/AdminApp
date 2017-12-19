@@ -926,6 +926,7 @@
     <Compile Include="ViewControllers\Comentarios\BodyComentarTableView.designer.cs">
       <DependentUpon>BodyComentarTableView.cs</DependentUpon>
     </Compile>
+    <Compile Include="SeleccionarSalaJuntasViewController.cs" />
     <Compile Include="InfoPerfilViewController.cs" />
     <Compile Include="InfoPerfilViewController.designer.cs">
       <DependentUpon>InfoPerfilViewController.cs</DependentUpon>
@@ -971,6 +972,13 @@
     <Compile Include="ReservarSalaJuntasViewTableController.cs" />
     <Compile Include="ReservarSalaJuntasViewTableController.designer.cs">
       <DependentUpon>ReservarSalaJuntasViewTableController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeleccionarSalaViewController.cs" />
+    <Compile Include="SeleccionarSalaViewController.designer.cs">
+      <DependentUpon>SeleccionarSalaViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeleccionarSalaJuntasViewController.designer.cs">
+      <DependentUpon>SeleccionarSalaJuntasViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
