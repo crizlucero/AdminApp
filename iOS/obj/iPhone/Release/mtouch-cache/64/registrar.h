@@ -17,6 +17,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 
+@protocol UICollectionViewSource;
 @protocol UIPickerViewModel;
 @class Foundation_InternalNSNotificationHandler;
 @class __MonoMac_NSActionDispatcher;
@@ -58,15 +59,22 @@
 @class TelefoniaTableView;
 @class EditarRedesSocialesTableViewController;
 @class FechaNacimientoPickerViewController;
-@class SalaJuntasTableViewController;
-@class HorariosTableViewController;
-@class HorariosTableViewCell;
 @class comentarTableView;
 @class HeaderComentarTableView;
 @class ComentarNoInfoCell;
 @class ComentarviewController;
 @class BodyComentarTableView;
 @class InfoPerfilViewController;
+@class ReservacionesCell;
+@class NoInfoCell;
+@class HeaderReservaciones;
+@class NoInfoReservacionesCell;
+@class ReservacionesSalaCell;
+@class CeldaSucursales;
+@class ColeccionSucursales;
+@class FechaReservacionPickerViewController;
+@class ReservarSalaJuntasViewTableController;
+@class SeleccionarSalaViewController;
 @class WorklabsMx_iOS_ViewElements_UICheckBox;
 @class WorklabsMx_iOS_ViewElements_HorarioEventos;
 @class WorklabsMx_iOS_ViewElements_UIDropdownList;
@@ -77,6 +85,7 @@
 @class WorklabsMx_iOS_Models_CarritoCompras;
 @class WorklabsMx_iOS_Models_OrdenVentaController;
 @class WorklabsMx_iOS_Models_OrdenVentaDetalle;
+@class WorklabsMx_iOS_Models_ReservacionSalaModel;
 @class WorklabsMx_iOS_Styles_STLButton;
 @class WorklabsMx_iOS_Styles_STLTextField;
 @class WorklabsMx_iOS_Styles_STLLabel;
@@ -119,6 +128,7 @@
 @class ColoniaViewController;
 @class WorklabsMx_iOS_SucursalesViewController_StackOverflowModel;
 @class SucursalesViewController;
+@class HistorialReservaciones;
 @class WorklabsMx_iOS_ViewElements_PostCard;
 @class WorklabsMx_iOS_Styles_STLTableViewSource;
 @class WorklabsMx_iOS_Styles_STLImageView;
@@ -142,6 +152,9 @@
 @class UIKit_UIScrollView__UIScrollViewDelegate;
 @class UIKit_UITextView__UITextViewDelegate;
 @class BigTed_ProgressHUD;
+
+@protocol UICollectionViewSource<UICollectionViewDataSource, UICollectionViewDelegate>
+@end
 
 @protocol UIPickerViewModel<UIPickerViewDataSource, UIPickerViewDelegate>
 @end
@@ -833,63 +846,6 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface SalaJuntasTableViewController : UITableViewController {
-}
-	@property (nonatomic, assign) UIButton * btnComprarHoras;
-	@property (nonatomic, assign) UIButton * btnEditarSalaJuntas;
-	@property (nonatomic, assign) UILabel * lblHorasDisponibles;
-	@property (nonatomic, assign) UILabel * lblSalaJuntas;
-	@property (nonatomic, assign) UIView * vwCalendarioJuntas;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIButton *) btnComprarHoras;
-	-(void) setBtnComprarHoras:(UIButton *)p0;
-	-(UIButton *) btnEditarSalaJuntas;
-	-(void) setBtnEditarSalaJuntas:(UIButton *)p0;
-	-(UILabel *) lblHorasDisponibles;
-	-(void) setLblHorasDisponibles:(UILabel *)p0;
-	-(UILabel *) lblSalaJuntas;
-	-(void) setLblSalaJuntas:(UILabel *)p0;
-	-(UIView *) vwCalendarioJuntas;
-	-(void) setVwCalendarioJuntas:(UIView *)p0;
-	-(void) viewDidLoad;
-	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
-	-(void) btnComprarHoras_Touch:(UIButton *)p0;
-	-(void) btnEditarSalaJuntas_Touch:(UIButton *)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
-@interface HorariosTableViewController : UITableViewController {
-}
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(void) viewDidLoad;
-	-(void) viewWillAppear:(BOOL)p0;
-	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
-	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1;
-	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
-@interface HorariosTableViewCell : UITableViewCell {
-}
-	@property (nonatomic, assign) UILabel * lblDisponibilidad;
-	@property (nonatomic, assign) UILabel * lblHorario;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UILabel *) lblDisponibilidad;
-	-(void) setLblDisponibilidad:(UILabel *)p0;
-	-(UILabel *) lblHorario;
-	-(void) setLblHorario:(UILabel *)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
 @interface comentarTableView : UITableViewController {
 }
 	@property (nonatomic, assign) UIBarButtonItem * btnBack;
@@ -1097,6 +1053,200 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
+@interface ReservacionesCell : UITableViewCell {
+}
+	@property (nonatomic, assign) UIButton * btnFlecha;
+	@property (nonatomic, assign) UILabel * lblCapacidadSala;
+	@property (nonatomic, assign) UILabel * lblDia;
+	@property (nonatomic, assign) UILabel * lblFecha;
+	@property (nonatomic, assign) UILabel * lblNombreSala;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnFlecha;
+	-(void) setBtnFlecha:(UIButton *)p0;
+	-(UILabel *) lblCapacidadSala;
+	-(void) setLblCapacidadSala:(UILabel *)p0;
+	-(UILabel *) lblDia;
+	-(void) setLblDia:(UILabel *)p0;
+	-(UILabel *) lblFecha;
+	-(void) setLblFecha:(UILabel *)p0;
+	-(UILabel *) lblNombreSala;
+	-(void) setLblNombreSala:(UILabel *)p0;
+	-(void) btnFlecha_Touch:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface NoInfoCell : UITableViewCell {
+}
+	@property (nonatomic, assign) UILabel * lblMensajeNoInfo;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UILabel *) lblMensajeNoInfo;
+	-(void) setLblMensajeNoInfo:(UILabel *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface HeaderReservaciones : UITableViewCell {
+}
+	@property (nonatomic, assign) UISegmentedControl * sgcReservacion;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UISegmentedControl *) sgcReservacion;
+	-(void) setSgcReservacion:(UISegmentedControl *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface NoInfoReservacionesCell : UITableViewCell {
+}
+	@property (nonatomic, assign) UILabel * lblMensajeNoInfo;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UILabel *) lblMensajeNoInfo;
+	-(void) setLblMensajeNoInfo:(UILabel *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface ReservacionesSalaCell : UITableViewCell {
+}
+	@property (nonatomic, assign) UIButton * btnFlecha;
+	@property (nonatomic, assign) UILabel * lblCapacidad;
+	@property (nonatomic, assign) UILabel * lblDiaReservacion;
+	@property (nonatomic, assign) UILabel * lblFechaReservacion;
+	@property (nonatomic, assign) UILabel * lblNombre;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnFlecha;
+	-(void) setBtnFlecha:(UIButton *)p0;
+	-(UILabel *) lblCapacidad;
+	-(void) setLblCapacidad:(UILabel *)p0;
+	-(UILabel *) lblDiaReservacion;
+	-(void) setLblDiaReservacion:(UILabel *)p0;
+	-(UILabel *) lblFechaReservacion;
+	-(void) setLblFechaReservacion:(UILabel *)p0;
+	-(UILabel *) lblNombre;
+	-(void) setLblNombre:(UILabel *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface CeldaSucursales : UICollectionViewCell {
+}
+	@property (nonatomic, assign) UIImageView * imgSucursal;
+	@property (nonatomic, assign) UILabel * lblDomicilio;
+	@property (nonatomic, assign) UILabel * lblNombre;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIImageView *) imgSucursal;
+	-(void) setImgSucursal:(UIImageView *)p0;
+	-(UILabel *) lblDomicilio;
+	-(void) setLblDomicilio:(UILabel *)p0;
+	-(UILabel *) lblNombre;
+	-(void) setLblNombre:(UILabel *)p0;
+	-(void) btnSucursal_Touch:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface ColeccionSucursales : UICollectionViewController {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(void) viewDidLoad;
+	-(NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)p0;
+	-(NSInteger) collectionView:(UICollectionView *)p0 numberOfItemsInSection:(NSInteger)p1;
+	-(UICollectionViewCell *) collectionView:(UICollectionView *)p0 cellForItemAtIndexPath:(NSIndexPath *)p1;
+	-(UIEdgeInsets) collectionView:(UICollectionView *)p0 layout:(UICollectionViewLayout *)p1 insetForSectionAtIndex:(int)p2;
+	-(CGFloat) collectionView:(UICollectionView *)p0 layout:(UICollectionViewLayout *)p1 minimumLineSpacingForSectionAtIndex:(NSInteger)p2;
+	-(CGSize) collectionView:(UICollectionView *)p0 layout:(UICollectionViewLayout *)p1 referenceSizeForHeaderInSection:(int)p2;
+	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
+	-(void) btnBack_Touch:(UIBarButtonItem *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface FechaReservacionPickerViewController : UIViewController {
+}
+	@property (nonatomic, assign) UIButton * btnCancelar;
+	@property (nonatomic, assign) UIButton * btnSleccionar;
+	@property (nonatomic, assign) UIDatePicker * dtpFechaReservacion;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnCancelar;
+	-(void) setBtnCancelar:(UIButton *)p0;
+	-(UIButton *) btnSleccionar;
+	-(void) setBtnSleccionar:(UIButton *)p0;
+	-(UIDatePicker *) dtpFechaReservacion;
+	-(void) setDtpFechaReservacion:(UIDatePicker *)p0;
+	-(void) viewDidLoad;
+	-(void) viewWillAppear:(BOOL)p0;
+	-(void) btnCancelar_Touch:(UIButton *)p0;
+	-(void) btnSeleccionar_Touch:(UIButton *)p0;
+	-(void) dtpFechaReservacion_ValueChanged:(UIDatePicker *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface ReservarSalaJuntasViewTableController : UITableViewController {
+}
+	@property (nonatomic, assign) UIButton * btnSeleccionFecha;
+	@property (nonatomic, assign) UIImageView * imgSalasJuntas;
+	@property (nonatomic, assign) UIPageControl * pcSucursales;
+	@property (nonatomic, assign) UIScrollView * scvSalasJuntas;
+	@property (nonatomic, assign) UIScrollView * scvScrollHorarios;
+	@property (nonatomic, assign) UIView * vwBotonFecha;
+	@property (nonatomic, assign) UIView * vwHorarios;
+	@property (nonatomic, assign) UIView * vwInfoReservacion;
+	@property (nonatomic, assign) UIView * vwSalasJuntas;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) btnSeleccionFecha;
+	-(void) setBtnSeleccionFecha:(UIButton *)p0;
+	-(UIImageView *) imgSalasJuntas;
+	-(void) setImgSalasJuntas:(UIImageView *)p0;
+	-(UIPageControl *) pcSucursales;
+	-(void) setPcSucursales:(UIPageControl *)p0;
+	-(UIScrollView *) scvSalasJuntas;
+	-(void) setScvSalasJuntas:(UIScrollView *)p0;
+	-(UIScrollView *) scvScrollHorarios;
+	-(void) setScvScrollHorarios:(UIScrollView *)p0;
+	-(UIView *) vwBotonFecha;
+	-(void) setVwBotonFecha:(UIView *)p0;
+	-(UIView *) vwHorarios;
+	-(void) setVwHorarios:(UIView *)p0;
+	-(UIView *) vwInfoReservacion;
+	-(void) setVwInfoReservacion:(UIView *)p0;
+	-(UIView *) vwSalasJuntas;
+	-(void) setVwSalasJuntas:(UIView *)p0;
+	-(void) viewDidLoad;
+	-(void) viewWillAppear:(BOOL)p0;
+	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
+	-(void) btnSeleccionarFecha_Touch:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface SeleccionarSalaViewController : UIViewController {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
 @interface WorklabsMx_iOS_ViewElements_UICheckBox : UIView {
 }
 	-(void) release;
@@ -1191,6 +1341,16 @@
 @end
 
 @interface WorklabsMx_iOS_Models_OrdenVentaDetalle : NSObject {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(BOOL) conformsToProtocol:(void *)p0;
+	-(id) init;
+@end
+
+@interface WorklabsMx_iOS_Models_ReservacionSalaModel : NSObject {
 }
 	-(void) release;
 	-(id) retain;
@@ -1894,6 +2054,27 @@
 	-(void) viewWillAppear:(BOOL)p0;
 	-(void) btnCancelar_Touch:(UIButton *)p0;
 	-(void) btnSeleccionar_Touch:(UIButton *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface HistorialReservaciones : UITableViewController {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(void) viewDidLoad;
+	-(void) viewWillAppear:(BOOL)p0;
+	-(void) viewDidAppear:(BOOL)p0;
+	-(UIView *) tableView:(UITableView *)p0 viewForHeaderInSection:(NSInteger)p1;
+	-(CGFloat) tableView:(UITableView *)p0 heightForHeaderInSection:(NSInteger)p1;
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
+	-(CGFloat) tableView:(UITableView *)p0 heightForRowAtIndexPath:(NSIndexPath *)p1;
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
+	-(void) tableView:(UITableView *)p0 commitEditingStyle:(NSInteger)p1 forRowAtIndexPath:(NSIndexPath *)p2;
+	-(BOOL) tableView:(UITableView *)p0 canEditRowAtIndexPath:(NSIndexPath *)p1;
+	-(NSString *) tableView:(UITableView *)p0 titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)p1;
+	-(void) btnBack:(UIBarButtonItem *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 

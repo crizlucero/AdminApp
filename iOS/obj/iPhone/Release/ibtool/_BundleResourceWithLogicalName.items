@@ -21,6 +21,16 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/0W8-4j-CEc-view-S7I-Tx-2m1.nib/objects-11.0+.nib">
+      <LogicalName>Main.storyboardc/0W8-4j-CEc-view-S7I-Tx-2m1.nib/objects-11.0+.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/0W8-4j-CEc-view-S7I-Tx-2m1.nib/runtime.nib">
+      <LogicalName>Main.storyboardc/0W8-4j-CEc-view-S7I-Tx-2m1.nib/runtime.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/11748-view-11749.nib/objects-11.0+.nib">
       <LogicalName>Main.storyboardc/11748-view-11749.nib/objects-11.0+.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -28,16 +38,6 @@
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/11748-view-11749.nib/runtime.nib">
       <LogicalName>Main.storyboardc/11748-view-11749.nib/runtime.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/1OJ-MZ-I97-view-TnL-WH-5Rf.nib/objects-11.0+.nib">
-      <LogicalName>Main.storyboardc/1OJ-MZ-I97-view-TnL-WH-5Rf.nib/objects-11.0+.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/1OJ-MZ-I97-view-TnL-WH-5Rf.nib/runtime.nib">
-      <LogicalName>Main.storyboardc/1OJ-MZ-I97-view-TnL-WH-5Rf.nib/runtime.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
@@ -161,6 +161,16 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/5oa-AU-zJ0-view-LSK-wu-36I.nib/objects-11.0+.nib">
+      <LogicalName>Main.storyboardc/5oa-AU-zJ0-view-LSK-wu-36I.nib/objects-11.0+.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/5oa-AU-zJ0-view-LSK-wu-36I.nib/runtime.nib">
+      <LogicalName>Main.storyboardc/5oa-AU-zJ0-view-LSK-wu-36I.nib/runtime.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/6017-view-6018.nib/objects-11.0+.nib">
       <LogicalName>Main.storyboardc/6017-view-6018.nib/objects-11.0+.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -258,16 +268,6 @@
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/8Oz-y0-eUW-view-gXg-xJ-c16.nib/runtime.nib">
       <LogicalName>Main.storyboardc/8Oz-y0-eUW-view-gXg-xJ-c16.nib/runtime.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/9sp-Uo-aH8-view-xYL-SA-A1b.nib/objects-11.0+.nib">
-      <LogicalName>Main.storyboardc/9sp-Uo-aH8-view-xYL-SA-A1b.nib/objects-11.0+.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/9sp-Uo-aH8-view-xYL-SA-A1b.nib/runtime.nib">
-      <LogicalName>Main.storyboardc/9sp-Uo-aH8-view-xYL-SA-A1b.nib/runtime.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
@@ -411,16 +411,6 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/McC-wT-P9R-view-5v0-mq-NCw.nib/objects-11.0+.nib">
-      <LogicalName>Main.storyboardc/McC-wT-P9R-view-5v0-mq-NCw.nib/objects-11.0+.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/McC-wT-P9R-view-5v0-mq-NCw.nib/runtime.nib">
-      <LogicalName>Main.storyboardc/McC-wT-P9R-view-5v0-mq-NCw.nib/runtime.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/MiMembresiaController.nib/objects-11.0+.nib">
       <LogicalName>Main.storyboardc/MiMembresiaController.nib/objects-11.0+.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -531,6 +521,16 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/SA4-pM-XhE-view-tgi-c6-rpR.nib/objects-11.0+.nib">
+      <LogicalName>Main.storyboardc/SA4-pM-XhE-view-tgi-c6-rpR.nib/objects-11.0+.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/SA4-pM-XhE-view-tgi-c6-rpR.nib/runtime.nib">
+      <LogicalName>Main.storyboardc/SA4-pM-XhE-view-tgi-c6-rpR.nib/runtime.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/SubMenuController.nib/objects-11.0+.nib">
       <LogicalName>Main.storyboardc/SubMenuController.nib/objects-11.0+.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -568,6 +568,16 @@
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/TelefoniaController.nib/runtime.nib">
       <LogicalName>Main.storyboardc/TelefoniaController.nib/runtime.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UICollectionViewController-5oa-AU-zJ0.nib/objects-11.0+.nib">
+      <LogicalName>Main.storyboardc/UICollectionViewController-5oa-AU-zJ0.nib/objects-11.0+.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UICollectionViewController-5oa-AU-zJ0.nib/runtime.nib">
+      <LogicalName>Main.storyboardc/UICollectionViewController-5oa-AU-zJ0.nib/runtime.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
@@ -611,6 +621,16 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UITableViewController-Wz8-Z3-GpJ.nib/objects-11.0+.nib">
+      <LogicalName>Main.storyboardc/UITableViewController-Wz8-Z3-GpJ.nib/objects-11.0+.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UITableViewController-Wz8-Z3-GpJ.nib/runtime.nib">
+      <LogicalName>Main.storyboardc/UITableViewController-Wz8-Z3-GpJ.nib/runtime.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UITableViewController-kDe-xg-nSj.nib/objects-11.0+.nib">
       <LogicalName>Main.storyboardc/UITableViewController-kDe-xg-nSj.nib/objects-11.0+.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -618,16 +638,6 @@
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UITableViewController-kDe-xg-nSj.nib/runtime.nib">
       <LogicalName>Main.storyboardc/UITableViewController-kDe-xg-nSj.nib/runtime.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UITableViewController-nmX-bo-rFa.nib/objects-11.0+.nib">
-      <LogicalName>Main.storyboardc/UITableViewController-nmX-bo-rFa.nib/objects-11.0+.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UITableViewController-nmX-bo-rFa.nib/runtime.nib">
-      <LogicalName>Main.storyboardc/UITableViewController-nmX-bo-rFa.nib/runtime.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
@@ -651,13 +661,13 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UIViewController-1OJ-MZ-I97.nib/objects-11.0+.nib">
-      <LogicalName>Main.storyboardc/UIViewController-1OJ-MZ-I97.nib/objects-11.0+.nib</LogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UIViewController-0W8-4j-CEc.nib/objects-11.0+.nib">
+      <LogicalName>Main.storyboardc/UIViewController-0W8-4j-CEc.nib/objects-11.0+.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UIViewController-1OJ-MZ-I97.nib/runtime.nib">
-      <LogicalName>Main.storyboardc/UIViewController-1OJ-MZ-I97.nib/runtime.nib</LogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UIViewController-0W8-4j-CEc.nib/runtime.nib">
+      <LogicalName>Main.storyboardc/UIViewController-0W8-4j-CEc.nib/runtime.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
@@ -691,16 +701,6 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UIViewController-McC-wT-P9R.nib/objects-11.0+.nib">
-      <LogicalName>Main.storyboardc/UIViewController-McC-wT-P9R.nib/objects-11.0+.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UIViewController-McC-wT-P9R.nib/runtime.nib">
-      <LogicalName>Main.storyboardc/UIViewController-McC-wT-P9R.nib/runtime.nib</LogicalName>
-      <Optimize>false</Optimize>
-      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
-    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UIViewController-Myn-c1-rQQ.nib/objects-11.0+.nib">
       <LogicalName>Main.storyboardc/UIViewController-Myn-c1-rQQ.nib/objects-11.0+.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -718,6 +718,16 @@
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UIViewController-Oiz-SU-rXd.nib/runtime.nib">
       <LogicalName>Main.storyboardc/UIViewController-Oiz-SU-rXd.nib/runtime.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UIViewController-SA4-pM-XhE.nib/objects-11.0+.nib">
+      <LogicalName>Main.storyboardc/UIViewController-SA4-pM-XhE.nib/objects-11.0+.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UIViewController-SA4-pM-XhE.nib/runtime.nib">
+      <LogicalName>Main.storyboardc/UIViewController-SA4-pM-XhE.nib/runtime.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
@@ -761,6 +771,26 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UIViewController-naS-j4-u1c.nib/objects-11.0+.nib">
+      <LogicalName>Main.storyboardc/UIViewController-naS-j4-u1c.nib/objects-11.0+.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UIViewController-naS-j4-u1c.nib/runtime.nib">
+      <LogicalName>Main.storyboardc/UIViewController-naS-j4-u1c.nib/runtime.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/Urz-q0-yGF-view-d2C-Mx-kwz.nib/objects-11.0+.nib">
+      <LogicalName>Main.storyboardc/Urz-q0-yGF-view-d2C-Mx-kwz.nib/objects-11.0+.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/Urz-q0-yGF-view-d2C-Mx-kwz.nib/runtime.nib">
+      <LogicalName>Main.storyboardc/Urz-q0-yGF-view-d2C-Mx-kwz.nib/runtime.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/UzL-6f-Aif-view-i0q-XU-8uZ.nib/objects-11.0+.nib">
       <LogicalName>Main.storyboardc/UzL-6f-Aif-view-i0q-XU-8uZ.nib/objects-11.0+.nib</LogicalName>
       <Optimize>false</Optimize>
@@ -778,6 +808,16 @@
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/VSm-LE-Gh7-view-OsK-Qp-xxt.nib/runtime.nib">
       <LogicalName>Main.storyboardc/VSm-LE-Gh7-view-OsK-Qp-xxt.nib/runtime.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/Wz8-Z3-GpJ-view-aAT-13-grq.nib/objects-11.0+.nib">
+      <LogicalName>Main.storyboardc/Wz8-Z3-GpJ-view-aAT-13-grq.nib/objects-11.0+.nib</LogicalName>
+      <Optimize>false</Optimize>
+      <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/Wz8-Z3-GpJ-view-aAT-13-grq.nib/runtime.nib">
+      <LogicalName>Main.storyboardc/Wz8-Z3-GpJ-view-aAT-13-grq.nib/runtime.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
@@ -881,13 +921,13 @@
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/nmX-bo-rFa-view-oym-1p-qAi.nib/objects-11.0+.nib">
-      <LogicalName>Main.storyboardc/nmX-bo-rFa-view-oym-1p-qAi.nib/objects-11.0+.nib</LogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/naS-j4-u1c-view-Xl5-Ru-GZ7.nib/objects-11.0+.nib">
+      <LogicalName>Main.storyboardc/naS-j4-u1c-view-Xl5-Ru-GZ7.nib/objects-11.0+.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
-    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/nmX-bo-rFa-view-oym-1p-qAi.nib/runtime.nib">
-      <LogicalName>Main.storyboardc/nmX-bo-rFa-view-oym-1p-qAi.nib/runtime.nib</LogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool-link/Main.storyboardc/naS-j4-u1c-view-Xl5-Ru-GZ7.nib/runtime.nib">
+      <LogicalName>Main.storyboardc/naS-j4-u1c-view-Xl5-Ru-GZ7.nib/runtime.nib</LogicalName>
       <Optimize>false</Optimize>
       <OriginalItemSpec>obj/iPhone/Release/ibtool-link/Main.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>

@@ -20,7 +20,7 @@
                     else
                     {
                         BTProgressHUD.Dismiss();
-                        new MessageDialog().SendToast("Correo y/o contraseña incorrecto");
+                        new MessageDialog().SendToast("No cuentas con conexión a internet");
                     }
                 }
                 else

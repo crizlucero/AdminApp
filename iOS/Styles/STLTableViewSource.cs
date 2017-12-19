@@ -41,7 +41,7 @@ namespace WorklabsMx.iOS.Styles
                 using (var url = new NSUrl(TableItems[indexPath.Row].Image))
                 {
                     var reach = CrossConnectivity.Current.IsReachable("http://desarrolloworklabs.com");
-                    if (reach.Wait(1000))
+                    if (reach.Wait(0))
                     {
                         using (var data = NSData.FromUrl(url))
                         {
