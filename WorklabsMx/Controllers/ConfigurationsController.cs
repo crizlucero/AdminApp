@@ -54,6 +54,7 @@ namespace WorklabsMx.Controllers
             {
                 Console.WriteLine(e.Message);
                 SlackLogs.SendMessage(e.Message);
+                return null;
             }
             finally
             {

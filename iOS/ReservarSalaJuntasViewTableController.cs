@@ -12,11 +12,7 @@ namespace WorklabsMx.iOS
         public string SucursalId;
         NSDateFormatter dateFormat = new NSDateFormatter();
 
-
-        nfloat h = 50.0f;
-        nfloat w = 50.0f;
-        nfloat padding = 10.0f;
-        nint n = 5;
+        nint NumberOfMR = 5;
 
         public ReservarSalaJuntasViewTableController (IntPtr handle) : base (handle)
         {
@@ -25,6 +21,36 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            nfloat WidthView = 0;
+            nfloat XImageView = 0;
+
+            for (int indice = 0; indice < NumberOfMR; indice ++)
+            {
+                WidthView = WidthView + this.vwSalasJuntas.Frame.Width;
+            }
+            this.pcSucursales.Pages = NumberOfMR;
+            CGRect newFrame = new CGRect(this.vwSalasJuntas.Frame.X, this.vwSalasJuntas.Frame.Y, WidthView, this.vwSalasJuntas.Frame.Height);
+
+            this.vwSalasJuntas.Frame = newFrame;
+
+            for (int indice = 1; indice < NumberOfMR; indice++)
+            {
+                XImageView = XImageView + this.imgSalasJuntas.Frame.Width;
+                UIImageView ImagenSalaJuntas = new UIImageView();
+                ImagenSalaJuntas.Frame = new CGRect(XImageView, this.imgSalasJuntas.Frame.Y, this.imgSalasJuntas.Frame.Width, this.imgSalasJuntas.Frame.Height);
+                ImagenSalaJuntas.Image = UIImage.FromBundle("SalaJuntas");
+                this.vwSalasJuntas.Add(ImagenSalaJuntas);
+            }
+
+            this.scvSalasJuntas.ContentSize = vwSalasJuntas.Frame.Size;
+            this.scvSalasJuntas.Scrolled += (sender, e) =>
+            {
+                this.pcSucursales.CurrentPage = (nint)(scvSalasJuntas.ContentOffset.X / scvSalasJuntas.Frame.Width);
+            };
+
+            this.scvScrollHorarios.ContentSize = vwHorarios.Frame.Size;
+
             StyleHelper.Style(this.vwBotonFecha.Layer);
             StyleHelper.Style(this.vwInfoReservacion.Layer);
             dateFormat.DateFormat = "dd/MM/yyyy";
@@ -34,32 +60,6 @@ namespace WorklabsMx.iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            /*this.scvScrollSalasJuntas.CanCancelContentTouches = false;
-            this.scvScrollSalasJuntas.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
-            this.scvScrollSalasJuntas.ClipsToBounds = false;
-            this.scvScrollSalasJuntas.ScrollEnabled = true;
-            this.scvScrollSalasJuntas.PagingEnabled = true;
-
-            //this.scvScrollSalasJuntas.ContentSize = new CGSize(scvScrollSalasJuntas.Frame.Width, scvScrollSalasJuntas.Frame.Height);
-            Console.WriteLine(scvScrollSalasJuntas.ContentSize);
-            nfloat with = 0;
-            nfloat ImageX = 0;
-            for (int i = 0; i < n; i++)
-            {
-                imgSalaJuntas.Frame = new CGRect(ImageX, imgSalaJuntas.Frame.Y, imgSalaJuntas.Frame.Width, imgSalaJuntas.Frame.Height);
-                imgSalaJuntas.Image = UIImage.FromBundle("ImagenSala");
-               
-                //scvScrollSalasJuntas.AddSubview(imgSalaJuntas);
-                with = with + imgSalaJuntas.Frame.Width;
-                ImageX = ImageX + imgSalaJuntas.Frame.Width;
-
-            }
-            this.scvScrollSalasJuntas.ContentSize = new CGSize(with, scvScrollSalasJuntas.Frame.Height);
-            //this.scvScrollSalasJuntas.Frame = new CGRect(this.scvScrollSalasJuntas.Frame.X, this.scvScrollSalasJuntas.Frame.Y, with, this.scvScrollSalasJuntas.Frame.Height);
-            //this.vwVistaSalas.Frame = new CGRect(this.vwVistaSalas.Frame.X, this.vwVistaSalas.Frame.Y, with, this.vwVistaSalas.Frame.Height);
-            scvScrollSalasJuntas.AddSubview(this.vwVistaSalas);
-            //this.scvScrollSalasJuntas.ContentSize = new CGSize(with, scvScrollSalasJuntas.Frame.Height + 10);
-            Console.WriteLine(scvScrollSalasJuntas.ContentSize);*/
         }
 
         partial void btnSeleccionarFecha_Touch(UIButton sender)
