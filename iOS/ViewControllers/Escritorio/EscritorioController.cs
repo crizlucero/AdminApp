@@ -6,7 +6,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 
         const int TamañoPublicacion = 223;
         const int TamañoHeader = 93;
-        const int TamañoMensajeNoInfo = 400;
+        const int TamañoMensajeNoInfo = 800;
 
         bool isShowInformation = false;
         bool existeConeccion = true;
@@ -79,7 +79,15 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 				var CommentView = (comentarTableView)segue.DestinationViewController;
                 CommentView.currentPost = CurrentPost;                 CommentView.currentPostImage = currentPostImage;                 CommentView.currentProfileImage = currentProfileImage;                 //CommentView.BackWindowDelegate = this;             }             else if(segue.Identifier == "toShowImageFromPost")             {                 var ImageView = (DetailCommentImage)segue.DestinationViewController;                 ImageView.ImagenPost = (UIImageView)sender;             }              else if(segue.Identifier == "DetallarPerfil")             {                 var PerfilView = (InfoPerfilViewController)segue.DestinationViewController;                 PerfilView.ListUser = ListUser;             }
         }          private void WillDisplay(int Row)         {             int LastRow = allPosts.Count - 1;             if ((Row == LastRow))             {                 BTProgressHUD.Dismiss();
-            }         }          private void CargarInfo()         {             try             {                 if (InternetConectionHelper.VerificarConexion())                 {                     allPosts = new Controllers.EscritorioController().GetMuroPosts(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));                      foreach (PostModel currentPost in allPosts)                     {                         allPostImages.Add(ImageGallery.LoadImage(currentPost.Publicacion_Imagen_Ruta));                         allProfileImages.Add(ImageGallery.LoadImage(currentPost.Usuario_Fotografia_Ruta));                     }                     miembro = new MiembrosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));                }                 else                 {                     this.btnScanQr.Title = "";                     this.btnScanQr.Enabled = false;                     isShowInformation = false;                     existeConeccion = false;                 }             }             catch(Exception e)             {                 SlackLogs.SendMessage(e.Message);             }                     } 
+            }         }          private void CargarInfo()         {             try             {                 if (InternetConectionHelper.VerificarConexion())                 {                     allPosts = new Controllers.EscritorioController().GetMuroPosts(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));                      if (allPosts.Count == 0)                     {
+                        isShowInformation = false;                         existeConeccion = false;                         this.btnScanQr.Title = "";                         this.btnScanQr.Enabled = false;
+                    }                     else                     {                         foreach (PostModel currentPost in allPosts)
+                        {
+                            allPostImages.Add(ImageGallery.LoadImage(currentPost.Publicacion_Imagen_Ruta));
+                            allProfileImages.Add(ImageGallery.LoadImage(currentPost.Usuario_Fotografia_Ruta));
+                        }
+                        miembro = new MiembrosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+                    }                 }                 else                 {                     this.btnScanQr.Title = "";                     this.btnScanQr.Enabled = false;                     isShowInformation = false;                     existeConeccion = false;                 }             }             catch(Exception e)             {                 SlackLogs.SendMessage(e.Message);             }                     } 
         partial void btnToScanQr_TouchUpInside(UIBarButtonItem sender)
         {
             this.PerformSegue("toScanQr", sender);
