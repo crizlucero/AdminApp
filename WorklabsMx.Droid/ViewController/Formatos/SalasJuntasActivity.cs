@@ -102,6 +102,8 @@ namespace WorklabsMx.Droid
                 };
             };
             FillHorario();
+            HorizontalScrollView scrollHoras = FindViewById<HorizontalScrollView>(Resource.Id.hsvHorario);
+            scrollHoras.SmoothScrollTo (500,0);
         }
 
         void FillHorario()

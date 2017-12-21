@@ -22,7 +22,7 @@ namespace WorklabsMx.Droid
         Dictionary<string, CarritoModel> CarritoMembresia, CarritoProducto;
         TableLayout tlCarrito;
         decimal Descuento, Subtotal, IVA = 1.16M, Total, IVATotal, Descuento_Porcentaje;
-        string moneda_id, impuesto_id, descuento_id;
+        string descuento_id;
         readonly List<decimal> Descuentos;
         SimpleStorage Storage;
         PickerItemsController controller;
