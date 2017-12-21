@@ -20,9 +20,13 @@ namespace WorklabsMx.iOS
         {
             if (miembro != null)
             {
-                lblNombre.Text = miembro[(int)CamposMiembro.Usuario_Nombre];
-                lblProfesion.Text = miembro[(int)CamposMiembro.Usuario_Puesto];
-                impPublicar.Image = ImageGallery.LoadImage(miembro[(int)CamposMiembro.Usuario_Fotografia]) ?? UIImage.FromBundle("PerfilEscritorio");
+                if (miembro.Count > 0)
+                {
+                    lblNombre.Text = miembro[(int)CamposMiembro.Usuario_Nombre];
+                    lblProfesion.Text = miembro[(int)CamposMiembro.Usuario_Puesto];
+                    impPublicar.Image = ImageGallery.LoadImage(miembro[(int)CamposMiembro.Usuario_Fotografia]) ?? UIImage.FromBundle("PerfilEscritorio");
+                }
+         
             }
         }
 
