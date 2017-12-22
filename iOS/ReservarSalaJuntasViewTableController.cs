@@ -106,6 +106,18 @@ namespace WorklabsMx.iOS
         }
 
 
+        private void FormatoDiaSeleccionado(NSDate Day)
+        {
+            dateFormat.DateFormat = "dd";
+            DiaSeleccionado = dateFormat.ToString(Day);
+            this.lblDiaNumero.Text = DiaSeleccionado;
+
+            dateFormat.DateFormat = "EEEE";
+            DiaSeleccionado = dateFormat.ToString(Day);
+
+            this.lblDiaLetra.Text = DiaSeleccionado;
+        }
+
         private void GenerateRecornizes()
         {
 
@@ -751,6 +763,9 @@ namespace WorklabsMx.iOS
                 var HoraInicio = HorasNoDisponibles[indice].Sala_Hora_Inicio;
                 this.VistasHorarios[int.Parse(HoraInicio) - 1].BackgroundColor = UIColor.Black;
             }
+            var NewDate = DateTime.ParseExact(FechaReservacion, "dd/MM/yyyy", null);
+            NSDate newFormatDate = (NSDate)NewDate;
+            this.FormatoDiaSeleccionado(newFormatDate);
         }
     }
 

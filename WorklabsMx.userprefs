@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ReservarSalaJuntasViewTableController.cs">
     <Files>
-      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="598" Column="43" />
+      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="767" Column="1" />
       <File FileName="iOS/Extensions/UIColorExtensions.cs" Line="5" Column="38" />
       <File FileName="iOS/Info.plist" />
       <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="118" Column="44" />
@@ -10,34 +9,23 @@
       <File FileName="WorklabsMx/Models/SalaJuntasReservacionModel.cs" Line="4" Column="18" />
       <File FileName="WorklabsMx/Models/SalaJuntasModel.cs" Line="4" Column="18" />
       <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="21" Column="1" />
-=======
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/Helpers/ImagesHelper.cs">
-    <Files>
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="103" Column="15" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasHistorialActivity.cs" Line="40" Column="103" />
-      <File FileName="WorklabsMx.Droid/Resources/drawable/CornerBorderLine.xml" Line="5" Column="34" />
-      <File FileName="WorklabsMx.Droid/Resources/drawable/NoBorderStyle.xml" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/Resources/drawable/stroke_style.xml" Line="6" Column="37" />
-      <File FileName="WorklabsMx.Droid/Resources/drawable/button_shadow_radius_dark.xml" Line="6" Column="44" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="108" Column="72" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="21" Column="53" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="25" Column="15" />
-      <File FileName="WorklabsMx.Droid/Helpers/ImagesHelper.cs" Line="32" Column="38" />
->>>>>>> 52b3eea98c0465b5330b23e329504a6f4efd978c
+      <File FileName="iOS/FechaReservacionPickerViewController.cs" Line="43" Column="1" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State>
           <Value>e.Message</Value>
           <Value>e.Message</Value>
+          <Value>FechaReservacion</Value>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="766" column="24" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C8F534E0-9C6A-4F53-A110-4E330B864317" automaticSigning="False" />
