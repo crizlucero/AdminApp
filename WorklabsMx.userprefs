@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ReservarSalaJuntasViewTableController.cs">
+    <Files>
+      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="598" Column="43" />
+      <File FileName="iOS/Extensions/UIColorExtensions.cs" Line="5" Column="38" />
+      <File FileName="iOS/Info.plist" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="118" Column="44" />
+      <File FileName="WorklabsMx/Helpers/Emails.cs" Line="22" Column="21" />
+      <File FileName="WorklabsMx/Models/SalaJuntasReservacionModel.cs" Line="4" Column="18" />
+      <File FileName="WorklabsMx/Models/SalaJuntasModel.cs" Line="4" Column="18" />
+      <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="21" Column="1" />
+=======
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/Formatos/RegistroInvitadosActivity.cs">
     <Files>
@@ -15,6 +28,14 @@
       <File FileName="WorklabsMx.Droid/Helpers/DatePickerFragment.cs" Line="42" Column="10" />
       <File FileName="WorklabsMx.Droid/ViewController/Formatos/RegistroInvitadosActivity.cs" Line="105" Column="13" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>e.Message</Value>
+          <Value>e.Message</Value>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
