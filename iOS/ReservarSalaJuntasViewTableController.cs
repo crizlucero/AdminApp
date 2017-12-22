@@ -35,12 +35,7 @@ namespace WorklabsMx.iOS
 
             this.lblHorasReservadas.Text = "0";
 
-            dateFormat.DateFormat = "dd";
-            DiaSeleccionado = dateFormat.ToString(NSDate.Now);
-            this.lblDiaNumero.Text = DiaSeleccionado;
-
-            dateFormat.DateFormat = "EEEE";
-            DiaSeleccionado = dateFormat.ToString(NSDate.Now);
+            this.FormatoDiaSeleccionado(NSDate.Now);
 
             this.lblDiaLetra.Text = DiaSeleccionado;
 
@@ -763,8 +758,13 @@ namespace WorklabsMx.iOS
                 var HoraInicio = HorasNoDisponibles[indice].Sala_Hora_Inicio;
                 this.VistasHorarios[int.Parse(HoraInicio) - 1].BackgroundColor = UIColor.Black;
             }
-            var NewDate = DateTime.ParseExact(FechaReservacion, "dd/MM/yyyy", null);
+            /*var NewDate = DateTime.ParseExact(FechaReservacion, "dd/MM/yyyy", null);
+
             NSDate newFormatDate = (NSDate)NewDate;
+            this.FormatoDiaSeleccionado(newFormatDate);*/
+            NSDateFormatter formato = new NSDateFormatter();
+            formato.DateFormat = "dd/MM/yyyy";
+            NSDate newFormatDate = formato.Parse(FechaReservacion);
             this.FormatoDiaSeleccionado(newFormatDate);
         }
     }
