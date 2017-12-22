@@ -14,7 +14,7 @@ namespace WorklabsMx.Droid
     {
         Spinner sucursales;
         SwipeRefreshLayout refresher;
-        SimpleStorage storage;
+        //SimpleStorage storage;
         AlertDialog dialog;
         protected override void OnCreate(Bundle savedInstanceState)
         {

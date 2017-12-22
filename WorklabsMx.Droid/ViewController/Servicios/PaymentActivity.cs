@@ -18,7 +18,7 @@ namespace WorklabsMx.Droid
     public class PaymentActivity : Activity
     {
         List<CarritoComprasDetalle> membresias = null, productos = null;
-        decimal Descuento, Subtotal, Total, IVATotal, Moneda, Descuento_Porcentaje;
+        decimal Descuento, Descuento_Porcentaje, Subtotal, Total, IVATotal;
         PagosController controller;
         SimpleStorage storage;
 
@@ -45,7 +45,7 @@ namespace WorklabsMx.Droid
             membresias = JsonConvert.DeserializeObject<List<CarritoComprasDetalle>>(Intent.GetStringExtra("Membresias"));
             productos = JsonConvert.DeserializeObject<List<CarritoComprasDetalle>>(Intent.GetStringExtra("Productos"));
             Descuento_Id = Convert.ToInt32(Intent.GetStringExtra("Descuento_Id"));
-            Descuento = Convert.ToDecimal(Intent.GetStringExtra("Descuento_Porcentaje"));
+            Descuento_Porcentaje = Convert.ToDecimal(Intent.GetStringExtra("Descuento_Porcentaje"));
             Descuento = Convert.ToDecimal(Intent.GetStringExtra("Descuento"));
             Subtotal = Convert.ToDecimal(Intent.GetStringExtra("Subtotal"));
             IVATotal = Convert.ToDecimal(Intent.GetStringExtra("IVA"));
