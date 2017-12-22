@@ -24,6 +24,38 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblCapacidad { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblCreditosDisponibles { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblCreditosPorUsar { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblDiaLetra { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblDiaNumero { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblHorasReservadas { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblNombre { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblPiso { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIPageControl pcSucursales { get; set; }
 
         [Outlet]
@@ -33,6 +65,102 @@ namespace WorklabsMx.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIScrollView scvScrollHorarios { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView view2324 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw0102 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw0203 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw0304 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw0405 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw0506 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw0607 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw0708 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw0809 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw0910 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw1011 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw1112 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw1213 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw1314 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw1415 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw1516 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw1617 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw1718 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw1819 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw1920 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw2021 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw2122 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw2223 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vw2401 { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -66,6 +194,46 @@ namespace WorklabsMx.iOS
                 imgSalasJuntas = null;
             }
 
+            if (lblCapacidad != null) {
+                lblCapacidad.Dispose ();
+                lblCapacidad = null;
+            }
+
+            if (lblCreditosDisponibles != null) {
+                lblCreditosDisponibles.Dispose ();
+                lblCreditosDisponibles = null;
+            }
+
+            if (lblCreditosPorUsar != null) {
+                lblCreditosPorUsar.Dispose ();
+                lblCreditosPorUsar = null;
+            }
+
+            if (lblDiaLetra != null) {
+                lblDiaLetra.Dispose ();
+                lblDiaLetra = null;
+            }
+
+            if (lblDiaNumero != null) {
+                lblDiaNumero.Dispose ();
+                lblDiaNumero = null;
+            }
+
+            if (lblHorasReservadas != null) {
+                lblHorasReservadas.Dispose ();
+                lblHorasReservadas = null;
+            }
+
+            if (lblNombre != null) {
+                lblNombre.Dispose ();
+                lblNombre = null;
+            }
+
+            if (lblPiso != null) {
+                lblPiso.Dispose ();
+                lblPiso = null;
+            }
+
             if (pcSucursales != null) {
                 pcSucursales.Dispose ();
                 pcSucursales = null;
@@ -79,6 +247,126 @@ namespace WorklabsMx.iOS
             if (scvScrollHorarios != null) {
                 scvScrollHorarios.Dispose ();
                 scvScrollHorarios = null;
+            }
+
+            if (view2324 != null) {
+                view2324.Dispose ();
+                view2324 = null;
+            }
+
+            if (vw0102 != null) {
+                vw0102.Dispose ();
+                vw0102 = null;
+            }
+
+            if (vw0203 != null) {
+                vw0203.Dispose ();
+                vw0203 = null;
+            }
+
+            if (vw0304 != null) {
+                vw0304.Dispose ();
+                vw0304 = null;
+            }
+
+            if (vw0405 != null) {
+                vw0405.Dispose ();
+                vw0405 = null;
+            }
+
+            if (vw0506 != null) {
+                vw0506.Dispose ();
+                vw0506 = null;
+            }
+
+            if (vw0607 != null) {
+                vw0607.Dispose ();
+                vw0607 = null;
+            }
+
+            if (vw0708 != null) {
+                vw0708.Dispose ();
+                vw0708 = null;
+            }
+
+            if (vw0809 != null) {
+                vw0809.Dispose ();
+                vw0809 = null;
+            }
+
+            if (vw0910 != null) {
+                vw0910.Dispose ();
+                vw0910 = null;
+            }
+
+            if (vw1011 != null) {
+                vw1011.Dispose ();
+                vw1011 = null;
+            }
+
+            if (vw1112 != null) {
+                vw1112.Dispose ();
+                vw1112 = null;
+            }
+
+            if (vw1213 != null) {
+                vw1213.Dispose ();
+                vw1213 = null;
+            }
+
+            if (vw1314 != null) {
+                vw1314.Dispose ();
+                vw1314 = null;
+            }
+
+            if (vw1415 != null) {
+                vw1415.Dispose ();
+                vw1415 = null;
+            }
+
+            if (vw1516 != null) {
+                vw1516.Dispose ();
+                vw1516 = null;
+            }
+
+            if (vw1617 != null) {
+                vw1617.Dispose ();
+                vw1617 = null;
+            }
+
+            if (vw1718 != null) {
+                vw1718.Dispose ();
+                vw1718 = null;
+            }
+
+            if (vw1819 != null) {
+                vw1819.Dispose ();
+                vw1819 = null;
+            }
+
+            if (vw1920 != null) {
+                vw1920.Dispose ();
+                vw1920 = null;
+            }
+
+            if (vw2021 != null) {
+                vw2021.Dispose ();
+                vw2021 = null;
+            }
+
+            if (vw2122 != null) {
+                vw2122.Dispose ();
+                vw2122 = null;
+            }
+
+            if (vw2223 != null) {
+                vw2223.Dispose ();
+                vw2223 = null;
+            }
+
+            if (vw2401 != null) {
+                vw2401.Dispose ();
+                vw2401 = null;
             }
 
             if (vwBotonFecha != null) {

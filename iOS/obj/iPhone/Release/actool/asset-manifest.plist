@@ -23,6 +23,30 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
+				<string>./Likes.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Release/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>The image set "Likes" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./Comments.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Release/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>The image set "Comments" has an unassigned child.</string>
+			<key>type</key>
+			<string>Ambiguous Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
 				<string>./SalaJuntas.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
 			</array>
 			<key>catalog</key>
@@ -59,36 +83,12 @@
 		<dict>
 			<key>affected-items</key>
 			<array>
-				<string>./Likes.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Release/actool/cloned-assets/Assets.xcassets</string>
-			<key>message</key>
-			<string>The image set "Likes" has an unassigned child.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
 				<string>./SalaJuntas.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
 			</array>
 			<key>catalog</key>
 			<string>/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Release/actool/cloned-assets/Assets.xcassets</string>
 			<key>message</key>
 			<string>The image set "SalaJuntas" has an unassigned child.</string>
-			<key>type</key>
-			<string>Ambiguous Content</string>
-		</dict>
-		<dict>
-			<key>affected-items</key>
-			<array>
-				<string>./Comments.imageset/[watch][][&gt;145][2x][][][][][][][1d][(null)]</string>
-			</array>
-			<key>catalog</key>
-			<string>/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/obj/iPhone/Release/actool/cloned-assets/Assets.xcassets</string>
-			<key>message</key>
-			<string>The image set "Comments" has an unassigned child.</string>
 			<key>type</key>
 			<string>Ambiguous Content</string>
 		</dict>

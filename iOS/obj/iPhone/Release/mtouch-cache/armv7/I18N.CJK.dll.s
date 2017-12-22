@@ -8552,7 +8552,7 @@ _mono_aot_file_info:
 	.long 288,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 46,130,239,164,164,247,246,230,20,157,137,216,86,124,36,81
+	.byte 59,171,126,35,129,220,48,97,231,228,94,220,35,54,235,255
 	.globl _mono_aot_module_I18N_CJK_info
 	.align 2
 _mono_aot_module_I18N_CJK_info:

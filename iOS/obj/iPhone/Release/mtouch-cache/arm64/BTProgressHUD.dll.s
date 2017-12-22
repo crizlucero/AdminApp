@@ -4576,7 +4576,7 @@ ldr x1, [x16, #832]
 .word 0xf9403b41
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9417c30
+.word 0xf9418030
 .word 0xd63f0200
 .word 0xf9403b40
 .word 0xa94167b8
@@ -11757,13 +11757,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 138,2936,229,130,66,391195135,0,4479
-	.long 128,8,8,10,0,24,6152,1664
+	.long 138,2936,229,130,66,391195135,0,4483
+	.long 128,8,8,10,0,24,6160,1664
 	.long 1400,776,0,1152,1352,952,0,656
 	.long 192,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 34,106,80,86,205,44,116,63,252,86,234,141,210,140,161,115
+	.byte 58,80,110,13,240,52,139,53,92,187,102,86,137,239,26,213
 	.globl _mono_aot_module_BTProgressHUD_info
 	.align 3
 _mono_aot_module_BTProgressHUD_info:
