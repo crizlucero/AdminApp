@@ -13,6 +13,7 @@ using Android.Widget;
 using Java.Lang;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
+using WorklabsMx.Droid.Helpers;
 using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
@@ -61,7 +62,16 @@ namespace WorklabsMx.Droid
             _viewPager.Adapter = new SalaJuntasAdapter(this, salas);
             Horarios.Add(salas[_viewPager.CurrentItem].Sala_Id, new Dictionary<string, List<int>>());
             Horarios[salas[_viewPager.CurrentItem].Sala_Id].Add(fecha_seleccionada, new List<int>());
-            FindViewById<LinearLayout>(Resource.Id.llSeleccionarFecha).Click += (sender, e) => ShowCalendarView();
+            FindViewById<LinearLayout>(Resource.Id.llSeleccionarFecha).Click += (sender, e) =>
+            {
+                DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
+                {
+                    FindViewById<TextView>(Resource.Id.lblDiaFecha).Text = time.DayOfWeek.ToString().Substring(0, 3);
+                    FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = time.Day.ToString();
+                    //_dateDisplay.Text = time.ToLongDateString();
+                });
+                frag.Show(FragmentManager, Resources.GetString(Resource.String.ReservaSala));
+            };
             FindViewById<TextView>(Resource.Id.lblDiaFecha).Text = DateTime.Parse(fecha_seleccionada).DayOfWeek.ToString().Substring(0, 3);
             FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = DateTime.Parse(fecha_seleccionada).Day.ToString();
             FindViewById<TextView>(Resource.Id.lblHorasTotal).Text = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Count.ToString();
@@ -87,10 +97,9 @@ namespace WorklabsMx.Droid
             FindViewById<RelativeLayout>(Resource.Id.rlAgendar).Click += delegate
             {
                 Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].ForEach(hora =>
-                {
-                    int reservacion_id = SalasController.AsignarSalaJuntas("ALTA", salas[_viewPager.CurrentItem].Sala_Id, storage.Get("Usuario_Id"),
-                                                                                       storage.Get("Usuario_Tipo"), fecha_seleccionada, (hora - 1).ToString("00") + ":00", hora.ToString("00") + ":00");
-                });
+                     SalasController.AsignarSalaJuntas("ALTA", salas[_viewPager.CurrentItem].Sala_Id, storage.Get("Usuario_Id"),
+                                                                                       storage.Get("Usuario_Tipo"), fecha_seleccionada, (hora - 1).ToString("00") + ":00", hora.ToString("00") + ":00")
+                );
                 SetContentView(Resource.Layout.SalasJuntasConfirmacionLayout);
                 FindViewById<TextView>(Resource.Id.lblDiaSemana).Text = DateTime.Parse(fecha_seleccionada).DayOfWeek.ToString().Substring(0, 3);
                 FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = DateTime.Parse(fecha_seleccionada).Day.ToString();
@@ -103,7 +112,7 @@ namespace WorklabsMx.Droid
             };
             FillHorario();
             HorizontalScrollView scrollHoras = FindViewById<HorizontalScrollView>(Resource.Id.hsvHorario);
-            scrollHoras.SmoothScrollTo (500,0);
+            scrollHoras.SmoothScrollTo(500, 0);
         }
 
         void FillHorario()
