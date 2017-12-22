@@ -491,13 +491,13 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag1112 == false)
                 {
-                    this.vw1213.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
+                    this.vw1112.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1112 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
                 }
                 else
                 {
-                    this.vw1213.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
+                    this.vw1112.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                     this.Flag1112 = false;
                     this.HorasReservadas = this.HorasReservadas - 1;
                 }
