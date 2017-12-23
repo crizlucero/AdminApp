@@ -151,6 +151,7 @@
     <Compile Include="ViewController\Formatos\SalasJuntasSucursalActivity.cs" />
     <Compile Include="Helpers\CalendarHelper.cs" />
     <Compile Include="Helpers\DatePickerFragment.cs" />
+    <Compile Include="Helpers\TimePickerFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
