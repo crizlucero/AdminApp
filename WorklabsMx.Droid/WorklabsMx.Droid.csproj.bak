@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>WorklabsMx.Droid</RootNamespace>
     <AssemblyName>WorklabsMx.Droid</AssemblyName>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -56,9 +56,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="System.Configuration.ConfigurationManager">
-      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.0\lib\netstandard2.0\System.Configuration.ConfigurationManager.dll</HintPath>
-    </Reference>
     <Reference Include="AndHUD">
       <HintPath>..\packages\AndHUD.1.2.0\lib\MonoAndroid\AndHUD.dll</HintPath>
     </Reference>
@@ -89,9 +86,6 @@
     <Reference Include="Xamarin.Android.Support.Media.Compat">
       <HintPath>..\packages\Xamarin.Android.Support.Media.Compat.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.Media.Compat.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Android.Support.v4">
-      <HintPath>..\packages\Xamarin.Android.Support.v4.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.v4.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Android.Support.Vector.Drawable">
       <HintPath>..\packages\Xamarin.Android.Support.Vector.Drawable.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.Vector.Drawable.dll</HintPath>
     </Reference>
@@ -101,21 +95,31 @@
     <Reference Include="Xamarin.Android.Support.v7.AppCompat">
       <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Android.Support.Transition">
+      <HintPath>..\packages\Xamarin.Android.Support.Transition.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.Transition.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Design">
+      <HintPath>..\packages\Xamarin.Android.Support.Design.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="FortySevenDeg.SwipeListView">
+      <HintPath>..\packages\FortySevenDeg.SwipeListView.2.0.0.2\lib\FortySevenDeg.SwipeListView.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.ConfigurationManager">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\netstandard2.0\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewController\AccesoActivity.cs" />
-    <Compile Include="ViewController\HomeFragment.cs" />
     <Compile Include="Helpers\ImagesHelper.cs" />
     <Compile Include="ViewElement\MenuView.cs" />
     <Compile Include="Fragments\MyProfileFragment.cs" />
     <Compile Include="Fragments\MenuFragment.cs" />
-    <Compile Include="ViewController\SubMenuActivity.cs" />
-    <Compile Include="Helpers\MenuService.cs" />
-    <Compile Include="ViewController\Servicios\MembresiasActivity.cs" />
-    <Compile Include="ViewController\Servicios\ProductosActivity.cs" />
     <Compile Include="ViewController\MiPerfil\PerfilActivity.cs" />
     <Compile Include="ViewController\MiPerfil\DatosFacturacionActivity.cs" />
     <Compile Include="ViewController\Directorio\DirectorioEmpresaActivity.cs" />
@@ -128,7 +132,6 @@
     <Compile Include="ViewController\MiPerfil\MiEmpresaActivity.cs" />
     <Compile Include="ViewController\MiPerfil\EditPerfilActivity.cs" />
     <Compile Include="ViewController\MiPerfil\EditEmpresaActivity.cs" />
-    <Compile Include="ViewController\PerfilesActivity.cs" />
     <Compile Include="ViewController\MyMembershipActivity.cs" />
     <Compile Include="ViewController\ReportActivity.cs" />
     <Compile Include="ViewController\MiPerfil\MisColaboradoresActivity.cs" />
@@ -148,7 +151,6 @@
     <Compile Include="ViewController\Formatos\SalasJuntasSucursalActivity.cs" />
     <Compile Include="Helpers\CalendarHelper.cs" />
     <Compile Include="Helpers\DatePickerFragment.cs" />
-    <Compile Include="Helpers\TimePickerFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -157,7 +159,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\mipmap-mdpi\Icon2.png" />
     <AndroidResource Include="Resources\mipmap-xhdpi\Icon2.png" />
@@ -171,9 +172,7 @@
     <AndroidResource Include="Resources\layout\AccesoLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_refresh.png" />
     <AndroidResource Include="Resources\menu\navmenu.xml" />
-    <AndroidResource Include="Resources\layout\headerdrawerlayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_dashboard.png" />
-    <AndroidResource Include="Resources\layout\homeLayout.axml" />
     <AndroidResource Include="Resources\menu\action_menu.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_cloud.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_call.png" />
@@ -247,8 +246,6 @@
     <AndroidResource Include="Resources\layout\ColaboradorCambioLayout.axml" />
     <AndroidResource Include="Resources\layout\OfflineAppLayout.axml" />
     <AndroidResource Include="Resources\menu\refresh_menu.xml" />
-    <AndroidResource Include="Resources\mipmap-hdpi\ic_log_background.png" />
-    <AndroidResource Include="Resources\layout\LoginLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_worklabs_title.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_logo_mini.png" />
     <AndroidResource Include="Resources\layout\DashboardLayout.axml" />
@@ -283,6 +280,40 @@
     <AndroidResource Include="Resources\mipmap-hdpi\Icono.png" />
     <AndroidResource Include="Resources\layout\CalendarioLayout.axml" />
     <AndroidResource Include="Resources\layout\HorarioPickerLayout.axml" />
+    <AndroidResource Include="Resources\layout\nav_header.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\worklabs_title.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_log_background.png" />
+    <AndroidResource Include="Resources\layout\SplashLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_like.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_profile_empty.png" />
+    <AndroidResource Include="Resources\layout\PreViewListLayout.axml" />
+    <AndroidResource Include="Resources\layout\PerfilCardLayout.axml" />
+    <AndroidResource Include="Resources\drawable\button_shadow_radius_dark.xml" />
+    <AndroidResource Include="Resources\drawable\button_shadow_radius_clear.xml" />
+    <AndroidResource Include="Resources\layout\LoginLayout.axml" />
+    <AndroidResource Include="Resources\layout\CarritoRecurrenteLayout.axml" />
+    <AndroidResource Include="Resources\layout\CarritoUnicoLayout.axml" />
+    <AndroidResource Include="Resources\layout\CarritoMembresiaLayout.axml" />
+    <AndroidResource Include="Resources\layout\CarouselLayout.axml" />
+    <AndroidResource Include="Resources\layout\SalasJuntasLayout.axml" />
+    <AndroidResource Include="Resources\layout\ListaReservacionesLayout.axml" />
+    <AndroidResource Include="Resources\layout\ReservacionElementoLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_arrow_right.png" />
+    <AndroidResource Include="Resources\layout\SalaJuntasHistorialLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_arrow_down.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_square.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_calendar.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_clock.png" />
+    <AndroidResource Include="Resources\layout\HorarioItemLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_diagonal_lines.png" />
+    <AndroidResource Include="Resources\menu\add_element_menu.xml" />
+    <AndroidResource Include="Resources\layout\SalasJuntasSucursalesLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_ubicacion_background.png" />
+    <AndroidResource Include="Resources\layout\SucursalInfoLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\suc_hidalgo_prueba.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\suc_metropark_prueba.png" />
+    <AndroidResource Include="Resources\layout\SalasJuntasConfirmacionLayout.axml" />
+    <AndroidResource Include="Resources\drawable\stroke_style.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -295,12 +326,6 @@
     <Folder Include="ViewController\MiPerfil\" />
     <Folder Include="ViewController\Directorio\" />
     <Folder Include="ViewController\Formatos\" />
-  </ItemGroup>
-  <ItemGroup>
-    <XamarinComponentReference Include="xamandroidsupportv7appcompat">
-      <Version>25.1.1.0</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
@@ -318,4 +343,7 @@
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Vector.Drawable.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Animated.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Animated.Vector.Drawable.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.v7.AppCompat.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v7.AppCompat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.AppCompat.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v7.AppCompat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Transition.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Transition.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Transition.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Transition.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.RecyclerView.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v7.RecyclerView.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.RecyclerView.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v7.RecyclerView.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Design.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Design.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Design.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Design.targets')" />
 </Project>
