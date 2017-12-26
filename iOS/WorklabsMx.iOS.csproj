@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -1108,4 +1109,1752 @@
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Import Project="..\packages\NETStandard.Library.2.0.0\build\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\NETStandard.Library.targets')" />
   <Import Project="..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
+=======
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>WorklabsMx.iOS</RootNamespace>
+    <AssemblyName>WorklabsMx.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>10632</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <MtouchI18n>west</MtouchI18n>
+    <CodesignProvision>
+    </CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution: Espacio Claro, S.A. de C.V. (3VMPS2N2KS)</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision>WorkLabsMxPP</CodesignProvision>
+    <MtouchI18n>west</MtouchI18n>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IOSDebuggerPort>58788</IOSDebuggerPort>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <MtouchI18n>west</MtouchI18n>
+    <CodesignProvision>
+    </CodesignProvision>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="Plugin.Share.Abstractions">
+      <HintPath>..\packages\Plugin.Share.7.0.1\lib\Xamarin.iOS10\Plugin.Share.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share">
+      <HintPath>..\packages\Plugin.Share.7.0.1\lib\Xamarin.iOS10\Plugin.Share.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="PerpetualEngine.SimpleStorage.iOS-Unified">
+      <HintPath>..\packages\SimpleStorage.1.4.2\lib\Xamarin.iOS10\PerpetualEngine.SimpleStorage.iOS-Unified.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoTouch.Dialog-1" />
+    <Reference Include="MonoTouch.NUnitLite" />
+    <Reference Include="Mono.Security" />
+    <Reference Include="Mono.Data.Tds" />
+    <Reference Include="Mono.Data.Sqlite" />
+    <Reference Include="Mono.CSharp" />
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.3\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.3\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.SkiaSharp">
+      <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\Android\Telerik.XamarinForms.SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Primitives">
+      <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\Android\Telerik.XamarinForms.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Input">
+      <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\Android\Telerik.XamarinForms.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataVisualization">
+      <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\Android\Telerik.XamarinForms.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataGrid">
+      <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\Android\Telerik.XamarinForms.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataControls">
+      <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\Android\Telerik.XamarinForms.DataControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Common">
+      <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\Android\Telerik.XamarinForms.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Chart">
+      <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\Android\Telerik.XamarinForms.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.iOS">
+      <HintPath>..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2017_3_926_1_Trial\Binaries\iOS\Telerik.Xamarin.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\packages\BTProgressHUD.1.2.0.6\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin-Sidebar-Unified">
+      <HintPath>..\packages\SidebarNavigation.1.9.4\lib\Xamarin.iOS10\Xamarin-Sidebar-Unified.dll</HintPath>
+    </Reference>
+    <Reference Include="SVProgressHUD">
+      <HintPath>..\packages\SVProgressHUD.2.2.2\lib\Xamarin.iOS10\SVProgressHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Settings.3.1.1\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\packages\Xam.Plugins.Settings.3.1.1\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle">
+      <HintPath>..\packages\MimeKit.1.20.0\lib\Xamarin.iOS10\BouncyCastle.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit">
+      <HintPath>..\packages\MimeKit.1.20.0\lib\Xamarin.iOS10\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit">
+      <HintPath>..\packages\MailKit.1.20.0\lib\Xamarin.iOS10\MailKit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\First.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\First.imageset\tab_feed.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\First.imageset\tab_feed%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\First.imageset\tab_feed%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Second.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Second.imageset\tab_about.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Second.imageset\tab_about%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Second.imageset\tab_about%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\XamarinLogo.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\XamarinLogo.imageset\xamarin_logo.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\XamarinLogo.imageset\xamarin_logo%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\XamarinLogo.imageset\xamarin_logo%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_business_center.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_business_center.imageset\ic_business_center.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_business_center.imageset\ic_business_center%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_business_center.imageset\ic_business_center%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_call.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_public.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_public.imageset\ic_public.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_public.imageset\ic_public_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_public.imageset\ic_public_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_create.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_create.imageset\ic_create.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_create.imageset\ic_create%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_create.imageset\ic_create%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_email.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_email.imageset\ic_email.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_email.imageset\ic_email_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_email.imageset\ic_email_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_person.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_person.imageset\ic_person.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_person.imageset\ic_person_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_person.imageset\ic_person_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_place.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_place.imageset\ic_place.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_place.imageset\ic_place_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_place.imageset\ic_place_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_school.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_share.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_share.imageset\ic_share.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_share.imageset\ic_share_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_share.imageset\ic_share_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_stay_current_portrait.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_stay_current_portrait.imageset\ic_stay_current_portrait.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_stay_current_portrait.imageset\ic_stay_current_portrait_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_stay_current_portrait.imageset\ic_stay_current_portrait_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_today.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_today.imageset\ic_today.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_today.imageset\ic_today_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_today.imageset\ic_today_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_work.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_work.imageset\ic_work.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_work.imageset\ic_work_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_work.imageset\ic_work_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_credit_card.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_credit_card.imageset\ic_credit_card.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_credit_card.imageset\ic_credit_card_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_credit_card.imageset\ic_credit_card_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_description.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_description.imageset\ic_description.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_description.imageset\ic_description_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_description.imageset\ic_description_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_dashboard.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_dashboard.imageset\ic_dashboard.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_dashboard.imageset\ic_dashboard_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_dashboard.imageset\ic_dashboard_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_insert_invitation.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_insert_invitation.imageset\ic_insert_invitation.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_insert_invitation.imageset\ic_insert_invitation_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_insert_invitation.imageset\ic_insert_invitation_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_format_list_bulleted.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_format_list_bulleted.imageset\ic_format_list_bulleted.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_format_list_bulleted.imageset\ic_format_list_bulleted_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_format_list_bulleted.imageset\ic_format_list_bulleted_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_book.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_book.imageset\ic_book.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_book.imageset\ic_book_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_book.imageset\ic_book_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_label.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_label.imageset\ic_label.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_label.imageset\ic_label_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_label.imageset\ic_label_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_cloud.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_cloud.imageset\ic_cloud.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_cloud.imageset\ic_cloud_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_cloud.imageset\ic_cloud_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_home.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_home.imageset\ic_home_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_domain.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_domain.imageset\ic_domain.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_domain.imageset\ic_domain_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_domain.imageset\ic_domain_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook_box_black_24dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook_box_black_36dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook_box_black_48dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram_black_24dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram_black_36dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram_black_48dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\sync_2.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\sync_2%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_refresh.imageset\sync_2%402x~ipad.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_thumb_up.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_thumb_up.imageset\ic_thumb_up.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_thumb_up.imageset\ic_thumb_up_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_thumb_up.imageset\ic_thumb_up_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_power_settings_new.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_power_settings_new.imageset\ic_power_settings_new.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_power_settings_new.imageset\ic_power_settings_new_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_power_settings_new.imageset\ic_power_settings_new_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_send.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_send.imageset\ic_send.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_send.imageset\ic_send_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_send.imageset\ic_send_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_logo_worklabs.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_logo_worklabs.imageset\itemContent.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\ic_attach_file.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\ic_attach_file_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_attach_file.imageset\ic_attach_file_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\ic_search.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\ic_search_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\ic_search_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_group.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_group.imageset\ic_group.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_group.imageset\ic_group_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_group.imageset\ic_group_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_black_18dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_black_24dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_black_36dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_black_48dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_grey600_18dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_grey600_24dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_grey600_36dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_grey600_48dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_white_18dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_white_24dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_white_36dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\drawable-hdpi\ic_twitter_box_white_48dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter_box_black_24dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter_box_black_36dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter_box_black_48dp.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\ic_remove.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\ic_remove_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_remove.imageset\ic_remove_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_people_outline.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_people_outline.imageset\ic_people_outline.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_people_outline.imageset\ic_people_outline_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_people_outline.imageset\ic_people_outline_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\ic_person_add.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\ic_person_add_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_person_add.imageset\ic_person_add_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_add.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_add.imageset\ic_add.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_add.imageset\ic_add_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_add.imageset\ic_add_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_clear.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_clear.imageset\ic_clear.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_clear.imageset\ic_clear_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_clear.imageset\ic_clear_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_check.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_check.imageset\ic_check.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_check.imageset\ic_check_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_check.imageset\ic_check_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_shopping_cart.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_shopping_cart.imageset\ic_shopping_cart.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_shopping_cart.imageset\ic_shopping_cart_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_shopping_cart.imageset\ic_shopping_cart_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_radiobutton_check.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_radiobutton_check.imageset\ic_radio_button_checked.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_radiobutton_check.imageset\ic_radio_button_checked_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_radiobutton_check.imageset\ic_radio_button_checked_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_radiobutton_uncheck.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_radiobutton_uncheck.imageset\ic_radio_button_unchecked.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_radiobutton_uncheck.imageset\ic_radio_button_unchecked_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_radiobutton_uncheck.imageset\ic_radio_button_unchecked_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_star.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_star_border.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_star.imageset\ic_star.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_star.imageset\ic_star_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_star.imageset\ic_star_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_star_border.imageset\ic_star_border.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_star_border.imageset\ic_star_border_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_star_border.imageset\ic_star_border_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_left_arrow.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_left_arrow.imageset\ic_keyboard_arrow_left.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_left_arrow.imageset\ic_keyboard_arrow_left_2x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_left_arrow.imageset\ic_keyboard_arrow_left_3x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\BackGround.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Leyenda.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Leyenda.imageset\leyenda.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Profile.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Profile.imageset\profile.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Likes.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Comments.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\back.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_derechaabajo.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_derechaabajo.imageset\derechaAbajo.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_derechaarriba.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_derechaarriba.imageset\derechaArriba.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_izquierdaabajo.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_izquierdaabajo.imageset\izquierdaAbajo.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_izquierdaarriba.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_izquierdaarriba.imageset\izquierdaArriba.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\worklabs.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\worklabs.imageset\worklabs.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\qr.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\qr.imageset\ic_qrcode.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Camera.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\delete-image.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\delete-image.imageset\dele-image.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\delete-image.imageset\dele-image%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\delete-image.imageset\dele-image%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\close.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\close.imageset\close.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\close.imageset\close%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\close.imageset\close%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Product.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Product.imageset\product.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Product.imageset\product%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Product.imageset\product%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\membership.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\membership.imageset\membership.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\membership.imageset\membership%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\membership.imageset\membership%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\shopping.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\shopping.imageset\shopping.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\shopping.imageset\shopping%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\shopping.imageset\shopping%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40px.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58px.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87px.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80px.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120px.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180px.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60px.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\BackGround.imageset\Back.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Launch.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Launch.imageset\Load.jpg">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Likes.imageset\Artboard 1.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Likes.imageset\Artboard 4.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Likes.imageset\Artboard 5.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Artboard 24.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Artboard 25.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ProfileImage.imageset\Artboard 26.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\back.imageset\Artboard 21.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\back.imageset\Artboard 22.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\back.imageset\Artboard 23.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Artboard 20.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Camera.imageset\Artboard 17.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Comments.imageset\Artboard 13.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Comments.imageset\Artboard 11.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Comments.imageset\Artboard 10.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Camera.imageset\Artboard 14.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Artboard 18.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\Artboard 30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\Artboard 29.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_qr.imageset\Artboard 27.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\Logotipo_500px.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icono_1024.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Artboard 19.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Camera.imageset\Artboard 15.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_call.imageset\icons8-phone-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_call.imageset\icons8-phone-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_call.imageset\icons8-phone-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_school.imageset\icons8-id-card-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_school.imageset\icons8-id-card-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ic_school.imageset\icons8-id-card-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Habilidades.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Habilidades.imageset\icons8-analyzing-skill-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Habilidades.imageset\icons8-analyzing-skill-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Habilidades.imageset\icons8-analyzing-skill-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Puesto.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Puesto.imageset\icons8-briefcase-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Puesto.imageset\icons8-briefcase-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Puesto.imageset\icons8-briefcase-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Mail.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Genero.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Profesion.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Editar.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Editar.imageset\icons8-edit-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Editar.imageset\icons8-edit-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Editar.imageset\icons8-edit-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Nombre.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Nombre.imageset\icons8-account-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Nombre.imageset\icons8-account-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Nombre.imageset\icons8-account-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Apellidos.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Nacimiento.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Nacimiento.imageset\icons8-birth-date-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Nacimiento.imageset\icons8-birth-date-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Nacimiento.imageset\icons8-birth-date-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\NombreEmpresa.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\NombreEmpresa.imageset\icons8-department-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\NombreEmpresa.imageset\icons8-department-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\NombreEmpresa.imageset\icons8-department-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\GiroComercial.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\GiroComercial.imageset\icons8-company-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\GiroComercial.imageset\icons8-company-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\GiroComercial.imageset\icons8-company-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\RFC.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\RFC.imageset\icons8-data-matrix-code-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\RFC.imageset\icons8-data-matrix-code-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\RFC.imageset\icons8-data-matrix-code-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\RazonSocial.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\RazonSocial.imageset\icons8-category-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\RazonSocial.imageset\icons8-category-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\RazonSocial.imageset\icons8-category-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Mail.imageset\icons8-message-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Mail.imageset\icons8-message-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Mail.imageset\icons8-message-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Phone.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Phone.imageset\icons8-phone-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Phone.imageset\icons8-phone-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Phone.imageset\icons8-phone-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Apellidos.imageset\icons8-account-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Apellidos.imageset\icons8-account-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Apellidos.imageset\icons8-account-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Genero.imageset\icons8-gender-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Genero.imageset\icons8-gender-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Genero.imageset\icons8-gender-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Profesion.imageset\icons8-id-card-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Profesion.imageset\icons8-id-card-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Profesion.imageset\icons8-id-card-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\CodigoPostal.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\CodigoPostal.imageset\icons8-zip-code-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\CodigoPostal.imageset\icons8-zip-code-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\CodigoPostal.imageset\icons8-zip-code-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Calle.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Calle.imageset\icons8-streets-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Calle.imageset\icons8-streets-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Calle.imageset\icons8-streets-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Estado.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Estado.imageset\icons8-museum-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Estado.imageset\icons8-museum-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Estado.imageset\icons8-museum-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Municipio.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Municipio.imageset\icons8-chapel-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Municipio.imageset\icons8-chapel-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Municipio.imageset\icons8-chapel-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Colonia.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Colonia.imageset\icons8-office-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Colonia.imageset\icons8-office-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Colonia.imageset\icons8-office-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\NumeroInterior.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\NumeroInterior.imageset\icons8-home-address-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\NumeroInterior.imageset\icons8-home-address-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\NumeroInterior.imageset\icons8-home-address-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\NumeroExterior.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\NumeroExterior.imageset\icons8-home-address-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\NumeroExterior.imageset\icons8-home-address-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\NumeroExterior.imageset\icons8-home-address-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\PaginaWeb.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\PaginaWeb.imageset\icons8-internet-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\PaginaWeb.imageset\icons8-internet-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\PaginaWeb.imageset\icons8-internet-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Facebook.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Facebook.imageset\icons8-facebook-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Facebook.imageset\icons8-facebook-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Facebook.imageset\icons8-facebook-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Twitter.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Twitter.imageset\icons8-twitter-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Twitter.imageset\icons8-twitter-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Twitter.imageset\icons8-twitter-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Instagram.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Instagram.imageset\icons8-instagram-filled-30.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Instagram.imageset\icons8-instagram-filled-60.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Instagram.imageset\icons8-instagram-filled-90.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\PerfilGrande.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\PerfilGrande.imageset\01.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\MessageDialog.cs" />
+    <Compile Include="Helpers\Utils.cs" />
+    <Compile Include="ViewControllers\LoginViewController.cs" />
+    <Compile Include="ViewControllers\LoginViewController.designer.cs">
+      <DependentUpon>LoginViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="ViewControllers\SplitViewController.cs" />
+    <Compile Include="ViewControllers\SplitViewController.designer.cs">
+      <DependentUpon>SplitViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\TableViewController.cs" />
+    <Compile Include="ViewControllers\TableViewController.designer.cs">
+      <DependentUpon>TableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ImageGallery.cs" />
+    <Compile Include="ViewControllers\AccesoController.cs" />
+    <Compile Include="ViewControllers\AccesoController.designer.cs">
+      <DependentUpon>AccesoController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\STLButton.cs" />
+    <Compile Include="Styles\STLTextField.cs" />
+    <Compile Include="Styles\STLTableViewSource.cs" />
+    <Compile Include="Styles\STLLabel.cs" />
+    <Compile Include="Styles\STLImageLabel.cs" />
+    <Compile Include="Styles\STLImageView.cs" />
+    <Compile Include="Helpers\LoadingView.cs" />
+    <Compile Include="Models\PickerModel.cs" />
+    <Compile Include="Helpers\DatePickerHelper.cs" />
+    <Compile Include="Helpers\Calendario.cs" />
+    <Compile Include="ViewControllers\SubMenuController.cs" />
+    <Compile Include="ViewControllers\SubMenuController.designer.cs">
+      <DependentUpon>SubMenuController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewElements\InfoPersonaCard.cs" />
+    <Compile Include="ViewElements\InfoEmpresaCard.cs" />
+    <Compile Include="Helpers\PickerDataModel.cs" />
+    <Compile Include="Helpers\DropDownListSource.cs" />
+    <Compile Include="Styles\STLDropDownList.cs" />
+    <Compile Include="ViewElements\UICheckBox.cs" />
+    <Compile Include="ViewElements\HorarioEventos.cs" />
+    <Compile Include="ViewElements\UIDropdownList.cs" />
+    <Compile Include="ViewElements\PostCard.cs" />
+    <Compile Include="ViewElements\CommentCard.cs" />
+    <Compile Include="Styles\STLCarritoCompra.cs" />
+    <Compile Include="ViewControllers\MiMembresiaController.cs" />
+    <Compile Include="ViewControllers\MiMembresiaController.designer.cs">
+      <DependentUpon>MiMembresiaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ReporteController.cs" />
+    <Compile Include="ViewControllers\ReporteController.designer.cs">
+      <DependentUpon>ReporteController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewElements\UIRadioButton.cs" />
+    <Compile Include="ViewControllers\MiPerfil\PerfilController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\PerfilController.designer.cs">
+      <DependentUpon>PerfilController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\DatosFacturacionController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\DatosFacturacionController.designer.cs">
+      <DependentUpon>DatosFacturacionController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Directorio\DirectorioEmpresasController.cs" />
+    <Compile Include="ViewControllers\Directorio\DirectorioEmpresasController.designer.cs">
+      <DependentUpon>DirectorioEmpresasController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Directorio\DirectorioUsuarioController.cs" />
+    <Compile Include="ViewControllers\Directorio\DirectorioUsuarioController.designer.cs">
+      <DependentUpon>DirectorioUsuarioController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\CarritoCompraController.cs" />
+    <Compile Include="ViewControllers\Servicios\CarritoCompraController.designer.cs">
+      <DependentUpon>CarritoCompraController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\MisColaboradoresBajaController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\MisColaboradoresBajaController.designer.cs">
+      <DependentUpon>MisColaboradoresBajaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\MisColaboradoresCambiosController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\MisColaboradoresCambiosController.designer.cs">
+      <DependentUpon>MisColaboradoresCambiosController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\MisColaboradoresController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\MisColaboradoresController.designer.cs">
+      <DependentUpon>MisColaboradoresController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Formatos\ReservaController.cs" />
+    <Compile Include="ViewControllers\Formatos\ReservaController.designer.cs">
+      <DependentUpon>ReservaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Formatos\RegistroInvitadosController.cs" />
+    <Compile Include="ViewControllers\Formatos\RegistroInvitadosController.designer.cs">
+      <DependentUpon>RegistroInvitadosController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\TarifasController.cs" />
+    <Compile Include="ViewControllers\Servicios\TarifasController.designer.cs">
+      <DependentUpon>TarifasController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\PaymentController.cs" />
+    <Compile Include="ViewControllers\Servicios\PaymentController.designer.cs">
+      <DependentUpon>PaymentController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\TabBarColaboradorController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\TabBarColaboradorController.designer.cs">
+      <DependentUpon>TabBarColaboradorController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\TabBarController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\TabBarController.designer.cs">
+      <DependentUpon>TabBarController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\EmpresaMiembroController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\EmpresaMiembroController.designer.cs">
+      <DependentUpon>EmpresaMiembroController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\EmpresaMiembroModificaController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\EmpresaMiembroModificaController.designer.cs">
+      <DependentUpon>EmpresaMiembroModificaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\AboutMeModificaController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\AboutMeModificaController.designer.cs">
+      <DependentUpon>AboutMeModificaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiPerfil\AboutMeController.cs" />
+    <Compile Include="ViewControllers\MiPerfil\AboutMeController.designer.cs">
+      <DependentUpon>AboutMeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\CarritoHelper.cs" />
+    <Compile Include="Styles\STLLine.cs" />
+    <Compile Include="Helpers\InternetConectionHelper.cs" />
+    <Compile Include="Helpers\StyleHelper.cs" />
+    <Compile Include="ViewControllers\Publicar\PublicarPostViewController.cs" />
+    <Compile Include="ViewControllers\Publicar\PublicarPostViewController.designer.cs">
+      <DependentUpon>PublicarPostViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\CamaraHelper.cs" />
+    <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="HeaderCarritoProductos.cs" />
+    <Compile Include="HeaderCarritoProductos.designer.cs">
+      <DependentUpon>HeaderCarritoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SucursalesModel.cs" />
+    <Compile Include="Models\CarritoCompras.cs" />
+    <Compile Include="Models\OrdenVentaController.cs" />
+    <Compile Include="Models\OrdenVentaDetalle.cs" />
+    <Compile Include="ViewControllers\Escritorio\ComentariosBodyCell.cs" />
+    <Compile Include="ViewControllers\Escritorio\ComentariosBodyCell.designer.cs">
+      <DependentUpon>ComentariosBodyCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Escritorio\EscritorioController.cs" />
+    <Compile Include="ViewControllers\Escritorio\EscritorioController.designer.cs">
+      <DependentUpon>EscritorioController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Escritorio\EscritorioHeaderCell.cs" />
+    <Compile Include="ViewControllers\Escritorio\EscritorioHeaderCell.designer.cs">
+      <DependentUpon>EscritorioHeaderCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Escritorio\NoComentsCell.cs" />
+    <Compile Include="ViewControllers\Escritorio\NoComentsCell.designer.cs">
+      <DependentUpon>NoComentsCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Comentarios\ComentarPostTableViewController.cs" />
+    <Compile Include="ViewControllers\Comentarios\ComentarPostTableViewController.designer.cs">
+      <DependentUpon>ComentarPostTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Comentarios\ComentarPostHeaderCell.cs" />
+    <Compile Include="ViewControllers\Comentarios\ComentarPostHeaderCell.designer.cs">
+      <DependentUpon>ComentarPostHeaderCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Comentarios\SeccionComentariosTableViewController.cs" />
+    <Compile Include="ViewControllers\Comentarios\SeccionComentariosTableViewController.designer.cs">
+      <DependentUpon>SeccionComentariosTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Comentarios\ComentarioViewCell.cs" />
+    <Compile Include="ViewControllers\Comentarios\ComentarioViewCell.designer.cs">
+      <DependentUpon>ComentarioViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Comentarios\NoComentariosViewCell.cs" />
+    <Compile Include="ViewControllers\Comentarios\NoComentariosViewCell.designer.cs">
+      <DependentUpon>NoComentariosViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiCuenta\MiCuentaViewController.cs" />
+    <Compile Include="ViewControllers\MiCuenta\MiCuentaViewController.designer.cs">
+      <DependentUpon>MiCuentaViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiCuenta\Productos\ProductosMiCuentaViewController.cs" />
+    <Compile Include="ViewControllers\MiCuenta\Productos\ProductosMiCuentaViewController.designer.cs">
+      <DependentUpon>ProductosMiCuentaViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiCuenta\Productos\CuentaProductosCell.cs" />
+    <Compile Include="ViewControllers\MiCuenta\Productos\CuentaProductosCell.designer.cs">
+      <DependentUpon>CuentaProductosCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiCuenta\Productos\NoInfoCuentaProductosCell.cs" />
+    <Compile Include="ViewControllers\MiCuenta\Productos\NoInfoCuentaProductosCell.designer.cs">
+      <DependentUpon>NoInfoCuentaProductosCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiCuenta\Membresias\MembresiasMiCuentaViewController.cs" />
+    <Compile Include="ViewControllers\MiCuenta\Membresias\MembresiasMiCuentaViewController.designer.cs">
+      <DependentUpon>MembresiasMiCuentaViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiCuenta\Membresias\CuentaMembresiasCell.cs" />
+    <Compile Include="ViewControllers\MiCuenta\Membresias\CuentaMembresiasCell.designer.cs">
+      <DependentUpon>CuentaMembresiasCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MiCuenta\Membresias\NoInfoCuentaMembresiasCell.cs" />
+    <Compile Include="ViewControllers\MiCuenta\Membresias\NoInfoCuentaMembresiasCell.designer.cs">
+      <DependentUpon>NoInfoCuentaMembresiasCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\TabBarDetalleVenta.cs" />
+    <Compile Include="ViewControllers\Servicios\TabBarDetalleVenta.designer.cs">
+      <DependentUpon>TabBarDetalleVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\Productos\CarritoProductos.cs" />
+    <Compile Include="ViewControllers\Servicios\Productos\CarritoProductos.designer.cs">
+      <DependentUpon>CarritoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\Productos\CeldaCarritoProductos.cs" />
+    <Compile Include="ViewControllers\Servicios\Productos\CeldaCarritoProductos.designer.cs">
+      <DependentUpon>CeldaCarritoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\Productos\CeldaNoProductos.cs" />
+    <Compile Include="ViewControllers\Servicios\Productos\CeldaNoProductos.designer.cs">
+      <DependentUpon>CeldaNoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\Membresias\TableViewMembresia.cs" />
+    <Compile Include="ViewControllers\Servicios\Membresias\TableViewMembresia.designer.cs">
+      <DependentUpon>TableViewMembresia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\Membresias\TableViewCellMembresias.cs" />
+    <Compile Include="ViewControllers\Servicios\Membresias\TableViewCellMembresias.designer.cs">
+      <DependentUpon>TableViewCellMembresias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\Membresias\TableViewCellNoMembresias.cs" />
+    <Compile Include="ViewControllers\Servicios\Membresias\TableViewCellNoMembresias.designer.cs">
+      <DependentUpon>TableViewCellNoMembresias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\VentaDetalleTableViewController.cs" />
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\VentaDetalleTableViewController.designer.cs">
+      <DependentUpon>VentaDetalleTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\VentaDetalleHeader.cs" />
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\VentaDetalleHeader.designer.cs">
+      <DependentUpon>VentaDetalleHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\CeldaVentaDetalle.cs" />
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\CeldaVentaDetalle.designer.cs">
+      <DependentUpon>CeldaVentaDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\CeldaNoDetalleVenta.cs" />
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\CeldaNoDetalleVenta.designer.cs">
+      <DependentUpon>CeldaNoDetalleVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\CanjearCuponController.cs" />
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\CanjearCuponController.designer.cs">
+      <DependentUpon>CanjearCuponController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\DetalleVentaViewController.cs" />
+    <Compile Include="ViewControllers\Servicios\VentaDetalle\DetalleVentaViewController.designer.cs">
+      <DependentUpon>DetalleVentaViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Comentarios\DetailCommentImage.cs" />
+    <Compile Include="ViewControllers\Comentarios\DetailCommentImage.designer.cs">
+      <DependentUpon>DetailCommentImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Cloud\cloudViewController.cs" />
+    <Compile Include="ViewControllers\Cloud\cloudViewController.designer.cs">
+      <DependentUpon>cloudViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Telefonia\TelefoniaTableView.cs" />
+    <Compile Include="ViewControllers\Telefonia\TelefoniaTableView.designer.cs">
+      <DependentUpon>TelefoniaTableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilTableViewController.cs" />
+    <Compile Include="PerfilTableViewController.designer.cs">
+      <DependentUpon>PerfilTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatosEmpresaTableViewController.cs" />
+    <Compile Include="DatosEmpresaTableViewController.designer.cs">
+      <DependentUpon>DatosEmpresaTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DireccionEmpresaTableViewController.cs" />
+    <Compile Include="DireccionEmpresaTableViewController.designer.cs">
+      <DependentUpon>DireccionEmpresaTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarRedesSocialesTableViewController.cs" />
+    <Compile Include="EditarRedesSocialesTableViewController.designer.cs">
+      <DependentUpon>EditarRedesSocialesTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FechaNacimientoPickerViewController.cs" />
+    <Compile Include="FechaNacimientoPickerViewController.designer.cs">
+      <DependentUpon>FechaNacimientoPickerViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneroViewController.cs" />
+    <Compile Include="GeneroViewController.designer.cs">
+      <DependentUpon>GeneroViewController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\ic_facebook.imageset\" />
+    <Folder Include="Assets.xcassets\ic_instagram.imageset\" />
+    <Folder Include="Assets.xcassets\ic_twitter.imageset\" />
+    <Folder Include="Assets.xcassets\ic_qr.imageset\" />
+    <Folder Include="Styles\" />
+    <Folder Include="Assets.xcassets\ic_refresh.imageset\" />
+    <Folder Include="Assets.xcassets\ic_logo_worklabs.imageset\" />
+    <Folder Include="Assets.xcassets\ic_attach_file.imageset\" />
+    <Folder Include="Models\" />
+    <Folder Include="Assets.xcassets\ic_search.imageset\" />
+    <Folder Include="Assets.xcassets\ic_twitter.imageset\" />
+    <Folder Include="ViewElements\" />
+    <Folder Include="Assets.xcassets\ic_shopping_cart.imageset\" />
+    <Folder Include="Assets.xcassets\ic_radiobutton_check.imageset\" />
+    <Folder Include="Assets.xcassets\ic_radiobutton_uncheck.imageset\" />
+    <Folder Include="ViewControllers\MiPerfil\" />
+    <Folder Include="ViewControllers\Servicios\" />
+    <Folder Include="ViewControllers\Directorio\" />
+    <Folder Include="ViewControllers\Formatos\" />
+    <Folder Include="Assets.xcassets\ic_star.imageset\" />
+    <Folder Include="Assets.xcassets\ic_star_border.imageset\" />
+    <Folder Include="Assets.xcassets\ic_left_arrow.imageset\" />
+    <Folder Include="Assets.xcassets\BackGround.imageset\" />
+    <Folder Include="Assets.xcassets\Leyenda.imageset\" />
+    <Folder Include="ViewControllers\Publicar\" />
+    <Folder Include="Assets.xcassets\Profile.imageset\" />
+    <Folder Include="Assets.xcassets\Likes.imageset\" />
+    <Folder Include="Assets.xcassets\Comments.imageset\" />
+    <Folder Include="Assets.xcassets\back.imageset\" />
+    <Folder Include="Assets.xcassets\ic_derechaabajo.imageset\" />
+    <Folder Include="Assets.xcassets\ic_derechaarriba.imageset\" />
+    <Folder Include="Assets.xcassets\ic_izquierdaabajo.imageset\" />
+    <Folder Include="Assets.xcassets\ic_izquierdaarriba.imageset\" />
+    <Folder Include="Assets.xcassets\worklabs.imageset\" />
+    <Folder Include="Assets.xcassets\ic_qr_NAVBAR.imageset\" />
+    <Folder Include="Assets.xcassets\qr.imageset\" />
+    <Folder Include="Assets.xcassets\ic_comentar.imageset\" />
+    <Folder Include="Assets.xcassets\Camera.imageset\" />
+    <Folder Include="Assets.xcassets\delete-image.imageset\" />
+    <Folder Include="Assets.xcassets\close.imageset\" />
+    <Folder Include="Assets.xcassets\Product.imageset\" />
+    <Folder Include="Assets.xcassets\membership.imageset\" />
+    <Folder Include="Assets.xcassets\shopping.imageset\" />
+    <Folder Include="Assets.xcassets\Launch.imageset\" />
+    <Folder Include="Assets.xcassets\worklabsLogo.imageset\" />
+    <Folder Include="ViewControllers\Escritorio\" />
+    <Folder Include="ViewControllers\Comentarios\" />
+    <Folder Include="ViewControllers\MiCuenta\" />
+    <Folder Include="ViewControllers\MiCuenta\Productos\" />
+    <Folder Include="ViewControllers\MiCuenta\Membresias\" />
+    <Folder Include="ViewControllers\Nueva carpeta\" />
+    <Folder Include="ViewControllers\Servicios\Productos\" />
+    <Folder Include="ViewControllers\Servicios\Membresias\" />
+    <Folder Include="ViewControllers\Servicios\VentaDetalle\" />
+    <Folder Include="ViewControllers\Cloud\" />
+    <Folder Include="ViewControllers\Telefonia\" />
+    <Folder Include="Assets.xcassets\Habilidades.imageset\" />
+    <Folder Include="Assets.xcassets\Puesto.imageset\" />
+    <Folder Include="Assets.xcassets\Mail.imageset\" />
+    <Folder Include="Assets.xcassets\Genero.imageset\" />
+    <Folder Include="Assets.xcassets\Profesion.imageset\" />
+    <Folder Include="Assets.xcassets\Telefono.imageset\" />
+    <Folder Include="Assets.xcassets\Celular.imageset\" />
+    <Folder Include="Assets.xcassets\Editar.imageset\" />
+    <Folder Include="Assets.xcassets\Nombre.imageset\" />
+    <Folder Include="Assets.xcassets\Apellidos.imageset\" />
+    <Folder Include="Assets.xcassets\Nacimiento.imageset\" />
+    <Folder Include="Assets.xcassets\NombreEmpresa.imageset\" />
+    <Folder Include="Assets.xcassets\GiroComercial.imageset\" />
+    <Folder Include="Assets.xcassets\RFC.imageset\" />
+    <Folder Include="Assets.xcassets\RazonSocial.imageset\" />
+    <Folder Include="Assets.xcassets\Phone.imageset\" />
+    <Folder Include="Assets.xcassets\CodigoPostal.imageset\" />
+    <Folder Include="Assets.xcassets\Calle.imageset\" />
+    <Folder Include="Assets.xcassets\Estado.imageset\" />
+    <Folder Include="Assets.xcassets\Municipio.imageset\" />
+    <Folder Include="Assets.xcassets\Colonia.imageset\" />
+    <Folder Include="Assets.xcassets\NumeroInterior.imageset\" />
+    <Folder Include="Assets.xcassets\NumeroExterior.imageset\" />
+    <Folder Include="Assets.xcassets\PaginaWeb.imageset\" />
+    <Folder Include="Assets.xcassets\Facebook.imageset\" />
+    <Folder Include="Assets.xcassets\Twitter.imageset\" />
+    <Folder Include="Assets.xcassets\Instagram.imageset\" />
+    <Folder Include="Assets.xcassets\PerfilGrande.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork%402x" />
+  </ItemGroup>
+  <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\NETStandard.Library.2.0.0\build\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\NETStandard.Library.targets')" />
+  <Import Project="..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
+>>>>>>> 935266a83dd65f080db147d3e8f20216df42a06f
 </Project>
