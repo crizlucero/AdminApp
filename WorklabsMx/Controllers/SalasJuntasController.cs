@@ -131,6 +131,8 @@ namespace WorklabsMx.Controllers
             finally { conn.Close(); }
             return salas;
         }
+
+
         public List<SalaJuntasReservacionModel> GetHorasNoDisponibles(string fecha, string sala_id){
             List<SalaJuntasReservacionModel> salas = new List<SalaJuntasReservacionModel>();
             try

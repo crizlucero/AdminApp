@@ -1,20 +1,31 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/FechaReservacionPickerViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs">
     <Files>
-      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="67" Column="31" />
-      <File FileName="iOS/FechaReservacionPickerViewController.cs" Line="26" Column="37" />
+      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="158" Column="39" />
+      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="127" Column="10" />
+      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="11" Column="56" />
+      <File FileName="iOS/FechaReservacionPickerViewController.cs" Line="31" Column="49" />
+      <File FileName="iOS/ViewControllers/Servicios/Productos/CarritoProductos.cs" Line="140" Column="63" />
+      <File FileName="iOS/ViewControllers/Servicios/Productos/CeldaCarritoProductos.cs" Line="66" Column="31" />
+      <File FileName="iOS/AppDelegate.cs" Line="73" Column="39" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasHistorialActivity.cs" Line="33" Column="53" />
+      <File FileName="WorklabsMx/Enum/TiposReservacion.cs" Line="7" Column="15" />
+      <File FileName="WorklabsMx/Enum/TiposServicios.cs" Line="4" Column="31" />
+      <File FileName="WorklabsMx/Enum/CamposMiembro.cs" Line="6" Column="23" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioHeaderCell.cs" Line="25" Column="70" />
+      <File FileName="iOS/ViewControllers/SalaJuntas/ReservacionesSalaCell.cs" Line="21" Column="10" />
+      <File FileName="iOS/ViewControllers/SalaJuntas/ReservacionesSalaCell.designer.cs" Line="15" Column="19" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State>
-          <Value>e.Message</Value>
-          <Value>e.Message</Value>
-          <Value>FechaReservacion</Value>
+          <Value>Reservacion.Sala_Hora_Inicio</Value>
+          <Value>Reservacion.Sala_Hora_Inicio.Substring(0, 5)</Value>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

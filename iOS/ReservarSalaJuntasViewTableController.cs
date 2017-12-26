@@ -21,6 +21,7 @@ namespace WorklabsMx.iOS
         SalaJuntasModel SalaActual = new SalaJuntasModel();
         List<UIView> VistasHorarios = new List<UIView>();
 
+
         int HorasReservadas = 0;
 
         string DiaSeleccionado;
@@ -32,12 +33,8 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
-            this.lblHorasReservadas.Text = "0";
-
-            this.FormatoDiaSeleccionado(NSDate.Now);
-
-            this.lblDiaLetra.Text = DiaSeleccionado;
+            this.GenerateRecornizes();
+            this.LimpiarInfo();
 
             if(InternetConectionHelper.VerificarConexion())
             {
@@ -45,12 +42,8 @@ namespace WorklabsMx.iOS
                 if(this.SalasJuntas.Count >= 0)
                 {
                     this.SalaActual = this.SalasJuntas[0];
-                    this.HorasNoDisponibles = new SalasJuntasController().GetHorasNoDisponibles(this.btnSeleccionFecha.TitleLabel.Text, this.SalaActual.Sala_Id);
-                    for (int indice = 0; indice < HorasNoDisponibles.Count; indice ++)
-                    {
-                        var HoraInicio = HorasNoDisponibles[indice].Sala_Hora_Inicio;
-                        this.VistasHorarios[int.Parse(HoraInicio) - 1].BackgroundColor = UIColor.Black;
-                    }
+
+                    this.GetHorasNoDisponibles(SalaActual.Sala_Id);
                 }
             }
 
@@ -83,21 +76,20 @@ namespace WorklabsMx.iOS
                 this.lblPiso.Text = "NIVEL " + SalaActual.Sala_Nivel;
                 this.lblNombre.Text = SalaActual.Sala_Descripcion;
                 this.lblCapacidad.Text = SalaActual.Sala_Capacidad + " PERSONAS";
-                this.HorasNoDisponibles = new SalasJuntasController().GetHorasNoDisponibles(this.btnSeleccionFecha.TitleLabel.Text, this.SalaActual.Sala_Id);
-                for (int indice = 0; indice < HorasNoDisponibles.Count; indice++)
+
+                if (InternetConectionHelper.VerificarConexion())
                 {
-                    var HoraInicio = HorasNoDisponibles[indice].Sala_Hora_Inicio;
-                    this.VistasHorarios[int.Parse(HoraInicio) - 1].BackgroundColor = UIColor.Black;
+                    this.GetHorasNoDisponibles(this.SalaActual.Sala_Id);
                 }
+               
             };
 
-            this.GenerateRecornizes();
+           
             CGRect FrameHorarios = new CGRect(this.vwHorarios.Frame.X, this.vwHorarios.Frame.Y, this.vwHorarios.Frame.Width + 50, this.vwHorarios.Frame.Height);
             this.scvScrollHorarios.ContentSize = FrameHorarios.Size;
             StyleHelper.Style(this.vwBotonFecha.Layer);
             StyleHelper.Style(this.vwInfoReservacion.Layer);
-            dateFormat.DateFormat = "dd/MM/yyyy";
-            this.btnSeleccionFecha.SetTitle(dateFormat.ToString(NSDate.Now), UIControlState.Normal);
+
         }
 
 
@@ -110,12 +102,39 @@ namespace WorklabsMx.iOS
             dateFormat.DateFormat = "EEEE";
             DiaSeleccionado = dateFormat.ToString(Day);
 
-            this.lblDiaLetra.Text = DiaSeleccionado;
+            this.lblDiaLetra.Text = DiaSeleccionado.Substring(0, 3);
+
+            dateFormat.DateFormat = "dd/MM/yyyy";
+            this.btnSeleccionFecha.SetTitle(dateFormat.ToString(Day), UIControlState.Normal);
+        }
+
+
+        private void GetHorasNoDisponibles(string SalaId)
+        {
+            for (int indice = 0; indice < 24; indice++)
+            {
+                this.VistasHorarios[indice].BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
+            }
+            FlagView2324 = false; FlagView2223 = false; FlagView2122 = false; FlagView2021 = false; FlagView1920 = false; FlagView1819 = false; FlagView1718 = false; FlagView1617 = false; Flag1516 = false; Flag1415 = false; Flag1314 = false; Flag1213 = false; Flag1112 = false; Flag1011 = false; Flag0910 = false; Flag0809 = false; Flag0708 = false; Flag0607 = false; Flag0506 = false; Flag0405 = false; Flag0304 = false; Flag0203 = false; Flag0102 = false; Flag0124 = false;
+
+
+            this.HorasNoDisponibles = new SalasJuntasController().GetHorasNoDisponibles(this.btnSeleccionFecha.TitleLabel.Text, SalaId);
+            for (int indice = 0; indice < HorasNoDisponibles.Count; indice++)
+            {
+                var HoraInicio = HorasNoDisponibles[indice].Sala_Hora_Inicio;
+                this.VistasHorarios[int.Parse(HoraInicio) - 1].BackgroundColor = UIColor.Black;
+            }
+        }
+
+        private void LimpiarInfo()
+        {
+            this.HorasReservadas = 0;
+            this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.FormatoDiaSeleccionado(NSDate.Now);
         }
 
         private void GenerateRecornizes()
         {
-
             UITapGestureRecognizer tapGesture2324 = new UITapGestureRecognizer(vw2324Touch);
             UITapGestureRecognizer tapGesture2223 = new UITapGestureRecognizer(vw2223Touch);
             UITapGestureRecognizer tapGesture2122 = new UITapGestureRecognizer(vw2122Touch);
@@ -143,8 +162,6 @@ namespace WorklabsMx.iOS
 
             this.view2324.UserInteractionEnabled = true;
             this.view2324.AddGestureRecognizer(tapGesture2324);
-            this.view2324.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
-
 
             this.vw0102.UserInteractionEnabled = true;
             this.vw0102.AddGestureRecognizer(tapGesture0102);
@@ -752,19 +769,12 @@ namespace WorklabsMx.iOS
         public void FechaReservaSeleccionada(String FechaReservacion)
         {
             this.btnSeleccionFecha.SetTitle(FechaReservacion, UIControlState.Normal);
-            this.HorasNoDisponibles = new SalasJuntasController().GetHorasNoDisponibles(FechaReservacion, this.SalaActual.Sala_Id);
-            for (int indice = 0; indice < HorasNoDisponibles.Count; indice++)
+            if(InternetConectionHelper.VerificarConexion())
             {
-                var HoraInicio = HorasNoDisponibles[indice].Sala_Hora_Inicio;
-                this.VistasHorarios[int.Parse(HoraInicio) - 1].BackgroundColor = UIColor.Black;
+                this.GetHorasNoDisponibles(this.SalaActual.Sala_Id);
             }
-            /*var NewDate = DateTime.ParseExact(FechaReservacion, "dd/MM/yyyy", null);
-
-            NSDate newFormatDate = (NSDate)NewDate;
-            this.FormatoDiaSeleccionado(newFormatDate);*/
-            NSDateFormatter formato = new NSDateFormatter();
-            formato.DateFormat = "dd/MM/yyyy";
-            NSDate newFormatDate = formato.Parse(FechaReservacion);
+            dateFormat.DateFormat = "dd/MM/yyyy";
+            NSDate newFormatDate = dateFormat.Parse(FechaReservacion);
             this.FormatoDiaSeleccionado(newFormatDate);
         }
     }

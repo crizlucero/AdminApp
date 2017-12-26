@@ -23,14 +23,14 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.dtpFechaReservacion.MinimumDate = NSDate.Now;
-            dateFormat.DateFormat = "dd/MM/yyyy";
-            this.FechaReservacion = dateFormat.ToString(this.dtpFechaReservacion.Date);
         }
 
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            this.dtpFechaReservacion.MinimumDate = (NSDate)DateTime.Now;
+            dateFormat.DateFormat = "dd/MM/yyyy";
+            this.FechaReservacion = dateFormat.ToString(this.dtpFechaReservacion.Date);
         }
 
         partial void btnCancelar_Touch(UIButton sender)

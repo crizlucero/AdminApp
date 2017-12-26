@@ -2,6 +2,7 @@ using System;
 using UIKit;
 using WorklabsMx.iOS.Models;
 using WorklabsMx.iOS.Helpers;
+using WorklabsMx.Enum;
 using WorklabsMx.Models;
 using System.Collections.Generic;
 using WorklabsMx.Controllers;
@@ -27,30 +28,22 @@ namespace WorklabsMx.iOS
         bool isShowInformation = false;
         bool existeConeccion = true;
 
-        List<ReservacionSalaModel> Reservaciones = new List<ReservacionSalaModel>();
+        List<SalaJuntasReservacionModel> Reservaciones = new List<SalaJuntasReservacionModel>();
 
         int SeccionSeleccionada = 0;
 
-        UIScrollView scrollView;
         List<UIImageView> ImagesViews = new List<UIImageView>();
 
-
-        nfloat h = 50.0f;
-        nfloat w = 50.0f;
-        nfloat padding = 10.0f;
-        nint n = 5;
 
         public HistorialReservaciones(IntPtr handle) : base(handle)
         {
         }
 
-
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            var reservacion1 = new ReservacionSalaModel();
-            this.Reservaciones.Add(reservacion1);
-            this.CreateScrollView();
+            this.GetReservaciones((int)TiposReservacion.Activo);
+
         }
 
         public override void ViewWillAppear(bool animated)
@@ -63,21 +56,32 @@ namespace WorklabsMx.iOS
             base.ViewDidAppear(animated);
         }
 
+
+        private void GetReservaciones(int TipoResrvacion)
+        {
+            if (InternetConectionHelper.VerificarConexion())
+            {
+                this.Reservaciones = new SalasJuntasController().GetReservaciones(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), TipoResrvacion);
+            }
+        }
+
         void MostrarTipoReservacion(object sender, EventArgs e)
         {
             var TipoReservaciones = int.Parse(sender.ToString());
-            this.Reservaciones = new List<ReservacionSalaModel>();
+            this.Reservaciones = new List<SalaJuntasReservacionModel>();
 
             if(TipoReservaciones == 0)
             {
-                //this.Reservaciones = //consulta para traer reservaciones con el filtro de pendientes o a realizar
-                //simulacion que se tiene una reservacion pendiente
-                var reservacion1 = new ReservacionSalaModel();
-                this.Reservaciones.Add(reservacion1);
+                this.GetReservaciones((int)TiposReservacion.Activo);
             }
             else
             {
-                //this.Reservaciones = //consulta para traer reservaciones con el filtro de canceladas o realizadas
+                this.GetReservaciones((int)TiposReservacion.Cancelada);
+                var Terminadas = new SalasJuntasController().GetReservaciones(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), (int)TiposReservacion.Terminada);
+                foreach(SalaJuntasReservacionModel terminada in Terminadas)
+                {
+                    this.Reservaciones.Add(terminada);
+                }
 
             }
             this.ActualizarTabla(TipoReservaciones);
@@ -143,11 +147,16 @@ namespace WorklabsMx.iOS
             switch (editingStyle)
             {
                 case UITableViewCellEditingStyle.Delete:
-                    // remove the item from the underlying data source
-                    Reservaciones.RemoveAt(indexPath.Row);
-                                      // delete the row from the table
-                    //tableView.DeleteRows(new NSIndexPath[] { indexPath }, UITableViewRowAnimation.Fade);
-                    this.TableView.ReloadData();
+                    bool eliminado = false;
+                    if(InternetConectionHelper.VerificarConexion())
+                    {
+                        eliminado = new SalasJuntasController().CancelarSalaJuntas("BAJA", this.Reservaciones[indexPath.Row].Sala_Junta_Reservacion_Id);
+                    }
+                    if (eliminado)
+                    {
+                        Reservaciones.RemoveAt(indexPath.Row);
+                        this.TableView.ReloadData();
+                    }
                     break;
                 case UITableViewCellEditingStyle.None:
                     Console.WriteLine("CommitEditingStyle:None called");
@@ -157,11 +166,11 @@ namespace WorklabsMx.iOS
 
         public override bool CanEditRow(UITableView tableView, NSIndexPath indexPath)
         {
-            return true; // return false if you wish to disable editing for a specific indexPath or for all rows
+            return true;
         }
 
         public override string TitleForDeleteConfirmation(UITableView tableView, NSIndexPath indexPath)
-        {   // Optional - default text is 'Delete'
+        {
             return "Cancelar";
         }
 
@@ -169,7 +178,6 @@ namespace WorklabsMx.iOS
         {
             this.NavigationController.PopViewController(true);
         }
-
 
         private void WillDisplay(int Row)
         {
@@ -189,28 +197,6 @@ namespace WorklabsMx.iOS
             this.TableView.ReloadData();
         }
 
-
-        private void CreateScrollView()
-        {
-           /* scrollView = new UIScrollView
-            {
-                Frame = new CGRect(0, 200, View.Frame.Width, h + 2 * padding),
-                ContentSize = new CGSize((w + padding) * n, h),
-                BackgroundColor = UIColor.White,
-                AutoresizingMask = UIViewAutoresizing.FlexibleWidth
-            };
-
-            for (int i = 0; i < n; i++)
-            {
-                var imageView = new UIImageView();
-                imageView.Image = UIImage.FromBundle("ImagenSala");
-                imageView.Frame = new CGRect(padding * (i + 1) + (i * w), padding, View.Frame.Width, h);
-                scrollView.AddSubview(imageView);
-                ImagesViews.Add(imageView);
-            }
-
-            View.AddSubview(scrollView);*/
-        }
 
 
     }
