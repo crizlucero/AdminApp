@@ -1,4 +1,4 @@
-using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.Models; using System.Collections.Generic; using WorklabsMx.Controllers; using BigTed; using WorklabsMx.Helpers; using System.Threading.Tasks; using Foundation;  namespace WorklabsMx.iOS {     public partial class EscritorioController : UITableViewController
+using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.Models; using System.Collections.Generic; using WorklabsMx.Controllers; using BigTed; using WorklabsMx.Helpers; using System.Threading.Tasks; using Foundation; using SWRevealViewControllerBinding;  namespace WorklabsMx.iOS {     public partial class EscritorioController : UITableViewController
     {
         const string IdentificadorCeldaHeader = "Header";
         const string IdentificadorCeldaPost = "Post";
@@ -91,5 +91,9 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         partial void btnToScanQr_TouchUpInside(UIBarButtonItem sender)
         {
             this.PerformSegue("toScanQr", sender);
-        } 
-    }      partial class EscritorioController: PostPublicadoDel     {         public async void PostPublicado()         {             BTProgressHUD.Show(status: "Cargando Comentarios");             await Task.Delay(2000);             this.CargarInfo();             this.TableView.ReloadData();         }     }      /*partial class EscritorioController: BackWindow     {         public async void BackWindow()         {             BTProgressHUD.Show(status: "Cargando Comentarios");             await Task.Delay(2000);             //this.CargarInfo();         }     }*/ } 
+        }
+
+        partial void Menu_Touch(UIBarButtonItem sender)
+        {
+            this.RevealViewController().RevealToggleAnimated(true);             View.AddGestureRecognizer(this.RevealViewController().PanGestureRecognizer);
+        }     }      partial class EscritorioController: PostPublicadoDel     {         public async void PostPublicado()         {             BTProgressHUD.Show(status: "Cargando Comentarios");             await Task.Delay(2000);             this.CargarInfo();             this.TableView.ReloadData();         }     }      /*partial class EscritorioController: BackWindow     {         public async void BackWindow()         {             BTProgressHUD.Show(status: "Cargando Comentarios");             await Task.Delay(2000);             //this.CargarInfo();         }     }*/ } 

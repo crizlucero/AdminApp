@@ -22,6 +22,10 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnToScanQr_TouchUpInside (UIKit.UIBarButtonItem sender);
 
+        [Action ("Menu_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void Menu_Touch (UIKit.UIBarButtonItem sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (btnScanQr != null) {

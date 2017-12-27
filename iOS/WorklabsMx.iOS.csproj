@@ -976,6 +976,22 @@
     <Compile Include="SeleccionarSalaViewController.designer.cs">
       <DependentUpon>SeleccionarSalaViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuTableViewController.cs" />
+    <Compile Include="MenuTableViewController.designer.cs">
+      <DependentUpon>MenuTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeaderMenulCell.cs" />
+    <Compile Include="HeaderMenulCell.designer.cs">
+      <DependentUpon>HeaderMenulCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuContenidoCell.cs" />
+    <Compile Include="MenuContenidoCell.designer.cs">
+      <DependentUpon>MenuContenidoCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoInfoMenuCell.cs" />
+    <Compile Include="NoInfoMenuCell.designer.cs">
+      <DependentUpon>NoInfoMenuCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -1102,6 +1118,12 @@
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SWRevealViewControllerBinding\SWRevealViewControllerBinding.csproj">
+      <Project>{896BABD5-06E7-41CE-B5F7-27D849F3BC6B}</Project>
+      <Name>SWRevealViewControllerBinding</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

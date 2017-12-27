@@ -1,7 +1,17 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/MenuTableViewController.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="64" Column="35" />
+      <File FileName="iOS/MenuTableViewController.cs" Line="22" Column="38" />
+      <File FileName="iOS/ViewControllers/TableViewController.cs" Line="17" Column="27" />
+      <File FileName="iOS/Styles/STLTableViewSource.cs" Line="78" Column="31" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="201" Column="32" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="142" Column="53" />
+      <File FileName="iOS/MenuContenidoCell.cs" Line="15" Column="32" />
+      <File FileName="iOS/ViewControllers/Escritorio/NoComentsCell.cs" Line="20" Column="4" />
+      <File FileName="iOS/AppDelegate.cs" Line="76" Column="72" />
+      <File FileName="iOS/ViewControllers/SplitViewController.cs" Line="21" Column="41" />
+      <File FileName="iOS/Main.storyboard" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioHeaderCell.cs" Line="27" Column="151" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -9,5 +19,6 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C8F534E0-9C6A-4F53-A110-4E330B864317" />
   <MultiItemStartupConfigurations />
 </Properties>

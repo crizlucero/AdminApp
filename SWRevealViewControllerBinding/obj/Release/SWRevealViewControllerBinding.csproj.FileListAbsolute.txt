@@ -1,0 +1,5 @@
+/Users/gilberto/Downloads/SWRevealViewController-XamarinBinding-master/SWRevealViewControllerBinding/bin/Release/SWRevealViewControllerBinding.dll
+/Users/gilberto/Downloads/SWRevealViewController-XamarinBinding-master/SWRevealViewControllerBinding/bin/Release/SWRevealViewControllerBinding.pdb
+/Users/gilberto/Downloads/SWRevealViewController-XamarinBinding-master/SWRevealViewControllerBinding/obj/Release/SWRevealViewControllerBinding.csproj.CoreCompileInputs.cache
+/Users/gilberto/Downloads/SWRevealViewController-XamarinBinding-master/SWRevealViewControllerBinding/obj/Release/SWRevealViewControllerBinding.dll
+/Users/gilberto/Downloads/SWRevealViewController-XamarinBinding-master/SWRevealViewControllerBinding/obj/Release/SWRevealViewControllerBinding.pdb
