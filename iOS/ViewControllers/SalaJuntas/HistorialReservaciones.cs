@@ -1,16 +1,14 @@
 using System;
 using UIKit;
-using WorklabsMx.iOS.Models;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Enum;
 using WorklabsMx.Models;
 using System.Collections.Generic;
 using WorklabsMx.Controllers;
 using BigTed;
-using WorklabsMx.Helpers;
 using System.Threading.Tasks;
 using Foundation;
-using CoreGraphics;
+using SWRevealViewControllerBinding;
 
 namespace WorklabsMx.iOS
 {
@@ -174,11 +172,6 @@ namespace WorklabsMx.iOS
             return "Cancelar";
         }
 
-        partial void btnBack(UIBarButtonItem sender)
-        {
-            this.NavigationController.PopViewController(true);
-        }
-
         private void WillDisplay(int Row)
         {
             int LastRow = Reservaciones.Count - 1;
@@ -197,8 +190,11 @@ namespace WorklabsMx.iOS
             this.TableView.ReloadData();
         }
 
-
-
+        partial void btnBack_Touch(UIBarButtonItem sender)
+        {
+            this.RevealViewController().RevealToggleAnimated(true);
+            View.AddGestureRecognizer(this.RevealViewController().PanGestureRecognizer);
+        }
     }
 
 }

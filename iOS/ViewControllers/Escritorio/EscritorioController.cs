@@ -25,6 +25,9 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         }          public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+        }          public override void ViewDidDisappear(bool animated)
+        {
+            base.ViewDidDisappear(animated);
         }
          void MostrarImagenEnGrande(object sender, EventArgs e)         {             this.PerformSegue("toShowImageFromPost", (UIImageView)sender);         }          async void ComentarPost(object sender, EventArgs e)         {             CurrentPost = (PostModel)sender;             ContadorComentar = ContadorComentar + 1;             if(ContadorComentar <= 1)             {                 BTProgressHUD.Show(status: "Cargando Comentarios");                 await Task.Delay(2000);                 currentProfileImage = ImageGallery.LoadImage(CurrentPost.Usuario_Fotografia_Ruta);                 currentPostImage = ImageGallery.LoadImage(CurrentPost.Publicacion_Imagen_Ruta);                 this.PerformSegue("comentar", null);             }          }           void InfoUserPost(object sender, EventArgs e)         {             ListUser = (List<string>)sender;             this.PerformSegue("DetallarPerfil", null);         }          public override UIView GetViewForHeader(UITableView tableView, nint section)
         {             var headerCell = (EscritorioHeaderCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);             headerCell.UpdateCell(miembro);             this.ImagenPerfil = headerCell.getImagenPerfil();             StyleHelper.Style(headerCell.Layer);
@@ -95,5 +98,5 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 
         partial void Menu_Touch(UIBarButtonItem sender)
         {
-            this.RevealViewController().RevealToggleAnimated(true);             View.AddGestureRecognizer(this.RevealViewController().PanGestureRecognizer);
+            this.RevealViewController().RevealToggleAnimated(true);             View.AddGestureRecognizer(this.RevealViewController().PanGestureRecognizer);            
         }     }      partial class EscritorioController: PostPublicadoDel     {         public async void PostPublicado()         {             BTProgressHUD.Show(status: "Cargando Comentarios");             await Task.Delay(2000);             this.CargarInfo();             this.TableView.ReloadData();         }     }      /*partial class EscritorioController: BackWindow     {         public async void BackWindow()         {             BTProgressHUD.Show(status: "Cargando Comentarios");             await Task.Delay(2000);             //this.CargarInfo();         }     }*/ } 

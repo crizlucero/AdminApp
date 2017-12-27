@@ -10,6 +10,7 @@ using BigTed;
 using System.Threading.Tasks;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Helpers;
+using SWRevealViewControllerBinding;
 
 namespace WorklabsMx.iOS
 {
@@ -80,5 +81,10 @@ namespace WorklabsMx.iOS
             }
         }
 
-	}
+        partial void btnBack_Touch(UIBarButtonItem sender)
+        {
+            this.RevealViewController().RevealToggleAnimated(true);
+            View.AddGestureRecognizer(this.RevealViewController().PanGestureRecognizer);
+        }
+    }
 }

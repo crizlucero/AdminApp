@@ -15,7 +15,15 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem btnBack { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIBarButtonItem btnCarrito { get; set; }
+
+        [Action ("btnBack_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnBack_Touch (UIKit.UIBarButtonItem sender);
 
         [Action ("btnCarrito_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -23,6 +31,11 @@ namespace WorklabsMx.iOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnBack != null) {
+                btnBack.Dispose ();
+                btnBack = null;
+            }
+
             if (btnCarrito != null) {
                 btnCarrito.Dispose ();
                 btnCarrito = null;

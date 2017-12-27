@@ -619,6 +619,10 @@
     <ImageAsset Include="Assets.xcassets\SalaJuntas.imageset\SalaJuntas.png" />
     <ImageAsset Include="Assets.xcassets\SalaJuntas.imageset\SalaJuntas%402x.png" />
     <ImageAsset Include="Assets.xcassets\SalaJuntas.imageset\SalaJuntas%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Menu.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Menu.imageset\Grabber.png" />
+    <ImageAsset Include="Assets.xcassets\Menu.imageset\Grabber%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Menu.imageset\Grabber%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -992,6 +996,7 @@
     <Compile Include="NoInfoMenuCell.designer.cs">
       <DependentUpon>NoInfoMenuCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\EscritorioController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -1115,6 +1120,7 @@
     <Folder Include="Assets.xcassets\Calendar.imageset\" />
     <Folder Include="Assets.xcassets\Clock.imageset\" />
     <Folder Include="Assets.xcassets\WL.imageset\" />
+    <Folder Include="Assets.xcassets\Menu.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

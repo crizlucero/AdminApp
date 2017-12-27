@@ -14,6 +14,10 @@ namespace WorklabsMx.iOS
     [Register ("SubMenuController")]
     partial class SubMenuController
     {
+        [Action ("Bakc_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void Bakc_Touch (UIKit.UIBarButtonItem sender);
+
         void ReleaseDesignerOutlets ()
         {
         }

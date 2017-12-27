@@ -25,7 +25,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\MiembrosController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\ColaboradoresController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\EmpresaController.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Controllers\EscritorioController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\PostModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ComentarioModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\DatosFiscales.cs" />

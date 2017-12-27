@@ -2,14 +2,12 @@ using System;
 using UIKit;
 using WorklabsMx.Models;
 using System.Collections.Generic;
-//using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
-using WorklabsMx.iOS.Styles;
 using WorklabsMx.Helpers;
-using WorklabsMx.Enum;
 using WorklabsMx.iOS.Helpers;
 using BigTed;
 using SWRevealViewControllerBinding;
+using Foundation;
 
 namespace WorklabsMx.iOS
 {
@@ -25,6 +23,8 @@ namespace WorklabsMx.iOS
 
         bool isShowInformation = false;
         bool existeConeccion = true;
+
+        int SubmenuIndex = 0;
 
         List<ItemsMenu> tableItems = new List<ItemsMenu>();
 
@@ -59,6 +59,14 @@ namespace WorklabsMx.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+        }
+
+        public override void ViewDidDisappear(bool animated)
+        {
+            base.ViewDidDisappear(animated);
+            // var color = UIColor.Black.ColorWithAlpha(0.6f);
+            //this.View.BackgroundColor = color;
+
         }
 
         public override UIView GetViewForHeader(UITableView tableView, nint section)
@@ -103,6 +111,24 @@ namespace WorklabsMx.iOS
             {
                 this.PerformSegue("ToSocial", this);
             }
+            else if(indexPath.Row == 1)
+            {
+                this.SubmenuIndex = 8;
+                this.PerformSegue("MiCuenta", null);
+            }
+            else if(indexPath.Row == 2)
+            {
+                this.SubmenuIndex = 9;
+                this.PerformSegue("MiCuenta", null);
+            }
+            else if(indexPath.Row == 3)
+            {
+                this.PerformSegue("Servicios", null);
+            }
+            else if (indexPath.Row == 4)
+            {
+                this.PerformSegue("ReservarSalaJuntas", this);
+            }
         }
 
         public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
@@ -137,11 +163,19 @@ namespace WorklabsMx.iOS
         public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
         {
             base.PrepareForSegue(segue, sender);
+            if (segue.Identifier == "MiCuenta")
+            {
+                var submenuView = segue.DestinationViewController.ChildViewControllers[0] as SubMenuController;
+                submenuView.SubmenuIndex = this.SubmenuIndex;
+             }
             var segueReveal = segue as SWRevealViewControllerSegueSetController;
             if (segueReveal == null)
             {
                 return;
             }
+
+
+
             this.RevealViewController().PushFrontViewController(segueReveal.DestinationViewController, true);
         }
 
