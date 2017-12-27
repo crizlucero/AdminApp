@@ -8,27 +8,40 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Text.Format;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
 
 namespace WorklabsMx.Droid.Helpers
 {
-    public class TimePickerFragment : Fragment
+    public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetListener
     {
-        public override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
+        public static readonly string TAG = "MyTimePickerFragment";
+        Action<DateTime> timeSelectedHandler = delegate { };
 
-            // Create your fragment here
+        public static TimePickerFragment NewInstance(Action<DateTime> onTimeSelected)
+        {
+            TimePickerFragment frag = new TimePickerFragment();
+            frag.timeSelectedHandler = onTimeSelected;
+            return frag;
         }
 
-        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        public override Dialog OnCreateDialog(Bundle savedInstanceState)
         {
-            // Use this to return your custom view for this Fragment
-            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
+            DateTime currentTime = DateTime.Now;
+            bool is24HourFormat = DateFormat.Is24HourFormat(Activity);
+            TimePickerDialog dialog = new TimePickerDialog
+                (Activity, this, currentTime.Hour, currentTime.Minute, is24HourFormat);
+            return dialog;
+        }
 
-            return base.OnCreateView(inflater, container, savedInstanceState);
+        public void OnTimeSet(TimePicker view, int hourOfDay, int minute)
+        {
+            DateTime currentTime = DateTime.Now;
+            DateTime selectedTime = new DateTime(currentTime.Year, currentTime.Month, currentTime.Day, hourOfDay, minute, 0);
+            Log.Debug(TAG, selectedTime.ToLongTimeString());
+            timeSelectedHandler(selectedTime);
         }
     }
 }
