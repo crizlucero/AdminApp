@@ -8,6 +8,7 @@ using WorklabsMx.iOS.Helpers;
 using BigTed;
 using SWRevealViewControllerBinding;
 using Foundation;
+using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
@@ -129,6 +130,14 @@ namespace WorklabsMx.iOS
             {
                 this.PerformSegue("ReservarSalaJuntas", this);
             }
+            else if (indexPath.Row == 5)
+            {
+                this.PerformSegue("RegistroInvitados", this);
+            }
+            else if(indexPath.Row == 6)
+            {
+                this.CerrarSesion();
+            }
         }
 
         public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
@@ -174,9 +183,24 @@ namespace WorklabsMx.iOS
                 return;
             }
 
-
-
             this.RevealViewController().PushFrontViewController(segueReveal.DestinationViewController, true);
+        }
+
+        private async void CerrarSesion()
+        {
+            BTProgressHUD.Show(status: "Cerrando sesión");
+            await Task.Delay(1000);
+            KeyChainHelper.DeleteKey("Usuario_Id");
+            KeyChainHelper.DeleteKey("Usuario_Tipo");
+            KeyChainHelper.DeleteKey("Empresa_Id");
+            KeyChainHelper.DeleteKey("Colaborador_Id");
+            KeyChainHelper.DeleteKey("Menu_Id");
+
+            var controller = UIStoryboard.FromName("Main", null)
+                .InstantiateViewController("LoginViewController");
+            controller.Title = "Iniciar Sesión";
+            BTProgressHUD.Dismiss();
+            UIApplication.SharedApplication.Windows[0].RootViewController = controller;
         }
 
 

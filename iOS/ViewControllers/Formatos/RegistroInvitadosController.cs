@@ -4,6 +4,7 @@ using UIKit;
 using CoreGraphics;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Styles;
+using SWRevealViewControllerBinding;
 
 namespace WorklabsMx.iOS
 {
@@ -72,6 +73,12 @@ namespace WorklabsMx.iOS
         {
             dpFecha.MinimumDate = (NSDate)DateTime.Today;
             dpFecha.MaximumDate = (NSDate)DateTime.Now.AddMonths(1).AddDays(-1);
+        }
+
+        partial void btnBack_Touch(UIBarButtonItem sender)
+        {
+            this.RevealViewController().RevealToggleAnimated(true);
+            View.AddGestureRecognizer(this.RevealViewController().PanGestureRecognizer);
         }
     }
 }

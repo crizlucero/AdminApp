@@ -14,6 +14,10 @@ namespace WorklabsMx.iOS
     [Register ("RegistroInvitadosController")]
     partial class RegistroInvitadosController
     {
+        [Action ("btnBack_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnBack_Touch (UIKit.UIBarButtonItem sender);
+
         void ReleaseDesignerOutlets ()
         {
         }

@@ -1,22 +1,23 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Servicios/TabBarDetalleVenta.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/LoginViewController.cs">
     <Files>
-      <File FileName="iOS/MenuTableViewController.cs" Line="123" Column="14" />
-      <File FileName="iOS/ViewControllers/SubMenuController.cs" Line="43" Column="1" />
+      <File FileName="iOS/MenuTableViewController.cs" Line="192" Column="36" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="63" Column="32" />
+      <File FileName="iOS/AppDelegate.cs" Line="30" Column="41" />
+      <File FileName="iOS/ViewControllers/SubMenuController.cs" Line="7" Column="1" />
       <File FileName="iOS/ViewControllers/TableViewController.cs" Line="36" Column="79" />
-      <File FileName="iOS/Styles/STLTableViewSource.cs" Line="13" Column="32" />
+      <File FileName="iOS/Styles/STLTableViewSource.cs" Line="98" Column="96" />
       <File FileName="iOS/Models/EscritorioController.cs" Line="209" Column="44" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="246" Column="49" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="267" Column="5" />
       <File FileName="iOS/MenuContenidoCell.cs" Line="15" Column="32" />
-      <File FileName="iOS/ViewControllers/SplitViewController.cs" Line="21" Column="41" />
-      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="177" Column="22" />
-      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.designer.cs" Line="1" Column="1" />
-      <File FileName="iOS/ViewControllers/SalaJuntas/ReservacionesSalaCell.designer.cs" Line="1" Column="1" />
+      <File FileName="iOS/ViewControllers/SplitViewController.cs" Line="6" Column="26" />
+      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="8" Column="14" />
       <File FileName="iOS/ViewControllers/Directorio/DirectorioUsuarioController.cs" Line="17" Column="16" />
       <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleTableViewController.cs" Line="171" Column="62" />
       <File FileName="iOS/ViewControllers/VistaSucursales/ColeccionSucursales.cs" Line="84" Column="17" />
-      <File FileName="iOS/Main.storyboard" />
-      <File FileName="iOS/ViewControllers/Servicios/TabBarDetalleVenta.cs" Line="85" Column="13" />
+      <File FileName="iOS/ViewControllers/Servicios/TabBarDetalleVenta.cs" Line="80" Column="20" />
+      <File FileName="iOS/ViewControllers/Formatos/RegistroInvitadosController.cs" Line="4" Column="20" />
+      <File FileName="iOS/Main.cs" Line="12" Column="1" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
@@ -33,7 +34,6 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="203" column="34" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" relfile="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" line="177" column="22" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

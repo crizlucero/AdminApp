@@ -5579,7 +5579,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="X0V-BA-wmO">
             <objects>
-                <viewController storyboardIdentifier="splitViewController" id="gVZ-XM-mGu" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NavEscritorio" id="gVZ-XM-mGu" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s59-Oq-zMM"/>
                         <viewControllerLayoutGuide type="bottom" id="deh-YG-h1h"/>
@@ -5587,7 +5587,6 @@
                     <view key="view" contentMode="scaleToFill" id="Sdk-ky-Ww3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
                         <segue destination="6v0-Ke-wXF" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="38X-hg-ui6"/>
@@ -5596,7 +5595,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgm-tR-PJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6518" y="-1946"/>
+            <point key="canvasLocation" x="-6519" y="-1965"/>
         </scene>
         <!--Menu Table View Controller-->
         <scene sceneID="ACe-yW-sFq">
@@ -5750,6 +5749,7 @@
                         <segue destination="c2k-Jg-C97" kind="custom" identifier="ReservarSalaJuntas" customClass="SWRevealViewControllerSegueSetController" id="DaD-6t-4EF"/>
                         <segue destination="ovg-0G-e4t" kind="custom" identifier="MiCuenta" customClass="SWRevealViewControllerSegueSetController" id="b0a-rE-zWS"/>
                         <segue destination="hI3-Bo-G6a" kind="custom" identifier="Servicios" customClass="SWRevealViewControllerSegueSetController" id="kHo-GC-v6g"/>
+                        <segue destination="X8R-Gh-5MN" kind="custom" identifier="RegistroInvitados" customClass="SWRevealViewControllerSegueSetController" id="yUm-Ac-FXY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yev-UM-OH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -5911,7 +5911,7 @@
             </objects>
             <point key="canvasLocation" x="4206" y="2357"/>
         </scene>
-        <!--Registro Invitados Controller-->
+        <!--Registro de invitados-->
         <scene sceneID="5083">
             <objects>
                 <viewController storyboardIdentifier="RegistroInvitadosController" id="5084" customClass="RegistroInvitadosController" sceneMemberID="viewController">
@@ -5924,10 +5924,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Registro de invitados" id="7Hr-q2-KDZ">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="evS-0e-bJW">
+                            <connections>
+                                <action selector="btnBack_Touch:" destination="5084" id="266136"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5086" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5183" y="1709"/>
+            <point key="canvasLocation" x="-5623" y="-2690"/>
         </scene>
         <!--Mis Colaboradores Cambios Controller-->
         <scene sceneID="5471">
@@ -7427,7 +7434,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QrBig" translatesAutoresizingMaskIntoConstraints="NO" id="RHk-0B-HCp">
-                                <rect key="frame" x="88.5" y="177" width="200" height="200"/>
+                                <rect key="frame" x="88" y="177" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="Ykn-gk-4va"/>
                                     <constraint firstAttribute="width" constant="200" id="kpd-nF-vJE"/>
@@ -7549,6 +7556,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5966" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3868" y="-1518"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KCJ-1k-IVk">
+            <objects>
+                <navigationController id="X8R-Gh-5MN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fsa-Fc-bzN">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5084" kind="relationship" relationship="rootViewController" id="DeV-hn-blf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nyI-58-2kS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6537" y="-2690"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cMn-a8-mL8">
@@ -8270,7 +8293,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Tlx-3I-mcH"/>
-        <segue reference="Hoa-iV-Mgh"/>
+        <segue reference="mo9-Of-trj"/>
         <segue reference="wV9-2A-ApY"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.10980392156862745" green="0.52941176470588236" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
