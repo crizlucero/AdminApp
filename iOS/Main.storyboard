@@ -447,7 +447,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="145"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ImagenSala" translatesAutoresizingMaskIntoConstraints="NO" id="fnA-5T-aCq">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="1246" height="321"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="145"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -482,7 +482,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 - 8" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4S-3N-PFI">
-                                                    <rect key="frame" x="285" y="176" width="82" height="21"/>
+                                                    <rect key="frame" x="257" y="176" width="110" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="VQf-tR-Uhm"/>
                                                     </constraints>
@@ -508,7 +508,7 @@
                                                     <color key="currentPageIndicatorTintColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </pageControl>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="SwX-sK-qCc">
-                                                    <rect key="frame" x="263" y="176" width="18" height="21"/>
+                                                    <rect key="frame" x="231" y="176" width="18" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Zvm-Lt-jRV"/>
                                                         <constraint firstAttribute="width" constant="18" id="eSW-ow-dHt"/>
@@ -519,11 +519,11 @@
                                                 <constraint firstItem="SwX-sK-qCc" firstAttribute="top" secondItem="v4S-3N-PFI" secondAttribute="top" id="2Gh-s9-OAV"/>
                                                 <constraint firstItem="Js5-T0-Z7K" firstAttribute="top" secondItem="n1n-5O-nvn" secondAttribute="bottom" id="BhV-hF-yhB"/>
                                                 <constraint firstItem="n1n-5O-nvn" firstAttribute="baseline" secondItem="v4S-3N-PFI" secondAttribute="baseline" id="DwH-A9-dfZ"/>
-                                                <constraint firstItem="v4S-3N-PFI" firstAttribute="leading" secondItem="SwX-sK-qCc" secondAttribute="trailing" constant="4" id="ImS-pv-NBi"/>
+                                                <constraint firstItem="v4S-3N-PFI" firstAttribute="leading" secondItem="SwX-sK-qCc" secondAttribute="trailing" constant="8" id="ImS-pv-NBi"/>
                                                 <constraint firstItem="n1n-5O-nvn" firstAttribute="firstBaseline" secondItem="v4S-3N-PFI" secondAttribute="firstBaseline" id="KyS-gf-k0p"/>
                                                 <constraint firstItem="n1n-5O-nvn" firstAttribute="leading" secondItem="HpH-iC-3GB" secondAttribute="leadingMargin" constant="-8" id="Nqh-Xs-rgC"/>
                                                 <constraint firstItem="n1n-5O-nvn" firstAttribute="leading" secondItem="Js5-T0-Z7K" secondAttribute="leading" id="Ynx-uf-wCO"/>
-                                                <constraint firstItem="SwX-sK-qCc" firstAttribute="leading" secondItem="n1n-5O-nvn" secondAttribute="trailing" constant="103.5" id="cLS-ht-kjm"/>
+                                                <constraint firstItem="SwX-sK-qCc" firstAttribute="leading" secondItem="n1n-5O-nvn" secondAttribute="trailing" constant="71.5" id="cLS-ht-kjm"/>
                                                 <constraint firstItem="EyF-3N-uzt" firstAttribute="top" secondItem="HpH-iC-3GB" secondAttribute="top" constant="49" id="cSP-wg-iwW"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Js5-T0-Z7K" secondAttribute="bottom" constant="5" id="cb7-gy-Ynq"/>
                                                 <constraint firstItem="iNv-bC-jyT" firstAttribute="top" secondItem="HpH-iC-3GB" secondAttribute="topMargin" constant="93" id="d2q-g0-KSU"/>
@@ -1511,7 +1511,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qvy-QJ-Gjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-711" y="-2660"/>
+            <point key="canvasLocation" x="-711.20000000000005" y="-2660.4197901049479"/>
         </scene>
         <!--Empresa-->
         <scene sceneID="jSw-MG-frS">
