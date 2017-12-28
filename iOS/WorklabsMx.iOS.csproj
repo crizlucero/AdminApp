@@ -623,6 +623,14 @@
     <ImageAsset Include="Assets.xcassets\Menu.imageset\Grabber.png" />
     <ImageAsset Include="Assets.xcassets\Menu.imageset\Grabber%402x.png" />
     <ImageAsset Include="Assets.xcassets\Menu.imageset\Grabber%403x.png" />
+    <ImageAsset Include="Assets.xcassets\NoLike.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\NoCom.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\NoCom.imageset\NoCom.png" />
+    <ImageAsset Include="Assets.xcassets\NoCom.imageset\NoCom%402x.png" />
+    <ImageAsset Include="Assets.xcassets\NoCom.imageset\NoCom%403x.png" />
+    <ImageAsset Include="Assets.xcassets\NoLike.imageset\NoLike.png" />
+    <ImageAsset Include="Assets.xcassets\NoLike.imageset\NoLike%402x.png" />
+    <ImageAsset Include="Assets.xcassets\NoLike.imageset\NoLike%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -633,14 +641,6 @@
     </Compile>
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Main.cs" />
-    <Compile Include="ViewControllers\SplitViewController.cs" />
-    <Compile Include="ViewControllers\SplitViewController.designer.cs">
-      <DependentUpon>SplitViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\TableViewController.cs" />
-    <Compile Include="ViewControllers\TableViewController.designer.cs">
-      <DependentUpon>TableViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helpers\ImageGallery.cs" />
     <Compile Include="ViewControllers\AccesoController.cs" />
     <Compile Include="ViewControllers\AccesoController.designer.cs">
@@ -997,6 +997,22 @@
       <DependentUpon>NoInfoMenuCell.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\EscritorioController.cs" />
+    <Compile Include="ComunidadTableViewController.cs" />
+    <Compile Include="ComunidadTableViewController.designer.cs">
+      <DependentUpon>ComunidadTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuscadorTableViewCell.cs" />
+    <Compile Include="BuscadorTableViewCell.designer.cs">
+      <DependentUpon>BuscadorTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FavoritosTableViewController.cs" />
+    <Compile Include="FavoritosTableViewController.designer.cs">
+      <DependentUpon>FavoritosTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FavoritosTableViewCell.cs" />
+    <Compile Include="FavoritosTableViewCell.designer.cs">
+      <DependentUpon>FavoritosTableViewCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -1121,6 +1137,8 @@
     <Folder Include="Assets.xcassets\Clock.imageset\" />
     <Folder Include="Assets.xcassets\WL.imageset\" />
     <Folder Include="Assets.xcassets\Menu.imageset\" />
+    <Folder Include="Assets.xcassets\NoLike.imageset\" />
+    <Folder Include="Assets.xcassets\NoCom.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

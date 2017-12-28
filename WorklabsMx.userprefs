@@ -1,34 +1,11 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/LoginViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Directorio/DirectorioUsuarioController.cs">
     <Files>
-      <File FileName="iOS/MenuTableViewController.cs" Line="192" Column="36" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="63" Column="32" />
-      <File FileName="iOS/AppDelegate.cs" Line="30" Column="41" />
-      <File FileName="iOS/ViewControllers/SubMenuController.cs" Line="7" Column="1" />
-      <File FileName="iOS/ViewControllers/TableViewController.cs" Line="36" Column="79" />
-      <File FileName="iOS/Styles/STLTableViewSource.cs" Line="98" Column="96" />
-      <File FileName="iOS/Models/EscritorioController.cs" Line="209" Column="44" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="267" Column="5" />
-      <File FileName="iOS/MenuContenidoCell.cs" Line="15" Column="32" />
-      <File FileName="iOS/ViewControllers/SplitViewController.cs" Line="6" Column="26" />
-      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="8" Column="14" />
-      <File FileName="iOS/ViewControllers/Directorio/DirectorioUsuarioController.cs" Line="17" Column="16" />
-      <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleTableViewController.cs" Line="171" Column="62" />
-      <File FileName="iOS/ViewControllers/VistaSucursales/ColeccionSucursales.cs" Line="84" Column="17" />
-      <File FileName="iOS/ViewControllers/Servicios/TabBarDetalleVenta.cs" Line="80" Column="20" />
-      <File FileName="iOS/ViewControllers/Formatos/RegistroInvitadosController.cs" Line="4" Column="20" />
-      <File FileName="iOS/Main.cs" Line="12" Column="1" />
+      <File FileName="iOS/ComunidadTableViewController.cs" Line="16" Column="13" />
+      <File FileName="iOS/ViewControllers/Directorio/DirectorioUsuarioController.cs" Line="34" Column="22" />
+      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="125" Column="70" />
+      <File FileName="iOS/FavoritosTableViewController.cs" Line="12" Column="6" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>KeyChainHelper.GetKey("Menu_Id")</Value>
-          <Value>segue.DestinationViewController</Value>
-          <Value>(SubMenuController)segue.DestinationViewController</Value>
-          <Value>segue.DestinationViewController.ChildViewControllers[0]</Value>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

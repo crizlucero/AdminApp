@@ -401,7 +401,15 @@ namespace WorklabsMx.Controllers
                 if (fotografia.Length != 0)
                 {
                     fotoNombre = Guid.NewGuid().ToString() + ".png";
-                    new UploadImages().UploadBitmapAsync(fotoNombre, fotografia);
+                    var result = new UploadImages().UploadBitmapAsync(fotoNombre, fotografia);
+                    if (result)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 conn.Open();
                 transaction = conn.BeginTransaction();
@@ -464,8 +472,15 @@ namespace WorklabsMx.Controllers
                 if (fotografia.Length != 0)
                 {
                     fotoNombre = Guid.NewGuid().ToString() + ".png";
-                    new UploadImages().UploadBitmapAsync(fotoNombre, fotografia);
-
+                    var result = new UploadImages().UploadBitmapAsync(fotoNombre, fotografia);
+                    if (result)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
 
                 }
                 transaction = conn.BeginTransaction();

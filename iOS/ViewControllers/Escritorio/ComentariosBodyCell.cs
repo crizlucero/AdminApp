@@ -31,8 +31,26 @@ namespace WorklabsMx.iOS
         {
             lblNombre.Text = post.Usuario_Nombre;
             lblLikes.Text = post.Publicacion_Me_Gustan_Cantidad + " LIKES";
+            if (int.Parse(post.Publicacion_Me_Gustan_Cantidad) == 0)
+            {
+                this.btnLikes.SetImage(UIImage.FromBundle("NoLike"), UIControlState.Normal);
+            }
+            else
+            {
+                this.btnLikes.SetImage(UIImage.FromBundle("Likes"), UIControlState.Normal);
+            }
             lblFechaPost.Text = post.Publicacion_Fecha;
             lblComentarios.Text = post.Publicacion_Comentarios_Cantidad + " COMENTARIOS";
+
+            if(int.Parse(post.Publicacion_Comentarios_Cantidad) == 0)
+            {
+                this.imgComentarios.Image = UIImage.FromBundle("NoCom");
+            }
+            else 
+            {
+                this.imgComentarios.Image = UIImage.FromBundle("Comments");
+            }
+
             txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
             txtComentario.ScrollEnabled = false;
             txtComentario.Text = post.Publicacion_Contenido;
@@ -44,6 +62,10 @@ namespace WorklabsMx.iOS
             if (post.Publicacion_Imagen_Ruta != "" && currentImagePost != null)
             {
                 btnImagenComentatio.SetBackgroundImage(currentImagePost, UIControlState.Normal);
+            }
+            else
+            {
+                btnImagenComentatio.Layer.Frame = new CGRect(btnImagenComentatio.Layer.Frame.X, btnImagenComentatio.Layer.Frame.Y, 1, 1);
             }
             PostLocal = post;
         }
@@ -75,7 +97,15 @@ namespace WorklabsMx.iOS
                     lblLikes.TextColor = (UIColor.FromRGB(57, 87, 217));
                 }
             }
-
+            var likes = new Controllers.EscritorioController().GetLikesPublish(PostLocal.Publicacion_Id);
+            if (int.Parse(likes) == 0)
+            {
+                this.btnLikes.SetImage(UIImage.FromBundle("NoLike"), UIControlState.Normal);
+            }
+            else 
+            {
+                this.btnLikes.SetImage(UIImage.FromBundle("Likes"), UIControlState.Normal);
+            }
 
         }
 
