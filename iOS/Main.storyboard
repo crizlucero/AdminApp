@@ -7349,7 +7349,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QrBig" translatesAutoresizingMaskIntoConstraints="NO" id="RHk-0B-HCp">
-                                <rect key="frame" x="88" y="177" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="177" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="Ykn-gk-4va"/>
                                     <constraint firstAttribute="width" constant="200" id="kpd-nF-vJE"/>
@@ -7526,7 +7526,7 @@
         <!--Favoritos-->
         <scene sceneID="0oy-o8-wvA">
             <objects>
-                <tableViewController id="ZZV-f0-tE2" sceneMemberID="viewController" customClass="FavoritosTableViewController">
+                <tableViewController id="ZZV-f0-tE2" customClass="FavoritosTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tDh-MG-7j0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -7555,7 +7555,7 @@
         <!--Comunidad-->
         <scene sceneID="1aX-o0-VI1">
             <objects>
-                <tableViewController id="hO5-Sh-eRi" sceneMemberID="viewController" customClass="ComunidadTableViewController">
+                <tableViewController id="hO5-Sh-eRi" customClass="ComunidadTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bgo-Lh-nhj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -7588,13 +7588,38 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderUsuarios" rowHeight="67" id="i4s-By-Vg6" customClass="ComunidadTableViewController">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CeldaUsuarios" rowHeight="67" id="i4s-By-Vg6" customClass="ComunidadTableViewCell">
                                 <rect key="frame" x="0.0" y="71" width="375" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i4s-By-Vg6" id="Sof-LN-Whj">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoInfo" rowHeight="417" id="6JY-J2-NzB" customClass="NoInfoCellUsuarios">
+                                <rect key="frame" x="0.0" y="138" width="375" height="417"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6JY-J2-NzB" id="jSn-rB-3PY">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="416.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No hay contactos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCk-JO-GPj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="417"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                            <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="zCk-JO-GPj" firstAttribute="leading" secondItem="jSn-rB-3PY" secondAttribute="leading" id="FqR-YF-VD0"/>
+                                        <constraint firstAttribute="trailing" secondItem="zCk-JO-GPj" secondAttribute="trailing" id="kbd-Vc-ElI"/>
+                                        <constraint firstAttribute="bottom" secondItem="zCk-JO-GPj" secondAttribute="bottom" constant="-0.5" id="uOo-Rs-SL5"/>
+                                        <constraint firstItem="zCk-JO-GPj" firstAttribute="top" secondItem="jSn-rB-3PY" secondAttribute="top" id="xXl-cO-mKF"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblNoInfo" destination="zCk-JO-GPj" id="name-outlet-zCk-JO-GPj"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -7606,7 +7631,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSE-qq-kjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4810.4" y="-4392.054"/>
+            <point key="canvasLocation" x="-4810.4" y="-4392.954"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cMn-a8-mL8">

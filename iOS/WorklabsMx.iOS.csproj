@@ -1013,6 +1013,14 @@
     <Compile Include="FavoritosTableViewCell.designer.cs">
       <DependentUpon>FavoritosTableViewCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComunidadTableViewCell.cs" />
+    <Compile Include="ComunidadTableViewCell.designer.cs">
+      <DependentUpon>ComunidadTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoInfoCellUsuarios.cs" />
+    <Compile Include="NoInfoCellUsuarios.designer.cs">
+      <DependentUpon>NoInfoCellUsuarios.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
