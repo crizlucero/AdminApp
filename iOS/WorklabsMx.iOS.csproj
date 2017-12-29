@@ -639,6 +639,10 @@
     <ImageAsset Include="Assets.xcassets\GrupoFavoritos.imageset\GrupoFavoritos.png" />
     <ImageAsset Include="Assets.xcassets\GrupoFavoritos.imageset\GrupoFavoritos%402x.png" />
     <ImageAsset Include="Assets.xcassets\GrupoFavoritos.imageset\GrupoFavoritos%403x.png" />
+    <ImageAsset Include="Assets.xcassets\FavoritoUsuario.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\FavoritoUsuario.imageset\FavoritoUsuario.png" />
+    <ImageAsset Include="Assets.xcassets\FavoritoUsuario.imageset\FavoritoUsuario%402x.png" />
+    <ImageAsset Include="Assets.xcassets\FavoritoUsuario.imageset\FavoritoUsuario%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1161,6 +1165,7 @@
     <Folder Include="Assets.xcassets\NoCom.imageset\" />
     <Folder Include="Assets.xcassets\Comunidad.imageset\" />
     <Folder Include="Assets.xcassets\GrupoFavoritos.imageset\" />
+    <Folder Include="Assets.xcassets\FavoritoUsuario.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

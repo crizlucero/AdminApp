@@ -16,6 +16,10 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnFavorito { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnImagenPerfil { get; set; }
 
         [Outlet]
@@ -26,12 +30,21 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblProfesion { get; set; }
 
+        [Action ("btnFavorito_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnFavorito_Touch (UIKit.UIButton sender);
+
         [Action ("btnImagenPerfil_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnImagenPerfil_Touch (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnFavorito != null) {
+                btnFavorito.Dispose ();
+                btnFavorito = null;
+            }
+
             if (btnImagenPerfil != null) {
                 btnImagenPerfil.Dispose ();
                 btnImagenPerfil = null;
