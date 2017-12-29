@@ -1,21 +1,36 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ComunidadTableViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/VistaSucursales/CeldaSucursales.cs">
     <Files>
-      <File FileName="iOS/ComunidadTableViewController.cs" Line="78" Column="43" />
-      <File FileName="iOS/ComunidadTableViewCell.cs" Line="14" Column="31" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="161" Column="33" />
-      <File FileName="iOS/ViewControllers/Directorio/DirectorioUsuarioController.cs" Line="40" Column="88" />
+      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="56" Column="29" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="220" Column="22" />
+      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="58" Column="28" />
+      <File FileName="iOS/ViewControllers/Servicios/TabBarDetalleVenta.cs" Line="29" Column="29" />
+      <File FileName="iOS/ViewControllers/Directorio/DirectorioUsuarioController.cs" Line="51" Column="54" />
       <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="2" Column="1" />
-      <File FileName="iOS/FavoritosTableViewController.cs" Line="12" Column="6" />
-      <File FileName="iOS/ComunidadTableViewCell.designer.cs" Line="1" Column="1" />
-      <File FileName="iOS/NoInfoCellUsuarios.cs" Line="23" Column="10" />
-      <File FileName="iOS/ViewControllers/Escritorio/NoComentsCell.cs" Line="20" Column="4" />
+      <File FileName="iOS/ViewControllers/SubMenuController.cs" Line="1" Column="1" />
+      <File FileName="iOS/MenuTableViewController.cs" Line="126" Column="34" />
+      <File FileName="iOS/TabBarDirectorio.cs" Line="21" Column="1" />
+      <File FileName="iOS/ViewControllers/Formatos/RegistroInvitadosController.cs" Line="60" Column="15" />
+      <File FileName="iOS/ComunidadTableViewController.cs" Line="24" Column="40" />
+      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="22" Column="26" />
+      <File FileName="iOS/ViewControllers/SalaJuntas/ReservacionesSalaCell.cs" Line="1" Column="1" />
+      <File FileName="iOS/Helpers/ImageGallery.cs" Line="84" Column="22" />
+      <File FileName="iOS/ViewControllers/VistaSucursales/ColeccionSucursales.cs" Line="56" Column="42" />
+      <File FileName="iOS/ViewControllers/VistaSucursales/CeldaSucursales.cs" Line="20" Column="27" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>currentImagePost</Value>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="203" column="34" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" relfile="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" line="56" column="29" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

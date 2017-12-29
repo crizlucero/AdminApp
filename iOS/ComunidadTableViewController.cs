@@ -4,6 +4,7 @@ using UIKit;
 using WorklabsMx.Models;
 using WorklabsMx.Controllers;
 using System.Collections.Generic;
+using BigTed;
 
 
 namespace WorklabsMx.iOS
@@ -13,11 +14,11 @@ namespace WorklabsMx.iOS
         List<MiembroModel> Usuarios = new List<MiembroModel>();
 
         const string IdentificadorCeldaHeader = "HeaderBuscador";
-        const string IdentificadorCeldaUsuarios = "HeaderUsuarios";
+        const string IdentificadorCeldaUsuarios = "CeldaUsuarios";
         const string IdentificadorCeldaNoInfo = "NoInfo";
 
         const int TamañoUsuarios = 70;
-        const int TamañoHeader = 45;
+        const int TamañoHeader = 50;
         const int TamañoMensajeNoInfo = 800;
 
         bool isShowInformation = false;

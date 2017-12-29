@@ -119,8 +119,7 @@ namespace WorklabsMx.iOS
             }
             else if(indexPath.Row == 2)
             {
-                this.SubmenuIndex = 9;
-                this.PerformSegue("MiCuenta", null);
+                this.PerformSegue("Directorio", this);
             }
             else if(indexPath.Row == 3)
             {
@@ -176,7 +175,7 @@ namespace WorklabsMx.iOS
             {
                 var submenuView = segue.DestinationViewController.ChildViewControllers[0] as SubMenuController;
                 submenuView.SubmenuIndex = this.SubmenuIndex;
-             }
+            }
             var segueReveal = segue as SWRevealViewControllerSegueSetController;
             if (segueReveal == null)
             {

@@ -70,7 +70,7 @@ namespace WorklabsMx.iOS
             this.txtPublicacion.Changed += HandleTextMessageChanged;
             FechaActual = DateTime.Now;
             lblFechaPublicacion.Text = String.Format("{0:dddd, d MMMM, yyyy}", FechaActual);
-            imgPerfil.Image = ImageGallery.LoadImage(this.ImagenPerfil);
+            imgPerfil.Image = ImageGallery.LoadImage(this.ImagenPerfil) ?? UIImage.FromBundle("PerfilEscritorio");
         }
 
 

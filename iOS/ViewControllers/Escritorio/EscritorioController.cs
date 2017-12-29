@@ -87,7 +87,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
                     }                     else                     {                         foreach (PostModel currentPost in allPosts)
                         {
                             allPostImages.Add(ImageGallery.LoadImage(currentPost.Publicacion_Imagen_Ruta));
-                            allProfileImages.Add(ImageGallery.LoadImage(currentPost.Usuario_Fotografia_Ruta));
+                            allProfileImages.Add(ImageGallery.LoadImage(currentPost.Usuario_Fotografia_Ruta) ?? UIImage.FromBundle("ProfileImage"));
                         }
                         miembro = new MiembrosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
                     }                 }                 else                 {                     this.btnScanQr.Title = "";                     this.btnScanQr.Enabled = false;                     isShowInformation = false;                     existeConeccion = false;                 }             }             catch(Exception e)             {                 SlackLogs.SendMessage(e.Message);             }                     } 

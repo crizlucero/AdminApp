@@ -13,6 +13,12 @@ namespace WorklabsMx.iOS
 
         public void UpdateCell(MiembroModel Miembro)
         {
+            this.lblNombre.Text = Miembro.Miembro_Nombre + " " + Miembro.Miembro_Apellidos;
+            this.lblProfesion.Text = Miembro.Miembro_Profesion;
+        }
+
+        partial void btnImagenPerfil_Touch(UIButton sender)
+        {
             
         }
     }

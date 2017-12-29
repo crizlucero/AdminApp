@@ -84,7 +84,7 @@ namespace WorklabsMx.iOS.Helpers
                     }
                 }
             }
-            return UIImage.FromBundle("ProfileImage");
+            return null;
         }
 
 

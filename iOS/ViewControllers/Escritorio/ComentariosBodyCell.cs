@@ -51,6 +51,18 @@ namespace WorklabsMx.iOS
                 this.imgComentarios.Image = UIImage.FromBundle("Comments");
             }
 
+            if (currentImagePost != null)
+            {
+                var newFrame = new CGRect(btnImagenComentatio.Frame.X, btnImagenComentatio.Frame.Y, btnImagenComentatio.Frame.Width, 400);
+                btnImagenComentatio.Frame = newFrame;
+                btnImagenComentatio.SetBackgroundImage(currentImagePost, UIControlState.Normal);
+            }
+            else if (post.Publicacion_Imagen_Ruta == "" || currentImagePost == null)
+            {
+                var newFrame = new CGRect(btnImagenComentatio.Frame.X, btnImagenComentatio.Frame.Y, btnImagenComentatio.Frame.Width, 1);
+                btnImagenComentatio.Frame = newFrame;
+                //btnImagenComentatio.SetBackgroundImage(currentImagePost, UIControlState.Normal);
+            }
             txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
             txtComentario.ScrollEnabled = false;
             txtComentario.Text = post.Publicacion_Contenido;
@@ -59,14 +71,7 @@ namespace WorklabsMx.iOS
 
             StyleHelper.Style(vwVistaComentario.Layer);
             btnImgPerfil.SetBackgroundImage(currentImageProfile ?? UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
-            if (post.Publicacion_Imagen_Ruta != "" && currentImagePost != null)
-            {
-                btnImagenComentatio.SetBackgroundImage(currentImagePost, UIControlState.Normal);
-            }
-            else
-            {
-                btnImagenComentatio.Layer.Frame = new CGRect(btnImagenComentatio.Layer.Frame.X, btnImagenComentatio.Layer.Frame.Y, 1, 1);
-            }
+
             PostLocal = post;
         }
 

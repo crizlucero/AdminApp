@@ -631,6 +631,14 @@
     <ImageAsset Include="Assets.xcassets\NoLike.imageset\NoLike.png" />
     <ImageAsset Include="Assets.xcassets\NoLike.imageset\NoLike%402x.png" />
     <ImageAsset Include="Assets.xcassets\NoLike.imageset\NoLike%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Comunidad.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\GrupoFavoritos.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Comunidad.imageset\Comunidad.png" />
+    <ImageAsset Include="Assets.xcassets\Comunidad.imageset\Comunidad%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Comunidad.imageset\Comunidad%403x.png" />
+    <ImageAsset Include="Assets.xcassets\GrupoFavoritos.imageset\GrupoFavoritos.png" />
+    <ImageAsset Include="Assets.xcassets\GrupoFavoritos.imageset\GrupoFavoritos%402x.png" />
+    <ImageAsset Include="Assets.xcassets\GrupoFavoritos.imageset\GrupoFavoritos%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1021,6 +1029,10 @@
     <Compile Include="NoInfoCellUsuarios.designer.cs">
       <DependentUpon>NoInfoCellUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="TabBarDirectorio.cs" />
+    <Compile Include="TabBarDirectorio.designer.cs">
+      <DependentUpon>TabBarDirectorio.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -1147,6 +1159,8 @@
     <Folder Include="Assets.xcassets\Menu.imageset\" />
     <Folder Include="Assets.xcassets\NoLike.imageset\" />
     <Folder Include="Assets.xcassets\NoCom.imageset\" />
+    <Folder Include="Assets.xcassets\Comunidad.imageset\" />
+    <Folder Include="Assets.xcassets\GrupoFavoritos.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />
