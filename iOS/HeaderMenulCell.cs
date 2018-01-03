@@ -28,15 +28,10 @@ namespace WorklabsMx.iOS
                 {
                     lblNombre.Text = miembro[(int)CamposMiembro.Usuario_Nombre];
                     lblPuesto.Text = miembro[(int)CamposMiembro.Usuario_Puesto];
-                    btnImagenPerfil.SetBackgroundImage(ImageGallery.LoadImage(miembro[(int)CamposMiembro.Usuario_Fotografia]) ?? UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
+                    //btnImagenPerfil.SetBackgroundImage(ImageGallery.LoadImage(miembro[(int)CamposMiembro.Usuario_Fotografia]) ?? UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
                 }
 
             }
-        }
-
-        partial void btnImagenPerfil_Touch(UIButton sender)
-        {
-            
         }
     }
 }

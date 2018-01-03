@@ -11,36 +11,31 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
-    [Register ("HeaderMenulCell")]
-    partial class HeaderMenulCell
+    [Register ("CeldaEmpresasCell")]
+    partial class CeldaEmpresasCell
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnImagenPerfil { get; set; }
+        UIKit.UIButton btnFotoEmpre { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblNombre { get; set; }
+        UIKit.UILabel lblEmpresas { get; set; }
 
-        [Outlet]
+        [Action ("btnImagenEmpresa_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblPuesto { get; set; }
+        partial void btnImagenEmpresa_Touch (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
-            if (btnImagenPerfil != null) {
-                btnImagenPerfil.Dispose ();
-                btnImagenPerfil = null;
+            if (btnFotoEmpre != null) {
+                btnFotoEmpre.Dispose ();
+                btnFotoEmpre = null;
             }
 
-            if (lblNombre != null) {
-                lblNombre.Dispose ();
-                lblNombre = null;
-            }
-
-            if (lblPuesto != null) {
-                lblPuesto.Dispose ();
-                lblPuesto = null;
+            if (lblEmpresas != null) {
+                lblEmpresas.Dispose ();
+                lblEmpresas = null;
             }
         }
     }

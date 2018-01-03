@@ -11,26 +11,26 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
-    [Register ("BuscadorTableViewCell")]
-    partial class BuscadorTableViewCell
+    [Register ("HeaderEmpresasCell")]
+    partial class HeaderEmpresasCell
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField txtBuscar { get; set; }
+        UIKit.UITextField txtBuscarEmpresa { get; set; }
 
-        [Action ("txtBuscar_Changed:")]
+        [Action ("txtBuscarEmpresa_Chang:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void txtBuscar_Changed (UIKit.UITextField sender);
+        partial void txtBuscarEmpresa_Chang (UIKit.UITextField sender);
 
-        [Action ("txtBuscar_Touch:")]
+        [Action ("txtEmpresaBuscador_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void txtBuscar_Touch (UIKit.UITextField sender);
+        partial void txtEmpresaBuscador_Touch (UIKit.UITextField sender);
 
         void ReleaseDesignerOutlets ()
         {
-            if (txtBuscar != null) {
-                txtBuscar.Dispose ();
-                txtBuscar = null;
+            if (txtBuscarEmpresa != null) {
+                txtBuscarEmpresa.Dispose ();
+                txtBuscarEmpresa = null;
             }
         }
     }

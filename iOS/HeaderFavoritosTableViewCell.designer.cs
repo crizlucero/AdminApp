@@ -11,8 +11,8 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
-    [Register ("BuscadorTableViewCell")]
-    partial class BuscadorTableViewCell
+    [Register ("HeaderFavoritosTableViewCell")]
+    partial class HeaderFavoritosTableViewCell
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]

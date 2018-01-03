@@ -643,6 +643,10 @@
     <ImageAsset Include="Assets.xcassets\FavoritoUsuario.imageset\FavoritoUsuario.png" />
     <ImageAsset Include="Assets.xcassets\FavoritoUsuario.imageset\FavoritoUsuario%402x.png" />
     <ImageAsset Include="Assets.xcassets\FavoritoUsuario.imageset\FavoritoUsuario%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Empresas.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Empresas.imageset\Empresas.png" />
+    <ImageAsset Include="Assets.xcassets\Empresas.imageset\Empresas%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Empresas.imageset\Empresas%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1040,6 +1044,30 @@
     <Compile Include="NoConexionViewController.designer.cs">
       <DependentUpon>NoConexionViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="HeaderFavoritosTableViewCell.cs" />
+    <Compile Include="HeaderFavoritosTableViewCell.designer.cs">
+      <DependentUpon>HeaderFavoritosTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmpresasTableViewController.cs" />
+    <Compile Include="EmpresasTableViewController.designer.cs">
+      <DependentUpon>EmpresasTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FavoritosNoInfo.cs" />
+    <Compile Include="FavoritosNoInfo.designer.cs">
+      <DependentUpon>FavoritosNoInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeaderEmpresasCell.cs" />
+    <Compile Include="HeaderEmpresasCell.designer.cs">
+      <DependentUpon>HeaderEmpresasCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaEmpresasCell.cs" />
+    <Compile Include="CeldaEmpresasCell.designer.cs">
+      <DependentUpon>CeldaEmpresasCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoInfoEmpresas.cs" />
+    <Compile Include="NoInfoEmpresas.designer.cs">
+      <DependentUpon>NoInfoEmpresas.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -1169,6 +1197,7 @@
     <Folder Include="Assets.xcassets\Comunidad.imageset\" />
     <Folder Include="Assets.xcassets\GrupoFavoritos.imageset\" />
     <Folder Include="Assets.xcassets\FavoritoUsuario.imageset\" />
+    <Folder Include="Assets.xcassets\Empresas.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

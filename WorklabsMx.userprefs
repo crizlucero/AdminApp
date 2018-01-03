@@ -1,27 +1,49 @@
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/HomeFragment.cs">
+﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/MiembrosController.cs">
     <Files>
-      <File FileName="../../../Library/Frameworks/Xamarin.Android.framework/Versions/8.1.0-25/lib/xamarin.android/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="1122" Column="2" />
-      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioActivity.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioFavoritosActivity.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioEmpresaActivity.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioUsuariosActivity.cs" Line="154" Column="15" />
-      <File FileName="WorklabsMx.Droid/ViewController/ReportActivity.cs" Line="32" Column="46" />
-      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="30" Column="9" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="39" Column="9" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/HomeFragment.cs" Line="20" Column="49" />
+      <File FileName="iOS/CeldaEmpresasCell.cs" Line="21" Column="53" />
+      <File FileName="iOS/EmpresasTableViewController.cs" Line="13" Column="6" />
+      <File FileName="iOS/FavoritosTableViewController.cs" Line="81" Column="35" />
+      <File FileName="iOS/ComunidadTableViewController.cs" Line="40" Column="54" />
+      <File FileName="iOS/FavoritosTableViewCell.cs" Line="1" Column="1" />
+      <File FileName="iOS/HeaderCarritoProductos.cs" Line="1" Column="1" />
+      <File FileName="iOS/ComunidadTableViewCell.cs" Line="35" Column="25" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="203" Column="1" />
+      <File FileName="iOS/Main.cs" Line="12" Column="1" />
+      <File FileName="iOS/HeaderEmpresasCell.cs" Line="18" Column="10" />
+      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="124" Column="12" />
+      <File FileName="iOS/NoInfoEmpresas.cs" Line="12" Column="9" />
+      <File FileName="iOS/NoInfoCell.cs" Line="1" Column="1" />
+      <File FileName="iOS/NoInfoCellUsuarios.cs" Line="23" Column="10" />
+      <File FileName="iOS/ViewControllers/Directorio/DirectorioUsuarioController.cs" Line="40" Column="85" />
+      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="125" Column="70" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WorklabsMx" expanded="True">
+            <Node name="WorklabsMx" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="MiembrosController.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="WorklabsMx.iOS" expanded="True">
+              <Node name="ViewControllers" expanded="True">
+                <Node name="Directorio" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="203" column="34" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" relfile="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" line="56" column="29" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" relfile="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" line="56" column="29" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" automaticSigning="False" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid PreferredExecutionTarget="Android.ZY32238MXJ" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" />
   <MultiItemStartupConfigurations />
 </Properties>

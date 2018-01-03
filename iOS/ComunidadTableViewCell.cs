@@ -32,12 +32,12 @@ namespace WorklabsMx.iOS
             }
         }
 
-        partial void btnImagenPerfil_Touch(UIButton sender)
+        partial void btnFavorito_Touch(UIButton sender)
         {
             
         }
 
-        partial void btnFavorito_Touch(UIButton sender)
+        partial void btnImagenComu_Touch(UIButton sender)
         {
             
         }
