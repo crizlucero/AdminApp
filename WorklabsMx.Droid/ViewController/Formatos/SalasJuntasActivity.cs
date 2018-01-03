@@ -30,7 +30,7 @@ namespace WorklabsMx.Droid
         readonly SalasJuntasController SalasController;
         LinearLayout llhHorario;
         double creditos;
-        Dictionary<string, Dictionary<string, List<int>>> Horarios;
+        readonly Dictionary<string, Dictionary<string, List<int>>> Horarios;
         public SalasJuntasActivity()
         {
             //HorasSeleccionadas = new List<int>();

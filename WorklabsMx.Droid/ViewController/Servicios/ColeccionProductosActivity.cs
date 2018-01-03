@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.OS;
+using Android.Runtime;
+using Android.Support.V4.View;
 using Android.Views;
 using Android.Views.InputMethods;
 using Android.Widget;
+using Java.Lang;
 using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
@@ -17,16 +20,80 @@ namespace WorklabsMx.Droid
     [Activity(Label = "@string/app_name")]
     public class ColeccionProductosActivity : Activity
     {
-        readonly Dictionary<string, CarritoModel> Productos, Membresias;
-        SimpleStorage Storage;
-        ArrayAdapter adapter;
-        TableRow.LayoutParams param;
-        AlertDialog dialog;
+        Dictionary<string, CarritoModel> Productos, Membresias;
+
+        ViewPager _viewPager;
         public ColeccionProductosActivity()
         {
-            Storage = SimpleStorage.EditGroup("Login");
             Productos = new Dictionary<string, CarritoModel>();
             Membresias = new Dictionary<string, CarritoModel>();
+        }
+
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+
+            SetContentView(Resource.Layout.CarritoComprasLayout);
+
+            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            SetActionBar(toolbar);
+            ActionBar.Title = Resources.GetString(Resource.String.Productos);
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
+
+            _viewPager = FindViewById<ViewPager>(Resource.Id.vpSucursal);
+            _viewPager.Adapter = new ComprasAdapter(this, new List<string> { "Productos", "Membresias" }, ref Productos, ref Membresias);
+
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.shopping_menu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.menu_cart:
+                    if (Productos.Count != 0 || Membresias.Count != 0)
+                    {
+                        Intent intent = new Intent(this, typeof(ShoppingCartActivity));
+                        intent.PutExtra("Productos", JsonConvert.SerializeObject(Productos));
+                        intent.PutExtra("Membresias", JsonConvert.SerializeObject(Membresias));
+                        StartActivity(intent);
+                    }
+                    else
+                        Toast.MakeText(this, "Debe seleccionar algún producto o membresía", ToastLength.Short).Show();
+                    break;
+                default:
+                    StartActivity(new Intent(this, typeof(MainActivity)));
+                    Finish();
+                    break;
+            }
+            return base.OnOptionsItemSelected(item);
+        }
+
+
+    }
+
+    class ComprasAdapter : PagerAdapter
+    {
+        Context context;
+        List<string> compras;
+        View TiposComprasView;
+        public Dictionary<string, CarritoModel> Productos, Membresias;
+        SimpleStorage Storage;
+        TableRow.LayoutParams param;
+        ArrayAdapter adapter;
+        AlertDialog dialog;
+        public ComprasAdapter(Context context, List<string> compras, ref Dictionary<string, CarritoModel> Productos, ref Dictionary<string, CarritoModel> Membresias)
+        {
+            this.context = context;
+            this.compras = compras;
+            this.Productos = Productos;
+            this.Membresias = Membresias;
+            adapter = new ArrayAdapter(context, Android.Resource.Layout.SimpleDropDownItem1Line, new SucursalController().GetSucursalNombres().ToArray());
             param = new TableRow.LayoutParams
             {
                 Column = 1,
@@ -34,39 +101,37 @@ namespace WorklabsMx.Droid
             };
         }
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        public override Java.Lang.Object InstantiateItem(View container, int position)
         {
-            base.OnCreate(savedInstanceState);
-
-            SetContentView(Resource.Layout.ProductosLayout);
-
-            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-            SetActionBar(toolbar);
-            ActionBar.Title = Resources.GetString(Resource.String.Productos);
-            ActionBar.SetDisplayHomeAsUpEnabled(true);
-
-            adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, new SucursalController().GetSucursalNombres().ToArray());
-            FindViewById<ImageButton>(Resource.Id.btnProductos).Click += delegate
+            LayoutInflater liView = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
+            switch (compras[position])
             {
-                FindViewById<TableLayout>(Resource.Id.tlProductos).RemoveAllViews();
-                FillDataProductos();
-            };
-
-            FindViewById<ImageButton>(Resource.Id.btnMembresias).Click += delegate
-            {
-                FindViewById<TableLayout>(Resource.Id.tlProductos).RemoveAllViews();
-                FillDataMembresias();
-            };
-
-            FillDataProductos();
+                case "Productos":
+                    TiposComprasView = liView.Inflate(Resource.Layout.ProductosLayout, null, true);
+                    FillDataProductos(); break;
+                default:
+                    TiposComprasView = liView.Inflate(Resource.Layout.MembresiasLayout, null, true);
+                    FillDataMembresias(); break;
+            }
+            var viewPager = container.JavaCast<ViewPager>();
+            viewPager.AddView(TiposComprasView);
+            return TiposComprasView;
         }
+
+        public override int Count => compras.Count;
+
+        public override bool IsViewFromObject(View view, Java.Lang.Object @object) => view == @object;
+
+        public override ICharSequence GetPageTitleFormatted(int position) => new Java.Lang.String(compras[position]);
+
+        public override void DestroyItem(View container, int position, Java.Lang.Object @object) => container.JavaCast<ViewPager>().RemoveView(@object as View);
 
         void FillDataMembresias()
         {
-            TableLayout tlMembresias = FindViewById<TableLayout>(Resource.Id.tlProductos);
+            TableLayout tlMembresias = TiposComprasView.FindViewById<TableLayout>(Resource.Id.tlMembresias);
             new PickerItemsController().GetMembresias().ForEach(membresia =>
             {
-                LayoutInflater liView = LayoutInflater;
+                LayoutInflater liView = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService); ;
 
                 View CarritoView = liView.Inflate(Resource.Layout.CarritoMembresiaLayout, null, true);
 
@@ -134,7 +199,7 @@ namespace WorklabsMx.Droid
                                           * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                     }
                     else
-                        Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
+                        Toast.MakeText(context, Resource.String.NumeroInferior, ToastLength.Short).Show();
                 };
 
                 CarritoView.FindViewById<TextView>(Resource.Id.lblTarifaMensual).Text = membresia.Membresia_Precio_Base_Neto.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
@@ -147,7 +212,7 @@ namespace WorklabsMx.Droid
                 {
                     if (dialog == null || !dialog.IsShowing)
                     {
-                        InputMethodManager mgr = (InputMethodManager)GetSystemService(Context.InputMethodService);
+                        InputMethodManager mgr = (InputMethodManager)context.GetSystemService(Context.InputMethodService);
                         mgr.HideSoftInputFromWindow(dtFechaInicio.WindowToken, HideSoftInputFlags.None);
                         ShowCalendarView((EditText)sender);
                     }
@@ -186,7 +251,7 @@ namespace WorklabsMx.Droid
                                               * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                         }
                         else
-                            Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
+                            Toast.MakeText(context, Resource.String.NumeroInferior, ToastLength.Short).Show();
                 };
 
                 ImageButton btnMesesPlus = CarritoView.FindViewById<ImageButton>(Resource.Id.btnAddMeses);
@@ -220,14 +285,14 @@ namespace WorklabsMx.Droid
                                           * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                     }
                     else
-                        Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
+                        Toast.MakeText(context, Resource.String.NumeroInferior, ToastLength.Short).Show();
                 };
                 subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
                             (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
                 lblProporcional.Text = 0.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
 
                 lblTotal.Text = 0.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
-                TableRow row = new TableRow(this);
+                TableRow row = new TableRow(context);
 
                 row.AddView(CarritoView);
                 tlMembresias.AddView(row);
@@ -236,10 +301,10 @@ namespace WorklabsMx.Droid
 
         void FillDataProductos()
         {
-            TableLayout tlProductos = FindViewById<TableLayout>(Resource.Id.tlProductos);
+            TableLayout tlProductos = TiposComprasView.FindViewById<TableLayout>(Resource.Id.tlProductos);
             new PickerItemsController().GetProductos().ForEach((producto) =>
             {
-                LayoutInflater liView = LayoutInflater;
+                LayoutInflater liView = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
 
                 View CarritoView;
                 if (producto.Producto_Disponibilidad.Contains("RECURRENTE"))
@@ -267,7 +332,7 @@ namespace WorklabsMx.Droid
                         Tipo = producto.Producto_Disponibilidad
                     });
 
-                TableRow row = new TableRow(this);
+                TableRow row = new TableRow(context);
 
                 EditText txtCantidadProductos = CarritoView.FindViewById<EditText>(Resource.Id.txtCantidad);
                 txtCantidadProductos.TextChanged += (sender, e) =>
@@ -304,7 +369,7 @@ namespace WorklabsMx.Droid
                 };
 
 
-                ImageButton btnLess = CarritoView.FindViewById<ImageButton>(Resource.Id.btnRemoveCantidad);;
+                ImageButton btnLess = CarritoView.FindViewById<ImageButton>(Resource.Id.btnRemoveCantidad); ;
                 btnLess.SetImageResource(Resource.Mipmap.ic_remove);
                 btnLess.Click += (sender, e) =>
                 {
@@ -335,7 +400,7 @@ namespace WorklabsMx.Droid
                     {
                         if (dialog == null || !dialog.IsShowing)
                         {
-                            InputMethodManager mgr = (InputMethodManager)GetSystemService(Context.InputMethodService);
+                            InputMethodManager mgr = (InputMethodManager)context.GetSystemService(Context.InputMethodService);
                             mgr.HideSoftInputFromWindow(dtFechaInicio.WindowToken, HideSoftInputFlags.None);
                             ShowCalendarView((EditText)sender);
                         }
@@ -371,7 +436,7 @@ namespace WorklabsMx.Droid
                                                   * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                             }
                             else
-                                Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
+                                Toast.MakeText(context, Resource.String.NumeroInferior, ToastLength.Short).Show();
                     };
 
                     ImageButton btnMesesPlus = CarritoView.FindViewById<ImageButton>(Resource.Id.btnAddMeses);
@@ -402,7 +467,7 @@ namespace WorklabsMx.Droid
                                               * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                         }
                         else
-                            Toast.MakeText(this, Resource.String.NumeroInferior, ToastLength.Short).Show();
+                            Toast.MakeText(context, Resource.String.NumeroInferior, ToastLength.Short).Show();
                     };
                     subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
                                 (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
@@ -415,42 +480,12 @@ namespace WorklabsMx.Droid
                 tlProductos.AddView(row);
             });
         }
-
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater.Inflate(Resource.Menu.shopping_menu, menu);
-            return base.OnCreateOptionsMenu(menu);
-        }
-
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            switch (item.ItemId)
-            {
-                case Resource.Id.menu_cart:
-                    if (Productos.Count != 0 || Membresias.Count != 0)
-                    {
-                        Intent intent = new Intent(this, typeof(ShoppingCartActivity));
-                        intent.PutExtra("Productos", JsonConvert.SerializeObject(Productos));
-                        intent.PutExtra("Membresias", JsonConvert.SerializeObject(Membresias));
-                        StartActivity(intent);
-                    }
-                    else
-                        Toast.MakeText(this, "Debe seleccionar algún producto o membresía", ToastLength.Short).Show();
-                    break;
-                default:
-                    StartActivity(new Intent(this, typeof(MainActivity)));
-                    Finish();
-                    break;
-            }
-            return base.OnOptionsItemSelected(item);
-        }
-
         void ShowCalendarView(EditText fecha)
         {
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
-            LayoutInflater liView = LayoutInflater;
+            LayoutInflater liView = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
 
             View customView = liView.Inflate(Resource.Layout.CalendarioLayout, null, true);
 

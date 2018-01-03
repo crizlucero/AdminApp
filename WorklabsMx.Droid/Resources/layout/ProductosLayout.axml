@@ -35,23 +35,4 @@
             </TableRow>
         </TableLayout>
     </ScrollView>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="-50dp"
-        android:background="#CCC"
-        android:id="@+id/rlBottomToolbar">
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/btnProductos"
-            android:src="@mipmap/ic_dns"
-            android:layout_marginLeft="140dp" />
-        <ImageButton
-            android:src="@mipmap/ic_card_membership"
-            android:layout_width="50.0dp"
-            android:layout_height="50.0dp"
-            android:layout_toRightOf="@id/btnProductos"
-            android:id="@+id/btnMembresias" />
-    </RelativeLayout>
 </LinearLayout>
