@@ -5,9 +5,6 @@
     android:layout_height="match_parent"
     android:id="@+id/llDirectorio"
     android:background="#FFF">
-<!--<include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbarlayout" />-->
     <ScrollView
         android:orientation="vertical"
         android:layout_width="match_parent"

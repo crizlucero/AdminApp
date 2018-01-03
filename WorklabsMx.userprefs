@@ -1,16 +1,13 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/HomeFragment.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/ColaboradoresController.cs">
     <Files>
-      <File FileName="../../../Library/Frameworks/Xamarin.Android.framework/Versions/8.1.0-25/lib/xamarin.android/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="1122" Column="2" />
-      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioActivity.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioFavoritosActivity.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioEmpresaActivity.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioUsuariosActivity.cs" Line="154" Column="15" />
+      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioActivity.cs" Line="34" Column="74" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ColeccionProductosActivity.cs" Line="50" Column="69" />
       <File FileName="WorklabsMx.Droid/ViewController/ReportActivity.cs" Line="32" Column="46" />
-      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="30" Column="9" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="39" Column="9" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/HomeFragment.cs" Line="20" Column="49" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="73" Column="35" />
+      <File FileName="WorklabsMx.Droid/ViewController/MyMembershipActivity.cs" Line="33" Column="15" />
+      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="200" Column="43" />
+      <File FileName="WorklabsMx/Controllers/ColaboradoresController.cs" Line="162" Column="56" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -22,6 +19,6 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" automaticSigning="False" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid PreferredExecutionTarget="Android.ZY32238MXJ" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid PreferredExecutionTarget="Android.Andorid_Emulator" />
   <MultiItemStartupConfigurations />
 </Properties>

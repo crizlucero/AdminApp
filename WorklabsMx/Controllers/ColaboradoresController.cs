@@ -157,29 +157,25 @@ namespace WorklabsMx.Controllers
                 command = CreateCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
-                if (colaborador_id != null)
-                {
-                    command.CommandText = "sp_Miembros_Empresas_Colaboradores";
-                    command.Parameters.AddWithValue("@Colaborador_Contrasena", password.EncodePassword(pwd));
-                    command.Parameters.AddWithValue("@Colaborador_Llave_Acceso", pwd);
-                    command.Parameters.AddWithValue("@Colaborador_Fecha_Registro", DateTime.Now);
-                }
-                else
-                {
-                    command.CommandText = "sp_Miembros_Update_Colaboradores";
-                    command.Parameters.AddWithValue("@Colaborador_ID", colaborador_id);
-                    command.Parameters.AddWithValue("@Colaborador_Fecha_Modificacion", DateTime.Now);
-                }
+                command.CommandText = "sp_Miembros_Empresas_Colaboradores";
+
+                command.Parameters.AddWithValue("@Trasaccion", colaborador_id == null ? "ALTA" : "MODIFICAR");
+
+                command.Parameters.AddWithValue("@Colaborador_Empresa_ID", colaborador_id);
+                command.Parameters.AddWithValue("@Colaborador_Fecha_Modificacion", DateTime.Now);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Contrasena", password.EncodePassword(pwd));
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Llave_Acceso", pwd);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Fecha_Registro", DateTime.Now);
                 command.Parameters.AddWithValue("@Miembro_Empresa_Id", empresa_id);
 
-                command.Parameters.AddWithValue("@Colaborador_Nombre", nombre);
-                command.Parameters.AddWithValue("@Colaborador_Apellidos", apellidos);
-                command.Parameters.AddWithValue("@Colaborador_Correo_Electronico", mail);
-                command.Parameters.AddWithValue("@Colaborador_Telefono", telefono);
-                command.Parameters.AddWithValue("@Colaborador_Celular", celular);
-                command.Parameters.AddWithValue("@Colaborador_Profesion", profesion);
-                command.Parameters.AddWithValue("@Colaborador_Puesto", puesto);
-                command.Parameters.AddWithValue("@Colaborador_Habilidades", habilidades);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Nombre", nombre);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Apellidos", apellidos);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Correo_Electronico", mail);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Telefono", telefono);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Celular", celular);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Profesion", profesion);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Puesto", puesto);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Habilidades", habilidades);
 
                 command.Parameters.AddWithValue("@Colaborador_Fecha_Nacimiento", fecha_nacimiento);
                 command.Transaction = transaction;

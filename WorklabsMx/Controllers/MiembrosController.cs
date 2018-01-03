@@ -335,7 +335,8 @@ namespace WorklabsMx.Controllers
                                     "inner join vw_pro_Usuarios_Directorio as duf on mf.Usuario_Favorito_Id = duf.Usuario_Id " +
                                     "AND mf.Usuario_Favorito_Tipo = duf.Usuario_Tipo " +
                                     "WHERE Miembros_Favoritos_Estatus = 1 " +
-                                    "AND mf.Usuario_Id = @usuario_id AND mf.Usuario_Tipo = @usuario_tipo");
+                                    "AND mf.Usuario_Id = @usuario_id AND mf.Usuario_Tipo = @usuario_tipo " +
+                                    "ORDER BY Usuario_Nombre, Usuario_Apellidos");
             command.Parameters.AddWithValue("@usuario_id", usuario_id);
             command.Parameters.AddWithValue("@usuario_tipo", usuario_tipo);
             try

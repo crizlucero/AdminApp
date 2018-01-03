@@ -114,8 +114,6 @@
     <Compile Include="Fragments\MenuFragment.cs" />
     <Compile Include="ViewController\MiPerfil\PerfilActivity.cs" />
     <Compile Include="ViewController\MiPerfil\DatosFacturacionActivity.cs" />
-    <Compile Include="ViewController\Directorio\DirectorioEmpresaActivity.cs" />
-    <Compile Include="ViewController\Directorio\DirectorioUsuariosActivity.cs" />
     <Compile Include="ViewController\Formatos\RegistroInvitadosActivity.cs" />
     <Compile Include="ViewController\Formatos\ReservaSalaJuntasActivity.cs" />
     <Compile Include="ViewController\Servicios\ShoppingCartActivity.cs" />
@@ -136,7 +134,6 @@
     <Compile Include="ViewController\LoginActivity.cs" />
     <Compile Include="Fragments\DirectorioComunidadFragment.cs" />
     <Compile Include="ViewController\Directorio\DirectorioActivity.cs" />
-    <Compile Include="ViewController\Directorio\DirectorioFavoritosActivity.cs" />
     <Compile Include="ViewController\Formatos\SalasJuntasActivity.cs" />
     <Compile Include="ViewController\Formatos\SalasJuntasHistorialActivity.cs" />
     <Compile Include="ViewController\Formatos\TabSalasJuntasHistorialActivity.cs" />
@@ -309,6 +306,8 @@
     <AndroidResource Include="Resources\layout\SalasJuntasConfirmacionLayout.axml" />
     <AndroidResource Include="Resources\drawable\stroke_style.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_profile_empty.png" />
+    <AndroidResource Include="Resources\layout\DirectoriosLayout.axml" />
+    <AndroidResource Include="Resources\layout\CarritoComprasLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

@@ -30,7 +30,7 @@ namespace WorklabsMx.Droid
             ActionBar.Title = Resources.GetString(Resource.String.Productos);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            FindViewById<ImageButton>(Resource.Id.btnProductos).Click += delegate
+            /*FindViewById<ImageButton>(Resource.Id.btnProductos).Click += delegate
             {
                 FindViewById<TableLayout>(Resource.Id.tlProductos).RemoveAllViews();
                 FillDataProductos();
@@ -40,7 +40,7 @@ namespace WorklabsMx.Droid
             {
                 FindViewById<TableLayout>(Resource.Id.tlProductos).RemoveAllViews();
                 FillDataMembresias();
-            };
+            };*/
 
             FillDataProductos();
         }
