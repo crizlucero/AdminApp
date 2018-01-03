@@ -65,6 +65,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\SalaJuntasModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\SalaJuntasReservacionModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enum\TiposReservacion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\EscritorioController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />

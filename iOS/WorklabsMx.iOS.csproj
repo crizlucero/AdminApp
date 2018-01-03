@@ -1008,7 +1008,6 @@
     <Compile Include="NoInfoMenuCell.designer.cs">
       <DependentUpon>NoInfoMenuCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\EscritorioController.cs" />
     <Compile Include="ComunidadTableViewController.cs" />
     <Compile Include="ComunidadTableViewController.designer.cs">
       <DependentUpon>ComunidadTableViewController.cs</DependentUpon>

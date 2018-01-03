@@ -112,10 +112,6 @@
     <Compile Include="ViewElement\MenuView.cs" />
     <Compile Include="Fragments\MyProfileFragment.cs" />
     <Compile Include="Fragments\MenuFragment.cs" />
-    <Compile Include="ViewController\SubMenuActivity.cs" />
-    <Compile Include="Helpers\MenuService.cs" />
-    <Compile Include="ViewController\Servicios\MembresiasActivity.cs" />
-    <Compile Include="ViewController\Servicios\ProductosActivity.cs" />
     <Compile Include="ViewController\MiPerfil\PerfilActivity.cs" />
     <Compile Include="ViewController\MiPerfil\DatosFacturacionActivity.cs" />
     <Compile Include="ViewController\Directorio\DirectorioEmpresaActivity.cs" />
@@ -128,7 +124,6 @@
     <Compile Include="ViewController\MiPerfil\MiEmpresaActivity.cs" />
     <Compile Include="ViewController\MiPerfil\EditPerfilActivity.cs" />
     <Compile Include="ViewController\MiPerfil\EditEmpresaActivity.cs" />
-    <Compile Include="ViewController\PerfilesActivity.cs" />
     <Compile Include="ViewController\MyMembershipActivity.cs" />
     <Compile Include="ViewController\ReportActivity.cs" />
     <Compile Include="ViewController\MiPerfil\MisColaboradoresActivity.cs" />
@@ -157,7 +152,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\mipmap-mdpi\Icon2.png" />
     <AndroidResource Include="Resources\mipmap-xhdpi\Icon2.png" />
@@ -171,9 +165,7 @@
     <AndroidResource Include="Resources\layout\AccesoLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_refresh.png" />
     <AndroidResource Include="Resources\menu\navmenu.xml" />
-    <AndroidResource Include="Resources\layout\headerdrawerlayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_dashboard.png" />
-    <AndroidResource Include="Resources\layout\homeLayout.axml" />
     <AndroidResource Include="Resources\menu\action_menu.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_cloud.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_call.png" />
