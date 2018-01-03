@@ -1037,6 +1037,10 @@
     <Compile Include="TabBarDirectorio.designer.cs">
       <DependentUpon>TabBarDirectorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="NoConexionViewController.cs" />
+    <Compile Include="NoConexionViewController.designer.cs">
+      <DependentUpon>NoConexionViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

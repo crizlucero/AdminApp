@@ -35,8 +35,29 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                conn.Close();
+                try
+                {
+                    string query = "SELECT Usuario_Id, Usuario_Tipo, Usuario_Empresa_Id FROM vw_pro_Usuarios_Directorio where Usuario_Correo_Electronico = @email --and Miembro_Contrasena = @password";
+                    command = CreateCommandIPV6(query);
+                    command.Parameters.AddWithValue("@email", email);
+                    command.Parameters.AddWithValue("@password", password);
+                    conn.Open();
+
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        datos.Add(reader["Usuario_Id"].ToString());
+                        datos.Add(reader["Usuario_Tipo"].ToString());
+                        datos.Add(reader["Usuario_Empresa_Id"].ToString());
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine(e.Message);
+                    SlackLogs.SendMessage(e.Message);
+                }
+
             }
             finally
             {

@@ -115,13 +115,7 @@ namespace WorklabsMx.iOS
 
         public override void TouchesBegan(NSSet touches, UIEvent evt)
         {
-            var touch = touches.AnyObject as UITouch;
-
-            var location = touch.LocationInView(this.View);
-            if (this.vwVistaComentar.Frame.Contains(location) == false)
-            {
-                this.DismissViewController(true, null);
-            }
+            this.txtPublicacion.ResignFirstResponder();
         }
 
         private void HandleTextMessageChanged(object sender, EventArgs e)
@@ -142,7 +136,6 @@ namespace WorklabsMx.iOS
         {
             PresentViewController(CrearActionSheet(), true, null);
         }
-
 
         private UIAlertController CrearActionSheet()
         {
