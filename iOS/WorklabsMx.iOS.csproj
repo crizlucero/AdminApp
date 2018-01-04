@@ -405,7 +405,6 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120px.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180px.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60px.png" />
-    <ImageAsset Include="Assets.xcassets\BackGround.imageset\Back.jpg" />
     <ImageAsset Include="Assets.xcassets\Launch.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Launch.imageset\Load.jpg" />
     <ImageAsset Include="Assets.xcassets\back.imageset\Artboard 21.png" />
@@ -414,7 +413,6 @@
     <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Artboard 20.png" />
     <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Artboard 18.png" />
     <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\Logotipo_500px.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icono_1024.png" />
     <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Artboard 19.png" />
     <ImageAsset Include="Assets.xcassets\ic_call.imageset\icons8-phone-30.png" />
@@ -647,6 +645,12 @@
     <ImageAsset Include="Assets.xcassets\Empresas.imageset\Empresas.png" />
     <ImageAsset Include="Assets.xcassets\Empresas.imageset\Empresas%402x.png" />
     <ImageAsset Include="Assets.xcassets\Empresas.imageset\Empresas%403x.png" />
+    <ImageAsset Include="Assets.xcassets\BackGround.imageset\BackGround.png" />
+    <ImageAsset Include="Assets.xcassets\BackGround.imageset\BackGround%402x.png" />
+    <ImageAsset Include="Assets.xcassets\BackGround.imageset\BackGround%403x.png" />
+    <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\worklabsLogo.png" />
+    <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\worklabsLogo%402x.png" />
+    <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\worklabsLogo%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
