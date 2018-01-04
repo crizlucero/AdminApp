@@ -5,22 +5,22 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         const string IdentificadorCeldaNoInfo = "NoInfo";
 
         const int TamañoPublicacion = 223;
-        const int TamañoHeader = 93;
+        const int TamañoHeader = 150;
         const int TamañoMensajeNoInfo = 800;
 
         bool isShowInformation = false;
         bool existeConeccion = true;
          List<PostModel> allPosts = new List<PostModel>();         List<UIImage> allProfileImages = new List<UIImage>();         List<UIImage> allPostImages = new List<UIImage>();         List<string> miembro;          List<string> ListUser = new List<string>();          PostModel CurrentPost = new PostModel();         UIImage currentProfileImage = new UIImage();         UIImage currentPostImage = new UIImage();         UIImageView ImagenPerfil;         int ContadorComentar; 
-        public EscritorioController(IntPtr handle) : base(handle)         {             
+        public EscritorioController(IntPtr handle) : base(handle)         {
         }
 
         public override void ViewDidLoad()
         {
-            base.ViewDidLoad();
+            base.ViewDidLoad();             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;   
 		}
 
         public override void ViewWillAppear(bool animated)
-        {             base.ViewWillAppear(animated);             ContadorComentar = 0;
+        {             base.ViewWillAppear(animated);             var Tap = new UITapGestureRecognizer(this.Tapped);             this.View.AddGestureRecognizer(Tap);             ContadorComentar = 0;
             this.CargarInfo();             this.TableView.ReloadData();             BTProgressHUD.Dismiss();
         }          public override void ViewDidAppear(bool animated)
         {
@@ -49,17 +49,6 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 			isShowInformation = false;
 			return 1;
         } 
-        /*public override nfloat GetHeightForRow(UITableView tableView, Foundation.NSIndexPath indexPath)
-        {
-            if (isShowInformation)
-            {                 if (allPosts[indexPath.Row].Publicacion_Imagen_Ruta == "")                 {                     return TamañoPublicacion - 50;                 }                 else                  {                     return TamañoPublicacion;                 }
-
-            }
-            else
-            {
-                return TamañoMensajeNoInfo;
-            }
-        }*/
 
         public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
         {
@@ -80,7 +69,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         {
             if(segue.Identifier == "toShowPostView")             {                 var postCommentView = (PublicarPostViewController)segue.DestinationViewController;                 postCommentView.PostPublicadoDelegate = this;                 postCommentView.setInfoPublicacion(miembro);             }              else if(segue.Identifier == "comentar")             {
 				var CommentView = (comentarTableView)segue.DestinationViewController;
-                CommentView.currentPost = CurrentPost;                 CommentView.currentPostImage = currentPostImage;                 CommentView.currentProfileImage = currentProfileImage;                 //CommentView.BackWindowDelegate = this;             }             else if(segue.Identifier == "toShowImageFromPost")             {                 var ImageView = (DetailCommentImage)segue.DestinationViewController;                 ImageView.ImagenPost = (UIImageView)sender;             }              else if(segue.Identifier == "DetallarPerfil")             {                 var PerfilView = (InfoPerfilViewController)segue.DestinationViewController;                 PerfilView.ListUser = ListUser;             }
+                CommentView.currentPost = CurrentPost;                 CommentView.currentPostImage = currentPostImage;                 CommentView.currentProfileImage = currentProfileImage;             }             else if(segue.Identifier == "toShowImageFromPost")             {                 var ImageView = (DetailCommentImage)segue.DestinationViewController;                 ImageView.ImagenPost = (UIImageView)sender;             }              else if(segue.Identifier == "DetallarPerfil")             {                 var PerfilView = (InfoPerfilViewController)segue.DestinationViewController;                 PerfilView.ListUser = ListUser;             }
         }          private void WillDisplay(int Row)         {             int LastRow = allPosts.Count - 1;             if ((Row == LastRow))             {                 BTProgressHUD.Dismiss();
             }         }          private void CargarInfo()         {             try             {                 if (InternetConectionHelper.VerificarConexion())                 {                     allPosts = new Controllers.EscritorioController().GetMuroPosts(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));                      if (allPosts.Count == 0)                     {
                         isShowInformation = false;                         existeConeccion = false;                         this.btnScanQr.Title = "";                         this.btnScanQr.Enabled = false;
@@ -99,4 +88,4 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         partial void Menu_Touch(UIBarButtonItem sender)
         {
             this.RevealViewController().RevealToggleAnimated(true);             View.AddGestureRecognizer(this.RevealViewController().PanGestureRecognizer);            
-        }     }      partial class EscritorioController: PostPublicadoDel     {         public async void PostPublicado()         {             BTProgressHUD.Show(status: "Cargando Comentarios");             await Task.Delay(2000);             this.CargarInfo();             this.TableView.ReloadData();         }     }  } 
+        }          private void Tapped(UITapGestureRecognizer Recognizer)         {             this.View.EndEditing(true);         }     }      partial class EscritorioController: PostPublicadoDel     {         public async void PostPublicado()         {             BTProgressHUD.Show(status: "Cargando Comentarios");             await Task.Delay(2000);             this.CargarInfo();             this.TableView.ReloadData();         }     }  } 

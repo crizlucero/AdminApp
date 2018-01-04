@@ -38,7 +38,7 @@ namespace WorklabsMx.iOS
 
         public override void ViewWillAppear(bool animated)
         {
-           
+            base.ViewWillAppear(animated);
         }
 
         private void FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "", bool disponibilidad = true, string pais = "", string estado = "", string municipio = "")
@@ -57,6 +57,7 @@ namespace WorklabsMx.iOS
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
             var headerCell = (HeaderFavoritosTableViewCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
+            headerCell.UpdateCell();
             return headerCell;
         }
 

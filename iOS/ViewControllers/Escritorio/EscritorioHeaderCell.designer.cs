@@ -28,9 +28,21 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnPublicar { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtBuscar { get; set; }
+
         [Action ("btnPublicar_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnPublicar_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("txtBuscar_Change:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void txtBuscar_Change (UIKit.UITextField sender);
+
+        [Action ("txtBuscar_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void txtBuscar_Touch (UIKit.UITextField sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -52,6 +64,11 @@ namespace WorklabsMx.iOS
             if (lblProfesion != null) {
                 lblProfesion.Dispose ();
                 lblProfesion = null;
+            }
+
+            if (txtBuscar != null) {
+                txtBuscar.Dispose ();
+                txtBuscar = null;
             }
         }
     }

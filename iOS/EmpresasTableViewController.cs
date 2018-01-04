@@ -49,6 +49,7 @@ namespace WorklabsMx.iOS
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
             var headerCell = (HeaderEmpresasCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
+            headerCell.UpdateCell();
             return headerCell;
         }
 
