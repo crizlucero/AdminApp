@@ -101,6 +101,10 @@
     <Reference Include="Xamarin.Android.Support.v7.AppCompat">
       <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
     </Reference>
+    <Reference Include="Refractored.PagerSlidingTabStrip">
+      <HintPath>..\packages\Refractored.PagerSlidingTabStrip.1.1.6\lib\MonoAndroid10\Refractored.PagerSlidingTabStrip.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android.Export" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -130,17 +134,16 @@
     <Compile Include="ViewController\MiPerfil\MisColaboradoresCambiosActivity.cs" />
     <Compile Include="ViewController\CommentsActivity.cs" />
     <Compile Include="SplashActivity.cs" />
-    <Compile Include="ViewController\Servicios\ColeccionProductosActivity.cs" />
     <Compile Include="ViewController\LoginActivity.cs" />
     <Compile Include="Fragments\DirectorioComunidadFragment.cs" />
     <Compile Include="ViewController\Directorio\DirectorioActivity.cs" />
     <Compile Include="ViewController\Formatos\SalasJuntasActivity.cs" />
-    <Compile Include="ViewController\Formatos\SalasJuntasHistorialActivity.cs" />
     <Compile Include="ViewController\Formatos\TabSalasJuntasHistorialActivity.cs" />
     <Compile Include="ViewController\Formatos\SalasJuntasSucursalActivity.cs" />
     <Compile Include="Helpers\CalendarHelper.cs" />
     <Compile Include="Helpers\DatePickerFragment.cs" />
     <Compile Include="Helpers\TimePickerFragment.cs" />
+    <Compile Include="Resources\ColeccionProductosActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -308,6 +311,9 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_profile_empty.png" />
     <AndroidResource Include="Resources\layout\DirectoriosLayout.axml" />
     <AndroidResource Include="Resources\layout\CarritoComprasLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_perfil_background.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_sala_prueba.png" />
+    <AndroidResource Include="Resources\layout\SalasJuntasHistorialesLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

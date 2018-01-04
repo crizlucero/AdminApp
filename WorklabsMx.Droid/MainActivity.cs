@@ -400,13 +400,24 @@ namespace WorklabsMx.Droid
             profileView.FindViewById<TextView>(Resource.Id.lblPuesto).Text = miembro.Miembro_Puesto;
             profileView.FindViewById<TextView>(Resource.Id.lblProfesion).Text = miembro.Miembro_Profesion;
             profileView.FindViewById<TextView>(Resource.Id.lblFechaNacimiento).Text = miembro.Miembro_Fecha_Nacimiento;
+            profileView.FindViewById<Button>(Resource.Id.btnSendMessage).Click += delegate
+            {
+                try
+                {
+                    Intent intent = PackageManager.GetLaunchIntentForPackage("mx.worklabs");
+                    StartActivity(intent);
+                }catch(Exception e){
+                    Intent intent = PackageManager.GetLaunchIntentForPackage("http://play.google.com/store/apps/details?id=");
+                    StartActivity(intent);
+                }
+            };
             TextView txtPhone = profileView.FindViewById<TextView>(Resource.Id.lblContacto);
             txtPhone.Text = miembro.Miembro_Celular;
             txtPhone.Click += delegate
             {
                 try
                 {
-                    var uri = Android.Net.Uri.Parse("tel:"+miembro.Miembro_Celular);
+                    var uri = Android.Net.Uri.Parse("tel:" + miembro.Miembro_Celular);
                     var intent = new Intent(Intent.ActionDial, uri);
                     StartActivity(intent);
                 }
@@ -441,6 +452,7 @@ namespace WorklabsMx.Droid
             builder.SetView(profileView);
             builder.Create();
             dialog = builder.Show();
+            dialog.Window.SetLayout(Resources.DisplayMetrics.WidthPixels, Resources.DisplayMetrics.HeightPixels);
             dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
         }
 

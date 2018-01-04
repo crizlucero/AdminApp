@@ -64,6 +64,1269 @@ namespace WorklabsMx.Droid
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::WorklabsMx.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::WorklabsMx.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
 			global::Droid.Resource.String.library_name = global::WorklabsMx.Droid.Resource.String.library_name;
+			global::com.refractored.Resource.Animation.abc_fade_in = global::WorklabsMx.Droid.Resource.Animation.abc_fade_in;
+			global::com.refractored.Resource.Animation.abc_fade_out = global::WorklabsMx.Droid.Resource.Animation.abc_fade_out;
+			global::com.refractored.Resource.Animation.abc_grow_fade_in_from_bottom = global::WorklabsMx.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::com.refractored.Resource.Animation.abc_popup_enter = global::WorklabsMx.Droid.Resource.Animation.abc_popup_enter;
+			global::com.refractored.Resource.Animation.abc_popup_exit = global::WorklabsMx.Droid.Resource.Animation.abc_popup_exit;
+			global::com.refractored.Resource.Animation.abc_shrink_fade_out_from_bottom = global::WorklabsMx.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::com.refractored.Resource.Animation.abc_slide_in_bottom = global::WorklabsMx.Droid.Resource.Animation.abc_slide_in_bottom;
+			global::com.refractored.Resource.Animation.abc_slide_in_top = global::WorklabsMx.Droid.Resource.Animation.abc_slide_in_top;
+			global::com.refractored.Resource.Animation.abc_slide_out_bottom = global::WorklabsMx.Droid.Resource.Animation.abc_slide_out_bottom;
+			global::com.refractored.Resource.Animation.abc_slide_out_top = global::WorklabsMx.Droid.Resource.Animation.abc_slide_out_top;
+			global::com.refractored.Resource.Attribute.actionBarDivider = global::WorklabsMx.Droid.Resource.Attribute.actionBarDivider;
+			global::com.refractored.Resource.Attribute.actionBarItemBackground = global::WorklabsMx.Droid.Resource.Attribute.actionBarItemBackground;
+			global::com.refractored.Resource.Attribute.actionBarPopupTheme = global::WorklabsMx.Droid.Resource.Attribute.actionBarPopupTheme;
+			global::com.refractored.Resource.Attribute.actionBarSize = global::WorklabsMx.Droid.Resource.Attribute.actionBarSize;
+			global::com.refractored.Resource.Attribute.actionBarSplitStyle = global::WorklabsMx.Droid.Resource.Attribute.actionBarSplitStyle;
+			global::com.refractored.Resource.Attribute.actionBarStyle = global::WorklabsMx.Droid.Resource.Attribute.actionBarStyle;
+			global::com.refractored.Resource.Attribute.actionBarTabBarStyle = global::WorklabsMx.Droid.Resource.Attribute.actionBarTabBarStyle;
+			global::com.refractored.Resource.Attribute.actionBarTabStyle = global::WorklabsMx.Droid.Resource.Attribute.actionBarTabStyle;
+			global::com.refractored.Resource.Attribute.actionBarTabTextStyle = global::WorklabsMx.Droid.Resource.Attribute.actionBarTabTextStyle;
+			global::com.refractored.Resource.Attribute.actionBarTheme = global::WorklabsMx.Droid.Resource.Attribute.actionBarTheme;
+			global::com.refractored.Resource.Attribute.actionBarWidgetTheme = global::WorklabsMx.Droid.Resource.Attribute.actionBarWidgetTheme;
+			global::com.refractored.Resource.Attribute.actionButtonStyle = global::WorklabsMx.Droid.Resource.Attribute.actionButtonStyle;
+			global::com.refractored.Resource.Attribute.actionDropDownStyle = global::WorklabsMx.Droid.Resource.Attribute.actionDropDownStyle;
+			global::com.refractored.Resource.Attribute.actionLayout = global::WorklabsMx.Droid.Resource.Attribute.actionLayout;
+			global::com.refractored.Resource.Attribute.actionMenuTextAppearance = global::WorklabsMx.Droid.Resource.Attribute.actionMenuTextAppearance;
+			global::com.refractored.Resource.Attribute.actionMenuTextColor = global::WorklabsMx.Droid.Resource.Attribute.actionMenuTextColor;
+			global::com.refractored.Resource.Attribute.actionModeBackground = global::WorklabsMx.Droid.Resource.Attribute.actionModeBackground;
+			global::com.refractored.Resource.Attribute.actionModeCloseButtonStyle = global::WorklabsMx.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::com.refractored.Resource.Attribute.actionModeCloseDrawable = global::WorklabsMx.Droid.Resource.Attribute.actionModeCloseDrawable;
+			global::com.refractored.Resource.Attribute.actionModeCopyDrawable = global::WorklabsMx.Droid.Resource.Attribute.actionModeCopyDrawable;
+			global::com.refractored.Resource.Attribute.actionModeCutDrawable = global::WorklabsMx.Droid.Resource.Attribute.actionModeCutDrawable;
+			global::com.refractored.Resource.Attribute.actionModeFindDrawable = global::WorklabsMx.Droid.Resource.Attribute.actionModeFindDrawable;
+			global::com.refractored.Resource.Attribute.actionModePasteDrawable = global::WorklabsMx.Droid.Resource.Attribute.actionModePasteDrawable;
+			global::com.refractored.Resource.Attribute.actionModePopupWindowStyle = global::WorklabsMx.Droid.Resource.Attribute.actionModePopupWindowStyle;
+			global::com.refractored.Resource.Attribute.actionModeSelectAllDrawable = global::WorklabsMx.Droid.Resource.Attribute.actionModeSelectAllDrawable;
+			global::com.refractored.Resource.Attribute.actionModeShareDrawable = global::WorklabsMx.Droid.Resource.Attribute.actionModeShareDrawable;
+			global::com.refractored.Resource.Attribute.actionModeSplitBackground = global::WorklabsMx.Droid.Resource.Attribute.actionModeSplitBackground;
+			global::com.refractored.Resource.Attribute.actionModeStyle = global::WorklabsMx.Droid.Resource.Attribute.actionModeStyle;
+			global::com.refractored.Resource.Attribute.actionModeWebSearchDrawable = global::WorklabsMx.Droid.Resource.Attribute.actionModeWebSearchDrawable;
+			global::com.refractored.Resource.Attribute.actionOverflowButtonStyle = global::WorklabsMx.Droid.Resource.Attribute.actionOverflowButtonStyle;
+			global::com.refractored.Resource.Attribute.actionOverflowMenuStyle = global::WorklabsMx.Droid.Resource.Attribute.actionOverflowMenuStyle;
+			global::com.refractored.Resource.Attribute.actionProviderClass = global::WorklabsMx.Droid.Resource.Attribute.actionProviderClass;
+			global::com.refractored.Resource.Attribute.actionViewClass = global::WorklabsMx.Droid.Resource.Attribute.actionViewClass;
+			global::com.refractored.Resource.Attribute.activityChooserViewStyle = global::WorklabsMx.Droid.Resource.Attribute.activityChooserViewStyle;
+			global::com.refractored.Resource.Attribute.alertDialogButtonGroupStyle = global::WorklabsMx.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::com.refractored.Resource.Attribute.alertDialogCenterButtons = global::WorklabsMx.Droid.Resource.Attribute.alertDialogCenterButtons;
+			global::com.refractored.Resource.Attribute.alertDialogStyle = global::WorklabsMx.Droid.Resource.Attribute.alertDialogStyle;
+			global::com.refractored.Resource.Attribute.alertDialogTheme = global::WorklabsMx.Droid.Resource.Attribute.alertDialogTheme;
+			global::com.refractored.Resource.Attribute.allowStacking = global::WorklabsMx.Droid.Resource.Attribute.allowStacking;
+			global::com.refractored.Resource.Attribute.arrowHeadLength = global::WorklabsMx.Droid.Resource.Attribute.arrowHeadLength;
+			global::com.refractored.Resource.Attribute.arrowShaftLength = global::WorklabsMx.Droid.Resource.Attribute.arrowShaftLength;
+			global::com.refractored.Resource.Attribute.autoCompleteTextViewStyle = global::WorklabsMx.Droid.Resource.Attribute.autoCompleteTextViewStyle;
+			global::com.refractored.Resource.Attribute.background = global::WorklabsMx.Droid.Resource.Attribute.background;
+			global::com.refractored.Resource.Attribute.backgroundSplit = global::WorklabsMx.Droid.Resource.Attribute.backgroundSplit;
+			global::com.refractored.Resource.Attribute.backgroundStacked = global::WorklabsMx.Droid.Resource.Attribute.backgroundStacked;
+			global::com.refractored.Resource.Attribute.backgroundTint = global::WorklabsMx.Droid.Resource.Attribute.backgroundTint;
+			global::com.refractored.Resource.Attribute.backgroundTintMode = global::WorklabsMx.Droid.Resource.Attribute.backgroundTintMode;
+			global::com.refractored.Resource.Attribute.barLength = global::WorklabsMx.Droid.Resource.Attribute.barLength;
+			global::com.refractored.Resource.Attribute.borderlessButtonStyle = global::WorklabsMx.Droid.Resource.Attribute.borderlessButtonStyle;
+			global::com.refractored.Resource.Attribute.buttonBarButtonStyle = global::WorklabsMx.Droid.Resource.Attribute.buttonBarButtonStyle;
+			global::com.refractored.Resource.Attribute.buttonBarNegativeButtonStyle = global::WorklabsMx.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::com.refractored.Resource.Attribute.buttonBarNeutralButtonStyle = global::WorklabsMx.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::com.refractored.Resource.Attribute.buttonBarPositiveButtonStyle = global::WorklabsMx.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::com.refractored.Resource.Attribute.buttonBarStyle = global::WorklabsMx.Droid.Resource.Attribute.buttonBarStyle;
+			global::com.refractored.Resource.Attribute.buttonPanelSideLayout = global::WorklabsMx.Droid.Resource.Attribute.buttonPanelSideLayout;
+			global::com.refractored.Resource.Attribute.buttonStyle = global::WorklabsMx.Droid.Resource.Attribute.buttonStyle;
+			global::com.refractored.Resource.Attribute.buttonStyleSmall = global::WorklabsMx.Droid.Resource.Attribute.buttonStyleSmall;
+			global::com.refractored.Resource.Attribute.buttonTint = global::WorklabsMx.Droid.Resource.Attribute.buttonTint;
+			global::com.refractored.Resource.Attribute.buttonTintMode = global::WorklabsMx.Droid.Resource.Attribute.buttonTintMode;
+			global::com.refractored.Resource.Attribute.checkboxStyle = global::WorklabsMx.Droid.Resource.Attribute.checkboxStyle;
+			global::com.refractored.Resource.Attribute.checkedTextViewStyle = global::WorklabsMx.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::com.refractored.Resource.Attribute.closeIcon = global::WorklabsMx.Droid.Resource.Attribute.closeIcon;
+			global::com.refractored.Resource.Attribute.closeItemLayout = global::WorklabsMx.Droid.Resource.Attribute.closeItemLayout;
+			global::com.refractored.Resource.Attribute.collapseContentDescription = global::WorklabsMx.Droid.Resource.Attribute.collapseContentDescription;
+			global::com.refractored.Resource.Attribute.collapseIcon = global::WorklabsMx.Droid.Resource.Attribute.collapseIcon;
+			global::com.refractored.Resource.Attribute.color = global::WorklabsMx.Droid.Resource.Attribute.color;
+			global::com.refractored.Resource.Attribute.colorAccent = global::WorklabsMx.Droid.Resource.Attribute.colorAccent;
+			global::com.refractored.Resource.Attribute.colorButtonNormal = global::WorklabsMx.Droid.Resource.Attribute.colorButtonNormal;
+			global::com.refractored.Resource.Attribute.colorControlActivated = global::WorklabsMx.Droid.Resource.Attribute.colorControlActivated;
+			global::com.refractored.Resource.Attribute.colorControlHighlight = global::WorklabsMx.Droid.Resource.Attribute.colorControlHighlight;
+			global::com.refractored.Resource.Attribute.colorControlNormal = global::WorklabsMx.Droid.Resource.Attribute.colorControlNormal;
+			global::com.refractored.Resource.Attribute.colorPrimary = global::WorklabsMx.Droid.Resource.Attribute.colorPrimary;
+			global::com.refractored.Resource.Attribute.colorPrimaryDark = global::WorklabsMx.Droid.Resource.Attribute.colorPrimaryDark;
+			global::com.refractored.Resource.Attribute.colorSwitchThumbNormal = global::WorklabsMx.Droid.Resource.Attribute.colorSwitchThumbNormal;
+			global::com.refractored.Resource.Attribute.commitIcon = global::WorklabsMx.Droid.Resource.Attribute.commitIcon;
+			global::com.refractored.Resource.Attribute.contentInsetEnd = global::WorklabsMx.Droid.Resource.Attribute.contentInsetEnd;
+			global::com.refractored.Resource.Attribute.contentInsetLeft = global::WorklabsMx.Droid.Resource.Attribute.contentInsetLeft;
+			global::com.refractored.Resource.Attribute.contentInsetRight = global::WorklabsMx.Droid.Resource.Attribute.contentInsetRight;
+			global::com.refractored.Resource.Attribute.contentInsetStart = global::WorklabsMx.Droid.Resource.Attribute.contentInsetStart;
+			global::com.refractored.Resource.Attribute.controlBackground = global::WorklabsMx.Droid.Resource.Attribute.controlBackground;
+			global::com.refractored.Resource.Attribute.customNavigationLayout = global::WorklabsMx.Droid.Resource.Attribute.customNavigationLayout;
+			global::com.refractored.Resource.Attribute.defaultQueryHint = global::WorklabsMx.Droid.Resource.Attribute.defaultQueryHint;
+			global::com.refractored.Resource.Attribute.dialogPreferredPadding = global::WorklabsMx.Droid.Resource.Attribute.dialogPreferredPadding;
+			global::com.refractored.Resource.Attribute.dialogTheme = global::WorklabsMx.Droid.Resource.Attribute.dialogTheme;
+			global::com.refractored.Resource.Attribute.displayOptions = global::WorklabsMx.Droid.Resource.Attribute.displayOptions;
+			global::com.refractored.Resource.Attribute.divider = global::WorklabsMx.Droid.Resource.Attribute.divider;
+			global::com.refractored.Resource.Attribute.dividerHorizontal = global::WorklabsMx.Droid.Resource.Attribute.dividerHorizontal;
+			global::com.refractored.Resource.Attribute.dividerPadding = global::WorklabsMx.Droid.Resource.Attribute.dividerPadding;
+			global::com.refractored.Resource.Attribute.dividerVertical = global::WorklabsMx.Droid.Resource.Attribute.dividerVertical;
+			global::com.refractored.Resource.Attribute.drawableSize = global::WorklabsMx.Droid.Resource.Attribute.drawableSize;
+			global::com.refractored.Resource.Attribute.drawerArrowStyle = global::WorklabsMx.Droid.Resource.Attribute.drawerArrowStyle;
+			global::com.refractored.Resource.Attribute.dropDownListViewStyle = global::WorklabsMx.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::com.refractored.Resource.Attribute.dropdownListPreferredItemHeight = global::WorklabsMx.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::com.refractored.Resource.Attribute.editTextBackground = global::WorklabsMx.Droid.Resource.Attribute.editTextBackground;
+			global::com.refractored.Resource.Attribute.editTextColor = global::WorklabsMx.Droid.Resource.Attribute.editTextColor;
+			global::com.refractored.Resource.Attribute.editTextStyle = global::WorklabsMx.Droid.Resource.Attribute.editTextStyle;
+			global::com.refractored.Resource.Attribute.elevation = global::WorklabsMx.Droid.Resource.Attribute.elevation;
+			global::com.refractored.Resource.Attribute.expandActivityOverflowButtonDrawable = global::WorklabsMx.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::com.refractored.Resource.Attribute.gapBetweenBars = global::WorklabsMx.Droid.Resource.Attribute.gapBetweenBars;
+			global::com.refractored.Resource.Attribute.goIcon = global::WorklabsMx.Droid.Resource.Attribute.goIcon;
+			global::com.refractored.Resource.Attribute.height = global::WorklabsMx.Droid.Resource.Attribute.height;
+			global::com.refractored.Resource.Attribute.hideOnContentScroll = global::WorklabsMx.Droid.Resource.Attribute.hideOnContentScroll;
+			global::com.refractored.Resource.Attribute.homeAsUpIndicator = global::WorklabsMx.Droid.Resource.Attribute.homeAsUpIndicator;
+			global::com.refractored.Resource.Attribute.homeLayout = global::WorklabsMx.Droid.Resource.Attribute.homeLayout;
+			global::com.refractored.Resource.Attribute.icon = global::WorklabsMx.Droid.Resource.Attribute.icon;
+			global::com.refractored.Resource.Attribute.iconifiedByDefault = global::WorklabsMx.Droid.Resource.Attribute.iconifiedByDefault;
+			global::com.refractored.Resource.Attribute.imageButtonStyle = global::WorklabsMx.Droid.Resource.Attribute.imageButtonStyle;
+			global::com.refractored.Resource.Attribute.indeterminateProgressStyle = global::WorklabsMx.Droid.Resource.Attribute.indeterminateProgressStyle;
+			global::com.refractored.Resource.Attribute.initialActivityCount = global::WorklabsMx.Droid.Resource.Attribute.initialActivityCount;
+			global::com.refractored.Resource.Attribute.isLightTheme = global::WorklabsMx.Droid.Resource.Attribute.isLightTheme;
+			global::com.refractored.Resource.Attribute.itemPadding = global::WorklabsMx.Droid.Resource.Attribute.itemPadding;
+			global::com.refractored.Resource.Attribute.layout = global::WorklabsMx.Droid.Resource.Attribute.layout;
+			global::com.refractored.Resource.Attribute.listChoiceBackgroundIndicator = global::WorklabsMx.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::com.refractored.Resource.Attribute.listDividerAlertDialog = global::WorklabsMx.Droid.Resource.Attribute.listDividerAlertDialog;
+			global::com.refractored.Resource.Attribute.listItemLayout = global::WorklabsMx.Droid.Resource.Attribute.listItemLayout;
+			global::com.refractored.Resource.Attribute.listLayout = global::WorklabsMx.Droid.Resource.Attribute.listLayout;
+			global::com.refractored.Resource.Attribute.listPopupWindowStyle = global::WorklabsMx.Droid.Resource.Attribute.listPopupWindowStyle;
+			global::com.refractored.Resource.Attribute.listPreferredItemHeight = global::WorklabsMx.Droid.Resource.Attribute.listPreferredItemHeight;
+			global::com.refractored.Resource.Attribute.listPreferredItemHeightLarge = global::WorklabsMx.Droid.Resource.Attribute.listPreferredItemHeightLarge;
+			global::com.refractored.Resource.Attribute.listPreferredItemHeightSmall = global::WorklabsMx.Droid.Resource.Attribute.listPreferredItemHeightSmall;
+			global::com.refractored.Resource.Attribute.listPreferredItemPaddingLeft = global::WorklabsMx.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::com.refractored.Resource.Attribute.listPreferredItemPaddingRight = global::WorklabsMx.Droid.Resource.Attribute.listPreferredItemPaddingRight;
+			global::com.refractored.Resource.Attribute.logo = global::WorklabsMx.Droid.Resource.Attribute.logo;
+			global::com.refractored.Resource.Attribute.logoDescription = global::WorklabsMx.Droid.Resource.Attribute.logoDescription;
+			global::com.refractored.Resource.Attribute.maxButtonHeight = global::WorklabsMx.Droid.Resource.Attribute.maxButtonHeight;
+			global::com.refractored.Resource.Attribute.measureWithLargestChild = global::WorklabsMx.Droid.Resource.Attribute.measureWithLargestChild;
+			global::com.refractored.Resource.Attribute.multiChoiceItemLayout = global::WorklabsMx.Droid.Resource.Attribute.multiChoiceItemLayout;
+			global::com.refractored.Resource.Attribute.navigationContentDescription = global::WorklabsMx.Droid.Resource.Attribute.navigationContentDescription;
+			global::com.refractored.Resource.Attribute.navigationIcon = global::WorklabsMx.Droid.Resource.Attribute.navigationIcon;
+			global::com.refractored.Resource.Attribute.navigationMode = global::WorklabsMx.Droid.Resource.Attribute.navigationMode;
+			global::com.refractored.Resource.Attribute.overlapAnchor = global::WorklabsMx.Droid.Resource.Attribute.overlapAnchor;
+			global::com.refractored.Resource.Attribute.paddingEnd = global::WorklabsMx.Droid.Resource.Attribute.paddingEnd;
+			global::com.refractored.Resource.Attribute.paddingStart = global::WorklabsMx.Droid.Resource.Attribute.paddingStart;
+			global::com.refractored.Resource.Attribute.panelBackground = global::WorklabsMx.Droid.Resource.Attribute.panelBackground;
+			global::com.refractored.Resource.Attribute.panelMenuListTheme = global::WorklabsMx.Droid.Resource.Attribute.panelMenuListTheme;
+			global::com.refractored.Resource.Attribute.panelMenuListWidth = global::WorklabsMx.Droid.Resource.Attribute.panelMenuListWidth;
+			global::com.refractored.Resource.Attribute.popupMenuStyle = global::WorklabsMx.Droid.Resource.Attribute.popupMenuStyle;
+			global::com.refractored.Resource.Attribute.popupTheme = global::WorklabsMx.Droid.Resource.Attribute.popupTheme;
+			global::com.refractored.Resource.Attribute.popupWindowStyle = global::WorklabsMx.Droid.Resource.Attribute.popupWindowStyle;
+			global::com.refractored.Resource.Attribute.preserveIconSpacing = global::WorklabsMx.Droid.Resource.Attribute.preserveIconSpacing;
+			global::com.refractored.Resource.Attribute.progressBarPadding = global::WorklabsMx.Droid.Resource.Attribute.progressBarPadding;
+			global::com.refractored.Resource.Attribute.progressBarStyle = global::WorklabsMx.Droid.Resource.Attribute.progressBarStyle;
+			global::com.refractored.Resource.Attribute.pstsDividerColor = global::WorklabsMx.Droid.Resource.Attribute.pstsDividerColor;
+			global::com.refractored.Resource.Attribute.pstsDividerPadding = global::WorklabsMx.Droid.Resource.Attribute.pstsDividerPadding;
+			global::com.refractored.Resource.Attribute.pstsDividerWidth = global::WorklabsMx.Droid.Resource.Attribute.pstsDividerWidth;
+			global::com.refractored.Resource.Attribute.pstsIndicatorColor = global::WorklabsMx.Droid.Resource.Attribute.pstsIndicatorColor;
+			global::com.refractored.Resource.Attribute.pstsIndicatorHeight = global::WorklabsMx.Droid.Resource.Attribute.pstsIndicatorHeight;
+			global::com.refractored.Resource.Attribute.pstsPaddingMiddle = global::WorklabsMx.Droid.Resource.Attribute.pstsPaddingMiddle;
+			global::com.refractored.Resource.Attribute.pstsScrollOffset = global::WorklabsMx.Droid.Resource.Attribute.pstsScrollOffset;
+			global::com.refractored.Resource.Attribute.pstsShouldExpand = global::WorklabsMx.Droid.Resource.Attribute.pstsShouldExpand;
+			global::com.refractored.Resource.Attribute.pstsTabBackground = global::WorklabsMx.Droid.Resource.Attribute.pstsTabBackground;
+			global::com.refractored.Resource.Attribute.pstsTabPaddingLeftRight = global::WorklabsMx.Droid.Resource.Attribute.pstsTabPaddingLeftRight;
+			global::com.refractored.Resource.Attribute.pstsTextAllCaps = global::WorklabsMx.Droid.Resource.Attribute.pstsTextAllCaps;
+			global::com.refractored.Resource.Attribute.pstsTextAlpha = global::WorklabsMx.Droid.Resource.Attribute.pstsTextAlpha;
+			global::com.refractored.Resource.Attribute.pstsTextColorSelected = global::WorklabsMx.Droid.Resource.Attribute.pstsTextColorSelected;
+			global::com.refractored.Resource.Attribute.pstsTextSelectedStyle = global::WorklabsMx.Droid.Resource.Attribute.pstsTextSelectedStyle;
+			global::com.refractored.Resource.Attribute.pstsTextStyle = global::WorklabsMx.Droid.Resource.Attribute.pstsTextStyle;
+			global::com.refractored.Resource.Attribute.pstsUnderlineColor = global::WorklabsMx.Droid.Resource.Attribute.pstsUnderlineColor;
+			global::com.refractored.Resource.Attribute.pstsUnderlineHeight = global::WorklabsMx.Droid.Resource.Attribute.pstsUnderlineHeight;
+			global::com.refractored.Resource.Attribute.queryBackground = global::WorklabsMx.Droid.Resource.Attribute.queryBackground;
+			global::com.refractored.Resource.Attribute.queryHint = global::WorklabsMx.Droid.Resource.Attribute.queryHint;
+			global::com.refractored.Resource.Attribute.radioButtonStyle = global::WorklabsMx.Droid.Resource.Attribute.radioButtonStyle;
+			global::com.refractored.Resource.Attribute.ratingBarStyle = global::WorklabsMx.Droid.Resource.Attribute.ratingBarStyle;
+			global::com.refractored.Resource.Attribute.ratingBarStyleIndicator = global::WorklabsMx.Droid.Resource.Attribute.ratingBarStyleIndicator;
+			global::com.refractored.Resource.Attribute.ratingBarStyleSmall = global::WorklabsMx.Droid.Resource.Attribute.ratingBarStyleSmall;
+			global::com.refractored.Resource.Attribute.searchHintIcon = global::WorklabsMx.Droid.Resource.Attribute.searchHintIcon;
+			global::com.refractored.Resource.Attribute.searchIcon = global::WorklabsMx.Droid.Resource.Attribute.searchIcon;
+			global::com.refractored.Resource.Attribute.searchViewStyle = global::WorklabsMx.Droid.Resource.Attribute.searchViewStyle;
+			global::com.refractored.Resource.Attribute.seekBarStyle = global::WorklabsMx.Droid.Resource.Attribute.seekBarStyle;
+			global::com.refractored.Resource.Attribute.selectableItemBackground = global::WorklabsMx.Droid.Resource.Attribute.selectableItemBackground;
+			global::com.refractored.Resource.Attribute.selectableItemBackgroundBorderless = global::WorklabsMx.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::com.refractored.Resource.Attribute.showAsAction = global::WorklabsMx.Droid.Resource.Attribute.showAsAction;
+			global::com.refractored.Resource.Attribute.showDividers = global::WorklabsMx.Droid.Resource.Attribute.showDividers;
+			global::com.refractored.Resource.Attribute.showText = global::WorklabsMx.Droid.Resource.Attribute.showText;
+			global::com.refractored.Resource.Attribute.singleChoiceItemLayout = global::WorklabsMx.Droid.Resource.Attribute.singleChoiceItemLayout;
+			global::com.refractored.Resource.Attribute.spinBars = global::WorklabsMx.Droid.Resource.Attribute.spinBars;
+			global::com.refractored.Resource.Attribute.spinnerDropDownItemStyle = global::WorklabsMx.Droid.Resource.Attribute.spinnerDropDownItemStyle;
+			global::com.refractored.Resource.Attribute.spinnerStyle = global::WorklabsMx.Droid.Resource.Attribute.spinnerStyle;
+			global::com.refractored.Resource.Attribute.splitTrack = global::WorklabsMx.Droid.Resource.Attribute.splitTrack;
+			global::com.refractored.Resource.Attribute.srcCompat = global::WorklabsMx.Droid.Resource.Attribute.srcCompat;
+			global::com.refractored.Resource.Attribute.state_above_anchor = global::WorklabsMx.Droid.Resource.Attribute.state_above_anchor;
+			global::com.refractored.Resource.Attribute.submitBackground = global::WorklabsMx.Droid.Resource.Attribute.submitBackground;
+			global::com.refractored.Resource.Attribute.subtitle = global::WorklabsMx.Droid.Resource.Attribute.subtitle;
+			global::com.refractored.Resource.Attribute.subtitleTextAppearance = global::WorklabsMx.Droid.Resource.Attribute.subtitleTextAppearance;
+			global::com.refractored.Resource.Attribute.subtitleTextColor = global::WorklabsMx.Droid.Resource.Attribute.subtitleTextColor;
+			global::com.refractored.Resource.Attribute.subtitleTextStyle = global::WorklabsMx.Droid.Resource.Attribute.subtitleTextStyle;
+			global::com.refractored.Resource.Attribute.suggestionRowLayout = global::WorklabsMx.Droid.Resource.Attribute.suggestionRowLayout;
+			global::com.refractored.Resource.Attribute.switchMinWidth = global::WorklabsMx.Droid.Resource.Attribute.switchMinWidth;
+			global::com.refractored.Resource.Attribute.switchPadding = global::WorklabsMx.Droid.Resource.Attribute.switchPadding;
+			global::com.refractored.Resource.Attribute.switchStyle = global::WorklabsMx.Droid.Resource.Attribute.switchStyle;
+			global::com.refractored.Resource.Attribute.switchTextAppearance = global::WorklabsMx.Droid.Resource.Attribute.switchTextAppearance;
+			global::com.refractored.Resource.Attribute.textAllCaps = global::WorklabsMx.Droid.Resource.Attribute.textAllCaps;
+			global::com.refractored.Resource.Attribute.textAppearanceLargePopupMenu = global::WorklabsMx.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::com.refractored.Resource.Attribute.textAppearanceListItem = global::WorklabsMx.Droid.Resource.Attribute.textAppearanceListItem;
+			global::com.refractored.Resource.Attribute.textAppearanceListItemSmall = global::WorklabsMx.Droid.Resource.Attribute.textAppearanceListItemSmall;
+			global::com.refractored.Resource.Attribute.textAppearanceSearchResultSubtitle = global::WorklabsMx.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::com.refractored.Resource.Attribute.textAppearanceSearchResultTitle = global::WorklabsMx.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::com.refractored.Resource.Attribute.textAppearanceSmallPopupMenu = global::WorklabsMx.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::com.refractored.Resource.Attribute.textColorAlertDialogListItem = global::WorklabsMx.Droid.Resource.Attribute.textColorAlertDialogListItem;
+			global::com.refractored.Resource.Attribute.textColorSearchUrl = global::WorklabsMx.Droid.Resource.Attribute.textColorSearchUrl;
+			global::com.refractored.Resource.Attribute.theme = global::WorklabsMx.Droid.Resource.Attribute.theme;
+			global::com.refractored.Resource.Attribute.thickness = global::WorklabsMx.Droid.Resource.Attribute.thickness;
+			global::com.refractored.Resource.Attribute.thumbTextPadding = global::WorklabsMx.Droid.Resource.Attribute.thumbTextPadding;
+			global::com.refractored.Resource.Attribute.title = global::WorklabsMx.Droid.Resource.Attribute.title;
+			global::com.refractored.Resource.Attribute.titleMarginBottom = global::WorklabsMx.Droid.Resource.Attribute.titleMarginBottom;
+			global::com.refractored.Resource.Attribute.titleMarginEnd = global::WorklabsMx.Droid.Resource.Attribute.titleMarginEnd;
+			global::com.refractored.Resource.Attribute.titleMarginStart = global::WorklabsMx.Droid.Resource.Attribute.titleMarginStart;
+			global::com.refractored.Resource.Attribute.titleMarginTop = global::WorklabsMx.Droid.Resource.Attribute.titleMarginTop;
+			global::com.refractored.Resource.Attribute.titleMargins = global::WorklabsMx.Droid.Resource.Attribute.titleMargins;
+			global::com.refractored.Resource.Attribute.titleTextAppearance = global::WorklabsMx.Droid.Resource.Attribute.titleTextAppearance;
+			global::com.refractored.Resource.Attribute.titleTextColor = global::WorklabsMx.Droid.Resource.Attribute.titleTextColor;
+			global::com.refractored.Resource.Attribute.titleTextStyle = global::WorklabsMx.Droid.Resource.Attribute.titleTextStyle;
+			global::com.refractored.Resource.Attribute.toolbarNavigationButtonStyle = global::WorklabsMx.Droid.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::com.refractored.Resource.Attribute.toolbarStyle = global::WorklabsMx.Droid.Resource.Attribute.toolbarStyle;
+			global::com.refractored.Resource.Attribute.track = global::WorklabsMx.Droid.Resource.Attribute.track;
+			global::com.refractored.Resource.Attribute.voiceIcon = global::WorklabsMx.Droid.Resource.Attribute.voiceIcon;
+			global::com.refractored.Resource.Attribute.windowActionBar = global::WorklabsMx.Droid.Resource.Attribute.windowActionBar;
+			global::com.refractored.Resource.Attribute.windowActionBarOverlay = global::WorklabsMx.Droid.Resource.Attribute.windowActionBarOverlay;
+			global::com.refractored.Resource.Attribute.windowActionModeOverlay = global::WorklabsMx.Droid.Resource.Attribute.windowActionModeOverlay;
+			global::com.refractored.Resource.Attribute.windowFixedHeightMajor = global::WorklabsMx.Droid.Resource.Attribute.windowFixedHeightMajor;
+			global::com.refractored.Resource.Attribute.windowFixedHeightMinor = global::WorklabsMx.Droid.Resource.Attribute.windowFixedHeightMinor;
+			global::com.refractored.Resource.Attribute.windowFixedWidthMajor = global::WorklabsMx.Droid.Resource.Attribute.windowFixedWidthMajor;
+			global::com.refractored.Resource.Attribute.windowFixedWidthMinor = global::WorklabsMx.Droid.Resource.Attribute.windowFixedWidthMinor;
+			global::com.refractored.Resource.Attribute.windowMinWidthMajor = global::WorklabsMx.Droid.Resource.Attribute.windowMinWidthMajor;
+			global::com.refractored.Resource.Attribute.windowMinWidthMinor = global::WorklabsMx.Droid.Resource.Attribute.windowMinWidthMinor;
+			global::com.refractored.Resource.Attribute.windowNoTitle = global::WorklabsMx.Droid.Resource.Attribute.windowNoTitle;
+			global::com.refractored.Resource.Boolean.abc_action_bar_embed_tabs = global::WorklabsMx.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::com.refractored.Resource.Boolean.abc_allow_stacked_button_bar = global::WorklabsMx.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::com.refractored.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::WorklabsMx.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::com.refractored.Resource.Boolean.abc_config_closeDialogWhenTouchOutside = global::WorklabsMx.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside;
+			global::com.refractored.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent = global::WorklabsMx.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent;
+			global::com.refractored.Resource.Color.abc_background_cache_hint_selector_material_dark = global::WorklabsMx.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::com.refractored.Resource.Color.abc_background_cache_hint_selector_material_light = global::WorklabsMx.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::com.refractored.Resource.Color.abc_color_highlight_material = global::WorklabsMx.Droid.Resource.Color.abc_color_highlight_material;
+			global::com.refractored.Resource.Color.abc_input_method_navigation_guard = global::WorklabsMx.Droid.Resource.Color.abc_input_method_navigation_guard;
+			global::com.refractored.Resource.Color.abc_primary_text_disable_only_material_dark = global::WorklabsMx.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::com.refractored.Resource.Color.abc_primary_text_disable_only_material_light = global::WorklabsMx.Droid.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::com.refractored.Resource.Color.abc_primary_text_material_dark = global::WorklabsMx.Droid.Resource.Color.abc_primary_text_material_dark;
+			global::com.refractored.Resource.Color.abc_primary_text_material_light = global::WorklabsMx.Droid.Resource.Color.abc_primary_text_material_light;
+			global::com.refractored.Resource.Color.abc_search_url_text = global::WorklabsMx.Droid.Resource.Color.abc_search_url_text;
+			global::com.refractored.Resource.Color.abc_search_url_text_normal = global::WorklabsMx.Droid.Resource.Color.abc_search_url_text_normal;
+			global::com.refractored.Resource.Color.abc_search_url_text_pressed = global::WorklabsMx.Droid.Resource.Color.abc_search_url_text_pressed;
+			global::com.refractored.Resource.Color.abc_search_url_text_selected = global::WorklabsMx.Droid.Resource.Color.abc_search_url_text_selected;
+			global::com.refractored.Resource.Color.abc_secondary_text_material_dark = global::WorklabsMx.Droid.Resource.Color.abc_secondary_text_material_dark;
+			global::com.refractored.Resource.Color.abc_secondary_text_material_light = global::WorklabsMx.Droid.Resource.Color.abc_secondary_text_material_light;
+			global::com.refractored.Resource.Color.accent_material_dark = global::WorklabsMx.Droid.Resource.Color.accent_material_dark;
+			global::com.refractored.Resource.Color.accent_material_light = global::WorklabsMx.Droid.Resource.Color.accent_material_light;
+			global::com.refractored.Resource.Color.background_floating_material_dark = global::WorklabsMx.Droid.Resource.Color.background_floating_material_dark;
+			global::com.refractored.Resource.Color.background_floating_material_light = global::WorklabsMx.Droid.Resource.Color.background_floating_material_light;
+			global::com.refractored.Resource.Color.background_material_dark = global::WorklabsMx.Droid.Resource.Color.background_material_dark;
+			global::com.refractored.Resource.Color.background_material_light = global::WorklabsMx.Droid.Resource.Color.background_material_light;
+			global::com.refractored.Resource.Color.bright_foreground_disabled_material_dark = global::WorklabsMx.Droid.Resource.Color.bright_foreground_disabled_material_dark;
+			global::com.refractored.Resource.Color.bright_foreground_disabled_material_light = global::WorklabsMx.Droid.Resource.Color.bright_foreground_disabled_material_light;
+			global::com.refractored.Resource.Color.bright_foreground_inverse_material_dark = global::WorklabsMx.Droid.Resource.Color.bright_foreground_inverse_material_dark;
+			global::com.refractored.Resource.Color.bright_foreground_inverse_material_light = global::WorklabsMx.Droid.Resource.Color.bright_foreground_inverse_material_light;
+			global::com.refractored.Resource.Color.bright_foreground_material_dark = global::WorklabsMx.Droid.Resource.Color.bright_foreground_material_dark;
+			global::com.refractored.Resource.Color.bright_foreground_material_light = global::WorklabsMx.Droid.Resource.Color.bright_foreground_material_light;
+			global::com.refractored.Resource.Color.button_material_dark = global::WorklabsMx.Droid.Resource.Color.button_material_dark;
+			global::com.refractored.Resource.Color.button_material_light = global::WorklabsMx.Droid.Resource.Color.button_material_light;
+			global::com.refractored.Resource.Color.dim_foreground_disabled_material_dark = global::WorklabsMx.Droid.Resource.Color.dim_foreground_disabled_material_dark;
+			global::com.refractored.Resource.Color.dim_foreground_disabled_material_light = global::WorklabsMx.Droid.Resource.Color.dim_foreground_disabled_material_light;
+			global::com.refractored.Resource.Color.dim_foreground_material_dark = global::WorklabsMx.Droid.Resource.Color.dim_foreground_material_dark;
+			global::com.refractored.Resource.Color.dim_foreground_material_light = global::WorklabsMx.Droid.Resource.Color.dim_foreground_material_light;
+			global::com.refractored.Resource.Color.foreground_material_dark = global::WorklabsMx.Droid.Resource.Color.foreground_material_dark;
+			global::com.refractored.Resource.Color.foreground_material_light = global::WorklabsMx.Droid.Resource.Color.foreground_material_light;
+			global::com.refractored.Resource.Color.highlighted_text_material_dark = global::WorklabsMx.Droid.Resource.Color.highlighted_text_material_dark;
+			global::com.refractored.Resource.Color.highlighted_text_material_light = global::WorklabsMx.Droid.Resource.Color.highlighted_text_material_light;
+			global::com.refractored.Resource.Color.material_blue_grey_800 = global::WorklabsMx.Droid.Resource.Color.material_blue_grey_800;
+			global::com.refractored.Resource.Color.material_blue_grey_900 = global::WorklabsMx.Droid.Resource.Color.material_blue_grey_900;
+			global::com.refractored.Resource.Color.material_blue_grey_950 = global::WorklabsMx.Droid.Resource.Color.material_blue_grey_950;
+			global::com.refractored.Resource.Color.material_deep_teal_200 = global::WorklabsMx.Droid.Resource.Color.material_deep_teal_200;
+			global::com.refractored.Resource.Color.material_deep_teal_500 = global::WorklabsMx.Droid.Resource.Color.material_deep_teal_500;
+			global::com.refractored.Resource.Color.material_grey_100 = global::WorklabsMx.Droid.Resource.Color.material_grey_100;
+			global::com.refractored.Resource.Color.material_grey_300 = global::WorklabsMx.Droid.Resource.Color.material_grey_300;
+			global::com.refractored.Resource.Color.material_grey_50 = global::WorklabsMx.Droid.Resource.Color.material_grey_50;
+			global::com.refractored.Resource.Color.material_grey_600 = global::WorklabsMx.Droid.Resource.Color.material_grey_600;
+			global::com.refractored.Resource.Color.material_grey_800 = global::WorklabsMx.Droid.Resource.Color.material_grey_800;
+			global::com.refractored.Resource.Color.material_grey_850 = global::WorklabsMx.Droid.Resource.Color.material_grey_850;
+			global::com.refractored.Resource.Color.material_grey_900 = global::WorklabsMx.Droid.Resource.Color.material_grey_900;
+			global::com.refractored.Resource.Color.primary_dark_material_dark = global::WorklabsMx.Droid.Resource.Color.primary_dark_material_dark;
+			global::com.refractored.Resource.Color.primary_dark_material_light = global::WorklabsMx.Droid.Resource.Color.primary_dark_material_light;
+			global::com.refractored.Resource.Color.primary_material_dark = global::WorklabsMx.Droid.Resource.Color.primary_material_dark;
+			global::com.refractored.Resource.Color.primary_material_light = global::WorklabsMx.Droid.Resource.Color.primary_material_light;
+			global::com.refractored.Resource.Color.primary_text_default_material_dark = global::WorklabsMx.Droid.Resource.Color.primary_text_default_material_dark;
+			global::com.refractored.Resource.Color.primary_text_default_material_light = global::WorklabsMx.Droid.Resource.Color.primary_text_default_material_light;
+			global::com.refractored.Resource.Color.primary_text_disabled_material_dark = global::WorklabsMx.Droid.Resource.Color.primary_text_disabled_material_dark;
+			global::com.refractored.Resource.Color.primary_text_disabled_material_light = global::WorklabsMx.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::com.refractored.Resource.Color.psts_background_tab_pressed = global::WorklabsMx.Droid.Resource.Color.psts_background_tab_pressed;
+			global::com.refractored.Resource.Color.ripple_material_dark = global::WorklabsMx.Droid.Resource.Color.ripple_material_dark;
+			global::com.refractored.Resource.Color.ripple_material_light = global::WorklabsMx.Droid.Resource.Color.ripple_material_light;
+			global::com.refractored.Resource.Color.secondary_text_default_material_dark = global::WorklabsMx.Droid.Resource.Color.secondary_text_default_material_dark;
+			global::com.refractored.Resource.Color.secondary_text_default_material_light = global::WorklabsMx.Droid.Resource.Color.secondary_text_default_material_light;
+			global::com.refractored.Resource.Color.secondary_text_disabled_material_dark = global::WorklabsMx.Droid.Resource.Color.secondary_text_disabled_material_dark;
+			global::com.refractored.Resource.Color.secondary_text_disabled_material_light = global::WorklabsMx.Droid.Resource.Color.secondary_text_disabled_material_light;
+			global::com.refractored.Resource.Color.switch_thumb_disabled_material_dark = global::WorklabsMx.Droid.Resource.Color.switch_thumb_disabled_material_dark;
+			global::com.refractored.Resource.Color.switch_thumb_disabled_material_light = global::WorklabsMx.Droid.Resource.Color.switch_thumb_disabled_material_light;
+			global::com.refractored.Resource.Color.switch_thumb_material_dark = global::WorklabsMx.Droid.Resource.Color.switch_thumb_material_dark;
+			global::com.refractored.Resource.Color.switch_thumb_material_light = global::WorklabsMx.Droid.Resource.Color.switch_thumb_material_light;
+			global::com.refractored.Resource.Color.switch_thumb_normal_material_dark = global::WorklabsMx.Droid.Resource.Color.switch_thumb_normal_material_dark;
+			global::com.refractored.Resource.Color.switch_thumb_normal_material_light = global::WorklabsMx.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::com.refractored.Resource.Dimension.abc_action_bar_content_inset_material = global::WorklabsMx.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::com.refractored.Resource.Dimension.abc_action_bar_default_height_material = global::WorklabsMx.Droid.Resource.Dimension.abc_action_bar_default_height_material;
+			global::com.refractored.Resource.Dimension.abc_action_bar_default_padding_end_material = global::WorklabsMx.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::com.refractored.Resource.Dimension.abc_action_bar_default_padding_start_material = global::WorklabsMx.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::com.refractored.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::WorklabsMx.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::com.refractored.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::WorklabsMx.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::com.refractored.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::WorklabsMx.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::com.refractored.Resource.Dimension.abc_action_bar_progress_bar_size = global::WorklabsMx.Droid.Resource.Dimension.abc_action_bar_progress_bar_size;
+			global::com.refractored.Resource.Dimension.abc_action_bar_stacked_max_height = global::WorklabsMx.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::com.refractored.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::WorklabsMx.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::com.refractored.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::WorklabsMx.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::com.refractored.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::WorklabsMx.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::com.refractored.Resource.Dimension.abc_action_button_min_height_material = global::WorklabsMx.Droid.Resource.Dimension.abc_action_button_min_height_material;
+			global::com.refractored.Resource.Dimension.abc_action_button_min_width_material = global::WorklabsMx.Droid.Resource.Dimension.abc_action_button_min_width_material;
+			global::com.refractored.Resource.Dimension.abc_action_button_min_width_overflow_material = global::WorklabsMx.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::com.refractored.Resource.Dimension.abc_alert_dialog_button_bar_height = global::WorklabsMx.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::com.refractored.Resource.Dimension.abc_button_inset_horizontal_material = global::WorklabsMx.Droid.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::com.refractored.Resource.Dimension.abc_button_inset_vertical_material = global::WorklabsMx.Droid.Resource.Dimension.abc_button_inset_vertical_material;
+			global::com.refractored.Resource.Dimension.abc_button_padding_horizontal_material = global::WorklabsMx.Droid.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::com.refractored.Resource.Dimension.abc_button_padding_vertical_material = global::WorklabsMx.Droid.Resource.Dimension.abc_button_padding_vertical_material;
+			global::com.refractored.Resource.Dimension.abc_config_prefDialogWidth = global::WorklabsMx.Droid.Resource.Dimension.abc_config_prefDialogWidth;
+			global::com.refractored.Resource.Dimension.abc_control_corner_material = global::WorklabsMx.Droid.Resource.Dimension.abc_control_corner_material;
+			global::com.refractored.Resource.Dimension.abc_control_inset_material = global::WorklabsMx.Droid.Resource.Dimension.abc_control_inset_material;
+			global::com.refractored.Resource.Dimension.abc_control_padding_material = global::WorklabsMx.Droid.Resource.Dimension.abc_control_padding_material;
+			global::com.refractored.Resource.Dimension.abc_dialog_fixed_height_major = global::WorklabsMx.Droid.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::com.refractored.Resource.Dimension.abc_dialog_fixed_height_minor = global::WorklabsMx.Droid.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::com.refractored.Resource.Dimension.abc_dialog_fixed_width_major = global::WorklabsMx.Droid.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::com.refractored.Resource.Dimension.abc_dialog_fixed_width_minor = global::WorklabsMx.Droid.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::com.refractored.Resource.Dimension.abc_dialog_min_width_major = global::WorklabsMx.Droid.Resource.Dimension.abc_dialog_min_width_major;
+			global::com.refractored.Resource.Dimension.abc_dialog_min_width_minor = global::WorklabsMx.Droid.Resource.Dimension.abc_dialog_min_width_minor;
+			global::com.refractored.Resource.Dimension.abc_dialog_padding_material = global::WorklabsMx.Droid.Resource.Dimension.abc_dialog_padding_material;
+			global::com.refractored.Resource.Dimension.abc_dialog_padding_top_material = global::WorklabsMx.Droid.Resource.Dimension.abc_dialog_padding_top_material;
+			global::com.refractored.Resource.Dimension.abc_disabled_alpha_material_dark = global::WorklabsMx.Droid.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::com.refractored.Resource.Dimension.abc_disabled_alpha_material_light = global::WorklabsMx.Droid.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::com.refractored.Resource.Dimension.abc_dropdownitem_icon_width = global::WorklabsMx.Droid.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::com.refractored.Resource.Dimension.abc_dropdownitem_text_padding_left = global::WorklabsMx.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::com.refractored.Resource.Dimension.abc_dropdownitem_text_padding_right = global::WorklabsMx.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::com.refractored.Resource.Dimension.abc_edit_text_inset_bottom_material = global::WorklabsMx.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::com.refractored.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::WorklabsMx.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::com.refractored.Resource.Dimension.abc_edit_text_inset_top_material = global::WorklabsMx.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::com.refractored.Resource.Dimension.abc_floating_window_z = global::WorklabsMx.Droid.Resource.Dimension.abc_floating_window_z;
+			global::com.refractored.Resource.Dimension.abc_list_item_padding_horizontal_material = global::WorklabsMx.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::com.refractored.Resource.Dimension.abc_panel_menu_list_width = global::WorklabsMx.Droid.Resource.Dimension.abc_panel_menu_list_width;
+			global::com.refractored.Resource.Dimension.abc_search_view_preferred_width = global::WorklabsMx.Droid.Resource.Dimension.abc_search_view_preferred_width;
+			global::com.refractored.Resource.Dimension.abc_seekbar_track_background_height_material = global::WorklabsMx.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::com.refractored.Resource.Dimension.abc_seekbar_track_progress_height_material = global::WorklabsMx.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::com.refractored.Resource.Dimension.abc_select_dialog_padding_start_material = global::WorklabsMx.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::com.refractored.Resource.Dimension.abc_switch_padding = global::WorklabsMx.Droid.Resource.Dimension.abc_switch_padding;
+			global::com.refractored.Resource.Dimension.abc_text_size_body_1_material = global::WorklabsMx.Droid.Resource.Dimension.abc_text_size_body_1_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_body_2_material = global::WorklabsMx.Droid.Resource.Dimension.abc_text_size_body_2_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_button_material = global::WorklabsMx.Droid.Resource.Dimension.abc_text_size_button_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_caption_material = global::WorklabsMx.Droid.Resource.Dimension.abc_text_size_caption_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_display_1_material = global::WorklabsMx.Droid.Resource.Dimension.abc_text_size_display_1_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_display_2_material = global::WorklabsMx.Droid.Resource.Dimension.abc_text_size_display_2_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_display_3_material = global::WorklabsMx.Droid.Resource.Dimension.abc_text_size_display_3_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_display_4_material = global::WorklabsMx.Droid.Resource.Dimension.abc_text_size_display_4_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_headline_material = global::WorklabsMx.Droid.Resource.Dimension.abc_text_size_headline_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_large_material = global::WorklabsMx.Droid.Resource.Dimension.abc_text_size_large_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_medium_material = global::WorklabsMx.Droid.Resource.Dimension.abc_text_size_medium_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_menu_material = global::WorklabsMx.Droid.Resource.Dimension.abc_text_size_menu_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_small_material = global::WorklabsMx.Droid.Resource.Dimension.abc_text_size_small_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_subhead_material = global::WorklabsMx.Droid.Resource.Dimension.abc_text_size_subhead_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::WorklabsMx.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::com.refractored.Resource.Dimension.abc_text_size_title_material = global::WorklabsMx.Droid.Resource.Dimension.abc_text_size_title_material;
+			global::com.refractored.Resource.Dimension.abc_text_size_title_material_toolbar = global::WorklabsMx.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::com.refractored.Resource.Dimension.disabled_alpha_material_dark = global::WorklabsMx.Droid.Resource.Dimension.disabled_alpha_material_dark;
+			global::com.refractored.Resource.Dimension.disabled_alpha_material_light = global::WorklabsMx.Droid.Resource.Dimension.disabled_alpha_material_light;
+			global::com.refractored.Resource.Dimension.highlight_alpha_material_colored = global::WorklabsMx.Droid.Resource.Dimension.highlight_alpha_material_colored;
+			global::com.refractored.Resource.Dimension.highlight_alpha_material_dark = global::WorklabsMx.Droid.Resource.Dimension.highlight_alpha_material_dark;
+			global::com.refractored.Resource.Dimension.highlight_alpha_material_light = global::WorklabsMx.Droid.Resource.Dimension.highlight_alpha_material_light;
+			global::com.refractored.Resource.Dimension.notification_large_icon_height = global::WorklabsMx.Droid.Resource.Dimension.notification_large_icon_height;
+			global::com.refractored.Resource.Dimension.notification_large_icon_width = global::WorklabsMx.Droid.Resource.Dimension.notification_large_icon_width;
+			global::com.refractored.Resource.Dimension.notification_subtext_size = global::WorklabsMx.Droid.Resource.Dimension.notification_subtext_size;
+			global::com.refractored.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_action_bar_item_background_material = global::WorklabsMx.Droid.Resource.Drawable.abc_action_bar_item_background_material;
+			global::com.refractored.Resource.Drawable.abc_btn_borderless_material = global::WorklabsMx.Droid.Resource.Drawable.abc_btn_borderless_material;
+			global::com.refractored.Resource.Drawable.abc_btn_check_material = global::WorklabsMx.Droid.Resource.Drawable.abc_btn_check_material;
+			global::com.refractored.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::WorklabsMx.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::com.refractored.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::WorklabsMx.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::com.refractored.Resource.Drawable.abc_btn_colored_material = global::WorklabsMx.Droid.Resource.Drawable.abc_btn_colored_material;
+			global::com.refractored.Resource.Drawable.abc_btn_default_mtrl_shape = global::WorklabsMx.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::com.refractored.Resource.Drawable.abc_btn_radio_material = global::WorklabsMx.Droid.Resource.Drawable.abc_btn_radio_material;
+			global::com.refractored.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::WorklabsMx.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::com.refractored.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::WorklabsMx.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::com.refractored.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::WorklabsMx.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::com.refractored.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::WorklabsMx.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::com.refractored.Resource.Drawable.abc_cab_background_internal_bg = global::WorklabsMx.Droid.Resource.Drawable.abc_cab_background_internal_bg;
+			global::com.refractored.Resource.Drawable.abc_cab_background_top_material = global::WorklabsMx.Droid.Resource.Drawable.abc_cab_background_top_material;
+			global::com.refractored.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_control_background_material = global::WorklabsMx.Droid.Resource.Drawable.abc_control_background_material;
+			global::com.refractored.Resource.Drawable.abc_edit_text_material = global::WorklabsMx.Droid.Resource.Drawable.abc_edit_text_material;
+			global::com.refractored.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::com.refractored.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::com.refractored.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_ic_star_black_16dp = global::WorklabsMx.Droid.Resource.Drawable.abc_ic_star_black_16dp;
+			global::com.refractored.Resource.Drawable.abc_ic_star_black_36dp = global::WorklabsMx.Droid.Resource.Drawable.abc_ic_star_black_36dp;
+			global::com.refractored.Resource.Drawable.abc_ic_star_half_black_16dp = global::WorklabsMx.Droid.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::com.refractored.Resource.Drawable.abc_ic_star_half_black_36dp = global::WorklabsMx.Droid.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::com.refractored.Resource.Drawable.abc_item_background_holo_dark = global::WorklabsMx.Droid.Resource.Drawable.abc_item_background_holo_dark;
+			global::com.refractored.Resource.Drawable.abc_item_background_holo_light = global::WorklabsMx.Droid.Resource.Drawable.abc_item_background_holo_light;
+			global::com.refractored.Resource.Drawable.abc_list_divider_mtrl_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_list_focused_holo = global::WorklabsMx.Droid.Resource.Drawable.abc_list_focused_holo;
+			global::com.refractored.Resource.Drawable.abc_list_longpressed_holo = global::WorklabsMx.Droid.Resource.Drawable.abc_list_longpressed_holo;
+			global::com.refractored.Resource.Drawable.abc_list_pressed_holo_dark = global::WorklabsMx.Droid.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::com.refractored.Resource.Drawable.abc_list_pressed_holo_light = global::WorklabsMx.Droid.Resource.Drawable.abc_list_pressed_holo_light;
+			global::com.refractored.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::WorklabsMx.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::com.refractored.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::WorklabsMx.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::com.refractored.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::WorklabsMx.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::com.refractored.Resource.Drawable.abc_list_selector_disabled_holo_light = global::WorklabsMx.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::com.refractored.Resource.Drawable.abc_list_selector_holo_dark = global::WorklabsMx.Droid.Resource.Drawable.abc_list_selector_holo_dark;
+			global::com.refractored.Resource.Drawable.abc_list_selector_holo_light = global::WorklabsMx.Droid.Resource.Drawable.abc_list_selector_holo_light;
+			global::com.refractored.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::WorklabsMx.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::com.refractored.Resource.Drawable.abc_popup_background_mtrl_mult = global::WorklabsMx.Droid.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::com.refractored.Resource.Drawable.abc_ratingbar_indicator_material = global::WorklabsMx.Droid.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::com.refractored.Resource.Drawable.abc_ratingbar_small_material = global::WorklabsMx.Droid.Resource.Drawable.abc_ratingbar_small_material;
+			global::com.refractored.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::WorklabsMx.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::com.refractored.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::WorklabsMx.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::com.refractored.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_seekbar_thumb_material = global::WorklabsMx.Droid.Resource.Drawable.abc_seekbar_thumb_material;
+			global::com.refractored.Resource.Drawable.abc_seekbar_track_material = global::WorklabsMx.Droid.Resource.Drawable.abc_seekbar_track_material;
+			global::com.refractored.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::com.refractored.Resource.Drawable.abc_spinner_textfield_background_material = global::WorklabsMx.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::com.refractored.Resource.Drawable.abc_switch_thumb_material = global::WorklabsMx.Droid.Resource.Drawable.abc_switch_thumb_material;
+			global::com.refractored.Resource.Drawable.abc_switch_track_mtrl_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_tab_indicator_material = global::WorklabsMx.Droid.Resource.Drawable.abc_tab_indicator_material;
+			global::com.refractored.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_text_cursor_material = global::WorklabsMx.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::com.refractored.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::WorklabsMx.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::com.refractored.Resource.Drawable.abc_textfield_search_material = global::WorklabsMx.Droid.Resource.Drawable.abc_textfield_search_material;
+			global::com.refractored.Resource.Drawable.notification_template_icon_bg = global::WorklabsMx.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::com.refractored.Resource.Drawable.psts_background_tab = global::WorklabsMx.Droid.Resource.Drawable.psts_background_tab;
+			global::com.refractored.Resource.Id.action0 = global::WorklabsMx.Droid.Resource.Id.action0;
+			global::com.refractored.Resource.Id.action_bar = global::WorklabsMx.Droid.Resource.Id.action_bar;
+			global::com.refractored.Resource.Id.action_bar_activity_content = global::WorklabsMx.Droid.Resource.Id.action_bar_activity_content;
+			global::com.refractored.Resource.Id.action_bar_container = global::WorklabsMx.Droid.Resource.Id.action_bar_container;
+			global::com.refractored.Resource.Id.action_bar_root = global::WorklabsMx.Droid.Resource.Id.action_bar_root;
+			global::com.refractored.Resource.Id.action_bar_spinner = global::WorklabsMx.Droid.Resource.Id.action_bar_spinner;
+			global::com.refractored.Resource.Id.action_bar_subtitle = global::WorklabsMx.Droid.Resource.Id.action_bar_subtitle;
+			global::com.refractored.Resource.Id.action_bar_title = global::WorklabsMx.Droid.Resource.Id.action_bar_title;
+			global::com.refractored.Resource.Id.action_context_bar = global::WorklabsMx.Droid.Resource.Id.action_context_bar;
+			global::com.refractored.Resource.Id.action_divider = global::WorklabsMx.Droid.Resource.Id.action_divider;
+			global::com.refractored.Resource.Id.action_menu_divider = global::WorklabsMx.Droid.Resource.Id.action_menu_divider;
+			global::com.refractored.Resource.Id.action_menu_presenter = global::WorklabsMx.Droid.Resource.Id.action_menu_presenter;
+			global::com.refractored.Resource.Id.action_mode_bar = global::WorklabsMx.Droid.Resource.Id.action_mode_bar;
+			global::com.refractored.Resource.Id.action_mode_bar_stub = global::WorklabsMx.Droid.Resource.Id.action_mode_bar_stub;
+			global::com.refractored.Resource.Id.action_mode_close_button = global::WorklabsMx.Droid.Resource.Id.action_mode_close_button;
+			global::com.refractored.Resource.Id.activity_chooser_view_content = global::WorklabsMx.Droid.Resource.Id.activity_chooser_view_content;
+			global::com.refractored.Resource.Id.alertTitle = global::WorklabsMx.Droid.Resource.Id.alertTitle;
+			global::com.refractored.Resource.Id.always = global::WorklabsMx.Droid.Resource.Id.always;
+			global::com.refractored.Resource.Id.beginning = global::WorklabsMx.Droid.Resource.Id.beginning;
+			global::com.refractored.Resource.Id.bold = global::WorklabsMx.Droid.Resource.Id.bold;
+			global::com.refractored.Resource.Id.buttonPanel = global::WorklabsMx.Droid.Resource.Id.buttonPanel;
+			global::com.refractored.Resource.Id.cancel_action = global::WorklabsMx.Droid.Resource.Id.cancel_action;
+			global::com.refractored.Resource.Id.checkbox = global::WorklabsMx.Droid.Resource.Id.checkbox;
+			global::com.refractored.Resource.Id.chronometer = global::WorklabsMx.Droid.Resource.Id.chronometer;
+			global::com.refractored.Resource.Id.collapseActionView = global::WorklabsMx.Droid.Resource.Id.collapseActionView;
+			global::com.refractored.Resource.Id.contentPanel = global::WorklabsMx.Droid.Resource.Id.contentPanel;
+			global::com.refractored.Resource.Id.custom = global::WorklabsMx.Droid.Resource.Id.custom;
+			global::com.refractored.Resource.Id.customPanel = global::WorklabsMx.Droid.Resource.Id.customPanel;
+			global::com.refractored.Resource.Id.decor_content_parent = global::WorklabsMx.Droid.Resource.Id.decor_content_parent;
+			global::com.refractored.Resource.Id.default_activity_button = global::WorklabsMx.Droid.Resource.Id.default_activity_button;
+			global::com.refractored.Resource.Id.disableHome = global::WorklabsMx.Droid.Resource.Id.disableHome;
+			global::com.refractored.Resource.Id.edit_query = global::WorklabsMx.Droid.Resource.Id.edit_query;
+			global::com.refractored.Resource.Id.end = global::WorklabsMx.Droid.Resource.Id.end;
+			global::com.refractored.Resource.Id.end_padder = global::WorklabsMx.Droid.Resource.Id.end_padder;
+			global::com.refractored.Resource.Id.expand_activities_button = global::WorklabsMx.Droid.Resource.Id.expand_activities_button;
+			global::com.refractored.Resource.Id.expanded_menu = global::WorklabsMx.Droid.Resource.Id.expanded_menu;
+			global::com.refractored.Resource.Id.home = global::WorklabsMx.Droid.Resource.Id.home;
+			global::com.refractored.Resource.Id.homeAsUp = global::WorklabsMx.Droid.Resource.Id.homeAsUp;
+			global::com.refractored.Resource.Id.icon = global::WorklabsMx.Droid.Resource.Id.icon;
+			global::com.refractored.Resource.Id.ifRoom = global::WorklabsMx.Droid.Resource.Id.ifRoom;
+			global::com.refractored.Resource.Id.image = global::WorklabsMx.Droid.Resource.Id.image;
+			global::com.refractored.Resource.Id.info = global::WorklabsMx.Droid.Resource.Id.info;
+			global::com.refractored.Resource.Id.italic = global::WorklabsMx.Droid.Resource.Id.italic;
+			global::com.refractored.Resource.Id.line1 = global::WorklabsMx.Droid.Resource.Id.line1;
+			global::com.refractored.Resource.Id.line3 = global::WorklabsMx.Droid.Resource.Id.line3;
+			global::com.refractored.Resource.Id.listMode = global::WorklabsMx.Droid.Resource.Id.listMode;
+			global::com.refractored.Resource.Id.list_item = global::WorklabsMx.Droid.Resource.Id.list_item;
+			global::com.refractored.Resource.Id.media_actions = global::WorklabsMx.Droid.Resource.Id.media_actions;
+			global::com.refractored.Resource.Id.middle = global::WorklabsMx.Droid.Resource.Id.middle;
+			global::com.refractored.Resource.Id.multiply = global::WorklabsMx.Droid.Resource.Id.multiply;
+			global::com.refractored.Resource.Id.never = global::WorklabsMx.Droid.Resource.Id.never;
+			global::com.refractored.Resource.Id.none = global::WorklabsMx.Droid.Resource.Id.none;
+			global::com.refractored.Resource.Id.normal = global::WorklabsMx.Droid.Resource.Id.normal;
+			global::com.refractored.Resource.Id.parentPanel = global::WorklabsMx.Droid.Resource.Id.parentPanel;
+			global::com.refractored.Resource.Id.progress_circular = global::WorklabsMx.Droid.Resource.Id.progress_circular;
+			global::com.refractored.Resource.Id.progress_horizontal = global::WorklabsMx.Droid.Resource.Id.progress_horizontal;
+			global::com.refractored.Resource.Id.psts_tab_title = global::WorklabsMx.Droid.Resource.Id.psts_tab_title;
+			global::com.refractored.Resource.Id.radio = global::WorklabsMx.Droid.Resource.Id.radio;
+			global::com.refractored.Resource.Id.screen = global::WorklabsMx.Droid.Resource.Id.screen;
+			global::com.refractored.Resource.Id.scrollIndicatorDown = global::WorklabsMx.Droid.Resource.Id.scrollIndicatorDown;
+			global::com.refractored.Resource.Id.scrollIndicatorUp = global::WorklabsMx.Droid.Resource.Id.scrollIndicatorUp;
+			global::com.refractored.Resource.Id.scrollView = global::WorklabsMx.Droid.Resource.Id.scrollView;
+			global::com.refractored.Resource.Id.search_badge = global::WorklabsMx.Droid.Resource.Id.search_badge;
+			global::com.refractored.Resource.Id.search_bar = global::WorklabsMx.Droid.Resource.Id.search_bar;
+			global::com.refractored.Resource.Id.search_button = global::WorklabsMx.Droid.Resource.Id.search_button;
+			global::com.refractored.Resource.Id.search_close_btn = global::WorklabsMx.Droid.Resource.Id.search_close_btn;
+			global::com.refractored.Resource.Id.search_edit_frame = global::WorklabsMx.Droid.Resource.Id.search_edit_frame;
+			global::com.refractored.Resource.Id.search_go_btn = global::WorklabsMx.Droid.Resource.Id.search_go_btn;
+			global::com.refractored.Resource.Id.search_mag_icon = global::WorklabsMx.Droid.Resource.Id.search_mag_icon;
+			global::com.refractored.Resource.Id.search_plate = global::WorklabsMx.Droid.Resource.Id.search_plate;
+			global::com.refractored.Resource.Id.search_src_text = global::WorklabsMx.Droid.Resource.Id.search_src_text;
+			global::com.refractored.Resource.Id.search_voice_btn = global::WorklabsMx.Droid.Resource.Id.search_voice_btn;
+			global::com.refractored.Resource.Id.select_dialog_listview = global::WorklabsMx.Droid.Resource.Id.select_dialog_listview;
+			global::com.refractored.Resource.Id.shortcut = global::WorklabsMx.Droid.Resource.Id.shortcut;
+			global::com.refractored.Resource.Id.showCustom = global::WorklabsMx.Droid.Resource.Id.showCustom;
+			global::com.refractored.Resource.Id.showHome = global::WorklabsMx.Droid.Resource.Id.showHome;
+			global::com.refractored.Resource.Id.showTitle = global::WorklabsMx.Droid.Resource.Id.showTitle;
+			global::com.refractored.Resource.Id.spacer = global::WorklabsMx.Droid.Resource.Id.spacer;
+			global::com.refractored.Resource.Id.split_action_bar = global::WorklabsMx.Droid.Resource.Id.split_action_bar;
+			global::com.refractored.Resource.Id.src_atop = global::WorklabsMx.Droid.Resource.Id.src_atop;
+			global::com.refractored.Resource.Id.src_in = global::WorklabsMx.Droid.Resource.Id.src_in;
+			global::com.refractored.Resource.Id.src_over = global::WorklabsMx.Droid.Resource.Id.src_over;
+			global::com.refractored.Resource.Id.status_bar_latest_event_content = global::WorklabsMx.Droid.Resource.Id.status_bar_latest_event_content;
+			global::com.refractored.Resource.Id.submit_area = global::WorklabsMx.Droid.Resource.Id.submit_area;
+			global::com.refractored.Resource.Id.tabMode = global::WorklabsMx.Droid.Resource.Id.tabMode;
+			global::com.refractored.Resource.Id.text = global::WorklabsMx.Droid.Resource.Id.text;
+			global::com.refractored.Resource.Id.text2 = global::WorklabsMx.Droid.Resource.Id.text2;
+			global::com.refractored.Resource.Id.textSpacerNoButtons = global::WorklabsMx.Droid.Resource.Id.textSpacerNoButtons;
+			global::com.refractored.Resource.Id.time = global::WorklabsMx.Droid.Resource.Id.time;
+			global::com.refractored.Resource.Id.title = global::WorklabsMx.Droid.Resource.Id.title;
+			global::com.refractored.Resource.Id.title_template = global::WorklabsMx.Droid.Resource.Id.title_template;
+			global::com.refractored.Resource.Id.topPanel = global::WorklabsMx.Droid.Resource.Id.topPanel;
+			global::com.refractored.Resource.Id.up = global::WorklabsMx.Droid.Resource.Id.up;
+			global::com.refractored.Resource.Id.useLogo = global::WorklabsMx.Droid.Resource.Id.useLogo;
+			global::com.refractored.Resource.Id.withText = global::WorklabsMx.Droid.Resource.Id.withText;
+			global::com.refractored.Resource.Id.wrap_content = global::WorklabsMx.Droid.Resource.Id.wrap_content;
+			global::com.refractored.Resource.Integer.abc_config_activityDefaultDur = global::WorklabsMx.Droid.Resource.Integer.abc_config_activityDefaultDur;
+			global::com.refractored.Resource.Integer.abc_config_activityShortDur = global::WorklabsMx.Droid.Resource.Integer.abc_config_activityShortDur;
+			global::com.refractored.Resource.Integer.cancel_button_image_alpha = global::WorklabsMx.Droid.Resource.Integer.cancel_button_image_alpha;
+			global::com.refractored.Resource.Integer.status_bar_notification_info_maxnum = global::WorklabsMx.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::com.refractored.Resource.Layout.abc_action_bar_title_item = global::WorklabsMx.Droid.Resource.Layout.abc_action_bar_title_item;
+			global::com.refractored.Resource.Layout.abc_action_bar_up_container = global::WorklabsMx.Droid.Resource.Layout.abc_action_bar_up_container;
+			global::com.refractored.Resource.Layout.abc_action_bar_view_list_nav_layout = global::WorklabsMx.Droid.Resource.Layout.abc_action_bar_view_list_nav_layout;
+			global::com.refractored.Resource.Layout.abc_action_menu_item_layout = global::WorklabsMx.Droid.Resource.Layout.abc_action_menu_item_layout;
+			global::com.refractored.Resource.Layout.abc_action_menu_layout = global::WorklabsMx.Droid.Resource.Layout.abc_action_menu_layout;
+			global::com.refractored.Resource.Layout.abc_action_mode_bar = global::WorklabsMx.Droid.Resource.Layout.abc_action_mode_bar;
+			global::com.refractored.Resource.Layout.abc_action_mode_close_item_material = global::WorklabsMx.Droid.Resource.Layout.abc_action_mode_close_item_material;
+			global::com.refractored.Resource.Layout.abc_activity_chooser_view = global::WorklabsMx.Droid.Resource.Layout.abc_activity_chooser_view;
+			global::com.refractored.Resource.Layout.abc_activity_chooser_view_list_item = global::WorklabsMx.Droid.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::com.refractored.Resource.Layout.abc_alert_dialog_button_bar_material = global::WorklabsMx.Droid.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::com.refractored.Resource.Layout.abc_alert_dialog_material = global::WorklabsMx.Droid.Resource.Layout.abc_alert_dialog_material;
+			global::com.refractored.Resource.Layout.abc_dialog_title_material = global::WorklabsMx.Droid.Resource.Layout.abc_dialog_title_material;
+			global::com.refractored.Resource.Layout.abc_expanded_menu_layout = global::WorklabsMx.Droid.Resource.Layout.abc_expanded_menu_layout;
+			global::com.refractored.Resource.Layout.abc_list_menu_item_checkbox = global::WorklabsMx.Droid.Resource.Layout.abc_list_menu_item_checkbox;
+			global::com.refractored.Resource.Layout.abc_list_menu_item_icon = global::WorklabsMx.Droid.Resource.Layout.abc_list_menu_item_icon;
+			global::com.refractored.Resource.Layout.abc_list_menu_item_layout = global::WorklabsMx.Droid.Resource.Layout.abc_list_menu_item_layout;
+			global::com.refractored.Resource.Layout.abc_list_menu_item_radio = global::WorklabsMx.Droid.Resource.Layout.abc_list_menu_item_radio;
+			global::com.refractored.Resource.Layout.abc_popup_menu_item_layout = global::WorklabsMx.Droid.Resource.Layout.abc_popup_menu_item_layout;
+			global::com.refractored.Resource.Layout.abc_screen_content_include = global::WorklabsMx.Droid.Resource.Layout.abc_screen_content_include;
+			global::com.refractored.Resource.Layout.abc_screen_simple = global::WorklabsMx.Droid.Resource.Layout.abc_screen_simple;
+			global::com.refractored.Resource.Layout.abc_screen_simple_overlay_action_mode = global::WorklabsMx.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::com.refractored.Resource.Layout.abc_screen_toolbar = global::WorklabsMx.Droid.Resource.Layout.abc_screen_toolbar;
+			global::com.refractored.Resource.Layout.abc_search_dropdown_item_icons_2line = global::WorklabsMx.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::com.refractored.Resource.Layout.abc_search_view = global::WorklabsMx.Droid.Resource.Layout.abc_search_view;
+			global::com.refractored.Resource.Layout.abc_select_dialog_material = global::WorklabsMx.Droid.Resource.Layout.abc_select_dialog_material;
+			global::com.refractored.Resource.Layout.notification_media_action = global::WorklabsMx.Droid.Resource.Layout.notification_media_action;
+			global::com.refractored.Resource.Layout.notification_media_cancel_action = global::WorklabsMx.Droid.Resource.Layout.notification_media_cancel_action;
+			global::com.refractored.Resource.Layout.notification_template_big_media = global::WorklabsMx.Droid.Resource.Layout.notification_template_big_media;
+			global::com.refractored.Resource.Layout.notification_template_big_media_narrow = global::WorklabsMx.Droid.Resource.Layout.notification_template_big_media_narrow;
+			global::com.refractored.Resource.Layout.notification_template_media = global::WorklabsMx.Droid.Resource.Layout.notification_template_media;
+			global::com.refractored.Resource.Layout.notification_template_part_chronometer = global::WorklabsMx.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::com.refractored.Resource.Layout.notification_template_part_time = global::WorklabsMx.Droid.Resource.Layout.notification_template_part_time;
+			global::com.refractored.Resource.Layout.psts_tab = global::WorklabsMx.Droid.Resource.Layout.psts_tab;
+			global::com.refractored.Resource.Layout.select_dialog_item_material = global::WorklabsMx.Droid.Resource.Layout.select_dialog_item_material;
+			global::com.refractored.Resource.Layout.select_dialog_multichoice_material = global::WorklabsMx.Droid.Resource.Layout.select_dialog_multichoice_material;
+			global::com.refractored.Resource.Layout.select_dialog_singlechoice_material = global::WorklabsMx.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::com.refractored.Resource.Layout.support_simple_spinner_dropdown_item = global::WorklabsMx.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::com.refractored.Resource.String.abc_action_bar_home_description = global::WorklabsMx.Droid.Resource.String.abc_action_bar_home_description;
+			global::com.refractored.Resource.String.abc_action_bar_home_description_format = global::WorklabsMx.Droid.Resource.String.abc_action_bar_home_description_format;
+			global::com.refractored.Resource.String.abc_action_bar_home_subtitle_description_format = global::WorklabsMx.Droid.Resource.String.abc_action_bar_home_subtitle_description_format;
+			global::com.refractored.Resource.String.abc_action_bar_up_description = global::WorklabsMx.Droid.Resource.String.abc_action_bar_up_description;
+			global::com.refractored.Resource.String.abc_action_menu_overflow_description = global::WorklabsMx.Droid.Resource.String.abc_action_menu_overflow_description;
+			global::com.refractored.Resource.String.abc_action_mode_done = global::WorklabsMx.Droid.Resource.String.abc_action_mode_done;
+			global::com.refractored.Resource.String.abc_activity_chooser_view_see_all = global::WorklabsMx.Droid.Resource.String.abc_activity_chooser_view_see_all;
+			global::com.refractored.Resource.String.abc_activitychooserview_choose_application = global::WorklabsMx.Droid.Resource.String.abc_activitychooserview_choose_application;
+			global::com.refractored.Resource.String.abc_capital_off = global::WorklabsMx.Droid.Resource.String.abc_capital_off;
+			global::com.refractored.Resource.String.abc_capital_on = global::WorklabsMx.Droid.Resource.String.abc_capital_on;
+			global::com.refractored.Resource.String.abc_search_hint = global::WorklabsMx.Droid.Resource.String.abc_search_hint;
+			global::com.refractored.Resource.String.abc_searchview_description_clear = global::WorklabsMx.Droid.Resource.String.abc_searchview_description_clear;
+			global::com.refractored.Resource.String.abc_searchview_description_query = global::WorklabsMx.Droid.Resource.String.abc_searchview_description_query;
+			global::com.refractored.Resource.String.abc_searchview_description_search = global::WorklabsMx.Droid.Resource.String.abc_searchview_description_search;
+			global::com.refractored.Resource.String.abc_searchview_description_submit = global::WorklabsMx.Droid.Resource.String.abc_searchview_description_submit;
+			global::com.refractored.Resource.String.abc_searchview_description_voice = global::WorklabsMx.Droid.Resource.String.abc_searchview_description_voice;
+			global::com.refractored.Resource.String.abc_shareactionprovider_share_with = global::WorklabsMx.Droid.Resource.String.abc_shareactionprovider_share_with;
+			global::com.refractored.Resource.String.abc_shareactionprovider_share_with_application = global::WorklabsMx.Droid.Resource.String.abc_shareactionprovider_share_with_application;
+			global::com.refractored.Resource.String.abc_toolbar_collapse_description = global::WorklabsMx.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::com.refractored.Resource.String.status_bar_notification_info_overflow = global::WorklabsMx.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::com.refractored.Resource.Style.AlertDialog_AppCompat = global::WorklabsMx.Droid.Resource.Style.AlertDialog_AppCompat;
+			global::com.refractored.Resource.Style.AlertDialog_AppCompat_Light = global::WorklabsMx.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::com.refractored.Resource.Style.Animation_AppCompat_Dialog = global::WorklabsMx.Droid.Resource.Style.Animation_AppCompat_Dialog;
+			global::com.refractored.Resource.Style.Animation_AppCompat_DropDownUp = global::WorklabsMx.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::com.refractored.Resource.Style.Base_AlertDialog_AppCompat = global::WorklabsMx.Droid.Resource.Style.Base_AlertDialog_AppCompat;
+			global::com.refractored.Resource.Style.Base_AlertDialog_AppCompat_Light = global::WorklabsMx.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::com.refractored.Resource.Style.Base_Animation_AppCompat_Dialog = global::WorklabsMx.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::com.refractored.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::WorklabsMx.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::com.refractored.Resource.Style.Base_DialogWindowTitle_AppCompat = global::WorklabsMx.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::com.refractored.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::WorklabsMx.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Button = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Large = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Small = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Title = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::com.refractored.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::com.refractored.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::com.refractored.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::com.refractored.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::WorklabsMx.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat = global::WorklabsMx.Droid.Resource.Style.Base_Theme_AppCompat;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::WorklabsMx.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Dialog = global::WorklabsMx.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::WorklabsMx.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::WorklabsMx.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::WorklabsMx.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::WorklabsMx.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Light = global::WorklabsMx.Droid.Resource.Style.Base_Theme_AppCompat_Light;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::WorklabsMx.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::WorklabsMx.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::WorklabsMx.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::WorklabsMx.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::WorklabsMx.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::com.refractored.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::WorklabsMx.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::com.refractored.Resource.Style.Base_ThemeOverlay_AppCompat = global::WorklabsMx.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::com.refractored.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::WorklabsMx.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::com.refractored.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::WorklabsMx.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::com.refractored.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::WorklabsMx.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::com.refractored.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::WorklabsMx.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::com.refractored.Resource.Style.Base_V11_Theme_AppCompat_Dialog = global::WorklabsMx.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog;
+			global::com.refractored.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog = global::WorklabsMx.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog;
+			global::com.refractored.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView = global::WorklabsMx.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView;
+			global::com.refractored.Resource.Style.Base_V12_Widget_AppCompat_EditText = global::WorklabsMx.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText;
+			global::com.refractored.Resource.Style.Base_V21_Theme_AppCompat = global::WorklabsMx.Droid.Resource.Style.Base_V21_Theme_AppCompat;
+			global::com.refractored.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::WorklabsMx.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::com.refractored.Resource.Style.Base_V21_Theme_AppCompat_Light = global::WorklabsMx.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::com.refractored.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::WorklabsMx.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::com.refractored.Resource.Style.Base_V22_Theme_AppCompat = global::WorklabsMx.Droid.Resource.Style.Base_V22_Theme_AppCompat;
+			global::com.refractored.Resource.Style.Base_V22_Theme_AppCompat_Light = global::WorklabsMx.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::com.refractored.Resource.Style.Base_V23_Theme_AppCompat = global::WorklabsMx.Droid.Resource.Style.Base_V23_Theme_AppCompat;
+			global::com.refractored.Resource.Style.Base_V23_Theme_AppCompat_Light = global::WorklabsMx.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::com.refractored.Resource.Style.Base_V7_Theme_AppCompat = global::WorklabsMx.Droid.Resource.Style.Base_V7_Theme_AppCompat;
+			global::com.refractored.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::WorklabsMx.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::com.refractored.Resource.Style.Base_V7_Theme_AppCompat_Light = global::WorklabsMx.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::com.refractored.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::WorklabsMx.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::com.refractored.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::WorklabsMx.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::com.refractored.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::WorklabsMx.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActionBar = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActionButton = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActionMode = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Button = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_Button;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Button_Small = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_EditText = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ImageButton = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ListView = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_RatingBar = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_SearchView = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_SeekBar = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Spinner = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Toolbar = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::com.refractored.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::WorklabsMx.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::com.refractored.Resource.Style.Platform_AppCompat = global::WorklabsMx.Droid.Resource.Style.Platform_AppCompat;
+			global::com.refractored.Resource.Style.Platform_AppCompat_Light = global::WorklabsMx.Droid.Resource.Style.Platform_AppCompat_Light;
+			global::com.refractored.Resource.Style.Platform_ThemeOverlay_AppCompat = global::WorklabsMx.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::com.refractored.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::WorklabsMx.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::com.refractored.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::WorklabsMx.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::com.refractored.Resource.Style.Platform_V11_AppCompat = global::WorklabsMx.Droid.Resource.Style.Platform_V11_AppCompat;
+			global::com.refractored.Resource.Style.Platform_V11_AppCompat_Light = global::WorklabsMx.Droid.Resource.Style.Platform_V11_AppCompat_Light;
+			global::com.refractored.Resource.Style.Platform_V14_AppCompat = global::WorklabsMx.Droid.Resource.Style.Platform_V14_AppCompat;
+			global::com.refractored.Resource.Style.Platform_V14_AppCompat_Light = global::WorklabsMx.Droid.Resource.Style.Platform_V14_AppCompat_Light;
+			global::com.refractored.Resource.Style.Platform_Widget_AppCompat_Spinner = global::WorklabsMx.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::com.refractored.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::WorklabsMx.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::WorklabsMx.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::WorklabsMx.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::WorklabsMx.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::WorklabsMx.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::WorklabsMx.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::WorklabsMx.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::WorklabsMx.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::WorklabsMx.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::WorklabsMx.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::WorklabsMx.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::WorklabsMx.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::com.refractored.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::WorklabsMx.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::com.refractored.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::WorklabsMx.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Body1 = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Body2 = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Button = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Button;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Caption = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Display1 = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Display2 = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Display3 = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Display4 = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Headline = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Inverse = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Large = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Large;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Medium = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Menu = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Small = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Small;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Subhead = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Title = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Title;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::com.refractored.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::WorklabsMx.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::com.refractored.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::WorklabsMx.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::com.refractored.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::WorklabsMx.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::com.refractored.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::WorklabsMx.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::com.refractored.Resource.Style.Theme_AppCompat = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat;
+			global::com.refractored.Resource.Style.Theme_AppCompat_CompactMenu = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::com.refractored.Resource.Style.Theme_AppCompat_DayNight = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_DayNight;
+			global::com.refractored.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::com.refractored.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::com.refractored.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::com.refractored.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::com.refractored.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::com.refractored.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Dialog = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_Dialog;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Dialog_Alert = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::com.refractored.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Light = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_Light;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Light_Dialog = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::com.refractored.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::com.refractored.Resource.Style.Theme_AppCompat_NoActionBar = global::WorklabsMx.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::com.refractored.Resource.Style.ThemeOverlay_AppCompat = global::WorklabsMx.Droid.Resource.Style.ThemeOverlay_AppCompat;
+			global::com.refractored.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::WorklabsMx.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::com.refractored.Resource.Style.ThemeOverlay_AppCompat_Dark = global::WorklabsMx.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::com.refractored.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::WorklabsMx.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::com.refractored.Resource.Style.ThemeOverlay_AppCompat_Light = global::WorklabsMx.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActionBar = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ActionBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActionButton = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ActionButton;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActionMode = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ActionMode;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ActivityChooserView = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::com.refractored.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Button = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Button;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Button_Borderless = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Button_Colored = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Button_Small = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Button_Small;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ButtonBar = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::com.refractored.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::com.refractored.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::com.refractored.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::com.refractored.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::com.refractored.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::com.refractored.Resource.Style.Widget_AppCompat_EditText = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_EditText;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ImageButton = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ImageButton;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionBar = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionButton = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_SearchView = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ListPopupWindow = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ListView = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ListView;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ListView_DropDown = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ListView_Menu = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::com.refractored.Resource.Style.Widget_AppCompat_PopupMenu = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::com.refractored.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::com.refractored.Resource.Style.Widget_AppCompat_PopupWindow = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ProgressBar = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::com.refractored.Resource.Style.Widget_AppCompat_RatingBar = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_RatingBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::com.refractored.Resource.Style.Widget_AppCompat_RatingBar_Small = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::com.refractored.Resource.Style.Widget_AppCompat_SearchView = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_SearchView;
+			global::com.refractored.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_SeekBar = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_SeekBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Spinner = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Spinner;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::com.refractored.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Toolbar = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Toolbar;
+			global::com.refractored.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::WorklabsMx.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::com.refractored.Resource.Styleable.ActionBar = global::WorklabsMx.Droid.Resource.Styleable.ActionBar;
+			global::com.refractored.Resource.Styleable.ActionBar_background = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_background;
+			global::com.refractored.Resource.Styleable.ActionBar_backgroundSplit = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_backgroundSplit;
+			global::com.refractored.Resource.Styleable.ActionBar_backgroundStacked = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_backgroundStacked;
+			global::com.refractored.Resource.Styleable.ActionBar_contentInsetEnd = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::com.refractored.Resource.Styleable.ActionBar_contentInsetLeft = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::com.refractored.Resource.Styleable.ActionBar_contentInsetRight = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_contentInsetRight;
+			global::com.refractored.Resource.Styleable.ActionBar_contentInsetStart = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_contentInsetStart;
+			global::com.refractored.Resource.Styleable.ActionBar_customNavigationLayout = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::com.refractored.Resource.Styleable.ActionBar_displayOptions = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_displayOptions;
+			global::com.refractored.Resource.Styleable.ActionBar_divider = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_divider;
+			global::com.refractored.Resource.Styleable.ActionBar_elevation = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_elevation;
+			global::com.refractored.Resource.Styleable.ActionBar_height = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_height;
+			global::com.refractored.Resource.Styleable.ActionBar_hideOnContentScroll = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::com.refractored.Resource.Styleable.ActionBar_homeAsUpIndicator = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::com.refractored.Resource.Styleable.ActionBar_homeLayout = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_homeLayout;
+			global::com.refractored.Resource.Styleable.ActionBar_icon = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_icon;
+			global::com.refractored.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::com.refractored.Resource.Styleable.ActionBar_itemPadding = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_itemPadding;
+			global::com.refractored.Resource.Styleable.ActionBar_logo = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_logo;
+			global::com.refractored.Resource.Styleable.ActionBar_navigationMode = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_navigationMode;
+			global::com.refractored.Resource.Styleable.ActionBar_popupTheme = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_popupTheme;
+			global::com.refractored.Resource.Styleable.ActionBar_progressBarPadding = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_progressBarPadding;
+			global::com.refractored.Resource.Styleable.ActionBar_progressBarStyle = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_progressBarStyle;
+			global::com.refractored.Resource.Styleable.ActionBar_subtitle = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_subtitle;
+			global::com.refractored.Resource.Styleable.ActionBar_subtitleTextStyle = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::com.refractored.Resource.Styleable.ActionBar_title = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_title;
+			global::com.refractored.Resource.Styleable.ActionBar_titleTextStyle = global::WorklabsMx.Droid.Resource.Styleable.ActionBar_titleTextStyle;
+			global::com.refractored.Resource.Styleable.ActionBarLayout = global::WorklabsMx.Droid.Resource.Styleable.ActionBarLayout;
+			global::com.refractored.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::WorklabsMx.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::com.refractored.Resource.Styleable.ActionMenuItemView = global::WorklabsMx.Droid.Resource.Styleable.ActionMenuItemView;
+			global::com.refractored.Resource.Styleable.ActionMenuItemView_android_minWidth = global::WorklabsMx.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::com.refractored.Resource.Styleable.ActionMenuView = global::WorklabsMx.Droid.Resource.Styleable.ActionMenuView;
+			global::com.refractored.Resource.Styleable.ActionMode = global::WorklabsMx.Droid.Resource.Styleable.ActionMode;
+			global::com.refractored.Resource.Styleable.ActionMode_background = global::WorklabsMx.Droid.Resource.Styleable.ActionMode_background;
+			global::com.refractored.Resource.Styleable.ActionMode_backgroundSplit = global::WorklabsMx.Droid.Resource.Styleable.ActionMode_backgroundSplit;
+			global::com.refractored.Resource.Styleable.ActionMode_closeItemLayout = global::WorklabsMx.Droid.Resource.Styleable.ActionMode_closeItemLayout;
+			global::com.refractored.Resource.Styleable.ActionMode_height = global::WorklabsMx.Droid.Resource.Styleable.ActionMode_height;
+			global::com.refractored.Resource.Styleable.ActionMode_subtitleTextStyle = global::WorklabsMx.Droid.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::com.refractored.Resource.Styleable.ActionMode_titleTextStyle = global::WorklabsMx.Droid.Resource.Styleable.ActionMode_titleTextStyle;
+			global::com.refractored.Resource.Styleable.ActivityChooserView = global::WorklabsMx.Droid.Resource.Styleable.ActivityChooserView;
+			global::com.refractored.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::WorklabsMx.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::com.refractored.Resource.Styleable.ActivityChooserView_initialActivityCount = global::WorklabsMx.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::com.refractored.Resource.Styleable.AlertDialog = global::WorklabsMx.Droid.Resource.Styleable.AlertDialog;
+			global::com.refractored.Resource.Styleable.AlertDialog_android_layout = global::WorklabsMx.Droid.Resource.Styleable.AlertDialog_android_layout;
+			global::com.refractored.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::WorklabsMx.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::com.refractored.Resource.Styleable.AlertDialog_listItemLayout = global::WorklabsMx.Droid.Resource.Styleable.AlertDialog_listItemLayout;
+			global::com.refractored.Resource.Styleable.AlertDialog_listLayout = global::WorklabsMx.Droid.Resource.Styleable.AlertDialog_listLayout;
+			global::com.refractored.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::WorklabsMx.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::com.refractored.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::WorklabsMx.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::com.refractored.Resource.Styleable.AppCompatImageView = global::WorklabsMx.Droid.Resource.Styleable.AppCompatImageView;
+			global::com.refractored.Resource.Styleable.AppCompatImageView_android_src = global::WorklabsMx.Droid.Resource.Styleable.AppCompatImageView_android_src;
+			global::com.refractored.Resource.Styleable.AppCompatImageView_srcCompat = global::WorklabsMx.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::com.refractored.Resource.Styleable.AppCompatTextView = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTextView;
+			global::com.refractored.Resource.Styleable.AppCompatTextView_android_textAppearance = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::com.refractored.Resource.Styleable.AppCompatTextView_textAllCaps = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::com.refractored.Resource.Styleable.AppCompatTheme = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarDivider = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarSize = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarTheme = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeBackground = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_buttonStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_checkboxStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_colorAccent = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_colorControlActivated = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_colorControlNormal = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_colorPrimary = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_controlBackground = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_dialogTheme = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_dividerVertical = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_editTextBackground = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_editTextColor = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_editTextStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_panelBackground = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_searchViewStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_seekBarStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_spinnerStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_switchStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_toolbarStyle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowActionBar = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::com.refractored.Resource.Styleable.AppCompatTheme_windowNoTitle = global::WorklabsMx.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::com.refractored.Resource.Styleable.ButtonBarLayout = global::WorklabsMx.Droid.Resource.Styleable.ButtonBarLayout;
+			global::com.refractored.Resource.Styleable.ButtonBarLayout_allowStacking = global::WorklabsMx.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::com.refractored.Resource.Styleable.CompoundButton = global::WorklabsMx.Droid.Resource.Styleable.CompoundButton;
+			global::com.refractored.Resource.Styleable.CompoundButton_android_button = global::WorklabsMx.Droid.Resource.Styleable.CompoundButton_android_button;
+			global::com.refractored.Resource.Styleable.CompoundButton_buttonTint = global::WorklabsMx.Droid.Resource.Styleable.CompoundButton_buttonTint;
+			global::com.refractored.Resource.Styleable.CompoundButton_buttonTintMode = global::WorklabsMx.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::com.refractored.Resource.Styleable.DrawerArrowToggle = global::WorklabsMx.Droid.Resource.Styleable.DrawerArrowToggle;
+			global::com.refractored.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::WorklabsMx.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::com.refractored.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::WorklabsMx.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::com.refractored.Resource.Styleable.DrawerArrowToggle_barLength = global::WorklabsMx.Droid.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::com.refractored.Resource.Styleable.DrawerArrowToggle_color = global::WorklabsMx.Droid.Resource.Styleable.DrawerArrowToggle_color;
+			global::com.refractored.Resource.Styleable.DrawerArrowToggle_drawableSize = global::WorklabsMx.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::com.refractored.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::WorklabsMx.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::com.refractored.Resource.Styleable.DrawerArrowToggle_spinBars = global::WorklabsMx.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::com.refractored.Resource.Styleable.DrawerArrowToggle_thickness = global::WorklabsMx.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat = global::WorklabsMx.Droid.Resource.Styleable.LinearLayoutCompat;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::WorklabsMx.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::WorklabsMx.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_android_gravity = global::WorklabsMx.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_android_orientation = global::WorklabsMx.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::WorklabsMx.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_divider = global::WorklabsMx.Droid.Resource.Styleable.LinearLayoutCompat_divider;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::WorklabsMx.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::WorklabsMx.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_showDividers = global::WorklabsMx.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_Layout = global::WorklabsMx.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::WorklabsMx.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::WorklabsMx.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::WorklabsMx.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::com.refractored.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::WorklabsMx.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::com.refractored.Resource.Styleable.ListPopupWindow = global::WorklabsMx.Droid.Resource.Styleable.ListPopupWindow;
+			global::com.refractored.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::WorklabsMx.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::com.refractored.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::WorklabsMx.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::com.refractored.Resource.Styleable.MenuGroup = global::WorklabsMx.Droid.Resource.Styleable.MenuGroup;
+			global::com.refractored.Resource.Styleable.MenuGroup_android_checkableBehavior = global::WorklabsMx.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::com.refractored.Resource.Styleable.MenuGroup_android_enabled = global::WorklabsMx.Droid.Resource.Styleable.MenuGroup_android_enabled;
+			global::com.refractored.Resource.Styleable.MenuGroup_android_id = global::WorklabsMx.Droid.Resource.Styleable.MenuGroup_android_id;
+			global::com.refractored.Resource.Styleable.MenuGroup_android_menuCategory = global::WorklabsMx.Droid.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::com.refractored.Resource.Styleable.MenuGroup_android_orderInCategory = global::WorklabsMx.Droid.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::com.refractored.Resource.Styleable.MenuGroup_android_visible = global::WorklabsMx.Droid.Resource.Styleable.MenuGroup_android_visible;
+			global::com.refractored.Resource.Styleable.MenuItem = global::WorklabsMx.Droid.Resource.Styleable.MenuItem;
+			global::com.refractored.Resource.Styleable.MenuItem_actionLayout = global::WorklabsMx.Droid.Resource.Styleable.MenuItem_actionLayout;
+			global::com.refractored.Resource.Styleable.MenuItem_actionProviderClass = global::WorklabsMx.Droid.Resource.Styleable.MenuItem_actionProviderClass;
+			global::com.refractored.Resource.Styleable.MenuItem_actionViewClass = global::WorklabsMx.Droid.Resource.Styleable.MenuItem_actionViewClass;
+			global::com.refractored.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::WorklabsMx.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::com.refractored.Resource.Styleable.MenuItem_android_checkable = global::WorklabsMx.Droid.Resource.Styleable.MenuItem_android_checkable;
+			global::com.refractored.Resource.Styleable.MenuItem_android_checked = global::WorklabsMx.Droid.Resource.Styleable.MenuItem_android_checked;
+			global::com.refractored.Resource.Styleable.MenuItem_android_enabled = global::WorklabsMx.Droid.Resource.Styleable.MenuItem_android_enabled;
+			global::com.refractored.Resource.Styleable.MenuItem_android_icon = global::WorklabsMx.Droid.Resource.Styleable.MenuItem_android_icon;
+			global::com.refractored.Resource.Styleable.MenuItem_android_id = global::WorklabsMx.Droid.Resource.Styleable.MenuItem_android_id;
+			global::com.refractored.Resource.Styleable.MenuItem_android_menuCategory = global::WorklabsMx.Droid.Resource.Styleable.MenuItem_android_menuCategory;
+			global::com.refractored.Resource.Styleable.MenuItem_android_numericShortcut = global::WorklabsMx.Droid.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::com.refractored.Resource.Styleable.MenuItem_android_onClick = global::WorklabsMx.Droid.Resource.Styleable.MenuItem_android_onClick;
+			global::com.refractored.Resource.Styleable.MenuItem_android_orderInCategory = global::WorklabsMx.Droid.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::com.refractored.Resource.Styleable.MenuItem_android_title = global::WorklabsMx.Droid.Resource.Styleable.MenuItem_android_title;
+			global::com.refractored.Resource.Styleable.MenuItem_android_titleCondensed = global::WorklabsMx.Droid.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::com.refractored.Resource.Styleable.MenuItem_android_visible = global::WorklabsMx.Droid.Resource.Styleable.MenuItem_android_visible;
+			global::com.refractored.Resource.Styleable.MenuItem_showAsAction = global::WorklabsMx.Droid.Resource.Styleable.MenuItem_showAsAction;
+			global::com.refractored.Resource.Styleable.MenuView = global::WorklabsMx.Droid.Resource.Styleable.MenuView;
+			global::com.refractored.Resource.Styleable.MenuView_android_headerBackground = global::WorklabsMx.Droid.Resource.Styleable.MenuView_android_headerBackground;
+			global::com.refractored.Resource.Styleable.MenuView_android_horizontalDivider = global::WorklabsMx.Droid.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::com.refractored.Resource.Styleable.MenuView_android_itemBackground = global::WorklabsMx.Droid.Resource.Styleable.MenuView_android_itemBackground;
+			global::com.refractored.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::WorklabsMx.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::com.refractored.Resource.Styleable.MenuView_android_itemTextAppearance = global::WorklabsMx.Droid.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::com.refractored.Resource.Styleable.MenuView_android_verticalDivider = global::WorklabsMx.Droid.Resource.Styleable.MenuView_android_verticalDivider;
+			global::com.refractored.Resource.Styleable.MenuView_android_windowAnimationStyle = global::WorklabsMx.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::com.refractored.Resource.Styleable.MenuView_preserveIconSpacing = global::WorklabsMx.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip = global::WorklabsMx.Droid.Resource.Styleable.PagerSlidingTabStrip;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsDividerColor = global::WorklabsMx.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsDividerColor;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsDividerPadding = global::WorklabsMx.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsDividerPadding;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsDividerWidth = global::WorklabsMx.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsDividerWidth;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsIndicatorColor = global::WorklabsMx.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsIndicatorColor;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsIndicatorHeight = global::WorklabsMx.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsIndicatorHeight;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsPaddingMiddle = global::WorklabsMx.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsPaddingMiddle;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsScrollOffset = global::WorklabsMx.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsScrollOffset;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsShouldExpand = global::WorklabsMx.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsShouldExpand;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsTabBackground = global::WorklabsMx.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsTabBackground;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsTabPaddingLeftRight = global::WorklabsMx.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsTabPaddingLeftRight;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsTextAllCaps = global::WorklabsMx.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsTextAllCaps;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsTextAlpha = global::WorklabsMx.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsTextAlpha;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsTextColorSelected = global::WorklabsMx.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsTextColorSelected;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsTextSelectedStyle = global::WorklabsMx.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsTextSelectedStyle;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsTextStyle = global::WorklabsMx.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsTextStyle;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsUnderlineColor = global::WorklabsMx.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsUnderlineColor;
+			global::com.refractored.Resource.Styleable.PagerSlidingTabStrip_pstsUnderlineHeight = global::WorklabsMx.Droid.Resource.Styleable.PagerSlidingTabStrip_pstsUnderlineHeight;
+			global::com.refractored.Resource.Styleable.PopupWindow = global::WorklabsMx.Droid.Resource.Styleable.PopupWindow;
+			global::com.refractored.Resource.Styleable.PopupWindow_android_popupBackground = global::WorklabsMx.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::com.refractored.Resource.Styleable.PopupWindow_overlapAnchor = global::WorklabsMx.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::com.refractored.Resource.Styleable.PopupWindowBackgroundState = global::WorklabsMx.Droid.Resource.Styleable.PopupWindowBackgroundState;
+			global::com.refractored.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::WorklabsMx.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::com.refractored.Resource.Styleable.SearchView = global::WorklabsMx.Droid.Resource.Styleable.SearchView;
+			global::com.refractored.Resource.Styleable.SearchView_android_focusable = global::WorklabsMx.Droid.Resource.Styleable.SearchView_android_focusable;
+			global::com.refractored.Resource.Styleable.SearchView_android_imeOptions = global::WorklabsMx.Droid.Resource.Styleable.SearchView_android_imeOptions;
+			global::com.refractored.Resource.Styleable.SearchView_android_inputType = global::WorklabsMx.Droid.Resource.Styleable.SearchView_android_inputType;
+			global::com.refractored.Resource.Styleable.SearchView_android_maxWidth = global::WorklabsMx.Droid.Resource.Styleable.SearchView_android_maxWidth;
+			global::com.refractored.Resource.Styleable.SearchView_closeIcon = global::WorklabsMx.Droid.Resource.Styleable.SearchView_closeIcon;
+			global::com.refractored.Resource.Styleable.SearchView_commitIcon = global::WorklabsMx.Droid.Resource.Styleable.SearchView_commitIcon;
+			global::com.refractored.Resource.Styleable.SearchView_defaultQueryHint = global::WorklabsMx.Droid.Resource.Styleable.SearchView_defaultQueryHint;
+			global::com.refractored.Resource.Styleable.SearchView_goIcon = global::WorklabsMx.Droid.Resource.Styleable.SearchView_goIcon;
+			global::com.refractored.Resource.Styleable.SearchView_iconifiedByDefault = global::WorklabsMx.Droid.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::com.refractored.Resource.Styleable.SearchView_layout = global::WorklabsMx.Droid.Resource.Styleable.SearchView_layout;
+			global::com.refractored.Resource.Styleable.SearchView_queryBackground = global::WorklabsMx.Droid.Resource.Styleable.SearchView_queryBackground;
+			global::com.refractored.Resource.Styleable.SearchView_queryHint = global::WorklabsMx.Droid.Resource.Styleable.SearchView_queryHint;
+			global::com.refractored.Resource.Styleable.SearchView_searchHintIcon = global::WorklabsMx.Droid.Resource.Styleable.SearchView_searchHintIcon;
+			global::com.refractored.Resource.Styleable.SearchView_searchIcon = global::WorklabsMx.Droid.Resource.Styleable.SearchView_searchIcon;
+			global::com.refractored.Resource.Styleable.SearchView_submitBackground = global::WorklabsMx.Droid.Resource.Styleable.SearchView_submitBackground;
+			global::com.refractored.Resource.Styleable.SearchView_suggestionRowLayout = global::WorklabsMx.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::com.refractored.Resource.Styleable.SearchView_voiceIcon = global::WorklabsMx.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::com.refractored.Resource.Styleable.Spinner = global::WorklabsMx.Droid.Resource.Styleable.Spinner;
+			global::com.refractored.Resource.Styleable.Spinner_android_dropDownWidth = global::WorklabsMx.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::com.refractored.Resource.Styleable.Spinner_android_entries = global::WorklabsMx.Droid.Resource.Styleable.Spinner_android_entries;
+			global::com.refractored.Resource.Styleable.Spinner_android_popupBackground = global::WorklabsMx.Droid.Resource.Styleable.Spinner_android_popupBackground;
+			global::com.refractored.Resource.Styleable.Spinner_android_prompt = global::WorklabsMx.Droid.Resource.Styleable.Spinner_android_prompt;
+			global::com.refractored.Resource.Styleable.Spinner_popupTheme = global::WorklabsMx.Droid.Resource.Styleable.Spinner_popupTheme;
+			global::com.refractored.Resource.Styleable.SwitchCompat = global::WorklabsMx.Droid.Resource.Styleable.SwitchCompat;
+			global::com.refractored.Resource.Styleable.SwitchCompat_android_textOff = global::WorklabsMx.Droid.Resource.Styleable.SwitchCompat_android_textOff;
+			global::com.refractored.Resource.Styleable.SwitchCompat_android_textOn = global::WorklabsMx.Droid.Resource.Styleable.SwitchCompat_android_textOn;
+			global::com.refractored.Resource.Styleable.SwitchCompat_android_thumb = global::WorklabsMx.Droid.Resource.Styleable.SwitchCompat_android_thumb;
+			global::com.refractored.Resource.Styleable.SwitchCompat_showText = global::WorklabsMx.Droid.Resource.Styleable.SwitchCompat_showText;
+			global::com.refractored.Resource.Styleable.SwitchCompat_splitTrack = global::WorklabsMx.Droid.Resource.Styleable.SwitchCompat_splitTrack;
+			global::com.refractored.Resource.Styleable.SwitchCompat_switchMinWidth = global::WorklabsMx.Droid.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::com.refractored.Resource.Styleable.SwitchCompat_switchPadding = global::WorklabsMx.Droid.Resource.Styleable.SwitchCompat_switchPadding;
+			global::com.refractored.Resource.Styleable.SwitchCompat_switchTextAppearance = global::WorklabsMx.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::com.refractored.Resource.Styleable.SwitchCompat_thumbTextPadding = global::WorklabsMx.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::com.refractored.Resource.Styleable.SwitchCompat_track = global::WorklabsMx.Droid.Resource.Styleable.SwitchCompat_track;
+			global::com.refractored.Resource.Styleable.TextAppearance = global::WorklabsMx.Droid.Resource.Styleable.TextAppearance;
+			global::com.refractored.Resource.Styleable.TextAppearance_android_shadowColor = global::WorklabsMx.Droid.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::com.refractored.Resource.Styleable.TextAppearance_android_shadowDx = global::WorklabsMx.Droid.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::com.refractored.Resource.Styleable.TextAppearance_android_shadowDy = global::WorklabsMx.Droid.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::com.refractored.Resource.Styleable.TextAppearance_android_shadowRadius = global::WorklabsMx.Droid.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::com.refractored.Resource.Styleable.TextAppearance_android_textColor = global::WorklabsMx.Droid.Resource.Styleable.TextAppearance_android_textColor;
+			global::com.refractored.Resource.Styleable.TextAppearance_android_textSize = global::WorklabsMx.Droid.Resource.Styleable.TextAppearance_android_textSize;
+			global::com.refractored.Resource.Styleable.TextAppearance_android_textStyle = global::WorklabsMx.Droid.Resource.Styleable.TextAppearance_android_textStyle;
+			global::com.refractored.Resource.Styleable.TextAppearance_android_typeface = global::WorklabsMx.Droid.Resource.Styleable.TextAppearance_android_typeface;
+			global::com.refractored.Resource.Styleable.TextAppearance_textAllCaps = global::WorklabsMx.Droid.Resource.Styleable.TextAppearance_textAllCaps;
+			global::com.refractored.Resource.Styleable.Toolbar = global::WorklabsMx.Droid.Resource.Styleable.Toolbar;
+			global::com.refractored.Resource.Styleable.Toolbar_android_gravity = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_android_gravity;
+			global::com.refractored.Resource.Styleable.Toolbar_android_minHeight = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_android_minHeight;
+			global::com.refractored.Resource.Styleable.Toolbar_collapseContentDescription = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::com.refractored.Resource.Styleable.Toolbar_collapseIcon = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_collapseIcon;
+			global::com.refractored.Resource.Styleable.Toolbar_contentInsetEnd = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::com.refractored.Resource.Styleable.Toolbar_contentInsetLeft = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::com.refractored.Resource.Styleable.Toolbar_contentInsetRight = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_contentInsetRight;
+			global::com.refractored.Resource.Styleable.Toolbar_contentInsetStart = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_contentInsetStart;
+			global::com.refractored.Resource.Styleable.Toolbar_logo = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_logo;
+			global::com.refractored.Resource.Styleable.Toolbar_logoDescription = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_logoDescription;
+			global::com.refractored.Resource.Styleable.Toolbar_maxButtonHeight = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::com.refractored.Resource.Styleable.Toolbar_navigationContentDescription = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::com.refractored.Resource.Styleable.Toolbar_navigationIcon = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_navigationIcon;
+			global::com.refractored.Resource.Styleable.Toolbar_popupTheme = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_popupTheme;
+			global::com.refractored.Resource.Styleable.Toolbar_subtitle = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_subtitle;
+			global::com.refractored.Resource.Styleable.Toolbar_subtitleTextAppearance = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::com.refractored.Resource.Styleable.Toolbar_subtitleTextColor = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::com.refractored.Resource.Styleable.Toolbar_title = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_title;
+			global::com.refractored.Resource.Styleable.Toolbar_titleMarginBottom = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::com.refractored.Resource.Styleable.Toolbar_titleMarginEnd = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::com.refractored.Resource.Styleable.Toolbar_titleMarginStart = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_titleMarginStart;
+			global::com.refractored.Resource.Styleable.Toolbar_titleMarginTop = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_titleMarginTop;
+			global::com.refractored.Resource.Styleable.Toolbar_titleMargins = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_titleMargins;
+			global::com.refractored.Resource.Styleable.Toolbar_titleTextAppearance = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::com.refractored.Resource.Styleable.Toolbar_titleTextColor = global::WorklabsMx.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::com.refractored.Resource.Styleable.View = global::WorklabsMx.Droid.Resource.Styleable.View;
+			global::com.refractored.Resource.Styleable.View_android_focusable = global::WorklabsMx.Droid.Resource.Styleable.View_android_focusable;
+			global::com.refractored.Resource.Styleable.View_android_theme = global::WorklabsMx.Droid.Resource.Styleable.View_android_theme;
+			global::com.refractored.Resource.Styleable.View_paddingEnd = global::WorklabsMx.Droid.Resource.Styleable.View_paddingEnd;
+			global::com.refractored.Resource.Styleable.View_paddingStart = global::WorklabsMx.Droid.Resource.Styleable.View_paddingStart;
+			global::com.refractored.Resource.Styleable.View_theme = global::WorklabsMx.Droid.Resource.Styleable.View_theme;
+			global::com.refractored.Resource.Styleable.ViewBackgroundHelper = global::WorklabsMx.Droid.Resource.Styleable.ViewBackgroundHelper;
+			global::com.refractored.Resource.Styleable.ViewBackgroundHelper_android_background = global::WorklabsMx.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::com.refractored.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::WorklabsMx.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::com.refractored.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::WorklabsMx.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::com.refractored.Resource.Styleable.ViewStubCompat = global::WorklabsMx.Droid.Resource.Styleable.ViewStubCompat;
+			global::com.refractored.Resource.Styleable.ViewStubCompat_android_id = global::WorklabsMx.Droid.Resource.Styleable.ViewStubCompat_android_id;
+			global::com.refractored.Resource.Styleable.ViewStubCompat_android_inflatedId = global::WorklabsMx.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::com.refractored.Resource.Styleable.ViewStubCompat_android_layout = global::WorklabsMx.Droid.Resource.Styleable.ViewStubCompat_android_layout;
 		}
 		
 		public partial class Animation
@@ -220,41 +1483,41 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f01006c
 			public const int activityChooserViewStyle = 2130772076;
 			
-			// aapt resource value: 0x7f010102
-			public const int ahBarColor = 2130772226;
+			// aapt resource value: 0x7f010113
+			public const int ahBarColor = 2130772243;
 			
-			// aapt resource value: 0x7f01010a
-			public const int ahBarLength = 2130772234;
+			// aapt resource value: 0x7f01011b
+			public const int ahBarLength = 2130772251;
 			
-			// aapt resource value: 0x7f010109
-			public const int ahBarWidth = 2130772233;
+			// aapt resource value: 0x7f01011a
+			public const int ahBarWidth = 2130772250;
 			
-			// aapt resource value: 0x7f010107
-			public const int ahCircleColor = 2130772231;
+			// aapt resource value: 0x7f010118
+			public const int ahCircleColor = 2130772248;
 			
-			// aapt resource value: 0x7f010106
-			public const int ahDelayMillis = 2130772230;
+			// aapt resource value: 0x7f010117
+			public const int ahDelayMillis = 2130772247;
 			
-			// aapt resource value: 0x7f010108
-			public const int ahRadius = 2130772232;
+			// aapt resource value: 0x7f010119
+			public const int ahRadius = 2130772249;
 			
-			// aapt resource value: 0x7f010103
-			public const int ahRimColor = 2130772227;
+			// aapt resource value: 0x7f010114
+			public const int ahRimColor = 2130772244;
 			
-			// aapt resource value: 0x7f010104
-			public const int ahRimWidth = 2130772228;
+			// aapt resource value: 0x7f010115
+			public const int ahRimWidth = 2130772245;
 			
-			// aapt resource value: 0x7f010105
-			public const int ahSpinSpeed = 2130772229;
+			// aapt resource value: 0x7f010116
+			public const int ahSpinSpeed = 2130772246;
 			
-			// aapt resource value: 0x7f0100ff
-			public const int ahText = 2130772223;
+			// aapt resource value: 0x7f010110
+			public const int ahText = 2130772240;
 			
-			// aapt resource value: 0x7f010100
-			public const int ahTextColor = 2130772224;
+			// aapt resource value: 0x7f010111
+			public const int ahTextColor = 2130772241;
 			
-			// aapt resource value: 0x7f010101
-			public const int ahTextSize = 2130772225;
+			// aapt resource value: 0x7f010112
+			public const int ahTextSize = 2130772242;
 			
 			// aapt resource value: 0x7f010091
 			public const int alertDialogButtonGroupStyle = 2130772113;
@@ -667,6 +1930,57 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f010011
 			public const int progressBarStyle = 2130771985;
 			
+			// aapt resource value: 0x7f010101
+			public const int pstsDividerColor = 2130772225;
+			
+			// aapt resource value: 0x7f010105
+			public const int pstsDividerPadding = 2130772229;
+			
+			// aapt resource value: 0x7f010102
+			public const int pstsDividerWidth = 2130772226;
+			
+			// aapt resource value: 0x7f0100ff
+			public const int pstsIndicatorColor = 2130772223;
+			
+			// aapt resource value: 0x7f010103
+			public const int pstsIndicatorHeight = 2130772227;
+			
+			// aapt resource value: 0x7f01010b
+			public const int pstsPaddingMiddle = 2130772235;
+			
+			// aapt resource value: 0x7f010107
+			public const int pstsScrollOffset = 2130772231;
+			
+			// aapt resource value: 0x7f010109
+			public const int pstsShouldExpand = 2130772233;
+			
+			// aapt resource value: 0x7f010108
+			public const int pstsTabBackground = 2130772232;
+			
+			// aapt resource value: 0x7f010106
+			public const int pstsTabPaddingLeftRight = 2130772230;
+			
+			// aapt resource value: 0x7f01010a
+			public const int pstsTextAllCaps = 2130772234;
+			
+			// aapt resource value: 0x7f01010d
+			public const int pstsTextAlpha = 2130772237;
+			
+			// aapt resource value: 0x7f01010c
+			public const int pstsTextColorSelected = 2130772236;
+			
+			// aapt resource value: 0x7f01010f
+			public const int pstsTextSelectedStyle = 2130772239;
+			
+			// aapt resource value: 0x7f01010e
+			public const int pstsTextStyle = 2130772238;
+			
+			// aapt resource value: 0x7f010100
+			public const int pstsUnderlineColor = 2130772224;
+			
+			// aapt resource value: 0x7f010104
+			public const int pstsUnderlineHeight = 2130772228;
+			
 			// aapt resource value: 0x7f0100d3
 			public const int queryBackground = 2130772179;
 			
@@ -960,44 +2274,44 @@ namespace WorklabsMx.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0a0047
-			public const int abc_background_cache_hint_selector_material_dark = 2131361863;
-			
 			// aapt resource value: 0x7f0a0048
-			public const int abc_background_cache_hint_selector_material_light = 2131361864;
+			public const int abc_background_cache_hint_selector_material_dark = 2131361864;
 			
 			// aapt resource value: 0x7f0a0049
-			public const int abc_btn_colored_borderless_text_material = 2131361865;
+			public const int abc_background_cache_hint_selector_material_light = 2131361865;
 			
 			// aapt resource value: 0x7f0a004a
-			public const int abc_btn_colored_text_material = 2131361866;
+			public const int abc_btn_colored_borderless_text_material = 2131361866;
 			
 			// aapt resource value: 0x7f0a004b
-			public const int abc_color_highlight_material = 2131361867;
+			public const int abc_btn_colored_text_material = 2131361867;
 			
 			// aapt resource value: 0x7f0a004c
-			public const int abc_hint_foreground_material_dark = 2131361868;
+			public const int abc_color_highlight_material = 2131361868;
 			
 			// aapt resource value: 0x7f0a004d
-			public const int abc_hint_foreground_material_light = 2131361869;
+			public const int abc_hint_foreground_material_dark = 2131361869;
+			
+			// aapt resource value: 0x7f0a004e
+			public const int abc_hint_foreground_material_light = 2131361870;
 			
 			// aapt resource value: 0x7f0a0000
 			public const int abc_input_method_navigation_guard = 2131361792;
 			
-			// aapt resource value: 0x7f0a004e
-			public const int abc_primary_text_disable_only_material_dark = 2131361870;
-			
 			// aapt resource value: 0x7f0a004f
-			public const int abc_primary_text_disable_only_material_light = 2131361871;
+			public const int abc_primary_text_disable_only_material_dark = 2131361871;
 			
 			// aapt resource value: 0x7f0a0050
-			public const int abc_primary_text_material_dark = 2131361872;
+			public const int abc_primary_text_disable_only_material_light = 2131361872;
 			
 			// aapt resource value: 0x7f0a0051
-			public const int abc_primary_text_material_light = 2131361873;
+			public const int abc_primary_text_material_dark = 2131361873;
 			
 			// aapt resource value: 0x7f0a0052
-			public const int abc_search_url_text = 2131361874;
+			public const int abc_primary_text_material_light = 2131361874;
+			
+			// aapt resource value: 0x7f0a0053
+			public const int abc_search_url_text = 2131361875;
 			
 			// aapt resource value: 0x7f0a0001
 			public const int abc_search_url_text_normal = 2131361793;
@@ -1008,32 +2322,32 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0a0003
 			public const int abc_search_url_text_selected = 2131361795;
 			
-			// aapt resource value: 0x7f0a0053
-			public const int abc_secondary_text_material_dark = 2131361875;
-			
 			// aapt resource value: 0x7f0a0054
-			public const int abc_secondary_text_material_light = 2131361876;
+			public const int abc_secondary_text_material_dark = 2131361876;
 			
 			// aapt resource value: 0x7f0a0055
-			public const int abc_tint_btn_checkable = 2131361877;
+			public const int abc_secondary_text_material_light = 2131361877;
 			
 			// aapt resource value: 0x7f0a0056
-			public const int abc_tint_default = 2131361878;
+			public const int abc_tint_btn_checkable = 2131361878;
 			
 			// aapt resource value: 0x7f0a0057
-			public const int abc_tint_edittext = 2131361879;
+			public const int abc_tint_default = 2131361879;
 			
 			// aapt resource value: 0x7f0a0058
-			public const int abc_tint_seek_thumb = 2131361880;
+			public const int abc_tint_edittext = 2131361880;
 			
 			// aapt resource value: 0x7f0a0059
-			public const int abc_tint_spinner = 2131361881;
+			public const int abc_tint_seek_thumb = 2131361881;
 			
 			// aapt resource value: 0x7f0a005a
-			public const int abc_tint_switch_track = 2131361882;
+			public const int abc_tint_spinner = 2131361882;
 			
-			// aapt resource value: 0x7f0a0040
-			public const int accent = 2131361856;
+			// aapt resource value: 0x7f0a005b
+			public const int abc_tint_switch_track = 2131361883;
+			
+			// aapt resource value: 0x7f0a0041
+			public const int accent = 2131361857;
 			
 			// aapt resource value: 0x7f0a0004
 			public const int accent_material_dark = 2131361796;
@@ -1077,11 +2391,11 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0a0011
 			public const int button_material_light = 2131361809;
 			
-			// aapt resource value: 0x7f0a0044
-			public const int button_unpressed = 2131361860;
+			// aapt resource value: 0x7f0a0045
+			public const int button_unpressed = 2131361861;
 			
-			// aapt resource value: 0x7f0a0043
-			public const int comment_pressed = 2131361859;
+			// aapt resource value: 0x7f0a0044
+			public const int comment_pressed = 2131361860;
 			
 			// aapt resource value: 0x7f0a0012
 			public const int dim_foreground_disabled_material_dark = 2131361810;
@@ -1110,14 +2424,14 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0a001a
 			public const int highlighted_text_material_light = 2131361818;
 			
-			// aapt resource value: 0x7f0a0045
-			public const int hour_selected = 2131361861;
-			
 			// aapt resource value: 0x7f0a0046
-			public const int hour_unselected = 2131361862;
+			public const int hour_selected = 2131361862;
 			
-			// aapt resource value: 0x7f0a0042
-			public const int like_heart_pressed = 2131361858;
+			// aapt resource value: 0x7f0a0047
+			public const int hour_unselected = 2131361863;
+			
+			// aapt resource value: 0x7f0a0043
+			public const int like_heart_pressed = 2131361859;
 			
 			// aapt resource value: 0x7f0a001b
 			public const int material_blue_grey_800 = 2131361819;
@@ -1164,11 +2478,11 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0a003b
 			public const int notification_material_background_media_default_color = 2131361851;
 			
-			// aapt resource value: 0x7f0a003e
-			public const int primary = 2131361854;
-			
 			// aapt resource value: 0x7f0a003f
-			public const int primaryDark = 2131361855;
+			public const int primary = 2131361855;
+			
+			// aapt resource value: 0x7f0a0040
+			public const int primaryDark = 2131361856;
 			
 			// aapt resource value: 0x7f0a0027
 			public const int primary_dark_material_dark = 2131361831;
@@ -1194,6 +2508,9 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0a002e
 			public const int primary_text_disabled_material_light = 2131361838;
 			
+			// aapt resource value: 0x7f0a003e
+			public const int psts_background_tab_pressed = 2131361854;
+			
 			// aapt resource value: 0x7f0a002f
 			public const int ripple_material_dark = 2131361839;
 			
@@ -1218,11 +2535,11 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0a0036
 			public const int switch_thumb_disabled_material_light = 2131361846;
 			
-			// aapt resource value: 0x7f0a005b
-			public const int switch_thumb_material_dark = 2131361883;
-			
 			// aapt resource value: 0x7f0a005c
-			public const int switch_thumb_material_light = 2131361884;
+			public const int switch_thumb_material_dark = 2131361884;
+			
+			// aapt resource value: 0x7f0a005d
+			public const int switch_thumb_material_light = 2131361885;
 			
 			// aapt resource value: 0x7f0a0037
 			public const int switch_thumb_normal_material_dark = 2131361847;
@@ -1236,8 +2553,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0a003a
 			public const int tooltip_background_light = 2131361850;
 			
-			// aapt resource value: 0x7f0a0041
-			public const int window_background = 2131361857;
+			// aapt resource value: 0x7f0a0042
+			public const int window_background = 2131361858;
 			
 			static Color()
 			{
@@ -1904,11 +3221,11 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f020065
 			public const int notification_icon_background = 2130837605;
 			
-			// aapt resource value: 0x7f02006d
-			public const int notification_template_icon_bg = 2130837613;
-			
 			// aapt resource value: 0x7f02006e
-			public const int notification_template_icon_low_bg = 2130837614;
+			public const int notification_template_icon_bg = 2130837614;
+			
+			// aapt resource value: 0x7f02006f
+			public const int notification_template_icon_low_bg = 2130837615;
 			
 			// aapt resource value: 0x7f020066
 			public const int notification_tile_bg = 2130837606;
@@ -1917,19 +3234,22 @@ namespace WorklabsMx.Droid
 			public const int notify_panel_notification_icon_bg = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int roundedbg = 2130837608;
+			public const int psts_background_tab = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int roundedbgdark = 2130837609;
+			public const int roundedbg = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int stroke_style = 2130837610;
+			public const int roundedbgdark = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int tooltip_frame_dark = 2130837611;
+			public const int stroke_style = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int tooltip_frame_light = 2130837612;
+			public const int tooltip_frame_dark = 2130837612;
+			
+			// aapt resource value: 0x7f02006d
+			public const int tooltip_frame_light = 2130837613;
 			
 			static Drawable()
 			{
@@ -1950,32 +3270,32 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b0024
 			public const int CTRL = 2131427364;
 			
-			// aapt resource value: 0x7f0b012f
-			public const int Comments = 2131427631;
+			// aapt resource value: 0x7f0b0132
+			public const int Comments = 2131427634;
 			
 			// aapt resource value: 0x7f0b0025
 			public const int FUNCTION = 2131427365;
 			
-			// aapt resource value: 0x7f0b0130
-			public const int Favorites = 2131427632;
+			// aapt resource value: 0x7f0b0133
+			public const int Favorites = 2131427635;
 			
-			// aapt resource value: 0x7f0b013a
-			public const int FavoritesLayout = 2131427642;
+			// aapt resource value: 0x7f0b013d
+			public const int FavoritesLayout = 2131427645;
 			
 			// aapt resource value: 0x7f0b0026
 			public const int META = 2131427366;
 			
-			// aapt resource value: 0x7f0b00a6
-			public const int Post = 2131427494;
+			// aapt resource value: 0x7f0b00a8
+			public const int Post = 2131427496;
 			
-			// aapt resource value: 0x7f0b013b
-			public const int PostLayout = 2131427643;
+			// aapt resource value: 0x7f0b013e
+			public const int PostLayout = 2131427646;
 			
-			// aapt resource value: 0x7f0b012e
-			public const int Posts = 2131427630;
+			// aapt resource value: 0x7f0b0131
+			public const int Posts = 2131427633;
 			
-			// aapt resource value: 0x7f0b00dc
-			public const int ProfileLayout = 2131427548;
+			// aapt resource value: 0x7f0b00de
+			public const int ProfileLayout = 2131427550;
 			
 			// aapt resource value: 0x7f0b0027
 			public const int SHIFT = 2131427367;
@@ -1983,41 +3303,41 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b0028
 			public const int SYM = 2131427368;
 			
-			// aapt resource value: 0x7f0b010b
-			public const int action0 = 2131427595;
+			// aapt resource value: 0x7f0b010d
+			public const int action0 = 2131427597;
 			
-			// aapt resource value: 0x7f0b0056
-			public const int action_bar = 2131427414;
+			// aapt resource value: 0x7f0b0057
+			public const int action_bar = 2131427415;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int action_bar_activity_content = 2131427328;
 			
-			// aapt resource value: 0x7f0b0055
-			public const int action_bar_container = 2131427413;
+			// aapt resource value: 0x7f0b0056
+			public const int action_bar_container = 2131427414;
 			
-			// aapt resource value: 0x7f0b0051
-			public const int action_bar_root = 2131427409;
+			// aapt resource value: 0x7f0b0052
+			public const int action_bar_root = 2131427410;
 			
 			// aapt resource value: 0x7f0b0001
 			public const int action_bar_spinner = 2131427329;
 			
+			// aapt resource value: 0x7f0b0036
+			public const int action_bar_subtitle = 2131427382;
+			
 			// aapt resource value: 0x7f0b0035
-			public const int action_bar_subtitle = 2131427381;
+			public const int action_bar_title = 2131427381;
 			
-			// aapt resource value: 0x7f0b0034
-			public const int action_bar_title = 2131427380;
+			// aapt resource value: 0x7f0b010a
+			public const int action_container = 2131427594;
 			
-			// aapt resource value: 0x7f0b0108
-			public const int action_container = 2131427592;
+			// aapt resource value: 0x7f0b0058
+			public const int action_context_bar = 2131427416;
 			
-			// aapt resource value: 0x7f0b0057
-			public const int action_context_bar = 2131427415;
+			// aapt resource value: 0x7f0b0111
+			public const int action_divider = 2131427601;
 			
-			// aapt resource value: 0x7f0b010f
-			public const int action_divider = 2131427599;
-			
-			// aapt resource value: 0x7f0b0109
-			public const int action_image = 2131427593;
+			// aapt resource value: 0x7f0b010b
+			public const int action_image = 2131427595;
 			
 			// aapt resource value: 0x7f0b0002
 			public const int action_menu_divider = 2131427330;
@@ -2025,32 +3345,32 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b0003
 			public const int action_menu_presenter = 2131427331;
 			
+			// aapt resource value: 0x7f0b0054
+			public const int action_mode_bar = 2131427412;
+			
 			// aapt resource value: 0x7f0b0053
-			public const int action_mode_bar = 2131427411;
-			
-			// aapt resource value: 0x7f0b0052
-			public const int action_mode_bar_stub = 2131427410;
-			
-			// aapt resource value: 0x7f0b0036
-			public const int action_mode_close_button = 2131427382;
-			
-			// aapt resource value: 0x7f0b0183
-			public const int action_refresh = 2131427715;
-			
-			// aapt resource value: 0x7f0b010a
-			public const int action_text = 2131427594;
-			
-			// aapt resource value: 0x7f0b0118
-			public const int actions = 2131427608;
+			public const int action_mode_bar_stub = 2131427411;
 			
 			// aapt resource value: 0x7f0b0037
-			public const int activity_chooser_view_content = 2131427383;
+			public const int action_mode_close_button = 2131427383;
+			
+			// aapt resource value: 0x7f0b0188
+			public const int action_refresh = 2131427720;
+			
+			// aapt resource value: 0x7f0b010c
+			public const int action_text = 2131427596;
+			
+			// aapt resource value: 0x7f0b011a
+			public const int actions = 2131427610;
+			
+			// aapt resource value: 0x7f0b0038
+			public const int activity_chooser_view_content = 2131427384;
 			
 			// aapt resource value: 0x7f0b001d
 			public const int add = 2131427357;
 			
-			// aapt resource value: 0x7f0b004a
-			public const int alertTitle = 2131427402;
+			// aapt resource value: 0x7f0b004b
+			public const int alertTitle = 2131427403;
 			
 			// aapt resource value: 0x7f0b0029
 			public const int always = 2131427369;
@@ -2064,158 +3384,164 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b0031
 			public const int blocking = 2131427377;
 			
+			// aapt resource value: 0x7f0b0034
+			public const int bold = 2131427380;
+			
 			// aapt resource value: 0x7f0b002e
 			public const int bottom = 2131427374;
 			
-			// aapt resource value: 0x7f0b0089
-			public const int btnAddCantidad = 2131427465;
+			// aapt resource value: 0x7f0b008b
+			public const int btnAddCantidad = 2131427467;
 			
-			// aapt resource value: 0x7f0b0092
-			public const int btnAddMeses = 2131427474;
+			// aapt resource value: 0x7f0b0094
+			public const int btnAddMeses = 2131427476;
 			
-			// aapt resource value: 0x7f0b0071
-			public const int btnApply = 2131427441;
+			// aapt resource value: 0x7f0b0073
+			public const int btnApply = 2131427443;
 			
-			// aapt resource value: 0x7f0b0146
-			public const int btnAttachImage = 2131427654;
+			// aapt resource value: 0x7f0b014a
+			public const int btnAttachImage = 2131427658;
 			
-			// aapt resource value: 0x7f0b017a
-			public const int btnBuscar = 2131427706;
+			// aapt resource value: 0x7f0b017f
+			public const int btnBuscar = 2131427711;
 			
-			// aapt resource value: 0x7f0b016f
-			public const int btnClear = 2131427695;
+			// aapt resource value: 0x7f0b0174
+			public const int btnClear = 2131427700;
 			
-			// aapt resource value: 0x7f0b0139
-			public const int btnComentar = 2131427641;
+			// aapt resource value: 0x7f0b013c
+			public const int btnComentar = 2131427644;
 			
-			// aapt resource value: 0x7f0b0169
-			public const int btnContinuar = 2131427689;
+			// aapt resource value: 0x7f0b016d
+			public const int btnContinuar = 2131427693;
 			
-			// aapt resource value: 0x7f0b0144
-			public const int btnDeleteImage = 2131427652;
-			
-			// aapt resource value: 0x7f0b00e9
-			public const int btnDescripcion = 2131427561;
-			
-			// aapt resource value: 0x7f0b0132
-			public const int btnFavorite = 2131427634;
+			// aapt resource value: 0x7f0b0148
+			public const int btnDeleteImage = 2131427656;
 			
 			// aapt resource value: 0x7f0b00eb
-			public const int btnFavoritos = 2131427563;
+			public const int btnDescripcion = 2131427563;
 			
-			// aapt resource value: 0x7f0b00f8
-			public const int btnForget = 2131427576;
+			// aapt resource value: 0x7f0b0135
+			public const int btnFavorite = 2131427637;
 			
-			// aapt resource value: 0x7f0b00af
-			public const int btnInitPublish = 2131427503;
-			
-			// aapt resource value: 0x7f0b00f7
-			public const int btnLogin = 2131427575;
-			
-			// aapt resource value: 0x7f0b00ea
-			public const int btnPosts = 2131427562;
-			
-			// aapt resource value: 0x7f0b0147
-			public const int btnPublishApply = 2131427655;
+			// aapt resource value: 0x7f0b00ed
+			public const int btnFavoritos = 2131427565;
 			
 			// aapt resource value: 0x7f0b00fa
-			public const int btnRegister = 2131427578;
+			public const int btnForget = 2131427578;
 			
-			// aapt resource value: 0x7f0b008a
-			public const int btnRemoveCantidad = 2131427466;
+			// aapt resource value: 0x7f0b00b1
+			public const int btnInitPublish = 2131427505;
 			
-			// aapt resource value: 0x7f0b0093
-			public const int btnRemoveMeses = 2131427475;
+			// aapt resource value: 0x7f0b00f9
+			public const int btnLogin = 2131427577;
 			
-			// aapt resource value: 0x7f0b0145
-			public const int btnTakePicture = 2131427653;
+			// aapt resource value: 0x7f0b00ec
+			public const int btnPosts = 2131427564;
 			
-			// aapt resource value: 0x7f0b003d
-			public const int buttonPanel = 2131427389;
+			// aapt resource value: 0x7f0b014b
+			public const int btnPublishApply = 2131427659;
 			
-			// aapt resource value: 0x7f0b010c
-			public const int cancel_action = 2131427596;
+			// aapt resource value: 0x7f0b00fc
+			public const int btnRegister = 2131427580;
 			
-			// aapt resource value: 0x7f0b017d
-			public const int cbDisponibilidad = 2131427709;
+			// aapt resource value: 0x7f0b008c
+			public const int btnRemoveCantidad = 2131427468;
 			
-			// aapt resource value: 0x7f0b004d
-			public const int checkbox = 2131427405;
+			// aapt resource value: 0x7f0b0095
+			public const int btnRemoveMeses = 2131427477;
 			
-			// aapt resource value: 0x7f0b0114
-			public const int chronometer = 2131427604;
+			// aapt resource value: 0x7f0b0128
+			public const int btnSendMessage = 2131427624;
+			
+			// aapt resource value: 0x7f0b0149
+			public const int btnTakePicture = 2131427657;
+			
+			// aapt resource value: 0x7f0b003e
+			public const int buttonPanel = 2131427390;
+			
+			// aapt resource value: 0x7f0b010e
+			public const int cancel_action = 2131427598;
+			
+			// aapt resource value: 0x7f0b0182
+			public const int cbDisponibilidad = 2131427714;
+			
+			// aapt resource value: 0x7f0b004e
+			public const int checkbox = 2131427406;
+			
+			// aapt resource value: 0x7f0b0116
+			public const int chronometer = 2131427606;
 			
 			// aapt resource value: 0x7f0b002a
 			public const int collapseActionView = 2131427370;
 			
-			// aapt resource value: 0x7f0b00a9
-			public const int comment_table = 2131427497;
+			// aapt resource value: 0x7f0b00ab
+			public const int comment_table = 2131427499;
 			
-			// aapt resource value: 0x7f0b0040
-			public const int contentPanel = 2131427392;
+			// aapt resource value: 0x7f0b0041
+			public const int contentPanel = 2131427393;
+			
+			// aapt resource value: 0x7f0b0048
+			public const int custom = 2131427400;
 			
 			// aapt resource value: 0x7f0b0047
-			public const int custom = 2131427399;
+			public const int customPanel = 2131427399;
 			
-			// aapt resource value: 0x7f0b0046
-			public const int customPanel = 2131427398;
+			// aapt resource value: 0x7f0b006c
+			public const int cvCalendario = 2131427436;
 			
-			// aapt resource value: 0x7f0b006b
-			public const int cvCalendario = 2131427435;
+			// aapt resource value: 0x7f0b00b4
+			public const int cvDatePicker = 2131427508;
 			
-			// aapt resource value: 0x7f0b00b2
-			public const int cvDatePicker = 2131427506;
+			// aapt resource value: 0x7f0b0055
+			public const int decor_content_parent = 2131427413;
 			
-			// aapt resource value: 0x7f0b0054
-			public const int decor_content_parent = 2131427412;
-			
-			// aapt resource value: 0x7f0b003a
-			public const int default_activity_button = 2131427386;
+			// aapt resource value: 0x7f0b003b
+			public const int default_activity_button = 2131427387;
 			
 			// aapt resource value: 0x7f0b0011
 			public const int disableHome = 2131427345;
 			
-			// aapt resource value: 0x7f0b0058
-			public const int edit_query = 2131427416;
+			// aapt resource value: 0x7f0b0059
+			public const int edit_query = 2131427417;
 			
 			// aapt resource value: 0x7f0b0021
 			public const int end = 2131427361;
 			
-			// aapt resource value: 0x7f0b011a
-			public const int end_padder = 2131427610;
+			// aapt resource value: 0x7f0b011c
+			public const int end_padder = 2131427612;
 			
-			// aapt resource value: 0x7f0b0038
-			public const int expand_activities_button = 2131427384;
+			// aapt resource value: 0x7f0b0039
+			public const int expand_activities_button = 2131427385;
 			
-			// aapt resource value: 0x7f0b004c
-			public const int expanded_menu = 2131427404;
+			// aapt resource value: 0x7f0b004d
+			public const int expanded_menu = 2131427405;
 			
 			// aapt resource value: 0x7f0b0032
 			public const int forever = 2131427378;
 			
-			// aapt resource value: 0x7f0b0152
-			public const int glReservacion = 2131427666;
+			// aapt resource value: 0x7f0b0156
+			public const int glReservacion = 2131427670;
 			
-			// aapt resource value: 0x7f0b0086
-			public const int gridLayout1 = 2131427462;
+			// aapt resource value: 0x7f0b0088
+			public const int gridLayout1 = 2131427464;
 			
-			// aapt resource value: 0x7f0b015d
-			public const int gridLayout2 = 2131427677;
+			// aapt resource value: 0x7f0b0161
+			public const int gridLayout2 = 2131427681;
 			
-			// aapt resource value: 0x7f0b0126
-			public const int gridView1 = 2131427622;
+			// aapt resource value: 0x7f0b0129
+			public const int gridView1 = 2131427625;
 			
-			// aapt resource value: 0x7f0b0141
-			public const int gvPublish = 2131427649;
+			// aapt resource value: 0x7f0b0145
+			public const int gvPublish = 2131427653;
 			
-			// aapt resource value: 0x7f0b016d
-			public const int gvSucursales = 2131427693;
+			// aapt resource value: 0x7f0b0172
+			public const int gvSucursales = 2131427698;
 			
-			// aapt resource value: 0x7f0b0166
-			public const int historial_scroll = 2131427686;
+			// aapt resource value: 0x7f0b016a
+			public const int historial_scroll = 2131427690;
 			
-			// aapt resource value: 0x7f0b0167
-			public const int historial_table = 2131427687;
+			// aapt resource value: 0x7f0b016b
+			public const int historial_table = 2131427691;
 			
 			// aapt resource value: 0x7f0b0004
 			public const int home = 2131427332;
@@ -2223,203 +3549,203 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b0012
 			public const int homeAsUp = 2131427346;
 			
-			// aapt resource value: 0x7f0b015b
-			public const int hsvHorario = 2131427675;
+			// aapt resource value: 0x7f0b015f
+			public const int hsvHorario = 2131427679;
 			
-			// aapt resource value: 0x7f0b0123
-			public const int ibCerrar = 2131427619;
+			// aapt resource value: 0x7f0b0125
+			public const int ibCerrar = 2131427621;
 			
-			// aapt resource value: 0x7f0b013c
-			public const int ibProfile = 2131427644;
+			// aapt resource value: 0x7f0b013f
+			public const int ibProfile = 2131427647;
 			
-			// aapt resource value: 0x7f0b003c
-			public const int icon = 2131427388;
+			// aapt resource value: 0x7f0b003d
+			public const int icon = 2131427389;
 			
-			// aapt resource value: 0x7f0b0119
-			public const int icon_group = 2131427609;
+			// aapt resource value: 0x7f0b011b
+			public const int icon_group = 2131427611;
 			
 			// aapt resource value: 0x7f0b002b
 			public const int ifRoom = 2131427371;
 			
-			// aapt resource value: 0x7f0b0039
-			public const int image = 2131427385;
+			// aapt resource value: 0x7f0b003a
+			public const int image = 2131427386;
 			
-			// aapt resource value: 0x7f0b006a
-			public const int imageView1 = 2131427434;
+			// aapt resource value: 0x7f0b006b
+			public const int imageView1 = 2131427435;
 			
-			// aapt resource value: 0x7f0b009a
-			public const int img = 2131427482;
+			// aapt resource value: 0x7f0b009c
+			public const int img = 2131427484;
 			
-			// aapt resource value: 0x7f0b0104
-			public const int imgEmpresaPerfil = 2131427588;
+			// aapt resource value: 0x7f0b0106
+			public const int imgEmpresaPerfil = 2131427590;
 			
-			// aapt resource value: 0x7f0b00ac
-			public const int imgPerfil = 2131427500;
+			// aapt resource value: 0x7f0b00ae
+			public const int imgPerfil = 2131427502;
 			
-			// aapt resource value: 0x7f0b0143
-			public const int imgPicture = 2131427651;
+			// aapt resource value: 0x7f0b0147
+			public const int imgPicture = 2131427655;
 			
-			// aapt resource value: 0x7f0b0136
-			public const int imgPost = 2131427638;
+			// aapt resource value: 0x7f0b0139
+			public const int imgPost = 2131427641;
 			
-			// aapt resource value: 0x7f0b00fe
-			public const int imgProfileMenu = 2131427582;
+			// aapt resource value: 0x7f0b0100
+			public const int imgProfileMenu = 2131427584;
 			
-			// aapt resource value: 0x7f0b0115
-			public const int info = 2131427605;
+			// aapt resource value: 0x7f0b0117
+			public const int info = 2131427607;
 			
 			// aapt resource value: 0x7f0b0033
 			public const int italic = 2131427379;
 			
-			// aapt resource value: 0x7f0b00ed
-			public const int ivHora = 2131427565;
+			// aapt resource value: 0x7f0b00ef
+			public const int ivHora = 2131427567;
 			
-			// aapt resource value: 0x7f0b0124
-			public const int ivPerfil = 2131427620;
-			
-			// aapt resource value: 0x7f0b0153
-			public const int ivSala = 2131427667;
-			
-			// aapt resource value: 0x7f0b016a
-			public const int ivSalaJunta = 2131427690;
-			
-			// aapt resource value: 0x7f0b017e
-			public const int ivSucursal = 2131427710;
-			
-			// aapt resource value: 0x7f0b0158
-			public const int ivSwipe = 2131427672;
-			
-			// aapt resource value: 0x7f0b00aa
-			public const int lDashboard = 2131427498;
-			
-			// aapt resource value: 0x7f0b0164
-			public const int lblAgendar = 2131427684;
-			
-			// aapt resource value: 0x7f0b017f
-			public const int lblCalle = 2131427711;
-			
-			// aapt resource value: 0x7f0b00be
-			public const int lblCantidad = 2131427518;
-			
-			// aapt resource value: 0x7f0b0180
-			public const int lblColonia = 2131427712;
-			
-			// aapt resource value: 0x7f0b0138
-			public const int lblComments = 2131427640;
-			
-			// aapt resource value: 0x7f0b0129
-			public const int lblContacto = 2131427625;
-			
-			// aapt resource value: 0x7f0b012a
-			public const int lblCorreo = 2131427626;
-			
-			// aapt resource value: 0x7f0b0161
-			public const int lblCreditosDisponibles = 2131427681;
-			
-			// aapt resource value: 0x7f0b0162
-			public const int lblCreditosUsados = 2131427682;
-			
-			// aapt resource value: 0x7f0b00bd
-			public const int lblDespliegue = 2131427517;
-			
-			// aapt resource value: 0x7f0b0156
-			public const int lblDia = 2131427670;
-			
-			// aapt resource value: 0x7f0b015e
-			public const int lblDiaFecha = 2131427678;
-			
-			// aapt resource value: 0x7f0b015f
-			public const int lblDiaNumero = 2131427679;
-			
-			// aapt resource value: 0x7f0b0155
-			public const int lblDiaSemana = 2131427669;
-			
-			// aapt resource value: 0x7f0b0125
-			public const int lblEmpresa = 2131427621;
-			
-			// aapt resource value: 0x7f0b0100
-			public const int lblEmpresaMenu = 2131427584;
-			
-			// aapt resource value: 0x7f0b012b
-			public const int lblFacebook = 2131427627;
-			
-			// aapt resource value: 0x7f0b0134
-			public const int lblFecha = 2131427636;
-			
-			// aapt resource value: 0x7f0b0128
-			public const int lblFechaNacimiento = 2131427624;
-			
-			// aapt resource value: 0x7f0b00ec
-			public const int lblHora = 2131427564;
-			
-			// aapt resource value: 0x7f0b014d
-			public const int lblHoraEntrada = 2131427661;
+			// aapt resource value: 0x7f0b0126
+			public const int ivPerfil = 2131427622;
 			
 			// aapt resource value: 0x7f0b0157
-			public const int lblHorario = 2131427671;
+			public const int ivSala = 2131427671;
 			
-			// aapt resource value: 0x7f0b0160
-			public const int lblHorasTotal = 2131427680;
+			// aapt resource value: 0x7f0b016f
+			public const int ivSalaJunta = 2131427695;
 			
-			// aapt resource value: 0x7f0b012c
-			public const int lblInstagram = 2131427628;
+			// aapt resource value: 0x7f0b0183
+			public const int ivSucursal = 2131427715;
 			
-			// aapt resource value: 0x7f0b00c5
-			public const int lblIva = 2131427525;
+			// aapt resource value: 0x7f0b015c
+			public const int ivSwipe = 2131427676;
 			
-			// aapt resource value: 0x7f0b0137
-			public const int lblLikes = 2131427639;
-			
-			// aapt resource value: 0x7f0b00bf
-			public const int lblMesesAdelantados = 2131427519;
+			// aapt resource value: 0x7f0b00ac
+			public const int lDashboard = 2131427500;
 			
 			// aapt resource value: 0x7f0b0168
-			public const int lblNivel = 2131427688;
+			public const int lblAgendar = 2131427688;
 			
-			// aapt resource value: 0x7f0b00ad
-			public const int lblNombre = 2131427501;
+			// aapt resource value: 0x7f0b0184
+			public const int lblCalle = 2131427716;
 			
-			// aapt resource value: 0x7f0b00ff
-			public const int lblNombreMenu = 2131427583;
+			// aapt resource value: 0x7f0b00c0
+			public const int lblCantidad = 2131427520;
 			
-			// aapt resource value: 0x7f0b00c1
-			public const int lblPeriodo = 2131427521;
+			// aapt resource value: 0x7f0b0185
+			public const int lblColonia = 2131427717;
 			
-			// aapt resource value: 0x7f0b0135
-			public const int lblPost = 2131427637;
+			// aapt resource value: 0x7f0b013b
+			public const int lblComments = 2131427643;
 			
-			// aapt resource value: 0x7f0b0087
-			public const int lblProducto = 2131427463;
-			
-			// aapt resource value: 0x7f0b0127
-			public const int lblProfesion = 2131427623;
-			
-			// aapt resource value: 0x7f0b00ae
-			public const int lblPuesto = 2131427502;
-			
-			// aapt resource value: 0x7f0b0154
-			public const int lblSalaJunta = 2131427668;
-			
-			// aapt resource value: 0x7f0b013e
-			public const int lblSubTitle = 2131427646;
-			
-			// aapt resource value: 0x7f0b00c3
-			public const int lblSubtotal = 2131427523;
-			
-			// aapt resource value: 0x7f0b008d
-			public const int lblTarifaInscripcion = 2131427469;
-			
-			// aapt resource value: 0x7f0b008c
-			public const int lblTarifaMensual = 2131427468;
-			
-			// aapt resource value: 0x7f0b013d
-			public const int lblTitle = 2131427645;
-			
-			// aapt resource value: 0x7f0b0096
-			public const int lblTotal = 2131427478;
+			// aapt resource value: 0x7f0b012c
+			public const int lblContacto = 2131427628;
 			
 			// aapt resource value: 0x7f0b012d
-			public const int lblTwitter = 2131427629;
+			public const int lblCorreo = 2131427629;
+			
+			// aapt resource value: 0x7f0b0165
+			public const int lblCreditosDisponibles = 2131427685;
+			
+			// aapt resource value: 0x7f0b0166
+			public const int lblCreditosUsados = 2131427686;
+			
+			// aapt resource value: 0x7f0b00bf
+			public const int lblDespliegue = 2131427519;
+			
+			// aapt resource value: 0x7f0b015a
+			public const int lblDia = 2131427674;
+			
+			// aapt resource value: 0x7f0b0162
+			public const int lblDiaFecha = 2131427682;
+			
+			// aapt resource value: 0x7f0b0163
+			public const int lblDiaNumero = 2131427683;
+			
+			// aapt resource value: 0x7f0b0159
+			public const int lblDiaSemana = 2131427673;
+			
+			// aapt resource value: 0x7f0b0127
+			public const int lblEmpresa = 2131427623;
+			
+			// aapt resource value: 0x7f0b0102
+			public const int lblEmpresaMenu = 2131427586;
+			
+			// aapt resource value: 0x7f0b012e
+			public const int lblFacebook = 2131427630;
+			
+			// aapt resource value: 0x7f0b0137
+			public const int lblFecha = 2131427639;
+			
+			// aapt resource value: 0x7f0b012b
+			public const int lblFechaNacimiento = 2131427627;
+			
+			// aapt resource value: 0x7f0b00ee
+			public const int lblHora = 2131427566;
+			
+			// aapt resource value: 0x7f0b0151
+			public const int lblHoraEntrada = 2131427665;
+			
+			// aapt resource value: 0x7f0b015b
+			public const int lblHorario = 2131427675;
+			
+			// aapt resource value: 0x7f0b0164
+			public const int lblHorasTotal = 2131427684;
+			
+			// aapt resource value: 0x7f0b012f
+			public const int lblInstagram = 2131427631;
+			
+			// aapt resource value: 0x7f0b00c7
+			public const int lblIva = 2131427527;
+			
+			// aapt resource value: 0x7f0b013a
+			public const int lblLikes = 2131427642;
+			
+			// aapt resource value: 0x7f0b00c1
+			public const int lblMesesAdelantados = 2131427521;
+			
+			// aapt resource value: 0x7f0b016c
+			public const int lblNivel = 2131427692;
+			
+			// aapt resource value: 0x7f0b00af
+			public const int lblNombre = 2131427503;
+			
+			// aapt resource value: 0x7f0b0101
+			public const int lblNombreMenu = 2131427585;
+			
+			// aapt resource value: 0x7f0b00c3
+			public const int lblPeriodo = 2131427523;
+			
+			// aapt resource value: 0x7f0b0138
+			public const int lblPost = 2131427640;
+			
+			// aapt resource value: 0x7f0b0089
+			public const int lblProducto = 2131427465;
+			
+			// aapt resource value: 0x7f0b012a
+			public const int lblProfesion = 2131427626;
+			
+			// aapt resource value: 0x7f0b00b0
+			public const int lblPuesto = 2131427504;
+			
+			// aapt resource value: 0x7f0b0158
+			public const int lblSalaJunta = 2131427672;
+			
+			// aapt resource value: 0x7f0b0141
+			public const int lblSubTitle = 2131427649;
+			
+			// aapt resource value: 0x7f0b00c5
+			public const int lblSubtotal = 2131427525;
+			
+			// aapt resource value: 0x7f0b008f
+			public const int lblTarifaInscripcion = 2131427471;
+			
+			// aapt resource value: 0x7f0b008e
+			public const int lblTarifaMensual = 2131427470;
+			
+			// aapt resource value: 0x7f0b0140
+			public const int lblTitle = 2131427648;
+			
+			// aapt resource value: 0x7f0b0098
+			public const int lblTotal = 2131427480;
+			
+			// aapt resource value: 0x7f0b0130
+			public const int lblTwitter = 2131427632;
 			
 			// aapt resource value: 0x7f0b0009
 			public const int line1 = 2131427337;
@@ -2427,119 +3753,119 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b000a
 			public const int line3 = 2131427338;
 			
-			// aapt resource value: 0x7f0b0067
-			public const int linearLayout1 = 2131427431;
+			// aapt resource value: 0x7f0b0068
+			public const int linearLayout1 = 2131427432;
 			
-			// aapt resource value: 0x7f0b0099
-			public const int linearLayout2 = 2131427481;
-			
-			// aapt resource value: 0x7f0b00f4
-			public const int linearLayout3 = 2131427572;
+			// aapt resource value: 0x7f0b009b
+			public const int linearLayout2 = 2131427483;
 			
 			// aapt resource value: 0x7f0b00f6
-			public const int linearLayout4 = 2131427574;
+			public const int linearLayout3 = 2131427574;
 			
-			// aapt resource value: 0x7f0b00da
-			public const int linearLayout5 = 2131427546;
+			// aapt resource value: 0x7f0b00f8
+			public const int linearLayout4 = 2131427576;
 			
-			// aapt resource value: 0x7f0b00f9
-			public const int linearLayout6 = 2131427577;
+			// aapt resource value: 0x7f0b00dc
+			public const int linearLayout5 = 2131427548;
+			
+			// aapt resource value: 0x7f0b00fb
+			public const int linearLayout6 = 2131427579;
 			
 			// aapt resource value: 0x7f0b000e
 			public const int listMode = 2131427342;
 			
-			// aapt resource value: 0x7f0b003b
-			public const int list_item = 2131427387;
+			// aapt resource value: 0x7f0b003c
+			public const int list_item = 2131427388;
 			
-			// aapt resource value: 0x7f0b0150
-			public const int llAcusaciones = 2131427664;
+			// aapt resource value: 0x7f0b0154
+			public const int llAcusaciones = 2131427668;
 			
-			// aapt resource value: 0x7f0b00c8
-			public const int llDirectorio = 2131427528;
+			// aapt resource value: 0x7f0b00ca
+			public const int llDirectorio = 2131427530;
 			
-			// aapt resource value: 0x7f0b0174
-			public const int llEstado = 2131427700;
+			// aapt resource value: 0x7f0b0179
+			public const int llEstado = 2131427705;
 			
-			// aapt resource value: 0x7f0b0173
-			public const int llLblEstado = 2131427699;
-			
-			// aapt resource value: 0x7f0b0176
-			public const int llLblMunicipio = 2131427702;
-			
-			// aapt resource value: 0x7f0b0170
-			public const int llLblPais = 2131427696;
-			
-			// aapt resource value: 0x7f0b0177
-			public const int llMunicipio = 2131427703;
-			
-			// aapt resource value: 0x7f0b0171
-			public const int llPais = 2131427697;
+			// aapt resource value: 0x7f0b0178
+			public const int llLblEstado = 2131427704;
 			
 			// aapt resource value: 0x7f0b017b
-			public const int llProfesion = 2131427707;
+			public const int llLblMunicipio = 2131427707;
 			
-			// aapt resource value: 0x7f0b0165
-			public const int llReservacion = 2131427685;
+			// aapt resource value: 0x7f0b0175
+			public const int llLblPais = 2131427701;
 			
-			// aapt resource value: 0x7f0b0159
-			public const int llSeleccionarFecha = 2131427673;
+			// aapt resource value: 0x7f0b017c
+			public const int llMunicipio = 2131427708;
 			
-			// aapt resource value: 0x7f0b015c
-			public const int llhHorario = 2131427676;
+			// aapt resource value: 0x7f0b0176
+			public const int llPais = 2131427702;
+			
+			// aapt resource value: 0x7f0b0180
+			public const int llProfesion = 2131427712;
+			
+			// aapt resource value: 0x7f0b0169
+			public const int llReservacion = 2131427689;
+			
+			// aapt resource value: 0x7f0b015d
+			public const int llSeleccionarFecha = 2131427677;
+			
+			// aapt resource value: 0x7f0b0160
+			public const int llhHorario = 2131427680;
+			
+			// aapt resource value: 0x7f0b00f3
+			public const int loadingImage = 2131427571;
 			
 			// aapt resource value: 0x7f0b00f1
-			public const int loadingImage = 2131427569;
+			public const int loadingProgressBar = 2131427569;
 			
-			// aapt resource value: 0x7f0b00ef
-			public const int loadingProgressBar = 2131427567;
+			// aapt resource value: 0x7f0b00f4
+			public const int loadingProgressWheel = 2131427572;
 			
-			// aapt resource value: 0x7f0b00f2
-			public const int loadingProgressWheel = 2131427570;
+			// aapt resource value: 0x7f0b0110
+			public const int media_actions = 2131427600;
 			
-			// aapt resource value: 0x7f0b010e
-			public const int media_actions = 2131427598;
+			// aapt resource value: 0x7f0b00ad
+			public const int menu = 2131427501;
 			
-			// aapt resource value: 0x7f0b00ab
-			public const int menu = 2131427499;
-			
-			// aapt resource value: 0x7f0b018e
-			public const int menu_acceso = 2131427726;
-			
-			// aapt resource value: 0x7f0b0184
-			public const int menu_add_element = 2131427716;
-			
-			// aapt resource value: 0x7f0b0185
-			public const int menu_add_person = 2131427717;
-			
-			// aapt resource value: 0x7f0b018d
-			public const int menu_cart = 2131427725;
-			
-			// aapt resource value: 0x7f0b0186
-			public const int menu_edit = 2131427718;
-			
-			// aapt resource value: 0x7f0b0101
-			public const int menu_layout = 2131427585;
-			
-			// aapt resource value: 0x7f0b0188
-			public const int menu_payment = 2131427720;
+			// aapt resource value: 0x7f0b0193
+			public const int menu_acceso = 2131427731;
 			
 			// aapt resource value: 0x7f0b0189
-			public const int menu_refresh = 2131427721;
+			public const int menu_add_element = 2131427721;
 			
 			// aapt resource value: 0x7f0b018a
-			public const int menu_save = 2131427722;
+			public const int menu_add_person = 2131427722;
 			
-			// aapt resource value: 0x7f0b00fd
-			public const int menu_scroll = 2131427581;
+			// aapt resource value: 0x7f0b0192
+			public const int menu_cart = 2131427730;
 			
 			// aapt resource value: 0x7f0b018b
-			public const int menu_search = 2131427723;
+			public const int menu_edit = 2131427723;
 			
-			// aapt resource value: 0x7f0b018c
-			public const int menu_send = 2131427724;
+			// aapt resource value: 0x7f0b0103
+			public const int menu_layout = 2131427587;
 			
-			// aapt resource value: 0x7f0b0182
-			public const int message = 2131427714;
+			// aapt resource value: 0x7f0b018d
+			public const int menu_payment = 2131427725;
+			
+			// aapt resource value: 0x7f0b018e
+			public const int menu_refresh = 2131427726;
+			
+			// aapt resource value: 0x7f0b018f
+			public const int menu_save = 2131427727;
+			
+			// aapt resource value: 0x7f0b00ff
+			public const int menu_scroll = 2131427583;
+			
+			// aapt resource value: 0x7f0b0190
+			public const int menu_search = 2131427728;
+			
+			// aapt resource value: 0x7f0b0191
+			public const int menu_send = 2131427729;
+			
+			// aapt resource value: 0x7f0b0187
+			public const int message = 2131427719;
 			
 			// aapt resource value: 0x7f0b0022
 			public const int middle = 2131427362;
@@ -2547,11 +3873,11 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b0018
 			public const int multiply = 2131427352;
 			
-			// aapt resource value: 0x7f0b0187
-			public const int nav_home = 2131427719;
+			// aapt resource value: 0x7f0b018c
+			public const int nav_home = 2131427724;
 			
-			// aapt resource value: 0x7f0b0107
-			public const int navheader_username = 2131427591;
+			// aapt resource value: 0x7f0b0109
+			public const int navheader_username = 2131427593;
 			
 			// aapt resource value: 0x7f0b002c
 			public const int never = 2131427372;
@@ -2562,23 +3888,23 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b000f
 			public const int normal = 2131427343;
 			
-			// aapt resource value: 0x7f0b0117
-			public const int notification_background = 2131427607;
+			// aapt resource value: 0x7f0b0119
+			public const int notification_background = 2131427609;
 			
-			// aapt resource value: 0x7f0b0111
-			public const int notification_main_column = 2131427601;
+			// aapt resource value: 0x7f0b0113
+			public const int notification_main_column = 2131427603;
 			
-			// aapt resource value: 0x7f0b0110
-			public const int notification_main_column_container = 2131427600;
+			// aapt resource value: 0x7f0b0112
+			public const int notification_main_column_container = 2131427602;
 			
-			// aapt resource value: 0x7f0b003f
-			public const int parentPanel = 2131427391;
+			// aapt resource value: 0x7f0b0040
+			public const int parentPanel = 2131427392;
 			
-			// aapt resource value: 0x7f0b00b0
-			public const int post_scroll = 2131427504;
+			// aapt resource value: 0x7f0b00b2
+			public const int post_scroll = 2131427506;
 			
-			// aapt resource value: 0x7f0b00b1
-			public const int post_table = 2131427505;
+			// aapt resource value: 0x7f0b00b3
+			public const int post_table = 2131427507;
 			
 			// aapt resource value: 0x7f0b0005
 			public const int progress_circular = 2131427333;
@@ -2586,80 +3912,83 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b0006
 			public const int progress_horizontal = 2131427334;
 			
-			// aapt resource value: 0x7f0b004f
-			public const int radio = 2131427407;
+			// aapt resource value: 0x7f0b0144
+			public const int psts_tab_title = 2131427652;
 			
-			// aapt resource value: 0x7f0b0069
-			public const int relativeLayout1 = 2131427433;
+			// aapt resource value: 0x7f0b0050
+			public const int radio = 2131427408;
 			
-			// aapt resource value: 0x7f0b0151
-			public const int rgAcusaciones = 2131427665;
+			// aapt resource value: 0x7f0b006a
+			public const int relativeLayout1 = 2131427434;
 			
-			// aapt resource value: 0x7f0b0116
-			public const int right_icon = 2131427606;
+			// aapt resource value: 0x7f0b0155
+			public const int rgAcusaciones = 2131427669;
 			
-			// aapt resource value: 0x7f0b0112
-			public const int right_side = 2131427602;
+			// aapt resource value: 0x7f0b0118
+			public const int right_icon = 2131427608;
 			
-			// aapt resource value: 0x7f0b0163
-			public const int rlAgendar = 2131427683;
+			// aapt resource value: 0x7f0b0114
+			public const int right_side = 2131427604;
 			
-			// aapt resource value: 0x7f0b00e8
-			public const int rlBottomToolbar = 2131427560;
+			// aapt resource value: 0x7f0b0167
+			public const int rlAgendar = 2131427687;
+			
+			// aapt resource value: 0x7f0b00ea
+			public const int rlBottomToolbar = 2131427562;
 			
 			// aapt resource value: 0x7f0b0019
 			public const int screen = 2131427353;
 			
-			// aapt resource value: 0x7f0b0045
-			public const int scrollIndicatorDown = 2131427397;
-			
-			// aapt resource value: 0x7f0b0041
-			public const int scrollIndicatorUp = 2131427393;
-			
-			// aapt resource value: 0x7f0b0098
-			public const int scrollLayout1 = 2131427480;
+			// aapt resource value: 0x7f0b0046
+			public const int scrollIndicatorDown = 2131427398;
 			
 			// aapt resource value: 0x7f0b0042
-			public const int scrollView = 2131427394;
+			public const int scrollIndicatorUp = 2131427394;
 			
-			// aapt resource value: 0x7f0b00fb
-			public const int scrollView1 = 2131427579;
+			// aapt resource value: 0x7f0b009a
+			public const int scrollLayout1 = 2131427482;
 			
-			// aapt resource value: 0x7f0b005a
-			public const int search_badge = 2131427418;
+			// aapt resource value: 0x7f0b0043
+			public const int scrollView = 2131427395;
 			
-			// aapt resource value: 0x7f0b0059
-			public const int search_bar = 2131427417;
+			// aapt resource value: 0x7f0b00fd
+			public const int scrollView1 = 2131427581;
 			
 			// aapt resource value: 0x7f0b005b
-			public const int search_button = 2131427419;
+			public const int search_badge = 2131427419;
 			
-			// aapt resource value: 0x7f0b0060
-			public const int search_close_btn = 2131427424;
+			// aapt resource value: 0x7f0b005a
+			public const int search_bar = 2131427418;
 			
 			// aapt resource value: 0x7f0b005c
-			public const int search_edit_frame = 2131427420;
+			public const int search_button = 2131427420;
 			
-			// aapt resource value: 0x7f0b0062
-			public const int search_go_btn = 2131427426;
+			// aapt resource value: 0x7f0b0061
+			public const int search_close_btn = 2131427425;
 			
 			// aapt resource value: 0x7f0b005d
-			public const int search_mag_icon = 2131427421;
-			
-			// aapt resource value: 0x7f0b005e
-			public const int search_plate = 2131427422;
-			
-			// aapt resource value: 0x7f0b005f
-			public const int search_src_text = 2131427423;
+			public const int search_edit_frame = 2131427421;
 			
 			// aapt resource value: 0x7f0b0063
-			public const int search_voice_btn = 2131427427;
+			public const int search_go_btn = 2131427427;
+			
+			// aapt resource value: 0x7f0b005e
+			public const int search_mag_icon = 2131427422;
+			
+			// aapt resource value: 0x7f0b005f
+			public const int search_plate = 2131427423;
+			
+			// aapt resource value: 0x7f0b0060
+			public const int search_src_text = 2131427424;
 			
 			// aapt resource value: 0x7f0b0064
-			public const int select_dialog_listview = 2131427428;
+			public const int search_voice_btn = 2131427428;
 			
-			// aapt resource value: 0x7f0b004e
-			public const int shortcut = 2131427406;
+			// aapt resource value: 0x7f0b0065
+			public const int select_dialog_listview = 2131427429;
+			
+			// aapt resource value: 0x7f0b004f
+			public const int shortcut = 2131427407;
 			
 			// aapt resource value: 0x7f0b0014
 			public const int showCustom = 2131427348;
@@ -2670,14 +3999,14 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b0016
 			public const int showTitle = 2131427350;
 			
-			// aapt resource value: 0x7f0b008e
-			public const int spSucursal = 2131427470;
+			// aapt resource value: 0x7f0b0090
+			public const int spSucursal = 2131427472;
 			
-			// aapt resource value: 0x7f0b00f3
-			public const int space1 = 2131427571;
+			// aapt resource value: 0x7f0b00f5
+			public const int space1 = 2131427573;
 			
-			// aapt resource value: 0x7f0b003e
-			public const int spacer = 2131427390;
+			// aapt resource value: 0x7f0b003f
+			public const int spacer = 2131427391;
 			
 			// aapt resource value: 0x7f0b0007
 			public const int split_action_bar = 2131427335;
@@ -2691,65 +4020,68 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b001c
 			public const int src_over = 2131427356;
 			
-			// aapt resource value: 0x7f0b010d
-			public const int status_bar_latest_event_content = 2131427597;
+			// aapt resource value: 0x7f0b010f
+			public const int status_bar_latest_event_content = 2131427599;
 			
-			// aapt resource value: 0x7f0b0050
-			public const int submenuarrow = 2131427408;
+			// aapt resource value: 0x7f0b0051
+			public const int submenuarrow = 2131427409;
 			
-			// aapt resource value: 0x7f0b0061
-			public const int submit_area = 2131427425;
+			// aapt resource value: 0x7f0b0062
+			public const int submit_area = 2131427426;
 			
-			// aapt resource value: 0x7f0b00c9
-			public const int svBuscar = 2131427529;
+			// aapt resource value: 0x7f0b00cb
+			public const int svBuscar = 2131427531;
 			
-			// aapt resource value: 0x7f0b00a8
-			public const int svComentarios = 2131427496;
+			// aapt resource value: 0x7f0b00aa
+			public const int svComentarios = 2131427498;
 			
-			// aapt resource value: 0x7f0b013f
-			public const int svCompras = 2131427647;
-			
-			// aapt resource value: 0x7f0b00a5
-			public const int svDirectorio = 2131427493;
-			
-			// aapt resource value: 0x7f0b00e7
-			public const int svFavoritos = 2131427559;
-			
-			// aapt resource value: 0x7f0b0133
-			public const int svPerfil = 2131427635;
-			
-			// aapt resource value: 0x7f0b016e
-			public const int svSearchUser = 2131427694;
-			
-			// aapt resource value: 0x7f0b0080
-			public const int swCondiciones = 2131427456;
+			// aapt resource value: 0x7f0b0142
+			public const int svCompras = 2131427650;
 			
 			// aapt resource value: 0x7f0b00a7
-			public const int swipe_container = 2131427495;
+			public const int svDirectorio = 2131427495;
 			
-			// aapt resource value: 0x7f0b0181
-			public const int tabHostProfile = 2131427713;
+			// aapt resource value: 0x7f0b00e9
+			public const int svFavoritos = 2131427561;
+			
+			// aapt resource value: 0x7f0b0136
+			public const int svPerfil = 2131427638;
+			
+			// aapt resource value: 0x7f0b0173
+			public const int svSearchUser = 2131427699;
+			
+			// aapt resource value: 0x7f0b0082
+			public const int swCondiciones = 2131427458;
+			
+			// aapt resource value: 0x7f0b00a9
+			public const int swipe_container = 2131427497;
+			
+			// aapt resource value: 0x7f0b0186
+			public const int tabHostProfile = 2131427718;
 			
 			// aapt resource value: 0x7f0b0010
 			public const int tabMode = 2131427344;
 			
-			// aapt resource value: 0x7f0b0073
-			public const int tableLayout4 = 2131427443;
+			// aapt resource value: 0x7f0b0075
+			public const int tableLayout4 = 2131427445;
+			
+			// aapt resource value: 0x7f0b0070
+			public const int tableRow1 = 2131427440;
+			
+			// aapt resource value: 0x7f0b0076
+			public const int tableRow2 = 2131427446;
+			
+			// aapt resource value: 0x7f0b0079
+			public const int tableRow3 = 2131427449;
+			
+			// aapt resource value: 0x7f0b007c
+			public const int tableRow4 = 2131427452;
+			
+			// aapt resource value: 0x7f0b007f
+			public const int tableRow5 = 2131427455;
 			
 			// aapt resource value: 0x7f0b006e
-			public const int tableRow1 = 2131427438;
-			
-			// aapt resource value: 0x7f0b0074
-			public const int tableRow2 = 2131427444;
-			
-			// aapt resource value: 0x7f0b0077
-			public const int tableRow3 = 2131427447;
-			
-			// aapt resource value: 0x7f0b007a
-			public const int tableRow4 = 2131427450;
-			
-			// aapt resource value: 0x7f0b007d
-			public const int tableRow5 = 2131427453;
+			public const int tabs = 2131427438;
 			
 			// aapt resource value: 0x7f0b000b
 			public const int text = 2131427339;
@@ -2757,365 +4089,365 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b000c
 			public const int text2 = 2131427340;
 			
+			// aapt resource value: 0x7f0b0045
+			public const int textSpacerNoButtons = 2131427397;
+			
 			// aapt resource value: 0x7f0b0044
-			public const int textSpacerNoButtons = 2131427396;
+			public const int textSpacerNoTitle = 2131427396;
 			
-			// aapt resource value: 0x7f0b0043
-			public const int textSpacerNoTitle = 2131427395;
-			
-			// aapt resource value: 0x7f0b0068
-			public const int textView1 = 2131427432;
-			
-			// aapt resource value: 0x7f0b0083
-			public const int textView10 = 2131427459;
-			
-			// aapt resource value: 0x7f0b0084
-			public const int textView11 = 2131427460;
-			
-			// aapt resource value: 0x7f0b011d
-			public const int textView12 = 2131427613;
+			// aapt resource value: 0x7f0b0069
+			public const int textView1 = 2131427433;
 			
 			// aapt resource value: 0x7f0b0085
-			public const int textView14 = 2131427461;
+			public const int textView10 = 2131427461;
+			
+			// aapt resource value: 0x7f0b0086
+			public const int textView11 = 2131427462;
 			
 			// aapt resource value: 0x7f0b011f
-			public const int textView17 = 2131427615;
+			public const int textView12 = 2131427615;
+			
+			// aapt resource value: 0x7f0b0087
+			public const int textView14 = 2131427463;
 			
 			// aapt resource value: 0x7f0b0121
-			public const int textView18 = 2131427617;
+			public const int textView17 = 2131427617;
 			
-			// aapt resource value: 0x7f0b008b
-			public const int textView2 = 2131427467;
+			// aapt resource value: 0x7f0b0123
+			public const int textView18 = 2131427619;
 			
-			// aapt resource value: 0x7f0b006f
-			public const int textView26 = 2131427439;
+			// aapt resource value: 0x7f0b008d
+			public const int textView2 = 2131427469;
 			
-			// aapt resource value: 0x7f0b0075
-			public const int textView36 = 2131427445;
+			// aapt resource value: 0x7f0b0071
+			public const int textView26 = 2131427441;
 			
-			// aapt resource value: 0x7f0b0078
-			public const int textView37 = 2131427448;
+			// aapt resource value: 0x7f0b0077
+			public const int textView36 = 2131427447;
 			
-			// aapt resource value: 0x7f0b007b
-			public const int textView38 = 2131427451;
+			// aapt resource value: 0x7f0b007a
+			public const int textView37 = 2131427450;
 			
-			// aapt resource value: 0x7f0b007e
-			public const int textView39 = 2131427454;
+			// aapt resource value: 0x7f0b007d
+			public const int textView38 = 2131427453;
 			
-			// aapt resource value: 0x7f0b0090
-			public const int textView4 = 2131427472;
+			// aapt resource value: 0x7f0b0080
+			public const int textView39 = 2131427456;
 			
-			// aapt resource value: 0x7f0b0094
-			public const int textView5 = 2131427476;
+			// aapt resource value: 0x7f0b0092
+			public const int textView4 = 2131427474;
 			
-			// aapt resource value: 0x7f0b0097
-			public const int textView6 = 2131427479;
+			// aapt resource value: 0x7f0b0096
+			public const int textView5 = 2131427478;
 			
-			// aapt resource value: 0x7f0b00f0
-			public const int textViewStatus = 2131427568;
+			// aapt resource value: 0x7f0b0099
+			public const int textView6 = 2131427481;
 			
-			// aapt resource value: 0x7f0b0113
-			public const int time = 2131427603;
+			// aapt resource value: 0x7f0b00f2
+			public const int textViewStatus = 2131427570;
+			
+			// aapt resource value: 0x7f0b0115
+			public const int time = 2131427605;
 			
 			// aapt resource value: 0x7f0b000d
 			public const int title = 2131427341;
 			
-			// aapt resource value: 0x7f0b004b
-			public const int titleDividerNoCustom = 2131427403;
+			// aapt resource value: 0x7f0b004c
+			public const int titleDividerNoCustom = 2131427404;
 			
-			// aapt resource value: 0x7f0b0049
-			public const int title_template = 2131427401;
+			// aapt resource value: 0x7f0b004a
+			public const int title_template = 2131427402;
 			
-			// aapt resource value: 0x7f0b0081
-			public const int tlCarrito = 2131427457;
+			// aapt resource value: 0x7f0b0083
+			public const int tlCarrito = 2131427459;
 			
-			// aapt resource value: 0x7f0b0072
-			public const int tlCupones = 2131427442;
+			// aapt resource value: 0x7f0b0074
+			public const int tlCupones = 2131427444;
 			
-			// aapt resource value: 0x7f0b00fc
-			public const int tlMembresias = 2131427580;
+			// aapt resource value: 0x7f0b00fe
+			public const int tlMembresias = 2131427582;
 			
-			// aapt resource value: 0x7f0b0140
-			public const int tlProductos = 2131427648;
+			// aapt resource value: 0x7f0b0143
+			public const int tlProductos = 2131427651;
 			
-			// aapt resource value: 0x7f0b0065
-			public const int toolbar = 2131427429;
+			// aapt resource value: 0x7f0b0066
+			public const int toolbar = 2131427430;
 			
 			// aapt resource value: 0x7f0b002f
 			public const int top = 2131427375;
 			
-			// aapt resource value: 0x7f0b0048
-			public const int topPanel = 2131427400;
+			// aapt resource value: 0x7f0b0049
+			public const int topPanel = 2131427401;
 			
-			// aapt resource value: 0x7f0b00ee
-			public const int tpHorario = 2131427566;
+			// aapt resource value: 0x7f0b00f0
+			public const int tpHorario = 2131427568;
 			
-			// aapt resource value: 0x7f0b0082
-			public const int trCarrito = 2131427458;
+			// aapt resource value: 0x7f0b0084
+			public const int trCarrito = 2131427460;
 			
-			// aapt resource value: 0x7f0b016b
-			public const int tvCapacidad = 2131427691;
+			// aapt resource value: 0x7f0b0170
+			public const int tvCapacidad = 2131427696;
 			
-			// aapt resource value: 0x7f0b0079
-			public const int tvDescuento = 2131427449;
+			// aapt resource value: 0x7f0b007b
+			public const int tvDescuento = 2131427451;
 			
-			// aapt resource value: 0x7f0b007c
-			public const int tvIVA = 2131427452;
+			// aapt resource value: 0x7f0b007e
+			public const int tvIVA = 2131427454;
 			
-			// aapt resource value: 0x7f0b016c
-			public const int tvNivel = 2131427692;
+			// aapt resource value: 0x7f0b0171
+			public const int tvNivel = 2131427697;
 			
-			// aapt resource value: 0x7f0b0076
-			public const int tvSubtotal = 2131427446;
+			// aapt resource value: 0x7f0b0078
+			public const int tvSubtotal = 2131427448;
 			
-			// aapt resource value: 0x7f0b007f
-			public const int tvTotal = 2131427455;
+			// aapt resource value: 0x7f0b0081
+			public const int tvTotal = 2131427457;
 			
-			// aapt resource value: 0x7f0b0122
-			public const int txtAnioTarjeta = 2131427618;
-			
-			// aapt resource value: 0x7f0b009c
-			public const int txtApellidos = 2131427484;
-			
-			// aapt resource value: 0x7f0b00de
-			public const int txtApellidosPerfil = 2131427550;
-			
-			// aapt resource value: 0x7f0b0149
-			public const int txtAsuntoInvitado = 2131427657;
-			
-			// aapt resource value: 0x7f0b014b
-			public const int txtCCInvitado = 2131427659;
-			
-			// aapt resource value: 0x7f0b011e
-			public const int txtCCV = 2131427614;
-			
-			// aapt resource value: 0x7f0b00ca
-			public const int txtCPEmpresa = 2131427530;
-			
-			// aapt resource value: 0x7f0b00ce
-			public const int txtCalleEmpresa = 2131427534;
-			
-			// aapt resource value: 0x7f0b00ba
-			public const int txtCalleFactura = 2131427514;
-			
-			// aapt resource value: 0x7f0b0088
-			public const int txtCantidad = 2131427464;
-			
-			// aapt resource value: 0x7f0b0091
-			public const int txtCantidadMeses = 2131427473;
-			
-			// aapt resource value: 0x7f0b00a4
-			public const int txtCelular = 2131427492;
-			
-			// aapt resource value: 0x7f0b00e6
-			public const int txtCelularPerfil = 2131427558;
-			
-			// aapt resource value: 0x7f0b00b6
-			public const int txtCodigoPostalFactura = 2131427510;
-			
-			// aapt resource value: 0x7f0b00cd
-			public const int txtColoniaEmpresa = 2131427533;
-			
-			// aapt resource value: 0x7f0b00b9
-			public const int txtColoniaFactura = 2131427513;
-			
-			// aapt resource value: 0x7f0b0102
-			public const int txtCompanyName = 2131427586;
-			
-			// aapt resource value: 0x7f0b00b3
-			public const int txtCorreoElectronicoFactura = 2131427507;
-			
-			// aapt resource value: 0x7f0b014a
-			public const int txtCorreoInvitado = 2131427658;
-			
-			// aapt resource value: 0x7f0b0070
-			public const int txtCupon = 2131427440;
-			
-			// aapt resource value: 0x7f0b0106
-			public const int txtDireccionEmpresa = 2131427590;
-			
-			// aapt resource value: 0x7f0b009d
-			public const int txtEmail = 2131427485;
-			
-			// aapt resource value: 0x7f0b0103
-			public const int txtEmailCompanyPerfil = 2131427587;
-			
-			// aapt resource value: 0x7f0b00d6
-			public const int txtEmailEmpresa = 2131427542;
-			
-			// aapt resource value: 0x7f0b00df
-			public const int txtEmailPerfil = 2131427551;
-			
-			// aapt resource value: 0x7f0b017c
-			public const int txtEmpresa = 2131427708;
-			
-			// aapt resource value: 0x7f0b0175
-			public const int txtEstado = 2131427701;
-			
-			// aapt resource value: 0x7f0b00cb
-			public const int txtEstadoEmpresa = 2131427531;
-			
-			// aapt resource value: 0x7f0b00b7
-			public const int txtEstadoFactura = 2131427511;
-			
-			// aapt resource value: 0x7f0b00d8
-			public const int txtFbEmpresa = 2131427544;
-			
-			// aapt resource value: 0x7f0b008f
-			public const int txtFechaInicio = 2131427471;
-			
-			// aapt resource value: 0x7f0b014c
-			public const int txtFechaInvitado = 2131427660;
-			
-			// aapt resource value: 0x7f0b009f
-			public const int txtFechaNacimiento = 2131427487;
-			
-			// aapt resource value: 0x7f0b00e1
-			public const int txtFechaNacimientoPerfil = 2131427553;
+			// aapt resource value: 0x7f0b0124
+			public const int txtAnioTarjeta = 2131427620;
 			
 			// aapt resource value: 0x7f0b009e
-			public const int txtGenero = 2131427486;
+			public const int txtApellidos = 2131427486;
 			
 			// aapt resource value: 0x7f0b00e0
-			public const int txtGeneroPerfil = 2131427552;
+			public const int txtApellidosPerfil = 2131427552;
 			
-			// aapt resource value: 0x7f0b0179
-			public const int txtGiroComercial = 2131427705;
-			
-			// aapt resource value: 0x7f0b00d4
-			public const int txtGiroComercialEmpresa = 2131427540;
-			
-			// aapt resource value: 0x7f0b0105
-			public const int txtGiroEmpresa = 2131427589;
-			
-			// aapt resource value: 0x7f0b00a2
-			public const int txtHabilidades = 2131427490;
-			
-			// aapt resource value: 0x7f0b00e4
-			public const int txtHabilidadesPerfil = 2131427556;
-			
-			// aapt resource value: 0x7f0b014e
-			public const int txtHoraEntradaInvitado = 2131427662;
+			// aapt resource value: 0x7f0b014d
+			public const int txtAsuntoInvitado = 2131427661;
 			
 			// aapt resource value: 0x7f0b014f
-			public const int txtHoraSalidaInvitado = 2131427663;
-			
-			// aapt resource value: 0x7f0b00db
-			public const int txtInstagramEmpresa = 2131427547;
-			
-			// aapt resource value: 0x7f0b00c6
-			public const int txtIva = 2131427526;
+			public const int txtCCInvitado = 2131427663;
 			
 			// aapt resource value: 0x7f0b0120
-			public const int txtMesTarjeta = 2131427616;
-			
-			// aapt resource value: 0x7f0b00c0
-			public const int txtMesesAdelantados = 2131427520;
-			
-			// aapt resource value: 0x7f0b0178
-			public const int txtMunicipio = 2131427704;
+			public const int txtCCV = 2131427616;
 			
 			// aapt resource value: 0x7f0b00cc
-			public const int txtMunicipioEmpresa = 2131427532;
-			
-			// aapt resource value: 0x7f0b00b8
-			public const int txtMunicipioFactura = 2131427512;
-			
-			// aapt resource value: 0x7f0b009b
-			public const int txtNombre = 2131427483;
-			
-			// aapt resource value: 0x7f0b00d3
-			public const int txtNombreEmpresa = 2131427539;
-			
-			// aapt resource value: 0x7f0b0148
-			public const int txtNombreInvitado = 2131427656;
-			
-			// aapt resource value: 0x7f0b00dd
-			public const int txtNombrePerfil = 2131427549;
-			
-			// aapt resource value: 0x7f0b011b
-			public const int txtNombreTarjeta = 2131427611;
-			
-			// aapt resource value: 0x7f0b00cf
-			public const int txtNumExteriorEmpresa = 2131427535;
-			
-			// aapt resource value: 0x7f0b00bb
-			public const int txtNumExteriorFactura = 2131427515;
+			public const int txtCPEmpresa = 2131427532;
 			
 			// aapt resource value: 0x7f0b00d0
-			public const int txtNumInteriorEmpresa = 2131427536;
+			public const int txtCalleEmpresa = 2131427536;
 			
 			// aapt resource value: 0x7f0b00bc
-			public const int txtNumInteriorFactura = 2131427516;
+			public const int txtCalleFactura = 2131427516;
 			
-			// aapt resource value: 0x7f0b011c
-			public const int txtNumeroTarjeta = 2131427612;
+			// aapt resource value: 0x7f0b008a
+			public const int txtCantidad = 2131427466;
 			
-			// aapt resource value: 0x7f0b00d7
-			public const int txtPaginaWebEmpresa = 2131427543;
+			// aapt resource value: 0x7f0b0093
+			public const int txtCantidadMeses = 2131427475;
 			
-			// aapt resource value: 0x7f0b0172
-			public const int txtPais = 2131427698;
+			// aapt resource value: 0x7f0b00a6
+			public const int txtCelular = 2131427494;
 			
-			// aapt resource value: 0x7f0b00f5
-			public const int txtPassword = 2131427573;
+			// aapt resource value: 0x7f0b00e8
+			public const int txtCelularPerfil = 2131427560;
 			
-			// aapt resource value: 0x7f0b00c2
-			public const int txtPeriodo = 2131427522;
+			// aapt resource value: 0x7f0b00b8
+			public const int txtCodigoPostalFactura = 2131427512;
 			
-			// aapt resource value: 0x7f0b00a0
-			public const int txtProfesion = 2131427488;
+			// aapt resource value: 0x7f0b00cf
+			public const int txtColoniaEmpresa = 2131427535;
 			
-			// aapt resource value: 0x7f0b00e2
-			public const int txtProfesionPerfil = 2131427554;
+			// aapt resource value: 0x7f0b00bb
+			public const int txtColoniaFactura = 2131427515;
 			
-			// aapt resource value: 0x7f0b0131
-			public const int txtProfileName = 2131427633;
-			
-			// aapt resource value: 0x7f0b0095
-			public const int txtProporcional = 2131427477;
-			
-			// aapt resource value: 0x7f0b0142
-			public const int txtPublicacion = 2131427650;
-			
-			// aapt resource value: 0x7f0b00a1
-			public const int txtPuesto = 2131427489;
-			
-			// aapt resource value: 0x7f0b00e3
-			public const int txtPuestoPerfil = 2131427555;
-			
-			// aapt resource value: 0x7f0b00d1
-			public const int txtRFCEmpresa = 2131427537;
+			// aapt resource value: 0x7f0b0104
+			public const int txtCompanyName = 2131427588;
 			
 			// aapt resource value: 0x7f0b00b5
-			public const int txtRFCFactura = 2131427509;
+			public const int txtCorreoElectronicoFactura = 2131427509;
 			
-			// aapt resource value: 0x7f0b00d2
-			public const int txtRazonSocialEmpresa = 2131427538;
+			// aapt resource value: 0x7f0b014e
+			public const int txtCorreoInvitado = 2131427662;
 			
-			// aapt resource value: 0x7f0b00b4
-			public const int txtRazonSocialFactura = 2131427508;
+			// aapt resource value: 0x7f0b0072
+			public const int txtCupon = 2131427442;
 			
-			// aapt resource value: 0x7f0b015a
-			public const int txtSeleccionarFecha = 2131427674;
+			// aapt resource value: 0x7f0b0108
+			public const int txtDireccionEmpresa = 2131427592;
 			
-			// aapt resource value: 0x7f0b00c4
-			public const int txtSubtotal = 2131427524;
+			// aapt resource value: 0x7f0b009f
+			public const int txtEmail = 2131427487;
 			
-			// aapt resource value: 0x7f0b00a3
-			public const int txtTelefono = 2131427491;
+			// aapt resource value: 0x7f0b0105
+			public const int txtEmailCompanyPerfil = 2131427589;
+			
+			// aapt resource value: 0x7f0b00d8
+			public const int txtEmailEmpresa = 2131427544;
+			
+			// aapt resource value: 0x7f0b00e1
+			public const int txtEmailPerfil = 2131427553;
+			
+			// aapt resource value: 0x7f0b0181
+			public const int txtEmpresa = 2131427713;
+			
+			// aapt resource value: 0x7f0b017a
+			public const int txtEstado = 2131427706;
+			
+			// aapt resource value: 0x7f0b00cd
+			public const int txtEstadoEmpresa = 2131427533;
+			
+			// aapt resource value: 0x7f0b00b9
+			public const int txtEstadoFactura = 2131427513;
+			
+			// aapt resource value: 0x7f0b00da
+			public const int txtFbEmpresa = 2131427546;
+			
+			// aapt resource value: 0x7f0b0091
+			public const int txtFechaInicio = 2131427473;
+			
+			// aapt resource value: 0x7f0b0150
+			public const int txtFechaInvitado = 2131427664;
+			
+			// aapt resource value: 0x7f0b00a1
+			public const int txtFechaNacimiento = 2131427489;
+			
+			// aapt resource value: 0x7f0b00e3
+			public const int txtFechaNacimientoPerfil = 2131427555;
+			
+			// aapt resource value: 0x7f0b00a0
+			public const int txtGenero = 2131427488;
+			
+			// aapt resource value: 0x7f0b00e2
+			public const int txtGeneroPerfil = 2131427554;
+			
+			// aapt resource value: 0x7f0b017e
+			public const int txtGiroComercial = 2131427710;
+			
+			// aapt resource value: 0x7f0b00d6
+			public const int txtGiroComercialEmpresa = 2131427542;
+			
+			// aapt resource value: 0x7f0b0107
+			public const int txtGiroEmpresa = 2131427591;
+			
+			// aapt resource value: 0x7f0b00a4
+			public const int txtHabilidades = 2131427492;
+			
+			// aapt resource value: 0x7f0b00e6
+			public const int txtHabilidadesPerfil = 2131427558;
+			
+			// aapt resource value: 0x7f0b0152
+			public const int txtHoraEntradaInvitado = 2131427666;
+			
+			// aapt resource value: 0x7f0b0153
+			public const int txtHoraSalidaInvitado = 2131427667;
+			
+			// aapt resource value: 0x7f0b00dd
+			public const int txtInstagramEmpresa = 2131427549;
+			
+			// aapt resource value: 0x7f0b00c8
+			public const int txtIva = 2131427528;
+			
+			// aapt resource value: 0x7f0b0122
+			public const int txtMesTarjeta = 2131427618;
+			
+			// aapt resource value: 0x7f0b00c2
+			public const int txtMesesAdelantados = 2131427522;
+			
+			// aapt resource value: 0x7f0b017d
+			public const int txtMunicipio = 2131427709;
+			
+			// aapt resource value: 0x7f0b00ce
+			public const int txtMunicipioEmpresa = 2131427534;
+			
+			// aapt resource value: 0x7f0b00ba
+			public const int txtMunicipioFactura = 2131427514;
+			
+			// aapt resource value: 0x7f0b009d
+			public const int txtNombre = 2131427485;
 			
 			// aapt resource value: 0x7f0b00d5
-			public const int txtTelefonoEmpresa = 2131427541;
+			public const int txtNombreEmpresa = 2131427541;
 			
-			// aapt resource value: 0x7f0b00e5
-			public const int txtTelefonoPerfil = 2131427557;
+			// aapt resource value: 0x7f0b014c
+			public const int txtNombreInvitado = 2131427660;
 			
-			// aapt resource value: 0x7f0b00c7
-			public const int txtTotal = 2131427527;
+			// aapt resource value: 0x7f0b00df
+			public const int txtNombrePerfil = 2131427551;
+			
+			// aapt resource value: 0x7f0b011d
+			public const int txtNombreTarjeta = 2131427613;
+			
+			// aapt resource value: 0x7f0b00d1
+			public const int txtNumExteriorEmpresa = 2131427537;
+			
+			// aapt resource value: 0x7f0b00bd
+			public const int txtNumExteriorFactura = 2131427517;
+			
+			// aapt resource value: 0x7f0b00d2
+			public const int txtNumInteriorEmpresa = 2131427538;
+			
+			// aapt resource value: 0x7f0b00be
+			public const int txtNumInteriorFactura = 2131427518;
+			
+			// aapt resource value: 0x7f0b011e
+			public const int txtNumeroTarjeta = 2131427614;
 			
 			// aapt resource value: 0x7f0b00d9
-			public const int txtTwitterEmpresa = 2131427545;
+			public const int txtPaginaWebEmpresa = 2131427545;
+			
+			// aapt resource value: 0x7f0b0177
+			public const int txtPais = 2131427703;
+			
+			// aapt resource value: 0x7f0b00f7
+			public const int txtPassword = 2131427575;
+			
+			// aapt resource value: 0x7f0b00c4
+			public const int txtPeriodo = 2131427524;
+			
+			// aapt resource value: 0x7f0b00a2
+			public const int txtProfesion = 2131427490;
+			
+			// aapt resource value: 0x7f0b00e4
+			public const int txtProfesionPerfil = 2131427556;
+			
+			// aapt resource value: 0x7f0b0134
+			public const int txtProfileName = 2131427636;
+			
+			// aapt resource value: 0x7f0b0097
+			public const int txtProporcional = 2131427479;
+			
+			// aapt resource value: 0x7f0b0146
+			public const int txtPublicacion = 2131427654;
+			
+			// aapt resource value: 0x7f0b00a3
+			public const int txtPuesto = 2131427491;
+			
+			// aapt resource value: 0x7f0b00e5
+			public const int txtPuestoPerfil = 2131427557;
+			
+			// aapt resource value: 0x7f0b00d3
+			public const int txtRFCEmpresa = 2131427539;
+			
+			// aapt resource value: 0x7f0b00b7
+			public const int txtRFCFactura = 2131427511;
+			
+			// aapt resource value: 0x7f0b00d4
+			public const int txtRazonSocialEmpresa = 2131427540;
+			
+			// aapt resource value: 0x7f0b00b6
+			public const int txtRazonSocialFactura = 2131427510;
+			
+			// aapt resource value: 0x7f0b015e
+			public const int txtSeleccionarFecha = 2131427678;
+			
+			// aapt resource value: 0x7f0b00c6
+			public const int txtSubtotal = 2131427526;
+			
+			// aapt resource value: 0x7f0b00a5
+			public const int txtTelefono = 2131427493;
+			
+			// aapt resource value: 0x7f0b00d7
+			public const int txtTelefonoEmpresa = 2131427543;
+			
+			// aapt resource value: 0x7f0b00e7
+			public const int txtTelefonoPerfil = 2131427559;
+			
+			// aapt resource value: 0x7f0b00c9
+			public const int txtTotal = 2131427529;
+			
+			// aapt resource value: 0x7f0b00db
+			public const int txtTwitterEmpresa = 2131427547;
 			
 			// aapt resource value: 0x7f0b001e
 			public const int uniform = 2131427358;
@@ -3126,11 +4458,14 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b0017
 			public const int useLogo = 2131427351;
 			
-			// aapt resource value: 0x7f0b006c
-			public const int vpDemo = 2131427436;
-			
 			// aapt resource value: 0x7f0b006d
-			public const int vpSucursal = 2131427437;
+			public const int vpDemo = 2131427437;
+			
+			// aapt resource value: 0x7f0b016e
+			public const int vpHistorial = 2131427694;
+			
+			// aapt resource value: 0x7f0b006f
+			public const int vpSucursal = 2131427439;
 			
 			// aapt resource value: 0x7f0b002d
 			public const int withText = 2131427373;
@@ -3138,8 +4473,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b001f
 			public const int wrap_content = 2131427359;
 			
-			// aapt resource value: 0x7f0b0066
-			public const int wvQRCode = 2131427430;
+			// aapt resource value: 0x7f0b0067
+			public const int wvQRCode = 2131427431;
 			
 			static Id()
 			{
@@ -3435,70 +4770,76 @@ namespace WorklabsMx.Droid
 			public const int ProductosLayout = 2130968659;
 			
 			// aapt resource value: 0x7f040054
-			public const int PublishLayout = 2130968660;
+			public const int psts_tab = 2130968660;
 			
 			// aapt resource value: 0x7f040055
-			public const int RegistroInvitadosLayout = 2130968661;
+			public const int PublishLayout = 2130968661;
 			
 			// aapt resource value: 0x7f040056
-			public const int ReportLayout = 2130968662;
+			public const int RegistroInvitadosLayout = 2130968662;
 			
 			// aapt resource value: 0x7f040057
-			public const int ReservacionElementoLayout = 2130968663;
+			public const int ReportLayout = 2130968663;
 			
 			// aapt resource value: 0x7f040058
-			public const int ReservaSalaJuntasLayout = 2130968664;
+			public const int ReservacionElementoLayout = 2130968664;
 			
 			// aapt resource value: 0x7f040059
-			public const int SalaJuntasHistorialLayout = 2130968665;
+			public const int ReservaSalaJuntasLayout = 2130968665;
 			
 			// aapt resource value: 0x7f04005a
-			public const int SalasJuntasConfirmacionLayout = 2130968666;
+			public const int SalaJuntasHistorialLayout = 2130968666;
 			
 			// aapt resource value: 0x7f04005b
-			public const int SalasJuntasLayout = 2130968667;
+			public const int SalasJuntasConfirmacionLayout = 2130968667;
 			
 			// aapt resource value: 0x7f04005c
-			public const int SalasJuntasSucursalesLayout = 2130968668;
+			public const int SalasJuntasHistorialesLayout = 2130968668;
 			
 			// aapt resource value: 0x7f04005d
-			public const int SearchCompanyLayout = 2130968669;
+			public const int SalasJuntasLayout = 2130968669;
 			
 			// aapt resource value: 0x7f04005e
-			public const int SearchUserLayout = 2130968670;
+			public const int SalasJuntasSucursalesLayout = 2130968670;
 			
 			// aapt resource value: 0x7f04005f
-			public const int select_dialog_item_material = 2130968671;
+			public const int SearchCompanyLayout = 2130968671;
 			
 			// aapt resource value: 0x7f040060
-			public const int select_dialog_multichoice_material = 2130968672;
+			public const int SearchUserLayout = 2130968672;
 			
 			// aapt resource value: 0x7f040061
-			public const int select_dialog_singlechoice_material = 2130968673;
+			public const int select_dialog_item_material = 2130968673;
 			
 			// aapt resource value: 0x7f040062
-			public const int SplashLayout = 2130968674;
+			public const int select_dialog_multichoice_material = 2130968674;
 			
 			// aapt resource value: 0x7f040063
-			public const int SubmenuLayout = 2130968675;
+			public const int select_dialog_singlechoice_material = 2130968675;
 			
 			// aapt resource value: 0x7f040064
-			public const int SubscriptionLayout = 2130968676;
+			public const int SplashLayout = 2130968676;
 			
 			// aapt resource value: 0x7f040065
-			public const int SucursalInfoLayout = 2130968677;
+			public const int SubmenuLayout = 2130968677;
 			
 			// aapt resource value: 0x7f040066
-			public const int support_simple_spinner_dropdown_item = 2130968678;
+			public const int SubscriptionLayout = 2130968678;
 			
 			// aapt resource value: 0x7f040067
-			public const int TabsLayout = 2130968679;
+			public const int SucursalInfoLayout = 2130968679;
 			
 			// aapt resource value: 0x7f040068
-			public const int ToolbarLayout = 2130968680;
+			public const int support_simple_spinner_dropdown_item = 2130968680;
 			
 			// aapt resource value: 0x7f040069
-			public const int tooltip = 2130968681;
+			public const int TabsLayout = 2130968681;
+			
+			// aapt resource value: 0x7f04006a
+			public const int ToolbarLayout = 2130968682;
+			
+			// aapt resource value: 0x7f04006b
+			public const int tooltip = 2130968683;
 			
 			static Layout()
 			{
@@ -3674,112 +5015,118 @@ namespace WorklabsMx.Droid
 			public const int ic_people_outline = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int ic_person = 2130903077;
+			public const int ic_perfil_background = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int ic_person_add = 2130903078;
+			public const int ic_person = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int ic_photo_camera = 2130903079;
+			public const int ic_person_add = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int ic_place = 2130903080;
+			public const int ic_photo_camera = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int ic_power_settings_new = 2130903081;
+			public const int ic_place = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int ic_profile = 2130903082;
+			public const int ic_power_settings_new = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int ic_profile_empty = 2130903083;
+			public const int ic_profile = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int ic_public = 2130903084;
+			public const int ic_profile_empty = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int ic_qrcode = 2130903085;
+			public const int ic_public = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int ic_receipt = 2130903086;
+			public const int ic_qrcode = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int ic_refresh = 2130903087;
+			public const int ic_receipt = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int ic_remove = 2130903088;
+			public const int ic_refresh = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public const int ic_save = 2130903089;
+			public const int ic_remove = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public const int ic_school = 2130903090;
+			public const int ic_sala_prueba = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int ic_search = 2130903091;
+			public const int ic_save = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int ic_send = 2130903092;
+			public const int ic_school = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int ic_share = 2130903093;
+			public const int ic_search = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int ic_shopping_cart = 2130903094;
+			public const int ic_send = 2130903094;
 			
 			// aapt resource value: 0x7f030037
-			public const int ic_square = 2130903095;
+			public const int ic_share = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public const int ic_star = 2130903096;
+			public const int ic_shopping_cart = 2130903096;
 			
 			// aapt resource value: 0x7f030039
-			public const int ic_star_border = 2130903097;
+			public const int ic_square = 2130903097;
 			
 			// aapt resource value: 0x7f03003a
-			public const int ic_star_like = 2130903098;
+			public const int ic_star = 2130903098;
 			
 			// aapt resource value: 0x7f03003b
-			public const int ic_store = 2130903099;
+			public const int ic_star_border = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int ic_thumb_up = 2130903100;
+			public const int ic_star_like = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int ic_today = 2130903101;
+			public const int ic_store = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int ic_twitter = 2130903102;
+			public const int ic_thumb_up = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int ic_ubicacion_background = 2130903103;
+			public const int ic_today = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int ic_view_list = 2130903104;
+			public const int ic_twitter = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int ic_work = 2130903105;
+			public const int ic_ubicacion_background = 2130903105;
 			
 			// aapt resource value: 0x7f030042
-			public const int ic_worklabs_title = 2130903106;
+			public const int ic_view_list = 2130903106;
 			
 			// aapt resource value: 0x7f030043
-			public const int Icon = 2130903107;
+			public const int ic_work = 2130903107;
 			
 			// aapt resource value: 0x7f030044
-			public const int Icon2 = 2130903108;
+			public const int ic_worklabs_title = 2130903108;
 			
 			// aapt resource value: 0x7f030045
-			public const int Icono = 2130903109;
+			public const int Icon = 2130903109;
 			
 			// aapt resource value: 0x7f030046
-			public const int suc_hidalgo_prueba = 2130903110;
+			public const int Icon2 = 2130903110;
 			
 			// aapt resource value: 0x7f030047
-			public const int suc_metropark_prueba = 2130903111;
+			public const int Icono = 2130903111;
 			
 			// aapt resource value: 0x7f030048
-			public const int worklabs_title = 2130903112;
+			public const int suc_hidalgo_prueba = 2130903112;
+			
+			// aapt resource value: 0x7f030049
+			public const int suc_metropark_prueba = 2130903113;
+			
+			// aapt resource value: 0x7f03004a
+			public const int worklabs_title = 2130903114;
 			
 			static Mipmap()
 			{
@@ -3925,6 +5272,9 @@ namespace WorklabsMx.Droid
 			
 			// aapt resource value: 0x7f060081
 			public const int Empresa = 2131099777;
+			
+			// aapt resource value: 0x7f0600b2
+			public const int EnviarMensaje = 2131099826;
 			
 			// aapt resource value: 0x7f060052
 			public const int ErrorAlGuardar = 2131099730;
@@ -4171,6 +5521,9 @@ namespace WorklabsMx.Droid
 			
 			// aapt resource value: 0x7f06008a
 			public const int ScanQR = 2131099786;
+			
+			// aapt resource value: 0x7f0600b3
+			public const int Seguir = 2131099827;
 			
 			// aapt resource value: 0x7f0600a9
 			public const int SeleccionarFecha = 2131099817;
@@ -6587,6 +7940,76 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 8
 			public const int MenuView_subMenuArrow = 8;
 			
+			public static int[] PagerSlidingTabStrip = new int[] {
+					2130772223,
+					2130772224,
+					2130772225,
+					2130772226,
+					2130772227,
+					2130772228,
+					2130772229,
+					2130772230,
+					2130772231,
+					2130772232,
+					2130772233,
+					2130772234,
+					2130772235,
+					2130772236,
+					2130772237,
+					2130772238,
+					2130772239};
+			
+			// aapt resource value: 2
+			public const int PagerSlidingTabStrip_pstsDividerColor = 2;
+			
+			// aapt resource value: 6
+			public const int PagerSlidingTabStrip_pstsDividerPadding = 6;
+			
+			// aapt resource value: 3
+			public const int PagerSlidingTabStrip_pstsDividerWidth = 3;
+			
+			// aapt resource value: 0
+			public const int PagerSlidingTabStrip_pstsIndicatorColor = 0;
+			
+			// aapt resource value: 4
+			public const int PagerSlidingTabStrip_pstsIndicatorHeight = 4;
+			
+			// aapt resource value: 12
+			public const int PagerSlidingTabStrip_pstsPaddingMiddle = 12;
+			
+			// aapt resource value: 8
+			public const int PagerSlidingTabStrip_pstsScrollOffset = 8;
+			
+			// aapt resource value: 10
+			public const int PagerSlidingTabStrip_pstsShouldExpand = 10;
+			
+			// aapt resource value: 9
+			public const int PagerSlidingTabStrip_pstsTabBackground = 9;
+			
+			// aapt resource value: 7
+			public const int PagerSlidingTabStrip_pstsTabPaddingLeftRight = 7;
+			
+			// aapt resource value: 11
+			public const int PagerSlidingTabStrip_pstsTextAllCaps = 11;
+			
+			// aapt resource value: 14
+			public const int PagerSlidingTabStrip_pstsTextAlpha = 14;
+			
+			// aapt resource value: 13
+			public const int PagerSlidingTabStrip_pstsTextColorSelected = 13;
+			
+			// aapt resource value: 16
+			public const int PagerSlidingTabStrip_pstsTextSelectedStyle = 16;
+			
+			// aapt resource value: 15
+			public const int PagerSlidingTabStrip_pstsTextStyle = 15;
+			
+			// aapt resource value: 1
+			public const int PagerSlidingTabStrip_pstsUnderlineColor = 1;
+			
+			// aapt resource value: 5
+			public const int PagerSlidingTabStrip_pstsUnderlineHeight = 5;
+			
 			public static int[] PopupWindow = new int[] {
 					16843126,
 					16843465,
@@ -6608,18 +8031,18 @@ namespace WorklabsMx.Droid
 			public const int PopupWindowBackgroundState_state_above_anchor = 0;
 			
 			public static int[] ProgressWheel = new int[] {
-					2130772223,
-					2130772224,
-					2130772225,
-					2130772226,
-					2130772227,
-					2130772228,
-					2130772229,
-					2130772230,
-					2130772231,
-					2130772232,
-					2130772233,
-					2130772234};
+					2130772240,
+					2130772241,
+					2130772242,
+					2130772243,
+					2130772244,
+					2130772245,
+					2130772246,
+					2130772247,
+					2130772248,
+					2130772249,
+					2130772250,
+					2130772251};
 			
 			// aapt resource value: 3
 			public const int ProgressWheel_ahBarColor = 3;

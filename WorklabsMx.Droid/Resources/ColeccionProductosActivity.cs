@@ -8,6 +8,7 @@ using Android.Support.V4.View;
 using Android.Views;
 using Android.Views.InputMethods;
 using Android.Widget;
+using com.refractored;
 using Java.Lang;
 using Newtonsoft.Json;
 using PerpetualEngine.Storage;
@@ -42,6 +43,9 @@ namespace WorklabsMx.Droid
 
             _viewPager = FindViewById<ViewPager>(Resource.Id.vpSucursal);
             _viewPager.Adapter = new ComprasAdapter(this, new List<string> { "Productos", "Membresias" }, ref Productos, ref Membresias);
+            PagerSlidingTabStrip tabs = FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
+            tabs.SetTextColorResource(Resource.Color.comment_pressed);
+            tabs.SetViewPager(_viewPager);
 
         }
 
