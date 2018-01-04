@@ -24,6 +24,8 @@ namespace WorklabsMx.iOS
         bool isShowInformation = false;
         bool existeConeccion = true;
 
+        UITableViewCell Header = new UITableViewCell();
+
         public ComunidadTableViewController (IntPtr handle) : base (handle)
         {
         }
@@ -34,6 +36,10 @@ namespace WorklabsMx.iOS
             this.FillData();
         }
 
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+        }
 
         private void FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "", bool disponibilidad = true, string pais = "", string estado = "", string municipio = "")
         {
@@ -43,6 +49,7 @@ namespace WorklabsMx.iOS
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
             var headerCell = (BuscadorTableViewCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
+            headerCell.UpdateCell();
             return headerCell;
         }
 
