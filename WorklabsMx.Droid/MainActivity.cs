@@ -58,7 +58,7 @@ namespace WorklabsMx.Droid
             base.OnPause();
         }
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override async void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             try
@@ -68,7 +68,7 @@ namespace WorklabsMx.Droid
                 localStorage = SimpleStorage.EditGroup("Login");
                 ListMenu = DashboardController.GetMenuAndroid(Convert.ToInt32(localStorage.Get("Usuario_Tipo")));
                 localStorage.Delete("Parent");
-                OpenDashboard();
+                await OpenDashboard();
             }
             catch (Exception e)
             {
@@ -80,7 +80,7 @@ namespace WorklabsMx.Droid
             }
         }
 
-        async void OpenDashboard()
+        async Task OpenDashboard()
         {
             SetContentView(Resource.Layout.DashboardLayout);
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
@@ -287,7 +287,7 @@ namespace WorklabsMx.Droid
                     if (!localStorage.HasKey("Parent"))
                     {
                         LinearLayout menu_scroll = FindViewById<LinearLayout>(Resource.Id.menu);
-                        //menu_scroll.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels * 3 / 4);
+                        menu_scroll.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels * 3 / 4);
                         if (menu_scroll.Visibility == ViewStates.Gone)
                         {
                             menu_scroll.LayoutParameters.Height = Window.Attributes.Height;
@@ -303,6 +303,7 @@ namespace WorklabsMx.Droid
                         localStorage.Delete("Parent");
                         FillMenu();
                     }
+
                     break;
             }
             return base.OnOptionsItemSelected(item);
@@ -360,7 +361,7 @@ namespace WorklabsMx.Droid
                 {
                     switch (menu.Controller)
                     {
-                        case "MainActivity": FindViewById<LinearLayout>(Resource.Id.menu).Visibility = ViewStates.Gone; break;
+                        //case "MainActivity": FindViewById<LinearLayout>(Resource.Id.menu).Visibility = ViewStates.Gone; break;
                         case "MyMembershipActivity": StartActivity(new Intent(this, typeof(MyMembershipActivity))); break;
                         case "SubMenuActivity":
                             localStorage.Put("Parent", menu.Menu_Id);

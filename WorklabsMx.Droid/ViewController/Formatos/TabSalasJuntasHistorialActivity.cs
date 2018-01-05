@@ -30,7 +30,9 @@ namespace WorklabsMx.Droid
             ActionBar.Title = Resources.GetString(Resource.String.SalasJuntas);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             ViewPager _viewPager = FindViewById<ViewPager>(Resource.Id.vpHistorial);
-            _viewPager.Adapter = new HistorialesAdapter(this, new List<string> { "Recientes", "Historico", "Canceladas" });
+            _viewPager.Adapter = new HistorialesAdapter(this, new List<string> { Resources.GetString(Resource.String.Recientes),
+                Resources.GetString(Resource.String.Historico),
+                Resources.GetString(Resource.String.Canceladas) });
 
             PagerSlidingTabStrip tabs = FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
             tabs.SetTextColorResource(Resource.Color.comment_pressed);
@@ -78,7 +80,8 @@ namespace WorklabsMx.Droid
             LayoutInflater liView = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
             SalasView = liView.Inflate(Resource.Layout.SalaJuntasHistorialLayout, null, true);
             var viewPager = container.JavaCast<ViewPager>();
-            historico = new SalasJuntasController().GetReservaciones(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), historiales[position] == "Recientes" ? 1 : historiales[position] == "Historico" ? 2 : 0);
+            historico = new SalasJuntasController().GetReservaciones(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), historiales[position] == context.Resources.GetString(Resource.String.Recientes) ? 1 :
+                                                                     historiales[position] == context.Resources.GetString(Resource.String.Historico) ? 2 : 0);
             if (historico.Count > 0)
             {
                 FillHistorial();

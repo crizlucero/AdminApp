@@ -2,8 +2,6 @@
 using Android.Content;
 using Android.OS;
 using Android.Support.V7.App;
-using Android.Widget;
-using AndroidHUD;
 using PerpetualEngine.Storage;
 
 namespace WorklabsMx.Droid

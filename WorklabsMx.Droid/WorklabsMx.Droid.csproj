@@ -143,7 +143,7 @@
     <Compile Include="Helpers\CalendarHelper.cs" />
     <Compile Include="Helpers\DatePickerFragment.cs" />
     <Compile Include="Helpers\TimePickerFragment.cs" />
-    <Compile Include="Resources\ColeccionProductosActivity.cs" />
+    <Compile Include="ViewController\Servicios\ColeccionProductosActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
