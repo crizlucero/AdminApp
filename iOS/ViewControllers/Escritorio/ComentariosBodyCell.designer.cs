@@ -62,10 +62,6 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnComentarPost_TouchUpInside (UIKit.UIButton sender);
 
-        [Action ("btnImagenComentatio_Touch:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnImagenComentatio_Touch (UIKit.UIButton sender);
-
         [Action ("btnImgPerfil_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnImgPerfil_Touch (UIKit.UIButton sender);

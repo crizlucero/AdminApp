@@ -34,6 +34,8 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             this.FillData();
+            var Tap = new UITapGestureRecognizer(this.Tapped);
+            this.View.AddGestureRecognizer(Tap);
         }
 
         public override void ViewWillAppear(bool animated)
@@ -50,7 +52,7 @@ namespace WorklabsMx.iOS
         {
             var headerCell = (BuscadorTableViewCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
             headerCell.UpdateCell();
-            return headerCell;
+            return headerCell.ContentView;
         }
 
         public override nfloat GetHeightForHeader(UITableView tableView, nint section)
@@ -95,6 +97,11 @@ namespace WorklabsMx.iOS
             {
                 BTProgressHUD.Dismiss();
             }
+        }
+
+        private void Tapped(UITapGestureRecognizer Recognizer)
+        {
+            this.View.EndEditing(true);
         }
 
     }

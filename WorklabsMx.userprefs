@@ -1,25 +1,15 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Comentarios/HeaderComentarTableView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.storyboard">
     <Files>
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="241" Column="22" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioHeaderCell.cs" Line="32" Column="10" />
-      <File FileName="iOS/ViewControllers/Comentarios/ComentarviewController.cs" Line="52" Column="28" />
-      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="30" Column="23" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="27" Column="9" />
-      <File FileName="iOS/EmpresasTableViewController.cs" Line="52" Column="37" />
-      <File FileName="iOS/FavoritosTableViewController.cs" Line="38" Column="9" />
-      <File FileName="iOS/ComunidadTableViewController.cs" Line="51" Column="42" />
-      <File FileName="iOS/FavoritosTableViewCell.cs" Line="1" Column="1" />
-      <File FileName="iOS/HeaderCarritoProductos.cs" Line="1" Column="1" />
-      <File FileName="iOS/ComunidadTableViewCell.cs" Line="35" Column="25" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="203" Column="1" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="181" Column="34" />
+      <File FileName="iOS/ComunidadTableViewController.cs" Line="91" Column="10" />
+      <File FileName="iOS/FavoritosTableViewController.cs" Line="37" Column="1" />
+      <File FileName="iOS/EmpresasTableViewController.cs" Line="24" Column="9" />
       <File FileName="iOS/Main.storyboard" />
-      <File FileName="iOS/BuscadorTableViewCell.cs" Line="15" Column="135" />
-      <File FileName="iOS/Main.cs" Line="9" Column="10" />
-      <File FileName="iOS/ViewControllers/Comentarios/BodyComentarTableView.cs" Line="1" Column="1" />
-      <File FileName="iOS/ViewControllers/Comentarios/comentarTableView.cs" Line="58" Column="47" />
-      <File FileName="iOS/ViewControllers/Comentarios/DetailCommentImage.cs" Line="1" Column="1" />
-      <File FileName="iOS/ViewControllers/Comentarios/HeaderComentarTableView.cs" Line="1" Column="1" />
+      <File FileName="iOS/HeaderFavoritosTableViewCell.cs" Line="17" Column="9" />
+      <File FileName="iOS/HeaderEmpresasCell.cs" Line="17" Column="9" />
+      <File FileName="iOS/BuscadorTableViewCell.cs" Line="17" Column="9" />
+      <File FileName="iOS/PerfilesTableViewController.cs" Line="15" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />

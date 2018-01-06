@@ -16,11 +16,11 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 
         public override void ViewDidLoad()
         {
-            base.ViewDidLoad();             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;   
+            base.ViewDidLoad();             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;             var Tap = new UITapGestureRecognizer(this.Tapped);             this.View.AddGestureRecognizer(Tap);  
 		}
 
         public override void ViewWillAppear(bool animated)
-        {             base.ViewWillAppear(animated);             var Tap = new UITapGestureRecognizer(this.Tapped);             this.View.AddGestureRecognizer(Tap);             ContadorComentar = 0;
+        {             base.ViewWillAppear(animated);             ContadorComentar = 0;
             this.CargarInfo();             this.TableView.ReloadData();             BTProgressHUD.Dismiss();
         }          public override void ViewDidAppear(bool animated)
         {
@@ -31,7 +31,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         }
          void MostrarImagenEnGrande(object sender, EventArgs e)         {             this.PerformSegue("toShowImageFromPost", (UIImageView)sender);         }          async void ComentarPost(object sender, EventArgs e)         {             CurrentPost = (PostModel)sender;             ContadorComentar = ContadorComentar + 1;             if(ContadorComentar <= 1)             {                 BTProgressHUD.Show(status: "Cargando Comentarios");                 await Task.Delay(2000);                 currentProfileImage = ImageGallery.LoadImage(CurrentPost.Usuario_Fotografia_Ruta);                 currentPostImage = ImageGallery.LoadImage(CurrentPost.Publicacion_Imagen_Ruta);                 this.PerformSegue("comentar", null);             }          }           void InfoUserPost(object sender, EventArgs e)         {             ListUser = (List<string>)sender;             this.PerformSegue("DetallarPerfil", null);         }          public override UIView GetViewForHeader(UITableView tableView, nint section)
         {             var headerCell = (EscritorioHeaderCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);             headerCell.UpdateCell(miembro);             this.ImagenPerfil = headerCell.getImagenPerfil();             StyleHelper.Style(headerCell.Layer);
-            return headerCell;
+            return headerCell.ContentView;
         }
 
         public override nfloat GetHeightForHeader(UITableView tableView, nint section)
@@ -69,7 +69,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         {
             if(segue.Identifier == "toShowPostView")             {                 var postCommentView = (PublicarPostViewController)segue.DestinationViewController;                 postCommentView.PostPublicadoDelegate = this;                 postCommentView.setInfoPublicacion(miembro);             }              else if(segue.Identifier == "comentar")             {
 				var CommentView = (comentarTableView)segue.DestinationViewController;
-                CommentView.currentPost = CurrentPost;                 CommentView.currentPostImage = currentPostImage;                 CommentView.currentProfileImage = currentProfileImage;             }             else if(segue.Identifier == "toShowImageFromPost")             {                 var ImageView = (DetailCommentImage)segue.DestinationViewController;                 ImageView.ImagenPost = (UIImageView)sender;             }              else if(segue.Identifier == "DetallarPerfil")             {                 var PerfilView = (InfoPerfilViewController)segue.DestinationViewController;                 PerfilView.ListUser = ListUser;             }
+                CommentView.currentPost = CurrentPost;                 CommentView.currentPostImage = currentPostImage;                 CommentView.currentProfileImage = currentProfileImage;             }             else if(segue.Identifier == "toShowImageFromPost")             {                 var ImageView = (DetailCommentImage)segue.DestinationViewController;                 ImageView.ImagenPost = (UIImageView)sender;             }              else if(segue.Identifier == "DetallarPerfil")             {                 //var PerfilView = (InfoPerfilViewController)segue.DestinationViewController;                 //PerfilView.ListUser = ListUser;             }
         }          private void WillDisplay(int Row)         {             int LastRow = allPosts.Count - 1;             if ((Row == LastRow))             {                 BTProgressHUD.Dismiss();
             }         }          private void CargarInfo()         {             try             {                 if (InternetConectionHelper.VerificarConexion())                 {                     allPosts = new Controllers.EscritorioController().GetMuroPosts(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));                      if (allPosts.Count == 0)                     {
                         isShowInformation = false;                         existeConeccion = false;                         this.btnScanQr.Title = "";                         this.btnScanQr.Enabled = false;

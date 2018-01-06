@@ -33,6 +33,8 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             this.FillData();
+            var Tap = new UITapGestureRecognizer(this.Tapped);
+            this.View.AddGestureRecognizer(Tap);
         }
 
         private void FillData(string nombre = "", string giro = "", string pais = "", string estado = "", string municipio = "")
@@ -50,7 +52,7 @@ namespace WorklabsMx.iOS
         {
             var headerCell = (HeaderEmpresasCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
             headerCell.UpdateCell();
-            return headerCell;
+            return headerCell.ContentView;
         }
 
         public override nfloat GetHeightForHeader(UITableView tableView, nint section)
@@ -96,6 +98,11 @@ namespace WorklabsMx.iOS
             {
                 BTProgressHUD.Dismiss();
             }
+        }
+
+        private void Tapped(UITapGestureRecognizer Recognizer)
+        {
+            this.View.EndEditing(true);
         }
 
     }

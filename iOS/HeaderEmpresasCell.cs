@@ -12,15 +12,8 @@ namespace WorklabsMx.iOS
 
         public void UpdateCell()
         {
-            this.txtBuscarEmpresa.AttributedPlaceholder = new NSAttributedString("Busca un contacto", null, UIColor.Clear.FromHex(0x8E8E93));
+            //this.txtBuscarEmpresa.AttributedPlaceholder = new NSAttributedString("Busca un contacto", null, UIColor.Clear.FromHex(0x8E8E93));
         }
 
-        partial void txtEmpresaBuscador_Touch(UITextField sender)
-        {
-        }
-
-        partial void txtBuscarEmpresa_Chang(UITextField sender)
-        {
-        }
     }
 }

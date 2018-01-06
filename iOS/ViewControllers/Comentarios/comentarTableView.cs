@@ -11,11 +11,6 @@ using System.Threading.Tasks;
 namespace WorklabsMx.iOS
 {
 
-    /*public interface BackWindow
-    {
-        void BackWindow();
-    }*/
-
     public partial class comentarTableView : UITableViewController
     {
 

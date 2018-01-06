@@ -382,10 +382,6 @@
     <ImageAsset Include="Assets.xcassets\delete-image.imageset\dele-image.png" />
     <ImageAsset Include="Assets.xcassets\delete-image.imageset\dele-image%402x.png" />
     <ImageAsset Include="Assets.xcassets\delete-image.imageset\dele-image%403x.png" />
-    <ImageAsset Include="Assets.xcassets\close.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\close.imageset\close.png" />
-    <ImageAsset Include="Assets.xcassets\close.imageset\close%402x.png" />
-    <ImageAsset Include="Assets.xcassets\close.imageset\close%403x.png" />
     <ImageAsset Include="Assets.xcassets\Product.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Product.imageset\product.png" />
     <ImageAsset Include="Assets.xcassets\Product.imageset\product%402x.png" />
@@ -651,6 +647,22 @@
     <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\worklabsLogo.png" />
     <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\worklabsLogo%402x.png" />
     <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\worklabsLogo%403x.png" />
+    <ImageAsset Include="Assets.xcassets\perfilbackimage.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\perfilbackimage.imageset\perfilbackimage.png" />
+    <ImageAsset Include="Assets.xcassets\perfilbackimage.imageset\perfilbackimage%402x.png" />
+    <ImageAsset Include="Assets.xcassets\perfilbackimage.imageset\perfilbackimage%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ImageExample.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ImageExample.imageset\imageExmaple.png" />
+    <ImageAsset Include="Assets.xcassets\ImageExample.imageset\imageExmaple%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ImageExample.imageset\imageExmaple%403x.png" />
+    <ImageAsset Include="Assets.xcassets\CerrarBlanco.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Desglosar.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Desglosar.imageset\desglose.png" />
+    <ImageAsset Include="Assets.xcassets\Desglosar.imageset\desglose%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Desglosar.imageset\desglose%403x.png" />
+    <ImageAsset Include="Assets.xcassets\CerrarBlanco.imageset\icons8-delete-30.png" />
+    <ImageAsset Include="Assets.xcassets\CerrarBlanco.imageset\icons8-delete-60.png" />
+    <ImageAsset Include="Assets.xcassets\CerrarBlanco.imageset\icons8-delete-90.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1072,6 +1084,10 @@
     <Compile Include="NoInfoEmpresas.designer.cs">
       <DependentUpon>NoInfoEmpresas.cs</DependentUpon>
     </Compile>
+    <Compile Include="PerfilesTableViewController.cs" />
+    <Compile Include="PerfilesTableViewController.designer.cs">
+      <DependentUpon>PerfilesTableViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -1202,6 +1218,10 @@
     <Folder Include="Assets.xcassets\GrupoFavoritos.imageset\" />
     <Folder Include="Assets.xcassets\FavoritoUsuario.imageset\" />
     <Folder Include="Assets.xcassets\Empresas.imageset\" />
+    <Folder Include="Assets.xcassets\perfilbackimage.imageset\" />
+    <Folder Include="Assets.xcassets\ImageExample.imageset\" />
+    <Folder Include="Assets.xcassets\CerrarBlanco.imageset\" />
+    <Folder Include="Assets.xcassets\Desglosar.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

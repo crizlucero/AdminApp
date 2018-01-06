@@ -2,13 +2,8 @@ using System;
 using UIKit;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Models;
-using System.Collections.Generic;
-using WorklabsMx.Controllers;
-using BigTed;
-using WorklabsMx.Helpers;
 using CoreGraphics;
 using WorklabsMx.Enum;
-
 
 namespace WorklabsMx.iOS
 {

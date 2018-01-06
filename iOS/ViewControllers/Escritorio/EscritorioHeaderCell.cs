@@ -14,11 +14,11 @@ namespace WorklabsMx.iOS
 	{
 		public EscritorioHeaderCell (IntPtr handle) : base (handle)
 		{
+
 		}
 
         internal void UpdateCell(List<string> miembro)
         {
-            this.txtBuscar.AttributedPlaceholder = new NSAttributedString("Explora la comunidad", null, UIColor.Clear.FromHex(0x8E8E93));
             if (miembro != null)
             {
                 if (miembro.Count > 0)
@@ -41,15 +41,6 @@ namespace WorklabsMx.iOS
             
         }
 
-        partial void txtBuscar_Touch(UITextField sender)
-        {
-            
-        }
-
-        partial void txtBuscar_Change(UITextField sender)
-        {
-           
-        }
     }
 
 

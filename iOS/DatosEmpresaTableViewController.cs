@@ -41,7 +41,6 @@ namespace WorklabsMx.iOS
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
             items = new PickerItemsController();
-            //StoregeLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
             StyleHelper.Style(this.imgPerfil.Layer);
             StyleHelper.Style(this.btnEditarDireccion.Layer);
             StyleHelper.Style(this.btnActualizarEmpresa.Layer);
