@@ -22,7 +22,8 @@
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp" />
+            android:layout_marginRight="30dp"
+            android:tint="#000" />
     </RelativeLayout>
     <LinearLayout
         android:orientation="vertical"
@@ -43,13 +44,15 @@
             android:layout_height="match_parent"
             android:id="@+id/txtEmail"
             android:hint="@string/CorreoElectronico"
-            android:background="#82FFFFFF"
+            android:background="#82000000"
             android:layout_gravity="center"
             android:paddingLeft="10dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="20dp"
+            android:textColor="#FFF"
+            android:textColorHint="#DDD" />
     <!--</android.support.design.widget.TextInputLayout>-->
     </LinearLayout>
     <Space
@@ -75,13 +78,15 @@
             android:id="@+id/txtPassword"
             android:hint="@string/Password"
             android:maxLength="8"
-            android:background="#82FFFFFF"
+            android:background="#82000000"
             android:layout_gravity="center"
             android:paddingLeft="10dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="20dp"
+            android:textColor="#FFF"
+            android:textColorHint="#DDD" />
     <!--</android.support.design.widget.TextInputLayout>-->
     </LinearLayout>
     <LinearLayout
@@ -99,7 +104,8 @@
             android:layout_marginRight="100dp"
             android:layout_marginLeft="100dp"
             android:background="#82000000"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:textAllCaps="false" />
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
@@ -113,10 +119,11 @@
             android:layout_height="wrap_content"
             android:id="@+id/btnForget"
             android:text="@string/Recovery"
-            android:textColor="#3957D9"
+            android:textColor="#009CFF"
             android:background="#00000000"
             android:layout_marginLeft="60dp"
-            android:layout_marginRight="60dp" />
+            android:layout_marginRight="60dp"
+            android:textAllCaps="false" />
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
@@ -130,9 +137,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/btnRegister"
             android:text="@string/Register"
-            android:textColor="#000"
+            android:textColor="#FFF"
             android:layout_marginLeft="100dp"
             android:layout_marginRight="100dp"
-            android:background="#ffF2F2F2" />
+            android:background="#ff95D6FF"
+            android:textAllCaps="false" />
     </LinearLayout>
 </LinearLayout>

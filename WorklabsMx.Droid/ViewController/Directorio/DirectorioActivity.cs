@@ -11,6 +11,7 @@ using Android.Support.V4.App;
 using Android.Support.V4.View;
 using Android.Views;
 using Android.Widget;
+using com.refractored;
 using Java.Lang;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
@@ -37,6 +38,10 @@ namespace WorklabsMx.Droid
             SimpleStorage storage = SimpleStorage.EditGroup("Login");
             List<MiembroModel> favoritos = new MiembrosController().GetMiembrosFavoritos(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"));
             _viewPager.Adapter = new DirectorioAdapter(this, new List<string> { "Miembros", "Empresas", "Favoritos" }, miembros, empresas, favoritos);
+
+            PagerSlidingTabStrip tabs = FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
+            tabs.SetTextColorResource(Resource.Color.comment_pressed);
+            tabs.SetViewPager(_viewPager);
             SearchView busqueda = FindViewById<SearchView>(Resource.Id.svBuscar);
             busqueda.SetQueryHint("Buscar...");
             busqueda.QueryTextChange += (sender, e) =>
@@ -60,12 +65,12 @@ namespace WorklabsMx.Droid
 
     public class DirectorioAdapter : PagerAdapter
     {
-        Context context;
+        readonly Context context;
         List<string> directorios;
         ScrollView svMiembros, svEmpresas;
         SimpleStorage storage;
-        List<MiembroModel> miembros, favoritos;
-        List<EmpresaModel> empresas;
+        readonly List<MiembroModel> miembros, favoritos;
+        readonly List<EmpresaModel> empresas;
         Android.Support.V7.App.AlertDialog dialog;
         public DirectorioAdapter(Context context, List<string> directorios, List<MiembroModel> miembros, List<EmpresaModel> empresas, List<MiembroModel> favoritos)
         {

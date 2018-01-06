@@ -1,84 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-<!--<LinearLayout
-        android:id="@+id/back"
-        android:tag="back">
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/ib_cancel_reservacion"
-            android:src="@mipmap/ic_delete" />
-    </LinearLayout>-->
-    <GridLayout
+    android:layout_height="100dp"
+    android:id="@+id/glReservacion"
+    android:tag="front"
+    android:columnCount="2"
+    android:rowCount="4"
+    android:layout_marginTop="5dp">
+    <ImageView
+        android:id="@+id/ivSala"
         android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:layout_rowSpan="4"
+        android:src="@mipmap/ic_sala_prueba"
+        android:layout_columnSpan="2"
+        android:scaleType="fitXY" />
+    <TextView
+        android:text="Sala In To The Wild"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/glReservacion"
-        android:tag="front"
-        android:columnCount="2"
-        android:rowCount="4"
-        android:layout_marginTop="5dp">
-        <ImageView
-            android:id="@+id/ivSala"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_column="0"
-            android:layout_row="0"
-            android:layout_rowSpan="4"
-            android:background="@mipmap/ic_ubicacion_background"
-            android:layout_columnSpan="2" />
-        <TextView
-            android:text="Sala In To The Wild"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblSalaJunta"
-            android:layout_column="0"
-            android:layout_row="0"
-            android:textColor="@android:color/white"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:textSize="12dp" />
-        <TextView
-            android:text="LUN"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblDiaSemana"
-            android:layout_column="0"
-            android:layout_row="1"
-            android:textColor="@android:color/white"
-            android:layout_gravity="center"
-            android:textSize="14dp"
-            android:textStyle="bold" />
-        <TextView
-            android:text="11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblDia"
-            android:layout_column="0"
-            android:layout_row="2"
-            android:textColor="@android:color/white"
-            android:layout_gravity="center"
-            android:textSize="13dp" />
-        <TextView
-            android:text="11:00 - 12:00"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblHorario"
-            android:layout_column="0"
-            android:layout_row="3"
-            android:textColor="@android:color/white"
-            android:layout_gravity="top|center"
-            android:textSize="10dp" />
-        <ImageView
-            android:id="@+id/ivSwipe"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_column="1"
-            android:layout_row="0"
-            android:layout_rowSpan="4"
-            android:layout_gravity="center_vertical|right"
-            android:src="@mipmap/ic_clear" />
-    </GridLayout>
-</LinearLayout>
+        android:id="@+id/lblSalaJunta"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="12dp" />
+    <TextView
+        android:text="LUN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblDiaSemana"
+        android:layout_column="0"
+        android:layout_row="1"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+    <TextView
+        android:text="11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblDia"
+        android:layout_column="0"
+        android:layout_row="2"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center"
+        android:textSize="13dp" />
+    <TextView
+        android:text="11:00 - 12:00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblHorario"
+        android:layout_column="0"
+        android:layout_row="3"
+        android:textColor="@android:color/white"
+        android:layout_gravity="top|center"
+        android:textSize="10dp" />
+    <ImageView
+        android:id="@+id/ivSwipe"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_column="1"
+        android:layout_row="0"
+        android:layout_rowSpan="4"
+        android:layout_gravity="center_vertical|right"
+        android:src="@mipmap/ic_clear"
+        android:layout_marginRight="10dp"
+        android:tint="#FFF" />
+</GridLayout>

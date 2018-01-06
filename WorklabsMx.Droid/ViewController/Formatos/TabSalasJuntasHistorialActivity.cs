@@ -1,51 +1,42 @@
-﻿using Android.App;
+﻿using System;
+using System.Collections.Generic;
+using Android.App;
 using Android.Content;
-using Android.Graphics.Drawables;
 using Android.OS;
+using Android.Runtime;
+using Android.Support.V4.App;
+using Android.Support.V4.View;
 using Android.Views;
 using Android.Widget;
-using WorklabsMx.Enum;
+using com.refractored;
+using Java.Lang;
+using PerpetualEngine.Storage;
+using WorklabsMx.Controllers;
+using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
     [Activity(Label = "@string/app_name")]
-    public class TabSalasJuntasHistorialActivity : ActivityGroup
+    public class TabSalasJuntasHistorialActivity : FragmentActivity
     {
-        static TabHost _tabs;
-
-        public static void CreateNewTab(Intent intent, string tabId, string tabName, Drawable Image, bool IsCurrent)
-        {
-            TabHost.TabSpec spec = _tabs.NewTabSpec(tabId);
-            spec.SetIndicator(tabName, (Image));
-            spec.SetContent(intent);
-
-            _tabs.AddTab(spec);
-            if (IsCurrent)
-                _tabs.SetCurrentTabByTag(tabId);
-        }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            SetContentView(Resource.Layout.TabsLayout);
+            SetContentView(Resource.Layout.SalasJuntasHistorialesLayout);
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.SalasJuntas);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+            ViewPager _viewPager = FindViewById<ViewPager>(Resource.Id.vpHistorial);
+            _viewPager.Adapter = new HistorialesAdapter(this, new List<string> { Resources.GetString(Resource.String.Recientes),
+                Resources.GetString(Resource.String.Historico),
+                Resources.GetString(Resource.String.Canceladas) });
 
-            _tabs = FindViewById<TabHost>(Resource.Id.tabHostProfile);
-            _tabs.Setup(LocalActivityManager);
-            Intent recientes = new Intent(this, typeof(SalasJuntasHistorialActivity));
-            recientes.PutExtra("reservacion_estatus", (int)TiposReservacion.Activo);
-            CreateNewTab(recientes, "tab1", Resources.GetString(Resource.String.Recientes), null, true);
-            Intent historico = new Intent(this, typeof(SalasJuntasHistorialActivity));
-            recientes.PutExtra("reservacion_estatus", (int)TiposReservacion.Terminada);
-            CreateNewTab(historico, "tab2", Resources.GetString(Resource.String.Historico), null, false);
-            Intent cancelado = new Intent(this, typeof(SalasJuntasHistorialActivity));
-            recientes.PutExtra("reservacion_estatus", (int)TiposReservacion.Cancelada);
-            CreateNewTab(cancelado, "tab2", Resources.GetString(Resource.String.Canceladas), null, false);
+            PagerSlidingTabStrip tabs = FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
+            tabs.SetTextColorResource(Resource.Color.comment_pressed);
+            tabs.SetViewPager(_viewPager);
 
         }
 
@@ -68,6 +59,71 @@ namespace WorklabsMx.Droid
                     break;
             }
             return base.OnOptionsItemSelected(item);
+        }
+    }
+    class HistorialesAdapter : PagerAdapter
+    {
+        Context context;
+        List<string> historiales;
+        SimpleStorage storage;
+        View SalasView;
+        List<SalaJuntasReservacionModel> historico;
+        public HistorialesAdapter(Context context, List<string> historiales)
+        {
+            this.context = context;
+            this.historiales = historiales;
+            storage = SimpleStorage.EditGroup("Login");
+        }
+
+        public override Java.Lang.Object InstantiateItem(View container, int position)
+        {
+            LayoutInflater liView = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
+            SalasView = liView.Inflate(Resource.Layout.SalaJuntasHistorialLayout, null, true);
+            var viewPager = container.JavaCast<ViewPager>();
+            historico = new SalasJuntasController().GetReservaciones(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), historiales[position] == context.Resources.GetString(Resource.String.Recientes) ? 1 :
+                                                                     historiales[position] == context.Resources.GetString(Resource.String.Historico) ? 2 : 0);
+            if (historico.Count > 0)
+            {
+                FillHistorial();
+                SalasView.FindViewById<TextView>(Resource.Id.lblSalaJunta).Text = historico[0].Sala_Descripcion;
+                SalasView.FindViewById<TextView>(Resource.Id.lblDiaSemana).Text = DateTime.Parse(historico[0].Sala_Fecha).Day.ToString();
+                SalasView.FindViewById<TextView>(Resource.Id.lblDia).Text = DateTime.Parse(historico[0].Sala_Fecha).DayOfWeek.ToString();
+                SalasView.FindViewById<TextView>(Resource.Id.lblHorario).Text = historico[0].Sala_Hora_Inicio.Substring(0, 5) + " - " + historico[0].Sala_Hora_Fin.Substring(0, 5);
+            }
+            else
+            {
+                SalasView.FindViewById<TextView>(Resource.Id.lblDiaSemana).Text = "Sin Reservaciones";
+                SalasView.FindViewById<TextView>(Resource.Id.lblSalaJunta).Text = "";
+                SalasView.FindViewById<TextView>(Resource.Id.lblDia).Text = "";
+                SalasView.FindViewById<TextView>(Resource.Id.lblHorario).Text = "";
+            }
+            viewPager.AddView(SalasView);
+            return SalasView;
+        }
+
+        public override int Count => historiales.Count;
+
+        public override bool IsViewFromObject(View view, Java.Lang.Object @object) => view == @object;
+
+        public override ICharSequence GetPageTitleFormatted(int position) => new Java.Lang.String(historiales[position]);
+
+        public override void DestroyItem(View container, int position, Java.Lang.Object @object) => container.JavaCast<ViewPager>().RemoveView(@object as View);
+
+        void FillHistorial()
+        {
+            TableLayout table = SalasView.FindViewById<TableLayout>(Resource.Id.historial_table);
+            historico.ForEach(reservacion =>
+            {
+                LayoutInflater inflater = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
+                View ReservaView = inflater.Inflate(Resource.Layout.ReservacionElementoLayout, null, true);
+                ReservaView.FindViewById<TextView>(Resource.Id.lblSalaJunta).Text = reservacion.Sala_Descripcion;
+                ReservaView.FindViewById<TextView>(Resource.Id.lblDiaSemana).Text = DateTime.Parse(reservacion.Sala_Fecha).Day.ToString();
+                ReservaView.FindViewById<TextView>(Resource.Id.lblDia).Text = DateTime.Parse(reservacion.Sala_Fecha).DayOfWeek.ToString();
+                ReservaView.FindViewById<TextView>(Resource.Id.lblHorario).Text = reservacion.Sala_Hora_Inicio.Substring(0, 5) + " - " + reservacion.Sala_Hora_Fin.Substring(0, 5);
+                TableRow row = new TableRow(context);
+                row.AddView(ReservaView);
+                table.AddView(row);
+            });
         }
     }
 }

@@ -144,4 +144,6 @@
     <string name="Continuar">Continuar</string>
     <string name="Excelente">¡Excelente!</string>
     <string name="ConfirmacionSala">Tu reservación se ha generado con éxito. No dudes en ponerte en contacto con el Staff para cualquier duda, será un gusto poder apoyarte.</string>
+    <string name="EnviarMensaje">Enviar Mensaje</string>
+    <string name="Seguir">Seguir</string>
 </resources>

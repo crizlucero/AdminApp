@@ -30,7 +30,7 @@ namespace WorklabsMx.Droid
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            StartActivity(new Intent(this, typeof(SalasJuntasHistorialActivity)));
+            StartActivity(new Intent(this, typeof(TabSalasJuntasHistorialActivity)));
             Finish();
             return base.OnOptionsItemSelected(item);
         }

@@ -58,7 +58,7 @@ namespace WorklabsMx.Droid
             base.OnPause();
         }
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override async void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             try
@@ -68,7 +68,7 @@ namespace WorklabsMx.Droid
                 localStorage = SimpleStorage.EditGroup("Login");
                 ListMenu = DashboardController.GetMenuAndroid(Convert.ToInt32(localStorage.Get("Usuario_Tipo")));
                 localStorage.Delete("Parent");
-                OpenDashboard();
+                await OpenDashboard();
             }
             catch (Exception e)
             {
@@ -80,7 +80,7 @@ namespace WorklabsMx.Droid
             }
         }
 
-        async void OpenDashboard()
+        async Task OpenDashboard()
         {
             SetContentView(Resource.Layout.DashboardLayout);
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
@@ -287,7 +287,7 @@ namespace WorklabsMx.Droid
                     if (!localStorage.HasKey("Parent"))
                     {
                         LinearLayout menu_scroll = FindViewById<LinearLayout>(Resource.Id.menu);
-                        //menu_scroll.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels * 3 / 4);
+                        menu_scroll.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels * 3 / 4);
                         if (menu_scroll.Visibility == ViewStates.Gone)
                         {
                             menu_scroll.LayoutParameters.Height = Window.Attributes.Height;
@@ -303,6 +303,7 @@ namespace WorklabsMx.Droid
                         localStorage.Delete("Parent");
                         FillMenu();
                     }
+
                     break;
             }
             return base.OnOptionsItemSelected(item);
@@ -360,7 +361,7 @@ namespace WorklabsMx.Droid
                 {
                     switch (menu.Controller)
                     {
-                        case "MainActivity": FindViewById<LinearLayout>(Resource.Id.menu).Visibility = ViewStates.Gone; break;
+                        //case "MainActivity": FindViewById<LinearLayout>(Resource.Id.menu).Visibility = ViewStates.Gone; break;
                         case "MyMembershipActivity": StartActivity(new Intent(this, typeof(MyMembershipActivity))); break;
                         case "SubMenuActivity":
                             localStorage.Put("Parent", menu.Menu_Id);
@@ -400,13 +401,24 @@ namespace WorklabsMx.Droid
             profileView.FindViewById<TextView>(Resource.Id.lblPuesto).Text = miembro.Miembro_Puesto;
             profileView.FindViewById<TextView>(Resource.Id.lblProfesion).Text = miembro.Miembro_Profesion;
             profileView.FindViewById<TextView>(Resource.Id.lblFechaNacimiento).Text = miembro.Miembro_Fecha_Nacimiento;
+            profileView.FindViewById<Button>(Resource.Id.btnSendMessage).Click += delegate
+            {
+                try
+                {
+                    Intent intent = PackageManager.GetLaunchIntentForPackage("mx.worklabs");
+                    StartActivity(intent);
+                }catch(Exception e){
+                    Intent intent = PackageManager.GetLaunchIntentForPackage("http://play.google.com/store/apps/details?id=");
+                    StartActivity(intent);
+                }
+            };
             TextView txtPhone = profileView.FindViewById<TextView>(Resource.Id.lblContacto);
             txtPhone.Text = miembro.Miembro_Celular;
             txtPhone.Click += delegate
             {
                 try
                 {
-                    var uri = Android.Net.Uri.Parse("tel:"+miembro.Miembro_Celular);
+                    var uri = Android.Net.Uri.Parse("tel:" + miembro.Miembro_Celular);
                     var intent = new Intent(Intent.ActionDial, uri);
                     StartActivity(intent);
                 }
@@ -441,6 +453,7 @@ namespace WorklabsMx.Droid
             builder.SetView(profileView);
             builder.Create();
             dialog = builder.Show();
+            dialog.Window.SetLayout(Resources.DisplayMetrics.WidthPixels, Resources.DisplayMetrics.HeightPixels);
             dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
         }
 
