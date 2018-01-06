@@ -14,8 +14,8 @@ namespace WorklabsMx.Models
 
         protected DataBaseModel()
         {
-            conn = new SqlConnection("Server=184.168.47.17; Database=Worklabs; User=webmaster; Pwd=W3bM4st3r; Trusted_Connection=False");
-            connIPV6 = new SqlConnection("Server=0:0:0:0:0:FFFF:B8A8:2F11; Database=Worklabs; User=webmaster; Pwd=W3bM4st3r; Trusted_Connection=False");
+            conn = new SqlConnection("Server=184.168.47.17:1433; Database=Worklabs; User=webmaster; Pwd=W3bM4st3r; Trusted_Connection=False");
+            connIPV6 = new SqlConnection("Server=0:0:0:0:0:FFFF:B8A8:2F11,1433; Database=Worklabs; User=webmaster; Pwd=W3bM4st3r; Trusted_Connection=False");
         }
 
         protected SqlCommand CreateCommand(string query) => new SqlCommand(query, conn);

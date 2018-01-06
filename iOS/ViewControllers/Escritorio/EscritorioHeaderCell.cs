@@ -7,6 +7,7 @@ using UIKit;
 using System.Collections.Generic;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Enum;
+using System.Net;
 
 namespace WorklabsMx.iOS
 {
@@ -39,6 +40,28 @@ namespace WorklabsMx.iOS
         partial void btnPublicar_TouchUpInside(UIButton sender)
         {
             
+        }
+
+        private void toip()
+        {
+            string input = "10.0.0.0";
+            string ips = "";
+            IPAddress address;
+            if (IPAddress.TryParse(input, out address))
+            {
+                switch (address.AddressFamily)
+                {
+                    case System.Net.Sockets.AddressFamily.InterNetwork:
+                        // we have IPv4, map it to IPv6
+                        IPAddress ip = IPAddress.Parse(input).MapToIPv6();
+                        ips = ip.ToString();
+                        break;
+                    case System.Net.Sockets.AddressFamily.InterNetworkV6:
+                        // we have IPv6, leave it as is
+                        ips = input;
+                        break;
+                }
+            }
         }
 
     }

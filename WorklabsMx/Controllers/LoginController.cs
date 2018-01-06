@@ -42,7 +42,7 @@ namespace WorklabsMx.Controllers
                     command = CreateCommandIPV6(query);
                     command.Parameters.AddWithValue("@email", email);
                     command.Parameters.AddWithValue("@password", password);
-                    conn.Open();
+                    connIPV6.Open();
 
                     reader = command.ExecuteReader();
                     while (reader.Read())
@@ -62,6 +62,7 @@ namespace WorklabsMx.Controllers
             finally
             {
                 conn.Close();
+                connIPV6.Close();
             }
             return datos;
         }

@@ -663,6 +663,10 @@
     <ImageAsset Include="Assets.xcassets\CerrarBlanco.imageset\icons8-delete-30.png" />
     <ImageAsset Include="Assets.xcassets\CerrarBlanco.imageset\icons8-delete-60.png" />
     <ImageAsset Include="Assets.xcassets\CerrarBlanco.imageset\icons8-delete-90.png" />
+    <ImageAsset Include="Assets.xcassets\ProfileImageBig.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ProfileImageBig.imageset\imgProfileBig.png" />
+    <ImageAsset Include="Assets.xcassets\ProfileImageBig.imageset\imgProfileBig%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ProfileImageBig.imageset\imgProfileBig%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1222,6 +1226,7 @@
     <Folder Include="Assets.xcassets\ImageExample.imageset\" />
     <Folder Include="Assets.xcassets\CerrarBlanco.imageset\" />
     <Folder Include="Assets.xcassets\Desglosar.imageset\" />
+    <Folder Include="Assets.xcassets\ProfileImageBig.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

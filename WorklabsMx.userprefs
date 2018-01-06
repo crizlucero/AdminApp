@@ -1,22 +1,25 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.storyboard">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Escritorio/EscritorioHeaderCell.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="181" Column="34" />
-      <File FileName="iOS/ComunidadTableViewController.cs" Line="91" Column="10" />
-      <File FileName="iOS/FavoritosTableViewController.cs" Line="37" Column="1" />
-      <File FileName="iOS/EmpresasTableViewController.cs" Line="24" Column="9" />
-      <File FileName="iOS/Main.storyboard" />
-      <File FileName="iOS/HeaderFavoritosTableViewCell.cs" Line="17" Column="9" />
-      <File FileName="iOS/HeaderEmpresasCell.cs" Line="17" Column="9" />
-      <File FileName="iOS/BuscadorTableViewCell.cs" Line="17" Column="9" />
-      <File FileName="iOS/PerfilesTableViewController.cs" Line="15" Column="1" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="55" Column="40" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioHeaderCell.cs" Line="44" Column="11" />
+      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="18" Column="74" NotebookId="1" />
+      <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="26" Column="21" NotebookId="1" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="55" column="38" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="91" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C8F534E0-9C6A-4F53-A110-4E330B864317" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" />
   <MultiItemStartupConfigurations />
 </Properties>
