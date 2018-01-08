@@ -2,7 +2,6 @@ using Foundation;
 using System;
 using UIKit;
 using WorklabsMx.iOS.Helpers;
-//using PerpetualEngine.Storage;
 using System.Collections.Generic;
 using WorklabsMx.Enum;
 using Photos;
@@ -22,24 +21,19 @@ namespace WorklabsMx.iOS
     public partial class PublicarPostViewController : UIViewController
     {
         
-        //SimpleStorage storageLocal;
         DateTime FechaActual;
         string Nombre;
         string Ocupacion;
         string ImagenPerfil;
-        //float opacity = 0.5f;
 
         UIImagePickerController imgPicker;
 
         UIImage ImagenPublicacion;
 
-        string UrlImage = "";
-
         public PostPublicadoDel PostPublicadoDelegate;
 
         public PublicarPostViewController(IntPtr handle) : base(handle)
         {
-            //storageLocal = SimpleStorage.EditGroup("Login");
         }
 
         public override void ViewDidLoad()
@@ -66,7 +60,6 @@ namespace WorklabsMx.iOS
             this.View.BackgroundColor = color;
             StyleHelper.Style(btnPublicar.Layer);
             StyleHelper.Style(vwVistaComentar.Layer);
-            //this.btnPublicar.Layer.Opacity = opacity;
             this.txtPublicacion.Changed += HandleTextMessageChanged;
             FechaActual = DateTime.Now;
             lblFechaPublicacion.Text = String.Format("{0:dddd, d MMMM, yyyy}", FechaActual);
@@ -154,8 +147,6 @@ namespace WorklabsMx.iOS
         public void FinishedPickingImage(UIKit.UIImagePickerController picker, UIKit.UIImage image, Foundation.NSDictionary editingInfo)
         {
             ImagenPublicacion = image;
-            var imageUrl = editingInfo["UIImagePickerControllerReferenceURL"] as NSUrl;
-            UrlImage = imageUrl.RelativeString;
             this.btnImageComment.SetImage(image, UIControlState.Normal);
             this.btnDeleteImge.Hidden = false;
             this.btnPublicar.Enabled = true;

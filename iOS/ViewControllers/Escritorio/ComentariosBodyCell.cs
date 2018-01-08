@@ -57,12 +57,6 @@ namespace WorklabsMx.iOS
                 btnImagenComentatio.Frame = newFrame;
                 btnImagenComentatio.SetBackgroundImage(currentImagePost, UIControlState.Normal);
             }
-            else if (post.Publicacion_Imagen_Ruta == "" || currentImagePost == null)
-            {
-                var newFrame = new CGRect(btnImagenComentatio.Frame.X, btnImagenComentatio.Frame.Y, btnImagenComentatio.Frame.Width, 1);
-                btnImagenComentatio.Frame = newFrame;
-                //btnImagenComentatio.SetBackgroundImage(currentImagePost, UIControlState.Normal);
-            }
             txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
             txtComentario.ScrollEnabled = false;
             txtComentario.Text = post.Publicacion_Contenido;

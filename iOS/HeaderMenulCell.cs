@@ -34,9 +34,5 @@ namespace WorklabsMx.iOS
             }
         }
 
-        partial void btnEditarPerfil_Touch(UIButton sender)
-        {
-            
-        }
     }
 }

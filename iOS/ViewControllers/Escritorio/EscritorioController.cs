@@ -5,7 +5,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         const string IdentificadorCeldaNoInfo = "NoInfo";
 
         const int TamañoPublicacion = 223;
-        const int TamañoHeader = 150;
+        const int TamañoHeader = 126;
         const int TamañoMensajeNoInfo = 800;
 
         bool isShowInformation = false;
