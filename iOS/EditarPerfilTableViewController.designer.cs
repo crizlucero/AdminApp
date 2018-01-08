@@ -16,6 +16,10 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnClose { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnFondoImagen { get; set; }
 
         [Outlet]
@@ -42,6 +46,14 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtProfesion { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwImagenPerfil { get; set; }
+
+        [Action ("btnClose_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnClose_Touch (UIKit.UIButton sender);
+
         [Action ("btnImagen_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnImagen_Touch (UIKit.UIButton sender);
@@ -64,6 +76,11 @@ namespace WorklabsMx.iOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnClose != null) {
+                btnClose.Dispose ();
+                btnClose = null;
+            }
+
             if (btnFondoImagen != null) {
                 btnFondoImagen.Dispose ();
                 btnFondoImagen = null;
@@ -97,6 +114,11 @@ namespace WorklabsMx.iOS
             if (txtProfesion != null) {
                 txtProfesion.Dispose ();
                 txtProfesion = null;
+            }
+
+            if (vwImagenPerfil != null) {
+                vwImagenPerfil.Dispose ();
+                vwImagenPerfil = null;
             }
         }
     }

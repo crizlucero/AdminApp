@@ -1,4 +1,4 @@
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
@@ -684,6 +684,7 @@
       <DependentUpon>LoginViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="EditarPerfilTableViewController.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Helpers\ImageGallery.cs" />
     <Compile Include="ViewControllers\AccesoController.cs" />
@@ -1100,7 +1101,6 @@
     <Compile Include="PerfilesTableViewController.designer.cs">
       <DependentUpon>PerfilesTableViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditarPerfilTableViewController.cs" />
     <Compile Include="EditarPerfilTableViewController.designer.cs">
       <DependentUpon>EditarPerfilTableViewController.cs</DependentUpon>
     </Compile>
