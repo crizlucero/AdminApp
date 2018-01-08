@@ -140,7 +140,7 @@ namespace WorklabsMx.iOS
                 listaUser.Add(PostLocal.Miembro_Id);
                 listaUser.Add(PostLocal.Colaborador_Empresa_Id);
                 listaUser.Add(PostLocal.Usuario_Tipo);
-                listaUser.Add(PostLocal.Publicacion_Imagen_Ruta);
+                listaUser.Add(PostLocal.Usuario_Fotografia_Ruta);
                 InfoUserPost(listaUser, EventArgs.Empty);
             }
             

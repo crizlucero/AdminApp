@@ -26,6 +26,10 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblPuesto { get; set; }
 
+        [Action ("btnEditarPerfil_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnEditarPerfil_Touch (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (btnImagenPerfil != null) {

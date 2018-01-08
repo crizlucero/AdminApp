@@ -81,11 +81,6 @@ namespace WorklabsMx.iOS
             }
         }
 
-        partial void btnClose_Touch(UIButton sender)
-        {
-            this.DismissViewController(true, null);
-        }
-
         partial void btnEnviarMensaje_Touch(UIButton sender)
         {
         }

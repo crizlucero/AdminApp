@@ -16,10 +16,6 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnClose { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnEnviarMensaje { get; set; }
 
         [Outlet]
@@ -62,10 +58,6 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnBackGroundImage_Touch (UIKit.UIButton sender);
 
-        [Action ("btnClose_Touch:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnClose_Touch (UIKit.UIButton sender);
-
         [Action ("btnEnviarMensaje_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnEnviarMensaje_Touch (UIKit.UIButton sender);
@@ -96,11 +88,6 @@ namespace WorklabsMx.iOS
 
         void ReleaseDesignerOutlets ()
         {
-            if (btnClose != null) {
-                btnClose.Dispose ();
-                btnClose = null;
-            }
-
             if (btnEnviarMensaje != null) {
                 btnEnviarMensaje.Dispose ();
                 btnEnviarMensaje = null;

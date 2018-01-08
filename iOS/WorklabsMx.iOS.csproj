@@ -18,7 +18,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Distribution: Espacio Claro, S.A. de C.V. (3VMPS2N2KS)</CodesignKey>
+    <CodesignKey>iPhone Developer: Tomas Peterson (Q7BW62ZW3L)</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -29,7 +29,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
     <MtouchI18n>cjk,mideast,other,rare,west</MtouchI18n>
-    <CodesignProvision>WorkLabsDist</CodesignProvision>
+    <CodesignProvision></CodesignProvision>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
@@ -667,6 +667,14 @@
     <ImageAsset Include="Assets.xcassets\ProfileImageBig.imageset\imgProfileBig.png" />
     <ImageAsset Include="Assets.xcassets\ProfileImageBig.imageset\imgProfileBig%402x.png" />
     <ImageAsset Include="Assets.xcassets\ProfileImageBig.imageset\imgProfileBig%403x.png" />
+    <ImageAsset Include="Assets.xcassets\CameraWhite.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\CameraWhite.imageset\icons8-camera-filled-30.png" />
+    <ImageAsset Include="Assets.xcassets\CameraWhite.imageset\icons8-camera-filled-60.png" />
+    <ImageAsset Include="Assets.xcassets\CameraWhite.imageset\icons8-camera-filled-90.png" />
+    <ImageAsset Include="Assets.xcassets\EditarBlanco.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\EditarBlanco.imageset\icons8-edit-60 %281%29.png" />
+    <ImageAsset Include="Assets.xcassets\EditarBlanco.imageset\icons8-edit-30 %281%29.png" />
+    <ImageAsset Include="Assets.xcassets\EditarBlanco.imageset\icons8-edit-90 %281%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1092,6 +1100,10 @@
     <Compile Include="PerfilesTableViewController.designer.cs">
       <DependentUpon>PerfilesTableViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditarPerfilTableViewController.cs" />
+    <Compile Include="EditarPerfilTableViewController.designer.cs">
+      <DependentUpon>EditarPerfilTableViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -1227,6 +1239,8 @@
     <Folder Include="Assets.xcassets\CerrarBlanco.imageset\" />
     <Folder Include="Assets.xcassets\Desglosar.imageset\" />
     <Folder Include="Assets.xcassets\ProfileImageBig.imageset\" />
+    <Folder Include="Assets.xcassets\CameraWhite.imageset\" />
+    <Folder Include="Assets.xcassets\EditarBlanco.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

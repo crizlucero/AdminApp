@@ -10,7 +10,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 
         bool isShowInformation = false;
         bool existeConeccion = true;
-         List<PostModel> allPosts = new List<PostModel>();         List<UIImage> allProfileImages = new List<UIImage>();         List<UIImage> allPostImages = new List<UIImage>();         List<string> miembro;          List<string> ListUser = new List<string>();          PostModel CurrentPost = new PostModel();         UIImage currentProfileImage = new UIImage();         UIImage currentPostImage = new UIImage();         UIImageView ImagenPerfil;         int ContadorComentar; 
+         List<PostModel> allPosts = new List<PostModel>();         List<UIImage> allProfileImages = new List<UIImage>();         List<UIImage> allPostImages = new List<UIImage>();         List<string> miembro;          List<string> ListUser = new List<string>();          PostModel CurrentPost = new PostModel();         UIImage currentProfileImage = new UIImage();         UIImage currentPostImage = new UIImage();         UIImageView ImagenPerfil;         int ContadorComentar;         int ContadorPerfil; 
         public EscritorioController(IntPtr handle) : base(handle)         {
         }
 
@@ -20,7 +20,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 		}
 
         public override void ViewWillAppear(bool animated)
-        {             base.ViewWillAppear(animated);             ContadorComentar = 0;
+        {             base.ViewWillAppear(animated);             ContadorComentar = 0;             ContadorPerfil = 0;
             this.CargarInfo();             this.TableView.ReloadData();             BTProgressHUD.Dismiss();
         }          public override void ViewDidAppear(bool animated)
         {
@@ -29,7 +29,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         {
             base.ViewDidDisappear(animated);
         }
-         void MostrarImagenEnGrande(object sender, EventArgs e)         {             this.PerformSegue("toShowImageFromPost", (UIImageView)sender);         }          async void ComentarPost(object sender, EventArgs e)         {             CurrentPost = (PostModel)sender;             ContadorComentar = ContadorComentar + 1;             if(ContadorComentar <= 1)             {                 BTProgressHUD.Show(status: "Cargando Comentarios");                 await Task.Delay(2000);                 currentProfileImage = ImageGallery.LoadImage(CurrentPost.Usuario_Fotografia_Ruta);                 currentPostImage = ImageGallery.LoadImage(CurrentPost.Publicacion_Imagen_Ruta);                 this.PerformSegue("comentar", null);             }          }           void InfoUserPost(object sender, EventArgs e)         {             ListUser = (List<string>)sender;             this.PerformSegue("DetallarPerfil", null);         }          public override UIView GetViewForHeader(UITableView tableView, nint section)
+         void MostrarImagenEnGrande(object sender, EventArgs e)         {             this.PerformSegue("toShowImageFromPost", (UIImageView)sender);         }          async void ComentarPost(object sender, EventArgs e)         {             CurrentPost = (PostModel)sender;             ContadorComentar = ContadorComentar + 1;             if(ContadorComentar <= 1)             {                 BTProgressHUD.Show(status: "Cargando Comentarios");                 await Task.Delay(2000);                 currentProfileImage = ImageGallery.LoadImage(CurrentPost.Usuario_Fotografia_Ruta);                 currentPostImage = ImageGallery.LoadImage(CurrentPost.Publicacion_Imagen_Ruta);                 this.PerformSegue("comentar", null);             }          }           void InfoUserPost(object sender, EventArgs e)         {             ContadorPerfil = ContadorPerfil + 1;             if(ContadorPerfil <= 1)             {                 ListUser = (List<string>)sender;                 this.PerformSegue("DetallarPerfil", null);              }                     }          public override UIView GetViewForHeader(UITableView tableView, nint section)
         {             var headerCell = (EscritorioHeaderCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);             headerCell.UpdateCell(miembro);             this.ImagenPerfil = headerCell.getImagenPerfil();             StyleHelper.Style(headerCell.Layer);
             return headerCell.ContentView;
         }
