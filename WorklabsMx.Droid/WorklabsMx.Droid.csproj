@@ -144,6 +144,8 @@
     <Compile Include="Helpers\DatePickerFragment.cs" />
     <Compile Include="Helpers\TimePickerFragment.cs" />
     <Compile Include="ViewController\Servicios\ColeccionProductosActivity.cs" />
+    <Compile Include="Helpers\PerfilPageAdapter.cs" />
+    <Compile Include="ViewController\PerfilCardActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -314,6 +316,7 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_perfil_background.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_sala_prueba.png" />
     <AndroidResource Include="Resources\layout\SalasJuntasHistorialesLayout.axml" />
+    <AndroidResource Include="Resources\layout\DatosGeneralesLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

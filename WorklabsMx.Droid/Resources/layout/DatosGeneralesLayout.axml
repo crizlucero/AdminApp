@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <GridLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="10"
+        android:id="@+id/gridView1">
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_columnSpan="3"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            android:text="@string/InfoGeneral"
+            android:layout_margin="15dp"
+            android:textAllCaps="true"
+            android:layout_width="wrap_content" />
+        <TextView
+            android:text="@string/Puesto"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0" />
+        <TextView
+            android:id="@+id/lblPuesto"
+            android:textColor="#95D6FF"
+            android:text="IT Chief"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_columnSpan="2"
+            android:maxWidth="120dp"
+            android:layout_width="wrap_content" />
+        <TextView
+            android:text="@string/Profesion"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_row="2"
+            android:layout_column="0" />
+        <TextView
+            android:id="@+id/lblProfesion"
+            android:textColor="#95D6FF"
+            android:text="IT Chief"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_columnSpan="2"
+            android:layout_width="wrap_content" />
+        <TextView
+            android:text="@string/FechaNacimiento"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:layout_marginRight="5dp" />
+        <TextView
+            android:id="@+id/lblFechaNacimiento"
+            android:textColor="#95D6FF"
+            android:text="IT Chief"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_columnSpan="2"
+            android:layout_width="wrap_content" />
+        <TextView
+            android:text="@string/Contacto"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_row="4"
+            android:layout_column="0" />
+        <TextView
+            android:id="@+id/lblContacto"
+            android:textColor="#95D6FF"
+            android:text="IT Chief"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:layout_columnSpan="2"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical" />
+        <TextView
+            android:text="@string/CorreoElectronico"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_row="5"
+            android:layout_column="0" />
+        <TextView
+            android:id="@+id/lblCorreo"
+            android:textColor="#95D6FF"
+            android:text="IT Chief"
+            android:layout_row="5"
+            android:layout_column="1"
+            android:layout_columnSpan="2"
+            android:layout_width="wrap_content" />
+        <TextView
+            android:text="@string/Facebook"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_row="6"
+            android:layout_column="0" />
+        <TextView
+            android:id="@+id/lblFacebook"
+            android:textColor="#95D6FF"
+            android:text="IT Chief"
+            android:layout_row="6"
+            android:layout_column="1"
+            android:layout_columnSpan="2"
+            android:layout_width="wrap_content" />
+        <TextView
+            android:text="@string/Instagram"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_row="7"
+            android:layout_column="0" />
+        <TextView
+            android:id="@+id/lblInstagram"
+            android:textColor="#95D6FF"
+            android:text="IT Chief"
+            android:layout_row="7"
+            android:layout_column="1"
+            android:layout_columnSpan="2"
+            android:layout_width="wrap_content" />
+        <TextView
+            android:text="@string/Twitter"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_row="8"
+            android:layout_column="0" />
+        <TextView
+            android:id="@+id/lblTwitter"
+            android:textColor="#95D6FF"
+            android:text="IT Chief"
+            android:layout_row="8"
+            android:layout_column="1"
+            android:layout_columnSpan="2"
+            android:layout_width="wrap_content" />
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_row="9"
+            android:layout_column="0"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
+            <ImageView
+                android:src="@mipmap/ic_open_book"
+                android:id="@+id/Posts"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:tint="#95D6FF"
+                android:paddingTop="15dp" />
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                android:text="34"
+                android:gravity="center"
+                android:layout_below="@id/Posts"
+                android:textColor="#95D6FF"
+                android:layout_marginLeft="7dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_row="9"
+            android:layout_column="1"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
+            <ImageView
+                android:src="@mipmap/ic_mode_comment"
+                android:id="@+id/Comments"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:tint="#95D6FF"
+                android:paddingTop="15dp" />
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                android:text="34"
+                android:gravity="center"
+                android:layout_below="@id/Comments"
+                android:textColor="#95D6FF"
+                android:layout_marginLeft="7dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_row="9"
+            android:layout_column="2"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
+            <ImageView
+                android:src="@mipmap/ic_star"
+                android:id="@+id/Favorites"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:tint="#95D6FF"
+                android:paddingTop="15dp" />
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                android:text="34"
+                android:gravity="center"
+                android:layout_below="@id/Favorites"
+                android:textColor="#95D6FF"
+                android:layout_marginLeft="7dp" />
+        </RelativeLayout>
+    </GridLayout>
+</LinearLayout>
