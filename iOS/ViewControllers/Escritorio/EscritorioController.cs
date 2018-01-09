@@ -6,7 +6,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 
         const int TamañoPublicacion = 223;
         const int TamañoHeader = 126;
-        const int TamañoMensajeNoInfo = 800;
+        const int TamañoMensajeNoInfo = 500;
 
         bool isShowInformation = false;
         bool existeConeccion = true;

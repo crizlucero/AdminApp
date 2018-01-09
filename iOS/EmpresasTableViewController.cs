@@ -19,7 +19,7 @@ namespace WorklabsMx.iOS
 
         const int TamañoUsuarios = 70;
         const int TamañoHeader = 50;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-        const int TamañoMensajeNoInfo = 800;
+        const int TamañoMensajeNoInfo = 500;
 
         bool isShowInformation = false;
         bool existeConeccion = true;
@@ -71,6 +71,15 @@ namespace WorklabsMx.iOS
         public override nfloat GetHeightForHeader(UITableView tableView, nint section)
         {
             return TamañoHeader;
+        }
+
+        public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+        {
+            if (isShowInformation)
+            {
+                return TamañoUsuarios;
+            }
+            return TamañoMensajeNoInfo;
         }
 
         public override nint RowsInSection(UITableView tableView, nint section)

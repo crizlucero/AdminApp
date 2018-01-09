@@ -21,7 +21,7 @@ namespace WorklabsMx.iOS
 
         const int TamañoUsuarios = 70;
         const int TamañoHeader = 50;
-        const int TamañoMensajeNoInfo = 800;
+        const int TamañoMensajeNoInfo = 500;
 
         bool isShowInformation = false;
         bool existeConeccion = true;
@@ -47,6 +47,15 @@ namespace WorklabsMx.iOS
             ContadorPerfil = 0;
         }
 
+        public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+        {
+            if (isShowInformation)
+            {
+                return TamañoUsuarios;
+            }
+            return TamañoMensajeNoInfo;
+        }
+
         void Buscando(object sender, EventArgs e)
         {
             string TextoBuscar = sender as string;
@@ -56,6 +65,8 @@ namespace WorklabsMx.iOS
             {
                 this.FillData();
             }
+
+
 
             if (TextoBuscar != "")
             {

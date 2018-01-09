@@ -1,17 +1,10 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/EmpresasTableViewController.cs">
     <Files>
-      <File FileName="iOS/PerfilesTableViewController.cs" Line="16" Column="75" />
-      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="17" Column="60" />
-      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="149" Column="68" />
-      <File FileName="iOS/FavoritosTableViewController.cs" Line="101" Column="46" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="1" Column="1" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioHeaderCell.cs" Line="42" Column="15" />
-      <File FileName="iOS/ComunidadTableViewController.cs" Line="73" Column="13" />
-      <File FileName="iOS/BuscadorTableViewCell.cs" Line="24" Column="15" />
-      <File FileName="iOS/Main.storyboard" />
-      <File FileName="iOS/HeaderFavoritosTableViewCell.cs" Line="18" Column="25" />
-      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="45" Column="1" />
+      <File FileName="iOS/ComunidadTableViewController.cs" Line="137" Column="1" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="24" Column="38" />
+      <File FileName="iOS/FavoritosTableViewController.cs" Line="57" Column="10" />
+      <File FileName="iOS/EmpresasTableViewController.cs" Line="83" Column="10" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
@@ -19,6 +12,7 @@
           <Value>allPosts</Value>
           <Value>allPosts.Find(x =&gt; x.Usuario_Nombre.Contains(TextoBuscar)</Value>
           <Value>SearchPost</Value>
+          <Value>UsuariosFavoritos</Value>
         </State>
       </Pad>
     </Pads>
@@ -26,7 +20,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" relfile="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" line="56" column="27" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/FavoritosTableViewController.cs" relfile="iOS/FavoritosTableViewController.cs" line="73" column="68" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

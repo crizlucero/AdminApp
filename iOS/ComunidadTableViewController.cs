@@ -134,6 +134,14 @@ namespace WorklabsMx.iOS
             this.TableView.ReloadData();
         }
 
+        public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+        {
+            if(isShowInformation)
+            {
+                return TamañoUsuarios;
+            }
+            return TamañoMensajeNoInfo;
+        }
 
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
