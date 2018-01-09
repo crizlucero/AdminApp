@@ -24,8 +24,6 @@ using WorklabsMx.Models;
 using System.Linq;
 using Android.Support.V7.App;
 using Android.App;
-using Android.Support.V4.View;
-using com.refractored;
 using Newtonsoft.Json;
 
 namespace WorklabsMx.Droid
@@ -105,30 +103,52 @@ namespace WorklabsMx.Droid
                 page = 0;
                 tlPost.RemoveAllViews();
                 posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
-                await FillPosts();
+                await FillPosts(posts);
                 ((SwipeRefreshLayout)sender).Refreshing = false;
             };
             posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
-            await FillPosts();
+            await FillPosts(posts);
             scroll.ScrollChange += async (sender, e) =>
             {
                 if (posts.Count / (page + 1) > 10)
                     if ((((ScrollView)sender).ScrollY / (page + 1)) > ((scroll.Height) * .6))
                     {
                         ++page;
-                        await FillPosts();
+                        await FillPosts(posts);
                     }
             };
 
-
+            SearchView svBuscar = FindViewById<SearchView>(Resource.Id.svBuscar);
+            svBuscar.QueryTextSubmit += async (sender, e) =>
+            {
+                ((SearchView)sender).ClearFocus();
+                tlPost.RemoveAllViews();
+                page = 0;
+                if (((SearchView)sender).Query.Length != 0)
+                    await FillPosts(posts.Where(post => post.Publicacion_Contenido.IndexOf(((SearchView)sender).Query, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                                                post.Usuario_Nombre.IndexOf(((SearchView)sender).Query, StringComparison.OrdinalIgnoreCase) >= 0).ToList());
+                else
+                    await FillPosts(posts);
+            };
+            svBuscar.QueryTextChange += async (sender, e) =>
+            {
+                if (((SearchView)sender).Query.Length == 0)
+                {
+                    ((SearchView)sender).ClearFocus();
+                    page = 0;
+                    tlPost.RemoveAllViews();
+                    posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+                    await FillPosts(posts);
+                }
+            };
         }
 
-        async Task FillPosts()
+        async Task FillPosts(List<PostModel> publicaciones)
         {
             AndHUD.Shared.Show(this, null, -1, MaskType.Black);
             await Task.Delay(500);
 
-            posts.Skip(page * sizePage).Take(sizePage).ToList().ForEach(post =>
+            publicaciones.Skip(page * sizePage).Take(sizePage).ToList().ForEach(post =>
             {
                 LayoutInflater liView = LayoutInflater;
                 View PostView = liView.Inflate(Resource.Layout.PostLayout, null, true);
@@ -350,8 +370,7 @@ namespace WorklabsMx.Droid
                 menuLayout.AddView(row);
                 row = new TableRow(this);
                 Drawable icon = ContextCompat.GetDrawable(this, Resources.GetIdentifier(menu.Image, "mipmap", PackageName));
-                icon.SetColorFilter(Color.White, PorterDuff.Mode.Multiply);
-                icon.SetTint(Resource.Color.material_grey_50);
+                icon.SetTintList(GetColorStateList(Resource.Color.comment_pressed));
                 icon.SetBounds(0, 0, 50, 50);
                 Button btnMenu = new Button(this)
                 {
@@ -466,7 +485,7 @@ namespace WorklabsMx.Droid
                         tlPost.RemoveAllViews();
                         page = 0;
                         posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
-                        await FillPosts();
+                        await FillPosts(posts);
                         dialog.Dismiss();
                         customView.FindViewById<ImageView>(Resource.Id.imgPicture).Visibility = ViewStates.Gone;
                         customView.FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Gone;

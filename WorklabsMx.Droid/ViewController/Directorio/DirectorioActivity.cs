@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using Android.App;
 using Android.Content;
@@ -49,7 +48,7 @@ namespace WorklabsMx.Droid
             {
                 _viewPager.Adapter = new DirectorioAdapter(this, new List<string> { "Miembros", "Empresas", "Favoritos" },
                                                            miembros.Where(miembro => miembro.Miembro_Nombre.IndexOf(((SearchView)sender).Query, StringComparison.OrdinalIgnoreCase) >= 0).ToList(),
-                                                           empresas.Where(empresa => empresa.Empresa_Miembro_Nombre.IndexOf(((SearchView)sender).Query, StringComparison.OrdinalIgnoreCase)>= 0).ToList(),
+                                                           empresas.Where(empresa => empresa.Empresa_Miembro_Nombre.IndexOf(((SearchView)sender).Query, StringComparison.OrdinalIgnoreCase) >= 0).ToList(),
                                                            favoritos.Where(miembro => miembro.Miembro_Nombre.IndexOf(((SearchView)sender).Query, StringComparison.OrdinalIgnoreCase) >= 0).ToList());
             };
         }
@@ -68,7 +67,7 @@ namespace WorklabsMx.Droid
     {
         readonly Context context;
         List<string> directorios;
-        ScrollView svMiembros, svEmpresas;
+        ScrollView svDirectorio;
         SimpleStorage storage;
         readonly List<MiembroModel> miembros, favoritos;
         readonly List<EmpresaModel> empresas;
@@ -90,15 +89,15 @@ namespace WorklabsMx.Droid
 
             switch (directorios[position])
             {
-                case "Favoritos": 
-                    svMiembros = SucursalView.FindViewById<ScrollView>(Resource.Id.svDirectorio);
+                case "Favoritos":
+                    svDirectorio = SucursalView.FindViewById<ScrollView>(Resource.Id.svDirectorio);
                     FillDirectorioUsuario(favoritos);
                     break;
                 case "Empresas":
-                    svEmpresas = SucursalView.FindViewById<ScrollView>(Resource.Id.svDirectorio);
+                    svDirectorio = SucursalView.FindViewById<ScrollView>(Resource.Id.svDirectorio);
                     FillDirectorioEmpresa(); break;
                 default:
-                    svMiembros = SucursalView.FindViewById<ScrollView>(Resource.Id.svDirectorio);
+                    svDirectorio = SucursalView.FindViewById<ScrollView>(Resource.Id.svDirectorio);
                     FillDirectorioUsuario(miembros); break;
             }
 
@@ -161,7 +160,7 @@ namespace WorklabsMx.Droid
                 llDirectorio.AddView(PersonaCard);
 
             });
-            svMiembros.AddView(llDirectorio);
+            svDirectorio.AddView(llDirectorio);
         }
 
         void ShowPerfilCard(MiembroModel miembro)
@@ -169,7 +168,6 @@ namespace WorklabsMx.Droid
             Intent intent = new Intent(context, typeof(PerfilCardActivity));
             intent.PutExtra("Miembro", JsonConvert.SerializeObject(miembro));
             context.StartActivity(intent);
-
         }
 
         public void FillDirectorioEmpresa()
@@ -207,11 +205,22 @@ namespace WorklabsMx.Droid
                 TextView lblNombre = PersonaCard.FindViewById<TextView>(Resource.Id.lblTitle);
 
                 lblNombre.Text = empresa.Empresa_Miembro_Nombre;
+                lblNombre.Click += delegate
+                {
+                    ShowEmpresaCard(empresa);
+                };
 
                 llDirectorio.AddView(PersonaCard);
 
             });
-            svEmpresas.AddView(llDirectorio);
+            svDirectorio.AddView(llDirectorio);
+        }
+        void ShowEmpresaCard(EmpresaModel empresa)
+        {
+            Intent intent = new Intent(context, typeof(EmpresaCardActivity));
+            intent.PutExtra("Empresa", JsonConvert.SerializeObject(empresa));
+            context.StartActivity(intent);
+
         }
     }
 }

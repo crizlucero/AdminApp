@@ -111,7 +111,6 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewController\AccesoActivity.cs" />
-    <Compile Include="ViewController\HomeFragment.cs" />
     <Compile Include="Helpers\ImagesHelper.cs" />
     <Compile Include="ViewElement\MenuView.cs" />
     <Compile Include="Fragments\MyProfileFragment.cs" />
@@ -146,6 +145,8 @@
     <Compile Include="ViewController\Servicios\ColeccionProductosActivity.cs" />
     <Compile Include="Helpers\PerfilPageAdapter.cs" />
     <Compile Include="ViewController\PerfilCardActivity.cs" />
+    <Compile Include="ViewController\EmpresaCardActivity.cs" />
+    <Compile Include="Helpers\EmpresaPageAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -317,6 +318,8 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_sala_prueba.png" />
     <AndroidResource Include="Resources\layout\SalasJuntasHistorialesLayout.axml" />
     <AndroidResource Include="Resources\layout\DatosGeneralesLayout.axml" />
+    <AndroidResource Include="Resources\layout\EmpresaCardLayout.axml" />
+    <AndroidResource Include="Resources\drawable\PerfilImagenStyle.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

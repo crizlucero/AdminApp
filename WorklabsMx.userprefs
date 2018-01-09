@@ -1,39 +1,23 @@
-﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/PerfilesTableViewController.cs">
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/MainActivity.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioHeaderCell.cs" Line="16" Column="62" />
-      <File FileName="iOS/EditarPerfilTableViewController.cs" Line="37" Column="65" />
-      <File FileName="iOS/EmpresasTableViewController.cs" Line="7" Column="14" />
-      <File FileName="iOS/FavoritosTableViewCell.cs" Line="1" Column="1" />
-      <File FileName="iOS/FavoritosTableViewController.cs" Line="103" Column="29" />
-      <File FileName="iOS/ComunidadTableViewController.cs" Line="76" Column="10" />
-      <File FileName="iOS/ComunidadTableViewCell.cs" Line="53" Column="56" />
-      <File FileName="iOS/PerfilesTableViewController.cs" Line="9" Column="2" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="145" Column="36" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="137" Column="38" NotebookId="1" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="122" Column="116" />
+      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioActivity.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/PerfilCardActivity.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/Helpers/EmpresaPageAdapter.cs" Line="80" Column="72" />
+      <File FileName="WorklabsMx.Droid/Helpers/PerfilPageAdapter.cs" Line="75" Column="9" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>ex.Message</Value>
-          <Value>e.Message</Value>
-          <Value>e.Message</Value>
-          <Value>pinger</Value>
-          <Value>this</Value>
-          <Value>reader.Read()</Value>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" relfile="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" line="56" column="27" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" relfile="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" line="56" column="27" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" automaticSigning="False">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
   </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>

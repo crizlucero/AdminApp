@@ -20,7 +20,9 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/svBuscar" />
+            android:id="@+id/svBuscar"
+            android:queryHint="@string/Buscar"
+            android:iconifiedByDefault="false" />
     </LinearLayout>
     <com.refractored.PagerSlidingTabStrip
         android:id="@+id/tabs"
