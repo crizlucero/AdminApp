@@ -105,5 +105,17 @@ namespace WorklabsMx.iOS
             this.View.EndEditing(true);
         }
 
+
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            if (segue.Identifier == "DetallarPerfil")
+            {
+                var PerfilView = (PerfilesTableViewController)segue.DestinationViewController;
+                //PerfilView.ListUser = ListUser;
+            }
+        }
+
+
+
     }
 }

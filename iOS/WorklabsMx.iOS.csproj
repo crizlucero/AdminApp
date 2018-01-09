@@ -154,6 +154,9 @@
     <Reference Include="Plugin.Share">
       <HintPath>..\packages\Plugin.Share.7.1.1\lib\Xamarin.iOS10\Plugin.Share.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.SimplePing.iOS">
+      <HintPath>..\packages\Xamarin.SimplePing.1.4.0\lib\XamariniOS10\Xamarin.SimplePing.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />

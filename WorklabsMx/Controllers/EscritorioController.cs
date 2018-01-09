@@ -52,45 +52,10 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 SlackLogs.SendMessage(e.Message);
-                conn.Close();
-                try
-                {
-                    connIPV6.Open();
-                    command = CreateCommand();
-                    command.Connection = connIPV6;
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.CommandText = "sp_vw_pro_Red_Social_Publicaciones";
-                    command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
-                    command.Parameters.AddWithValue("@Usuario_Tipo", usuario_tipo);
-
-                    reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        posts.Add(new PostModel
-                        {
-                            Publicacion_Id = reader["Publicacion_Id"].ToString(),
-                            Miembro_Id = reader["Miembro_Id"].ToString(),
-                            Colaborador_Empresa_Id = reader["Colaborador_Empresa_Id"].ToString(),
-                            Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
-                            Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
-                            Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString(),
-                            Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
-                            Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
-                            Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),
-                            Publicacion_Imagen_Ruta = reader["Publicacion_Imagen_Ruta"].ToString(),
-                            Publicacion_Fecha = reader["Publicacion_Fecha"].ToString(),
-                            Publicacion_Comentarios_Cantidad = reader["Publicacion_Comentarios_Cantidad"].ToString(),
-                            Publicacion_Me_Gustan_Cantidad = reader["Publicacion_Me_Gustan_Cantidad"].ToString(),
-                            Publicacion_Me_Gusta_Usuario = reader["Publicacion_Me_Gusta_Usuario"].ToString()
-                        });
-                    }
-                }
-                catch (Exception ex)
-                {
-                    SlackLogs.SendMessage(ex.Message);
-                }
             }
-            finally { conn.Close(); }
+            finally { 
+                conn.Close(); 
+            }
             return posts;
         }
 

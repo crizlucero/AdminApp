@@ -48,29 +48,29 @@
 	<key>NSCalendarsUsageDescription</key>
 	<string>Se necesitan permisos para acceder a el calendario</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.1</string>
+	<string>1.1.2</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Se necesitan permisos para acceder a el microfono</string>
 	<key>CFBundleVersion</key>
-	<string>1.1.1</string>
+	<string>1.1.2</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-    	<key>NSExceptionDomains</key>
-    	<dict>
-        <key>184.168.47.17</key>
-        <dict>
-            <key>NSExceptionMinimumTLSVersion</key>
-            <string>TLSv1.0</string>
-            <key>NSExceptionRequiresForwardSecrecy</key>
-            <false/>
-            <key>NSExceptionAllowsInsecureHTTPLoads</key>
-            <true/>
-            <key>NSIncludesSubdomains</key>
-            <true/>
-        </dict>
-    	</dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>184.168.47.17</key>
+			<dict>
+				<key>NSExceptionMinimumTLSVersion</key>
+				<string>TLSv1.0</string>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
 	</dict>
 </dict>
 </plist>

@@ -26,6 +26,9 @@ namespace WorklabsMx.iOS
 
         UITableViewCell Header = new UITableViewCell();
 
+        int ContadorPerfil;
+        List<string> ListUser = new List<string>();
+
         public ComunidadTableViewController (IntPtr handle) : base (handle)
         {
         }
@@ -41,6 +44,18 @@ namespace WorklabsMx.iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            ContadorPerfil = 0;
+        }
+
+        void InfoUserPost(object sender, EventArgs e)
+        {
+            ContadorPerfil = ContadorPerfil + 1;
+            if (ContadorPerfil <= 1)
+            {
+                ListUser = (List<string>)sender;
+                this.PerformSegue("DetallarPerfil", null);
+            }
+
         }
 
         private void FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "", bool disponibilidad = true, string pais = "", string estado = "", string municipio = "")
@@ -77,6 +92,7 @@ namespace WorklabsMx.iOS
             {
                 var current = Usuarios[indexPath.Row];
                 var currentUser = (ComunidadTableViewCell)tableView.DequeueReusableCell(IdentificadorCeldaUsuarios, indexPath);
+                currentUser.InfoUserPost += InfoUserPost;
                 currentUser.UpdateCell(current);
                 this.WillDisplay(indexPath.Row);
                 return currentUser;
@@ -102,6 +118,16 @@ namespace WorklabsMx.iOS
         private void Tapped(UITapGestureRecognizer Recognizer)
         {
             this.View.EndEditing(true);
+        }
+
+
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            if (segue.Identifier == "DetallarPerfil")
+            {
+                var PerfilView = (PerfilesTableViewController)segue.DestinationViewController;
+                PerfilView.ListUser = ListUser;
+            }
         }
 
     }
