@@ -139,15 +139,6 @@
     <Reference Include="Plugin.KeyChain">
       <HintPath>..\packages\Plugin.KeyChain.2.2.0\lib\Xamarin.iOS10\Plugin.KeyChain.dll</HintPath>
     </Reference>
-    <Reference Include="BouncyCastle">
-      <HintPath>..\packages\MimeKit.2.0.0\lib\xamarinios\BouncyCastle.dll</HintPath>
-    </Reference>
-    <Reference Include="MimeKit">
-      <HintPath>..\packages\MimeKit.2.0.0\lib\xamarinios\MimeKit.dll</HintPath>
-    </Reference>
-    <Reference Include="MailKit">
-      <HintPath>..\packages\MailKit.2.0.0\lib\xamarinios\MailKit.dll</HintPath>
-    </Reference>
     <Reference Include="Plugin.Share.Abstractions">
       <HintPath>..\packages\Plugin.Share.7.1.1\lib\Xamarin.iOS10\Plugin.Share.Abstractions.dll</HintPath>
     </Reference>
@@ -156,6 +147,15 @@
     </Reference>
     <Reference Include="Xamarin.SimplePing.iOS">
       <HintPath>..\packages\Xamarin.SimplePing.1.4.0\lib\XamariniOS10\Xamarin.SimplePing.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle">
+      <HintPath>..\packages\MimeKit.2.0.1\lib\xamarinios\BouncyCastle.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit">
+      <HintPath>..\packages\MimeKit.2.0.1\lib\xamarinios\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit">
+      <HintPath>..\packages\MailKit.2.0.1\lib\xamarinios\MailKit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -1106,6 +1106,10 @@
     </Compile>
     <Compile Include="EditarPerfilTableViewController.designer.cs">
       <DependentUpon>EditarPerfilTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleEmpresaViewController.cs" />
+    <Compile Include="DetalleEmpresaViewController.designer.cs">
+      <DependentUpon>DetalleEmpresaViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

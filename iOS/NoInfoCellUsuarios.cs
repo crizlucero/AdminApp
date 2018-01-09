@@ -14,7 +14,7 @@ namespace WorklabsMx.iOS
         {
             if (existeConeccion)
             {
-                lblNoInfo.Text = "No hay comentarios en tu muro";
+                lblNoInfo.Text = "Sin resultados de búsqueda";
             }
             else
             {

@@ -1,11 +1,15 @@
-using Foundation;
 using System;
 using UIKit;
+using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Models;
-using WorklabsMx.Controllers;
 using System.Collections.Generic;
+using WorklabsMx.Controllers;
 using BigTed;
-
+using WorklabsMx.Helpers;
+using System.Threading.Tasks;
+using Foundation;
+using SWRevealViewControllerBinding;
+using Xamarin.SimplePing;
 
 namespace WorklabsMx.iOS
 {
@@ -63,10 +67,87 @@ namespace WorklabsMx.iOS
             this.Usuarios = new MiembrosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
         }
 
+
+        private void AgregarBusqueda(string Parametro)
+        {
+            
+        }
+
+        void Buscando(object sender, EventArgs e)
+        {
+            string TextoBuscar = sender as string;
+            List<MiembroModel> SearchPost = new List<MiembroModel>();
+
+            if (InternetConectionHelper.VerificarConexion())
+            {
+                Usuarios = new MiembrosController().GetDirectorioUsuarios("", "", "", "", "", true, "", "", "");
+            }
+
+            if (TextoBuscar != "")
+            {
+                if (Usuarios.FindAll(x => x.Miembro_Nombre.Contains(TextoBuscar)) != null)
+                {
+                    foreach (MiembroModel post in Usuarios.FindAll(x => x.Miembro_Nombre.Contains(TextoBuscar)))
+                    {
+                        if (SearchPost.Contains(post) == false)
+                        {
+                            SearchPost.Add(post);
+                        }
+
+                    }
+                }
+                if (Usuarios.FindAll(x => x.Miembro_Apellidos.Contains(TextoBuscar)) != null)
+                {
+                    foreach (MiembroModel post in Usuarios.FindAll(x => x.Miembro_Apellidos.Contains(TextoBuscar)))
+                    {
+                        if (SearchPost.Contains(post) == false)
+                        {
+                            SearchPost.Add(post);
+                        }
+
+                    }
+                }
+                if (Usuarios.FindAll(x => x.Miembro_Puesto.Contains(TextoBuscar)) != null)
+                {
+                    foreach (MiembroModel post in Usuarios.FindAll(x => x.Miembro_Puesto.Contains(TextoBuscar)))
+                    {
+                        if (SearchPost.Contains(post) == false)
+                        {
+                            SearchPost.Add(post);
+                        }
+
+                    }
+                }
+                if (Usuarios.FindAll(x => x.Miembro_Profesion.Contains(TextoBuscar)) != null)
+                {
+                    foreach (MiembroModel post in Usuarios.FindAll(x => x.Miembro_Profesion.Contains(TextoBuscar)))
+                    {
+                        if (SearchPost.Contains(post) == false)
+                        {
+                            SearchPost.Add(post);
+                        }
+
+                    }
+                }
+                this.Usuarios = SearchPost;
+            }
+            this.TableView.ReloadData();
+        }
+
+        public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+        {
+            if(isShowInformation)
+            {
+                return TamañoUsuarios;
+            }
+            return TamañoMensajeNoInfo;
+        }
+
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
             var headerCell = (BuscadorTableViewCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
             headerCell.UpdateCell();
+            headerCell.Buscando += Buscando;
             return headerCell.ContentView;
         }
 

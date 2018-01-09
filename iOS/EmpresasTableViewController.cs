@@ -19,10 +19,13 @@ namespace WorklabsMx.iOS
 
         const int TamañoUsuarios = 70;
         const int TamañoHeader = 50;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-        const int TamañoMensajeNoInfo = 800;
+        const int TamañoMensajeNoInfo = 500;
 
         bool isShowInformation = false;
         bool existeConeccion = true;
+
+        int contadorEmpresas;
+        EmpresaModel Empresa;
 
         public EmpresasTableViewController (IntPtr handle) : base (handle)
         {
@@ -39,12 +42,23 @@ namespace WorklabsMx.iOS
         private void FillData(string nombre = "", string giro = "", string pais = "", string estado = "", string municipio = "")
         {
             this.Empresas = new EmpresaController().GetDirectorioEmpresas(nombre, pais, estado, municipio, giro);
-
         }
 
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            this.contadorEmpresas = 0;
+        }
+
+
+        void InfoEmpresas(object sender, EventArgs e)
+        {
+            contadorEmpresas = contadorEmpresas + 1;
+            if (contadorEmpresas <= 1)
+            {
+                this.Empresa = sender as EmpresaModel;
+                this.PerformSegue("DetallarEmpresa", null);
+            }
         }
 
         public override UIView GetViewForHeader(UITableView tableView, nint section)
@@ -57,6 +71,15 @@ namespace WorklabsMx.iOS
         public override nfloat GetHeightForHeader(UITableView tableView, nint section)
         {
             return TamañoHeader;
+        }
+
+        public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+        {
+            if (isShowInformation)
+            {
+                return TamañoUsuarios;
+            }
+            return TamañoMensajeNoInfo;
         }
 
         public override nint RowsInSection(UITableView tableView, nint section)
@@ -77,6 +100,7 @@ namespace WorklabsMx.iOS
                 var current = Empresas[indexPath.Row];
                 var currentUser = (CeldaEmpresasCell)tableView.DequeueReusableCell(IdentificadorCeldaUsuarios, indexPath);
                 currentUser.UpdateCell(current);
+                currentUser.InfoEmpresas += InfoEmpresas;
                 this.WillDisplay(indexPath.Row);
                 return currentUser;
             }
@@ -107,10 +131,10 @@ namespace WorklabsMx.iOS
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
-            if (segue.Identifier == "DetallarPerfil")
+            if (segue.Identifier == "DetallarEmpresa")
             {
-                var PerfilView = (PerfilesTableViewController)segue.DestinationViewController;
-                //PerfilView.ListUser = ListUser;
+                var PerfilView = (DetalleEmpresaViewController)segue.DestinationViewController;
+                PerfilView.Empresa = this.Empresa;
             }
         }
 

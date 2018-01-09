@@ -15,12 +15,11 @@
                         KeyChainHelper.SetKey("Usuario_Tipo", MiembrosId[1]);
                         KeyChainHelper.SetKey("Empresa_Id", MiembrosId[2]);                         BTProgressHUD.Dismiss();
                         NavigateToTabbed();
-
                     }
                     else
                     {
                         BTProgressHUD.Dismiss();
-                        new MessageDialog().SendToast("Esta aplicación no esta disponible para conexiones IPV6");
+                        new MessageDialog().SendToast("Tenemos un pequeño problema, por favor intenta de nuevo");
                     }
                 }
                 else

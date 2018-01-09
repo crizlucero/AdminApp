@@ -31,7 +31,6 @@ namespace WorklabsMx.iOS
                 listaUser.Add(MiembroLocal.Miembro_Id);
                 listaUser.Add(MiembroLocal.Miembro_Empresa);
                 listaUser.Add(MiembroLocal.Miembro_Tipo);
-                listaUser.Add(MiembroLocal.Miembro_Fotografia);
                 InfoUserPost(listaUser, EventArgs.Empty);
             }
         }

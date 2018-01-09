@@ -14,8 +14,16 @@ namespace WorklabsMx.iOS
     [Register ("BuscadorTableViewCell")]
     partial class BuscadorTableViewCell
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISearchBar srbComunidad { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (srbComunidad != null) {
+                srbComunidad.Dispose ();
+                srbComunidad = null;
+            }
         }
     }
 }

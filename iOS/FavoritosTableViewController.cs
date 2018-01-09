@@ -21,7 +21,7 @@ namespace WorklabsMx.iOS
 
         const int TamañoUsuarios = 70;
         const int TamañoHeader = 50;
-        const int TamañoMensajeNoInfo = 800;
+        const int TamañoMensajeNoInfo = 500;
 
         bool isShowInformation = false;
         bool existeConeccion = true;
@@ -46,6 +46,79 @@ namespace WorklabsMx.iOS
             base.ViewWillAppear(animated);
             ContadorPerfil = 0;
         }
+
+        public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+        {
+            if (isShowInformation)
+            {
+                return TamañoUsuarios;
+            }
+            return TamañoMensajeNoInfo;
+        }
+
+        void Buscando(object sender, EventArgs e)
+        {
+            string TextoBuscar = sender as string;
+            List<MiembroModel> SearchPost = new List<MiembroModel>();
+
+            if (InternetConectionHelper.VerificarConexion())
+            {
+                this.FillData();
+            }
+
+
+
+            if (TextoBuscar != "")
+            {
+                if (UsuariosFavoritos.FindAll(x => x.Miembro_Nombre.Contains(TextoBuscar)) != null)
+                {
+                    foreach (MiembroModel post in UsuariosFavoritos.FindAll(x => x.Miembro_Nombre.Contains(TextoBuscar)))
+                    {
+                        if (SearchPost.Contains(post) == false)
+                        {
+                            SearchPost.Add(post);
+                        }
+
+                    }
+                }
+                if (UsuariosFavoritos.FindAll(x => x.Miembro_Apellidos.Contains(TextoBuscar)) != null)
+                {
+                    foreach (MiembroModel post in UsuariosFavoritos.FindAll(x => x.Miembro_Apellidos.Contains(TextoBuscar)))
+                    {
+                        if (SearchPost.Contains(post) == false)
+                        {
+                            SearchPost.Add(post);
+                        }
+
+                    }
+                }
+                if (UsuariosFavoritos.FindAll(x => x.Miembro_Puesto.Contains(TextoBuscar)) != null)
+                {
+                    foreach (MiembroModel post in UsuariosFavoritos.FindAll(x => x.Miembro_Puesto.Contains(TextoBuscar)))
+                    {
+                        if (SearchPost.Contains(post) == false)
+                        {
+                            SearchPost.Add(post);
+                        }
+
+                    }
+                }
+                if (UsuariosFavoritos.FindAll(x => x.Miembro_Profesion.Contains(TextoBuscar)) != null)
+                {
+                    foreach (MiembroModel post in UsuariosFavoritos.FindAll(x => x.Miembro_Profesion.Contains(TextoBuscar)))
+                    {
+                        if (SearchPost.Contains(post) == false)
+                        {
+                            SearchPost.Add(post);
+                        }
+
+                    }
+                }
+                this.UsuariosFavoritos = SearchPost;
+            }
+            this.TableView.ReloadData();
+        }
+
 
         void InfoUserPost(object sender, EventArgs e)
         {
@@ -74,6 +147,7 @@ namespace WorklabsMx.iOS
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
             var headerCell = (HeaderFavoritosTableViewCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
+            headerCell.Buscando += Buscando;
             headerCell.UpdateCell();
             return headerCell.ContentView;
         }

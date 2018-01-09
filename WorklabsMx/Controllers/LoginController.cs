@@ -41,7 +41,6 @@ namespace WorklabsMx.Controllers
             finally
             {
                 conn.Close();
-                connIPV6.Close();
             }
             return datos;
         }

@@ -13,6 +13,9 @@ namespace WorklabsMx.iOS
 {
 	public partial class EscritorioHeaderCell : UITableViewCell
 	{
+
+        public event EventHandler Buscando;
+
 		public EscritorioHeaderCell (IntPtr handle) : base (handle)
 		{
 
@@ -30,6 +33,14 @@ namespace WorklabsMx.iOS
                 }
          
             }
+
+            srbBuscarComunidad.TextChanged += (sender, e) => {
+                if(Buscando != null)
+                {
+                    Buscando(e.SearchText, EventArgs.Empty);
+                }
+            };
+
         }
 
         public UIImageView getImagenPerfil()
