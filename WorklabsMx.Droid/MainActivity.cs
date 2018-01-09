@@ -24,6 +24,9 @@ using WorklabsMx.Models;
 using System.Linq;
 using Android.Support.V7.App;
 using Android.App;
+using Android.Support.V4.View;
+using com.refractored;
+using Newtonsoft.Json;
 
 namespace WorklabsMx.Droid
 {
@@ -109,13 +112,15 @@ namespace WorklabsMx.Droid
             await FillPosts();
             scroll.ScrollChange += async (sender, e) =>
             {
-                if ((posts.Count / (page + 1)) < 10)
-                    if ((((ScrollView)sender).ScrollY / (page + 1)) > ((scroll.Height) * .4))
+                if (posts.Count / (page + 1) > 10)
+                    if ((((ScrollView)sender).ScrollY / (page + 1)) > ((scroll.Height) * .6))
                     {
                         ++page;
                         await FillPosts();
                     }
             };
+
+
         }
 
         async Task FillPosts()
@@ -388,73 +393,9 @@ namespace WorklabsMx.Droid
 
         void ShowPerfilCard(MiembroModel miembro)
         {
-            Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this);
-
-            LayoutInflater liView = LayoutInflater;
-
-            View profileView = liView.Inflate(Resource.Layout.PerfilCardLayout, null, true);
-
-            profileView.FindViewById<ImageButton>(Resource.Id.ibCerrar).Click += (sender, e) => dialog.Dismiss();
-
-            profileView.FindViewById<TextView>(Resource.Id.lblNombre).Text = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos;
-            profileView.FindViewById<TextView>(Resource.Id.lblEmpresa).Text = miembro.Miembro_Empresa;
-            profileView.FindViewById<TextView>(Resource.Id.lblPuesto).Text = miembro.Miembro_Puesto;
-            profileView.FindViewById<TextView>(Resource.Id.lblProfesion).Text = miembro.Miembro_Profesion;
-            profileView.FindViewById<TextView>(Resource.Id.lblFechaNacimiento).Text = miembro.Miembro_Fecha_Nacimiento;
-            profileView.FindViewById<Button>(Resource.Id.btnSendMessage).Click += delegate
-            {
-                try
-                {
-                    Intent intent = PackageManager.GetLaunchIntentForPackage("mx.worklabs");
-                    StartActivity(intent);
-                }catch(Exception e){
-                    Intent intent = PackageManager.GetLaunchIntentForPackage("http://play.google.com/store/apps/details?id=");
-                    StartActivity(intent);
-                }
-            };
-            TextView txtPhone = profileView.FindViewById<TextView>(Resource.Id.lblContacto);
-            txtPhone.Text = miembro.Miembro_Celular;
-            txtPhone.Click += delegate
-            {
-                try
-                {
-                    var uri = Android.Net.Uri.Parse("tel:" + miembro.Miembro_Celular);
-                    var intent = new Intent(Intent.ActionDial, uri);
-                    StartActivity(intent);
-                }
-                catch (Exception ex)
-                {
-                    SlackLogs.SendMessage(ex.Message);
-                }
-            };
-
-            TextView txtEmail = profileView.FindViewById<TextView>(Resource.Id.lblCorreo);
-            txtEmail.Text = miembro.Miembro_Correo_Electronico;
-            txtEmail.Click += delegate
-            {
-                try
-                {
-                    Intent email = new Intent(Intent.ActionSend);
-                    email.PutExtra(Intent.ExtraEmail,
-                                   new string[] { miembro.Miembro_Correo_Electronico });
-                    email.PutExtra(Intent.ExtraSubject, Resources.GetString(Resource.String.AsuntoCorreo));
-                    email.SetType("message/rfc822");
-                    StartActivity(email);
-                }
-                catch (Exception ex)
-                {
-                    SlackLogs.SendMessage(ex.Message);
-                }
-            };
-            profileView.FindViewById<TextView>(Resource.Id.lblFacebook).Text = "";
-            profileView.FindViewById<TextView>(Resource.Id.lblInstagram).Text = "";
-            profileView.FindViewById<TextView>(Resource.Id.lblTwitter).Text = "";
-
-            builder.SetView(profileView);
-            builder.Create();
-            dialog = builder.Show();
-            dialog.Window.SetLayout(Resources.DisplayMetrics.WidthPixels, Resources.DisplayMetrics.HeightPixels);
-            dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
+            Intent intent = new Intent(this, typeof(PerfilCardActivity));
+            intent.PutExtra("Miembro", JsonConvert.SerializeObject(miembro));
+            StartActivity(intent);
         }
 
         void ShowPublish()

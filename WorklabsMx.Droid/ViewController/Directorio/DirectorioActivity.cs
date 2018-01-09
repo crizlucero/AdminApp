@@ -13,6 +13,7 @@ using Android.Views;
 using Android.Widget;
 using com.refractored;
 using Java.Lang;
+using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Models;
@@ -165,29 +166,10 @@ namespace WorklabsMx.Droid
 
         void ShowPerfilCard(MiembroModel miembro)
         {
-            Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(context);
+            Intent intent = new Intent(context, typeof(PerfilCardActivity));
+            intent.PutExtra("Miembro", JsonConvert.SerializeObject(miembro));
+            context.StartActivity(intent);
 
-            LayoutInflater liView = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
-
-            View customView = liView.Inflate(Resource.Layout.PerfilCardLayout, null, true);
-
-            customView.FindViewById<ImageButton>(Resource.Id.ibCerrar).Click += (sender, e) => dialog.Dismiss();
-
-            customView.FindViewById<TextView>(Resource.Id.lblNombre).Text = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos;
-            customView.FindViewById<TextView>(Resource.Id.lblEmpresa).Text = miembro.Miembro_Empresa;
-            customView.FindViewById<TextView>(Resource.Id.lblPuesto).Text = miembro.Miembro_Puesto;
-            customView.FindViewById<TextView>(Resource.Id.lblProfesion).Text = miembro.Miembro_Profesion;
-            customView.FindViewById<TextView>(Resource.Id.lblFechaNacimiento).Text = miembro.Miembro_Fecha_Nacimiento;
-            customView.FindViewById<TextView>(Resource.Id.lblContacto).Text = miembro.Miembro_Telefono;
-            customView.FindViewById<TextView>(Resource.Id.lblCorreo).Text = miembro.Miembro_Correo_Electronico;
-            customView.FindViewById<TextView>(Resource.Id.lblFacebook).Text = "";
-            customView.FindViewById<TextView>(Resource.Id.lblInstagram).Text = "";
-            customView.FindViewById<TextView>(Resource.Id.lblTwitter).Text = "";
-
-            builder.SetView(customView);
-            builder.Create();
-            dialog = builder.Show();
-            dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
         }
 
         public void FillDirectorioEmpresa()
