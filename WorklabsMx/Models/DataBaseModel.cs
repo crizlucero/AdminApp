@@ -6,7 +6,6 @@ namespace WorklabsMx.Models
     public abstract class DataBaseModel
     {
         protected SqlConnection conn;
-        protected SqlConnection connIPV6;
 
         protected string IP;
 

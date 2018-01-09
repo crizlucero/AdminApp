@@ -22,11 +22,10 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
             if (InternetConectionHelper.VerificarConexion())
             {
-                
                 this.Miembro = new MiembrosController().GetMemberData((ListUser[0] != "") ? ListUser[0] : ListUser[1], ListUser[2]);
                 this.lblNombre.Text = (Miembro.Miembro_Nombre != "") ? Miembro.Miembro_Nombre : "Sin Info";
                 this.lblEmpresa.Text = (Miembro.Miembro_Empresa != null) ? Miembro.Miembro_Empresa : "Sin Info";
-                this.btnProfileImage.SetBackgroundImage(ImageGallery.LoadImage(ListUser[3]) ?? UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
+                this.btnProfileImage.SetBackgroundImage(ImageGallery.LoadImage(Miembro.Miembro_Fotografia) ?? UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
                 KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Miembro.Miembro_Id, Miembro.Miembro_Tipo);
                 if (isFavorite.Key == 0)
                 {

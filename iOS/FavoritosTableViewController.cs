@@ -47,6 +47,68 @@ namespace WorklabsMx.iOS
             ContadorPerfil = 0;
         }
 
+        void Buscando(object sender, EventArgs e)
+        {
+            string TextoBuscar = sender as string;
+            List<MiembroModel> SearchPost = new List<MiembroModel>();
+
+            if (InternetConectionHelper.VerificarConexion())
+            {
+                this.FillData();
+            }
+
+            if (TextoBuscar != "")
+            {
+                if (UsuariosFavoritos.FindAll(x => x.Miembro_Nombre.Contains(TextoBuscar)) != null)
+                {
+                    foreach (MiembroModel post in UsuariosFavoritos.FindAll(x => x.Miembro_Nombre.Contains(TextoBuscar)))
+                    {
+                        if (SearchPost.Contains(post) == false)
+                        {
+                            SearchPost.Add(post);
+                        }
+
+                    }
+                }
+                if (UsuariosFavoritos.FindAll(x => x.Miembro_Apellidos.Contains(TextoBuscar)) != null)
+                {
+                    foreach (MiembroModel post in UsuariosFavoritos.FindAll(x => x.Miembro_Apellidos.Contains(TextoBuscar)))
+                    {
+                        if (SearchPost.Contains(post) == false)
+                        {
+                            SearchPost.Add(post);
+                        }
+
+                    }
+                }
+                if (UsuariosFavoritos.FindAll(x => x.Miembro_Puesto.Contains(TextoBuscar)) != null)
+                {
+                    foreach (MiembroModel post in UsuariosFavoritos.FindAll(x => x.Miembro_Puesto.Contains(TextoBuscar)))
+                    {
+                        if (SearchPost.Contains(post) == false)
+                        {
+                            SearchPost.Add(post);
+                        }
+
+                    }
+                }
+                if (UsuariosFavoritos.FindAll(x => x.Miembro_Profesion.Contains(TextoBuscar)) != null)
+                {
+                    foreach (MiembroModel post in UsuariosFavoritos.FindAll(x => x.Miembro_Profesion.Contains(TextoBuscar)))
+                    {
+                        if (SearchPost.Contains(post) == false)
+                        {
+                            SearchPost.Add(post);
+                        }
+
+                    }
+                }
+                this.UsuariosFavoritos = SearchPost;
+            }
+            this.TableView.ReloadData();
+        }
+
+
         void InfoUserPost(object sender, EventArgs e)
         {
             ContadorPerfil = ContadorPerfil + 1;
@@ -74,6 +136,7 @@ namespace WorklabsMx.iOS
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
             var headerCell = (HeaderFavoritosTableViewCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
+            headerCell.Buscando += Buscando;
             headerCell.UpdateCell();
             return headerCell.ContentView;
         }

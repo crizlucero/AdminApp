@@ -14,8 +14,16 @@ namespace WorklabsMx.iOS
     [Register ("HeaderFavoritosTableViewCell")]
     partial class HeaderFavoritosTableViewCell
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISearchBar srbFavoritos { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (srbFavoritos != null) {
+                srbFavoritos.Dispose ();
+                srbFavoritos = null;
+            }
         }
     }
 }
