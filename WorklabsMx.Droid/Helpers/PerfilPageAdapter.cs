@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Android.Content;
 using Android.Runtime;
 using Android.Support.V4.View;
@@ -23,7 +22,7 @@ namespace WorklabsMx.Droid
             this.miembro = miembro;
         }
 
-        public override Java.Lang.Object InstantiateItem(View container, int position)
+        public override Object InstantiateItem(View container, int position)
         {
             LayoutInflater liView = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
             View profileView = liView.Inflate(Resource.Layout.DatosGeneralesLayout, null, true);
@@ -74,13 +73,12 @@ namespace WorklabsMx.Droid
             return profileView;
         }
 
-
         public override int Count => titulos.Count;
 
-        public override bool IsViewFromObject(View view, Java.Lang.Object @object) => view == @object;
+        public override bool IsViewFromObject(View view, Object @object) => view == @object;
 
-        public override ICharSequence GetPageTitleFormatted(int position) => new Java.Lang.String(titulos[position]);
+        public override ICharSequence GetPageTitleFormatted(int position) => new String(titulos[position]);
 
-        public override void DestroyItem(View container, int position, Java.Lang.Object @object) => container.JavaCast<ViewPager>().RemoveView(@object as View);
+        public override void DestroyItem(View container, int position, Object @object) => container.JavaCast<ViewPager>().RemoveView(@object as View);
     }
 }
