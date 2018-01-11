@@ -127,7 +127,7 @@ namespace WorklabsMx.iOS
             {
                 var current = Reservaciones[indexPath.Row];
                 var currentPostCell = (ReservacionesSalaCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
-                currentPostCell.UpdateCell(current);
+                currentPostCell.UpdateCell(current, this.SeccionSeleccionada);
                 this.WillDisplay(indexPath.Row);
                 return currentPostCell;
             }
@@ -164,7 +164,15 @@ namespace WorklabsMx.iOS
 
         public override bool CanEditRow(UITableView tableView, NSIndexPath indexPath)
         {
-            return true;
+            if (this.SeccionSeleccionada == 0)
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+
         }
 
         public override string TitleForDeleteConfirmation(UITableView tableView, NSIndexPath indexPath)

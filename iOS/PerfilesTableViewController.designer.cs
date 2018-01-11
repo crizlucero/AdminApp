@@ -54,6 +54,18 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblNombre { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwMi { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwSocial { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwTrabajo { get; set; }
+
         [Action ("btnBackGroundImage_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnBackGroundImage_Touch (UIKit.UIButton sender);
@@ -136,6 +148,21 @@ namespace WorklabsMx.iOS
             if (lblNombre != null) {
                 lblNombre.Dispose ();
                 lblNombre = null;
+            }
+
+            if (vwMi != null) {
+                vwMi.Dispose ();
+                vwMi = null;
+            }
+
+            if (vwSocial != null) {
+                vwSocial.Dispose ();
+                vwSocial = null;
+            }
+
+            if (vwTrabajo != null) {
+                vwTrabajo.Dispose ();
+                vwTrabajo = null;
             }
         }
     }

@@ -178,6 +178,10 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwSalasJuntas { get; set; }
 
+        [Action ("btnAgendar_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnAgendar_Touch (UIKit.UIButton sender);
+
         [Action ("btnSeleccionarFecha_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnSeleccionarFecha_Touch (UIKit.UIButton sender);

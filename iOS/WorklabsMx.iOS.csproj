@@ -1111,6 +1111,11 @@
     <Compile Include="DetalleEmpresaViewController.designer.cs">
       <DependentUpon>DetalleEmpresaViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfirmarSalaJuntasController.cs" />
+    <Compile Include="ConfirmarSalaJuntasController.designer.cs">
+      <DependentUpon>ConfirmarSalaJuntasController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\AppHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

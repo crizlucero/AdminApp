@@ -13,6 +13,8 @@ namespace WorklabsMx.iOS
         MiembrosController Favorites = new MiembrosController();
         MiembroModel Miembro = new MiembroModel();
 
+        bool FromMi = true, FromSocial = false, FromTrabajo = false;
+
         public PerfilesTableViewController (IntPtr handle) : base (handle)
         {
         }
@@ -90,14 +92,68 @@ namespace WorklabsMx.iOS
 
         partial void btnSobreMi_Touch(UIButton sender)
         {
+            this.btnSobreMi.BackgroundColor = UIColor.Clear.FromHex(0xFFFFFF);
+            this.btnSobreMi.SetTitleColor(UIColor.Clear.FromHex(0x63B4EA), UIControlState.Normal);
+            this.vwMi.BackgroundColor = UIColor.Clear.FromHex(0xFFFFFF);
+            if (FromSocial)
+            {
+                this.btnSocial.BackgroundColor = UIColor.Clear.FromHex(0xF4F4F4);
+                this.btnSocial.SetTitleColor(UIColor.Clear.FromHex(0x767676), UIControlState.Normal);
+                this.vwSocial.BackgroundColor = UIColor.Clear.FromHex(0xF4F4F4);
+            }
+            else if (FromTrabajo)
+            {
+                this.btnTrabajo.BackgroundColor = UIColor.Clear.FromHex(0xE6E6E6);
+                this.btnTrabajo.SetTitleColor(UIColor.Clear.FromHex(0x767676), UIControlState.Normal);
+                this.vwTrabajo.BackgroundColor = UIColor.Clear.FromHex(0xE6E6E6);
+            }
+            this.FromMi = true;
+            this.FromSocial = false;
+            this.FromTrabajo = false;
         }
 
         partial void btnSocial_Touch(UIButton sender)
         {
+            this.btnSocial.BackgroundColor = UIColor.Clear.FromHex(0xFFFFFF);
+            this.btnSocial.SetTitleColor(UIColor.Clear.FromHex(0x63B4EA), UIControlState.Normal);
+            this.vwSocial.BackgroundColor = UIColor.Clear.FromHex(0xFFFFFF);
+            if (FromMi)
+            {
+                this.btnSobreMi.BackgroundColor = UIColor.Clear.FromHex(0xF4F4F4);
+                this.btnSobreMi.SetTitleColor(UIColor.Clear.FromHex(0x767676), UIControlState.Normal);
+                this.vwMi.BackgroundColor = UIColor.Clear.FromHex(0xF4F4F4);
+            }
+            else if (FromTrabajo)
+            {
+                this.btnTrabajo.BackgroundColor = UIColor.Clear.FromHex(0xE6E6E6);
+                this.btnTrabajo.SetTitleColor(UIColor.Clear.FromHex(0x767676), UIControlState.Normal);
+                this.vwTrabajo.BackgroundColor = UIColor.Clear.FromHex(0xE6E6E6);
+            }
+            this.FromMi = false;
+            this.FromSocial = true;
+            this.FromTrabajo = false;
         }
 
         partial void btnTrabajo_Touch(UIButton sender)
         {
+            this.btnTrabajo.BackgroundColor = UIColor.Clear.FromHex(0xFFFFFF);
+            this.btnTrabajo.SetTitleColor(UIColor.Clear.FromHex(0x63B4EA), UIControlState.Normal);
+            this.vwTrabajo.BackgroundColor = UIColor.Clear.FromHex(0xFFFFFF);
+            if (FromMi)
+            {
+                this.btnSobreMi.BackgroundColor = UIColor.Clear.FromHex(0xE6E6E6);
+                this.btnSobreMi.SetTitleColor(UIColor.Clear.FromHex(0x767676), UIControlState.Normal);
+                this.vwMi.BackgroundColor = UIColor.Clear.FromHex(0xE6E6E6);
+            }
+            else if (FromSocial)
+            {
+                this.btnSocial.BackgroundColor = UIColor.Clear.FromHex(0xF4F4F4);
+                this.btnSocial.SetTitleColor(UIColor.Clear.FromHex(0x767676), UIControlState.Normal);
+                this.vwSocial.BackgroundColor = UIColor.Clear.FromHex(0xF4F4F4);
+            }
+            this.FromMi = false;
+            this.FromSocial = false;
+            this.FromTrabajo = true;
         }
     }
 }

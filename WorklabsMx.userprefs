@@ -1,29 +1,34 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/EmpresasTableViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ConfirmarSalaJuntasController.cs">
     <Files>
-      <File FileName="iOS/ComunidadTableViewController.cs" Line="137" Column="1" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="24" Column="38" />
-      <File FileName="iOS/FavoritosTableViewController.cs" Line="57" Column="10" />
-      <File FileName="iOS/EmpresasTableViewController.cs" Line="83" Column="10" />
+      <File FileName="iOS/PerfilesTableViewController.cs" Line="141" Column="78" NotebookId="1" />
+      <File FileName="iOS/DetalleEmpresaViewController.cs" Line="87" Column="66" NotebookId="1" />
+      <File FileName="iOS/EditarPerfilTableViewController.cs" Line="102" Column="13" NotebookId="1" />
+      <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="38" Column="59" NotebookId="1" />
+      <File FileName="iOS/FechaReservacionPickerViewController.cs" Line="32" Column="34" NotebookId="1" />
+      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="939" Column="55" NotebookId="1" />
+      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="11" Column="146" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="30" Column="1" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="142" Column="21" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/MiMembresiaController.cs" Line="14" Column="67" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/MiPerfil/AboutMeController.cs" Line="20" Column="98" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="105" Column="38" NotebookId="1" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>allPosts</Value>
-          <Value>allPosts.Find(x =&gt; x.Usuario_Nombre.Contains(TextoBuscar)</Value>
-          <Value>SearchPost</Value>
-          <Value>UsuariosFavoritos</Value>
-        </State>
-      </Pad>
-    </Pads>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="1072" Y="23" Width="976" Height="480">
+        <Files>
+          <File FileName="WorklabsMx/Models/SalaJuntasReservacionModel.cs" Line="2" Column="28" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/FavoritosTableViewController.cs" relfile="iOS/FavoritosTableViewController.cs" line="73" column="68" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C8F534E0-9C6A-4F53-A110-4E330B864317" />
   <MultiItemStartupConfigurations />
 </Properties>
