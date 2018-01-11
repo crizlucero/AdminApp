@@ -6,7 +6,6 @@ using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
-using Android.Support.V4.App;
 using Android.Support.V4.View;
 using Android.Views;
 using Android.Widget;
@@ -19,7 +18,7 @@ using WorklabsMx.Models;
 namespace WorklabsMx.Droid
 {
     [Activity(Label = "@string/app_name")]
-    public class SalasJuntasActivity : FragmentActivity
+    public class SalasJuntasActivity : Activity
     {
         ViewPager _viewPager;
         List<int> horas, HorasNoDisponibles;
@@ -97,8 +96,28 @@ namespace WorklabsMx.Droid
             FindViewById<RelativeLayout>(Resource.Id.rlAgendar).Click += delegate
             {
                 Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].ForEach(hora =>
-                     SalasController.AsignarSalaJuntas("ALTA", salas[_viewPager.CurrentItem].Sala_Id, storage.Get("Usuario_Id"),
-                                                                                       storage.Get("Usuario_Tipo"), fecha_seleccionada, (hora - 1).ToString("00") + ":00", hora.ToString("00") + ":00")
+                {
+                    /*ContentValues eventValues = new ContentValues();
+                    DateTime sd = DateTime.Parse(fecha_seleccionada);
+                    eventValues.Put(CalendarContract.Events.InterfaceConsts.CalendarId, 1);
+                    eventValues.Put(CalendarContract.Events.InterfaceConsts.Title, "Title Here");
+                    eventValues.Put(CalendarContract.Events.InterfaceConsts.Description, "Some Text goes here");
+                    eventValues.Put(CalendarContract.Events.InterfaceConsts.Dtstart, new CalendarHelper().GetDateTimeMS(sd.Year, sd.Month, sd.Day, hora - 1, 0));
+                    eventValues.Put(CalendarContract.Events.InterfaceConsts.Dtend, new CalendarHelper().GetDateTimeMS(sd.Year, sd.Month, sd.Day, hora, 0));
+                    eventValues.Put(CalendarContract.Events.InterfaceConsts.AllDay, "0");
+                    eventValues.Put(CalendarContract.Events.InterfaceConsts.HasAlarm, "1");
+                    eventValues.Put(CalendarContract.Events.InterfaceConsts.EventTimezone, "GMT-6:00");
+                    eventValues.Put(CalendarContract.Events.InterfaceConsts.EventEndTimezone, "GMT-6:00");
+                    var eventUri = ContentResolver.Insert(CalendarContract.Events.ContentUri, eventValues);
+                    long eventID = long.Parse(eventUri.LastPathSegment);
+                    ContentValues remindervalues = new ContentValues();
+                    remindervalues.Put(CalendarContract.Reminders.InterfaceConsts.Minutes, 30);
+                    remindervalues.Put(CalendarContract.Reminders.InterfaceConsts.EventId, eventID);
+                    remindervalues.Put(CalendarContract.Reminders.InterfaceConsts.Method, (int)RemindersMethod.Alert);
+                    var reminderURI = ContentResolver.Insert(CalendarContract.Reminders.ContentUri, remindervalues);*/
+                    //SalasController.AsignarSalaJuntas("ALTA", salas[_viewPager.CurrentItem].Sala_Id, storage.Get("Usuario_Id"),
+                    //                                  storage.Get("Usuario_Tipo"), fecha_seleccionada, (hora - 1).ToString("00") + ":00", hora.ToString("00") + ":00");
+                }
                 );
                 SetContentView(Resource.Layout.SalasJuntasConfirmacionLayout);
                 FindViewById<TextView>(Resource.Id.lblDiaSemana).Text = DateTime.Parse(fecha_seleccionada).DayOfWeek.ToString().Substring(0, 3);
@@ -236,7 +255,40 @@ namespace WorklabsMx.Droid
             dialog = builder.Show();
             dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
         }
+
+        void ShowConfirmacion()
+        {
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            LayoutInflater liView = LayoutInflater;
+
+            View customView = liView.Inflate(Resource.Layout.CalendarioLayout, null, true);
+
+            CalendarView calendar = customView.FindViewById<CalendarView>(Resource.Id.cvCalendario);
+            calendar.MinDate = new Java.Util.Date().Time;
+            calendar.FirstDayOfWeek = (int)DayOfWeek.Sunday;
+            calendar.DateChange += (sender, e) =>
+            {
+                fecha_seleccionada = e.DayOfMonth + "/" + e.Month + "/" + e.Year;
+                DateTime fecha = DateTime.ParseExact(fecha_seleccionada, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                FindViewById<TextView>(Resource.Id.lblDiaFecha).Text = fecha.DayOfWeek.ToString().Substring(0, 3);
+                FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = fecha.Day.ToString();
+                HorasNoDisponibles.Clear();
+                SalasController.GetHorasNoDisponibles(fecha_seleccionada, salas[_viewPager.CurrentItem].Sala_Id).ForEach(horas => HorasNoDisponibles.Add(DateTime.Parse(horas.Sala_Hora_Fin).Hour));
+                if (!Horarios[salas[_viewPager.CurrentItem].Sala_Id].ContainsKey(fecha_seleccionada))
+                    Horarios[salas[_viewPager.CurrentItem].Sala_Id].Add(fecha_seleccionada, new List<int>());
+                FillHorario();
+                dialog.Dismiss();
+            };
+            builder.SetView(customView);
+            builder.Create();
+            dialog = builder.Show();
+            dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
+        }
+
     }
+
 
     class SalaJuntasAdapter : PagerAdapter
     {

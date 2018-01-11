@@ -146,4 +146,6 @@
     <string name="ConfirmacionSala">Tu reservación se ha generado con éxito. No dudes en ponerte en contacto con el Staff para cualquier duda, será un gusto poder apoyarte.</string>
     <string name="EnviarMensaje">Enviar Mensaje</string>
     <string name="Seguir">Seguir</string>
+    <string name="DetalleReserva">Detalle de Reservación</string>
+    <string name="Confirmar">Confirmar</string>
 </resources>

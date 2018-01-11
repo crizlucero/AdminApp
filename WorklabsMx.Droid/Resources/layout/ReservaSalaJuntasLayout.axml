@@ -221,7 +221,7 @@
                 <ImageView
                     android:layout_width="10dp"
                     android:layout_gravity="top"
-                    android:src="@mipmap/ic_clock"
+                    android:src="@mipmap/ic_creditos"
                     android:id="@+id/imageView1"
                     android:layout_height="10dp" />
                 <TextView
@@ -275,7 +275,7 @@
                 <ImageView
                     android:layout_width="10dp"
                     android:layout_gravity="top"
-                    android:src="@mipmap/ic_clock"
+                    android:src="@mipmap/ic_creditos"
                     android:id="@+id/imageView1"
                     android:layout_height="10dp" />
                 <TextView

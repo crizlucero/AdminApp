@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFF">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/DetalleReserva"
+        android:gravity="center_horizontal"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textColor="#D8A96E"
+        android:layout_margin="20dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/svReservaciones"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnCancelar"
+            android:textColor="#FFF"
+            android:textSize="12dp"
+            android:background="#D8A96E"
+            android:text="@string/Cancelar"
+            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp" />
+        <Button
+            android:id="@+id/btnConfirmar"
+            android:background="#D8A96E"
+            android:textColor="#FFF"
+            android:text="@string/Confirmar"
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp" />
+    </RelativeLayout>
+</LinearLayout>

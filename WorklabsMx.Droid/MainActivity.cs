@@ -59,7 +59,7 @@ namespace WorklabsMx.Droid
             base.OnPause();
         }
 
-        protected override async void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             try
@@ -69,7 +69,7 @@ namespace WorklabsMx.Droid
                 localStorage = SimpleStorage.EditGroup("Login");
                 ListMenu = DashboardController.GetMenuAndroid(Convert.ToInt32(localStorage.Get("Usuario_Tipo")));
                 localStorage.Delete("Parent");
-                await OpenDashboard();
+                OpenDashboard();
             }
             catch (Exception e)
             {
