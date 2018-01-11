@@ -12,12 +12,17 @@ namespace WorklabsMx.iOS
         {
         }
 
-        public void UpdateCell(SalaJuntasReservacionModel Reservacion)
+        public void UpdateCell(SalaJuntasReservacionModel Reservacion, int seccion)
         {
             this.lblNombre.Text = Reservacion.Sala_Descripcion;
             this.lblCapacidad.Text = Reservacion.Sala_Capacidad + " Personas";
             this.lblDiaReservacion.Text = Reservacion.Sala_Fecha;
             this.lblFechaReservacion.Text = Reservacion.Sala_Hora_Inicio.Substring(0, 5) + " - " + Reservacion.Sala_Hora_Fin.Substring(0, 5);
+            if (seccion == 1)
+            {
+                this.btnFlecha.Hidden = true;
+                this.btnFlecha.Enabled = false;
+            }
         }
 
     }

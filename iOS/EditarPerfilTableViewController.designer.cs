@@ -50,6 +50,18 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwImagenPerfil { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwSocial { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwTrabajo { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwVistaMi { get; set; }
+
         [Action ("btnClose_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnClose_Touch (UIKit.UIButton sender);
@@ -119,6 +131,21 @@ namespace WorklabsMx.iOS
             if (vwImagenPerfil != null) {
                 vwImagenPerfil.Dispose ();
                 vwImagenPerfil = null;
+            }
+
+            if (vwSocial != null) {
+                vwSocial.Dispose ();
+                vwSocial = null;
+            }
+
+            if (vwTrabajo != null) {
+                vwTrabajo.Dispose ();
+                vwTrabajo = null;
+            }
+
+            if (vwVistaMi != null) {
+                vwVistaMi.Dispose ();
+                vwVistaMi = null;
             }
         }
     }

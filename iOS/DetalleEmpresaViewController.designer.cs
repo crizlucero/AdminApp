@@ -42,6 +42,18 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblNombreEmpresa { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwMi { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwSocial { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwTrabajo { get; set; }
+
         [Action ("btnSobreMi_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnSobreMi_Touch (UIKit.UIButton sender);
@@ -89,6 +101,21 @@ namespace WorklabsMx.iOS
             if (lblNombreEmpresa != null) {
                 lblNombreEmpresa.Dispose ();
                 lblNombreEmpresa = null;
+            }
+
+            if (vwMi != null) {
+                vwMi.Dispose ();
+                vwMi = null;
+            }
+
+            if (vwSocial != null) {
+                vwSocial.Dispose ();
+                vwSocial = null;
+            }
+
+            if (vwTrabajo != null) {
+                vwTrabajo.Dispose ();
+                vwTrabajo = null;
             }
         }
     }
