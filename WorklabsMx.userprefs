@@ -1,52 +1,15 @@
-<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ConfirmarSalaJuntasController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/NoInfoCellUsuarios.cs">
     <Files>
-      <File FileName="iOS/PerfilesTableViewController.cs" Line="141" Column="78" NotebookId="1" />
-      <File FileName="iOS/DetalleEmpresaViewController.cs" Line="87" Column="66" NotebookId="1" />
-      <File FileName="iOS/EditarPerfilTableViewController.cs" Line="102" Column="13" NotebookId="1" />
-      <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="38" Column="59" NotebookId="1" />
-      <File FileName="iOS/FechaReservacionPickerViewController.cs" Line="32" Column="34" NotebookId="1" />
-      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="939" Column="55" NotebookId="1" />
-      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="11" Column="146" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="30" Column="1" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="142" Column="21" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/MiMembresiaController.cs" Line="14" Column="67" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/MiPerfil/AboutMeController.cs" Line="20" Column="98" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="105" Column="38" NotebookId="1" />
+      <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="1" Column="1" />
+      <File FileName="iOS/NoInfoCellUsuarios.cs" Line="1" Column="1" />
     </Files>
-    <FloatingWindows>
-      <FloatingWindow WindowId="1" X="1072" Y="23" Width="976" Height="480">
-        <Files>
-          <File FileName="WorklabsMx/Models/SalaJuntasReservacionModel.cs" Line="2" Column="28" />
-        </Files>
-      </FloatingWindow>
-    </FloatingWindows>
-=======
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench>
-    <Files>
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="184" Column="42" />
-      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioActivity.cs" Line="50" Column="73" />
-      <File FileName="WorklabsMx.Droid/ViewController/PerfilCardActivity.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/Helpers/EmpresaPageAdapter.cs" Line="80" Column="72" />
-      <File FileName="WorklabsMx.Droid/Helpers/PerfilPageAdapter.cs" Line="75" Column="9" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="22" Column="1" />
-      <File FileName="WorklabsMx/Models/SalaJuntasModel.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Models/SalaJuntasReservacionModel.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="120" Column="62" />
-      <File FileName="WorklabsMx.Droid/Resources/values/styles.xml" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="150" Column="39" />
-    </Files>
->>>>>>> 73cb7368052a275c51d29fcd393fce4837a81c15
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" relfile="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" line="56" column="27" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.8E7870C1-E826-4C43-8050-33E492EADDA5" />
   <MultiItemStartupConfigurations />
 </Properties>

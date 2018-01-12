@@ -14,3 +14,4 @@
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/SWRevealViewControllerBinding/obj/Debug/SWRevealViewControllerBinding.dll
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/SWRevealViewControllerBinding/obj/Debug/SWRevealViewControllerBinding.pdb
 /Users/gilberto/Documents/WorkLabsMx/WorklabsMx/SWRevealViewControllerBinding/obj/Debug/SWRevealViewControllerBinding.csprojResolveAssemblyReference.cache
+/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.3/WorklabsMx/SWRevealViewControllerBinding/obj/Debug/SWRevealViewControllerBinding.csprojResolveAssemblyReference.cache

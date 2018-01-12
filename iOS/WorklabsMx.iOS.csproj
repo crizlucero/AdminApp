@@ -678,6 +678,18 @@
     <ImageAsset Include="Assets.xcassets\EditarBlanco.imageset\icons8-edit-60 %281%29.png" />
     <ImageAsset Include="Assets.xcassets\EditarBlanco.imageset\icons8-edit-30 %281%29.png" />
     <ImageAsset Include="Assets.xcassets\EditarBlanco.imageset\icons8-edit-90 %281%29.png" />
+    <ImageAsset Include="Assets.xcassets\MiniLogo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\MiniLogo.imageset\MiniLogo.png" />
+    <ImageAsset Include="Assets.xcassets\MiniLogo.imageset\MiniLogo%402x.png" />
+    <ImageAsset Include="Assets.xcassets\MiniLogo.imageset\MiniLogo%403x.png" />
+    <ImageAsset Include="Assets.xcassets\MiniCalendar.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\MiniCalendar.imageset\MiniCalendar.png" />
+    <ImageAsset Include="Assets.xcassets\MiniCalendar.imageset\MiniCalendar%402x.png" />
+    <ImageAsset Include="Assets.xcassets\MiniCalendar.imageset\MiniCalendar%403x.png" />
+    <ImageAsset Include="Assets.xcassets\MiniHorario.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\MiniHorario.imageset\MiniCalendario.png" />
+    <ImageAsset Include="Assets.xcassets\MiniHorario.imageset\MiniCalendario%402x.png" />
+    <ImageAsset Include="Assets.xcassets\MiniHorario.imageset\MiniCalendario%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1116,6 +1128,14 @@
       <DependentUpon>ConfirmarSalaJuntasController.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AppHelper.cs" />
+    <Compile Include="ReservacionesTableView.cs" />
+    <Compile Include="ReservacionesTableView.designer.cs">
+      <DependentUpon>ReservacionesTableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReservacionTableViewCell.cs" />
+    <Compile Include="ReservacionTableViewCell.designer.cs">
+      <DependentUpon>ReservacionTableViewCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -1253,6 +1273,9 @@
     <Folder Include="Assets.xcassets\ProfileImageBig.imageset\" />
     <Folder Include="Assets.xcassets\CameraWhite.imageset\" />
     <Folder Include="Assets.xcassets\EditarBlanco.imageset\" />
+    <Folder Include="Assets.xcassets\MiniLogo.imageset\" />
+    <Folder Include="Assets.xcassets\MiniCalendar.imageset\" />
+    <Folder Include="Assets.xcassets\MiniHorario.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

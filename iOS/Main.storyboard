@@ -1420,7 +1420,7 @@
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="btnAgendar_Touch:" destination="Wz8-Z3-GpJ" id="350072" eventType="touchUpInside"/>
+                                                        <action selector="btnAgendar_Touch:" destination="Wz8-Z3-GpJ" eventType="touchUpInside" id="350072"/>
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="CUS-Yc-arL">
@@ -8940,7 +8940,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="btnCancelar_Touch:" destination="JIb-ss-hjE" id="344556" eventType="touchUpInside"/>
+                                            <action selector="btnCancelar_Touch:" destination="JIb-ss-hjE" eventType="touchUpInside" id="344556"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2O-ki-02P">
@@ -9018,19 +9018,93 @@
         <!--Table View Controller-->
         <scene sceneID="GeR-zB-85b">
             <objects>
-                <tableViewController id="KYz-ti-jF9" sceneMemberID="viewController">
+                <tableViewController id="KYz-ti-jF9" sceneMemberID="viewController" customClass="ReservacionesTableView">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ydX-wE-TIC">
                         <rect key="frame" x="0.0" y="0.0" width="338" height="387"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="Iar-id-pwD">
-                                <rect key="frame" x="0.0" y="28" width="338" height="80"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="117" id="Iar-id-pwD" customClass="ReservacionTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="338" height="117"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Iar-id-pwD" id="ghC-DH-xlj">
-                                    <rect key="frame" x="0.0" y="0.0" width="338" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="338" height="116.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yur-2y-nXq">
+                                            <rect key="frame" x="16" y="11" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eUM-NN-LKb" image="MiniCalendar">
+                                            <rect key="frame" x="124" y="54" width="15" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlK-v8-VGt">
+                                            <rect key="frame" x="124" y="11" width="198" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLH-sV-1h0">
+                                            <rect key="frame" x="124" y="28" width="198" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meo-HN-5Dk">
+                                            <rect key="frame" x="148" y="54" width="174" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MiniLogo" translatesAutoresizingMaskIntoConstraints="NO" id="4zg-En-viZ">
+                                            <rect key="frame" x="124" y="97" width="15" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukg-jv-cOY">
+                                            <rect key="frame" x="148" y="97" width="174" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E8M-8J-Yd1">
+                                            <rect key="frame" x="16" y="115" width="306" height="1"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                                        </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MiniHorario" translatesAutoresizingMaskIntoConstraints="NO" id="05G-8v-6oj">
+                                            <rect key="frame" x="124" y="75" width="15" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IyX-pD-t5a">
+                                            <rect key="frame" x="148" y="75" width="80" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ee-2f-I0U">
+                                            <rect key="frame" x="236" y="75" width="86" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imgSala" destination="Yur-2y-nXq" id="name-outlet-Yur-2y-nXq"/>
+                                    <outlet property="lblSalaNombre" destination="ZlK-v8-VGt" id="name-outlet-ZlK-v8-VGt"/>
+                                    <outlet property="lblNivel" destination="YLH-sV-1h0" id="name-outlet-YLH-sV-1h0"/>
+                                    <outlet property="lblDiaMes" destination="meo-HN-5Dk" id="name-outlet-meo-HN-5Dk"/>
+                                    <outlet property="lblCreditos" destination="ukg-jv-cOY" id="name-outlet-ukg-jv-cOY"/>
+                                    <outlet property="lblHoraInicioFin" destination="IyX-pD-t5a" id="name-outlet-IyX-pD-t5a"/>
+                                    <outlet property="lblCantidadHoras" destination="0Ee-2f-I0U" id="name-outlet-0Ee-2f-I0U"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -9839,6 +9913,8 @@
         <image name="Likes" width="15" height="14"/>
         <image name="Mail" width="30" height="30"/>
         <image name="Menu" width="25" height="10"/>
+        <image name="MiniHorario" width="10" height="10"/>
+        <image name="MiniLogo" width="10" height="10"/>
         <image name="Municipio" width="30" height="30"/>
         <image name="Nacimiento" width="30" height="30"/>
         <image name="Nombre" width="30" height="30"/>
@@ -9933,6 +10009,7 @@
         <image name="NoCom" width="17" height="17"/>
         <image name="NoLike" width="17" height="16"/>
         <image name="ProfileImageBig" width="180" height="180"/>
+        <image name="MiniCalendar" width="10" height="10"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="teg-hU-Dz2"/>
