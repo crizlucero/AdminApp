@@ -142,7 +142,7 @@
     <Compile Include="Fragments\MenuFragment.cs" />
     <Compile Include="ViewController\MiPerfil\PerfilActivity.cs" />
     <Compile Include="ViewController\MiPerfil\DatosFacturacionActivity.cs" />
-    <Compile Include="ViewController\Formatos\RegistroInvitadosActivity.cs" />
+    <Compile Include="ViewController\Formatos\InvitadosActivity.cs" />
     <Compile Include="ViewController\Formatos\ReservaSalaJuntasActivity.cs" />
     <Compile Include="ViewController\Servicios\ShoppingCartActivity.cs" />
     <Compile Include="ViewController\Servicios\PaymentActivity.cs" />
@@ -218,7 +218,7 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_cellphone.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_work.png" />
     <AndroidResource Include="Resources\layout\DatosFacturacionLayout.axml" />
-    <AndroidResource Include="Resources\layout\RegistroInvitadosLayout.axml" />
+    <AndroidResource Include="Resources\layout\InvitadosLayout.axml" />
     <AndroidResource Include="Resources\layout\ReservaSalaJuntasLayout.axml" />
     <AndroidResource Include="Resources\layout\MiEmpresaLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_place.png" />
@@ -348,6 +348,10 @@
     <AndroidResource Include="Resources\layout\DetallesReservacionLayout.axml" />
     <AndroidResource Include="Resources\layout\DetallesReservacionSalaJuntaLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_creditos.png" />
+    <AndroidResource Include="Resources\layout\DatosBasicosLayout.axml" />
+    <AndroidResource Include="Resources\layout\ConfirmacionInvitadoLayout.axml" />
+    <AndroidResource Include="Resources\layout\ConfirmacionInvitacionesLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_arrow_left.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
