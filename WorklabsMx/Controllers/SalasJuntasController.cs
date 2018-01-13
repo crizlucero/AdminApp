@@ -84,7 +84,7 @@ namespace WorklabsMx.Controllers
                         Sala_Capacidad = reader["Sala_Capacidad"].ToString(),
                         Sala_Nivel = reader["Sala_Nivel"].ToString(),
                         Sucursal_Id = reader["Sucursal_Id"].ToString(),
-                        Sucursal_Descripcion = reader["Sucursal_Id"].ToString(),
+                        Sucursal_Descripcion = reader["Sucursal_Descripcion"].ToString(),
                         Sucursal_Estatus = reader["Sucursal_Estatus"].ToString()
                     });
             }

@@ -42,6 +42,10 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblSalaNombre { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblSucursal { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (imgSala != null) {
@@ -77,6 +81,11 @@ namespace WorklabsMx.iOS
             if (lblSalaNombre != null) {
                 lblSalaNombre.Dispose ();
                 lblSalaNombre = null;
+            }
+
+            if (lblSucursal != null) {
+                lblSucursal.Dispose ();
+                lblSucursal = null;
             }
         }
     }
