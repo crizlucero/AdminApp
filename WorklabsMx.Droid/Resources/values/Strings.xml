@@ -136,6 +136,7 @@
     <string name="CantidadMeses">Cantidad de meses</string>
     <string name="Proporcional">Proporcional</string>
     <string name="SeleccionarFecha">Seleccionar Fecha</string>
+    <string name="SeleccionarUbicacion">Seleccionar Ubicación</string>
     <string name="Historico">Histórico</string>
     <string name="Recientes">Recientes</string>
     <string name="Canceladas">Canceladas</string>
@@ -145,7 +146,12 @@
     <string name="Excelente">¡Excelente!</string>
     <string name="ConfirmacionSala">Tu reservación se ha generado con éxito. No dudes en ponerte en contacto con el Staff para cualquier duda, será un gusto poder apoyarte.</string>
     <string name="EnviarMensaje">Enviar Mensaje</string>
+    <string name="EnviarInvitacion">Enviar Invitación</string>
     <string name="Seguir">Seguir</string>
     <string name="DetalleReserva">Detalle de Reservación</string>
     <string name="Confirmar">Confirmar</string>
+    <string name="AgregarInvitado">Añadir un invitado</string>
+    <string name="TuLlaveAcceso">ESTA ES TU LLAVE DE ACCESO</string>
+    <string name="TuLlaveAcceso_Qr">Lleva contigo este código QR.</string>
+    <string name="TuLlaveAcceso_Informacion">Será solicitado al momento de tu ingreso en la ubicación a la cual fuiste invitado.</string>
 </resources>

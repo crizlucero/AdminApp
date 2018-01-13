@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D8A96E"
+    android:paddingRight="20dp"
+    android:paddingLeft="20dp">
+    <TextView
+        android:id="@+id/lblNombre"
+        android:textColor="#FFF"
+        android:textStyle="bold"
+        android:text="JUAN PEDRO HERNANDEZ LOPEZ"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:background="#FFF"
+        android:layout_height="1dp"
+        android:layout_width="match_parent" />
+    <TextView
+        android:layout_column="0"
+        android:id="@+id/lblFecha"
+        android:layout_width="match_parent"
+        android:drawableLeft="@mipmap/ic_calendar"
+        android:gravity="center_vertical"
+        android:drawableTint="#FFF"
+        android:textColor="#FFF"
+        android:text="Enero 15, 2018 12:00 PM"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:background="#FFF"
+        android:layout_height="1dp"
+        android:layout_width="match_parent" />
+    <TextView
+        android:layout_column="0"
+        android:id="@+id/lblSucursal"
+        android:layout_width="match_parent"
+        android:drawableLeft="@mipmap/ic_place"
+        android:gravity="center_vertical"
+        android:drawableTint="#FFF"
+        android:textColor="#FFF"
+        android:text="Worklabs Minerva"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/lblDireccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_vertical"
+        android:drawableTint="#FFF"
+        android:textColor="#FFF"
+        android:text="Av. Miguel Hidalgo Y Costilla 1995" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblColonia"
+        android:layout_marginLeft="23dp"
+        android:textColor="#FFF"
+        android:text="Col. Ladrón de Guevara" />
+    <LinearLayout
+        android:background="#FFF"
+        android:layout_height="1dp"
+        android:layout_width="match_parent" />
+    <LinearLayout
+        android:background="#FFF"
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp" />
+    <android.webkit.WebView
+        android:layout_width="275dp"
+        android:layout_height="275dp"
+        android:id="@+id/wvQR"
+        android:layout_gravity="center" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:text="@string/TuLlaveAcceso"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp" />
+    <TextView
+        android:text="@string/TuLlaveAcceso_Qr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFF"
+        android:gravity="center"
+        android:textSize="12dp" />
+    <TextView
+        android:text="@string/TuLlaveAcceso_Informacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:textSize="12dp" />
+</LinearLayout>

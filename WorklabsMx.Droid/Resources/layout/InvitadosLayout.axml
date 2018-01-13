@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarlayout" />
+    <ScrollView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="447dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent">
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tlDatosBasicos" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblAgregarInvitado"
+                android:hint="@string/AgregarInvitado"
+                android:textColor="#000"
+                android:textSize="16dp"
+                android:drawableLeft="@mipmap/ic_add"
+                android:drawableTint="#ffCCCCCC"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:textAllCaps="true" />
+            <Button
+                android:inputType="date"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:id="@+id/btnFecha"
+                android:textColor="#ffCCCCCC"
+                android:drawableRight="@mipmap/ic_arrow_down"
+                android:layout_gravity="center"
+                android:text="@string/SeleccionarFecha"
+                android:drawableTint="#ffCCCCCC" />
+            <TextView
+                android:inputType="time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblFecha"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="16dp"
+                android:text="@string/HoraEntrada"
+                android:textColor="#CCC"
+                android:drawableTop="#95989A"
+                android:drawableBottom="#95989A"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textAllCaps="true" />
+            <Button
+                android:inputType="date"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:id="@+id/btnUbicacion"
+                android:textColor="#ffCCCCCC"
+                android:drawableRight="@mipmap/ic_arrow_down"
+                android:layout_gravity="center"
+                android:text="@string/SeleccionarUbicacion"
+                android:drawableTint="#ffCCCCCC" />
+            <TextView
+                android:inputType="time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblUbicacion"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="16dp"
+                android:text="@string/HoraEntrada"
+                android:textColor="#CCC"
+                android:drawableTop="#95989A"
+                android:drawableBottom="#95989A"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textAllCaps="true" />
+        </LinearLayout>
+    </ScrollView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/textView1"
+        android:textColor="#FFF"
+        android:text="@string/EnviarInvitacion"
+        android:gravity="center"
+        android:drawableRight="@mipmap/ic_arrow_right"
+        android:drawableTint="#FFF"
+        android:background="#D8A96E"
+        android:layout_gravity="bottom" />
+</LinearLayout>
