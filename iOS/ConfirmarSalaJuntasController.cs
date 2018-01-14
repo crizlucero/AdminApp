@@ -10,10 +10,19 @@ using CoreLocation;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface ReservacionConfirmada
+    {
+        void ReservacionConfirmada();
+    }
+
     public partial class ConfirmarSalaJuntasController : UIViewController
     {
 
         public List<SalaJuntasReservacionModel> Reservaciones = new List<SalaJuntasReservacionModel>();
+
+
+        public ReservacionConfirmada ReservacionConfirmadaDelegate;
 
         public ConfirmarSalaJuntasController (IntPtr handle) : base (handle)
         {
@@ -21,18 +30,31 @@ namespace WorklabsMx.iOS
 
         partial void btnConfirmar_Touch(UIButton sender)
         {
-            
+            var OperacionTerminada = false;
             foreach (SalaJuntasReservacionModel Reservacion in Reservaciones)
             {
                 if(InternetConectionHelper.VerificarConexion())
                 {
-                    var asignacion = new SalasJuntasController().AsignarSalaJuntas("1", Reservacion.Sala_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Reservacion.Sala_Fecha, Reservacion.Sala_Hora_Inicio, Reservacion.Sala_Hora_Fin);
+                    DateTime myDate = DateTime.ParseExact(Reservacion.Sala_Fecha, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                    var asignacion = new SalasJuntasController().AsignarSalaJuntas("1", Reservacion.Sala_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), myDate, Reservacion.Sala_Hora_Inicio, Reservacion.Sala_Hora_Fin);
                     if (asignacion != -1)
                     {
+                        OperacionTerminada = true;
                         this.GenerarEvento(Reservacion);
+                    }
+                    else
+                    {
+                        OperacionTerminada = false;
+                        break;
                     }
                 }
                
+            }
+
+            if (OperacionTerminada)
+            {
+                this.ReservacionConfirmadaDelegate.ReservacionConfirmada();
+                this.DismissViewController(true, null);
             }
         }
 

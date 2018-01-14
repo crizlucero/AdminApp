@@ -1136,6 +1136,10 @@
     <Compile Include="ReservacionTableViewCell.designer.cs">
       <DependentUpon>ReservacionTableViewCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="InfoConfirmacionViewController.cs" />
+    <Compile Include="InfoConfirmacionViewController.designer.cs">
+      <DependentUpon>InfoConfirmacionViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

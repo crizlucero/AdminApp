@@ -8,7 +8,7 @@ namespace WorklabsMx.Controllers
 {
     public class SalasJuntasController : DataBaseModel
     {
-        public int AsignarSalaJuntas(string transaccion, string sala_id, string usuario_id, string usuario_tipo, string fecha, string hora_inicio, string hora_fin)
+        public int AsignarSalaJuntas(string transaccion, string sala_id, string usuario_id, string usuario_tipo, DateTime fecha, string hora_inicio, string hora_fin)
         {
             try
             {

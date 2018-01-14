@@ -1,64 +1,21 @@
-<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ConfirmarSalaJuntasController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/SalasJuntasController.cs">
     <Files>
-      <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="16" Column="45" NotebookId="1" />
-      <File FileName="iOS/ReservacionesTableView.cs" Line="8" Column="25" NotebookId="1" />
-      <File FileName="iOS/ReservacionTableViewCell.cs" Line="7" Column="12" NotebookId="1" />
-      <File FileName="WorklabsMx/Models/SucursalModel.cs" Line="6" Column="48" NotebookId="1" />
-      <File FileName="WorklabsMx/Models/SalaJuntasModel.cs" Line="4" Column="43" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/VistaSucursales/ColeccionSucursales.cs" Line="67" Column="10" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/MiPerfil/AboutMeController.cs" Line="20" Column="62" NotebookId="1" />
-=======
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench>
-    <Files>
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="401" Column="117" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/ReservaSalaJuntasActivity.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="289" Column="23" />
-      <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="156" Column="129" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/InvitadosActivity.cs" Line="52" Column="69" />
-      <File FileName="WorklabsMx.Droid/ViewController/AccesoActivity.cs" Line="31" Column="27" />
->>>>>>> d4790d11212210beb28b9c4b087c680d9af13eea
+      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="277" Column="1" />
+      <File FileName="iOS/FechaReservacionPickerViewController.cs" Line="10" Column="38" />
+      <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="38" Column="70" />
+      <File FileName="iOS/InfoConfirmacionViewController.cs" Line="73" Column="30" />
+      <File FileName="WorklabsMx/Models/SalaJuntasReservacionModel.cs" Line="4" Column="18" />
+      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="35" Column="14" />
     </Files>
-    <FloatingWindows>
-      <FloatingWindow WindowId="1" X="1195" Y="187" Width="1042" Height="480">
-        <Files>
-          <File FileName="WorklabsMx/Models/SalaJuntasReservacionModel.cs" Line="14" Column="385" />
-          <File FileName="iOS/ViewControllers/VistaSucursales/CeldaSucursales.cs" Line="20" Column="44" />
-          <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="27" Column="76" />
-          <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="12" Column="87" />
-        </Files>
-      </FloatingWindow>
-    </FloatingWindows>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>Reservacion.Sala_Fecha</Value>
-          <Value>Convert.ToDateTime(Reservacion.Sala_Fecha)</Value>
-          <Value>(NSDate)Convert.ToDateTime(Reservacion.Sala_Fecha)</Value>
-          <Value>myDate</Value>
-          <Value>int.Parse(Reservacion.Sala_Hora_Inicio)</Value>
-          <Value>(NSDate)myDate.AddHours(int.Parse(Reservacion.Sala_Hora_Inicio))</Value>
-          <Value>myDate.AddHours(int.Parse(Reservacion.Sala_Hora_Inicio) - 4)</Value>
-          <Value>DateTimeToNSDate(HoraAntesReunion.AddMinutes(45))</Value>
-          <Value>e</Value>
-          <Value>this.SalaActual.Sucursal_Descripcion</Value>
-          <Value>this.SalaActual</Value>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.3/WorklabsMx/iOS/ConfirmarSalaJuntasController.cs" relfile="iOS/ConfirmarSalaJuntasController.cs" line="40" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" />
-=======
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
->>>>>>> d4790d11212210beb28b9c4b087c680d9af13eea
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.8E7870C1-E826-4C43-8050-33E492EADDA5" />
   <MultiItemStartupConfigurations />
 </Properties>
