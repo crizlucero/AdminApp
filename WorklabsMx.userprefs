@@ -1,21 +1,19 @@
-﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/SalasJuntasController.cs">
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/PagosController.cs">
     <Files>
-      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="277" Column="1" />
-      <File FileName="iOS/FechaReservacionPickerViewController.cs" Line="10" Column="38" />
-      <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="38" Column="70" />
-      <File FileName="iOS/InfoConfirmacionViewController.cs" Line="73" Column="30" />
-      <File FileName="WorklabsMx/Models/SalaJuntasReservacionModel.cs" Line="4" Column="18" />
-      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="35" Column="14" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="106" Column="55" />
+      <File FileName="WorklabsMx/Controllers/PagosController.cs" Line="107" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.3/WorklabsMx/iOS/ConfirmarSalaJuntasController.cs" relfile="iOS/ConfirmarSalaJuntasController.cs" line="40" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ConfirmarSalaJuntasController.cs" relfile="iOS/ConfirmarSalaJuntasController.cs" line="40" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.8E7870C1-E826-4C43-8050-33E492EADDA5" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D3D00818-B828-45D1-ACAA-A06B2D1C1EA8" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid PreferredExecutionTarget="Android.ZY32238MXJ" />
   <MultiItemStartupConfigurations />
 </Properties>
