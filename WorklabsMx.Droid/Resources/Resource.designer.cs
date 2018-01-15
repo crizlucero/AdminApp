@@ -5016,28 +5016,31 @@ namespace WorklabsMx.Droid
 			public const int select_dialog_singlechoice_material = 2130968682;
 			
 			// aapt resource value: 0x7f04006b
-			public const int SplashLayout = 2130968683;
+			public const int SobreMiLayout = 2130968683;
 			
 			// aapt resource value: 0x7f04006c
-			public const int SubmenuLayout = 2130968684;
+			public const int SplashLayout = 2130968684;
 			
 			// aapt resource value: 0x7f04006d
-			public const int SubscriptionLayout = 2130968685;
+			public const int SubmenuLayout = 2130968685;
 			
 			// aapt resource value: 0x7f04006e
-			public const int SucursalInfoLayout = 2130968686;
+			public const int SubscriptionLayout = 2130968686;
 			
 			// aapt resource value: 0x7f04006f
-			public const int support_simple_spinner_dropdown_item = 2130968687;
+			public const int SucursalInfoLayout = 2130968687;
 			
 			// aapt resource value: 0x7f040070
-			public const int TabsLayout = 2130968688;
+			public const int support_simple_spinner_dropdown_item = 2130968688;
 			
 			// aapt resource value: 0x7f040071
-			public const int ToolbarLayout = 2130968689;
+			public const int TabsLayout = 2130968689;
 			
 			// aapt resource value: 0x7f040072
-			public const int tooltip = 2130968690;
+			public const int ToolbarLayout = 2130968690;
+			
+			// aapt resource value: 0x7f040073
+			public const int tooltip = 2130968691;
 			
 			static Layout()
 			{
@@ -5536,6 +5539,9 @@ namespace WorklabsMx.Droid
 			
 			// aapt resource value: 0x7f0700bc
 			public const int Historico = 2131165372;
+			
+			// aapt resource value: 0x7f0700cd
+			public const int Hola = 2131165389;
 			
 			// aapt resource value: 0x7f070054
 			public const int HoraEntrada = 2131165268;

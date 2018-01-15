@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V4.App;
 using Android.Support.V4.View;
+using Android.Support.V4.Widget;
 using Android.Views;
 using Android.Widget;
 using com.refractored;
@@ -82,6 +84,31 @@ namespace WorklabsMx.Droid
             var viewPager = container.JavaCast<ViewPager>();
             historico = new SalasJuntasController().GetReservaciones(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), historiales[position] == context.Resources.GetString(Resource.String.Recientes) ? 1 :
                                                                      historiales[position] == context.Resources.GetString(Resource.String.Historico) ? 2 : 0);
+            SwipeRefreshLayout refresher = SalasView.FindViewById<SwipeRefreshLayout>(Resource.Id.swipe_container);
+            refresher.SetColorSchemeColors(Color.Gray, Color.LightGray, Color.Gray, Color.DarkGray, Color.Black, Color.DarkGray);
+            refresher.Refresh += (sender, e) =>
+            {
+                historico = new SalasJuntasController().GetReservaciones(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), historiales[position] == context.Resources.GetString(Resource.String.Recientes) ? 1 :
+                                                                     historiales[position] == context.Resources.GetString(Resource.String.Historico) ? 2 : 0);
+                HistorialValidation();
+                ((SwipeRefreshLayout)sender).Refreshing = false;
+            };
+            HistorialValidation();
+
+            viewPager.AddView(SalasView);
+            return SalasView;
+        }
+
+        public override int Count => historiales.Count;
+
+        public override bool IsViewFromObject(View view, Java.Lang.Object @object) => view == @object;
+
+        public override ICharSequence GetPageTitleFormatted(int position) => new Java.Lang.String(historiales[position]);
+
+        public override void DestroyItem(View container, int position, Java.Lang.Object @object) => container.JavaCast<ViewPager>().RemoveView(@object as View);
+
+        void HistorialValidation()
+        {
             if (historico.Count > 0)
             {
                 FillHistorial();
@@ -97,21 +124,12 @@ namespace WorklabsMx.Droid
                 SalasView.FindViewById<TextView>(Resource.Id.lblDia).Text = "";
                 SalasView.FindViewById<TextView>(Resource.Id.lblHorario).Text = "";
             }
-            viewPager.AddView(SalasView);
-            return SalasView;
         }
-
-        public override int Count => historiales.Count;
-
-        public override bool IsViewFromObject(View view, Java.Lang.Object @object) => view == @object;
-
-        public override ICharSequence GetPageTitleFormatted(int position) => new Java.Lang.String(historiales[position]);
-
-        public override void DestroyItem(View container, int position, Java.Lang.Object @object) => container.JavaCast<ViewPager>().RemoveView(@object as View);
 
         void FillHistorial()
         {
             TableLayout table = SalasView.FindViewById<TableLayout>(Resource.Id.historial_table);
+            table.RemoveAllViews();
             historico.ForEach(reservacion =>
             {
                 LayoutInflater inflater = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);

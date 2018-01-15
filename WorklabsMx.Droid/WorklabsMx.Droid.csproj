@@ -352,6 +352,7 @@
     <AndroidResource Include="Resources\layout\ConfirmacionInvitadoLayout.axml" />
     <AndroidResource Include="Resources\layout\ConfirmacionInvitacionesLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_arrow_left.png" />
+    <AndroidResource Include="Resources\layout\SobreMiLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

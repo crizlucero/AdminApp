@@ -72,7 +72,7 @@ namespace WorklabsMx.Controllers
             try
             {
                 conn.Open();
-                string query = "SELECT * FROM vw_cat_Salas_Juntas WHERE Sala_Estatus = 1 AND Sucursal_Estatus = 1 AND Sucursal_Id = @sucursal_id";
+                string query = "SELECT * FROM cat_Salas_Juntas WHERE Sala_Estatus = 1 AND Sucursal_Id = @sucursal_id";
                 command = CreateCommand(query);
                 command.Parameters.AddWithValue("@sucursal_id", sucursal_id);
                 reader = command.ExecuteReader();
