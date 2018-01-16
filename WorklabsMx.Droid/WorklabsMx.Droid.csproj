@@ -352,6 +352,11 @@
     <AndroidResource Include="Resources\layout\ConfirmacionInvitadoLayout.axml" />
     <AndroidResource Include="Resources\layout\ConfirmacionInvitacionesLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_arrow_left.png" />
+    <AndroidResource Include="Resources\layout\SobreMiLayout.axml" />
+    <AndroidResource Include="Resources\layout\EtiquetasLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_dot.png" />
+    <AndroidResource Include="Resources\layout\SobreMiSocialLayout.axml" />
+    <AndroidResource Include="Resources\layout\SobreMiTrabajoLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

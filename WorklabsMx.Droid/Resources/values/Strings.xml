@@ -154,4 +154,12 @@
     <string name="TuLlaveAcceso">ESTA ES TU LLAVE DE ACCESO</string>
     <string name="TuLlaveAcceso_Qr">Lleva contigo este código QR.</string>
     <string name="TuLlaveAcceso_Informacion">Será solicitado al momento de tu ingreso en la ubicación a la cual fuiste invitado.</string>
+    <string name="Hola">Hola:</string>
+    <string name="Intereses">Intereses</string>
+    <string name="Publicaciones">Publicaciones</string>
+    <string name="Seguidores">Seguidores</string>
+    <string name="Siguiendo">Siguiendo</string>
+    <string name="Actualmente">Actualmente</string>
+    <string name="Anteriores">Anteriores</string>
+    <string name="Colaboraciones">Colaboraciones</string>
 </resources>
