@@ -72,7 +72,7 @@ namespace WorklabsMx.Controllers
             try
             {
                 conn.Open();
-                string query = "SELECT * FROM cat_Salas_Juntas WHERE Sala_Estatus = 1 AND Sucursal_Id = @sucursal_id";
+                string query = "SELECT * FROM vw_cat_Salas_Juntas WHERE Sala_Estatus = 1 AND Sucursal_Id = @sucursal_id";
                 command = CreateCommand(query);
                 command.Parameters.AddWithValue("@sucursal_id", sucursal_id);
                 reader = command.ExecuteReader();
@@ -100,7 +100,7 @@ namespace WorklabsMx.Controllers
             try
             {
                 conn.Open();
-                string query = "SELECT * FROM vw_cat_Salas_Juntas " +
+                string query = "SELECT * FROM vw_pro_Salas_Juntas_Reservaciones " +
                     "WHERE Sala_Estatus = 1 AND Sucursal_Estatus = 1 AND Usuario_Id = @usuario_id " +
                     "AND Usuario_Tipo = @usuario_tipo AND Sala_Junta_Reservacion_Estatus = @reservacion_estatus";
                 command = CreateCommand(query);
@@ -139,7 +139,7 @@ namespace WorklabsMx.Controllers
             try
             {
                 conn.Open();
-                string query = "SELECT Sala_Junta_Reservacion_Id, Sala_Junta_Hora_Inicio, Sala_Junta_Hora_Fin, Usuario_Id, Usuario_Tipo FROM vw_cat_Salas_Juntas " +
+                string query = "SELECT Sala_Junta_Reservacion_Id, Sala_Junta_Hora_Inicio, Sala_Junta_Hora_Fin, Usuario_Id, Usuario_Tipo FROM vw_pro_Salas_Juntas_Reservaciones " +
                     "WHERE Sala_id = @sala_id AND Sala_Junta_Reservacion_Estatus = 1 AND Sala_Junta_Fecha = @fecha";
                 command = CreateCommand(query);
                 command.Parameters.AddWithValue("@sala_id", sala_id);
