@@ -747,18 +747,6 @@
     <Compile Include="ViewControllers\MiPerfil\DatosFacturacionController.designer.cs">
       <DependentUpon>DatosFacturacionController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\Directorio\DirectorioEmpresasController.cs" />
-    <Compile Include="ViewControllers\Directorio\DirectorioEmpresasController.designer.cs">
-      <DependentUpon>DirectorioEmpresasController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\Directorio\DirectorioUsuarioController.cs" />
-    <Compile Include="ViewControllers\Directorio\DirectorioUsuarioController.designer.cs">
-      <DependentUpon>DirectorioUsuarioController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\Servicios\CarritoCompraController.cs" />
-    <Compile Include="ViewControllers\Servicios\CarritoCompraController.designer.cs">
-      <DependentUpon>CarritoCompraController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewControllers\MiPerfil\MisColaboradoresBajaController.cs" />
     <Compile Include="ViewControllers\MiPerfil\MisColaboradoresBajaController.designer.cs">
       <DependentUpon>MisColaboradoresBajaController.cs</DependentUpon>
@@ -771,17 +759,9 @@
     <Compile Include="ViewControllers\MiPerfil\MisColaboradoresController.designer.cs">
       <DependentUpon>MisColaboradoresController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\Formatos\ReservaController.cs" />
-    <Compile Include="ViewControllers\Formatos\ReservaController.designer.cs">
-      <DependentUpon>ReservaController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewControllers\Formatos\RegistroInvitadosController.cs" />
     <Compile Include="ViewControllers\Formatos\RegistroInvitadosController.designer.cs">
       <DependentUpon>RegistroInvitadosController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\Servicios\TarifasController.cs" />
-    <Compile Include="ViewControllers\Servicios\TarifasController.designer.cs">
-      <DependentUpon>TarifasController.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewControllers\Servicios\PaymentController.cs" />
     <Compile Include="ViewControllers\Servicios\PaymentController.designer.cs">
@@ -990,10 +970,6 @@
     <Compile Include="ViewControllers\Comentarios\BodyComentarTableView.designer.cs">
       <DependentUpon>BodyComentarTableView.cs</DependentUpon>
     </Compile>
-    <Compile Include="InfoPerfilViewController.cs" />
-    <Compile Include="InfoPerfilViewController.designer.cs">
-      <DependentUpon>InfoPerfilViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Extensions\UIColorExtensions.cs" />
     <Compile Include="ReservacionesCell.cs" />
     <Compile Include="ReservacionesCell.designer.cs">
@@ -1084,6 +1060,7 @@
     <Compile Include="TabBarDirectorio.designer.cs">
       <DependentUpon>TabBarDirectorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="InfoConfirmacionViewController.cs" />
     <Compile Include="NoConexionViewController.cs" />
     <Compile Include="NoConexionViewController.designer.cs">
       <DependentUpon>NoConexionViewController.cs</DependentUpon>
@@ -1136,7 +1113,6 @@
     <Compile Include="ReservacionTableViewCell.designer.cs">
       <DependentUpon>ReservacionTableViewCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="InfoConfirmacionViewController.cs" />
     <Compile Include="InfoConfirmacionViewController.designer.cs">
       <DependentUpon>InfoConfirmacionViewController.cs</DependentUpon>
     </Compile>

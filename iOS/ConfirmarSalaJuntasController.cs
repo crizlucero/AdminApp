@@ -13,14 +13,14 @@ namespace WorklabsMx.iOS
 
     public interface ReservacionConfirmada
     {
-        void ReservacionConfirmada();
+        void ReservacionConfirmada(List<SalaJuntasReservacionModel> ReservacionesConcat);
     }
 
     public partial class ConfirmarSalaJuntasController : UIViewController
     {
 
         public List<SalaJuntasReservacionModel> Reservaciones = new List<SalaJuntasReservacionModel>();
-
+        public List<SalaJuntasReservacionModel> ReservacionesConcat = new List<SalaJuntasReservacionModel>();
 
         public ReservacionConfirmada ReservacionConfirmadaDelegate;
 
@@ -28,19 +28,52 @@ namespace WorklabsMx.iOS
         {
         }
 
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            //this.ReservacionesConcat = new List<SalaJuntasReservacionModel>();
+        }
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+            //this.ReservacionesConcat = new List<SalaJuntasReservacionModel>();
+            StyleHelper.StyleBlack(this.vwVsitaConfirmar.Layer);
+            var indiceReservacionesConcat = 0;
+            this.Reservaciones.Sort((p, q) => -1 * int.Parse(p.Sala_Hora_Inicio).CompareTo(int.Parse(q.Sala_Hora_Inicio)));
+            ReservacionesConcat.Add(Reservaciones[indiceReservacionesConcat]);
+            for (int indice = 0; indice < Reservaciones.Count - 1; indice++ )
+            {
+                if (int.Parse(Reservaciones[indice].Sala_Hora_Inicio) == int.Parse(Reservaciones[indice + 1].Sala_Hora_Fin))
+                {
+                    ReservacionesConcat[indiceReservacionesConcat].Sala_Hora_Inicio = Reservaciones[indice + 1].Sala_Hora_Inicio;
+                    ReservacionesConcat[indiceReservacionesConcat].Horas_Reservadas = ReservacionesConcat[indiceReservacionesConcat].Horas_Reservadas + 1;
+                }
+                else
+                {
+                    ReservacionesConcat.Add(Reservaciones[indice + 1]);
+                    indiceReservacionesConcat++;
+                }
+            }
+
+        }
+
         partial void btnConfirmar_Touch(UIButton sender)
         {
             var OperacionTerminada = false;
+           
             foreach (SalaJuntasReservacionModel Reservacion in Reservaciones)
             {
+
                 if(InternetConectionHelper.VerificarConexion())
                 {
                     DateTime myDate = DateTime.ParseExact(Reservacion.Sala_Fecha, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-                    var asignacion = new SalasJuntasController().AsignarSalaJuntas("1", Reservacion.Sala_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), myDate, Reservacion.Sala_Hora_Inicio, Reservacion.Sala_Hora_Fin);
+                    var asignacion = new SalasJuntasController().AsignarSalaJuntas("ALTA", Reservacion.Sala_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), myDate, Reservacion.Sala_Hora_Inicio + ":00", Reservacion.Sala_Hora_Fin + ":00");
                     if (asignacion != -1)
                     {
                         OperacionTerminada = true;
-                        this.GenerarEvento(Reservacion);
+
                     }
                     else
                     {
@@ -53,7 +86,11 @@ namespace WorklabsMx.iOS
 
             if (OperacionTerminada)
             {
-                this.ReservacionConfirmadaDelegate.ReservacionConfirmada();
+                this.ReservacionConfirmadaDelegate.ReservacionConfirmada(this.ReservacionesConcat);
+                foreach(SalaJuntasReservacionModel Reservacion in ReservacionesConcat)
+                {
+                    this.GenerarEvento(Reservacion);
+                }
                 this.DismissViewController(true, null);
             }
         }
@@ -135,7 +172,7 @@ namespace WorklabsMx.iOS
             if(segue.Identifier == "HorariosTable")
             {
                 var VistaReservaciones = (ReservacionesTableView)segue.DestinationViewController;
-                VistaReservaciones.Reservaciones = this.Reservaciones;
+                VistaReservaciones.Reservaciones = this.ReservacionesConcat;
             }
         }
 

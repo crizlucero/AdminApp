@@ -18,7 +18,7 @@ namespace WorklabsMx.iOS
             this.lblDiaMes.Text = Reservacion.Sala_Fecha;
             this.lblHoraInicioFin.Text = Reservacion.Sala_Hora_Inicio + " - " + Reservacion.Sala_Hora_Fin;
             this.lblCreditos.Text = "3 CREDITOS";
-            this.lblCantidadHoras.Text = "1 HRS.";
+            this.lblCantidadHoras.Text = Reservacion.Horas_Reservadas.ToString() + " HRS.";
         }
     }
 }

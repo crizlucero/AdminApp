@@ -18,7 +18,6 @@ namespace WorklabsMx.iOS
     {
 
         public List<SalaJuntasReservacionModel> Reservaciones = new List<SalaJuntasReservacionModel>();
-        public List<SalaJuntasReservacionModel> ReservacionesConcatenadas = new List<SalaJuntasReservacionModel>();
 
         const string IdentificadorReservaciones = "Reservaciones";
 

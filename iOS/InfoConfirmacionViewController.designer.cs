@@ -58,6 +58,10 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwInfoConfirmacion { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwVistaInfoReservacion { get; set; }
+
         [Action ("btnAdelante_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnAdelante_Touch (UIKit.UIButton sender);
@@ -125,6 +129,11 @@ namespace WorklabsMx.iOS
             if (vwInfoConfirmacion != null) {
                 vwInfoConfirmacion.Dispose ();
                 vwInfoConfirmacion = null;
+            }
+
+            if (vwVistaInfoReservacion != null) {
+                vwVistaInfoReservacion.Dispose ();
+                vwVistaInfoReservacion = null;
             }
         }
     }

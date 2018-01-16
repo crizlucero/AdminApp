@@ -60,6 +60,7 @@ namespace WorklabsMx.iOS
             if (InternetConectionHelper.VerificarConexion())
             {
                 this.Reservaciones = new SalasJuntasController().GetReservaciones(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), TipoResrvacion);
+                this.Reservaciones.Sort((p, q) => int.Parse(p.Sala_Hora_Inicio.Replace(":00:00.0000000","")).CompareTo(int.Parse(q.Sala_Hora_Inicio.Replace(":00:00.0000000", ""))));
             }
         }
 
@@ -182,11 +183,7 @@ namespace WorklabsMx.iOS
 
         private void WillDisplay(int Row)
         {
-            int LastRow = Reservaciones.Count - 1;
-            if ((Row == LastRow))
-            {
-                BTProgressHUD.Dismiss();
-            }
+            BTProgressHUD.Dismiss();
         }
 
 

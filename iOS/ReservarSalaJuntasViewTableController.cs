@@ -6,6 +6,7 @@ using CoreGraphics;
 using System.Collections.Generic;
 using WorklabsMx.Controllers;
 using WorklabsMx.Models;
+using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
@@ -22,7 +23,7 @@ namespace WorklabsMx.iOS
         List<UIView> VistasHorarios = new List<UIView>();
 
         List<SalaJuntasReservacionModel> Reservaciones = new List<SalaJuntasReservacionModel>();
-
+        List<SalaJuntasReservacionModel> ReservacionesConcat = new List<SalaJuntasReservacionModel>();
 
         int HorasReservadas = 0;
 
@@ -126,7 +127,7 @@ namespace WorklabsMx.iOS
             for (int indice = 0; indice < HorasNoDisponibles.Count; indice++)
             {
                 var HoraInicio = HorasNoDisponibles[indice].Sala_Hora_Inicio;
-                this.VistasHorarios[int.Parse(HoraInicio) - 1].BackgroundColor = UIColor.Black;
+                this.VistasHorarios[int.Parse(HoraInicio.Replace(":00:00.0000000","")) - 1].BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
         }
 
@@ -274,7 +275,7 @@ namespace WorklabsMx.iOS
                     this.FlagView2324 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
 
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "23", "24", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "23", "24", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
                 }
                 else
                 {
@@ -301,7 +302,7 @@ namespace WorklabsMx.iOS
                     this.vw2223.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView2223 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "22", "23", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "22", "23", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -329,7 +330,7 @@ namespace WorklabsMx.iOS
                     this.vw2122.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView2122 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "21", "22", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "21", "22", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -356,7 +357,8 @@ namespace WorklabsMx.iOS
                     this.vw2021.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView2021 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "20", "21", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "20", "21", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
+
                 }
                 else
                 {
@@ -383,7 +385,7 @@ namespace WorklabsMx.iOS
                     this.vw1920.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView1920 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "19", "20", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "19", "20", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -411,7 +413,7 @@ namespace WorklabsMx.iOS
                     this.vw1819.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView1819 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "18", "19", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "18", "19", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
                 }
                 else
                 {
@@ -437,7 +439,7 @@ namespace WorklabsMx.iOS
                     this.vw1718.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView1718 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "17", "18", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "17", "18", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
                 }
                 else
                 {
@@ -464,7 +466,7 @@ namespace WorklabsMx.iOS
                     this.vw1617.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView1617 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "16", "17", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "16", "17", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -491,7 +493,7 @@ namespace WorklabsMx.iOS
                     this.vw1516.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1516 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "15", "16", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "15", "16", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -518,7 +520,7 @@ namespace WorklabsMx.iOS
                     this.vw1415.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1415 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "14", "15", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "14", "15", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -545,7 +547,7 @@ namespace WorklabsMx.iOS
                     this.vw1314.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1314 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "13", "14", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "13", "14", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -572,7 +574,7 @@ namespace WorklabsMx.iOS
                     this.vw1213.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1213 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "12", "13", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "12", "13", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -599,7 +601,7 @@ namespace WorklabsMx.iOS
                     this.vw1112.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1112 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "11", "12", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "11", "12", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -626,7 +628,7 @@ namespace WorklabsMx.iOS
                     this.vw1011.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1011 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "10", "11", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "10", "11", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -653,7 +655,7 @@ namespace WorklabsMx.iOS
                     this.vw0910.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0910 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "09", "10", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "09", "10", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -680,7 +682,7 @@ namespace WorklabsMx.iOS
                     this.vw0809.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0809 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "08", "09", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "08", "09", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -707,7 +709,7 @@ namespace WorklabsMx.iOS
                     this.vw0708.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0708 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "07", "08", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "07", "08", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -734,7 +736,7 @@ namespace WorklabsMx.iOS
                     this.vw0607.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0607 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "06", "07", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "06", "07", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -761,7 +763,7 @@ namespace WorklabsMx.iOS
                     this.vw0506.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0607 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "05", "06", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "05", "06", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -788,7 +790,7 @@ namespace WorklabsMx.iOS
                     this.vw0405.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0405 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "04", "05", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "04", "05", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -815,7 +817,7 @@ namespace WorklabsMx.iOS
                     this.vw0304.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0304 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "03", "04", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "03", "04", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -842,7 +844,7 @@ namespace WorklabsMx.iOS
                     this.vw0203.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0203 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "02", "03", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "02", "03", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
                 }
                 else
                 {
@@ -868,7 +870,7 @@ namespace WorklabsMx.iOS
                     this.vw0102.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0102 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "01", "02", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "01", "02", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -895,7 +897,7 @@ namespace WorklabsMx.iOS
                     this.vw2401.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0124 = true;
                     this.HorasReservadas = this.HorasReservadas + 1;
-                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "24", "01", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id));
+                    this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "24", "01", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 1));
 
                 }
                 else
@@ -940,7 +942,7 @@ namespace WorklabsMx.iOS
             else if(segue.Identifier == "DetalleReservacion")
             {
                 var VistaInfoReservacion = (InfoConfirmacionViewController)segue.DestinationViewController;
-                VistaInfoReservacion.Reservaciones = this.Reservaciones;
+                VistaInfoReservacion.Reservaciones = this.ReservacionesConcat;
             }
         }
 
@@ -975,9 +977,11 @@ namespace WorklabsMx.iOS
 
     partial class ReservarSalaJuntasViewTableController: ReservacionConfirmada
     {
-        public void ReservacionConfirmada()
+        public async void ReservacionConfirmada(List<SalaJuntasReservacionModel> ReservacionesConcat)
         {
+            await Task.Delay(200);
             this.PerformSegue("DetalleReservacion", null);
+            this.ReservacionesConcat = ReservacionesConcat;
         }
     }
 
