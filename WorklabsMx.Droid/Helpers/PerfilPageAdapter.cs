@@ -25,9 +25,16 @@ namespace WorklabsMx.Droid
         public override Object InstantiateItem(View container, int position)
         {
             LayoutInflater liView = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
-            View profileView = liView.Inflate(Resource.Layout.DatosGeneralesLayout, null, true);
+            View profileView;
+            switch (position)
+            {
+                case 1: profileView = liView.Inflate(Resource.Layout.SobreMiSocialLayout, null, true); break;
+                case 2: profileView = liView.Inflate(Resource.Layout.SobreMiTrabajoLayout, null, true); break;
+                default: profileView = liView.Inflate(Resource.Layout.SobreMiLayout, null, true); break;
+            }
 
-            profileView.FindViewById<TextView>(Resource.Id.lblPuesto).Text = miembro.Miembro_Puesto;
+
+            /*profileView.FindViewById<TextView>(Resource.Id.lblPuesto).Text = miembro.Miembro_Puesto;
             profileView.FindViewById<TextView>(Resource.Id.lblProfesion).Text = miembro.Miembro_Profesion;
             profileView.FindViewById<TextView>(Resource.Id.lblFechaNacimiento).Text = miembro.Miembro_Fecha_Nacimiento;
 
@@ -67,7 +74,7 @@ namespace WorklabsMx.Droid
             };
             profileView.FindViewById<TextView>(Resource.Id.lblFacebook).Text = "";
             profileView.FindViewById<TextView>(Resource.Id.lblInstagram).Text = "";
-            profileView.FindViewById<TextView>(Resource.Id.lblTwitter).Text = "";
+            profileView.FindViewById<TextView>(Resource.Id.lblTwitter).Text = "";*/
             var viewPager = container.JavaCast<ViewPager>();
             viewPager.AddView(profileView);
             return profileView;
