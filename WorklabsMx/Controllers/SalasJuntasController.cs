@@ -66,7 +66,7 @@ namespace WorklabsMx.Controllers
             return true;
         }
 
-        public List<SalaJuntasModel> GetSalaJuntas(int sucursal_id)
+        public List<SalaJuntasModel> GetSalaJuntas(string sucursal_id)
         {
             List<SalaJuntasModel> salas = new List<SalaJuntasModel>();
             try
