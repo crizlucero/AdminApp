@@ -66,7 +66,7 @@ namespace WorklabsMx.Controllers
             return true;
         }
 
-        public List<SalaJuntasModel> GetSalaJuntas(string sucursal_id)
+        public List<SalaJuntasModel> GetSalaJuntas(int sucursal_id)
         {
             List<SalaJuntasModel> salas = new List<SalaJuntasModel>();
             try
@@ -81,7 +81,7 @@ namespace WorklabsMx.Controllers
                     {
                         Sala_Descripcion = reader["Sala_Descripcion"].ToString(),
                         Sala_Id = reader["Sala_Id"].ToString(),
-                        Sala_Estatus = reader["Sala_Descripcion"].ToString(),
+                        Sala_Estatus = reader["Sala_Estatus"].ToString(),
                         Sala_Capacidad = reader["Sala_Capacidad"].ToString(),
                         Sala_Nivel = reader["Sala_Nivel"].ToString(),
                         Sucursal_Id = reader["Sucursal_Id"].ToString(),

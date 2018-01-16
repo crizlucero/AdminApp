@@ -41,8 +41,8 @@ namespace WorklabsMx.iOS
 
             if(InternetConectionHelper.VerificarConexion())
             {
-                this.SalasJuntas = new SalasJuntasController().GetSalaJuntas(SucursalId);
-                if(this.SalasJuntas.Count >= 0)
+                this.SalasJuntas = new SalasJuntasController().GetSalaJuntas(int.Parse(SucursalId));
+                if(this.SalasJuntas.Count > 0)
                 {
                     this.SalaActual = this.SalasJuntas[0];
 
