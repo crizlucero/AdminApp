@@ -36,7 +36,6 @@ namespace WorklabsMx.iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            this.ConcatenarReservaciones();
         }
 
 
@@ -55,13 +54,6 @@ namespace WorklabsMx.iOS
            
         }
 
-        private void ConcatenarReservaciones()
-        {
-            foreach(SalaJuntasReservacionModel Reservacion in this.Reservaciones)
-            {
-                
-            }
-        }
 
 
     }

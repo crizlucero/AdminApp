@@ -11,6 +11,12 @@ using CoreLocation;
 namespace WorklabsMx.iOS
 {
 
+    public interface ReservacionCancelada
+    {
+        void ReservacionCancelada(List<SalaJuntasReservacionModel> Reservaciones);
+    }
+
+
     public interface ReservacionConfirmada
     {
         void ReservacionConfirmada(List<SalaJuntasReservacionModel> ReservacionesConcat);
@@ -23,6 +29,7 @@ namespace WorklabsMx.iOS
         public List<SalaJuntasReservacionModel> ReservacionesConcat = new List<SalaJuntasReservacionModel>();
 
         public ReservacionConfirmada ReservacionConfirmadaDelegate;
+        public ReservacionCancelada ReservacionCanceladaDelegate;
 
         public ConfirmarSalaJuntasController (IntPtr handle) : base (handle)
         {
@@ -38,11 +45,12 @@ namespace WorklabsMx.iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            //this.ReservacionesConcat = new List<SalaJuntasReservacionModel>();
             StyleHelper.StyleBlack(this.vwVsitaConfirmar.Layer);
             var indiceReservacionesConcat = 0;
             this.Reservaciones.Sort((p, q) => -1 * int.Parse(p.Sala_Hora_Inicio).CompareTo(int.Parse(q.Sala_Hora_Inicio)));
-            ReservacionesConcat.Add(Reservaciones[indiceReservacionesConcat]);
+            SalaJuntasReservacionModel Reservacion = new SalaJuntasReservacionModel();
+            Reservacion = Reservaciones[indiceReservacionesConcat];
+            ReservacionesConcat.Add(Reservacion);
             for (int indice = 0; indice < Reservaciones.Count - 1; indice++ )
             {
                 if (int.Parse(Reservaciones[indice].Sala_Hora_Inicio) == int.Parse(Reservaciones[indice + 1].Sala_Hora_Fin))
@@ -97,7 +105,10 @@ namespace WorklabsMx.iOS
 
         partial void btnCancelar_Touch(UIButton sender)
         {
-            this.DismissViewController(true, null);
+            this.DismissViewController(true,() => 
+            {
+                this.ReservacionCanceladaDelegate.ReservacionCancelada(this.Reservaciones);
+            });
         }
 
         private void GenerarEvento(SalaJuntasReservacionModel Reservacion)
