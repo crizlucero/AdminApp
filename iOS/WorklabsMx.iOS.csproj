@@ -690,6 +690,10 @@
     <ImageAsset Include="Assets.xcassets\MiniHorario.imageset\MiniCalendario.png" />
     <ImageAsset Include="Assets.xcassets\MiniHorario.imageset\MiniCalendario%402x.png" />
     <ImageAsset Include="Assets.xcassets\MiniHorario.imageset\MiniCalendario%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Gradiente.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Gradiente.imageset\gradient.png" />
+    <ImageAsset Include="Assets.xcassets\Gradiente.imageset\gradient%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Gradiente.imageset\gradient%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1116,6 +1120,10 @@
     <Compile Include="InfoConfirmacionViewController.designer.cs">
       <DependentUpon>InfoConfirmacionViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistroInvitadosTableViewController.cs" />
+    <Compile Include="RegistroInvitadosTableViewController.designer.cs">
+      <DependentUpon>RegistroInvitadosTableViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -1256,6 +1264,7 @@
     <Folder Include="Assets.xcassets\MiniLogo.imageset\" />
     <Folder Include="Assets.xcassets\MiniCalendar.imageset\" />
     <Folder Include="Assets.xcassets\MiniHorario.imageset\" />
+    <Folder Include="Assets.xcassets\Gradiente.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

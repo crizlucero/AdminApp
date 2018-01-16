@@ -1,17 +1,13 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ConfirmarSalaJuntasController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/RegistroInvitadosTableViewController.cs">
     <Files>
-      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="401" Column="1" />
-      <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="61" Column="1" />
+      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="288" Column="39" />
+      <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="58" Column="1" />
       <File FileName="iOS/ReservacionTableViewCell.cs" Line="21" Column="70" />
       <File FileName="iOS/InfoConfirmacionViewController.cs" Line="14" Column="62" />
-      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="185" Column="10" />
-      <File FileName="iOS/ReservacionesTableView.cs" Line="52" Column="37" />
-      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="93" Column="1" />
-      <File FileName="WorklabsMx/Models/SalaJuntasModel.cs" Line="4" Column="45" />
-      <File FileName="WorklabsMx/Models/SucursalModel.cs" Line="4" Column="18" />
-      <File FileName="WorklabsMx/Models/SalaJuntasReservacionModel.cs" Line="13" Column="36" />
-      <File FileName="iOS/Main.cs" Line="12" Column="1" />
+      <File FileName="iOS/RegistroInvitadosTableViewController.cs" Line="24" Column="106" />
+      <File FileName="iOS/MenuTableViewController.cs" Line="37" Column="10" />
+      <File FileName="iOS/ViewControllers/Formatos/RegistroInvitadosController.cs" Line="20" Column="13" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
@@ -26,7 +22,6 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/SalasJuntasController.cs" relfile="WorklabsMx/Controllers/SalasJuntasController.cs" line="37" column="22" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="289" column="37" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="346" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="373" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="401" column="1" />
@@ -49,8 +44,6 @@
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="859" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="886" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="913" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ConfirmarSalaJuntasController.cs" relfile="iOS/ConfirmarSalaJuntasController.cs" line="65" column="55" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ConfirmarSalaJuntasController.cs" relfile="iOS/ConfirmarSalaJuntasController.cs" line="59" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
