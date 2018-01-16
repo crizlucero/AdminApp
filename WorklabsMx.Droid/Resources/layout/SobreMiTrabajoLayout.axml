@@ -8,7 +8,6 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:translationZ="3dp"
@@ -17,26 +16,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Actualmente" />
-        <GridLayout
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:rowCount="2"
-            android:columnCount="2">
-            <ImageView
-                android:src="@android:drawable/ic_menu_gallery"
-                android:id="@+id/imageView1"
-                android:layout_rowSpan="2"
-                android:layout_row="0"
-                android:layout_column="0" />
-            <TextView
-                android:id="@+id/lblNombre"
-                android:text="Worklabs"
-                android:textAllCaps="true" />
-            <TextView
-                android:id="@+id/lblPais"
-                android:text="México"
-                android:textAllCaps="true" />
-        </GridLayout>
+            android:id="@+id/llEmpleoActual" />
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
@@ -44,7 +30,6 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout2"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:elevation="13dp"

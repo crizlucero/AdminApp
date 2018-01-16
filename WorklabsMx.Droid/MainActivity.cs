@@ -355,7 +355,6 @@ namespace WorklabsMx.Droid
 
         void FillMenu()
         {
-            //NavigationView nv = FindViewById<NavigationView>(Resource.Id.nav_home);
             TableLayout menuLayout = FindViewById<TableLayout>(Resource.Id.menu_layout);
             menuLayout.RemoveAllViews();
             menuLayout.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels);

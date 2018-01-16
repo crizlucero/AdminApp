@@ -58,7 +58,7 @@ namespace WorklabsMx.Droid
             ActionBar.Title = Resources.GetString(Resource.String.ReservaSala);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             _viewPager = FindViewById<ViewPager>(Resource.Id.vpSucursal);
-            salas = SalasController.GetSalaJuntas(Intent.GetStringExtra("sucursal_id"));
+            salas = SalasController.GetSalaJuntas(Intent.GetIntExtra("sucursal_id",-1));
             _viewPager.Adapter = new SalaJuntasAdapter(this, salas);
             Horarios.Add(salas[_viewPager.CurrentItem].Sala_Id, new Dictionary<string, List<int>>());
             Horarios[salas[_viewPager.CurrentItem].Sala_Id].Add(fecha_seleccionada, new List<int>());

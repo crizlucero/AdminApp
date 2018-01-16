@@ -357,6 +357,8 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_dot.png" />
     <AndroidResource Include="Resources\layout\SobreMiSocialLayout.axml" />
     <AndroidResource Include="Resources\layout\SobreMiTrabajoLayout.axml" />
+    <AndroidResource Include="Resources\drawable\spinner_style.xml" />
+    <AndroidResource Include="Resources\layout\TituloEmpresaLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
