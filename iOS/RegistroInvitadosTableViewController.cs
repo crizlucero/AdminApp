@@ -21,7 +21,10 @@ namespace WorklabsMx.iOS
         partial void btnAñadir_Touch(UIButton sender)
         {
             TableView.BeginUpdates();
-            TableView.InsertRows(new NSIndexPath[] { NSIndexPath.FromRowSection(NumeroCeldasInvitados, 0) }, UITableViewRowAnimation.Fade);
+            NSIndexPath newIndexPath = NSIndexPath.FromRowSection(NumeroCeldasInvitados, 0);
+            //TableView.InsertRows(new NSIndexPath[] { NSIndexPath.FromRowSection(0, 0) }, UITableViewRowAnimation.Fade);
+            TableView.InsertRows (new NSIndexPath[]{newIndexPath}, withRowAnimation: UITableViewRowAnimation.Automatic);        
+
             NumeroCeldasInvitados++;
             TableView.EndUpdates();
         }

@@ -7349,7 +7349,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="textField.placeholderColor">
-                                                            <color key="value" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
@@ -7370,7 +7370,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="textField.placeholderColor">
-                                                            <color key="value" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
@@ -7391,7 +7391,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="textField.placeholderColor">
-                                                            <color key="value" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
@@ -7485,10 +7485,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FlechaAbajo" translatesAutoresizingMaskIntoConstraints="NO" id="Vec-NM-Poc">
-                                                    <rect key="frame" x="294" y="55" width="25" height="10"/>
+                                                    <rect key="frame" x="296" y="58" width="20" height="5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="25" id="3jB-YB-Ve3"/>
-                                                        <constraint firstAttribute="height" constant="10" id="8BA-9t-8bX"/>
+                                                        <constraint firstAttribute="width" constant="20" id="3jB-YB-Ve3"/>
+                                                        <constraint firstAttribute="height" constant="5" id="8BA-9t-8bX"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -7499,21 +7499,21 @@
                                                 <constraint firstItem="epN-XG-38L" firstAttribute="trailing" secondItem="QKi-N1-iD8" secondAttribute="trailing" id="9ow-Fa-65z"/>
                                                 <constraint firstItem="fH5-ZK-8zn" firstAttribute="leading" secondItem="biu-Om-yAR" secondAttribute="leadingMargin" id="DRP-uD-rDa"/>
                                                 <constraint firstItem="QKi-N1-iD8" firstAttribute="leading" secondItem="shY-E7-6sm" secondAttribute="leading" id="JOL-sm-hke"/>
-                                                <constraint firstItem="Vec-NM-Poc" firstAttribute="baseline" secondItem="BjA-78-MaO" secondAttribute="baseline" constant="1.3333333333333286" id="M4H-X6-RSR"/>
+                                                <constraint firstItem="Vec-NM-Poc" firstAttribute="baseline" secondItem="BjA-78-MaO" secondAttribute="baseline" constant="-0.6666666666666714" id="M4H-X6-RSR"/>
                                                 <constraint firstItem="shY-E7-6sm" firstAttribute="top" secondItem="QKi-N1-iD8" secondAttribute="bottom" constant="8" symbolic="YES" id="Scy-A8-g8b"/>
                                                 <constraint firstItem="QKi-N1-iD8" firstAttribute="top" secondItem="epN-XG-38L" secondAttribute="bottom" constant="8" symbolic="YES" id="XGT-oo-cij"/>
                                                 <constraint firstItem="BjA-78-MaO" firstAttribute="centerX" secondItem="epN-XG-38L" secondAttribute="centerX" id="XiC-hf-5sn"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="shY-E7-6sm" secondAttribute="bottom" constant="13" id="aoy-lW-Sxi"/>
-                                                <constraint firstItem="Vec-NM-Poc" firstAttribute="bottom" secondItem="BjA-78-MaO" secondAttribute="bottom" constant="-9" id="bEj-HF-qGn"/>
+                                                <constraint firstItem="Vec-NM-Poc" firstAttribute="bottom" secondItem="BjA-78-MaO" secondAttribute="bottom" constant="-11" id="bEj-HF-qGn"/>
                                                 <constraint firstItem="epN-XG-38L" firstAttribute="trailing" secondItem="biu-Om-yAR" secondAttribute="trailingMargin" id="eHY-pX-m4S"/>
                                                 <constraint firstItem="BjA-78-MaO" firstAttribute="leading" secondItem="biu-Om-yAR" secondAttribute="leadingMargin" constant="70" id="gKW-In-07M"/>
                                                 <constraint firstAttribute="trailing" secondItem="BjA-78-MaO" secondAttribute="trailing" constant="90" id="h38-tm-2Wr"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Vec-NM-Poc" secondAttribute="trailing" constant="75" id="izg-du-GQA"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Vec-NM-Poc" secondAttribute="trailing" constant="78" id="izg-du-GQA"/>
                                                 <constraint firstItem="QKi-N1-iD8" firstAttribute="trailing" secondItem="shY-E7-6sm" secondAttribute="trailing" id="jw5-sW-I3F"/>
                                                 <constraint firstItem="fH5-ZK-8zn" firstAttribute="leading" secondItem="epN-XG-38L" secondAttribute="leading" id="oem-Op-cgH"/>
                                                 <constraint firstItem="BjA-78-MaO" firstAttribute="top" secondItem="fH5-ZK-8zn" secondAttribute="bottom" constant="22" id="pQL-JT-GwB"/>
                                                 <constraint firstItem="epN-XG-38L" firstAttribute="leading" secondItem="QKi-N1-iD8" secondAttribute="leading" id="vAx-ec-nCX"/>
-                                                <constraint firstItem="Vec-NM-Poc" firstAttribute="top" secondItem="BjA-78-MaO" secondAttribute="top" constant="9" id="vap-hw-EGb"/>
+                                                <constraint firstItem="Vec-NM-Poc" firstAttribute="top" secondItem="BjA-78-MaO" secondAttribute="top" constant="12" id="vap-hw-EGb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.10588235294117647" green="0.10588235294117647" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
@@ -7526,10 +7526,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9J-8h-dgN">
-                                                    <rect key="frame" x="90" y="37" width="234" height="30"/>
+                                                    <rect key="frame" x="90" y="37" width="234" height="31"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="XaB-4p-eqL"/>
+                                                        <constraint firstAttribute="height" constant="31" id="XaB-4p-eqL"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                                     <state key="normal" title="SELECCIONA UNA UBICACIÓN">
@@ -7546,21 +7546,21 @@
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TLB-1o-EOd">
-                                                    <rect key="frame" x="20" y="90" width="374" height="1"/>
+                                                    <rect key="frame" x="20" y="91" width="374" height="1"/>
                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="G0d-KJ-m7v"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3r-uR-xH6">
-                                                    <rect key="frame" x="20" y="128" width="374" height="1"/>
+                                                    <rect key="frame" x="20" y="129" width="374" height="1"/>
                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="DX8-lw-rFm"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICK-TV-RMr">
-                                                    <rect key="frame" x="20" y="99" width="374" height="21"/>
+                                                    <rect key="frame" x="20" y="100" width="374" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="o2A-Xl-56j"/>
                                                     </constraints>
@@ -7590,10 +7590,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FlechaAbajo" translatesAutoresizingMaskIntoConstraints="NO" id="aVi-xo-4rR">
-                                                    <rect key="frame" x="294" y="47" width="25" height="10"/>
+                                                    <rect key="frame" x="299" y="50" width="20" height="5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="10" id="ibr-8Q-snI"/>
-                                                        <constraint firstAttribute="width" constant="25" id="xtW-ka-0rJ"/>
+                                                        <constraint firstAttribute="height" constant="5" id="ibr-8Q-snI"/>
+                                                        <constraint firstAttribute="width" constant="20" id="xtW-ka-0rJ"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -7614,7 +7614,7 @@
                                                 <constraint firstItem="I3r-uR-xH6" firstAttribute="leading" secondItem="dci-p9-nu9" secondAttribute="leading" constant="20" id="aCO-1C-wRa"/>
                                                 <constraint firstItem="TLB-1o-EOd" firstAttribute="trailing" secondItem="ICK-TV-RMr" secondAttribute="trailing" id="bbC-RB-kYF"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="eB3-Mt-Xcc" secondAttribute="bottom" constant="-2" id="csW-ZI-o0z"/>
-                                                <constraint firstItem="TLB-1o-EOd" firstAttribute="top" secondItem="aVi-xo-4rR" secondAttribute="bottom" constant="33" id="dDC-CT-09L"/>
+                                                <constraint firstItem="TLB-1o-EOd" firstAttribute="top" secondItem="aVi-xo-4rR" secondAttribute="bottom" constant="36" id="dDC-CT-09L"/>
                                                 <constraint firstAttribute="trailing" secondItem="I3r-uR-xH6" secondAttribute="trailing" constant="20" id="jOv-bH-A29"/>
                                                 <constraint firstItem="k9J-8h-dgN" firstAttribute="centerY" secondItem="aVi-xo-4rR" secondAttribute="centerY" id="ktY-Gh-cJx"/>
                                                 <constraint firstItem="Fpp-PO-hcI" firstAttribute="leading" secondItem="dci-p9-nu9" secondAttribute="leading" id="wb0-ar-B8V"/>
@@ -9798,7 +9798,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Tlx-3I-mcH"/>
         <segue reference="Hoa-iV-Mgh"/>
-        <segue reference="ByN-Yg-Spq"/>
+        <segue reference="vvg-Oz-35K"/>
         <segue reference="fLD-ZY-1hz"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.10980392156862745" green="0.52941176470588236" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
