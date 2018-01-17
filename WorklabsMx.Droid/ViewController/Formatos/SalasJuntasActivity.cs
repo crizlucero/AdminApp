@@ -58,7 +58,7 @@ namespace WorklabsMx.Droid
             ActionBar.Title = Resources.GetString(Resource.String.ReservaSala);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             _viewPager = FindViewById<ViewPager>(Resource.Id.vpSucursal);
-            salas = SalasController.GetSalaJuntas(Intent.GetIntExtra("sucursal_id",-1));
+            salas = SalasController.GetSalaJuntas(Intent.GetStringExtra("sucursal_id"));
             _viewPager.Adapter = new SalaJuntasAdapter(this, salas);
             Horarios.Add(salas[_viewPager.CurrentItem].Sala_Id, new Dictionary<string, List<int>>());
             Horarios[salas[_viewPager.CurrentItem].Sala_Id].Add(fecha_seleccionada, new List<int>());
@@ -290,8 +290,8 @@ namespace WorklabsMx.Droid
                     reminderValues.Put(CalendarContract.Reminders.InterfaceConsts.Method, (int)RemindersMethod.Alert);
                     var reminderUri = ContentResolver.Insert(CalendarContract.Reminders.ContentUri, reminderValues);
                     Console.WriteLine("Uri for new event: {0}", reminderUri);
-                    //SalasController.AsignarSalaJuntas("ALTA", salas[_viewPager.CurrentItem].Sala_Id, storage.Get("Usuario_Id"),
-                    //                                  storage.Get("Usuario_Tipo"), fecha_seleccionada, (hora - 1).ToString("00") + ":00", hora.ToString("00") + ":00");
+                    SalasController.AsignarSalaJuntas("ALTA", salas[_viewPager.CurrentItem].Sala_Id, storage.Get("Usuario_Id"),
+                                                      storage.Get("Usuario_Tipo"), DateTime.Parse(fecha_seleccionada), (hora - 1).ToString("00") + ":00", hora.ToString("00") + ":00");
                 }
                 );
                 dialog.Dismiss();
