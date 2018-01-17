@@ -26,6 +26,25 @@ namespace WorklabsMx.Controllers
             return sucursales;
         }
 
+        public Dictionary<string, string> GetSucursalInfo()
+        {
+            Dictionary<string, string> sucursales = new Dictionary<string, string>();
+            string query = "SELECT Sucursal_Id, Sucursal_Descripcion FROM vw_cat_Sucursales";
+            try
+            {
+                conn.Open();
+                command = CreateCommand(query);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    sucursales.Add(reader["Sucursal_Descripcion"].ToString(), reader["Sucursal_Id"].ToString());
+                }
+            }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            finally { conn.Close(); }
+            return sucursales;
+        }
+
         public int GetSucursalId(string sucursal)
         {
             string query = "SELECT Sucursal_Id FROM vw_cat_Sucursales WHERE Sucursal_Descripcion = @sucursal";
