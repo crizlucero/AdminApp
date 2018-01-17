@@ -10,8 +10,7 @@
         android:hint="@string/Nombre"
         android:textColorHint="#ffCCCCCC"
         android:textColor="#FFF"
-        android:layout_gravity="fill"
-        android:text="Christian" />
+        android:layout_gravity="fill" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,8 +18,7 @@
         android:hint="@string/Apellidos"
         android:textColor="#FFF"
         android:textColorHint="#ffCCCCCC"
-        android:layout_gravity="fill"
-        android:text="Lucero" />
+        android:layout_gravity="fill" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="40.0dp"
@@ -29,6 +27,5 @@
         android:textColor="#FFF"
         android:textColorHint="#ffCCCCCC"
         android:layout_gravity="fill"
-        android:inputType="textEmailAddress"
-        android:text="crizlucero@gmail.com" />
+        android:inputType="textEmailAddress" />
 </LinearLayout>

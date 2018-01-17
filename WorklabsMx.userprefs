@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/Helpers/PerfilPageAdapter.cs">
     <Files>
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="293" Column="45" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="187" Column="25" />
       <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="373" Column="17" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/InvitadosActivity.cs" Line="72" Column="68" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/InvitadosActivity.cs" Line="19" Column="31" />
       <File FileName="WorklabsMx/Controllers/SucursalController.cs" Line="40" Column="111" />
-      <File FileName="WorklabsMx.Droid/Helpers/PerfilPageAdapter.cs" Line="79" Column="63" />
-      <File FileName="WorklabsMx/Controllers/InvitadosController.cs" Line="65" Column="45" />
+      <File FileName="WorklabsMx.Droid/Helpers/PerfilPageAdapter.cs" Line="49" Column="10" />
+      <File FileName="WorklabsMx/Controllers/InvitadosController.cs" Line="47" Column="77" />
       <File FileName="WorklabsMx/Helpers/Emails.cs" Line="56" Column="51" />
     </Files>
   </MonoDevelop.Ide.Workbench>

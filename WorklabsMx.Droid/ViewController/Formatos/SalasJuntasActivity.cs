@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
-using Android.Provider;
 using Android.Runtime;
 using Android.Support.V4.View;
 using Android.Views;
@@ -33,7 +31,6 @@ namespace WorklabsMx.Droid
         readonly Dictionary<string, Dictionary<string, List<int>>> Horarios;
         public SalasJuntasActivity()
         {
-            //HorasSeleccionadas = new List<int>();
             HorasNoDisponibles = new List<int>();
             storage = SimpleStorage.EditGroup("Login");
             fecha_seleccionada = DateTime.Now.ToString("d");
@@ -41,12 +38,8 @@ namespace WorklabsMx.Droid
             Horarios = new Dictionary<string, Dictionary<string, List<int>>>();
             horas = new List<int>();
             for (int i = 1; i < 25; i++)
-            {
-                if (i < 24)
-                    horas.Add(i);
-                else
-                    horas.Add(0);
-            }
+                horas.Add(i);
+
         }
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -68,7 +61,6 @@ namespace WorklabsMx.Droid
                 {
                     FindViewById<TextView>(Resource.Id.lblDiaFecha).Text = time.DayOfWeek.ToString().Substring(0, 3);
                     FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = time.Day.ToString();
-                    //_dateDisplay.Text = time.ToLongDateString();
                 });
                 frag.Show(FragmentManager, Resources.GetString(Resource.String.ReservaSala));
             };
@@ -84,7 +76,6 @@ namespace WorklabsMx.Droid
 
             _viewPager.PageSelected += (sender, e) =>
             {
-                //Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Clear();
                 HorasNoDisponibles.Clear();
                 SalasController.GetHorasNoDisponibles(fecha_seleccionada, salas[_viewPager.CurrentItem].Sala_Id).ForEach(horas =>
                     HorasNoDisponibles.Add(DateTime.Parse(horas.Sala_Hora_Fin).Hour));
@@ -208,6 +199,10 @@ namespace WorklabsMx.Droid
 
             for (int i = 1; i < Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Count; i++)
             {
+                if (Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i] - 1 < 0)
+                {
+
+                }
                 if (aux[aux2] == Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i] - 1)
                 {
                     aux[aux2] = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i];
@@ -216,14 +211,13 @@ namespace WorklabsMx.Droid
                 {
                     aux2 = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i] - 1;
                     aux.Add(aux2, aux2 + 1);
-
                 }
             }
 
 
             TableLayout tlReservaciones = customView.FindViewById<TableLayout>(Resource.Id.tlReservaciones);
 
-            foreach (KeyValuePair<int, int> horas in aux)
+            foreach (KeyValuePair<int, int> hora in aux)
             {
                 LayoutInflater li = LayoutInflater;
 
@@ -231,28 +225,12 @@ namespace WorklabsMx.Droid
                 detalleView.FindViewById<TextView>(Resource.Id.lblSalasJuntas).Text = salas[_viewPager.CurrentItem].Sala_Descripcion;
                 detalleView.FindViewById<TextView>(Resource.Id.lblPiso).Text = "Nivel " + salas[_viewPager.CurrentItem].Sala_Nivel;
                 detalleView.FindViewById<TextView>(Resource.Id.lblFechaNumero).Text = DateTime.Parse(fecha_seleccionada).ToString("M");
-                detalleView.FindViewById<TextView>(Resource.Id.lblHorario).Text = (horas.Key).ToString("00") + ":00 - " + horas.Value.ToString("00") + ":00";
+                detalleView.FindViewById<TextView>(Resource.Id.lblHorario).Text = (hora.Key).ToString("00") + ":00 - " + hora.Value.ToString("00") + ":00";
 
                 TableRow row = new TableRow(this);
                 row.AddView(detalleView);
                 tlReservaciones.AddView(row);
             }
-
-            /*Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].ForEach(hora =>
-            {
-
-                LayoutInflater li = LayoutInflater;
-
-                View detalleView = li.Inflate(Resource.Layout.DetallesReservacionSalaJuntaLayout, null, true);
-                detalleView.FindViewById<TextView>(Resource.Id.lblSalasJuntas).Text = salas[_viewPager.CurrentItem].Sala_Descripcion;
-                detalleView.FindViewById<TextView>(Resource.Id.lblPiso).Text = "Nivel " + salas[_viewPager.CurrentItem].Sala_Nivel;
-                detalleView.FindViewById<TextView>(Resource.Id.lblFechaNumero).Text = DateTime.Parse(fecha_seleccionada).ToString("M");
-                detalleView.FindViewById<TextView>(Resource.Id.lblHorario).Text = (hora - 1).ToString("00") + ":00 - " + hora.ToString("00") + ":00";
-
-                TableRow row = new TableRow(this);
-                row.AddView(detalleView);
-                tlReservaciones.AddView(row);
-            });*/
 
 
             customView.FindViewById<Button>(Resource.Id.btnCancelar).Click += (sender, e) => dialog.Dismiss();
@@ -260,38 +238,9 @@ namespace WorklabsMx.Droid
             {
                 Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].ForEach(hora =>
                 {
-                    ContentValues eventValues = new ContentValues();
-
-                    eventValues.Put(CalendarContract.Events.InterfaceConsts.CalendarId,
-                        1);
-                    eventValues.Put(CalendarContract.Events.InterfaceConsts.Title,
-                        "Test Event from M4A");
-                    eventValues.Put(CalendarContract.Events.InterfaceConsts.Description,
-                        "This is an event created from Xamarin.Android");
-                    eventValues.Put(CalendarContract.Events.InterfaceConsts.Dtstart,
-                        new CalendarHelper().GetDateTimeMS(2017, 1, 12, 16, 55));
-                    eventValues.Put(CalendarContract.Events.InterfaceConsts.Dtend,
-                                    new CalendarHelper().GetDateTimeMS(2017, 1, 12, 18, 40));
-
-                    eventValues.Put(CalendarContract.Events.InterfaceConsts.EventTimezone,
-                        "UTC");
-                    eventValues.Put(CalendarContract.Events.InterfaceConsts.EventEndTimezone,
-                        "UTC");
-
-                    var uri = ContentResolver.Insert(CalendarContract.Events.ContentUri,
-                        eventValues);
-                    Console.WriteLine(uri);
-                    long eventID = long.Parse(uri.LastPathSegment);
-
-                    ContentValues reminderValues = new ContentValues();
-                    reminderValues.Put(CalendarContract.Reminders.InterfaceConsts.Minutes, 30);
-                    reminderValues.Put(CalendarContract.Reminders.InterfaceConsts.EventId, eventID);
-                    //reminderValues.Put(CalendarContract.Reminders.InterfaceConsts.CalendarId, 1);
-                    reminderValues.Put(CalendarContract.Reminders.InterfaceConsts.Method, (int)RemindersMethod.Alert);
-                    var reminderUri = ContentResolver.Insert(CalendarContract.Reminders.ContentUri, reminderValues);
-                    Console.WriteLine("Uri for new event: {0}", reminderUri);
                     SalasController.AsignarSalaJuntas("ALTA", salas[_viewPager.CurrentItem].Sala_Id, storage.Get("Usuario_Id"),
-                                                      storage.Get("Usuario_Tipo"), DateTime.Parse(fecha_seleccionada), (hora - 1).ToString("00") + ":00", hora.ToString("00") + ":00");
+                                                      storage.Get("Usuario_Tipo"), DateTime.Parse(fecha_seleccionada),
+                                                      (hora - 1).ToString("00") + ":00", (hora != 24 ? hora : 0).ToString("00") + ":00");
                 }
                 );
                 dialog.Dismiss();

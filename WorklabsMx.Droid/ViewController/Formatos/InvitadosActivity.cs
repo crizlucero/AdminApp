@@ -17,7 +17,6 @@ namespace WorklabsMx.Droid
     public class InvitadosActivity : Activity
     {
         SimpleStorage storage;
-        AlertDialog dialog;
         TableLayout DatosBasicos;
         List<MiembroModel> invitados;
 
