@@ -153,8 +153,11 @@ namespace WorklabsMx.iOS
                     }
                     if (eliminado)
                     {
+                       // this.TableView.BeginUpdates();
+
+                        tableView.DeleteRows(new NSIndexPath[] { indexPath }, UITableViewRowAnimation.Fade);
                         Reservaciones.RemoveAt(indexPath.Row);
-                        this.TableView.ReloadData();
+                        //this.TableView.EndUpdates();
                     }
                     break;
                 case UITableViewCellEditingStyle.None:
