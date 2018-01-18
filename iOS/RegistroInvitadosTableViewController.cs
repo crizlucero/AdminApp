@@ -23,7 +23,7 @@ namespace WorklabsMx.iOS
             NumeroCeldasInvitados++;
             TableView.BeginUpdates();
             NSIndexPath newIndexPath = NSIndexPath.FromRowSection(1, 0);
-            TableView.InsertRows (new NSIndexPath[]{newIndexPath}, withRowAnimation: UITableViewRowAnimation.Automatic);        
+            TableView.InsertRows (new NSIndexPath[]{newIndexPath}, withRowAnimation: UITableViewRowAnimation.Automatic);
             TableView.EndUpdates();
         }
 
@@ -53,10 +53,10 @@ namespace WorklabsMx.iOS
 
         }
 
-        public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
+        /*public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
         {
-           
-        }
+
+        }*/
 
         partial void btnMenuInvitados_Touch(UIBarButtonItem sender)
         {

@@ -67,9 +67,6 @@ namespace WorklabsMx.iOS
                 }
             }
 
-
-
-
         }
 
         partial void btnConfirmar_Touch(UIButton sender)

@@ -38,6 +38,9 @@ namespace WorklabsMx.iOS
                     this.btnSeguir.SetTitle("- Dejar de seguir", UIControlState.Normal); 
                 }
             }
+            this.cvwMi.Hidden = false;
+            this.cvwSocial.Hidden = true;
+            this.cvwTrabajo.Hidden = true;
         }
 
         partial void btnBackGroundImage_Touch(UIButton sender)
@@ -92,6 +95,9 @@ namespace WorklabsMx.iOS
 
         partial void btnSobreMi_Touch(UIButton sender)
         {
+            this.cvwMi.Hidden = false;
+            this.cvwSocial.Hidden = true;
+            this.cvwTrabajo.Hidden = true;
             this.btnSobreMi.BackgroundColor = UIColor.Clear.FromHex(0xFFFFFF);
             this.btnSobreMi.SetTitleColor(UIColor.Clear.FromHex(0x63B4EA), UIControlState.Normal);
             this.vwMi.BackgroundColor = UIColor.Clear.FromHex(0xFFFFFF);
@@ -114,6 +120,9 @@ namespace WorklabsMx.iOS
 
         partial void btnSocial_Touch(UIButton sender)
         {
+            this.cvwMi.Hidden = true;
+            this.cvwSocial.Hidden = false;
+            this.cvwTrabajo.Hidden = true;
             this.btnSocial.BackgroundColor = UIColor.Clear.FromHex(0xFFFFFF);
             this.btnSocial.SetTitleColor(UIColor.Clear.FromHex(0x63B4EA), UIControlState.Normal);
             this.vwSocial.BackgroundColor = UIColor.Clear.FromHex(0xFFFFFF);
@@ -136,6 +145,9 @@ namespace WorklabsMx.iOS
 
         partial void btnTrabajo_Touch(UIButton sender)
         {
+            this.cvwMi.Hidden = true;
+            this.cvwSocial.Hidden = true;
+            this.cvwTrabajo.Hidden = false;
             this.btnTrabajo.BackgroundColor = UIColor.Clear.FromHex(0xFFFFFF);
             this.btnTrabajo.SetTitleColor(UIColor.Clear.FromHex(0x63B4EA), UIControlState.Normal);
             this.vwTrabajo.BackgroundColor = UIColor.Clear.FromHex(0xFFFFFF);
