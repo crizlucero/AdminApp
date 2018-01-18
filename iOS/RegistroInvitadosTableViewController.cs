@@ -20,12 +20,10 @@ namespace WorklabsMx.iOS
 
         partial void btnAñadir_Touch(UIButton sender)
         {
-            TableView.BeginUpdates();
-            NSIndexPath newIndexPath = NSIndexPath.FromRowSection(NumeroCeldasInvitados, 0);
-            //TableView.InsertRows(new NSIndexPath[] { NSIndexPath.FromRowSection(0, 0) }, UITableViewRowAnimation.Fade);
-            TableView.InsertRows (new NSIndexPath[]{newIndexPath}, withRowAnimation: UITableViewRowAnimation.Automatic);        
-
             NumeroCeldasInvitados++;
+            TableView.BeginUpdates();
+            NSIndexPath newIndexPath = NSIndexPath.FromRowSection(1, 0);
+            TableView.InsertRows (new NSIndexPath[]{newIndexPath}, withRowAnimation: UITableViewRowAnimation.Automatic);        
             TableView.EndUpdates();
         }
 
@@ -50,8 +48,14 @@ namespace WorklabsMx.iOS
             }
             else
             {
-                return base.RowsInSection(TableView, section);
+                return 2;
             }
+
+        }
+
+        public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
+        {
+           
         }
 
         partial void btnMenuInvitados_Touch(UIBarButtonItem sender)
@@ -59,5 +63,7 @@ namespace WorklabsMx.iOS
             this.RevealViewController().RevealToggleAnimated(true);
             View.AddGestureRecognizer(this.RevealViewController().PanGestureRecognizer);
         }
+
+
     }
 }

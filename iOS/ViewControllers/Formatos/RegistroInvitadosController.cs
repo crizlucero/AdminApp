@@ -62,7 +62,7 @@ namespace WorklabsMx.iOS
 
             NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Registrar", UIBarButtonItemStyle.Plain, (sender, e) =>
             {
-                new InvitadosController().RegistraInvitado(txtNombre.Text, txtAsunto.Text, txtEmail.Text, txtCC.Text, (DateTime)dpHoraEntrada.Date, (DateTime)dpHoraSalida.Date, (DateTime)dpFecha.Date);
+                //new InvitadosController().RegistraInvitado(txtNombre.Text, txtAsunto.Text, txtEmail.Text, txtCC.Text, (DateTime)dpHoraEntrada.Date, (DateTime)dpHoraSalida.Date, (DateTime)dpFecha.Date);
             }), true);
 
             scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 580);

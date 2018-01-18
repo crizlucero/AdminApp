@@ -1124,6 +1124,10 @@
     <Compile Include="RegistroInvitadosTableViewController.designer.cs">
       <DependentUpon>RegistroInvitadosTableViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvitadoTableViewCell.cs" />
+    <Compile Include="InvitadoTableViewCell.designer.cs">
+      <DependentUpon>InvitadoTableViewCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
