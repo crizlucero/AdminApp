@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+	<!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+  -->
+    <attr path="/api/package[@name='com.threatmetrix.TrustDefenderMobile']/interface[@name='TrustDefenderMobileStandardV2']" name="visibility">public</attr>
+    <attr path="/api/package[@name='com.threatmetrix.TrustDefenderMobile']/class[@name='BaseConfig']" name="visibility">public</attr>
+    <attr path="/api/package[@name='com.threatmetrix.TrustDefenderMobile']/interface[@name='EndNotifierBase']" name="visibility">public</attr>
+    <attr path="/api/package[@name='org.apache.commons.codec.net']/class[@name='RFC1522Codec']" name="visibility">public</attr>
+    <attr path="/api/package[@name='org.apache.commons.codec.binary']/interface[@name='BaseNCodec']" name="visibility">public</attr>
+    <attr path="/api/package[@name='org.apache.commons.codec.binary']/class[@name='BaseNCodec']" name="visibility">public</attr>
+    <attr path="/api/package[@name='org.apache.commons.codec.binary']/class[@name='Base32']" name="visibility">protected</attr>
+    <attr path="/api/package[@name='org.apache.commons.codec.language.bm']/class[@name='Rule']" name="visibility">public</attr>
+    <attr path="/api/package[@name='java.lang']/interface[@name='Iterable']" name="visibility">public</attr>
+    <attr path="/api/package[@name='org.apache.commons.codec.language.bm']/class[@name='Rule.Phoneme']" name="visibility">public</attr>
+    <attr path="/api/package[@name='org.apache.commons.codec.language.bm.Rule']/class[@name='Phoneme']" name="visibility">public</attr>
+    <attr path="/api/package[@name='org.apache.commons.codec.language.bm']/class[@name='Rule.PhonemeList']" name="visibility">public</attr>
+    <attr path="/api/package[@name='org.apache.commons.codec.language.bm']/class[@name='Rule.PhonemeList.Phonemes']" name="visibility">public</attr>
+    <attr path="/api/package[@name='org.apache.commons.codec.language.bm']/interface[@name='Rule.PhonemeExpr']" name="visibility">public</attr>
+    <attr path="/api/package[@name='org.apache.commons.codec.language.bm']/interface[@name='Rule.IPhonemeExpr.Phonemes']/method[@name='getPhonemes' and count(parameter)=0]" name="managedName">GetTypeImpl</attr>
+    <attr path="/api/package[@name='org.apache.commons.codec.language.bm']/class[@name='Rule']" name="visibility">public</attr>
+</metadata>

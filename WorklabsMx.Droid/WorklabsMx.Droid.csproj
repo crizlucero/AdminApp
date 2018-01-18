@@ -130,6 +130,9 @@
     <Reference Include="Xamarin.GooglePlayServices.Auth">
       <HintPath>..\packages\Xamarin.GooglePlayServices.Auth.60.1142.0\lib\MonoAndroid80\Xamarin.GooglePlayServices.Auth.dll</HintPath>
     </Reference>
+    <Reference Include="PagosAndroid">
+      <HintPath>..\PagosAndroid\bin\Debug\PagosAndroid.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -172,7 +175,7 @@
     <Compile Include="ViewController\PerfilCardActivity.cs" />
     <Compile Include="ViewController\EmpresaCardActivity.cs" />
     <Compile Include="Helpers\EmpresaPageAdapter.cs" />
-    <Compile Include="Helpers\CalendarEventsHelper.cs" />
+    <Compile Include="Helpers\PagosHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

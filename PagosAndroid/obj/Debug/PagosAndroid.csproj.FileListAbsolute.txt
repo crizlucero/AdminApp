@@ -1,0 +1,1 @@
+/Users/worklabs/WorklabsMx/PagosAndroid/obj/Debug/PagosAndroid.csproj.CoreCompileInputs.cache

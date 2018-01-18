@@ -13,3 +13,8 @@
 /Users/gilberto/Documents/WorkLabs/WorkLabs1.0.3/WorklabsMx/SWRevealViewControllerBinding/obj/Debug/SWRevealViewControllerBinding.csproj.CoreCompileInputs.cache
 /Users/gilberto/Documents/WorkLabs/WorkLabs1.0.3/WorklabsMx/SWRevealViewControllerBinding/obj/Debug/SWRevealViewControllerBinding.dll
 /Users/gilberto/Documents/WorkLabs/WorkLabs1.0.3/WorklabsMx/SWRevealViewControllerBinding/obj/Debug/SWRevealViewControllerBinding.pdb
+/Users/worklabs/WorklabsMx/SWRevealViewControllerBinding/bin/Debug/SWRevealViewControllerBinding.dll
+/Users/worklabs/WorklabsMx/SWRevealViewControllerBinding/bin/Debug/SWRevealViewControllerBinding.pdb
+/Users/worklabs/WorklabsMx/SWRevealViewControllerBinding/obj/Debug/SWRevealViewControllerBinding.csproj.CoreCompileInputs.cache
+/Users/worklabs/WorklabsMx/SWRevealViewControllerBinding/obj/Debug/SWRevealViewControllerBinding.dll
+/Users/worklabs/WorklabsMx/SWRevealViewControllerBinding/obj/Debug/SWRevealViewControllerBinding.pdb
