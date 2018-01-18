@@ -1,7 +1,11 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/RegistroInvitadosTableViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.storyboard">
     <Files>
-      <File FileName="iOS/RegistroInvitadosTableViewController.cs" Line="26" Column="33" />
+      <File FileName="iOS/RegistroInvitadosTableViewController.cs" Line="21" Column="158" />
+      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="129" Column="44" />
+      <File FileName="iOS/Main.cs" Line="12" Column="1" />
+      <File FileName="iOS/InvitadoTableViewCell.cs" Line="15" Column="24" />
+      <File FileName="iOS/Main.storyboard" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />

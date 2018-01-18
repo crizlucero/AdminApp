@@ -56,16 +56,18 @@ namespace WorklabsMx.iOS
 
         }
 
-        public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
+        public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
             if (indexPath.Section == 0)
             {
-                CategoryCell cell = (CategoryCell)tableView.DequeueReusableCell(CategoryCellIdentifier);
+                InvitadoTableViewCell cell = (InvitadoTableViewCell)tableView.DequeueReusableCell("CeldaInvitaciones");
+                return cell;
             }
-            else
+            else 
             {
                 return base.GetCell(tableView, indexPath);
             }
+           
         }
 
         partial void btnMenuInvitados_Touch(UIBarButtonItem sender)

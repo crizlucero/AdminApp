@@ -7399,7 +7399,7 @@
                         <sections>
                             <tableViewSection id="Neu-ab-bZ5">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="142" id="P6O-lD-s0h" customClass="InvitadoTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CeldaInvitaciones" rowHeight="142" id="P6O-lD-s0h" customClass="InvitadoTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P6O-lD-s0h" id="HqB-fw-jlY">
