@@ -48,6 +48,18 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView cvwMi { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView cvwSocial { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView cvwTrabajo { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblEmpresa { get; set; }
 
         [Outlet]
@@ -138,6 +150,21 @@ namespace WorklabsMx.iOS
             if (btnVerMas != null) {
                 btnVerMas.Dispose ();
                 btnVerMas = null;
+            }
+
+            if (cvwMi != null) {
+                cvwMi.Dispose ();
+                cvwMi = null;
+            }
+
+            if (cvwSocial != null) {
+                cvwSocial.Dispose ();
+                cvwSocial = null;
+            }
+
+            if (cvwTrabajo != null) {
+                cvwTrabajo.Dispose ();
+                cvwTrabajo = null;
             }
 
             if (lblEmpresa != null) {

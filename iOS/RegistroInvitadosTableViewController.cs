@@ -16,6 +16,9 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            txtApellido.AttributedPlaceholder = new NSAttributedString("APELLIDO", new UIStringAttributes { ForegroundColor = UIColor.Clear.FromHex(0x848484) });
+            txtNombre.AttributedPlaceholder = new NSAttributedString("NOMBRE", new UIStringAttributes { ForegroundColor = UIColor.Clear.FromHex(0x848484) });
+            txtEmail.AttributedPlaceholder = new NSAttributedString("EMAIL", new UIStringAttributes { ForegroundColor = UIColor.Clear.FromHex(0x848484) });
         }
 
         partial void btnAñadir_Touch(UIButton sender)
@@ -23,7 +26,7 @@ namespace WorklabsMx.iOS
             NumeroCeldasInvitados++;
             TableView.BeginUpdates();
             NSIndexPath newIndexPath = NSIndexPath.FromRowSection(1, 0);
-            TableView.InsertRows (new NSIndexPath[]{newIndexPath}, withRowAnimation: UITableViewRowAnimation.Automatic);        
+            TableView.InsertRows (new NSIndexPath[]{newIndexPath}, withRowAnimation: UITableViewRowAnimation.Automatic);
             TableView.EndUpdates();
         }
 
@@ -53,8 +56,17 @@ namespace WorklabsMx.iOS
 
         }
 
-        public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
+        public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
+            if (indexPath.Section == 0)
+            {
+                InvitadoTableViewCell cell = (InvitadoTableViewCell)tableView.DequeueReusableCell("CeldaInvitaciones");
+                return cell;
+            }
+            else 
+            {
+                return base.GetCell(tableView, indexPath);
+            }
            
         }
 

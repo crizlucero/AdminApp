@@ -694,6 +694,18 @@
     <ImageAsset Include="Assets.xcassets\Gradiente.imageset\gradient.png" />
     <ImageAsset Include="Assets.xcassets\Gradiente.imageset\gradient%402x.png" />
     <ImageAsset Include="Assets.xcassets\Gradiente.imageset\gradient%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Empresa.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Empresa.imageset\Empresa.png" />
+    <ImageAsset Include="Assets.xcassets\Empresa.imageset\Empresa%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Empresa.imageset\Empresa%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Colaborador.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Colaborador.imageset\Colaborador.png" />
+    <ImageAsset Include="Assets.xcassets\Colaborador.imageset\Colaborador%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Colaborador.imageset\Colaborador%403x.png" />
+    <ImageAsset Include="Assets.xcassets\facebookic.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\facebookic.imageset\facebookic.png" />
+    <ImageAsset Include="Assets.xcassets\facebookic.imageset\facebookic%402x.png" />
+    <ImageAsset Include="Assets.xcassets\facebookic.imageset\facebookic%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1128,6 +1140,26 @@
     <Compile Include="InvitadoTableViewCell.designer.cs">
       <DependentUpon>InvitadoTableViewCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="InfoEmpresaTableViewController.cs" />
+    <Compile Include="InfoEmpresaTableViewController.designer.cs">
+      <DependentUpon>InfoEmpresaTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilSocialTableViewController.cs" />
+    <Compile Include="PerfilSocialTableViewController.designer.cs">
+      <DependentUpon>PerfilSocialTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilRedesSociales.cs" />
+    <Compile Include="PerfilRedesSociales.designer.cs">
+      <DependentUpon>PerfilRedesSociales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RedesSocialesTableViewCell.cs" />
+    <Compile Include="RedesSocialesTableViewCell.designer.cs">
+      <DependentUpon>RedesSocialesTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MiInfoViewController.cs" />
+    <Compile Include="MiInfoViewController.designer.cs">
+      <DependentUpon>MiInfoViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -1269,6 +1301,9 @@
     <Folder Include="Assets.xcassets\MiniCalendar.imageset\" />
     <Folder Include="Assets.xcassets\MiniHorario.imageset\" />
     <Folder Include="Assets.xcassets\Gradiente.imageset\" />
+    <Folder Include="Assets.xcassets\Empresa.imageset\" />
+    <Folder Include="Assets.xcassets\Colaborador.imageset\" />
+    <Folder Include="Assets.xcassets\facebookic.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />
