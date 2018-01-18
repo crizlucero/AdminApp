@@ -172,6 +172,7 @@
     <Compile Include="ViewController\PerfilCardActivity.cs" />
     <Compile Include="ViewController\EmpresaCardActivity.cs" />
     <Compile Include="Helpers\EmpresaPageAdapter.cs" />
+    <Compile Include="Helpers\CalendarEventsHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

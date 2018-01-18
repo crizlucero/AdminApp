@@ -17,7 +17,6 @@ namespace WorklabsMx.Droid
     public class InvitadosActivity : Activity
     {
         SimpleStorage storage;
-        AlertDialog dialog;
         TableLayout DatosBasicos;
         List<MiembroModel> invitados;
 
@@ -56,9 +55,12 @@ namespace WorklabsMx.Droid
             AddDatosBasicos();
 
             Spinner ubicacion = FindViewById<Spinner>(Resource.Id.spUbicacion);
-            Dictionary<string, string> sucursales= new SucursalController().GetSucursalInfo();
+            Dictionary<string, string> sucursales = new SucursalController().GetSucursalInfo();
             List<string> display = sucursales.Keys.ToList();
             ubicacion.Adapter = new ArrayAdapter<string>(this, Resource.Drawable.spinner_style, display);
+
+            EditText txtAsunto = FindViewById<EditText>(Resource.Id.txtAsunto);
+
 
             FindViewById<TextView>(Resource.Id.lblAgregarInvitado).Click += (sender, e) => AddDatosBasicos();
             FindViewById<TextView>(Resource.Id.lblEnviar).Click += delegate
@@ -66,10 +68,12 @@ namespace WorklabsMx.Droid
                 Console.WriteLine(sucursales[ubicacion.SelectedItem.ToString()]);
                 invitados.ForEach(invitado =>
                 {
-                    /*if (new InvitadosController().RegistraInvitado(invitado.Miembro_Nombre, invitado.Miembro_Apellidos, invitado.Miembro_Correo_Electronico,lblFecha.Text))
+                    if (new InvitadosController().RegistraInvitado(invitado.Miembro_Nombre, invitado.Miembro_Apellidos, invitado.Miembro_Correo_Electronico, 
+                                                                   txtAsunto.Text, DateTime.Parse(lblFecha.Text), sucursales[ubicacion.SelectedItem.ToString()], 
+                                                                   storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo")))
                         Toast.MakeText(this, Resource.String.DatosGuardados, ToastLength.Short).Show();
                     else
-                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();*/
+                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
                 });
             };
         }
@@ -100,81 +104,14 @@ namespace WorklabsMx.Droid
             invitados.Add(invitado);
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater.Inflate(Resource.Menu.send_menu, menu);
-            return base.OnCreateOptionsMenu(menu);
-        }
+        public override bool OnCreateOptionsMenu(IMenu menu) => base.OnCreateOptionsMenu(menu);
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
 
-            switch (item.ItemId)
-            {
-                case Resource.Id.menu_send:
-                    /*string nombre = FindViewById<EditText>(Resource.Id.txtNombreInvitado).Text;
-                    string asunto = FindViewById<EditText>(Resource.Id.txtAsuntoInvitado).Text;
-                    string correo = FindViewById<EditText>(Resource.Id.txtCorreoInvitado).Text;
-                    string cc = FindViewById<EditText>(Resource.Id.txtCCInvitado).Text;
-                    DateTime entrada = DateTime.Parse(FindViewById<EditText>(Resource.Id.txtHoraEntradaInvitado).Text);
-                    DateTime salida = DateTime.Parse(FindViewById<EditText>(Resource.Id.txtHoraSalidaInvitado).Text);
-                    DateTime fecha = DateTime.Parse(FindViewById<EditText>(Resource.Id.txtFechaInvitado).Text);
-                    if (nombre.Trim().Length != 0 && asunto.Trim().Length != 0 && correo.Trim().Length != 0 && cc.Trim().Length != 0)
-                        if (new InvitadosController().RegistraInvitado(nombre, asunto, correo, cc, entrada, salida, fecha))
-                            Toast.MakeText(this, Resource.String.DatosGuardados, ToastLength.Short).Show();
-                        else
-                            Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
-                    else
-                        Toast.MakeText(this, Resource.String.LlenarDatos, ToastLength.Short).Show();*/
-                    break;
-                default:
-                    StartActivity(new Intent(this, typeof(MainActivity)));
-                    Finish();
-                    break;
-            }
+            StartActivity(new Intent(this, typeof(MainActivity)));
+            Finish();
             return base.OnOptionsItemSelected(item);
-        }
-
-        void ShowCalendarView(EditText fecha)
-        {
-
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-            LayoutInflater liView = LayoutInflater;
-
-            View customView = liView.Inflate(Resource.Layout.CalendarioLayout, null, true);
-
-            CalendarView calendar = customView.FindViewById<CalendarView>(Resource.Id.cvCalendario);
-            calendar.MinDate = new Java.Util.Date().Time;
-            calendar.DateChange += (sender, e) =>
-            {
-                fecha.Text = e.DayOfMonth + "/" + e.Month + "/" + e.Year;
-                dialog.Dismiss();
-            };
-            builder.SetView(customView);
-            builder.Create();
-            dialog = builder.Show();
-            dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
-        }
-
-        void ShowHorarioPicker(EditText hora)
-        {
-
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-            LayoutInflater liView = LayoutInflater;
-
-            View customView = liView.Inflate(Resource.Layout.HorarioPickerLayout, null, true);
-
-            TimePicker horario = customView.FindViewById<TimePicker>(Resource.Id.tpHorario);
-            horario.TimeChanged += (sender, e) =>
-            {
-                hora.Text = e.HourOfDay.ToString("00") + ":" + e.Minute.ToString("00");
-            };
-            builder.SetView(customView);
-            builder.Create();
-            dialog = builder.Show();
-            dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
         }
     }
 

@@ -4,24 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="344dp"
         android:layout_height="wrap_content"
         android:id="@+id/txtNombre"
         android:hint="@string/Nombre"
         android:textColorHint="#ffCCCCCC"
-        android:textColor="#000" />
+        android:textColor="#FFF"
+        android:layout_gravity="fill" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtApellidos"
         android:hint="@string/Apellidos"
-        android:textColor="#ff000000"
-        android:textColorHint="#ffCCCCCC" />
+        android:textColor="#FFF"
+        android:textColorHint="#ffCCCCCC"
+        android:layout_gravity="fill" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="40.0dp"
         android:id="@+id/txtEmail"
         android:hint="@string/CorreoElectronico"
-        android:textColor="#ff000000"
-        android:textColorHint="#ffCCCCCC" />
+        android:textColor="#FFF"
+        android:textColorHint="#ffCCCCCC"
+        android:layout_gravity="fill"
+        android:inputType="textEmailAddress" />
 </LinearLayout>

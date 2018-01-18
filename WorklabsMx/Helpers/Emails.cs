@@ -53,7 +53,7 @@ namespace WorklabsMx
         /// <param name="cc">CC</param>
         /// <param name="name">Nombre</param>
         /// <param name="clave">Clave de acceso</param>
-        public void SendMailInvitado(string email, string cc, string name, string clave)
+        public void SendMailInvitado(string email, string name, string clave)
         {
 
             MailMessage message = new MailMessage(configuracion.Parametro_Varchar_1, email);

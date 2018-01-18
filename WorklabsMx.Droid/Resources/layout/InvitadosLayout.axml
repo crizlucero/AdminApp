@@ -35,6 +35,11 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="20dp"
                 android:textAllCaps="true" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtAsunto"
+                android:hint="@string/Asunto" />
             <Button
                 android:inputType="date"
                 android:layout_width="wrap_content"
