@@ -4,6 +4,7 @@ using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Models;
 using System.Collections.Generic;
+using Foundation;
 
 namespace WorklabsMx.iOS
 {
@@ -91,6 +92,7 @@ namespace WorklabsMx.iOS
 
         partial void btnVerMas_Touch(UIButton sender)
         {
+            this.TableView.ScrollToRow(NSIndexPath.FromRowSection(1, 0), UITableViewScrollPosition.None, true);
         }
 
         partial void btnSobreMi_Touch(UIButton sender)

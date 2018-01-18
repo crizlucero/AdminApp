@@ -3,13 +3,12 @@
     <Files>
       <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="4" Column="1" />
       <File FileName="iOS/InfoConfirmacionViewController.cs" Line="39" Column="35" />
-      <File FileName="iOS/RegistroInvitadosTableViewController.cs" Line="54" Column="10" />
+      <File FileName="iOS/RegistroInvitadosTableViewController.cs" Line="25" Column="12" />
       <File FileName="iOS/MenuTableViewController.cs" Line="37" Column="10" />
       <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="1" Column="1" />
-      <File FileName="iOS/PerfilesTableViewController.cs" Line="27" Column="63" />
-      <File FileName="iOS/InfoEmpresaTableViewController.cs" Line="10" Column="78" />
-      <File FileName="iOS/MiInfoViewController.cs" Line="27" Column="2" />
-      <File FileName="WorklabsMx/Controllers/ColaboradoresController.cs" Line="147" Column="41" />
+      <File FileName="iOS/PerfilesTableViewController.cs" Line="94" Column="51" />
+      <File FileName="iOS/InfoEmpresaTableViewController.cs" Line="19" Column="6" />
+      <File FileName="iOS/MiInfoViewController.cs" Line="36" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
