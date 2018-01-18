@@ -24,12 +24,12 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
             nfloat WidthView = 0;
 
-            nfloat XLabelDia = 16;
+            nfloat XLabelDia = 0;
             nfloat XLabelDiaNumero = 0;
-            nfloat XLabekNivel = 16;
-            nfloat XLabelNombreSala = 16;
-            nfloat XLabelHoraInicioFin = 16;
-            nfloat XVistaDianNumero = 186;
+            nfloat XLabekNivel = 0;
+            nfloat XLabelNombreSala = 0;
+            nfloat XLabelHoraInicioFin = 8;
+            nfloat XVistaDianNumero = 170;
 
             for (int indice = 0; indice < this.Reservaciones.Count; indice++)
             {

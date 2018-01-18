@@ -27,7 +27,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Sala_Junta_Hora_Fin", hora_fin);
                 command.Parameters.Add("@Sala_Junta_Reservacion_Id", SqlDbType.Int).Direction = ParameterDirection.Output;
 
-                command.Transaction = transaction;
+                command.Transaction = transaction;                                                                                                                                                                                                                                                                                                                                
                 command.ExecuteNonQuery();
                 transaction.Commit();
                 return Convert.ToInt32(command.Parameters["@Sala_Junta_Reservacion_Id"].Value);

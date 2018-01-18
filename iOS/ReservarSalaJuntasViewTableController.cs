@@ -981,8 +981,8 @@ namespace WorklabsMx.iOS
         public async void ReservacionConfirmada(List<SalaJuntasReservacionModel> ReservacionesConcat)
         {
             await Task.Delay(100);
-            this.PerformSegue("DetalleReservacion", null);
             this.ReservacionesConcat = ReservacionesConcat;
+            this.PerformSegue("DetalleReservacion", null);
         }
     }
 

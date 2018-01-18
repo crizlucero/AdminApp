@@ -107,7 +107,7 @@ namespace WorklabsMx.iOS
                 return Reservaciones.Count;
             }
             isShowInformation = false;
-            return 1;
+            return 0;
         }
 
         public override nfloat GetHeightForRow(UITableView tableView, Foundation.NSIndexPath indexPath)
@@ -143,26 +143,21 @@ namespace WorklabsMx.iOS
 
         public override void CommitEditingStyle(UITableView tableView, UITableViewCellEditingStyle editingStyle, Foundation.NSIndexPath indexPath)
         {
-            switch (editingStyle)
+            if (editingStyle == UITableViewCellEditingStyle.Delete)
             {
-                case UITableViewCellEditingStyle.Delete:
-                    bool eliminado = false;
-                    if(InternetConectionHelper.VerificarConexion())
-                    {
-                        eliminado = new SalasJuntasController().CancelarSalaJuntas("BAJA", this.Reservaciones[indexPath.Row].Sala_Junta_Reservacion_Id);
-                    }
-                    if (eliminado)
-                    {
-                       // this.TableView.BeginUpdates();
-
-                        tableView.DeleteRows(new NSIndexPath[] { indexPath }, UITableViewRowAnimation.Fade);
-                        Reservaciones.RemoveAt(indexPath.Row);
-                        //this.TableView.EndUpdates();
-                    }
-                    break;
-                case UITableViewCellEditingStyle.None:
-                    Console.WriteLine("CommitEditingStyle:None called");
-                    break;
+                bool eliminado = false;
+                if (InternetConectionHelper.VerificarConexion())
+                {
+                    eliminado = new SalasJuntasController().CancelarSalaJuntas("BAJA", this.Reservaciones[indexPath.Row].Sala_Junta_Reservacion_Id);
+                }
+                if (eliminado)
+                {
+                    tableView.BeginUpdates();
+                    Reservaciones.RemoveAt(indexPath.Row);
+                    tableView.DeleteRows(new NSIndexPath[] { indexPath }, UITableViewRowAnimation.Automatic);
+                    tableView.EndUpdates();
+                }
+               
             }
         }
 
