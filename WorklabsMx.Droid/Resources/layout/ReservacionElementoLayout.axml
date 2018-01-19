@@ -9,7 +9,7 @@
     android:layout_marginTop="5dp">
     <ImageView
         android:id="@+id/ivSala"
-        android:layout_width="match_parent"
+        android:layout_width="360dp"
         android:layout_height="100dp"
         android:layout_column="0"
         android:layout_row="0"
@@ -60,8 +60,8 @@
         android:textColor="@android:color/white"
         android:layout_gravity="top|center"
         android:textSize="10dp" />
-    <ImageView
-        android:id="@+id/ivSwipe"
+    <ImageButton
+        android:id="@+id/btnCancelar"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_column="1"
@@ -70,5 +70,6 @@
         android:layout_gravity="center_vertical|right"
         android:src="@mipmap/ic_clear"
         android:layout_marginRight="10dp"
-        android:tint="#FFF" />
+        android:tint="#FFF"
+        android:background="@android:color/transparent" />
 </GridLayout>

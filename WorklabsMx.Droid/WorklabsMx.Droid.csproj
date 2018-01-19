@@ -130,8 +130,8 @@
     <Reference Include="Xamarin.GooglePlayServices.Auth">
       <HintPath>..\packages\Xamarin.GooglePlayServices.Auth.60.1142.0\lib\MonoAndroid80\Xamarin.GooglePlayServices.Auth.dll</HintPath>
     </Reference>
-    <Reference Include="PagosAndroid">
-      <HintPath>..\PagosAndroid\bin\Debug\PagosAndroid.dll</HintPath>
+    <Reference Include="FortySevenDeg.SwipeListView">
+      <HintPath>..\packages\FortySevenDeg.SwipeListView.2.0.0.2\lib\FortySevenDeg.SwipeListView.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -363,6 +363,8 @@
     <AndroidResource Include="Resources\layout\SobreMiTrabajoLayout.axml" />
     <AndroidResource Include="Resources\drawable\spinner_style.xml" />
     <AndroidResource Include="Resources\layout\TituloEmpresaLayout.axml" />
+    <AndroidResource Include="Resources\drawable\choice_selected.xml" />
+    <AndroidResource Include="Resources\drawable\choice_unselected.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
