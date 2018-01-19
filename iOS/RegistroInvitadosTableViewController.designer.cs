@@ -24,10 +24,6 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnFecha { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIBarButtonItem btnMenuIvitados { get; set; }
 
         [Outlet]
@@ -45,6 +41,10 @@ namespace WorklabsMx.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtApellido { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView txtAsunto { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -86,11 +86,6 @@ namespace WorklabsMx.iOS
                 btnEnviarInvitacion = null;
             }
 
-            if (btnFecha != null) {
-                btnFecha.Dispose ();
-                btnFecha = null;
-            }
-
             if (btnMenuIvitados != null) {
                 btnMenuIvitados.Dispose ();
                 btnMenuIvitados = null;
@@ -114,6 +109,11 @@ namespace WorklabsMx.iOS
             if (txtApellido != null) {
                 txtApellido.Dispose ();
                 txtApellido = null;
+            }
+
+            if (txtAsunto != null) {
+                txtAsunto.Dispose ();
+                txtAsunto = null;
             }
 
             if (txtEmail != null) {

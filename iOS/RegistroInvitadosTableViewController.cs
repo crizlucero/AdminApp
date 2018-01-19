@@ -2,13 +2,17 @@ using Foundation;
 using System;
 using UIKit;
 using SWRevealViewControllerBinding;
-
+using WorklabsMx.Controllers;
+using System.Collections.Generic;
+using WorklabsMx.Models;
+using WorklabsMx.iOS.Helpers;
 
 namespace WorklabsMx.iOS
 {
     public partial class RegistroInvitadosTableViewController : UITableViewController
     {
-        int NumeroCeldasInvitados = 1;
+        List<MiembroModel> invitados;
+        List<SucursalModel> sucursales = new SucursalController().GetSucursales();
         public RegistroInvitadosTableViewController (IntPtr handle) : base (handle)
         {
         }
@@ -16,16 +20,42 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            invitados = new List<MiembroModel>();
+            this.CrearInvitado();
             txtApellido.AttributedPlaceholder = new NSAttributedString("APELLIDO", new UIStringAttributes { ForegroundColor = UIColor.Clear.FromHex(0x848484) });
             txtNombre.AttributedPlaceholder = new NSAttributedString("NOMBRE", new UIStringAttributes { ForegroundColor = UIColor.Clear.FromHex(0x848484) });
             txtEmail.AttributedPlaceholder = new NSAttributedString("EMAIL", new UIStringAttributes { ForegroundColor = UIColor.Clear.FromHex(0x848484) });
+            NSDateFormatter dateFormat = new NSDateFormatter();
+            dateFormat.DateFormat = "E, d MMM yyyy HH:mm";
+            this.lblFecha.Text = dateFormat.ToString((NSDate)DateTime.Now);
+            this.lblUbicacion.Text = sucursales[0].Sucursal_Descripcion;
+        }
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+            this.txtNombre.ShouldReturn += (textField) => {
+                this.txtApellido.BecomeFirstResponder();
+                return true;
+            };
+
+            this.txtApellido.ShouldReturn += (textField) => {
+                this.txtEmail.BecomeFirstResponder();
+                return true;
+            };
+
+
+            this.txtEmail.ShouldReturn += (textField) => {
+                textField.ResignFirstResponder();
+                return true;
+            };
         }
 
         partial void btnAñadir_Touch(UIButton sender)
         {
-            NumeroCeldasInvitados++;
             TableView.BeginUpdates();
-            NSIndexPath newIndexPath = NSIndexPath.FromRowSection(1, 0);
+            CrearInvitado();
+            NSIndexPath newIndexPath = NSIndexPath.FromRowSection(invitados.Count - 1, 0);
             TableView.InsertRows (new NSIndexPath[]{newIndexPath}, withRowAnimation: UITableViewRowAnimation.Automatic);
             TableView.EndUpdates();
         }
@@ -33,21 +63,69 @@ namespace WorklabsMx.iOS
 
         partial void btnFecha_Tocuh(UIButton sender)
         {
+            this.PerformSegue("SeleccionarFecha", null);
         }
 
         partial void btnUbicacion_Touch(UIButton sender)
         {
+            this.PerformSegue("sucursales", null);
         }
 
         partial void btnEnviarInvitacion_Touch(UIButton sender)
         {
+            var CamposVacios = false;
+            var ErrorInvitar = false;
+
+            foreach (MiembroModel invitado in invitados)
+            {
+                if ((invitado.Miembro_Nombre != "" && invitado.Miembro_Apellidos != "" && invitado.Miembro_Correo_Electronico != ""))
+                {
+                    var Sucursal = sucursales.Find(x => x.Sucursal_Descripcion == lblUbicacion.Text);
+                    if(InternetConectionHelper.VerificarConexion())
+                    {
+                        if (new InvitadosController().RegistraInvitado(invitado.Miembro_Nombre, invitado.Miembro_Apellidos, invitado.Miembro_Correo_Electronico, txtAsunto.Text, DateTime.Parse(lblFecha.Text), Sucursal.Sucursal_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo")))
+                        {
+                            ErrorInvitar = false;
+                        }
+                        else
+                        {
+                            ErrorInvitar = true;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        ErrorInvitar = true;
+                        break;
+                    }
+
+                    CamposVacios = false;
+                }
+                else
+                {
+                    CamposVacios = true;
+                    break;
+                }
+            }
+            if(CamposVacios)
+            {
+                new MessageDialog().SendToast("Favor de llenar todos los campos");
+
+            }
+            else if (ErrorInvitar)
+            {
+                new MessageDialog().SendToast("No se pudieron enviar las invitaciones, intente de nuevo");
+            } else
+            {
+                new MessageDialog().SendToast("Se han creado las invitaciones");
+            }
         }
 
         public override nint RowsInSection(UITableView tableView, nint section)
         {
             if (section == 0)
             {
-                return NumeroCeldasInvitados;
+                return invitados.Count;
             }
             else
             {
@@ -56,19 +134,6 @@ namespace WorklabsMx.iOS
 
         }
 
-        public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
-        {
-            if (indexPath.Section == 0)
-            {
-                InvitadoTableViewCell cell = (InvitadoTableViewCell)tableView.DequeueReusableCell("CeldaInvitaciones");
-                return cell;
-            }
-            else 
-            {
-                return base.GetCell(tableView, indexPath);
-            }
-           
-        }
 
         partial void btnMenuInvitados_Touch(UIBarButtonItem sender)
         {
@@ -76,6 +141,63 @@ namespace WorklabsMx.iOS
             View.AddGestureRecognizer(this.RevealViewController().PanGestureRecognizer);
         }
 
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            if (segue.Identifier == "SeleccionarFecha")
+            {
+                var GenderView = (FechaReservacionPickerViewController)segue.DestinationViewController;
+                GenderView.FechaSeleccionadaDelegate = this;
+                GenderView.FromRegister = true;
+            }
+            else if (segue.Identifier == "sucursales")
+            {
+                var GenderView = (SucursalesViewController)segue.DestinationViewController;
+                GenderView.SucursalSeleccionadaDel = this;
+            }
+        }
 
+        private void CrearInvitado()
+        {
+            MiembroModel invitado = new MiembroModel();
+            invitado.Miembro_Nombre = txtNombre.Text;
+            invitado.Miembro_Apellidos = txtApellido.Text;
+            invitado.Miembro_Correo_Electronico = txtEmail.Text;
+            invitados.Add(invitado);
+
+        }
+
+        public override void TouchesBegan(NSSet touches, UIEvent evt)
+        {
+            base.TouchesBegan(touches, evt);
+            UITouch touch = touches.AnyObject as UITouch;
+            if (touch != null)
+            {
+                View.EndEditing(true);
+            }
+        }
+
+
+
+    }
+
+
+
+    partial class RegistroInvitadosTableViewController : FechaReservaSeleccionada
+    {
+        public void FechaReservaSeleccionada(String FechaReservacion)
+        {
+            this.lblFecha.Text = FechaReservacion;
+           
+        }
+    }
+
+    partial class RegistroInvitadosTableViewController : SucursalSeleccionada
+    {
+        public void SucursalSeleccionada(String Sucursal)
+        {
+
+            this.lblUbicacion.Text = Sucursal;
+
+        }
     }
 }

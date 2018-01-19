@@ -34,8 +34,6 @@ namespace WorklabsMx.iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            var color = new UIColor(0, 0.0f);
-            this.View.BackgroundColor = color;
         }
 
         partial void btnSeleccionar_Touch(UIButton sender)

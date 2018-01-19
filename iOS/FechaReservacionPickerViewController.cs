@@ -12,6 +12,8 @@ namespace WorklabsMx.iOS
 
     public partial class FechaReservacionPickerViewController : UIViewController
     {
+        public bool FromRegister = false;
+
         NSDateFormatter dateFormat = new NSDateFormatter();
         public FechaReservaSeleccionada FechaSeleccionadaDelegate;
         string FechaReservacion;
@@ -29,7 +31,15 @@ namespace WorklabsMx.iOS
         {
             base.ViewWillAppear(animated);
             this.dtpFechaReservacion.MinimumDate = (NSDate)DateTime.Now;
-            dateFormat.DateFormat = "dd/MM/yyyy";
+            if (FromRegister)
+            {
+                dateFormat.DateFormat = "E, d MMM yyyy HH:mm";
+            }
+            else
+            {
+                dateFormat.DateFormat = "dd/MM/yyyy";
+
+            }
             this.FechaReservacion = dateFormat.ToString(this.dtpFechaReservacion.Date);
         }
 
