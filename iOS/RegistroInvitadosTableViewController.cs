@@ -78,12 +78,12 @@ namespace WorklabsMx.iOS
 
             foreach (MiembroModel invitado in invitados)
             {
-                if ((invitado.Miembro_Nombre != "" && invitado.Miembro_Apellidos != "" && invitado.Miembro_Correo_Electronico != ""))
+                if ((txtNombre.Text/*invitado.Miembro_Nombre*/ != "" && txtApellido.Text /*invitado.Miembro_Apellidos*/ != "" && txtEmail.Text /*invitado.Miembro_Correo_Electronico*/ != ""))
                 {
                     var Sucursal = sucursales.Find(x => x.Sucursal_Descripcion == lblUbicacion.Text);
                     if(InternetConectionHelper.VerificarConexion())
                     {
-                        if (new InvitadosController().RegistraInvitado(invitado.Miembro_Nombre, invitado.Miembro_Apellidos, invitado.Miembro_Correo_Electronico, txtAsunto.Text, DateTime.Parse(lblFecha.Text), Sucursal.Sucursal_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo")))
+                        if (new InvitadosController().RegistraInvitado(txtNombre.Text /*invitado.Miembro_Nombre*/, txtApellido.Text /*invitado.Miembro_Apellidos*/, txtEmail.Text /*invitado.Miembro_Correo_Electronico*/, txtAsunto.Text, DateTime.Parse(lblFecha.Text), Sucursal.Sucursal_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo")))
                         {
                             ErrorInvitar = false;
                         }
