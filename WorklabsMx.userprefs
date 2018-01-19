@@ -1,23 +1,27 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/LoginViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../../Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/lib/msbuild/iOS/Xamarin.iOS.Common.targets">
     <Files>
-      <File FileName="iOS/RegistroInvitadosTableViewController.cs" Line="145" Column="20" />
+      <File FileName="iOS/RegistroInvitadosTableViewController.cs" Line="86" Column="236" />
       <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="130" Column="36" />
       <File FileName="iOS/FechaReservacionPickerViewController.cs" Line="33" Column="52" />
-      <File FileName="WorklabsMx/Controllers/InvitadosController.cs" Line="23" Column="136" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/InvitadosActivity.cs" Line="74" Column="68" />
+      <File FileName="WorklabsMx/Controllers/InvitadosController.cs" Line="65" Column="38" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/InvitadosActivity.cs" Line="81" Column="31" />
       <File FileName="WorklabsMx/Controllers/SucursalController.cs" Line="68" Column="43" />
       <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="255" Column="56" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="136" Column="42" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="107" Column="1" />
+      <File FileName="iOS/Info.plist" />
+      <File FileName="../../../../../../Library/Frameworks/Xamarin.iOS.framework/Versions/11.6.1.3/lib/msbuild/iOS/Xamarin.iOS.Common.targets" Line="635" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.3/WorklabsMx/iOS/RegistroInvitadosTableViewController.cs" relfile="iOS/RegistroInvitadosTableViewController.cs" line="61" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabs/WorkLabs1.0.3/WorklabsMx/WorklabsMx/Controllers/InvitadosController.cs" relfile="WorklabsMx/Controllers/InvitadosController.cs" line="65" column="38" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.8E7870C1-E826-4C43-8050-33E492EADDA5" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" automaticSigning="False">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
+  </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
   <MultiItemStartupConfigurations />
 </Properties>
