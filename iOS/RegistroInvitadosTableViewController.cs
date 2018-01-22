@@ -96,7 +96,7 @@ namespace WorklabsMx.iOS
                         var Sucursal = sucursales.Find(x => x.Sucursal_Descripcion == lblUbicacion.Text);
                         if (InternetConectionHelper.VerificarConexion())
                         {
-                            if (new InvitadosController().RegistraInvitado(txtNombre.Text /*invitado.Miembro_Nombre*/, txtApellido.Text /*invitado.Miembro_Apellidos*/, txtEmail.Text /*invitado.Miembro_Correo_Electronico*/, txtAsunto.Text, DateTime.Parse(lblFecha.Text), Sucursal.Sucursal_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo")))
+                            if (new InvitadosController().RegistraInvitado(txtNombre.Text /*invitado.Miembro_Nombre*/, txtApellido.Text /*invitado.Miembro_Apellidos*/, txtEmail.Text /*invitado.Miembro_Correo_Electronico*/, txtAsunto.Text, DateTime.Parse(lblFecha.Text), Sucursal.Sucursal_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo")) != -1)
                             {
                                 ErrorInvitar = false;
                                 this.CrearInvitado();
@@ -195,6 +195,7 @@ namespace WorklabsMx.iOS
             invitado.Miembro_Nombre = txtNombre.Text;
             invitado.Miembro_Apellidos = txtApellido.Text;
             invitado.Miembro_Correo_Electronico = txtEmail.Text;
+            invitado.Miembro_Fecha_Registro = this.lblFecha.Text;
             invitados.Add(invitado);
 
         }

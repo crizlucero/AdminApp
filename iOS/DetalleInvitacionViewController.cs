@@ -22,6 +22,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            this.LlenarInfo();
             string newAcceso = new MiembrosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
 
             LoadingView loadPop = new LoadingView(UIScreen.MainScreen.Bounds);
@@ -32,10 +33,11 @@ namespace WorklabsMx.iOS
 
         }
 
-        public void LenarInfo()
+        public void LlenarInfo()
         {
             foreach(MiembroModel Invitado in Invitados)
             {
+                this.lblNombreInvitado.Text = Invitado.Miembro_Nombre + " " + Invitado.Miembro_Apellidos;
                 this.lblFecha.Text = Invitado.Miembro_Fecha_Registro;
                 this.lblDomicilio.Text = DomicilioInvitacion;
             }

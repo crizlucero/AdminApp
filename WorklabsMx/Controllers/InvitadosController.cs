@@ -56,12 +56,12 @@ namespace WorklabsMx.Controllers
                     command.Parameters.AddWithValue("@Colaborador_Id", usuario_id);
                 }
 
-                command.Parameters.Add("@Invitado_Id", SqlDbType.Int).Direction = ParameterDirection.Output;
+                command.Parameters.Add("@Visita_Id", SqlDbType.Int).Direction = ParameterDirection.Output;
 
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();
                 transaction.Commit();
-                return Convert.ToInt32(command.Parameters["@Invitado_Id"].Value);
+                return Convert.ToInt32(command.Parameters["@Visita_Id"].Value);
             }
 
             catch (Exception ex)
