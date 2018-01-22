@@ -10,5 +10,6 @@ namespace WorklabsMx.Models
 		public string Sucursal_Correo { get; set; }
 		public string Sucursal_Imagen { get; set; }
 		public string Sucursal_Estatus { get; set; }
+        public TerritorioModel Territorio { get; set; }
     }
 }

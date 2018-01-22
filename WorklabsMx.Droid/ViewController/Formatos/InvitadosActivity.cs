@@ -6,9 +6,11 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Droid.Helpers;
+using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
@@ -66,15 +68,30 @@ namespace WorklabsMx.Droid
             FindViewById<TextView>(Resource.Id.lblEnviar).Click += delegate
             {
                 Console.WriteLine(sucursales[ubicacion.SelectedItem.ToString()]);
+                List<int> invitados_id = new List<int>();
                 invitados.ForEach(invitado =>
                 {
-                    if (new InvitadosController().RegistraInvitado(invitado.Miembro_Nombre, invitado.Miembro_Apellidos, invitado.Miembro_Correo_Electronico, 
-                                                                   txtAsunto.Text, DateTime.Parse(lblFecha.Text), sucursales[ubicacion.SelectedItem.ToString()], 
-                                                                   storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo")))
+                    try
+                    {
+                        invitados_id.Add(new InvitadosController().RegistraInvitado(invitado.Miembro_Nombre, invitado.Miembro_Apellidos, invitado.Miembro_Correo_Electronico,
+                                                                       txtAsunto.Text, DateTime.Parse(lblFecha.Text), sucursales[ubicacion.SelectedItem.ToString()],
+                                                                                  storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo")));
                         Toast.MakeText(this, Resource.String.DatosGuardados, ToastLength.Short).Show();
-                    else
+
+                    }
+                    catch (Exception e)
+                    {
                         Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
+                        SlackLogs.SendMessage(e.Message);
+                    }
                 });
+                if (invitados_id.Count != 0)
+                {
+                    Intent intent = new Intent(this, typeof(InvitadosConfirmacionActivity));
+                    intent.PutExtra("Invitados_Id", JsonConvert.SerializeObject(invitados_id));
+                    StartActivity(intent);
+                    Finish();
+                }
             };
         }
 

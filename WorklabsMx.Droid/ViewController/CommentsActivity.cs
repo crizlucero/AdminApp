@@ -6,7 +6,6 @@ using Android.Content;
 using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.OS;
-using Android.Support.V4.Content;
 using Android.Support.V4.Widget;
 using Android.Views;
 using Android.Widget;
@@ -91,7 +90,8 @@ namespace WorklabsMx.Droid
             };
         }
 
-        void FillPost(){
+        void FillPost()
+        {
             string Usuario_Id = !string.IsNullOrEmpty(post.Miembro_Id) ? post.Miembro_Id : post.Colaborador_Empresa_Id;
 
             ImageButton imgPerfil = FindViewById<ImageButton>(Resource.Id.imgPerfil);
@@ -164,7 +164,8 @@ namespace WorklabsMx.Droid
 
             Button btnComentar = FindViewById<Button>(Resource.Id.btnComentar);
             btnComentar.Visibility = ViewStates.Visible;
-            btnComentar.Click += delegate {
+            btnComentar.Click += delegate
+            {
                 ShowPublish();
             };
         }
@@ -380,7 +381,6 @@ namespace WorklabsMx.Droid
                     if (bitmap != null)
                     {
                         imgPicture.SetImageBitmap(bitmap);
-                        //bitmap = null;
                     }
 
                     GC.Collect();
@@ -390,7 +390,7 @@ namespace WorklabsMx.Droid
                     imagePath = (string)data.Data;
                     bitmap = Media.GetBitmap(ContentResolver, data.Data);
                     imgPicture.SetImageURI(data.Data);
-                    imgPublish = System.Uri.EscapeUriString(data.Data.LastPathSegment);
+                    imgPublish = Uri.EscapeUriString(data.Data.LastPathSegment);
                 }
                 imgPicture.Visibility = ViewStates.Visible;
                 customView.FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Visible;

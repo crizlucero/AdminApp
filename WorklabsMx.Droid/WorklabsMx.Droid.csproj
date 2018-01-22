@@ -176,6 +176,7 @@
     <Compile Include="ViewController\EmpresaCardActivity.cs" />
     <Compile Include="Helpers\EmpresaPageAdapter.cs" />
     <Compile Include="Helpers\PagosHelper.cs" />
+    <Compile Include="ViewController\Formatos\InvitadosConfirmacionActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using WorklabsMx.Enum;
 using WorklabsMx.Helpers;
@@ -20,7 +21,7 @@ namespace WorklabsMx.Controllers
         /// <param name="sucursal_id">Sucursal identifier.</param>
         /// <param name="usuario_id">Usuario identifier.</param>
         /// <param name="usuario_tipo">Usuario tipo.</param>
-		public bool RegistraInvitado(string nombre, string apellidos, string email, string asunto, DateTime fecha_entrada, string sucursal_id, string usuario_id, string usuario_tipo)
+		public int RegistraInvitado(string nombre, string apellidos, string email, string asunto, DateTime fecha_entrada, string sucursal_id, string usuario_id, string usuario_tipo)
         {
             string clave = new PassSecurity().GeneraIdentifier(20);
 
@@ -55,9 +56,12 @@ namespace WorklabsMx.Controllers
                     command.Parameters.AddWithValue("@Colaborador_Id", usuario_id);
                 }
 
+                command.Parameters.Add("@Invitado_Id", SqlDbType.Int).Direction = ParameterDirection.Output;
+
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();
                 transaction.Commit();
+                return Convert.ToInt32(command.Parameters["@Invitado_Id"].Value);
             }
 
             catch (Exception ex)
@@ -65,14 +69,66 @@ namespace WorklabsMx.Controllers
                 SlackLogs.SendMessage(ex.Message);
                 transaction.Rollback();
                 Console.WriteLine(ex.Message);
-                return false;
+                return -1;
             }
             finally
             {
                 conn.Close();
             }
             //new Emails().SendMailInvitado(email, nombre, clave);
-            return true;
+        }
+
+        public List<VisitaModel> GetInvitados(List<int> invitaciones_id)
+        {
+            List<VisitaModel> invitados = new List<VisitaModel>();
+            string invitaciones = string.Empty;
+            invitaciones_id.ForEach(key =>
+            {
+                invitaciones += key + ",";
+            });
+            string query = "select * from vw_pro_Visitas where visita_id in (" + invitaciones.Substring(0, invitaciones.Length - 1) + ")";
+            try
+            {
+                command = CreateCommand(query);
+                conn.Open();
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    invitados.Add(new VisitaModel
+                    {
+                        Visita_Id = reader["Visita_Id"].ToString(),
+                        Visita_Nombre = reader["Visita_Nombre"].ToString(),
+                        Visita_Apellidos = reader["Visita_Apellidps"].ToString(),
+                        Visita_Email = reader["Visita_Email"].ToString(),
+                        Visita_Fecha_Entrada = reader["Visita_Fecha_Entrada"].ToString(),
+                        Visita_Codigo_Acceso = reader["Visita_Codigo_Acceso"].ToString(),
+                        Sucursal = new SucursalModel
+                        {
+                            Sucursal_Id = reader["Sucursal_Id"].ToString(),
+                            Sucursal_Correo = reader["Sucursal_Correo_1"].ToString(),
+                            Sucursal_Descripcion = reader["Sucursal_Descripcion"].ToString(),
+                            Sucursal_Domicilio = reader["Sucursal_Calle"].ToString(),
+                            Territorio = new TerritorioModel
+                            {
+                                Colonia = reader["Territorio_Colonia_Descripcion"].ToString(),
+                                Municipio = reader["Territorio_Municipio_Descripcion"].ToString(),
+                                Estado = reader["Territorio_Estado_Descripcion"].ToString(),
+                                Pais = reader["Territorio_Pais_Descripcion"].ToString()
+                            }
+
+                        }
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return invitados;
         }
     }
 }
