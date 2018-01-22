@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/RegistroInvitadosTableViewController.cs">
     <Files>
@@ -23,5 +24,29 @@
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C8F534E0-9C6A-4F53-A110-4E330B864317" automaticSigning="False">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
   </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioActivity.cs" Line="34" Column="13" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ColeccionProductosActivity.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/TabSalasJuntasHistorialActivity.cs" Line="162" Column="1" />
+      <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="115" Column="24" />
+      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="52" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/RegistroInvitadosTableViewController.cs" relfile="iOS/RegistroInvitadosTableViewController.cs" line="61" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/SalasJuntasController.cs" relfile="WorklabsMx/Controllers/SalasJuntasController.cs" line="52" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D3D00818-B828-45D1-ACAA-A06B2D1C1EA8" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
+>>>>>>> 5c2378b9bf74aa23b504ca94ca29001f5cb87d18
   <MultiItemStartupConfigurations />
 </Properties>

@@ -162,4 +162,5 @@
     <string name="Actualmente">Actualmente</string>
     <string name="Anteriores">Anteriores</string>
     <string name="Colaboraciones">Colaboraciones</string>
+    <string name="SalaCancelada">La sala de juntas fue cancelada</string>
 </resources>

@@ -22,6 +22,7 @@ namespace WorklabsMx.Droid
     public class TabSalasJuntasHistorialActivity : FragmentActivity
     {
 
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -65,16 +66,19 @@ namespace WorklabsMx.Droid
     }
     class HistorialesAdapter : PagerAdapter
     {
-        Context context;
+        readonly Context context;
         List<string> historiales;
         SimpleStorage storage;
         View SalasView;
         List<SalaJuntasReservacionModel> historico;
+        SalasJuntasController controller;
+
         public HistorialesAdapter(Context context, List<string> historiales)
         {
             this.context = context;
             this.historiales = historiales;
             storage = SimpleStorage.EditGroup("Login");
+            controller = new SalasJuntasController();
         }
 
         public override Java.Lang.Object InstantiateItem(View container, int position)
@@ -82,13 +86,13 @@ namespace WorklabsMx.Droid
             LayoutInflater liView = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
             SalasView = liView.Inflate(Resource.Layout.SalaJuntasHistorialLayout, null, true);
             var viewPager = container.JavaCast<ViewPager>();
-            historico = new SalasJuntasController().GetReservaciones(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), historiales[position] == context.Resources.GetString(Resource.String.Recientes) ? 1 :
+            historico = controller.GetReservaciones(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), historiales[position] == context.Resources.GetString(Resource.String.Recientes) ? 1 :
                                                                      historiales[position] == context.Resources.GetString(Resource.String.Historico) ? 2 : 0);
             SwipeRefreshLayout refresher = SalasView.FindViewById<SwipeRefreshLayout>(Resource.Id.swipe_container);
             refresher.SetColorSchemeColors(Color.Gray, Color.LightGray, Color.Gray, Color.DarkGray, Color.Black, Color.DarkGray);
             refresher.Refresh += (sender, e) =>
             {
-                historico = new SalasJuntasController().GetReservaciones(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), historiales[position] == context.Resources.GetString(Resource.String.Recientes) ? 1 :
+                historico = controller.GetReservaciones(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), historiales[position] == context.Resources.GetString(Resource.String.Recientes) ? 1 :
                                                                      historiales[position] == context.Resources.GetString(Resource.String.Historico) ? 2 : 0);
                 HistorialValidation();
                 ((SwipeRefreshLayout)sender).Refreshing = false;
@@ -138,6 +142,16 @@ namespace WorklabsMx.Droid
                 ReservaView.FindViewById<TextView>(Resource.Id.lblDiaSemana).Text = DateTime.Parse(reservacion.Sala_Fecha).Day.ToString();
                 ReservaView.FindViewById<TextView>(Resource.Id.lblDia).Text = DateTime.Parse(reservacion.Sala_Fecha).DayOfWeek.ToString();
                 ReservaView.FindViewById<TextView>(Resource.Id.lblHorario).Text = reservacion.Sala_Hora_Inicio.Substring(0, 5) + " - " + reservacion.Sala_Hora_Fin.Substring(0, 5);
+                ReservaView.FindViewById<ImageButton>(Resource.Id.btnCancelar).Click += delegate
+                {
+                    if (controller.CancelarSalaJuntas("Baja", reservacion.Sala_Junta_Reservacion_Id)){
+                        Toast.MakeText(context, Resource.String.SalaCancelada, ToastLength.Short).Show();
+                        historico.Remove(reservacion);
+                        HistorialValidation();
+                    }else
+                        Toast.MakeText(context, Resource.String.ErrorIntento, ToastLength.Short).Show();
+                };
+
                 TableRow row = new TableRow(context);
                 row.AddView(ReservaView);
                 table.AddView(row);
