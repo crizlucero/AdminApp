@@ -1,0 +1,2 @@
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/PagosAndroid/obj/Release/PagosAndroid.csprojResolveAssemblyReference.cache
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/PagosAndroid/obj/Release/PagosAndroid.csproj.CoreCompileInputs.cache

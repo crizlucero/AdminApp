@@ -1,3 +1,30 @@
+<<<<<<< HEAD
+﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/RegistroInvitadosTableViewController.cs">
+    <Files>
+      <File FileName="iOS/RegistroInvitadosTableViewController.cs" Line="141" Column="14" />
+      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="130" Column="36" />
+      <File FileName="iOS/FechaReservacionPickerViewController.cs" Line="33" Column="52" />
+      <File FileName="WorklabsMx/Controllers/InvitadosController.cs" Line="65" Column="38" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/InvitadosActivity.cs" Line="81" Column="31" />
+      <File FileName="WorklabsMx/Controllers/SucursalController.cs" Line="68" Column="43" />
+      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="255" Column="56" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="98" Column="41" />
+      <File FileName="iOS/DetalleInvitacionViewController.cs" Line="3" Column="13" />
+      <File FileName="iOS/ViewControllers/Comentarios/ComentarviewController.cs" Line="51" Column="9" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/InvitadosController.cs" relfile="WorklabsMx/Controllers/InvitadosController.cs" line="65" column="38" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C8F534E0-9C6A-4F53-A110-4E330B864317" automaticSigning="False">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
+  </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
+=======
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/Formatos/InvitadosConfirmacionActivity.cs">
     <Files>

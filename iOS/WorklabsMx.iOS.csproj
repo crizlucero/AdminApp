@@ -706,6 +706,14 @@
     <ImageAsset Include="Assets.xcassets\facebookic.imageset\facebookic.png" />
     <ImageAsset Include="Assets.xcassets\facebookic.imageset\facebookic%402x.png" />
     <ImageAsset Include="Assets.xcassets\facebookic.imageset\facebookic%403x.png" />
+    <ImageAsset Include="Assets.xcassets\CalendarioBlaco.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\UbicacionBlanca.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\CalendarioBlaco.imageset\CalendarInv.png" />
+    <ImageAsset Include="Assets.xcassets\CalendarioBlaco.imageset\CalendarInv%402x.png" />
+    <ImageAsset Include="Assets.xcassets\CalendarioBlaco.imageset\CalendarInv%403x.png" />
+    <ImageAsset Include="Assets.xcassets\UbicacionBlanca.imageset\UbicacionInv.png" />
+    <ImageAsset Include="Assets.xcassets\UbicacionBlanca.imageset\UbicacionInv%402x.png" />
+    <ImageAsset Include="Assets.xcassets\UbicacionBlanca.imageset\UbicacionInv%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1160,6 +1168,10 @@
     <Compile Include="MiInfoViewController.designer.cs">
       <DependentUpon>MiInfoViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetalleInvitacionViewController.cs" />
+    <Compile Include="DetalleInvitacionViewController.designer.cs">
+      <DependentUpon>DetalleInvitacionViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -1304,6 +1316,8 @@
     <Folder Include="Assets.xcassets\Empresa.imageset\" />
     <Folder Include="Assets.xcassets\Colaborador.imageset\" />
     <Folder Include="Assets.xcassets\facebookic.imageset\" />
+    <Folder Include="Assets.xcassets\CalendarioBlaco.imageset\" />
+    <Folder Include="Assets.xcassets\UbicacionBlanca.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />
