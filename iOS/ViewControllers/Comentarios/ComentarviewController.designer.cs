@@ -24,6 +24,14 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnImagen { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnRemoveImage { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextView txtComentario { get; set; }
 
         [Outlet]
@@ -42,6 +50,14 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnComentar_TouchUpInside (UIKit.UIButton sender);
 
+        [Action ("btnImagen_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnImagen_Touch (UIKit.UIButton sender);
+
+        [Action ("btnRemoveImage_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnRemoveImage_Touch (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (btnCamara != null) {
@@ -52,6 +68,16 @@ namespace WorklabsMx.iOS
             if (btnComentar != null) {
                 btnComentar.Dispose ();
                 btnComentar = null;
+            }
+
+            if (btnImagen != null) {
+                btnImagen.Dispose ();
+                btnImagen = null;
+            }
+
+            if (btnRemoveImage != null) {
+                btnRemoveImage.Dispose ();
+                btnRemoveImage = null;
             }
 
             if (txtComentario != null) {

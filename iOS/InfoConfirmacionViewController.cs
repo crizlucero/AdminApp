@@ -28,8 +28,8 @@ namespace WorklabsMx.iOS
             nfloat XLabelDiaNumero = 0;
             nfloat XLabekNivel = 0;
             nfloat XLabelNombreSala = 0;
-            nfloat XLabelHoraInicioFin = 8;
-            nfloat XVistaDianNumero = 170;
+            nfloat XLabelHoraInicioFin = 0;
+            nfloat XVistaDianNumero = 0;
 
             for (int indice = 0; indice < this.Reservaciones.Count; indice++)
             {

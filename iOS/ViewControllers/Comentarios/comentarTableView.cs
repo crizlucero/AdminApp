@@ -23,6 +23,7 @@ namespace WorklabsMx.iOS
 
         const string IdentificadorCeldaHeader = "Header";
         const string IdentificadorCeldaPost = "Body";
+        const string IdentificadorImageCeldaPost = "BodyImage";
         const string IdentificadorCeldaNoInfo = "NoInfo";
 
         const int TamañoMensajeNoInfo = 400;
@@ -103,13 +104,28 @@ namespace WorklabsMx.iOS
             if (isShowInformation)
             {
                 var currentComment = comentarios[indexPath.Row];
-                var currentPostCell = (BodyComentarTableView)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
+
                 var currentImageProfile = allProfileImages[indexPath.Row];
                 var currentImageComments = allCommentImages[indexPath.Row];
-                currentPostCell.UpdateCell(currentComment, currentImageProfile, currentImageComments);
-                currentPostCell.MostrarImagenEnGrandes += MostrarImagenEnGrandes;
-                this.WillDisplay(indexPath.Row);
-                return currentPostCell;
+
+                if(currentImageComments != null)
+                {
+                    var currentPostImageCell = (ComentarImageTableViewCell)tableView.DequeueReusableCell(IdentificadorImageCeldaPost, indexPath);
+                    currentPostImageCell.UpdateCell(currentComment, currentImageProfile, currentImageComments);
+                    currentPostImageCell.MostrarImagenEnGrandes += MostrarImagenEnGrandes;
+                    this.WillDisplay(indexPath.Row);
+                    return currentPostImageCell;
+                }
+                else
+                {
+                    var currentPostCell = (BodyComentarTableView)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
+                    currentPostCell.UpdateCell(currentComment, currentImageProfile);
+                    currentPostCell.MostrarImagenEnGrandes += MostrarImagenEnGrandes;
+                    this.WillDisplay(indexPath.Row);
+                    return currentPostCell;
+                }
+
+               
             }
             else
             {
@@ -164,15 +180,14 @@ namespace WorklabsMx.iOS
 
     partial class comentarTableView : ComentarioRealizado
     {
-        public void ComentarioRealizado(String Comentario)
+        public void ComentarioRealizado(String Comentario, UIImage ImagenPublicacion)
         {
             byte[] Fotografia = new byte[0];
 
-            /*if (ImagenPublicacion != null)
+            if (ImagenPublicacion != null)
             {
                 Fotografia = ImagenPublicacion?.AsPNG().ToArray();
-            }*/
-
+            }
 
             if (new Controllers.EscritorioController().CommentPost(currentPost.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Comentario, Fotografia))
             {

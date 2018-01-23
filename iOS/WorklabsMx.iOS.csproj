@@ -1172,6 +1172,14 @@
     <Compile Include="DetalleInvitacionViewController.designer.cs">
       <DependentUpon>DetalleInvitacionViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComentariosBodyImageCell.cs" />
+    <Compile Include="ComentariosBodyImageCell.designer.cs">
+      <DependentUpon>ComentariosBodyImageCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComentarImageTableViewCell.cs" />
+    <Compile Include="ComentarImageTableViewCell.designer.cs">
+      <DependentUpon>ComentarImageTableViewCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

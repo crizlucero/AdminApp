@@ -414,7 +414,7 @@ namespace WorklabsMx.iOS
 
         private void vw2223Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw2223.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw2223.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.FlagView2223 == false)
                 {

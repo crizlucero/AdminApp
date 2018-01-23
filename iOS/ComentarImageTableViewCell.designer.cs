@@ -11,28 +11,24 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
-    [Register ("ComentariosBodyCell")]
-    partial class ComentariosBodyCell
+    [Register ("ComentarImageTableViewCell")]
+    partial class ComentarImageTableViewCell
     {
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnImgPerfil { get; set; }
-
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnLikes { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIImageView imgComentarios { get; set; }
+        UIKit.UIImageView imgPerfil { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblComentarios { get; set; }
+        UIKit.UIImageView imgPublicacion { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblFechaPost { get; set; }
+        UIKit.UILabel lblFecha { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -44,23 +40,11 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblOcupacion { get; set; }
+        UIKit.UILabel lblProfesion { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextView txtComentario { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView vwVistaComentario { get; set; }
-
-        [Action ("btnComentarPost_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnComentarPost_TouchUpInside (UIKit.UIButton sender);
-
-        [Action ("btnImgPerfil_Touch:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnImgPerfil_Touch (UIKit.UIButton sender);
 
         [Action ("btnLikes_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -68,29 +52,24 @@ namespace WorklabsMx.iOS
 
         void ReleaseDesignerOutlets ()
         {
-            if (btnImgPerfil != null) {
-                btnImgPerfil.Dispose ();
-                btnImgPerfil = null;
-            }
-
             if (btnLikes != null) {
                 btnLikes.Dispose ();
                 btnLikes = null;
             }
 
-            if (imgComentarios != null) {
-                imgComentarios.Dispose ();
-                imgComentarios = null;
+            if (imgPerfil != null) {
+                imgPerfil.Dispose ();
+                imgPerfil = null;
             }
 
-            if (lblComentarios != null) {
-                lblComentarios.Dispose ();
-                lblComentarios = null;
+            if (imgPublicacion != null) {
+                imgPublicacion.Dispose ();
+                imgPublicacion = null;
             }
 
-            if (lblFechaPost != null) {
-                lblFechaPost.Dispose ();
-                lblFechaPost = null;
+            if (lblFecha != null) {
+                lblFecha.Dispose ();
+                lblFecha = null;
             }
 
             if (lblLikes != null) {
@@ -103,19 +82,14 @@ namespace WorklabsMx.iOS
                 lblNombre = null;
             }
 
-            if (lblOcupacion != null) {
-                lblOcupacion.Dispose ();
-                lblOcupacion = null;
+            if (lblProfesion != null) {
+                lblProfesion.Dispose ();
+                lblProfesion = null;
             }
 
             if (txtComentario != null) {
                 txtComentario.Dispose ();
                 txtComentario = null;
-            }
-
-            if (vwVistaComentario != null) {
-                vwVistaComentario.Dispose ();
-                vwVistaComentario = null;
             }
         }
     }
