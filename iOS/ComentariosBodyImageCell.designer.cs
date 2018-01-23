@@ -11,9 +11,17 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
-    [Register ("ComentariosBodyCell")]
-    partial class ComentariosBodyCell
+    [Register ("ComentariosBodyImageCell")]
+    partial class ComentariosBodyImageCell
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnComentarios { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnImagenComentatio { get; set; }
+
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnImgPerfil { get; set; }
@@ -25,6 +33,10 @@ namespace WorklabsMx.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView imgComentarios { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView imgPublicacion { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -54,20 +66,30 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwVistaComentario { get; set; }
 
-        [Action ("btnComentarPost_TouchUpInside:")]
+        [Action ("btnComentarios_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnComentarPost_TouchUpInside (UIKit.UIButton sender);
+        partial void btnComentarios_Touch (UIKit.UIButton sender);
 
-        [Action ("btnImgPerfil_Touch:")]
+        [Action ("btnImagePerfil_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnImgPerfil_Touch (UIKit.UIButton sender);
+        partial void btnImagePerfil_Touch (UIKit.UIButton sender);
 
-        [Action ("btnLikes_TouchUpInside:")]
+        [Action ("btnLikes_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnLikes_TouchUpInside (UIKit.UIButton sender);
+        partial void btnLikes_Touch (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnComentarios != null) {
+                btnComentarios.Dispose ();
+                btnComentarios = null;
+            }
+
+            if (btnImagenComentatio != null) {
+                btnImagenComentatio.Dispose ();
+                btnImagenComentatio = null;
+            }
+
             if (btnImgPerfil != null) {
                 btnImgPerfil.Dispose ();
                 btnImgPerfil = null;
@@ -81,6 +103,11 @@ namespace WorklabsMx.iOS
             if (imgComentarios != null) {
                 imgComentarios.Dispose ();
                 imgComentarios = null;
+            }
+
+            if (imgPublicacion != null) {
+                imgPublicacion.Dispose ();
+                imgPublicacion = null;
             }
 
             if (lblComentarios != null) {

@@ -1,7 +1,7 @@
 using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.Models; using System.Collections.Generic; using WorklabsMx.Controllers; using BigTed; using WorklabsMx.Helpers; using System.Threading.Tasks; using Foundation; using SWRevealViewControllerBinding;  namespace WorklabsMx.iOS {     public partial class EscritorioController : UITableViewController
     {
         const string IdentificadorCeldaHeader = "Header";
-        const string IdentificadorCeldaPost = "Post";
+        const string IdentificadorCeldaPost = "Post";         const string IdentificadorCeldaImagenPost = "PostImage";
         const string IdentificadorCeldaNoInfo = "NoInfo";
 
         const int TamañoPublicacion = 223;
@@ -55,9 +55,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
             if (isShowInformation)
             {
                 var current = allPosts[indexPath.Row];
-                var currentPostCell = (ComentariosBodyCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);                 var currentImageProfile = allProfileImages[indexPath.Row];                 var currentImagePost = allPostImages[indexPath.Row];
-                currentPostCell.UpdateCell(current, currentImageProfile, currentImagePost);                 currentPostCell.MostrarImagenEnGrande += MostrarImagenEnGrande;                 currentPostCell.ComentarPost += ComentarPost;                 currentPostCell.InfoUserPost += InfoUserPost;                 this.WillDisplay(indexPath.Row);
-                return currentPostCell;
+                var currentImageProfile = allProfileImages[indexPath.Row];                 var currentImagePost = allPostImages[indexPath.Row];                 if (currentImagePost != null)                 {                     var currentImagePostCell = (ComentariosBodyImageCell)tableView.DequeueReusableCell(IdentificadorCeldaImagenPost, indexPath);                     currentImagePostCell.UpdateCell(current, currentImageProfile, currentImagePost);                     currentImagePostCell.MostrarImagenEnGrande += MostrarImagenEnGrande;                     currentImagePostCell.ComentarPost += ComentarPost;                     currentImagePostCell.InfoUserPost += InfoUserPost;                     this.WillDisplay(indexPath.Row);                     return currentImagePostCell;                 }                 else                 {                     var currentPostCell = (ComentariosBodyCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);                     currentPostCell.UpdateCell(current, currentImageProfile);                     currentPostCell.ComentarPost += ComentarPost;                     currentPostCell.InfoUserPost += InfoUserPost;                     this.WillDisplay(indexPath.Row);                     return currentPostCell;                 }                
             }
             else
             {                 BTProgressHUD.Dismiss();
