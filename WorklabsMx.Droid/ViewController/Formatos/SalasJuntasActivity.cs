@@ -61,6 +61,8 @@ namespace WorklabsMx.Droid
                 {
                     FindViewById<TextView>(Resource.Id.lblDiaFecha).Text = time.DayOfWeek.ToString().Substring(0, 3);
                     FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = time.Day.ToString();
+                    fecha_seleccionada = time.ToString("d");
+                    UpdateHorasNoDisponibles();
                 });
                 frag.Show(FragmentManager, Resources.GetString(Resource.String.ReservaSala));
             };
@@ -72,13 +74,17 @@ namespace WorklabsMx.Droid
             SalasController.GetHorasNoDisponibles(fecha_seleccionada, salas[_viewPager.CurrentItem].Sala_Id).ForEach(horas =>
             {
                 HorasNoDisponibles.Add(DateTime.Parse(horas.Sala_Hora_Fin).Hour);
+                UpdateHorasNoDisponibles();
             });
 
             _viewPager.PageSelected += (sender, e) =>
             {
                 HorasNoDisponibles.Clear();
                 SalasController.GetHorasNoDisponibles(fecha_seleccionada, salas[_viewPager.CurrentItem].Sala_Id).ForEach(horas =>
-                    HorasNoDisponibles.Add(DateTime.Parse(horas.Sala_Hora_Fin).Hour));
+                {
+                    HorasNoDisponibles.Add(DateTime.Parse(horas.Sala_Hora_Fin).Hour);
+                    UpdateHorasNoDisponibles();
+                });
                 if (!Horarios.ContainsKey(salas[_viewPager.CurrentItem].Sala_Id))
                     Horarios.Add(salas[_viewPager.CurrentItem].Sala_Id, new Dictionary<string, List<int>>());
                 if (!Horarios[salas[_viewPager.CurrentItem].Sala_Id].ContainsKey(fecha_seleccionada))
@@ -86,9 +92,21 @@ namespace WorklabsMx.Droid
                 FillHorario();
             };
             FindViewById<RelativeLayout>(Resource.Id.rlAgendar).Click += (sender, e) => ShowConfirmacion();
+            UpdateHorasNoDisponibles();
             FillHorario();
             HorizontalScrollView scrollHoras = FindViewById<HorizontalScrollView>(Resource.Id.hsvHorario);
-            scrollHoras.SmoothScrollTo(500, 0);
+
+            scrollHoras.SmoothScrollBy(scrollHoras.Width,0);
+        }
+
+        void UpdateHorasNoDisponibles()
+        {
+            if (DateTime.Parse(fecha_seleccionada).ToString("d") == DateTime.Now.ToString("d"))
+            {
+                for (int i = 0; i <= DateTime.Now.Hour; i++)
+                    if (!HorasNoDisponibles.Contains(i))
+                        HorasNoDisponibles.Add(i);
+            }
         }
 
         void FillHorario()
@@ -104,6 +122,7 @@ namespace WorklabsMx.Droid
                 else
                     HorarioView.FindViewById<TextView>(Resource.Id.lblHora).Text = "0";
                 ImageView horario = HorarioView.FindViewById<ImageView>(Resource.Id.ivHora);
+
                 if (HorasNoDisponibles.Contains(hora))
                 {
                     horario.SetBackgroundColor(Color.Rgb(85, 85, 85));
@@ -135,7 +154,6 @@ namespace WorklabsMx.Droid
                     {
                         if (Horarios.ContainsKey(sala.Sala_Id))
                         {
-
                             foreach (KeyValuePair<string, List<int>> fechaHorario in Horarios[sala.Sala_Id])
                             {
                                 totalHoras += fechaHorario.Value.Count;
