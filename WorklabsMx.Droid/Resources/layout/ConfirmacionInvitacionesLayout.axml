@@ -20,20 +20,31 @@
             android:src="@mipmap/ic_arrow_left"
             android:tint="#FFF"
             android:layout_gravity="center_vertical"
-            android:layout_height="150dp"
-            android:id="@+id/btnPrevio" />
+            android:layout_height="60dp"
+            android:id="@+id/btnPrevio"
+            android:background="@drawable/button_circle"
+            android:paddingRight="55dp"
+            android:elevation="2dp"
+            android:translationZ="2dp" />
         <android.support.v4.view.ViewPager
             android:id="@+id/vpInvitaciones"
             android:layout_width="250dp"
             android:layout_height="510dp"
             android:layout_marginBottom="10dp"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:layout_marginLeft="-20dp"
+            android:layout_marginRight="-20dp"
+            android:translationZ="-2dp"
+            android:elevation="-2dp" />
         <ImageView
             android:src="@mipmap/ic_arrow_right"
             android:tint="#FFF"
             android:layout_gravity="center_vertical"
-            android:layout_height="150dp"
-            android:layout_width="wrap_content"
-            android:id="@+id/btnSiguiente" />
+            android:layout_height="60dp"
+            android:id="@+id/btnSiguiente"
+            android:background="@drawable/button_circle"
+            android:paddingLeft="55dp"
+            android:translationZ="2dp"
+            android:elevation="2dp" />
     </GridLayout>
 </LinearLayout>
