@@ -69,28 +69,36 @@ namespace WorklabsMx.Droid
             {
                 Console.WriteLine(sucursales[ubicacion.SelectedItem.ToString()]);
                 List<int> invitados_id = new List<int>();
-                invitados.ForEach(invitado =>
+                //Validar datos
+                if (invitados.FindAll((invitado) => string.IsNullOrEmpty(invitado.Miembro_Nombre) || string.IsNullOrEmpty(invitado.Miembro_Apellidos) || string.IsNullOrEmpty(invitado.Miembro_Correo_Electronico)).ToList().Count == 0)
                 {
-                    try
-                    {
-                        invitados_id.Add(new InvitadosController().RegistraInvitado(invitado.Miembro_Nombre, invitado.Miembro_Apellidos, invitado.Miembro_Correo_Electronico,
-                                                                       txtAsunto.Text, DateTime.Parse(lblFecha.Text), sucursales[ubicacion.SelectedItem.ToString()],
-                                                                                  storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo")));
-                        Toast.MakeText(this, Resource.String.DatosGuardados, ToastLength.Short).Show();
+                    invitados.ForEach(invitado =>
+                   {
+                       try
+                       {
+                           invitados_id.Add(new InvitadosController().RegistraInvitado(invitado.Miembro_Nombre, invitado.Miembro_Apellidos, invitado.Miembro_Correo_Electronico,
+                                                                          txtAsunto.Text, DateTime.Parse(lblFecha.Text), sucursales[ubicacion.SelectedItem.ToString()],
+                                                                                     storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo")));
+                           Toast.MakeText(this, Resource.String.DatosGuardados, ToastLength.Short).Show();
 
-                    }
-                    catch (Exception e)
+                       }
+                       catch (Exception e)
+                       {
+                           Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
+                           SlackLogs.SendMessage(e.Message);
+                       }
+                   });
+                    if (invitados_id.Count != 0)
                     {
-                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
-                        SlackLogs.SendMessage(e.Message);
+                        Intent intent = new Intent(this, typeof(InvitadosConfirmacionActivity));
+                        intent.PutExtra("Invitados_Id", JsonConvert.SerializeObject(invitados_id));
+                        StartActivity(intent);
+                        Finish();
                     }
-                });
-                if (invitados_id.Count != 0)
+                }
+                else
                 {
-                    Intent intent = new Intent(this, typeof(InvitadosConfirmacionActivity));
-                    intent.PutExtra("Invitados_Id", JsonConvert.SerializeObject(invitados_id));
-                    StartActivity(intent);
-                    Finish();
+                    Toast.MakeText(this, "Revise los datos\nNo deben de existir campos en blanco", ToastLength.Short).Show();
                 }
             };
         }
@@ -112,7 +120,8 @@ namespace WorklabsMx.Droid
 
             basicView.FindViewById<EditText>(Resource.Id.txtEmail).TextChanged += (sender, e) =>
             {
-                invitado.Miembro_Correo_Electronico = ((EditText)sender).Text;
+                if (Android.Util.Patterns.EmailAddress.Matcher(((EditText)sender).Text).Matches())
+                    invitado.Miembro_Correo_Electronico = ((EditText)sender).Text;
             };
 
             TableRow row = new TableRow(this);

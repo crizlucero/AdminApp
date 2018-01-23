@@ -366,6 +366,7 @@
     <AndroidResource Include="Resources\layout\TituloEmpresaLayout.axml" />
     <AndroidResource Include="Resources\drawable\choice_selected.xml" />
     <AndroidResource Include="Resources\drawable\choice_unselected.xml" />
+    <AndroidResource Include="Resources\drawable\ticket_style.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
