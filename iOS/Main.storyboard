@@ -7903,7 +7903,6 @@ Sera solicitado al momento de tu ingreso en la ubicación a la cual fuiste invit
                                     <constraint firstItem="kFd-9l-Nte" firstAttribute="trailing" secondItem="IeZ-gX-A5L" secondAttribute="trailing" id="XZH-ZB-m7R"/>
                                     <constraint firstItem="5Wr-2R-bXu" firstAttribute="top" secondItem="VRQ-iN-YFb" secondAttribute="bottom" constant="51" id="YDD-L6-LDX"/>
                                     <constraint firstItem="9oP-iu-lYk" firstAttribute="top" secondItem="x1o-LU-g1N" secondAttribute="bottom" constant="2" id="cBT-ta-9RG"/>
-                                    <constraint firstItem="ZMd-dL-awo" firstAttribute="leading" secondItem="HYj-Un-cGe" secondAttribute="leading" constant="47" id="cvW-MS-cy3"/>
                                     <constraint firstItem="5Wr-2R-bXu" firstAttribute="centerX" secondItem="ZMd-dL-awo" secondAttribute="centerX" id="djR-vC-A9C"/>
                                     <constraint firstItem="uB9-3z-4Dd" firstAttribute="top" secondItem="IeZ-gX-A5L" secondAttribute="bottom" constant="8" id="eg7-Bq-qkh"/>
                                     <constraint firstItem="5Wr-2R-bXu" firstAttribute="leading" secondItem="HYj-Un-cGe" secondAttribute="leading" constant="19" id="exu-JR-zfm"/>
@@ -7914,6 +7913,7 @@ Sera solicitado al momento de tu ingreso en la ubicación a la cual fuiste invit
                                     <constraint firstItem="kFd-9l-Nte" firstAttribute="top" secondItem="FR5-qE-MMD" secondAttribute="bottom" constant="8" id="kWs-Fd-cvY"/>
                                     <constraint firstItem="VRQ-iN-YFb" firstAttribute="leading" secondItem="9oP-iu-lYk" secondAttribute="leading" id="lwr-GG-97h"/>
                                     <constraint firstItem="VRQ-iN-YFb" firstAttribute="trailing" secondItem="9oP-iu-lYk" secondAttribute="trailing" id="nhj-Dm-AH8"/>
+                                    <constraint firstItem="ZMd-dL-awo" firstAttribute="leading" secondItem="HYj-Un-cGe" secondAttribute="leading" constant="47" id="pIj-N8-HFt"/>
                                     <constraint firstItem="IeZ-gX-A5L" firstAttribute="top" secondItem="LRm-Pb-VS8" secondAttribute="bottom" constant="13" id="plD-o9-y08"/>
                                     <constraint firstItem="IeZ-gX-A5L" firstAttribute="leading" secondItem="uB9-3z-4Dd" secondAttribute="leading" id="qrt-9A-OCD"/>
                                     <constraint firstItem="kgC-8a-91m" firstAttribute="top" secondItem="HYj-Un-cGe" secondAttribute="topMargin" id="wvU-hZ-u75"/>

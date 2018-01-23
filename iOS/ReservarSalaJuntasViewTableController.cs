@@ -29,6 +29,8 @@ namespace WorklabsMx.iOS
 
         string DiaSeleccionado;
 
+
+
         public ReservarSalaJuntasViewTableController (IntPtr handle) : base (handle)
         {
         }
@@ -36,6 +38,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
             this.GenerateRecornizes();
             this.LimpiarInfo();
 
@@ -49,7 +52,7 @@ namespace WorklabsMx.iOS
                     this.GetHorasNoDisponibles(SalaActual.Sala_Id);
                     this.lblPiso.Text = "NIVEL " +  this.SalaActual.Sala_Nivel;
                     this.lblNombre.Text = this.SalaActual.Sala_Descripcion;
-                    this.lblCapacidad.Text = this.SalaActual.Sala_Capacidad + " PERSONAS";;
+                    this.lblCapacidad.Text = this.SalaActual.Sala_Capacidad + " PERSONAS";
                 }
             }
 
@@ -95,7 +98,7 @@ namespace WorklabsMx.iOS
             this.scvScrollHorarios.ContentSize = FrameHorarios.Size;
             StyleHelper.Style(this.vwBotonFecha.Layer);
             StyleHelper.Style(this.vwInfoReservacion.Layer);
-
+            this.ValidateHour();
         }
 
         public override void ViewWillAppear(bool animated)
@@ -103,6 +106,117 @@ namespace WorklabsMx.iOS
             base.ViewWillAppear(animated);
         }
 
+
+        private void ValidateHour()
+        {
+            int date = DateTime.Now.Hour;
+
+            if (date >= 0)
+            {
+                vw2401.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 1)
+            {
+                vw0102.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 2)
+            {
+                vw0203.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 3)
+            {
+                vw0304.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 4)
+            {
+                vw0405.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 5)
+            {
+                vw0506.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 6)
+            {
+                vw0607.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 7)
+            {
+                vw0708.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 8)
+            {
+                vw0809.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 9)
+            {
+                vw0910.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 10)
+            {
+                vw1011.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 11)
+            {
+                vw1112.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 12)
+            {
+                vw1213.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 13)
+            {
+                vw1314.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 14)
+            {
+                vw1415.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 15)
+            {
+                vw1516.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+
+
+            if (date >= 16)
+            {
+                vw1617.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 17)
+            {
+                vw1718.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 18)
+            {
+                vw1819.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 19)
+            {
+                vw1920.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 20)
+            {
+                vw2021.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+
+
+            if (date >= 21)
+            {
+                vw2122.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 22)
+            {
+                vw2223.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 23)
+            {
+                view2324.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+            if (date >= 24)
+            {
+                vw2401.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+            }
+
+        }
 
         private void FormatoDiaSeleccionado(NSDate Day)
         {
@@ -272,7 +386,7 @@ namespace WorklabsMx.iOS
         //Touch Views
         private void vw2324Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.view2324.BackgroundColor != UIColor.Black)
+            if (this.view2324.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.FlagView2324 == false)
                 {
@@ -300,7 +414,7 @@ namespace WorklabsMx.iOS
 
         private void vw2223Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw2223.BackgroundColor != UIColor.Black)
+            if (this.vw2223.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.FlagView2223 == false)
                 {
@@ -328,7 +442,7 @@ namespace WorklabsMx.iOS
 
         private void vw2122Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw2122.BackgroundColor != UIColor.Black)
+            if (this.vw2122.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.FlagView2122 == false)
                 {
@@ -355,7 +469,7 @@ namespace WorklabsMx.iOS
 
         private void vw2021Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw2021.BackgroundColor != UIColor.Black)
+            if (this.vw2021.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.FlagView2021 == false)
                 {
@@ -383,7 +497,7 @@ namespace WorklabsMx.iOS
 
         private void vw1920Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1920.BackgroundColor != UIColor.Black)
+            if (this.vw1920.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.FlagView1920 == false)
                 {
@@ -411,7 +525,7 @@ namespace WorklabsMx.iOS
 
         private void vw1819Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1819.BackgroundColor != UIColor.Black)
+            if (this.vw1819.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.FlagView1819 == false)
                 {
@@ -437,7 +551,7 @@ namespace WorklabsMx.iOS
 
         private void vw1718Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1718.BackgroundColor != UIColor.Black)
+            if (this.vw1718.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.FlagView1718 == false)
                 {
@@ -464,7 +578,7 @@ namespace WorklabsMx.iOS
 
         private void vw1617Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1617.BackgroundColor != UIColor.Black)
+            if (this.vw1617.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.FlagView1617 == false)
                 {
@@ -491,7 +605,7 @@ namespace WorklabsMx.iOS
 
         private void vw1516Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1516.BackgroundColor != UIColor.Black)
+            if (this.vw1516.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.Flag1516 == false)
                 {
@@ -518,7 +632,7 @@ namespace WorklabsMx.iOS
 
         private void vw1415Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1415.BackgroundColor != UIColor.Black)
+            if (this.vw1415.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.Flag1415 == false)
                 {
@@ -545,7 +659,7 @@ namespace WorklabsMx.iOS
 
         private void vw1314Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1314.BackgroundColor != UIColor.Black)
+            if (this.vw1314.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.Flag1314 == false)
                 {
@@ -572,7 +686,7 @@ namespace WorklabsMx.iOS
 
         private void vw1213Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1213.BackgroundColor != UIColor.Black)
+            if (this.vw1213.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.Flag1213 == false)
                 {
@@ -599,7 +713,7 @@ namespace WorklabsMx.iOS
 
         private void vw1112Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1112.BackgroundColor != UIColor.Black)
+            if (this.vw1112.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.Flag1112 == false)
                 {
@@ -626,7 +740,7 @@ namespace WorklabsMx.iOS
 
         private void vw1011Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1011.BackgroundColor != UIColor.Black)
+            if (this.vw1011.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.Flag1011 == false)
                 {
@@ -653,7 +767,7 @@ namespace WorklabsMx.iOS
 
         private void vw0910Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw0910.BackgroundColor != UIColor.Black)
+            if (this.vw0910.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.Flag0910 == false)
                 {
@@ -680,7 +794,7 @@ namespace WorklabsMx.iOS
 
         private void vw0809Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw0809.BackgroundColor != UIColor.Black)
+            if (this.vw0809.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.Flag0809 == false)
                 {
@@ -707,7 +821,7 @@ namespace WorklabsMx.iOS
 
         private void vw0708Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw0708.BackgroundColor != UIColor.Black)
+            if (this.vw0708.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.Flag0708 == false)
                 {
@@ -734,7 +848,7 @@ namespace WorklabsMx.iOS
 
         private void vw0607Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw0607.BackgroundColor != UIColor.Black)
+            if (this.vw0607.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.Flag0607 == false)
                 {
@@ -761,7 +875,7 @@ namespace WorklabsMx.iOS
 
         private void vw0506Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw0506.BackgroundColor != UIColor.Black)
+            if (this.vw0506.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.Flag0506 == false)
                 {
@@ -788,7 +902,7 @@ namespace WorklabsMx.iOS
 
         private void vw0405Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw0405.BackgroundColor != UIColor.Black)
+            if (this.vw0405.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.Flag0405 == false)
                 {
@@ -815,7 +929,7 @@ namespace WorklabsMx.iOS
 
         private void vw0304Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw0304.BackgroundColor != UIColor.Black)
+            if (this.vw0304.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.Flag0304 == false)
                 {
@@ -842,7 +956,7 @@ namespace WorklabsMx.iOS
 
         private void vw0203Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw0203.BackgroundColor != UIColor.Black)
+            if (this.vw0203.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.Flag0203 == false)
                 {
@@ -868,7 +982,7 @@ namespace WorklabsMx.iOS
 
         private void vw0102Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw0102.BackgroundColor != UIColor.Black)
+            if (this.vw0102.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.Flag0102 == false)
                 {
@@ -895,7 +1009,7 @@ namespace WorklabsMx.iOS
 
         private void vw0124Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw2401.BackgroundColor != UIColor.Black)
+            if (this.vw2401.BackgroundColor != UIColor.Clear.FromHex(0x404040))
             {
                 if (this.Flag0124 == false)
                 {
@@ -970,6 +1084,12 @@ namespace WorklabsMx.iOS
             {
                 this.GetHorasNoDisponibles(this.SalaActual.Sala_Id);
             }
+
+            if(FechaReservacion == DateTime.Now.ToString("dd/MM/yyyy"))
+            {
+                this.ValidateHour();
+            }
+
             dateFormat.DateFormat = "dd/MM/yyyy";
             NSDate newFormatDate = dateFormat.Parse(FechaReservacion);
             this.FormatoDiaSeleccionado(newFormatDate);

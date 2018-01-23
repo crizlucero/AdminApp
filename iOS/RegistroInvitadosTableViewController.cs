@@ -84,29 +84,23 @@ namespace WorklabsMx.iOS
             var CamposVacios = false;
             var ErrorInvitar = false;
 
-           // foreach (MiembroModel invitado in invitados)
+            // foreach (MiembroModel invitado in invitados)
             //{
-                if ((txtNombre.Text/*invitado.Miembro_Nombre*/ != "" && txtApellido.Text /*invitado.Miembro_Apellidos*/ != "" && txtEmail.Text /*invitado.Miembro_Correo_Electronico*/ != ""))
+            if ((txtNombre.Text/*invitado.Miembro_Nombre*/ != "" && txtApellido.Text /*invitado.Miembro_Apellidos*/ != "" && txtEmail.Text /*invitado.Miembro_Correo_Electronico*/ != ""))
+            {
+
+                bool EmailEsValido = this.ElTextoEsValido(this.txtEmail, EmailRegex);
+
+                if (EmailEsValido)
                 {
-
-                    bool EmailEsValido = this.ElTextoEsValido(this.txtEmail, EmailRegex);
-
-                    if(EmailEsValido)
+                    var Sucursal = sucursales.Find(x => x.Sucursal_Descripcion == lblUbicacion.Text);
+                    if (InternetConectionHelper.VerificarConexion())
                     {
-                        var Sucursal = sucursales.Find(x => x.Sucursal_Descripcion == lblUbicacion.Text);
-                        if (InternetConectionHelper.VerificarConexion())
+                        if (new InvitadosController().RegistraInvitado(txtNombre.Text /*invitado.Miembro_Nombre*/, txtApellido.Text /*invitado.Miembro_Apellidos*/, txtEmail.Text /*invitado.Miembro_Correo_Electronico*/, txtAsunto.Text, DateTime.Parse(lblFecha.Text), Sucursal.Sucursal_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo")) != -1)
                         {
-                            if (new InvitadosController().RegistraInvitado(txtNombre.Text /*invitado.Miembro_Nombre*/, txtApellido.Text /*invitado.Miembro_Apellidos*/, txtEmail.Text /*invitado.Miembro_Correo_Electronico*/, txtAsunto.Text, DateTime.Parse(lblFecha.Text), Sucursal.Sucursal_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo")) != -1)
-                            {
-                                ErrorInvitar = false;
-                                this.CrearInvitado();
-                                this.DomicilioInvitacion = Sucursal.Sucursal_Descripcion + " " + Sucursal.Sucursal_Domicilio;
-                            }
-                            else
-                            {
-                                ErrorInvitar = true;
-                                //break;
-                            }
+                            ErrorInvitar = false;
+                            this.CrearInvitado();
+                            this.DomicilioInvitacion = Sucursal.Sucursal_Descripcion + " " + Sucursal.Sucursal_Domicilio;
                         }
                         else
                         {
@@ -116,16 +110,22 @@ namespace WorklabsMx.iOS
                     }
                     else
                     {
-                        
+                        ErrorInvitar = true;
+                        //break;
                     }
-
-                    CamposVacios = false;
                 }
                 else
                 {
-                    CamposVacios = true;
-                    //break;
+
                 }
+
+                CamposVacios = false;
+            }
+            else
+            {
+                CamposVacios = true;
+                //break;
+            }
             //}
             if(CamposVacios)
             {
