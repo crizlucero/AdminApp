@@ -27,5 +27,6 @@
         android:textColor="#FFF"
         android:textColorHint="#ffCCCCCC"
         android:layout_gravity="fill"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:autoText="true" />
 </LinearLayout>

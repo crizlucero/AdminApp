@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
+    android:layout_width="250dp"
     android:layout_height="match_parent"
-    android:background="#D8A96E"
     android:paddingRight="20dp"
-    android:paddingLeft="20dp">
+    android:paddingLeft="20dp"
+    android:background="@drawable/ticket_style">
     <TextView
         android:id="@+id/lblNombre"
         android:textColor="#FFF"
@@ -13,7 +13,8 @@
         android:text="JUAN PEDRO HERNANDEZ LOPEZ"
         android:textSize="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" />
     <LinearLayout
         android:background="#FFF"
         android:layout_height="1dp"
@@ -58,20 +59,23 @@
         android:id="@+id/lblColonia"
         android:layout_marginLeft="23dp"
         android:textColor="#FFF"
-        android:text="Col. Ladrón de Guevara" />
-    <LinearLayout
-        android:background="#FFF"
-        android:layout_height="1dp"
-        android:layout_width="match_parent" />
+        android:text="Col. Ladrón de Guevara"
+        android:layout_marginBottom="10.0dp" />
     <LinearLayout
         android:background="#FFF"
         android:layout_height="1dp"
         android:layout_width="match_parent"
-        android:layout_marginTop="10dp" />
+        android:layout_gravity="center" />
+    <LinearLayout
+        android:background="#FFF"
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="35dp" />
     <android.webkit.WebView
-        android:layout_width="275dp"
-        android:layout_height="275dp"
-        android:id="@+id/wvQR"
+        android:layout_width="210dp"
+        android:layout_height="210dp"
+        android:id="@+id/wvQRCode"
         android:layout_gravity="center" />
     <TextView
         android:layout_width="match_parent"

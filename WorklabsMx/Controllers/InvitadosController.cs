@@ -98,7 +98,7 @@ namespace WorklabsMx.Controllers
                     {
                         Visita_Id = reader["Visita_Id"].ToString(),
                         Visita_Nombre = reader["Visita_Nombre"].ToString(),
-                        Visita_Apellidos = reader["Visita_Apellidps"].ToString(),
+                        Visita_Apellidos = reader["Visita_Apellidos"].ToString(),
                         Visita_Email = reader["Visita_Email"].ToString(),
                         Visita_Fecha_Entrada = reader["Visita_Fecha_Entrada"].ToString(),
                         Visita_Codigo_Acceso = reader["Visita_Codigo_Acceso"].ToString(),
@@ -108,6 +108,8 @@ namespace WorklabsMx.Controllers
                             Sucursal_Correo = reader["Sucursal_Correo_1"].ToString(),
                             Sucursal_Descripcion = reader["Sucursal_Descripcion"].ToString(),
                             Sucursal_Domicilio = reader["Sucursal_Calle"].ToString(),
+                            Sucursal_No_Exterior = reader["Sucursal_No_Exterior"].ToString(),
+                            Sucursal_No_Interior = reader["Sucursal_No_Interior"].ToString(),
                             Territorio = new TerritorioModel
                             {
                                 Colonia = reader["Territorio_Colonia_Descripcion"].ToString(),
@@ -115,7 +117,6 @@ namespace WorklabsMx.Controllers
                                 Estado = reader["Territorio_Estado_Descripcion"].ToString(),
                                 Pais = reader["Territorio_Pais_Descripcion"].ToString()
                             }
-
                         }
                     });
                 }
