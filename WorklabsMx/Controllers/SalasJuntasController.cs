@@ -102,7 +102,8 @@ namespace WorklabsMx.Controllers
                 conn.Open();
                 string query = "SELECT * FROM vw_pro_Salas_Juntas_Reservaciones " +
                     "WHERE Sala_Estatus = 1 AND Sucursal_Estatus = 1 AND Usuario_Id = @usuario_id " +
-                    "AND Usuario_Tipo = @usuario_tipo AND Sala_Junta_Reservacion_Estatus = @reservacion_estatus";
+                    "AND Usuario_Tipo = @usuario_tipo AND Sala_Junta_Reservacion_Estatus = @reservacion_estatus " +
+                    "Order by Sala_Junta_Hora_Inicio";
                 command = CreateCommand(query);
                 command.Parameters.AddWithValue("@usuario_id", usuario_id);
                 command.Parameters.AddWithValue("@usuario_tipo", usuario_tipo);
