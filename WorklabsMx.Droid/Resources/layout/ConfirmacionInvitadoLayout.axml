@@ -70,13 +70,13 @@
         android:background="#FFF"
         android:layout_height="1dp"
         android:layout_width="match_parent"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="35dp" />
+        android:layout_marginTop="125dp" />
     <android.webkit.WebView
-        android:layout_width="210dp"
-        android:layout_height="210dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:id="@+id/wvQRCode"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
