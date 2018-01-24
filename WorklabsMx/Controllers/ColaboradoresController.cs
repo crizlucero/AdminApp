@@ -71,7 +71,7 @@ namespace WorklabsMx.Controllers
         /// Obtiene los datos de un colaborador
         /// </summary>
         /// <returns>Colaborador</returns>
-        /// <param name="colaborador_id">Identificador del colaborador</param>
+        /// <param name="usuario_id">Identificador del colaborador</param>
         public ColaboradorModel GetColaborador(string usuario_id)
         {
             ColaboradorModel colaborador = new ColaboradorModel();
@@ -115,7 +115,12 @@ namespace WorklabsMx.Controllers
             }
             return colaborador;
         }
-
+        /// <summary>
+        /// Cambia el estado del colaborador
+        /// </summary>
+        /// <returns><c>true</c>, si el estado del colaborador cambió, <c>false</c> existió un error.</returns>
+        /// <param name="colaborador_id">Identificador del colaborador.</param>
+        /// <param name="estatus">Estado del colaborador.</param>
         public bool ChangeColaboradorEstatus(string colaborador_id, int estatus)
         {
             try
@@ -143,7 +148,21 @@ namespace WorklabsMx.Controllers
             finally { conn.Close(); }
             return true;
         }
-
+        /// <summary>
+        /// Agrega o cambia la información del colaborador
+        /// </summary>
+        /// <returns><c>true</c>, si se agregño la información, <c>false</c> existió algún error.</returns>
+        /// <param name="empresa_id">Identificador de la empresa.</param>
+        /// <param name="nombre">Nombre.</param>
+        /// <param name="apellidos">Apellidos.</param>
+        /// <param name="mail">Mail.</param>
+        /// <param name="telefono">Telefono.</param>
+        /// <param name="celular">Celular.</param>
+        /// <param name="profesion">Profesión.</param>
+        /// <param name="puesto">Puesto.</param>
+        /// <param name="habilidades">Habilidades.</param>
+        /// <param name="fecha_nacimiento">Fecha de nacimiento.</param>
+        /// <param name="colaborador_id">Identificador del colaborador.</param>
         public bool AddChangeColaborador(string empresa_id, string nombre, string apellidos, string mail,
                                          string telefono, string celular, string profesion, string puesto,
                                          string habilidades, string fecha_nacimiento, string colaborador_id)

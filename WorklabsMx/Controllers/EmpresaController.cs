@@ -218,7 +218,27 @@ namespace WorklabsMx.Controllers
 
             return true;
         }
-
+        /// <summary>
+        /// Actualiza los datos de la empresa
+        /// </summary>
+        /// <returns><c>true</c>, Si la información se guardó, <c>false</c> existió algún problema.</returns>
+        /// <param name="empresa_id">Identificador de la Empresa.</param>
+        /// <param name="miembro_id">Identificador del Miembro.</param>
+        /// <param name="giro_id">Identificador del giro.</param>
+        /// <param name="territorio_id">Identificador del territorio.</param>
+        /// <param name="razonSocial">Razón social.</param>
+        /// <param name="rfc">Rfc.</param>
+        /// <param name="nombre">Nombre.</param>
+        /// <param name="calle">Calle.</param>
+        /// <param name="numExterior">Number exterior.</param>
+        /// <param name="numInterior">Number interior.</param>
+        /// <param name="correo">Correo.</param>
+        /// <param name="telefono">Teléfono.</param>
+        /// <param name="paginaWeb">Página web.</param>
+        /// <param name="facebook">Facebook.</param>
+        /// <param name="twitter">Twitter.</param>
+        /// <param name="instagram">Instagram.</param>
+        /// <param name="logo">Logo.</param>
         public bool UpdateDataEmpresa(string empresa_id, string miembro_id, string giro_id, string territorio_id, string razonSocial,
                                       string rfc, string nombre, string calle, string numExterior, string numInterior, string correo,
                                      string telefono, string paginaWeb, string facebook, string twitter, string instagram, string logo)

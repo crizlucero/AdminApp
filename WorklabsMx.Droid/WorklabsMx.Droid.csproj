@@ -49,9 +49,6 @@
     <Reference Include="System.Data.Services.Client" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net" />
-    <Reference Include="PerpetualEngine.SimpleStorage.Droid">
-      <HintPath>..\packages\SimpleStorage.1.4.2\lib\MonoAndroid\PerpetualEngine.SimpleStorage.Droid.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="Newtonsoft.Json">
@@ -132,6 +129,9 @@
     </Reference>
     <Reference Include="FortySevenDeg.SwipeListView">
       <HintPath>..\packages\FortySevenDeg.SwipeListView.2.0.0.2\lib\FortySevenDeg.SwipeListView.dll</HintPath>
+    </Reference>
+    <Reference Include="PerpetualEngine.SimpleStorage.Droid">
+      <HintPath>..\packages\SimpleStorage.1.4.8\lib\MonoAndroid\PerpetualEngine.SimpleStorage.Droid.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

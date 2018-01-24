@@ -10,11 +10,11 @@ namespace WorklabsMx.Controllers
     public class CarritoController : DataBaseModel
     {
         /// <summary>
-        /// Gets the carrito.
+        /// Obtiene la información de carrito
         /// </summary>
-        /// <returns>The carrito.</returns>
-        /// <param name="miembro_id">Miembro identifier.</param>
-        /// <param name="tipo">Tipo.</param>
+        /// <returns>Información del carrito.</returns>
+        /// <param name="miembro_id">Identificador del Miembro.</param>
+        /// <param name="tipo">Tipo de servicio.</param>
         public Dictionary<string, CarritoModel> GetCarrito(string miembro_id, TiposServicios tipo)
         {
             Dictionary<string, CarritoModel> carrito = new Dictionary<string, CarritoModel>();
@@ -75,15 +75,15 @@ namespace WorklabsMx.Controllers
             return carrito;
         }
         /// <summary>
-        /// Updates the carrito.
-        /// </summary>
-        /// <param name="miembro_id">Miembro identifier.</param>
-        /// <param name="producto_id">Producto identifier.</param>
-        /// <param name="producto_cantidad">Producto cantidad.</param>
-        /// <param name="membresia_id">Membresia identifier.</param>
-        /// <param name="membresia_cantidad">Membresia cantidad.</param>
-        /// <param name="pedido_estatus">Pedido estatus.</param>
-        /// <param name="pedido_total">Pedido total.</param>
+        /// Actualiza el carrito de compra.
+		/// </summary>
+        /// <param name="miembro_id">Identificador del Miembro.</param>
+        /// <param name="producto_id">Identificador del Producto.</param>
+        /// <param name="producto_cantidad">Cantidad de Producto.</param>
+        /// <param name="membresia_id">Identificador de la Membresia.</param>
+        /// <param name="membresia_cantidad">Cantidad de la Membresia.</param>
+        /// <param name="pedido_estatus">Estado del Pedido.</param>
+        /// <param name="pedido_total">Total del Pedido.</param>
         public void UpdateCarrito(string miembro_id, string producto_id, string producto_cantidad,
                                   string membresia_id, string membresia_cantidad, string pedido_estatus, string pedido_total)
         {
@@ -249,7 +249,17 @@ namespace WorklabsMx.Controllers
             finally { conn.Close(); }
             return detalle;
         }
-
+        /// <summary>
+        /// Agrega al carrito de compras
+        /// </summary>
+        /// <returns><c>true</c>, si se agregó la información, <c>false</c> existió algún error.</returns>
+        /// <param name="miembro_id">Identificador del Miembro.</param>
+        /// <param name="tipo">Tipo de servicio.</param>
+        /// <param name="id">identificador del servicio.</param>
+        /// <param name="cantidad">Cantidad.</param>
+        /// <param name="sucursal">Sucursal.</param>
+        /// <param name="membresia_meses_cantidad">cantidad de meses de la membresia Membresia.</param>
+        /// <param name="membresia_fecha_inicio">Fecha de inicio de la Membresia.</param>
         public bool AddCarritoCompras(string miembro_id, TiposServicios tipo, string id, int cantidad, int sucursal, int membresia_meses_cantidad, DateTime membresia_fecha_inicio)
         {
             try
@@ -291,7 +301,12 @@ namespace WorklabsMx.Controllers
             finally { conn.Close(); }
             return true;
         }
-
+        /// <summary>
+        /// Revisa si existe la cantidad de espacios.
+        /// </summary>
+        /// <returns><c>true</c>, Si hay lugar, <c>false</c> ya no existe lugar.</returns>
+        /// <param name="membresia_id">Identificador de la Membresia.</param>
+        /// <param name="cantidad">Cantidad.</param>
         public bool CheckQuantity(string membresia_id, int cantidad)
         {
             string query = "SELECT Distribucion_Membresia_Espacio FROM vw_cat_Membresias_Distribuciones_Disponibles WHERE Membresia_Id = @membresia_id";
@@ -314,7 +329,13 @@ namespace WorklabsMx.Controllers
             }
             finally { conn.Close(); }
         }
-
+        /// <summary>
+        /// Agrega al rarrito
+        /// </summary>
+        /// <returns><c>true</c>, Agregó la información, <c>false</c> Existió algún error.</returns>
+        /// <param name="datos">Datos.</param>
+        /// <param name="tipo">Tipo.</param>
+        /// <param name="usuario_id">Usuario identifier.</param>
         public bool AddCarrito(Dictionary<string, CarritoModel> datos, TiposServicios tipo, string usuario_id)
         {
             Dictionary<string, CarritoModel> carrito = GetCarrito(usuario_id, tipo);

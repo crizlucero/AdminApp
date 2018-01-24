@@ -6,6 +6,11 @@ namespace WorklabsMx.Controllers
 {
     public class TerritorioController : DataBaseModel
     {
+        /// <summary>
+        /// Obtiene el territorio según el código postal
+        /// </summary>
+        /// <returns>Territorio por código postal.</returns>
+        /// <param name="CP">Código postal.</param>
         public TerritorioModel GetTerritorio(string CP)
         {
             TerritorioModel territorio = new TerritorioModel();
@@ -36,6 +41,12 @@ namespace WorklabsMx.Controllers
             return territorio;
         }
 
+        /// <summary>
+        /// Obtiene el identificador del territorio
+        /// </summary>
+        /// <returns>Identificador del territorio.</returns>
+        /// <param name="cp">Código postal.</param>
+        /// <param name="colonia">Colonia.</param>
         public string GetTerritorioId(string cp, string colonia)
         {
             string query = "SELECT Territorio_Id FROM vw_cat_Territorios " +

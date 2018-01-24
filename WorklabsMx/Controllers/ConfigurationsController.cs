@@ -63,7 +63,11 @@ namespace WorklabsMx.Controllers
 
             return configuracion;
         }
-
+        /// <summary>
+        /// Obtiene el listado de configuraciones
+        /// </summary>
+        /// <returns>Listado de configuraciones.</returns>
+        /// <param name="parametros">Parametros.</param>
         public List<ConfiguracionesModel> GetListConfiguraciones(string parametros)
         {
             string query = "SELECT * FROM vw_cat_Parametros_Generales WHERE Parametro_Descripcion in (" + parametros + ")";

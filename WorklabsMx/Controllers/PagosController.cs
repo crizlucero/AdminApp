@@ -10,6 +10,11 @@ namespace WorklabsMx.Controllers
 {
     public class PagosController : DataBaseModel
     {
+        /// <summary>
+        /// Valida el cupón ingresado
+        /// </summary>
+        /// <returns>Información del cupón.</returns>
+        /// <param name="cupon">Código del cupón.</param>
         public PromocionModel AplicarCupon(string cupon)
         {
             PromocionModel promo = new PromocionModel();
@@ -73,6 +78,24 @@ namespace WorklabsMx.Controllers
             return renovaciones;
         }
 
+        /// <summary>
+        /// Guarda los datos de la compra en la base de datis
+        /// </summary>
+        /// <returns>Identificador de la orden de venta.</returns>
+        /// <param name="miembro_id">Identificador del miembro.</param>
+        /// <param name="moneda_id">Identificador de moneda.</param>
+        /// <param name="impuesto_id">Identificador de impuesto.</param>
+        /// <param name="promocion_id">Identificador de la promoción.</param>
+        /// <param name="descuento_id">Identificador del descuento.</param>
+        /// <param name="folio">Folio.</param>
+        /// <param name="importe_suma">Suma del importe.</param>
+        /// <param name="porcentaje_descuento">Porcentaje de descuento.</param>
+        /// <param name="importe_descuento">Importe de descuento.</param>
+        /// <param name="importe_subtotal">Importe de subtotal.</param>
+        /// <param name="importe_impuesto">Importe de impuesto.</param>
+        /// <param name="importe_total">Importe total.</param>
+        /// <param name="importe_pagado">Importe pagado.</param>
+        /// <param name="importe_facturado">Importe facturado.</param>
         public int AddOrdenVentaEncabezado(int miembro_id, int moneda_id, int impuesto_id, int promocion_id, int descuento_id, string folio, decimal importe_suma, decimal porcentaje_descuento,
                                            decimal importe_descuento, decimal importe_subtotal, decimal importe_impuesto, decimal importe_total, decimal importe_pagado, decimal importe_facturado)
         {
@@ -122,6 +145,26 @@ namespace WorklabsMx.Controllers
             finally { conn.Close(); }
         }
 
+        /// <summary>
+        /// Agrega los detalles de la orden de venta
+        /// </summary>
+        /// <returns>Identificador del detalle de la orden de venta.</returns>
+        /// <param name="encabezado_id">Identificador del encabezado.</param>
+        /// <param name="Membresia_Id">Identificador de la membresía.</param>
+        /// <param name="Inscripcion_Membresia_Id">Identificador de la inscripción membresía.</param>
+        /// <param name="Lista_Precio_Membresia_Id">Identificador del precio de la membresía.</param>
+        /// <param name="Producto_Id">Identificador del producto.</param>
+        /// <param name="Lista_Precio_Producto_Id">Identificador del precio del producto.</param>
+        /// <param name="Orden_Venta_Detalle_Descripcion">Descripción del detalle del producto/membresía.</param>
+        /// <param name="Orden_Venta_Detalle_Cantidad">Cantidad del detalle del producto/membresía.</param>
+        /// <param name="Orden_Venta_Detalle_Importe_Precio">Importe del detalle del producto/membresía.</param>
+        /// <param name="Orden_Venta_Detalle_Importe_Prorrateo">Importe por prorrateo del detalle del producto/membresía.</param>
+        /// <param name="Orden_Venta_Detalle_Importe_Suma">Suma del importe del detalle del producto/membresía.</param>
+        /// <param name="Orden_Venta_Detalle_Importe_Descuento">Importe del descuento del detalle del producto/membresía.</param>
+        /// <param name="Orden_Venta_Detalle_Importe_Subtotal">Subtotal del detalle del producto/membresía.</param>
+        /// <param name="Orden_Venta_Detalle_Importe_Impuesto">Impuesto del detalle del producto/membresía.</param>
+        /// <param name="Orden_Venta_Detalle_Importe_Total">Importe total del detalle del producto/membresía.</param>
+        /// <param name="tipo">Tipo de detalle de compra (Membresía o Producto).</param>
         public int AddOrdenVentaDetalle(int encabezado_id, string Membresia_Id, string Inscripcion_Membresia_Id, string Lista_Precio_Membresia_Id, string Producto_Id, string Lista_Precio_Producto_Id,
                                          string Orden_Venta_Detalle_Descripcion, int Orden_Venta_Detalle_Cantidad, decimal Orden_Venta_Detalle_Importe_Precio, decimal Orden_Venta_Detalle_Importe_Prorrateo,
                                          decimal Orden_Venta_Detalle_Importe_Suma, decimal Orden_Venta_Detalle_Importe_Descuento, decimal Orden_Venta_Detalle_Importe_Subtotal, decimal Orden_Venta_Detalle_Importe_Impuesto,
