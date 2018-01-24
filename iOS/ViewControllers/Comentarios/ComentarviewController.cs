@@ -58,14 +58,14 @@ namespace WorklabsMx.iOS
 
         partial void btnComentar_TouchUpInside(UIButton sender)
         {
-            if (txtComentario.Text != "" && ImagenPublicacion != null)
+            if (txtComentario.Text == "" && ImagenPublicacion == null)
             {
-                this.ComentarioDelegate.ComentarioRealizado(this.txtComentario.Text, ImagenPublicacion);
-                this.DismissViewController(true, null);
+                new MessageDialog().SendToast("Selecciona una imagen o escribe un texto para comentar");
             }
             else
             {
-                new MessageDialog().SendToast("Selecciona una imagen o escribe un texto para comentar");
+                this.ComentarioDelegate.ComentarioRealizado(this.txtComentario.Text, ImagenPublicacion);
+                this.DismissViewController(true, null);
             }
 
         }

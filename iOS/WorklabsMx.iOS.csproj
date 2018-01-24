@@ -1180,6 +1180,10 @@
     <Compile Include="ComentarImageTableViewCell.designer.cs">
       <DependentUpon>ComentarImageTableViewCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReservacionesTabBarController.cs" />
+    <Compile Include="ReservacionesTabBarController.designer.cs">
+      <DependentUpon>ReservacionesTabBarController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
