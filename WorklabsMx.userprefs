@@ -1,79 +1,30 @@
-
-﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/LoginViewController.cs">
-    <Files>
-      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="154" Column="13" />
-      <File FileName="iOS/ViewControllers/Comentarios/comentarTableView.cs" Line="187" Column="34" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="394" Column="21" />
-      <File FileName="iOS/ViewControllers/Comentarios/ComentarviewController.cs" Line="91" Column="59" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="136" Column="113" NotebookId="1" />
-=======
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/Resources/drawable/button_circle.xml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/CarritoController.cs">
     <Files>
       <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="1" Column="1" />
       <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="136" Column="44" />
-      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="128" Column="82" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="96" Column="27" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="225" Column="25" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="137" Column="34" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="208" Column="22" />
+      <File FileName="WorklabsMx.Droid/Resources/drawable/button_circle.xml" Line="6" Column="47" />
+      <File FileName="WorklabsMx.Droid/Resources/drawable/ticket_style.xml" Line="6" Column="42" />
+      <File FileName="WorklabsMx.Droid/ViewController/LoginActivity.cs" Line="58" Column="76" />
+      <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="44" Column="14" />
+      <File FileName="WorklabsMx/Controllers/SuscripcionesController.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Controllers/SucursalController.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="334" Column="47" />
+      <File FileName="WorklabsMx/Controllers/InvitadosController.cs" Line="85" Column="84" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="794" Column="57" />
+      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="240" Column="39" />
+      <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="70" Column="48" />
+      <File FileName="WorklabsMx/Controllers/ColaboradoresController.cs" Line="165" Column="61" />
+      <File FileName="WorklabsMx/Controllers/CarritoController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/MainActivity.cs" relfile="WorklabsMx.Droid/MainActivity.cs" line="216" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
->>>>>>> 4fd3082701df1f899f574447acae7d47a3d5ee31
-  <MultiItemStartupConfigurations />
-</Properties>
-﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/LoginViewController.cs">
-    <Files>
-      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="154" Column="13" />
-      <File FileName="iOS/ViewControllers/Comentarios/comentarTableView.cs" Line="187" Column="34" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="394" Column="21" />
-      <File FileName="iOS/ViewControllers/Comentarios/ComentarviewController.cs" Line="91" Column="59" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="136" Column="113" NotebookId="1" />
-=======
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/Resources/drawable/button_circle.xml">
-    <Files>
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="136" Column="44" />
-      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="128" Column="82" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="96" Column="27" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="225" Column="25" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="96" Column="27" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="225" Column="25" />
->>>>>>> 4fd3082701df1f899f574447acae7d47a3d5ee31
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/MainActivity.cs" relfile="WorklabsMx.Droid/MainActivity.cs" line="216" column="1" />
-    </BreakpointStore>
-    <BreakpointStore>
-<<<<<<< HEAD
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/InvitadosController.cs" relfile="WorklabsMx/Controllers/InvitadosController.cs" line="69" column="32" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="770" column="26" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="1088" column="29" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Escritorio/EscritorioController.cs" relfile="iOS/ViewControllers/Escritorio/EscritorioController.cs" line="195" column="45" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C8F534E0-9C6A-4F53-A110-4E330B864317" automaticSigning="False">
-    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
-  </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
-=======
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/MainActivity.cs" relfile="WorklabsMx.Droid/MainActivity.cs" line="216" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
->>>>>>> 4fd3082701df1f899f574447acae7d47a3d5ee31
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>

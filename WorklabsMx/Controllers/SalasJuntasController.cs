@@ -8,6 +8,17 @@ namespace WorklabsMx.Controllers
 {
     public class SalasJuntasController : DataBaseModel
     {
+        /// <summary>
+		/// Crea la reservación de la sala de juntas.
+        /// </summary>
+        /// <returns>Identificador de la reservación de la sala de juntas.</returns>
+        /// <param name="transaccion">Tipo de transaccion.</param>
+        /// <param name="sala_id">Identificador de la sala de juntas.</param>
+        /// <param name="usuario_id">Identificador del usuario.</param>
+        /// <param name="usuario_tipo">Tipo de usuario.</param>
+        /// <param name="fecha">Fecha seleccionada.</param>
+        /// <param name="hora_inicio">Hora de inicio.</param>
+        /// <param name="hora_fin">Hora de fin.</param>
         public int AsignarSalaJuntas(string transaccion, string sala_id, string usuario_id, string usuario_tipo, DateTime fecha, string hora_inicio, string hora_fin)
         {
             try
@@ -27,7 +38,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Sala_Junta_Hora_Fin", hora_fin);
                 command.Parameters.Add("@Sala_Junta_Reservacion_Id", SqlDbType.Int).Direction = ParameterDirection.Output;
 
-                command.Transaction = transaction;                                                                                                                                                                                                                                                                                                                                
+                command.Transaction = transaction;
                 command.ExecuteNonQuery();
                 transaction.Commit();
                 return Convert.ToInt32(command.Parameters["@Sala_Junta_Reservacion_Id"].Value);
@@ -40,6 +51,12 @@ namespace WorklabsMx.Controllers
             finally { conn.Close(); }
         }
 
+        /// <summary>
+        /// Cancela la reservación de la sala de juntas.
+        /// </summary>
+        /// <returns><c>true</c>, si la reservación fue cancelada, <c>false</c> existió un error.</returns>
+        /// <param name="transaccion">Tipo de transacción.</param>
+        /// <param name="reservacion_id">Identificador de la reservación.</param>
         public bool CancelarSalaJuntas(string transaccion, string reservacion_id)
         {
             try
@@ -66,6 +83,11 @@ namespace WorklabsMx.Controllers
             return true;
         }
 
+        /// <summary>
+        /// Obtiene las salas de juntas de la sucursal
+        /// </summary>
+        /// <returns>Listado de salas de juntas.</returns>
+        /// <param name="sucursal_id">Identificador de la sucursal.</param>
         public List<SalaJuntasModel> GetSalaJuntas(string sucursal_id)
         {
             List<SalaJuntasModel> salas = new List<SalaJuntasModel>();
@@ -94,6 +116,13 @@ namespace WorklabsMx.Controllers
             return salas;
         }
 
+        /// <summary>
+        /// Obtiene el historial de las reservaciones de las salas de juntas realizadas por el usuario
+        /// </summary>
+        /// <returns>Listado de las reservaciones de las salas de juntas.</returns>
+        /// <param name="usuario_id">Identificador del usuario.</param>
+        /// <param name="usuario_tipo">Tipo de usuario.</param>
+        /// <param name="reservacion_estatus">Estado de la reservación.</param>
         public List<SalaJuntasReservacionModel> GetReservaciones(string usuario_id, string usuario_tipo, int reservacion_estatus)
         {
             List<SalaJuntasReservacionModel> salas = new List<SalaJuntasReservacionModel>();
@@ -134,8 +163,14 @@ namespace WorklabsMx.Controllers
             return salas;
         }
 
-
-        public List<SalaJuntasReservacionModel> GetHorasNoDisponibles(string fecha, string sala_id){
+        /// <summary>
+        /// Se obtienen las horas ya reservadas en el día seleccionado
+        /// </summary>
+        /// <returns>Listado de horas reservadas.</returns>
+        /// <param name="fecha">Fecha seleccionada.</param>
+        /// <param name="sala_id">Identificador de la sala de juntas</param>
+        public List<SalaJuntasReservacionModel> GetHorasNoDisponibles(string fecha, string sala_id)
+        {
             List<SalaJuntasReservacionModel> salas = new List<SalaJuntasReservacionModel>();
             try
             {
@@ -155,6 +190,7 @@ namespace WorklabsMx.Controllers
                         Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
                         Sala_Junta_Reservacion_Id = reader["Sala_Junta_Reservacion_Id"].ToString()
                     });
+
             }
             catch (Exception e) { SlackLogs.SendMessage(e.Message); }
             finally { conn.Close(); }

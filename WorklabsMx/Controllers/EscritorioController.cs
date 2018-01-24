@@ -58,7 +58,13 @@ namespace WorklabsMx.Controllers
             }
             return posts;
         }
-
+        /// <summary>
+        /// Obtiene el listado de posts del usuario
+        /// </summary>
+        /// <returns>Listado de posts del usuario.</returns>
+        /// <param name="usuario_id">Identificador del Usuario.</param>
+		/// <param name="tipo">Tipo de usuario.</param>
+        /// <param name="page">Pagina del post.</param>
         public List<PostModel> GetPerfilPosts(string usuario_id, string tipo, int page = 0)
         {
 
@@ -128,7 +134,11 @@ namespace WorklabsMx.Controllers
             finally { conn.Close(); }
             return "";
         }
-
+        /// <summary>
+        /// Obtiene los likes del comentario
+        /// </summary>
+        /// <returns>Cantidad de likes del comentario.</returns>
+        /// <param name="comment_id">Identificador del comentario.</param>
         public string GetLikesComments(string comment_id)
         {
             string query = "select Count(Me_Gusta_Comentario_Id) FROM vw_pro_Red_Social_Publicaciones_Comentarios_Me_Gustan Where Comentario_Id = @comment_id AND Me_Gusta_Comentario_Estatus = 1";
@@ -777,7 +787,11 @@ namespace WorklabsMx.Controllers
             }
             return posts_id;
         }
-
+        /// <summary>
+        /// Cantidad de comentarios del post
+        /// </summary>
+        /// <returns>Cantidad de comentarios.</returns>
+        /// <param name="post_id">Identificador del Post.</param>
         public string TotalComments(string post_id)
         {
             string query = "select count(Post_ID) from vw_Muro_Comments Where Post_ID = @post_id AND COMM_ESTATUS = 1";

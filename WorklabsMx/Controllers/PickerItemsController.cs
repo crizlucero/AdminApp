@@ -40,6 +40,7 @@ namespace WorklabsMx.Controllers
 
             return generos;
         }
+
         /// <summary>
         /// Obtiene los paises
         /// </summary>
@@ -71,6 +72,7 @@ namespace WorklabsMx.Controllers
 
             return paises;
         }
+
         /// <summary>
         /// Obtiene los estados
         /// </summary>
@@ -105,6 +107,7 @@ namespace WorklabsMx.Controllers
 
             return estados;
         }
+
         /// <summary>
         /// Obtiene los municipios
         /// </summary>
@@ -139,6 +142,7 @@ namespace WorklabsMx.Controllers
 
             return municipios;
         }
+
         /// <summary>
         /// Obtiene los giros de las empresas
         /// </summary>
@@ -171,6 +175,11 @@ namespace WorklabsMx.Controllers
             return giros;
         }
 
+        /// <summary>
+        /// Obtiene el identificador del giro
+        /// </summary>
+        /// <returns>Identificador del giro.</returns>
+        /// <param name="giro">Nombre del giro.</param>
         public int GetGiroId(string giro)
         {
             string query = "SELECT Giro_Id FROM cat_Miembros_Empresas_Giros WHERE Giro_Descripcion = @giro";
@@ -192,6 +201,7 @@ namespace WorklabsMx.Controllers
             }
             return -1;
         }
+
         /// <summary>
         /// Obtiene las colonias
         /// </summary>
@@ -227,6 +237,11 @@ namespace WorklabsMx.Controllers
             return colonias;
         }
 
+        /// <summary>
+        /// Obtiene el identificador de la colonia
+        /// </summary>
+        /// <returns>Identificador de la colonia.</returns>
+        /// <param name="colonia">Nombre de la colonia.</param>
         public int GetColonia(string colonia)
         {
             string query = "SELECT Territorio_Colonia_Id FROM vw_cat_Territorios WHERE Territorio_Colonia_Descripcion = @colonia";
@@ -244,6 +259,7 @@ namespace WorklabsMx.Controllers
             finally { conn.Close(); }
             return -1;
         }
+
         /// <summary>
         /// Obtiene las sucursales
         /// </summary>
@@ -275,6 +291,7 @@ namespace WorklabsMx.Controllers
 
             return sucursales;
         }
+
         /// <summary>
         /// Obtiene las membresias disponibles.
         /// </summary>
@@ -329,6 +346,11 @@ namespace WorklabsMx.Controllers
             return membresias;
         }
 
+        /// <summary>
+        /// Obtiene el listado de precios de la membresías
+        /// </summary>
+        /// <returns>TListado de precios de la membresías.</returns>
+        /// <param name="dictMembresias">Diccionario de membresías.</param>
         public List<MembresiaModel> GetMembresiasPrecios(Dictionary<string, int> dictMembresias)
         {
             List<MembresiaModel> membresias = new List<MembresiaModel>();
@@ -376,6 +398,10 @@ namespace WorklabsMx.Controllers
             return membresias;
         }
 
+        /// <summary>
+        /// Obtiene el listado de productos
+        /// </summary>
+        /// <returns>Listado de productos.</returns>
         public List<ProductoModel> GetProductos()
         {
             List<ProductoModel> productos = new List<ProductoModel>();
@@ -420,6 +446,11 @@ namespace WorklabsMx.Controllers
             return productos;
         }
 
+        /// <summary>
+        /// Obtiene el listado de precios de los productos
+        /// </summary>
+        /// <returns>Listado de precios de los productos.</returns>
+        /// <param name="dictProductos">Diccionario de productos.</param>
         public List<ProductoModel> GetProductosPrecios(Dictionary<string, int> dictProductos)
         {
             List<ProductoModel> productos = new List<ProductoModel>();
@@ -464,6 +495,10 @@ namespace WorklabsMx.Controllers
             return productos;
         }
 
+        /// <summary>
+        /// Obtiene los códigos postales
+        /// </summary>
+        /// <returns>Listado de los códigos postales.</returns>
         public List<string> GetCodigosPostales()
         {
             List<string> CPs = new List<string>();
@@ -486,6 +521,19 @@ namespace WorklabsMx.Controllers
             return CPs;
         }
 
+        /// <summary>
+        /// Crea un carrito de compra detallado
+        /// </summary>
+        /// <returns>Carrito de compras detallado.</returns>
+        /// <param name="referencia_tipo">Tipo de referencia.</param>
+        /// <param name="referencia_id">Identificador de producto/membresías.</param>
+        /// <param name="referencia_cantidad">Cantidad de producto/membresías.</param>
+        /// <param name="referencia_meses">Meses de producto/membresías.</param>
+        /// <param name="referencia_fecha_inicio">Fecha inicio producto/membresías.</param>
+        /// <param name="precio_id">Identificador del precio.</param>
+        /// <param name="moneda_id">Identificador de la moneda.</param>
+        /// <param name="impuesto_id">Identificador del impuesto.</param>
+        /// <param name="descuento_id">Identificador del descuento.</param>
         public List<CarritoComprasDetalle> GetProductosMembresias(TiposServicios referencia_tipo, int referencia_id, int referencia_cantidad, int referencia_meses,
                                                          string referencia_fecha_inicio, int precio_id, int moneda_id, int impuesto_id, int descuento_id)
         {

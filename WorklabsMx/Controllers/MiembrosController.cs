@@ -58,7 +58,7 @@ namespace WorklabsMx.Controllers
         }
 
         /// <summary>
-        /// Obtener el nombre del miembro
+        /// Obtiene el nombre del miembro
         /// </summary>
         /// <returns>Nombre del miembro</returns>
         /// <param name="miembro_id">Identificador del miembro</param>
@@ -326,7 +326,12 @@ namespace WorklabsMx.Controllers
             finally { conn.Close(); }
             return true;
         }
-
+        /// <summary>
+        /// Obtiene la lista de miembros favoritos del usuario.
+        /// </summary>
+        /// <returns>Listado de los miembros favoritos del usuario.</returns>
+        /// <param name="usuario_id">Identificador del usuario.</param>
+        /// <param name="usuario_tipo">Tipo de usuario.</param>
         public List<MiembroModel> GetMiembrosFavoritos(string usuario_id, string usuario_tipo)
         {
             List<MiembroModel> usuarios = new List<MiembroModel>();

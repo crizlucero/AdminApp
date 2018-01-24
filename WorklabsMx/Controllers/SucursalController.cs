@@ -7,6 +7,10 @@ namespace WorklabsMx.Controllers
 {
     public class SucursalController : DataBaseModel
     {
+        /// <summary>
+        /// Obtiene los nombres de las sucursales
+        /// </summary>
+        /// <returns>Listado de las sucursales.</returns>
         public List<string> GetSucursalNombres()
         {
             List<string> sucursales = new List<string>();
@@ -25,7 +29,10 @@ namespace WorklabsMx.Controllers
             finally { conn.Close(); }
             return sucursales;
         }
-
+        /// <summary>
+        /// Obtiene la información de la sucursal
+        /// </summary>
+        /// <returns>Información de la sucursal.</returns>
         public Dictionary<string, string> GetSucursalInfo()
         {
             Dictionary<string, string> sucursales = new Dictionary<string, string>();
@@ -44,7 +51,11 @@ namespace WorklabsMx.Controllers
             finally { conn.Close(); }
             return sucursales;
         }
-
+        /// <summary>
+        /// Obtiene el identificador de la sucursal.
+        /// </summary>
+        /// <returns>Identificador de la sucursal.</returns>
+        /// <param name="sucursal">Nombre de la sucursal.</param>
         public int GetSucursalId(string sucursal)
         {
             string query = "SELECT Sucursal_Id FROM vw_cat_Sucursales WHERE Sucursal_Descripcion = @sucursal";

@@ -78,6 +78,11 @@ namespace WorklabsMx.Controllers
             //new Emails().SendMailInvitado(email, nombre, clave);
         }
 
+        /// <summary>
+        /// Obtiene la información de los invitados
+        /// </summary>
+        /// <returns>Lista de invitados.</returns>
+        /// <param name="invitaciones_id">Lista de los identificadores de invitados.</param>
         public List<VisitaModel> GetInvitados(List<int> invitaciones_id)
         {
             List<VisitaModel> invitados = new List<VisitaModel>();
