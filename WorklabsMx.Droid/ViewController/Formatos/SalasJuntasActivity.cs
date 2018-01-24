@@ -277,10 +277,7 @@ namespace WorklabsMx.Droid
             dialog = builder.Show();
             dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
         }
-
-
     }
-
 
     class SalaJuntasAdapter : PagerAdapter
     {
