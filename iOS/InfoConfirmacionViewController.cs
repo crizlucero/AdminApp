@@ -8,8 +8,15 @@ using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface ConfirmacionRealizada
+    {
+        void ConfirmacionRealizada();
+    }
+
     public partial class InfoConfirmacionViewController : UIViewController
     {
+        public ConfirmacionRealizada ConfirmacionRealizadaDel;
 
         public List<SalaJuntasReservacionModel> Reservaciones = new List<SalaJuntasReservacionModel>();
         NSDateFormatter dateFormat = new NSDateFormatter();
@@ -145,10 +152,8 @@ namespace WorklabsMx.iOS
 
         partial void btnContinuar_Touch(UIButton sender)
         {
-            this.DismissViewController(true, async () => {
-                await Task.Delay(100);
-                var app = (AppDelegate)UIApplication.SharedApplication.Delegate;
-                app.Window.RootViewController = UIStoryboard.FromName("Main", null).InstantiateViewController("ReservaController") as UIViewController;
+            this.DismissViewController(true, () => {
+               this.ConfirmacionRealizadaDel.ConfirmacionRealizada();
             });
         }
 

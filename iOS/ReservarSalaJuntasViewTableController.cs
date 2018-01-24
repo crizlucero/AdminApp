@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
+
+
+ 
+
     public partial class ReservarSalaJuntasViewTableController : UITableViewController
     {
 
@@ -386,7 +390,7 @@ namespace WorklabsMx.iOS
         //Touch Views
         private void vw2324Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.view2324.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.view2324.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.FlagView2324 == false)
                 {
@@ -442,7 +446,7 @@ namespace WorklabsMx.iOS
 
         private void vw2122Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw2122.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw2122.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.FlagView2122 == false)
                 {
@@ -469,7 +473,7 @@ namespace WorklabsMx.iOS
 
         private void vw2021Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw2021.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw2021.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.FlagView2021 == false)
                 {
@@ -497,7 +501,7 @@ namespace WorklabsMx.iOS
 
         private void vw1920Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1920.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw1920.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.FlagView1920 == false)
                 {
@@ -525,7 +529,7 @@ namespace WorklabsMx.iOS
 
         private void vw1819Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1819.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw1819.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.FlagView1819 == false)
                 {
@@ -551,7 +555,7 @@ namespace WorklabsMx.iOS
 
         private void vw1718Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1718.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw1718.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.FlagView1718 == false)
                 {
@@ -578,7 +582,7 @@ namespace WorklabsMx.iOS
 
         private void vw1617Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1617.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw1617.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.FlagView1617 == false)
                 {
@@ -605,7 +609,7 @@ namespace WorklabsMx.iOS
 
         private void vw1516Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1516.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw1516.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.Flag1516 == false)
                 {
@@ -632,7 +636,7 @@ namespace WorklabsMx.iOS
 
         private void vw1415Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1415.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw1415.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.Flag1415 == false)
                 {
@@ -659,7 +663,7 @@ namespace WorklabsMx.iOS
 
         private void vw1314Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1314.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw1314.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.Flag1314 == false)
                 {
@@ -686,7 +690,7 @@ namespace WorklabsMx.iOS
 
         private void vw1213Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1213.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw1213.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.Flag1213 == false)
                 {
@@ -713,7 +717,7 @@ namespace WorklabsMx.iOS
 
         private void vw1112Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1112.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw1112.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.Flag1112 == false)
                 {
@@ -740,7 +744,7 @@ namespace WorklabsMx.iOS
 
         private void vw1011Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw1011.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw1011.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.Flag1011 == false)
                 {
@@ -767,7 +771,7 @@ namespace WorklabsMx.iOS
 
         private void vw0910Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw0910.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw0910.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.Flag0910 == false)
                 {
@@ -794,7 +798,7 @@ namespace WorklabsMx.iOS
 
         private void vw0809Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw0809.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw0809.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.Flag0809 == false)
                 {
@@ -821,7 +825,7 @@ namespace WorklabsMx.iOS
 
         private void vw0708Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw0708.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw0708.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.Flag0708 == false)
                 {
@@ -848,7 +852,7 @@ namespace WorklabsMx.iOS
 
         private void vw0607Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw0607.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw0607.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.Flag0607 == false)
                 {
@@ -875,7 +879,7 @@ namespace WorklabsMx.iOS
 
         private void vw0506Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw0506.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw0506.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.Flag0506 == false)
                 {
@@ -902,7 +906,7 @@ namespace WorklabsMx.iOS
 
         private void vw0405Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw0405.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw0405.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.Flag0405 == false)
                 {
@@ -929,7 +933,7 @@ namespace WorklabsMx.iOS
 
         private void vw0304Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw0304.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw0304.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.Flag0304 == false)
                 {
@@ -956,7 +960,7 @@ namespace WorklabsMx.iOS
 
         private void vw0203Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw0203.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw0203.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.Flag0203 == false)
                 {
@@ -982,7 +986,7 @@ namespace WorklabsMx.iOS
 
         private void vw0102Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw0102.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw0102.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.Flag0102 == false)
                 {
@@ -1009,7 +1013,7 @@ namespace WorklabsMx.iOS
 
         private void vw0124Touch(UITapGestureRecognizer Recognizer)
         {
-            if (this.vw2401.BackgroundColor != UIColor.Clear.FromHex(0x404040))
+            if (this.vw2401.BackgroundColor.ToString() != UIColor.Clear.FromHex(0x404040).ToString())
             {
                 if (this.Flag0124 == false)
                 {
@@ -1058,6 +1062,7 @@ namespace WorklabsMx.iOS
             {
                 var VistaInfoReservacion = (InfoConfirmacionViewController)segue.DestinationViewController;
                 VistaInfoReservacion.Reservaciones = this.ReservacionesConcat;
+                VistaInfoReservacion.ConfirmacionRealizadaDel = this;
             }
         }
 
@@ -1111,6 +1116,14 @@ namespace WorklabsMx.iOS
         public void ReservacionCancelada(List<SalaJuntasReservacionModel> Reservciones)
         {
             this.Reservaciones = Reservciones;
+        }
+    }
+
+    partial class ReservarSalaJuntasViewTableController : ConfirmacionRealizada
+    {
+        public void ConfirmacionRealizada()
+        {
+            this.NavigationController.PopViewController(true);
         }
     }
 
