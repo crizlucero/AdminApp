@@ -1,53 +1,42 @@
-<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/TabBarDirectorio.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/RegistrarTableViewController.cs">
     <Files>
       <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="166" Column="10" />
-      <File FileName="iOS/ViewControllers/Comentarios/comentarTableView.cs" Line="187" Column="34" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="394" Column="21" />
-      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="1124" Column="44" />
+      <File FileName="iOS/ViewControllers/Comentarios/comentarTableView.cs" Line="49" Column="44" />
+      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="27" Column="49" />
       <File FileName="iOS/InfoConfirmacionViewController.cs" Line="156" Column="45" />
-      <File FileName="iOS/ReservacionesTabBarController.cs" Line="22" Column="13" />
-      <File FileName="iOS/TabBarDirectorio.cs" Line="24" Column="58" />
-      <File FileName="iOS/ViewControllers/Comentarios/ComentarviewController.cs" Line="71" Column="10" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="117" Column="73" NotebookId="1" />
-      <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="144" Column="10" NotebookId="1" />
-=======
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/CarritoController.cs">
-    <Files>
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="136" Column="44" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="137" Column="34" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="208" Column="22" />
-      <File FileName="WorklabsMx.Droid/Resources/drawable/button_circle.xml" Line="6" Column="47" />
-      <File FileName="WorklabsMx.Droid/Resources/drawable/ticket_style.xml" Line="6" Column="42" />
-      <File FileName="WorklabsMx.Droid/ViewController/LoginActivity.cs" Line="58" Column="76" />
-      <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="44" Column="14" />
-      <File FileName="WorklabsMx/Controllers/SuscripcionesController.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Controllers/SucursalController.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="334" Column="47" />
-      <File FileName="WorklabsMx/Controllers/InvitadosController.cs" Line="85" Column="84" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="794" Column="57" />
-      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="240" Column="39" />
-      <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="70" Column="48" />
-      <File FileName="WorklabsMx/Controllers/ColaboradoresController.cs" Line="165" Column="61" />
-      <File FileName="WorklabsMx/Controllers/CarritoController.cs" Line="1" Column="1" />
->>>>>>> e9f8f044357d32b9167f5379f09628ddb09bc083
+      <File FileName="iOS/ReservacionesTabBarController.cs" Line="2" Column="14" />
+      <File FileName="iOS/TabBarDirectorio.cs" Line="1" Column="1" />
+      <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="70" Column="46" />
+      <File FileName="iOS/CeldaInvitados.cs" Line="49" Column="22" />
+      <File FileName="iOS/ViewControllers/Comentarios/ComentarviewController.cs" Line="179" Column="44" NotebookId="1" />
+      <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="19" Column="5" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="15" Column="53" NotebookId="1" />
+      <File FileName="iOS/ComentariosBodyImageCell.cs" Line="67" Column="12" NotebookId="1" />
+      <File FileName="iOS/RegistroInvitadosTableViewController.cs" Line="187" Column="38" NotebookId="1" />
+      <File FileName="iOS/DetalleInvitacionViewController.cs" Line="15" Column="42" NotebookId="1" />
+      <File FileName="iOS/RegistrarTableViewController.cs" Line="124" Column="39" NotebookId="1" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>NumeroCeldas</Value>
+          <Value>HideButton</Value>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-<<<<<<< HEAD
     <BreakpointStore>
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/InvitadosController.cs" relfile="WorklabsMx/Controllers/InvitadosController.cs" line="69" column="32" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Escritorio/EscritorioController.cs" relfile="iOS/ViewControllers/Escritorio/EscritorioController.cs" line="195" column="45" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/CeldaDetalleInvitacion.cs" relfile="iOS/CeldaDetalleInvitacion.cs" line="80" column="16" />
     </BreakpointStore>
-=======
-    <BreakpointStore />
->>>>>>> e9f8f044357d32b9167f5379f09628ddb09bc083
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.662B9949-BD52-435B-8468-DE60A99E5000" automaticSigning="False">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
+  </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
   <MultiItemStartupConfigurations />
 </Properties>

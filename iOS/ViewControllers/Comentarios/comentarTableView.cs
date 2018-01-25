@@ -95,7 +95,6 @@ namespace WorklabsMx.iOS
 
         partial void btnBack_TouchUpInside(UIBarButtonItem sender)
         {
-            //this.BackWindowDelegate.BackWindow();
             this.NavigationController.PopViewController(true);
         }
 

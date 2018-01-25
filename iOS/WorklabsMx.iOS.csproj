@@ -1184,6 +1184,18 @@
     <Compile Include="ReservacionesTabBarController.designer.cs">
       <DependentUpon>ReservacionesTabBarController.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistrarTableViewController.cs" />
+    <Compile Include="RegistrarTableViewController.designer.cs">
+      <DependentUpon>RegistrarTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaInvitados.cs" />
+    <Compile Include="CeldaInvitados.designer.cs">
+      <DependentUpon>CeldaInvitados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaDetalleInvitacion.cs" />
+    <Compile Include="CeldaDetalleInvitacion.designer.cs">
+      <DependentUpon>CeldaDetalleInvitacion.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
