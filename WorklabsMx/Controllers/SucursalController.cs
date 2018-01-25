@@ -74,6 +74,10 @@ namespace WorklabsMx.Controllers
             return -1;
         }
 
+        /// <summary>
+        /// Obtiene las sucursales
+        /// </summary>
+        /// <returns>Lista de sucursales.</returns>
         public List<SucursalModel> GetSucursales()
         {
             List<SucursalModel> sucursales = new List<SucursalModel>();

@@ -146,7 +146,6 @@
     <Compile Include="ViewController\MiPerfil\PerfilActivity.cs" />
     <Compile Include="ViewController\MiPerfil\DatosFacturacionActivity.cs" />
     <Compile Include="ViewController\Formatos\InvitadosActivity.cs" />
-    <Compile Include="ViewController\Formatos\ReservaSalaJuntasActivity.cs" />
     <Compile Include="ViewController\Servicios\ShoppingCartActivity.cs" />
     <Compile Include="ViewController\Servicios\PaymentActivity.cs" />
     <Compile Include="ViewController\MiPerfil\TabPerfilActivity.cs" />
