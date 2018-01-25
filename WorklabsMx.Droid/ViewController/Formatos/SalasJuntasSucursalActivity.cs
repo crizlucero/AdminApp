@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -51,15 +52,9 @@ namespace WorklabsMx.Droid
 
         public override int Count => sucursales.Count;
 
-        public override Java.Lang.Object GetItem(int position)
-        {
-            return null;
-        }
+        public override Java.Lang.Object GetItem(int position) => null;
 
-        public override long GetItemId(int position)
-        {
-            return 0;
-        }
+        public override long GetItemId(int position) => Convert.ToInt32(sucursales[position].Sucursal_Id);
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {

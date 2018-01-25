@@ -81,7 +81,7 @@ namespace WorklabsMx.Droid
             }
         }
 
-        async Task OpenDashboard()
+        async void OpenDashboard()
         {
             SetContentView(Resource.Layout.DashboardLayout);
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
@@ -193,10 +193,8 @@ namespace WorklabsMx.Droid
                         lblLike.Text = new EscritorioController().GetLikesPublish(post.Publicacion_Id) + " " + Resources.GetString(Resource.String.Likes);
                         if (transaccion == "BAJA")
                         {
-
                             post.Publicacion_Me_Gusta_Usuario = "0";
                             lblLike.SetTextColor(Color.Black);
-
                             icLike.SetTintList(GetColorStateList(Resource.Color.button_unpressed));
                         }
                         else
@@ -208,9 +206,7 @@ namespace WorklabsMx.Droid
                     }
                 };
                 if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
-                {
                     icLike.SetTintList(GetColorStateList(Resource.Color.like_heart_pressed));
-                }
 
                 ImageView imgPost = PostView.FindViewById<ImageView>(Resource.Id.imgPost);
                 if (!string.IsNullOrEmpty(post.Publicacion_Imagen_Ruta))
@@ -319,9 +315,7 @@ namespace WorklabsMx.Droid
                             menu_scroll.Visibility = ViewStates.Visible;
                         }
                         else
-                        {
                             menu_scroll.Visibility = ViewStates.Gone;
-                        }
                     }
                     else
                     {
@@ -384,7 +378,6 @@ namespace WorklabsMx.Droid
                 {
                     switch (menu.Controller)
                     {
-                        //case "MainActivity": FindViewById<LinearLayout>(Resource.Id.menu).Visibility = ViewStates.Gone; break;
                         case "MyMembershipActivity": StartActivity(new Intent(this, typeof(MyMembershipActivity))); break;
                         case "SubMenuActivity":
                             localStorage.Put("Parent", menu.Menu_Id);
@@ -536,11 +529,7 @@ namespace WorklabsMx.Droid
                     imagePath = _file.Path;
                     bitmap = _file.Path.LoadAndResizeBitmap(width, height);
                     if (bitmap != null)
-                    {
                         imgPicture.SetImageBitmap(bitmap);
-                        //bitmap = null;
-                    }
-
                     GC.Collect();
                 }
                 if (requestCode == PickImageId && resultCode == Result.Ok && data != null)

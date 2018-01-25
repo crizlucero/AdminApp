@@ -22,7 +22,7 @@ namespace WorklabsMx.Droid
             this.empresa = empresa;
         }
 
-        public override Java.Lang.Object InstantiateItem(View container, int position)
+        public override Object InstantiateItem(View container, int position)
         {
             LayoutInflater liView = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
             View profileView = liView.Inflate(Resource.Layout.DatosGeneralesLayout, null, true);

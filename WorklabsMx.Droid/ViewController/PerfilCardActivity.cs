@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -27,20 +26,14 @@ namespace WorklabsMx.Droid
             FindViewById<TextView>(Resource.Id.lblEmpresa).Text = miembro.Miembro_Empresa;
             FindViewById<Button>(Resource.Id.btnSendMessage).Click += delegate
             {
-                try
-                {
-                    Intent intent = PackageManager.GetLaunchIntentForPackage("mx.worklabs");
-                    StartActivity(intent);
-                }
-                catch (Exception e)
-                {
-                    Intent intent = PackageManager.GetLaunchIntentForPackage("http://play.google.com/store/apps/details?id=");
-                    StartActivity(intent);
-                }
+                Intent intent;
+                try { intent = PackageManager.GetLaunchIntentForPackage("mx.worklabs"); }
+                catch { intent = PackageManager.GetLaunchIntentForPackage("http://play.google.com/store/apps/details?id="); }
+                StartActivity(intent);
             };
 
             ViewPager _viewPager = FindViewById<ViewPager>(Resource.Id.vpPerfil);
-            _viewPager.Adapter = new PerfilPageAdapter(this, new List<string> { "Sobre Mi", "Social", "Trabajo" }, miembro);
+            _viewPager.Adapter = new PerfilPageAdapter(this, new List<string> { Resources.GetString(Resource.String.SobreMi), Resources.GetString(Resource.String.Social), Resources.GetString(Resource.String.Trabajo) }, miembro);
 
             PagerSlidingTabStrip tabs = FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
             tabs.SetTextColorResource(Resource.Color.comment_pressed);

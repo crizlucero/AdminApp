@@ -27,10 +27,6 @@ namespace WorklabsMx.Droid.Helpers
             return dialog;
         }
 
-        public void OnDateSet(DatePicker view, int year, int month, int dayOfMonth)
-        {
-            DateTime selectedDate = new DateTime(year, month + 1, dayOfMonth);
-            _dateSelectedHandler(selectedDate);
-        }
+        public void OnDateSet(DatePicker view, int year, int month, int dayOfMonth) => _dateSelectedHandler(new DateTime(year, month + 1, dayOfMonth));
     }
 }

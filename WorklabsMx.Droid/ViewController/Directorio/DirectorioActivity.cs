@@ -71,7 +71,6 @@ namespace WorklabsMx.Droid
         SimpleStorage storage;
         readonly List<MiembroModel> miembros, favoritos;
         readonly List<EmpresaModel> empresas;
-        Android.Support.V7.App.AlertDialog dialog;
         public DirectorioAdapter(Context context, List<string> directorios, List<MiembroModel> miembros, List<EmpresaModel> empresas, List<MiembroModel> favoritos)
         {
             this.context = context;
