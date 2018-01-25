@@ -163,4 +163,7 @@
     <string name="Anteriores">Anteriores</string>
     <string name="Colaboraciones">Colaboraciones</string>
     <string name="SalaCancelada">La sala de juntas fue cancelada</string>
+    <string name="SobreMi">Sobre Mi</string>
+    <string name="Social">Social</string>
+    <string name="Trabajo">Trabajo</string>
 </resources>

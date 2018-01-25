@@ -131,7 +131,7 @@
       <HintPath>..\packages\FortySevenDeg.SwipeListView.2.0.0.2\lib\FortySevenDeg.SwipeListView.dll</HintPath>
     </Reference>
     <Reference Include="PerpetualEngine.SimpleStorage.Droid">
-      <HintPath>..\packages\SimpleStorage.1.4.8\lib\MonoAndroid\PerpetualEngine.SimpleStorage.Droid.dll</HintPath>
+      <HintPath>..\packages\SimpleStorage.1.4.9\lib\MonoAndroid\PerpetualEngine.SimpleStorage.Droid.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -140,9 +140,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewController\AccesoActivity.cs" />
     <Compile Include="Helpers\ImagesHelper.cs" />
-    <Compile Include="ViewElement\MenuView.cs" />
-    <Compile Include="Fragments\MyProfileFragment.cs" />
-    <Compile Include="Fragments\MenuFragment.cs" />
     <Compile Include="ViewController\MiPerfil\PerfilActivity.cs" />
     <Compile Include="ViewController\MiPerfil\DatosFacturacionActivity.cs" />
     <Compile Include="ViewController\Formatos\InvitadosActivity.cs" />
@@ -161,7 +158,6 @@
     <Compile Include="ViewController\CommentsActivity.cs" />
     <Compile Include="SplashActivity.cs" />
     <Compile Include="ViewController\LoginActivity.cs" />
-    <Compile Include="Fragments\DirectorioComunidadFragment.cs" />
     <Compile Include="ViewController\Directorio\DirectorioActivity.cs" />
     <Compile Include="ViewController\Formatos\SalasJuntasActivity.cs" />
     <Compile Include="ViewController\Formatos\TabSalasJuntasHistorialActivity.cs" />

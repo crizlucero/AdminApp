@@ -1,7 +1,5 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -28,16 +26,19 @@ namespace WorklabsMx.Droid
             List<VisitaModel> invitados = new InvitadosController().GetInvitados(JsonConvert.DeserializeObject<List<int>>(Intent.GetStringExtra("Invitados_Id")));
             ViewPager _viewPager = FindViewById<ViewPager>(Resource.Id.vpInvitaciones);
             _viewPager.Adapter = new ConfirmacionInvitadoAdapter(this, invitados);
-            FindViewById<ImageView>(Resource.Id.btnPrevio).Click += delegate {
-                _viewPager.SetCurrentItem(_viewPager.CurrentItem-1,true);
-            };
-            FindViewById<ImageView>(Resource.Id.btnSiguiente).Click += delegate {
+            FindViewById<ImageView>(Resource.Id.btnPrevio).Click += delegate
+            {
                 _viewPager.SetCurrentItem(_viewPager.CurrentItem - 1, true);
             };
-            FindViewById<ImageView>(Resource.Id.btnCerrar).Click += delegate {
+            FindViewById<ImageView>(Resource.Id.btnSiguiente).Click += delegate
+            {
+                _viewPager.SetCurrentItem(_viewPager.CurrentItem + 1, true);
+            };
+            FindViewById<ImageView>(Resource.Id.btnCerrar).Click += delegate
+            {
                 StartActivity(new Intent(this, typeof(MainActivity)));
                 Finish();
-            };;
+            }; ;
         }
     }
 

@@ -15,23 +15,12 @@
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/scrollView1">
+        android:layout_height="match_parent">
         <TableLayout
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/tlMembresias">
-            <TableRow
-                android:id="@+id/tableRow1">
-            </TableRow>
-            <TableRow
-                android:id="@+id/tableRow2">
-            </TableRow>
-            <TableRow
-                android:id="@+id/tableRow3">
-            </TableRow>
-        </TableLayout>
+            android:id="@+id/tlMembresias" />
     </ScrollView>
 </LinearLayout>

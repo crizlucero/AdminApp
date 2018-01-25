@@ -109,14 +109,10 @@ namespace WorklabsMx.Droid
             LayoutInflater liView = LayoutInflater;
             View basicView = liView.Inflate(Resource.Layout.DatosBasicosLayout, null, false);
             basicView.FindViewById<EditText>(Resource.Id.txtNombre).TextChanged += (sender, e) =>
-            {
                 invitado.Miembro_Nombre = ((EditText)sender).Text;
-            };
 
             basicView.FindViewById<EditText>(Resource.Id.txtApellidos).TextChanged += (sender, e) =>
-            {
                 invitado.Miembro_Apellidos = ((EditText)sender).Text;
-            };
 
             basicView.FindViewById<EditText>(Resource.Id.txtEmail).TextChanged += (sender, e) =>
             {
