@@ -9,6 +9,7 @@ using BigTed;
 using WorklabsMx.Helpers;
 using System.Threading.Tasks;
 using SWRevealViewControllerBinding;
+using System.Text.RegularExpressions;
 
 namespace WorklabsMx.iOS
 {
@@ -27,6 +28,23 @@ namespace WorklabsMx.iOS
 
         public void UpdateCell()
         {
+
+            this.txtNombre.ShouldReturn += (textField) => {
+                this.txtApellido.BecomeFirstResponder();
+                return true;
+            };
+
+            this.txtApellido.ShouldReturn += (textField) => {
+                this.txtEmail.BecomeFirstResponder();
+                return true;
+            };
+
+
+            this.txtEmail.ShouldReturn += (textField) => {
+                textField.ResignFirstResponder();
+                return true;
+            };
+
             txtApellido.EditingChanged += (sender, e) =>
             {
                 invitado.Miembro_Apellidos = txtApellido.Text;
@@ -57,6 +75,12 @@ namespace WorklabsMx.iOS
                 EventTextFiled(invitado, EventArgs.Empty);
             }
 
+        }
+
+        private Boolean ElTextoEsValido(string TextField, String RegularExpr)
+        {
+            bool EsValido = Regex.IsMatch(TextField, RegularExpr);
+            return EsValido;
         }
     }
 }

@@ -27,20 +27,10 @@ namespace WorklabsMx.iOS
         {
         }
 
-        public void UpdateCell(bool HideButton, List<MiembroModel> invitados, string FechaReservacion, string Sucursal)
+        public void UpdateCell(List<MiembroModel> invitados, string FechaReservacion, string Sucursal)
         {
             this.lblFecha.Text = FechaReservacion;
             this.lblUbicacion.Text = Sucursal;
-            if(HideButton)
-            {
-                this.btnAgregar.Hidden = true;
-                this.btnAgregar.Enabled = false;
-            }
-            else
-            {
-                this.btnAgregar.Hidden = false;
-                this.btnAgregar.Enabled = true;
-            }
             invitadosLocal = invitados;
         }
 
@@ -72,30 +62,47 @@ namespace WorklabsMx.iOS
         partial void btnInvitar_Touch(UIButton sender)
         {
             var ErrorInvitar = false;
-
+            var EmailValido = true;
             foreach (MiembroModel invitado in invitadosLocal)
             {
-                if ((invitado.Miembro_Nombre != "" && invitado.Miembro_Apellidos != "" && invitado.Miembro_Correo_Electronico != ""))
+
+                if (invitado.Miembro_Apellidos != "" && invitado.Miembro_Apellidos != null && invitado.Miembro_Nombre != "" && invitado.Miembro_Nombre != null && invitado.Miembro_Correo_Electronico != "" && invitado.Miembro_Correo_Electronico != null)
                 {
-                    var Sucursal = sucursales.Find(x => x.Sucursal_Descripcion == lblUbicacion.Text);
-                    if (InternetConectionHelper.VerificarConexion())
+                    String EmailRegex = "";
+                    EmailRegex = KeyChainHelper.GetKey("EmailRegex");
+                    bool EmailEsValido = false;
+                    if (invitado.Miembro_Correo_Electronico != null)
                     {
-                        if (new InvitadosController().RegistraInvitado(invitado.Miembro_Nombre, invitado.Miembro_Apellidos, invitado.Miembro_Correo_Electronico, txtAsunto.Text, DateTime.Parse(lblFecha.Text), Sucursal.Sucursal_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo")) != -1)
+                        EmailEsValido = this.ElTextoEsValido(invitado.Miembro_Correo_Electronico, EmailRegex);
+                    }
+                    if (EmailEsValido)
+                    {
+                        var Sucursal = sucursales.Find(x => x.Sucursal_Descripcion == lblUbicacion.Text);
+                        if (InternetConectionHelper.VerificarConexion())
                         {
-                            ErrorInvitar = false;
-                            this.DomicilioInvitacion = Sucursal.Sucursal_Descripcion + " " + Sucursal.Sucursal_Domicilio;
+                            if (new InvitadosController().RegistraInvitado(invitado.Miembro_Nombre, invitado.Miembro_Apellidos, invitado.Miembro_Correo_Electronico, txtAsunto.Text, DateTime.Parse(lblFecha.Text), Sucursal.Sucursal_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo")) != -1)
+                            {
+                                ErrorInvitar = false;
+                                this.DomicilioInvitacion = Sucursal.Sucursal_Descripcion + " " + Sucursal.Sucursal_Domicilio;
+                            }
+                            else
+                            {
+                                ErrorInvitar = true;
+                                break;
+                            }
                         }
                         else
                         {
                             ErrorInvitar = true;
                             break;
-                        }
+                        } 
                     }
                     else
                     {
-                        ErrorInvitar = true;
+                        EmailValido = false;
                         break;
                     }
+
 
                 }
                 else
@@ -108,6 +115,10 @@ namespace WorklabsMx.iOS
             {
                 new MessageDialog().SendToast("No se pudieron enviar las invitaciones, intente de nuevo");
             }
+            else if (EmailValido == false)
+            {
+                new MessageDialog().SendToast("El Email no es válido");
+            }
             else
             {
                 if (ConfirmarInvitaciones != null)
@@ -115,6 +126,12 @@ namespace WorklabsMx.iOS
                     ConfirmarInvitaciones(invitadosLocal, EventArgs.Empty);
                 }
             }
+        }
+
+        private Boolean ElTextoEsValido(string TextField, String RegularExpr)
+        {
+            bool EsValido = Regex.IsMatch(TextField, RegularExpr);
+            return EsValido;
         }
     }
 }

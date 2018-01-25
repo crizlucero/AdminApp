@@ -8,7 +8,7 @@ using WorklabsMx.Models;
 using WorklabsMx.Controllers;
 using EventKit;
 using CoreLocation;
-using System.Text.RegularExpressions;
+
 
 namespace WorklabsMx.iOS
 {
@@ -23,7 +23,6 @@ namespace WorklabsMx.iOS
         int contadorConfirmar;
         int ContadorSucursales;
 
-        bool HideButton = true;
         List<MiembroModel> invitados = new List<MiembroModel>();
         List<SucursalModel> sucursales = new SucursalController().GetSucursales();
         string FechaReservacion = "", Sucursal = "";
@@ -35,11 +34,8 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            ContadorEventos = 0;
-            contadorFechas = 0;
-            contadorConfirmar = 0;
-            ContadorSucursales = 0;
-
+            var Tap = new UITapGestureRecognizer(this.Tapped);
+            this.View.AddGestureRecognizer(Tap);
             NumeroCeldas.Add(0);
             NumeroCeldas.Add(1);
             NSDateFormatter dateFormat = new NSDateFormatter();
@@ -67,31 +63,20 @@ namespace WorklabsMx.iOS
             {
                 NumeroCeldas.Add(0);
                 NumeroCeldas.Sort((x, y) => x.CompareTo(y));
-                this.TableView.ReloadData();
+                TableView.BeginUpdates();
+                TableView.InsertRows(new[] { NSIndexPath.Create(0, 0) }, UITableViewRowAnimation.Left);
+                TableView.EndUpdates();
+                //this.TableView.ReloadData();
             }
         }
 
         void EventTextFiled(object sender, EventArgs e)
         {
             var invitado = (MiembroModel)sender;
-            String EmailRegex = "";
-            EmailRegex = KeyChainHelper.GetKey("EmailRegex");
-            bool EmailEsValido = this.ElTextoEsValido(invitado.Miembro_Correo_Electronico, EmailRegex);
-            if ((invitado.Miembro_Apellidos == "" || invitado.Miembro_Apellidos == null) || (invitado.Miembro_Nombre == "" || invitado.Miembro_Nombre == null) || (invitado.Miembro_Correo_Electronico == "" || invitado.Miembro_Correo_Electronico == null) || EmailEsValido == false)
+            if (invitados.Contains(invitado) == false)
             {
-                HideButton = true;
-                this.TableView.ReloadData();
+                invitados.Add(invitado);
             }
-            else
-            {
-                if (invitados.Contains(invitado) == false)
-                {
-                    invitados.Add(invitado);
-                }
-                HideButton = false;
-                this.TableView.ReloadData();
-            }
-
         }
 
         partial void btnAtras(UIBarButtonItem sender)
@@ -132,12 +117,12 @@ namespace WorklabsMx.iOS
             {
                 ContadorEventos = 0;
                 var CeldaDetalleInvitacion = (CeldaDetalleInvitacion)tableView.DequeueReusableCell(IdentificadorCeldaDetalle, indexPath);
-                CeldaDetalleInvitacion.UpdateCell(HideButton, invitados, FechaReservacion, Sucursal);
+                CeldaDetalleInvitacion.UpdateCell(invitados, FechaReservacion, Sucursal);
                 CeldaDetalleInvitacion.AgregarCeldas += AgregarCeldas;
                 CeldaDetalleInvitacion.ConfirmarInvitaciones += ConfirmarInvitaciones;
                 CeldaDetalleInvitacion.FechaSeleccionada += FechaSeleccionada;
                 CeldaDetalleInvitacion.SucursalSeleccionada += SucursalSeleccionada;
-                HideButton = true;
+                //HideButton = true;
                 return CeldaDetalleInvitacion;
             }
         }
@@ -178,26 +163,31 @@ namespace WorklabsMx.iOS
             {
                 var GenderView = (FechaReservacionPickerViewController)segue.DestinationViewController;
                 GenderView.FechaSeleccionadaDelegate = this;
+                GenderView.FechaCanceladaDelegate = this;
                 GenderView.FromRegister = true;
             }
             else if (segue.Identifier == "sucursales")
             {
                 var GenderView = (SucursalesViewController)segue.DestinationViewController;
                 GenderView.SucursalSeleccionadaDel = this;
+                GenderView.SucursalCanceladaDel = this;
             }
             else if (segue.Identifier == "DetalleInvitacion")
             {
                 var GenderView = (DetalleInvitacionViewController)segue.DestinationViewController;
                 GenderView.Invitados = this.invitados;
+                var ObjSucursal = sucursales.Find(x => x.Sucursal_Descripcion == Sucursal);
+                GenderView.DomicilioInvitacion = ObjSucursal.Sucursal_Descripcion + " " + ObjSucursal.Sucursal_Domicilio;
+                GenderView.FechaReservacion = this.FechaReservacion;
+                GenderView.CerrarVistaDel = this;
             }
         }
 
-
-        private Boolean ElTextoEsValido(string TextField, String RegularExpr)
+        private void Tapped(UITapGestureRecognizer Recognizer)
         {
-            bool EsValido = Regex.IsMatch(TextField, RegularExpr);
-            return EsValido;
+            this.View.EndEditing(true);
         }
+
     }
 
     partial class RegistrarTableViewController : FechaReservaSeleccionada
@@ -205,6 +195,16 @@ namespace WorklabsMx.iOS
         public void FechaReservaSeleccionada(String FechaReservacion)
         {
             this.FechaReservacion = FechaReservacion;
+            contadorFechas = 0;
+            this.TableView.ReloadData();
+        }
+    }
+
+    partial class RegistrarTableViewController : FechaReservaCancelada
+    {
+        public void FechaReservaCancelada()
+        {
+            contadorFechas = 0;
             this.TableView.ReloadData();
         }
     }
@@ -214,7 +214,27 @@ namespace WorklabsMx.iOS
         public void SucursalSeleccionada(String Sucursal)
         {
             this.Sucursal = Sucursal;
+            ContadorSucursales = 0;
             this.TableView.ReloadData();
         }
     }
+
+    partial class RegistrarTableViewController : SucursalCancelada
+    {
+        public void SucursalCancelada()
+        {
+            ContadorSucursales = 0;
+            this.TableView.ReloadData();
+        }
+    }
+
+    partial class RegistrarTableViewController : CerrarVista
+    {
+        public void CerrarVista()
+        {
+            contadorConfirmar = 0;
+            this.TableView.ReloadData();
+        }
+    }
+
 }

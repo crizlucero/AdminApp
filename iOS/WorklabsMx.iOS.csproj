@@ -714,6 +714,14 @@
     <ImageAsset Include="Assets.xcassets\UbicacionBlanca.imageset\UbicacionInv.png" />
     <ImageAsset Include="Assets.xcassets\UbicacionBlanca.imageset\UbicacionInv%402x.png" />
     <ImageAsset Include="Assets.xcassets\UbicacionBlanca.imageset\UbicacionInv%403x.png" />
+    <ImageAsset Include="Assets.xcassets\NuevaReservacion.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\HistorialReservacion.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\NuevaReservacion.imageset\Custom Size – 22.png" />
+    <ImageAsset Include="Assets.xcassets\NuevaReservacion.imageset\Custom Size – 22%402x.png" />
+    <ImageAsset Include="Assets.xcassets\NuevaReservacion.imageset\Custom Size – 22%403x.png" />
+    <ImageAsset Include="Assets.xcassets\HistorialReservacion.imageset\Custom Size – 25%403x.png" />
+    <ImageAsset Include="Assets.xcassets\HistorialReservacion.imageset\Custom Size – 26%403x.png" />
+    <ImageAsset Include="Assets.xcassets\HistorialReservacion.imageset\Custom Size – 27%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1140,10 +1148,6 @@
     <Compile Include="InfoConfirmacionViewController.designer.cs">
       <DependentUpon>InfoConfirmacionViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistroInvitadosTableViewController.cs" />
-    <Compile Include="RegistroInvitadosTableViewController.designer.cs">
-      <DependentUpon>RegistroInvitadosTableViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="InvitadoTableViewCell.cs" />
     <Compile Include="InvitadoTableViewCell.designer.cs">
       <DependentUpon>InvitadoTableViewCell.cs</DependentUpon>
@@ -1342,6 +1346,8 @@
     <Folder Include="Assets.xcassets\facebookic.imageset\" />
     <Folder Include="Assets.xcassets\CalendarioBlaco.imageset\" />
     <Folder Include="Assets.xcassets\UbicacionBlanca.imageset\" />
+    <Folder Include="Assets.xcassets\NuevaReservacion.imageset\" />
+    <Folder Include="Assets.xcassets\HistorialReservacion.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

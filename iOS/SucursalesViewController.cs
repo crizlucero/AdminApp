@@ -10,10 +10,16 @@ namespace WorklabsMx.iOS
         void SucursalSeleccionada(string Sucursal);
     }
 
+    public interface SucursalCancelada
+    {
+        void SucursalCancelada();
+    }
+
     public partial class SucursalesViewController : UIViewController
     {
         
         public SucursalSeleccionada SucursalSeleccionadaDel;
+        public SucursalCancelada SucursalCanceladaDel;
 
         UILabel selectedLbl = new UILabel();
 
@@ -44,6 +50,7 @@ namespace WorklabsMx.iOS
 
         partial void btnCancelar_Touch(UIButton sender)
         {
+            this.SucursalCanceladaDel.SucursalCancelada();
             this.DismissViewController(true, null);
         }
 

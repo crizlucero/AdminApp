@@ -49,7 +49,7 @@ namespace WorklabsMx.iOS
                 this.btnAtras.Enabled = false;
 
                 this.btnAdelante.Hidden = true;
-                this.btnAtras.Enabled = false;
+                this.btnAdelante.Enabled = false;
             }
 
             CGRect newFrame = new CGRect(this.vwInfoConfirmacion.Frame.X, this.vwInfoConfirmacion.Frame.Y, WidthView, this.vwInfoConfirmacion.Frame.Height);
@@ -80,9 +80,7 @@ namespace WorklabsMx.iOS
                 LabelDia.Text = this.FormatoDiaSeleccionado(newFormatDate);
                 LabelDia.Font = lblDia.Font;
                 LabelDia.TextAlignment = UITextAlignment.Center;
-
-
-                    
+                 
                 XLabekNivel = XLabekNivel + this.lblNivel.Frame.Width;
                 UILabel LabelNivel = new UILabel();
                 LabelNivel.Frame = new CGRect(XLabekNivel, this.lblNivel.Frame.Y, this.lblNivel.Frame.Width, this.lblNivel.Frame.Height);
