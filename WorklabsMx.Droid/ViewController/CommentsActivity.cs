@@ -164,10 +164,7 @@ namespace WorklabsMx.Droid
 
             Button btnComentar = FindViewById<Button>(Resource.Id.btnComentar);
             btnComentar.Visibility = ViewStates.Visible;
-            btnComentar.Click += delegate
-            {
-                ShowPublish();
-            };
+            btnComentar.Click += (sender, e) => ShowPublish();
         }
 
         async void FillCommentsAsync()
