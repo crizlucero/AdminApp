@@ -10,14 +10,9 @@ using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
-    public interface CerrarVista
-    {
-        void CerrarVista();
-    }
 
     public partial class DetalleInvitacionViewController : UIViewController
     {
-        public CerrarVista CerrarVistaDel;
 
         public List<MiembroModel> Invitados = new List<MiembroModel>();
         public string DomicilioInvitacion = "";
@@ -107,9 +102,7 @@ namespace WorklabsMx.iOS
 
         partial void btnCerrar_Touch(UIButton sender)
         {
-            this.DismissViewController(true, () => {
-                this.CerrarVistaDel.CerrarVista();
-            });
+            this.DismissViewController(true, null);
         }
 
         partial void btnAtras_Touch(UIButton sender)

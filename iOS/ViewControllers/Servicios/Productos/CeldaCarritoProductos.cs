@@ -12,12 +12,19 @@ using WorklabsMx.Enum;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface EventosCarritoProductos
+    {
+        void ObtenerPreordenProductos(CarritoCompras Preorden);
+    }
+
     public partial class CeldaCarritoProductos : UITableViewCell
     {
 
         double subTotalGlobal = 0.0;
         ProductoModel ProductoGlobal;
-        public event EventHandler ObtenerPreordenProductos;
+
+        public EventosCarritoProductos EventosCarritoProductosDelegate;
 
         CarritoCompras Preorden = new CarritoCompras();
         string FechaInicio;
@@ -131,10 +138,7 @@ namespace WorklabsMx.iOS
             Preorden.DescuentoId = 0;
             Preorden.TotalPagar = this.lblTotal.Text;
             Preorden.Nombre = this.lblNombreProducto.Text;
-            if (ObtenerPreordenProductos != null)
-            {
-                ObtenerPreordenProductos(Preorden, EventArgs.Empty);
-            }
+            EventosCarritoProductosDelegate.ObtenerPreordenProductos(Preorden);
         }
     }
 

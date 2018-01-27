@@ -11,10 +11,17 @@ using WorklabsMx.Enum;
 
 namespace WorklabsMx.iOS
 {
+
+
+    public interface EventosHeader
+    {
+        void Buscando(string Texto);
+    }
+
 	public partial class EscritorioHeaderCell : UITableViewCell
 	{
 
-        public event EventHandler Buscando;
+        public EventosHeader EventosHeaderDelegate;
 
 		public EscritorioHeaderCell (IntPtr handle) : base (handle)
 		{
@@ -35,10 +42,7 @@ namespace WorklabsMx.iOS
             }
 
             srbBuscarComunidad.TextChanged += (sender, e) => {
-                if(Buscando != null)
-                {
-                    Buscando(e.SearchText, EventArgs.Empty);
-                }
+                EventosHeaderDelegate.Buscando(e.SearchText);
             };
 
         }

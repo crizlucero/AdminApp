@@ -71,30 +71,6 @@ namespace WorklabsMx.iOS
             return this.PreordenProductos;
         }
 
-        private void ObtenerPreordenProductos(object sender, EventArgs e)
-        {
-            var currentOrderMember = (CarritoCompras)sender;
-            if (PreordenProductos.Find(x => x.Nombre == currentOrderMember.Nombre) != null)
-            {
-                if (currentOrderMember.TotalPagar == "$0.00")
-                {
-                    PreordenProductos.Remove(currentOrderMember);
-                }
-                else
-                {
-                    PreordenProductos[PreordenProductos.Count - 1] = currentOrderMember;
-                }
-            }
-            else
-            {
-                if (currentOrderMember.TotalPagar != "$0.00")
-                {
-                    PreordenProductos.Add((CarritoCompras)sender);
-                }
-
-            }
-
-        }
 
         public override nint RowsInSection(UITableView tableView, nint section)
         {
@@ -139,7 +115,7 @@ namespace WorklabsMx.iOS
                 var currentProduct = allProducts[indexPath.Row];
                 var currentProductCell = (CeldaCarritoProductos)tableView.DequeueReusableCell(IDENTIFIER_PRODUCTS, indexPath);
                 currentProductCell.UpdateCell(currentProduct, this.QuitarViewCompraRecurrente, this.MensajeTarifa, indexPath.Row);
-                currentProductCell.ObtenerPreordenProductos += ObtenerPreordenProductos;
+                currentProductCell.EventosCarritoProductosDelegate = this;
                 this.WillDisplay(indexPath.Row);
                 return currentProductCell;
             }
@@ -162,4 +138,33 @@ namespace WorklabsMx.iOS
         }
 
     }
+
+    public partial class CarritoProductos : EventosCarritoProductos
+    {
+        public void ObtenerPreordenProductos(CarritoCompras Preorden)
+        {
+            var currentOrderMember = Preorden;
+            if (PreordenProductos.Find(x => x.Nombre == currentOrderMember.Nombre) != null)
+            {
+                if (currentOrderMember.TotalPagar == "$0.00")
+                {
+                    PreordenProductos.Remove(currentOrderMember);
+                }
+                else
+                {
+                    PreordenProductos[PreordenProductos.Count - 1] = currentOrderMember;
+                }
+            }
+            else
+            {
+                if (currentOrderMember.TotalPagar != "$0.00")
+                {
+                    PreordenProductos.Add(Preorden);
+                }
+
+            }
+        }
+
+    }
+ 
 }

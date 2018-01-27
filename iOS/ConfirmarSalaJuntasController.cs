@@ -11,16 +11,12 @@ using CoreLocation;
 namespace WorklabsMx.iOS
 {
 
-    public interface ReservacionCancelada
+    public interface EventosReservaciones
     {
         void ReservacionCancelada(List<SalaJuntasReservacionModel> Reservaciones);
-    }
-
-
-    public interface ReservacionConfirmada
-    {
         void ReservacionConfirmada(List<SalaJuntasReservacionModel> ReservacionesConcat);
     }
+
 
     public partial class ConfirmarSalaJuntasController : UIViewController
     {
@@ -28,8 +24,7 @@ namespace WorklabsMx.iOS
         public List<SalaJuntasReservacionModel> Reservaciones = new List<SalaJuntasReservacionModel>();
         public List<SalaJuntasReservacionModel> ReservacionesConcat = new List<SalaJuntasReservacionModel>();
 
-        public ReservacionConfirmada ReservacionConfirmadaDelegate;
-        public ReservacionCancelada ReservacionCanceladaDelegate;
+        public EventosReservaciones EventosReservacionesDelegate;
 
         public ConfirmarSalaJuntasController (IntPtr handle) : base (handle)
         {
@@ -129,7 +124,7 @@ namespace WorklabsMx.iOS
                         this.GenerarEvento(ReservacionConcat);
                     }
 
-                    this.ReservacionConfirmadaDelegate.ReservacionConfirmada(this.ReservacionesConcat);
+                    this.EventosReservacionesDelegate.ReservacionConfirmada(this.ReservacionesConcat);
 
                 });
             }
@@ -139,7 +134,7 @@ namespace WorklabsMx.iOS
         {
             this.DismissViewController(true,() => 
             {
-                this.ReservacionCanceladaDelegate.ReservacionCancelada(this.Reservaciones);
+                this.EventosReservacionesDelegate.ReservacionCancelada(this.Reservaciones);
             });
         }
 

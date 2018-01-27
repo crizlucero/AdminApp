@@ -50,17 +50,6 @@ namespace WorklabsMx.iOS
             this.contadorEmpresas = 0;
         }
 
-
-        void InfoEmpresas(object sender, EventArgs e)
-        {
-            contadorEmpresas = contadorEmpresas + 1;
-            if (contadorEmpresas <= 1)
-            {
-                this.Empresa = sender as EmpresaModel;
-                this.PerformSegue("DetallarEmpresa", null);
-            }
-        }
-
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
             var headerCell = (HeaderEmpresasCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
@@ -100,7 +89,7 @@ namespace WorklabsMx.iOS
                 var current = Empresas[indexPath.Row];
                 var currentUser = (CeldaEmpresasCell)tableView.DequeueReusableCell(IdentificadorCeldaUsuarios, indexPath);
                 currentUser.UpdateCell(current);
-                currentUser.InfoEmpresas += InfoEmpresas;
+                currentUser.EventosEmpresasDelegate = this;
                 this.WillDisplay(indexPath.Row);
                 return currentUser;
             }
@@ -138,7 +127,14 @@ namespace WorklabsMx.iOS
             }
         }
 
+    }
 
-
+    public partial class EmpresasTableViewController : EventosEmpresas
+    {
+        public void InfoEmpresas(EmpresaModel EmpresaLocal)
+        {
+            this.Empresa = EmpresaLocal;
+            this.PerformSegue("DetallarEmpresa", null);
+        }
     }
 }

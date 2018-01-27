@@ -69,31 +69,6 @@ namespace WorklabsMx.iOS
             return this.PreordenMembresias;
         }
 
-
-        private void ObtenerPreordenMembresia(object sender,EventArgs e)
-        {
-            var currentOrderMember = (CarritoCompras)sender;
-            if (PreordenMembresias.Find(x => x.Nombre == currentOrderMember.Nombre) != null)
-            {
-                if(currentOrderMember.TotalPagar == "$0.00")
-                {
-                    PreordenMembresias.Remove(currentOrderMember);
-                }
-                else
-                {
-                    PreordenMembresias[PreordenMembresias.Count - 1] = currentOrderMember;
-                }
-            }
-            else 
-            {
-                if (currentOrderMember.TotalPagar != "$0.00")
-                {
-                    PreordenMembresias.Add((CarritoCompras)sender);
-                }
-            }
-           
-        }
-
         public override nint RowsInSection(UITableView tableView, nint section)
         {
             if (Membresias.Count > 0)
@@ -124,7 +99,7 @@ namespace WorklabsMx.iOS
                 var currentMembership = Membresias[indexPath.Row];
                 var currentMembershipCell = (TableViewCellMembresias)tableView.DequeueReusableCell(IDENTIFICADOR_CELDA_MEMBRESIAS, indexPath);
                 currentMembershipCell.UpdateCell(currentMembership, indexPath.Row);
-                currentMembershipCell.ObtenerPreordenMembresia += ObtenerPreordenMembresia;
+                currentMembershipCell.EventosCeldaMembresiasDelegate = this;
                 this.WillDisplay(indexPath.Row);
                 return currentMembershipCell;
             }
@@ -154,5 +129,30 @@ namespace WorklabsMx.iOS
             }
         }
 
+    }
+
+    public partial class TableViewMembresia : EventosCeldaMembresias
+    {
+        public void ObtenerPreordenMembresia(CarritoCompras Preorden)
+        {
+            if (PreordenMembresias.Find(x => x.Nombre == Preorden.Nombre) != null)
+            {
+                if (Preorden.TotalPagar == "$0.00")
+                {
+                    PreordenMembresias.Remove(Preorden);
+                }
+                else
+                {
+                    PreordenMembresias[PreordenMembresias.Count - 1] = Preorden;
+                }
+            }
+            else
+            {
+                if (Preorden.TotalPagar != "$0.00")
+                {
+                    PreordenMembresias.Add(Preorden);
+                }
+            }
+        }
     }
 }

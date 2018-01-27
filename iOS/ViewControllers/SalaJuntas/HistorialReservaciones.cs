@@ -64,33 +64,11 @@ namespace WorklabsMx.iOS
             }
         }
 
-        void MostrarTipoReservacion(object sender, EventArgs e)
-        {
-            var TipoReservaciones = int.Parse(sender.ToString());
-            this.Reservaciones = new List<SalaJuntasReservacionModel>();
-
-            if(TipoReservaciones == 0)
-            {
-                this.GetReservaciones((int)TiposReservacion.Activo);
-            }
-            else
-            {
-                this.GetReservaciones((int)TiposReservacion.Cancelada);
-                var Terminadas = new SalasJuntasController().GetReservaciones(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), (int)TiposReservacion.Terminada);
-                foreach(SalaJuntasReservacionModel terminada in Terminadas)
-                {
-                    this.Reservaciones.Add(terminada);
-                }
-
-            }
-            this.ActualizarTabla(TipoReservaciones);
-        }
-
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
             var headerCell = (HeaderReservaciones)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
             headerCell.UpdateCell(this.SeccionSeleccionada);
-            headerCell.MostrarTipoReservacion += MostrarTipoReservacion;
+            headerCell.EventosHeaderReservacionesDelegate = this;
             return headerCell;
         }
 
@@ -198,6 +176,32 @@ namespace WorklabsMx.iOS
             this.RevealViewController().RevealToggleAnimated(true);
             View.AddGestureRecognizer(this.RevealViewController().PanGestureRecognizer);
         }
+    }
+
+    public partial class HistorialReservaciones : EventosHeaderReservaciones
+    {
+        public void MostrarTipoReservacion(nint SelectedSegment)
+        {
+            var TipoReservaciones = int.Parse(SelectedSegment.ToString());
+            this.Reservaciones = new List<SalaJuntasReservacionModel>();
+
+            if (TipoReservaciones == 0)
+            {
+                this.GetReservaciones((int)TiposReservacion.Activo);
+            }
+            else
+            {
+                this.GetReservaciones((int)TiposReservacion.Cancelada);
+                var Terminadas = new SalasJuntasController().GetReservaciones(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), (int)TiposReservacion.Terminada);
+                foreach (SalaJuntasReservacionModel terminada in Terminadas)
+                {
+                    this.Reservaciones.Add(terminada);
+                }
+
+            }
+            this.ActualizarTabla(TipoReservaciones);
+        }
+            
     }
 
 }

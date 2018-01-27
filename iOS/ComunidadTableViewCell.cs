@@ -8,12 +8,19 @@ using System.Collections.Generic;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface EventosComunidadCell
+    {
+        void InfoUserPost(List<String> listaUser);
+    }
+
     public partial class ComunidadTableViewCell : UITableViewCell
     {
         MiembrosController Favorites;
-        public event EventHandler InfoUserPost;
 
         MiembroModel MiembroLocal;
+
+        public EventosComunidadCell EventosComunidadCellDelegate;
 
         public ComunidadTableViewCell (IntPtr handle) : base (handle)
         {
@@ -45,15 +52,11 @@ namespace WorklabsMx.iOS
 
         partial void btnImagenComu_Touch(UIButton sender)
         {
-            if (InfoUserPost != null)
-            {
-                //string[] ArrayUserPost = { PostLocal.Miembro_Id, PostLocal.Colaborador_Empresa_Id, PostLocal.Usuario_Tipo};
-                List<String> listaUser = new List<string>();
-                listaUser.Add(MiembroLocal.Miembro_Id);
-                listaUser.Add(MiembroLocal.Miembro_Empresa);
-                listaUser.Add(MiembroLocal.Miembro_Tipo);
-                InfoUserPost(listaUser, EventArgs.Empty);
-            }
+            List<String> listaUser = new List<string>();
+            listaUser.Add(MiembroLocal.Miembro_Id);
+            listaUser.Add(MiembroLocal.Miembro_Empresa);
+            listaUser.Add(MiembroLocal.Miembro_Tipo);
+            EventosComunidadCellDelegate.InfoUserPost(listaUser);
         }
     }
 }

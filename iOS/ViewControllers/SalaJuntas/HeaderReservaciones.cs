@@ -4,10 +4,16 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface EventosHeaderReservaciones
+    {
+        void MostrarTipoReservacion(nint SelectedSegment);
+    }
+
     public partial class HeaderReservaciones : UITableViewCell
     {
-        
-        public event EventHandler MostrarTipoReservacion;
+
+        public EventosHeaderReservaciones EventosHeaderReservacionesDelegate;
 
         public HeaderReservaciones (IntPtr handle) : base (handle)
         {
@@ -23,13 +29,9 @@ namespace WorklabsMx.iOS
 
         private void sgcReservacionTouch()
         {
-            if(MostrarTipoReservacion != null)
-            {
-                MostrarTipoReservacion(sgcReservacion.SelectedSegment, EventArgs.Empty);
-            }
+
+            EventosHeaderReservacionesDelegate.MostrarTipoReservacion(sgcReservacion.SelectedSegment);
         }
-
-
 
     }
 }

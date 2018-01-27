@@ -10,16 +10,24 @@ using System.Text.RegularExpressions;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface EventosDetalleInvitacion
+    {
+        void AgregarCeldas();
+        void QuitarCelda(NSIndexPath indexPath);
+        void ConfirmarInvitaciones(List<MiembroModel> invitadosLocal);
+        void FechaSeleccionada();
+        void SucursalSeleccionada();
+    }
+
     public partial class CeldaDetalleInvitacion : UITableViewCell
     {
-
-        public event EventHandler AgregarCeldas;
         string DomicilioInvitacion = "";
         List<MiembroModel> invitadosLocal;
 
-        public event EventHandler ConfirmarInvitaciones;
-        public event EventHandler FechaSeleccionada;
-        public event EventHandler SucursalSeleccionada;
+        public EventosDetalleInvitacion EventosDetalleInvitacionDel;
+
+        NSIndexPath indexPathLocal;
 
         List<SucursalModel> sucursales = new SucursalController().GetSucursales();
 
@@ -27,36 +35,27 @@ namespace WorklabsMx.iOS
         {
         }
 
-        public void UpdateCell(List<MiembroModel> invitados, string FechaReservacion, string Sucursal)
+        public void UpdateCell(List<MiembroModel> invitados, string FechaReservacion, string Sucursal, NSIndexPath indexPath)
         {
             this.lblFecha.Text = FechaReservacion;
             this.lblUbicacion.Text = Sucursal;
             invitadosLocal = invitados;
+            indexPathLocal = indexPath;
         }
 
         partial void btnAgregar_Touch(UIButton sender)
         {
-            var contadorEventos = 0;
-            if (AgregarCeldas != null)
-            {
-                AgregarCeldas(contadorEventos, EventArgs.Empty);
-            }
+            EventosDetalleInvitacionDel.AgregarCeldas();
         }
 
         partial void btnFecha_Touch(UIButton sender)
         {
-            if (FechaSeleccionada != null)
-            {
-                FechaSeleccionada(null, EventArgs.Empty);
-            }
+            EventosDetalleInvitacionDel.FechaSeleccionada();
         }
 
         partial void btnUbicacion_Touch(UIButton sender)
         {
-            if (SucursalSeleccionada != null)
-            {
-                SucursalSeleccionada(null, EventArgs.Empty);
-            }
+            EventosDetalleInvitacionDel.SucursalSeleccionada();
         }
 
         partial void btnInvitar_Touch(UIButton sender)
@@ -121,10 +120,7 @@ namespace WorklabsMx.iOS
             }
             else
             {
-                if (ConfirmarInvitaciones != null)
-                {
-                    ConfirmarInvitaciones(invitadosLocal, EventArgs.Empty);
-                }
+                EventosDetalleInvitacionDel.ConfirmarInvitaciones(invitadosLocal);
             }
         }
 
@@ -132,6 +128,11 @@ namespace WorklabsMx.iOS
         {
             bool EsValido = Regex.IsMatch(TextField, RegularExpr);
             return EsValido;
+        }
+
+        partial void btnQuitar_Touch(UIButton sender)
+        {
+            EventosDetalleInvitacionDel.QuitarCelda(indexPathLocal);
         }
     }
 }

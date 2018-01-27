@@ -28,6 +28,10 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnQuitar { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnUbicacion { get; set; }
 
         [Outlet]
@@ -54,6 +58,10 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnInvitar_Touch (UIKit.UIButton sender);
 
+        [Action ("btnQuitar_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnQuitar_Touch (UIKit.UIButton sender);
+
         [Action ("btnUbicacion_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnUbicacion_Touch (UIKit.UIButton sender);
@@ -73,6 +81,11 @@ namespace WorklabsMx.iOS
             if (btnInvitar != null) {
                 btnInvitar.Dispose ();
                 btnInvitar = null;
+            }
+
+            if (btnQuitar != null) {
+                btnQuitar.Dispose ();
+                btnQuitar = null;
             }
 
             if (btnUbicacion != null) {

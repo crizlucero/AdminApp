@@ -58,11 +58,6 @@ namespace WorklabsMx.iOS
             BTProgressHUD.Show(status: "Cargando Comentarios");
         }
 
-        void MostrarImagenEnGrandes(object sender, EventArgs e)
-        {
-            this.PerformSegue("ToViewImageFromComment", (UIImageView)sender);
-        }
-
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
             var headerCell = (HeaderComentarTableView)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
@@ -111,7 +106,7 @@ namespace WorklabsMx.iOS
                 {
                     var currentPostImageCell = (ComentarImageTableViewCell)tableView.DequeueReusableCell(IdentificadorImageCeldaPost, indexPath);
                     currentPostImageCell.UpdateCell(currentComment, currentImageProfile, currentImageComments);
-                    currentPostImageCell.MostrarImagenEnGrandes += MostrarImagenEnGrandes;
+                    currentPostImageCell.EventosImagenDel = this;
                     this.WillDisplay(indexPath.Row);
                     return currentPostImageCell;
                 }
@@ -119,7 +114,7 @@ namespace WorklabsMx.iOS
                 {
                     var currentPostCell = (BodyComentarTableView)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
                     currentPostCell.UpdateCell(currentComment, currentImageProfile);
-                    currentPostCell.MostrarImagenEnGrandes += MostrarImagenEnGrandes;
+                    currentPostCell.EventosImagenComentarDel = this;
                     this.WillDisplay(indexPath.Row);
                     return currentPostCell;
                 }
@@ -192,6 +187,22 @@ namespace WorklabsMx.iOS
             {
                 this.ReloadData();
             }
+        }
+    }
+
+    partial class comentarTableView : EventosImagen
+    {
+        public void MostrarImagenEnGrandes(UIImageView Imagen)
+        {
+            this.PerformSegue("ToViewImageFromComment", Imagen);
+        }
+    }
+
+    partial class comentarTableView : EventosImagenComentar
+    {
+        public void MostrarImagenEnGrandesComentar(UIImageView Imagen)
+        {
+            this.PerformSegue("ToViewImageFromComment", Imagen);
         }
     }
 }

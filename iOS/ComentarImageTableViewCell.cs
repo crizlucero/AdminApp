@@ -8,12 +8,16 @@ using CoreGraphics;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface EventosImagen
+    {
+        void MostrarImagenEnGrandes(UIImageView Imagen);
+    }
+
     public partial class ComentarImageTableViewCell : UITableViewCell
     {
-
         ComentarioModel comentarioLocal;
-
-        public event EventHandler MostrarImagenEnGrandes;
+        public EventosImagen EventosImagenDel;
 
         public ComentarImageTableViewCell (IntPtr handle) : base (handle)
         {
@@ -29,8 +33,6 @@ namespace WorklabsMx.iOS
             lblNombre.Text = comentario.Usuario_Nombre;
             lblLikes.Text = comentario.Comentario_Me_Gustan_Cantidad + " LIKES";
             lblFecha.Text = comentario.Comentario_Fecha;
-            //lblPuesto.Text = comentario.USUARIO_PUESTO;
-
             txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
             txtComentario.ScrollEnabled = false;
             txtComentario.Text = comentario.Comentario_Contenido;
@@ -45,15 +47,11 @@ namespace WorklabsMx.iOS
 
         private void ImageTapped(UITapGestureRecognizer Recognizer)
         {
-            if (MostrarImagenEnGrandes != null)
-            {
-                MostrarImagenEnGrandes(imgPublicacion, EventArgs.Empty);
-            }
+            EventosImagenDel.MostrarImagenEnGrandes(imgPublicacion);
         }
 
         partial void btnLikes_TouchUpInside(UIButton sender)
         {
-            //var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
             string transaccion = "ALTA";
             if (comentarioLocal.Comentario_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
             {

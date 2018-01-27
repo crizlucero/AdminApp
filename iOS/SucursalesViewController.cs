@@ -5,21 +5,16 @@ using WorklabsMx.Controllers;
 namespace WorklabsMx.iOS
 {
 
-    public interface SucursalSeleccionada
+    public interface Sucursal
     {
         void SucursalSeleccionada(string Sucursal);
     }
 
-    public interface SucursalCancelada
-    {
-        void SucursalCancelada();
-    }
 
     public partial class SucursalesViewController : UIViewController
     {
         
-        public SucursalSeleccionada SucursalSeleccionadaDel;
-        public SucursalCancelada SucursalCanceladaDel;
+        public Sucursal SucursalDelegate;
 
         UILabel selectedLbl = new UILabel();
 
@@ -44,13 +39,12 @@ namespace WorklabsMx.iOS
 
         partial void btnSeleccionar_Touch(UIButton sender)
         {
-            this.SucursalSeleccionadaDel.SucursalSeleccionada(selectedLbl.Text);
+            this.SucursalDelegate.SucursalSeleccionada(selectedLbl.Text);
             this.DismissViewController(true, null);
         }
 
         partial void btnCancelar_Touch(UIButton sender)
         {
-            this.SucursalCanceladaDel.SucursalCancelada();
             this.DismissViewController(true, null);
         }
 

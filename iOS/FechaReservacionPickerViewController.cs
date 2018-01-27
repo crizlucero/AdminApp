@@ -5,23 +5,18 @@ using UIKit;
 namespace WorklabsMx.iOS
 {
 
-    public interface FechaReservaSeleccionada
+    public interface FechaReservacion
     {
         void FechaReservaSeleccionada(String FechaNacimiento);
     }
 
-    public interface FechaReservaCancelada
-    {
-        void FechaReservaCancelada();
-    }
 
-    public partial class FechaReservacionPickerViewController : UIViewController
+        public partial class FechaReservacionPickerViewController : UIViewController
     {
         public bool FromRegister = false;
 
         NSDateFormatter dateFormat = new NSDateFormatter();
-        public FechaReservaSeleccionada FechaSeleccionadaDelegate;
-        public FechaReservaCancelada FechaCanceladaDelegate;
+        public FechaReservacion FechaSeleccionDelegate;
         string FechaReservacion;
 
         public FechaReservacionPickerViewController(IntPtr handle) : base(handle)
@@ -51,13 +46,12 @@ namespace WorklabsMx.iOS
 
         partial void btnCancelar_Touch(UIButton sender)
         {
-            this.FechaCanceladaDelegate.FechaReservaCancelada();
             this.DismissViewController(true, null);
         }
 
         partial void btnSeleccionar_Touch(UIButton sender)
         {
-            this.FechaSeleccionadaDelegate.FechaReservaSeleccionada(this.FechaReservacion);
+            this.FechaSeleccionDelegate.FechaReservaSeleccionada(this.FechaReservacion);
             this.DismissViewController(true, null);
         }
 

@@ -18,16 +18,11 @@ namespace WorklabsMx.iOS
         const string IdentificadorCeldaDetalle = "DetalleInvitacion";
         List<int> NumeroCeldas = new List<int>();
 
-        int ContadorEventos;
-        int contadorFechas;
-        int contadorConfirmar;
-        int ContadorSucursales;
-
         List<MiembroModel> invitados = new List<MiembroModel>();
         List<SucursalModel> sucursales = new SucursalController().GetSucursales();
         string FechaReservacion = "", Sucursal = "";
 
-        public RegistrarTableViewController (IntPtr handle) : base (handle)
+        public RegistrarTableViewController(IntPtr handle) : base(handle)
         {
         }
 
@@ -53,30 +48,6 @@ namespace WorklabsMx.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
-        }
-
-
-        void AgregarCeldas(object sender, EventArgs e)
-        {
-            ContadorEventos = ContadorEventos + 1;
-            if (ContadorEventos <= 1)
-            {
-                NumeroCeldas.Add(0);
-                NumeroCeldas.Sort((x, y) => x.CompareTo(y));
-                TableView.BeginUpdates();
-                TableView.InsertRows(new[] { NSIndexPath.Create(0, 0) }, UITableViewRowAnimation.Left);
-                TableView.EndUpdates();
-                //this.TableView.ReloadData();
-            }
-        }
-
-        void EventTextFiled(object sender, EventArgs e)
-        {
-            var invitado = (MiembroModel)sender;
-            if (invitados.Contains(invitado) == false)
-            {
-                invitados.Add(invitado);
-            }
         }
 
         partial void btnAtras(UIBarButtonItem sender)
@@ -106,71 +77,35 @@ namespace WorklabsMx.iOS
         public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
         {
             var current = NumeroCeldas[indexPath.Row];
-            if(current == 0)
+            if (current == 0)
             {
                 var CeldaInvitados = (CeldaInvitados)tableView.DequeueReusableCell(IdentificadorCeldaCampos, indexPath);
                 CeldaInvitados.UpdateCell();
-                CeldaInvitados.EventTextFiled += EventTextFiled;
+                CeldaInvitados.EventosCeldaInvitadosDelegate = this;
                 return CeldaInvitados;
             }
             else
             {
-                ContadorEventos = 0;
                 var CeldaDetalleInvitacion = (CeldaDetalleInvitacion)tableView.DequeueReusableCell(IdentificadorCeldaDetalle, indexPath);
-                CeldaDetalleInvitacion.UpdateCell(invitados, FechaReservacion, Sucursal);
-                CeldaDetalleInvitacion.AgregarCeldas += AgregarCeldas;
-                CeldaDetalleInvitacion.ConfirmarInvitaciones += ConfirmarInvitaciones;
-                CeldaDetalleInvitacion.FechaSeleccionada += FechaSeleccionada;
-                CeldaDetalleInvitacion.SucursalSeleccionada += SucursalSeleccionada;
-                //HideButton = true;
+                CeldaDetalleInvitacion.UpdateCell(invitados, FechaReservacion, Sucursal, indexPath);
+                CeldaDetalleInvitacion.EventosDetalleInvitacionDel = this;
                 return CeldaDetalleInvitacion;
             }
         }
 
-        void ConfirmarInvitaciones(object sender, EventArgs e)
-        {
-            contadorConfirmar = contadorConfirmar + 1;
-            if(contadorConfirmar <= 1)
-            {
-                this.PerformSegue("DetalleInvitacion", null);
-            }
-
-        }
-
-        void FechaSeleccionada(object sender, EventArgs e)
-        {
-            contadorFechas = contadorFechas + 1;
-            if(contadorFechas <= 1)
-            {
-                this.PerformSegue("SeleccionarFecha", null);
-            }
-
-        }
-
-        void SucursalSeleccionada(object sender, EventArgs e)
-        {
-            ContadorSucursales = ContadorSucursales + 1;
-            if(ContadorSucursales <= 1)
-            {
-                this.PerformSegue("sucursales", null);
-            }
-
-        }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             if (segue.Identifier == "SeleccionarFecha")
             {
                 var GenderView = (FechaReservacionPickerViewController)segue.DestinationViewController;
-                GenderView.FechaSeleccionadaDelegate = this;
-                GenderView.FechaCanceladaDelegate = this;
+                GenderView.FechaSeleccionDelegate = this;
                 GenderView.FromRegister = true;
             }
             else if (segue.Identifier == "sucursales")
             {
                 var GenderView = (SucursalesViewController)segue.DestinationViewController;
-                GenderView.SucursalSeleccionadaDel = this;
-                GenderView.SucursalCanceladaDel = this;
+                GenderView.SucursalDelegate = this;
             }
             else if (segue.Identifier == "DetalleInvitacion")
             {
@@ -179,7 +114,6 @@ namespace WorklabsMx.iOS
                 var ObjSucursal = sucursales.Find(x => x.Sucursal_Descripcion == Sucursal);
                 GenderView.DomicilioInvitacion = ObjSucursal.Sucursal_Descripcion + " " + ObjSucursal.Sucursal_Domicilio;
                 GenderView.FechaReservacion = this.FechaReservacion;
-                GenderView.CerrarVistaDel = this;
             }
         }
 
@@ -190,51 +124,74 @@ namespace WorklabsMx.iOS
 
     }
 
-    partial class RegistrarTableViewController : FechaReservaSeleccionada
+    partial class RegistrarTableViewController : FechaReservacion
     {
         public void FechaReservaSeleccionada(String FechaReservacion)
         {
             this.FechaReservacion = FechaReservacion;
-            contadorFechas = 0;
             this.TableView.ReloadData();
         }
     }
 
-    partial class RegistrarTableViewController : FechaReservaCancelada
-    {
-        public void FechaReservaCancelada()
-        {
-            contadorFechas = 0;
-            this.TableView.ReloadData();
-        }
-    }
-
-    partial class RegistrarTableViewController : SucursalSeleccionada
+    partial class RegistrarTableViewController : Sucursal
     {
         public void SucursalSeleccionada(String Sucursal)
         {
             this.Sucursal = Sucursal;
-            ContadorSucursales = 0;
             this.TableView.ReloadData();
         }
     }
 
-    partial class RegistrarTableViewController : SucursalCancelada
+
+    partial class RegistrarTableViewController : EventosDetalleInvitacion
     {
-        public void SucursalCancelada()
+        public void AgregarCeldas()
         {
-            ContadorSucursales = 0;
-            this.TableView.ReloadData();
+            NumeroCeldas.Add(0);
+            NumeroCeldas.Sort((x, y) => x.CompareTo(y));
+            TableView.BeginUpdates();
+            TableView.InsertRows(new[] { NSIndexPath.Create(0, 0) }, UITableViewRowAnimation.Left);
+            TableView.EndUpdates();
+
+        }
+        public void QuitarCelda(NSIndexPath indexPath)
+        {
+            if (NumeroCeldas.Count > 2)
+            {
+                TableView.BeginUpdates();
+                NumeroCeldas.RemoveAt(NumeroCeldas[0]);
+                TableView.DeleteRows(new NSIndexPath[] { NSIndexPath.Create(0, 0) }, UITableViewRowAnimation.Left);
+                TableView.EndUpdates();
+            }
+           
+        }
+        public void ConfirmarInvitaciones(List<MiembroModel> invitadosLocal)
+        {
+            this.PerformSegue("DetalleInvitacion", null);
+
+        }
+        public void FechaSeleccionada()
+        {
+
+            this.PerformSegue("SeleccionarFecha", null);
+
+        }
+        public void SucursalSeleccionada()
+        {
+
+            this.PerformSegue("sucursales", null);
+
         }
     }
 
-    partial class RegistrarTableViewController : CerrarVista
+    public partial class RegistrarTableViewController : EventosCeldaInvitados
     {
-        public void CerrarVista()
+        public void EventTextFiled(MiembroModel invitado)
         {
-            contadorConfirmar = 0;
-            this.TableView.ReloadData();
+            if (invitados.Contains(invitado) == false)
+            {
+                invitados.Add(invitado);
+            }
         }
     }
-
 }

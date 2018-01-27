@@ -10,9 +10,6 @@ namespace WorklabsMx.iOS
 {
 	public partial class VentaDetalleHeader : UITableViewCell
 	{
-
-       // public event EventHandler CanjearCupon;
-
 		public VentaDetalleHeader (IntPtr handle) : base (handle)
 		{
             

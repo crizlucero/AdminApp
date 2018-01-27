@@ -4,10 +4,16 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface EventosBuscar
+    {
+        void Buscando(string SearchText);
+    }
+
     public partial class HeaderFavoritosTableViewCell : UITableViewCell
     {
 
-        public event EventHandler Buscando;
+        public EventosBuscar EventosBuscarDelegate;
 
         public HeaderFavoritosTableViewCell (IntPtr handle) : base (handle)
         {
@@ -16,10 +22,7 @@ namespace WorklabsMx.iOS
         public void UpdateCell()
         {
             srbFavoritos.TextChanged += (sender, e) => {
-                if (Buscando != null)
-                {
-                    Buscando(e.SearchText, EventArgs.Empty);
-                }
+                EventosBuscarDelegate.Buscando(e.SearchText);
             };
         }
 

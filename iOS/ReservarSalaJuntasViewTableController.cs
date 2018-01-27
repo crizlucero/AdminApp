@@ -1048,15 +1048,13 @@ namespace WorklabsMx.iOS
             if (segue.Identifier == "SelectDate")
             {
                 var GenderView = (FechaReservacionPickerViewController)segue.DestinationViewController;
-                GenderView.FechaSeleccionadaDelegate = this;
+                GenderView.FechaSeleccionDelegate = this;
             }
             else if(segue.Identifier == "confirmarCompra")
             {
                 var VistaConfirmacion = (ConfirmarSalaJuntasController)segue.DestinationViewController;
                 VistaConfirmacion.Reservaciones = this.Reservaciones;
-                VistaConfirmacion.ReservacionConfirmadaDelegate = this;
-                VistaConfirmacion.ReservacionCanceladaDelegate = this;
-
+                VistaConfirmacion.EventosReservacionesDelegate = this;
             }
             else if(segue.Identifier == "DetalleReservacion")
             {
@@ -1080,7 +1078,7 @@ namespace WorklabsMx.iOS
     }
 
 
-    partial class ReservarSalaJuntasViewTableController : FechaReservaSeleccionada
+    partial class ReservarSalaJuntasViewTableController : FechaReservacion
     {
         public void FechaReservaSeleccionada(String FechaReservacion)
         {
@@ -1101,7 +1099,7 @@ namespace WorklabsMx.iOS
         }
     }
 
-    partial class ReservarSalaJuntasViewTableController: ReservacionConfirmada
+    partial class ReservarSalaJuntasViewTableController: EventosReservaciones
     {
         public async void ReservacionConfirmada(List<SalaJuntasReservacionModel> ReservacionesConcat)
         {
@@ -1109,15 +1107,13 @@ namespace WorklabsMx.iOS
             this.ReservacionesConcat = ReservacionesConcat;
             this.PerformSegue("DetalleReservacion", null);
         }
-    }
 
-    partial class ReservarSalaJuntasViewTableController : ReservacionCancelada
-    {
         public void ReservacionCancelada(List<SalaJuntasReservacionModel> Reservciones)
         {
             this.Reservaciones = Reservciones;
         }
     }
+
 
     partial class ReservarSalaJuntasViewTableController : ConfirmacionRealizada
     {

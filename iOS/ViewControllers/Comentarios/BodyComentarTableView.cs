@@ -7,12 +7,19 @@ using CoreGraphics;
 
 namespace WorklabsMx.iOS
 {
+
+
+    public interface EventosImagenComentar
+    {
+        void MostrarImagenEnGrandesComentar(UIImageView Imagen);
+    }
+
     public partial class BodyComentarTableView : UITableViewCell
     {
 
         ComentarioModel comentarioLocal;
 
-        public event EventHandler MostrarImagenEnGrandes;
+        public EventosImagenComentar EventosImagenComentarDel;
 
         public BodyComentarTableView (IntPtr handle) : base (handle)
         {
@@ -40,10 +47,7 @@ namespace WorklabsMx.iOS
 
         partial void btnImagen_TouchUpInside(UIButton sender)
         {
-            if (MostrarImagenEnGrandes != null)
-            {
-                MostrarImagenEnGrandes(sender.ImageView, EventArgs.Empty);
-            }
+            EventosImagenComentarDel.MostrarImagenEnGrandesComentar(sender.ImageView);
         }
 
         partial void btnLikes_TouchUpInside(UIButton sender)

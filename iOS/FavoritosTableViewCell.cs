@@ -6,10 +6,15 @@ using System.Collections.Generic;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface EventosFavoritosCell
+    {
+        void InfoUserPost(List<String> listaUser);
+    }
+
     public partial class FavoritosTableViewCell : UITableViewCell
     {
-        public event EventHandler InfoUserPost;
-
+        public EventosFavoritosCell EventosFavoritosCellDelegate;
         MiembroModel MiembroLocal;
 
         public FavoritosTableViewCell (IntPtr handle) : base (handle)
@@ -25,14 +30,11 @@ namespace WorklabsMx.iOS
 
         partial void btnImagenFav_Touch(UIButton sender)
         {
-            if (InfoUserPost != null)
-            {
-                List<String> listaUser = new List<string>();
-                listaUser.Add(MiembroLocal.Miembro_Id);
-                listaUser.Add(MiembroLocal.Miembro_Empresa);
-                listaUser.Add(MiembroLocal.Miembro_Tipo);
-                InfoUserPost(listaUser, EventArgs.Empty);
-            }
-        }
+            List<String> listaUser = new List<string>();
+            listaUser.Add(MiembroLocal.Miembro_Id);
+            listaUser.Add(MiembroLocal.Miembro_Empresa);
+            listaUser.Add(MiembroLocal.Miembro_Tipo);
+            EventosFavoritosCellDelegate.InfoUserPost(listaUser);
+        }        
     }
 }

@@ -13,6 +13,12 @@ using System.Text.RegularExpressions;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface EventosCeldaInvitados
+    {
+        void EventTextFiled(MiembroModel invitado);
+    }
+
     public partial class CeldaInvitados : UITableViewCell
     {
         
@@ -21,9 +27,8 @@ namespace WorklabsMx.iOS
             
         }
 
+        public EventosCeldaInvitados EventosCeldaInvitadosDelegate;
         List<bool> TextFilled = new List<bool> { false, false, false };
-        public event EventHandler EventTextFiled;
-
         MiembroModel invitado = new MiembroModel();
 
         public void UpdateCell()
@@ -70,11 +75,7 @@ namespace WorklabsMx.iOS
 
         private void SendTextStatus()
         {
-            if (EventTextFiled != null)
-            {
-                EventTextFiled(invitado, EventArgs.Empty);
-            }
-
+            EventosCeldaInvitadosDelegate.EventTextFiled(invitado);
         }
 
         private Boolean ElTextoEsValido(string TextField, String RegularExpr)

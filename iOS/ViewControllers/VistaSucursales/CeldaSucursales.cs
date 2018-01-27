@@ -5,10 +5,16 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface EventosCeldasSucursales
+    {
+        void SucursalSeleccionada(string SucursalId);
+    }
+
     public partial class CeldaSucursales : UICollectionViewCell
     {
 
-        public event EventHandler SucursalSeleccionada;
+        public EventosCeldasSucursales EventosCeldasSucursalesDelegate;
         string SucursalId;
 
         public CeldaSucursales (IntPtr handle) : base (handle)
@@ -24,10 +30,7 @@ namespace WorklabsMx.iOS
 
         partial void btnSucursal_Touch(UIButton sender)
         {
-            if (SucursalSeleccionada != null)
-            {
-                SucursalSeleccionada(SucursalId, EventArgs.Empty);
-            }
+            EventosCeldasSucursalesDelegate.SucursalSeleccionada(SucursalId);
         }
     }
 }

@@ -8,15 +8,20 @@ using System.Collections.Generic;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface EventosComentariosBody
+    {
+        void ComentarPosts(PostModel PostLocal);
+        void InfoUserPosts(List<String> listaUser);
+    }
+
     public partial class ComentariosBodyCell : UITableViewCell
     {
         PostModel PostLocal;
 
-        public event EventHandler ComentarPost;
-
-        public event EventHandler InfoUserPost;
-
         string transaccion = "ALTA";
+
+        public EventosComentariosBody EventosComentariosBodyDel;
 
         public ComentariosBodyCell (IntPtr handle) : base (handle)
         {
@@ -99,32 +104,17 @@ namespace WorklabsMx.iOS
 
         partial void btnComentarPost_TouchUpInside(UIButton sender)
         {
-            if (ComentarPost != null)
-            {
-                ComentarPost(PostLocal, EventArgs.Empty);
-            }
+            EventosComentariosBodyDel.ComentarPosts(PostLocal);
         }
 
-       /* private void btnImagenComentario_Touch(UIImage ImagenComentario)
-        {
-            if (MostrarImagenEnGrande != null)
-            {
-                MostrarImagenEnGrande(ImagenComentario, EventArgs.Empty);
-            }
-        }*/
 
         partial void btnImgPerfil_Touch(UIButton sender)
         {
-            if (InfoUserPost != null)
-            {
-                //string[] ArrayUserPost = { PostLocal.Miembro_Id, PostLocal.Colaborador_Empresa_Id, PostLocal.Usuario_Tipo};
-                List<String> listaUser = new List<string>();
-                listaUser.Add(PostLocal.Miembro_Id);
-                listaUser.Add(PostLocal.Colaborador_Empresa_Id);
-                listaUser.Add(PostLocal.Usuario_Tipo);
-                InfoUserPost(listaUser, EventArgs.Empty);
-            }
-            
+            List<String> listaUser = new List<string>();
+            listaUser.Add(PostLocal.Miembro_Id);
+            listaUser.Add(PostLocal.Colaborador_Empresa_Id);
+            listaUser.Add(PostLocal.Usuario_Tipo);
+            EventosComentariosBodyDel.InfoUserPosts(listaUser);
         }
     }
 }

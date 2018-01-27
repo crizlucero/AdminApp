@@ -9,14 +9,19 @@ using WorklabsMx.Enum;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface EventosCeldaMembresias
+    {
+        void ObtenerPreordenMembresia(CarritoCompras Preorden);
+    }
+
     public partial class TableViewCellMembresias : UITableViewCell
     {
+        public EventosCeldaMembresias EventosCeldaMembresiasDelegate;
         MembresiaModel MembresiaGlobal;
         double subtotal;
         CarritoCompras Preorden = new CarritoCompras();
         string FechaInicio;
-
-        public event EventHandler ObtenerPreordenMembresia;
 
         NSDateFormatter dateFormat = new NSDateFormatter();
 
@@ -97,10 +102,7 @@ namespace WorklabsMx.iOS
             Preorden.TotalPagar = this.lblTotal.Text;
             Preorden.IndiceProducto = this.IndiceMembresia;
             Preorden.Nombre = this.lblNombreMembresia.Text;
-            if (ObtenerPreordenMembresia != null)
-            {
-                ObtenerPreordenMembresia(Preorden, EventArgs.Empty);
-            }
+            EventosCeldaMembresiasDelegate.ObtenerPreordenMembresia(Preorden);
         }
     }
 }

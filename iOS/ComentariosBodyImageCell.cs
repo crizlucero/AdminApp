@@ -9,13 +9,19 @@ using System.Collections.Generic;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface EventosComentarios
+    {
+        void MostrarImagenEnGrande(UIImageView imgPublicacion);
+        void ComentarPost(PostModel PostLocal);
+        void InfoUserPost(List<String> listaUser);
+    }
+
+
     public partial class ComentariosBodyImageCell : UITableViewCell
     {
-        public event EventHandler MostrarImagenEnGrande;
 
-        public event EventHandler ComentarPost;
-
-        public event EventHandler InfoUserPost;
+        public EventosComentarios EventosComentariosDelegate;
 
         PostModel PostLocal;
 
@@ -64,10 +70,7 @@ namespace WorklabsMx.iOS
 
         private void ImageTapped(UITapGestureRecognizer Recognizer)
         {
-            if (MostrarImagenEnGrande != null)
-            {
-                MostrarImagenEnGrande(imgPublicacion, EventArgs.Empty);
-            }
+            EventosComentariosDelegate.MostrarImagenEnGrande(imgPublicacion);
         }
 
         partial void btnLikes_Touch(UIButton sender)
@@ -110,21 +113,17 @@ namespace WorklabsMx.iOS
 
         partial void btnImagePerfil_Touch(UIButton sender)
         {
-            if (InfoUserPost != null)
-            {                List<String> listaUser = new List<string>();
-                listaUser.Add(PostLocal.Miembro_Id);
-                listaUser.Add(PostLocal.Colaborador_Empresa_Id);
-                listaUser.Add(PostLocal.Usuario_Tipo);
-                InfoUserPost(listaUser, EventArgs.Empty);
-            }
+
+            List<String> listaUser = new List<string>();
+            listaUser.Add(PostLocal.Miembro_Id);
+            listaUser.Add(PostLocal.Colaborador_Empresa_Id);
+            listaUser.Add(PostLocal.Usuario_Tipo);
+            EventosComentariosDelegate.InfoUserPost(listaUser);
         }
 
         partial void btnComentarios_Touch(UIButton sender)
         {
-            if (ComentarPost != null)
-            {
-                ComentarPost(PostLocal, EventArgs.Empty);
-            }
+            EventosComentariosDelegate.ComentarPost(PostLocal);
         }
     }
 }

@@ -29,13 +29,6 @@ namespace WorklabsMx.iOS
             this.products = new SucursalController().GetSucursales();
         }
 
-
-        void SucursalSeleccionada(object sender, EventArgs e)
-        {
-            this.SucursalId = sender.ToString();
-            this.PerformSegue("ReservarSalaJuntas", null);
-        }
-
         public override nint NumberOfSections(UICollectionView collectionView)
         {
             return 1;
@@ -55,7 +48,7 @@ namespace WorklabsMx.iOS
         {
             var cellProducts = (CeldaSucursales)this.CollectionView.DequeueReusableCell(IDENTIFIER_SUCURSALES_CELL, indexPath);
             cellProducts.UpdateCell(this.products[indexPath.Row]);
-            cellProducts.SucursalSeleccionada += SucursalSeleccionada;
+            cellProducts.EventosCeldasSucursalesDelegate = this;
             return cellProducts;
         }
 
@@ -87,6 +80,14 @@ namespace WorklabsMx.iOS
                 ReservarView.SucursalId = this.SucursalId;
             }
         }
+    }
 
+    public partial class ColeccionSucursales : EventosCeldasSucursales
+    {
+        public void SucursalSeleccionada(string SucursalId)
+        {
+            this.SucursalId = SucursalId;
+            this.PerformSegue("ReservarSalaJuntas", null);
+        }
     }
 }

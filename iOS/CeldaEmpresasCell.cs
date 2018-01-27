@@ -7,10 +7,15 @@ using WorklabsMx.iOS.Helpers;
 
 namespace WorklabsMx.iOS
 {
+    public interface EventosEmpresas
+    {
+        void InfoEmpresas(EmpresaModel EmpresaLocal);
+    }
+
     public partial class CeldaEmpresasCell : UITableViewCell
     {
 
-        public event EventHandler InfoEmpresas;
+        public EventosEmpresas EventosEmpresasDelegate;
 
         private EmpresaModel EmpresaLocal;
 
@@ -20,10 +25,8 @@ namespace WorklabsMx.iOS
 
         partial void btnImagenEmpresa_Touch(UIButton sender)
         {
-            if (InfoEmpresas != null)
-            {
-                this.InfoEmpresas(this.EmpresaLocal, EventArgs.Empty);
-            }
+            EventosEmpresasDelegate.InfoEmpresas(EmpresaLocal);
+
         }
 
         public void UpdateCell(EmpresaModel Empresa)
