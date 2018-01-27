@@ -16,8 +16,8 @@ namespace WorklabsMx.Helpers
             {
                 using (WebClient client = new WebClient())
                 {
-                    client.Credentials = new NetworkCredential("crizlucero", "Ch1nv35l");
-                    client.UploadData(new Uri("ftp://10.10.28.68/Plantillas/" + imgNombre), image);
+                    client.Credentials = new NetworkCredential(@"SRVWLHOSTING\ftp", @"*Admin_FTP*");
+                    client.UploadData(new Uri("ftp://38.122.16.212/Pruebas/" + imgNombre), image);
                     return true;
                 }
             }
