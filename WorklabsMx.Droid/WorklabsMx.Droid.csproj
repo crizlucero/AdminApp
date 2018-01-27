@@ -103,12 +103,6 @@
       <HintPath>..\packages\Refractored.PagerSlidingTabStrip.1.1.6\lib\MonoAndroid10\Refractored.PagerSlidingTabStrip.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android.Export" />
-    <Reference Include="Google.Apis.Core">
-      <HintPath>..\packages\Google.Apis.Core.1.32.0\lib\netstandard1.3\Google.Apis.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis">
-      <HintPath>..\packages\Google.Apis.1.32.0\lib\netstandard1.3\Google.Apis.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.GooglePlayServices.Basement">
       <HintPath>..\packages\Xamarin.GooglePlayServices.Basement.60.1142.0\lib\MonoAndroid80\Xamarin.GooglePlayServices.Basement.dll</HintPath>
     </Reference>
@@ -132,6 +126,12 @@
     </Reference>
     <Reference Include="PerpetualEngine.SimpleStorage.Droid">
       <HintPath>..\packages\SimpleStorage.1.4.9\lib\MonoAndroid\PerpetualEngine.SimpleStorage.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core">
+      <HintPath>..\packages\Google.Apis.Core.1.32.1\lib\netstandard1.3\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis">
+      <HintPath>..\packages\Google.Apis.1.32.1\lib\netstandard1.3\Google.Apis.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -167,11 +167,13 @@
     <Compile Include="Helpers\TimePickerFragment.cs" />
     <Compile Include="ViewController\Servicios\ColeccionProductosActivity.cs" />
     <Compile Include="Helpers\PerfilPageAdapter.cs" />
-    <Compile Include="ViewController\PerfilCardActivity.cs" />
-    <Compile Include="ViewController\EmpresaCardActivity.cs" />
     <Compile Include="Helpers\EmpresaPageAdapter.cs" />
     <Compile Include="Helpers\PagosHelper.cs" />
     <Compile Include="ViewController\Formatos\InvitadosConfirmacionActivity.cs" />
+    <Compile Include="ViewElement\MenuView.cs" />
+    <Compile Include="ViewElement\MainActivity.cs" />
+    <Compile Include="ViewElement\EmpresaCardActivity.cs" />
+    <Compile Include="ViewElement\PerfilCardActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
