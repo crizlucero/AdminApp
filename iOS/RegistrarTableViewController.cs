@@ -165,17 +165,20 @@ namespace WorklabsMx.iOS
             }
            
         }
+
         public void ConfirmarInvitaciones(List<MiembroModel> invitadosLocal)
         {
             this.PerformSegue("DetalleInvitacion", null);
 
         }
+
         public void FechaSeleccionada()
         {
 
             this.PerformSegue("SeleccionarFecha", null);
 
         }
+
         public void SucursalSeleccionada()
         {
 

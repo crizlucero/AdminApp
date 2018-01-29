@@ -1,49 +1,18 @@
-<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleHeader.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Info.plist">
     <Files>
-      <File FileName="iOS/EditarPerfilTableViewController.cs" Line="1" Column="1" />
-      <File FileName="iOS/EditarRedesSocialesTableViewController.cs" Line="1" Column="1" />
-      <File FileName="iOS/EmpresasTableViewController.cs" Line="92" Column="52" />
-      <File FileName="iOS/FavoritosNoInfo.cs" Line="1" Column="1" />
-      <File FileName="iOS/FavoritosTableViewCell.cs" Line="11" Column="6" />
-      <File FileName="iOS/CeldaInvitados.cs" Line="25" Column="9" />
-      <File FileName="iOS/ViewControllers/VistaSucursales/CeldaSucursales.cs" Line="11" Column="54" />
-      <File FileName="iOS/ViewControllers/VistaSucursales/ColeccionSucursales.cs" Line="86" Column="6" />
-      <File FileName="iOS/FavoritosTableViewController.cs" Line="72" Column="52" />
-      <File FileName="iOS/HeaderFavoritosTableViewCell.cs" Line="10" Column="42" />
-      <File FileName="iOS/ViewControllers/SalaJuntas/HeaderReservaciones.cs" Line="10" Column="9" />
-      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="182" Column="6" />
-      <File FileName="iOS/Helpers/PickerDataModel.cs" Line="9" Column="58" />
-      <File FileName="iOS/ViewControllers/Servicios/Membresias/TableViewCellMembresias.cs" Line="15" Column="9" />
-      <File FileName="iOS/ViewControllers/Servicios/Membresias/TableViewMembresia.cs" Line="147" Column="18" />
-      <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleHeader.cs" Line="14" Column="1" />
-      <File FileName="iOS/RegistrarTableViewController.cs" Line="187" Column="32" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleHeader.cs" Line="14" Column="4" />
+      <File FileName="iOS/Main.cs" Line="12" Column="56" />
+      <File FileName="iOS/Info.plist" />
+      <File FileName="iOS/RegistrarTableViewController.cs" Line="168" Column="9" NotebookId="1" />
       <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="21" Column="6" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
-=======
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/MainActivity.cs">
-    <Files>
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="72" Column="9" />
-      <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="21" Column="26" />
-      <File FileName="WorklabsMx.Droid/ViewElement/MainActivity.cs" Line="129" Column="9" />
-      <File FileName="WorklabsMx.Droid/ViewElement/EmpresaCardActivity.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="170" Column="19" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
->>>>>>> 135113c53d4560552b1a50a58e810efea418c1f6
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C8F534E0-9C6A-4F53-A110-4E330B864317" />
-=======
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid PreferredExecutionTarget="Android.ZY32238MXJ" />
->>>>>>> 135113c53d4560552b1a50a58e810efea418c1f6
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.BFC150B7-1305-4B59-9EBF-520A7AF5E5A8" automaticSigning="False" />
   <MultiItemStartupConfigurations />
 </Properties>
