@@ -44,18 +44,18 @@ namespace WorklabsMx.Droid
 
         void FillUserData()
         {
-            MiembroModel miembro = new MiembrosController().GetMemberData(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"));
-            //FindViewById<ImageView>(Resource.Id.imgPerfil).SetImageURI(Android.Net.Uri.Parse("http://worklabs.mx/Dashboard_Client/usr_imgs/" + miembro.Miembro_Fotografia));
-            nombre.Text = miembro.Miembro_Nombre;
-            apellidos.Text = miembro.Miembro_Apellidos;
-            email.Text = miembro.Miembro_Correo_Electronico;
-            generos.SetSelection(miembro.Genero_Descripcion == "Femenino" ? 0 : 1, true);
-            fechaNacimiento.Text = miembro.Miembro_Fecha_Nacimiento;
-            Profesion.Text = miembro.Miembro_Profesion;
-            Puesto.Text = miembro.Miembro_Puesto;
-            Habilidades.Text = miembro.Miembro_Habilidades;
-            Telefono.Text = miembro.Miembro_Telefono;
-            Celular.Text = miembro.Miembro_Celular;
+            UsuarioModel miembro = new UsuariosController().GetMemberData(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"));
+            //FindViewById<ImageView>(Resource.Id.imgPerfil).SetImageURI(Android.Net.Uri.Parse("http://worklabs.mx/Dashboard_Client/usr_imgs/" + miembro.Usuario_Fotografia));
+            nombre.Text = miembro.Usuario_Nombre;
+            apellidos.Text = miembro.Usuario_Apellidos;
+            email.Text = miembro.Usuario_Correo_Electronico;
+            generos.SetSelection(miembro.Genero.Genero_Descripcion == "Femenino" ? 0 : 1, true);
+            fechaNacimiento.Text = miembro.Usuario_Fecha_Nacimiento;
+            Profesion.Text = miembro.Usuario_Profesion;
+            Puesto.Text = miembro.Usuario_Puesto;
+            //Habilidades.Text = miembro.Usuario_Habilidades;
+            Telefono.Text = miembro.Usuario_Telefono;
+            Celular.Text = miembro.Usuario_Celular;
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -69,7 +69,7 @@ namespace WorklabsMx.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.menu_save:
-                    if (new MiembrosController().UpdateDataMiembros(Convert.ToInt32(storage.Get("Usuario_Id")), nombre.Text, apellidos.Text, email.Text,
+                    if (new UsuariosController().UpdateDataMiembros(Convert.ToInt32(storage.Get("Usuario_Id")), nombre.Text, apellidos.Text, email.Text,
                                                                 Telefono.Text, Celular.Text, Profesion.Text, Puesto.Text, Habilidades.Text,
                                                                    Convert.ToDateTime(fechaNacimiento.Text), ""))
                         Toast.MakeText(this, Resource.String.DatosGuardados, ToastLength.Short).Show();

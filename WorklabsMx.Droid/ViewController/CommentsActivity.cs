@@ -92,21 +92,21 @@ namespace WorklabsMx.Droid
 
         void FillPost()
         {
-            string Usuario_Id = !string.IsNullOrEmpty(post.Miembro_Id) ? post.Miembro_Id : post.Colaborador_Empresa_Id;
+            //string Usuario_Id = !string.IsNullOrEmpty(post.Usuario.Usuario_Id.Miembro_Id) ? post.Miembro_Id : post.Colaborador_Empresa_Id;
 
             ImageButton imgPerfil = FindViewById<ImageButton>(Resource.Id.imgPerfil);
-            imgPerfil.SetImageURI(ImagesHelper.GetPerfilImagen(post.Usuario_Fotografia_Ruta));
+            imgPerfil.SetImageURI(ImagesHelper.GetPerfilImagen(post.Usuario.Usuario_Fotografia));
             imgPerfil.Click += (sender, e) => AndHUD.Shared.ShowImage(this, Resources.GetDrawable(Resource.Mipmap.ic_work, null), null, MaskType.Black);
 
             TextView lblNombre = FindViewById<TextView>(Resource.Id.lblNombre);
-            lblNombre.Text = post.Usuario_Nombre;
+            lblNombre.Text = post.Usuario.Usuario_Nombre;
             lblNombre.Click += delegate
             {
-                if (localStorage.Get("Usuario_Id") != Usuario_Id || localStorage.Get("Usuario_Tipo") != post.Usuario_Tipo)
+                if (localStorage.Get("Usuario_Id") != post.Usuario.Usuario_Id || localStorage.Get("Usuario_Tipo") != post.Usuario.Usuario_Tipo)
                 {
                     Intent perfil = new Intent(this, typeof(PerfilActivity));
-                    perfil.PutExtra("usuario_id", Usuario_Id);
-                    perfil.PutExtra("usuario_tipo", post.Usuario_Tipo);
+                    perfil.PutExtra("usuario_id", post.Usuario.Usuario_Id);
+                    perfil.PutExtra("usuario_tipo", post.Usuario.Usuario_Tipo);
                     StartActivity(perfil);
                 }
                 else
@@ -114,7 +114,7 @@ namespace WorklabsMx.Droid
             };
 
             TextView lblPuesto = FindViewById<TextView>(Resource.Id.lblPuesto);
-            lblPuesto.Text = post.Usuario_Puesto;
+            lblPuesto.Text = post.Usuario.Usuario_Puesto;
 
             TextView lblFecha = FindViewById<TextView>(Resource.Id.lblFecha);
             lblFecha.Text = post.Publicacion_Fecha;
@@ -282,8 +282,8 @@ namespace WorklabsMx.Droid
 
             customView = liView.Inflate(Resource.Layout.PublishLayout, null, true);
 
-            customView.FindViewById<TextView>(Resource.Id.lblNombre).Text = post.Usuario_Nombre;
-            customView.FindViewById<TextView>(Resource.Id.lblPuesto).Text = post.Usuario_Puesto;
+            customView.FindViewById<TextView>(Resource.Id.lblNombre).Text = post.Usuario.Usuario_Nombre;
+            customView.FindViewById<TextView>(Resource.Id.lblPuesto).Text = post.Usuario.Usuario_Puesto;
             customView.FindViewById<TextView>(Resource.Id.lblFecha).Text = DateTime.Now.ToString("d");
             customView.FindViewById<ImageButton>(Resource.Id.imgPicture).Visibility = ViewStates.Gone;
             customView.FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Gone;

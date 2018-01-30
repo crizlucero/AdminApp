@@ -599,5 +599,69 @@ namespace WorklabsMx.Controllers
             finally { conn.Close(); }
             return carrito;
         }
+
+        public List<RedSocialModel> GetRedesSociales(string usuario_id, string usuario_tipo)
+        {
+            List<RedSocialModel> redesSociales = new List<RedSocialModel>();
+            try
+            {
+                command = CreateCommand("select Usuario_Red_Social_Id, Red_Social_Id, Red_Social_Nombre, Red_Social_Icono_Android, Red_Social_Icono_iOS, Red_Social_Icono_Web " +
+                                       "from vw_pro_Directorio_Usuarios Where Usuario_Id = @Usuario_Id and Usuario_Tipo = @Usuario_Tipo");
+                command.Parameters.AddWithValue("@Usuario_Id",usuario_id);
+                command.Parameters.AddWithValue("@Usuario_Tipo", usuario_tipo);
+                conn.Open();
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    redesSociales.Add(new RedSocialModel
+                    {
+                        Usuario_Red_Social_Id = reader["Usuario_Red_Social_Id"].ToString(),
+                        Red_Social_Id = reader["Red_Social_Id"].ToString(),
+                        Red_Social_Nombre = reader["Red_Social_Nombre"].ToString(),
+                        Red_Social_Icono_Android = reader["Red_Social_Icono_Android"].ToString(),
+                        Red_Social_Icono_iOS = reader["Red_Social_Icono_iOS"].ToString(),
+                        Red_Social_Icono_Web = reader["Red_Social_Icono_Web"].ToString()
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message);
+            }
+            finally { conn.Close(); }
+            return redesSociales;
+        }
+
+        public List<EtiquetaModel> GetEtiquetas(string usuario_id, string usuario_tipo)
+        {
+            List<EtiquetaModel> etiquetas = new List<EtiquetaModel>();
+            try
+            {
+                command = CreateCommand("select Usuario_Etiqueta_Id, Etiqueta_Id, Usuario_Etiqueta_Estatus, Etiqueta_Nombre, Etiqueta_Tipo " +
+                                        "from vw_pro_Directorio_Usuarios Where Usuario_Id = @Usuario_Id and Usuario_Tipo = @Usuario_Tipo");
+                command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
+                command.Parameters.AddWithValue("@Usuario_Tipo", usuario_tipo);
+                conn.Open();
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    etiquetas.Add(new EtiquetaModel
+                    {
+                        
+                        Etiqueta_Id = reader["Etiqueta_Id"].ToString(),
+                        Etiqueta_Nombre = reader["Etiqueta_Nombre"].ToString(),
+                        Etiqueta_Tipo = reader["Etiqueta_Tipo"].ToString(),
+                        Usuario_Etiqueta_Estatus = reader["Usuario_Etiqueta_Estatus"].ToString(),
+                        Usuario_Etiqueta_Id = reader["Usuario_Etiqueta_Id"].ToString()
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message);
+            }
+            finally { conn.Close(); }
+            return etiquetas;
+        }
     }
 }

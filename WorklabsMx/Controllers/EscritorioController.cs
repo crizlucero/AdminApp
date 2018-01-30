@@ -33,12 +33,14 @@ namespace WorklabsMx.Controllers
                     posts.Add(new PostModel
                     {
                         Publicacion_Id = reader["Publicacion_Id"].ToString(),
-                        Miembro_Id = reader["Miembro_Id"].ToString(),
-                        Colaborador_Empresa_Id = reader["Colaborador_Empresa_Id"].ToString(),
-                        Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
-                        Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
-                        Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString(),
-                        Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
+                        Usuario = new UsuarioModel
+                        {
+                            Usuario_Id = reader["Miembro_Id"].ToString() =="" ? reader["Miembro_Id"].ToString() : reader["Colaborador_Empresa_Id"].ToString(),
+                            Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
+                            Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
+                            Usuario_Fotografia = reader["Usuario_Fotografia_Ruta"].ToString(),
+                            Usuario_Puesto = reader["Usuario_Puesto"].ToString()
+                        },
                         Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
                         Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),
                         Publicacion_Imagen_Ruta = reader["Publicacion_Imagen_Ruta"].ToString(),
@@ -89,12 +91,14 @@ namespace WorklabsMx.Controllers
                     posts.Add(new PostModel
                     {
                         Publicacion_Id = reader["Publicacion_Id"].ToString(),
-                        Miembro_Id = reader["Miembro_Id"].ToString(),
-                        Colaborador_Empresa_Id = reader["Colaborador_Empresa_Id"].ToString(),
-                        Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
-                        Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
-                        Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString(),
-                        Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
+                        Usuario = new UsuarioModel
+                        {
+                            Usuario_Id = reader["Miembro_Id"].ToString() == "" ? reader["Miembro_Id"].ToString() : reader["Colaborador_Empresa_Id"].ToString(),
+                            Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
+                            Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
+                            Usuario_Fotografia = reader["Usuario_Fotografia_Ruta"].ToString(),
+                            Usuario_Puesto = reader["Usuario_Puesto"].ToString()
+                        },
                         Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
                         Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),
                         Publicacion_Imagen_Ruta = reader["Publicacion_Imagen_Ruta"].ToString(),
@@ -556,12 +560,14 @@ namespace WorklabsMx.Controllers
                     post = new PostModel
                     {
                         Publicacion_Id = reader["Publicacion_Id"].ToString(),
-                        Miembro_Id = reader["Miembro_Id"].ToString(),
-                        Colaborador_Empresa_Id = reader["Colaborador_Empresa_Id"].ToString(),
-                        Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
-                        Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
-                        Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString(),
-                        Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
+                        Usuario = new UsuarioModel
+                        {
+                            Usuario_Id = reader["Miembro_Id"].ToString() == "" ? reader["Miembro_Id"].ToString() : reader["Colaborador_Empresa_Id"].ToString(),
+                            Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
+                            Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
+                            Usuario_Fotografia = reader["Usuario_Fotografia_Ruta"].ToString(),
+                            Usuario_Puesto = reader["Usuario_Puesto"].ToString()
+                        },
                         Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
                         Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),
                         Publicacion_Imagen_Ruta = reader["Publicacion_Imagen_Ruta"].ToString(),

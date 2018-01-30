@@ -46,7 +46,7 @@ namespace WorklabsMx.Droid
                 LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent),
                 Orientation = Orientation.Vertical
             };
-            new ColaboradoresController().GetColaboradoresMiembro(miembro_id, 1, nombre, apellido, puesto, profesion, habilidades, disponibilidad).ForEach((colaborador) =>
+            new UsuariosController().GetColaboradoresMiembro(miembro_id, 1, nombre, apellido, puesto, profesion, habilidades, disponibilidad).ForEach((colaborador) =>
             {
                 LinearLayout llColaborador = new LinearLayout(this)
                 {
@@ -59,7 +59,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtNombre = new TextView(this)
                 {
-                    Text = colaborador.Colaborador_Nombre + " " + colaborador.Colaborador_Apellidos,
+                    Text = colaborador.Usuario_Nombre + " " + colaborador.Usuario_Apellidos,
                     TextSize = 20
                 };
                 rlNombre.AddView(txtNombre);
@@ -69,7 +69,7 @@ namespace WorklabsMx.Droid
                 btnBaja.SetX(Resources.DisplayMetrics.WidthPixels - 120);
                 btnBaja.Click += (sender, e) =>
                 {
-                    if (new ColaboradoresController().ChangeColaboradorEstatus(colaborador.Colaborador_Id, 0))
+                    if (new UsuariosController().ChangeColaboradorEstatus(colaborador.Usuario_Id, 0))
                         llDirectorio.RemoveView(llColaborador);
                     else
                         Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
@@ -83,7 +83,7 @@ namespace WorklabsMx.Droid
                 TextView txtEmail = new TextView(this)
                 {
                     TextSize = 14,
-                    Text = colaborador.Colaborador_Correo_Electronico
+                    Text = colaborador.Usuario_Correo_Electronico
                 };
                 txtEmail.Click += (sender, e) =>
                 {
@@ -91,7 +91,7 @@ namespace WorklabsMx.Droid
                     {
                         Intent email = new Intent(Intent.ActionSend);
                         email.PutExtra(Intent.ExtraEmail,
-                                       new string[] { colaborador.Colaborador_Correo_Electronico });
+                                       new string[] { colaborador.Usuario_Correo_Electronico });
                         email.PutExtra(Intent.ExtraSubject, Resources.GetString(Resource.String.AsuntoCorreo));
                         email.SetType("message/rfc822");
                         StartActivity(email);
@@ -147,7 +147,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroGenero = new TextView(this)
                 {
-                    Text = colaborador.Genero_Descripcion
+                    Text = colaborador.Genero.Genero_Descripcion
                 };
                 txtMiembroGenero.SetX(50);
                 llGenero.AddView(txtMiembroGenero);
@@ -177,7 +177,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroFechaNacimiento = new TextView(this)
                 {
-                    Text = colaborador.Colaborador_Fecha_Nacimiento
+                    Text = colaborador.Usuario_Fecha_Nacimiento
                 };
                 txtMiembroFechaNacimiento.SetX(50);
                 llFechaNacimiento.AddView(txtMiembroFechaNacimiento);
@@ -207,7 +207,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroProfesion = new TextView(this)
                 {
-                    Text = colaborador.Colaborador_Profesion
+                    Text = colaborador.Usuario_Profesion
                 };
                 txtMiembroProfesion.SetX(50);
                 llProfesion.AddView(txtMiembroProfesion);
@@ -237,7 +237,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroPuesto = new TextView(this)
                 {
-                    Text = colaborador.Colaborador_Puesto
+                    Text = colaborador.Usuario_Puesto
                 };
                 txtMiembroPuesto.SetX(50);
                 llPuesto.AddView(txtMiembroPuesto);
@@ -267,7 +267,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroHabilidades = new TextView(this)
                 {
-                    Text = colaborador.Colaborador_Habilidades
+                    //Text = colaborador.Usuario_Habilidades
                 };
                 txtMiembroHabilidades.SetX(50);
                 llHabilidades.AddView(txtMiembroHabilidades);
@@ -314,7 +314,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroTelefono = new TextView(this)
                 {
-                    Text = colaborador.Colaborador_Telefono
+                    Text = colaborador.Usuario_Telefono
                 };
                 txtMiembroTelefono.SetX(50);
                 llTelefono.AddView(txtMiembroTelefono);
@@ -345,7 +345,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroCelular = new TextView(this)
                 {
-                    Text = colaborador.Colaborador_Celular
+                    Text = colaborador.Usuario_Celular
                 };
                 txtMiembroCelular.SetX(50);
                 llCelular.AddView(txtMiembroCelular);
@@ -374,7 +374,7 @@ namespace WorklabsMx.Droid
                 btnModificar.Click += (sender, e) =>
                 {
                     Intent intent = new Intent(this, typeof(MisColaboradoresCambiosActivity));
-                    intent.PutExtra("colaborador_id", colaborador.Colaborador_Id);
+                    intent.PutExtra("colaborador_id", colaborador.Usuario_Id);
                     intent.PutExtra("colaborador_tipo", "2");
                     StartActivity(intent);
                 };

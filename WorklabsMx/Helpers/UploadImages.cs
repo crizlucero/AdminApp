@@ -25,7 +25,6 @@ namespace WorklabsMx.Helpers
 
                 FtpWebResponse response = (FtpWebResponse)client.GetResponse();
                 response.Close();
-                //client.UploadData(new Uri("ftp://38.122.16.212/" + imgNombre), image);
                 return true;
 
             }
