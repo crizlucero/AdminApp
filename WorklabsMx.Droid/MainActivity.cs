@@ -196,12 +196,16 @@ namespace WorklabsMx.Droid
                 ImageView imgPost = PostView.FindViewById<ImageView>(Resource.Id.imgPost);
                 if (!string.IsNullOrEmpty(post.Publicacion_Imagen_Ruta))
                 {
-                    imgPost.Visibility = ViewStates.Visible;
-                    imgPost.SetImageURI(Android.Net.Uri.Parse("http://desarrolloworklabs.com/Dashboard_Client/" + post.Publicacion_Imagen_Ruta));
-                    imgPost.Click += delegate
+                    byte[] photo = new UploadImages().DownloadFileFTP(post.Publicacion_Imagen);
+                    if (photo.Length != 0)
                     {
-                        AndHUD.Shared.ShowImage(this, Drawable.CreateFromPath(""));
-                    };
+                        imgPost.Visibility = ViewStates.Visible;
+                        imgPost.SetImageBitmap(BitmapFactory.DecodeByteArray(photo, 0, photo.Length));//SetImageURI(Android.Net.Uri.Parse("http://desarrolloworklabs.com/Dashboard_Client/" + post.Publicacion_Imagen_Ruta));
+                        imgPost.Click += delegate
+                        {
+                            //AndHUD.Shared.ShowImage(this, Drawable.CreateFromStream());
+                        };
+                    }
                 }
                 TextView lblComentario = PostView.FindViewById<TextView>(Resource.Id.lblComments);
                 lblComentario.Text = post.Publicacion_Comentarios_Cantidad + " " + Resources.GetString(Resource.String.Comentarios);

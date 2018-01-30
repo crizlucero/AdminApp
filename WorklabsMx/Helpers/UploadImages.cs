@@ -1,12 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Net;
-using Foundation;
-using UIKit;
-using WorklabsMx.Helpers;
-using WorklabsMx.iOS.Styles;
-using Plugin.Connectivity;
-
 namespace WorklabsMx.Helpers
 {
     public class UploadImages
@@ -40,37 +34,30 @@ namespace WorklabsMx.Helpers
             }
         }
 
-        public UIImage DownloadFileFTP(string Imagen)
+        public byte[] DownloadFileFTP(string imgNombre)
         {
-            if (Imagen == "")
-            {
-                return null;
-            }
-            else
+            if (!string.IsNullOrEmpty(imgNombre))
             {
                 try
                 {
-                    string ftphost = "ftp://38.122.16.212/";
-                    string ftpfilepath = "/ " + Imagen.Replace("\\", "/");
+                    FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://38.122.16.212/" + imgNombre.Replace("\\", "/"));
+                    client.Method = WebRequestMethods.Ftp.DownloadFile;
+                    client.UsePassive = false;
+                    client.Credentials = new NetworkCredential(@"SRVWLHOSTING\worklabscloud", @"Worklabscloud!");
+                    Stream responseStream = ((FtpWebResponse)client.GetResponse()).GetResponseStream();
+                    MemoryStream ms = new MemoryStream();
+                    responseStream.CopyTo(ms);
 
-                    string ftpfullpath = "ftp://" + ftphost + ftpfilepath;
-
-                    using (WebClient request = new WebClient())
-                    {
-                        request.Credentials = new NetworkCredential(@"SRVWLHOSTING\worklabscloud", @"Worklabscloud!");
-                        byte[] fileData = request.DownloadData(ftpfullpath);
-                        var data = NSData.FromArray(fileData);
-                        UIImage Image = UIImage.LoadFromData(data);
-                        return Image;
-                    }
+                    return ms.ToArray();
                 }
-                catch
+                catch (Exception e)
                 {
+                    SlackLogs.SendMessage(e.Message);
                     return null;
                 }
-               
-            }
 
+            }
+            return null;
         }
     }
 }
