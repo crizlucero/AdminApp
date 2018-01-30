@@ -722,6 +722,9 @@
     <ImageAsset Include="Assets.xcassets\ResumenReservacion.imageset\Group 24.png" />
     <ImageAsset Include="Assets.xcassets\ResumenReservacion.imageset\Group 24%402x.png" />
     <ImageAsset Include="Assets.xcassets\ResumenReservacion.imageset\Group 24%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\grande.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\chico.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\mediano.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1065,6 +1068,7 @@
       <DependentUpon>NoInfoMenuCell.cs</DependentUpon>
     </Compile>
     <Compile Include="ComunidadTableViewController.cs" />
+    <Compile Include="InfoEmpresaTableViewController.cs" />
     <Compile Include="ComunidadTableViewController.designer.cs">
       <DependentUpon>ComunidadTableViewController.cs</DependentUpon>
     </Compile>
@@ -1152,7 +1156,6 @@
     <Compile Include="InvitadoTableViewCell.designer.cs">
       <DependentUpon>InvitadoTableViewCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="InfoEmpresaTableViewController.cs" />
     <Compile Include="InfoEmpresaTableViewController.designer.cs">
       <DependentUpon>InfoEmpresaTableViewController.cs</DependentUpon>
     </Compile>

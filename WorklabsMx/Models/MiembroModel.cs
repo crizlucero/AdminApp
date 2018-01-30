@@ -21,5 +21,6 @@
         public string Miembro_Estatus { get; set; }
         public string Miembro_Tipo { get; set; }
         public string Miembro_Empresa { get; set; }
+        public string Miembro_SobreMi { get; set; }
     }
 }

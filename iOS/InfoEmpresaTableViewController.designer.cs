@@ -16,6 +16,14 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblEmpresa { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblPais { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwEmpresa { get; set; }
 
         [Outlet]
@@ -24,6 +32,16 @@ namespace WorklabsMx.iOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (lblEmpresa != null) {
+                lblEmpresa.Dispose ();
+                lblEmpresa = null;
+            }
+
+            if (lblPais != null) {
+                lblPais.Dispose ();
+                lblPais = null;
+            }
+
             if (vwEmpresa != null) {
                 vwEmpresa.Dispose ();
                 vwEmpresa = null;

@@ -17,7 +17,6 @@
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
-		<integer>2</integer>
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
@@ -47,13 +46,13 @@
 	<key>NSCalendarsUsageDescription</key>
 	<string>Se necesitan permisos para acceder a el calendario</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.8</string>
+	<string>1.2.0</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Se necesitan permisos para acceder a el microfono</string>
 	<key>CFBundleVersion</key>
-	<string>1.1.8</string>
+	<string>1.2.0</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>

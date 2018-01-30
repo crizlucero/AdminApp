@@ -10,7 +10,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 
         bool isShowInformation = false;
         bool existeConeccion = true;
-         List<PostModel> allPosts = new List<PostModel>();          List<UIImage> allProfileImages = new List<UIImage>();         List<UIImage> allPostImages = new List<UIImage>();         List<string> miembro;          List<string> ListUser = new List<string>();          PostModel CurrentPost = new PostModel();         UIImage currentProfileImage = new UIImage();         UIImage currentPostImage = new UIImage();         UIImageView ImagenPerfil;         int ContadorComentar;         int ContadorPerfil; 
+         List<PostModel> allPosts = new List<PostModel>();          List<UIImage> allProfileImages = new List<UIImage>();         List<UIImage> allPostImages = new List<UIImage>();         List<string> miembro;          List<string> ListUser = new List<string>();          PostModel CurrentPost = new PostModel();         UIImage currentProfileImage = new UIImage();         UIImage currentPostImage = new UIImage();         UIImageView ImagenPerfil; 
         public EscritorioController(IntPtr handle) : base(handle)         {
         }
 
@@ -20,7 +20,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 		}
 
         public override void ViewWillAppear(bool animated)
-        {             base.ViewWillAppear(animated);             ContadorComentar = 0;             ContadorPerfil = 0;
+        {             base.ViewWillAppear(animated);
             this.CargarInfo();             this.TableView.ReloadData();             BTProgressHUD.Dismiss();
         }          public override void ViewDidAppear(bool animated)
         {

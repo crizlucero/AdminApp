@@ -2915,8 +2915,8 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTz-7s-Sb5">
-                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTz-7s-Sb5">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="285"/>
                                             <connections>
                                                 <action selector="btnSucursal_Touch:" destination="K4T-oV-kCH" eventType="touchUpInside" id="219637"/>
                                             </connections>
@@ -5240,19 +5240,19 @@
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zW-KK-NAX">
                                                     <rect key="frame" x="0.0" y="37" width="375" height="500"/>
                                                     <connections>
-                                                        <segue destination="aRM-LH-MbS" kind="embed" id="G7N-b2-H7N"/>
+                                                        <segue destination="aRM-LH-MbS" kind="embed" identifier="SobreMi" id="G7N-b2-H7N"/>
                                                     </connections>
                                                 </containerView>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rvr-RM-VqQ">
                                                     <rect key="frame" x="0.0" y="37" width="375" height="500"/>
                                                     <connections>
-                                                        <segue destination="KIH-Zf-PNX" kind="embed" id="ONj-XP-6cN"/>
+                                                        <segue destination="KIH-Zf-PNX" kind="embed" identifier="Social" id="ONj-XP-6cN"/>
                                                     </connections>
                                                 </containerView>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4u-pP-Whb">
                                                     <rect key="frame" x="0.0" y="37" width="375" height="500"/>
                                                     <connections>
-                                                        <segue destination="HKb-CV-LEX" kind="embed" id="hD3-yS-IeK"/>
+                                                        <segue destination="HKb-CV-LEX" kind="embed" identifier="Trabajo" id="hD3-yS-IeK"/>
                                                     </connections>
                                                 </containerView>
                                             </subviews>
@@ -10719,6 +10719,8 @@ COL. LADRON DE GUEVARA</string>
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="lblEmpresa" destination="sTm-Jh-opC" id="name-outlet-sTm-Jh-opC"/>
+                        <outlet property="lblPais" destination="wxJ-ly-hjh" id="name-outlet-wxJ-ly-hjh"/>
                         <outlet property="vwEmpresa" destination="uIZ-eI-S39" id="name-outlet-uIZ-eI-S39"/>
                         <outlet property="vwEmpresasAnteriores" destination="eNy-SY-5ao" id="name-outlet-eNy-SY-5ao"/>
                     </connections>
@@ -10740,7 +10742,7 @@ COL. LADRON DE GUEVARA</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USc-jZ-ts3">
-                                <rect key="frame" x="13" y="20" width="349" height="150"/>
+                                <rect key="frame" x="8" y="20" width="359" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="0.20392156862745098" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
@@ -10748,14 +10750,14 @@ COL. LADRON DE GUEVARA</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d6z-iT-ix3">
-                                <rect key="frame" x="13" y="178" width="349" height="1"/>
+                                <rect key="frame" x="8" y="178" width="359" height="1"/>
                                 <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="uM4-lC-qKZ"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habilidades:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAB-cP-VLe">
-                                <rect key="frame" x="13" y="187" width="349" height="21"/>
+                                <rect key="frame" x="8" y="187" width="359" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="SSt-ve-8pL"/>
                                 </constraints>
@@ -10764,14 +10766,14 @@ COL. LADRON DE GUEVARA</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZe-xs-BEq">
-                                <rect key="frame" x="13" y="341" width="349" height="1"/>
+                                <rect key="frame" x="13" y="341" width="354" height="1"/>
                                 <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="oyR-mx-X9b"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intereses:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fH5-HT-9yp">
-                                <rect key="frame" x="13" y="356" width="349" height="21"/>
+                                <rect key="frame" x="13" y="356" width="354" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="P5e-tZ-F2n"/>
                                 </constraints>
@@ -10780,10 +10782,11 @@ COL. LADRON DE GUEVARA</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emprendedor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7u0-NC-FIQ">
-                                <rect key="frame" x="13" y="216" width="63.5" height="21"/>
+                                <rect key="frame" x="13" y="216" width="150" height="21"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Qhn-Lg-jZU"/>
+                                    <constraint firstAttribute="height" constant="21" id="iKr-QX-BFt"/>
+                                    <constraint firstAttribute="width" constant="150" id="lK1-lo-5wt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -10796,10 +10799,10 @@ COL. LADRON DE GUEVARA</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emprendedor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Adt-WZ-iNZ">
-                                <rect key="frame" x="13" y="414" width="63.5" height="21"/>
+                                <rect key="frame" x="13" y="414" width="150" height="21"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="MPU-RA-12j"/>
+                                    <constraint firstAttribute="height" constant="21" id="oC5-G8-Vby"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -10812,10 +10815,10 @@ COL. LADRON DE GUEVARA</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emprendedor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3h9-Xs-KcR">
-                                <rect key="frame" x="13" y="443" width="63.5" height="21"/>
+                                <rect key="frame" x="13" y="443" width="150" height="21"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="RtV-Qj-Uut"/>
+                                    <constraint firstAttribute="height" constant="21" id="hu6-iQ-Vag"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -10828,10 +10831,10 @@ COL. LADRON DE GUEVARA</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emprendedor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cz9-WS-XYA">
-                                <rect key="frame" x="13" y="245" width="63.5" height="21"/>
+                                <rect key="frame" x="13" y="245" width="150" height="21"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Q2w-ru-fNX"/>
+                                    <constraint firstAttribute="height" constant="21" id="FuR-bg-qa0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -10844,10 +10847,10 @@ COL. LADRON DE GUEVARA</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emprendedor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5P6-hF-j3M">
-                                <rect key="frame" x="97.5" y="245" width="257.5" height="21"/>
+                                <rect key="frame" x="217" y="245" width="150" height="21"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="V4J-JS-goo"/>
+                                    <constraint firstAttribute="height" constant="21" id="qG1-o9-ASp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -10860,10 +10863,10 @@ COL. LADRON DE GUEVARA</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emprendedor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFN-4R-OS6">
-                                <rect key="frame" x="13" y="274" width="63.5" height="21"/>
+                                <rect key="frame" x="13" y="274" width="150" height="21"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="nkV-rh-X01"/>
+                                    <constraint firstAttribute="height" constant="21" id="aC8-je-bWw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -10876,10 +10879,10 @@ COL. LADRON DE GUEVARA</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emprendedor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq9-kd-Nms">
-                                <rect key="frame" x="13" y="385" width="63.5" height="21"/>
+                                <rect key="frame" x="13" y="385" width="150" height="21"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="zSU-b8-u9h"/>
+                                    <constraint firstAttribute="height" constant="21" id="Gvt-39-550"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -10892,10 +10895,10 @@ COL. LADRON DE GUEVARA</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emprendedor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3V-bo-DvD">
-                                <rect key="frame" x="97.5" y="385" width="257.5" height="21"/>
+                                <rect key="frame" x="217" y="385" width="150" height="21"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="h9I-e9-gf4"/>
+                                    <constraint firstAttribute="height" constant="21" id="8cN-YZ-8Po"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -10908,10 +10911,10 @@ COL. LADRON DE GUEVARA</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emprendedor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meB-aB-htm">
-                                <rect key="frame" x="97.5" y="414" width="257.5" height="21"/>
+                                <rect key="frame" x="217" y="414" width="150" height="21"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="8hz-eI-Ydv"/>
+                                    <constraint firstAttribute="height" constant="21" id="bS9-2O-BUQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -10924,10 +10927,10 @@ COL. LADRON DE GUEVARA</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emprendedor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vsj-IB-6gL">
-                                <rect key="frame" x="97.5" y="216" width="257.5" height="21"/>
+                                <rect key="frame" x="217" y="216" width="150" height="21"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="cGO-kw-6MM"/>
+                                    <constraint firstAttribute="height" constant="21" id="bgU-fa-ezz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -10939,75 +10942,107 @@ COL. LADRON DE GUEVARA</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMz-Z3-mVM">
+                                <rect key="frame" x="180" y="216" width="20" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Nnl-TG-JpL"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vvI-VD-Hx8">
+                                <rect key="frame" x="180" y="245" width="20" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="hPH-Lr-4EJ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGm-fa-qqj">
+                                <rect key="frame" x="180" y="385" width="20" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Lcn-Rt-lTK"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WP2-Us-Lqz">
+                                <rect key="frame" x="180" y="414" width="20" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="pec-Qh-gEF"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NAB-cP-VLe" firstAttribute="trailing" secondItem="EZe-xs-BEq" secondAttribute="trailing" id="0u6-ul-rvV"/>
-                            <constraint firstItem="cz9-WS-XYA" firstAttribute="leading" secondItem="LFN-4R-OS6" secondAttribute="leading" id="5X5-2B-1Mw"/>
-                            <constraint firstItem="7u0-NC-FIQ" firstAttribute="leading" secondItem="iKo-hT-dwN" secondAttribute="leading" constant="13" id="6Ds-FE-tIO"/>
-                            <constraint firstItem="LFN-4R-OS6" firstAttribute="leading" secondItem="iKo-hT-dwN" secondAttribute="leading" constant="13" id="6pf-WJ-C61"/>
-                            <constraint firstItem="NAB-cP-VLe" firstAttribute="leading" secondItem="7u0-NC-FIQ" secondAttribute="leading" id="7C3-eo-kdC"/>
-                            <constraint firstItem="l3V-bo-DvD" firstAttribute="trailing" secondItem="meB-aB-htm" secondAttribute="trailing" id="7Mb-R2-OXX"/>
-                            <constraint firstItem="Vsj-IB-6gL" firstAttribute="leading" secondItem="5P6-hF-j3M" secondAttribute="leading" id="8td-2w-oce"/>
+                            <constraint firstItem="Adt-WZ-iNZ" firstAttribute="baseline" secondItem="meB-aB-htm" secondAttribute="baseline" id="1ZV-8i-Frm"/>
+                            <constraint firstItem="Adt-WZ-iNZ" firstAttribute="firstBaseline" secondItem="meB-aB-htm" secondAttribute="firstBaseline" id="1uu-da-Fza"/>
+                            <constraint firstItem="Adt-WZ-iNZ" firstAttribute="bottom" secondItem="WP2-Us-Lqz" secondAttribute="bottom" id="2FJ-H0-Va8"/>
+                            <constraint firstItem="WP2-Us-Lqz" firstAttribute="top" secondItem="iGm-fa-qqj" secondAttribute="bottom" constant="8" symbolic="YES" id="6HA-It-dHH"/>
+                            <constraint firstItem="Pq9-kd-Nms" firstAttribute="trailing" secondItem="Adt-WZ-iNZ" secondAttribute="trailing" id="7kG-Gz-aq2"/>
+                            <constraint firstItem="iGm-fa-qqj" firstAttribute="trailing" secondItem="WP2-Us-Lqz" secondAttribute="trailing" id="8fs-iy-5bN"/>
+                            <constraint firstItem="Adt-WZ-iNZ" firstAttribute="top" secondItem="Pq9-kd-Nms" secondAttribute="bottom" constant="8" symbolic="YES" id="9WA-wM-2Lk"/>
                             <constraint firstItem="EZe-xs-BEq" firstAttribute="trailing" secondItem="fH5-HT-9yp" secondAttribute="trailing" id="9dg-kJ-rUh"/>
-                            <constraint firstAttribute="trailing" secondItem="5P6-hF-j3M" secondAttribute="trailing" constant="20" id="ANT-O9-Kpt"/>
+                            <constraint firstItem="7u0-NC-FIQ" firstAttribute="leading" secondItem="cz9-WS-XYA" secondAttribute="leading" id="B46-D2-S3K"/>
+                            <constraint firstItem="5P6-hF-j3M" firstAttribute="top" secondItem="Vsj-IB-6gL" secondAttribute="bottom" constant="8" id="BTg-Gg-fBn"/>
                             <constraint firstItem="USc-jZ-ts3" firstAttribute="centerX" secondItem="iKo-hT-dwN" secondAttribute="centerX" id="BWG-T0-SYD"/>
-                            <constraint firstItem="Vsj-IB-6gL" firstAttribute="trailing" secondItem="5P6-hF-j3M" secondAttribute="trailing" id="Bd6-WK-qkk"/>
-                            <constraint firstItem="7u0-NC-FIQ" firstAttribute="top" secondItem="NAB-cP-VLe" secondAttribute="bottom" constant="8" symbolic="YES" id="Cos-xh-oZP"/>
-                            <constraint firstItem="LFN-4R-OS6" firstAttribute="leading" secondItem="EZe-xs-BEq" secondAttribute="leading" id="DRq-3U-Fgm"/>
-                            <constraint firstItem="3h9-Xs-KcR" firstAttribute="leading" secondItem="iKo-hT-dwN" secondAttribute="leading" constant="13" id="DxA-re-fsh"/>
+                            <constraint firstItem="l3V-bo-DvD" firstAttribute="trailing" secondItem="meB-aB-htm" secondAttribute="trailing" id="Bpw-X9-Su1"/>
+                            <constraint firstItem="lMz-Z3-mVM" firstAttribute="leading" secondItem="7u0-NC-FIQ" secondAttribute="trailing" constant="17" id="E8c-1H-3dI"/>
+                            <constraint firstItem="Adt-WZ-iNZ" firstAttribute="leading" secondItem="3h9-Xs-KcR" secondAttribute="leading" id="F5k-gn-czi"/>
                             <constraint firstItem="USc-jZ-ts3" firstAttribute="leading" secondItem="d6z-iT-ix3" secondAttribute="leading" id="FWX-fv-Pyh"/>
-                            <constraint firstItem="Vsj-IB-6gL" firstAttribute="leading" secondItem="7u0-NC-FIQ" secondAttribute="trailing" constant="21" id="GwC-aC-nbM"/>
-                            <constraint firstItem="374790" firstAttribute="top" secondItem="meB-aB-htm" secondAttribute="bottom" constant="65" id="Hb7-Xq-QCG"/>
+                            <constraint firstItem="meB-aB-htm" firstAttribute="top" secondItem="l3V-bo-DvD" secondAttribute="bottom" constant="8" id="FaV-LT-WAq"/>
                             <constraint firstItem="d6z-iT-ix3" firstAttribute="trailing" secondItem="NAB-cP-VLe" secondAttribute="trailing" id="HdT-K8-E7A"/>
-                            <constraint firstItem="l3V-bo-DvD" firstAttribute="top" secondItem="fH5-HT-9yp" secondAttribute="bottom" constant="8" id="Hkb-EA-oA8"/>
-                            <constraint firstItem="5P6-hF-j3M" firstAttribute="top" secondItem="Vsj-IB-6gL" secondAttribute="bottom" constant="8" id="Huo-xb-PC2"/>
-                            <constraint firstItem="7u0-NC-FIQ" firstAttribute="leading" secondItem="cz9-WS-XYA" secondAttribute="leading" id="Jxu-lK-66c"/>
-                            <constraint firstItem="meB-aB-htm" firstAttribute="top" secondItem="l3V-bo-DvD" secondAttribute="bottom" constant="8" id="Lx3-3P-cz1"/>
-                            <constraint firstItem="Vsj-IB-6gL" firstAttribute="trailing" secondItem="iKo-hT-dwN" secondAttribute="trailingMargin" id="N1Y-HK-zgP"/>
-                            <constraint firstAttribute="trailing" secondItem="meB-aB-htm" secondAttribute="trailing" constant="20" id="N5O-UI-7oc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5P6-hF-j3M" secondAttribute="trailing" constant="-8" id="L0P-Ml-UiQ"/>
+                            <constraint firstItem="cz9-WS-XYA" firstAttribute="top" secondItem="7u0-NC-FIQ" secondAttribute="bottom" constant="8" symbolic="YES" id="MuT-0g-r0n"/>
                             <constraint firstItem="NAB-cP-VLe" firstAttribute="top" secondItem="iKo-hT-dwN" secondAttribute="top" constant="187" id="Oe8-13-Rs0"/>
-                            <constraint firstItem="Vsj-IB-6gL" firstAttribute="top" secondItem="NAB-cP-VLe" secondAttribute="bottom" constant="8" id="OkI-vu-J9X"/>
-                            <constraint firstItem="EZe-xs-BEq" firstAttribute="top" secondItem="5P6-hF-j3M" secondAttribute="bottom" constant="75" id="PNg-XI-A6c"/>
+                            <constraint firstItem="vvI-VD-Hx8" firstAttribute="top" secondItem="lMz-Z3-mVM" secondAttribute="bottom" constant="8" id="Pqo-Xw-aap"/>
                             <constraint firstItem="NAB-cP-VLe" firstAttribute="top" secondItem="d6z-iT-ix3" secondAttribute="bottom" constant="8" symbolic="YES" id="PsY-5w-W4f"/>
-                            <constraint firstAttribute="trailing" secondItem="l3V-bo-DvD" secondAttribute="trailing" constant="20" id="SXn-Kt-4u8"/>
-                            <constraint firstItem="Adt-WZ-iNZ" firstAttribute="baseline" secondItem="meB-aB-htm" secondAttribute="baseline" id="TT4-7x-deh"/>
-                            <constraint firstItem="cz9-WS-XYA" firstAttribute="trailing" secondItem="LFN-4R-OS6" secondAttribute="trailing" id="VGY-VD-ufj"/>
-                            <constraint firstItem="Pq9-kd-Nms" firstAttribute="leading" secondItem="Adt-WZ-iNZ" secondAttribute="leading" id="VJ0-h4-vjq"/>
-                            <constraint firstItem="Adt-WZ-iNZ" firstAttribute="firstBaseline" secondItem="meB-aB-htm" secondAttribute="firstBaseline" id="W0b-Lu-bFr"/>
-                            <constraint firstItem="Pq9-kd-Nms" firstAttribute="baseline" secondItem="l3V-bo-DvD" secondAttribute="baseline" id="Wu2-DT-8BP"/>
-                            <constraint firstItem="5P6-hF-j3M" firstAttribute="leading" secondItem="l3V-bo-DvD" secondAttribute="leading" id="Xwo-Uf-hYN"/>
-                            <constraint firstItem="Adt-WZ-iNZ" firstAttribute="leading" secondItem="3h9-Xs-KcR" secondAttribute="leading" id="ZJX-zL-5iw"/>
-                            <constraint firstItem="cz9-WS-XYA" firstAttribute="leading" secondItem="iKo-hT-dwN" secondAttribute="leading" constant="13" id="aDF-rL-MGB"/>
-                            <constraint firstItem="Adt-WZ-iNZ" firstAttribute="leading" secondItem="iKo-hT-dwN" secondAttribute="leading" constant="13" id="aJB-0X-2Tn"/>
-                            <constraint firstItem="LFN-4R-OS6" firstAttribute="top" secondItem="cz9-WS-XYA" secondAttribute="bottom" constant="8" symbolic="YES" id="adF-Yk-NbK"/>
-                            <constraint firstItem="EZe-xs-BEq" firstAttribute="top" secondItem="LFN-4R-OS6" secondAttribute="bottom" constant="46" id="bfR-QK-s9k"/>
-                            <constraint firstItem="Adt-WZ-iNZ" firstAttribute="top" secondItem="Pq9-kd-Nms" secondAttribute="bottom" constant="8" symbolic="YES" id="bgh-du-imu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vsj-IB-6gL" secondAttribute="trailing" constant="-8" id="QN0-N6-Tvu"/>
+                            <constraint firstItem="l3V-bo-DvD" firstAttribute="top" secondItem="fH5-HT-9yp" secondAttribute="bottom" constant="8" id="Qwg-oW-V7a"/>
+                            <constraint firstItem="cz9-WS-XYA" firstAttribute="leading" secondItem="LFN-4R-OS6" secondAttribute="leading" id="RP2-bt-gDf"/>
+                            <constraint firstItem="iGm-fa-qqj" firstAttribute="leading" secondItem="WP2-Us-Lqz" secondAttribute="leading" id="SAf-RG-dBt"/>
+                            <constraint firstItem="7u0-NC-FIQ" firstAttribute="trailing" secondItem="cz9-WS-XYA" secondAttribute="trailing" id="V2K-re-pbc"/>
+                            <constraint firstItem="EZe-xs-BEq" firstAttribute="top" secondItem="LFN-4R-OS6" secondAttribute="bottom" constant="46" id="VdR-mW-YHP"/>
+                            <constraint firstItem="vvI-VD-Hx8" firstAttribute="bottom" secondItem="5P6-hF-j3M" secondAttribute="bottom" id="WCy-Mf-v8t"/>
+                            <constraint firstItem="7u0-NC-FIQ" firstAttribute="firstBaseline" secondItem="Vsj-IB-6gL" secondAttribute="firstBaseline" id="WI1-ld-WtD"/>
+                            <constraint firstItem="LFN-4R-OS6" firstAttribute="top" secondItem="cz9-WS-XYA" secondAttribute="bottom" constant="8" symbolic="YES" id="We6-fz-Wfm"/>
+                            <constraint firstItem="lMz-Z3-mVM" firstAttribute="top" secondItem="NAB-cP-VLe" secondAttribute="bottom" constant="8" id="X3m-b7-tEd"/>
+                            <constraint firstItem="7u0-NC-FIQ" firstAttribute="baseline" secondItem="Vsj-IB-6gL" secondAttribute="baseline" id="a3o-XE-LGe"/>
+                            <constraint firstItem="Vsj-IB-6gL" firstAttribute="top" secondItem="NAB-cP-VLe" secondAttribute="bottom" constant="8" id="aFf-BR-xeL"/>
+                            <constraint firstItem="cz9-WS-XYA" firstAttribute="firstBaseline" secondItem="5P6-hF-j3M" secondAttribute="firstBaseline" id="aHv-lw-bhD"/>
+                            <constraint firstItem="l3V-bo-DvD" firstAttribute="leading" secondItem="meB-aB-htm" secondAttribute="leading" id="aM3-lt-ICy"/>
+                            <constraint firstItem="l3V-bo-DvD" firstAttribute="trailing" secondItem="fH5-HT-9yp" secondAttribute="trailing" id="aQf-iz-GQk"/>
+                            <constraint firstItem="Pq9-kd-Nms" firstAttribute="top" secondItem="fH5-HT-9yp" secondAttribute="bottom" constant="8" symbolic="YES" id="ar3-vm-aFi"/>
+                            <constraint firstItem="vvI-VD-Hx8" firstAttribute="trailing" secondItem="iGm-fa-qqj" secondAttribute="trailing" id="b9f-JX-UAy"/>
+                            <constraint firstItem="cz9-WS-XYA" firstAttribute="trailing" secondItem="LFN-4R-OS6" secondAttribute="trailing" id="bYi-QS-ZPc"/>
                             <constraint firstItem="EZe-xs-BEq" firstAttribute="leading" secondItem="fH5-HT-9yp" secondAttribute="leading" id="c4O-le-865"/>
                             <constraint firstItem="USc-jZ-ts3" firstAttribute="top" secondItem="374789" secondAttribute="bottom" id="csS-A1-gJ7"/>
-                            <constraint firstItem="Pq9-kd-Nms" firstAttribute="trailing" secondItem="Adt-WZ-iNZ" secondAttribute="trailing" id="cuo-ga-xna"/>
-                            <constraint firstItem="Pq9-kd-Nms" firstAttribute="leading" secondItem="iKo-hT-dwN" secondAttribute="leading" constant="13" id="fs1-KW-rxI"/>
+                            <constraint firstItem="Pq9-kd-Nms" firstAttribute="top" secondItem="iGm-fa-qqj" secondAttribute="top" id="dEa-dO-XVx"/>
+                            <constraint firstItem="Pq9-kd-Nms" firstAttribute="leading" secondItem="fH5-HT-9yp" secondAttribute="leading" id="deU-kY-cDw"/>
+                            <constraint firstItem="Adt-WZ-iNZ" firstAttribute="top" secondItem="WP2-Us-Lqz" secondAttribute="top" id="gOA-z0-3Vd"/>
                             <constraint firstItem="d6z-iT-ix3" firstAttribute="leading" secondItem="NAB-cP-VLe" secondAttribute="leading" id="h9a-Gc-geU"/>
-                            <constraint firstItem="cz9-WS-XYA" firstAttribute="top" secondItem="7u0-NC-FIQ" secondAttribute="bottom" constant="8" symbolic="YES" id="hrD-09-Knb"/>
-                            <constraint firstItem="5P6-hF-j3M" firstAttribute="trailing" secondItem="l3V-bo-DvD" secondAttribute="trailing" id="ich-oZ-Np0"/>
-                            <constraint firstItem="USc-jZ-ts3" firstAttribute="leading" secondItem="iKo-hT-dwN" secondAttribute="leadingMargin" constant="-7" id="jAt-bC-FxZ"/>
-                            <constraint firstItem="7u0-NC-FIQ" firstAttribute="firstBaseline" secondItem="Vsj-IB-6gL" secondAttribute="firstBaseline" id="jBw-D7-9pi"/>
-                            <constraint firstAttribute="trailing" secondItem="Vsj-IB-6gL" secondAttribute="trailing" constant="20" id="lcd-gy-kfg"/>
+                            <constraint firstItem="Pq9-kd-Nms" firstAttribute="leading" secondItem="Adt-WZ-iNZ" secondAttribute="leading" id="hB8-7l-42H"/>
+                            <constraint firstItem="USc-jZ-ts3" firstAttribute="leading" secondItem="iKo-hT-dwN" secondAttribute="leadingMargin" constant="-8" id="jAt-bC-FxZ"/>
+                            <constraint firstItem="vvI-VD-Hx8" firstAttribute="top" secondItem="5P6-hF-j3M" secondAttribute="top" id="jeI-U6-wUg"/>
+                            <constraint firstItem="vvI-VD-Hx8" firstAttribute="centerX" secondItem="EZe-xs-BEq" secondAttribute="centerX" id="kta-a5-8bS"/>
                             <constraint firstItem="d6z-iT-ix3" firstAttribute="top" secondItem="USc-jZ-ts3" secondAttribute="bottom" constant="8" id="lva-PO-VqL"/>
-                            <constraint firstItem="374790" firstAttribute="top" secondItem="3h9-Xs-KcR" secondAttribute="bottom" constant="36" id="lyB-8R-gBU"/>
+                            <constraint firstItem="LFN-4R-OS6" firstAttribute="leading" secondItem="EZe-xs-BEq" secondAttribute="leading" id="mPU-Zm-Sjt"/>
+                            <constraint firstItem="5P6-hF-j3M" firstAttribute="leading" secondItem="vvI-VD-Hx8" secondAttribute="trailing" constant="17" id="mjc-66-GRj"/>
+                            <constraint firstItem="lMz-Z3-mVM" firstAttribute="centerX" secondItem="NAB-cP-VLe" secondAttribute="centerX" constant="2.5" id="mqw-Za-seI"/>
+                            <constraint firstItem="Adt-WZ-iNZ" firstAttribute="trailing" secondItem="3h9-Xs-KcR" secondAttribute="trailing" id="n7t-zQ-Dqi"/>
+                            <constraint firstItem="Pq9-kd-Nms" firstAttribute="firstBaseline" secondItem="l3V-bo-DvD" secondAttribute="firstBaseline" id="nZr-u5-1Kc"/>
                             <constraint firstItem="fH5-HT-9yp" firstAttribute="top" secondItem="EZe-xs-BEq" secondAttribute="bottom" constant="14" id="nlo-db-tIk"/>
-                            <constraint firstItem="LFN-4R-OS6" firstAttribute="trailing" secondItem="Pq9-kd-Nms" secondAttribute="trailing" id="onh-V3-mOZ"/>
-                            <constraint firstItem="l3V-bo-DvD" firstAttribute="leading" secondItem="meB-aB-htm" secondAttribute="leading" id="qqF-k5-AAl"/>
-                            <constraint firstItem="Pq9-kd-Nms" firstAttribute="top" secondItem="fH5-HT-9yp" secondAttribute="bottom" constant="8" symbolic="YES" id="szq-am-hfE"/>
-                            <constraint firstItem="Adt-WZ-iNZ" firstAttribute="trailing" secondItem="3h9-Xs-KcR" secondAttribute="trailing" id="tdT-24-BWq"/>
-                            <constraint firstItem="Pq9-kd-Nms" firstAttribute="firstBaseline" secondItem="l3V-bo-DvD" secondAttribute="firstBaseline" id="uLt-WH-RF7"/>
-                            <constraint firstItem="cz9-WS-XYA" firstAttribute="baseline" secondItem="5P6-hF-j3M" secondAttribute="baseline" id="uM2-1d-eIc"/>
-                            <constraint firstItem="7u0-NC-FIQ" firstAttribute="baseline" secondItem="Vsj-IB-6gL" secondAttribute="baseline" id="ueB-Jd-IyW"/>
+                            <constraint firstItem="3h9-Xs-KcR" firstAttribute="top" secondItem="Adt-WZ-iNZ" secondAttribute="bottom" constant="8" symbolic="YES" id="oIQ-ok-IJp"/>
+                            <constraint firstItem="374790" firstAttribute="top" secondItem="3h9-Xs-KcR" secondAttribute="bottom" constant="36" id="pEX-LU-aGr"/>
+                            <constraint firstItem="5P6-hF-j3M" firstAttribute="leading" secondItem="l3V-bo-DvD" secondAttribute="leading" id="rlb-DS-cSt"/>
+                            <constraint firstItem="LFN-4R-OS6" firstAttribute="trailing" secondItem="Pq9-kd-Nms" secondAttribute="trailing" id="u6A-TR-MXr"/>
+                            <constraint firstItem="7u0-NC-FIQ" firstAttribute="top" secondItem="NAB-cP-VLe" secondAttribute="bottom" constant="8" symbolic="YES" id="uIQ-Hk-z20"/>
                             <constraint firstItem="USc-jZ-ts3" firstAttribute="trailing" secondItem="d6z-iT-ix3" secondAttribute="trailing" id="uuD-om-dTa"/>
-                            <constraint firstItem="cz9-WS-XYA" firstAttribute="firstBaseline" secondItem="5P6-hF-j3M" secondAttribute="firstBaseline" id="vln-Qe-Vrj"/>
-                            <constraint firstItem="3h9-Xs-KcR" firstAttribute="top" secondItem="Adt-WZ-iNZ" secondAttribute="bottom" constant="8" symbolic="YES" id="ww7-Uq-ZK8"/>
-                            <constraint firstItem="fH5-HT-9yp" firstAttribute="leading" secondItem="Pq9-kd-Nms" secondAttribute="leading" id="xYw-jB-4hV"/>
-                            <constraint firstItem="7u0-NC-FIQ" firstAttribute="trailing" secondItem="cz9-WS-XYA" secondAttribute="trailing" id="zK6-YO-rf8"/>
+                            <constraint firstItem="Pq9-kd-Nms" firstAttribute="baseline" secondItem="l3V-bo-DvD" secondAttribute="baseline" id="wjs-J7-UGt"/>
+                            <constraint firstItem="vvI-VD-Hx8" firstAttribute="leading" secondItem="iGm-fa-qqj" secondAttribute="leading" id="x2n-SJ-qAv"/>
+                            <constraint firstItem="Vsj-IB-6gL" firstAttribute="leading" secondItem="5P6-hF-j3M" secondAttribute="leading" id="x80-2J-r6R"/>
+                            <constraint firstItem="Vsj-IB-6gL" firstAttribute="leading" secondItem="lMz-Z3-mVM" secondAttribute="trailing" constant="17" id="xD7-yD-DIr"/>
+                            <constraint firstItem="vvI-VD-Hx8" firstAttribute="leading" secondItem="cz9-WS-XYA" secondAttribute="trailing" constant="17" id="yAz-ii-B1v"/>
+                            <constraint firstItem="cz9-WS-XYA" firstAttribute="baseline" secondItem="5P6-hF-j3M" secondAttribute="baseline" id="zBQ-Js-r0a"/>
                         </constraints>
                     </view>
                     <connections>
@@ -11026,7 +11061,7 @@ COL. LADRON DE GUEVARA</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ea-62-Dp5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2595.652" y="-4515.4889999999996"/>
+            <point key="canvasLocation" x="-2596" y="-4515.7420000000002"/>
         </scene>
         <!--Perfil Social Table View Controller-->
         <scene sceneID="uZU-BK-qLD">
@@ -11509,7 +11544,7 @@ COL. LADRON DE GUEVARA</string>
         <image name="worklabsLogo" width="983" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="teg-hU-Dz2"/>
+        <segue reference="Tlx-3I-mcH"/>
         <segue reference="mo9-Of-trj"/>
         <segue reference="ByN-Yg-Spq"/>
         <segue reference="wV9-2A-ApY"/>

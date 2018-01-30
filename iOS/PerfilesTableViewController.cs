@@ -5,6 +5,7 @@ using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Models;
 using System.Collections.Generic;
 using Foundation;
+using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
@@ -23,6 +24,14 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            this.cvwMi.Hidden = false;
+            this.cvwSocial.Hidden = true;
+            this.cvwTrabajo.Hidden = true;
+        }
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
             if (InternetConectionHelper.VerificarConexion())
             {
                 this.Miembro = new MiembrosController().GetMemberData((ListUser[0] != "") ? ListUser[0] : ListUser[1], ListUser[2]);
@@ -34,14 +43,16 @@ namespace WorklabsMx.iOS
                 {
                     this.btnSeguir.SetTitle("+ Seguir", UIControlState.Normal);
                 }
-                else 
+                else
                 {
-                    this.btnSeguir.SetTitle("- Dejar de seguir", UIControlState.Normal); 
+                    this.btnSeguir.SetTitle("- Dejar de seguir", UIControlState.Normal);
                 }
             }
-            this.cvwMi.Hidden = false;
-            this.cvwSocial.Hidden = true;
-            this.cvwTrabajo.Hidden = true;
+        }
+
+        public override void ViewDidAppear(bool animated)
+        {
+            base.ViewDidAppear(animated);
         }
 
         partial void btnBackGroundImage_Touch(UIButton sender)
@@ -168,6 +179,21 @@ namespace WorklabsMx.iOS
             this.FromMi = false;
             this.FromSocial = false;
             this.FromTrabajo = true;
+        }
+
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            this.Miembro = new MiembrosController().GetMemberData((ListUser[0] != "") ? ListUser[0] : ListUser[1], ListUser[2]);
+            if (segue.Identifier == "SobreMi")
+            {
+                var InfoPeril = (MiInfoViewController)segue.DestinationViewController;
+                InfoPeril.Miembro = this.Miembro;
+            }
+            else if (segue.Identifier == "Trabajo")
+            {
+                var InfoPeril = (InfoEmpresaTableViewController)segue.DestinationViewController;
+                InfoPeril.Miembro = this.Miembro;
+            }
         }
     }
 }

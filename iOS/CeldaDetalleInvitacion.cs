@@ -18,6 +18,7 @@ namespace WorklabsMx.iOS
         void ConfirmarInvitaciones(List<MiembroModel> invitadosLocal);
         void FechaSeleccionada();
         void SucursalSeleccionada();
+        void Asunto(string Asunto);
     }
 
     public partial class CeldaDetalleInvitacion : UITableViewCell
@@ -120,7 +121,9 @@ namespace WorklabsMx.iOS
             }
             else
             {
+                EventosDetalleInvitacionDel.Asunto(txtAsunto.Text);
                 EventosDetalleInvitacionDel.ConfirmarInvitaciones(invitadosLocal);
+
             }
         }
 

@@ -7,6 +7,8 @@ using WorklabsMx.Models;
 using WorklabsMx.iOS.Helpers;
 using CoreGraphics;
 using System.Threading.Tasks;
+using EventKit;
+using CoreLocation;
 
 namespace WorklabsMx.iOS
 {
@@ -15,9 +17,10 @@ namespace WorklabsMx.iOS
     {
 
         public List<MiembroModel> Invitados = new List<MiembroModel>();
-        public string DomicilioInvitacion = "";
+        public List<MiembroModel> InvitadosCalendar = new List<MiembroModel>();
+        public SucursalModel SucursalModel;
         string strAcceso = string.Empty;
-        public string FechaReservacion;
+        public string FechaReservacion, Asunto;
 
         public DetalleInvitacionViewController (IntPtr handle) : base (handle)
         {
@@ -26,6 +29,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            this.GenerarEvento();
             this.LlenarInfo();
         }
 
@@ -59,7 +63,7 @@ namespace WorklabsMx.iOS
             var PrimerInvitado = Invitados[0];
 
             this.lblFecha.Text = this.FechaReservacion;
-            this.lblDomicilio.Text = DomicilioInvitacion;
+            this.lblDomicilio.Text = SucursalModel.Sucursal_Descripcion + " " + SucursalModel.Sucursal_Domicilio;
             this.lblNombreInvitado.Text = PrimerInvitado.Miembro_Nombre + " " + PrimerInvitado.Miembro_Apellidos;
             string newAcceso = new MiembrosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
             //LoadingView loadPop = new LoadingView(UIScreen.MainScreen.Bounds);
@@ -111,6 +115,81 @@ namespace WorklabsMx.iOS
 
         partial void btnAdelante_Touch(UIButton sender)
         {
+        }
+
+        private void GenerarEvento()
+        {
+            RequestAccess(EKEntityType.Event, () =>
+            {
+                
+                CLLocation location = new CLLocation();
+                if (SucursalModel.Sucursal_Id == "1")
+                {
+                    location = new CLLocation(20.6766, -103.3812);
+                }
+                else
+                {
+                    location = new CLLocation(20.6766, -103.3812);
+                }
+                var structuredLocation = new EKStructuredLocation();
+                structuredLocation.Title = SucursalModel.Sucursal_Domicilio;
+                structuredLocation.GeoLocation = location;
+
+                NSDateFormatter dateFormat = new NSDateFormatter();
+                dateFormat.DateFormat = "E, d MMM yyyy HH:mm";
+                NSDate newFormatDate = dateFormat.Parse(this.FechaReservacion);
+                EKEvent newEvent = EKEvent.FromStore(AppHelper.Current.EventStore);
+
+                DateTime myDate = ((DateTime)newFormatDate).ToLocalTime();
+                var HoraAntesReunion = myDate.AddHours(1 * - 1);
+                newEvent.AddAlarm(EKAlarm.FromDate(DateTimeToNSDate(HoraAntesReunion.AddMinutes(30))));
+                newEvent.AddAlarm(EKAlarm.FromDate(DateTimeToNSDate(HoraAntesReunion.AddMinutes(45))));
+                if (myDate != null)
+                {
+                    newEvent.StartDate = DateTimeToNSDate(myDate);
+                    newEvent.EndDate = DateTimeToNSDate(myDate.AddHours(1));
+                }
+                newEvent.Title = "Visita de invitados en " + SucursalModel.Sucursal_Descripcion;
+                newEvent.Notes = "Invitados: ";
+                foreach (MiembroModel Invitado in InvitadosCalendar)
+                {
+                    newEvent.Notes = newEvent.Notes + Invitado.Miembro_Nombre + " " + Invitado.Miembro_Apellidos + ". ";
+                }
+                newEvent.Notes = newEvent.Notes + " Asunto: " + Asunto;
+                newEvent.Calendar = AppHelper.Current.EventStore.DefaultCalendarForNewEvents;
+                newEvent.Location = SucursalModel.Sucursal_Domicilio;
+                newEvent.StructuredLocation = structuredLocation;
+                NSError e;
+                AppHelper.Current.EventStore.SaveEvent(newEvent, EKSpan.ThisEvent, out e);
+            });
+
+        }
+
+        protected void RequestAccess(EKEntityType type, Action completion)
+        {
+            AppHelper.Current.EventStore.RequestAccess(type,
+                (bool granted, NSError e) => {
+                    InvokeOnMainThread(() =>
+                    {
+                        if (granted)
+                        {
+                            completion.Invoke();
+                        }
+                        else
+                        {
+                            new MessageDialog().SendToast("Acceso denegado, no tienes acceso a el calendario");
+                        }
+
+                    });
+                });
+        }
+
+
+        public NSDate DateTimeToNSDate(DateTime date)
+        {
+            if (date.Kind == DateTimeKind.Unspecified)
+                date = DateTime.SpecifyKind(date, DateTimeKind.Local);
+            return (NSDate)date;
         }
     }
 }

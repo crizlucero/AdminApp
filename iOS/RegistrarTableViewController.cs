@@ -6,8 +6,7 @@ using WorklabsMx.iOS.Helpers;
 using System.Collections.Generic;
 using WorklabsMx.Models;
 using WorklabsMx.Controllers;
-using EventKit;
-using CoreLocation;
+
 
 
 namespace WorklabsMx.iOS
@@ -20,7 +19,8 @@ namespace WorklabsMx.iOS
 
         List<MiembroModel> invitados = new List<MiembroModel>();
         List<SucursalModel> sucursales = new SucursalController().GetSucursales();
-        string FechaReservacion = "", Sucursal = "";
+        string FechaReservacion = "", Sucursal = "", AsuntoInv = "";
+
 
         public RegistrarTableViewController(IntPtr handle) : base(handle)
         {
@@ -112,7 +112,8 @@ namespace WorklabsMx.iOS
                 var GenderView = (DetalleInvitacionViewController)segue.DestinationViewController;
                 GenderView.Invitados = this.invitados;
                 var ObjSucursal = sucursales.Find(x => x.Sucursal_Descripcion == Sucursal);
-                GenderView.DomicilioInvitacion = ObjSucursal.Sucursal_Descripcion + " " + ObjSucursal.Sucursal_Domicilio;
+                GenderView.SucursalModel = ObjSucursal;
+                GenderView.Asunto = AsuntoInv;
                 GenderView.FechaReservacion = this.FechaReservacion;
             }
         }
@@ -185,6 +186,11 @@ namespace WorklabsMx.iOS
             this.PerformSegue("sucursales", null);
 
         }
+
+        public void Asunto(string Asunto)
+        {
+            this.AsuntoInv = Asunto;
+        }
     }
 
     public partial class RegistrarTableViewController : EventosCeldaInvitados
@@ -197,4 +203,7 @@ namespace WorklabsMx.iOS
             }
         }
     }
+
+
+
 }

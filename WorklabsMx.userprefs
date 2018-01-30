@@ -1,18 +1,37 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Info.plist">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Escritorio/EscritorioController.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleHeader.cs" Line="14" Column="4" />
-      <File FileName="iOS/Main.cs" Line="12" Column="56" />
-      <File FileName="iOS/Info.plist" />
-      <File FileName="iOS/RegistrarTableViewController.cs" Line="168" Column="9" NotebookId="1" />
-      <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="21" Column="6" NotebookId="1" />
+      <File FileName="iOS/MiInfoViewController.cs" Line="44" Column="13" />
+      <File FileName="iOS/PerfilesTableViewController.cs" Line="183" Column="30" />
+      <File FileName="iOS/InfoEmpresaTableViewController.cs" Line="26" Column="42" />
+      <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="39" Column="31" />
+      <File FileName="iOS/RegistrarTableViewController.cs" Line="128" Column="55" />
+      <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="171" Column="113" />
+      <File FileName="iOS/DetalleInvitacionViewController.cs" Line="141" Column="40" />
+      <File FileName="iOS/FechaReservacionPickerViewController.cs" Line="37" Column="42" />
+      <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="20" Column="78" />
+      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="16" Column="29" />
+      <File FileName="iOS/DatosEmpresaTableViewController.cs" Line="104" Column="55" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="238" Column="31" />
+      <File FileName="iOS/ViewControllers/AccesoController.cs" Line="37" Column="132" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>FechaReservacion</Value>
+          <Value>1 * - 1</Value>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/PerfilesTableViewController.cs" relfile="iOS/PerfilesTableViewController.cs" line="189" column="49" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/PerfilesTableViewController.cs" relfile="iOS/PerfilesTableViewController.cs" line="54" column="23" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.BFC150B7-1305-4B59-9EBF-520A7AF5E5A8" automaticSigning="False" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C8F534E0-9C6A-4F53-A110-4E330B864317" />
   <MultiItemStartupConfigurations />
 </Properties>

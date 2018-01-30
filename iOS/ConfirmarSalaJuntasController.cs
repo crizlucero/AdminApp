@@ -147,6 +147,10 @@ namespace WorklabsMx.iOS
                 {
                     location = new CLLocation(20.6766, -103.3812);
                 }
+                else
+                {
+                    location = new CLLocation(20.6766, -103.3812);
+                }
                 var structuredLocation = new EKStructuredLocation();
                 structuredLocation.Title = Reservacion.Sucursal_Domicilio;
                 structuredLocation.GeoLocation = location;
