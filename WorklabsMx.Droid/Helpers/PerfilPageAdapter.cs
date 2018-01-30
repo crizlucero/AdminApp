@@ -15,11 +15,11 @@ namespace WorklabsMx.Droid
 {
     public class PerfilPageAdapter : PagerAdapter
     {
-        Context context;
+        readonly Context context;
         List<string> titulos;
-        MiembroModel miembro;
+        readonly UsuarioModel miembro;
         View profileView;
-        public PerfilPageAdapter(Context context, List<string> titulos, MiembroModel miembro)
+        public PerfilPageAdapter(Context context, List<string> titulos, UsuarioModel miembro)
         {
             this.context = context;
             this.titulos = titulos;
@@ -51,7 +51,11 @@ namespace WorklabsMx.Droid
         void FillSobreMi()
         {
             profileView.FindViewById<TextView>(Resource.Id.lblSobreMi);
-            miembro.Miembro_Habilidades.Split(',').ToList().ForEach(habilidad => FillEtiqueta(habilidad, profileView.FindViewById<RelativeLayout>(Resource.Id.rlHabilidades)));
+            miembro.Etiquetas.ToList().ForEach(habilidad =>
+            {
+                if (habilidad.Etiqueta_Tipo == "Habilidad")
+                    FillEtiqueta(habilidad.Etiqueta_Nombre, profileView.FindViewById<RelativeLayout>(Resource.Id.rlHabilidades));
+            });
         }
 
         void FillEtiqueta(string etiqueta, RelativeLayout rlEtiqueta)
@@ -74,7 +78,7 @@ namespace WorklabsMx.Droid
 
         void FillTrabajo()
         {
-            EmpresaModel empresa = new EmpresaController().GetEmpresaMiembro(miembro.Miembro_Id);
+            EmpresaModel empresa = new EmpresaController().GetEmpresaMiembro(miembro.Usuario_Id);
             LayoutInflater liView = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
             View empresaView = liView.Inflate(Resource.Layout.TituloEmpresaLayout, null, true);
             empresaView.FindViewById<TextView>(Resource.Id.lblNombre).Text = empresa.Empresa_Miembro_Nombre;

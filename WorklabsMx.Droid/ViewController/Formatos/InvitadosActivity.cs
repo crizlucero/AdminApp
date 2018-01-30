@@ -20,11 +20,11 @@ namespace WorklabsMx.Droid
     {
         SimpleStorage storage;
         TableLayout DatosBasicos;
-        List<MiembroModel> invitados;
+        List<UsuarioModel> invitados;
 
         public InvitadosActivity()
         {
-            invitados = new List<MiembroModel>();
+            invitados = new List<UsuarioModel>();
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -70,13 +70,13 @@ namespace WorklabsMx.Droid
                 Console.WriteLine(sucursales[ubicacion.SelectedItem.ToString()]);
                 List<int> invitados_id = new List<int>();
                 //Validar datos
-                if (invitados.FindAll((invitado) => string.IsNullOrEmpty(invitado.Miembro_Nombre) || string.IsNullOrEmpty(invitado.Miembro_Apellidos) || string.IsNullOrEmpty(invitado.Miembro_Correo_Electronico)).ToList().Count == 0)
+                if (invitados.FindAll((invitado) => string.IsNullOrEmpty(invitado.Usuario_Nombre) || string.IsNullOrEmpty(invitado.Usuario_Apellidos) || string.IsNullOrEmpty(invitado.Usuario_Correo_Electronico)).ToList().Count == 0)
                 {
                     invitados.ForEach(invitado =>
                    {
                        try
                        {
-                           invitados_id.Add(new InvitadosController().RegistraInvitado(invitado.Miembro_Nombre, invitado.Miembro_Apellidos, invitado.Miembro_Correo_Electronico,
+                           invitados_id.Add(new InvitadosController().RegistraInvitado(invitado.Usuario_Nombre, invitado.Usuario_Apellidos, invitado.Usuario_Correo_Electronico,
                                                                           txtAsunto.Text, DateTime.Parse(lblFecha.Text), sucursales[ubicacion.SelectedItem.ToString()],
                                                                                      storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo")));
                            Toast.MakeText(this, Resource.String.DatosGuardados, ToastLength.Short).Show();
@@ -105,19 +105,19 @@ namespace WorklabsMx.Droid
 
         void AddDatosBasicos()
         {
-            MiembroModel invitado = new MiembroModel();
+            UsuarioModel invitado = new UsuarioModel();
             LayoutInflater liView = LayoutInflater;
             View basicView = liView.Inflate(Resource.Layout.DatosBasicosLayout, null, false);
             basicView.FindViewById<EditText>(Resource.Id.txtNombre).TextChanged += (sender, e) =>
-                invitado.Miembro_Nombre = ((EditText)sender).Text;
+                invitado.Usuario_Nombre = ((EditText)sender).Text;
 
             basicView.FindViewById<EditText>(Resource.Id.txtApellidos).TextChanged += (sender, e) =>
-                invitado.Miembro_Apellidos = ((EditText)sender).Text;
+                invitado.Usuario_Apellidos = ((EditText)sender).Text;
 
             basicView.FindViewById<EditText>(Resource.Id.txtEmail).TextChanged += (sender, e) =>
             {
                 if (Android.Util.Patterns.EmailAddress.Matcher(((EditText)sender).Text).Matches())
-                    invitado.Miembro_Correo_Electronico = ((EditText)sender).Text;
+                    invitado.Usuario_Correo_Electronico = ((EditText)sender).Text;
             };
 
             TableRow row = new TableRow(this);

@@ -3,12 +3,7 @@
     public class PostModel
     {
         public string Publicacion_Id { get; set; }
-        public string Miembro_Id { get; set; }
-        public string Colaborador_Empresa_Id { get; set; }
-        public string Usuario_Nombre { get; set; }
-        public string Usuario_Tipo { get; set; }
-        public string Usuario_Fotografia_Ruta { get; set; }
-        public string Usuario_Puesto { get; set;}
+        public UsuarioModel Usuario { get; set; }
         public string Publicacion_Contenido { get; set; }
         public string Publicacion_Imagen { get; set; }
         public string Publicacion_Imagen_Ruta { get; set; }

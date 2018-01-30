@@ -113,7 +113,7 @@ namespace WorklabsMx.Droid
                 page = 0;
                 if (((SearchView)sender).Query.Length != 0)
                     posts = posts.Where(post => post.Publicacion_Contenido.IndexOf(((SearchView)sender).Query, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                                        post.Usuario_Nombre.IndexOf(((SearchView)sender).Query, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+                                        post.Usuario.Usuario_Nombre.IndexOf(((SearchView)sender).Query, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
                 await FillPosts();
             };
             svBuscar.QueryTextChange += async (sender, e) =>
@@ -138,23 +138,23 @@ namespace WorklabsMx.Droid
                 LayoutInflater liView = LayoutInflater;
                 View PostView = liView.Inflate(Resource.Layout.PostLayout, null, true);
                 PostView.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels);
-                string Usuario_Id = !string.IsNullOrEmpty(post.Miembro_Id) ? post.Miembro_Id : post.Colaborador_Empresa_Id;
+                //string Usuario_Id = !string.IsNullOrEmpty(post.Usuario.Usuario_Id) ? post.Miembro_Id : post.Colaborador_Empresa_Id;
 
                 ImageButton imgPerfil = PostView.FindViewById<ImageButton>(Resource.Id.imgPerfil);
-                imgPerfil.SetImageURI(ImagesHelper.GetPerfilImagen(post.Usuario_Fotografia_Ruta));
-                imgPerfil.Click += (sender, e) => ShowPerfilCard(new MiembrosController().GetMemberData(Usuario_Id, post.Usuario_Tipo));
+                imgPerfil.SetImageURI(ImagesHelper.GetPerfilImagen(post.Usuario.Usuario_Fotografia));
+                imgPerfil.Click += (sender, e) => ShowPerfilCard(new UsuariosController().GetMemberData(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo));
 
                 TextView lblNombre = PostView.FindViewById<TextView>(Resource.Id.lblNombre);
-                lblNombre.Text = post.Usuario_Nombre;
-                lblNombre.Click += (sender, e) => ShowPerfilCard(new MiembrosController().GetMemberData(Usuario_Id, post.Usuario_Tipo));
+                lblNombre.Text = post.Usuario.Usuario_Nombre;
+                lblNombre.Click += (sender, e) => ShowPerfilCard(new UsuariosController().GetMemberData(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo));
 
                 TextView lblPuesto = PostView.FindViewById<TextView>(Resource.Id.lblPuesto);
-                lblPuesto.Text = post.Usuario_Puesto;
-                lblPuesto.Click += (sender, e) => ShowPerfilCard(new MiembrosController().GetMemberData(Usuario_Id, post.Usuario_Tipo));
+                lblPuesto.Text = post.Usuario.Usuario_Puesto;
+                lblPuesto.Click += (sender, e) => ShowPerfilCard(new UsuariosController().GetMemberData(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo));
 
                 TextView lblFecha = PostView.FindViewById<TextView>(Resource.Id.lblFecha);
                 lblFecha.Text = post.Publicacion_Fecha;
-                lblFecha.Click += (sender, e) => ShowPerfilCard(new MiembrosController().GetMemberData(Usuario_Id, post.Usuario_Tipo));
+                lblFecha.Click += (sender, e) => ShowPerfilCard(new UsuariosController().GetMemberData(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo));
 
                 TextView lblPost = PostView.FindViewById<TextView>(Resource.Id.lblPost);
                 lblPost.SetMaxWidth(Convert.ToInt32(Resources.DisplayMetrics.WidthPixels * .911));

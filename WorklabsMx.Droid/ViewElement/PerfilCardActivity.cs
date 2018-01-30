@@ -13,17 +13,17 @@ namespace WorklabsMx.Droid
     [Activity(Label = "PerfilCardActivity")]
     public class PerfilCardActivity : Activity
     {
-        MiembroModel miembro;
+        UsuarioModel miembro;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.PerfilCardLayout);
-            miembro = JsonConvert.DeserializeObject<MiembroModel>(Intent.GetStringExtra("Miembro"));
+            miembro = JsonConvert.DeserializeObject<UsuarioModel>(Intent.GetStringExtra("Miembro"));
             FindViewById<ImageButton>(Resource.Id.ibCerrar).Click += (sender, e) => OnBackPressed();
 
-            FindViewById<TextView>(Resource.Id.lblNombre).Text = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos;
-            FindViewById<TextView>(Resource.Id.lblEmpresa).Text = miembro.Miembro_Empresa;
+            FindViewById<TextView>(Resource.Id.lblNombre).Text = miembro.Usuario_Nombre + " " + miembro.Usuario_Apellidos;
+            FindViewById<TextView>(Resource.Id.lblEmpresa).Text = miembro.Usuario_Empresa_Nombre;
             FindViewById<Button>(Resource.Id.btnSendMessage).Click += delegate
             {
                 Intent intent;

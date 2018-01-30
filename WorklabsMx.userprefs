@@ -1,6 +1,7 @@
-﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Helpers/ImageGallery.cs">
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/PostModel.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="191" Column="69" />
       <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="49" Column="40" />
       <File FileName="iOS/MiInfoViewController.cs" Line="39" Column="1" />
@@ -13,10 +14,28 @@
       <File FileName="WorklabsMx/Controllers/ColaboradoresController.cs" Line="178" Column="31" />
       <File FileName="WorklabsMx/Enum/CamposMiembro.cs" Line="4" Column="17" />
       <File FileName="WorklabsMx/Controllers/MiembrosController.cs" Line="65" Column="29" />
+=======
+      <File FileName="WorklabsMx.Droid/ViewElement/MainActivity.cs" Line="30" Column="29" />
+      <File FileName="WorklabsMx/Models/VisitaModel.cs" Line="15" Column="16" />
+      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardActivity.cs" Line="26" Column="97" />
+      <File FileName="WorklabsMx.Droid/Helpers/PerfilPageAdapter.cs" Line="22" Column="73" />
+      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/PerfilActivity.cs" Line="61" Column="95" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/InvitadosActivity.cs" Line="108" Column="53" />
+      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/EditPerfilActivity.cs" Line="72" Column="29" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="136" Column="15" />
+      <File FileName="WorklabsMx/Models/PostModel.cs" Line="12" Column="53" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="570" Column="27" />
+      <File FileName="WorklabsMx.Droid/ViewController/ReportActivity.cs" Line="68" Column="62" />
+      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/MisColaboradoresCambiosActivity.cs" Line="103" Column="25" />
+      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="285" Column="82" />
+      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/MisColaboradoresActivity.cs" Line="150" Column="47" />
+      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/MisColaboradoresBajaActivity.cs" Line="267" Column="23" />
+>>>>>>> 54205fe71c2d92927e57cb4839fa0a788a4602e5
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
+<<<<<<< HEAD
     <BreakpointStore>
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Publicar/PublicarPostViewController.cs" relfile="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" line="86" column="171" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Publicar/PublicarPostViewController.cs" relfile="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" line="77" column="34" />
@@ -37,5 +56,11 @@
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
   </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
   <MonoDevelop.Ide.ItemProperties.PagosAndroid PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
+=======
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
+>>>>>>> 54205fe71c2d92927e57cb4839fa0a788a4602e5
   <MultiItemStartupConfigurations />
 </Properties>

@@ -31,8 +31,8 @@ namespace WorklabsMx.Droid
         SimpleStorage storage;
         public string usuario_id = string.Empty, usuario_tipo = string.Empty, imgPublish, imagePath;
         AlertDialog dialog;
-        MiembrosController Favorites;
-        MiembroModel miembro;
+        UsuariosController Favorites;
+        UsuarioModel miembro;
         TableLayout tlPost;
         ScrollView svDirectorio, svPosts;
         View customView;
@@ -44,7 +44,7 @@ namespace WorklabsMx.Droid
         public PerfilActivity()
         {
             storage = SimpleStorage.EditGroup("Login");
-            Favorites = new MiembrosController();
+            Favorites = new UsuariosController();
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -58,10 +58,7 @@ namespace WorklabsMx.Droid
                 usuario_tipo = storage.Get("Usuario_Tipo");
             }
             posts = new EscritorioController().GetMuroPosts(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"));
-            if (usuario_tipo == (((int)TiposUsuarios.Miembro).ToString()))
-                posts = posts.Where(user => user.Miembro_Id == usuario_id && user.Usuario_Tipo == usuario_tipo).ToList();
-            else
-                posts = posts.Where(user => user.Colaborador_Empresa_Id == usuario_id && user.Usuario_Tipo == usuario_tipo).ToList();
+                posts = posts.Where(user => user.Usuario.Usuario_Id == usuario_id && user.Usuario.Usuario_Tipo == usuario_tipo).ToList();
             FillDescripcionData();
             SimpleStorage.SetContext(ApplicationContext);
         }
@@ -80,11 +77,11 @@ namespace WorklabsMx.Droid
                     Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
                     SetActionBar(toolbar);
                     ActionBar.SetDisplayHomeAsUpEnabled(true);
-                    ActionBar.Title = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos;
+                    ActionBar.Title = miembro.Usuario_Nombre + " " + miembro.Usuario_Apellidos;
                 }
 
                 tlPost = FindViewById<TableLayout>(Resource.Id.post_table);
-                List<string> data = new MiembrosController().GetMemberName(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"));
+                List<string> data = new UsuariosController().GetMemberName(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"));
                 FindViewById<TextView>(Resource.Id.lblNombre).Text = data[(int)CamposMiembro.Usuario_Nombre];
                 FindViewById<TextView>(Resource.Id.lblPuesto).Text = data[(int)CamposMiembro.Usuario_Puesto];
                 FindViewById<Button>(Resource.Id.btnInitPublish).Click += (sender, e) => ShowPublish();
@@ -133,13 +130,13 @@ namespace WorklabsMx.Droid
         {
             ButtonAction();
             ImageButton btnFavorito = FindViewById<ImageButton>(Resource.Id.btnFavorite);
-            miembro = new MiembrosController().GetMemberData(usuario_id, usuario_tipo);
+            miembro = new UsuariosController().GetMemberData(usuario_id, usuario_tipo);
             if (!string.IsNullOrEmpty(Intent.GetStringExtra("usuario_id")) || !string.IsNullOrEmpty(Intent.GetStringExtra("usuario_tipo")))
             {
-                ActionBar.Title = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos;
-                if (storage.Get("Usuario_Id") != miembro.Miembro_Id || storage.Get("Usuario_Tipo") != miembro.Miembro_Tipo)
+                ActionBar.Title = miembro.Usuario_Nombre + " " + miembro.Usuario_Apellidos;
+                if (storage.Get("Usuario_Id") != miembro.Usuario_Id || storage.Get("Usuario_Tipo") != miembro.Usuario_Tipo)
                 {
-                    KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Miembro_Id, miembro.Miembro_Tipo);
+                    KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Usuario_Id, miembro.Usuario_Tipo);
                     btnFavorito.Visibility = ViewStates.Visible;
                     btnFavorito.SetBackgroundColor(Color.White);
                     if (isFavorite.Value)
@@ -148,7 +145,7 @@ namespace WorklabsMx.Droid
                     {
                         if (isFavorite.Key == 0)
                         {
-                            if (Favorites.AddMiembroFavorito(usuario_id, usuario_tipo, miembro.Miembro_Id, miembro.Miembro_Tipo))
+                            if (Favorites.AddMiembroFavorito(usuario_id, usuario_tipo, miembro.Usuario_Id, miembro.Usuario_Tipo))
                                 btnFavorito.SetImageResource(Resource.Mipmap.ic_star);
                             else
                                 Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
@@ -165,20 +162,20 @@ namespace WorklabsMx.Droid
                             else
                                 Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
                         }
-                        isFavorite = Favorites.IsMiembroFavorito(usuario_id, usuario_tipo, miembro.Miembro_Id, miembro.Miembro_Tipo);
+                        isFavorite = Favorites.IsMiembroFavorito(usuario_id, usuario_tipo, miembro.Usuario_Id, miembro.Usuario_Tipo);
                     };
                 }
             }
-            FindViewById<ImageView>(Resource.Id.imgPerfil).SetImageURI(Android.Net.Uri.Parse("http://worklabs.mx/Dashboard_Client/usr_imgs/" + miembro.Miembro_Fotografia));
-            FindViewById<TextView>(Resource.Id.txtProfileName).Text = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos;
-            FindViewById<TextView>(Resource.Id.txtEmailPerfil).Text = miembro.Miembro_Correo_Electronico;
-            FindViewById<TextView>(Resource.Id.txtGeneroPerfil).Text = miembro.Genero_Descripcion;
-            FindViewById<TextView>(Resource.Id.txtFechaNacimientoPerfil).Text = DateTime.TryParse(miembro.Miembro_Fecha_Nacimiento, out var result) ? result.ToString("dd/MM/yyyy") : DateTime.Now.ToString("dd/MM/yyyy");
-            FindViewById<TextView>(Resource.Id.txtProfesionPerfil).Text = miembro.Miembro_Profesion;
-            FindViewById<TextView>(Resource.Id.txtPuestoPerfil).Text = miembro.Miembro_Puesto;
-            FindViewById<TextView>(Resource.Id.txtHabilidadesPerfil).Text = miembro.Miembro_Habilidades;
-            FindViewById<TextView>(Resource.Id.txtTelefonoPerfil).Text = miembro.Miembro_Telefono;
-            FindViewById<TextView>(Resource.Id.txtCelularPerfil).Text = miembro.Miembro_Celular;
+            FindViewById<ImageView>(Resource.Id.imgPerfil).SetImageURI(Android.Net.Uri.Parse("http://worklabs.mx/Dashboard_Client/usr_imgs/" + miembro.Usuario_Fotografia));
+            FindViewById<TextView>(Resource.Id.txtProfileName).Text = miembro.Usuario_Nombre + " " + miembro.Usuario_Apellidos;
+            FindViewById<TextView>(Resource.Id.txtEmailPerfil).Text = miembro.Usuario_Correo_Electronico;
+            FindViewById<TextView>(Resource.Id.txtGeneroPerfil).Text = miembro.Genero.Genero_Descripcion;
+            FindViewById<TextView>(Resource.Id.txtFechaNacimientoPerfil).Text = DateTime.TryParse(miembro.Usuario_Fecha_Nacimiento, out var result) ? result.ToString("dd/MM/yyyy") : DateTime.Now.ToString("dd/MM/yyyy");
+            FindViewById<TextView>(Resource.Id.txtProfesionPerfil).Text = miembro.Usuario_Profesion;
+            FindViewById<TextView>(Resource.Id.txtPuestoPerfil).Text = miembro.Usuario_Puesto;
+            //FindViewById<TextView>(Resource.Id.txtHabilidadesPerfil).Text = miembro.Usuario_Habilidades;
+            FindViewById<TextView>(Resource.Id.txtTelefonoPerfil).Text = miembro.Usuario_Telefono;
+            FindViewById<TextView>(Resource.Id.txtCelularPerfil).Text = miembro.Usuario_Celular;
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
@@ -212,7 +209,7 @@ namespace WorklabsMx.Droid
                 ImageButton ibFotoPostUsuario = new ImageButton(this);
                 ibFotoPostUsuario.SetMinimumWidth(150);
                 ibFotoPostUsuario.SetMinimumHeight(150);
-                ibFotoPostUsuario.SetImageURI(ImagesHelper.GetPerfilImagen(post.Usuario_Fotografia_Ruta));
+                ibFotoPostUsuario.SetImageURI(ImagesHelper.GetPerfilImagen(post.Usuario.Usuario_Fotografia));
                 GridLayout.LayoutParams param = new GridLayout.LayoutParams();
                 param.SetGravity(GravityFlags.Center);
                 param.ColumnSpec = GridLayout.InvokeSpec(0);
@@ -223,7 +220,7 @@ namespace WorklabsMx.Droid
 
                 TextView txtNombre = new TextView(this)
                 {
-                    Text = post.Usuario_Nombre,
+                    Text = post.Usuario.Usuario_Nombre,
                     TextSize = 14,
                 };
                 txtNombre.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels - 150);
@@ -243,7 +240,7 @@ namespace WorklabsMx.Droid
 
                 TextView txtPuesto = new TextView(this)
                 {
-                    Text = post.Usuario_Puesto,
+                    Text = post.Usuario.Usuario_Puesto,
                     TextSize = 12
                 };
                 param = new GridLayout.LayoutParams();
@@ -365,7 +362,7 @@ namespace WorklabsMx.Droid
                 Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
                 SetActionBar(toolbar);
                 ActionBar.SetDisplayHomeAsUpEnabled(true);
-                ActionBar.Title = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos;
+                ActionBar.Title = miembro.Usuario_Nombre + " " + miembro.Usuario_Apellidos;
             }
             else
             {
@@ -383,7 +380,7 @@ namespace WorklabsMx.Droid
                 LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent),
                 Orientation = Orientation.Vertical
             };
-            foreach (MiembroModel favorito in new MiembrosController().GetMiembrosFavoritos(usuario_id, usuario_tipo))
+            foreach (UsuarioModel favorito in new UsuariosController().GetMiembrosFavoritos(usuario_id, usuario_tipo))
             {
                 RelativeLayout llNombre = new RelativeLayout(this)
                 {
@@ -391,13 +388,13 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtNombre = new TextView(this)
                 {
-                    Text = favorito.Miembro_Nombre + " " + favorito.Miembro_Apellidos,
+                    Text = favorito.Usuario_Id + " " + favorito.Usuario_Apellidos,
                     TextSize = 20
                 };
                 llNombre.AddView(txtNombre);
-                if (storage.Get("Usuario_Id") != favorito.Miembro_Id || storage.Get("Usuario_Tipo") != favorito.Miembro_Tipo)
+                if (storage.Get("Usuario_Id") != favorito.Usuario_Id || storage.Get("Usuario_Tipo") != favorito.Usuario_Tipo)
                 {
-                    KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), favorito.Miembro_Id, favorito.Miembro_Tipo);
+                    KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), favorito.Usuario_Id, favorito.Usuario_Tipo);
                     ImageButton btnFavorito = new ImageButton(this);
                     btnFavorito.SetBackgroundColor(Color.White);
                     btnFavorito.SetImageResource(Resource.Mipmap.ic_star);
@@ -408,7 +405,7 @@ namespace WorklabsMx.Droid
                     {
                         if (isFavorite.Key == 0)
                         {
-                            if (Favorites.AddMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), favorito.Miembro_Id, favorito.Miembro_Tipo))
+                            if (Favorites.AddMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), favorito.Usuario_Id, favorito.Usuario_Tipo))
                                 btnFavorito.SetImageResource(Resource.Mipmap.ic_star);
                             else
                                 Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
@@ -425,7 +422,7 @@ namespace WorklabsMx.Droid
                             else
                                 Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
                         }
-                        isFavorite = Favorites.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), favorito.Miembro_Id, favorito.Miembro_Tipo);
+                        isFavorite = Favorites.IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), favorito.Usuario_Id, favorito.Usuario_Tipo);
                     };
                     llNombre.AddView(btnFavorito);
                 }
@@ -437,7 +434,7 @@ namespace WorklabsMx.Droid
                 TextView txtEmail = new TextView(this)
                 {
                     TextSize = 14,
-                    Text = favorito.Miembro_Correo_Electronico
+                    Text = favorito.Usuario_Correo_Electronico
                 };
                 txtEmail.Click += delegate
                 {
@@ -445,7 +442,7 @@ namespace WorklabsMx.Droid
                     {
                         Intent email = new Intent(Intent.ActionSend);
                         email.PutExtra(Intent.ExtraEmail,
-                                       new string[] { favorito.Miembro_Correo_Electronico });
+                                       new string[] { favorito.Usuario_Correo_Electronico });
                         email.PutExtra(Intent.ExtraSubject, Resources.GetString(Resource.String.AsuntoCorreo));
                         email.SetType("message/rfc822");
                         StartActivity(email);
@@ -501,7 +498,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroGenero = new TextView(this)
                 {
-                    Text = favorito.Genero_Descripcion
+                    Text = favorito.Genero.Genero_Descripcion
                 };
                 txtMiembroGenero.SetX(50);
                 llGenero.AddView(txtMiembroGenero);
@@ -531,7 +528,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroFechaNacimiento = new TextView(this)
                 {
-                    Text = favorito.Miembro_Fecha_Nacimiento
+                    Text = favorito.Usuario_Fecha_Nacimiento
                 };
                 txtMiembroFechaNacimiento.SetX(50);
                 llFechaNacimiento.AddView(txtMiembroFechaNacimiento);
@@ -561,7 +558,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroProfesion = new TextView(this)
                 {
-                    Text = favorito.Miembro_Profesion
+                    Text = favorito.Usuario_Profesion
                 };
                 txtMiembroProfesion.SetX(50);
                 llProfesion.AddView(txtMiembroProfesion);
@@ -591,7 +588,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroPuesto = new TextView(this)
                 {
-                    Text = favorito.Miembro_Puesto
+                    Text = favorito.Usuario_Puesto
                 };
                 txtMiembroPuesto.SetX(50);
                 llPuesto.AddView(txtMiembroPuesto);
@@ -621,7 +618,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroHabilidades = new TextView(this)
                 {
-                    Text = favorito.Miembro_Habilidades
+                    //Text = favorito.Usuario_Habilidades
                 };
                 txtMiembroHabilidades.SetX(50);
                 llHabilidades.AddView(txtMiembroHabilidades);
@@ -651,7 +648,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroEmpresa = new TextView(this)
                 {
-                    Text = favorito.Miembro_Empresa
+                    Text = favorito.Usuario_Empresa_Nombre
                 };
                 txtMiembroEmpresa.SetX(50);
                 llEmpresa.AddView(txtMiembroEmpresa);
@@ -681,7 +678,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroTelefono = new TextView(this)
                 {
-                    Text = favorito.Miembro_Telefono
+                    Text = favorito.Usuario_Telefono
                 };
                 txtMiembroTelefono.SetX(50);
                 llTelefono.AddView(txtMiembroTelefono);
@@ -712,7 +709,7 @@ namespace WorklabsMx.Droid
                 };
                 TextView txtMiembroCelular = new TextView(this)
                 {
-                    Text = favorito.Miembro_Celular
+                    Text = favorito.Usuario_Celular
                 };
                 txtMiembroCelular.SetX(50);
                 llCelular.AddView(txtMiembroCelular);

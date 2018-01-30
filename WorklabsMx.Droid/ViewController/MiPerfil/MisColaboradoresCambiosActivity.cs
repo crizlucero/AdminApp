@@ -71,18 +71,18 @@ namespace WorklabsMx.Droid
 
         void FillData()
         {
-            ColaboradorModel colaborador = new ColaboradoresController().GetColaborador(colaborador_id);
+            UsuarioModel colaborador = new UsuariosController().GetColaborador(colaborador_id);
 
-            txtNombre.Text = colaborador.Colaborador_Nombre;
-            txtApellidos.Text = colaborador.Colaborador_Apellidos;
-            txtCorreo.Text = colaborador.Colaborador_Correo_Electronico;
-            txtNacimiento.Text = colaborador.Colaborador_Fecha_Nacimiento;
-            txtProfesion.Text = colaborador.Colaborador_Profesion;
-            txtPuesto.Text = colaborador.Colaborador_Puesto;
-            txtHabilidades.Text = colaborador.Colaborador_Habilidades;
-            txtTelefono.Text = colaborador.Colaborador_Telefono;
-            txtCelular.Text = colaborador.Colaborador_Celular;
-            spGenero.SetSelection(Convert.ToInt32(colaborador.Genero_Id) - 1, true);
+            txtNombre.Text = colaborador.Usuario_Nombre;
+            txtApellidos.Text = colaborador.Usuario_Apellidos;
+            txtCorreo.Text = colaborador.Usuario_Correo_Electronico;
+            txtNacimiento.Text = colaborador.Usuario_Fecha_Nacimiento;
+            txtProfesion.Text = colaborador.Usuario_Profesion;
+            txtPuesto.Text = colaborador.Usuario_Puesto;
+            //txtHabilidades.Text = colaborador.Usuario_Habilidades;
+            txtTelefono.Text = colaborador.Usuario_Telefono;
+            txtCelular.Text = colaborador.Usuario_Celular;
+            spGenero.SetSelection(Convert.ToInt32(colaborador.Genero.Genero_Id) - 1, true);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -100,7 +100,7 @@ namespace WorklabsMx.Droid
                     System.IO.MemoryStream stream = new System.IO.MemoryStream();
                     bitmap?.Compress(Bitmap.CompressFormat.Png, 0, stream);
                     byte[] bitmapData = stream?.ToArray();
-                    new ColaboradoresController().AddChangeColaborador(PerpetualEngine.Storage.SimpleStorage.EditGroup("Login").Get("Empresa_Id"), txtNombre.Text, txtApellidos.Text,
+                    new UsuariosController().AddChangeColaborador(PerpetualEngine.Storage.SimpleStorage.EditGroup("Login").Get("Empresa_Id"), txtNombre.Text, txtApellidos.Text,
                                                                        txtCorreo.Text, txtTelefono.Text, txtCelular.Text, txtProfesion.Text,
                                                                        txtPuesto.Text, txtHabilidades.Text, txtNacimiento.ToString(),
                                                                        colaborador_id, (spGenero.SelectedItemId + 1).ToString(), bitmapData);

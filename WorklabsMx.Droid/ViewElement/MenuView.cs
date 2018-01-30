@@ -33,7 +33,7 @@ namespace WorklabsMx.Droid.ViewElement
 
         public void FillMemberCard(ref string nombre, ref string foto, ref string puesto, ref string empresa)
         {
-            DataUsuario = new MiembrosController().GetMemberName(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+            DataUsuario = new UsuariosController().GetMemberName(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
             nombre = DataUsuario[(int)CamposMiembro.Usuario_Nombre];
             foto = DataUsuario[(int)CamposMiembro.Usuario_Fotografia];
             puesto = DataUsuario[(int)CamposMiembro.Usuario_Puesto];

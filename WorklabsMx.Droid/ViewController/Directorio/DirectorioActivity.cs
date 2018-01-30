@@ -33,11 +33,11 @@ namespace WorklabsMx.Droid
             ActionBar.Title = Resources.GetString(Resource.String.Directorio);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             _viewPager = FindViewById<ViewPager>(Resource.Id.vpSucursal);
-            List<MiembroModel> miembros = new MiembrosController().GetDirectorioUsuarios();
+            List<UsuarioModel> usuarios = new UsuariosController().GetDirectorioUsuarios();
             List<EmpresaModel> empresas = new EmpresaController().GetDirectorioEmpresas();
             SimpleStorage storage = SimpleStorage.EditGroup("Login");
-            List<MiembroModel> favoritos = new MiembrosController().GetMiembrosFavoritos(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"));
-            _viewPager.Adapter = new DirectorioAdapter(this, new List<string> { "Miembros", "Empresas", "Favoritos" }, miembros, empresas, favoritos);
+            List<UsuarioModel> favoritos = new UsuariosController().GetMiembrosFavoritos(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"));
+            _viewPager.Adapter = new DirectorioAdapter(this, new List<string> { "Miembros", "Empresas", "Favoritos" }, usuarios, empresas, favoritos);
 
             PagerSlidingTabStrip tabs = FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
             tabs.SetTextColorResource(Resource.Color.comment_pressed);
@@ -47,9 +47,9 @@ namespace WorklabsMx.Droid
             busqueda.QueryTextChange += (sender, e) =>
             {
                 _viewPager.Adapter = new DirectorioAdapter(this, new List<string> { "Miembros", "Empresas", "Favoritos" },
-                                                           miembros.Where(miembro => miembro.Miembro_Nombre.IndexOf(((SearchView)sender).Query, StringComparison.OrdinalIgnoreCase) >= 0).ToList(),
+                                                           usuarios.Where(usuario => usuario.Usuario_Nombre.IndexOf(((SearchView)sender).Query, StringComparison.OrdinalIgnoreCase) >= 0).ToList(),
                                                            empresas.Where(empresa => empresa.Empresa_Miembro_Nombre.IndexOf(((SearchView)sender).Query, StringComparison.OrdinalIgnoreCase) >= 0).ToList(),
-                                                           favoritos.Where(miembro => miembro.Miembro_Nombre.IndexOf(((SearchView)sender).Query, StringComparison.OrdinalIgnoreCase) >= 0).ToList());
+                                                           favoritos.Where(miembro => miembro.Usuario_Nombre.IndexOf(((SearchView)sender).Query, StringComparison.OrdinalIgnoreCase) >= 0).ToList());
             };
         }
 
@@ -69,13 +69,13 @@ namespace WorklabsMx.Droid
         List<string> directorios;
         ScrollView svDirectorio;
         SimpleStorage storage;
-        readonly List<MiembroModel> miembros, favoritos;
+        readonly List<UsuarioModel> usuarios, favoritos;
         readonly List<EmpresaModel> empresas;
-        public DirectorioAdapter(Context context, List<string> directorios, List<MiembroModel> miembros, List<EmpresaModel> empresas, List<MiembroModel> favoritos)
+        public DirectorioAdapter(Context context, List<string> directorios, List<UsuarioModel> usuarios, List<EmpresaModel> empresas, List<UsuarioModel> favoritos)
         {
             this.context = context;
             this.directorios = directorios;
-            this.miembros = miembros;
+            this.usuarios = usuarios;
             this.empresas = empresas;
             this.favoritos = favoritos;
             storage = SimpleStorage.EditGroup("Login");
@@ -97,7 +97,7 @@ namespace WorklabsMx.Droid
                     FillDirectorioEmpresa(); break;
                 default:
                     svDirectorio = SucursalView.FindViewById<ScrollView>(Resource.Id.svDirectorio);
-                    FillDirectorioUsuario(miembros); break;
+                    FillDirectorioUsuario(usuarios); break;
             }
 
             var viewPager = container.JavaCast<ViewPager>();
@@ -113,7 +113,7 @@ namespace WorklabsMx.Droid
 
         public override void DestroyItem(View container, int position, Java.Lang.Object @object) => container.JavaCast<ViewPager>().RemoveView(@object as View);
 
-        public void FillDirectorioUsuario(List<MiembroModel> usuarios)
+        public void FillDirectorioUsuario(List<UsuarioModel> miembros)
         {
             LinearLayout llDirectorio = new LinearLayout(context)
             {
@@ -121,9 +121,9 @@ namespace WorklabsMx.Droid
                 Orientation = Orientation.Vertical
             };
             string aux = "";
-            usuarios.ForEach((miembro) =>
+            miembros.ForEach((miembro) =>
             {
-                if (miembro.Miembro_Nombre[0].ToString() != aux)
+                if (miembro.Usuario_Nombre[0].ToString() != aux)
                 {
                     LinearLayout llList = new LinearLayout(context);
                     llList.SetBackgroundColor(Color.Rgb(149, 214, 255));
@@ -133,7 +133,7 @@ namespace WorklabsMx.Droid
                         LeftMargin = 50
                     };
                     lblCapital.LayoutParameters = ll;
-                    aux = miembro.Miembro_Nombre[0].ToString();
+                    aux = miembro.Usuario_Nombre[0].ToString();
                     lblCapital.Text = aux;
 
                     llList.AddView(lblCapital);
@@ -147,14 +147,14 @@ namespace WorklabsMx.Droid
 
                 TextView lblNombre = PersonaCard.FindViewById<TextView>(Resource.Id.lblTitle);
 
-                lblNombre.Text = miembro.Miembro_Nombre + " " + miembro.Miembro_Apellidos;
+                lblNombre.Text = miembro.Usuario_Nombre + " " + miembro.Usuario_Apellidos;
                 lblNombre.Click += delegate
                 {
                     ShowPerfilCard(miembro);
                 };
 
                 TextView lblEmpresa = PersonaCard.FindViewById<TextView>(Resource.Id.lblSubTitle);
-                lblEmpresa.Text = miembro.Miembro_Empresa;
+                lblEmpresa.Text = miembro.Usuario_Empresa_Nombre;
 
                 llDirectorio.AddView(PersonaCard);
 
@@ -162,7 +162,7 @@ namespace WorklabsMx.Droid
             svDirectorio.AddView(llDirectorio);
         }
 
-        void ShowPerfilCard(MiembroModel miembro)
+        void ShowPerfilCard(UsuarioModel miembro)
         {
             Intent intent = new Intent(context, typeof(PerfilCardActivity));
             intent.PutExtra("Miembro", JsonConvert.SerializeObject(miembro));

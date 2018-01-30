@@ -27,7 +27,7 @@ namespace WorklabsMx.Droid
         Bitmap bitmap;
         AlertDialog dialog;
         string imgPublish, imagePath;
-        void ShowPerfilCard(MiembroModel miembro)
+        void ShowPerfilCard(UsuarioModel miembro)
         {
             Intent intent = new Intent(this, typeof(PerfilCardActivity));
             intent.PutExtra("Miembro", JsonConvert.SerializeObject(miembro));

@@ -44,7 +44,7 @@ namespace WorklabsMx.Droid
         {
             TableLayout tlPost = FindViewById<TableLayout>(Resource.Id.post_table);
             PostModel post = new EscritorioController().GetSinglePost(post_id);
-            string Usuario_Id = post.Miembro_Id ?? post.Colaborador_Empresa_Id;
+            //string Usuario_Id = post.Miembro_Id ?? post.Colaborador_Empresa_Id;
             TableRow row = new TableRow(this);
             row.SetMinimumHeight(100);
             RelativeLayout rl = new RelativeLayout(this);
@@ -53,19 +53,19 @@ namespace WorklabsMx.Droid
             ImageButton ibFotoPostUsuario = new ImageButton(this);
             ibFotoPostUsuario.SetMinimumWidth(150);
             ibFotoPostUsuario.SetMinimumHeight(150);
-            ibFotoPostUsuario.SetImageURI(ImagesHelper.GetPerfilImagen(post.Usuario_Fotografia_Ruta));
+            ibFotoPostUsuario.SetImageURI(ImagesHelper.GetPerfilImagen(post.Usuario.Usuario_Fotografia));
             rl.AddView(ibFotoPostUsuario);
 
             TextView lblNombre = new TextView(this)
             {
-                Text = post.Usuario_Nombre,
+                Text = post.Usuario.Usuario_Nombre,
                 TextSize = 14
             };
             lblNombre.Click += delegate
             {
                 Intent perfil = new Intent(this, typeof(PerfilActivity));
-                perfil.PutExtra("usuario_id", Usuario_Id);
-                perfil.PutExtra("usuario_tipo", post.Usuario_Tipo);
+                perfil.PutExtra("usuario_id", post.Usuario.Usuario_Id);
+                perfil.PutExtra("usuario_tipo", post.Usuario.Usuario_Tipo);
                 StartActivity(perfil);
             };
             lblNombre.SetX(170);
