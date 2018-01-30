@@ -35,7 +35,7 @@ namespace WorklabsMx.Controllers
                         Publicacion_Id = reader["Publicacion_Id"].ToString(),
                         Usuario = new UsuarioModel
                         {
-                            Usuario_Id = reader["Miembro_Id"].ToString() =="" ? reader["Miembro_Id"].ToString() : reader["Colaborador_Empresa_Id"].ToString(),
+                            Usuario_Id = !string.IsNullOrEmpty(reader["Miembro_Id"].ToString()) ? reader["Miembro_Id"].ToString() : reader["Colaborador_Empresa_Id"].ToString(),
                             Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
                             Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
                             Usuario_Fotografia = reader["Usuario_Fotografia_Ruta"].ToString(),
