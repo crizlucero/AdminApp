@@ -53,8 +53,9 @@ namespace WorklabsMx.Controllers
             {
                 SlackLogs.SendMessage(e.Message);
             }
-            finally { 
-                conn.Close(); 
+            finally
+            {
+                conn.Close();
             }
             return posts;
         }
@@ -485,11 +486,7 @@ namespace WorklabsMx.Controllers
                 {
                     fotoNombre = Guid.NewGuid().ToString() + ".png";
                     var result = new UploadImages().UploadBitmapAsync(fotoNombre, fotografia);
-                    if (result)
-                    {
-                        return true;
-                    }
-                    else
+                    if (!result)
                     {
                         return false;
                     }
@@ -520,10 +517,9 @@ namespace WorklabsMx.Controllers
 
                 command.Parameters.AddWithValue("@Publicacion_Imagen", fotoNombre);
 
-                command.Transaction = transaction;
+                /*command.Transaction = transaction;
                 command.ExecuteNonQuery();
-                transaction.Commit();
-
+                transaction.Commit();*/
             }
             catch (Exception e)
             {
@@ -700,6 +696,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Trasaccion", "ALTA");
                 command.Parameters.AddWithValue("@Reporte_Publicacion_Id", DBNull.Value);
                 command.Parameters.AddWithValue("@Publicacion_Id", post_id);
+                command.Parameters.AddWithValue("@Mensaje_Id", mensaje_id);
                 if (miembro_tipo == TiposUsuarios.Miembro.ToString())
                 {
                     command.Parameters.AddWithValue("@Miembro_Id", miembro_id);
