@@ -1,21 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
+using Android.Graphics;
 using Android.OS;
+using Android.Provider;
 using Android.Views;
 using Android.Widget;
+using Java.IO;
 using WorklabsMx.Controllers;
+using WorklabsMx.Droid.Helpers;
 using WorklabsMx.Models;
+using static Android.Provider.MediaStore.Images;
 
 namespace WorklabsMx.Droid
 {
     [Activity(Label = "@string/app_name")]
     public class MisColaboradoresCambiosActivity : Activity
     {
-        string colaborador_id, colaborador_tipo;
+        string colaborador_id, colaborador_tipo, imagePath, imgPublish;
         EditText txtNombre, txtApellidos, txtCorreo, txtNacimiento,
         txtProfesion, txtPuesto, txtHabilidades, txtTelefono, txtCelular;
         Spinner spGenero;
+        File _file, _dir;
+        Bitmap bitmap;
+        readonly int sizePage = 10, PickImageId = 1000, TakePicture = 500;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -48,6 +58,15 @@ namespace WorklabsMx.Droid
             txtCelular = FindViewById<EditText>(Resource.Id.txtCelular);
             spGenero = FindViewById<Spinner>(Resource.Id.txtGenero);
             spGenero.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, new PickerItemsController().GetGeneros().ToArray());
+            FindViewById<ImageButton>(Resource.Id.imgColaborador).Click += delegate
+            {
+                CreateDirectoryForPictures();
+                IsThereAnAppToTakePictures();
+                Intent intent = new Intent(MediaStore.ActionImageCapture);
+                _file = new File(_dir, String.Format("{0}.png", Guid.NewGuid()));
+                intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(_file));
+                StartActivityForResult(intent, TakePicture);
+            };
         }
 
         void FillData()
@@ -78,10 +97,13 @@ namespace WorklabsMx.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.menu_send:
+                    System.IO.MemoryStream stream = new System.IO.MemoryStream();
+                    bitmap?.Compress(Bitmap.CompressFormat.Png, 0, stream);
+                    byte[] bitmapData = stream?.ToArray();
                     new ColaboradoresController().AddChangeColaborador(PerpetualEngine.Storage.SimpleStorage.EditGroup("Login").Get("Empresa_Id"), txtNombre.Text, txtApellidos.Text,
                                                                        txtCorreo.Text, txtTelefono.Text, txtCelular.Text, txtProfesion.Text,
                                                                        txtPuesto.Text, txtHabilidades.Text, txtNacimiento.ToString(),
-                                                                       colaborador_id);
+                                                                       colaborador_id, (spGenero.SelectedItemId + 1).ToString(), bitmapData);
                     break;
                 default:
                     StartActivity(new Intent(this, typeof(TabColaboradoresActivity)));
@@ -89,6 +111,53 @@ namespace WorklabsMx.Droid
                     break;
             }
             return base.OnOptionsItemSelected(item);
+        }
+
+        void CreateDirectoryForPictures()
+        {
+            _dir = new File(
+                Android.OS.Environment.GetExternalStoragePublicDirectory(
+                    Android.OS.Environment.DirectoryPictures), "WorklabsMx");
+            if (!_dir.Exists())
+                _dir.Mkdirs();
+        }
+
+        bool IsThereAnAppToTakePictures()
+        {
+            IList<ResolveInfo> availableActivities =
+                PackageManager.QueryIntentActivities(new Intent(MediaStore.ActionImageCapture), PackageInfoFlags.MatchDefaultOnly);
+            return availableActivities != null && availableActivities.Count > 0;
+        }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            ImageButton imgPicture = FindViewById<ImageButton>(Resource.Id.imgColaborador);
+            if (resultCode == Result.Ok)
+            {
+                if (requestCode == TakePicture && resultCode == Result.Ok)
+                {
+                    Intent mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
+                    Android.Net.Uri contentUri = Android.Net.Uri.FromFile(_file);
+                    mediaScanIntent.SetData(contentUri);
+                    SendBroadcast(mediaScanIntent);
+
+                    int height = Resources.DisplayMetrics.HeightPixels;
+                    int width = 900;
+                    imagePath = _file.Path;
+                    bitmap = _file.Path.LoadAndResizeBitmap(width, height);
+                    if (bitmap != null)
+                        imgPicture.SetImageBitmap(bitmap);
+                    GC.Collect();
+                }
+                if (requestCode == PickImageId && resultCode == Result.Ok && data != null)
+                {
+                    imagePath = (string)data.Data;
+                    bitmap = Media.GetBitmap(ContentResolver, data.Data);
+                    imgPicture.SetImageURI(data.Data);
+                    imgPublish = Uri.EscapeUriString(data.Data.LastPathSegment);
+                }
+            }
         }
     }
 }

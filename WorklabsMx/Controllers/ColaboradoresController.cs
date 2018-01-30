@@ -165,38 +165,52 @@ namespace WorklabsMx.Controllers
         /// <param name="colaborador_id">Identificador del colaborador.</param>
         public bool AddChangeColaborador(string empresa_id, string nombre, string apellidos, string mail,
                                          string telefono, string celular, string profesion, string puesto,
-                                         string habilidades, string fecha_nacimiento, string colaborador_id)
+                                         string habilidades, string fecha_nacimiento, string colaborador_id, 
+                                         string genero_id, byte[] fotografia)
         {
             PassSecurity password = new PassSecurity();
             string pwd = password.GeneraIdentifier();
+            string fotoNombre = null;
             try
             {
+                if (fotografia.Length != 0)
+                {
+                    fotoNombre = Guid.NewGuid().ToString() + ".png";
+                    var result = new UploadImages().UploadBitmapAsync(fotoNombre, fotografia);
+                    if (!result)
+                    {
+                        return false;
+                    }
+
+                }
                 conn.Open();
                 transaction = conn.BeginTransaction();
                 command = CreateCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "sp_Miembros_Empresas_Colaboradores";
+                command.CommandText = "sp_cat_Miembros_Empresas_Colaboradores";
 
                 command.Parameters.AddWithValue("@Trasaccion", colaborador_id == null ? "ALTA" : "MODIFICAR");
 
                 command.Parameters.AddWithValue("@Colaborador_Empresa_ID", colaborador_id);
-                command.Parameters.AddWithValue("@Colaborador_Fecha_Modificacion", DateTime.Now);
-                command.Parameters.AddWithValue("@Colaborador_Empresa_Contrasena", password.EncodePassword(pwd));
-                command.Parameters.AddWithValue("@Colaborador_Empresa_Llave_Acceso", pwd);
-                command.Parameters.AddWithValue("@Colaborador_Empresa_Fecha_Registro", DateTime.Now);
                 command.Parameters.AddWithValue("@Miembro_Empresa_Id", empresa_id);
-
+                command.Parameters.AddWithValue("@Genero_Id", genero_id);
                 command.Parameters.AddWithValue("@Colaborador_Empresa_Nombre", nombre);
                 command.Parameters.AddWithValue("@Colaborador_Empresa_Apellidos", apellidos);
+                command.Parameters.AddWithValue("@Colaborador_Fecha_Nacimiento", fecha_nacimiento);
                 command.Parameters.AddWithValue("@Colaborador_Empresa_Correo_Electronico", mail);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Contrasena", password.EncodePassword(pwd));
                 command.Parameters.AddWithValue("@Colaborador_Empresa_Telefono", telefono);
                 command.Parameters.AddWithValue("@Colaborador_Empresa_Celular", celular);
                 command.Parameters.AddWithValue("@Colaborador_Empresa_Profesion", profesion);
                 command.Parameters.AddWithValue("@Colaborador_Empresa_Puesto", puesto);
                 command.Parameters.AddWithValue("@Colaborador_Empresa_Habilidades", habilidades);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Llave_Acceso", pwd);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Identificacion", pwd);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Fotografia", fotoNombre);
+                command.Parameters.AddWithValue("@Colaborador_Empresa_Estatus", 1);
+                command.Parameters.Add("@Colaborador_Empresa_Id_Salida", SqlDbType.Int).Direction = ParameterDirection.Output;
 
-                command.Parameters.AddWithValue("@Colaborador_Fecha_Nacimiento", fecha_nacimiento);
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();
                 transaction.Commit();

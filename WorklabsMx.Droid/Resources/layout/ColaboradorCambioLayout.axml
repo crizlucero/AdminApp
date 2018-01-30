@@ -31,7 +31,7 @@
                     android:src="@android:drawable/ic_menu_gallery"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/img" />
+                    android:id="@+id/imgColaborador" />
             </LinearLayout>
             <RelativeLayout
                 android:minWidth="25px"

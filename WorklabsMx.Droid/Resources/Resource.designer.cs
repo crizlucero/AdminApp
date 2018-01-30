@@ -3787,7 +3787,7 @@ namespace WorklabsMx.Droid
 			public const int imageView1 = 2131492985;
 			
 			// aapt resource value: 0x7f0c00aa
-			public const int img = 2131493034;
+			public const int imgColaborador = 2131493034;
 			
 			// aapt resource value: 0x7f0c0116
 			public const int imgDot = 2131493142;
