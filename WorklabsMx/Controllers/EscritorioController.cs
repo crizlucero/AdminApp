@@ -517,9 +517,9 @@ namespace WorklabsMx.Controllers
 
                 command.Parameters.AddWithValue("@Publicacion_Imagen", fotoNombre);
 
-                /*command.Transaction = transaction;
+                command.Transaction = transaction;
                 command.ExecuteNonQuery();
-                transaction.Commit();*/
+                transaction.Commit();
             }
             catch (Exception e)
             {

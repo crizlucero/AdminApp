@@ -70,12 +70,12 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         }          private void WillDisplay(int Row)         {             int LastRow = allPosts.Count - 1;             if ((Row == LastRow))             {                 BTProgressHUD.Dismiss();
             }         }          private void CargarInfo()         {             try             {                 if (InternetConectionHelper.VerificarConexion())                 {                     allPosts = new Controllers.EscritorioController().GetMuroPosts(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));                     if (allPosts.Count == 0)                     {
                         isShowInformation = false;                         existeConeccion = false;                         this.btnScanQr.Title = "";                         this.btnScanQr.Enabled = false;
-                    }                     else                     {                         foreach (PostModel currentPost in allPosts)
+                    }                     else                     {                         miembro = new MiembrosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));                         foreach (PostModel currentPost in allPosts)
                         {
-                            allPostImages.Add(ImageGallery.LoadImage(currentPost.Publicacion_Imagen_Ruta));
+                            allPostImages.Add(new UploadImages().DownloadFileFTP(currentPost.Publicacion_Imagen_Ruta));
                             allProfileImages.Add(ImageGallery.LoadImage(currentPost.Usuario_Fotografia_Ruta) ?? UIImage.FromBundle("ProfileImage"));
                         }
-                        miembro = new MiembrosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+
                     }                 }                 else                 {                     this.btnScanQr.Title = "";                     this.btnScanQr.Enabled = false;                     isShowInformation = false;                     existeConeccion = false;                 }             }             catch(Exception e)             {                 SlackLogs.SendMessage(e.Message);             }                     } 
         partial void btnToScanQr_TouchUpInside(UIBarButtonItem sender)
         {

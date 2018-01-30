@@ -1,6 +1,11 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using Foundation;
+using UIKit;
+using WorklabsMx.Helpers;
+using WorklabsMx.iOS.Styles;
+using Plugin.Connectivity;
 
 namespace WorklabsMx.Helpers
 {
@@ -34,6 +39,39 @@ namespace WorklabsMx.Helpers
                 SlackLogs.SendMessage(e.Message);
                 return false;
             }
+        }
+
+        public UIImage DownloadFileFTP(string Imagen)
+        {
+            if (Imagen == "")
+            {
+                return null;
+            }
+            else
+            {
+                try
+                {
+                    string ftphost = "ftp://38.122.16.212/";
+                    string ftpfilepath = "/ " + Imagen.Replace("\\", "/");
+
+                    string ftpfullpath = "ftp://" + ftphost + ftpfilepath;
+
+                    using (WebClient request = new WebClient())
+                    {
+                        request.Credentials = new NetworkCredential(@"SRVWLHOSTING\worklabscloud", @"Worklabscloud!");
+                        byte[] fileData = request.DownloadData(ftpfullpath);
+                        var data = NSData.FromArray(fileData);
+                        UIImage Image = UIImage.LoadFromData(data);
+                        return Image;
+                    }
+                }
+                catch
+                {
+                    return null;
+                }
+               
+            }
+
         }
     }
 }
