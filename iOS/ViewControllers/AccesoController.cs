@@ -27,7 +27,7 @@ namespace WorklabsMx.iOS
   
             this.RefreshAccess();
             this.InitTimer();
-            strAcceso = new MiembrosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+            strAcceso = new UsuariosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
 
             UIButton btnRefresh = new STLButton("")
             {
@@ -46,7 +46,7 @@ namespace WorklabsMx.iOS
         {
             if(InternetConectionHelper.VerificarConexion())
             {
-                string newAcceso = new MiembrosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+                string newAcceso = new UsuariosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
                 if (!strAcceso.Equals(newAcceso))
                 {
                     LoadingView loadPop = new LoadingView(UIScreen.MainScreen.Bounds);

@@ -11,9 +11,9 @@ namespace WorklabsMx.iOS
 {
     public partial class FavoritosTableViewController : UITableViewController
     {
-        MiembrosController Favorites = new MiembrosController();
-        List<MiembroModel> Usuarios = new List<MiembroModel>();
-        List<MiembroModel> UsuariosFavoritos = new List<MiembroModel>();
+        UsuariosController Favorites = new UsuariosController();
+        List<UsuarioModel> Usuarios = new List<UsuarioModel>();
+        List<UsuarioModel> UsuariosFavoritos = new List<UsuarioModel>();
 
         const string IdentificadorCeldaHeader = "HeaderBuscador";
         const string IdentificadorCeldaUsuarios = "CeldaFavoritos";
@@ -57,10 +57,10 @@ namespace WorklabsMx.iOS
 
         private void FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "", bool disponibilidad = true, string pais = "", string estado = "", string municipio = "")
         {
-            this.Usuarios = new MiembrosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
-            foreach(MiembroModel UsuarioFavorito in this.Usuarios)
+            this.Usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
+            foreach(UsuarioModel UsuarioFavorito in this.Usuarios)
             {
-                var isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), UsuarioFavorito.Miembro_Id, UsuarioFavorito.Miembro_Tipo);
+                var isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), UsuarioFavorito.Usuario_Id, UsuarioFavorito.Usuario_Tipo);
                 if(isFavorite.Value)
                 {
                     this.UsuariosFavoritos.Add(UsuarioFavorito);
@@ -155,7 +155,7 @@ namespace WorklabsMx.iOS
         public void Buscando(string SearchText)
         {
             string TextoBuscar = SearchText;
-            List<MiembroModel> SearchPost = new List<MiembroModel>();
+            List<UsuarioModel> SearchPost = new List<UsuarioModel>();
 
             if (InternetConectionHelper.VerificarConexion())
             {
@@ -166,9 +166,9 @@ namespace WorklabsMx.iOS
 
             if (TextoBuscar != "")
             {
-                if (UsuariosFavoritos.FindAll(x => x.Miembro_Nombre.Contains(TextoBuscar)) != null)
+                if (UsuariosFavoritos.FindAll(x => x.Usuario_Nombre.Contains(TextoBuscar)) != null)
                 {
-                    foreach (MiembroModel post in UsuariosFavoritos.FindAll(x => x.Miembro_Nombre.Contains(TextoBuscar)))
+                    foreach (UsuarioModel post in UsuariosFavoritos.FindAll(x => x.Usuario_Nombre.Contains(TextoBuscar)))
                     {
                         if (SearchPost.Contains(post) == false)
                         {
@@ -177,9 +177,9 @@ namespace WorklabsMx.iOS
 
                     }
                 }
-                if (UsuariosFavoritos.FindAll(x => x.Miembro_Apellidos.Contains(TextoBuscar)) != null)
+                if (UsuariosFavoritos.FindAll(x => x.Usuario_Apellidos.Contains(TextoBuscar)) != null)
                 {
-                    foreach (MiembroModel post in UsuariosFavoritos.FindAll(x => x.Miembro_Apellidos.Contains(TextoBuscar)))
+                    foreach (UsuarioModel post in UsuariosFavoritos.FindAll(x => x.Usuario_Apellidos.Contains(TextoBuscar)))
                     {
                         if (SearchPost.Contains(post) == false)
                         {
@@ -188,9 +188,9 @@ namespace WorklabsMx.iOS
 
                     }
                 }
-                if (UsuariosFavoritos.FindAll(x => x.Miembro_Puesto.Contains(TextoBuscar)) != null)
+                if (UsuariosFavoritos.FindAll(x => x.Usuario_Puesto.Contains(TextoBuscar)) != null)
                 {
-                    foreach (MiembroModel post in UsuariosFavoritos.FindAll(x => x.Miembro_Puesto.Contains(TextoBuscar)))
+                    foreach (UsuarioModel post in UsuariosFavoritos.FindAll(x => x.Usuario_Puesto.Contains(TextoBuscar)))
                     {
                         if (SearchPost.Contains(post) == false)
                         {
@@ -199,9 +199,9 @@ namespace WorklabsMx.iOS
 
                     }
                 }
-                if (UsuariosFavoritos.FindAll(x => x.Miembro_Profesion.Contains(TextoBuscar)) != null)
+                if (UsuariosFavoritos.FindAll(x => x.Usuario_Profesion.Contains(TextoBuscar)) != null)
                 {
-                    foreach (MiembroModel post in UsuariosFavoritos.FindAll(x => x.Miembro_Profesion.Contains(TextoBuscar)))
+                    foreach (UsuarioModel post in UsuariosFavoritos.FindAll(x => x.Usuario_Profesion.Contains(TextoBuscar)))
                     {
                         if (SearchPost.Contains(post) == false)
                         {

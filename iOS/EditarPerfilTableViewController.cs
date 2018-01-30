@@ -36,7 +36,7 @@ namespace WorklabsMx.iOS
             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;
             this.txtNombre.AttributedPlaceholder = new NSAttributedString("  Nombre", null, UIColor.Clear.FromHex(0xFFFFFF));
             this.txtProfesion.AttributedPlaceholder = new NSAttributedString("   Puesto", null, UIColor.Clear.FromHex(0xFFFFFF));
-            var miembro = new MiembrosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+            var miembro = new UsuariosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
             if (miembro != null)
             {
                 if (miembro.Count > 0)

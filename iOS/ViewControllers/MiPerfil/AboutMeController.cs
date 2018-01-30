@@ -8,7 +8,7 @@ namespace WorklabsMx.iOS
 {
     public partial class AboutMeController : UIViewController
     {
-        MiembroModel miembro;
+        UsuarioModel miembro;
         public AboutMeController(IntPtr handle) : base(handle)
         {
         }
@@ -17,7 +17,7 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             //var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
-            miembro = new MiembrosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"),KeyChainHelper.GetKey("Usuario_Tipo"));
+            miembro = new UsuariosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"),KeyChainHelper.GetKey("Usuario_Tipo"));
             FillData();
             btnEditar.BackgroundColor = UIColor.FromRGB(101, 216, 250);
             btnEditar.SetTitleColor(UIColor.Black, UIControlState.Normal);
@@ -27,11 +27,11 @@ namespace WorklabsMx.iOS
         void FillData()
         {
             #region Datos del miembro
-            lblProfesion.Text = miembro.Miembro_Profesion;
-            lblPuesto.Text = miembro.Miembro_Puesto;
-            lblHabilidades.Text = miembro.Miembro_Habilidades;
-            lblTelefono.Text = miembro.Miembro_Telefono;
-            lblCelular.Text = miembro.Miembro_Celular;
+            lblProfesion.Text = miembro.Usuario_Profesion;
+            lblPuesto.Text = miembro.Usuario_Puesto;
+            lblHabilidades.Text = "";//miembro.Miembro_Habilidades;
+            lblTelefono.Text = miembro.Usuario_Telefono;
+            lblCelular.Text = miembro.Usuario_Celular;
             #endregion
         }
     }

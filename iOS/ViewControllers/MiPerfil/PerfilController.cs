@@ -19,7 +19,7 @@ namespace WorklabsMx.iOS
 {
     public partial class PerfilController : UIViewController
     {
-        MiembroModel miembro;
+        UsuarioModel miembro;
         public string Usuario = null, Tipo = null;
         UIScrollView scrollView;
         UIImageView imagen;
@@ -41,9 +41,9 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
 
             if (string.IsNullOrEmpty(Usuario))
-                miembro = new MiembrosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+                miembro = new UsuariosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
             else
-                miembro = new MiembrosController().GetMemberData(Usuario, Tipo);
+                miembro = new UsuariosController().GetMemberData(Usuario, Tipo);
             new InfoPersonaCard(miembro, View);
 
             UIToolbar tbNav = new UIToolbar
@@ -93,15 +93,15 @@ namespace WorklabsMx.iOS
                     CNMutableContact contact = new CNMutableContact();
                     CNContactViewController editor = CNContactViewController.FromNewContact(contact);
 
-                    CNLabeledValue<CNPhoneNumber> cellPhone = new CNLabeledValue<CNPhoneNumber>(CNLabelPhoneNumberKey.Mobile, new CNPhoneNumber(miembro.Miembro_Celular));
-                    CNLabeledValue<CNPhoneNumber> telephone = new CNLabeledValue<CNPhoneNumber>(CNLabelPhoneNumberKey.Main, new CNPhoneNumber(miembro.Miembro_Telefono));
-                    CNLabeledValue<NSString> email = new CNLabeledValue<NSString>(CNLabelKey.Home, new NSString(miembro.Miembro_Correo_Electronico));
+                    CNLabeledValue<CNPhoneNumber> cellPhone = new CNLabeledValue<CNPhoneNumber>(CNLabelPhoneNumberKey.Mobile, new CNPhoneNumber(miembro.Usuario_Celular));
+                    CNLabeledValue<CNPhoneNumber> telephone = new CNLabeledValue<CNPhoneNumber>(CNLabelPhoneNumberKey.Main, new CNPhoneNumber(miembro.Usuario_Telefono));
+                    CNLabeledValue<NSString> email = new CNLabeledValue<NSString>(CNLabelKey.Home, new NSString(miembro.Usuario_Correo_Electronico));
                     // Configure editor
 
                     editor.ContactStore = store;
-                    contact.GivenName = miembro.Miembro_Nombre;
-                    contact.FamilyName = miembro.Miembro_Apellidos;
-                    contact.JobTitle = miembro.Miembro_Puesto;
+                    contact.GivenName = miembro.Usuario_Nombre;
+                    contact.FamilyName = miembro.Usuario_Apellidos;
+                    contact.JobTitle = miembro.Usuario_Puesto;
                     contact.PhoneNumbers = new[] { telephone, cellPhone };
                     contact.EmailAddresses = new CNLabeledValue<NSString>[] { email };
                     // Display picker
@@ -159,8 +159,8 @@ namespace WorklabsMx.iOS
                             try
                             {
                                 PerfilController perfilController = (PerfilController)Storyboard.InstantiateViewController("PerfilIndividualController");
-                                perfilController.Tipo = post.Usuario_Tipo;
-                                perfilController.Usuario = post.Miembro_Id;
+                                perfilController.Tipo = post.Usuario.Usuario_Tipo;
+                                perfilController.Usuario = post.Usuario.Usuario_Id;
                                 NavigationController.PushViewController(perfilController, true);
                                 ((UIButton)sender).BackgroundColor = UIColor.Clear;
                             }
@@ -266,7 +266,7 @@ namespace WorklabsMx.iOS
             using (UIScrollView scrollView = new UIScrollView(new CGRect(0, 100, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)))
             {
                 int position = 0;
-                foreach (MiembroModel usuario in new MiembrosController().GetMiembrosFavoritos(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo")))
+                foreach (UsuarioModel usuario in new UsuariosController().GetMiembrosFavoritos(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo")))
                 {
                     InfoPersonaCard personaCard = new InfoPersonaCard(usuario, scrollView, position);
                     personaCard.lblMail.TouchUpInside += (sender, e) =>
@@ -276,7 +276,7 @@ namespace WorklabsMx.iOS
                         {
                             mailController = new MFMailComposeViewController();
 
-                            mailController.SetToRecipients(new string[] { usuario.Miembro_Correo_Electronico });
+                            mailController.SetToRecipients(new string[] { usuario.Usuario_Correo_Electronico });
                             mailController.SetSubject("Contacto - Worklabs");
                             mailController.SetMessageBody("", false);
 
@@ -292,8 +292,8 @@ namespace WorklabsMx.iOS
                     personaCard.lblNombre.TouchUpInside += (sender, e) =>
                     {
                         PerfilController perfilController = (PerfilController)Storyboard.InstantiateViewController("PerfilIndividualController");
-                        perfilController.Tipo = usuario.Miembro_Tipo;
-                        perfilController.Usuario = usuario.Miembro_Id;
+                        perfilController.Tipo = usuario.Usuario_Tipo;
+                        perfilController.Usuario = usuario.Usuario_Id;
                         perfilController.Title = "Perfil";
                         NavigationController.PushViewController(perfilController, true);
                         ((UIButton)sender).BackgroundColor = UIColor.Clear;

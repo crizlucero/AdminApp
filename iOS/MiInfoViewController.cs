@@ -11,7 +11,7 @@ namespace WorklabsMx.iOS
 {
     public partial class MiInfoViewController : UIViewController
     {
-        public MiembroModel Miembro = new MiembroModel();
+        public UsuarioModel Miembro = new UsuarioModel();
         string[] Habilidades, Intereses;
         List<string> ListaHabilidades = new List<string>();
         List<string> ListaIntereses = new List<string>();
@@ -36,7 +36,7 @@ namespace WorklabsMx.iOS
             this.OcultarIntereses();
             this.OcultarHabilidades();
 
-            Habilidades = Miembro.Miembro_Habilidades.Split(',');
+           /* Habilidades = Miembro.Etiquetas(',');
 
             for (int indice = 0; indice < Habilidades.Length - 1; indice++)
             {
@@ -46,7 +46,7 @@ namespace WorklabsMx.iOS
             this.MostrarHabilidades();
             this.MostrarIntereses();
 
-            txtSobreMi.Text = Miembro.Miembro_SobreMi;
+            txtSobreMi.Text = Miembro.so;*/
         }
 
         private void OcultarHabilidades()

@@ -16,8 +16,8 @@ namespace WorklabsMx.iOS
     public partial class DetalleInvitacionViewController : UIViewController
     {
 
-        public List<MiembroModel> Invitados = new List<MiembroModel>();
-        public List<MiembroModel> InvitadosCalendar = new List<MiembroModel>();
+        public List<UsuarioModel> Invitados = new List<UsuarioModel>();
+        public List<UsuarioModel> InvitadosCalendar = new List<UsuarioModel>();
         public SucursalModel SucursalModel;
         string strAcceso = string.Empty;
         public string FechaReservacion, Asunto;
@@ -64,20 +64,20 @@ namespace WorklabsMx.iOS
 
             this.lblFecha.Text = this.FechaReservacion;
             this.lblDomicilio.Text = SucursalModel.Sucursal_Descripcion + " " + SucursalModel.Sucursal_Domicilio;
-            this.lblNombreInvitado.Text = PrimerInvitado.Miembro_Nombre + " " + PrimerInvitado.Miembro_Apellidos;
-            string newAcceso = new MiembrosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+            this.lblNombreInvitado.Text = PrimerInvitado.Usuario_Nombre + " " + PrimerInvitado.Usuario_Apellidos;
+            string newAcceso = new UsuariosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
             //LoadingView loadPop = new LoadingView(UIScreen.MainScreen.Bounds);
             //View.Add(loadPop);
             //strAcceso = newAcceso;
             imgQR.Image = ImageGallery.LoadImageUrl(newAcceso);
             //loadPop.Hide();
             Invitados.Remove(PrimerInvitado);
-            foreach(MiembroModel Invitado in Invitados)
+            foreach(UsuarioModel Invitado in Invitados)
             {
                 XLabelNombre = XLabelNombre + this.lblNombreInvitado.Frame.Width;
                 UILabel LabelNombre = new UILabel();
                 LabelNombre.Frame = new CGRect(XLabelNombre, this.lblNombreInvitado.Frame.Y, this.lblNombreInvitado.Frame.Width, this.lblNombreInvitado.Frame.Height);
-                LabelNombre.Text = Invitado.Miembro_Nombre + " " + Invitado.Miembro_Apellidos;
+                LabelNombre.Text = Invitado.Usuario_Nombre + " " + Invitado.Usuario_Apellidos;
                 LabelNombre.Font = lblNombreInvitado.Font;
                 LabelNombre.TextColor = UIColor.White;
                 LabelNombre.TextAlignment = UITextAlignment.Left;
@@ -88,7 +88,7 @@ namespace WorklabsMx.iOS
 
                 UIImageView ImagenQr = new UIImageView();
                 ImagenQr.Frame = this.imgQR.Frame;
-                newAcceso = new MiembrosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+                newAcceso = new UsuariosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
                 ImagenQr.Image = ImageGallery.LoadImageUrl(newAcceso);
 
                 VistaQR.Add(ImagenQr);
@@ -151,9 +151,9 @@ namespace WorklabsMx.iOS
                 }
                 newEvent.Title = "Visita de invitados en " + SucursalModel.Sucursal_Descripcion;
                 newEvent.Notes = "Invitados: ";
-                foreach (MiembroModel Invitado in InvitadosCalendar)
+                foreach (UsuarioModel Invitado in InvitadosCalendar)
                 {
-                    newEvent.Notes = newEvent.Notes + Invitado.Miembro_Nombre + " " + Invitado.Miembro_Apellidos + ". ";
+                    newEvent.Notes = newEvent.Notes + Invitado.Usuario_Nombre + " " + Invitado.Usuario_Apellidos + ". ";
                 }
                 newEvent.Notes = newEvent.Notes + " Asunto: " + Asunto;
                 newEvent.Calendar = AppHelper.Current.EventStore.DefaultCalendarForNewEvents;

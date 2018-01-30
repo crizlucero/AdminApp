@@ -17,7 +17,7 @@ namespace WorklabsMx.iOS
         const string IdentificadorCeldaDetalle = "DetalleInvitacion";
         List<int> NumeroCeldas = new List<int>();
 
-        List<MiembroModel> invitados = new List<MiembroModel>();
+        List<UsuarioModel> invitados = new List<UsuarioModel>();
         List<SucursalModel> sucursales = new SucursalController().GetSucursales();
         string FechaReservacion = "", Sucursal = "", AsuntoInv = "";
 
@@ -167,7 +167,7 @@ namespace WorklabsMx.iOS
            
         }
 
-        public void ConfirmarInvitaciones(List<MiembroModel> invitadosLocal)
+        public void ConfirmarInvitaciones(List<UsuarioModel> invitadosLocal)
         {
             this.PerformSegue("DetalleInvitacion", null);
 
@@ -195,7 +195,7 @@ namespace WorklabsMx.iOS
 
     public partial class RegistrarTableViewController : EventosCeldaInvitados
     {
-        public void EventTextFiled(MiembroModel invitado)
+        public void EventTextFiled(UsuarioModel invitado)
         {
             if (invitados.Contains(invitado) == false)
             {

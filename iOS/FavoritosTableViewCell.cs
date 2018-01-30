@@ -15,25 +15,25 @@ namespace WorklabsMx.iOS
     public partial class FavoritosTableViewCell : UITableViewCell
     {
         public EventosFavoritosCell EventosFavoritosCellDelegate;
-        MiembroModel MiembroLocal;
+        UsuarioModel MiembroLocal;
 
         public FavoritosTableViewCell (IntPtr handle) : base (handle)
         {
         }
 
-        public void UpdateCell(MiembroModel Miembro)
+        public void UpdateCell(UsuarioModel Miembro)
         {
-            this.lblNombre.Text = Miembro.Miembro_Nombre + " " + Miembro.Miembro_Apellidos;
-            this.lblProfesion.Text = Miembro.Miembro_Profesion;
+            this.lblNombre.Text = Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos;
+            this.lblProfesion.Text = Miembro.Usuario_Profesion;
             this.MiembroLocal = Miembro;
         }
 
         partial void btnImagenFav_Touch(UIButton sender)
         {
             List<String> listaUser = new List<string>();
-            listaUser.Add(MiembroLocal.Miembro_Id);
-            listaUser.Add(MiembroLocal.Miembro_Empresa);
-            listaUser.Add(MiembroLocal.Miembro_Tipo);
+            listaUser.Add(MiembroLocal.Usuario_Id);
+            listaUser.Add(MiembroLocal.Usuario_Empresa_Nombre);
+            listaUser.Add(MiembroLocal.Usuario_Tipo);
             EventosFavoritosCellDelegate.InfoUserPost(listaUser);
         }        
     }
