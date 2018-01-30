@@ -10,11 +10,11 @@ namespace WorklabsMx.iOS
 {
     public partial class MisColaboradoresCambiosController : UIViewController
     {
-        ColaboradorModel colaborador;
+        UsuarioModel colaborador;
 
         public MisColaboradoresCambiosController(IntPtr handle) : base(handle)
         {
-            colaborador = new ColaboradorModel();
+            colaborador = new UsuarioModel();
         }
 
         public override void ViewDidLoad()
@@ -25,7 +25,7 @@ namespace WorklabsMx.iOS
             //var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
             if (!string.IsNullOrEmpty(KeyChainHelper.GetKey("Colaborador_Id")))
             {
-                colaborador = new ColaboradoresController().GetColaborador(KeyChainHelper.GetKey("Colaborador_Id"));
+                colaborador = new UsuariosController().GetColaborador(KeyChainHelper.GetKey("Colaborador_Id"));
                 Title = "Modificar Colaborador";
             }
 
@@ -33,7 +33,7 @@ namespace WorklabsMx.iOS
             {
                 scrollView.Add(new STLLabel("Fotografía", 40));
 
-                UIImageView imagen = new STLImageView(65, colaborador.Colaborador_Fotografia);
+                UIImageView imagen = new STLImageView(65, colaborador.Usuario_Fotografia);
                 imagen.Image.Scale(new CGSize(50, 50), 0);
                 scrollView.Add(imagen);
 
@@ -42,23 +42,23 @@ namespace WorklabsMx.iOS
                 scrollView.Add(btnPhoto);
 
                 scrollView.Add(new STLLabel("Nombre", 170));
-                UITextField txtNombre = new STLTextField("Nombre", 200, colaborador.Colaborador_Nombre);
+                UITextField txtNombre = new STLTextField("Nombre", 200, colaborador.Usuario_Nombre);
                 scrollView.Add(txtNombre);
 
                 scrollView.Add(new STLLabel("Apellidos", 230));
-                UITextField txtApellidos = new STLTextField("Apellidos", 260, colaborador.Colaborador_Apellidos);
+                UITextField txtApellidos = new STLTextField("Apellidos", 260, colaborador.Usuario_Apellidos);
                 scrollView.Add(txtApellidos);
 
                 scrollView.Add(new STLLabel("Puesto", 290));
-                UITextField txtPuesto = new STLTextField("Puesto", 320, colaborador.Colaborador_Puesto);
+                UITextField txtPuesto = new STLTextField("Puesto", 320, colaborador.Usuario_Puesto);
                 scrollView.Add(txtPuesto);
 
                 scrollView.Add(new STLLabel("Profesión", 350));
-                UITextField txtProfesion = new STLTextField("Profesión", 380, colaborador.Colaborador_Profesion);
+                UITextField txtProfesion = new STLTextField("Profesión", 380, colaborador.Usuario_Profesion);
                 scrollView.Add(txtProfesion);
 
                 scrollView.Add(new STLLabel("Habilidades", 410));
-                UITextField txtHabilidades = new STLTextField("Habilidades", 440, colaborador.Colaborador_Habilidades);
+                UITextField txtHabilidades = new STLTextField("Habilidades", 440, "");
                 scrollView.Add(txtHabilidades);
 
                 scrollView.Add(new STLLabel("Fecha de Nacimiento", 470));
@@ -66,33 +66,33 @@ namespace WorklabsMx.iOS
                 {
                     Mode = UIDatePickerMode.Date,
                     Frame = new CGRect(40, 500, UIScreen.MainScreen.Bounds.Width - 80, 100),
-                    Date = DatePickerHelper.GetDate(colaborador.Colaborador_Fecha_Nacimiento)
+                    Date = DatePickerHelper.GetDate(colaborador.Usuario_Fecha_Nacimiento)
                 };
                 scrollView.Add(dpFechaNacimiento);
 
                 scrollView.Add(new STLLabel("Genero", 600));
-                UITextField txtGenero = new STLTextField("Genero", 630, colaborador.Genero_Id);
+                UITextField txtGenero = new STLTextField("Genero", 630, colaborador.Genero.Genero_Id);
                 scrollView.Add(txtGenero);
 
                 scrollView.Add(new STLLabel("Correo Electrónico", 660));
-                UITextField txtEmail = new STLTextField("Correo Electrónico", 690, colaborador.Colaborador_Correo_Electronico, UIKeyboardType.EmailAddress);
+                UITextField txtEmail = new STLTextField("Correo Electrónico", 690, colaborador.Usuario_Correo_Electronico, UIKeyboardType.EmailAddress);
                 scrollView.Add(txtEmail);
 
                 scrollView.Add(new STLLabel("Teléfono", 720));
-                UITextField txtTelefono = new STLTextField("Teléfono", 750, colaborador.Colaborador_Telefono, UIKeyboardType.PhonePad);
+                UITextField txtTelefono = new STLTextField("Teléfono", 750, colaborador.Usuario_Telefono, UIKeyboardType.PhonePad);
                 scrollView.Add(txtTelefono);
 
                 scrollView.Add(new STLLabel("Celular", 780));
-                UITextField txtCelular = new STLTextField("Celular", 810, colaborador.Colaborador_Celular, UIKeyboardType.PhonePad);
+                UITextField txtCelular = new STLTextField("Celular", 810, colaborador.Usuario_Celular, UIKeyboardType.PhonePad);
                 scrollView.Add(txtCelular);
 
 
                 NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_send"), UIBarButtonItemStyle.Plain, (sender, e) =>
                 {
-                    new ColaboradoresController().AddChangeColaborador(colaborador.Miembro_Empresa_Id, txtNombre.Text, txtApellidos.Text,
+                    new UsuariosController().AddChangeColaborador("", txtNombre.Text, txtApellidos.Text,
                                                                        txtEmail.Text, txtTelefono.Text, txtCelular.Text, txtProfesion.Text,
                                                                        txtPuesto.Text, txtHabilidades.Text, dpFechaNacimiento.Date.ToString(),
-                                                                       colaborador.Colaborador_Id, txtGenero.Text, null);
+                                                                       colaborador.Usuario_Id, txtGenero.Text, null);
                 }), true);
                 scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 840);
                 Add(scrollView);

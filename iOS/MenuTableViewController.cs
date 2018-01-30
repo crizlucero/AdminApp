@@ -36,7 +36,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
            
-            List<string> data = new MiembrosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+            List<string> data = new UsuariosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
             try
             {
                 //tableItems.Add(new ItemsMenu { Image = "http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + data[(int)CamposMiembro.Usuario_Fotografia], Label = data[(int)CamposMiembro.Usuario_Nombre], Principal = true });

@@ -37,10 +37,10 @@ namespace WorklabsMx.iOS
         {
             int totalSize = 20;
             scrollView = new UIScrollView(new CGRect(0, totalSize, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)) { BackgroundColor = UIColor.White };
-            foreach (ColaboradorModel colaborador in new ColaboradoresController().GetColaboradoresMiembro(miembro_id, 1))
+            foreach (UsuarioModel colaborador in new UsuariosController().GetColaboradoresMiembro(miembro_id, 1))
             {
                 scrollView.AddSubview(new STLLine(totalSize));
-                scrollView.AddSubview(new STLImageView(20 + totalSize, colaborador.Colaborador_Fotografia));
+                scrollView.AddSubview(new STLImageView(20 + totalSize, colaborador.Usuario_Fotografia));
 
                 UIButton btnBaja = new STLButton(UIImage.FromBundle("ic_clear"))
                 {
@@ -49,7 +49,7 @@ namespace WorklabsMx.iOS
                 };
                 btnBaja.TouchUpInside += (sender, e) =>
                 {
-                    if (new ColaboradoresController().ChangeColaboradorEstatus(colaborador.Colaborador_Id, 0))
+                    if (new UsuariosController().ChangeColaboradorEstatus(colaborador.Usuario_Id, 0))
                     {
                         scrollView.RemoveFromSuperview();
                         FillColaboradores(miembro_id);
@@ -59,19 +59,19 @@ namespace WorklabsMx.iOS
                 };
                 scrollView.AddSubview(btnBaja);
 
-                scrollView.AddSubview(new STLLabel(colaborador.Colaborador_Nombre + " " + colaborador.Colaborador_Apellidos, 70 + totalSize));
+                scrollView.AddSubview(new STLLabel(colaborador.Usuario_Nombre + " " + colaborador.Usuario_Apellidos, 70 + totalSize));
 
                 scrollView.AddSubview(new STLImageLabel(scrollView, "Género", 100 + totalSize, "ic_person"));
 
-                scrollView.AddSubview(new STLLabel(colaborador.Genero_Id, 130 + totalSize));
+                scrollView.AddSubview(new STLLabel(colaborador.Genero.Genero_Id, 130 + totalSize));
 
                 scrollView.AddSubview(new STLImageLabel(scrollView, "Fecha de Nacimiento", 170 + totalSize, "ic_today"));
 
-                scrollView.AddSubview(new STLLabel(Convert.ToDateTime(colaborador.Colaborador_Fecha_Nacimiento).ToString("MM/dd/yyyy"), 200 + totalSize));
+                scrollView.AddSubview(new STLLabel(Convert.ToDateTime(colaborador.Usuario_Fecha_Nacimiento).ToString("MM/dd/yyyy"), 200 + totalSize));
 
                 scrollView.AddSubview(new STLImageLabel(scrollView, "Profesión", 240 + totalSize, "ic_school"));
 
-                scrollView.AddSubview(new STLLabel(colaborador.Colaborador_Profesion, 270 + totalSize));
+                scrollView.AddSubview(new STLLabel(colaborador.Usuario_Profesion, 270 + totalSize));
 
                 UIButton btnModificar = new STLButton("Modificar")
                 {
@@ -80,7 +80,7 @@ namespace WorklabsMx.iOS
 
                 btnModificar.TouchUpInside += (sender, e) =>
                 {
-                    KeyChainHelper.SetKey("Colaborador_Id", colaborador.Colaborador_Id);
+                    KeyChainHelper.SetKey("Colaborador_Id", colaborador.Usuario_Id);
                     UIViewController controller = this.Storyboard.InstantiateViewController("MisColaboradoresCambiosController");
                     controller.Title = "Modifica Colaborador";
                     this.NavigationController.PushViewController(controller, true);
@@ -95,8 +95,8 @@ namespace WorklabsMx.iOS
 
                 btnRenovarAcceso.TouchUpInside += (sender, e) =>
                 {
-                    new Emails().SendMail(colaborador.Colaborador_Correo_Electronico,
-                                          colaborador.Colaborador_Nombre + " " + colaborador.Colaborador_Apellidos,
+                    new Emails().SendMail(colaborador.Usuario_Correo_Electronico,
+                                          colaborador.Usuario_Nombre + " " + colaborador.Usuario_Apellidos,
                                           new PassSecurity().GeneraIdentifier());
                 };
                 scrollView.AddSubview(btnRenovarAcceso);

@@ -12,8 +12,8 @@ namespace WorklabsMx.iOS
     public partial class PerfilesTableViewController : UITableViewController
     {
         public List<string> ListUser = new List<string>();
-        MiembrosController Favorites = new MiembrosController();
-        MiembroModel Miembro = new MiembroModel();
+        UsuariosController Favorites = new UsuariosController();
+        UsuarioModel Miembro = new UsuarioModel();
 
         bool FromMi = true, FromSocial = false, FromTrabajo = false;
 
@@ -34,11 +34,11 @@ namespace WorklabsMx.iOS
             base.ViewWillAppear(animated);
             if (InternetConectionHelper.VerificarConexion())
             {
-                this.Miembro = new MiembrosController().GetMemberData((ListUser[0] != "") ? ListUser[0] : ListUser[1], ListUser[2]);
-                this.lblNombre.Text = (Miembro.Miembro_Nombre != "") ? Miembro.Miembro_Nombre : "Sin Info";
-                this.lblEmpresa.Text = (Miembro.Miembro_Empresa != null) ? Miembro.Miembro_Empresa : "Sin Info";
-                this.btnProfileImage.SetBackgroundImage(ImageGallery.LoadImage(Miembro.Miembro_Fotografia) ?? UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
-                KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Miembro.Miembro_Id, Miembro.Miembro_Tipo);
+                this.Miembro = new UsuariosController().GetMemberData((ListUser[0] != "") ? ListUser[0] : ListUser[1], ListUser[2]);
+                this.lblNombre.Text = (Miembro.Usuario_Nombre != "") ? Miembro.Usuario_Nombre : "Sin Info";
+                this.lblEmpresa.Text = (Miembro.Usuario_Empresa_Nombre != null) ? Miembro.Usuario_Empresa_Nombre : "Sin Info";
+                this.btnProfileImage.SetBackgroundImage(ImageGallery.LoadImage(Miembro.Usuario_Fotografia) ?? UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
+                KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Miembro.Usuario_Id, Miembro.Usuario_Tipo);
                 if (isFavorite.Key == 0)
                 {
                     this.btnSeguir.SetTitle("+ Seguir", UIControlState.Normal);
@@ -67,10 +67,10 @@ namespace WorklabsMx.iOS
         {
             if (InternetConectionHelper.VerificarConexion())
             {
-                KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Miembro.Miembro_Id, Miembro.Miembro_Tipo);
+                KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Miembro.Usuario_Id, Miembro.Usuario_Tipo);
                 if (isFavorite.Key == 0)
                 {
-                    if (Favorites.AddMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Miembro.Miembro_Id, Miembro.Miembro_Tipo))
+                    if (Favorites.AddMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Miembro.Usuario_Id, Miembro.Usuario_Tipo))
                     {
                         this.btnSeguir.SetTitle("Dejar de seguir", UIControlState.Normal);
                     }
@@ -183,7 +183,7 @@ namespace WorklabsMx.iOS
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
-            this.Miembro = new MiembrosController().GetMemberData((ListUser[0] != "") ? ListUser[0] : ListUser[1], ListUser[2]);
+            this.Miembro = new UsuariosController().GetMemberData((ListUser[0] != "") ? ListUser[0] : ListUser[1], ListUser[2]);
             if (segue.Identifier == "SobreMi")
             {
                 var InfoPeril = (MiInfoViewController)segue.DestinationViewController;

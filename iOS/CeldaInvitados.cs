@@ -16,7 +16,7 @@ namespace WorklabsMx.iOS
 
     public interface EventosCeldaInvitados
     {
-        void EventTextFiled(MiembroModel invitado);
+        void EventTextFiled(UsuarioModel invitado);
     }
 
     public partial class CeldaInvitados : UITableViewCell
@@ -29,7 +29,7 @@ namespace WorklabsMx.iOS
 
         public EventosCeldaInvitados EventosCeldaInvitadosDelegate;
         List<bool> TextFilled = new List<bool> { false, false, false };
-        MiembroModel invitado = new MiembroModel();
+        UsuarioModel invitado = new UsuarioModel();
 
         public void UpdateCell()
         {
@@ -52,19 +52,19 @@ namespace WorklabsMx.iOS
 
             txtApellido.EditingChanged += (sender, e) =>
             {
-                invitado.Miembro_Apellidos = txtApellido.Text;
+                invitado.Usuario_Apellidos = txtApellido.Text;
                 this.SendTextStatus();
             };
 
             txtNombre.EditingChanged += (sender, e) =>
             {
-                invitado.Miembro_Nombre = txtNombre.Text;
+                invitado.Usuario_Nombre = txtNombre.Text;
                 this.SendTextStatus();
             };
 
             txtEmail.EditingChanged += (sender, e) =>
             {
-                invitado.Miembro_Correo_Electronico = txtEmail.Text;
+                invitado.Usuario_Correo_Electronico = txtEmail.Text;
                 this.SendTextStatus();
             };
 

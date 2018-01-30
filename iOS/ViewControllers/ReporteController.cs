@@ -55,7 +55,7 @@ namespace WorklabsMx.iOS
             using (UIView postView = new UIView(new CGRect(0, 50, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)))
             {
                 PostModel post = ctrlEscritorio.GetSinglePost(post_id);
-                UIButton pstImage = new STLButton(ImageGallery.LoadImage(post.Usuario_Fotografia_Ruta))
+                UIButton pstImage = new STLButton(ImageGallery.LoadImage(post.Usuario.Usuario_Fotografia))
                 {
                     Frame = new CGRect(10, 20, 50, 50)
                 };
@@ -63,11 +63,11 @@ namespace WorklabsMx.iOS
                 pstImage.Layer.CornerRadius = 25;
                 pstImage.TouchUpInside += (sender, e) =>
                 {
-                    new MessageDialog().ShowImage(ImageGallery.LoadImage(post.Usuario_Fotografia_Ruta));
+                    new MessageDialog().ShowImage(ImageGallery.LoadImage(post.Usuario.Usuario_Fotografia));
                 };
                 postView.AddSubview(pstImage);
 
-                UIButton lblNombre = new STLButton(post.Usuario_Nombre)
+                UIButton lblNombre = new STLButton(post.Usuario.Usuario_Nombre)
                 {
                     Frame = new CGRect(65, 25, UIScreen.MainScreen.Bounds.Width, 20),
                     Font = UIFont.BoldSystemFontOfSize(16),

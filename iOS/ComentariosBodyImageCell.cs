@@ -37,7 +37,7 @@ namespace WorklabsMx.iOS
             imgPublicacion.UserInteractionEnabled = true;
             imgPublicacion.AddGestureRecognizer(Tap);
 
-            lblNombre.Text = post.Usuario_Nombre;
+            lblNombre.Text = post.Usuario.Usuario_Nombre;
             lblLikes.Text = post.Publicacion_Me_Gustan_Cantidad + " LIKES";
             if (int.Parse(post.Publicacion_Me_Gustan_Cantidad) == 0)
             {
@@ -115,9 +115,9 @@ namespace WorklabsMx.iOS
         {
 
             List<String> listaUser = new List<string>();
-            listaUser.Add(PostLocal.Miembro_Id);
-            listaUser.Add(PostLocal.Colaborador_Empresa_Id);
-            listaUser.Add(PostLocal.Usuario_Tipo);
+            listaUser.Add(PostLocal.Usuario.Usuario_Id);
+            listaUser.Add(PostLocal.Usuario.Usuario_Empresa_Nombre);
+            listaUser.Add(PostLocal.Usuario.Usuario_Tipo);
             EventosComentariosDelegate.InfoUserPost(listaUser);
         }
 

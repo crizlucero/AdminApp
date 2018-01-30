@@ -28,16 +28,16 @@ namespace WorklabsMx.iOS.ViewElements
             {
                 Frame = new CGRect(10, 20, 50, 50)
             };
-            pstImage.SetImage(ImageGallery.LoadImage(post.Usuario_Fotografia_Ruta), UIControlState.Normal);
+            pstImage.SetImage(ImageGallery.LoadImage(post.Publicacion_Imagen_Ruta), UIControlState.Normal);
             pstImage.Layer.MasksToBounds = true;
             pstImage.Layer.CornerRadius = 25;
             pstImage.TouchUpInside += (sender, e) =>
             {
-                new MessageDialog().ShowImage(ImageGallery.LoadImage(post.Usuario_Fotografia_Ruta));
+                new MessageDialog().ShowImage(ImageGallery.LoadImage(post.Usuario.Usuario_Fotografia));
             };
             AddSubview(pstImage);
 
-            lblNombre = new STLButton(post.Usuario_Nombre)
+            lblNombre = new STLButton(post.Usuario.Usuario_Nombre)
             {
                 Frame = new CGRect(65, 25, UIScreen.MainScreen.Bounds.Width, 20),
                 Font = UIFont.BoldSystemFontOfSize(16),

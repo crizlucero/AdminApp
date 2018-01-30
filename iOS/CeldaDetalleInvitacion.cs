@@ -15,7 +15,7 @@ namespace WorklabsMx.iOS
     {
         void AgregarCeldas();
         void QuitarCelda(NSIndexPath indexPath);
-        void ConfirmarInvitaciones(List<MiembroModel> invitadosLocal);
+        void ConfirmarInvitaciones(List<UsuarioModel> invitadosLocal);
         void FechaSeleccionada();
         void SucursalSeleccionada();
         void Asunto(string Asunto);
@@ -24,7 +24,7 @@ namespace WorklabsMx.iOS
     public partial class CeldaDetalleInvitacion : UITableViewCell
     {
         string DomicilioInvitacion = "";
-        List<MiembroModel> invitadosLocal;
+        List<UsuarioModel> invitadosLocal;
 
         public EventosDetalleInvitacion EventosDetalleInvitacionDel;
 
@@ -36,7 +36,7 @@ namespace WorklabsMx.iOS
         {
         }
 
-        public void UpdateCell(List<MiembroModel> invitados, string FechaReservacion, string Sucursal, NSIndexPath indexPath)
+        public void UpdateCell(List<UsuarioModel> invitados, string FechaReservacion, string Sucursal, NSIndexPath indexPath)
         {
             this.lblFecha.Text = FechaReservacion;
             this.lblUbicacion.Text = Sucursal;
@@ -63,24 +63,24 @@ namespace WorklabsMx.iOS
         {
             var ErrorInvitar = false;
             var EmailValido = true;
-            foreach (MiembroModel invitado in invitadosLocal)
+            foreach (UsuarioModel invitado in invitadosLocal)
             {
 
-                if (invitado.Miembro_Apellidos != "" && invitado.Miembro_Apellidos != null && invitado.Miembro_Nombre != "" && invitado.Miembro_Nombre != null && invitado.Miembro_Correo_Electronico != "" && invitado.Miembro_Correo_Electronico != null)
+                if (invitado.Usuario_Apellidos != "" && invitado.Usuario_Apellidos != null && invitado.Usuario_Nombre != "" && invitado.Usuario_Nombre != null && invitado.Usuario_Correo_Electronico != "" && invitado.Usuario_Correo_Electronico != null)
                 {
                     String EmailRegex = "";
                     EmailRegex = KeyChainHelper.GetKey("EmailRegex");
                     bool EmailEsValido = false;
-                    if (invitado.Miembro_Correo_Electronico != null)
+                    if (invitado.Usuario_Correo_Electronico != null)
                     {
-                        EmailEsValido = this.ElTextoEsValido(invitado.Miembro_Correo_Electronico, EmailRegex);
+                        EmailEsValido = this.ElTextoEsValido(invitado.Usuario_Correo_Electronico, EmailRegex);
                     }
                     if (EmailEsValido)
                     {
                         var Sucursal = sucursales.Find(x => x.Sucursal_Descripcion == lblUbicacion.Text);
                         if (InternetConectionHelper.VerificarConexion())
                         {
-                            if (new InvitadosController().RegistraInvitado(invitado.Miembro_Nombre, invitado.Miembro_Apellidos, invitado.Miembro_Correo_Electronico, txtAsunto.Text, DateTime.Parse(lblFecha.Text), Sucursal.Sucursal_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo")) != -1)
+                            if (new InvitadosController().RegistraInvitado(invitado.Usuario_Nombre, invitado.Usuario_Apellidos, invitado.Usuario_Correo_Electronico, txtAsunto.Text, DateTime.Parse(lblFecha.Text), Sucursal.Sucursal_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo")) != -1)
                             {
                                 ErrorInvitar = false;
                                 this.DomicilioInvitacion = Sucursal.Sucursal_Descripcion + " " + Sucursal.Sucursal_Domicilio;

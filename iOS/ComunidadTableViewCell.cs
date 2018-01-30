@@ -16,9 +16,9 @@ namespace WorklabsMx.iOS
 
     public partial class ComunidadTableViewCell : UITableViewCell
     {
-        MiembrosController Favorites;
+        UsuariosController Favorites;
 
-        MiembroModel MiembroLocal;
+        UsuarioModel MiembroLocal;
 
         public EventosComunidadCell EventosComunidadCellDelegate;
 
@@ -26,12 +26,12 @@ namespace WorklabsMx.iOS
         {
         }
 
-        public void UpdateCell(MiembroModel Miembro)
+        public void UpdateCell(UsuarioModel Miembro)
         {
-            Favorites = new MiembrosController();
-            this.lblNombre.Text = Miembro.Miembro_Nombre + " " + Miembro.Miembro_Apellidos;
-            this.lblProfesion.Text = Miembro.Miembro_Profesion;
-            var isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Miembro.Miembro_Id, Miembro.Miembro_Tipo);
+            Favorites = new UsuariosController();
+            this.lblNombre.Text = Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos;
+            this.lblProfesion.Text = Miembro.Usuario_Profesion;
+            var isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Miembro.Usuario_Id, Miembro.Usuario_Tipo);
             if(isFavorite.Value)
             {
                 this.btnFavorito.Enabled = true;
@@ -53,9 +53,9 @@ namespace WorklabsMx.iOS
         partial void btnImagenComu_Touch(UIButton sender)
         {
             List<String> listaUser = new List<string>();
-            listaUser.Add(MiembroLocal.Miembro_Id);
-            listaUser.Add(MiembroLocal.Miembro_Empresa);
-            listaUser.Add(MiembroLocal.Miembro_Tipo);
+            listaUser.Add(MiembroLocal.Usuario_Id);
+            listaUser.Add(MiembroLocal.Usuario_Empresa_Nombre);
+            listaUser.Add(MiembroLocal.Usuario_Tipo);
             EventosComunidadCellDelegate.InfoUserPost(listaUser);
         }
     }

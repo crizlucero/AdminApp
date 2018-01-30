@@ -11,7 +11,7 @@ namespace WorklabsMx.iOS
 {
     public partial class AboutMeModificaController : UIViewController
     {
-        MiembroModel miembro;
+        UsuarioModel miembro;
         UITableView selectView;
         public AboutMeModificaController(IntPtr handle) : base(handle)
         {
@@ -21,7 +21,7 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             //var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
-            miembro = new MiembrosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+            miembro = new UsuariosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
             Title = "Mi Perfil";
 
             using (UIScrollView scrollView = new UIScrollView(new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)))
@@ -29,7 +29,7 @@ namespace WorklabsMx.iOS
 
                 scrollView.Add(new STLLabel("Fotografía", 40));
 
-                UIImageView imagen = new STLImageView(70, miembro.Miembro_Fotografia);
+                UIImageView imagen = new STLImageView(70, miembro.Usuario_Fotografia);
                 imagen.Image.Scale(new CGSize(50, 50), 0);
                 scrollView.Add(imagen);
 
@@ -38,23 +38,23 @@ namespace WorklabsMx.iOS
                 scrollView.Add(btnPhoto);
 
                 scrollView.Add(new STLLabel("Nombre", 170));
-                UITextField txtNombre = new STLTextField("Nombre", 200, miembro.Miembro_Nombre);
+                UITextField txtNombre = new STLTextField("Nombre", 200, miembro.Usuario_Nombre);
                 scrollView.Add(txtNombre);
 
                 scrollView.Add(new STLLabel("Apellidos", 230));
-                UITextField txtApellidos = new STLTextField("Apellidos", 260, miembro.Miembro_Apellidos);
+                UITextField txtApellidos = new STLTextField("Apellidos", 260, miembro.Usuario_Apellidos);
                 scrollView.Add(txtApellidos);
 
                 scrollView.Add(new STLLabel("Puesto", 290));
-                UITextField txtPuesto = new STLTextField("Puesto", 320, miembro.Miembro_Puesto);
+                UITextField txtPuesto = new STLTextField("Puesto", 320, miembro.Usuario_Puesto);
                 scrollView.Add(txtPuesto);
 
                 scrollView.Add(new STLLabel("Profesión", 350));
-                UITextField txtProfesion = new STLTextField("Profesión", 380, miembro.Miembro_Profesion);
+                UITextField txtProfesion = new STLTextField("Profesión", 380, miembro.Usuario_Profesion);
                 scrollView.Add(txtProfesion);
 
                 scrollView.Add(new STLLabel("Habilidades", 410));
-                UITextField txtHabilidades = new STLTextField("Habilidades", 440, miembro.Miembro_Habilidades);
+                UITextField txtHabilidades = new STLTextField("Habilidades", 440, "");
                 scrollView.Add(txtHabilidades);
 
                 scrollView.Add(new STLLabel("Fecha de Nacimiento", 470));
@@ -63,13 +63,13 @@ namespace WorklabsMx.iOS
                 {
                     Mode = UIDatePickerMode.Date,
                     Frame = new CGRect(40, 500, UIScreen.MainScreen.Bounds.Width - 80, 100),
-                    Date = DatePickerHelper.GetDate(miembro.Miembro_Fecha_Nacimiento)
+                    Date = DatePickerHelper.GetDate(miembro.Usuario_Fecha_Nacimiento)
                 };
 
                 scrollView.Add(dpFechaNacimiento);
 
                 scrollView.Add(new STLLabel("Genero", 630));
-                UITextField txtGenero = new STLTextField("Genero", 660, miembro.Genero_Descripcion);
+                UITextField txtGenero = new STLTextField("Genero", 660, miembro.Genero.Genero_Descripcion);
                 txtGenero.EditingDidBegin += (sender, e) =>
                 {
                     selectView = new UIDropdownList(txtGenero, View);
@@ -83,20 +83,20 @@ namespace WorklabsMx.iOS
                 //scrollView.Add(txtGenero);
 
                 scrollView.Add(new STLLabel("Correo Electrónico", 720));
-                UITextField txtEmail = new STLTextField("Correo Electrónico", 750, miembro.Miembro_Correo_Electronico, UIKeyboardType.EmailAddress);
+                UITextField txtEmail = new STLTextField("Correo Electrónico", 750, miembro.Usuario_Correo_Electronico, UIKeyboardType.EmailAddress);
                 scrollView.Add(txtEmail);
 
                 scrollView.Add(new STLLabel("Teléfono", 780));
-                UITextField txtTelefono = new STLTextField("Teléfono", 810, miembro.Miembro_Telefono, UIKeyboardType.PhonePad);
+                UITextField txtTelefono = new STLTextField("Teléfono", 810, miembro.Usuario_Telefono, UIKeyboardType.PhonePad);
                 scrollView.Add(txtTelefono);
 
                 scrollView.Add(new STLLabel("Celular", 840));
-                UITextField txtCelular = new STLTextField("Celular", 870, miembro.Miembro_Celular, UIKeyboardType.PhonePad);
+                UITextField txtCelular = new STLTextField("Celular", 870, miembro.Usuario_Celular, UIKeyboardType.PhonePad);
                 scrollView.Add(txtCelular);
 
                 this.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Actualizar", UIBarButtonItemStyle.Plain, (sender, e) =>
                 {
-                    if (new MiembrosController().UpdateDataMiembros(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Id")), txtNombre.Text, txtApellidos.Text, txtEmail.Text,
+                    if (new UsuariosController().UpdateDataMiembros(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Id")), txtNombre.Text, txtApellidos.Text, txtEmail.Text,
                                                                    txtTelefono.Text, txtCelular.Text, txtProfesion.Text, txtPuesto.Text, txtHabilidades.Text, (DateTime)dpFechaNacimiento.Date, ""))
                         new MessageDialog().SendToast("Datos guardados");
                     else

@@ -11,7 +11,7 @@ namespace WorklabsMx.iOS
     public partial class InfoEmpresaTableViewController : UITableViewController
     {
 
-        public MiembroModel Miembro = new MiembroModel();
+        public UsuarioModel Miembro = new UsuarioModel();
 
         public InfoEmpresaTableViewController(IntPtr handle) : base(handle)
         {
@@ -22,7 +22,7 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
             StyleHelper.Style(this.vwEmpresa.Layer);
             StyleHelper.Style(this.vwEmpresasAnteriores.Layer);
-            EmpresaModel empresa = new EmpresaController().GetEmpresaMiembro(Miembro.Miembro_Id);
+            EmpresaModel empresa = new EmpresaController().GetEmpresaMiembro(Miembro.Usuario_Id);
             this.lblPais.Text = "México";
             this.lblEmpresa.Text = empresa.Empresa_Miembro_Nombre;
         }

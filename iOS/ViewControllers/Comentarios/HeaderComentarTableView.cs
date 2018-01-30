@@ -20,7 +20,7 @@ namespace WorklabsMx.iOS
 
         internal void UpdateCell(PostModel Publicacion, UIImage currentImageProfile, UIImage currentImagePost) 
         {
-            lblNombre.Text = Publicacion.Usuario_Nombre;
+            lblNombre.Text = Publicacion.Usuario.Usuario_Nombre;
             lblLikes.Text = Publicacion.Publicacion_Me_Gustan_Cantidad + " LIKES";
             lblFechaComentario.Text = Publicacion.Publicacion_Fecha;
             lblComentarios.Text = Publicacion.Publicacion_Comentarios_Cantidad + " COMENTARIOS";
