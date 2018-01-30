@@ -92,7 +92,7 @@ namespace WorklabsMx.iOS
                     new ColaboradoresController().AddChangeColaborador(colaborador.Miembro_Empresa_Id, txtNombre.Text, txtApellidos.Text,
                                                                        txtEmail.Text, txtTelefono.Text, txtCelular.Text, txtProfesion.Text,
                                                                        txtPuesto.Text, txtHabilidades.Text, dpFechaNacimiento.Date.ToString(),
-                                                                       colaborador.Colaborador_Id);
+                                                                       colaborador.Colaborador_Id, txtGenero.Text, null);
                 }), true);
                 scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 840);
                 Add(scrollView);
