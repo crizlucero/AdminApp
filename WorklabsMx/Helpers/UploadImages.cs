@@ -10,11 +10,11 @@ namespace WorklabsMx.Helpers
         /// </summary>
         /// <param name="imgNombre">Nombre de la imagen.</param>
         /// <param name="image">Bytes de la imagen</param>
-        public bool UploadBitmapAsync(string imgNombre, byte[] image)
+        public bool UploadBitmapAsync(string imgNombre, byte[] image, string path)
         {
             try
             {
-                FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://38.122.16.212/" + imgNombre);
+                FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://38.122.16.212/" + path + imgNombre);
                 client.Method = WebRequestMethods.Ftp.UploadFile;
                 client.UsePassive = false;
                 client.Credentials = new NetworkCredential(@"SRVWLHOSTING\worklabscloud", @"Worklabscloud!");
@@ -34,13 +34,13 @@ namespace WorklabsMx.Helpers
             }
         }
 
-        public byte[] DownloadFileFTP(string imgNombre)
+        public byte[] DownloadFileFTP(string imgNombre, string path)
         {
             if (!string.IsNullOrEmpty(imgNombre))
             {
                 try
                 {
-                    FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://38.122.16.212/" + imgNombre.Replace("\\", "/"));
+                    FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://38.122.16.212/" + path + imgNombre.Replace("\\", "/"));
                     client.Method = WebRequestMethods.Ftp.DownloadFile;
                     client.UsePassive = false;
                     client.Credentials = new NetworkCredential(@"SRVWLHOSTING\worklabscloud", @"Worklabscloud!");

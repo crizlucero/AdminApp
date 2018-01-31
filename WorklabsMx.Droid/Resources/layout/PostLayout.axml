@@ -27,7 +27,8 @@
             android:layout_width="50dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"
+            android:background="@drawable/post_round_image" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblNombre"

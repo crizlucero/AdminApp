@@ -10,6 +10,15 @@ namespace WorklabsMx.Controllers
 {
     public class EscritorioController : DataBaseModel
     {
+        UploadImages ImageHelper;
+        readonly string usuario_imagen_path, publicaciones_imagen_path;
+        public EscritorioController()
+        {
+            ImageHelper = new UploadImages();
+            List<ConfiguracionesModel> config = new ConfigurationsController().GetListConfiguraciones();
+            usuario_imagen_path = config.Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1;
+            publicaciones_imagen_path = config.Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PUBLICACIONES").Parametro_Varchar_1;
+        }
         /// <summary>
         /// Obtiene los posts del muro
         /// </summary>
@@ -17,6 +26,8 @@ namespace WorklabsMx.Controllers
         public List<PostModel> GetMuroPosts(string usuario_id, string usuario_tipo)
         {
             List<PostModel> posts = new List<PostModel>();
+            List<UsuarioModel> usuarios = new List<UsuarioModel>();
+            string post_user_id = string.Empty;
             try
             {
                 conn.Open();
@@ -30,17 +41,26 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    posts.Add(new PostModel
+                    post_user_id = !string.IsNullOrEmpty(reader["Miembro_Id"].ToString()) ? reader["Miembro_Id"].ToString() : reader["Colaborador_Empresa_Id"].ToString();
+                    UsuarioModel usuario = usuarios.Find(user => user.Usuario_Id == post_user_id && user.Usuario_Tipo == reader["Usuario_Tipo"].ToString());
+                    if (usuario == null)
                     {
-                        Publicacion_Id = reader["Publicacion_Id"].ToString(),
-                        Usuario = new UsuarioModel
+                        usuario = new UsuarioModel
                         {
                             Usuario_Id = !string.IsNullOrEmpty(reader["Miembro_Id"].ToString()) ? reader["Miembro_Id"].ToString() : reader["Colaborador_Empresa_Id"].ToString(),
                             Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
                             Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
                             Usuario_Fotografia = reader["Usuario_Fotografia_Ruta"].ToString(),
-                            Usuario_Puesto = reader["Usuario_Puesto"].ToString()
-                        },
+                            Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
+                            Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path)
+                        };
+                        usuarios.Add(usuario);
+                    }
+
+                    posts.Add(new PostModel
+                    {
+                        Publicacion_Id = reader["Publicacion_Id"].ToString(),
+                        Usuario = usuario,
                         Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
                         Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),
                         Publicacion_Imagen_Ruta = reader["Publicacion_Imagen_Ruta"].ToString(),
@@ -418,7 +438,7 @@ namespace WorklabsMx.Controllers
                 if (fotografia.Length != 0)
                 {
                     fotoNombre = Guid.NewGuid().ToString() + ".png";
-                    var result = new UploadImages().UploadBitmapAsync(fotoNombre, fotografia);
+                    var result = new UploadImages().UploadBitmapAsync(fotoNombre, fotografia,publicaciones_imagen_path);
                     if (result)
                     {
                         return true;
@@ -489,7 +509,7 @@ namespace WorklabsMx.Controllers
                 if (fotografia.Length != 0)
                 {
                     fotoNombre = Guid.NewGuid().ToString() + ".png";
-                    var result = new UploadImages().UploadBitmapAsync(fotoNombre, fotografia);
+                    var result = new UploadImages().UploadBitmapAsync(fotoNombre, fotografia,publicaciones_imagen_path);
                     if (!result)
                     {
                         return false;

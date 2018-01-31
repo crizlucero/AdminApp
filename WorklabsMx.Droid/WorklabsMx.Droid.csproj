@@ -365,6 +365,7 @@
     <AndroidResource Include="Resources\drawable\choice_unselected.xml" />
     <AndroidResource Include="Resources\drawable\ticket_style.xml" />
     <AndroidResource Include="Resources\drawable\button_circle.xml" />
+    <AndroidResource Include="Resources\drawable\post_round_image.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

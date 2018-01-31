@@ -68,6 +68,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\EtiquetasModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\RedSocialModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\UsuariosController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ConfiguracionesHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />

@@ -67,16 +67,14 @@ namespace WorklabsMx.Controllers
         /// Obtiene el listado de configuraciones
         /// </summary>
         /// <returns>Listado de configuraciones.</returns>
-        /// <param name="parametros">Parametros.</param>
-        public List<ConfiguracionesModel> GetListConfiguraciones(string parametros)
+        public List<ConfiguracionesModel> GetListConfiguraciones()
         {
-            string query = "SELECT * FROM vw_cat_Parametros_Generales WHERE Parametro_Descripcion in (" + parametros + ")";
+            string query = "SELECT * FROM vw_cat_Parametros_Generales";
             List<ConfiguracionesModel> configuraciones = new List<ConfiguracionesModel>();
             try
             {
                 conn.Open();
                 command = this.CreateCommand(query);
-                command.Parameters.AddWithValue("@Parametro", parametros);
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
