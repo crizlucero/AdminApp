@@ -47,7 +47,6 @@ namespace WorklabsMx.Helpers
                     Stream responseStream = ((FtpWebResponse)client.GetResponse()).GetResponseStream();
                     MemoryStream ms = new MemoryStream();
                     responseStream.CopyTo(ms);
-
                     return ms.ToArray();
                 }
                 catch (Exception e)

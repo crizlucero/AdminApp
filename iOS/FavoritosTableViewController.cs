@@ -145,7 +145,7 @@ namespace WorklabsMx.iOS
         public void InfoUserPost(List<String> listaUser)
         {
             ListUser = listaUser;
-            this.PerformSegue("DetallarPerfil", null);
+            //this.PerformSegue("DetallarPerfil", null);
         }
 
     }

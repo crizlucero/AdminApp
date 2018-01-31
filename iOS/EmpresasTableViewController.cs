@@ -24,7 +24,6 @@ namespace WorklabsMx.iOS
         bool isShowInformation = false;
         bool existeConeccion = true;
 
-        int contadorEmpresas;
         EmpresaModel Empresa;
 
         public EmpresasTableViewController (IntPtr handle) : base (handle)
@@ -47,7 +46,6 @@ namespace WorklabsMx.iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            this.contadorEmpresas = 0;
         }
 
         public override UIView GetViewForHeader(UITableView tableView, nint section)
@@ -134,7 +132,7 @@ namespace WorklabsMx.iOS
         public void InfoEmpresas(EmpresaModel EmpresaLocal)
         {
             this.Empresa = EmpresaLocal;
-            this.PerformSegue("DetallarEmpresa", null);
+            //this.PerformSegue("DetallarEmpresa", null);
         }
     }
 }

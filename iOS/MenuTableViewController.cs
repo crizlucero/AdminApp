@@ -48,7 +48,11 @@ namespace WorklabsMx.iOS
             }
             foreach (ItemsMenu menu in new Controllers.EscritorioController().GetMenuiOS(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Tipo"))))
             {
-                tableItems.Add(menu);
+                if(menu.Menu_Id != "22" && menu.Menu_Id != "8")
+                {
+                    tableItems.Add(menu);
+                }
+
             }
         }
 
@@ -114,26 +118,17 @@ namespace WorklabsMx.iOS
             }
             else if(indexPath.Row == 1)
             {
-                this.SubmenuIndex = 8;
-                this.PerformSegue("MiCuenta", null);
+                this.PerformSegue("Directorio", null);
             }
             else if(indexPath.Row == 2)
             {
-                this.PerformSegue("Directorio", this);
+                this.PerformSegue("ReservarSalaJuntas", this);
             }
             else if(indexPath.Row == 3)
             {
-                this.PerformSegue("Servicios", null);
+                this.PerformSegue("RegistroInvitados", null);
             }
             else if (indexPath.Row == 4)
-            {
-                this.PerformSegue("ReservarSalaJuntas", this);
-            }
-            else if (indexPath.Row == 5)
-            {
-                this.PerformSegue("RegistroInvitados", this);
-            }
-            else if(indexPath.Row == 6)
             {
                 this.CerrarSesion();
             }
