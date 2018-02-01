@@ -36,12 +36,14 @@ namespace WorklabsMx.Droid
         SimpleStorage localStorage;
         EscritorioController DashboardController;
         TableLayout tlPost;
-        string nombre, puesto, foto, empresa;
+        string nombre, puesto, foto, empresa, upload_image_path;
         List<PostModel> posts;
         MenuView menu;
         public MainActivity()
         {
             DashboardController = new EscritorioController();
+
+
         }
 
         protected override void OnPause()
@@ -58,6 +60,7 @@ namespace WorklabsMx.Droid
                 menu = new MenuView(this);
                 localStorage = SimpleStorage.EditGroup("Login");
                 localStorage.Delete("Parent");
+                upload_image_path = new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PUBLICACIONES").Parametro_Varchar_1;
                 OpenDashboard();
             }
             catch (Exception e)
@@ -141,7 +144,10 @@ namespace WorklabsMx.Droid
                 //string Usuario_Id = !string.IsNullOrEmpty(post.Usuario.Usuario_Id) ? post.Miembro_Id : post.Colaborador_Empresa_Id;
 
                 ImageButton imgPerfil = PostView.FindViewById<ImageButton>(Resource.Id.imgPerfil);
-                imgPerfil.SetImageURI(ImagesHelper.GetPerfilImagen(post.Usuario.Usuario_Fotografia));
+                if (post.Usuario.Usuario_Fotografia_Perfil != null)
+                    imgPerfil.SetImageURI(ImagesHelper.GetPerfilImagen(post.Usuario.Usuario_Fotografia));
+                else
+                    imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
                 imgPerfil.Click += (sender, e) => ShowPerfilCard(new UsuariosController().GetMemberData(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo));
 
                 TextView lblNombre = PostView.FindViewById<TextView>(Resource.Id.lblNombre);
@@ -196,8 +202,8 @@ namespace WorklabsMx.Droid
                 ImageView imgPost = PostView.FindViewById<ImageView>(Resource.Id.imgPost);
                 if (!string.IsNullOrEmpty(post.Publicacion_Imagen_Ruta))
                 {
-                    byte[] photo = new UploadImages().DownloadFileFTP(post.Publicacion_Imagen);
-                    if (photo.Length != 0)
+                    byte[] photo = new UploadImages().DownloadFileFTP(post.Publicacion_Imagen, upload_image_path);
+                    if (photo != null && photo.Length != 0)
                     {
                         imgPost.Visibility = ViewStates.Visible;
                         imgPost.SetImageBitmap(BitmapFactory.DecodeByteArray(photo, 0, photo.Length));//SetImageURI(Android.Net.Uri.Parse("http://desarrolloworklabs.com/Dashboard_Client/" + post.Publicacion_Imagen_Ruta));

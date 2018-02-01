@@ -9,6 +9,8 @@ namespace WorklabsMx.Controllers
 {
     public class UsuariosController : DataBaseModel
     {
+        readonly string usuario_imagen_path =  new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1;
+
         /// <summary>
         /// Obtiene la información del miembro
         /// </summary>
@@ -569,7 +571,7 @@ namespace WorklabsMx.Controllers
                 if (fotografia.Length != 0)
                 {
                     fotoNombre = Guid.NewGuid().ToString() + ".png";
-                    var result = new UploadImages().UploadBitmapAsync(fotoNombre, fotografia);
+                    var result = new UploadImages().UploadBitmapAsync(fotoNombre, fotografia, usuario_imagen_path);
                     if (!result)
                     {
                         return false;

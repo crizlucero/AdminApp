@@ -13,7 +13,7 @@ namespace WorklabsMx.Helpers
         List<ConfiguracionesModel> Parametros;
         public void GenerarPago()
         {
-            Parametros = new ConfigurationsController().GetListConfiguraciones("6,12");
+            Parametros = new ConfigurationsController().GetListConfiguraciones();
 
             string varEstatus = "Correcto|0";
             try

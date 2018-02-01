@@ -45,7 +45,9 @@
             android:id="@+id/imgPerfil"
             android:layout_rowSpan="3"
             android:background="@drawable/imagestyle"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:layout_width="75dp"
+            android:layout_height="70dp" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/lblNombre"
@@ -54,6 +56,8 @@
             android:text="@string/Nombre"
             android:textStyle="bold"
             android:textSize="18dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="290dp"
             android:layout_marginRight="10dp" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
@@ -62,7 +66,10 @@
             android:layout_column="1"
             android:text="@string/Puesto"
             android:textStyle="bold"
-            android:textSize="10dp" />
+            android:textSize="10dp"
+            android:layout_width="290dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
         <Button
             android:background="@drawable/buttonstyle"
             style="@style/ButtonApply"
@@ -70,7 +77,9 @@
             android:layout_column="1"
             android:layout_gravity="left"
             android:layout_height="20dp"
-            android:id="@+id/btnInitPublish" />
+            android:id="@+id/btnInitPublish"
+            android:layout_width="100dp"
+            android:layout_marginLeft="10dp" />
     </GridLayout>
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_container"

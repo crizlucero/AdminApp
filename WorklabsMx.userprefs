@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/SalaJuntas/ReservacionesSalaCell.cs">
     <Files>
@@ -37,5 +38,27 @@
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
   </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
   <MonoDevelop.Ide.ItemProperties.PagosAndroid PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/EscritorioController.cs">
+    <Files>
+      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="32" Column="50" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="215" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MainActivity.cs" Line="98" Column="57" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="19" Column="15" />
+      <File FileName="WorklabsMx/Models/PostModel.cs" Line="5" Column="51" />
+      <File FileName="WorklabsMx/Models/UsuarioModel.cs" Line="29" Column="61" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="27" Column="29" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Helpers/ConfiguracionesHelper.cs" relfile="WorklabsMx/Helpers/ConfiguracionesHelper.cs" line="12" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
+>>>>>>> 0c629bde9374939daf9ecee0e3d9d390032abb30
   <MultiItemStartupConfigurations />
 </Properties>
