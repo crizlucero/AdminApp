@@ -23,6 +23,11 @@ namespace WorklabsMx.iOS
                 this.btnFlecha.Hidden = true;
                 this.btnFlecha.Enabled = false;
             }
+            else
+            {
+                this.btnFlecha.Hidden = false;
+                this.btnFlecha.Enabled = true;
+            }
         }
 
     }

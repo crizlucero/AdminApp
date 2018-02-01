@@ -85,6 +85,7 @@ namespace WorklabsMx.iOS
                 return Reservaciones.Count;
             }
             isShowInformation = false;
+            BTProgressHUD.Dismiss();
             return 0;
         }
 
@@ -166,7 +167,7 @@ namespace WorklabsMx.iOS
         private async void ActualizarTabla(int CampoSeleccionado)
         {
             BTProgressHUD.Show();
-            await Task.Delay(2000);
+            await Task.Delay(1000);
             this.SeccionSeleccionada = CampoSeleccionado;
             this.TableView.ReloadData();
         }
