@@ -20,22 +20,23 @@ namespace WorklabsMx.Droid
     public class SalasJuntasActivity : Activity
     {
         ViewPager _viewPager;
-        List<int> horas, HorasNoDisponibles;
+        List<int> horas;
+        List<double> HorasNoDisponibles;
         string fecha_seleccionada;
-        SimpleStorage storage;
+        readonly SimpleStorage storage;
         AlertDialog dialog;
         List<SalaJuntasModel> salas;
         readonly SalasJuntasController SalasController;
         LinearLayout llhHorario;
         double creditos;
-        readonly Dictionary<string, Dictionary<string, List<int>>> Horarios;
+        readonly Dictionary<string, Dictionary<string, List<double>>> Horarios;
         public SalasJuntasActivity()
         {
-            HorasNoDisponibles = new List<int>();
+            HorasNoDisponibles = new List<double>();
             storage = SimpleStorage.EditGroup("Login");
             fecha_seleccionada = DateTime.Now.ToString("d");
             SalasController = new SalasJuntasController();
-            Horarios = new Dictionary<string, Dictionary<string, List<int>>>();
+            Horarios = new Dictionary<string, Dictionary<string, List<double>>>();
             horas = new List<int>();
             for (int i = 1; i < 25; i++)
                 horas.Add(i);
@@ -53,8 +54,8 @@ namespace WorklabsMx.Droid
             _viewPager = FindViewById<ViewPager>(Resource.Id.vpSucursal);
             salas = SalasController.GetSalaJuntas(Intent.GetStringExtra("sucursal_id"));
             _viewPager.Adapter = new SalaJuntasAdapter(this, salas);
-            Horarios.Add(salas[_viewPager.CurrentItem].Sala_Id, new Dictionary<string, List<int>>());
-            Horarios[salas[_viewPager.CurrentItem].Sala_Id].Add(fecha_seleccionada, new List<int>());
+            Horarios.Add(salas[_viewPager.CurrentItem].Sala_Id, new Dictionary<string, List<double>>());
+            Horarios[salas[_viewPager.CurrentItem].Sala_Id].Add(fecha_seleccionada, new List<double>());
             FindViewById<LinearLayout>(Resource.Id.llSeleccionarFecha).Click += (sender, e) =>
             {
                 DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
@@ -86,9 +87,9 @@ namespace WorklabsMx.Droid
                     UpdateHorasNoDisponibles();
                 });
                 if (!Horarios.ContainsKey(salas[_viewPager.CurrentItem].Sala_Id))
-                    Horarios.Add(salas[_viewPager.CurrentItem].Sala_Id, new Dictionary<string, List<int>>());
+                    Horarios.Add(salas[_viewPager.CurrentItem].Sala_Id, new Dictionary<string, List<double>>());
                 if (!Horarios[salas[_viewPager.CurrentItem].Sala_Id].ContainsKey(fecha_seleccionada))
-                    Horarios[salas[_viewPager.CurrentItem].Sala_Id].Add(fecha_seleccionada, new List<int>());
+                    Horarios[salas[_viewPager.CurrentItem].Sala_Id].Add(fecha_seleccionada, new List<double>());
                 FillHorario();
             };
             FindViewById<RelativeLayout>(Resource.Id.rlAgendar).Click += (sender, e) => ShowConfirmacion();
@@ -96,14 +97,14 @@ namespace WorklabsMx.Droid
             FillHorario();
             HorizontalScrollView scrollHoras = FindViewById<HorizontalScrollView>(Resource.Id.hsvHorario);
 
-            scrollHoras.SmoothScrollBy(scrollHoras.Width,0);
+            scrollHoras.SmoothScrollBy(scrollHoras.Width, 0);
         }
 
         void UpdateHorasNoDisponibles()
         {
             if (DateTime.Parse(fecha_seleccionada).ToString("d") == DateTime.Now.ToString("d"))
             {
-                for (int i = 0; i <= DateTime.Now.Hour; i++)
+                for (double i = 0; i <= DateTime.Now.Hour; i += .5)
                     if (!HorasNoDisponibles.Contains(i))
                         HorasNoDisponibles.Add(i);
             }
@@ -121,57 +122,89 @@ namespace WorklabsMx.Droid
                     HorarioView.FindViewById<TextView>(Resource.Id.lblHora).Text = hora.ToString();
                 else
                     HorarioView.FindViewById<TextView>(Resource.Id.lblHora).Text = "0";
-                ImageView horario = HorarioView.FindViewById<ImageView>(Resource.Id.ivHora);
+                ImageView horarioInf = HorarioView.FindViewById<ImageView>(Resource.Id.ivHoraInf);
+                ImageView horarioSup = HorarioView.FindViewById<ImageView>(Resource.Id.ivHoraSup);
 
                 if (HorasNoDisponibles.Contains(hora))
                 {
-                    horario.SetBackgroundColor(Color.Rgb(85, 85, 85));
-                    horario.SetImageResource(Resource.Mipmap.ic_diagonal_lines);
+                    horarioInf.SetBackgroundColor(Color.Rgb(85, 85, 85));
+                    horarioInf.SetImageResource(Resource.Mipmap.ic_diagonal_lines);
+                }
+                if (HorasNoDisponibles.Contains(hora - .5))
+                {
+                    horarioSup.SetBackgroundColor(Color.Rgb(85, 85, 85));
+                    horarioSup.SetImageResource(Resource.Mipmap.ic_diagonal_lines);
                 }
                 if (Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Contains(hora))
                 {
-                    horario.SetBackgroundColor(Color.Rgb(162, 219, 255));
+                    horarioInf.SetBackgroundColor(Color.Rgb(162, 219, 255));
                 }
-                HorarioView.Click += delegate
+                if (Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Contains(hora - .5))
                 {
-                    if (!HorasNoDisponibles.Contains(hora))
+                    horarioSup.SetBackgroundColor(Color.Rgb(162, 219, 255));
+                }
+                horarioInf.Click += delegate
+                {
+                    if (!HorasNoDisponibles.Contains(hora - 1))
                     {
-                        if (!Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Contains(hora))
+                        if (!Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Contains(hora - 1))
                         {
-                            horario.SetBackgroundColor(Color.Rgb(162, 219, 255));
-                            Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Add(hora);
+                            horarioInf.SetBackgroundColor(Color.Rgb(162, 219, 255));
+                            Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Add(hora - 1);
                         }
                         else
                         {
-                            horario.SetBackgroundColor(Color.Rgb(225, 252, 195));
-                            Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Remove(hora);
+                            horarioInf.SetBackgroundColor(Color.Rgb(225, 252, 195));
+                            Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Remove(hora - 1);
                         }
+                        CalculoCreditos();
                     }
-                    int totalHoras = 0;
+                };
 
-                    creditos = 0;
-                    salas.ForEach(sala =>
+                horarioSup.Click += delegate
+                {
+                    if (!HorasNoDisponibles.Contains(hora - .5))
                     {
-                        if (Horarios.ContainsKey(sala.Sala_Id))
+                        if (!Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Contains(hora - .5))
                         {
-                            foreach (KeyValuePair<string, List<int>> fechaHorario in Horarios[sala.Sala_Id])
-                            {
-                                totalHoras += fechaHorario.Value.Count;
-                                fechaHorario.Value.ForEach(time =>
-                                {
-                                    creditos++;
-                                    if (sala.Sala_Capacidad == "10" && time > 10 && time < 18)
-                                        creditos += .5;
-                                });
-                            }
+                            horarioSup.SetBackgroundColor(Color.Rgb(162, 219, 255));
+                            Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Add(hora - .5);
                         }
-                    });
-                    FindViewById<TextView>(Resource.Id.lblHorasTotal).Text = totalHoras.ToString();
-                    FindViewById<TextView>(Resource.Id.lblCreditosUsados).Text = creditos.ToString();
-
+                        else
+                        {
+                            horarioSup.SetBackgroundColor(Color.Rgb(225, 252, 195));
+                            Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Remove(hora - .5);
+                        }
+                        CalculoCreditos();
+                    }
                 };
                 llhHorario.AddView(HorarioView);
             });
+        }
+
+        void CalculoCreditos()
+        {
+            double totalHoras = 0;
+
+            creditos = 0;
+            salas.ForEach(sala =>
+            {
+                if (Horarios.ContainsKey(sala.Sala_Id))
+                {
+                    foreach (KeyValuePair<string, List<double>> fechaHorario in Horarios[sala.Sala_Id])
+                    {
+                        totalHoras += fechaHorario.Value.Count / 2;
+                        fechaHorario.Value.ForEach(time =>
+                        {
+                            creditos++;
+                            if (sala.Sala_Capacidad == "10" && time > 10 && time < 18)
+                                creditos += .5;
+                        });
+                    }
+                }
+            });
+            FindViewById<TextView>(Resource.Id.lblHorasTotal).Text = totalHoras.ToString();
+            FindViewById<TextView>(Resource.Id.lblCreditosUsados).Text = creditos.ToString();
         }
 
         void PutZeroHour()
@@ -210,32 +243,33 @@ namespace WorklabsMx.Droid
             LayoutInflater liView = LayoutInflater;
 
             View customView = liView.Inflate(Resource.Layout.DetallesReservacionLayout, null, true);
-            Dictionary<int, int> aux = new Dictionary<int, int>();
+            Dictionary<double, double> aux = new Dictionary<double, double>();
             Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Sort();
-            int aux2 = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0] - 1;
-            aux.Add(aux2, aux2 + 1);
+            double aux2 = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0];
+            aux.Add(aux2, aux2 + .5);
 
             for (int i = 1; i < Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Count; i++)
             {
-                if (Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i] - 1 < 0)
+                if (Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i] - .5 < 0)
                 {
 
                 }
-                if (aux[aux2] == Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i] - 1)
+                Console.WriteLine(Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i]);
+                if (aux[aux2] == Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i])
                 {
-                    aux[aux2] = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i];
+                    aux[aux2] = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i] + .5;
                 }
                 else
                 {
-                    aux2 = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i] - 1;
-                    aux.Add(aux2, aux2 + 1);
+                    aux2 = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i];
+                    aux.Add(aux2, aux2 + .5);
                 }
             }
 
 
             TableLayout tlReservaciones = customView.FindViewById<TableLayout>(Resource.Id.tlReservaciones);
 
-            foreach (KeyValuePair<int, int> hora in aux)
+            foreach (KeyValuePair<double, double> hora in aux)
             {
                 LayoutInflater li = LayoutInflater;
 
@@ -243,7 +277,8 @@ namespace WorklabsMx.Droid
                 detalleView.FindViewById<TextView>(Resource.Id.lblSalasJuntas).Text = salas[_viewPager.CurrentItem].Sala_Descripcion;
                 detalleView.FindViewById<TextView>(Resource.Id.lblPiso).Text = "Nivel " + salas[_viewPager.CurrentItem].Sala_Nivel;
                 detalleView.FindViewById<TextView>(Resource.Id.lblFechaNumero).Text = DateTime.Parse(fecha_seleccionada).ToString("M");
-                detalleView.FindViewById<TextView>(Resource.Id.lblHorario).Text = (hora.Key).ToString("00") + ":00 - " + hora.Value.ToString("00") + ":00";
+
+                detalleView.FindViewById<TextView>(Resource.Id.lblHorario).Text = TimeSpan.FromHours(hora.Key).ToString().Substring(0, 5) + " - " + TimeSpan.FromHours(hora.Value).ToString().Substring(0, 5);//hora.Value.ToString("00") + ":00";
 
                 TableRow row = new TableRow(this);
                 row.AddView(detalleView);
@@ -258,7 +293,7 @@ namespace WorklabsMx.Droid
                 {
                     SalasController.AsignarSalaJuntas("ALTA", salas[_viewPager.CurrentItem].Sala_Id, storage.Get("Usuario_Id"),
                                                       storage.Get("Usuario_Tipo"), DateTime.Parse(fecha_seleccionada),
-                                                      (hora - 1).ToString("00") + ":00", (hora != 24 ? hora : 0).ToString("00") + ":00");
+                                                      TimeSpan.FromHours(hora).ToString().Substring(0, 5), TimeSpan.FromHours(hora + .5).ToString().Substring(0, 5));
                 }
                 );
                 dialog.Dismiss();
