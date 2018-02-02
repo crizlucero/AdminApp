@@ -36,7 +36,8 @@ namespace WorklabsMx.Droid
         SimpleStorage localStorage;
         EscritorioController DashboardController;
         TableLayout tlPost;
-        string nombre, puesto, foto, empresa, upload_image_path;
+        string nombre, puesto, empresa, upload_image_path;
+        byte[] foto;
         List<PostModel> posts;
         MenuView menu;
         public MainActivity()
@@ -85,6 +86,11 @@ namespace WorklabsMx.Droid
             menu.FillMenu();
             FindViewById<TextView>(Resource.Id.lblNombre).Text = nombre;
             FindViewById<TextView>(Resource.Id.lblPuesto).Text = puesto;
+            ImageView imgPerfil = FindViewById<ImageView>(Resource.Id.imgPerfil);
+            if (foto != null)
+                imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(foto, 0, foto.Length));
+            else
+                imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
             scroll = FindViewById<ScrollView>(Resource.Id.post_scroll);
             tlPost = FindViewById<TableLayout>(Resource.Id.post_table);
             FindViewById<Button>(Resource.Id.btnInitPublish).Click += (sender, e) => ShowPublish();
@@ -141,11 +147,10 @@ namespace WorklabsMx.Droid
                 LayoutInflater liView = LayoutInflater;
                 View PostView = liView.Inflate(Resource.Layout.PostLayout, null, true);
                 PostView.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels);
-                //string Usuario_Id = !string.IsNullOrEmpty(post.Usuario.Usuario_Id) ? post.Miembro_Id : post.Colaborador_Empresa_Id;
 
                 ImageButton imgPerfil = PostView.FindViewById<ImageButton>(Resource.Id.imgPerfil);
                 if (post.Usuario.Usuario_Fotografia_Perfil != null)
-                    imgPerfil.SetImageURI(ImagesHelper.GetPerfilImagen(post.Usuario.Usuario_Fotografia));
+                    imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(post.Usuario.Usuario_Fotografia_Perfil, 0, post.Usuario.Usuario_Fotografia_Perfil.Length));
                 else
                     imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
                 imgPerfil.Click += (sender, e) => ShowPerfilCard(new UsuariosController().GetMemberData(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo));
