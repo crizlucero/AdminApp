@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs">
     <Files>
@@ -31,5 +32,24 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" />
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="274" Column="52" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="91" Column="85" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="18" Column="104" />
+      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="37" Column="38" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MainActivity.cs" Line="58" Column="38" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="46" Column="34" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
+>>>>>>> 73422838dec727073773437077949ff7e68efec4
   <MultiItemStartupConfigurations />
 </Properties>

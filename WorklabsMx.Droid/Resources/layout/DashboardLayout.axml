@@ -33,7 +33,7 @@
     </LinearLayout>
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="66.0dp"
+        android:layout_height="wrap_content"
         android:id="@+id/gridLayout1"
         android:columnCount="2"
         android:rowCount="3"
@@ -41,13 +41,17 @@
         android:background="#FFF"
         android:translationZ="3dp">
         <ImageView
-            android:src="@mipmap/ic_logo_mini"
+            android:src="@mipmap/ic_profile_empty"
             android:id="@+id/imgPerfil"
             android:layout_rowSpan="3"
             android:background="@drawable/imagestyle"
             android:layout_gravity="center"
             android:layout_width="75dp"
-            android:layout_height="70dp" />
+            android:layout_height="75dp"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/lblNombre"
@@ -58,7 +62,8 @@
             android:textSize="18dp"
             android:layout_marginLeft="10dp"
             android:layout_width="290dp"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblPuesto"

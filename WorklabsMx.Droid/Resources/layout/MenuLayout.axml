@@ -20,20 +20,25 @@
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY" />
         <TextView
             android:text="Large Text"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/lblNombreMenu"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:layout_width="270dp"
+            android:layout_marginRight="10dp" />
         <TextView
             android:text="Small Text"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblEmpresaMenu"
             android:layout_marginLeft="20dp"
-            android:textColor="#DDD" />
+            android:textColor="#DDD"
+            android:layout_width="270dp"
+            android:layout_marginRight="10dp" />
     </GridLayout>
     <ScrollView
         android:id="@+id/menu_scroll"

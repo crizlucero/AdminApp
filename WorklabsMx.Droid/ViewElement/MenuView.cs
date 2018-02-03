@@ -14,6 +14,7 @@ using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Droid.Helpers;
 using WorklabsMx.Enum;
+using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid.ViewElement
@@ -24,24 +25,25 @@ namespace WorklabsMx.Droid.ViewElement
         readonly SimpleStorage localStorage;
         List<string> DataUsuario;
         readonly List<ItemsMenu> ListMenu;
+        readonly string usuario_imagen_path;
         public MenuView(Activity context)
         {
             this.context = context;
             localStorage = SimpleStorage.EditGroup("Login");
             ListMenu = new EscritorioController().GetMenuAndroid(Convert.ToInt32(localStorage.Get("Usuario_Tipo")));
+            usuario_imagen_path = new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1;
         }
 
-        public void FillMemberCard(ref string nombre, ref string foto, ref string puesto, ref string empresa)
+        public void FillMemberCard(ref string nombre, ref byte[] foto, ref string puesto, ref string empresa)
         {
             DataUsuario = new UsuariosController().GetMemberName(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
             nombre = DataUsuario[(int)CamposMiembro.Usuario_Nombre];
-            foto = DataUsuario[(int)CamposMiembro.Usuario_Fotografia];
+            foto = new UploadImages().DownloadFileFTP(DataUsuario[(int)CamposMiembro.Usuario_Fotografia], usuario_imagen_path);
             puesto = DataUsuario[(int)CamposMiembro.Usuario_Puesto];
             empresa = DataUsuario[(int)CamposMiembro.Usuario_Empresa_Nombre];
             ImageView imgFoto = context.FindViewById<ImageView>(Resource.Id.imgProfileMenu);
-            Bitmap bmFoto = ImagesHelper.GetImageBitmapFromUrl(foto);
-            if (bmFoto != null)
-                imgFoto.SetImageBitmap(bmFoto);
+            if (foto != null)
+                imgFoto.SetImageBitmap(BitmapFactory.DecodeByteArray(foto, 0, foto.Length));
             else
                 imgFoto.SetImageResource(Resource.Mipmap.ic_profile_empty);
             TextView NombreUsuario = context.FindViewById<TextView>(Resource.Id.lblNombreMenu);

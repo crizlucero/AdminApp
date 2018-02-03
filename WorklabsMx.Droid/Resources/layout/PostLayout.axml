@@ -28,7 +28,8 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
-            android:background="@drawable/post_round_image" />
+            android:background="@drawable/post_round_image"
+            android:scaleType="fitXY" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblNombre"
@@ -71,8 +72,8 @@
             android:layout_width="match_parent"
             android:layout_margin="10dp" />
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_columnSpan="5"
             android:layout_column="0"
             android:layout_row="4"
@@ -80,6 +81,7 @@
             android:id="@+id/imgPost"
             android:adjustViewBounds="false"
             android:layout_columnWeight="5"
+            android:scaleType="fitXY"
             android:visibility="gone" />
         <TextView
             android:id="@+id/lblLikes"

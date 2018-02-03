@@ -40,7 +40,7 @@ namespace WorklabsMx.Helpers
             {
                 try
                 {
-                    FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://38.122.16.212/" + path + imgNombre.Replace("\\", "/"));
+                    FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://38.122.16.212" + path + imgNombre.Replace("\\", "/"));
                     client.Method = WebRequestMethods.Ftp.DownloadFile;
                     client.UsePassive = false;
                     client.Credentials = new NetworkCredential(@"SRVWLHOSTING\worklabscloud", @"Worklabscloud!");
