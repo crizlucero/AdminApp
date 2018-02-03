@@ -10,9 +10,9 @@ namespace WorklabsMx.Models
         public string Sala_Reservacion_Estatus { get; set; }
         public string Usuario_Id { get; set; }
         public string Usuario_Tipo { get; set; }
-        public int Horas_Reservadas { get; set; }
+        public float Horas_Reservadas { get; set; }
 
-        public SalaJuntasReservacionModel(string Sala_Junta_Reservacion_Id = "", string Sala_Hora_Inicio = "", string Sala_Hora_Fin = "", string Sala_Fecha = "", string Sala_Reservacion_Estatus = "", string Usuario_Id = "", string Usuario_Tipo = "", string Sala_Descripcion = "", string Sala_Capacidad = "", string Sala_Nivel = "", string Sucursal_Descripcion = "", string Sucursal_Id = "", string Sala_Id = "", int Horas_Reservadas = 0)
+        public SalaJuntasReservacionModel(string Sala_Junta_Reservacion_Id = "", string Sala_Hora_Inicio = "", string Sala_Hora_Fin = "", string Sala_Fecha = "", string Sala_Reservacion_Estatus = "", string Usuario_Id = "", string Usuario_Tipo = "", string Sala_Descripcion = "", string Sala_Capacidad = "", string Sala_Nivel = "", string Sucursal_Descripcion = "", string Sucursal_Id = "", string Sala_Id = "", float Horas_Reservadas = 0)
         {
             this.Sala_Junta_Reservacion_Id = Sala_Junta_Reservacion_Id;
             this.Sala_Hora_Inicio = Sala_Hora_Inicio;

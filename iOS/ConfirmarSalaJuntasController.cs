@@ -42,17 +42,17 @@ namespace WorklabsMx.iOS
             base.ViewWillAppear(animated);
             StyleHelper.StyleBlack(this.vwVsitaConfirmar.Layer);
             var indiceReservacionesConcat = 0;
-            this.Reservaciones.Sort((p, q) => -1 * int.Parse(p.Sala_Hora_Inicio).CompareTo(int.Parse(q.Sala_Hora_Inicio)));
+            this.Reservaciones.Sort((p, q) => p.Sala_Hora_Inicio.CompareTo(q.Sala_Hora_Inicio));
             SalaJuntasReservacionModel Reservacion = new SalaJuntasReservacionModel();
             Reservacion = Reservaciones[indiceReservacionesConcat];
             ReservacionesConcat.Add(Reservacion);
 
             for (int indice = 0; indice < Reservaciones.Count - 1; indice++ )
             {
-                if (int.Parse(Reservaciones[indice].Sala_Hora_Inicio) == int.Parse(Reservaciones[indice + 1].Sala_Hora_Fin))
+                if (Reservaciones[indice].Sala_Hora_Inicio == Reservaciones[indice + 1].Sala_Hora_Fin)
                 {
                     ReservacionesConcat[indiceReservacionesConcat].Sala_Hora_Inicio = Reservaciones[indice + 1].Sala_Hora_Inicio;
-                    ReservacionesConcat[indiceReservacionesConcat].Horas_Reservadas = ReservacionesConcat[indiceReservacionesConcat].Horas_Reservadas + 1;
+                    ReservacionesConcat[indiceReservacionesConcat].Horas_Reservadas = ReservacionesConcat[indiceReservacionesConcat].Horas_Reservadas + 0.5f;
                 }
                 else
                 {
@@ -70,26 +70,20 @@ namespace WorklabsMx.iOS
            
             foreach (SalaJuntasReservacionModel Reservacion in Reservaciones)
             {
-                Reservacion.Sala_Hora_Inicio = (int.Parse(Reservacion.Sala_Hora_Fin) - 1).ToString();
-
-                if (Reservacion.Sala_Hora_Inicio.Length == 1)
-                {
-                    Reservacion.Sala_Hora_Inicio = "0" + Reservacion.Sala_Hora_Inicio;
-                }
 
                 if(InternetConectionHelper.VerificarConexion())
                 {
                     DateTime myDate = DateTime.ParseExact(Reservacion.Sala_Fecha, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-                    if (Reservacion.Sala_Hora_Inicio == "24")
+                    if (Reservacion.Sala_Hora_Inicio == "24:00")
                     {
-                        Reservacion.Sala_Hora_Inicio = "00";
+                        Reservacion.Sala_Hora_Inicio = "00:00";
                     }
 
-                    if (Reservacion.Sala_Hora_Fin == "24")
+                    if (Reservacion.Sala_Hora_Fin == "24:00")
                     {
-                        Reservacion.Sala_Hora_Fin = "00";
+                        Reservacion.Sala_Hora_Fin = "00:00";
                     }
-                    var asignacion = new SalasJuntasController().AsignarSalaJuntas("ALTA", Reservacion.Sala_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), myDate, Reservacion.Sala_Hora_Inicio + ":00", Reservacion.Sala_Hora_Fin + ":00");
+                    var asignacion = new SalasJuntasController().AsignarSalaJuntas("ALTA", Reservacion.Sala_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), myDate, Reservacion.Sala_Hora_Inicio , Reservacion.Sala_Hora_Fin);
                     if (asignacion != -1)
                     {
                         OperacionTerminada = true;
@@ -111,16 +105,6 @@ namespace WorklabsMx.iOS
 
                     foreach (SalaJuntasReservacionModel ReservacionConcat in ReservacionesConcat)
                     {
-                        string HoraInicio = (int.Parse(ReservacionConcat.Sala_Hora_Inicio) - (ReservacionConcat.Horas_Reservadas - 1)).ToString();
-                        if (HoraInicio.Length == 1)
-                        {
-                            ReservacionConcat.Sala_Hora_Inicio = "0" + HoraInicio;
-                        }
-                        else
-                        {
-                            ReservacionConcat.Sala_Hora_Inicio = HoraInicio;
-                        }
-
                         this.GenerarEvento(ReservacionConcat);
                     }
 

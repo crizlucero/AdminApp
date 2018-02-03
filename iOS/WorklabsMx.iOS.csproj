@@ -1203,6 +1203,7 @@
     <Compile Include="CeldaDetalleInvitacion.designer.cs">
       <DependentUpon>CeldaDetalleInvitacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ImageHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

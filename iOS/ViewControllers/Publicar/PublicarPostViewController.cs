@@ -85,7 +85,7 @@ namespace WorklabsMx.iOS
 
             if (new Controllers.EscritorioController().SetPost(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), txtPublicacion.Text, Fotografia))
             {
-                this.PostPublicadoDelegate?.PostPublicado();
+                this.PostPublicadoDelegate.PostPublicado();
                 this.DismissViewController(true, null);
                 BTProgressHUD.Dismiss();
             }
