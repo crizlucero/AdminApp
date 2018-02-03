@@ -22,22 +22,16 @@ namespace WorklabsMx.iOS
         private Timer timer1; 
         public override void ViewDidLoad()
         {
-            
             base.ViewDidLoad();
-  
+ 
             this.RefreshAccess();
             this.InitTimer();
             strAcceso = new UsuariosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
 
-            UIButton btnRefresh = new STLButton("")
-            {
-                Frame = new CGRect((UIScreen.MainScreen.Bounds.Width / 2) - 25, (UIScreen.MainScreen.Bounds.Height * 3 / 5), 50, 50)
-            };
-
             NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_refresh"), UIBarButtonItemStyle.Plain, async (sender, e) =>
             {
                 BTProgressHUD.Show(status: "Actualizando QR");
-                await Task.Delay(2000);
+                await Task.Delay(500);
                 this.RefreshAccess();
             }), true);
         }

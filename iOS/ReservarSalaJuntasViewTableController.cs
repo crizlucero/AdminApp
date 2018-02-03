@@ -92,6 +92,7 @@ namespace WorklabsMx.iOS
                 {
                     this.GetHorasNoDisponibles(this.SalaActual.Sala_Id);
                 }
+                this.ValidateHour();
                
             };
            
@@ -109,54 +110,54 @@ namespace WorklabsMx.iOS
 
         private void PintarMinutos()
         {
-            int date = 24 - DateTime.Now.Hour;
+            int date = DateTime.Now.Hour;
             if (date > 0)
             {
                 vw2401_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 1)
             {
-                vw0102_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                view2324_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 2)
             {
-                vw0203_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw2223_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 3)
             {
-                vw0304_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw2122_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 4)
             {
-                vw0405_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw2021_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 5)
             {
-                vw0506_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw1920_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 6)
             {
-                vw0607_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw1819_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 7)
             {
-                vw0708_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw1718_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 8)
             {
-                vw0809_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw1617_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 9)
             {
-                vw0910_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw1516_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 10)
             {
-                vw1011_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw1415_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 11)
             {
-                vw1112_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw1314_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 12)
             {
@@ -164,299 +165,75 @@ namespace WorklabsMx.iOS
             }
             if (date > 13)
             {
-                vw1314_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw1112_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 14)
             {
-                vw1415_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw1011_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 15)
             {
-                vw1516_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw0910_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 16)
             {
-                vw1617_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw0809_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 17)
             {
-                vw1718_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw0708_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 18)
             {
-                vw1819_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw0607_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 19)
             {
-                vw1920_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw0506_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 20)
             {
-                vw2122_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw0405_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 21)
             {
-                vw2021_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw0304_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 22)
             {
-                vw2223_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw0203_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 23)
             {
-                view2324_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                vw0102_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date > 24)
             {
                 vw2401_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
 
         }
 
         private void ValidateHour()
         {
-            int date = 24 - DateTime.Now.Hour;
+            int date = DateTime.Now.Hour;
             int minutes = DateTime.Now.Minute;
 
             var BanderaMin = false;
             var BanderaHoras = false;
 
-            if (date > 0)
+            if (date >= 0)
             {
-                
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-                BanderaHoras = true;
                 vw2401.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+                BanderaHoras = true;
 
             }
-            if (date > 1)
-            {
-                BanderaHoras = true;
-                vw0102.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 2)
-            {
-                BanderaHoras = true;
-                vw0203.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 3)
-            {
-                BanderaHoras = true;
-                vw0304.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 4)
-            {
-                BanderaHoras = true;
-                vw0405.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 5)
-            {
-                BanderaHoras = true;
-                vw0506.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 6)
-            {
-                BanderaHoras = true;
-                vw0607.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 7)
-            {
-                BanderaHoras = true;
-                vw0708.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 8)
-            {
-                BanderaHoras = true;
-                vw0809.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 9)
-            {
-                BanderaHoras = true;
-                vw0910.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 10)
-            {
-                BanderaHoras = true;
-                vw1011.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 11)
-            {
-                BanderaHoras = true;
-                vw1112.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 12)
-            {
-                BanderaHoras = true;
-                vw1213.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 13)
-            {
-                BanderaHoras = true;
-                vw1314.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 14)
-            {
-                BanderaHoras = true;
-                vw1415.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 15)
-            {
-                BanderaHoras = true;
-                vw1516.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 16)
-            {
-                BanderaHoras = true;
-                vw1617.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 17)
-            {
-                BanderaHoras = true;
-                vw1718.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 18)
-            {
-                BanderaHoras = true;
-                vw1819.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 19)
-            {
-                BanderaHoras = true;
-                vw1920.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 20)
-            {
-                BanderaHoras = true;
-                vw2021.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-
-
-            if (date > 21)
-            {
-                BanderaHoras = true;
-                vw2122.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 22)
-            {
-                BanderaHoras = true;
-                vw2223.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
-                {
-                    this.PintarMinutos();
-                    BanderaMin = true;
-                }
-            }
-            if (date > 23)
+            if (date >= 1)
             {
                 BanderaHoras = true;
                 view2324.BackgroundColor = UIColor.Clear.FromHex(0x404040);
@@ -466,7 +243,231 @@ namespace WorklabsMx.iOS
                     BanderaMin = true;
                 }
             }
-            if (date > 24)
+            if (date >= 2)
+            {
+                vw2223.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                BanderaHoras = true;
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 3)
+            {
+                vw2122.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+
+                BanderaHoras = true;
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 4)
+            {
+                BanderaHoras = true;
+                vw2021.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 5)
+            {
+                BanderaHoras = true;
+                vw1920.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 6)
+            {
+                BanderaHoras = true;
+                vw1819.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 7)
+            {
+                BanderaHoras = true;
+                vw1718.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date > 8)
+            {
+                BanderaHoras = true;
+                vw1617.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 9)
+            {
+                BanderaHoras = true;
+                vw1516.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 10)
+            {
+                BanderaHoras = true;
+                vw1415.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 11)
+            {
+                BanderaHoras = true;
+                vw1314.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 12)
+            {
+                BanderaHoras = true;
+                vw1213.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 13)
+            {
+                BanderaHoras = true;
+                vw1112.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 14)
+            {
+                BanderaHoras = true;
+                vw1011.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 15)
+            {
+                BanderaHoras = true;
+                vw0910.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 16)
+            {
+                BanderaHoras = true;
+                vw0809.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 17)
+            {
+                BanderaHoras = true;
+                vw0708.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 18)
+            {
+                BanderaHoras = true;
+                vw0607.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 19)
+            {
+                BanderaHoras = true;
+                vw0506.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 20)
+            {
+                BanderaHoras = true;
+                vw0405.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+
+
+            if (date >= 21)
+            {
+                BanderaHoras = true;
+                vw0304.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 22)
+            {
+                BanderaHoras = true;
+                vw0203.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 23)
+            {
+                BanderaHoras = true;
+                vw0102.BackgroundColor = UIColor.Clear.FromHex(0x404040);
+                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                {
+                    this.PintarMinutos();
+                    BanderaMin = true;
+                }
+            }
+            if (date >= 24)
             {
                 BanderaHoras = true;
                 vw2401.BackgroundColor = UIColor.Clear.FromHex(0x404040);
@@ -497,7 +498,7 @@ namespace WorklabsMx.iOS
 
         private void GetHorasNoDisponibles(string SalaId)
         {
-            for (int indice = 0; indice < 24; indice++)
+            for (int indice = 0; indice < 48; indice++)
             {
                 this.VistasHorarios[indice].BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
             }

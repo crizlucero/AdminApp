@@ -35,17 +35,7 @@ namespace WorklabsMx.iOS
 
         public override void ViewDidLoad()
         {
-           
-            List<string> data = new UsuariosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
-            try
-            {
-                //tableItems.Add(new ItemsMenu { Image = "http://desarrolloworklabs.com/Dashboard_Client/usr_imgs/" + data[(int)CamposMiembro.Usuario_Fotografia], Label = data[(int)CamposMiembro.Usuario_Nombre], Principal = true });
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
-            }
+           this.TableView.BeginUpdates();
             foreach (ItemsMenu menu in new Controllers.EscritorioController().GetMenuiOS(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Tipo"))))
             {
                 if(menu.Menu_Id != "22" && menu.Menu_Id != "8")
@@ -54,6 +44,7 @@ namespace WorklabsMx.iOS
                 }
 
             }
+            this.TableView.EndUpdates();
         }
 
         public override void ViewWillAppear(bool animated)
@@ -69,9 +60,6 @@ namespace WorklabsMx.iOS
         public override void ViewDidDisappear(bool animated)
         {
             base.ViewDidDisappear(animated);
-            // var color = UIColor.Black.ColorWithAlpha(0.6f);
-            //this.View.BackgroundColor = color;
-
         }
 
         public override UIView GetViewForHeader(UITableView tableView, nint section)

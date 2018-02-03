@@ -20,8 +20,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 		}
 
         public override void ViewWillAppear(bool animated)
-        {             base.ViewWillAppear(animated);
-            this.CargarInfo();             this.TableView.ReloadData();             BTProgressHUD.Dismiss();
+        {             base.ViewWillAppear(animated);             this.CargarInfo();             this.TableView.ReloadData();             this.CargarMiembro();             this.TableView.BeginUpdates();             this.CargarImagenes();             this.TableView.EndUpdates();             BTProgressHUD.Dismiss();
         }          public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
@@ -68,14 +67,25 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 				var CommentView = (comentarTableView)segue.DestinationViewController;
                 CommentView.currentPost = CurrentPost;                 CommentView.currentPostImage = currentPostImage;                 CommentView.currentProfileImage = currentProfileImage;             }             else if(segue.Identifier == "toShowImageFromPost")             {                 var ImageView = (DetailCommentImage)segue.DestinationViewController;                 ImageView.ImagenPost = (UIImageView)sender;             }              else if(segue.Identifier == "DetallarPerfil")             {                 var PerfilView = (PerfilesTableViewController)segue.DestinationViewController;                 PerfilView.ListUser = ListUser;             }
         }          private void WillDisplay(int Row)         {             int LastRow = allPosts.Count - 1;             if ((Row == LastRow))             {                 BTProgressHUD.Dismiss();
-            }         }          private void CargarInfo()         {             try             {                 if (InternetConectionHelper.VerificarConexion())                 {                     allPosts = new Controllers.EscritorioController().GetMuroPosts(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));                     if (allPosts.Count == 0)                     {
-                        isShowInformation = false;                         existeConeccion = false;                         this.btnScanQr.Title = "";                         this.btnScanQr.Enabled = false;
-                    }                     else                     {                         miembro = new UsuariosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));                         foreach (PostModel currentPost in allPosts)
-                        {                             var imageBytes = new UploadImages().DownloadFileFTP(currentPost.Publicacion_Imagen, upload_image_path);                             if (imageBytes != null)                             {                                 var data = NSData.FromArray(imageBytes);                                 var uiimage = UIImage.LoadFromData(data);                                 var porcentajeWith = ((float.Parse(UIScreen.MainScreen.Bounds.Width.ToString()) * 100) / uiimage.CGImage.Height);                                 var HeightImage = uiimage.CGImage.Height * (porcentajeWith / 100);                                 var ReescalImage = ImageHelper.ResizeUIImage(uiimage, float.Parse(UIScreen.MainScreen.Bounds.Width.ToString()), HeightImage);                                 allPostImages.Add(ReescalImage);                             }                             else                             {                                 allPostImages.Add(null);                             }
-                            allProfileImages.Add(ImageGallery.LoadImage(currentPost.Usuario.Usuario_Fotografia) ?? UIImage.FromBundle("ProfileImage"));
-                        }
-
-                    }                 }                 else                 {                     this.btnScanQr.Title = "";                     this.btnScanQr.Enabled = false;                     isShowInformation = false;                     existeConeccion = false;                 }             }             catch(Exception e)             {                 SlackLogs.SendMessage(e.Message);             }                     }   
+            }         }          private void CargarImagenes()         {             if (allPosts.Count != 0)             {                 foreach (PostModel currentPost in allPosts)
+                {
+                    var imageBytes = new UploadImages().DownloadFileFTP(currentPost.Publicacion_Imagen, upload_image_path);
+                    if (imageBytes != null)
+                    {
+                        var data = NSData.FromArray(imageBytes);
+                        var uiimage = UIImage.LoadFromData(data);
+                        var porcentajeWith = ((float.Parse(UIScreen.MainScreen.Bounds.Width.ToString()) * 100) / uiimage.CGImage.Height);
+                        var HeightImage = uiimage.CGImage.Height * (porcentajeWith / 100);
+                        var ReescalImage = ImageHelper.ResizeUIImage(uiimage, float.Parse(UIScreen.MainScreen.Bounds.Width.ToString()), HeightImage);
+                        allPostImages.Add(ReescalImage);
+                    }
+                    else
+                    {
+                        allPostImages.Add(null);
+                    }
+                    allProfileImages.Add(ImageGallery.LoadImage(currentPost.Usuario.Usuario_Fotografia) ?? UIImage.FromBundle("ProfileImage"));                 }             }         }          private void CargarMiembro()         {             if(allPosts.Count != 0)             {                 miembro = new UsuariosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));             }         }          private void CargarInfo()         {             try             {                 if (InternetConectionHelper.VerificarConexion())                 {                     allPosts = new Controllers.EscritorioController().GetMuroPosts(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));                      if (allPosts.Count == 0)                     {
+                        isShowInformation = false;                         existeConeccion = true;                         this.btnScanQr.Title = "";                         this.btnScanQr.Enabled = false;
+                    }                                    }                 else                 {                     this.btnScanQr.Title = "";                     this.btnScanQr.Enabled = false;                     isShowInformation = false;                     existeConeccion = false;                 }             }             catch(Exception e)             {                 SlackLogs.SendMessage(e.Message);             }                     }   
         partial void btnToScanQr_TouchUpInside(UIBarButtonItem sender)
         {
             this.PerformSegue("toScanQr", sender);
@@ -84,7 +94,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         partial void Menu_Touch(UIBarButtonItem sender)
         {             this.View.EndEditing(true);
             this.RevealViewController().RevealToggleAnimated(true);             View.AddGestureRecognizer(this.RevealViewController().PanGestureRecognizer);
-        }          private void Tapped(UITapGestureRecognizer Recognizer)         {             this.View.EndEditing(true);         }     }      partial class EscritorioController: PostPublicadoDel     {         public async void PostPublicado()         {             BTProgressHUD.Show(status: "Cargando Comentarios");             await Task.Delay(1000);             this.CargarInfo();             this.TableView.ReloadData();         }     }       partial class EscritorioController: EventosComentarios     {         public void MostrarImagenEnGrande(UIImageView imgPublicacion)         {             PerformSegue("toShowImageFromPost", imgPublicacion);         }         public async void ComentarPost(PostModel PostLocal)         {             CurrentPost = PostLocal;
+        }          private void Tapped(UITapGestureRecognizer Recognizer)         {             this.View.EndEditing(true);         }     }      partial class EscritorioController: PostPublicadoDel     {         public async void PostPublicado()         {             BTProgressHUD.Show(status: "Cargando Comentarios");             await Task.Delay(500);             this.TableView.BeginUpdates();             this.CargarInfo();             this.TableView.EndUpdates();             this.CargarMiembro();             this.TableView.BeginUpdates();             this.CargarImagenes();             this.TableView.EndUpdates();          }     }       partial class EscritorioController: EventosComentarios     {         public void MostrarImagenEnGrande(UIImageView imgPublicacion)         {             PerformSegue("toShowImageFromPost", imgPublicacion);         }         public async void ComentarPost(PostModel PostLocal)         {             CurrentPost = PostLocal;
             BTProgressHUD.Show(status: "Cargando Comentarios");
             await Task.Delay(2000);
             currentProfileImage = ImageGallery.LoadImage(CurrentPost.Usuario.Usuario_Fotografia);

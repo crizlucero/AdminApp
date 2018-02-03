@@ -167,7 +167,7 @@ namespace WorklabsMx.iOS
         private async void ActualizarTabla(int CampoSeleccionado)
         {
             BTProgressHUD.Show();
-            await Task.Delay(1000);
+            await Task.Delay(500);
             this.SeccionSeleccionada = CampoSeleccionado;
             this.TableView.ReloadData();
         }

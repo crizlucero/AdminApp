@@ -39,7 +39,6 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
             imgPicker = new UIImagePickerController();
             imgPicker.Delegate = this;
         }
