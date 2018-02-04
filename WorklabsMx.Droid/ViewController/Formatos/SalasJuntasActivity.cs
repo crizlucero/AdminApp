@@ -291,16 +291,18 @@ namespace WorklabsMx.Droid
             {
                 Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].ForEach(hora =>
                 {
-                    SalasController.AsignarSalaJuntas("ALTA", salas[_viewPager.CurrentItem].Sala_Id, storage.Get("Usuario_Id"),
+                    if (SalasController.AsignarSalaJuntas("ALTA", salas[_viewPager.CurrentItem].Sala_Id, storage.Get("Usuario_Id"),
                                                       storage.Get("Usuario_Tipo"), DateTime.Parse(fecha_seleccionada),
-                                                      TimeSpan.FromHours(hora).ToString().Substring(0, 5), TimeSpan.FromHours(hora + .5).ToString().Substring(0, 5));
+                                                         TimeSpan.FromHours(hora).ToString().Substring(0, 5), TimeSpan.FromHours(hora + .5).ToString().Substring(0, 5)) == -1)
+                        WorklabsMx.Helpers.SlackLogs.SendMessage("ERROR: Registro de sala de junta " + TimeSpan.FromHours(hora).ToString().Substring(0, 5) + " - " + TimeSpan.FromHours(hora + .5).ToString().Substring(0, 5));
+
                 }
                 );
                 dialog.Dismiss();
                 SetContentView(Resource.Layout.SalasJuntasConfirmacionLayout);
                 FindViewById<TextView>(Resource.Id.lblDiaSemana).Text = DateTime.Parse(fecha_seleccionada).DayOfWeek.ToString().Substring(0, 3);
                 FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = DateTime.Parse(fecha_seleccionada).Day.ToString();
-                FindViewById<TextView>(Resource.Id.lblHorario).Text = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0] + " - " + Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0];
+                FindViewById<TextView>(Resource.Id.lblHorario).Text = TimeSpan.FromHours(Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0]).ToString().Substring(0, 5) + " - " + TimeSpan.FromHours(Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0] + .5).ToString().Substring(0, 5);
                 FindViewById<Button>(Resource.Id.btnContinuar).Click += delegate
                 {
                     StartActivity(new Intent(this, typeof(TabSalasJuntasHistorialActivity)));

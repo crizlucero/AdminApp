@@ -1,29 +1,28 @@
-﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/MenuTableViewController.cs">
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="175" Column="14" />
-      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="46" Column="21" />
-      <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="108" Column="61" />
-      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="170" Column="35" />
-      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="95" Column="34" />
-      <File FileName="WorklabsMx/Controllers/CarritoController.cs" Line="29" Column="19" />
-      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="21" Column="84" />
+      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="25" Column="2" />
       <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="70" Column="43" />
       <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="131" Column="56" />
-      <File FileName="iOS/ViewControllers/Escritorio/NoComentsCell.cs" Line="13" Column="48" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="252" Column="19" />
-      <File FileName="iOS/MenuTableViewController.cs" Line="38" Column="26" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="83" Column="26" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="39" Column="1" />
+      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="37" Column="23" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="294" Column="24" />
+      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="22" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ConfirmarSalaJuntasController.cs" relfile="iOS/ConfirmarSalaJuntasController.cs" line="54" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ConfirmarSalaJuntasController.cs" relfile="iOS/ConfirmarSalaJuntasController.cs" line="71" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/ConfigurationsController.cs" relfile="WorklabsMx/Controllers/ConfigurationsController.cs" line="55" column="32" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ConfirmarSalaJuntasController.cs" relfile="iOS/ConfirmarSalaJuntasController.cs" line="54" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ConfirmarSalaJuntasController.cs" relfile="iOS/ConfirmarSalaJuntasController.cs" line="71" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/ConfigurationsController.cs" relfile="WorklabsMx/Controllers/ConfigurationsController.cs" line="55" column="32" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Helpers/UploadImages.cs" relfile="WorklabsMx/Helpers/UploadImages.cs" line="43" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/ViewElement/MenuView.cs" relfile="WorklabsMx.Droid/ViewElement/MenuView.cs" line="38" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid PreferredExecutionTarget="Android.Andorid_Emulator" />
   <MultiItemStartupConfigurations />
 </Properties>
