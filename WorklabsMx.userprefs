@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/NoInfoCellUsuarios.cs">
     <Files>
@@ -7,6 +8,19 @@
       <File FileName="iOS/FavoritosTableViewController.cs" Line="114" Column="45" NotebookId="1" />
       <File FileName="iOS/FavoritosNoInfo.cs" Line="21" Column="37" NotebookId="1" />
       <File FileName="iOS/NoInfoCellUsuarios.cs" Line="7" Column="33" NotebookId="1" />
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs">
+    <Files>
+      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="25" Column="2" />
+      <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="70" Column="43" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="131" Column="56" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="83" Column="26" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="39" Column="1" />
+      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="37" Column="23" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="294" Column="24" />
+      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="22" Column="20" />
+>>>>>>> 3723f0d35d11539a64fe7514c5e574dddfa2e09b
     </Files>
     <FloatingWindows>
       <FloatingWindow WindowId="1" X="2064" Y="23" Width="1404" Height="719">
@@ -18,9 +32,10 @@
       </FloatingWindow>
     </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
+<<<<<<< HEAD
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ConfirmarSalaJuntasController.cs" relfile="iOS/ConfirmarSalaJuntasController.cs" line="71" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/ConfigurationsController.cs" relfile="WorklabsMx/Controllers/ConfigurationsController.cs" line="55" column="32" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/AccesoController.cs" relfile="iOS/ViewControllers/AccesoController.cs" line="41" column="1" />
@@ -28,9 +43,17 @@
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/UsuariosController.cs" relfile="WorklabsMx/Controllers/UsuariosController.cs" line="114" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ConfirmarSalaJuntasController.cs" relfile="iOS/ConfirmarSalaJuntasController.cs" line="129" column="30" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ConfirmarSalaJuntasController.cs" relfile="iOS/ConfirmarSalaJuntasController.cs" line="86" column="29" />
+=======
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ConfirmarSalaJuntasController.cs" relfile="iOS/ConfirmarSalaJuntasController.cs" line="54" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ConfirmarSalaJuntasController.cs" relfile="iOS/ConfirmarSalaJuntasController.cs" line="71" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/ConfigurationsController.cs" relfile="WorklabsMx/Controllers/ConfigurationsController.cs" line="55" column="32" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Helpers/UploadImages.cs" relfile="WorklabsMx/Helpers/UploadImages.cs" line="43" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/ViewElement/MenuView.cs" relfile="WorklabsMx.Droid/ViewElement/MenuView.cs" line="38" column="1" />
+>>>>>>> 3723f0d35d11539a64fe7514c5e574dddfa2e09b
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid PreferredExecutionTarget="Android.Andorid_Emulator" />
   <MultiItemStartupConfigurations />
 </Properties>

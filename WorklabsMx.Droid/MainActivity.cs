@@ -43,8 +43,6 @@ namespace WorklabsMx.Droid
         public MainActivity()
         {
             DashboardController = new EscritorioController();
-
-
         }
 
         protected override void OnPause()
