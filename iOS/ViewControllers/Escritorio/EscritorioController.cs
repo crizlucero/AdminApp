@@ -16,11 +16,11 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 
         public override void ViewDidLoad()
         {
-            base.ViewDidLoad();             upload_image_path = new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PUBLICACIONES").Parametro_Varchar_1;            UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;             var Tap = new UITapGestureRecognizer(this.Tapped);             this.View.AddGestureRecognizer(Tap);  
+            base.ViewDidLoad();             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;             upload_image_path = new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PUBLICACIONES").Parametro_Varchar_1;                         var Tap = new UITapGestureRecognizer(this.Tapped);             this.View.AddGestureRecognizer(Tap);  
 		}
 
         public override void ViewWillAppear(bool animated)
-        {             base.ViewWillAppear(animated);             this.CargarInfo();             this.TableView.ReloadData();             this.CargarMiembro();             this.TableView.BeginUpdates();             this.CargarImagenes();             this.TableView.EndUpdates();             BTProgressHUD.Dismiss();
+        {             base.ViewWillAppear(animated);             this.CargarInfo();             //this.TableView.ReloadData();             this.CargarMiembro();             this.TableView.BeginUpdates();             this.CargarImagenes();             this.TableView.EndUpdates();             BTProgressHUD.Dismiss();
         }          public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);

@@ -1,26 +1,33 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/MenuTableViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/NoInfoCellUsuarios.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="175" Column="14" />
-      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="46" Column="21" />
-      <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="108" Column="61" />
-      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="170" Column="35" />
-      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="95" Column="34" />
-      <File FileName="WorklabsMx/Controllers/CarritoController.cs" Line="29" Column="19" />
-      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="21" Column="84" />
-      <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="70" Column="43" />
-      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="131" Column="56" />
-      <File FileName="iOS/ViewControllers/Escritorio/NoComentsCell.cs" Line="13" Column="48" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="252" Column="19" />
-      <File FileName="iOS/MenuTableViewController.cs" Line="38" Column="26" />
+      <File FileName="iOS/MenuTableViewController.cs" Line="31" Column="43" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="193" Column="38" NotebookId="1" />
+      <File FileName="iOS/ComunidadTableViewController.cs" Line="112" Column="50" NotebookId="1" />
+      <File FileName="iOS/FavoritosTableViewController.cs" Line="114" Column="45" NotebookId="1" />
+      <File FileName="iOS/FavoritosNoInfo.cs" Line="21" Column="37" NotebookId="1" />
+      <File FileName="iOS/NoInfoCellUsuarios.cs" Line="7" Column="33" NotebookId="1" />
     </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="2064" Y="23" Width="1404" Height="719">
+        <Files>
+          <File FileName="iOS/EmpresasTableViewController.cs" Line="96" Column="43" />
+          <File FileName="iOS/CeldaEmpresasCell.cs" Line="18" Column="31" />
+          <File FileName="iOS/NoInfoEmpresas.cs" Line="20" Column="14" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ConfirmarSalaJuntasController.cs" relfile="iOS/ConfirmarSalaJuntasController.cs" line="54" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ConfirmarSalaJuntasController.cs" relfile="iOS/ConfirmarSalaJuntasController.cs" line="71" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/ConfigurationsController.cs" relfile="WorklabsMx/Controllers/ConfigurationsController.cs" line="55" column="32" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/AccesoController.cs" relfile="iOS/ViewControllers/AccesoController.cs" line="41" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/UsuariosController.cs" relfile="WorklabsMx/Controllers/UsuariosController.cs" line="109" column="22" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/UsuariosController.cs" relfile="WorklabsMx/Controllers/UsuariosController.cs" line="114" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ConfirmarSalaJuntasController.cs" relfile="iOS/ConfirmarSalaJuntasController.cs" line="129" column="30" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ConfirmarSalaJuntasController.cs" relfile="iOS/ConfirmarSalaJuntasController.cs" line="86" column="29" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

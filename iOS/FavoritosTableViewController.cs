@@ -6,6 +6,7 @@ using WorklabsMx.Controllers;
 using System.Collections.Generic;
 using BigTed;
 using WorklabsMx.iOS.Helpers;
+using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
@@ -35,14 +36,17 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.FillData();
+
+
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
         }
 
-        public override void ViewWillAppear(bool animated)
+        public async override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            await FillData();
+            this.TableView.ReloadData();
         }
 
         public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
@@ -55,8 +59,9 @@ namespace WorklabsMx.iOS
         }
 
 
-        private void FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "", bool disponibilidad = true, string pais = "", string estado = "", string municipio = "")
+        async Task FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "", bool disponibilidad = true, string pais = "", string estado = "", string municipio = "")
         {
+            await Task.Delay(50);
             this.Usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
             foreach(UsuarioModel UsuarioFavorito in this.Usuarios)
             {
@@ -152,14 +157,14 @@ namespace WorklabsMx.iOS
 
     public partial class FavoritosTableViewController : EventosBuscar
     {
-        public void Buscando(string SearchText)
+        public async void Buscando(string SearchText)
         {
             string TextoBuscar = SearchText;
             List<UsuarioModel> SearchPost = new List<UsuarioModel>();
 
             if (InternetConectionHelper.VerificarConexion())
             {
-                this.FillData();
+                await FillData();
             }
 
 

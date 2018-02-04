@@ -49,9 +49,9 @@ namespace WorklabsMx.iOS
 
             for (int indice = 0; indice < Reservaciones.Count - 1; indice++ )
             {
-                if (Reservaciones[indice].Sala_Hora_Inicio == Reservaciones[indice + 1].Sala_Hora_Fin)
+                if (Reservaciones[indice].Sala_Hora_Fin == Reservaciones[indice + 1].Sala_Hora_Inicio)
                 {
-                    ReservacionesConcat[indiceReservacionesConcat].Sala_Hora_Inicio = Reservaciones[indice + 1].Sala_Hora_Inicio;
+                    ReservacionesConcat[indiceReservacionesConcat].Sala_Hora_Fin = Reservaciones[indice + 1].Sala_Hora_Fin;
                     ReservacionesConcat[indiceReservacionesConcat].Horas_Reservadas = ReservacionesConcat[indiceReservacionesConcat].Horas_Reservadas + 0.5f;
                 }
                 else

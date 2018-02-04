@@ -39,18 +39,20 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.FillData();
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
         }
 
-        public override void ViewWillAppear(bool animated)
+        public override async void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            await FillData();
+            this.TableView.ReloadData();
         }
 
-        private void FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "", bool disponibilidad = true, string pais = "", string estado = "", string municipio = "")
+        async Task FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "", bool disponibilidad = true, string pais = "", string estado = "", string municipio = "")
         {
+            await Task.Delay(50);
             this.Usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
         }
 
@@ -141,14 +143,14 @@ namespace WorklabsMx.iOS
 
     partial class ComunidadTableViewController : EventoBuscador
     {
-        public void Buscando(string Texto)
+        public async void Buscando(string Texto)
         {
             string TextoBuscar = Texto;
             List<UsuarioModel> SearchPost = new List<UsuarioModel>();
 
             if (InternetConectionHelper.VerificarConexion())
             {
-                Usuarios = new UsuariosController().GetDirectorioUsuarios("", "", "", "", "", true, "", "", "");
+                await FillData("", "", "", "", "", true, "", "", "");
             }
 
             if (TextoBuscar != "")

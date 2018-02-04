@@ -14,11 +14,11 @@ namespace WorklabsMx.iOS
         {
             if (existeConeccion)
             {
-                lblNoInfo.Text = "Sin resultados de búsqueda";
+                lblNoInfo.Text = "";
             }
             else
             {
-                lblNoInfo.Text = "No tienes acceso a una conexión de Internet";
+                lblNoInfo.Text = "";
             }
         }
     }

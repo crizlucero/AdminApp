@@ -5,6 +5,7 @@ using WorklabsMx.Models;
 using WorklabsMx.Controllers;
 using System.Collections.Generic;
 using BigTed;
+using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
@@ -33,19 +34,17 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.FillData();
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
         }
 
-        private void FillData(string nombre = "", string giro = "", string pais = "", string estado = "", string municipio = "")
-        {
-            this.Empresas = new EmpresaController().GetDirectorioEmpresas(nombre, pais, estado, municipio, giro);
-        }
 
-        public override void ViewWillAppear(bool animated)
+
+        public override async void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            await FillData();
+            this.TableView.ReloadData();
         }
 
         public override UIView GetViewForHeader(UITableView tableView, nint section)
@@ -100,6 +99,11 @@ namespace WorklabsMx.iOS
             }
         }
 
+        async Task FillData(string nombre = "", string giro = "", string pais = "", string estado = "", string municipio = "")
+        {
+            await Task.Delay(50);
+            this.Empresas = new EmpresaController().GetDirectorioEmpresas(nombre, pais, estado, municipio, giro);
+        }
 
         private void WillDisplay(int Row)
         {
@@ -124,6 +128,8 @@ namespace WorklabsMx.iOS
                 PerfilView.Empresa = this.Empresa;
             }
         }
+
+
 
     }
 
