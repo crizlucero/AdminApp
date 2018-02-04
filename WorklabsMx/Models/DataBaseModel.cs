@@ -15,11 +15,7 @@ namespace WorklabsMx.Models
 
         protected DataBaseModel()
         {
-<<<<<<< HEAD
-            conn = new SqlConnection("Server=38.122.16.212\\WLSQLSERVER; Database=WorklabsTest; User=developer; Pwd=d3p3l0p3r!");        
-=======
-            conn = new SqlConnection(@"Server=38.122.16.212\WLSQLSERVER; Database=WorklabsTest; User=developer; Pwd=d3p3l0p3r!");        
->>>>>>> 3723f0d35d11539a64fe7514c5e574dddfa2e09b
+            conn = new SqlConnection("Server=38.122.16.212\\WLSQLSERVER; Database=WorklabsTest; User=developer; Pwd=d3p3l0p3r!");
         }
 
         protected SqlCommand CreateCommand(string query) => new SqlCommand(query, conn);

@@ -159,6 +159,7 @@ namespace WorklabsMx.iOS
     {
         public async void Buscando(string SearchText)
         {
+            await Task.Delay(50);
             string TextoBuscar = SearchText;
             List<UsuarioModel> SearchPost = new List<UsuarioModel>();
 
@@ -166,8 +167,6 @@ namespace WorklabsMx.iOS
             {
                 await FillData();
             }
-
-
 
             if (TextoBuscar != "")
             {

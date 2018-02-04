@@ -145,14 +145,13 @@ namespace WorklabsMx.iOS
     {
         public async void Buscando(string Texto)
         {
+            await Task.Delay(50);
             string TextoBuscar = Texto;
             List<UsuarioModel> SearchPost = new List<UsuarioModel>();
-
             if (InternetConectionHelper.VerificarConexion())
             {
                 await FillData("", "", "", "", "", true, "", "", "");
             }
-
             if (TextoBuscar != "")
             {
                 if (Usuarios.FindAll(x => x.Usuario_Nombre.Contains(TextoBuscar)) != null)
