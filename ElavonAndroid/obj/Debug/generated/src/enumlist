@@ -1,7 +1,0 @@
-com.mitec.suitemcommerce.utilities.Currency:Com.Mitec.Suitemcommerce.Utilities:Currency
-com.mitec.suitemcommerce.utilities.Environment:Com.Mitec.Suitemcommerce.Utilities:Environment
-com.mitec.suitemcommerce.utilities.PaymentType:Com.Mitec.Suitemcommerce.Utilities:PaymentType
-com.threatmetrix.TrustDefenderMobile.THMStatusCode:Com.Threatmetrix.TrustDefenderMobile:THMStatusCode
-org.apache.commons.codec.digest.HmacAlgorithms:Org.Apache.Commons.Codec.Digest:HmacAlgorithms
-org.apache.commons.codec.language.bm.NameType:Org.Apache.Commons.Codec.Language.BM:NameType
-org.apache.commons.codec.language.bm.RuleType:Org.Apache.Commons.Codec.Language.BM:RuleType

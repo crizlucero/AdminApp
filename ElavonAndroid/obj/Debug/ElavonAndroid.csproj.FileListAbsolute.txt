@@ -1,5 +1,0 @@
-/Users/worklabs/WorklabsMx/ElavonAndroid/bin/Debug/ElavonAndroid.dll
-/Users/worklabs/WorklabsMx/ElavonAndroid/bin/Debug/ElavonAndroid.pdb
-/Users/worklabs/WorklabsMx/ElavonAndroid/obj/Debug/ElavonAndroid.csproj.CoreCompileInputs.cache
-/Users/worklabs/WorklabsMx/ElavonAndroid/obj/Debug/ElavonAndroid.dll
-/Users/worklabs/WorklabsMx/ElavonAndroid/obj/Debug/ElavonAndroid.pdb
