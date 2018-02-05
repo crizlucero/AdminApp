@@ -32,7 +32,7 @@ namespace WorklabsMx.iOS
             tableItems = new List<ItemsMenu>();
             await FillTable();
             this.TableView.Source = new EgTableViewSource(tableItems, this);
-            this.TableView.ReloadData();
+            BTProgressHUD.Dismiss();
         }
 
         public override void ViewDidAppear(bool animated)
@@ -57,8 +57,9 @@ namespace WorklabsMx.iOS
             {
                 if (menu.Menu_Id != "22" && menu.Menu_Id != "8")
                 {
+                    TableView.BeginUpdates();
                     tableItems.Add(menu);
-                  
+                    TableView.EndUpdates();
                 }
 
             }
@@ -86,7 +87,7 @@ namespace WorklabsMx.iOS
         public async void CerrarSesion()
         {
             BTProgressHUD.Show(status: "Cerrando sesión");
-            await Task.Delay(1000);
+            await Task.Delay(50);
             KeyChainHelper.DeleteKey("Usuario_Id");
             KeyChainHelper.DeleteKey("Usuario_Tipo");
             KeyChainHelper.DeleteKey("Empresa_Id");
@@ -173,6 +174,7 @@ namespace WorklabsMx.iOS
                 var currentOptionCell = (MenuContenidoCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
                 currentOptionCell.UpdateCell(current.Label);
                 BTProgressHUD.Dismiss();
+                //tableView.ReloadRows(new[] {indexPath}, UITableViewRowAnimation.Fade);
                 return currentOptionCell;
             }
             else

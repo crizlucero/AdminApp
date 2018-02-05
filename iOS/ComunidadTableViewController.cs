@@ -36,18 +36,37 @@ namespace WorklabsMx.iOS
         {
         }
 
-        public override void ViewDidLoad()
+        public override async void ViewDidLoad()
         {
             base.ViewDidLoad();
+            RefreshControl = new UIRefreshControl();
+            RefreshControl.AddTarget(HandleValueChanged, UIControlEvent.ValueChanged);
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
-        }
-
-        public override async void ViewWillAppear(bool animated)
-        {
-            base.ViewWillAppear(animated);
             await FillData();
             this.TableView.ReloadData();
+        }
+
+        void HandleValueChanged(object sender, EventArgs e)
+        {
+            this.GetData();
+        }
+
+        async void GetData()
+        {
+            RefreshControl.BeginRefreshing();
+            await FillData();
+            TableView.ReloadData();
+
+            if (RefreshControl != null && RefreshControl.Refreshing)
+                RefreshControl.EndRefreshing();
+
+        }
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+
         }
 
         async Task FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "", bool disponibilidad = true, string pais = "", string estado = "", string municipio = "")
@@ -103,7 +122,6 @@ namespace WorklabsMx.iOS
                 var currentUser = (ComunidadTableViewCell)tableView.DequeueReusableCell(IdentificadorCeldaUsuarios, indexPath);
                 currentUser.EventosComunidadCellDelegate = this;
                 currentUser.UpdateCell(current);
-                this.WillDisplay(indexPath.Row);
                 return currentUser;
             }
             else
@@ -115,14 +133,6 @@ namespace WorklabsMx.iOS
             }
         }
 
-        private void WillDisplay(int Row)
-        {
-            int LastRow = Usuarios.Count - 1;
-            if ((Row == LastRow))
-            {
-                BTProgressHUD.Dismiss();
-            }
-        }
 
         private void Tapped(UITapGestureRecognizer Recognizer)
         {

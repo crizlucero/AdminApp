@@ -1,20 +1,23 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/DataBaseModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/EmpresaController.cs">
     <Files>
-      <File FileName="iOS/MenuTableViewController.cs" Line="55" Column="13" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="61" Column="28" NotebookId="1" />
-      <File FileName="iOS/ComunidadTableViewController.cs" Line="148" Column="13" NotebookId="1" />
-      <File FileName="iOS/FavoritosTableViewController.cs" Line="60" Column="9" NotebookId="1" />
-      <File FileName="iOS/FavoritosNoInfo.cs" Line="11" Column="10" NotebookId="1" />
-      <File FileName="iOS/NoInfoCellUsuarios.cs" Line="17" Column="35" NotebookId="1" />
-      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="6" Column="40" NotebookId="1" />
+      <File FileName="iOS/MenuTableViewController.cs" Line="56" Column="36" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="93" Column="1" NotebookId="1" />
+      <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="43" Column="57" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="68" Column="9" NotebookId="1" />
+      <File FileName="iOS/ComunidadTableViewController.cs" Line="75" Column="68" NotebookId="1" />
+      <File FileName="iOS/EmpresasTableViewController.cs" Line="124" Column="66" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="141" Column="21" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Comentarios/comentarTableView.cs" Line="59" Column="38" NotebookId="1" />
+      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="609" Column="129" NotebookId="1" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="131" Column="35" NotebookId="1" />
+      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="122" Column="35" NotebookId="1" />
     </Files>
     <FloatingWindows>
-      <FloatingWindow WindowId="1" X="2064" Y="23" Width="1404" Height="719">
+      <FloatingWindow WindowId="1" X="2182" Y="23" Width="1079" Height="882">
         <Files>
-          <File FileName="iOS/EmpresasTableViewController.cs" Line="25" Column="40" />
-          <File FileName="iOS/CeldaEmpresasCell.cs" Line="18" Column="48" />
-          <File FileName="iOS/NoInfoEmpresas.cs" Line="17" Column="37" />
+          <File FileName="iOS/FavoritosTableViewController.cs" Line="122" Column="37" />
+          <File FileName="iOS/HeaderFavoritosTableViewCell.cs" Line="9" Column="6" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>

@@ -31,20 +31,23 @@ namespace WorklabsMx.iOS
         {
         }
 
-        public override void ViewDidLoad()
+        public override async void ViewDidLoad()
         {
             base.ViewDidLoad();
+            RefreshControl = new UIRefreshControl();
+            RefreshControl.AddTarget(HandleValueChanged, UIControlEvent.ValueChanged);
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
+            await FillData();
+            this.TableView.ReloadData();
         }
 
 
 
-        public override async void ViewWillAppear(bool animated)
+        public override  void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            await FillData();
-            this.TableView.ReloadData();
+   
         }
 
         public override UIView GetViewForHeader(UITableView tableView, nint section)
@@ -87,7 +90,7 @@ namespace WorklabsMx.iOS
                 var currentUser = (CeldaEmpresasCell)tableView.DequeueReusableCell(IdentificadorCeldaUsuarios, indexPath);
                 currentUser.UpdateCell(current);
                 currentUser.EventosEmpresasDelegate = this;
-                this.WillDisplay(indexPath.Row);
+
                 return currentUser;
             }
             else
@@ -99,20 +102,28 @@ namespace WorklabsMx.iOS
             }
         }
 
+        void HandleValueChanged(object sender, EventArgs e)
+        {
+            this.GetData();
+        }
+
+        async void GetData()
+        {
+            RefreshControl.BeginRefreshing();
+            await FillData();
+            TableView.ReloadData();
+
+            if (RefreshControl != null && RefreshControl.Refreshing)
+                RefreshControl.EndRefreshing();
+
+        }
+
         async Task FillData(string nombre = "", string giro = "", string pais = "", string estado = "", string municipio = "")
         {
             await Task.Delay(50);
             this.Empresas = new EmpresaController().GetDirectorioEmpresas(nombre, pais, estado, municipio, giro);
         }
 
-        private void WillDisplay(int Row)
-        {
-            int LastRow = Empresas.Count - 1;
-            if ((Row == LastRow))
-            {
-                BTProgressHUD.Dismiss();
-            }
-        }
 
         private void Tapped(UITapGestureRecognizer Recognizer)
         {

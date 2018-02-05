@@ -43,12 +43,14 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.ReloadData();
+
         }
 
-        public override void ViewWillAppear(bool animated)
+        public async override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            await FillData();
+            this.TableView.ReloadData();
         }
 
         public override void ViewWillDisappear(bool animated)
@@ -130,8 +132,9 @@ namespace WorklabsMx.iOS
 
         }
 
-        private void ReloadData()
+        async Task FillData()
         {
+            await Task.Delay(50);
             allCommentImages = new List<UIImage>();
             allProfileImages = new List<UIImage>();
             if (InternetConectionHelper.VerificarConexion())
@@ -148,8 +151,8 @@ namespace WorklabsMx.iOS
                 existeConeccion = false;
                 isShowInformation = false;
             }
-            BTProgressHUD.Dismiss();
-            this.TableView.ReloadData();
+            //BTProgressHUD.Dismiss();
+            //this.TableView.ReloadData();
         }
 
         private void WillDisplay(int Row)
@@ -174,7 +177,7 @@ namespace WorklabsMx.iOS
 
     partial class comentarTableView : ComentarioRealizado
     {
-        public void ComentarioRealizado(String Comentario, UIImage ImagenPublicacion)
+        public async void ComentarioRealizado(String Comentario, UIImage ImagenPublicacion)
         {
             byte[] Fotografia = new byte[0];
 
@@ -185,7 +188,7 @@ namespace WorklabsMx.iOS
 
             if (new Controllers.EscritorioController().CommentPost(currentPost.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Comentario, Fotografia))
             {
-                this.ReloadData();
+                await FillData();
             }
         }
     }

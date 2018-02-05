@@ -33,20 +33,22 @@ namespace WorklabsMx.iOS
         {
         }
 
-        public override void ViewDidLoad()
+        public override async void ViewDidLoad()
         {
             base.ViewDidLoad();
-
-
+            UsuariosFavoritos = new List<UsuarioModel>();
+            RefreshControl = new UIRefreshControl();
+            RefreshControl.AddTarget(HandleValueChanged, UIControlEvent.ValueChanged);
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
-        }
-
-        public async override void ViewWillAppear(bool animated)
-        {
-            base.ViewWillAppear(animated);
             await FillData();
             this.TableView.ReloadData();
+        }
+
+        public  override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+            UsuariosFavoritos = new List<UsuarioModel>();
         }
 
         public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
@@ -105,7 +107,6 @@ namespace WorklabsMx.iOS
                 var currentUser = (FavoritosTableViewCell)tableView.DequeueReusableCell(IdentificadorCeldaUsuarios, indexPath);
                 currentUser.EventosFavoritosCellDelegate = this;
                 currentUser.UpdateCell(current);
-                this.WillDisplay(indexPath.Row);
                 return currentUser;
             }
             else
@@ -118,13 +119,20 @@ namespace WorklabsMx.iOS
         }
 
 
-        private void WillDisplay(int Row)
+        void HandleValueChanged(object sender, EventArgs e)
         {
-            int LastRow = Usuarios.Count - 1;
-            if ((Row == LastRow))
-            {
-                BTProgressHUD.Dismiss();
-            }
+            this.GetData();
+        }
+
+        async void GetData()
+        {
+            RefreshControl.BeginRefreshing();
+            await FillData();
+            TableView.ReloadData();
+
+            if (RefreshControl != null && RefreshControl.Refreshing)
+                RefreshControl.EndRefreshing();
+
         }
 
         private void Tapped(UITapGestureRecognizer Recognizer)
