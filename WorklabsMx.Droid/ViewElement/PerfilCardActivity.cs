@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Android.App;
 using Android.Content;
+using Android.Net;
 using Android.OS;
 using Android.Support.V4.View;
 using Android.Widget;
@@ -28,7 +29,12 @@ namespace WorklabsMx.Droid
             {
                 Intent intent;
                 try { intent = PackageManager.GetLaunchIntentForPackage("mx.worklabs"); }
-                catch { intent = PackageManager.GetLaunchIntentForPackage("http://play.google.com/store/apps/details?id="); }
+                catch
+                {
+                    intent = new Intent(Intent.ActionView, Uri.Parse("market://details?id=mx.worklabs"));
+                    intent.AddFlags(ActivityFlags.NewTask);
+                }
+
                 StartActivity(intent);
             };
 

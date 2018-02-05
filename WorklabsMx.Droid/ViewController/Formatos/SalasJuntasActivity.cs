@@ -300,6 +300,7 @@ namespace WorklabsMx.Droid
                 );
                 dialog.Dismiss();
                 SetContentView(Resource.Layout.SalasJuntasConfirmacionLayout);
+
                 FindViewById<TextView>(Resource.Id.lblDiaSemana).Text = DateTime.Parse(fecha_seleccionada).DayOfWeek.ToString().Substring(0, 3);
                 FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = DateTime.Parse(fecha_seleccionada).Day.ToString();
                 FindViewById<TextView>(Resource.Id.lblHorario).Text = TimeSpan.FromHours(Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0]).ToString().Substring(0, 5) + " - " + TimeSpan.FromHours(Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0] + .5).ToString().Substring(0, 5);
