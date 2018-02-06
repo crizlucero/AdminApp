@@ -3522,8 +3522,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c0155
 			public const int action_divider = 2131493205;
 			
-			// aapt resource value: 0x7f0c01c2
-			public const int action_done = 2131493314;
+			// aapt resource value: 0x7f0c01c4
+			public const int action_done = 2131493316;
 			
 			// aapt resource value: 0x7f0c014f
 			public const int action_image = 2131493199;
@@ -3543,8 +3543,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c0045
 			public const int action_mode_close_button = 2131492933;
 			
-			// aapt resource value: 0x7f0c01be
-			public const int action_refresh = 2131493310;
+			// aapt resource value: 0x7f0c01c0
+			public const int action_refresh = 2131493312;
 			
 			// aapt resource value: 0x7f0c0150
 			public const int action_text = 2131493200;
@@ -3609,8 +3609,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c0181
 			public const int btnAttachImage = 2131493249;
 			
-			// aapt resource value: 0x7f0c01ac
-			public const int btnBuscar = 2131493292;
+			// aapt resource value: 0x7f0c01ae
+			public const int btnBuscar = 2131493294;
 			
 			// aapt resource value: 0x7f0c0086
 			public const int btnCancelToken = 2131492998;
@@ -3621,8 +3621,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c00c9
 			public const int btnCerrar = 2131493065;
 			
-			// aapt resource value: 0x7f0c01a1
-			public const int btnClear = 2131493281;
+			// aapt resource value: 0x7f0c01a3
+			public const int btnClear = 2131493283;
 			
 			// aapt resource value: 0x7f0c0173
 			public const int btnComentar = 2131493235;
@@ -3630,8 +3630,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c00fe
 			public const int btnConfirmar = 2131493118;
 			
-			// aapt resource value: 0x7f0c019a
-			public const int btnContinuar = 2131493274;
+			// aapt resource value: 0x7f0c019c
+			public const int btnContinuar = 2131493276;
 			
 			// aapt resource value: 0x7f0c017f
 			public const int btnDeleteImage = 2131493247;
@@ -3702,8 +3702,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c007c
 			public const int card = 2131492988;
 			
-			// aapt resource value: 0x7f0c01af
-			public const int cbDisponibilidad = 2131493295;
+			// aapt resource value: 0x7f0c01b1
+			public const int cbDisponibilidad = 2131493297;
 			
 			// aapt resource value: 0x7f0c005c
 			public const int checkbox = 2131492956;
@@ -3777,8 +3777,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c00a5
 			public const int gridLayout1 = 2131493029;
 			
-			// aapt resource value: 0x7f0c018e
-			public const int gridLayout2 = 2131493262;
+			// aapt resource value: 0x7f0c0190
+			public const int gridLayout2 = 2131493264;
 			
 			// aapt resource value: 0x7f0c00e5
 			public const int gridView1 = 2131493093;
@@ -3786,14 +3786,14 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c017c
 			public const int gvPublish = 2131493244;
 			
-			// aapt resource value: 0x7f0c019f
-			public const int gvSucursales = 2131493279;
+			// aapt resource value: 0x7f0c01a1
+			public const int gvSucursales = 2131493281;
 			
-			// aapt resource value: 0x7f0c0197
-			public const int historial_scroll = 2131493271;
+			// aapt resource value: 0x7f0c0199
+			public const int historial_scroll = 2131493273;
 			
-			// aapt resource value: 0x7f0c0198
-			public const int historial_table = 2131493272;
+			// aapt resource value: 0x7f0c019a
+			public const int historial_table = 2131493274;
 			
 			// aapt resource value: 0x7f0c0004
 			public const int home = 2131492868;
@@ -3801,8 +3801,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c001b
 			public const int homeAsUp = 2131492891;
 			
-			// aapt resource value: 0x7f0c018c
-			public const int hsvHorario = 2131493260;
+			// aapt resource value: 0x7f0c018e
+			public const int hsvHorario = 2131493262;
 			
 			// aapt resource value: 0x7f0c0122
 			public const int ibCerrar = 2131493154;
@@ -3834,8 +3834,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c0125
 			public const int imgDot = 2131493157;
 			
-			// aapt resource value: 0x7f0c01bb
-			public const int imgEmpresa = 2131493307;
+			// aapt resource value: 0x7f0c01bd
+			public const int imgEmpresa = 2131493309;
 			
 			// aapt resource value: 0x7f0c014a
 			public const int imgEmpresaPerfil = 2131493194;
@@ -3870,11 +3870,11 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c0186
 			public const int ivSala = 2131493254;
 			
-			// aapt resource value: 0x7f0c019c
-			public const int ivSalaJunta = 2131493276;
+			// aapt resource value: 0x7f0c019e
+			public const int ivSalaJunta = 2131493278;
 			
-			// aapt resource value: 0x7f0c01b8
-			public const int ivSucursal = 2131493304;
+			// aapt resource value: 0x7f0c01ba
+			public const int ivSucursal = 2131493306;
 			
 			// aapt resource value: 0x7f0c00d2
 			public const int lDashboard = 2131493074;
@@ -3888,14 +3888,14 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c007a
 			public const int layoutInputs = 2131492986;
 			
-			// aapt resource value: 0x7f0c0195
-			public const int lblAgendar = 2131493269;
+			// aapt resource value: 0x7f0c0197
+			public const int lblAgendar = 2131493271;
 			
 			// aapt resource value: 0x7f0c0131
 			public const int lblAgregarInvitado = 2131493169;
 			
-			// aapt resource value: 0x7f0c01b9
-			public const int lblCalle = 2131493305;
+			// aapt resource value: 0x7f0c01bb
+			public const int lblCalle = 2131493307;
 			
 			// aapt resource value: 0x7f0c00f1
 			public const int lblCantidad = 2131493105;
@@ -3915,11 +3915,11 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c0103
 			public const int lblCredito = 2131493123;
 			
-			// aapt resource value: 0x7f0c0192
-			public const int lblCreditosDisponibles = 2131493266;
+			// aapt resource value: 0x7f0c0194
+			public const int lblCreditosDisponibles = 2131493268;
 			
-			// aapt resource value: 0x7f0c0193
-			public const int lblCreditosUsados = 2131493267;
+			// aapt resource value: 0x7f0c0195
+			public const int lblCreditosUsados = 2131493269;
 			
 			// aapt resource value: 0x7f0c00f0
 			public const int lblDespliegue = 2131493104;
@@ -3927,11 +3927,11 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c0189
 			public const int lblDia = 2131493257;
 			
-			// aapt resource value: 0x7f0c018f
-			public const int lblDiaFecha = 2131493263;
+			// aapt resource value: 0x7f0c0191
+			public const int lblDiaFecha = 2131493265;
 			
-			// aapt resource value: 0x7f0c0190
-			public const int lblDiaNumero = 2131493264;
+			// aapt resource value: 0x7f0c0192
+			public const int lblDiaNumero = 2131493266;
 			
 			// aapt resource value: 0x7f0c0188
 			public const int lblDiaSemana = 2131493256;
@@ -3969,8 +3969,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c0102
 			public const int lblHorario = 2131493122;
 			
-			// aapt resource value: 0x7f0c0191
-			public const int lblHorasTotal = 2131493265;
+			// aapt resource value: 0x7f0c0193
+			public const int lblHorasTotal = 2131493267;
 			
 			// aapt resource value: 0x7f0c00eb
 			public const int lblInstagram = 2131493099;
@@ -3984,8 +3984,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c00f2
 			public const int lblMesesAdelantados = 2131493106;
 			
-			// aapt resource value: 0x7f0c0199
-			public const int lblNivel = 2131493273;
+			// aapt resource value: 0x7f0c019b
+			public const int lblNivel = 2131493275;
 			
 			// aapt resource value: 0x7f0c00cd
 			public const int lblNombre = 2131493069;
@@ -3993,8 +3993,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c0145
 			public const int lblNombreMenu = 2131493189;
 			
-			// aapt resource value: 0x7f0c01bc
-			public const int lblPais = 2131493308;
+			// aapt resource value: 0x7f0c01be
+			public const int lblPais = 2131493310;
 			
 			// aapt resource value: 0x7f0c00f4
 			public const int lblPeriodo = 2131493108;
@@ -4020,8 +4020,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c00ff
 			public const int lblSalasJuntas = 2131493119;
 			
-			// aapt resource value: 0x7f0c01b0
-			public const int lblSobreMi = 2131493296;
+			// aapt resource value: 0x7f0c01b2
+			public const int lblSobreMi = 2131493298;
 			
 			// aapt resource value: 0x7f0c0178
 			public const int lblSubTitle = 2131493240;
@@ -4044,14 +4044,14 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c00b5
 			public const int lblTotal = 2131493045;
 			
-			// aapt resource value: 0x7f0c01b3
-			public const int lblTotalPublicaciones = 2131493299;
-			
-			// aapt resource value: 0x7f0c01b4
-			public const int lblTotalSeguidores = 2131493300;
-			
 			// aapt resource value: 0x7f0c01b5
-			public const int lblTotalSiguiendo = 2131493301;
+			public const int lblTotalPublicaciones = 2131493301;
+			
+			// aapt resource value: 0x7f0c01b6
+			public const int lblTotalSeguidores = 2131493302;
+			
+			// aapt resource value: 0x7f0c01b7
+			public const int lblTotalSiguiendo = 2131493303;
 			
 			// aapt resource value: 0x7f0c00ec
 			public const int lblTwitter = 2131493100;
@@ -4098,38 +4098,41 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c0104
 			public const int llDirectorio = 2131493124;
 			
-			// aapt resource value: 0x7f0c01b7
-			public const int llEmpleoActual = 2131493303;
-			
-			// aapt resource value: 0x7f0c01a6
-			public const int llEstado = 2131493286;
-			
-			// aapt resource value: 0x7f0c01a5
-			public const int llLblEstado = 2131493285;
+			// aapt resource value: 0x7f0c01b9
+			public const int llEmpleoActual = 2131493305;
 			
 			// aapt resource value: 0x7f0c01a8
-			public const int llLblMunicipio = 2131493288;
+			public const int llEstado = 2131493288;
 			
-			// aapt resource value: 0x7f0c01a2
-			public const int llLblPais = 2131493282;
+			// aapt resource value: 0x7f0c01a7
+			public const int llLblEstado = 2131493287;
 			
-			// aapt resource value: 0x7f0c01a9
-			public const int llMunicipio = 2131493289;
+			// aapt resource value: 0x7f0c01aa
+			public const int llLblMunicipio = 2131493290;
 			
-			// aapt resource value: 0x7f0c01a3
-			public const int llPais = 2131493283;
+			// aapt resource value: 0x7f0c01a4
+			public const int llLblPais = 2131493284;
 			
-			// aapt resource value: 0x7f0c01ad
-			public const int llProfesion = 2131493293;
+			// aapt resource value: 0x7f0c01ab
+			public const int llMunicipio = 2131493291;
 			
-			// aapt resource value: 0x7f0c0196
-			public const int llReservacion = 2131493270;
+			// aapt resource value: 0x7f0c01a5
+			public const int llPais = 2131493285;
+			
+			// aapt resource value: 0x7f0c01af
+			public const int llProfesion = 2131493295;
+			
+			// aapt resource value: 0x7f0c0198
+			public const int llReservacion = 2131493272;
+			
+			// aapt resource value: 0x7f0c018c
+			public const int llSeleccionarFecha = 2131493260;
 			
 			// aapt resource value: 0x7f0c018a
-			public const int llSeleccionarFecha = 2131493258;
+			public const int llSeleccionarNivel = 2131493258;
 			
-			// aapt resource value: 0x7f0c018d
-			public const int llhHorario = 2131493261;
+			// aapt resource value: 0x7f0c018f
+			public const int llhHorario = 2131493263;
 			
 			// aapt resource value: 0x7f0c0138
 			public const int loadingImage = 2131493176;
@@ -4146,44 +4149,44 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c00d3
 			public const int menu = 2131493075;
 			
-			// aapt resource value: 0x7f0c01ca
-			public const int menu_acceso = 2131493322;
-			
-			// aapt resource value: 0x7f0c01bf
-			public const int menu_add_element = 2131493311;
-			
-			// aapt resource value: 0x7f0c01c0
-			public const int menu_add_person = 2131493312;
-			
-			// aapt resource value: 0x7f0c01c9
-			public const int menu_cart = 2131493321;
+			// aapt resource value: 0x7f0c01cc
+			public const int menu_acceso = 2131493324;
 			
 			// aapt resource value: 0x7f0c01c1
-			public const int menu_edit = 2131493313;
+			public const int menu_add_element = 2131493313;
+			
+			// aapt resource value: 0x7f0c01c2
+			public const int menu_add_person = 2131493314;
+			
+			// aapt resource value: 0x7f0c01cb
+			public const int menu_cart = 2131493323;
+			
+			// aapt resource value: 0x7f0c01c3
+			public const int menu_edit = 2131493315;
 			
 			// aapt resource value: 0x7f0c0147
 			public const int menu_layout = 2131493191;
 			
-			// aapt resource value: 0x7f0c01c4
-			public const int menu_payment = 2131493316;
-			
-			// aapt resource value: 0x7f0c01c5
-			public const int menu_refresh = 2131493317;
-			
 			// aapt resource value: 0x7f0c01c6
-			public const int menu_save = 2131493318;
+			public const int menu_payment = 2131493318;
+			
+			// aapt resource value: 0x7f0c01c7
+			public const int menu_refresh = 2131493319;
+			
+			// aapt resource value: 0x7f0c01c8
+			public const int menu_save = 2131493320;
 			
 			// aapt resource value: 0x7f0c0143
 			public const int menu_scroll = 2131493187;
 			
-			// aapt resource value: 0x7f0c01c7
-			public const int menu_search = 2131493319;
+			// aapt resource value: 0x7f0c01c9
+			public const int menu_search = 2131493321;
 			
-			// aapt resource value: 0x7f0c01c8
-			public const int menu_send = 2131493320;
+			// aapt resource value: 0x7f0c01ca
+			public const int menu_send = 2131493322;
 			
-			// aapt resource value: 0x7f0c01bd
-			public const int message = 2131493309;
+			// aapt resource value: 0x7f0c01bf
+			public const int message = 2131493311;
 			
 			// aapt resource value: 0x7f0c002a
 			public const int middle = 2131492906;
@@ -4194,8 +4197,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c0020
 			public const int multiply = 2131492896;
 			
-			// aapt resource value: 0x7f0c01c3
-			public const int nav_home = 2131493315;
+			// aapt resource value: 0x7f0c01c5
+			public const int nav_home = 2131493317;
 			
 			// aapt resource value: 0x7f0c014d
 			public const int navheader_username = 2131493197;
@@ -4260,17 +4263,17 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c0158
 			public const int right_side = 2131493208;
 			
-			// aapt resource value: 0x7f0c0194
-			public const int rlAgendar = 2131493268;
+			// aapt resource value: 0x7f0c0196
+			public const int rlAgendar = 2131493270;
 			
 			// aapt resource value: 0x7f0c0128
 			public const int rlBottomToolbar = 2131493160;
 			
-			// aapt resource value: 0x7f0c01b1
-			public const int rlHabilidades = 2131493297;
+			// aapt resource value: 0x7f0c01b3
+			public const int rlHabilidades = 2131493299;
 			
-			// aapt resource value: 0x7f0c01b2
-			public const int rlIntereses = 2131493298;
+			// aapt resource value: 0x7f0c01b4
+			public const int rlIntereses = 2131493300;
 			
 			// aapt resource value: 0x7f0c0021
 			public const int screen = 2131492897;
@@ -4287,8 +4290,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c0051
 			public const int scrollView = 2131492945;
 			
-			// aapt resource value: 0x7f0c01b6
-			public const int scrollView1 = 2131493302;
+			// aapt resource value: 0x7f0c01b8
+			public const int scrollView1 = 2131493304;
 			
 			// aapt resource value: 0x7f0c0069
 			public const int search_badge = 2131492969;
@@ -4392,8 +4395,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c00fb
 			public const int svReservaciones = 2131493115;
 			
-			// aapt resource value: 0x7f0c01a0
-			public const int svSearchUser = 2131493280;
+			// aapt resource value: 0x7f0c01a2
+			public const int svSearchUser = 2131493282;
 			
 			// aapt resource value: 0x7f0c009f
 			public const int swCondiciones = 2131493023;
@@ -4401,8 +4404,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c00c6
 			public const int swipe_container = 2131493062;
 			
-			// aapt resource value: 0x7f0c01ba
-			public const int tabHostProfile = 2131493306;
+			// aapt resource value: 0x7f0c01bc
+			public const int tabHostProfile = 2131493308;
 			
 			// aapt resource value: 0x7f0c0019
 			public const int tabMode = 2131492889;
@@ -4539,8 +4542,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c00a1
 			public const int trCarrito = 2131493025;
 			
-			// aapt resource value: 0x7f0c019d
-			public const int tvCapacidad = 2131493277;
+			// aapt resource value: 0x7f0c019f
+			public const int tvCapacidad = 2131493279;
 			
 			// aapt resource value: 0x7f0c0098
 			public const int tvDescuento = 2131493016;
@@ -4548,8 +4551,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c009b
 			public const int tvIVA = 2131493019;
 			
-			// aapt resource value: 0x7f0c019e
-			public const int tvNivel = 2131493278;
+			// aapt resource value: 0x7f0c01a0
+			public const int tvNivel = 2131493280;
 			
 			// aapt resource value: 0x7f0c0095
 			public const int tvSubtotal = 2131493013;
@@ -4626,11 +4629,11 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c011a
 			public const int txtEmailPerfil = 2131493146;
 			
-			// aapt resource value: 0x7f0c01ae
-			public const int txtEmpresa = 2131493294;
+			// aapt resource value: 0x7f0c01b0
+			public const int txtEmpresa = 2131493296;
 			
-			// aapt resource value: 0x7f0c01a7
-			public const int txtEstado = 2131493287;
+			// aapt resource value: 0x7f0c01a9
+			public const int txtEstado = 2131493289;
 			
 			// aapt resource value: 0x7f0c0106
 			public const int txtEstadoEmpresa = 2131493126;
@@ -4656,8 +4659,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c011b
 			public const int txtGeneroPerfil = 2131493147;
 			
-			// aapt resource value: 0x7f0c01ab
-			public const int txtGiroComercial = 2131493291;
+			// aapt resource value: 0x7f0c01ad
+			public const int txtGiroComercial = 2131493293;
 			
 			// aapt resource value: 0x7f0c010f
 			public const int txtGiroComercialEmpresa = 2131493135;
@@ -4683,14 +4686,17 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c00f3
 			public const int txtMesesAdelantados = 2131493107;
 			
-			// aapt resource value: 0x7f0c01aa
-			public const int txtMunicipio = 2131493290;
+			// aapt resource value: 0x7f0c01ac
+			public const int txtMunicipio = 2131493292;
 			
 			// aapt resource value: 0x7f0c0107
 			public const int txtMunicipioEmpresa = 2131493127;
 			
 			// aapt resource value: 0x7f0c00e0
 			public const int txtMunicipioFactura = 2131493088;
+			
+			// aapt resource value: 0x7f0c018b
+			public const int txtNivel = 2131493259;
 			
 			// aapt resource value: 0x7f0c00ba
 			public const int txtNombre = 2131493050;
@@ -4722,8 +4728,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c0112
 			public const int txtPaginaWebEmpresa = 2131493138;
 			
-			// aapt resource value: 0x7f0c01a4
-			public const int txtPais = 2131493284;
+			// aapt resource value: 0x7f0c01a6
+			public const int txtPais = 2131493286;
 			
 			// aapt resource value: 0x7f0c013c
 			public const int txtPassword = 2131493180;
@@ -4764,8 +4770,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c00dc
 			public const int txtRazonSocialFactura = 2131493084;
 			
-			// aapt resource value: 0x7f0c018b
-			public const int txtSeleccionarFecha = 2131493259;
+			// aapt resource value: 0x7f0c018d
+			public const int txtSeleccionarFecha = 2131493261;
 			
 			// aapt resource value: 0x7f0c00f7
 			public const int txtSubtotal = 2131493111;
@@ -4797,8 +4803,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c008a
 			public const int vpDemo = 2131493002;
 			
-			// aapt resource value: 0x7f0c019b
-			public const int vpHistorial = 2131493275;
+			// aapt resource value: 0x7f0c019d
+			public const int vpHistorial = 2131493277;
 			
 			// aapt resource value: 0x7f0c00cb
 			public const int vpInvitaciones = 2131493067;
@@ -5977,6 +5983,9 @@ namespace WorklabsMx.Droid
 			
 			// aapt resource value: 0x7f0700f3
 			public const int SeleccionarFecha = 2131165427;
+			
+			// aapt resource value: 0x7f070112
+			public const int SeleccionarNivel = 2131165458;
 			
 			// aapt resource value: 0x7f0700f4
 			public const int SeleccionarUbicacion = 2131165428;

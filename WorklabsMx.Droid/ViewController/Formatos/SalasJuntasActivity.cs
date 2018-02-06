@@ -251,15 +251,13 @@ namespace WorklabsMx.Droid
 
             for (int i = 1; i < Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Count; i++)
             {
-                if (Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i] - .5 < 0)
+                /*if (Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i] - .5 < 0)
                 {
 
-                }
+                }*/
                 Console.WriteLine(Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i]);
                 if (aux[aux2] == Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i])
-                {
                     aux[aux2] = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i] + .5;
-                }
                 else
                 {
                     aux2 = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i];
