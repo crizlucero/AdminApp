@@ -88,7 +88,7 @@ namespace WorklabsMx.Controllers
         /// </summary>
         /// <returns>Listado de salas de juntas.</returns>
         /// <param name="sucursal_id">Identificador de la sucursal.</param>
-        public List<SalaJuntasModel> GetSalaJuntas(string sucursal_id, int nivel = 7)
+        public List<SalaJuntasModel> GetSalaJuntas(string sucursal_id, string nivel = "7")
         {
             List<SalaJuntasModel> salas = new List<SalaJuntasModel>();
             try
@@ -196,6 +196,26 @@ namespace WorklabsMx.Controllers
             catch (Exception e) { SlackLogs.SendMessage(e.Message); }
             finally { conn.Close(); }
             return salas;
+        }
+
+        public Dictionary<string, string> GetNivelesSucursal(string sucursal_id)
+        {
+            Dictionary<string, string> niveles = new Dictionary<string, string>();
+            try
+            {
+                conn.Open();
+                string query = "SELECT Sala_Nivel FROM vw_cat_Salas_Juntas WHERE Sala_Estatus = 1 AND Sucursal_Id = @sucursal_id GROUP BY Sala_Nivel";
+                command = CreateCommand(query);
+                command.Parameters.AddWithValue("@sucursal_id", sucursal_id);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    niveles.Add("Nivel " + reader["Sala_Nivel"].ToString(), reader["Sala_Nivel"].ToString());
+                }
+            }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            finally { conn.Close(); }
+            return niveles;
         }
     }
 }

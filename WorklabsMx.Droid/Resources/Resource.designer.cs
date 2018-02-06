@@ -4338,6 +4338,9 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c001e
 			public const int showTitle = 2131492894;
 			
+			// aapt resource value: 0x7f0c018b
+			public const int spNivel = 2131493259;
+			
 			// aapt resource value: 0x7f0c00ad
 			public const int spSucursal = 2131493037;
 			
@@ -4694,9 +4697,6 @@ namespace WorklabsMx.Droid
 			
 			// aapt resource value: 0x7f0c00e0
 			public const int txtMunicipioFactura = 2131493088;
-			
-			// aapt resource value: 0x7f0c018b
-			public const int txtNivel = 2131493259;
 			
 			// aapt resource value: 0x7f0c00ba
 			public const int txtNombre = 2131493050;
