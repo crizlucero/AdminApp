@@ -45,9 +45,13 @@ namespace WorklabsMx.iOS
 
         public void setInfoPublicacion(List<string> miembro)
         {
-            this.ImagenPerfil = miembro[(int)CamposMiembro.Usuario_Fotografia];
-            this.Nombre = miembro[(int)CamposMiembro.Usuario_Nombre];
-            this.Ocupacion = miembro[(int)CamposMiembro.Usuario_Puesto];
+            if (miembro != null)
+            {
+                this.ImagenPerfil = miembro[(int)CamposMiembro.Usuario_Fotografia];
+                this.Nombre = miembro[(int)CamposMiembro.Usuario_Nombre];
+                this.Ocupacion = miembro[(int)CamposMiembro.Usuario_Puesto];
+            }
+
         }
 
         public override void ViewWillAppear(bool animated)
@@ -82,17 +86,26 @@ namespace WorklabsMx.iOS
                 Fotografia = new byte[0];
             }
 
-            if (new Controllers.EscritorioController().SetPost(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), txtPublicacion.Text, Fotografia))
+            if(InternetConectionHelper.VerificarConexion())
             {
-                this.PostPublicadoDelegate.PostPublicado();
-                this.DismissViewController(true, null);
-                BTProgressHUD.Dismiss();
+                if (new Controllers.EscritorioController().SetPost(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), txtPublicacion.Text, Fotografia))
+                {
+                    this.PostPublicadoDelegate.PostPublicado();
+                    this.DismissViewController(true, null);
+                    BTProgressHUD.Dismiss();
+                }
+                else
+                {
+                    BTProgressHUD.Dismiss();
+                    new MessageDialog().SendToast("No pudimos publicar tu mensaje, intenta de nuevo");
+                }
             }
             else
             {
                 BTProgressHUD.Dismiss();
-                new MessageDialog().SendToast("No pudimos publicar tu mensaje, intenta de nuevo");
+                new MessageDialog().SendToast("No tienes conexión a internet, intenta de nuevo");
             }
+           
         }
 
         partial void btnPublicar_TouchUpInside(UIButton sender)

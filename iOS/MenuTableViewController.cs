@@ -21,18 +21,20 @@ namespace WorklabsMx.iOS
         {
         }
 
-        public override void ViewDidLoad()
+        public override async void ViewDidLoad()
         {
             base.ViewDidLoad();
-        }
-
-        public override  async void ViewWillAppear(bool animated)
-        {
-            base.ViewWillAppear(animated);
             tableItems = new List<ItemsMenu>();
             await FillTable();
             this.TableView.Source = new EgTableViewSource(tableItems, this);
-            BTProgressHUD.Dismiss();
+            TableView.ReloadData();
+            TableView.BeginUpdates();
+            TableView.EndUpdates();
+        }
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
         }
 
         public override void ViewDidAppear(bool animated)
@@ -52,20 +54,25 @@ namespace WorklabsMx.iOS
 
         async Task FillTable()
         {
-            await Task.Delay(50);
-            foreach (ItemsMenu menu in new Controllers.EscritorioController().GetMenuiOS(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Tipo"))))
+            await Task.Delay(20);
+            if(InternetConectionHelper.VerificarConexion())
             {
-                if (menu.Menu_Id != "22" && menu.Menu_Id != "8")
+                foreach (ItemsMenu menu in new Controllers.EscritorioController().GetMenuiOS(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Tipo"))))
                 {
-                    TableView.BeginUpdates();
-                    tableItems.Add(menu);
-                    TableView.EndUpdates();
-                }
+                    if (menu.Menu_Id != "22" && menu.Menu_Id != "8")
+                    {
+                        tableItems.Add(menu);
+                    }
 
+                }
             }
+            else
+            {
+                new MessageDialog().SendToast("No tienes conexión a internet, intenta de nuevo");
+            }
+
         }
 
- 
        
         public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
         {
@@ -170,16 +177,15 @@ namespace WorklabsMx.iOS
         {
             if (isShowInformation)
             {
+                tableView.BeginUpdates();
                 var current = TableItems[indexPath.Row];
                 var currentOptionCell = (MenuContenidoCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
                 currentOptionCell.UpdateCell(current.Label);
-                BTProgressHUD.Dismiss();
-                //tableView.ReloadRows(new[] {indexPath}, UITableViewRowAnimation.Fade);
+                tableView.EndUpdates();
                 return currentOptionCell;
             }
             else
             {
-                BTProgressHUD.Dismiss();
                 var noPostCell = (NoInfoMenuCell)tableView.DequeueReusableCell(IdentificadorCeldaNoInfo, indexPath);
                 noPostCell.UpdateCell(this.existeConeccion);
                 return noPostCell;

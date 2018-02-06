@@ -1043,7 +1043,6 @@
     <Compile Include="FechaReservacionPickerViewController.designer.cs">
       <DependentUpon>FechaReservacionPickerViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReservarSalaJuntasViewTableController.cs" />
     <Compile Include="ReservarSalaJuntasViewTableController.designer.cs">
       <DependentUpon>ReservarSalaJuntasViewTableController.cs</DependentUpon>
     </Compile>
@@ -1069,6 +1068,7 @@
     </Compile>
     <Compile Include="ComunidadTableViewController.cs" />
     <Compile Include="InfoEmpresaTableViewController.cs" />
+    <Compile Include="ReservarSalaJuntasViewTableController.cs" />
     <Compile Include="ComunidadTableViewController.designer.cs">
       <DependentUpon>ComunidadTableViewController.cs</DependentUpon>
     </Compile>
@@ -1204,6 +1204,10 @@
       <DependentUpon>CeldaDetalleInvitacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="NivelesViewController.cs" />
+    <Compile Include="NivelesViewController.designer.cs">
+      <DependentUpon>NivelesViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

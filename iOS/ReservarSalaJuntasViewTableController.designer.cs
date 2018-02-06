@@ -16,6 +16,10 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnNivel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnSeleccionFecha { get; set; }
 
         [Outlet]
@@ -278,12 +282,21 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnAgendar_Touch (UIKit.UIButton sender);
 
+        [Action ("btnNivel_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnNivel_Touch (UIKit.UIButton sender);
+
         [Action ("btnSeleccionarFecha_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnSeleccionarFecha_Touch (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnNivel != null) {
+                btnNivel.Dispose ();
+                btnNivel = null;
+            }
+
             if (btnSeleccionFecha != null) {
                 btnSeleccionFecha.Dispose ();
                 btnSeleccionFecha = null;

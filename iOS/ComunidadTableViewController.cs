@@ -45,6 +45,8 @@ namespace WorklabsMx.iOS
             this.View.AddGestureRecognizer(Tap);
             await FillData();
             this.TableView.ReloadData();
+            TableView.BeginUpdates();
+            TableView.EndUpdates();
         }
 
         void HandleValueChanged(object sender, EventArgs e)
@@ -57,7 +59,8 @@ namespace WorklabsMx.iOS
             RefreshControl.BeginRefreshing();
             await FillData();
             TableView.ReloadData();
-
+            TableView.BeginUpdates();
+            TableView.EndUpdates();
             if (RefreshControl != null && RefreshControl.Refreshing)
                 RefreshControl.EndRefreshing();
 
@@ -66,7 +69,6 @@ namespace WorklabsMx.iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-
         }
 
         async Task FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "", bool disponibilidad = true, string pais = "", string estado = "", string municipio = "")
@@ -118,10 +120,12 @@ namespace WorklabsMx.iOS
         {
             if (isShowInformation)
             {
+                tableView.BeginUpdates();
                 var current = Usuarios[indexPath.Row];
                 var currentUser = (ComunidadTableViewCell)tableView.DequeueReusableCell(IdentificadorCeldaUsuarios, indexPath);
                 currentUser.EventosComunidadCellDelegate = this;
                 currentUser.UpdateCell(current);
+                tableView.EndUpdates();
                 return currentUser;
             }
             else
