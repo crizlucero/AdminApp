@@ -27,6 +27,7 @@ namespace WorklabsMx.Droid
         AlertDialog dialog;
         List<SalaJuntasModel> salas;
         readonly SalasJuntasController SalasController;
+        readonly UsuarioModel usuario;
         LinearLayout llhHorario;
         double creditos;
         readonly Dictionary<string, Dictionary<string, List<double>>> Horarios;
@@ -40,7 +41,7 @@ namespace WorklabsMx.Droid
             horas = new List<int>();
             for (int i = 1; i < 25; i++)
                 horas.Add(i);
-
+            usuario = new UsuariosController().GetMemberData(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"));
         }
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -235,7 +236,7 @@ namespace WorklabsMx.Droid
             return base.OnOptionsItemSelected(item);
         }
 
-        void ShowConfirmacion()
+        async void ShowConfirmacion()
         {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -285,7 +286,7 @@ namespace WorklabsMx.Droid
                 tlReservaciones.AddView(row);
             }
 
-
+            await new Emails().SendMail(usuario.Usuario_Correo_Electronico, usuario.Usuario_Nombre + " " + usuario.Usuario_Apellidos, "", "Sala de juntas");
             customView.FindViewById<Button>(Resource.Id.btnCancelar).Click += (sender, e) => dialog.Dismiss();
             customView.FindViewById<Button>(Resource.Id.btnConfirmar).Click += delegate
             {

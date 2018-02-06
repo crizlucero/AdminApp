@@ -5,7 +5,8 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using AndroidHUD;
+using Com.Mitec.Suitemcommerce.Beans;
+using Com.Mitec.Suitemcommerce.Controller;
 using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
@@ -17,10 +18,10 @@ namespace WorklabsMx.Droid
     [Activity(Label = "@string/app_name")]
     public class PaymentActivity : Activity
     {
-        List<CarritoComprasDetalle> membresias = null, productos = null;
+        List<CarritoComprasDetalle> membresias, productos;
         decimal Descuento, Descuento_Porcentaje, Subtotal, Total, IVATotal;
-        PagosController controller;
-        SimpleStorage storage;
+        readonly PagosController controller;
+        readonly SimpleStorage storage;
 
         int Descuento_Id;
         public PaymentActivity()
@@ -41,6 +42,35 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.RealizaPago);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
+
+            SuiteController sc = new SuiteController(Com.Mitec.Suitemcommerce.Utilities.Environment.Dev, this, null);
+            BeanTokenization bt = new BeanTokenization
+            {
+                Branch = "",
+                Company = "",
+                Country = "",
+                User = "",
+                Password = "",
+                Merchant = "º",
+                Currency = Com.Mitec.Suitemcommerce.Utilities.Currency.Mxn,
+                OperationType = "",
+                Reference = ""
+
+            };
+            Bean3DS b3ds = new Bean3DS
+            {
+                Company = "",
+                Branch = "",
+                Country = "",
+                User = "",
+                Password = "",
+                Merchant = "",
+                Currency = Com.Mitec.Suitemcommerce.Utilities.Currency.Mxn,
+                AuthKey = "",
+                Reference = ""
+            };
+            sc.Authenticate(bt, b3ds);
+            sc.SndPayWithToken(bt,b3ds);
 
             membresias = JsonConvert.DeserializeObject<List<CarritoComprasDetalle>>(Intent.GetStringExtra("Membresias"));
             productos = JsonConvert.DeserializeObject<List<CarritoComprasDetalle>>(Intent.GetStringExtra("Productos"));
