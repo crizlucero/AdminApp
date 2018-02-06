@@ -17,9 +17,13 @@ namespace WorklabsMx.iOS
     public partial class ReservarSalaJuntasViewTableController : UITableViewController
     {
 
+
         public string SucursalId;
         NSDateFormatter dateFormat = new NSDateFormatter();
-        bool FlagView2324 = false, FlagView2324_2 = false, FlagView2223 = false, FlagView2223_2 = false, FlagView2122 = false, FlagView2122_2 = false, FlagView2021 = false, FlagView2021_2 = false, FlagView1920 = false, FlagView1920_2 = false, FlagView1819 = false, FlagView1819_2 = false, FlagView1718 = false, FlagView1718_2 = false, FlagView1617 = false, FlagView1617_2 = false, Flag1516 = false, Flag1516_2 = false, Flag1415 = false, Flag1415_2 = false, Flag1314 = false, Flag1314_2 = false, Flag1213 = false, Flag1213_2 = false, Flag1112 = false, Flag1112_2 = false, Flag1011 = false, Flag1011_2 = false,Flag0910 = false, Flag0910_2 = false, Flag0809 = false, Flag0809_2 = false, Flag0708 = false, Flag0708_2 = false, Flag0607 = false, Flag0607_2 = false, Flag0506 = false, Flag0506_2 = false, Flag0405 = false, Flag0405_2 = false, Flag0304 = false, Flag0304_2 = false, Flag0203 = false, Flag0203_2 = false, Flag0102 = false, Flag0102_2 = false, Flag0124 = false, Flag0124_2 = false;
+        bool FlagView2324 = false, FlagView2324_2 = false, FlagView2223 = false, FlagView2223_2 = false, FlagView2122 = false, FlagView2122_2 = false, FlagView2021 = false, FlagView2021_2 = false, FlagView1920 = false, FlagView1920_2 = false, FlagView1819 = false, FlagView1819_2 = false, FlagView1718 = false, FlagView1718_2 = false, FlagView1617 = false,
+
+
+        FlagView1617_2 = false, Flag1516 = false, Flag1516_2 = false, Flag1415 = false, Flag1415_2 = false, Flag1314 = false, Flag1314_2 = false, Flag1213 = false, Flag1213_2 = false, Flag1112 = false, Flag1112_2 = false, Flag1011 = false, Flag1011_2 = false,Flag0910 = false, Flag0910_2 = false, Flag0809 = false, Flag0809_2 = false, Flag0708 = false, Flag0708_2 = false, Flag0607 = false, Flag0607_2 = false, Flag0506 = false, Flag0506_2 = false, Flag0405 = false, Flag0405_2 = false, Flag0304 = false, Flag0304_2 = false, Flag0203 = false, Flag0203_2 = false, Flag0102 = false, Flag0102_2 = false, Flag0124 = false, Flag0124_2 = false;
 
         List<SalaJuntasReservacionModel> HorasNoDisponibles = new List<SalaJuntasReservacionModel>();
         List<SalaJuntasModel> SalasJuntas = new List<SalaJuntasModel>();
@@ -2068,7 +2072,7 @@ namespace WorklabsMx.iOS
                     this.vw0203_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                     this.Flag0203_2 = false;
                     this.HorasReservadas = this.HorasReservadas - 0.5f;
-                    var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "22");
+                    var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "22:00");
                     if (itemToRemove != null)
                     {
                         Reservaciones.Remove(itemToRemove);
@@ -2211,6 +2215,12 @@ namespace WorklabsMx.iOS
                 VistaInfoReservacion.Reservaciones = this.ReservacionesConcat;
                 VistaInfoReservacion.ConfirmacionRealizadaDel = this;
             }
+
+            else if (segue.Identifier == "SeleccionarNivel")
+            {
+                var VistaNivel = (NivelesViewController)segue.DestinationViewController;
+                VistaNivel.NivelSeleccionadoDel = this;
+            }
         }
 
         partial void btnAgendar_Touch(UIButton sender)
@@ -2224,6 +2234,11 @@ namespace WorklabsMx.iOS
                 new MessageDialog().SendToast("No has seleccionado un horario");
             }
         }
+
+        partial void btnNivel_Touch(UIButton sender)
+        {
+            this.PerformSegue("SeleccionarNivel", null);
+        }
     }
 
 
@@ -2232,6 +2247,7 @@ namespace WorklabsMx.iOS
         public void FechaReservaSeleccionada(String FechaReservacion)
         {
             this.btnSeleccionFecha.SetTitle(FechaReservacion, UIControlState.Normal);
+            this.GetHorasNoDisponibles(this.SalaActual.Sala_Id);
            
             if(InternetConectionHelper.VerificarConexion())
             {
@@ -2246,6 +2262,14 @@ namespace WorklabsMx.iOS
             dateFormat.DateFormat = "dd/MM/yyyy";
             NSDate newFormatDate = dateFormat.Parse(FechaReservacion);
             this.FormatoDiaSeleccionado(newFormatDate);
+        }
+    }
+
+    partial class ReservarSalaJuntasViewTableController: NivelSeleccionado
+    {
+        public void NivelSeleccionado(string Nivel)
+        {
+            this.lblPiso.Text = Nivel;
         }
     }
 

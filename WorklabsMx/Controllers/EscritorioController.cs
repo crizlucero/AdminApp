@@ -52,7 +52,7 @@ namespace WorklabsMx.Controllers
                             Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
                             Usuario_Fotografia = reader["Usuario_Fotografia_Ruta"].ToString(),
                             Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
-                            Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path)
+                            Usuario_Fotografia_Perfil = null//ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path)
                         };
                         usuarios.Add(usuario);
                     }

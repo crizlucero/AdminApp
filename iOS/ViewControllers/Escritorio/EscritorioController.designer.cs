@@ -14,24 +14,12 @@ namespace WorklabsMx.iOS
     [Register ("EscritorioController")]
     partial class EscritorioController
     {
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIBarButtonItem btnScanQr { get; set; }
-
-        [Action ("btnToScanQr_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnToScanQr_TouchUpInside (UIKit.UIBarButtonItem sender);
-
         [Action ("Menu_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void Menu_Touch (UIKit.UIBarButtonItem sender);
 
         void ReleaseDesignerOutlets ()
         {
-            if (btnScanQr != null) {
-                btnScanQr.Dispose ();
-                btnScanQr = null;
-            }
         }
     }
 }

@@ -11,7 +11,7 @@ namespace WorklabsMx.iOS
     }
 
 
-        public partial class FechaReservacionPickerViewController : UIViewController
+    public partial class FechaReservacionPickerViewController : UIViewController
     {
         public bool FromRegister = false;
 

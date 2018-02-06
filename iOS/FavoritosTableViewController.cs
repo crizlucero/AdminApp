@@ -43,6 +43,8 @@ namespace WorklabsMx.iOS
             this.View.AddGestureRecognizer(Tap);
             await FillData();
             this.TableView.ReloadData();
+            TableView.BeginUpdates();
+            TableView.EndUpdates();
         }
 
         public  override void ViewWillAppear(bool animated)
@@ -103,10 +105,12 @@ namespace WorklabsMx.iOS
         {
             if (isShowInformation)
             {
+                tableView.BeginUpdates();
                 var current = UsuariosFavoritos[indexPath.Row];
                 var currentUser = (FavoritosTableViewCell)tableView.DequeueReusableCell(IdentificadorCeldaUsuarios, indexPath);
                 currentUser.EventosFavoritosCellDelegate = this;
                 currentUser.UpdateCell(current);
+                tableView.EndUpdates();
                 return currentUser;
             }
             else
@@ -129,7 +133,8 @@ namespace WorklabsMx.iOS
             RefreshControl.BeginRefreshing();
             await FillData();
             TableView.ReloadData();
-
+            TableView.BeginUpdates();
+            TableView.EndUpdates();
             if (RefreshControl != null && RefreshControl.Refreshing)
                 RefreshControl.EndRefreshing();
 

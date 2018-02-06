@@ -151,8 +151,6 @@ namespace WorklabsMx.iOS
                 existeConeccion = false;
                 isShowInformation = false;
             }
-            //BTProgressHUD.Dismiss();
-            //this.TableView.ReloadData();
         }
 
         private void WillDisplay(int Row)
