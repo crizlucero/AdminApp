@@ -88,15 +88,16 @@ namespace WorklabsMx.Controllers
         /// </summary>
         /// <returns>Listado de salas de juntas.</returns>
         /// <param name="sucursal_id">Identificador de la sucursal.</param>
-        public List<SalaJuntasModel> GetSalaJuntas(string sucursal_id)
+        public List<SalaJuntasModel> GetSalaJuntas(string sucursal_id, int nivel = 7)
         {
             List<SalaJuntasModel> salas = new List<SalaJuntasModel>();
             try
             {
                 conn.Open();
-                string query = "SELECT * FROM vw_cat_Salas_Juntas WHERE Sala_Estatus = 1 AND Sucursal_Id = @sucursal_id";
+                string query = "SELECT * FROM vw_cat_Salas_Juntas WHERE Sala_Estatus = 1 AND Sucursal_Id = @sucursal_id AND Sala_Nivel = @nivel";
                 command = CreateCommand(query);
                 command.Parameters.AddWithValue("@sucursal_id", sucursal_id);
+                command.Parameters.AddWithValue("@nivel", nivel);
                 reader = command.ExecuteReader();
                 while (reader.Read())
                     salas.Add(new SalaJuntasModel
