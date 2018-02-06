@@ -54,23 +54,25 @@ namespace WorklabsMx.iOS
 
         async Task FillTable()
         {
-            await Task.Delay(20);
-            if(InternetConectionHelper.VerificarConexion())
+
+            await Task.Run(() =>
             {
-                foreach (ItemsMenu menu in new Controllers.EscritorioController().GetMenuiOS(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Tipo"))))
+                if (InternetConectionHelper.VerificarConexion())
                 {
-                    if (menu.Menu_Id != "22" && menu.Menu_Id != "8")
+                    foreach (ItemsMenu menu in new Controllers.EscritorioController().GetMenuiOS(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Tipo"))))
                     {
-                        tableItems.Add(menu);
+                        if (menu.Menu_Id != "22" && menu.Menu_Id != "8")
+                        {
+                            tableItems.Add(menu);
+                        }
+
                     }
-
                 }
-            }
-            else
-            {
-                new MessageDialog().SendToast("No tienes conexión a internet, intenta de nuevo");
-            }
-
+                else
+                {
+                    new MessageDialog().SendToast("No tienes conexión a internet, intenta de nuevo");
+                }
+            });
         }
 
        
@@ -94,18 +96,20 @@ namespace WorklabsMx.iOS
         public async void CerrarSesion()
         {
             BTProgressHUD.Show(status: "Cerrando sesión");
-            await Task.Delay(50);
-            KeyChainHelper.DeleteKey("Usuario_Id");
-            KeyChainHelper.DeleteKey("Usuario_Tipo");
-            KeyChainHelper.DeleteKey("Empresa_Id");
-            KeyChainHelper.DeleteKey("Colaborador_Id");
-            KeyChainHelper.DeleteKey("Menu_Id");
+            await Task.Run(() =>
+            {
+                KeyChainHelper.DeleteKey("Usuario_Id");
+                KeyChainHelper.DeleteKey("Usuario_Tipo");
+                KeyChainHelper.DeleteKey("Empresa_Id");
+                KeyChainHelper.DeleteKey("Colaborador_Id");
+                KeyChainHelper.DeleteKey("Menu_Id");
 
-            var controller = UIStoryboard.FromName("Main", null)
-                .InstantiateViewController("LoginViewController");
-            controller.Title = "Iniciar Sesión";
-            BTProgressHUD.Dismiss();
-            UIApplication.SharedApplication.Windows[0].RootViewController = controller;
+                var controller = UIStoryboard.FromName("Main", null)
+                    .InstantiateViewController("LoginViewController");
+                controller.Title = "Iniciar Sesión";
+                BTProgressHUD.Dismiss();
+                UIApplication.SharedApplication.Windows[0].RootViewController = controller;
+            });
         }
 
 

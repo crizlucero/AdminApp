@@ -75,9 +75,33 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
                 CommentView.currentPost = CurrentPost;                 CommentView.currentPostImage = currentPostImage;                 CommentView.currentProfileImage = currentProfileImage;             }             else if(segue.Identifier == "toShowImageFromPost")             {                 var ImageView = (DetailCommentImage)segue.DestinationViewController;                 ImageView.ImagenPost = (UIImageView)sender;             }              else if(segue.Identifier == "DetallarPerfil")             {                 var PerfilView = (PerfilesTableViewController)segue.DestinationViewController;                 PerfilView.ListUser = ListUser;             }
         }          private void WillDisplay(int Row)         {             int LastRow = allPosts.Count - 1;             if ((Row == LastRow))             {                 BTProgressHUD.Dismiss();
             }         }          private void CargarImagenes()         {             if (InternetConectionHelper.VerificarConexion())             {                 if (allPosts.Count != 0)                 {                     foreach (PostModel currentPost in allPosts)                     {                         byte[] imageBytes = null;//new UploadImages().DownloadFileFTP(currentPost.Publicacion_Imagen, upload_image_path);                         if (imageBytes != null)                         {                             var data = NSData.FromArray(imageBytes);                             var uiimage = UIImage.LoadFromData(data);                             var porcentajeWith = ((float.Parse(UIScreen.MainScreen.Bounds.Width.ToString()) * 100) / uiimage.CGImage.Height);                             var HeightImage = uiimage.CGImage.Height * (porcentajeWith / 100);                             var ReescalImage = ImageHelper.ResizeUIImage(uiimage, float.Parse(UIScreen.MainScreen.Bounds.Width.ToString()), HeightImage);                             allPostImages.Add(ReescalImage);                         }                         else                         {                             allPostImages.Add(null);                         }                         allProfileImages.Add(ImageGallery.LoadImage(currentPost.Usuario.Usuario_Fotografia) ?? UIImage.FromBundle("ProfileImage"));                     }                 }             }          }          private void CargarMiembro()         {             if (InternetConectionHelper.VerificarConexion())             {                 miembro = new UsuariosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));             }
-        }          async Task CargarInfo()         {                          await Task.Delay(50);             try             {                 if (InternetConectionHelper.VerificarConexion())                 {                                          allPosts = new Controllers.EscritorioController().GetMuroPosts(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));                      if (allPosts.Count == 0)                     {
-                        isShowInformation = false;                         existeConeccion = true;
-                    }                                    }                 else                 {                     isShowInformation = false;                     existeConeccion = false;                 }             }             catch(Exception e)             {                 SlackLogs.SendMessage(e.Message);             }                     } 
+        }          async Task CargarInfo()         {
+
+            await Task.Run(() =>             {
+                try
+                {
+                    if (InternetConectionHelper.VerificarConexion())
+                    {
+
+                        allPosts = new Controllers.EscritorioController().GetMuroPosts(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+
+                        if (allPosts.Count == 0)
+                        {
+                            isShowInformation = false;
+                            existeConeccion = true;
+                        }
+
+                    }
+                    else
+                    {
+                        isShowInformation = false;
+                        existeConeccion = false;
+                    }
+                }
+                catch (Exception e)
+                {
+                    SlackLogs.SendMessage(e.Message);
+                }             });         }  
 
         partial void Menu_Touch(UIBarButtonItem sender)
         {             this.View.EndEditing(true);

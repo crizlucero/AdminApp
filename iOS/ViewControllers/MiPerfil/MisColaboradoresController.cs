@@ -95,9 +95,9 @@ namespace WorklabsMx.iOS
 
                 btnRenovarAcceso.TouchUpInside += (sender, e) =>
                 {
-                    new Emails().SendMail(colaborador.Usuario_Correo_Electronico,
+                    /*new Emails().SendMail(colaborador.Usuario_Correo_Electronico,
                                           colaborador.Usuario_Nombre + " " + colaborador.Usuario_Apellidos,
-                                          new PassSecurity().GeneraIdentifier());
+                                          new PassSecurity().GeneraIdentifier());*/
                 };
                 scrollView.AddSubview(btnRenovarAcceso);
 
