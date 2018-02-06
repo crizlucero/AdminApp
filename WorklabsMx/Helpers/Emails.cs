@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Net;
-using System.Net.Mail;
+using System.Threading.Tasks;
+using MailKit.Net.Smtp;
+using MimeKit;
 using WorklabsMx.Controllers;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
@@ -18,66 +19,40 @@ namespace WorklabsMx
         /// </summary>
         /// <param name="email">Correo electrónico</param>
         /// <param name="name">Nombre de la persona que se le enviará el correo</param>
-        /// <param name="password">Contraseña</param>
-        public void SendMail(string email, string name, string password)
+        /// <param name="html">Texto html para el correo</param>
+        /// <param name="subject">Asunto del correo</param>
+        public async Task SendMail(string email, string name, string html, string subject)
         {
+            await Task.Run(() =>
+            {
+                try
+                {
+                    MimeMessage msg = new MimeMessage
+                    {
+                        Subject = subject,
+                        Body = new TextPart(MimeKit.Text.TextFormat.Html)
+                        {
+                            Text = html
+                        }
+                    };
+                    msg.From.Add(new MailboxAddress("Worklabs", "desarrollo@worklabs.mx"));
+                    msg.To.Add(new MailboxAddress(name, email));
 
-            MailMessage message = new MailMessage(configuracion.Parametro_Varchar_1, email);
-            message.Subject = "Recuperación de contraseña";
-            message.Body = "Hola " + name + "\n Tu contraseña nueva es: " + password;
-            message.IsBodyHtml = true;
-            SmtpClient client = new SmtpClient
-            {
-                Port = Convert.ToInt32(configuracion.Parametro_Int_1),
-                EnableSsl = true,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(configuracion.Parametro_Varchar_1, "worklabs1000"),
-                Host = configuracion.Parametro_Varchar_3
-            };
-            try
-            {
-                client.Send(message);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Excepción enviando el correo: {0}",
-                                  ex.Message);
-                SlackLogs.SendMessage(ex.Message);
-            }
-        }
-        /// <summary>
-        /// Envia el correo electrónico de la invitación
-        /// </summary>
-        /// <param name="email">Correo electrónico</param>
-        /// <param name="cc">CC</param>
-        /// <param name="name">Nombre</param>
-        /// <param name="clave">Clave de acceso</param>
-        public void SendMailInvitado(string email, string name, string clave)
-        {
+                    using (SmtpClient client = new SmtpClient())
+                    {
+                        client.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+                        client.Connect("smtp.gmail.com", 587, false);
+                        client.Authenticate("desarrollo@worklabs.mx", "worklabs1000");
+                        client.Send(msg);
+                        client.Disconnect(true);
+                    }
+                }
+                catch (Exception e)
+                {
+                    SlackLogs.SendMessage(e.Message);
+                }
+            });
 
-            MailMessage message = new MailMessage(configuracion.Parametro_Varchar_1, email);
-            message.Subject = "Recuperación de contraseña";
-            message.Body = "Hola " + name + "\n Tu código de acceso es: \n<img src='https://api.qrserver.com/v1/create-qr-code/?data=" + clave + "&amp;size=60x60'/>";
-            SmtpClient client = new SmtpClient
-            {
-                Port = Convert.ToInt32(configuracion.Parametro_Int_1),
-                EnableSsl = true,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(configuracion.Parametro_Varchar_1, "worklabs1000"),
-                Host = configuracion.Parametro_Varchar_3
-            };
-            try
-            {
-                client.Send(message);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Excepción enviando el correo: {0}",
-                                  ex.Message);
-                SlackLogs.SendMessage(ex.Message);
-            }
         }
     }
 }

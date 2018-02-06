@@ -133,6 +133,15 @@
     <Reference Include="Google.Apis">
       <HintPath>..\packages\Google.Apis.1.32.1\lib\netstandard1.3\Google.Apis.dll</HintPath>
     </Reference>
+    <Reference Include="BouncyCastle">
+      <HintPath>..\packages\MimeKit.2.0.1\lib\monoandroid\BouncyCastle.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit">
+      <HintPath>..\packages\MimeKit.2.0.1\lib\monoandroid\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit">
+      <HintPath>..\packages\MailKit.2.0.1\lib\monoandroid\MailKit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -384,6 +393,12 @@
       <Version>25.1.1.0</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ElavonAndroid\ElavonAndroid.csproj">
+      <Project>{62433E1A-97AA-4F71-9FBB-4BCFF98C0035}</Project>
+      <Name>ElavonAndroid</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

@@ -621,7 +621,7 @@ namespace WorklabsMx.Controllers
             {
                 conn.Close();
             }
-            new Emails().SendMail(mail, nombre + " " + apellidos, pwd);
+            //new Emails().SendMail(mail, nombre + " " + apellidos, pwd);
             return true;
         }
     }
