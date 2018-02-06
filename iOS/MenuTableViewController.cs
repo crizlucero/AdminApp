@@ -207,8 +207,13 @@ namespace WorklabsMx.iOS
             }
             else if (indexPath.Row == 4)
             {
+                this.Controller.PerformSegue("scanQR", null);
+            }
+            else if (indexPath.Row == 5)
+            {
                 this.Controller.CerrarSesion();
             }
+
         }
 
         public override void WillDisplay(UITableView tableView, UITableViewCell cell, NSIndexPath indexPath)

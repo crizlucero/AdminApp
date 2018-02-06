@@ -1,17 +1,11 @@
 using System;
 using UIKit;
-//using PerpetualEngine.Storage;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Controllers;
-using WorklabsMx.iOS.Styles;
-using CoreGraphics;
 using System.Threading.Tasks;
-//using PerpetualEngine.Storage;
-using System.Collections.Generic;
-using Foundation;
-using System.Text.RegularExpressions;
 using BigTed;
 using System.Timers;
+using SWRevealViewControllerBinding;
 
 namespace WorklabsMx.iOS
 {
@@ -20,39 +14,29 @@ namespace WorklabsMx.iOS
         string strAcceso = string.Empty;
         public AccesoController(IntPtr handle) : base(handle) { }
         private Timer timer1; 
-        public override void ViewDidLoad()
+        public override async void ViewDidLoad()
         {
             base.ViewDidLoad();
- 
-            this.RefreshAccess();
-            this.InitTimer();
-            strAcceso = new UsuariosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
-
+            BTProgressHUD.Show(status: "Cargando QR");
             NavigationItem.SetRightBarButtonItem(new UIBarButtonItem(UIImage.FromBundle("ic_refresh"), UIBarButtonItemStyle.Plain, async (sender, e) =>
             {
                 BTProgressHUD.Show(status: "Actualizando QR");
-                await Task.Delay(500);
-                this.RefreshAccess();
+                await RefreshAccess();
             }), true);
+            await LoadQR();
+            await RefreshAccess();
+            BTProgressHUD.Dismiss();
+            this.InitTimer();
         }
 
-        private void RefreshAccess()
+        async Task RefreshAccess()
         {
-            if(InternetConectionHelper.VerificarConexion())
+            await Task.Delay(50);
+            if (InternetConectionHelper.VerificarConexion())
             {
                 string newAcceso = new UsuariosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
-                if (!strAcceso.Equals(newAcceso))
-                {
-                    LoadingView loadPop = new LoadingView(UIScreen.MainScreen.Bounds);
-                    View.Add(loadPop);
-                    strAcceso = newAcceso;
-                    imgQr.Image = ImageGallery.LoadImageUrl(newAcceso);
-                    loadPop.Hide();
-                }
-                else
-                {
-                    Console.WriteLine(newAcceso);
-                }
+                strAcceso = newAcceso;
+                imgQr.Image = ImageGallery.LoadImageUrl(newAcceso);
             }
             BTProgressHUD.Dismiss();
         }
@@ -65,11 +49,23 @@ namespace WorklabsMx.iOS
             timer1.Start();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        async Task LoadQR()
         {
-            RefreshAccess();
+            await Task.Delay(50);
+            strAcceso = new UsuariosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
         }
 
-      
+        private async void timer1_Tick(object sender, EventArgs e)
+        {
+            await RefreshAccess();
+        }
+
+
+        partial void btnMenu(UIBarButtonItem sender)
+        {
+            this.View.EndEditing(true);
+            this.RevealViewController().RevealToggleAnimated(true);
+            View.AddGestureRecognizer(this.RevealViewController().PanGestureRecognizer);
+        }
     }
 }

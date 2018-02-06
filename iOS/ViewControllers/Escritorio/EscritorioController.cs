@@ -20,7 +20,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 		}
 
         public override async void ViewWillAppear(bool animated)
-        {             base.ViewWillAppear(animated);             BTProgressHUD.Show("Cargando publicaciones");             await CargarInfo();             TableView.ReloadData();             this.CargarMiembro();             this.TableView.BeginUpdates();             this.CargarImagenes();             this.TableView.EndUpdates();             BTProgressHUD.Dismiss();
+        {             base.ViewWillAppear(animated);             this.CargarMiembro();             BTProgressHUD.Show("Cargando publicaciones");             await CargarInfo();             TableView.ReloadData();             this.TableView.BeginUpdates();             this.CargarImagenes();             this.TableView.EndUpdates();             BTProgressHUD.Dismiss();
         }          void HandleValueChanged(object sender, EventArgs e)         {             this.GetData();         }          public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
@@ -90,13 +90,10 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
                     {
                         allPostImages.Add(null);
                     }
-                    allProfileImages.Add(ImageGallery.LoadImage(currentPost.Usuario.Usuario_Fotografia) ?? UIImage.FromBundle("ProfileImage"));                 }             }         }          private void CargarMiembro()         {             if(allPosts.Count != 0)             {                 miembro = new UsuariosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));             }         }          async Task CargarInfo()         {                          await Task.Delay(50);             try             {                 if (InternetConectionHelper.VerificarConexion())                 {                     TableView.BeginUpdates();                     allPosts = new Controllers.EscritorioController().GetMuroPosts(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));                     TableView.EndUpdates();                     if (allPosts.Count == 0)                     {
-                        isShowInformation = false;                         existeConeccion = true;                         this.btnScanQr.Title = "";                         this.btnScanQr.Enabled = false;
-                    }                                    }                 else                 {                     this.btnScanQr.Title = "";                     this.btnScanQr.Enabled = false;                     isShowInformation = false;                     existeConeccion = false;                 }             }             catch(Exception e)             {                 SlackLogs.SendMessage(e.Message);             }                     }   
-        partial void btnToScanQr_TouchUpInside(UIBarButtonItem sender)
-        {
-            this.PerformSegue("toScanQr", sender);
-        }
+                    allProfileImages.Add(ImageGallery.LoadImage(currentPost.Usuario.Usuario_Fotografia) ?? UIImage.FromBundle("ProfileImage"));                 }             }         }          private void CargarMiembro()         {
+            miembro = new UsuariosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));         }          async Task CargarInfo()         {                          await Task.Delay(50);             try             {                 if (InternetConectionHelper.VerificarConexion())                 {                     TableView.BeginUpdates();                     allPosts = new Controllers.EscritorioController().GetMuroPosts(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));                     TableView.EndUpdates();                     if (allPosts.Count == 0)                     {
+                        isShowInformation = false;                         existeConeccion = true;
+                    }                                    }                 else                 {                     isShowInformation = false;                     existeConeccion = false;                 }             }             catch(Exception e)             {                 SlackLogs.SendMessage(e.Message);             }                     } 
 
         partial void Menu_Touch(UIBarButtonItem sender)
         {             this.View.EndEditing(true);
