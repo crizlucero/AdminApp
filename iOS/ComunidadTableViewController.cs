@@ -73,8 +73,10 @@ namespace WorklabsMx.iOS
 
         async Task FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "", bool disponibilidad = true, string pais = "", string estado = "", string municipio = "")
         {
-            await Task.Delay(50);
-            this.Usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
+            await Task.Run(() =>
+            {
+                this.Usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
+            });
         }
 
 
@@ -216,6 +218,7 @@ namespace WorklabsMx.iOS
             }
             this.TableView.ReloadData();
         }
+                           
     }
 
     partial class ComunidadTableViewController : EventosComunidadCell

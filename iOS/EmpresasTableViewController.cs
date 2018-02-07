@@ -124,8 +124,10 @@ namespace WorklabsMx.iOS
 
         async Task FillData(string nombre = "", string giro = "", string pais = "", string estado = "", string municipio = "")
         {
-            await Task.Delay(50);
-            this.Empresas = new EmpresaController().GetDirectorioEmpresas(nombre, pais, estado, municipio, giro);
+            await Task.Run(() =>
+            {
+                this.Empresas = new EmpresaController().GetDirectorioEmpresas(nombre, pais, estado, municipio, giro);
+            });
         }
 
 

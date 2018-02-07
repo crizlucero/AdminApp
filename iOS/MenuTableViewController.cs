@@ -54,7 +54,6 @@ namespace WorklabsMx.iOS
 
         async Task FillTable()
         {
-
             await Task.Run(() =>
             {
                 if (InternetConectionHelper.VerificarConexion())
@@ -65,7 +64,6 @@ namespace WorklabsMx.iOS
                         {
                             tableItems.Add(menu);
                         }
-
                     }
                 }
                 else

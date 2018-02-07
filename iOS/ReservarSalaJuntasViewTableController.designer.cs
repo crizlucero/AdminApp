@@ -276,6 +276,10 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwNivel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwSalasJuntas { get; set; }
 
         [Action ("btnAgendar_Touch:")]
@@ -615,6 +619,11 @@ namespace WorklabsMx.iOS
             if (vwInfoReservacion != null) {
                 vwInfoReservacion.Dispose ();
                 vwInfoReservacion = null;
+            }
+
+            if (vwNivel != null) {
+                vwNivel.Dispose ();
+                vwNivel = null;
             }
 
             if (vwSalasJuntas != null) {

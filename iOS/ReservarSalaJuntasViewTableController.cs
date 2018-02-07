@@ -12,7 +12,7 @@ namespace WorklabsMx.iOS
 {
 
 
- 
+
 
     public partial class ReservarSalaJuntasViewTableController : UITableViewController
     {
@@ -23,7 +23,7 @@ namespace WorklabsMx.iOS
         bool FlagView2324 = false, FlagView2324_2 = false, FlagView2223 = false, FlagView2223_2 = false, FlagView2122 = false, FlagView2122_2 = false, FlagView2021 = false, FlagView2021_2 = false, FlagView1920 = false, FlagView1920_2 = false, FlagView1819 = false, FlagView1819_2 = false, FlagView1718 = false, FlagView1718_2 = false, FlagView1617 = false,
 
 
-        FlagView1617_2 = false, Flag1516 = false, Flag1516_2 = false, Flag1415 = false, Flag1415_2 = false, Flag1314 = false, Flag1314_2 = false, Flag1213 = false, Flag1213_2 = false, Flag1112 = false, Flag1112_2 = false, Flag1011 = false, Flag1011_2 = false,Flag0910 = false, Flag0910_2 = false, Flag0809 = false, Flag0809_2 = false, Flag0708 = false, Flag0708_2 = false, Flag0607 = false, Flag0607_2 = false, Flag0506 = false, Flag0506_2 = false, Flag0405 = false, Flag0405_2 = false, Flag0304 = false, Flag0304_2 = false, Flag0203 = false, Flag0203_2 = false, Flag0102 = false, Flag0102_2 = false, Flag0124 = false, Flag0124_2 = false;
+        FlagView1617_2 = false, Flag1516 = false, Flag1516_2 = false, Flag1415 = false, Flag1415_2 = false, Flag1314 = false, Flag1314_2 = false, Flag1213 = false, Flag1213_2 = false, Flag1112 = false, Flag1112_2 = false, Flag1011 = false, Flag1011_2 = false, Flag0910 = false, Flag0910_2 = false, Flag0809 = false, Flag0809_2 = false, Flag0708 = false, Flag0708_2 = false, Flag0607 = false, Flag0607_2 = false, Flag0506 = false, Flag0506_2 = false, Flag0405 = false, Flag0405_2 = false, Flag0304 = false, Flag0304_2 = false, Flag0203 = false, Flag0203_2 = false, Flag0102 = false, Flag0102_2 = false, Flag0124 = false, Flag0124_2 = false;
 
         List<SalaJuntasReservacionModel> HorasNoDisponibles = new List<SalaJuntasReservacionModel>();
         List<SalaJuntasModel> SalasJuntas = new List<SalaJuntasModel>();
@@ -39,37 +39,49 @@ namespace WorklabsMx.iOS
 
         string SalaId = "";
 
-        public ReservarSalaJuntasViewTableController (IntPtr handle) : base (handle)
+        int Nivel = 7;
+
+        nfloat vwSalasJuntasResp;
+
+        public ReservarSalaJuntasViewTableController(IntPtr handle) : base(handle)
         {
         }
 
         public override void ViewDidLoad()
         {
+            nfloat aux = this.vwSalasJuntas.Frame.Width;
+            vwSalasJuntasResp = aux;
             base.ViewDidLoad();
-
             this.GenerateRecornizes();
             this.LimpiarInfo();
+            this.GetSalas(this.Nivel);
+            this.btnNivel.SetTitle("NIVEL 7", UIControlState.Normal);
+        }
 
-            if(InternetConectionHelper.VerificarConexion())
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+        }
+
+
+
+        private void UpdateInfo()
+        {
+            if (this.SalasJuntas.Count > 0)
             {
-                this.SalasJuntas = new SalasJuntasController().GetSalaJuntas(SucursalId);
-                if(this.SalasJuntas.Count > 0)
-                {
-                    this.SalaActual = this.SalasJuntas[0];
+                this.SalaActual = this.SalasJuntas[0];
 
-                    this.GetHorasNoDisponibles(SalaActual.Sala_Id);
-                    this.lblPiso.Text = "NIVEL " +  this.SalaActual.Sala_Nivel;
-                    this.lblNombre.Text = this.SalaActual.Sala_Descripcion;
-                    this.lblCapacidad.Text = this.SalaActual.Sala_Capacidad + " PERSONAS";
-                }
+                this.GetHorasNoDisponibles(SalaActual.Sala_Id);
+                this.lblPiso.Text = "NIVEL " + this.SalaActual.Sala_Nivel;
+                this.lblNombre.Text = this.SalaActual.Sala_Descripcion;
+                this.lblCapacidad.Text = this.SalaActual.Sala_Capacidad + " PERSONAS";
             }
 
             nfloat WidthView = 0;
             nfloat XImageView = 0;
-
-            for (int indice = 0; indice < this.SalasJuntas.Count; indice ++)
+            for (int indice = 0; indice < this.SalasJuntas.Count; indice++)
             {
-                WidthView = WidthView + this.vwSalasJuntas.Frame.Width;
+                WidthView = WidthView + vwSalasJuntasResp;
             }
             this.pcSucursales.Pages = this.SalasJuntas.Count;
             CGRect newFrame = new CGRect(this.vwSalasJuntas.Frame.X, this.vwSalasJuntas.Frame.Y, WidthView, this.vwSalasJuntas.Frame.Height);
@@ -100,19 +112,15 @@ namespace WorklabsMx.iOS
                     this.GetHorasNoDisponibles(this.SalaActual.Sala_Id);
                 }
                 this.ValidateHour();
-               
+
             };
-           
+
             CGRect FrameHorarios = new CGRect(this.vwHorarios.Frame.X, this.vwHorarios.Frame.Y, this.vwHorarios.Frame.Width + 50, this.vwHorarios.Frame.Height);
             this.scvScrollHorarios.ContentSize = FrameHorarios.Size;
             StyleHelper.Style(this.vwBotonFecha.Layer);
             StyleHelper.Style(this.vwInfoReservacion.Layer);
+            StyleHelper.Style(this.vwNivel.Layer);
             this.ValidateHour();
-        }
-
-        public override void ViewWillAppear(bool animated)
-        {
-            base.ViewWillAppear(animated);
         }
 
         private void PintarMinutos()
@@ -120,145 +128,99 @@ namespace WorklabsMx.iOS
             int date = DateTime.Now.Hour - 1;
             if (date >= 0)
             {
-                //vw2401_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 view2324_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date >= 1)
             {
-                //view2324_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw2223_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
             if (date >= 2)
             {
-                //vw2223_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw2122_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 3)
             {
-                //vw2122_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw2021_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 4)
             {
-                //vw2021_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw1920_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 5)
             {
-                //vw1920_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw1819_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 6)
             {
-                //vw1819_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw1718_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 7)
             {
-                //vw1718_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw1617_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 8)
             {
-                //vw1617_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw1516_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 9)
             {
-                //vw1516_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw1415_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 10)
             {
-                //vw1415_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw1314_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 11)
             {
-                //vw1314_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw1213_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 12)
             {
-                //vw1213_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw1112_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 13)
             {
-                //vw1112_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw1011_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 14)
             {
-                //vw1011_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw0910_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 15)
             {
-                //vw0910_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw0809_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 16)
             {
-                //vw0809_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw0708_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 17)
             {
-                //vw0708_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw0607_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 18)
             {
-                //vw0607_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw0506_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 19)
             {
-                //vw0506_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw0405_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 20)
             {
-                //vw0405_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw0304_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 21)
             {
-                //vw0304_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw0203_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 22)
             {
-                //vw0203_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw0102_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
             if (date >= 23)
             {
-                //vw0102_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw2401_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
             }
           /* if (date >= 24)
             {
@@ -278,8 +240,6 @@ namespace WorklabsMx.iOS
             if (date >= 0)
             {
                 view2324.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
-                //vw2401.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
                     this.PintarMinutos();
@@ -292,7 +252,6 @@ namespace WorklabsMx.iOS
             {
                 vw2223.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 BanderaHoras = true;
-                //view2324.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
                     this.PintarMinutos();
@@ -301,9 +260,7 @@ namespace WorklabsMx.iOS
             }
             if (date >= 2)
             {
-                //vw2223.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 vw2122.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
@@ -314,7 +271,6 @@ namespace WorklabsMx.iOS
             if (date >= 3)
             {
                 vw2021.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-               // vw2122.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
@@ -325,9 +281,7 @@ namespace WorklabsMx.iOS
             if (date >= 4)
             {
                 vw1920.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
-                //vw2021.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
                     this.PintarMinutos();
@@ -337,9 +291,7 @@ namespace WorklabsMx.iOS
             if (date >= 5)
             {
                 vw1819.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
-                //vw1920.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
                     this.PintarMinutos();
@@ -2239,6 +2191,18 @@ namespace WorklabsMx.iOS
         {
             this.PerformSegue("SeleccionarNivel", null);
         }
+
+        public void GetSalas(int Nivel)
+        {
+
+            if (InternetConectionHelper.VerificarConexion())
+            {
+                this.SalasJuntas = new SalasJuntasController().GetSalaJuntas(SucursalId, Nivel);
+
+                this.UpdateInfo();
+            }
+
+        }
     }
 
 
@@ -2270,6 +2234,9 @@ namespace WorklabsMx.iOS
         public void NivelSeleccionado(string Nivel)
         {
             this.lblPiso.Text = Nivel;
+            this.btnNivel.SetTitle(Nivel, UIControlState.Normal);
+            this.Nivel = int.Parse(Nivel.Replace("NIVEL ", ""));
+            this.GetSalas(this.Nivel);
         }
     }
 

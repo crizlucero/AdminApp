@@ -1401,7 +1401,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FlechaAbajo" translatesAutoresizingMaskIntoConstraints="NO" id="EbF-BR-pla">
-                                                            <rect key="frame" x="159" y="6" width="30" height="21"/>
+                                                            <rect key="frame" x="159" y="10" width="30" height="12"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="sMG-qb-5cC"/>
                                                             </constraints>
@@ -1420,7 +1420,7 @@
                                                         <constraint firstItem="EbF-BR-pla" firstAttribute="centerY" secondItem="XC4-d1-978" secondAttribute="centerY" id="gIl-lC-EmJ"/>
                                                         <constraint firstItem="Us3-sS-NAg" firstAttribute="centerY" secondItem="wEF-5s-aNV" secondAttribute="centerY" id="gon-kV-FVT"/>
                                                         <constraint firstItem="Us3-sS-NAg" firstAttribute="leading" secondItem="wEF-5s-aNV" secondAttribute="leading" constant="0.5" id="hbB-5a-HMn"/>
-                                                        <constraint firstItem="EbF-BR-pla" firstAttribute="top" secondItem="wEF-5s-aNV" secondAttribute="top" constant="6" id="nH8-Vw-E3G"/>
+                                                        <constraint firstItem="EbF-BR-pla" firstAttribute="top" secondItem="wEF-5s-aNV" secondAttribute="top" constant="10" id="nH8-Vw-E3G"/>
                                                         <constraint firstItem="Us3-sS-NAg" firstAttribute="centerY" secondItem="XC4-d1-978" secondAttribute="centerY" id="nbd-li-l0m"/>
                                                         <constraint firstAttribute="trailing" secondItem="XC4-d1-978" secondAttribute="trailing" constant="8" id="sL3-F8-5y0"/>
                                                     </constraints>
@@ -1521,8 +1521,8 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="FlechaAbajo" translatesAutoresizingMaskIntoConstraints="NO" id="Ue2-1U-wVj">
-                                                            <rect key="frame" x="162" y="6" width="30" height="20"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FlechaAbajo" translatesAutoresizingMaskIntoConstraints="NO" id="Ue2-1U-wVj">
+                                                            <rect key="frame" x="159" y="10" width="30" height="12"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="2wl-5t-jhH"/>
                                                             </constraints>
@@ -1531,11 +1531,13 @@
                                                     <color key="backgroundColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="Uef-1s-eyu" secondAttribute="bottom" constant="1" id="1c9-Fz-Tud"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Ue2-1U-wVj" secondAttribute="trailing" constant="8" id="CK0-ZV-c8y"/>
                                                         <constraint firstAttribute="trailing" secondItem="Uef-1s-eyu" secondAttribute="trailing" constant="1" id="HG6-ke-7N4"/>
                                                         <constraint firstItem="Uef-1s-eyu" firstAttribute="leading" secondItem="8OH-zW-huT" secondAttribute="leading" constant="0.5" id="KdP-ga-28l"/>
+                                                        <constraint firstItem="Ue2-1U-wVj" firstAttribute="centerY" secondItem="Uef-1s-eyu" secondAttribute="centerY" id="N8a-d1-mcF"/>
                                                         <constraint firstAttribute="height" constant="32" id="YAf-Ei-dqE"/>
                                                         <constraint firstItem="Uef-1s-eyu" firstAttribute="top" secondItem="8OH-zW-huT" secondAttribute="top" constant="0.5" id="bie-S9-bec"/>
-                                                        <constraint firstItem="Ue2-1U-wVj" firstAttribute="top" secondItem="8OH-zW-huT" secondAttribute="top" constant="6" id="bty-Sq-CPT"/>
+                                                        <constraint firstItem="Ue2-1U-wVj" firstAttribute="top" secondItem="8OH-zW-huT" secondAttribute="top" constant="10" id="bty-Sq-CPT"/>
                                                         <constraint firstItem="Uef-1s-eyu" firstAttribute="centerX" secondItem="8OH-zW-huT" secondAttribute="centerX" id="nz1-i9-6QV"/>
                                                         <constraint firstItem="Uef-1s-eyu" firstAttribute="centerY" secondItem="8OH-zW-huT" secondAttribute="centerY" id="pA7-rI-MSd"/>
                                                     </constraints>
@@ -1941,6 +1943,7 @@
                         <outlet property="vwBotonFecha" destination="wEF-5s-aNV" id="name-outlet-wEF-5s-aNV"/>
                         <outlet property="vwHorarios" destination="1W4-e3-lIV" id="name-outlet-1W4-e3-lIV"/>
                         <outlet property="vwInfoReservacion" destination="d7O-b2-dRc" id="name-outlet-d7O-b2-dRc"/>
+                        <outlet property="vwNivel" destination="8OH-zW-huT" id="name-outlet-8OH-zW-huT"/>
                         <outlet property="vwSalasJuntas" destination="0xd-eU-gnB" id="name-outlet-0xd-eU-gnB"/>
                         <segue destination="0W8-4j-CEc" kind="presentation" identifier="SelectDate" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="Vey-JC-Spx"/>
                         <segue destination="SA4-pM-XhE" kind="presentation" id="mkT-c5-Cxx"/>
@@ -1951,7 +1954,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qvy-QJ-Gjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-216.80000000000001" y="-2883.5079999999998"/>
+            <point key="canvasLocation" x="-216.80000000000001" y="-2883.5082458770617"/>
         </scene>
         <!--Empresa-->
         <scene sceneID="jSw-MG-frS">
@@ -12002,7 +12005,7 @@ COL. LADRON DE GUEVARA</string>
     <inferredMetricsTieBreakers>
         <segue reference="Tlx-3I-mcH"/>
         <segue reference="Hoa-iV-Mgh"/>
-        <segue reference="ByN-Yg-Spq"/>
+        <segue reference="vvg-Oz-35K"/>
         <segue reference="wV9-2A-ApY"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.10980392156862745" green="0.52941176470588236" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

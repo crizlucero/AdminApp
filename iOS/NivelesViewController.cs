@@ -25,15 +25,13 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            selectedLbl.Text = "Masculino";
+            selectedLbl.Text = "NIVEL 7";
             this.pcvNiveles.Model = new ListadoNiveles(selectedLbl);
         }
 
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            var color = new UIColor(0, 0.0f);
-            this.View.BackgroundColor = color;
         }
 
         partial void btnSeleccionar_Touch(UIButton sender)

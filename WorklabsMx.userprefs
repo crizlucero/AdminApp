@@ -1,2 +1,29 @@
-
+﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ConfirmarSalaJuntasController.cs">
+    <Files>
+      <File FileName="iOS/MenuTableViewController.cs" Line="61" Column="94" />
+      <File FileName="iOS/ComunidadTableViewController.cs" Line="79" Column="12" />
+      <File FileName="iOS/FavoritosTableViewController.cs" Line="112" Column="54" />
+      <File FileName="iOS/EmpresasTableViewController.cs" Line="53" Column="10" />
+      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="53" Column="37" />
+      <File FileName="iOS/NivelesViewController.cs" Line="22" Column="13" />
+      <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="153" Column="18" />
+      <File FileName="iOS/FavoritosTableViewCell.cs" Line="22" Column="10" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="252" Column="19" />
+      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="9" Column="9" />
+      <File FileName="iOS/Main.cs" Line="12" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="2076" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="2080" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="2046" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="2053" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+  <MultiItemStartupConfigurations />
 </Properties>

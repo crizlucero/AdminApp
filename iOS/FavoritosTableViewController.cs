@@ -65,16 +65,18 @@ namespace WorklabsMx.iOS
 
         async Task FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "", bool disponibilidad = true, string pais = "", string estado = "", string municipio = "")
         {
-            await Task.Delay(50);
-            this.Usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
-            foreach(UsuarioModel UsuarioFavorito in this.Usuarios)
+            await Task.Run(() =>
             {
-                var isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), UsuarioFavorito.Usuario_Id, UsuarioFavorito.Usuario_Tipo);
-                if(isFavorite.Value)
+                this.Usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
+                foreach (UsuarioModel UsuarioFavorito in this.Usuarios)
                 {
-                    this.UsuariosFavoritos.Add(UsuarioFavorito);
+                    var isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), UsuarioFavorito.Usuario_Id, UsuarioFavorito.Usuario_Tipo);
+                    if (isFavorite.Value)
+                    {
+                        this.UsuariosFavoritos.Add(UsuarioFavorito);
+                    }
                 }
-            }
+            });
         }
 
         public override UIView GetViewForHeader(UITableView tableView, nint section)

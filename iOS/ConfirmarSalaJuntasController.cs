@@ -146,13 +146,27 @@ namespace WorklabsMx.iOS
                 EKEvent newEvent = EKEvent.FromStore(AppHelper.Current.EventStore);
 
                 DateTime myDate = DateTime.ParseExact(Reservacion.Sala_Fecha, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-                var HoraAntesReunion = myDate.AddHours(int.Parse(Reservacion.Sala_Hora_Inicio) - 1);
+
+                var arrTime = Reservacion.Sala_Hora_Inicio.Split(':');
+                var hora = arrTime[0];
+                var minutos = arrTime[1];
+                myDate.AddHours(int.Parse(hora) - 1);
+                myDate.AddMinutes(int.Parse(minutos));
+                var HoraAntesReunion = myDate;
                 newEvent.AddAlarm(EKAlarm.FromDate(DateTimeToNSDate(HoraAntesReunion.AddMinutes(30))));
                 newEvent.AddAlarm(EKAlarm.FromDate(DateTimeToNSDate(HoraAntesReunion.AddMinutes(45))));
                 if (myDate != null)
                 {
-                    newEvent.StartDate = this.DateTimeToNSDate(myDate.AddHours(int.Parse(Reservacion.Sala_Hora_Inicio)));
-                    newEvent.EndDate = this.DateTimeToNSDate(myDate.AddHours(int.Parse(Reservacion.Sala_Hora_Fin)));
+                    myDate.AddHours(int.Parse(hora));
+                    myDate.AddMinutes(int.Parse(minutos));
+                    var HoraInicio = this.DateTimeToNSDate(myDate);
+                    newEvent.StartDate = HoraInicio;
+                    arrTime = Reservacion.Sala_Hora_Fin.Split(':');
+                    hora = arrTime[0];
+                    minutos = arrTime[1];
+                    myDate.AddHours(int.Parse(hora));
+                    myDate.AddMinutes(int.Parse(minutos));
+                    newEvent.EndDate = this.DateTimeToNSDate(myDate);
                 }
                 newEvent.Title = "Reservación de sala de juntas en " + Reservacion.Sucursal_Descripcion;
                 newEvent.Notes = "Se recomienda presentarse 5 minutos antes de su hora de reservación";
