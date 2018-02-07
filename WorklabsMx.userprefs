@@ -1,17 +1,26 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/VisitaModel.cs">
     <Files>
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="41" Column="45" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="100" Column="46" />
-      <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="108" Column="10" />
-      <File FileName="WorklabsMx/Helpers/Emails.cs" Line="29" Column="18" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="84" Column="1" />
-      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="624" Column="15" />
-      <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="206" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/TabSalasJuntasHistorialActivity.cs" Line="123" Column="14" />
-      <File FileName="WorklabsMx.Droid/SplashActivity.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/Resources/drawable/background_splash.xml" Line="11" Column="32" />
+      <File FileName="WorklabsMx/Models/CarritoModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/ComentarioModel.cs" Line="22" Column="11" />
+      <File FileName="WorklabsMx/Models/PostModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/EtiquetasModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/GeneroModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/ItemsMenu.cs" Line="14" Column="50" />
+      <File FileName="WorklabsMx/Models/MembresiaModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/ProductoModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="216" Column="310" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="52" Column="25" />
+      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="101" Column="78" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="150" Column="17" />
+      <File FileName="WorklabsMx/Models/PromocionModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/RedSocialModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/RenovacionPagosModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/SalaJuntasModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/SalaJuntasReservacionModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/TerritorioModel.cs" Line="4" Column="18" />
+      <File FileName="WorklabsMx/Models/UsuarioModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/VisitaModel.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

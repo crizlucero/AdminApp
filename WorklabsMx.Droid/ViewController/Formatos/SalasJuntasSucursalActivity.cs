@@ -39,9 +39,8 @@ namespace WorklabsMx.Droid
 
     class SucursalAdapter : BaseAdapter
     {
-
-        Context context;
-        List<SucursalModel> sucursales;
+        readonly Context context;
+        readonly List<SucursalModel> sucursales;
 
         public SucursalAdapter(Context context, List<SucursalModel> sucursales)
         {
@@ -54,13 +53,16 @@ namespace WorklabsMx.Droid
 
         public override Java.Lang.Object GetItem(int position) => null;
 
-        public override long GetItemId(int position) => Convert.ToInt32(sucursales[position].Sucursal_Id);
+        public override long GetItemId(int position) => 0;
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             LayoutInflater inflater = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
-            View SucursalView = inflater.Inflate(Resource.Layout.SucursalInfoLayout, null, false);
-            SucursalView.SetMinimumWidth(context.Resources.DisplayMetrics.WidthPixels / 2);
+            View SucursalView;
+            if (convertView == null)
+                SucursalView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.SucursalInfoLayout, parent, false);
+            else
+                SucursalView = convertView;
             SucursalView.Click += delegate
             {
                 Intent intent = new Intent(context, typeof(SalasJuntasActivity));
@@ -69,7 +71,7 @@ namespace WorklabsMx.Droid
             };
             SucursalView.FindViewById<TextView>(Resource.Id.lblNombre).Text = sucursales[position].Sucursal_Descripcion;
             SucursalView.FindViewById<TextView>(Resource.Id.lblCalle).Text = sucursales[position].Sucursal_Domicilio;
-            SucursalView.FindViewById<TextView>(Resource.Id.lblColonia).Text = sucursales[position].Sucursal_Domicilio;
+            SucursalView.FindViewById<TextView>(Resource.Id.lblColonia).Text = sucursales[position].Territorio.Colonia;
             return SucursalView;
         }
     }

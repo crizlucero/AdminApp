@@ -51,7 +51,7 @@ namespace WorklabsMx.Droid
                 Country = "",
                 User = "",
                 Password = "",
-                Merchant = "º",
+                Merchant = "",
                 Currency = Com.Mitec.Suitemcommerce.Utilities.Currency.Mxn,
                 OperationType = "",
                 Reference = ""

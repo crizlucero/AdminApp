@@ -12,8 +12,5 @@ namespace WorklabsMx.Models
         public bool Principal { get; set; }
         public bool Admin { get; set; }
         public string Menu_Padre_Id { get; set; }
-        public ItemsMenu()
-        {
-        }
     }
 }

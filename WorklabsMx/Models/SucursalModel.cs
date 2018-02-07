@@ -1,5 +1,4 @@
-﻿using System;
-namespace WorklabsMx.Models
+﻿namespace WorklabsMx.Models
 {
     public class SucursalModel
     {
