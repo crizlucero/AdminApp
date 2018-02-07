@@ -48,7 +48,8 @@ namespace WorklabsMx.Controllers
                         Usuario_Fotografia = reader["Usuario_Fotografia"].ToString(),
                         Usuario_Fecha_Registro = reader["Usuario_Fecha_Registro"].ToString(),
                         Usuario_Estatus = reader["Usuario_Estatus"].ToString(),
-                        Usuario_Tipo = reader["Usuario_Tipo"].ToString()
+                        Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
+
                     };
                 }
             }

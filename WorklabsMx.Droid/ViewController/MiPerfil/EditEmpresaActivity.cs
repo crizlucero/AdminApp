@@ -71,15 +71,15 @@ namespace WorklabsMx.Droid
             CorreoElectronico.Text = empresa.Empresa_Miembro_Correo_Electronico;
 
             GiroComercial.SetSelection(giros.IndexOf(empresa.Giro_Descripcion));
-            Municipio.Text = empresa.Territorio_Municipio_Descripcion;
-            Estado.Text = empresa.Territorio_Estado_Descripcion;
+            Municipio.Text = empresa.Territorio.Municipio;
+            Estado.Text = empresa.Territorio.Estado;
             Calle.Text = empresa.Empresa_Miembro_Calle;
             NumExterior.Text = empresa.Empresa_Miembro_Numero_Exterior;
             NumInterior.Text = empresa.Empresa_Miembro_Numero_Interior;
-            colonias = items.GetColonias(empresa.Territorio_Cp);
+            colonias = items.GetColonias(empresa.Territorio.CP);
             Colonia.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, colonias.ToArray());
-            Colonia.SetSelection(colonias.IndexOf(empresa.Territorio_Colonia_Descripcion));
-            CodigoPostal.Text = empresa.Territorio_Cp;
+            Colonia.SetSelection(colonias.IndexOf(empresa.Territorio.Colonia));
+            CodigoPostal.Text = empresa.Territorio.CP;
             Telefono.Text = empresa.Empresa_Miembro_Telefono;
             RFC.Text = empresa.Empresa_Miembro_Rfc;
             RazonSocial.Text = empresa.Empresa_Miembro_Razon_Social;

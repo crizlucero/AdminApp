@@ -71,7 +71,7 @@ namespace WorklabsMx.Droid
         SimpleStorage storage;
         View SalasView;
         List<SalaJuntasReservacionModel> historico;
-        SalasJuntasController controller;
+        readonly SalasJuntasController controller;
 
         public HistorialesAdapter(Context context, List<string> historiales)
         {

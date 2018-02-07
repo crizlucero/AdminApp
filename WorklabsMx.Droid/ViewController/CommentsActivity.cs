@@ -95,7 +95,10 @@ namespace WorklabsMx.Droid
             //string Usuario_Id = !string.IsNullOrEmpty(post.Usuario.Usuario_Id.Miembro_Id) ? post.Miembro_Id : post.Colaborador_Empresa_Id;
 
             ImageButton imgPerfil = FindViewById<ImageButton>(Resource.Id.imgPerfil);
-            imgPerfil.SetImageURI(ImagesHelper.GetPerfilImagen(post.Usuario.Usuario_Fotografia));
+            if (post.Usuario.Usuario_Fotografia_Perfil != null)
+                imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(post.Usuario.Usuario_Fotografia_Perfil, 0, post.Usuario.Usuario_Fotografia_Perfil.Length));
+            else
+                imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
             imgPerfil.Click += (sender, e) => AndHUD.Shared.ShowImage(this, Resources.GetDrawable(Resource.Mipmap.ic_work, null), null, MaskType.Black);
 
             TextView lblNombre = FindViewById<TextView>(Resource.Id.lblNombre);
@@ -177,21 +180,24 @@ namespace WorklabsMx.Droid
                 LayoutInflater liView = LayoutInflater;
                 View CommentView = liView.Inflate(Resource.Layout.PostLayout, null, true);
                 CommentView.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels);
-                string Usuario_Id = !string.IsNullOrEmpty(comentario.Miembro_Id) ? comentario.Miembro_Id : comentario.Colaborador_Empresa_Id;
+                //string Usuario_Id = !string.IsNullOrEmpty(comentario.Miembro_Id) ? comentario.Miembro_Id : comentario.Colaborador_Empresa_Id;
 
                 ImageButton imgPerfil = CommentView.FindViewById<ImageButton>(Resource.Id.imgPerfil);
-                imgPerfil.SetImageURI(ImagesHelper.GetPerfilImagen(comentario.Usuario_Fotografia_Ruta));
+                if (post.Usuario.Usuario_Fotografia_Perfil != null)
+                    imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(post.Usuario.Usuario_Fotografia_Perfil, 0, post.Usuario.Usuario_Fotografia_Perfil.Length));
+                else
+                    imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
                 imgPerfil.Click += (sender, e) => AndHUD.Shared.ShowImage(this, Resources.GetDrawable(Resource.Mipmap.ic_work, null), null, MaskType.Black);
 
                 TextView lblNombre = CommentView.FindViewById<TextView>(Resource.Id.lblNombre);
-                lblNombre.Text = comentario.Usuario_Nombre;
+                lblNombre.Text = comentario.Usuario.Usuario_Nombre;
                 lblNombre.Click += delegate
                 {
-                    if (localStorage.Get("Usuario_Id") != Usuario_Id || localStorage.Get("Usuario_Tipo") != comentario.Usuario_Tipo)
+                    if (localStorage.Get("Usuario_Id") != comentario.Usuario.Usuario_Id || localStorage.Get("Usuario_Tipo") != comentario.Usuario.Usuario_Tipo)
                     {
                         Intent perfil = new Intent(this, typeof(PerfilActivity));
-                        perfil.PutExtra("usuario_id", Usuario_Id);
-                        perfil.PutExtra("usuario_tipo", comentario.Usuario_Tipo);
+                        perfil.PutExtra("usuario_id", comentario.Usuario.Usuario_Id);
+                        perfil.PutExtra("usuario_tipo", comentario.Usuario.Usuario_Tipo);
                         StartActivity(perfil);
                     }
                     else
@@ -199,7 +205,7 @@ namespace WorklabsMx.Droid
                 };
 
                 TextView lblPuesto = CommentView.FindViewById<TextView>(Resource.Id.lblPuesto);
-                lblPuesto.Text = comentario.Usuario_Puesto;
+                lblPuesto.Text = comentario.Usuario.Usuario_Puesto;
 
                 TextView lblFecha = CommentView.FindViewById<TextView>(Resource.Id.lblFecha);
                 lblFecha.Text = comentario.Comentario_Fecha;

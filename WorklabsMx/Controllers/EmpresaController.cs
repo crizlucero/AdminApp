@@ -20,7 +20,7 @@ namespace WorklabsMx.Controllers
                 "Empresa_Miembro_Red_Social_1, Empresa_Miembro_Pagina_Web, Empresa_Miembro_Telefono, " +
                 "Empresa_Miembro_Correo_Electronico, Empresa_Miembro_Numero_Interior, " +
                 "Empresa_Miembro_Numero_Exterior, Empresa_Miembro_Calle, Empresa_Miembro_Nombre, " +
-                "Empresa_Miembro_Rfc, Empresa_Miembro_Razon_Social, Empresa_Miembro_Id, Territorio_Estado_Descripcion, " +
+                "Empresa_Miembro_Rfc, Empresa_Miembro_Razon_Social, Empresa_Miembro_Id, Territorio_Pais_Descripcion, Territorio_Estado_Descripcion, " +
                 "Territorio_Municipio_Descripcion, Territorio_Colonia_Descripcion, Territorio_Cp, Empresa_Miembro_Logotipo " +
                 "FROM vw_cat_Miembros_Empresas WHERE Miembro_Id = @miembro_id";
 
@@ -49,10 +49,14 @@ namespace WorklabsMx.Controllers
                         Empresa_Miembro_Razon_Social = reader["Empresa_Miembro_Razon_Social"].ToString(),
                         Empresa_Miembro_Logotipo = reader["Empresa_Miembro_Logotipo"].ToString(),
                         Empresa_Miembro_Id = reader["Empresa_Miembro_Id"].ToString(),
-                        Territorio_Estado_Descripcion = reader["Territorio_Estado_Descripcion"].ToString(),
-                        Territorio_Municipio_Descripcion = reader["Territorio_Municipio_Descripcion"].ToString(),
-                        Territorio_Colonia_Descripcion = reader["Territorio_Colonia_Descripcion"].ToString(),
-                        Territorio_Cp = reader["Territorio_Cp"].ToString()
+                        Territorio = new TerritorioModel
+                        {
+                            Pais = reader["Territorio_Pais_Descripcion"].ToString(),
+                            Estado =  reader["Territorio_Estado_Descripcion"].ToString(),
+                            Municipio = reader["Territorio_Municipio_Descripcion"].ToString(),
+                            Colonia = reader["Territorio_Colonia_Descripcion"].ToString(),
+                            CP = reader["Territorio_Cp"].ToString()
+                        }
                     };
                 }
             }
@@ -127,7 +131,7 @@ namespace WorklabsMx.Controllers
                 + "Empresa_Miembro_Red_Social_1, Empresa_Miembro_Pagina_Web, Empresa_Miembro_Telefono, " +
                 "Empresa_Miembro_Correo_Electronico, Empresa_Miembro_Numero_Interior, " +
                 "Empresa_Miembro_Numero_Exterior, Empresa_Miembro_Calle, Empresa_Miembro_Nombre, " +
-                "Empresa_Miembro_Rfc, Empresa_Miembro_Razon_Social, Empresa_Miembro_Id, Territorio_Estado_Descripcion, " +
+                "Empresa_Miembro_Rfc, Empresa_Miembro_Razon_Social, Empresa_Miembro_Id, Territorio_Pais_Descripcion, Territorio_Estado_Descripcion, " +
                 "Territorio_Municipio_Descripcion, Territorio_Colonia_Descripcion, Territorio_Cp, Empresa_Miembro_Logotipo " +
                 "FROM vw_cat_Miembros_Empresas WHERE Empresa_Miembro_Nombre LIKE @nombre AND Territorio_Pais_Descripcion like @pais " +
                 "AND Territorio_Estado_Descripcion LIKE @estado AND Territorio_Municipio_Descripcion LIKE @municipio " +
@@ -161,10 +165,14 @@ namespace WorklabsMx.Controllers
                         Empresa_Miembro_Razon_Social = reader["Empresa_Miembro_Razon_Social"].ToString(),
                         Empresa_Miembro_Logotipo = reader["Empresa_Miembro_Logotipo"].ToString(),
                         Empresa_Miembro_Id = reader["Empresa_Miembro_Id"].ToString(),
-                        Territorio_Estado_Descripcion = reader["Territorio_Estado_Descripcion"].ToString(),
-                        Territorio_Municipio_Descripcion = reader["Territorio_Municipio_Descripcion"].ToString(),
-                        Territorio_Colonia_Descripcion = reader["Territorio_Colonia_Descripcion"].ToString(),
-                        Territorio_Cp = reader["Territorio_Cp"].ToString()
+                        Territorio = new TerritorioModel
+                        {
+                            Pais = reader["Territorio_Pais_Descripcion"].ToString(),
+                            Estado = reader["Territorio_Estado_Descripcion"].ToString(),
+                            Municipio = reader["Territorio_Municipio_Descripcion"].ToString(),
+                            Colonia = reader["Territorio_Colonia_Descripcion"].ToString(),
+                            CP = reader["Territorio_Cp"].ToString()
+                        }
                     });
                 }
             }

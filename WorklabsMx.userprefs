@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ConfirmarSalaJuntasController.cs">
     <Files>
@@ -25,5 +26,40 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/VisitaModel.cs">
+    <Files>
+      <File FileName="WorklabsMx/Models/CarritoModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/ComentarioModel.cs" Line="22" Column="11" />
+      <File FileName="WorklabsMx/Models/PostModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/EtiquetasModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/GeneroModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/ItemsMenu.cs" Line="14" Column="50" />
+      <File FileName="WorklabsMx/Models/MembresiaModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/ProductoModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="216" Column="310" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="52" Column="25" />
+      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="101" Column="78" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="150" Column="17" />
+      <File FileName="WorklabsMx/Models/PromocionModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/RedSocialModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/RenovacionPagosModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/SalaJuntasModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/SalaJuntasReservacionModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/TerritorioModel.cs" Line="4" Column="18" />
+      <File FileName="WorklabsMx/Models/UsuarioModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/VisitaModel.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/SalasJuntasController.cs" relfile="WorklabsMx/Controllers/SalasJuntasController.cs" line="206" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
+>>>>>>> 6c0346e3916384d9fd800523c4c9ee04f508b980
   <MultiItemStartupConfigurations />
 </Properties>

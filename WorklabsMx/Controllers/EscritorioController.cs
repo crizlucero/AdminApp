@@ -207,12 +207,20 @@ namespace WorklabsMx.Controllers
                     {
                         Comentario_Id = reader["Comentario_Id"].ToString(),
                         Publicacion_Id = reader["Publicacion_Id"].ToString(),
-                        Miembro_Id = reader["Miembro_Id"].ToString(),
+                        Usuario = new UsuarioModel{
+                            Usuario_Id = reader["Usuario_Tipo"].ToString() == "1" ? reader["Miembro_Id"].ToString():reader["Colaborador_Empresa_Id"].ToString(),
+                            Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
+                            Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
+                            Usuario_Fotografia = reader["Usuario_Fotografia_Ruta"].ToString(),
+                            Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
+                            Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(reader["Usuario_Fotografia_Ruta"].ToString(),new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1)
+                        },
+                        /*Miembro_Id = reader["Miembro_Id"].ToString(),
                         Colaborador_Empresa_Id = reader["Colaborador_Empresa_Id"].ToString(),
                         Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
                         Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
                         Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString(),
-                        Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
+                        Usuario_Puesto = reader["Usuario_Puesto"].ToString(),*/
                         Comentario_Contenido = reader["Comentario_Contenido"].ToString(),
                         Comentario_Imagen = reader["Comentario_Imagen"].ToString(),
                         Comentario_Imagen_Ruta = reader["Comentario_Imagen_Ruta"].ToString(),

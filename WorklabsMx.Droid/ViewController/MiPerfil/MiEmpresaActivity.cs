@@ -28,11 +28,11 @@ namespace WorklabsMx.Droid
             FindViewById<TextView>(Resource.Id.txtCompanyName).Text = empresa.Empresa_Miembro_Nombre;
             FindViewById<TextView>(Resource.Id.txtEmailCompanyPerfil).Text = empresa.Empresa_Miembro_Correo_Electronico;
             FindViewById<TextView>(Resource.Id.txtGiroEmpresa).Text = empresa.Giro_Descripcion;
-            FindViewById<TextView>(Resource.Id.txtDireccionEmpresa).Text = empresa.Territorio_Municipio_Descripcion + ", " + empresa.Territorio_Estado_Descripcion + ", "
+            FindViewById<TextView>(Resource.Id.txtDireccionEmpresa).Text = empresa.Territorio.Municipio + ", " + empresa.Territorio.Estado + ", "
                                                    + empresa.Empresa_Miembro_Calle + " #" + empresa.Empresa_Miembro_Numero_Exterior +
                                                     (!string.IsNullOrEmpty(empresa.Empresa_Miembro_Numero_Interior) ? " int. " + empresa.Empresa_Miembro_Numero_Interior : "") +
-                                                   " Col. " + empresa.Territorio_Colonia_Descripcion
-                                                    + " CP. " + empresa.Territorio_Cp;
+                " Col. " + empresa.Territorio.Colonia
+                + " CP. " + empresa.Territorio.CP;
             FindViewById<TextView>(Resource.Id.txtTelefonoEmpresa).Text = empresa.Empresa_Miembro_Telefono;
             FindViewById<TextView>(Resource.Id.txtRFCEmpresa).Text = empresa.Empresa_Miembro_Rfc;
             FindViewById<TextView>(Resource.Id.txtRazonSocialEmpresa).Text = empresa.Empresa_Miembro_Razon_Social;

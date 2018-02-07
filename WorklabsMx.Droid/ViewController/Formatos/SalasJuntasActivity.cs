@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
@@ -31,6 +32,7 @@ namespace WorklabsMx.Droid
         LinearLayout llhHorario;
         double creditos;
         readonly Dictionary<string, Dictionary<string, List<double>>> Horarios;
+        Dictionary<string, string> niveles;
         public SalasJuntasActivity()
         {
             HorasNoDisponibles = new List<double>();
@@ -42,6 +44,7 @@ namespace WorklabsMx.Droid
             for (int i = 1; i < 25; i++)
                 horas.Add(i);
             usuario = new UsuariosController().GetMemberData(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"));
+
         }
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -54,6 +57,7 @@ namespace WorklabsMx.Droid
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             _viewPager = FindViewById<ViewPager>(Resource.Id.vpSucursal);
             salas = SalasController.GetSalaJuntas(Intent.GetStringExtra("sucursal_id"));
+            niveles = SalasController.GetNivelesSucursal(Intent.GetStringExtra("sucursal_id"));
             _viewPager.Adapter = new SalaJuntasAdapter(this, salas);
             Horarios.Add(salas[_viewPager.CurrentItem].Sala_Id, new Dictionary<string, List<double>>());
             Horarios[salas[_viewPager.CurrentItem].Sala_Id].Add(fecha_seleccionada, new List<double>());
@@ -72,6 +76,14 @@ namespace WorklabsMx.Droid
             FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = DateTime.Parse(fecha_seleccionada).Day.ToString();
             FindViewById<TextView>(Resource.Id.lblHorasTotal).Text = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Count.ToString();
             FindViewById<TextView>(Resource.Id.lblCreditosUsados).Text = creditos.ToString();
+            Spinner spNivel = FindViewById<Spinner>(Resource.Id.spNivel);
+            spNivel.Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, niveles.Keys.ToList());
+            spNivel.SetSelection(niveles.Count - 1);
+            spNivel.ItemSelected += (sender, e) =>
+            {
+                salas = SalasController.GetSalaJuntas(Intent.GetStringExtra("sucursal_id"), niveles[((Spinner)sender).SelectedItem.ToString()]);
+                _viewPager.Adapter = new SalaJuntasAdapter(this, salas);
+            };
             llhHorario = FindViewById<LinearLayout>(Resource.Id.llhHorario);
             SalasController.GetHorasNoDisponibles(fecha_seleccionada, salas[_viewPager.CurrentItem].Sala_Id).ForEach(horas =>
             {
@@ -85,12 +97,12 @@ namespace WorklabsMx.Droid
                 SalasController.GetHorasNoDisponibles(fecha_seleccionada, salas[_viewPager.CurrentItem].Sala_Id).ForEach(horas =>
                 {
                     HorasNoDisponibles.Add(DateTime.Parse(horas.Sala_Hora_Fin).Hour);
-                    UpdateHorasNoDisponibles();
                 });
                 if (!Horarios.ContainsKey(salas[_viewPager.CurrentItem].Sala_Id))
                     Horarios.Add(salas[_viewPager.CurrentItem].Sala_Id, new Dictionary<string, List<double>>());
                 if (!Horarios[salas[_viewPager.CurrentItem].Sala_Id].ContainsKey(fecha_seleccionada))
                     Horarios[salas[_viewPager.CurrentItem].Sala_Id].Add(fecha_seleccionada, new List<double>());
+                UpdateHorasNoDisponibles();
                 FillHorario();
             };
             FindViewById<RelativeLayout>(Resource.Id.rlAgendar).Click += (sender, e) => ShowConfirmacion();
@@ -313,6 +325,11 @@ namespace WorklabsMx.Droid
             builder.Create();
             dialog = builder.Show();
             dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
+        }
+
+        void SelecccionarNivel()
+        {
+
         }
     }
 
