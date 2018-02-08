@@ -1,36 +1,15 @@
-
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/RegistrarTableViewController.cs">
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="iOS/RegistrarTableViewController.cs" Line="158" Column="25" />
-      <File FileName="iOS/CeldaInvitados.cs" Line="19" Column="28" />
-      <File FileName="iOS/CeldaInvitadosAgregados.cs" Line="15" Column="22" />
-      <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="49" Column="54" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/SalasJuntasController.cs" relfile="WorklabsMx/Controllers/SalasJuntasController.cs" line="206" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
-  <MultiItemStartupConfigurations />
-</Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/RegistrarTableViewController.cs">
-﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/DetalleInvitacionViewController.cs">
-    <Files>
-      <File FileName="iOS/RegistrarTableViewController.cs" Line="158" Column="25" />
-      <File FileName="iOS/CeldaInvitados.cs" Line="19" Column="28" />
-      <File FileName="iOS/CeldaInvitadosAgregados.cs" Line="15" Column="22" />
-      <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="49" Column="54" />
-      <File FileName="iOS/RegistrarTableViewController.cs" Line="124" Column="56" />
-      <File FileName="iOS/CeldaInvitadosAgregados.cs" Line="16" Column="89" />
-      <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="49" Column="54" />
-      <File FileName="iOS/MenuTableViewController.cs" Line="39" Column="31" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="149" Column="94" />
-      <File FileName="iOS/DetalleInvitacionViewController.cs" Line="69" Column="2" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="53" Column="31" />
+      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="208" Column="61" />
+      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="58" Column="18" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/InvitadosActivity.cs" Line="77" Column="22" />
+      <File FileName="WorklabsMx.Droid/Resources/drawable/background_splash.xml" Line="22" Column="28" />
+      <File FileName="WorklabsMx.Droid/ViewController/AccesoActivity.cs" Line="31" Column="76" />
+      <File FileName="WorklabsMx/Helpers/Emails.cs" Line="24" Column="27" />
+      <File FileName="WorklabsMx/Controllers/SucursalController.cs" Line="72" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />

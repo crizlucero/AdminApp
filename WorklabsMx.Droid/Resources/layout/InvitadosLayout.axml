@@ -18,10 +18,33 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <TableLayout
+            <EditText
+                android:layout_width="344dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtNombre"
+                android:hint="@string/Nombre"
+                android:textColorHint="#ffCCCCCC"
+                android:textColor="#FFF"
+                android:layout_gravity="fill"
+                android:inputType="textPersonName" />
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tlDatosBasicos" />
+                android:id="@+id/txtApellidos"
+                android:hint="@string/Apellidos"
+                android:textColor="#FFF"
+                android:textColorHint="#ffCCCCCC"
+                android:layout_gravity="fill"
+                android:inputType="textPersonName" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40.0dp"
+                android:id="@+id/txtEmail"
+                android:hint="@string/CorreoElectronico"
+                android:textColor="#FFF"
+                android:textColorHint="#ffCCCCCC"
+                android:layout_gravity="fill"
+                android:inputType="textEmailAddress" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -35,11 +58,16 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="20dp"
                 android:textAllCaps="true" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/llInvitados" />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtAsunto"
-                android:hint="@string/Asunto" />
+                android:hint="@string/Asunto"
+                android:inputType="textEmailSubject" />
             <Button
                 android:inputType="date"
                 android:layout_width="wrap_content"
