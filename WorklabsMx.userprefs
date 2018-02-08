@@ -1,12 +1,14 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/DetalleInvitacionViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Helpers/UploadImages.cs">
     <Files>
-      <File FileName="iOS/RegistrarTableViewController.cs" Line="124" Column="56" />
+      <File FileName="iOS/RegistrarTableViewController.cs" Line="190" Column="42" />
       <File FileName="iOS/CeldaInvitadosAgregados.cs" Line="16" Column="89" />
-      <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="49" Column="54" />
+      <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="114" Column="14" />
       <File FileName="iOS/MenuTableViewController.cs" Line="39" Column="31" />
       <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="149" Column="94" />
-      <File FileName="iOS/DetalleInvitacionViewController.cs" Line="69" Column="2" />
+      <File FileName="iOS/DetalleInvitacionViewController.cs" Line="19" Column="35" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="209" Column="73" />
+      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="37" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
