@@ -127,12 +127,6 @@
     <Reference Include="PerpetualEngine.SimpleStorage.Droid">
       <HintPath>..\packages\SimpleStorage.1.4.9\lib\MonoAndroid\PerpetualEngine.SimpleStorage.Droid.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Core">
-      <HintPath>..\packages\Google.Apis.Core.1.32.1\lib\netstandard1.3\Google.Apis.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis">
-      <HintPath>..\packages\Google.Apis.1.32.1\lib\netstandard1.3\Google.Apis.dll</HintPath>
-    </Reference>
     <Reference Include="BouncyCastle">
       <HintPath>..\packages\MimeKit.2.0.1\lib\monoandroid\BouncyCastle.dll</HintPath>
     </Reference>
@@ -141,6 +135,12 @@
     </Reference>
     <Reference Include="MailKit">
       <HintPath>..\packages\MailKit.2.0.1\lib\monoandroid\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core">
+      <HintPath>..\packages\Google.Apis.Core.1.32.2\lib\netstandard1.3\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis">
+      <HintPath>..\packages\Google.Apis.1.32.2\lib\netstandard1.3\Google.Apis.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -45,6 +45,7 @@ namespace WorklabsMx.Helpers
                     client.Method = WebRequestMethods.Ftp.DownloadFile;
                     client.UsePassive = false;
                     client.Credentials = new NetworkCredential(@"SRVWLHOSTING\worklabscloud", @"Worklabscloud!");
+                    client.Timeout = 3000;
                     Stream responseStream = ((FtpWebResponse)client.GetResponse()).GetResponseStream();
                     MemoryStream ms = new MemoryStream();
                     responseStream.CopyTo(ms);
