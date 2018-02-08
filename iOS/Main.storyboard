@@ -1401,7 +1401,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FlechaAbajo" translatesAutoresizingMaskIntoConstraints="NO" id="EbF-BR-pla">
-                                                            <rect key="frame" x="159" y="10" width="30" height="12"/>
+                                                            <rect key="frame" x="159" y="10" width="30" height="13"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="sMG-qb-5cC"/>
                                                             </constraints>
@@ -1954,7 +1954,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qvy-QJ-Gjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-216.80000000000001" y="-2883.5082458770617"/>
+            <point key="canvasLocation" x="-216.80000000000001" y="-2883.5079999999998"/>
         </scene>
         <!--Empresa-->
         <scene sceneID="jSw-MG-frS">
@@ -7864,7 +7864,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWU-aS-20e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4631.1999999999998" y="-368.36581709145429"/>
+            <point key="canvasLocation" x="-4631.1999999999998" y="-368.36579999999998"/>
         </scene>
         <!--Reporte Controller-->
         <scene sceneID="5677">
@@ -8336,8 +8336,49 @@ COL. LADRON DE GUEVARA</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="InvitadosAgregados" rowHeight="93" id="9rj-Tg-tTk" userLabel="InvitadosAgregados" customClass="CeldaInvitadosAgregados">
+                                <rect key="frame" x="0.0" y="28" width="375" height="93"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9rj-Tg-tTk" id="0DA-RI-N93">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="93"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGM-6L-VFY">
+                                            <rect key="frame" x="16" y="23" width="343" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="2Gg-NQ-0ID"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1z-aH-bxP">
+                                            <rect key="frame" x="16" y="48" width="343" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="1lc-dV-xOD"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="S1z-aH-bxP" secondAttribute="trailing" constant="16" id="002-f2-m91"/>
+                                        <constraint firstItem="S1z-aH-bxP" firstAttribute="top" secondItem="qGM-6L-VFY" secondAttribute="bottom" constant="4" id="Sev-Ko-5oH"/>
+                                        <constraint firstItem="qGM-6L-VFY" firstAttribute="top" secondItem="0DA-RI-N93" secondAttribute="top" constant="23" id="T1P-If-5cz"/>
+                                        <constraint firstAttribute="trailing" secondItem="qGM-6L-VFY" secondAttribute="trailing" constant="16" id="jdr-vc-k5m"/>
+                                        <constraint firstItem="qGM-6L-VFY" firstAttribute="leading" secondItem="0DA-RI-N93" secondAttribute="leading" constant="16" id="kkC-qX-TZr"/>
+                                        <constraint firstItem="S1z-aH-bxP" firstAttribute="leading" secondItem="0DA-RI-N93" secondAttribute="leading" constant="16" id="ocj-Ti-IE2"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.1058823529" green="0.1058823529" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="lblCorreo" destination="S1z-aH-bxP" id="name-outlet-S1z-aH-bxP"/>
+                                    <outlet property="lblNombre" destination="qGM-6L-VFY" id="name-outlet-qGM-6L-VFY"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Invitados" rowHeight="142" id="cDZ-jO-qIo" customClass="CeldaInvitados">
-                                <rect key="frame" x="0.0" y="28" width="375" height="142"/>
+                                <rect key="frame" x="0.0" y="121" width="375" height="142"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cDZ-jO-qIo" id="4h3-tI-Oah">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
@@ -8425,7 +8466,7 @@ COL. LADRON DE GUEVARA</string>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DetalleInvitacion" rowHeight="503" id="eAC-SN-dUw" customClass="CeldaDetalleInvitacion">
-                                <rect key="frame" x="0.0" y="170" width="375" height="503"/>
+                                <rect key="frame" x="0.0" y="263" width="375" height="503"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eAC-SN-dUw" id="uSz-Ht-seA">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="503"/>
@@ -8692,7 +8733,7 @@ COL. LADRON DE GUEVARA</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xB8-lF-bon" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9698.3999999999996" y="-1854.4227886056974"/>
+            <point key="canvasLocation" x="-9698.3999999999996" y="-1854.423"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ncZ-g1-bZQ">
@@ -12006,7 +12047,7 @@ COL. LADRON DE GUEVARA</string>
         <segue reference="Tlx-3I-mcH"/>
         <segue reference="Hoa-iV-Mgh"/>
         <segue reference="ByN-Yg-Spq"/>
-        <segue reference="wV9-2A-ApY"/>
+        <segue reference="fLD-ZY-1hz"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.10980392156862745" green="0.52941176470588236" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

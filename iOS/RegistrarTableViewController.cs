@@ -13,6 +13,7 @@ namespace WorklabsMx.iOS
 {
     public partial class RegistrarTableViewController : UITableViewController
     {
+        const string IdentificadorInvitadosAgregados = "InvitadosAgregados";
         const string IdentificadorCeldaCampos = "Invitados";
         const string IdentificadorCeldaDetalle = "DetalleInvitacion";
         List<int> NumeroCeldas = new List<int>();
@@ -20,7 +21,7 @@ namespace WorklabsMx.iOS
         List<UsuarioModel> invitados = new List<UsuarioModel>();
         List<SucursalModel> sucursales = new SucursalController().GetSucursales();
         string FechaReservacion = "", Sucursal = "", AsuntoInv = "";
-
+        UsuarioModel invitadoGeneral = new UsuarioModel();
 
         public RegistrarTableViewController(IntPtr handle) : base(handle)
         {
@@ -59,7 +60,11 @@ namespace WorklabsMx.iOS
         public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
         {
             var current = NumeroCeldas[indexPath.Row];
-            if (current == 0)
+            if (current == - 1)
+            {
+                return 93;
+            }
+            else if (current == 0)
             {
                 return 142;
             }
@@ -77,7 +82,13 @@ namespace WorklabsMx.iOS
         public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
         {
             var current = NumeroCeldas[indexPath.Row];
-            if (current == 0)
+            if (current == - 1)
+            {
+                var CeldaInvitados = (CeldaInvitadosAgregados)tableView.DequeueReusableCell(IdentificadorInvitadosAgregados, indexPath);
+                CeldaInvitados.UpdateCell(invitadoGeneral);
+                return CeldaInvitados;
+            }
+            else if (current == 0)
             {
                 var CeldaInvitados = (CeldaInvitados)tableView.DequeueReusableCell(IdentificadorCeldaCampos, indexPath);
                 CeldaInvitados.UpdateCell();
@@ -148,11 +159,12 @@ namespace WorklabsMx.iOS
     {
         public void AgregarCeldas()
         {
-            NumeroCeldas.Add(0);
+            NumeroCeldas.Add(-1);
             NumeroCeldas.Sort((x, y) => x.CompareTo(y));
             TableView.BeginUpdates();
-            TableView.InsertRows(new[] { NSIndexPath.Create(0, 0) }, UITableViewRowAnimation.Left);
+            TableView.InsertRows(new[] { NSIndexPath.Create(0, NumeroCeldas.Count - 2) }, UITableViewRowAnimation.Left);
             TableView.EndUpdates();
+            TableView.ReloadData();
 
         }
         public void QuitarCelda(NSIndexPath indexPath)
@@ -160,9 +172,10 @@ namespace WorklabsMx.iOS
             if (NumeroCeldas.Count > 2)
             {
                 TableView.BeginUpdates();
-                NumeroCeldas.RemoveAt(NumeroCeldas[0]);
+                NumeroCeldas.RemoveAt(0);
                 TableView.DeleteRows(new NSIndexPath[] { NSIndexPath.Create(0, 0) }, UITableViewRowAnimation.Left);
                 TableView.EndUpdates();
+
             }
            
         }
@@ -199,7 +212,9 @@ namespace WorklabsMx.iOS
         {
             if (invitados.Contains(invitado) == false)
             {
+                invitadoGeneral = invitado;
                 invitados.Add(invitado);
+                //TableView.ReloadData();
             }
         }
     }

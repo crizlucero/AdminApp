@@ -1,17 +1,33 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Helpers/UploadImages.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/RegistrarTableViewController.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="210" Column="70" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioHeaderCell.cs" Line="33" Column="1" />
-      <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="72" Column="1" />
-      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="98" Column="38" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="74" Column="53" />
-      <File FileName="WorklabsMx/Helpers/Emails.cs" Line="24" Column="35" />
-      <File FileName="iOS/MenuTableViewController.cs" Line="112" Column="14" />
-      <File FileName="iOS/AppDelegate.cs" Line="71" Column="38" />
-      <File FileName="iOS/NoConexionViewController.cs" Line="24" Column="13" />
-      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="44" Column="36" />
+      <File FileName="iOS/RegistrarTableViewController.cs" Line="158" Column="25" />
+      <File FileName="iOS/CeldaInvitados.cs" Line="19" Column="28" />
+      <File FileName="iOS/CeldaInvitadosAgregados.cs" Line="15" Column="22" />
+      <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="49" Column="54" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WorklabsMx" expanded="True">
+            <Node name="WorklabsMx" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Helpers" expanded="True" />
+            </Node>
+            <Node name="WorklabsMx.iOS" expanded="True">
+              <Node name="NativeReferenceFolder" expanded="True" />
+              <Node name="ViewControllers" expanded="True">
+                <Node name="Publicar" expanded="True" />
+                <Node name="Servicios" expanded="True">
+                  <Node name="VentaDetalle" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="RegistrarTableViewController.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

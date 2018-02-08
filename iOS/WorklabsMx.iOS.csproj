@@ -1208,6 +1208,10 @@
     <Compile Include="NivelesViewController.designer.cs">
       <DependentUpon>NivelesViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="CeldaInvitadosAgregados.cs" />
+    <Compile Include="CeldaInvitadosAgregados.designer.cs">
+      <DependentUpon>CeldaInvitadosAgregados.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

@@ -131,17 +131,21 @@ namespace WorklabsMx.iOS
             }
             else if (indexPath.Row == 2)
             {
-                this.PerformSegue("ReservarSalaJuntas", this);
+                this.PerformSegue("Servicios", null);
             }
             else if (indexPath.Row == 3)
             {
-                this.PerformSegue("RegistroInvitados", null);
+                this.PerformSegue("ReservarSalaJuntas", this);
             }
             else if (indexPath.Row == 4)
             {
-                this.PerformSegue("scanQR", null);
+                this.PerformSegue("RegistroInvitados", null);
             }
             else if (indexPath.Row == 5)
+            {
+                this.PerformSegue("scanQR", null);
+            }
+            else if (indexPath.Row == 6)
             {
                  this.CerrarSesion();
             }
@@ -156,7 +160,7 @@ namespace WorklabsMx.iOS
                 {
                     foreach (ItemsMenu menu in new Controllers.EscritorioController().GetMenuiOS(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Tipo"))))
                     {
-                        if (menu.Menu_Id != "22" && menu.Menu_Id != "8")
+                        if (menu.Menu_Id != "8")
                         {
                             tableItems.Add(menu);
                         }
