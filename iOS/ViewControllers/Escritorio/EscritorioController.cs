@@ -20,7 +20,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 		}
 
         public override async void ViewWillAppear(bool animated)
-        {             base.ViewWillAppear(animated);              BTProgressHUD.Show("Cargando publicaciones");             await CargarInfo();             TableView.ReloadData();             this.TableView.BeginUpdates();             this.CargarImagenes();             this.TableView.EndUpdates();             BTProgressHUD.Dismiss();
+        {             base.ViewWillAppear(animated);             //BTProgressHUD.Show("Cargando publicaciones");             await CargarInfo();             TableView.ReloadData();             this.TableView.BeginUpdates();             this.CargarImagenes();             this.TableView.EndUpdates();             //BTProgressHUD.Dismiss();
         }          void HandleValueChanged(object sender, EventArgs e)         {             this.GetData();         }          public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);

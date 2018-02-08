@@ -22,3 +22,35 @@
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/RegistrarTableViewController.cs">
+﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Helpers/UploadImages.cs">
+    <Files>
+<<<<<<< HEAD
+      <File FileName="iOS/RegistrarTableViewController.cs" Line="190" Column="42" />
+=======
+      <File FileName="iOS/RegistrarTableViewController.cs" Line="158" Column="25" />
+      <File FileName="iOS/CeldaInvitados.cs" Line="19" Column="28" />
+      <File FileName="iOS/CeldaInvitadosAgregados.cs" Line="15" Column="22" />
+      <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="49" Column="54" />
+      <File FileName="iOS/RegistrarTableViewController.cs" Line="124" Column="56" />
+>>>>>>> 9e3c8bb67acbae64160df1dc06b6eae9ef4307e5
+      <File FileName="iOS/CeldaInvitadosAgregados.cs" Line="16" Column="89" />
+      <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="114" Column="14" />
+      <File FileName="iOS/MenuTableViewController.cs" Line="39" Column="31" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="149" Column="94" />
+      <File FileName="iOS/DetalleInvitacionViewController.cs" Line="19" Column="35" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="209" Column="73" />
+      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="37" Column="23" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/SalasJuntasController.cs" relfile="WorklabsMx/Controllers/SalasJuntasController.cs" line="206" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
+  <MultiItemStartupConfigurations />
+</Properties>
