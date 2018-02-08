@@ -66,11 +66,7 @@ namespace WorklabsMx.iOS
             this.lblDomicilio.Text = SucursalModel.Sucursal_Descripcion + " " + SucursalModel.Sucursal_Domicilio;
             this.lblNombreInvitado.Text = PrimerInvitado.Usuario_Nombre + " " + PrimerInvitado.Usuario_Apellidos;
             string newAcceso = new UsuariosController().GetLlaveAcceso(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
-            //LoadingView loadPop = new LoadingView(UIScreen.MainScreen.Bounds);
-            //View.Add(loadPop);
-            //strAcceso = newAcceso;
             imgQR.Image = ImageGallery.LoadImageUrl(newAcceso);
-            //loadPop.Hide();
             Invitados.Remove(PrimerInvitado);
             foreach(UsuarioModel Invitado in Invitados)
             {

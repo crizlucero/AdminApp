@@ -1,33 +1,13 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/RegistrarTableViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/DetalleInvitacionViewController.cs">
     <Files>
-      <File FileName="iOS/RegistrarTableViewController.cs" Line="158" Column="25" />
-      <File FileName="iOS/CeldaInvitados.cs" Line="19" Column="28" />
-      <File FileName="iOS/CeldaInvitadosAgregados.cs" Line="15" Column="22" />
+      <File FileName="iOS/RegistrarTableViewController.cs" Line="124" Column="56" />
+      <File FileName="iOS/CeldaInvitadosAgregados.cs" Line="16" Column="89" />
       <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="49" Column="54" />
+      <File FileName="iOS/MenuTableViewController.cs" Line="39" Column="31" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="149" Column="94" />
+      <File FileName="iOS/DetalleInvitacionViewController.cs" Line="69" Column="2" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="WorklabsMx" expanded="True">
-            <Node name="WorklabsMx" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Helpers" expanded="True" />
-            </Node>
-            <Node name="WorklabsMx.iOS" expanded="True">
-              <Node name="NativeReferenceFolder" expanded="True" />
-              <Node name="ViewControllers" expanded="True">
-                <Node name="Publicar" expanded="True" />
-                <Node name="Servicios" expanded="True">
-                  <Node name="VentaDetalle" expanded="True" />
-                </Node>
-              </Node>
-              <Node name="RegistrarTableViewController.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
