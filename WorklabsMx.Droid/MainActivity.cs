@@ -206,13 +206,13 @@ namespace WorklabsMx.Droid
                 if (!string.IsNullOrEmpty(post.Publicacion_Imagen_Ruta))
                 {
                     byte[] photo = new UploadImages().DownloadFileFTP(post.Publicacion_Imagen, upload_image_path);
-                    if (photo != null && photo.Length != 0)
+                    if (photo != null)
                     {
                         imgPost.Visibility = ViewStates.Visible;
                         imgPost.SetImageBitmap(BitmapFactory.DecodeByteArray(photo, 0, photo.Length));//SetImageURI(Android.Net.Uri.Parse("http://desarrolloworklabs.com/Dashboard_Client/" + post.Publicacion_Imagen_Ruta));
                         imgPost.Click += delegate
                         {
-                            //AndHUD.Shared.ShowImage(this, Drawable.CreateFromStream());
+                                //AndHUD.Shared.ShowImage(this, Drawable.CreateFromStream());
                         };
                     }
                 }
