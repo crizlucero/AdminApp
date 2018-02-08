@@ -63,6 +63,7 @@ namespace WorklabsMx.iOS
         {
             var ErrorInvitar = false;
             var EmailValido = true;
+            var CamposVacios = false;
             foreach (UsuarioModel invitado in invitadosLocal)
             {
 
@@ -107,7 +108,7 @@ namespace WorklabsMx.iOS
                 }
                 else
                 {
-                    new MessageDialog().SendToast("Algunos campos estan vacíos");
+                    CamposVacios = true;
                     break;
                 }
             }
@@ -118,6 +119,14 @@ namespace WorklabsMx.iOS
             else if (EmailValido == false)
             {
                 new MessageDialog().SendToast("El Email no es válido");
+            }
+            else if (invitadosLocal.Count == 0)
+            {
+                new MessageDialog().SendToast("Favor de agregar a un invitado");
+            }
+            else if (CamposVacios)
+            {
+                new MessageDialog().SendToast("Algunos campos estan vacíos");
             }
             else
             {

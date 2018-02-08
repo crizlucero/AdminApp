@@ -32,12 +32,13 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
-            NumeroCeldas.Add(0);
+            NumeroCeldas.Add(-1);
             NumeroCeldas.Add(1);
             NSDateFormatter dateFormat = new NSDateFormatter();
             dateFormat.DateFormat = "E, d MMM yyyy HH:mm";
             FechaReservacion = dateFormat.ToString((NSDate)DateTime.Now);
             Sucursal = sucursales[0].Sucursal_Descripcion;
+
         }
 
 
@@ -62,11 +63,11 @@ namespace WorklabsMx.iOS
             var current = NumeroCeldas[indexPath.Row];
             if (current == - 1)
             {
-                return 93;
+                return 142;
             }
             else if (current == 0)
             {
-                return 142;
+                return 93;
             }
             else
             {
@@ -82,13 +83,13 @@ namespace WorklabsMx.iOS
         public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
         {
             var current = NumeroCeldas[indexPath.Row];
-            if (current == - 1)
+            if (current == 0)
             {
                 var CeldaInvitados = (CeldaInvitadosAgregados)tableView.DequeueReusableCell(IdentificadorInvitadosAgregados, indexPath);
                 CeldaInvitados.UpdateCell(invitadoGeneral);
                 return CeldaInvitados;
             }
-            else if (current == 0)
+            else if (current == -1)
             {
                 var CeldaInvitados = (CeldaInvitados)tableView.DequeueReusableCell(IdentificadorCeldaCampos, indexPath);
                 CeldaInvitados.UpdateCell();
@@ -159,21 +160,27 @@ namespace WorklabsMx.iOS
     {
         public void AgregarCeldas()
         {
-            NumeroCeldas.Add(-1);
-            NumeroCeldas.Sort((x, y) => x.CompareTo(y));
-            TableView.BeginUpdates();
-            TableView.InsertRows(new[] { NSIndexPath.Create(0, NumeroCeldas.Count - 2) }, UITableViewRowAnimation.Left);
-            TableView.EndUpdates();
-            TableView.ReloadData();
-
+            if (!((invitadoGeneral.Usuario_Nombre == "" || invitadoGeneral.Usuario_Nombre == null) || (invitadoGeneral.Usuario_Apellidos == "" || invitadoGeneral.Usuario_Apellidos == null) || (invitadoGeneral.Usuario_Correo_Electronico == "" || invitadoGeneral.Usuario_Correo_Electronico == null)))
+            {
+                NumeroCeldas.Add(0);
+                NumeroCeldas.Sort((x, y) => x.CompareTo(y));
+                TableView.BeginUpdates();
+                TableView.InsertRows(new[] { NSIndexPath.Create(0, 1) }, UITableViewRowAnimation.Bottom);
+                TableView.EndUpdates();
+            }
+            else 
+            {
+                new MessageDialog().SendToast("Por favor llena todos los campos");
+            }
+          
         }
         public void QuitarCelda(NSIndexPath indexPath)
         {
             if (NumeroCeldas.Count > 2)
             {
                 TableView.BeginUpdates();
-                NumeroCeldas.RemoveAt(0);
-                TableView.DeleteRows(new NSIndexPath[] { NSIndexPath.Create(0, 0) }, UITableViewRowAnimation.Left);
+                NumeroCeldas.RemoveAt(1);
+                TableView.DeleteRows(new NSIndexPath[] { NSIndexPath.Create(0, 1) }, UITableViewRowAnimation.Left);
                 TableView.EndUpdates();
 
             }
@@ -182,6 +189,10 @@ namespace WorklabsMx.iOS
 
         public void ConfirmarInvitaciones(List<UsuarioModel> invitadosLocal)
         {
+            foreach (UsuarioModel Invitado in invitados)
+            {
+                
+            }
             this.PerformSegue("DetalleInvitacion", null);
 
         }
@@ -214,7 +225,6 @@ namespace WorklabsMx.iOS
             {
                 invitadoGeneral = invitado;
                 invitados.Add(invitado);
-                //TableView.ReloadData();
             }
         }
     }
