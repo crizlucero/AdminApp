@@ -1,21 +1,19 @@
-<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ConfirmarSalaJuntasController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Helpers/UploadImages.cs">
     <Files>
-      <File FileName="iOS/MenuTableViewController.cs" Line="61" Column="94" />
-      <File FileName="iOS/ComunidadTableViewController.cs" Line="79" Column="12" />
-      <File FileName="iOS/FavoritosTableViewController.cs" Line="112" Column="54" />
-      <File FileName="iOS/EmpresasTableViewController.cs" Line="53" Column="10" />
-      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="53" Column="37" />
-      <File FileName="iOS/NivelesViewController.cs" Line="22" Column="13" />
-      <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="153" Column="18" />
-      <File FileName="iOS/FavoritosTableViewCell.cs" Line="22" Column="10" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="252" Column="19" />
-      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="9" Column="9" />
-      <File FileName="iOS/Main.cs" Line="12" Column="1" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="210" Column="70" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioHeaderCell.cs" Line="33" Column="1" />
+      <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="72" Column="1" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="98" Column="38" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="74" Column="53" />
+      <File FileName="WorklabsMx/Helpers/Emails.cs" Line="24" Column="35" />
+      <File FileName="iOS/MenuTableViewController.cs" Line="112" Column="14" />
+      <File FileName="iOS/AppDelegate.cs" Line="71" Column="38" />
+      <File FileName="iOS/NoConexionViewController.cs" Line="24" Column="13" />
+      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="44" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="2076" column="1" />
@@ -25,41 +23,6 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
-=======
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/VisitaModel.cs">
-    <Files>
-      <File FileName="WorklabsMx/Models/CarritoModel.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Models/ComentarioModel.cs" Line="22" Column="11" />
-      <File FileName="WorklabsMx/Models/PostModel.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Models/EtiquetasModel.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Models/GeneroModel.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Models/ItemsMenu.cs" Line="14" Column="50" />
-      <File FileName="WorklabsMx/Models/MembresiaModel.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Models/ProductoModel.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="216" Column="310" />
-      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="52" Column="25" />
-      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="101" Column="78" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="150" Column="17" />
-      <File FileName="WorklabsMx/Models/PromocionModel.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Models/RedSocialModel.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Models/RenovacionPagosModel.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Models/SalaJuntasModel.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Models/SalaJuntasReservacionModel.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Models/TerritorioModel.cs" Line="4" Column="18" />
-      <File FileName="WorklabsMx/Models/UsuarioModel.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Models/VisitaModel.cs" Line="1" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/SalasJuntasController.cs" relfile="WorklabsMx/Controllers/SalasJuntasController.cs" line="206" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
->>>>>>> 6c0346e3916384d9fd800523c4c9ee04f508b980
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C8F534E0-9C6A-4F53-A110-4E330B864317" />
   <MultiItemStartupConfigurations />
 </Properties>

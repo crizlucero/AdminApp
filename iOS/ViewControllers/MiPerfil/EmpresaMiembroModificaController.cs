@@ -25,7 +25,7 @@ namespace WorklabsMx.iOS
             items = new PickerItemsController();
             //storageLocal = SimpleStorage.EditGroup("Login");
             empresa = new EmpresaController().GetEmpresaMiembro(KeyChainHelper.GetKey("Usuario_Id"));
-            TerritorioModel territorio = new TerritorioController().GetTerritorio(empresa.Territorio_Cp);
+            TerritorioModel territorio = new TerritorioController().GetTerritorio(empresa.Territorio.CP);
             empresa_id = empresa.Empresa_Miembro_Id;
             territorio_id = territorio.Territorio_Id;
             colonias = items.GetColonias(territorio.CP);
@@ -56,7 +56,7 @@ namespace WorklabsMx.iOS
                 scrollView.Add(new STLLabel("Dirección", 170, 20));
 
                 scrollView.Add(new STLLabel("Estado", 200));
-                txtEstado = new STLTextField("Estado", 230, empresa.Territorio_Estado_Descripcion)
+                txtEstado = new STLTextField("Estado", 230, empresa.Territorio.Estado)
                 {
 					Enabled = false,
 					TextColor = UIColor.Gray
@@ -64,14 +64,14 @@ namespace WorklabsMx.iOS
                 scrollView.Add(txtEstado);
 
                 scrollView.Add(new STLLabel("Municipio", 260));
-                txtMunicipio = new STLTextField("Municipio", 290, empresa.Territorio_Municipio_Descripcion){
+                txtMunicipio = new STLTextField("Municipio", 290, empresa.Territorio.Municipio){
 					Enabled = false,
 					TextColor = UIColor.Gray
                 };
                 scrollView.Add(txtMunicipio);
 
                 scrollView.Add(new STLLabel("Colonia", 320));
-                txtColonia = new STLTextField("Colonia", 350, empresa.Territorio_Colonia_Descripcion);
+                txtColonia = new STLTextField("Colonia", 350, empresa.Territorio.Colonia);
                 txtColonia.EditingDidBegin += (sender, e) =>
                 {
                     //selectView = new UIDropdownList(txtColonia, scrollView, colonias);
@@ -86,7 +86,7 @@ namespace WorklabsMx.iOS
                 scrollView.Add(txtColonia);
 
                 scrollView.Add(new STLLabel("Código Postal", 380));
-                txtCP = new STLTextField("Código Postal", 410, empresa.Territorio_Cp, UIKeyboardType.NumberPad);
+                txtCP = new STLTextField("Código Postal", 410, empresa.Territorio.CP, UIKeyboardType.NumberPad);
                 txtCP.EditingChanged += TxtCP_EditingChanged;
                 scrollView.Add(txtCP);
 

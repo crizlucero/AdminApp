@@ -54,5 +54,10 @@ namespace WorklabsMx
             });
 
         }
+
+        internal object SendMail(string text, string miembro, string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

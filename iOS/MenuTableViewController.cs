@@ -13,6 +13,17 @@ namespace WorklabsMx.iOS
     public partial class MenuTableViewController : UITableViewController
     {
    
+        const string IdentificadorCeldaHeader = "Header";
+        const string IdentificadorCeldaPost = "Contenido";
+        const string IdentificadorCeldaNoInfo = "NoInfo";
+
+        const int TamañoCelda = 46;
+        const int TamañoHeader = 120;
+        const int TamañoMensajeNoInfo = 800;
+
+        bool isShowInformation = false;
+        bool existeConeccion = true;
+
        int SubmenuIndex = 0;
 
         List<ItemsMenu> tableItems = new List<ItemsMenu>();
@@ -26,7 +37,6 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
             tableItems = new List<ItemsMenu>();
             await FillTable();
-            this.TableView.Source = new EgTableViewSource(tableItems, this);
             TableView.ReloadData();
             TableView.BeginUpdates();
             TableView.EndUpdates();
@@ -50,6 +60,92 @@ namespace WorklabsMx.iOS
         void RowSelected(NSIndexPath indexPath)
         {
             
+        }
+
+        public override UIView GetViewForHeader(UITableView tableView, nint section)
+        {
+            var headerCell = (HeaderMenulCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
+            headerCell.UpdateCell();
+            return headerCell;
+        }
+
+        public override nfloat GetHeightForHeader(UITableView tableView, nint section)
+        {
+            return TamañoHeader;
+        }
+
+        public override nint RowsInSection(UITableView tableView, nint section)
+        {
+            if (tableItems.Count > 0)
+            {
+                isShowInformation = true;
+                return tableItems.Count;
+            }
+            isShowInformation = false;
+            return 1;
+        }
+
+
+        public override nfloat GetHeightForRow(UITableView tableView, Foundation.NSIndexPath indexPath)
+        {
+            if (isShowInformation)
+            {
+                return TamañoCelda;
+            }
+            else
+            {
+                return TamañoMensajeNoInfo;
+            }
+        }
+
+
+        public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
+        {
+            if (isShowInformation)
+            {
+                tableView.BeginUpdates();
+                var current = tableItems[indexPath.Row];
+                var currentOptionCell = (MenuContenidoCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
+                currentOptionCell.UpdateCell(current.Label);
+                tableView.EndUpdates();
+                return currentOptionCell;
+            }
+            else
+            {
+                var noPostCell = (NoInfoMenuCell)tableView.DequeueReusableCell(IdentificadorCeldaNoInfo, indexPath);
+                noPostCell.UpdateCell(this.existeConeccion);
+                return noPostCell;
+            }
+
+        }
+
+        public override void RowSelected(UITableView tableView, Foundation.NSIndexPath indexPath)
+        {
+            if (indexPath.Row == 0)
+            {
+                this.PerformSegue("ToSocial", this);
+            }
+            else if (indexPath.Row == 1)
+            {
+                this.PerformSegue("Directorio", null);
+            }
+            else if (indexPath.Row == 2)
+            {
+                this.PerformSegue("ReservarSalaJuntas", this);
+            }
+            else if (indexPath.Row == 3)
+            {
+                this.PerformSegue("RegistroInvitados", null);
+            }
+            else if (indexPath.Row == 4)
+            {
+                this.PerformSegue("scanQR", null);
+            }
+            else if (indexPath.Row == 5)
+            {
+                 this.CerrarSesion();
+            }
+
         }
 
         async Task FillTable()
@@ -93,140 +189,19 @@ namespace WorklabsMx.iOS
 
         public async void CerrarSesion()
         {
+            await Task.Delay(1000);
             BTProgressHUD.Show(status: "Cerrando sesión");
-            await Task.Run(() =>
-            {
-                KeyChainHelper.DeleteKey("Usuario_Id");
-                KeyChainHelper.DeleteKey("Usuario_Tipo");
-                KeyChainHelper.DeleteKey("Empresa_Id");
-                KeyChainHelper.DeleteKey("Colaborador_Id");
-                KeyChainHelper.DeleteKey("Menu_Id");
-
-                var controller = UIStoryboard.FromName("Main", null)
-                    .InstantiateViewController("LoginViewController");
-                controller.Title = "Iniciar Sesión";
-                BTProgressHUD.Dismiss();
-                UIApplication.SharedApplication.Windows[0].RootViewController = controller;
-            });
+            KeyChainHelper.DeleteKey("Usuario_Id");
+            KeyChainHelper.DeleteKey("Usuario_Tipo");
+            KeyChainHelper.DeleteKey("Empresa_Id");
+            KeyChainHelper.DeleteKey("Colaborador_Id");
+            KeyChainHelper.DeleteKey("Menu_Id");
+            var app = (AppDelegate)UIApplication.SharedApplication.Delegate;
+            app.Window.RootViewController = UIStoryboard.FromName("Main", null).InstantiateViewController("LoginViewController") as UIViewController;
+            BTProgressHUD.Dismiss();
         }
 
 
     }
 
-
-    public class EgTableViewSource : UITableViewSource
-    {
-        const string IdentificadorCeldaHeader = "Header";
-        const string IdentificadorCeldaPost = "Contenido";
-        const string IdentificadorCeldaNoInfo = "NoInfo";
-
-        const int TamañoCelda = 46;
-        const int TamañoHeader = 120;
-        const int TamañoMensajeNoInfo = 800;
-
-        bool isShowInformation = false;
-        bool existeConeccion = true;
-
-
-        List<ItemsMenu> TableItems = new List<ItemsMenu>();
-        MenuTableViewController Controller;
-
-        public EgTableViewSource(List<ItemsMenu> tableItems, MenuTableViewController Controller)
-        {
-            TableItems = tableItems;
-            this.Controller = Controller;
-        }
-
-
-        public override UIView GetViewForHeader(UITableView tableView, nint section)
-        {
-            var headerCell = (HeaderMenulCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
-            headerCell.UpdateCell();
-            return headerCell;
-        }
-
-        public override nfloat GetHeightForHeader(UITableView tableView, nint section)
-        {
-            return TamañoHeader;
-        }
-
-        public override nint RowsInSection(UITableView tableView, nint section)
-        {
-            if (TableItems.Count > 0)
-            {
-                isShowInformation = true;
-                return TableItems.Count;
-            }
-            isShowInformation = false;
-            return 1;
-        }
-
-
-        public override nfloat GetHeightForRow(UITableView tableView, Foundation.NSIndexPath indexPath)
-        {
-            if (isShowInformation)
-            {
-                return TamañoCelda;
-            }
-            else
-            {
-                return TamañoMensajeNoInfo;
-            }
-        }
-
-
-        public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
-        {
-            if (isShowInformation)
-            {
-                tableView.BeginUpdates();
-                var current = TableItems[indexPath.Row];
-                var currentOptionCell = (MenuContenidoCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
-                currentOptionCell.UpdateCell(current.Label);
-                tableView.EndUpdates();
-                return currentOptionCell;
-            }
-            else
-            {
-                var noPostCell = (NoInfoMenuCell)tableView.DequeueReusableCell(IdentificadorCeldaNoInfo, indexPath);
-                noPostCell.UpdateCell(this.existeConeccion);
-                return noPostCell;
-            }
-
-        }
-
-        public override void RowSelected(UITableView tableView, Foundation.NSIndexPath indexPath)
-        {
-            if (indexPath.Row == 0)
-            {
-                this.Controller.PerformSegue("ToSocial", this);
-            }
-            else if (indexPath.Row == 1)
-            {
-                this.Controller.PerformSegue("Directorio", null);
-            }
-            else if (indexPath.Row == 2)
-            {
-                this.Controller.PerformSegue("ReservarSalaJuntas", this);
-            }
-            else if (indexPath.Row == 3)
-            {
-                this.Controller.PerformSegue("RegistroInvitados", null);
-            }
-            else if (indexPath.Row == 4)
-            {
-                this.Controller.PerformSegue("scanQR", null);
-            }
-            else if (indexPath.Row == 5)
-            {
-                this.Controller.CerrarSesion();
-            }
-
-        }
-
-        public override void WillDisplay(UITableView tableView, UITableViewCell cell, NSIndexPath indexPath)
-        {
-           
-        }
-    }
 }

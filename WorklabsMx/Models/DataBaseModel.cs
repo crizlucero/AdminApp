@@ -13,14 +13,7 @@ namespace WorklabsMx.Models
         protected SqlCommand command;
         protected SqlTransaction transaction;
 
-<<<<<<< HEAD
-        protected DataBaseModel()
-        {
-            conn = new SqlConnection(@"Server=mssql.worklabs.mx\WLSQLSERVER; Database=WorklabsTest; User=developer; Pwd=d3p3l0p3r!");
-        }
-=======
         protected DataBaseModel() => conn = new SqlConnection(@"Server=mssql.worklabs.mx\WLSQLSERVER; Database=WorklabsTest; User=developer; Pwd=d3p3l0p3r!");
->>>>>>> 6c0346e3916384d9fd800523c4c9ee04f508b980
 
         protected SqlCommand CreateCommand(string query) => new SqlCommand(query, conn);
 

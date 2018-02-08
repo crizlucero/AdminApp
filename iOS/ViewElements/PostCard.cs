@@ -166,7 +166,7 @@ namespace WorklabsMx.iOS.ViewElements
                     };
                     btnCommentDelete.TouchUpInside += (sender, e) =>
                     {
-                        if (comentario.Miembro_Id == KeyChainHelper.GetKey("Usuario_Id") && comentario.Usuario_Tipo == KeyChainHelper.GetKey("Usuario_Tipo"))
+                        if (comentario.Usuario.Usuario_Id == KeyChainHelper.GetKey("Usuario_Id") && comentario.Usuario.Usuario_Tipo == KeyChainHelper.GetKey("Usuario_Tipo"))
                         {
                             new MessageDialog().SendConfirmation("Se eliminará el comentario", "Borrar comentario", (obj) =>
                            {

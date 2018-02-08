@@ -95,7 +95,7 @@ namespace WorklabsMx.iOS
         {
             if (InternetConectionHelper.VerificarConexion())
             {
-                TerritorioId = new TerritorioController().GetTerritorioId(Empresa.Territorio_Cp, Empresa.Territorio_Colonia_Descripcion);
+                TerritorioId = new TerritorioController().GetTerritorioId(Empresa.Territorio.CP, Empresa.Territorio.Colonia);
                 GiroId = items.GetGiroId(txtGiroComercial.Text).ToString();
                 if (new EmpresaController().UpdateDataEmpresa(Empresa.Empresa_Miembro_Id, KeyChainHelper.GetKey("Usuario_Id"), GiroId, TerritorioId, txtRazonSocial.Text, txtRFC.Text,
                                                                   txtNombreEmpresa.Text, Empresa.Empresa_Miembro_Calle, Empresa.Empresa_Miembro_Numero_Exterior, Empresa.Empresa_Miembro_Numero_Interior, txtCorreoElectronico.Text, txtTelefono.Text, Empresa.Empresa_Miembro_Pagina_Web, Empresa.Empresa_Miembro_Red_Social_1, Empresa.Empresa_Miembro_Red_Social_2, Empresa.Empresa_Miembro_Red_Social_3, Empresa.Empresa_Miembro_Logotipo))

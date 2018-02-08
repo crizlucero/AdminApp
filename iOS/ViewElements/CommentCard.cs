@@ -15,7 +15,7 @@ namespace WorklabsMx.iOS.ViewElements
             AddSubview(new STLLine(1));
             UIImageView pstImage = new UIImageView
             {
-                Image = ImageGallery.LoadImage(comentario.Usuario_Fotografia_Ruta),
+                Image = ImageGallery.LoadImage(comentario.Usuario.Usuario_Fotografia),
                 Frame = new CGRect(10, 20, 20, 20)
             };
             pstImage.Layer.CornerRadius = 10;
@@ -24,7 +24,7 @@ namespace WorklabsMx.iOS.ViewElements
             UILabel lblNombre = new UILabel
             {
                 Frame = new CGRect(30, 20, UIScreen.MainScreen.Bounds.Width / 2, 10),
-                Text = comentario.Usuario_Nombre,
+                Text = comentario.Usuario.Usuario_Nombre,
                 Font = UIFont.BoldSystemFontOfSize(10)
             };
 

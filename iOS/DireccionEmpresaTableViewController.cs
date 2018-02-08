@@ -34,14 +34,14 @@ namespace WorklabsMx.iOS
             this.EventosTecladoTextfileds();
             Empresa = new EmpresaController().GetEmpresaMiembro(KeyChainHelper.GetKey("Usuario_Id"));
             this.txtCalle.Text = Empresa.Empresa_Miembro_Calle;
-            this.txtEstado.Text = Empresa.Territorio_Estado_Descripcion;
-            this.txtMunicipio.Text = Empresa.Territorio_Municipio_Descripcion;
-            this.txtColonia.Text = Empresa.Territorio_Colonia_Descripcion;
-            this.txtCodigoPostal.Text = Empresa.Territorio_Cp;
+            this.txtEstado.Text = Empresa.Territorio.Estado;
+            this.txtMunicipio.Text = Empresa.Territorio.Municipio;
+            this.txtColonia.Text = Empresa.Territorio.Colonia;
+            this.txtCodigoPostal.Text = Empresa.Territorio.CP;
             this.LimiteCaracteresTextFields(this.txtCodigoPostal, 5);
             this.txtNumeroExterior.Text = Empresa.Empresa_Miembro_Numero_Exterior;
             this.txtNumeroInterior.Text = Empresa.Empresa_Miembro_Numero_Interior;
-            Colonias = Items.GetColonias(Empresa.Territorio_Cp);
+            Colonias = Items.GetColonias(Empresa.Territorio.CP);
 
             if (txtCodigoPostal.Text == "")
             {

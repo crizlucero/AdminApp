@@ -29,7 +29,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
     <MtouchI18n>cjk,mideast,other,rare,west</MtouchI18n>
-    <CodesignProvision></CodesignProvision>
+    <CodesignProvision>VS: com.WorklabsMx.WorklabsMx Development</CodesignProvision>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
@@ -397,13 +397,6 @@
     <ImageAsset Include="Assets.xcassets\shopping.imageset\shopping.png" />
     <ImageAsset Include="Assets.xcassets\shopping.imageset\shopping%402x.png" />
     <ImageAsset Include="Assets.xcassets\shopping.imageset\shopping%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40px.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58px.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87px.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80px.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120px.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180px.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60px.png" />
     <ImageAsset Include="Assets.xcassets\Launch.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Launch.imageset\Load.jpg" />
     <ImageAsset Include="Assets.xcassets\back.imageset\Artboard 21.png" />
@@ -412,7 +405,6 @@
     <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Artboard 20.png" />
     <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Artboard 18.png" />
     <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icono_1024.png" />
     <ImageAsset Include="Assets.xcassets\ic_comentar.imageset\Artboard 19.png" />
     <ImageAsset Include="Assets.xcassets\ic_call.imageset\icons8-phone-30.png" />
     <ImageAsset Include="Assets.xcassets\ic_call.imageset\icons8-phone-60.png" />
@@ -725,6 +717,14 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\grande.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\chico.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\mediano.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 8%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 11.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 9%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 8%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 11%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 11%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 5.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 4%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1367,6 +1367,12 @@
       <Project>{896BABD5-06E7-41CE-B5F7-27D849F3BC6B}</Project>
       <Name>SWRevealViewControllerBinding</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="..\..\..\Pagos\SuiteMCommerce.framework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

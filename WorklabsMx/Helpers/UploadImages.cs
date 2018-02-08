@@ -36,6 +36,7 @@ namespace WorklabsMx.Helpers
 
         public byte[] DownloadFileFTP(string imgNombre, string path)
         {
+            
             if (!string.IsNullOrEmpty(imgNombre))
             {
                 try

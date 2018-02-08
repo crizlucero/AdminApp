@@ -2197,7 +2197,7 @@ namespace WorklabsMx.iOS
 
             if (InternetConectionHelper.VerificarConexion())
             {
-                this.SalasJuntas = new SalasJuntasController().GetSalaJuntas(SucursalId, Nivel);
+                this.SalasJuntas = new SalasJuntasController().GetSalaJuntas(SucursalId, Nivel.ToString());
 
                 this.UpdateInfo();
             }

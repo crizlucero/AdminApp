@@ -44,11 +44,11 @@ namespace WorklabsMx.iOS.ViewElements
                 scrollView.AddSubview(new STLLabel(empresa.Giro_Descripcion, 280) { Frame = new CGRect(30, 280, UIScreen.MainScreen.Bounds.Width, 30) });
 
                 scrollView.AddSubview(new STLImageLabel(scrollView, "Dirección", 310, "ic_place"));
-                scrollView.AddSubview(new STLLabel(empresa.Territorio_Municipio_Descripcion + ", " + empresa.Territorio_Estado_Descripcion + ", "
+                scrollView.AddSubview(new STLLabel(empresa.Territorio.Municipio + ", " + empresa.Territorio.Estado + ", "
                                                    + empresa.Empresa_Miembro_Calle + " #" + empresa.Empresa_Miembro_Numero_Exterior +
                                                     (!string.IsNullOrEmpty(empresa.Empresa_Miembro_Numero_Interior) ? " int. " + empresa.Empresa_Miembro_Numero_Interior : "") +
-                                                   " Col. " + empresa.Territorio_Colonia_Descripcion
-                                                    + " CP. " + empresa.Territorio_Cp, 340)
+                                                   " Col. " + empresa.Territorio.Colonia
+                                                    + " CP. " + empresa.Territorio.CP, 340)
                 { Frame = new CGRect(30, 340, UIScreen.MainScreen.Bounds.Width, 30) });
 
                 scrollView.AddSubview(new STLImageLabel(scrollView, "Teléfono", 370, "ic_call"));

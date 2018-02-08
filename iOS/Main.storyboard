@@ -7373,18 +7373,18 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ql-S3-Cav">
-                                                    <rect key="frame" x="80" y="62" width="287" height="13"/>
+                                                    <rect key="frame" x="80" y="62" width="287" height="16"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="13" id="JyL-kC-X9p"/>
+                                                        <constraint firstAttribute="height" constant="16" id="JyL-kC-X9p"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lck-ZZ-opi">
-                                                    <rect key="frame" x="80" y="76" width="287" height="14"/>
+                                                    <rect key="frame" x="80" y="79" width="287" height="19"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="14" id="k9d-oz-Xsi"/>
+                                                        <constraint firstAttribute="height" constant="19" id="k9d-oz-Xsi"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                     <color key="textColor" red="0.45490196078431372" green="0.45490196078431372" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
@@ -7425,7 +7425,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="saH-rb-yXi" secondAttribute="bottom" constant="4" id="W8N-oq-KYg"/>
                                                 <constraint firstAttribute="trailing" secondItem="GTJ-ii-QRV" secondAttribute="trailing" id="Xzd-Sf-WS1"/>
                                                 <constraint firstItem="f09-gk-iVl" firstAttribute="leading" secondItem="NuQ-ca-MMb" secondAttribute="leadingMargin" id="bR3-Y4-fs3"/>
-                                                <constraint firstItem="saH-rb-yXi" firstAttribute="top" secondItem="lck-ZZ-opi" secondAttribute="bottom" constant="10" id="dgb-R7-W1T"/>
+                                                <constraint firstItem="saH-rb-yXi" firstAttribute="top" secondItem="lck-ZZ-opi" secondAttribute="bottom" constant="2" id="dgb-R7-W1T"/>
                                                 <constraint firstItem="0Ql-S3-Cav" firstAttribute="leading" secondItem="lck-ZZ-opi" secondAttribute="leading" id="gag-Zw-trn"/>
                                                 <constraint firstItem="f09-gk-iVl" firstAttribute="bottom" secondItem="saH-rb-yXi" secondAttribute="bottom" id="mWd-zd-dhD"/>
                                                 <constraint firstItem="saH-rb-yXi" firstAttribute="leading" secondItem="f09-gk-iVl" secondAttribute="trailing" constant="12" id="nAb-FC-xi8"/>
@@ -7864,7 +7864,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWU-aS-20e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4630" y="-368"/>
+            <point key="canvasLocation" x="-4631.1999999999998" y="-368.36581709145429"/>
         </scene>
         <!--Reporte Controller-->
         <scene sceneID="5677">
@@ -8692,7 +8692,7 @@ COL. LADRON DE GUEVARA</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xB8-lF-bon" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9697" y="-1854"/>
+            <point key="canvasLocation" x="-9698.3999999999996" y="-1854.4227886056974"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ncZ-g1-bZQ">
@@ -11631,8 +11631,8 @@ COL. LADRON DE GUEVARA</string>
                                     <rect key="frame" x="0.0" y="0.0" width="281" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="faccebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXx-f2-znS">
-                                            <rect key="frame" x="46" y="8" width="223" height="22"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="faccebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXx-f2-znS">
+                                            <rect key="frame" x="46" y="8" width="219" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="hSw-QS-q3F"/>
                                             </constraints>
@@ -12005,7 +12005,7 @@ COL. LADRON DE GUEVARA</string>
     <inferredMetricsTieBreakers>
         <segue reference="Tlx-3I-mcH"/>
         <segue reference="Hoa-iV-Mgh"/>
-        <segue reference="vvg-Oz-35K"/>
+        <segue reference="ByN-Yg-Spq"/>
         <segue reference="wV9-2A-ApY"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.10980392156862745" green="0.52941176470588236" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

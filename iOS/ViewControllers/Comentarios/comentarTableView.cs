@@ -143,7 +143,7 @@ namespace WorklabsMx.iOS
                 foreach (ComentarioModel comentario in this.comentarios)
                 {
                     allCommentImages.Add(ImageGallery.LoadImage(comentario.Comentario_Imagen_Ruta));
-                    allProfileImages.Add(ImageGallery.LoadImage(comentario.Usuario_Fotografia_Ruta));
+                    allProfileImages.Add(ImageGallery.LoadImage(comentario.Usuario.Usuario_Fotografia));
                 }
             }
             else

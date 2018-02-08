@@ -30,7 +30,7 @@ namespace WorklabsMx.iOS
             imgPublicacion.UserInteractionEnabled = true;
             imgPublicacion.AddGestureRecognizer(Tap);
 
-            lblNombre.Text = comentario.Usuario_Nombre;
+            lblNombre.Text = comentario.Usuario.Usuario_Nombre;
             lblLikes.Text = comentario.Comentario_Me_Gustan_Cantidad + " LIKES";
             lblFecha.Text = comentario.Comentario_Fecha;
             txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
