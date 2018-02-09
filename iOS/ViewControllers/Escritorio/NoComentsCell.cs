@@ -13,9 +13,9 @@ namespace WorklabsMx.iOS
 		internal void UpdateCell(bool existeConeccion)
 		{
             if(existeConeccion){
-                lblMessageNoComments.Text = "No hay comentarios en tu muro";
+                lblMessageNoComments.Text = "";
             } else {
-                lblMessageNoComments.Text = "No tienes acceso a una conexión de Internet";
+                lblMessageNoComments.Text = "";
             }
 		}
     }

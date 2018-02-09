@@ -39,6 +39,7 @@ namespace WorklabsMx.iOS
         public override async void ViewDidLoad()
         {
             base.ViewDidLoad();
+            BTProgressHUD.Show();
             RefreshControl = new UIRefreshControl();
             RefreshControl.AddTarget(HandleValueChanged, UIControlEvent.ValueChanged);
             var Tap = new UITapGestureRecognizer(this.Tapped);
@@ -47,6 +48,7 @@ namespace WorklabsMx.iOS
             this.TableView.ReloadData();
             TableView.BeginUpdates();
             TableView.EndUpdates();
+           
         }
 
         void HandleValueChanged(object sender, EventArgs e)
@@ -76,6 +78,7 @@ namespace WorklabsMx.iOS
             await Task.Run(() =>
             {
                 this.Usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
+
             });
         }
 
@@ -128,6 +131,7 @@ namespace WorklabsMx.iOS
                 currentUser.EventosComunidadCellDelegate = this;
                 currentUser.UpdateCell(current);
                 tableView.EndUpdates();
+                BTProgressHUD.Dismiss();
                 return currentUser;
             }
             else

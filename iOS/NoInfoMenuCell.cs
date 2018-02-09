@@ -14,11 +14,11 @@ namespace WorklabsMx.iOS
         {
             if (existeConeccion)
             {
-                lblMensaje.Text = "No hay comentarios en tu muro";
+                lblMensaje.Text = "";
             }
             else
             {
-                lblMensaje.Text = "No tienes acceso a una conexión de Internet";
+                lblMensaje.Text = "";
             }
         }
     }

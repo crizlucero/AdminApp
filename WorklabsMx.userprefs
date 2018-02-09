@@ -1,51 +1,41 @@
-
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/RegistrarTableViewController.cs">
-    <Files>
-      <File FileName="iOS/RegistrarTableViewController.cs" Line="158" Column="25" />
-      <File FileName="iOS/CeldaInvitados.cs" Line="19" Column="28" />
-      <File FileName="iOS/CeldaInvitadosAgregados.cs" Line="15" Column="22" />
-      <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="49" Column="54" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/SalasJuntasController.cs" relfile="WorklabsMx/Controllers/SalasJuntasController.cs" line="206" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
-  <MultiItemStartupConfigurations />
-</Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/RegistrarTableViewController.cs">
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Helpers/UploadImages.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Escritorio/EscritorioController.cs">
     <Files>
-<<<<<<< HEAD
-      <File FileName="iOS/RegistrarTableViewController.cs" Line="190" Column="42" />
-=======
-      <File FileName="iOS/RegistrarTableViewController.cs" Line="158" Column="25" />
-      <File FileName="iOS/CeldaInvitados.cs" Line="19" Column="28" />
-      <File FileName="iOS/CeldaInvitadosAgregados.cs" Line="15" Column="22" />
-      <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="49" Column="54" />
-      <File FileName="iOS/RegistrarTableViewController.cs" Line="124" Column="56" />
->>>>>>> 9e3c8bb67acbae64160df1dc06b6eae9ef4307e5
-      <File FileName="iOS/CeldaInvitadosAgregados.cs" Line="16" Column="89" />
-      <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="114" Column="14" />
-      <File FileName="iOS/MenuTableViewController.cs" Line="39" Column="31" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="149" Column="94" />
-      <File FileName="iOS/DetalleInvitacionViewController.cs" Line="19" Column="35" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="209" Column="73" />
-      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="37" Column="23" />
+      <File FileName="iOS/MenuTableViewController.cs" Line="117" Column="43" NotebookId="1" />
+      <File FileName="iOS/DetalleInvitacionViewController.cs" Line="19" Column="35" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="134" Column="1" NotebookId="1" />
+      <File FileName="iOS/ComunidadTableViewController.cs" Line="134" Column="38" NotebookId="1" />
+      <File FileName="iOS/FavoritosTableViewController.cs" Line="39" Column="26" NotebookId="1" />
+      <File FileName="iOS/EmpresasTableViewController.cs" Line="95" Column="40" NotebookId="1" />
+      <File FileName="iOS/Info.plist" NotebookId="1" />
+      <File FileName="iOS/MenuContenidoCell.cs" Line="15" Column="44" NotebookId="1" />
+      <File FileName="iOS/NoInfoMenuCell.cs" Line="1" Column="18" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="147" Column="107" NotebookId="1" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="622" Column="32" NotebookId="1" />
+      <File FileName="iOS/Main.cs" Line="12" Column="1" NotebookId="1" />
     </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="1290" Y="23" Width="758" Height="951">
+        <Files>
+          <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="129" Column="10" />
+          <File FileName="iOS/ViewControllers/Comentarios/ComentarviewController.cs" Line="82" Column="40" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/SalasJuntasController.cs" relfile="WorklabsMx/Controllers/SalasJuntasController.cs" line="206" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="2076" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="2080" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="2046" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="2053" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/ConfigurationsController.cs" relfile="WorklabsMx/Controllers/ConfigurationsController.cs" line="55" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" automaticSigning="False">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
+  </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
   <MultiItemStartupConfigurations />
 </Properties>

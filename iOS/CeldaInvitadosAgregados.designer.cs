@@ -16,10 +16,6 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblApellidos { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblCorreo { get; set; }
 
         [Outlet]
@@ -28,11 +24,6 @@ namespace WorklabsMx.iOS
 
         void ReleaseDesignerOutlets ()
         {
-            if (lblApellidos != null) {
-                lblApellidos.Dispose ();
-                lblApellidos = null;
-            }
-
             if (lblCorreo != null) {
                 lblCorreo.Dispose ();
                 lblCorreo = null;
