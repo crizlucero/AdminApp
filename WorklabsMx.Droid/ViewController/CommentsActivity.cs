@@ -247,25 +247,27 @@ namespace WorklabsMx.Droid
 
                 CommentView.FindViewById<ImageView>(Resource.Id.imgMore).Click += delegate
                 {
-                    PopupMenu menuPost = new PopupMenu(this, FindViewById<ImageView>(Resource.Id.imgMore));
-                    menuPost.Inflate(Resource.Menu.post_reporte_menu);
-                    menuPost.MenuItemClick += async delegate
+                    using (PopupMenu menuPost = new PopupMenu(this, CommentView.FindViewById<ImageView>(Resource.Id.imgMore)))
                     {
-                        if (DashboardController.OcultarComment(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo, comentario.Publicacion_Id, comentario.Comentario_Id))
+                        menuPost.Inflate(Resource.Menu.post_reporte_menu);
+                        menuPost.MenuItemClick += async delegate
                         {
-                            Toast.MakeText(this, "Comentario eliminado", ToastLength.Short).Show();
-                            page = 0;
-                            comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
-                            if (comentarios.Count != 0)
+                            if (DashboardController.OcultarComment(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo, comentario.Publicacion_Id, comentario.Comentario_Id))
                             {
-                                tlComentarios.RemoveAllViews();
-                                await FillCommentsAsync();
+                                Toast.MakeText(this, "Comentario eliminado", ToastLength.Short).Show();
+                                page = 0;
+                                comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+                                if (comentarios.Count != 0)
+                                {
+                                    tlComentarios.RemoveAllViews();
+                                    await FillCommentsAsync();
+                                }
                             }
-                        }
-                        else
-                            Toast.MakeText(this, "Existió un error al eliminar el comentario", ToastLength.Short).Show();
-                    };
-                    menuPost.Show();
+                            else
+                                Toast.MakeText(this, "Existió un error al eliminar el comentario", ToastLength.Short).Show();
+                        };
+                        menuPost.Show();
+                    }
                 };
 
                 TableRow row = new TableRow(this);
