@@ -1,5 +1,4 @@
 ﻿using System.Data.SqlClient;
-using System.Net;
 
 namespace WorklabsMx.Models
 {
@@ -13,7 +12,7 @@ namespace WorklabsMx.Models
         protected SqlCommand command;
         protected SqlTransaction transaction;
 
-        protected DataBaseModel() => conn = new SqlConnection(@"Server=mssql.worklabs.mx\WLSQLSERVER; Database=WorklabsTest; User=developer; Pwd=d3p3l0p3r!");
+        protected DataBaseModel() => conn = new SqlConnection(@"Server=worklabs.mx\WLSQLSERVER; Database=WorklabsTest; User=developer; Pwd=d3p3l0p3r!");
 
         protected SqlCommand CreateCommand(string query) => new SqlCommand(query, conn);
 
