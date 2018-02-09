@@ -170,7 +170,7 @@ namespace WorklabsMx.Droid
             btnComentar.Click += (sender, e) => ShowPublish();
         }
 
-        async void FillCommentsAsync()
+        async Task FillCommentsAsync()
         {
             AndHUD.Shared.Show(this, null, -1, MaskType.Black);
             await Task.Delay(500);
@@ -244,6 +244,29 @@ namespace WorklabsMx.Droid
                     lblLike.SetTextColor(Color.Rgb(57, 87, 217));
                 }
                 CommentView.FindViewById<TextView>(Resource.Id.lblComments).Visibility = ViewStates.Invisible;
+
+                CommentView.FindViewById<ImageView>(Resource.Id.imgMore).Click += delegate
+                {
+                    PopupMenu menuPost = new PopupMenu(this, FindViewById<ImageView>(Resource.Id.imgMore));
+                    menuPost.Inflate(Resource.Menu.post_reporte_menu);
+                    menuPost.MenuItemClick += async delegate
+                    {
+                        if (DashboardController.OcultarComment(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo, comentario.Publicacion_Id, comentario.Comentario_Id))
+                        {
+                            Toast.MakeText(this, "Comentario eliminado", ToastLength.Short).Show();
+                            page = 0;
+                            comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+                            if (comentarios.Count != 0)
+                            {
+                                tlComentarios.RemoveAllViews();
+                                await FillCommentsAsync();
+                            }
+                        }
+                        else
+                            Toast.MakeText(this, "Existió un error al eliminar el comentario", ToastLength.Short).Show();
+                    };
+                    menuPost.Show();
+                };
 
                 TableRow row = new TableRow(this);
                 row.AddView(CommentView);

@@ -207,13 +207,14 @@ namespace WorklabsMx.Controllers
                     {
                         Comentario_Id = reader["Comentario_Id"].ToString(),
                         Publicacion_Id = reader["Publicacion_Id"].ToString(),
-                        Usuario = new UsuarioModel{
-                            Usuario_Id = reader["Usuario_Tipo"].ToString() == "1" ? reader["Miembro_Id"].ToString():reader["Colaborador_Empresa_Id"].ToString(),
+                        Usuario = new UsuarioModel
+                        {
+                            Usuario_Id = reader["Usuario_Tipo"].ToString() == "1" ? reader["Miembro_Id"].ToString() : reader["Colaborador_Empresa_Id"].ToString(),
                             Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
                             Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
                             Usuario_Fotografia = reader["Usuario_Fotografia_Ruta"].ToString(),
                             Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
-                            Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(reader["Usuario_Fotografia_Ruta"].ToString(),new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1)
+                            Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(reader["Usuario_Fotografia_Ruta"].ToString(), new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1)
                         },
                         /*Miembro_Id = reader["Miembro_Id"].ToString(),
                         Colaborador_Empresa_Id = reader["Colaborador_Empresa_Id"].ToString(),
@@ -616,10 +617,8 @@ namespace WorklabsMx.Controllers
         /// Oculta el post
         /// </summary>
         /// <returns><c>true</c>, Si el post se ocultó <c>false</c> Existió algún error</returns>
-        /// <param name="miembro_id">Identificador del miembro</param>
         /// <param name="post_id">Identificador del post</param>
-        /// <param name="post_estatus">Estado del post</param>
-        public bool OcultarPost(string miembro_id, string post_id, int post_estatus)
+        public bool OcultarPost(string usuario_id, string usuario_tipo, string post_id)
         {
             try
             {
@@ -628,10 +627,22 @@ namespace WorklabsMx.Controllers
                 command = CreateCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "sp_Muro_Posts_Ocultar";
-                command.Parameters.AddWithValue("@miembro_Id", miembro_id);
-                command.Parameters.AddWithValue("@Post_Id", post_id);
-                command.Parameters.AddWithValue("@Post_Estatus", post_estatus);
+                command.CommandText = "sp_pro_Red_Social_Publicaciones";
+                command.Parameters.AddWithValue("@Trasaccion", "BAJA");
+                if (usuario_tipo == ((int)TiposUsuarios.Miembro).ToString())
+                {
+                    command.Parameters.AddWithValue("@Miembro_Id", usuario_id);
+                    command.Parameters.AddWithValue("@Colaborador_Empresa_Id", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@Miembro_Id", DBNull.Value);
+                    command.Parameters.AddWithValue("@Colaborador_Empresa_Id", usuario_id);
+                }
+                command.Parameters.AddWithValue("@Publicacion_Id", post_id);
+                command.Parameters.AddWithValue("@Publicacion_Estatus", 0);
+                command.Parameters.AddWithValue("@Publicacion_Contenido", "");
+                command.Parameters.AddWithValue("@Publicacion_Imagen", "");
 
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();
@@ -653,7 +664,7 @@ namespace WorklabsMx.Controllers
             return true;
         }
 
-        public bool OcultarComment(string comment_id, int comment_estatus)
+        public bool OcultarComment(string usuario_id, string usuario_tipo, string post_id, string comment_id)
         {
             try
             {
@@ -662,9 +673,23 @@ namespace WorklabsMx.Controllers
                 command = CreateCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "sp_Muro_Comentarios_Ocultar";
-                command.Parameters.AddWithValue("@Comment_Id", comment_id);
-                command.Parameters.AddWithValue("@Comment_Estatus", comment_estatus);
+                command.CommandText = "sp_pro_Red_Social_Publicaciones_Comentarios";
+                command.Parameters.AddWithValue("@Trasaccion", "BAJA");
+                if (usuario_tipo == ((int)TiposUsuarios.Miembro).ToString())
+                {
+                    command.Parameters.AddWithValue("@Miembro_Id", usuario_id);
+                    command.Parameters.AddWithValue("@Colaborador_Empresa_Id", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@Miembro_Id", DBNull.Value);
+                    command.Parameters.AddWithValue("@Colaborador_Empresa_Id", usuario_id);
+                }
+                command.Parameters.AddWithValue("@Publicacion_Id", post_id);
+                command.Parameters.AddWithValue("@Comentario_Id", comment_id);
+                command.Parameters.AddWithValue("@Comentario_Estatus", 0);
+                command.Parameters.AddWithValue("@Comentario_Contenido", "");
+                command.Parameters.AddWithValue("@Comentario_Imagen", "");
 
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();

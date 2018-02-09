@@ -8,7 +8,6 @@ using Android.Views;
 using Android.Content;
 using Android.Graphics.Drawables;
 using Android.Support.V4.Content;
-using WorklabsMx.Droid.Helpers;
 using Android.Graphics;
 using Android.Net;
 using WorklabsMx.Helpers;
@@ -212,7 +211,7 @@ namespace WorklabsMx.Droid
                         imgPost.SetImageBitmap(BitmapFactory.DecodeByteArray(photo, 0, photo.Length));//SetImageURI(Android.Net.Uri.Parse("http://desarrolloworklabs.com/Dashboard_Client/" + post.Publicacion_Imagen_Ruta));
                         imgPost.Click += delegate
                         {
-                                //AndHUD.Shared.ShowImage(this, Drawable.CreateFromStream());
+                            //AndHUD.Shared.ShowImage(this, Drawable.CreateFromStream());
                         };
                     }
                 }
@@ -235,6 +234,23 @@ namespace WorklabsMx.Droid
                 {
                     icComentario.SetTintList(GetColorStateList(Resource.Color.comment_pressed));
                 }
+
+                PostView.FindViewById<ImageView>(Resource.Id.imgMore).Click += delegate
+                {
+                    PopupMenu menuPost = new PopupMenu(this, FindViewById<ImageView>(Resource.Id.imgMore));
+                    menuPost.Inflate(Resource.Menu.post_reporte_menu);
+                    menuPost.MenuItemClick += async delegate
+                    {
+                        if (DashboardController.OcultarPost(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo, post.Publicacion_Id)){
+                            Toast.MakeText(this, "Publicación eliminada", ToastLength.Short).Show();
+                            page = 0;
+                            posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+                            await FillPosts();
+                        }else
+                            Toast.MakeText(this, "Existió un error al eliminar la publicación", ToastLength.Short).Show();
+                    };
+                    menuPost.Show();
+                };
                 TableRow row = new TableRow(this);
                 row.AddView(PostView);
                 tlPost.AddView(row);

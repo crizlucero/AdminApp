@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item 
+        android:id="@+id/menu_post_reporte"
+        android:icon="@mipmap/ic_clear"
+        android:showAsAction="ifRoom"
+        android:title="Eliminar"
+    />
+</menu>

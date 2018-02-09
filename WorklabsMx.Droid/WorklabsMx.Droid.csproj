@@ -375,6 +375,9 @@
     <AndroidResource Include="Resources\drawable\ticket_style.xml" />
     <AndroidResource Include="Resources\drawable\button_circle.xml" />
     <AndroidResource Include="Resources\drawable\post_round_image.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_more.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_more_horiz.png" />
+    <AndroidResource Include="Resources\menu\post_reporte_menu.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
