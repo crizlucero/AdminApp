@@ -35,11 +35,13 @@ namespace WorklabsMx.iOS
         public override async void ViewDidLoad()
         {
             base.ViewDidLoad();
+            BTProgressHUD.Show();
             tableItems = new List<ItemsMenu>();
             await FillTable();
             TableView.ReloadData();
             TableView.BeginUpdates();
             TableView.EndUpdates();
+            BTProgressHUD.Dismiss();
         }
 
         public override void ViewWillAppear(bool animated)
@@ -129,23 +131,23 @@ namespace WorklabsMx.iOS
             {
                 this.PerformSegue("Directorio", null);
             }
-            else if (indexPath.Row == 2)
+            /*else if (indexPath.Row == 2)
             {
                 this.PerformSegue("Servicios", null);
-            }
-            else if (indexPath.Row == 3)
+            }*/
+            else if (indexPath.Row == 2)
             {
                 this.PerformSegue("ReservarSalaJuntas", this);
             }
-            else if (indexPath.Row == 4)
+            else if (indexPath.Row == 3)
             {
                 this.PerformSegue("RegistroInvitados", null);
             }
-            else if (indexPath.Row == 5)
+            else if (indexPath.Row == 4)
             {
                 this.PerformSegue("scanQR", null);
             }
-            else if (indexPath.Row == 6)
+            else if (indexPath.Row == 5)
             {
                  this.CerrarSesion();
             }
@@ -160,7 +162,7 @@ namespace WorklabsMx.iOS
                 {
                     foreach (ItemsMenu menu in new Controllers.EscritorioController().GetMenuiOS(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Tipo"))))
                     {
-                        if (menu.Menu_Id != "8")
+                        if (menu.Menu_Id != "8" && menu.Menu_Id != "22")
                         {
                             tableItems.Add(menu);
                         }

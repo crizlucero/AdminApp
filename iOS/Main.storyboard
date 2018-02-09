@@ -3260,8 +3260,8 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTz-7s-Sb5">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="285"/>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTz-7s-Sb5">
+                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                             <connections>
                                                 <action selector="btnSucursal_Touch:" destination="K4T-oV-kCH" eventType="touchUpInside" id="219637"/>
                                             </connections>
@@ -7463,7 +7463,7 @@
                                             <rect key="frame" x="0.0" y="9" width="375" height="164"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13902">
-                                                    <rect key="frame" x="61" y="13" width="298" height="21"/>
+                                                    <rect key="frame" x="61" y="13" width="274" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Viu-X9-kv2"/>
                                                     </constraints>
@@ -7516,8 +7516,8 @@
                                                         <action selector="btnLikes_TouchUpInside:" destination="yNy-r3-KII" eventType="touchUpInside" id="22866"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13904">
-                                                    <rect key="frame" x="61" y="34" width="298" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13904">
+                                                    <rect key="frame" x="61" y="34" width="274" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="Iex-dm-U3m"/>
                                                     </constraints>
@@ -7558,6 +7558,17 @@
                                                         <action selector="btnComentarPost_TouchUpInside:" destination="yNy-r3-KII" eventType="touchUpInside" id="49142"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3T-Hu-QAf">
+                                                    <rect key="frame" x="346" y="13" width="21" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="GWI-lU-5p7"/>
+                                                        <constraint firstAttribute="width" constant="21" id="ew1-09-giL"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="Opciones"/>
+                                                    <connections>
+                                                        <action selector="btnOpciones_Touch:" destination="yNy-r3-KII" eventType="touchUpInside" id="476965"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -7567,14 +7578,17 @@
                                                 <constraint firstItem="13902" firstAttribute="top" secondItem="uk9-vT-XI2" secondAttribute="top" constant="13" id="6wC-uW-Mb9"/>
                                                 <constraint firstItem="13902" firstAttribute="trailing" secondItem="13904" secondAttribute="trailing" id="8QI-7f-Ywh"/>
                                                 <constraint firstItem="13902" firstAttribute="leading" secondItem="13904" secondAttribute="leading" id="9gL-sL-ht3"/>
+                                                <constraint firstItem="f3T-Hu-QAf" firstAttribute="leading" secondItem="13902" secondAttribute="trailing" constant="11" id="Dj0-TT-o6V"/>
                                                 <constraint firstItem="tda-bT-i38" firstAttribute="leading" secondItem="uk9-vT-XI2" secondAttribute="leading" constant="8" id="DpH-Ec-MAj"/>
                                                 <constraint firstItem="13908" firstAttribute="leading" secondItem="DNu-Ky-gXd" secondAttribute="trailing" constant="1" id="GGc-bf-s54"/>
                                                 <constraint firstAttribute="bottom" secondItem="DNu-Ky-gXd" secondAttribute="bottom" constant="11" id="H5L-Qp-3MU"/>
                                                 <constraint firstItem="13910" firstAttribute="leading" secondItem="13915" secondAttribute="trailing" constant="3" id="IWC-eg-HsM"/>
                                                 <constraint firstItem="13904" firstAttribute="leading" secondItem="tda-bT-i38" secondAttribute="trailing" constant="8" id="J9e-eB-HWn"/>
+                                                <constraint firstAttribute="trailing" secondItem="f3T-Hu-QAf" secondAttribute="trailing" constant="8" id="KEt-QF-xFo"/>
                                                 <constraint firstItem="13912" firstAttribute="leading" secondItem="13910" secondAttribute="trailing" constant="10" id="LP1-nD-0ho"/>
                                                 <constraint firstItem="fit-9T-3tY" firstAttribute="top" secondItem="tda-bT-i38" secondAttribute="bottom" constant="7" id="NR3-fu-r7T"/>
-                                                <constraint firstAttribute="trailing" secondItem="13904" secondAttribute="trailing" constant="16" id="V9a-vp-RDx"/>
+                                                <constraint firstItem="f3T-Hu-QAf" firstAttribute="top" secondItem="uk9-vT-XI2" secondAttribute="top" constant="13" id="UNk-fC-gOa"/>
+                                                <constraint firstAttribute="trailing" secondItem="13904" secondAttribute="trailing" constant="40" id="V9a-vp-RDx"/>
                                                 <constraint firstItem="fit-9T-3tY" firstAttribute="leading" secondItem="uk9-vT-XI2" secondAttribute="leading" constant="8" id="a4N-0d-MqL"/>
                                                 <constraint firstAttribute="trailing" secondItem="13908" secondAttribute="trailing" constant="8" id="a7q-oR-22q"/>
                                                 <constraint firstAttribute="trailing" secondItem="fit-9T-3tY" secondAttribute="trailing" constant="8" id="adg-Tf-JRC"/>
@@ -7606,6 +7620,7 @@
                                 <connections>
                                     <outlet property="btnImgPerfil" destination="tda-bT-i38" id="name-outlet-tda-bT-i38"/>
                                     <outlet property="btnLikes" destination="gGu-Zp-q3w" id="name-outlet-gGu-Zp-q3w"/>
+                                    <outlet property="btnOpciones" destination="f3T-Hu-QAf" id="name-outlet-f3T-Hu-QAf"/>
                                     <outlet property="imgComentarios" destination="13910" id="name-outlet-13910"/>
                                     <outlet property="lblComentarios" destination="13912" id="name-outlet-13912"/>
                                     <outlet property="lblFechaPost" destination="13908" id="name-outlet-13908"/>
@@ -8732,7 +8747,7 @@ COL. LADRON DE GUEVARA</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xB8-lF-bon" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9698.3999999999996" y="-1855.3223388305848"/>
+            <point key="canvasLocation" x="-9698.3999999999996" y="-1855.3219999999999"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ncZ-g1-bZQ">
@@ -11671,7 +11686,7 @@ COL. LADRON DE GUEVARA</string>
                                     <rect key="frame" x="0.0" y="0.0" width="281" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="faccebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXx-f2-znS">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="faccebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXx-f2-znS">
                                             <rect key="frame" x="46" y="8" width="223" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="hSw-QS-q3F"/>
@@ -12010,6 +12025,7 @@ COL. LADRON DE GUEVARA</string>
         <image name="NombreEmpresa" width="30" height="30"/>
         <image name="NumeroExterior" width="30" height="30"/>
         <image name="NumeroInterior" width="30" height="30"/>
+        <image name="Opciones" width="25" height="25"/>
         <image name="PaginaWeb" width="30" height="30"/>
         <image name="PerfilEscritorio" width="27" height="27"/>
         <image name="PerfilGrande" width="33.333332061767578" height="33.333332061767578"/>

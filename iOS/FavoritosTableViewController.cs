@@ -36,6 +36,7 @@ namespace WorklabsMx.iOS
         public override async void ViewDidLoad()
         {
             base.ViewDidLoad();
+            BTProgressHUD.Show();
             UsuariosFavoritos = new List<UsuarioModel>();
             RefreshControl = new UIRefreshControl();
             RefreshControl.AddTarget(HandleValueChanged, UIControlEvent.ValueChanged);
@@ -68,6 +69,7 @@ namespace WorklabsMx.iOS
             await Task.Run(() =>
             {
                 this.Usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
+                UsuariosFavoritos = new List<UsuarioModel>();
                 foreach (UsuarioModel UsuarioFavorito in this.Usuarios)
                 {
                     var isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), UsuarioFavorito.Usuario_Id, UsuarioFavorito.Usuario_Tipo);
@@ -113,6 +115,7 @@ namespace WorklabsMx.iOS
                 currentUser.EventosFavoritosCellDelegate = this;
                 currentUser.UpdateCell(current);
                 tableView.EndUpdates();
+                BTProgressHUD.Dismiss();
                 return currentUser;
             }
             else
@@ -132,6 +135,7 @@ namespace WorklabsMx.iOS
 
         async void GetData()
         {
+            
             RefreshControl.BeginRefreshing();
             await FillData();
             TableView.ReloadData();

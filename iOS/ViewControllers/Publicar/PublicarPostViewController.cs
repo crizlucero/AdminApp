@@ -73,38 +73,38 @@ namespace WorklabsMx.iOS
         private async void PublicarPost()
         {
             BTProgressHUD.Show();
-            await Task.Delay(500);
-
-            byte[] Fotografia;
-
-            if (ImagenPublicacion != null )
+            await Task.Run(() =>
             {
-                Fotografia = ImagenPublicacion?.AsPNG().ToArray();
-            }
-            else 
-            {
-                Fotografia = new byte[0];
-            }
-
-            if(InternetConectionHelper.VerificarConexion())
-            {
-                if (new Controllers.EscritorioController().SetPost(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), txtPublicacion.Text, Fotografia))
+                byte[] Fotografia;
+                if (ImagenPublicacion != null)
                 {
-                    this.PostPublicadoDelegate.PostPublicado();
-                    this.DismissViewController(true, null);
-                    BTProgressHUD.Dismiss();
+                    Fotografia = ImagenPublicacion?.AsPNG().ToArray();
+                }
+                else
+                {
+                    Fotografia = new byte[0];
+                }
+
+                if (InternetConectionHelper.VerificarConexion())
+                {
+                    if (new Controllers.EscritorioController().SetPost(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), txtPublicacion.Text, Fotografia))
+                    {
+                        this.PostPublicadoDelegate.PostPublicado();
+                        this.DismissViewController(true, null);
+                        BTProgressHUD.Dismiss();
+                    }
+                    else
+                    {
+                        BTProgressHUD.Dismiss();
+                        new MessageDialog().SendToast("No pudimos publicar tu mensaje, intenta de nuevo");
+                    }
                 }
                 else
                 {
                     BTProgressHUD.Dismiss();
-                    new MessageDialog().SendToast("No pudimos publicar tu mensaje, intenta de nuevo");
+                    new MessageDialog().SendToast("No tienes conexión a internet, intenta de nuevo");
                 }
-            }
-            else
-            {
-                BTProgressHUD.Dismiss();
-                new MessageDialog().SendToast("No tienes conexión a internet, intenta de nuevo");
-            }
+            });
            
         }
 
