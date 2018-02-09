@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Android.App;
 using Android.Content;
+using Android.Content.Res;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
@@ -19,12 +21,15 @@ namespace WorklabsMx.Droid
     public class InvitadosActivity : Activity
     {
         SimpleStorage storage;
-        TableLayout DatosBasicos;
+        LinearLayout DatosBasicos;
+        EditText Nombre, Apellidos, Correo;
         List<UsuarioModel> invitados;
-
+        Emails email;
+        string correoInvitacion;
         public InvitadosActivity()
         {
             invitados = new List<UsuarioModel>();
+            email = new Emails();
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -37,7 +42,6 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.RegistroInvitados);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-
             TextView lblFecha = FindViewById<TextView>(Resource.Id.lblFecha);
             lblFecha.Text = DateTime.Now.ToString("MMMM dd, yyyy hh:mm tt").ToUpper();
             FindViewById<Button>(Resource.Id.btnFecha).Click += (sender, e) =>
@@ -53,8 +57,10 @@ namespace WorklabsMx.Droid
                 });
                 frag.Show(FragmentManager, Resources.GetString(Resource.String.ReservaSala));
             };
-            DatosBasicos = FindViewById<TableLayout>(Resource.Id.tlDatosBasicos);
-            AddDatosBasicos();
+            Nombre = FindViewById<EditText>(Resource.Id.txtNombre);
+            Apellidos = FindViewById<EditText>(Resource.Id.txtApellidos);
+            Correo = FindViewById<EditText>(Resource.Id.txtEmail);
+            DatosBasicos = FindViewById<LinearLayout>(Resource.Id.llInvitados);
 
             Spinner ubicacion = FindViewById<Spinner>(Resource.Id.spUbicacion);
             Dictionary<string, string> sucursales = new SucursalController().GetSucursalInfo();
@@ -67,63 +73,67 @@ namespace WorklabsMx.Droid
             FindViewById<TextView>(Resource.Id.lblAgregarInvitado).Click += (sender, e) => AddDatosBasicos();
             FindViewById<TextView>(Resource.Id.lblEnviar).Click += delegate
             {
-                Console.WriteLine(sucursales[ubicacion.SelectedItem.ToString()]);
                 List<int> invitados_id = new List<int>();
-                //Validar datos
-                if (invitados.FindAll((invitado) => string.IsNullOrEmpty(invitado.Usuario_Nombre) || string.IsNullOrEmpty(invitado.Usuario_Apellidos) || string.IsNullOrEmpty(invitado.Usuario_Correo_Electronico)).ToList().Count == 0)
+                AssetManager asset = Assets;
+                correoInvitacion = new StreamReader(asset.Open("Invitacion.html")).ReadToEnd();
+                SucursalModel sucursal = new SucursalController().GetSucursalInfo(sucursales[ubicacion.SelectedItem.ToString()]);
+                invitados.ForEach(invitado =>
                 {
-                    invitados.ForEach(invitado =>
-                   {
-                       try
-                       {
-                           invitados_id.Add(new InvitadosController().RegistraInvitado(invitado.Usuario_Nombre, invitado.Usuario_Apellidos, invitado.Usuario_Correo_Electronico,
-                                                                          txtAsunto.Text, DateTime.Parse(lblFecha.Text), sucursales[ubicacion.SelectedItem.ToString()],
-                                                                                     storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo")));
-                           Toast.MakeText(this, Resource.String.DatosGuardados, ToastLength.Short).Show();
-
-                       }
-                       catch (Exception e)
-                       {
-                           Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
-                           SlackLogs.SendMessage(e.Message);
-                       }
-                   });
-                    if (invitados_id.Count != 0)
+                    try
                     {
-                        Intent intent = new Intent(this, typeof(InvitadosConfirmacionActivity));
-                        intent.PutExtra("Invitados_Id", JsonConvert.SerializeObject(invitados_id));
-                        StartActivity(intent);
-                        Finish();
+                        invitados_id.Add(new InvitadosController().RegistraInvitado(invitado.Usuario_Nombre, invitado.Usuario_Apellidos, invitado.Usuario_Correo_Electronico,
+                                                                       txtAsunto.Text, DateTime.Parse(lblFecha.Text), sucursales[ubicacion.SelectedItem.ToString()],
+                                                                                  storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo")));
+
+                        email.SendMail(invitado.Usuario_Correo_Electronico, invitado.Usuario_Nombre + " " + invitado.Usuario_Apellidos, 
+                                       correoInvitacion.Replace("{{NOMBRE}}",invitado.Usuario_Nombre + " " + invitado.Usuario_Apellidos)
+                                       .Replace("{{FECHA}}",lblFecha.Text)
+                                       .Replace("{{SUCURSAL}}",sucursal.Sucursal_Descripcion)
+                                       .Replace("{{CALLE}}",sucursal.Sucursal_Domicilio)
+                                       .Replace("{{COLONIA}}",sucursal.Territorio.Colonia)
+                                       .Replace("{{QR}}","INVITADO"), "Sala de juntas");
+                        Toast.MakeText(this, Resource.String.DatosGuardados, ToastLength.Short).Show();
+
                     }
-                }
-                else
+                    catch (Exception e)
+                    {
+                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
+                        SlackLogs.SendMessage(e.Message);
+                    }
+                });
+                if (invitados_id.Count != 0)
                 {
-                    Toast.MakeText(this, "Revise los datos\nNo deben de existir campos en blanco", ToastLength.Short).Show();
+                    Intent intent = new Intent(this, typeof(InvitadosConfirmacionActivity));
+                    intent.PutExtra("Invitados_Id", JsonConvert.SerializeObject(invitados_id));
+                    StartActivity(intent);
+                    Finish();
                 }
             };
         }
 
         void AddDatosBasicos()
         {
-            UsuarioModel invitado = new UsuarioModel();
-            LayoutInflater liView = LayoutInflater;
-            View basicView = liView.Inflate(Resource.Layout.DatosBasicosLayout, null, false);
-            basicView.FindViewById<EditText>(Resource.Id.txtNombre).TextChanged += (sender, e) =>
-                invitado.Usuario_Nombre = ((EditText)sender).Text;
-
-            basicView.FindViewById<EditText>(Resource.Id.txtApellidos).TextChanged += (sender, e) =>
-                invitado.Usuario_Apellidos = ((EditText)sender).Text;
-
-            basicView.FindViewById<EditText>(Resource.Id.txtEmail).TextChanged += (sender, e) =>
+            if (Android.Util.Patterns.EmailAddress.Matcher(Correo.Text).Matches() && !string.IsNullOrEmpty(Nombre.Text) && !string.IsNullOrEmpty(Apellidos.Text))
             {
-                if (Android.Util.Patterns.EmailAddress.Matcher(((EditText)sender).Text).Matches())
-                    invitado.Usuario_Correo_Electronico = ((EditText)sender).Text;
-            };
+                UsuarioModel invitado = new UsuarioModel();
+                LayoutInflater liView = LayoutInflater;
+                View basicView = liView.Inflate(Resource.Layout.DatosBasicosLayout, null, false);
+                basicView.FindViewById<TextView>(Resource.Id.txtNombre).Text = Nombre.Text + " " + Apellidos.Text;
+                basicView.FindViewById<TextView>(Resource.Id.txtEmail).Text = Correo.Text;
 
-            TableRow row = new TableRow(this);
-            row.AddView(basicView);
-            DatosBasicos.AddView(row);
-            invitados.Add(invitado);
+                invitado.Usuario_Nombre = Nombre.Text;
+                invitado.Usuario_Apellidos = Apellidos.Text;
+                invitado.Usuario_Correo_Electronico = Correo.Text;
+
+                Nombre.Text = "";
+                Apellidos.Text = "";
+                Correo.Text = "";
+
+                DatosBasicos.AddView(basicView);
+                invitados.Add(invitado);
+            }
+            else
+                Toast.MakeText(this, "Llene todos los campos correctamente", ToastLength.Short).Show();
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu) => base.OnCreateOptionsMenu(menu);

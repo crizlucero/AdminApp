@@ -36,11 +36,10 @@ namespace WorklabsMx.Controllers
         public Dictionary<string, string> GetSucursalInfo()
         {
             Dictionary<string, string> sucursales = new Dictionary<string, string>();
-            string query = "SELECT Sucursal_Id, Sucursal_Descripcion FROM vw_cat_Sucursales";
             try
             {
                 conn.Open();
-                command = CreateCommand(query);
+                command = CreateCommand("SELECT Sucursal_Id, Sucursal_Descripcion FROM vw_cat_Sucursales");
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
@@ -50,6 +49,35 @@ namespace WorklabsMx.Controllers
             catch (Exception e) { SlackLogs.SendMessage(e.Message); }
             finally { conn.Close(); }
             return sucursales;
+        }
+
+        public SucursalModel GetSucursalInfo(string sucursal_id)
+        {
+            SucursalModel sucursal = new SucursalModel();
+
+            try
+            {
+                conn.Open();
+                command = CreateCommand("select * from vw_cat_Sucursales Where Sucursal_Id = @Sucursal_Id");
+                command.Parameters.AddWithValue("@Sucursal_Id", sucursal_id);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    sucursal = new SucursalModel
+                    {
+                        Sucursal_Correo = reader["Sucursal_Correo_1"].ToString(),
+                        Sucursal_Descripcion = reader["Sucursal_Descripcion"].ToString(),
+                        Sucursal_Domicilio = reader["Sucursal_Domicilio"].ToString(),
+                        Territorio = new TerritorioModel
+                        {
+                            Colonia = reader["Territorio_Colonia_Descripcion"].ToString(),
+                        }
+                    };
+                }
+            }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+
+            return sucursal;
         }
         /// <summary>
         /// Obtiene el identificador de la sucursal.

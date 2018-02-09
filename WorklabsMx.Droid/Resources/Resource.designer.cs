@@ -3891,8 +3891,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c0197
 			public const int lblAgendar = 2131493271;
 			
-			// aapt resource value: 0x7f0c0131
-			public const int lblAgregarInvitado = 2131493169;
+			// aapt resource value: 0x7f0c0130
+			public const int lblAgregarInvitado = 2131493168;
 			
 			// aapt resource value: 0x7f0c01bb
 			public const int lblCalle = 2131493307;
@@ -4103,6 +4103,9 @@ namespace WorklabsMx.Droid
 			
 			// aapt resource value: 0x7f0c01a8
 			public const int llEstado = 2131493288;
+			
+			// aapt resource value: 0x7f0c0131
+			public const int llInvitados = 2131493169;
 			
 			// aapt resource value: 0x7f0c01a7
 			public const int llLblEstado = 2131493287;
@@ -4517,9 +4520,6 @@ namespace WorklabsMx.Droid
 			
 			// aapt resource value: 0x7f0c0091
 			public const int tlCupones = 2131493009;
-			
-			// aapt resource value: 0x7f0c0130
-			public const int tlDatosBasicos = 2131493168;
 			
 			// aapt resource value: 0x7f0c0142
 			public const int tlMembresias = 2131493186;

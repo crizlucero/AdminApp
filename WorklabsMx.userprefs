@@ -1,3 +1,31 @@
+<<<<<<< HEAD
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="53" Column="31" />
+      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="208" Column="61" />
+      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="58" Column="18" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/InvitadosActivity.cs" Line="77" Column="22" />
+      <File FileName="WorklabsMx.Droid/Resources/drawable/background_splash.xml" Line="22" Column="28" />
+      <File FileName="WorklabsMx.Droid/ViewController/AccesoActivity.cs" Line="31" Column="76" />
+      <File FileName="WorklabsMx/Helpers/Emails.cs" Line="24" Column="27" />
+      <File FileName="WorklabsMx/Controllers/SucursalController.cs" Line="72" Column="26" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/SalasJuntasController.cs" relfile="WorklabsMx/Controllers/SalasJuntasController.cs" line="206" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
+  <MultiItemStartupConfigurations />
+</Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/RegistrarTableViewController.cs">
+>>>>>>> 411d8a9b73bea9e3372bfc68c2f2d0ef43304d72
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Escritorio/EscritorioController.cs">
     <Files>

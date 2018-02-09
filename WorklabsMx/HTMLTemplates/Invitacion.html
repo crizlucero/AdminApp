@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            *{
+                color:#FFFFFF;
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: bold;
+            }
+            body{
+                background-color: black;
+                background: linear-gradient(45deg, rgba(0,0,0,1), rgba(0,0,0,.6)); /* Standard syntax (must be last) */
+                width: 350px;
+                display:block;
+                margin-left:auto;
+                margin-right:auto;
+            }
+            table{padding:25px;}
+
+            #Ticket{
+                border-radius: 20px;
+                background-color:rgb(216, 169, 110);
+                padding: 20px;
+                margin: 20px;
+            }
+            .MiddleLine{
+                padding-top: 50px;
+                border-top: 2px dashed #FFF;
+            }
+            img{
+                display:block;
+                margin-left:auto;
+                margin-right:auto;
+                margin-bottom: 10px;
+                padding:20px;
+                border-radius: 20px;
+                background:#FFF;
+            }
+            .Lowercase{
+                text-transform: initial;
+                text-align: center;
+                font-size: 10px;
+                margin-bottom:-10px;
+                font-weight: initial;
+            }
+            .circle{
+                display: block;
+                background: black;
+                width: 50px;
+                height: 60px;
+                border-radius: 25px;
+            }
+        </style>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head> 
+    <body>
+        <table id="Ticket">
+            <tr>
+                <td colspan="2" >
+                    <p style="font-size: 20px !important;">{{NOMBRE}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="background:#FFFFFF" />
+            </tr>
+            <tr>
+                <td>
+                    <i class="material-icons" >today</i> 
+                </td>
+                <td><p>{{FECHA}}</p></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="background:#FFFFFF"/>
+            </tr>
+            <tr>
+                <td rowspan="2">
+                        <i class="material-icons" style="margin-top: -30px;" >place</i>
+                </td>
+                <td>
+                        <p style="margin-top:10px">{{SUCURSAL}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>{{CALLE}}</p>
+                    <p style="margin-top:10px">Col. {{COLONIA}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border-top: 2px solid #FFFFFF;padding-bottom:50px;"/>
+            </tr>
+            <tr>
+                <td colspan="2" class="MiddleLine">
+                    <!--<span class="circle" style="margin-left: -50px;margin-top: -80px;"></span>
+                    <span class="circle" style="margin-left: 210px;margin-top: -60px;right: -55px;position: relative;"></span>-->
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?data={{QR}}" width="150" height="150"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p style="text-align: center;font-size: 10px;font-weight: bold;">Esta es tu llave de acceso</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p class="Lowercase">Lleva contigo este código QR.</p>
+                    <p class="Lowercase">Será solicitado al momento de tu ingreso en la ubicación a la cual fuiste invitado.</p>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
