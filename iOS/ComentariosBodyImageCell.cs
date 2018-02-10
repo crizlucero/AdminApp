@@ -15,11 +15,14 @@ namespace WorklabsMx.iOS
         void MostrarImagenEnGrande(UIImageView imgPublicacion);
         void ComentarPost(PostModel PostLocal);
         void InfoUserPost(List<String> listaUser);
+        void EnviarActions(UIAlertController actionSheetAlert);
+        void ActualizaTabla();
     }
 
 
     public partial class ComentariosBodyImageCell : UITableViewCell
     {
+ 
 
         public EventosComentarios EventosComentariosDelegate;
 
@@ -64,7 +67,6 @@ namespace WorklabsMx.iOS
             txtComentario.Text = post.Publicacion_Contenido;
             StyleHelper.Style(vwVistaComentario.Layer);
             btnImgPerfil.SetBackgroundImage(currentImageProfile ?? UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
-
             PostLocal = post;
         }
 
@@ -124,6 +126,27 @@ namespace WorklabsMx.iOS
         partial void btnComentarios_Touch(UIButton sender)
         {
             EventosComentariosDelegate.ComentarPost(PostLocal);
+        }
+
+        partial void btnOpciones_Toouch(UIButton sender)
+        {
+            UIAlertController actionSheetAlert = UIAlertController.Create(null, null, UIAlertControllerStyle.ActionSheet);
+            actionSheetAlert.AddAction(this.EliminarPublicacion());
+            actionSheetAlert.AddAction(UIAlertAction.Create("Cancelar", UIAlertActionStyle.Cancel, null));
+            EventosComentariosDelegate.EnviarActions(actionSheetAlert);  
+        }
+
+        private UIAlertAction EliminarPublicacion()
+        {
+            UIAlertAction Eliminar = UIAlertAction.Create("Eliminar publicación", UIAlertActionStyle.Default, (action) =>
+            {
+                var PublicacionEliminada = new Controllers.EscritorioController().OcultarPost(PostLocal.Usuario.Usuario_Id, PostLocal.Usuario.Usuario_Tipo, PostLocal.Publicacion_Id);
+                if (PublicacionEliminada)
+                {
+                    EventosComentariosDelegate.ActualizaTabla();
+                }
+            });
+            return Eliminar;
         }
     }
 }

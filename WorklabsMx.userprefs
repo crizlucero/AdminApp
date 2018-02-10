@@ -1,51 +1,32 @@
-<<<<<<< HEAD
-=======
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/CommentsActivity.cs">
-    <Files>
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/InvitadosActivity.cs" Line="92" Column="57" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="242" Column="53" />
-      <File FileName="WorklabsMx.Droid/Resources/menu/top_menus.xml" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/Resources/menu/post_reporte_menu.xml" Line="7" Column="33" />
-      <File FileName="WorklabsMx.Droid/Resources/values/styles.xml" Line="87" Column="68" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="692" Column="61" />
-      <File FileName="../../../Library/Frameworks/Xamarin.Android.framework/Versions/8.1.5-0/lib/xamarin.android/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="1334" Column="2" />
-      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="1" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/SalasJuntasController.cs" relfile="WorklabsMx/Controllers/SalasJuntasController.cs" line="206" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
-  <MultiItemStartupConfigurations />
-</Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/RegistrarTableViewController.cs">
->>>>>>> 411d8a9b73bea9e3372bfc68c2f2d0ef43304d72
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Escritorio/EscritorioController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Helpers/Emails.cs">
     <Files>
-      <File FileName="iOS/MenuTableViewController.cs" Line="117" Column="43" NotebookId="1" />
+      <File FileName="iOS/MenuTableViewController.cs" Line="197" Column="10" NotebookId="1" />
       <File FileName="iOS/DetalleInvitacionViewController.cs" Line="19" Column="35" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="134" Column="1" NotebookId="1" />
-      <File FileName="iOS/ComunidadTableViewController.cs" Line="134" Column="38" NotebookId="1" />
-      <File FileName="iOS/FavoritosTableViewController.cs" Line="39" Column="26" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="138" Column="46" NotebookId="1" />
+      <File FileName="iOS/ComunidadTableViewController.cs" Line="132" Column="14" NotebookId="1" />
+      <File FileName="iOS/FavoritosTableViewController.cs" Line="71" Column="70" NotebookId="1" />
       <File FileName="iOS/EmpresasTableViewController.cs" Line="95" Column="40" NotebookId="1" />
-      <File FileName="iOS/Info.plist" NotebookId="1" />
-      <File FileName="iOS/MenuContenidoCell.cs" Line="15" Column="44" NotebookId="1" />
-      <File FileName="iOS/NoInfoMenuCell.cs" Line="1" Column="18" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="147" Column="107" NotebookId="1" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="622" Column="32" NotebookId="1" />
-      <File FileName="iOS/Main.cs" Line="12" Column="1" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="130" Column="79" NotebookId="1" />
+      <File FileName="iOS/ComentarImageTableViewCell.cs" Line="84" Column="10" NotebookId="1" />
+      <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="147" Column="67" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="161" Column="22" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/MiCuenta/Membresias/MembresiasMiCuentaViewController.cs" Line="100" Column="22" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/MiCuenta/Productos/ProductosMiCuentaViewController.cs" Line="100" Column="22" NotebookId="1" />
+      <File FileName="iOS/HTML/Invitacion.html" Line="4" Column="16" NotebookId="1" />
+      <File FileName="WorklabsMx/Helpers/Emails.cs" Line="26" Column="33" NotebookId="1" />
     </Files>
     <FloatingWindows>
-      <FloatingWindow WindowId="1" X="1290" Y="23" Width="758" Height="951">
+      <FloatingWindow WindowId="1" X="1031" Y="23" Width="1076" Height="1026">
         <Files>
-          <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="129" Column="10" />
-          <File FileName="iOS/ViewControllers/Comentarios/ComentarviewController.cs" Line="82" Column="40" />
+          <File FileName="iOS/ComentariosBodyImageCell.cs" Line="116" Column="59" />
+          <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="33" Column="19" />
+          <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="9" Column="9" />
+          <File FileName="iOS/ViewElements/PostCard.cs" Line="173" Column="40" />
+          <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="61" Column="30" />
+          <File FileName="iOS/ViewControllers/Comentarios/comentarTableView.cs" Line="120" Column="21" />
+          <File FileName="iOS/ViewControllers/Comentarios/BodyComentarTableView.cs" Line="92" Column="51" />
+          <File FileName="WorklabsMx.Droid/ViewController/Formatos/InvitadosActivity.cs" Line="65" Column="78" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
@@ -58,6 +39,9 @@
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="2046" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="2053" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/ConfigurationsController.cs" relfile="WorklabsMx/Controllers/ConfigurationsController.cs" line="55" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/CeldaDetalleInvitacion.cs" relfile="iOS/CeldaDetalleInvitacion.cs" line="48" column="23" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Helpers/Emails.cs" relfile="WorklabsMx/Helpers/Emails.cs" line="52" column="23" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Helpers/Emails.cs" relfile="WorklabsMx/Helpers/Emails.cs" line="30" column="24" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

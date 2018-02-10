@@ -79,6 +79,11 @@ namespace WorklabsMx.iOS
             {
                 this.Usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
 
+                if (Usuarios.Count == 0)
+                {
+                    isShowInformation = false;
+                    BTProgressHUD.Dismiss();
+                }
             });
         }
 
@@ -131,12 +136,11 @@ namespace WorklabsMx.iOS
                 currentUser.EventosComunidadCellDelegate = this;
                 currentUser.UpdateCell(current);
                 tableView.EndUpdates();
-                BTProgressHUD.Dismiss();
+                this.WillDisplay(indexPath.Row);
                 return currentUser;
             }
             else
             {
-                BTProgressHUD.Dismiss();
                 var noPostCell = (NoInfoCellUsuarios)tableView.DequeueReusableCell(IdentificadorCeldaNoInfo, indexPath);
                 noPostCell.UpdateCell(this.existeConeccion);
                 return noPostCell;
@@ -149,6 +153,14 @@ namespace WorklabsMx.iOS
             this.View.EndEditing(true);
         }
 
+        private void WillDisplay(int Row)
+        {
+            int LastRow = this.Usuarios.Count - 1;
+            if ((Row == LastRow) /*&& (LastRow < allPosts.Count)*/)
+            {
+                BTProgressHUD.Dismiss();
+            }
+        }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {

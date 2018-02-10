@@ -197,6 +197,24 @@ namespace WorklabsMx.iOS
         {
             this.PerformSegue("ToViewImageFromComment", Imagen);
         }
+
+        public void EnviarActions(UIAlertController actionSheetAlert)
+        {
+
+            UIPopoverPresentationController presentationPopover = actionSheetAlert.PopoverPresentationController;
+            if (presentationPopover != null)
+            {
+                presentationPopover.SourceView = this.View;
+                presentationPopover.PermittedArrowDirections = UIPopoverArrowDirection.Up;
+            }
+            this.PresentViewController(actionSheetAlert, true, null);
+        }
+
+        public async void ActualizaTabla()
+        {
+            await FillData();
+            TableView.ReloadData();
+        }
     }
 
     partial class comentarTableView : EventosImagenComentar
@@ -204,6 +222,24 @@ namespace WorklabsMx.iOS
         public void MostrarImagenEnGrandesComentar(UIImageView Imagen)
         {
             this.PerformSegue("ToViewImageFromComment", Imagen);
+        }
+
+        public void EnviarAction(UIAlertController actionSheetAlert)
+        {
+
+            UIPopoverPresentationController presentationPopover = actionSheetAlert.PopoverPresentationController;
+            if (presentationPopover != null)
+            {
+                presentationPopover.SourceView = this.View;
+                presentationPopover.PermittedArrowDirections = UIPopoverArrowDirection.Up;
+            }
+            this.PresentViewController(actionSheetAlert, true, null);
+        }
+
+        public async void ActualizarTabla()
+        {
+            await FillData();
+            TableView.ReloadData();
         }
     }
 }

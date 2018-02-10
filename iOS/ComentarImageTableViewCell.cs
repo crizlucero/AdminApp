@@ -12,6 +12,8 @@ namespace WorklabsMx.iOS
     public interface EventosImagen
     {
         void MostrarImagenEnGrandes(UIImageView Imagen);
+        void EnviarActions(UIAlertController actionSheetAlert);
+        void ActualizaTabla();
     }
 
     public partial class ComentarImageTableViewCell : UITableViewCell
@@ -78,5 +80,25 @@ namespace WorklabsMx.iOS
             }
         }
 
+        partial void btnComentar_Touch(UIButton sender)
+        {
+            UIAlertController actionSheetAlert = UIAlertController.Create(null, null, UIAlertControllerStyle.ActionSheet);
+            actionSheetAlert.AddAction(this.EliminarPublicacion());
+            actionSheetAlert.AddAction(UIAlertAction.Create("Cancelar", UIAlertActionStyle.Cancel, null));
+            EventosImagenDel.EnviarActions(actionSheetAlert);  
+        }
+
+        private UIAlertAction EliminarPublicacion()
+        {
+            UIAlertAction Eliminar = UIAlertAction.Create("Eliminar comentario", UIAlertActionStyle.Default, (action) =>
+            {
+                var PublicacionEliminada = new Controllers.EscritorioController().OcultarComment(comentarioLocal.Usuario.Usuario_Id, comentarioLocal.Usuario.Usuario_Tipo, comentarioLocal.Publicacion_Id, comentarioLocal.Comentario_Id);
+                if (PublicacionEliminada)
+                {
+                    EventosImagenDel.ActualizaTabla();
+                }
+            });
+            return Eliminar;
+        }
     }
 }

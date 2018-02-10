@@ -122,14 +122,14 @@ namespace WorklabsMx.iOS
         {
             UIAlertController actionSheetAlert = UIAlertController.Create(null, null, UIAlertControllerStyle.ActionSheet);
             actionSheetAlert.AddAction(this.EliminarPublicacion());
-            actionSheetAlert.AddAction(UIAlertAction.Create("Cancelar", UIAlertActionStyle.Cancel, (action) => Console.WriteLine("Cancel button pressed.")));
+            actionSheetAlert.AddAction(UIAlertAction.Create("Cancelar", UIAlertActionStyle.Cancel, null));
             EventosComentariosBodyDel.EnviarAction(actionSheetAlert);        
         }
         private UIAlertAction EliminarPublicacion()
         {
-            UIAlertAction Eliminar = UIAlertAction.Create("Eliminar publicación", UIAlertActionStyle.Default, (action) =>
+            UIAlertAction Eliminar = UIAlertAction.Create("Eliminar comentario", UIAlertActionStyle.Default, (action) =>
             {
-                var PublicacionEliminada = new Controllers.EscritorioController().OcultarPost(PostLocal.Usuario.Usuario_Id, PostLocal.Publicacion_Id, int.Parse(PostLocal.Publicacion_Estatus));
+                var PublicacionEliminada = new Controllers.EscritorioController().OcultarPost(PostLocal.Usuario.Usuario_Id, PostLocal.Usuario.Usuario_Tipo, PostLocal.Publicacion_Id);
                 if (PublicacionEliminada)
                 {
                     EventosComentariosBodyDel.ActualizarTabla();

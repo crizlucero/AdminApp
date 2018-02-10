@@ -32,6 +32,10 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnOpciones { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView imgComentarios { get; set; }
 
         [Outlet]
@@ -78,6 +82,10 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnLikes_Touch (UIKit.UIButton sender);
 
+        [Action ("btnOpciones_Toouch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnOpciones_Toouch (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (btnComentarios != null) {
@@ -98,6 +106,11 @@ namespace WorklabsMx.iOS
             if (btnLikes != null) {
                 btnLikes.Dispose ();
                 btnLikes = null;
+            }
+
+            if (btnOpciones != null) {
+                btnOpciones.Dispose ();
+                btnOpciones = null;
             }
 
             if (imgComentarios != null) {

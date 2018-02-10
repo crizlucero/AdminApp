@@ -171,14 +171,16 @@ namespace WorklabsMx.iOS.ViewElements
                             new MessageDialog().SendConfirmation("Se eliminará el comentario", "Borrar comentario", (obj) =>
                            {
                                if (obj)
-                                   if (new Controllers.EscritorioController().OcultarComment(comentario.Comentario_Id, 0))
+                               {
+                                   /*if (new Controllers.EscritorioController().OcultarComment(comentario.Comentario_Id, 0))
                                    {
                                        new MessageDialog().SendToast("Comentario eliminado");
                                        commentScroll.RemoveFromSuperview();
                                        AddComentarios(post);
                                    }
                                    else
-                                       new MessageDialog().SendToast("Hubo un error, intente de nuevo");
+                                       new MessageDialog().SendToast("Hubo un error, intente de nuevo");*/
+                               }
                            });
                         }
                         else

@@ -1,12 +1,13 @@
 using Foundation;
 using System;
 using UIKit;
-using SWRevealViewControllerBinding;
 using WorklabsMx.Controllers;
 using System.Collections.Generic;
 using WorklabsMx.Models;
 using WorklabsMx.iOS.Helpers;
 using System.Text.RegularExpressions;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
@@ -32,6 +33,8 @@ namespace WorklabsMx.iOS
 
         List<SucursalModel> sucursales = new SucursalController().GetSucursales();
 
+        string correoInvitacion;
+
         public CeldaDetalleInvitacion (IntPtr handle) : base (handle)
         {
         }
@@ -42,7 +45,9 @@ namespace WorklabsMx.iOS
             this.lblUbicacion.Text = Sucursal;
             invitadosLocal = invitados;
             indexPathLocal = indexPath;
+            correoInvitacion = System.IO.File.ReadAllText("HTML/Invitacion.html");
         }
+
 
         partial void btnAgregar_Touch(UIButton sender)
         {
@@ -59,7 +64,7 @@ namespace WorklabsMx.iOS
             EventosDetalleInvitacionDel.SucursalSeleccionada();
         }
 
-        partial void btnInvitar_Touch(UIButton sender)
+        async partial void btnInvitar_Touch(UIButton sender)
         {
             var ErrorInvitar = false;
             var EmailValido = true;
@@ -85,6 +90,7 @@ namespace WorklabsMx.iOS
                             {
                                 ErrorInvitar = false;
                                 this.DomicilioInvitacion = Sucursal.Sucursal_Descripcion + " " + Sucursal.Sucursal_Domicilio;
+                                await EnviarMail(invitado, Sucursal);
                             }
                             else
                             {
@@ -142,9 +148,23 @@ namespace WorklabsMx.iOS
             return EsValido;
         }
 
+        async Task EnviarMail(UsuarioModel invitado, SucursalModel sucursal)
+        {
+            Emails email = new Emails();
+            await email.SendMail(invitado.Usuario_Correo_Electronico, invitado.Usuario_Nombre + " " + invitado.Usuario_Apellidos,
+                                       correoInvitacion.Replace("{{NOMBRE}}", invitado.Usuario_Nombre + " " + invitado.Usuario_Apellidos)
+                                       .Replace("{{FECHA}}", lblFecha.Text)
+                                       .Replace("{{SUCURSAL}}", sucursal.Sucursal_Descripcion)
+                                       .Replace("{{CALLE}}", sucursal.Sucursal_Domicilio)
+                                       .Replace("{{COLONIA}}", sucursal.Territorio.Colonia)
+                                 .Replace("{{QR}}", "INVITADO"), "Sala de juntas");
+
+        }
+
         partial void btnQuitar_Touch(UIButton sender)
         {
             EventosDetalleInvitacionDel.QuitarCelda(indexPathLocal);
+
         }
     }
 }
