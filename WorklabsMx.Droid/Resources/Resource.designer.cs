@@ -4170,14 +4170,14 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0c01c4
 			public const int menu_edit = 2131493316;
 			
+			// aapt resource value: 0x7f0c01c8
+			public const int menu_eliminar = 2131493320;
+			
 			// aapt resource value: 0x7f0c0147
 			public const int menu_layout = 2131493191;
 			
 			// aapt resource value: 0x7f0c01c7
 			public const int menu_payment = 2131493319;
-			
-			// aapt resource value: 0x7f0c01c8
-			public const int menu_post_reporte = 2131493320;
 			
 			// aapt resource value: 0x7f0c01c9
 			public const int menu_refresh = 2131493321;

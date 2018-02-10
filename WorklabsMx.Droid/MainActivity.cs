@@ -237,19 +237,23 @@ namespace WorklabsMx.Droid
 
                 PostView.FindViewById<ImageView>(Resource.Id.imgMore).Click += delegate
                 {
-                    PopupMenu menuPost = new PopupMenu(this, FindViewById<ImageView>(Resource.Id.imgMore));
-                    menuPost.Inflate(Resource.Menu.post_reporte_menu);
-                    menuPost.MenuItemClick += async delegate
+                    using (PopupMenu menuPost = new PopupMenu(this, PostView.FindViewById<ImageView>(Resource.Id.imgMore), GravityFlags.Center))
                     {
-                        if (DashboardController.OcultarPost(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo, post.Publicacion_Id)){
-                            Toast.MakeText(this, "Publicación eliminada", ToastLength.Short).Show();
-                            page = 0;
-                            posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
-                            await FillPosts();
-                        }else
-                            Toast.MakeText(this, "Existió un error al eliminar la publicación", ToastLength.Short).Show();
-                    };
-                    menuPost.Show();
+                        menuPost.Inflate(Resource.Menu.post_reporte_menu);
+                        menuPost.MenuItemClick += async delegate
+                        {
+                            if (DashboardController.OcultarPost(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo, post.Publicacion_Id))
+                            {
+                                Toast.MakeText(this, "Publicación eliminada", ToastLength.Short).Show();
+                                page = 0;
+                                posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+                                await FillPosts();
+                            }
+                            else
+                                Toast.MakeText(this, "Existió un error al eliminar la publicación", ToastLength.Short).Show();
+                        };
+                        menuPost.Show();
+                    }
                 };
                 TableRow row = new TableRow(this);
                 row.AddView(PostView);
