@@ -14,15 +14,8 @@ namespace WorklabsMx.Models
         protected SqlCommand command;
         protected SqlTransaction transaction;
 
-        protected DataBaseModel()
-        {
-            try
-            {
-                conn = new SqlConnection(@"Server=worklabs.mx\WLSQLSERVER; Database=WorklabsTest; User=developer; Pwd=d3p3l0p3r!");
-            }catch(Exception e){
-                SlackLogs.SendMessage(e.Message + " " + e.Source + " " + e.StackTrace);
-            }
-        }
+        protected DataBaseModel() =>
+                conn = new SqlConnection(@"Data Source=worklabs.mx,1443; Network Library=DBMSSOCN; Initial Catalog=WorklabsTest; User ID=developer; Pwd=d3p3l0p3r!");
 
         protected SqlCommand CreateCommand(string query) => new SqlCommand(query, conn);
 

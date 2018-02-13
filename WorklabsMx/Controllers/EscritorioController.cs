@@ -448,12 +448,7 @@ namespace WorklabsMx.Controllers
                 if (fotografia.Length != 0)
                 {
                     fotoNombre = Guid.NewGuid().ToString() + ".png";
-                    var result = new UploadImages().UploadBitmapAsync(fotoNombre, fotografia, publicaciones_imagen_path);
-                    if (result)
-                    {
-                        return true;
-                    }
-                    else
+                    if (!new UploadImages().UploadBitmapAsync(fotoNombre, fotografia, publicaciones_imagen_path))
                     {
                         return false;
                     }
