@@ -14,10 +14,10 @@ namespace WorklabsMx.Helpers
         {
             try
             {
-                FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://38.122.16.212:21/" + path + imgNombre);
+                FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://worklabs.mx/" + path + imgNombre);
                 client.Method = WebRequestMethods.Ftp.UploadFile;
                 client.UsePassive = false;
-                client.Credentials = new NetworkCredential(@"SRVWLHOSTING\worklabscloud", @"Worklabscloud!");
+                client.Credentials = new NetworkCredential(@"worklabscloud", @"Worklabscloud!");
                 Stream requestStream = client.GetRequestStream();
                 requestStream.Write(image, 0, image.Length);
                 requestStream.Close();
@@ -41,10 +41,10 @@ namespace WorklabsMx.Helpers
             {
                 try
                 {
-                    FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://38.122.16.212:21" + path + imgNombre.Replace("\\", "/"));
+                    FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://worklabs.mx/" + path + imgNombre.Replace("\\", "/"));
                     client.Method = WebRequestMethods.Ftp.DownloadFile;
                     client.UsePassive = false;
-                    client.Credentials = new NetworkCredential(@"SRVWLHOSTING\worklabscloud", @"Worklabscloud!");
+                    client.Credentials = new NetworkCredential(@"worklabscloud", @"Worklabscloud!");
                     client.Timeout = 3000;
                     Stream responseStream = ((FtpWebResponse)client.GetResponse()).GetResponseStream();
                     MemoryStream ms = new MemoryStream();
