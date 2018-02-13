@@ -7,6 +7,9 @@ using WorklabsMx.Controllers;
 using BigTed;
 using WorklabsMx.Helpers;
 using System.Threading.Tasks;
+using System.Threading;
+using Foundation;
+
 
 namespace WorklabsMx.iOS
 {
@@ -36,6 +39,8 @@ namespace WorklabsMx.iOS
         List<UIImage> allProfileImages = new List<UIImage>();
         List<UIImage> allCommentImages = new List<UIImage>();
 
+        float withImage;
+
         public comentarTableView (IntPtr handle) : base (handle)
         {
         }
@@ -43,7 +48,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
+            withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());
         }
 
         public async override void ViewWillAppear(bool animated)
@@ -51,6 +56,8 @@ namespace WorklabsMx.iOS
             base.ViewWillAppear(animated);
             await FillData();
             this.TableView.ReloadData();
+            this.TableView.BeginUpdates();
+            this.TableView.EndUpdates();
         }
 
         public override void ViewWillDisappear(bool animated)
@@ -134,23 +141,45 @@ namespace WorklabsMx.iOS
 
         async Task FillData()
         {
-            await Task.Delay(50);
-            allCommentImages = new List<UIImage>();
-            allProfileImages = new List<UIImage>();
-            if (InternetConectionHelper.VerificarConexion())
-            {
-                this.comentarios = new Controllers.EscritorioController().GetComentariosPost(currentPost.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
-                foreach (ComentarioModel comentario in this.comentarios)
-                {
-                    allCommentImages.Add(ImageGallery.LoadImage(comentario.Comentario_Imagen_Ruta));
-                    allProfileImages.Add(ImageGallery.LoadImage(comentario.Usuario.Usuario_Fotografia));
-                }
-            }
-            else
-            {
-                existeConeccion = false;
-                isShowInformation = false;
-            }
+            await Task.Run(() =>
+           {
+               allCommentImages = new List<UIImage>();
+               allProfileImages = new List<UIImage>();
+               if (InternetConectionHelper.VerificarConexion())
+               {
+                   this.comentarios = new Controllers.EscritorioController().GetComentariosPost(currentPost.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+                   foreach (ComentarioModel comentario in this.comentarios)
+                   {
+                       allCommentImages.Add(ImageGallery.LoadImage(comentario.Comentario_Imagen_Ruta));
+                       allProfileImages.Add(ImageGallery.LoadImage(comentario.Usuario.Usuario_Fotografia));
+
+
+                       var upload_image_path = MenuHelper.UploadImagePath;
+                       byte[] imageBytes = new UploadImages().DownloadFileFTP(currentPost.Publicacion_Imagen, upload_image_path);
+
+                       if (imageBytes != null)
+                       {
+                           var data = NSData.FromArray(imageBytes);
+                           var uiimage = UIImage.LoadFromData(data);
+                           var porcentajeWith = ((withImage * 100) / uiimage.CGImage.Height);
+                           var HeightImage = uiimage.CGImage.Height * (porcentajeWith / 100);
+                           var ReescalImage = ImageHelper.ResizeUIImage(uiimage, withImage, HeightImage);
+                           allCommentImages.Add(ReescalImage);
+                       }
+                       else
+                       {
+                            allCommentImages.Add(null);
+                       }
+                       allProfileImages.Add(ImageGallery.LoadImage(currentPost.Usuario.Usuario_Fotografia) ?? UIImage.FromBundle("ProfileImage"));
+
+                   }
+               }
+               else
+               {
+                   existeConeccion = false;
+                   isShowInformation = false;
+               }
+           });
         }
 
         private void WillDisplay(int Row)
@@ -187,6 +216,9 @@ namespace WorklabsMx.iOS
             if (new Controllers.EscritorioController().CommentPost(currentPost.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Comentario, Fotografia))
             {
                 await FillData();
+                TableView.ReloadData();
+                this.TableView.BeginUpdates();
+                this.TableView.EndUpdates();
             }
         }
     }
@@ -214,6 +246,8 @@ namespace WorklabsMx.iOS
         {
             await FillData();
             TableView.ReloadData();
+            this.TableView.BeginUpdates();
+            this.TableView.EndUpdates();
         }
     }
 
@@ -240,6 +274,8 @@ namespace WorklabsMx.iOS
         {
             await FillData();
             TableView.ReloadData();
+            this.TableView.BeginUpdates();
+            this.TableView.EndUpdates();
         }
     }
 }

@@ -44,7 +44,14 @@ namespace WorklabsMx.iOS
             RefreshControl.AddTarget(HandleValueChanged, UIControlEvent.ValueChanged);
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
-            await FillData();
+            if (MenuHelper.Comunidad != null)
+            {
+                Usuarios = MenuHelper.Comunidad; 
+            }
+            else
+            {
+                await FillData();  
+            }
             this.TableView.ReloadData();
             TableView.BeginUpdates();
             TableView.EndUpdates();
@@ -60,6 +67,7 @@ namespace WorklabsMx.iOS
         {
             RefreshControl.BeginRefreshing();
             await FillData();
+          
             TableView.ReloadData();
             TableView.BeginUpdates();
             TableView.EndUpdates();

@@ -74,6 +74,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 SlackLogs.SendMessage(e.Message);
+                return null;
             }
             finally
             {

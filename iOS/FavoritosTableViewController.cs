@@ -68,16 +68,26 @@ namespace WorklabsMx.iOS
         {
             await Task.Run(() =>
             {
-                this.Usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
-                UsuariosFavoritos = new List<UsuarioModel>();
-                foreach (UsuarioModel UsuarioFavorito in this.Usuarios)
+                if (InternetConectionHelper.VerificarConexion())
                 {
-                    var isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), UsuarioFavorito.Usuario_Id, UsuarioFavorito.Usuario_Tipo);
-                    if (isFavorite.Value)
+                    this.Usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
+                    UsuariosFavoritos = new List<UsuarioModel>();
+                    foreach (UsuarioModel UsuarioFavorito in this.Usuarios)
                     {
-                        this.UsuariosFavoritos.Add(UsuarioFavorito);
+                        var isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), UsuarioFavorito.Usuario_Id, UsuarioFavorito.Usuario_Tipo);
+                        if (isFavorite.Value)
+                        {
+                            this.UsuariosFavoritos.Add(UsuarioFavorito);
+                        }
                     }
                 }
+                else
+                {
+                    BTProgressHUD.Dismiss();
+                    this.existeConeccion = false;
+                    this.isShowInformation = false;
+                }
+
             });
         }
 
@@ -115,18 +125,25 @@ namespace WorklabsMx.iOS
                 currentUser.EventosFavoritosCellDelegate = this;
                 currentUser.UpdateCell(current);
                 tableView.EndUpdates();
-                BTProgressHUD.Dismiss();
+                WillDisplay(indexPath.Row);
                 return currentUser;
             }
             else
             {
-                BTProgressHUD.Dismiss();
                 var noPostCell = (FavoritosNoInfo)tableView.DequeueReusableCell(IdentificadorCeldaNoInfo, indexPath);
                 noPostCell.UpdateCell(this.existeConeccion);
                 return noPostCell;
             }
         }
 
+        private void WillDisplay(int Row)
+        {
+            int LastRow = UsuariosFavoritos.Count - 1;
+            if ((Row == LastRow))
+            {
+                BTProgressHUD.Dismiss();
+            }
+        }
 
         void HandleValueChanged(object sender, EventArgs e)
         {

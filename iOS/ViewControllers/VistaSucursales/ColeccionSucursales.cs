@@ -5,6 +5,7 @@ using WorklabsMx.Controllers;
 using System.Collections.Generic;
 using WorklabsMx.Models;
 using CoreGraphics;
+using WorklabsMx.iOS.Helpers;
 
 
 namespace WorklabsMx.iOS
@@ -26,7 +27,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.products = new SucursalController().GetSucursales();
+            this.products = MenuHelper.ListaSucursales;
         }
 
         public override nint NumberOfSections(UICollectionView collectionView)

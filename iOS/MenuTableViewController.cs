@@ -25,23 +25,18 @@ namespace WorklabsMx.iOS
         bool existeConeccion = true;
 
        int SubmenuIndex = 0;
-
-        List<ItemsMenu> tableItems = new List<ItemsMenu>();
+        public static List<ItemsMenu> tableItems;
 
         public MenuTableViewController (IntPtr handle) : base (handle)
         {
+            
         }
 
-        public override async void ViewDidLoad()
+        public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            BTProgressHUD.Show();
-            tableItems = new List<ItemsMenu>();
-            await FillTable();
-            TableView.ReloadData();
-            TableView.BeginUpdates();
-            TableView.EndUpdates();
-            BTProgressHUD.Dismiss();
+            tableItems = MenuHelper.GeneralList;
+            //await MenuHelper.FillData();
         }
 
         public override void ViewWillAppear(bool animated)
@@ -105,11 +100,9 @@ namespace WorklabsMx.iOS
         {
             if (isShowInformation)
             {
-                tableView.BeginUpdates();
                 var current = tableItems[indexPath.Row];
                 var currentOptionCell = (MenuContenidoCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
                 currentOptionCell.UpdateCell(current.Label);
-                tableView.EndUpdates();
                 return currentOptionCell;
             }
             else
@@ -153,28 +146,6 @@ namespace WorklabsMx.iOS
             }
 
         }
-
-        async Task FillTable()
-        {
-            await Task.Run(() =>
-            {
-                if (InternetConectionHelper.VerificarConexion())
-                {
-                    foreach (ItemsMenu menu in new Controllers.EscritorioController().GetMenuiOS(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Tipo"))))
-                    {
-                        if (menu.Menu_Id != "8" && menu.Menu_Id != "22")
-                        {
-                            tableItems.Add(menu);
-                        }
-                    }
-                }
-                else
-                {
-                    new MessageDialog().SendToast("No tienes conexión a internet, intenta de nuevo");
-                }
-            });
-        }
-
        
         public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
         {

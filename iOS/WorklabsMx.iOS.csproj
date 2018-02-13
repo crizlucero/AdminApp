@@ -1216,6 +1216,7 @@
     <Compile Include="CeldaInvitadosAgregados.designer.cs">
       <DependentUpon>CeldaInvitadosAgregados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\MenuHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

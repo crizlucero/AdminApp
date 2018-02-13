@@ -21,7 +21,7 @@ namespace WorklabsMx.iOS
 
         public void UpdateCell()
         {
-            var miembro = new UsuariosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+            var miembro = MenuHelper.UserInfo;
             if (miembro != null)
             {
                 if (miembro.Count > 0)

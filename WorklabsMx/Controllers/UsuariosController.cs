@@ -9,7 +9,7 @@ namespace WorklabsMx.Controllers
 {
     public class UsuariosController : DataBaseModel
     {
-        readonly string usuario_imagen_path =  new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1;
+        readonly string usuario_imagen_path = (new ConfigurationsController().GetListConfiguraciones() != null) ? new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1 :  "";
 
         /// <summary>
         /// Obtiene la información del miembro
@@ -94,6 +94,7 @@ namespace WorklabsMx.Controllers
             {
                 Console.WriteLine(e.Message);
                 SlackLogs.SendMessage(e.Message);
+                return null;
             }
             finally { conn.Close(); }
             return data;
