@@ -150,10 +150,6 @@ namespace WorklabsMx.iOS
                    this.comentarios = new Controllers.EscritorioController().GetComentariosPost(currentPost.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
                    foreach (ComentarioModel comentario in this.comentarios)
                    {
-                       allCommentImages.Add(ImageGallery.LoadImage(comentario.Comentario_Imagen_Ruta));
-                       allProfileImages.Add(ImageGallery.LoadImage(comentario.Usuario.Usuario_Fotografia));
-
-
                        var upload_image_path = MenuHelper.UploadImagePath;
                        byte[] imageBytes = new UploadImages().DownloadFileFTP(currentPost.Publicacion_Imagen, upload_image_path);
 

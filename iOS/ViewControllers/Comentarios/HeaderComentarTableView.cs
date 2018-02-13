@@ -20,6 +20,26 @@ namespace WorklabsMx.iOS
 
         internal void UpdateCell(PostModel Publicacion, UIImage currentImageProfile, UIImage currentImagePost) 
         {
+
+            lblLikes.Text = Publicacion.Publicacion_Me_Gustan_Cantidad + " LIKES";
+            if (int.Parse(Publicacion.Publicacion_Me_Gustan_Cantidad) == 0)
+            {
+                this.btnLikes.SetImage(UIImage.FromBundle("NoLike"), UIControlState.Normal);
+            }
+            else
+            {
+                this.btnLikes.SetImage(UIImage.FromBundle("Likes"), UIControlState.Normal);
+            }
+
+            if (int.Parse(Publicacion.Publicacion_Comentarios_Cantidad) == 0)
+            {
+                this.imgComentarios.Image = UIImage.FromBundle("NoCom");
+            }
+            else
+            {
+                this.imgComentarios.Image = UIImage.FromBundle("Comments");
+            }
+
             lblNombre.Text = Publicacion.Usuario.Usuario_Nombre;
             lblLikes.Text = Publicacion.Publicacion_Me_Gustan_Cantidad + " LIKES";
             lblFechaComentario.Text = Publicacion.Publicacion_Fecha;

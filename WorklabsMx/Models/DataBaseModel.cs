@@ -18,7 +18,7 @@ namespace WorklabsMx.Models
         {
             try
             {
-                conn = new SqlConnection(@"Server=worklabs.mx\WLSQLSERVER; Database=WorklabsTest; User=developer; Pwd=d3p3l0p3r!");
+                conn = new SqlConnection(@"Server=worklabs.mx,1443; Database=WorklabsTest; User=developer; Pwd=d3p3l0p3r!");
             }catch(Exception e){
                 SlackLogs.SendMessage(e.Message + " " + e.Source + " " + e.StackTrace);
             }

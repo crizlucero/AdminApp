@@ -18,7 +18,6 @@ namespace WorklabsMx.Helpers
                 client.Method = WebRequestMethods.Ftp.UploadFile;
                 client.UsePassive = false;
                 client.Credentials = new NetworkCredential(@"SRVWLHOSTING\worklabscloud", @"Worklabscloud!");
-                client.Timeout = 3000;
                 Stream requestStream = client.GetRequestStream();
                 requestStream.Write(image, 0, image.Length);
                 requestStream.Close();

@@ -32,6 +32,16 @@ namespace WorklabsMx.iOS
             imgPublicacion.UserInteractionEnabled = true;
             imgPublicacion.AddGestureRecognizer(Tap);
 
+            if (int.Parse(comentario.Comentario_Me_Gustan_Cantidad) == 0)
+            {
+                this.btnLikes.SetImage(UIImage.FromBundle("NoLike"), UIControlState.Normal);
+            }
+            else
+            {
+                this.btnLikes.SetImage(UIImage.FromBundle("Likes"), UIControlState.Normal);
+            }
+
+
             lblNombre.Text = comentario.Usuario.Usuario_Nombre;
             lblLikes.Text = comentario.Comentario_Me_Gustan_Cantidad + " LIKES";
             lblFecha.Text = comentario.Comentario_Fecha;
