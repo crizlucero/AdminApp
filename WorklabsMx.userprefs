@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Info.plist">
     <Files>
@@ -34,5 +35,30 @@
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" automaticSigning="False">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
   </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/LoginController.cs">
+    <Files>
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="153" Column="56" />
+      <File FileName="WorklabsMx.Droid/ViewElement/EmpresaCardActivity.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MainActivity.cs" Line="30" Column="9" />
+      <File FileName="WorklabsMx.Droid/ViewController/AccesoActivity.cs" Line="36" Column="10" />
+      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="370" Column="52" />
+      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/TabPerfilActivity.cs" Line="26" Column="122" />
+      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="21" Column="55" />
+      <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="10" Column="6" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="453" Column="37" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="101" Column="167" />
+      <File FileName="WorklabsMx.Droid/SplashActivity.cs" Line="22" Column="62" />
+      <File FileName="WorklabsMx.Droid/ViewController/LoginActivity.cs" Line="58" Column="74" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid PreferredExecutionTarget="Android.ZY32238MXJ" />
+>>>>>>> b4f6906dae127c5421adcc2afa783f99d759c281
   <MultiItemStartupConfigurations />
 </Properties>

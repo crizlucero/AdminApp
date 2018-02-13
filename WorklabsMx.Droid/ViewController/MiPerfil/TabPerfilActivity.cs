@@ -1,27 +1,18 @@
 ﻿using Android.App;
 using Android.Content;
-using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
+using PerpetualEngine.Storage;
+using WorklabsMx.Controllers;
+using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
     [Activity(Label = "@string/app_name")]
-    public class TabPerfilActivity : ActivityGroup
+    public class TabPerfilActivity : Activity
     {
-        static TabHost _tabs;
-
-        public static void CreateNewTab(Intent intent, string tabId, string tabName, Drawable Image, bool IsCurrent)
-        {
-            TabHost.TabSpec spec = _tabs.NewTabSpec(tabId);
-            spec.SetIndicator(tabName, (Image));
-            spec.SetContent(intent);
-            _tabs.AddTab(spec);
-            if (IsCurrent)
-                _tabs.SetCurrentTabByTag(tabId);
-        }
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -31,13 +22,15 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.MiPerfil);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
+            SimpleStorage storage = SimpleStorage.EditGroup("Login");
+            ShowPerfilCard(new UsuariosController().GetMemberData(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo")));
 
-            _tabs = FindViewById<TabHost>(Resource.Id.tabHostProfile);
-            _tabs.Setup(LocalActivityManager);
-
-            CreateNewTab(new Intent(this, typeof(PerfilActivity)), "tab1", "Perfil", Resources.GetDrawable(Resource.Mipmap.ic_group, null), true);
-            CreateNewTab(new Intent(this, typeof(MiEmpresaActivity)), "tab2", "Empresa", Resources.GetDrawable(Resource.Mipmap.ic_people_outline, null), false);
-
+        }
+        void ShowPerfilCard(UsuarioModel miembro)
+        {
+            Intent intent = new Intent(this, typeof(PerfilCardActivity));
+            intent.PutExtra("Miembro", JsonConvert.SerializeObject(miembro));
+            StartActivity(intent);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -48,19 +41,8 @@ namespace WorklabsMx.Droid
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            switch (item.ItemId)
-            {
-                case Resource.Id.menu_edit:
-                    if (_tabs.CurrentTab == 0)
-                        StartActivity(new Intent(this, typeof(EditPerfilActivity)));
-                    else if (_tabs.CurrentTab == 1)
-                        StartActivity(new Intent(this, typeof(EditEmpresaActivity)));
-                    break;
-                default:
-                    StartActivity(new Intent(this, typeof(MainActivity)));
-                    Finish();
-                    break;
-            }
+            StartActivity(new Intent(this, typeof(MainActivity)));
+            Finish();
             return base.OnOptionsItemSelected(item);
         }
     }

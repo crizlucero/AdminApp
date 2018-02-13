@@ -10,6 +10,7 @@ using Android.Graphics.Drawables;
 using Android.Support.V4.Content;
 using Android.Views;
 using Android.Widget;
+using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Enum;
@@ -95,7 +96,10 @@ namespace WorklabsMx.Droid.ViewElement
                         case "ColeccionProductosActivity": context.StartActivity(new Intent(context, typeof(ColeccionProductosActivity))); break;
                         case "ReservaSalaJuntasActivity": context.StartActivity(new Intent(context, typeof(TabSalasJuntasHistorialActivity))); break;
                         case "RegistroInvitadosActivity": context.StartActivity(new Intent(context, typeof(InvitadosActivity))); break;
-                        case "PerfilActivity": context.StartActivity(new Intent(context, typeof(TabPerfilActivity))); break;
+                        case "PerfilActivity": 
+                            Intent intent = new Intent(context, typeof(PerfilCardActivity));
+                            intent.PutExtra("Miembro", JsonConvert.SerializeObject(new UsuariosController().GetMemberData(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"))));
+                            context.StartActivity(intent); break;
                         case "DatosFacturacionActivity": context.StartActivity(new Intent(context, typeof(DatosFacturacionActivity))); break;
                         case "MisColaboradoresActivity": context.StartActivity(new Intent(context, typeof(TabColaboradoresActivity))); break;
                         case "DirectorioActivity": context.StartActivity(new Intent(context, typeof(DirectorioActivity))); break;
