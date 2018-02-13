@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AppDelegate.cs">
     <Files>
@@ -25,5 +26,24 @@
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.662B9949-BD52-435B-8468-DE60A99E5000" automaticSigning="False">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
   </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/DataBaseModel.cs">
+    <Files>
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="285" Column="13" />
+      <File FileName="WorklabsMx.Droid/ViewElement/EmpresaCardActivity.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MainActivity.cs" Line="172" Column="2" />
+      <File FileName="WorklabsMx.Droid/ViewController/AccesoActivity.cs" Line="36" Column="10" />
+      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="16" Column="9" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid PreferredExecutionTarget="Android.Andorid_Emulator" />
+>>>>>>> 452dc4578569912515f82c7195e4af947bfb952f
   <MultiItemStartupConfigurations />
 </Properties>

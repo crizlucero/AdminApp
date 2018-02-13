@@ -1,4 +1,6 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Data.SqlClient;
+using WorklabsMx.Helpers;
 
 namespace WorklabsMx.Models
 {
@@ -12,7 +14,15 @@ namespace WorklabsMx.Models
         protected SqlCommand command;
         protected SqlTransaction transaction;
 
-        protected DataBaseModel() => conn = new SqlConnection(@"Server=worklabs.mx\WLSQLSERVER; Database=WorklabsTest; User=developer; Pwd=d3p3l0p3r!");
+        protected DataBaseModel()
+        {
+            try
+            {
+                conn = new SqlConnection(@"Server=worklabs.mx\WLSQLSERVER; Database=WorklabsTest; User=developer; Pwd=d3p3l0p3r!");
+            }catch(Exception e){
+                SlackLogs.SendMessage(e.Message + " " + e.Source + " " + e.StackTrace);
+            }
+        }
 
         protected SqlCommand CreateCommand(string query) => new SqlCommand(query, conn);
 
