@@ -32,7 +32,7 @@ namespace WorklabsMx.Droid
             storage = SimpleStorage.EditGroup("Login");
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
-            ActionBar.Title = Resources.GetString(Resource.String.MiPerfil);
+            ActionBar.Title = Resources.GetString(Resource.String.str_profile_my_profile);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
 

@@ -25,7 +25,7 @@
             android:layout_marginRight="0.0dp"
             android:textColor="#ff000000"
             android:translationX="10dp"
-            android:text="@string/CorreoElectronico"
+            android:text="@string/str_general_email"
             android:textSize="14dp" />
     </RelativeLayout>
     <ScrollView
@@ -210,7 +210,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/PaginaWeb"
+                    android:text="@string/str_social_network_web"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -239,7 +239,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/RedesSociales"
+                    android:text="@string/str_social_network"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -255,7 +255,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Facebook"
+                    android:text="@string/str_social_network_facebook"
                     android:translationX="30dp"
                     android:translationY="5dp"
                     android:id="@+id/txtFbEmpresa" />
@@ -272,7 +272,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Twitter"
+                    android:text="@string/str_social_network_twitter"
                     android:translationX="30dp"
                     android:translationY="5dp"
                     android:id="@+id/txtTwitterEmpresa" />
@@ -289,7 +289,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Instagram"
+                    android:text="@string/str_social_network_instagram"
                     android:translationX="30dp"
                     android:translationY="5dp"
                     android:id="@+id/txtInstagramEmpresa" />

@@ -28,7 +28,7 @@
             android:layout_marginRight="0.0dp"
             android:textColor="#ff000000"
             android:translationX="10dp"
-            android:text="@string/CorreoElectronico"
+            android:text="@string/str_general_email"
             android:textSize="14dp" />
         <ImageButton
             android:src="@mipmap/ic_star_border"
@@ -75,7 +75,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Genero"
+                    android:text="@string/str_profile_gender"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -89,7 +89,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txtGeneroPerfil"
+                    android:id="@+id/txtGenero"
                     android:text="Masculino" />
             </LinearLayout>
         <!---->
@@ -105,7 +105,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/FechaNacimiento"
+                    android:text="@string/str_profile_birthdate"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -119,7 +119,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txtFechaNacimientoPerfil"
+                    android:id="@+id/txtFechaNacimiento"
                     android:text="11/11/2017" />
             </LinearLayout>
             <RelativeLayout
@@ -192,7 +192,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Habilidades"
+                    android:text="@string/str_profile_hability"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>

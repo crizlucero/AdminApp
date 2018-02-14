@@ -107,7 +107,7 @@ namespace WorklabsMx.Droid
             {
                 if (localStorage.Get("Usuario_Id") != post.Usuario.Usuario_Id || localStorage.Get("Usuario_Tipo") != post.Usuario.Usuario_Tipo)
                 {
-                    Intent perfil = new Intent(this, typeof(PerfilActivity));
+                    Intent perfil = new Intent(this, typeof(TabPerfilActivity));
                     perfil.PutExtra("usuario_id", post.Usuario.Usuario_Id);
                     perfil.PutExtra("usuario_tipo", post.Usuario.Usuario_Tipo);
                     StartActivity(perfil);
@@ -195,7 +195,7 @@ namespace WorklabsMx.Droid
                 {
                     if (localStorage.Get("Usuario_Id") != comentario.Usuario.Usuario_Id || localStorage.Get("Usuario_Tipo") != comentario.Usuario.Usuario_Tipo)
                     {
-                        Intent perfil = new Intent(this, typeof(PerfilActivity));
+                        Intent perfil = new Intent(this, typeof(TabPerfilActivity));
                         perfil.PutExtra("usuario_id", comentario.Usuario.Usuario_Id);
                         perfil.PutExtra("usuario_tipo", comentario.Usuario.Usuario_Tipo);
                         StartActivity(perfil);

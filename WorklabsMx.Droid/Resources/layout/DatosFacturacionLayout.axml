@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="25.0dp">
                 <TextView
-                    android:text="@string/CorreoElectronico"
+                    android:text="@string/str_general_email"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -40,7 +40,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40.5dp"
                     android:id="@+id/txtCorreoElectronicoFactura"
-                    android:hint="@string/CorreoElectronico" />
+                    android:hint="@string/str_general_email" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"

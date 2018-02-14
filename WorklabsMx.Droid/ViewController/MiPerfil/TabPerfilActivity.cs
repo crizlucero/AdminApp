@@ -20,7 +20,7 @@ namespace WorklabsMx.Droid
             SetContentView(Resource.Layout.TabsLayout);
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
-            ActionBar.Title = Resources.GetString(Resource.String.MiPerfil);
+            ActionBar.Title = Resources.GetString(Resource.String.str_profile_my_profile);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             SimpleStorage storage = SimpleStorage.EditGroup("Login");
             ShowPerfilCard(new UsuariosController().GetMemberData(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo")));

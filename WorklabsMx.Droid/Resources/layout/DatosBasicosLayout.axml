@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtEmail"
         android:textColor="#FFF"
-        android:text="@string/CorreoElectronico"
+        android:text="@string/str_general_email"
         android:layout_gravity="fill"
         android:autoText="true" />
 </LinearLayout>

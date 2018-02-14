@@ -149,14 +149,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewController\AccesoActivity.cs" />
     <Compile Include="Helpers\ImagesHelper.cs" />
-    <Compile Include="ViewController\MiPerfil\PerfilActivity.cs" />
     <Compile Include="ViewController\MiPerfil\DatosFacturacionActivity.cs" />
     <Compile Include="ViewController\Formatos\InvitadosActivity.cs" />
     <Compile Include="ViewController\Servicios\ShoppingCartActivity.cs" />
     <Compile Include="ViewController\Servicios\PaymentActivity.cs" />
     <Compile Include="ViewController\MiPerfil\TabPerfilActivity.cs" />
     <Compile Include="ViewController\MiPerfil\MiEmpresaActivity.cs" />
-    <Compile Include="ViewController\MiPerfil\EditPerfilActivity.cs" />
     <Compile Include="ViewController\MiPerfil\EditEmpresaActivity.cs" />
     <Compile Include="ViewController\MyMembershipActivity.cs" />
     <Compile Include="ViewController\ReportActivity.cs" />
@@ -254,7 +252,6 @@
     <AndroidResource Include="Resources\menu\search_menu.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_search.png" />
     <AndroidResource Include="Resources\layout\TabsLayout.axml" />
-    <AndroidResource Include="Resources\layout\EditPerfilLayout.axml" />
     <AndroidResource Include="Resources\layout\EditCompanyLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_save.png" />
     <AndroidResource Include="Resources\menu\save_menu.xml" />
@@ -309,7 +306,6 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_receipt.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_dns.png" />
     <AndroidResource Include="Resources\layout\DesgloseIndividualLayout.axml" />
-    <AndroidResource Include="Resources\layout\DatePickerLayout.axml" />
     <AndroidResource Include="Resources\layout\MembresiasLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\Icono.png" />
     <AndroidResource Include="Resources\layout\CalendarioLayout.axml" />
@@ -327,7 +323,6 @@
     <AndroidResource Include="Resources\layout\CarritoRecurrenteLayout.axml" />
     <AndroidResource Include="Resources\layout\CarritoUnicoLayout.axml" />
     <AndroidResource Include="Resources\layout\CarritoMembresiaLayout.axml" />
-    <AndroidResource Include="Resources\layout\CarouselLayout.axml" />
     <AndroidResource Include="Resources\layout\SalasJuntasLayout.axml" />
     <AndroidResource Include="Resources\layout\ListaReservacionesLayout.axml" />
     <AndroidResource Include="Resources\layout\ReservacionElementoLayout.axml" />
@@ -378,6 +373,9 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_more.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_more_horiz.png" />
     <AndroidResource Include="Resources\menu\post_reporte_menu.xml" />
+    <AndroidResource Include="Resources\layout\SobreMiEditarLayout.axml" />
+    <AndroidResource Include="Resources\drawable\border_shadow_style.xml" />
+    <AndroidResource Include="Resources\layout\SobreMiSocialEditarLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

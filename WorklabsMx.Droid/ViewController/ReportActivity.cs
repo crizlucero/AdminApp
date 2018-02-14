@@ -63,7 +63,7 @@ namespace WorklabsMx.Droid
             };
             lblNombre.Click += delegate
             {
-                Intent perfil = new Intent(this, typeof(PerfilActivity));
+                Intent perfil = new Intent(this, typeof(TabPerfilActivity));
                 perfil.PutExtra("usuario_id", post.Usuario.Usuario_Id);
                 perfil.PutExtra("usuario_tipo", post.Usuario.Usuario_Tipo);
                 StartActivity(perfil);

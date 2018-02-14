@@ -25,7 +25,7 @@ namespace WorklabsMx.Droid
             FindViewById<TextView>(Resource.Id.lblNombre).Text = empresa.Empresa_Miembro_Nombre;
 
             ViewPager _viewPager = FindViewById<ViewPager>(Resource.Id.vpPerfil);
-            _viewPager.Adapter = new EmpresaPageAdapter(this, new List<string> { Resources.GetString(Resource.String.SobreMi), Resources.GetString(Resource.String.Social), Resources.GetString(Resource.String.Trabajo) }, empresa);
+            _viewPager.Adapter = new EmpresaPageAdapter(this, new List<string> { Resources.GetString(Resource.String.str_profile_about_me), Resources.GetString(Resource.String.str_profile_social), Resources.GetString(Resource.String.str_profile_work) }, empresa);
 
             PagerSlidingTabStrip tabs = FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
             tabs.SetTextColorResource(Resource.Color.comment_pressed);

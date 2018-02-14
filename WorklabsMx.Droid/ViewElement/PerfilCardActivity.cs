@@ -39,7 +39,7 @@ namespace WorklabsMx.Droid
             };
 
             ViewPager _viewPager = FindViewById<ViewPager>(Resource.Id.vpPerfil);
-            _viewPager.Adapter = new PerfilPageAdapter(this, new List<string> { Resources.GetString(Resource.String.SobreMi), Resources.GetString(Resource.String.Social), Resources.GetString(Resource.String.Trabajo) }, miembro);
+            _viewPager.Adapter = new PerfilPageAdapter(this, new List<string> { Resources.GetString(Resource.String.str_profile_about_me), Resources.GetString(Resource.String.str_profile_social), Resources.GetString(Resource.String.str_profile_work) }, miembro);
 
             PagerSlidingTabStrip tabs = FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
             tabs.SetTextColorResource(Resource.Color.comment_pressed);

@@ -22,8 +22,7 @@
             android:id="@+id/linearLayout1">
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="30.0dp"
-                android:id="@+id/relativeLayout1">
+                android:layout_height="30.0dp">
                 <TextView
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="327.0dp"
@@ -138,7 +137,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/Habilidades" />
+                    android:text="@string/str_profile_hability" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -150,7 +149,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtHabilidades"
-                    android:hint="@string/Habilidades" />
+                    android:hint="@string/str_profile_hability" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"

@@ -342,7 +342,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView2"
-                    android:text="@string/CorreoElectronico" />
+                    android:text="@string/str_general_email" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -354,7 +354,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtEmailEmpresa"
-                    android:hint="@string/CorreoElectronico" />
+                    android:hint="@string/str_general_email" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -366,7 +366,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/PaginaWeb" />
+                    android:text="@string/str_social_network_web" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -378,7 +378,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtPaginaWebEmpresa"
-                    android:hint="@string/PaginaWeb" />
+                    android:hint="@string/str_social_network_web" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -390,7 +390,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/RedesSociales" />
+                    android:text="@string/str_social_network" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -403,7 +403,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView2"
-                    android:text="@string/Facebook" />
+                    android:text="@string/str_social_network_facebook" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -415,7 +415,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtFbEmpresa"
-                    android:hint="@string/Facebook" />
+                    android:hint="@string/str_social_network_facebook" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -427,7 +427,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/Twitter" />
+                    android:text="@string/str_social_network_twitter" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -439,7 +439,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtTwitterEmpresa"
-                    android:hint="@string/Twitter" />
+                    android:hint="@string/str_social_network_twitter" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -451,7 +451,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/Instagram" />
+                    android:text="@string/str_social_network_instagram" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -464,7 +464,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtInstagramEmpresa"
-                    android:hint="@string/Instagram" />
+                    android:hint="@string/str_social_network_instagram" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

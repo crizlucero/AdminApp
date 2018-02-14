@@ -131,7 +131,7 @@ namespace WorklabsMx.Droid
                 rlGenero.AddView(imgGenero);
                 TextView txtGenero = new TextView(this)
                 {
-                    Text = Resources.GetString(Resource.String.Genero)
+                    Text = Resources.GetString(Resource.String.str_profile_gender)
                 };
                 txtGenero.SetX(100);
                 rlGenero.AddView(txtGenero);
@@ -161,7 +161,7 @@ namespace WorklabsMx.Droid
                 rlFechaNacimiento.AddView(imgFechaNacimiento);
                 TextView txtFechaNacimiento = new TextView(this)
                 {
-                    Text = Resources.GetString(Resource.String.FechaNacimiento)
+                    Text = Resources.GetString(Resource.String.str_profile_birthdate)
                 };
                 txtFechaNacimiento.SetX(100);
                 rlFechaNacimiento.AddView(txtFechaNacimiento);
@@ -251,7 +251,7 @@ namespace WorklabsMx.Droid
                 rlHabilidades.AddView(imgHabilidades);
                 TextView txtHabilidades = new TextView(this)
                 {
-                    Text = Resources.GetString(Resource.String.Habilidades)
+                    Text = Resources.GetString(Resource.String.str_profile_hability)
                 };
                 txtHabilidades.SetX(100);
                 rlHabilidades.AddView(txtHabilidades);
@@ -281,7 +281,7 @@ namespace WorklabsMx.Droid
                 rlEmpresa.AddView(imgEmpresa);
                 TextView txtEmpresa = new TextView(this)
                 {
-                    Text = Resources.GetString(Resource.String.MiEmpresa)
+                    Text = Resources.GetString(Resource.String.str_profile_my_company)
                 };
                 txtEmpresa.SetX(100);
                 rlEmpresa.AddView(txtEmpresa);

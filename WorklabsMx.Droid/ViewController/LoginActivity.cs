@@ -68,7 +68,7 @@ namespace WorklabsMx.Droid
                     }
                     else
                     {
-                        Toast.MakeText(this, Resource.String.LoginError, ToastLength.Short).Show();
+                        Toast.MakeText(this, Resource.String.str_login_error, ToastLength.Short).Show();
                         //AndHUD.Shared.Dismiss(this);
                     }
                 }
