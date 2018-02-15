@@ -23,7 +23,7 @@
             android:layout_width="306.5dp"
             android:layout_height="21.5dp"
             android:layout_below="@id/txtProfileName"
-            android:id="@+id/txtEmailPerfil"
+            android:id="@+id/txtEmail"
             android:layout_marginTop="0.0dp"
             android:layout_marginRight="0.0dp"
             android:textColor="#ff000000"
@@ -134,7 +134,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Profesion"
+                    android:text="@string/str_profile_profession"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -148,7 +148,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txtProfesionPerfil"
+                    android:id="@+id/txtProfesion"
                     android:text="Ingeniero" />
             </LinearLayout>
             <RelativeLayout
@@ -163,7 +163,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Puesto"
+                    android:text="@string/str_profile_job_place"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -177,7 +177,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txtPuestoPerfil"
+                    android:id="@+id/txtPuesto"
                     android:text="Desarrollador" />
             </LinearLayout>
             <RelativeLayout
@@ -206,7 +206,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txtHabilidadesPerfil"
+                    android:id="@+id/txtHabilidades"
                     android:text="Mobile" />
             </LinearLayout>
             <RelativeLayout
@@ -221,7 +221,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Telefono"
+                    android:text="@string/str_profile_telephone"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -235,7 +235,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txtTelefonoPerfil"
+                    android:id="@+id/txtTelefono"
                     android:text="33333333" />
             </LinearLayout>
             <RelativeLayout
@@ -250,7 +250,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Celular"
+                    android:text="@string/str_profile_cellphone"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -264,7 +264,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txtCelularPerfil"
+                    android:id="@+id/txtCelular"
                     android:text="3333333" />
             </LinearLayout>
         </LinearLayout>

@@ -189,7 +189,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Profesion"
+                    android:text="@string/str_profile_profession"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -218,7 +218,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Puesto"
+                    android:text="@string/str_profile_job_place"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -276,7 +276,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Telefono"
+                    android:text="@string/str_profile_telephone"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -305,7 +305,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Celular"
+                    android:text="@string/str_profile_cellphone"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>

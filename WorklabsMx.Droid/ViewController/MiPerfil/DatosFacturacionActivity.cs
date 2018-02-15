@@ -36,16 +36,16 @@ namespace WorklabsMx.Droid
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
 
-            Email = FindViewById<EditText>(Resource.Id.txtCorreoElectronicoFactura);
-            RazonSocial = FindViewById<EditText>(Resource.Id.txtRazonSocialFactura);
-            RFC = FindViewById<EditText>(Resource.Id.txtRFCFactura);
-            Estado = FindViewById<EditText>(Resource.Id.txtEstadoFactura);
-            Municipio = FindViewById<EditText>(Resource.Id.txtMunicipioFactura);
-            Colonia = FindViewById<Spinner>(Resource.Id.txtColoniaFactura);
-            CodigoPostal = FindViewById<EditText>(Resource.Id.txtCodigoPostalFactura);
-            Calle = FindViewById<EditText>(Resource.Id.txtCalleFactura);
-            NumExterior = FindViewById<EditText>(Resource.Id.txtNumExteriorFactura);
-            NumInterior = FindViewById<EditText>(Resource.Id.txtNumInteriorFactura);
+            Email = FindViewById<EditText>(Resource.Id.txtCorreoElectronico);
+            RazonSocial = FindViewById<EditText>(Resource.Id.txtRazonSocial);
+            RFC = FindViewById<EditText>(Resource.Id.txtRFC);
+            Estado = FindViewById<EditText>(Resource.Id.txtEstado);
+            Municipio = FindViewById<EditText>(Resource.Id.txtMunicipio);
+            Colonia = FindViewById<Spinner>(Resource.Id.txtColonia);
+            CodigoPostal = FindViewById<EditText>(Resource.Id.txtCodigoPostal);
+            Calle = FindViewById<EditText>(Resource.Id.txtCalle);
+            NumExterior = FindViewById<EditText>(Resource.Id.txtNumExterior);
+            NumInterior = FindViewById<EditText>(Resource.Id.txtNumInterior);
 
             FillData();
             CodigoPostal.TextChanged += CodigoPostal_TextChanged;

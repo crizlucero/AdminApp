@@ -62,7 +62,7 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:layout_column="0"
                 android:id="@+id/textView17"
-                android:text="@string/TarjetaMes" />
+                android:text="@string/str_general_month" />
             <EditText
                 android:layout_column="1"
                 android:id="@+id/txtMesTarjeta"
@@ -76,7 +76,7 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:layout_column="0"
                 android:id="@+id/textView18"
-                android:text="@string/TarjetaAnio" />
+                android:text="@string/str_general_year" />
             <EditText
                 android:layout_column="1"
                 android:id="@+id/txtAnioTarjeta"

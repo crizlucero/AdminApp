@@ -28,7 +28,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/CodigoPostal" />
+                    android:text="@string/str_general_postal_code" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -40,7 +40,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtCPEmpresa"
-                    android:hint="@string/CodigoPostal" />
+                    android:hint="@string/str_general_postal_code" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -52,8 +52,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView1"
-                    android:text="@string/Estado" />
+                    android:text="@string/str_general_state" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -66,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:enabled="false"
                     android:id="@+id/txtEstadoEmpresa"
-                    android:hint="@string/Estado" />
+                    android:hint="@string/str_general_state" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -79,7 +78,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView2"
-                    android:text="@string/Municipio" />
+                    android:text="@string/str_general_town" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -92,7 +91,7 @@
                     android:layout_height="wrap_content"
                     android:enabled="false"
                     android:id="@+id/txtMunicipioEmpresa"
-                    android:hint="@string/Municipio" />
+                    android:hint="@string/str_general_town" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -105,7 +104,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView2"
-                    android:text="@string/Colonia" />
+                    android:text="@string/str_general_suburb" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -117,7 +116,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/txtColoniaEmpresa"
-                    android:hint="@string/Colonia" />
+                    android:hint="@string/str_general_suburb" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -130,7 +129,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView2"
-                    android:text="@string/Calle" />
+                    android:text="@string/str_general_street" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -142,7 +141,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtCalleEmpresa"
-                    android:hint="@string/Calle" />
+                    android:hint="@string/str_general_street" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -155,7 +154,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView2"
-                    android:text="@string/NumExterior" />
+                    android:text="@string/str_general_exterior_number" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -167,7 +166,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtNumExteriorEmpresa"
-                    android:hint="@string/NumExterior" />
+                    android:hint="@string/str_general_exterior_number" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -180,7 +179,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView2"
-                    android:text="@string/NumInterior" />
+                    android:text="@string/str_general_interior_number" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -192,7 +191,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtNumInteriorEmpresa"
-                    android:hint="@string/NumInterior" />
+                    android:hint="@string/str_general_interior_number" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -205,7 +204,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView2"
-                    android:text="@string/RFC" />
+                    android:text="@string/str_company_profile_rfc" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -217,7 +216,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtRFCEmpresa"
-                    android:hint="@string/RFC" />
+                    android:hint="@string/str_company_profile_rfc" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -230,7 +229,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView2"
-                    android:text="@string/RazonSocial" />
+                    android:text="@string/str_company_profile_bussines_name" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -242,7 +241,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtRazonSocialEmpresa"
-                    android:hint="@string/RazonSocial" />
+                    android:hint="@string/str_company_profile_bussines_name" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -317,7 +316,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/Telefono" />
+                    android:text="@string/str_profile_telephone" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
@@ -329,7 +328,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtTelefonoEmpresa"
-                    android:hint="@string/Telefono" />
+                    android:hint="@string/str_profile_telephone" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"

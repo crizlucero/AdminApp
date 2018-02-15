@@ -39,7 +39,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="40.5dp"
-                    android:id="@+id/txtCorreoElectronicoFactura"
+                    android:id="@+id/txtCorreoElectronico"
                     android:hint="@string/str_general_email" />
             </LinearLayout>
             <LinearLayout
@@ -47,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="25.0dp">
                 <TextView
-                    android:text="@string/RazonSocial"
+                    android:text="@string/str_company_profile_bussines_name"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -62,15 +62,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="40.5dp"
                     android:enabled="false"
-                    android:id="@+id/txtRazonSocialFactura"
-                    android:hint="@string/RazonSocial" />
+                    android:id="@+id/txtRazonSocial"
+                    android:hint="@string/str_company_profile_bussines_name" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="25.0dp">
                 <TextView
-                    android:text="@string/RFC"
+                    android:text="@string/str_company_profile_rfc"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -85,15 +85,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="40.5dp"
                     android:enabled="false"
-                    android:id="@+id/txtRFCFactura"
-                    android:hint="@string/RFC" />
+                    android:id="@+id/txtRFC"
+                    android:hint="@string/str_company_profile_rfc" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="25.0dp">
                 <TextView
-                    android:text="@string/CodigoPostal"
+                    android:text="@string/str_general_postal_code"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -107,16 +107,16 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="40.5dp"
-                    android:id="@+id/txtCodigoPostalFactura"
+                    android:id="@+id/txtCodigoPostal"
                     android:inputType="number"
-                    android:hint="@string/CodigoPostal" />
+                    android:hint="@string/str_general_postal_code" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="25.0dp">
                 <TextView
-                    android:text="@string/Estado"
+                    android:text="@string/str_general_state"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -130,16 +130,16 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="40.5dp"
-                    android:id="@+id/txtEstadoFactura"
+                    android:id="@+id/txtEstado"
                     android:enabled="false"
-                    android:hint="@string/Estado" />
+                    android:hint="@string/str_general_state" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="25.0dp">
                 <TextView
-                    android:text="@string/Municipio"
+                    android:text="@string/str_general_town"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -153,16 +153,16 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="40.5dp"
-                    android:id="@+id/txtMunicipioFactura"
+                    android:id="@+id/txtMunicipio"
                     android:enabled="false"
-                    android:hint="@string/Municipio" />
+                    android:hint="@string/str_general_town" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="25.0dp">
                 <TextView
-                    android:text="@string/Colonia"
+                    android:text="@string/str_general_suburb"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -176,15 +176,15 @@
                 <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="40.5dp"
-                    android:id="@+id/txtColoniaFactura"
-                    android:hint="@string/Colonia" />
+                    android:id="@+id/txtColonia"
+                    android:hint="@string/str_general_suburb" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="25.0dp">
                 <TextView
-                    android:text="@string/Calle"
+                    android:text="@string/str_general_street"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -198,15 +198,15 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="40.5dp"
-                    android:id="@+id/txtCalleFactura"
-                    android:hint="@string/Calle" />
+                    android:id="@+id/txtCalle"
+                    android:hint="@string/str_general_street" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="25.0dp">
                 <TextView
-                    android:text="@string/NumExterior"
+                    android:text="@string/str_general_exterior_number"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -220,15 +220,15 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="40.5dp"
-                    android:id="@+id/txtNumExteriorFactura"
-                    android:hint="@string/NumExterior" />
+                    android:id="@+id/txtNumExterior"
+                    android:hint="@string/str_general_exterior_number" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="25.0dp">
                 <TextView
-                    android:text="@string/NumInterior"
+                    android:text="@string/str_general_interior_number"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -242,8 +242,8 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="40.5dp"
-                    android:id="@+id/txtNumInteriorFactura"
-                    android:hint="@string/NumInterior" />
+                    android:id="@+id/txtNumInterior"
+                    android:hint="@string/str_general_interior_number" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

@@ -154,7 +154,6 @@
     <Compile Include="ViewController\Servicios\ShoppingCartActivity.cs" />
     <Compile Include="ViewController\Servicios\PaymentActivity.cs" />
     <Compile Include="ViewController\MiPerfil\TabPerfilActivity.cs" />
-    <Compile Include="ViewController\MiPerfil\MiEmpresaActivity.cs" />
     <Compile Include="ViewController\MiPerfil\EditEmpresaActivity.cs" />
     <Compile Include="ViewController\MyMembershipActivity.cs" />
     <Compile Include="ViewController\ReportActivity.cs" />
@@ -181,6 +180,9 @@
     <Compile Include="ViewElement\MainActivity.cs" />
     <Compile Include="ViewElement\EmpresaCardActivity.cs" />
     <Compile Include="ViewElement\PerfilCardActivity.cs" />
+    <Compile Include="ViewController\MiPerfil\EditarPerfilActivity.cs" />
+    <Compile Include="ViewElement\PerfilCardEditarActivity.cs" />
+    <Compile Include="Helpers\PerfilEditarPageAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -229,7 +231,6 @@
     <AndroidResource Include="Resources\layout\DatosFacturacionLayout.axml" />
     <AndroidResource Include="Resources\layout\InvitadosLayout.axml" />
     <AndroidResource Include="Resources\layout\ReservaSalaJuntasLayout.axml" />
-    <AndroidResource Include="Resources\layout\MiEmpresaLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_place.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_share.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_facebook.png" />
@@ -262,8 +263,6 @@
     <AndroidResource Include="Resources\layout\SubscriptionLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_thumb_up.png" />
     <AndroidResource Include="Resources\layout\ReportLayout.axml" />
-    <AndroidResource Include="Resources\layout\SearchUserLayout.axml" />
-    <AndroidResource Include="Resources\layout\SearchCompanyLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_open_book.png" />
     <AndroidResource Include="Resources\layout\PostsUserLayout.axml" />
     <AndroidResource Include="Resources\layout\FavoritesUserLayout.axml" />
@@ -310,7 +309,6 @@
     <AndroidResource Include="Resources\mipmap-hdpi\Icono.png" />
     <AndroidResource Include="Resources\layout\CalendarioLayout.axml" />
     <AndroidResource Include="Resources\layout\HorarioPickerLayout.axml" />
-    <AndroidResource Include="Resources\layout\nav_header.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\worklabs_title.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_log_background.png" />
     <AndroidResource Include="Resources\layout\SplashLayout.axml" />
@@ -376,6 +374,9 @@
     <AndroidResource Include="Resources\layout\SobreMiEditarLayout.axml" />
     <AndroidResource Include="Resources\drawable\border_shadow_style.xml" />
     <AndroidResource Include="Resources\layout\SobreMiSocialEditarLayout.axml" />
+    <AndroidResource Include="Resources\layout\SobreMiTrabajoEditarLayout.axml" />
+    <AndroidResource Include="Resources\drawable\blue_round_button.xml" />
+    <AndroidResource Include="Resources\layout\CompanyCardLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

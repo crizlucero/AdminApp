@@ -69,7 +69,7 @@
             android:id="@+id/lblPuesto"
             android:layout_row="1"
             android:layout_column="1"
-            android:text="@string/Puesto"
+            android:text="@string/str_profile_job_place"
             android:textStyle="bold"
             android:textSize="10dp"
             android:layout_width="290dp"

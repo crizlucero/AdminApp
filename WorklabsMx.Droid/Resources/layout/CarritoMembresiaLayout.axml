@@ -83,7 +83,7 @@
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_marginLeft="10dp"
-            android:text="@string/FechaInicio"
+            android:text="@string/str_general_initial_date"
             android:layout_gravity="center_vertical" />
         <EditText
             android:textAppearance="?android:attr/textAppearanceSmall"
