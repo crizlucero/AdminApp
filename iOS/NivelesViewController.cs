@@ -49,11 +49,6 @@ namespace WorklabsMx.iOS
         {
             static string[] names = new string[]
             {
-                "NIVEL 1",
-                "NIVEL 2",
-                "NIVEL 3",
-                "NIVEL 4",
-                "NIVEL 5",
                 "NIVEL 6",
                 "NIVEL 7",
             };

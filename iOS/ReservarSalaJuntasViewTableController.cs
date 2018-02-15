@@ -42,6 +42,7 @@ namespace WorklabsMx.iOS
         int Nivel = 7;
 
         nfloat vwSalasJuntasResp;
+        float withImage;
 
         public ReservarSalaJuntasViewTableController(IntPtr handle) : base(handle)
         {
@@ -50,7 +51,8 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             nfloat aux = this.vwSalasJuntas.Frame.Width;
-            vwSalasJuntasResp = aux;
+            withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());
+            vwSalasJuntasResp = withImage;
             base.ViewDidLoad();
             this.GenerateRecornizes();
             this.LimpiarInfo();
@@ -67,6 +69,8 @@ namespace WorklabsMx.iOS
 
         private void UpdateInfo()
         {
+            this.scvSalasJuntas.Frame = new CGRect(this.scvSalasJuntas.Frame.X, this.scvSalasJuntas.Frame.Y, withImage, this.scvSalasJuntas.Frame.Height);
+
             if (this.SalasJuntas.Count > 0)
             {
                 this.SalaActual = this.SalasJuntas[0];
@@ -88,15 +92,23 @@ namespace WorklabsMx.iOS
 
             this.vwSalasJuntas.Frame = newFrame;
 
-            for (int indice = 1; indice < this.SalasJuntas.Count; indice++)
+            for (int indice = 0; indice < this.SalasJuntas.Count ; indice++)
             {
-                XImageView = XImageView + this.imgSalasJuntas.Frame.Width;
                 UIImageView ImagenSalaJuntas = new UIImageView();
-                ImagenSalaJuntas.Frame = new CGRect(XImageView, this.imgSalasJuntas.Frame.Y, this.imgSalasJuntas.Frame.Width, this.imgSalasJuntas.Frame.Height);
-                ImagenSalaJuntas.Image = UIImage.FromBundle("SalaJuntas");
-                this.vwSalasJuntas.Add(ImagenSalaJuntas);
-            }
+                ImagenSalaJuntas.Frame = new CGRect(XImageView, this.imgSalasJuntas.Frame.Y, vwSalasJuntasResp, this.imgSalasJuntas.Frame.Height);
+                if (this.SalasJuntas[indice].Sala_Capacidad == "6")
+                {
+                    ImagenSalaJuntas.Image = UIImage.FromBundle("Sala6");
+                }
+                else if (this.SalasJuntas[indice].Sala_Capacidad == "10")
+                {
+                    ImagenSalaJuntas.Image = UIImage.FromBundle("Sala10");
+                }
 
+                this.vwSalasJuntas.Add(ImagenSalaJuntas);
+                XImageView = XImageView + this.imgSalasJuntas.Frame.Width;
+
+            }
             this.scvSalasJuntas.ContentSize = vwSalasJuntas.Frame.Size;
             this.scvSalasJuntas.Scrolled += (sender, e) =>
             {

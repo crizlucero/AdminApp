@@ -16,7 +16,11 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnEnviarMensaje { get; set; }
+        UIKit.UIButton btnCerrar { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnEditarPerfil { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -25,10 +29,6 @@ namespace WorklabsMx.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnProfileImage { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnSeguir { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -78,21 +78,13 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwTrabajo { get; set; }
 
-        [Action ("btnBackGroundImage_Touch:")]
+        [Action ("btnCerrar_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnBackGroundImage_Touch (UIKit.UIButton sender);
+        partial void btnCerrar_Touch (UIKit.UIButton sender);
 
-        [Action ("btnEnviarMensaje_Touch:")]
+        [Action ("btnEditarPerfil_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnEnviarMensaje_Touch (UIKit.UIButton sender);
-
-        [Action ("btnImageProfile:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnImageProfile (UIKit.UIButton sender);
-
-        [Action ("btnSeguir_Touch:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnSeguir_Touch (UIKit.UIButton sender);
+        partial void btnEditarPerfil_Touch (UIKit.UIButton sender);
 
         [Action ("btnSobreMi_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -112,9 +104,14 @@ namespace WorklabsMx.iOS
 
         void ReleaseDesignerOutlets ()
         {
-            if (btnEnviarMensaje != null) {
-                btnEnviarMensaje.Dispose ();
-                btnEnviarMensaje = null;
+            if (btnCerrar != null) {
+                btnCerrar.Dispose ();
+                btnCerrar = null;
+            }
+
+            if (btnEditarPerfil != null) {
+                btnEditarPerfil.Dispose ();
+                btnEditarPerfil = null;
             }
 
             if (btnImageBackGround != null) {
@@ -125,11 +122,6 @@ namespace WorklabsMx.iOS
             if (btnProfileImage != null) {
                 btnProfileImage.Dispose ();
                 btnProfileImage = null;
-            }
-
-            if (btnSeguir != null) {
-                btnSeguir.Dispose ();
-                btnSeguir = null;
             }
 
             if (btnSobreMi != null) {

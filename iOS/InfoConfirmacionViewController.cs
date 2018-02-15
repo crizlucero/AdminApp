@@ -40,14 +40,13 @@ namespace WorklabsMx.iOS
 
             for (int indice = 0; indice < this.Reservaciones.Count; indice++)
             {
-                WidthView = WidthView + this.vwInfoConfirmacion.Frame.Width;
+                WidthView = WidthView + this.vwVistaInfoReservacion.Frame.Width;
             }
 
             if (this.Reservaciones.Count == 1)
             {
                 this.btnAtras.Hidden = true;
                 this.btnAtras.Enabled = false;
-
                 this.btnAdelante.Hidden = true;
                 this.btnAdelante.Enabled = false;
             }

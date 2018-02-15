@@ -12,9 +12,10 @@ namespace WorklabsMx.iOS
     public partial class MiInfoViewController : UIViewController
     {
         public UsuarioModel Miembro = new UsuarioModel();
-        string[] Habilidades, Intereses;
-        List<string> ListaHabilidades = new List<string>();
-        List<string> ListaIntereses = new List<string>();
+        public List<EtiquetaModel> Etiquetas;
+
+        List<EtiquetaModel> EtiquetasHabilidades = new List<EtiquetaModel>();
+        List<EtiquetaModel> EtiquetasIntereses = new List<EtiquetaModel>();
 
         public MiInfoViewController (IntPtr handle) : base (handle)
         {
@@ -23,6 +24,19 @@ namespace WorklabsMx.iOS
        public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            this.lblSobreMi.Text = (Miembro.Usuario_Descripcion != "" && Miembro.Usuario_Descripcion != null) ? Miembro.Usuario_Descripcion : "Sin Info";
+            this.Etiquetas = Miembro.Etiquetas;
+            foreach(EtiquetaModel Etiqueta in Etiquetas)
+            {
+                if (Etiqueta.Etiqueta_Tipo == "HABILIDAD")
+                {
+                    EtiquetasHabilidades.Add(Etiqueta);
+                }
+                else if (Etiqueta.Etiqueta_Tipo == "INTERES")
+                {
+                    EtiquetasIntereses.Add(Etiqueta);
+                }
+            }
         }
 
         public override void ViewWillAppear(bool animated)
@@ -33,107 +47,24 @@ namespace WorklabsMx.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
-            this.OcultarIntereses();
-            this.OcultarHabilidades();
-
-           /* Habilidades = Miembro.Etiquetas(',');
-
-            for (int indice = 0; indice < Habilidades.Length - 1; indice++)
-            {
-                ListaHabilidades.Add(Habilidades[indice]);
-            }
-
-            this.MostrarHabilidades();
-            this.MostrarIntereses();
-
-            txtSobreMi.Text = Miembro.so;*/
         }
 
-        private void OcultarHabilidades()
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
-            lblHabTag1.Hidden = true;
-            lblHabTag2.Hidden = true;
-            lblHabTag3.Hidden = true;
-            lblHabTag4.Hidden = true;
-            lblHabTag5.Hidden = true;
-        }
-
-        private void OcultarIntereses()
-        {
-            lblIntTag1.Hidden = true;
-            lblIntTag2.Hidden = true;
-            lblIntTag3.Hidden = true;
-            lblIntTag4.Hidden = true;
-            lblIntTag5.Hidden = true;
-        }
-
-        private void MostrarHabilidades()
-        {
-            if(ListaHabilidades.Count == 1)
+            if (segue.Identifier == "Habilidades")
             {
-                this.lblHabTag1.Hidden = false;
+                var VistaHabilidades = (HabilidadesCollectionView)segue.DestinationViewController;
+                VistaHabilidades.EtiquetasHabilidades = EtiquetasHabilidades;
             }
-            if (ListaHabilidades.Count == 2)
+            else if (segue.Identifier == "Intereses")
             {
-                this.lblHabTag1.Hidden = false;
-                this.lblHabTag2.Hidden = false;
-            }
-            if (ListaHabilidades.Count == 3)
-            {
-                this.lblHabTag1.Hidden = false;
-                this.lblHabTag2.Hidden = false;
-                this.lblHabTag3.Hidden = false;
-            }
-            if (ListaHabilidades.Count == 4)
-            {
-                this.lblHabTag1.Hidden = false;
-                this.lblHabTag2.Hidden = false;
-                this.lblHabTag3.Hidden = false;
-                this.lblHabTag4.Hidden = false;
-            }
-            if (ListaHabilidades.Count == 5)
-            {
-                this.lblHabTag1.Hidden = false;
-                this.lblHabTag2.Hidden = false;
-                this.lblHabTag3.Hidden = false;
-                this.lblHabTag4.Hidden = false;
-                this.lblHabTag5.Hidden = false;
+                var VistaIntereses = (InteresesCollectionView)segue.DestinationViewController;
+                VistaIntereses.EtiquetasIntereses = EtiquetasIntereses;
             }
         }
 
-        private void MostrarIntereses()
-        {
-            if (ListaIntereses.Count == 1)
-            {
-                this.lblIntTag1.Hidden = false;
-            }
-            if (ListaIntereses.Count == 2)
-            {
-                this.lblIntTag1.Hidden = false;
-                this.lblIntTag2.Hidden = false;
-            }
-            if (ListaIntereses.Count == 3)
-            {
-                this.lblIntTag1.Hidden = false;
-                this.lblIntTag2.Hidden = false;
-                this.lblIntTag3.Hidden = false;
-            }
-            if (ListaIntereses.Count == 4)
-            {
-                this.lblIntTag1.Hidden = false;
-                this.lblIntTag2.Hidden = false;
-                this.lblIntTag3.Hidden = false;
-                this.lblIntTag4.Hidden = false;
-            }
-            if (ListaIntereses.Count == 5)
-            {
-                this.lblIntTag1.Hidden = false;
-                this.lblIntTag2.Hidden = false;
-                this.lblIntTag3.Hidden = false;
-                this.lblIntTag4.Hidden = false;
-                this.lblIntTag5.Hidden = false;
-            }
-        }
+       
+
 
     }
 }

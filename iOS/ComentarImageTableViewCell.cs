@@ -27,11 +27,19 @@ namespace WorklabsMx.iOS
 
         internal void UpdateCell(ComentarioModel comentario, UIImage currentImageProfile, UIImage currentImageComments)
         {
-
             var Tap = new UITapGestureRecognizer(this.ImageTapped);
             imgPublicacion.UserInteractionEnabled = true;
             imgPublicacion.AddGestureRecognizer(Tap);
-
+            if (comentario.Usuario.Usuario_Id == KeyChainHelper.GetKey("Usuario_Id") && comentario.Usuario.Usuario_Tipo == KeyChainHelper.GetKey("Usuario_Tipo"))
+            {
+                this.btnComentar.Hidden = false;
+                this.btnComentar.Enabled = true;
+            }
+            else
+            {
+                this.btnComentar.Hidden = true;
+                this.btnComentar.Enabled = false;
+            }
             if (int.Parse(comentario.Comentario_Me_Gustan_Cantidad) == 0)
             {
                 this.btnLikes.SetImage(UIImage.FromBundle("NoLike"), UIControlState.Normal);
@@ -40,7 +48,6 @@ namespace WorklabsMx.iOS
             {
                 this.btnLikes.SetImage(UIImage.FromBundle("Likes"), UIControlState.Normal);
             }
-
 
             lblNombre.Text = comentario.Usuario.Usuario_Nombre;
             lblLikes.Text = comentario.Comentario_Me_Gustan_Cantidad + " LIKES";

@@ -578,9 +578,6 @@
     <ImageAsset Include="Assets.xcassets\Ubicaciones.imageset\Salas_de_Reuniones.png" />
     <ImageAsset Include="Assets.xcassets\Ubicaciones.imageset\Salas_de_Reuniones%402x.png" />
     <ImageAsset Include="Assets.xcassets\Ubicaciones.imageset\Salas_de_Reuniones%403x.png" />
-    <ImageAsset Include="Assets.xcassets\ImagenSucursal.imageset\RENDER LOBBY.png" />
-    <ImageAsset Include="Assets.xcassets\ImagenSucursal.imageset\RENDER LOBBY%402x.png" />
-    <ImageAsset Include="Assets.xcassets\ImagenSucursal.imageset\RENDER LOBBY%403x.png" />
     <ImageAsset Include="Assets.xcassets\AtrasBlanco.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\AtrasBlanco.imageset\icons8-back-filled-30 %281%29.png" />
     <ImageAsset Include="Assets.xcassets\AtrasBlanco.imageset\icons8-back-filled-60 %281%29.png" />
@@ -729,6 +726,15 @@
     <ImageAsset Include="Assets.xcassets\Opciones.imageset\opciones.png" />
     <ImageAsset Include="Assets.xcassets\Opciones.imageset\opciones%402x.png" />
     <ImageAsset Include="Assets.xcassets\Opciones.imageset\opciones%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ImagenSucursal.imageset\314ce393-195b-4212-893a-69d13d0fe025.jpg" />
+    <ImageAsset Include="Assets.xcassets\Sala6.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Sala10.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Sala10.imageset\5dfd3326-815a-4398-a759-c219f590949e 2.jpg" />
+    <ImageAsset Include="Assets.xcassets\Sala6.imageset\b65a18b6-80b2-4573-946c-abb1690ec202.jpg" />
+    <ImageAsset Include="Assets.xcassets\EditarPerfil.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\EditarPerfil.imageset\EditarPerfil.png" />
+    <ImageAsset Include="Assets.xcassets\EditarPerfil.imageset\EditarPerfil%402x.png" />
+    <ImageAsset Include="Assets.xcassets\EditarPerfil.imageset\EditarPerfil%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1217,6 +1223,42 @@
       <DependentUpon>CeldaInvitadosAgregados.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\MenuHelper.cs" />
+    <Compile Include="HabilidadesCollectionView.cs" />
+    <Compile Include="HabilidadesCollectionView.designer.cs">
+      <DependentUpon>HabilidadesCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InteresesCollectionView.cs" />
+    <Compile Include="InteresesCollectionView.designer.cs">
+      <DependentUpon>InteresesCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaHabilidades.cs" />
+    <Compile Include="CeldaHabilidades.designer.cs">
+      <DependentUpon>CeldaHabilidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaIntereses.cs" />
+    <Compile Include="CeldaIntereses.designer.cs">
+      <DependentUpon>CeldaIntereses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColeccionTrabajosAnteriores.cs" />
+    <Compile Include="ColeccionTrabajosAnteriores.designer.cs">
+      <DependentUpon>ColeccionTrabajosAnteriores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaTrabajosAnteriores.cs" />
+    <Compile Include="CeldaTrabajosAnteriores.designer.cs">
+      <DependentUpon>CeldaTrabajosAnteriores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="coleccionColaboradores.cs" />
+    <Compile Include="coleccionColaboradores.designer.cs">
+      <DependentUpon>coleccionColaboradores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaColaboradores.cs" />
+    <Compile Include="CeldaColaboradores.designer.cs">
+      <DependentUpon>CeldaColaboradores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoRedesCell.cs" />
+    <Compile Include="NoRedesCell.designer.cs">
+      <DependentUpon>NoRedesCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -1369,6 +1411,9 @@
     <Folder Include="Assets.xcassets\ReservarSalaJuntas.imageset\" />
     <Folder Include="Assets.xcassets\Opciones.imageset\" />
     <Folder Include="HTML\" />
+    <Folder Include="Assets.xcassets\Sala6.imageset\" />
+    <Folder Include="Assets.xcassets\Sala10.imageset\" />
+    <Folder Include="Assets.xcassets\EditarPerfil.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

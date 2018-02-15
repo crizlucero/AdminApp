@@ -13,7 +13,7 @@ namespace WorklabsMx.iOS
     {
         public List<string> ListUser = new List<string>();
         UsuariosController Favorites = new UsuariosController();
-        UsuarioModel Miembro = new UsuarioModel();
+        public UsuarioModel Miembro = new UsuarioModel();
 
         bool FromMi = true, FromSocial = false, FromTrabajo = false;
 
@@ -21,9 +21,13 @@ namespace WorklabsMx.iOS
         {
         }
 
+
+
         public override void ViewDidLoad()
+
         {
             base.ViewDidLoad();
+            this.CargarInfo();
             this.cvwMi.Hidden = false;
             this.cvwSocial.Hidden = true;
             this.cvwTrabajo.Hidden = true;
@@ -32,22 +36,7 @@ namespace WorklabsMx.iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            if (InternetConectionHelper.VerificarConexion())
-            {
-                this.Miembro = new UsuariosController().GetMemberData((ListUser[0] != "") ? ListUser[0] : ListUser[1], ListUser[2]);
-                this.lblNombre.Text = (Miembro.Usuario_Nombre != "") ? Miembro.Usuario_Nombre : "Sin Info";
-                this.lblEmpresa.Text = (Miembro.Usuario_Empresa_Nombre != null) ? Miembro.Usuario_Empresa_Nombre : "Sin Info";
-                this.btnProfileImage.SetBackgroundImage(ImageGallery.LoadImage(Miembro.Usuario_Fotografia) ?? UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
-                KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Miembro.Usuario_Id, Miembro.Usuario_Tipo);
-                if (isFavorite.Key == 0)
-                {
-                    this.btnSeguir.SetTitle("+ Seguir", UIControlState.Normal);
-                }
-                else
-                {
-                    this.btnSeguir.SetTitle("- Dejar de seguir", UIControlState.Normal);
-                }
-            }
+           
         }
 
         public override void ViewDidAppear(bool animated)
@@ -55,51 +44,6 @@ namespace WorklabsMx.iOS
             base.ViewDidAppear(animated);
         }
 
-        partial void btnBackGroundImage_Touch(UIButton sender)
-        {
-        }
-
-        partial void btnImageProfile(UIButton sender)
-        {
-        }
-
-        partial void btnSeguir_Touch(UIButton sender)
-        {
-            if (InternetConectionHelper.VerificarConexion())
-            {
-                KeyValuePair<int, bool> isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Miembro.Usuario_Id, Miembro.Usuario_Tipo);
-                if (isFavorite.Key == 0)
-                {
-                    if (Favorites.AddMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Miembro.Usuario_Id, Miembro.Usuario_Tipo))
-                    {
-                        this.btnSeguir.SetTitle("Dejar de seguir", UIControlState.Normal);
-                    }
-                    else
-                    {
-                        new MessageDialog().SendToast("Error de conexión, intente más tarde");
-                    }
-                }
-                else
-                {
-                    if (Favorites.RemoveMiembroFavorito(isFavorite))
-                    {
-                        this.btnSeguir.SetTitle("Seguir", UIControlState.Normal);
-                    }
-                    else
-                    {
-                        new MessageDialog().SendToast("Error de conexión, intente más tarde");
-                    }
-                }
-            }
-            else 
-            {
-                new MessageDialog().SendToast("Error de conexión, intente más tarde");
-            }
-        }
-
-        partial void btnEnviarMensaje_Touch(UIButton sender)
-        {
-        }
 
         partial void btnVerMas_Touch(UIButton sender)
         {
@@ -183,17 +127,38 @@ namespace WorklabsMx.iOS
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
-            this.Miembro = new UsuariosController().GetMemberData((ListUser[0] != "") ? ListUser[0] : ListUser[1], ListUser[2]);
             if (segue.Identifier == "SobreMi")
             {
                 var InfoPeril = (MiInfoViewController)segue.DestinationViewController;
                 InfoPeril.Miembro = this.Miembro;
+            }
+            else if(segue.Identifier == "Social")
+            {
+                var InfoSocial = (PerfilSocialTableViewController)segue.DestinationViewController;
+                InfoSocial.Redes_Sociales = this.Miembro.Redes_Sociales;
             }
             else if (segue.Identifier == "Trabajo")
             {
                 var InfoPeril = (InfoEmpresaTableViewController)segue.DestinationViewController;
                 InfoPeril.Miembro = this.Miembro;
             }
+        }
+
+        private void CargarInfo()
+        {
+            this.lblNombre.Text = (Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos != "") ? Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos : "Sin Info";
+            this.lblEmpresa.Text = (Miembro.Usuario_Empresa_Nombre != null) ? Miembro.Usuario_Empresa_Nombre : "Sin Info";
+            this.btnProfileImage.SetBackgroundImage(ImageGallery.LoadImage(Miembro.Usuario_Fotografia) ?? UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
+        }
+
+        partial void btnEditarPerfil_Touch(UIButton sender)
+        {
+            
+        }
+
+        partial void btnCerrar_Touch(UIButton sender)
+        {
+            this.DismissViewController(true, null);
         }
     }
 }

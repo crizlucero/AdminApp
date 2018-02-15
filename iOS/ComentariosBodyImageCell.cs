@@ -39,7 +39,16 @@ namespace WorklabsMx.iOS
             var Tap = new UITapGestureRecognizer(this.ImageTapped);
             imgPublicacion.UserInteractionEnabled = true;
             imgPublicacion.AddGestureRecognizer(Tap);
-
+            if (post.Usuario.Usuario_Id == KeyChainHelper.GetKey("Usuario_Id") && post.Usuario.Usuario_Tipo == KeyChainHelper.GetKey("Usuario_Tipo"))
+            {
+                this.btnOpciones.Hidden = false;
+                this.btnOpciones.Enabled = true;
+            }
+            else
+            {
+                this.btnOpciones.Hidden = true;
+                this.btnOpciones.Enabled = false;
+            }
             lblNombre.Text = post.Usuario.Usuario_Nombre;
             lblLikes.Text = post.Publicacion_Me_Gustan_Cantidad + " LIKES";
             if (int.Parse(post.Publicacion_Me_Gustan_Cantidad) == 0)
