@@ -16,9 +16,8 @@ namespace WorklabsMx.iOS
         const int TamañoCeldaNoRedes = 400;
 
         bool isShowInformation = false;
-        bool existeConeccion = true;
 
-        public List<RedSocialModel> Redes_Sociales;
+        public List<RedSocialModel> Redes_Sociales = new List<RedSocialModel>();
 
         public PerfilRedesSociales (IntPtr handle) : base (handle)
         {
@@ -66,7 +65,7 @@ namespace WorklabsMx.iOS
             }
             else
             {
-                var currentCell = tableView.DequeueReusableCell(IdentificadorNoRedes, indexPath);
+                var currentCell = (NoRedesCell)tableView.DequeueReusableCell(IdentificadorNoRedes, indexPath);
                 return currentCell;
             }
 

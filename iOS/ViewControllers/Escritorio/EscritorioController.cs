@@ -16,7 +16,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 
         public override async void ViewDidLoad()
         {
-            base.ViewDidLoad();             withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());             BTProgressHUD.Show("Cargando publicaciones");             await MenuHelper.GetListConfiguraciones();              RefreshControl = new UIRefreshControl();             RefreshControl.AddTarget(HandleValueChanged, UIControlEvent.ValueChanged);             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;             var Tap = new UITapGestureRecognizer(this.Tapped);             this.View.AddGestureRecognizer(Tap);             await MenuHelper.FillTable();             await MenuHelper.FillUserInfo();             await MenuHelper.GetSucursales();
+            base.ViewDidLoad();             withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());             BTProgressHUD.Show("Cargando publicaciones");             await MenuHelper.GetListConfiguraciones();              RefreshControl = new UIRefreshControl();             RefreshControl.AddTarget(HandleValueChanged, UIControlEvent.ValueChanged);             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;             var Tap = new UITapGestureRecognizer(this.Tapped);             this.View.AddGestureRecognizer(Tap);             await MenuHelper.FillTable();             await MenuHelper.FillUserInfo();             await MenuHelper.GetSucursales();             await MenuHelper.GetUsuarioInfo();
 		}
 
         public override async void ViewWillAppear(bool animated)

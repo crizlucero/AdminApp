@@ -5337,7 +5337,7 @@
         <!--Perfil-->
         <scene sceneID="2YO-yw-5Uc">
             <objects>
-                <tableViewController id="vlS-Uy-q2f" customClass="PerfilesTableViewController" sceneMemberID="viewController">
+                <tableViewController id="vlS-Uy-q2f" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ezj-3u-0lP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5960,7 +5960,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <segue destination="mdy-sd-2ky" kind="show" identifier="" id="x4z-Ti-jjc"/>
+                                                <segue destination="mdy-sd-2ky" kind="show" identifier="DetallePerfil" id="dWH-F8-bIl"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JUAN PEDRO HERNANDEZ LOPEZ" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aM-zc-dRm">
@@ -10605,7 +10605,7 @@ COL. LADRON DE GUEVARA</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YlX-MZ-CwL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12743" y="-4858"/>
+            <point key="canvasLocation" x="-13641" y="-4857"/>
         </scene>
         <!--Empresa-->
         <scene sceneID="Lhd-57-s7p">
@@ -11759,7 +11759,7 @@ COL. LADRON DE GUEVARA</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tHY-M3-UUo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12150" y="-4614"/>
+            <point key="canvasLocation" x="-13059" y="-4725"/>
         </scene>
         <!--Perfil-->
         <scene sceneID="dBZ-P2-yDg">
@@ -11768,7 +11768,7 @@ COL. LADRON DE GUEVARA</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JmE-hQ-2FL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="76E-me-VfF">
                                 <cells>
@@ -11835,31 +11835,11 @@ COL. LADRON DE GUEVARA</string>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TpB-jb-cCD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="343"/>
+                                                    <rect key="frame" x="0.0" y="-20" width="375" height="363"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="343" id="OXM-aY-TT1"/>
+                                                        <constraint firstAttribute="height" constant="363" id="OXM-aY-TT1"/>
                                                     </constraints>
-                                                    <state key="normal" backgroundImage="perfilbackimage"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JkS-o2-MHv">
-                                                    <rect key="frame" x="113" y="251" width="149" height="150"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="150" id="G1g-9R-JcY"/>
-                                                    </constraints>
-                                                    <state key="normal" backgroundImage="ProfileImageBig"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="75"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                            <integer key="value" value="3"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gG8-8B-IQD">
                                                     <rect key="frame" x="329" y="11" width="30" height="30"/>
@@ -11867,27 +11847,49 @@ COL. LADRON DE GUEVARA</string>
                                                         <constraint firstAttribute="width" constant="30" id="8Au-Ga-7R5"/>
                                                         <constraint firstAttribute="height" constant="30" id="AwW-VD-vY5"/>
                                                     </constraints>
-                                                    <state key="normal" backgroundImage="Editar"/>
+                                                    <state key="normal" backgroundImage="EditarPerfil"/>
                                                     <connections>
                                                         <action selector="btnEditarPerfil_Touch:" destination="mdy-sd-2ky" eventType="touchUpInside" id="497756"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JkS-o2-MHv">
+                                                    <rect key="frame" x="112" y="254" width="150" height="150"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="150" id="G1g-9R-JcY"/>
+                                                        <constraint firstAttribute="width" constant="150" id="Wsy-jk-hGG"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="ProfileImageBig"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="75"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wk0-Y7-uYB">
+                                                    <rect key="frame" x="16" y="11" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="NRi-zq-r7F"/>
+                                                        <constraint firstAttribute="height" constant="30" id="fYz-1p-jRO"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="CerrarBlanco"/>
+                                                    <connections>
+                                                        <action selector="btnCerrar_Touch:" destination="mdy-sd-2ky" eventType="touchUpInside" id="505036"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="gG8-8B-IQD" firstAttribute="firstBaseline" secondItem="TpB-jb-cCD" secondAttribute="firstBaseline" id="64Z-Y5-WGN"/>
                                                 <constraint firstItem="JkS-o2-MHv" firstAttribute="centerX" secondItem="cFE-gv-CKu" secondAttribute="centerX" id="6wQ-mw-9rp"/>
-                                                <constraint firstItem="JkS-o2-MHv" firstAttribute="leading" secondItem="Vhr-nc-YNQ" secondAttribute="leadingMargin" constant="97" id="B2R-IM-nie"/>
-                                                <constraint firstItem="gG8-8B-IQD" firstAttribute="baseline" secondItem="TpB-jb-cCD" secondAttribute="baseline" id="T6X-Pp-kqI"/>
-                                                <constraint firstItem="gG8-8B-IQD" firstAttribute="baseline" secondItem="TpB-jb-cCD" secondAttribute="firstBaseline" id="XE6-sg-jvM"/>
-                                                <constraint firstItem="TpB-jb-cCD" firstAttribute="top" secondItem="Vhr-nc-YNQ" secondAttribute="top" id="YWY-0i-UEO"/>
-                                                <constraint firstItem="JkS-o2-MHv" firstAttribute="top" secondItem="Vhr-nc-YNQ" secondAttribute="top" constant="251" id="aEj-kY-pSa"/>
+                                                <constraint firstItem="wk0-Y7-uYB" firstAttribute="top" secondItem="Vhr-nc-YNQ" secondAttribute="top" constant="11" id="HfQ-qB-Gww"/>
+                                                <constraint firstItem="TpB-jb-cCD" firstAttribute="top" secondItem="Vhr-nc-YNQ" secondAttribute="top" constant="-20" id="YWY-0i-UEO"/>
+                                                <constraint firstItem="JkS-o2-MHv" firstAttribute="top" secondItem="Vhr-nc-YNQ" secondAttribute="top" constant="254" id="aEj-kY-pSa"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="cFE-gv-CKu" secondAttribute="bottom" constant="-13" id="fYd-Mh-Gv6"/>
                                                 <constraint firstAttribute="trailing" secondItem="cFE-gv-CKu" secondAttribute="trailing" id="fuX-Ek-KuH"/>
                                                 <constraint firstItem="TpB-jb-cCD" firstAttribute="centerX" secondItem="JkS-o2-MHv" secondAttribute="centerX" id="gmf-Cx-Uc3"/>
-                                                <constraint firstItem="TpB-jb-cCD" firstAttribute="firstBaseline" secondItem="gG8-8B-IQD" secondAttribute="firstBaseline" id="hCg-FR-oPY"/>
                                                 <constraint firstItem="TpB-jb-cCD" firstAttribute="leading" secondItem="Vhr-nc-YNQ" secondAttribute="leading" id="mcB-RS-alf"/>
                                                 <constraint firstItem="cFE-gv-CKu" firstAttribute="top" secondItem="TpB-jb-cCD" secondAttribute="bottom" id="qj9-te-9K9"/>
                                                 <constraint firstItem="gG8-8B-IQD" firstAttribute="top" secondItem="Vhr-nc-YNQ" secondAttribute="topMargin" id="vgV-XA-6pg"/>
+                                                <constraint firstItem="wk0-Y7-uYB" firstAttribute="leading" secondItem="Vhr-nc-YNQ" secondAttribute="leading" constant="16" id="w53-Yz-t4k"/>
                                                 <constraint firstItem="gG8-8B-IQD" firstAttribute="trailing" secondItem="Vhr-nc-YNQ" secondAttribute="trailingMargin" id="xjt-ax-Ffp"/>
                                                 <constraint firstItem="TpB-jb-cCD" firstAttribute="leading" secondItem="cFE-gv-CKu" secondAttribute="leading" id="z0b-jl-514"/>
                                             </constraints>
@@ -12051,6 +12053,7 @@ COL. LADRON DE GUEVARA</string>
                     </tableView>
                     <navigationItem key="navigationItem" title="Perfil" id="R1i-pB-4Xf"/>
                     <connections>
+                        <outlet property="btnCerrar" destination="wk0-Y7-uYB" id="name-outlet-wk0-Y7-uYB"/>
                         <outlet property="btnEditarPerfil" destination="gG8-8B-IQD" id="name-outlet-gG8-8B-IQD"/>
                         <outlet property="btnImageBackGround" destination="TpB-jb-cCD" id="xSL-oU-OHL"/>
                         <outlet property="btnProfileImage" destination="JkS-o2-MHv" id="ogk-uK-bqY"/>
@@ -12083,7 +12086,7 @@ COL. LADRON DE GUEVARA</string>
                         <sections>
                             <tableViewSection id="bSV-iV-5ps">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="vyp-AW-Cbf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="150" id="vyp-AW-Cbf">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vyp-AW-Cbf" id="dW3-yy-GGB">
@@ -12127,7 +12130,7 @@ COL. LADRON DE GUEVARA</string>
                                                             <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sin Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYK-3v-lna">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sin Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYK-3v-lna">
                                                             <rect key="frame" x="66" y="89" width="305" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="zW1-8Z-cez"/>
@@ -12136,7 +12139,7 @@ COL. LADRON DE GUEVARA</string>
                                                             <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sin Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyO-f0-qjU">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sin Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyO-f0-qjU">
                                                             <rect key="frame" x="66" y="111" width="305" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="MHI-q9-wI3"/>
@@ -12149,6 +12152,7 @@ COL. LADRON DE GUEVARA</string>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="CwO-Su-JM2" firstAttribute="leading" secondItem="ZWU-1n-OcU" secondAttribute="leading" id="0Rj-CP-PAr"/>
+                                                        <constraint firstItem="FYK-3v-lna" firstAttribute="leading" secondItem="ua3-nC-dqZ" secondAttribute="leading" constant="66" id="33u-v4-3fJ"/>
                                                         <constraint firstAttribute="trailing" secondItem="CwO-Su-JM2" secondAttribute="trailing" constant="4" id="6S7-pI-emh"/>
                                                         <constraint firstItem="nZa-O2-Uc5" firstAttribute="leading" secondItem="ZWU-1n-OcU" secondAttribute="trailing" constant="8" symbolic="YES" id="8FC-xh-KD4"/>
                                                         <constraint firstItem="CwO-Su-JM2" firstAttribute="trailing" secondItem="bqS-cc-B8M" secondAttribute="trailing" id="A0d-Ej-sJY"/>
@@ -12163,6 +12167,7 @@ COL. LADRON DE GUEVARA</string>
                                                         <constraint firstAttribute="trailing" secondItem="FYK-3v-lna" secondAttribute="trailing" constant="4" id="axC-Cm-xGz"/>
                                                         <constraint firstAttribute="bottom" secondItem="ZWU-1n-OcU" secondAttribute="bottom" constant="47" id="dKV-UA-olW"/>
                                                         <constraint firstItem="nZa-O2-Uc5" firstAttribute="leading" secondItem="bqS-cc-B8M" secondAttribute="leading" id="fcN-Wd-ntS"/>
+                                                        <constraint firstItem="hyO-f0-qjU" firstAttribute="leading" secondItem="ua3-nC-dqZ" secondAttribute="leading" constant="66" id="mh1-wP-Wev"/>
                                                         <constraint firstAttribute="bottom" secondItem="hyO-f0-qjU" secondAttribute="bottom" constant="8" id="rki-vJ-SXf"/>
                                                         <constraint firstItem="hyO-f0-qjU" firstAttribute="top" secondItem="FYK-3v-lna" secondAttribute="bottom" constant="2" id="wla-A0-RqV"/>
                                                     </constraints>
@@ -12180,7 +12185,7 @@ COL. LADRON DE GUEVARA</string>
                             </tableViewSection>
                             <tableViewSection id="wiJ-iQ-5g9">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="182" id="7gi-qC-e5z">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="182" id="7gi-qC-e5z">
                                         <rect key="frame" x="0.0" y="150" width="375" height="182"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7gi-qC-e5z" id="xvF-mC-Nfo">
@@ -12202,7 +12207,7 @@ COL. LADRON DE GUEVARA</string>
                                                         <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="268-hD-M3E">
                                                             <rect key="frame" x="8" y="34" width="359" height="132"/>
                                                             <connections>
-                                                                <segue destination="3my-gd-RdG" kind="embed" id="o60-lx-bFB"/>
+                                                                <segue destination="3my-gd-RdG" kind="embed" identifier="EmpresasAnteriores" id="o60-lx-bFB"/>
                                                             </connections>
                                                         </containerView>
                                                     </subviews>
@@ -12231,7 +12236,7 @@ COL. LADRON DE GUEVARA</string>
                             </tableViewSection>
                             <tableViewSection id="acq-EU-Igk">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="182" id="Jzp-gO-rq2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="182" id="Jzp-gO-rq2">
                                         <rect key="frame" x="0.0" y="332" width="375" height="182"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jzp-gO-rq2" id="3NI-EL-jbB">
@@ -12244,7 +12249,7 @@ COL. LADRON DE GUEVARA</string>
                                                         <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duY-LV-pc1">
                                                             <rect key="frame" x="8" y="42" width="359" height="124"/>
                                                             <connections>
-                                                                <segue destination="OR1-oJ-sj5" kind="embed" id="flK-Tp-3Er"/>
+                                                                <segue destination="OR1-oJ-sj5" kind="embed" identifier="Colaboradores" id="flK-Tp-3Er"/>
                                                             </connections>
                                                         </containerView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colaboradores:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yX6-hu-l7F">
@@ -12565,7 +12570,7 @@ COL. LADRON DE GUEVARA</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nAl-od-O5r">
-                                <rect key="frame" x="0.0" y="60" width="371" height="1"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="1"/>
                                 <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="x9i-YX-E1f"/>
@@ -12586,30 +12591,31 @@ COL. LADRON DE GUEVARA</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQ3-8k-0sB">
-                                <rect key="frame" x="370" y="0.0" width="1" height="61"/>
+                                <rect key="frame" x="374" y="0.0" width="1" height="61"/>
                                 <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="GBB-hU-jAH"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWA-1J-T7n">
-                                <rect key="frame" x="233" y="0.0" width="1" height="60"/>
+                                <rect key="frame" x="237" y="0.0" width="1" height="60"/>
                                 <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="VJy-w7-nEa"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLO-tZ-FtQ">
-                                <rect key="frame" x="146" y="6" width="79" height="21"/>
+                                <rect key="frame" x="146" y="6" width="83" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="CEx-Ko-DYI"/>
+                                    <constraint firstAttribute="width" constant="83" id="bzN-i9-hL6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCE-Lh-1BY">
-                                <rect key="frame" x="242" y="6" width="120" height="24"/>
+                                <rect key="frame" x="246" y="6" width="120" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="0sG-Tc-Qhy"/>
                                     <constraint firstAttribute="width" constant="120" id="ABJ-rs-q3Q"/>
@@ -12619,7 +12625,7 @@ COL. LADRON DE GUEVARA</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Siguiendo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMp-B9-naH">
-                                <rect key="frame" x="242" y="34" width="120" height="18"/>
+                                <rect key="frame" x="246" y="34" width="120" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="WRD-CU-oxK"/>
                                 </constraints>
@@ -12628,22 +12634,23 @@ COL. LADRON DE GUEVARA</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iNC-5N-rhG">
-                                <rect key="frame" x="45" y="102" width="281" height="378"/>
+                                <rect key="frame" x="0.0" y="102" width="375" height="378"/>
                                 <connections>
                                     <segue destination="M7T-8d-Vvk" kind="embed" id="Y3t-eF-Znj"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIq-uO-Wr1">
-                                <rect key="frame" x="0.0" y="0.0" width="371" height="1"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
                                 <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="ZEf-Qm-8Dw"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seguidores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4o-n9-QIE">
-                                <rect key="frame" x="146" y="34" width="79" height="18"/>
+                                <rect key="frame" x="146" y="34" width="83" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="PbT-nN-gfL"/>
+                                    <constraint firstAttribute="width" constant="83" id="V6t-Rq-VBA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -12654,7 +12661,7 @@ COL. LADRON DE GUEVARA</string>
                         <constraints>
                             <constraint firstItem="nAl-od-O5r" firstAttribute="bottom" secondItem="RQ3-8k-0sB" secondAttribute="bottom" id="2di-lA-a8I"/>
                             <constraint firstItem="cIq-uO-Wr1" firstAttribute="leading" secondItem="NBe-9t-BKs" secondAttribute="leading" id="2tH-6R-Bfs"/>
-                            <constraint firstAttribute="trailing" secondItem="iNC-5N-rhG" secondAttribute="trailing" constant="49" id="3Ai-40-Hxo"/>
+                            <constraint firstAttribute="trailing" secondItem="iNC-5N-rhG" secondAttribute="trailing" id="3Ai-40-Hxo"/>
                             <constraint firstItem="71E-5O-0Ky" firstAttribute="bottom" secondItem="EY9-E6-ndT" secondAttribute="bottom" id="4St-nT-7TC"/>
                             <constraint firstItem="uLO-tZ-FtQ" firstAttribute="centerX" secondItem="cIq-uO-Wr1" secondAttribute="centerX" id="5JF-fe-g1H"/>
                             <constraint firstItem="EY9-E6-ndT" firstAttribute="leading" secondItem="It9-9U-2OD" secondAttribute="trailing" constant="8" id="5cQ-M9-Jjc"/>
@@ -12672,7 +12679,6 @@ COL. LADRON DE GUEVARA</string>
                             <constraint firstItem="RQ3-8k-0sB" firstAttribute="leading" secondItem="dMp-B9-naH" secondAttribute="trailing" constant="8" id="QLW-bh-8ws"/>
                             <constraint firstAttribute="bottom" secondItem="sWA-1J-T7n" secondAttribute="bottom" constant="440" id="QZY-PO-Aob"/>
                             <constraint firstItem="sWA-1J-T7n" firstAttribute="top" secondItem="NBe-9t-BKs" secondAttribute="top" id="SoK-5P-8c5"/>
-                            <constraint firstItem="iNC-5N-rhG" firstAttribute="top" secondItem="NBe-9t-BKs" secondAttribute="top" constant="102" id="SqV-Xy-w93"/>
                             <constraint firstItem="nAl-od-O5r" firstAttribute="top" secondItem="kQX-3w-oub" secondAttribute="bottom" constant="27" id="U1S-Xe-P1J"/>
                             <constraint firstItem="T4o-n9-QIE" firstAttribute="top" secondItem="uLO-tZ-FtQ" secondAttribute="bottom" constant="7" id="UNe-WZ-e7X"/>
                             <constraint firstItem="iNC-5N-rhG" firstAttribute="top" secondItem="nAl-od-O5r" secondAttribute="bottom" constant="41" id="VC1-bg-oq3"/>
@@ -12689,7 +12695,7 @@ COL. LADRON DE GUEVARA</string>
                             <constraint firstItem="nAl-od-O5r" firstAttribute="centerX" secondItem="iNC-5N-rhG" secondAttribute="centerX" id="fDG-Je-ewf"/>
                             <constraint firstAttribute="bottom" secondItem="iNC-5N-rhG" secondAttribute="bottom" constant="20" symbolic="YES" id="fcZ-jK-pKi"/>
                             <constraint firstItem="kQX-3w-oub" firstAttribute="top" secondItem="NBe-9t-BKs" secondAttribute="top" constant="9" id="j3c-nW-cFf"/>
-                            <constraint firstItem="iNC-5N-rhG" firstAttribute="leading" secondItem="NBe-9t-BKs" secondAttribute="leadingMargin" constant="29" id="mRr-BL-RMZ"/>
+                            <constraint firstItem="iNC-5N-rhG" firstAttribute="leading" secondItem="NBe-9t-BKs" secondAttribute="leadingMargin" constant="-16" id="mRr-BL-RMZ"/>
                             <constraint firstItem="kQX-3w-oub" firstAttribute="top" secondItem="cIq-uO-Wr1" secondAttribute="bottom" constant="8" symbolic="YES" id="rRw-v9-gsv"/>
                             <constraint firstItem="dMp-B9-naH" firstAttribute="top" secondItem="FCE-Lh-1BY" secondAttribute="bottom" constant="4" id="rZQ-eS-h7A"/>
                             <constraint firstItem="sWA-1J-T7n" firstAttribute="leading" secondItem="T4o-n9-QIE" secondAttribute="trailing" constant="8" id="t5k-Pg-39M"/>
@@ -12709,26 +12715,26 @@ COL. LADRON DE GUEVARA</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAg-qG-3Qi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9767" y="-5140"/>
+            <point key="canvasLocation" x="-9767.2000000000007" y="-5140.9300000000003"/>
         </scene>
         <!--Perfil Redes Sociales-->
         <scene sceneID="G2U-rz-sYK">
             <objects>
                 <tableViewController id="M7T-8d-Vvk" customClass="PerfilRedesSociales" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fMC-AK-s1I">
-                        <rect key="frame" x="0.0" y="0.0" width="281" height="378"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="378"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Contenido" rowHeight="40" id="88w-Un-1QG" customClass="RedesSocialesTableViewCell">
-                                <rect key="frame" x="0.0" y="28" width="281" height="40"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Contenido" rowHeight="40" id="88w-Un-1QG" customClass="RedesSocialesTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="88w-Un-1QG" id="9fJ-qn-Kfh">
-                                    <rect key="frame" x="0.0" y="0.0" width="281" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="faccebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0W-Zx-Ljc">
-                                            <rect key="frame" x="46" y="8" width="219" height="22"/>
+                                            <rect key="frame" x="46" y="8" width="313" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="eWk-oM-bCB"/>
                                             </constraints>
@@ -12759,15 +12765,15 @@ COL. LADRON DE GUEVARA</string>
                                     <outlet property="lblRedSocial" destination="u0W-Zx-Ljc" id="8lR-gm-pWL"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoRedes" rowHeight="315" id="FGf-R9-1vM">
-                                <rect key="frame" x="0.0" y="68" width="281" height="315"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoRedes" rowHeight="315" id="FGf-R9-1vM" customClass="NoRedesCell">
+                                <rect key="frame" x="0.0" y="68" width="375" height="315"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FGf-R9-1vM" id="Egh-yp-H0X">
-                                    <rect key="frame" x="0.0" y="0.0" width="281" height="315"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="315"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sin redes sociales" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvr-J4-7oL">
-                                            <rect key="frame" x="16" y="11" width="249" height="293"/>
+                                            <rect key="frame" x="16" y="11" width="343" height="293"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="31"/>
                                             <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -13025,8 +13031,8 @@ COL. LADRON DE GUEVARA</string>
                                     <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4dg-pr-Ca1">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4dg-pr-Ca1">
+                                            <rect key="frame" x="0.0" y="0.0" width="64" height="0.0"/>
                                         </imageView>
                                     </subviews>
                                 </view>
@@ -13049,7 +13055,7 @@ COL. LADRON DE GUEVARA</string>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzj-3i-eCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9007.2000000000007" y="-4331.3343328335832"/>
+            <point key="canvasLocation" x="-9007.2000000000007" y="-4331.3339999999998"/>
         </scene>
     </scenes>
     <resources>
@@ -13074,6 +13080,7 @@ COL. LADRON DE GUEVARA</string>
         <image name="Desglosar" width="26" height="13"/>
         <image name="Editar" width="30" height="30"/>
         <image name="EditarBlanco" width="60" height="60"/>
+        <image name="EditarPerfil" width="22" height="22"/>
         <image name="Empresa" width="34" height="37"/>
         <image name="Empresas" width="20" height="20"/>
         <image name="Estado" width="30" height="30"/>

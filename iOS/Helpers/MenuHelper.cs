@@ -1,14 +1,9 @@
 ﻿using System;
-using UIKit;
 using WorklabsMx.Models;
 using System.Collections.Generic;
-using WorklabsMx.iOS.Helpers;
-using BigTed;
-using SWRevealViewControllerBinding;
-using Foundation;
 using System.Threading.Tasks;
-using WorklabsMx.Helpers;
 using WorklabsMx.Controllers;
+
 
 namespace WorklabsMx.iOS.Helpers
 {
@@ -26,6 +21,8 @@ namespace WorklabsMx.iOS.Helpers
         public static List<SucursalModel> ListaSucursales;
 
         public static string UploadImagePath;
+
+        public static UsuarioModel Usuario;
         
         public static async Task FillTable()
         {
@@ -93,6 +90,15 @@ namespace WorklabsMx.iOS.Helpers
                     upload_image_path = "";
                 }
                 UploadImagePath = upload_image_path;
+            });
+        }
+
+        public static async Task GetUsuarioInfo()
+        {
+            await Task.Run(() => 
+            {
+                var usuario = new UsuariosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+                Usuario = usuario;
             });
         }
 

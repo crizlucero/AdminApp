@@ -24,8 +24,9 @@ namespace WorklabsMx.iOS
         bool isShowInformation = false;
         bool existeConeccion = true;
 
-       int SubmenuIndex = 0;
-        public static List<ItemsMenu> tableItems;
+        public static List<ItemsMenu> tableItems = new List<ItemsMenu>();
+
+        UsuarioModel Usuario = new UsuarioModel();
 
         public MenuTableViewController (IntPtr handle) : base (handle)
         {
@@ -35,7 +36,9 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            tableItems = new List<ItemsMenu>();
             tableItems = MenuHelper.GeneralList;
+           
             //await MenuHelper.FillData();
         }
 
@@ -149,11 +152,11 @@ namespace WorklabsMx.iOS
        
         public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
         {
-            base.PrepareForSegue(segue, sender);
-            if (segue.Identifier == "MiCuenta")
+            if (segue.Identifier == "DetallePerfil")
             {
-                var submenuView = segue.DestinationViewController.ChildViewControllers[0] as SubMenuController;
-                submenuView.SubmenuIndex = this.SubmenuIndex;
+                var PerfilView = (PerfilesTableViewController)segue.DestinationViewController;
+                PerfilView.Miembro = MenuHelper.Usuario;
+
             }
             var segueReveal = segue as SWRevealViewControllerSegueSetController;
             if (segueReveal == null)

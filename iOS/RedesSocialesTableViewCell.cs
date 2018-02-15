@@ -14,7 +14,7 @@ namespace WorklabsMx.iOS
 
         public void UpdateCell(RedSocialModel RedSocial)
         {
-            this.lblRedSocial.Text = RedSocial.Red_Social_Nombre;
+            this.lblRedSocial.Text = (RedSocial.Red_Social_Nombre != "") ? RedSocial.Red_Social_Nombre : "Sin Info";
         }
     }
 }

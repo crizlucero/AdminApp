@@ -24,11 +24,25 @@ namespace WorklabsMx.iOS
             StyleHelper.Style(this.vwEmpresasAnteriores.Layer);
             StyleHelper.Style(this.vwColaboradores.Layer);
             EmpresaModel empresa = new EmpresaController().GetEmpresaMiembro(Miembro.Usuario_Id);
-            this.lblPais.Text = empresa.Territorio.Municipio + ", " + empresa.Territorio.Pais;
-            this.lblEmpresa.Text = empresa.Empresa_Miembro_Nombre;
-            this.lblPuesto.Text = Miembro.Usuario_Puesto;
-            this.lblFechaInicioFin.Text = "";
+            this.lblPais.Text = ((empresa.Territorio.Municipio + ", " + empresa.Territorio.Pais) != "") ? (empresa.Territorio.Municipio + ", " + empresa.Territorio.Pais) : "Sin Info";
+            this.lblEmpresa.Text = (empresa.Empresa_Miembro_Nombre != "") ? empresa.Empresa_Miembro_Nombre : "Sin Info";
+            this.lblPuesto.Text = (Miembro.Usuario_Puesto != "") ? Miembro.Usuario_Puesto : "Sin Info";
+            this.lblFechaInicioFin.Text = "Sin Info";//Miembro.Empresa_Actual.;
+        }
 
+
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            if (segue.Identifier == "EmpresasAnteriores")
+            {
+                var VistaEmpresas = (ColeccionTrabajosAnteriores)segue.DestinationViewController;
+                VistaEmpresas.Empresas_Anteriores = Miembro.Empresas_Anteriores;
+            }
+            else if (segue.Identifier == "Colaboradores")
+            {
+                var VistaColaboradores = (coleccionColaboradores)segue.DestinationViewController;
+
+            }
         }
     }
 }

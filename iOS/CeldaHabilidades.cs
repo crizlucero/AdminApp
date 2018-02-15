@@ -13,7 +13,7 @@ namespace WorklabsMx.iOS
 
         public void UpdateCell(EtiquetaModel Etiqueta)
         {
-            this.lblHabilidades.Text = Etiqueta.Etiqueta_Nombre;
+            this.lblHabilidades.Text = (Etiqueta.Etiqueta_Nombre != "") ? Etiqueta.Etiqueta_Nombre : "Sin Info";
         }
 
     }

@@ -13,7 +13,7 @@ namespace WorklabsMx.iOS
     {
         public List<string> ListUser = new List<string>();
         UsuariosController Favorites = new UsuariosController();
-        UsuarioModel Miembro = new UsuarioModel();
+        public UsuarioModel Miembro = new UsuarioModel();
 
         bool FromMi = true, FromSocial = false, FromTrabajo = false;
 
@@ -21,10 +21,13 @@ namespace WorklabsMx.iOS
         {
         }
 
-        public override async void ViewDidLoad()
+
+
+        public override void ViewDidLoad()
+
         {
             base.ViewDidLoad();
-            await CargarInfo();
+            this.CargarInfo();
             this.cvwMi.Hidden = false;
             this.cvwSocial.Hidden = true;
             this.cvwTrabajo.Hidden = true;
@@ -124,7 +127,6 @@ namespace WorklabsMx.iOS
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
-            this.Miembro = new UsuariosController().GetMemberData((ListUser[0] != "") ? ListUser[0] : ListUser[1], ListUser[2]);
             if (segue.Identifier == "SobreMi")
             {
                 var InfoPeril = (MiInfoViewController)segue.DestinationViewController;
@@ -142,22 +144,21 @@ namespace WorklabsMx.iOS
             }
         }
 
-        async Task CargarInfo()
+        private void CargarInfo()
         {
-            await Task.Run(() =>
-            {
-                if (InternetConectionHelper.VerificarConexion())
-                {
-                    this.Miembro = new UsuariosController().GetMemberData((ListUser[0] != "") ? ListUser[0] : ListUser[1], ListUser[2]);
-                    this.lblNombre.Text = (Miembro.Usuario_Nombre != "") ? Miembro.Usuario_Nombre : "Sin Info";
-                    this.lblEmpresa.Text = (Miembro.Usuario_Empresa_Nombre != null) ? Miembro.Usuario_Empresa_Nombre : "Sin Info";
-                    this.btnProfileImage.SetBackgroundImage(ImageGallery.LoadImage(Miembro.Usuario_Fotografia) ?? UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
-                }
-            });
+            this.lblNombre.Text = (Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos != "") ? Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos : "Sin Info";
+            this.lblEmpresa.Text = (Miembro.Usuario_Empresa_Nombre != null) ? Miembro.Usuario_Empresa_Nombre : "Sin Info";
+            this.btnProfileImage.SetBackgroundImage(ImageGallery.LoadImage(Miembro.Usuario_Fotografia) ?? UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
         }
 
         partial void btnEditarPerfil_Touch(UIButton sender)
         {
+            
+        }
+
+        partial void btnCerrar_Touch(UIButton sender)
+        {
+            this.DismissViewController(true, null);
         }
     }
 }

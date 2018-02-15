@@ -24,7 +24,7 @@ namespace WorklabsMx.iOS
        public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.lblSobreMi.Text = Miembro.Usuario_Descripcion;
+            this.lblSobreMi.Text = (Miembro.Usuario_Descripcion != "" && Miembro.Usuario_Descripcion != null) ? Miembro.Usuario_Descripcion : "Sin Info";
             this.Etiquetas = Miembro.Etiquetas;
             foreach(EtiquetaModel Etiqueta in Etiquetas)
             {
