@@ -118,12 +118,12 @@ namespace WorklabsMx.Droid
                                                                  Calle.Text, NumExterior.Text, NumInterior.Text, CorreoElectronico.Text, Telefono.Text, PaginaWeb.Text, Facebook.Text, Twitter.Text, Instagram.Text, ""))
                         Toast.MakeText(this, Resource.String.DatosGuardados, ToastLength.Short).Show();
                     else
-                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
+                        Toast.MakeText(this, Resource.String.str_general_save_error, ToastLength.Short).Show();
 
                     break;
             }
-            StartActivity(new Intent(this, typeof(TabPerfilActivity)));
-            Finish();
+            //StartActivity(new Intent(this, typeof(TabPerfilActivity)));
+            //Finish();
             return base.OnOptionsItemSelected(item);
         }
     }

@@ -107,7 +107,7 @@ namespace WorklabsMx.Droid
                         customView.FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Gone;
                     }
                     else
-                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
+                        Toast.MakeText(this, Resource.String.str_general_save_error, ToastLength.Short);
                 }
                 catch (Exception e) { SlackLogs.SendMessage(e.Message); }
             };

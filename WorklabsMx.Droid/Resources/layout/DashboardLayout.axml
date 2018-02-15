@@ -53,19 +53,18 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp" />
         <TextView
-            android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/lblNombre"
             android:layout_row="0"
             android:layout_column="1"
-            android:text="@string/Nombre"
+            android:text="@string/str_profile_name"
             android:textStyle="bold"
             android:textSize="18dp"
             android:layout_marginLeft="10dp"
             android:layout_width="290dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:textColor="#000" />
         <TextView
-            android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblPuesto"
             android:layout_row="1"
             android:layout_column="1"
@@ -74,7 +73,8 @@
             android:textSize="10dp"
             android:layout_width="290dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"
+            android:textColor="#999" />
         <Button
             android:background="@drawable/buttonstyle"
             style="@style/ButtonApply"

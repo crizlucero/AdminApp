@@ -28,10 +28,9 @@
 	<string name="str_general_exterior_number">Num. Exterior</string>
 	<string name="str_general_interior_number">Num. Interior</string>
     <string name="str_general_ubication">Ubicación</string>
-	<string name="Nombre">Nombre</string>
-	<string name="Apellidos">Apellidos</string>
-	<string name="Asunto">Asunto</string>
-	<string name="CC">CC</string>
+	<string name="str_profile_name">Nombre</string>
+	<string name="str_profile_lastname">Apellidos</string>
+	<string name="str_general_subject">Asunto</string>
 	<string name="Fecha">Fecha</string>
 	<string name="HoraSalida">Hora de Salida</string>
 	<string name="HoraEntrada">Hora de Entrada</string>
@@ -44,7 +43,7 @@
 	<string name="AsuntoCorreo">Contacto desde Worklabs</string>
 	<string name="AplicationNotFound">No tiene la aplicación instalada necesaria</string>
 	<string name="DatosGuardados">Datos guardados exitosamente</string>
-	<string name="ErrorAlGuardar">Existió un error en la petición</string>
+	<string name="str_general_save_error">Existió un error en la petición</string>
 	<string name="RegistroInvitados">Registro de invitados</string>
 	<string name="Actualizar">Actualizar</string>
 	<string name="LlenarDatos">Llene todos los datos</string>
@@ -80,7 +79,7 @@
 	<string name="NombreEmpresa">Nombre de la Empresa</string>
 	<string name="EditarPerfil">Editar Datos del Perfil</string>
 	<string name="EditarEmpresa">Editar Datos de la Empresa</string>
-	<string name="Guardar">Guardar</string>
+	<string name="str_general_save">Guardar</string>
 	<string name="Escritorio">Escritorio</string>
 	<string name="Acceso">Acceso</string>
 	<string name="NumeroInferior">La cantidad debe de ser mayor</string>
@@ -143,7 +142,7 @@
 	<string name="ConfirmacionSala">Tu reservación se ha generado con éxito. No dudes en ponerte en contacto con el Staff para cualquier duda, será un gusto poder apoyarte.</string>
 	<string name="EnviarMensaje">Enviar Mensaje</string>
 	<string name="EnviarInvitacion">Enviar Invitación</string>
-	<string name="Seguir">Seguir</string>
+	<string name="str_social_network_follow">Seguir</string>
 	<string name="DetalleReserva">Detalle de Reservación</string>
 	<string name="Confirmar">Confirmar</string>
 	<string name="AgregarInvitado">Añadir un invitado</string>

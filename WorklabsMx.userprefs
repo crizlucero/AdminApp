@@ -1,7 +1,14 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/MainActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/EmpresaModel.cs">
     <Files>
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="61" Column="72" />
+      <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="145" Column="41" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="100" Column="82" />
+      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardActivity.cs" Line="52" Column="26" />
+      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardEditarActivity.cs" Line="46" Column="15" />
+      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/MisColaboradoresActivity.cs" Line="10" Column="26" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="163" Column="91" />
+      <File FileName="WorklabsMx/Models/UsuarioModel.cs" Line="30" Column="26" />
+      <File FileName="WorklabsMx/Models/EmpresaModel.cs" Line="25" Column="31" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -11,6 +18,6 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>

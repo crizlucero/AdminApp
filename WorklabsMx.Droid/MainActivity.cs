@@ -78,7 +78,7 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.Escritorio);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu_white);
             menu.FillMemberCard(ref nombre, ref foto, ref puesto, ref empresa);
             menu.FillMenu();
             FindViewById<TextView>(Resource.Id.lblNombre).Text = nombre;

@@ -153,10 +153,8 @@
     <Compile Include="ViewController\Formatos\InvitadosActivity.cs" />
     <Compile Include="ViewController\Servicios\ShoppingCartActivity.cs" />
     <Compile Include="ViewController\Servicios\PaymentActivity.cs" />
-    <Compile Include="ViewController\MiPerfil\TabPerfilActivity.cs" />
     <Compile Include="ViewController\MiPerfil\EditEmpresaActivity.cs" />
     <Compile Include="ViewController\MyMembershipActivity.cs" />
-    <Compile Include="ViewController\ReportActivity.cs" />
     <Compile Include="ViewController\MiPerfil\MisColaboradoresActivity.cs" />
     <Compile Include="ViewController\MiPerfil\TabColaboradoresActivity.cs" />
     <Compile Include="ViewController\MiPerfil\MisColaboradoresBajaActivity.cs" />
@@ -180,7 +178,6 @@
     <Compile Include="ViewElement\MainActivity.cs" />
     <Compile Include="ViewElement\EmpresaCardActivity.cs" />
     <Compile Include="ViewElement\PerfilCardActivity.cs" />
-    <Compile Include="ViewController\MiPerfil\EditarPerfilActivity.cs" />
     <Compile Include="ViewElement\PerfilCardEditarActivity.cs" />
     <Compile Include="Helpers\PerfilEditarPageAdapter.cs" />
   </ItemGroup>
@@ -377,6 +374,12 @@
     <AndroidResource Include="Resources\layout\SobreMiTrabajoEditarLayout.axml" />
     <AndroidResource Include="Resources\drawable\blue_round_button.xml" />
     <AndroidResource Include="Resources\layout\CompanyCardLayout.axml" />
+    <AndroidResource Include="Resources\layout\PerfilCardEditarLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_menu_white.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_menu_white.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_menu_white.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_menu_white.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_menu_white.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

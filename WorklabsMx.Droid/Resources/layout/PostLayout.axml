@@ -34,7 +34,7 @@
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblNombre"
-            android:text="@string/Nombre"
+            android:text="@string/str_profile_name"
             android:layout_columnSpan="3"
             android:textColor="#000"
             android:layout_marginRight="10dp"

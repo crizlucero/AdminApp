@@ -8,7 +8,6 @@ using Android.Widget;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Helpers;
-using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
@@ -72,7 +71,7 @@ namespace WorklabsMx.Droid
                     if (new UsuariosController().ChangeColaboradorEstatus(colaborador.Usuario_Id, 0))
                         llDirectorio.RemoveView(llColaborador);
                     else
-                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
+                        Toast.MakeText(this, Resource.String.str_general_save_error, ToastLength.Short).Show();
                 };
                 rlNombre.AddView(btnBaja);
                 llColaborador.AddView(rlNombre);

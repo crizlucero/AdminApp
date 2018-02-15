@@ -130,7 +130,7 @@ namespace WorklabsMx.Droid
                     }
                     else
                     {
-                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
+                        Toast.MakeText(this, Resource.String.str_general_save_error, ToastLength.Short);
                     }
                     break;
                 default:

@@ -20,6 +20,7 @@ using Java.IO;
 using Android.Content.PM;
 using Android.Provider;
 using static Android.Provider.MediaStore.Images;
+using Newtonsoft.Json;
 
 namespace WorklabsMx.Droid
 {
@@ -105,15 +106,7 @@ namespace WorklabsMx.Droid
             lblNombre.Text = post.Usuario.Usuario_Nombre;
             lblNombre.Click += delegate
             {
-                if (localStorage.Get("Usuario_Id") != post.Usuario.Usuario_Id || localStorage.Get("Usuario_Tipo") != post.Usuario.Usuario_Tipo)
-                {
-                    Intent perfil = new Intent(this, typeof(TabPerfilActivity));
-                    perfil.PutExtra("usuario_id", post.Usuario.Usuario_Id);
-                    perfil.PutExtra("usuario_tipo", post.Usuario.Usuario_Tipo);
-                    StartActivity(perfil);
-                }
-                else
-                    StartActivity(new Intent(this, typeof(TabPerfilActivity)));
+                ShowPerfilCard(new UsuariosController().GetMemberData(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo));
             };
 
             TextView lblPuesto = FindViewById<TextView>(Resource.Id.lblPuesto);
@@ -187,22 +180,11 @@ namespace WorklabsMx.Droid
                     imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(post.Usuario.Usuario_Fotografia_Perfil, 0, post.Usuario.Usuario_Fotografia_Perfil.Length));
                 else
                     imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
-                imgPerfil.Click += (sender, e) => AndHUD.Shared.ShowImage(this, Resources.GetDrawable(Resource.Mipmap.ic_work, null), null, MaskType.Black);
+                imgPerfil.Click += (sender, e) => ShowPerfilCard(new UsuariosController().GetMemberData(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo));
 
                 TextView lblNombre = CommentView.FindViewById<TextView>(Resource.Id.lblNombre);
                 lblNombre.Text = comentario.Usuario.Usuario_Nombre;
-                lblNombre.Click += delegate
-                {
-                    if (localStorage.Get("Usuario_Id") != comentario.Usuario.Usuario_Id || localStorage.Get("Usuario_Tipo") != comentario.Usuario.Usuario_Tipo)
-                    {
-                        Intent perfil = new Intent(this, typeof(TabPerfilActivity));
-                        perfil.PutExtra("usuario_id", comentario.Usuario.Usuario_Id);
-                        perfil.PutExtra("usuario_tipo", comentario.Usuario.Usuario_Tipo);
-                        StartActivity(perfil);
-                    }
-                    else
-                        StartActivity(new Intent(this, typeof(TabPerfilActivity)));
-                };
+                lblNombre.Click += (sender, e) => ShowPerfilCard(new UsuariosController().GetMemberData(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo));
 
                 TextView lblPuesto = CommentView.FindViewById<TextView>(Resource.Id.lblPuesto);
                 lblPuesto.Text = comentario.Usuario.Usuario_Puesto;
@@ -276,6 +258,13 @@ namespace WorklabsMx.Droid
                 tlComentarios.AddView(row);
             });
             AndHUD.Shared.Dismiss(this);
+        }
+
+        void ShowPerfilCard(UsuarioModel miembro)
+        {
+            Intent intent = new Intent(this, typeof(PerfilCardActivity));
+            intent.PutExtra("Miembro", JsonConvert.SerializeObject(miembro));
+            StartActivity(intent);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu) => base.OnCreateOptionsMenu(menu);
@@ -376,7 +365,7 @@ namespace WorklabsMx.Droid
                         svComentarios.ScrollY = svComentarios.Height;
                     }
                     else
-                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short);
+                        Toast.MakeText(this, Resource.String.str_general_save_error, ToastLength.Short);
                 }
                 else
                     Toast.MakeText(this, "Escribe o envía una imagen", ToastLength.Short).Show();

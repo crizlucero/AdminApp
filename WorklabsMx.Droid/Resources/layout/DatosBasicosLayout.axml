@@ -7,7 +7,7 @@
         android:layout_width="344dp"
         android:layout_height="wrap_content"
         android:id="@+id/txtNombre"
-        android:text="@string/Nombre"
+        android:text="@string/str_profile_name"
         android:textColor="#FFF"
         android:layout_gravity="fill" />
     <TextView
