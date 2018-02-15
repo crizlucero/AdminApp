@@ -109,7 +109,7 @@ namespace WorklabsMx.Controllers
         public List<SucursalModel> GetSucursales()
         {
             List<SucursalModel> sucursales = new List<SucursalModel>();
-            string query = "SELECT Sucursal_Id, Sucursal_Domicilio, Sucursal_Descripcion, Territorio_Colonia_Descripcion FROM vw_cat_Sucursales";
+            string query = "SELECT Sucursal_Id, Sucursal_Domicilio, Sucursal_Descripcion, Territorio_Colonia_Descripcion FROM vw_cat_Sucursales WHERE Sucursal_Estatus = 1";
             try
             {
                 conn.Open();

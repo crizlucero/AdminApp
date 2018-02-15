@@ -46,6 +46,16 @@ namespace WorklabsMx.iOS
             invitadosLocal = invitados;
             indexPathLocal = indexPath;
             correoInvitacion = System.IO.File.ReadAllText("HTML/Invitacion.html");
+            if (invitados.Count == 0)
+            {
+                this.btnQuitar.Enabled = false;
+                this.btnQuitar.Hidden = true;
+            }
+            else
+            {
+                this.btnQuitar.Enabled = true;
+                this.btnQuitar.Hidden = false; 
+            }
         }
 
 

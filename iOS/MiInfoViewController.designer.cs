@@ -16,43 +16,15 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblHabTag1 { get; set; }
+        UIKit.UIView cvwHabilidades { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblHabTag2 { get; set; }
+        UIKit.UIView cvwIntereses { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblHabTag3 { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblHabTag4 { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblHabTag5 { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblIntTag1 { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblIntTag2 { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblIntTag3 { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblIntTag4 { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblIntTag5 { get; set; }
+        UIKit.UILabel lblSobreMi { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -60,54 +32,19 @@ namespace WorklabsMx.iOS
 
         void ReleaseDesignerOutlets ()
         {
-            if (lblHabTag1 != null) {
-                lblHabTag1.Dispose ();
-                lblHabTag1 = null;
+            if (cvwHabilidades != null) {
+                cvwHabilidades.Dispose ();
+                cvwHabilidades = null;
             }
 
-            if (lblHabTag2 != null) {
-                lblHabTag2.Dispose ();
-                lblHabTag2 = null;
+            if (cvwIntereses != null) {
+                cvwIntereses.Dispose ();
+                cvwIntereses = null;
             }
 
-            if (lblHabTag3 != null) {
-                lblHabTag3.Dispose ();
-                lblHabTag3 = null;
-            }
-
-            if (lblHabTag4 != null) {
-                lblHabTag4.Dispose ();
-                lblHabTag4 = null;
-            }
-
-            if (lblHabTag5 != null) {
-                lblHabTag5.Dispose ();
-                lblHabTag5 = null;
-            }
-
-            if (lblIntTag1 != null) {
-                lblIntTag1.Dispose ();
-                lblIntTag1 = null;
-            }
-
-            if (lblIntTag2 != null) {
-                lblIntTag2.Dispose ();
-                lblIntTag2 = null;
-            }
-
-            if (lblIntTag3 != null) {
-                lblIntTag3.Dispose ();
-                lblIntTag3 = null;
-            }
-
-            if (lblIntTag4 != null) {
-                lblIntTag4.Dispose ();
-                lblIntTag4 = null;
-            }
-
-            if (lblIntTag5 != null) {
-                lblIntTag5.Dispose ();
-                lblIntTag5 = null;
+            if (lblSobreMi != null) {
+                lblSobreMi.Dispose ();
+                lblSobreMi = null;
             }
 
             if (txtSobreMi != null) {

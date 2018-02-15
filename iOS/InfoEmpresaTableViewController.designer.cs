@@ -20,7 +20,19 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblFechaInicioFin { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblPais { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblPuesto { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwColaboradores { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -37,9 +49,24 @@ namespace WorklabsMx.iOS
                 lblEmpresa = null;
             }
 
+            if (lblFechaInicioFin != null) {
+                lblFechaInicioFin.Dispose ();
+                lblFechaInicioFin = null;
+            }
+
             if (lblPais != null) {
                 lblPais.Dispose ();
                 lblPais = null;
+            }
+
+            if (lblPuesto != null) {
+                lblPuesto.Dispose ();
+                lblPuesto = null;
+            }
+
+            if (vwColaboradores != null) {
+                vwColaboradores.Dispose ();
+                vwColaboradores = null;
             }
 
             if (vwEmpresa != null) {

@@ -34,6 +34,16 @@ namespace WorklabsMx.iOS
         {
             lblNombre.Text = post.Usuario.Usuario_Nombre;
             lblLikes.Text = post.Publicacion_Me_Gustan_Cantidad + " LIKES";
+            if (post.Usuario.Usuario_Id == KeyChainHelper.GetKey("Usuario_Id") && post.Usuario.Usuario_Tipo == KeyChainHelper.GetKey("Usuario_Tipo"))
+            {
+                this.btnOpciones.Hidden = false;
+                this.btnOpciones.Enabled = true;
+            }
+            else
+            {
+                this.btnOpciones.Hidden = true;
+                this.btnOpciones.Enabled = false;
+            }
             if (int.Parse(post.Publicacion_Me_Gustan_Cantidad) == 0)
             {
                 this.btnLikes.SetImage(UIImage.FromBundle("NoLike"), UIControlState.Normal);
@@ -44,7 +54,6 @@ namespace WorklabsMx.iOS
             }
             lblFechaPost.Text = post.Publicacion_Fecha;
             lblComentarios.Text = post.Publicacion_Comentarios_Cantidad + " COMENTARIOS";
-
             if(int.Parse(post.Publicacion_Comentarios_Cantidad) == 0)
             {
                 this.imgComentarios.Image = UIImage.FromBundle("NoCom");
@@ -53,14 +62,11 @@ namespace WorklabsMx.iOS
             {
                 this.imgComentarios.Image = UIImage.FromBundle("Comments");
             }
-
             txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
             txtComentario.ScrollEnabled = false;
             txtComentario.Text = post.Publicacion_Contenido;
-
             StyleHelper.Style(vwVistaComentario.Layer);
             btnImgPerfil.SetBackgroundImage(currentImageProfile ?? UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
-
             PostLocal = post;
         }
 

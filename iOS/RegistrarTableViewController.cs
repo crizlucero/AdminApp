@@ -22,6 +22,7 @@ namespace WorklabsMx.iOS
         List<SucursalModel> sucursales = new SucursalController().GetSucursales();
         string FechaReservacion = "", Sucursal = "", AsuntoInv = "";
         UsuarioModel invitadoGeneral = new UsuarioModel();
+        int CantidadInvitadosAgregados = 0;
 
         public RegistrarTableViewController(IntPtr handle) : base(handle)
         {
@@ -38,13 +39,13 @@ namespace WorklabsMx.iOS
             dateFormat.DateFormat = "E, d MMM yyyy HH:mm";
             FechaReservacion = dateFormat.ToString((NSDate)DateTime.Now);
             Sucursal = sucursales[0].Sucursal_Descripcion;
-
         }
 
 
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            CantidadInvitadosAgregados = 0;
         }
 
         public override void ViewDidAppear(bool animated)
@@ -87,6 +88,7 @@ namespace WorklabsMx.iOS
             {
                 var CeldaInvitados = (CeldaInvitadosAgregados)tableView.DequeueReusableCell(IdentificadorInvitadosAgregados, indexPath);
                 CeldaInvitados.UpdateCell(invitadoGeneral);
+                CantidadInvitadosAgregados++;
                 return CeldaInvitados;
             }
             else if (current == -1)
@@ -182,33 +184,23 @@ namespace WorklabsMx.iOS
                 NumeroCeldas.RemoveAt(1);
                 TableView.DeleteRows(new NSIndexPath[] { NSIndexPath.Create(0, 1) }, UITableViewRowAnimation.Left);
                 TableView.EndUpdates();
-
             }
            
         }
 
         public void ConfirmarInvitaciones(List<UsuarioModel> invitadosLocal)
         {
-            foreach (UsuarioModel Invitado in invitados)
-            {
-                
-            }
             this.PerformSegue("DetalleInvitacion", null);
-
         }
 
         public void FechaSeleccionada()
         {
-
             this.PerformSegue("SeleccionarFecha", null);
-
         }
 
         public void SucursalSeleccionada()
         {
-
             this.PerformSegue("sucursales", null);
-
         }
 
         public void Asunto(string Asunto)
@@ -225,6 +217,7 @@ namespace WorklabsMx.iOS
             {
                 invitadoGeneral = invitado;
                 invitados.Add(invitado);
+                this.TableView.ReloadData();
             }
         }
     }

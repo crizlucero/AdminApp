@@ -1,4 +1,4 @@
-using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.Models; using System.Collections.Generic; using WorklabsMx.Controllers; using BigTed; using WorklabsMx.Helpers; using System.Threading.Tasks; using System.Threading; using Foundation; using SWRevealViewControllerBinding;  namespace WorklabsMx.iOS {     public partial class EscritorioController : UITableViewController
+using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.Models; using System.Collections.Generic; using WorklabsMx.Controllers; using BigTed; using WorklabsMx.Helpers; using System.Threading.Tasks; using Foundation; using SWRevealViewControllerBinding;  namespace WorklabsMx.iOS {     public partial class EscritorioController : UITableViewController
     {
         const string IdentificadorCeldaHeader = "Header";
         const string IdentificadorCeldaPost = "Post";         const string IdentificadorCeldaImagenPost = "PostImage";
@@ -27,12 +27,10 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         }          public override void ViewDidDisappear(bool animated)
         {
             base.ViewDidDisappear(animated);
-        }          async void GetData()         {
-                         RefreshControl.BeginRefreshing();
+        }          async void GetData()         {             RefreshControl.BeginRefreshing();
             await CargarInfo();             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();
             if (RefreshControl != null && RefreshControl.Refreshing)
                 RefreshControl.EndRefreshing();
-
         }          public override UIView GetViewForHeader(UITableView tableView, nint section)
         {             this.CargarMiembro();             var headerCell = (EscritorioHeaderCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);             headerCell.UpdateCell(miembro);             headerCell.EventosHeaderDelegate = this;             this.ImagenPerfil = headerCell.getImagenPerfil();             StyleHelper.Style(headerCell.Layer);
             return headerCell.ContentView;
@@ -154,5 +152,4 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
                         }
                     }
                     this.allPosts = SearchPost;
-                }
-                this.TableView.ReloadData();             });         }     }  } 
+                }             });              this.TableView.ReloadData();         }     }  } 

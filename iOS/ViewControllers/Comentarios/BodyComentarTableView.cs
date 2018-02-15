@@ -30,7 +30,19 @@ namespace WorklabsMx.iOS
 
         internal void UpdateCell(ComentarioModel comentario, UIImage currentImageProfile)
         {
-            
+
+
+
+            if (comentario.Usuario.Usuario_Id == KeyChainHelper.GetKey("Usuario_Id") && comentario.Usuario.Usuario_Tipo == KeyChainHelper.GetKey("Usuario_Tipo"))
+            {
+                this.btnComentar.Hidden = false;
+                this.btnComentar.Enabled = true;
+            }
+            else
+            {
+                this.btnComentar.Hidden = true;
+                this.btnComentar.Enabled = false;
+            }
             if (int.Parse(comentario.Comentario_Me_Gustan_Cantidad) == 0)
             {
                 this.btnLikes.SetImage(UIImage.FromBundle("NoLike"), UIControlState.Normal);

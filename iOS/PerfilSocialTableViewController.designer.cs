@@ -20,6 +20,10 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblCantidadPublicaciones { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblPublicaciones { get; set; }
 
         [Outlet]
@@ -35,6 +39,11 @@ namespace WorklabsMx.iOS
             if (cvwTablaRedesSociales != null) {
                 cvwTablaRedesSociales.Dispose ();
                 cvwTablaRedesSociales = null;
+            }
+
+            if (lblCantidadPublicaciones != null) {
+                lblCantidadPublicaciones.Dispose ();
+                lblCantidadPublicaciones = null;
             }
 
             if (lblPublicaciones != null) {

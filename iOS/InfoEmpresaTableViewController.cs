@@ -22,9 +22,13 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
             StyleHelper.Style(this.vwEmpresa.Layer);
             StyleHelper.Style(this.vwEmpresasAnteriores.Layer);
+            StyleHelper.Style(this.vwColaboradores.Layer);
             EmpresaModel empresa = new EmpresaController().GetEmpresaMiembro(Miembro.Usuario_Id);
-            this.lblPais.Text = "México";
+            this.lblPais.Text = empresa.Territorio.Municipio + ", " + empresa.Territorio.Pais;
             this.lblEmpresa.Text = empresa.Empresa_Miembro_Nombre;
+            this.lblPuesto.Text = Miembro.Usuario_Puesto;
+            this.lblFechaInicioFin.Text = "";
+
         }
     }
 }
