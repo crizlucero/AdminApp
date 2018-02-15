@@ -4,6 +4,6 @@
         android:id="@+id/menu_save"
         android:icon="@mipmap/ic_save"
         android:showAsAction="ifRoom"
-        android:title="@string/Guardar"
+        android:title="@string/str_general_save"
     />
 </menu>

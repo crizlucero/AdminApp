@@ -8,7 +8,6 @@ using Android.Widget;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Helpers;
-using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
@@ -72,7 +71,7 @@ namespace WorklabsMx.Droid
                     if (new UsuariosController().ChangeColaboradorEstatus(colaborador.Usuario_Id, 0))
                         llDirectorio.RemoveView(llColaborador);
                     else
-                        Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
+                        Toast.MakeText(this, Resource.String.str_general_save_error, ToastLength.Short).Show();
                 };
                 rlNombre.AddView(btnBaja);
                 llColaborador.AddView(rlNombre);
@@ -134,7 +133,7 @@ namespace WorklabsMx.Droid
                 rlGenero.AddView(imgGenero);
                 TextView txtGenero = new TextView(this)
                 {
-                    Text = Resources.GetString(Resource.String.Genero)
+                    Text = Resources.GetString(Resource.String.str_profile_gender)
                 };
                 txtGenero.SetX(100);
                 rlGenero.AddView(txtGenero);
@@ -164,7 +163,7 @@ namespace WorklabsMx.Droid
                 rlFechaNacimiento.AddView(imgFechaNacimiento);
                 TextView txtFechaNacimiento = new TextView(this)
                 {
-                    Text = Resources.GetString(Resource.String.FechaNacimiento)
+                    Text = Resources.GetString(Resource.String.str_profile_birthdate)
                 };
                 txtFechaNacimiento.SetX(100);
                 rlFechaNacimiento.AddView(txtFechaNacimiento);
@@ -194,7 +193,7 @@ namespace WorklabsMx.Droid
                 rlProfesion.AddView(imgProfesion);
                 TextView txtProfesion = new TextView(this)
                 {
-                    Text = Resources.GetString(Resource.String.Profesion)
+                    Text = Resources.GetString(Resource.String.str_profile_profession)
                 };
                 txtProfesion.SetX(100);
                 rlProfesion.AddView(txtProfesion);
@@ -224,7 +223,7 @@ namespace WorklabsMx.Droid
                 rlPuesto.AddView(imgPuesto);
                 TextView txtPuesto = new TextView(this)
                 {
-                    Text = Resources.GetString(Resource.String.Puesto)
+                    Text = Resources.GetString(Resource.String.str_profile_job_place)
                 };
                 txtPuesto.SetX(100);
                 rlPuesto.AddView(txtPuesto);
@@ -254,7 +253,7 @@ namespace WorklabsMx.Droid
                 rlHabilidades.AddView(imgHabilidades);
                 TextView txtHabilidades = new TextView(this)
                 {
-                    Text = Resources.GetString(Resource.String.Habilidades)
+                    Text = Resources.GetString(Resource.String.str_profile_hability)
                 };
                 txtHabilidades.SetX(100);
                 rlHabilidades.AddView(txtHabilidades);
@@ -284,7 +283,7 @@ namespace WorklabsMx.Droid
                 rlEmpresa.AddView(imgEmpresa);
                 TextView txtEmpresa = new TextView(this)
                 {
-                    Text = Resources.GetString(Resource.String.MiEmpresa)
+                    Text = Resources.GetString(Resource.String.str_profile_my_company)
                 };
                 txtEmpresa.SetX(100);
                 rlEmpresa.AddView(txtEmpresa);
@@ -301,7 +300,7 @@ namespace WorklabsMx.Droid
                 rlTelefono.AddView(imgTelefono);
                 TextView txtTelefono = new TextView(this)
                 {
-                    Text = Resources.GetString(Resource.String.Telefono)
+                    Text = Resources.GetString(Resource.String.str_profile_telephone)
                 };
                 txtTelefono.SetX(100);
                 rlTelefono.AddView(txtTelefono);
@@ -332,7 +331,7 @@ namespace WorklabsMx.Droid
                 rlCelular.AddView(imgCelular);
                 TextView txtCelular = new TextView(this)
                 {
-                    Text = Resources.GetString(Resource.String.Celular)
+                    Text = Resources.GetString(Resource.String.str_profile_cellphone)
                 };
                 txtCelular.SetX(100);
                 rlCelular.AddView(txtCelular);
@@ -409,33 +408,5 @@ namespace WorklabsMx.Droid
             return base.OnOptionsItemSelected(item);
         }
 
-        void SearchView()
-        {
-            SetContentView(Resource.Layout.SearchUserLayout);
-            FindViewById<ImageButton>(Resource.Id.btnClear).Click += (sender, e) =>
-            {
-                Directorio();
-            };
-
-            FindViewById<Button>(Resource.Id.btnBuscar).Click += (sender, e) =>
-            {
-                Directorio(FindViewById<TextView>(Resource.Id.txtNombre).Text, FindViewById<TextView>(Resource.Id.txtApellidos).Text,
-                           FindViewById<TextView>(Resource.Id.txtPuesto).Text, FindViewById<TextView>(Resource.Id.txtProfesion).Text,
-                           FindViewById<TextView>(Resource.Id.txtHabilidades).Text, FindViewById<CheckBox>(Resource.Id.cbDisponibilidad).Checked ? "Disponible" : "No Disponible");
-            };
-            FindViewById<LinearLayout>(Resource.Id.llLblPais).Visibility = ViewStates.Gone;
-            FindViewById<LinearLayout>(Resource.Id.llLblEstado).Visibility = ViewStates.Gone;
-            FindViewById<LinearLayout>(Resource.Id.llLblMunicipio).Visibility = ViewStates.Gone;
-            FindViewById<LinearLayout>(Resource.Id.llPais).Visibility = ViewStates.Gone;
-            FindViewById<LinearLayout>(Resource.Id.llEstado).Visibility = ViewStates.Gone;
-            FindViewById<LinearLayout>(Resource.Id.llMunicipio).Visibility = ViewStates.Gone;
-
-
-            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-            SetActionBar(toolbar);
-            ActionBar.Title = Resources.GetString(Resource.String.DirectorioUsuario);
-            ActionBar.SetDisplayHomeAsUpEnabled(true);
-            //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
-        }
     }
 }

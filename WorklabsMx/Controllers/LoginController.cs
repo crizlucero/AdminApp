@@ -35,7 +35,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage("Inicio de sesión: "+ e.ToString());
+                SlackLogs.SendMessage("Inicio de sesión: "+ e);
             }
             finally
             {

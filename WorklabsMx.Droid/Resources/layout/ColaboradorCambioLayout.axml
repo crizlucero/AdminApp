@@ -18,15 +18,13 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/linearLayout1">
+            android:layout_height="match_parent">
             <LinearLayout
                 android:orientation="vertical"
                 android:minWidth="25px"
                 android:minHeight="25px"
                 android:layout_width="match_parent"
-                android:layout_height="144.0dp"
-                android:id="@+id/linearLayout2">
+                android:layout_height="144.0dp">
                 <ImageView
                     android:src="@android:drawable/ic_menu_gallery"
                     android:layout_width="match_parent"
@@ -45,7 +43,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Nombre"
+                    android:text="@string/str_profile_name"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -60,7 +58,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtNombre"
-                    android:hint="@string/Nombre" />
+                    android:hint="@string/str_profile_name" />
             </LinearLayout>
             <RelativeLayout
                 android:minWidth="25px"
@@ -74,7 +72,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Apellidos"
+                    android:text="@string/str_profile_lastname"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -89,7 +87,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtApellidos"
-                    android:hint="@string/Apellidos" />
+                    android:hint="@string/str_profile_lastname" />
             </LinearLayout>
             <RelativeLayout
                 android:minWidth="25px"
@@ -103,7 +101,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/CorreoElectronico"
+                    android:text="@string/str_general_email"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -118,7 +116,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtEmail"
-                    android:hint="@string/CorreoElectronico" />
+                    android:hint="@string/str_general_email" />
             </LinearLayout>
             <RelativeLayout
                 android:minWidth="25px"
@@ -132,7 +130,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Genero"
+                    android:text="@string/str_profile_gender"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -161,7 +159,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/FechaNacimiento"
+                    android:text="@string/str_profile_birthdate"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -191,7 +189,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Profesion"
+                    android:text="@string/str_profile_profession"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -220,7 +218,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Puesto"
+                    android:text="@string/str_profile_job_place"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -249,7 +247,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Habilidades"
+                    android:text="@string/str_profile_hability"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -278,7 +276,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Telefono"
+                    android:text="@string/str_profile_telephone"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>
@@ -307,7 +305,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29.0dp"
-                    android:text="@string/Celular"
+                    android:text="@string/str_profile_cellphone"
                     android:translationX="30dp"
                     android:translationY="5dp" />
             </RelativeLayout>

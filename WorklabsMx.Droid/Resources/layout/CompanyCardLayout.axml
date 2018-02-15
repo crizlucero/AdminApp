@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFF">
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:rowCount="4"
+        android:columnCount="3"
+        android:background="#FFF"
+        android:elevation="3dp"
+        android:translationZ="3dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp">
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:id="@+id/imageView1"
+            android:layout_rowSpan="4"
+            android:layout_width="75dp"
+            android:layout_height="75dp" />
+        <TextView
+            android:id="@+id/lblPuesto"
+            android:text="Director Creativo" />
+        <TextView
+            android:id="@+id/lblEditar"
+            android:text="@string/str_general_edit"
+            android:textColor="#95D6FF"
+            android:layout_rowSpan="2"
+            android:layout_gravity="center_vertical|right"
+            android:gravity="left"
+            android:paddingRight="15dp" />
+        <TextView
+            android:id="@+id/lblNombre"
+            android:text="© Airbnb, Inc." />
+        <TextView
+            android:id="@+id/lblUbicacion"
+            android:text="Guadalajara, México" />
+        <TextView
+            android:id="@+id/textView1"
+            android:text="@string/str_general_delete"
+            android:textColor="#FC4A4A"
+            android:layout_rowSpan="2"
+            android:layout_gravity="center_vertical|right" />
+        <TextView
+            android:id="@+id/lblFecha"
+            android:text="Feb 2016 - Presente" />
+    </GridLayout>
+</LinearLayout>

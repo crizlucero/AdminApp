@@ -78,7 +78,7 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.Escritorio);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
+            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu_white);
             menu.FillMemberCard(ref nombre, ref foto, ref puesto, ref empresa);
             menu.FillMenu();
             FindViewById<TextView>(Resource.Id.lblNombre).Text = nombre;
@@ -170,7 +170,10 @@ namespace WorklabsMx.Droid
 
                 TextView lblLike = PostView.FindViewById<TextView>(Resource.Id.lblLikes);
                 Drawable icLike = ContextCompat.GetDrawable(this, Resource.Mipmap.ic_like);
-                icLike.SetTintList(GetColorStateList(Resource.Color.button_unpressed));
+                if (Build.VERSION.SdkInt > BuildVersionCodes.Lollipop)
+                    icLike.SetTintList(GetColorStateList(Resource.Color.button_unpressed));
+                else
+                    icLike.SetTint(Resource.Color.button_unpressed);
                 icLike.SetBounds(0, 0, 50, 50);
                 lblLike.SetCompoundDrawables(icLike, null, null, null);
                 lblLike.Text = post.Publicacion_Me_Gustan_Cantidad + " " + Resources.GetString(Resource.String.Likes);
@@ -188,18 +191,27 @@ namespace WorklabsMx.Droid
                         {
                             post.Publicacion_Me_Gusta_Usuario = "0";
                             lblLike.SetTextColor(Color.Black);
-                            icLike.SetTintList(GetColorStateList(Resource.Color.button_unpressed));
+                            if (Build.VERSION.SdkInt > BuildVersionCodes.Lollipop)
+                                icLike.SetTintList(GetColorStateList(Resource.Color.button_unpressed));
+                            else
+                                icLike.SetTint(Resource.Color.button_unpressed);
                         }
                         else
                         {
                             post.Publicacion_Me_Gusta_Usuario = "1";
-                            icLike.SetTintList(GetColorStateList(Resource.Color.like_heart_pressed));
+                            if (Build.VERSION.SdkInt > BuildVersionCodes.Lollipop)
+                                icLike.SetTintList(GetColorStateList(Resource.Color.like_heart_pressed));
+                            else
+                                icLike.SetTint(Resource.Color.like_heart_pressed);
                             lblLike.SetTextColor(Color.Rgb(57, 87, 217));
                         }
                     }
                 };
                 if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
-                    icLike.SetTintList(GetColorStateList(Resource.Color.like_heart_pressed));
+                    if (Build.VERSION.SdkInt > BuildVersionCodes.Lollipop)
+                        icLike.SetTintList(GetColorStateList(Resource.Color.like_heart_pressed));
+                    else
+                        icLike.SetTint(Resource.Color.like_heart_pressed);
 
                 ImageView imgPost = PostView.FindViewById<ImageView>(Resource.Id.imgPost);
                 if (!string.IsNullOrEmpty(post.Publicacion_Imagen_Ruta))
@@ -219,7 +231,10 @@ namespace WorklabsMx.Droid
                 lblComentario.Text = post.Publicacion_Comentarios_Cantidad + " " + Resources.GetString(Resource.String.Comentarios);
 
                 Drawable icComentario = ContextCompat.GetDrawable(this, Resource.Mipmap.ic_mode_comment);
-                icComentario.SetTintList(GetColorStateList(Resource.Color.button_unpressed));
+                if (Build.VERSION.SdkInt > BuildVersionCodes.Lollipop)
+                    icLike.SetTintList(GetColorStateList(Resource.Color.button_unpressed));
+                else
+                    icLike.SetTint(Resource.Color.button_unpressed);
                 icComentario.SetBounds(0, 0, 50, 50);
                 lblComentario.SetCompoundDrawables(icComentario, null, null, null);
 
@@ -232,7 +247,10 @@ namespace WorklabsMx.Droid
                 };
                 if (post.Publicacion_Comentarios_Cantidad != "0")
                 {
-                    icComentario.SetTintList(GetColorStateList(Resource.Color.comment_pressed));
+                    if (Build.VERSION.SdkInt > BuildVersionCodes.Lollipop)
+                        icLike.SetTintList(GetColorStateList(Resource.Color.comment_pressed));
+                    else
+                        icLike.SetTint(Resource.Color.comment_pressed);
                 }
                 if (localStorage.Get("Usuario_id") == post.Usuario.Usuario_Id && localStorage.Get("Usuario_Tipo") == post.Usuario.Usuario_Tipo)
                 {

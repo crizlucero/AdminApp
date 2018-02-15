@@ -22,7 +22,7 @@
                 android:layout_width="344dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtNombre"
-                android:hint="@string/Nombre"
+                android:hint="@string/str_profile_name"
                 android:textColorHint="#ffCCCCCC"
                 android:textColor="#FFF"
                 android:layout_gravity="fill"
@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtApellidos"
-                android:hint="@string/Apellidos"
+                android:hint="@string/str_profile_lastname"
                 android:textColor="#FFF"
                 android:textColorHint="#ffCCCCCC"
                 android:layout_gravity="fill"
@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40.0dp"
                 android:id="@+id/txtEmail"
-                android:hint="@string/CorreoElectronico"
+                android:hint="@string/str_general_email"
                 android:textColor="#FFF"
                 android:textColorHint="#ffCCCCCC"
                 android:layout_gravity="fill"
@@ -66,7 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtAsunto"
-                android:hint="@string/Asunto"
+                android:hint="@string/str_general_subject"
                 android:inputType="textEmailSubject" />
             <Button
                 android:inputType="date"
@@ -76,7 +76,7 @@
                 android:textColor="#ffCCCCCC"
                 android:drawableRight="@mipmap/ic_arrow_down"
                 android:layout_gravity="center"
-                android:text="@string/SeleccionarFecha"
+                android:text="@string/str_meeting_room_select_date"
                 android:drawableTint="#ffCCCCCC" />
             <TextView
                 android:inputType="time"

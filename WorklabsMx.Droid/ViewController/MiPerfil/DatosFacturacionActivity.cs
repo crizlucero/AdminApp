@@ -32,20 +32,20 @@ namespace WorklabsMx.Droid
             storage = SimpleStorage.EditGroup("Login");
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
-            ActionBar.Title = Resources.GetString(Resource.String.MiPerfil);
+            ActionBar.Title = Resources.GetString(Resource.String.str_profile_my_profile);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             //ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu);
 
-            Email = FindViewById<EditText>(Resource.Id.txtCorreoElectronicoFactura);
-            RazonSocial = FindViewById<EditText>(Resource.Id.txtRazonSocialFactura);
-            RFC = FindViewById<EditText>(Resource.Id.txtRFCFactura);
-            Estado = FindViewById<EditText>(Resource.Id.txtEstadoFactura);
-            Municipio = FindViewById<EditText>(Resource.Id.txtMunicipioFactura);
-            Colonia = FindViewById<Spinner>(Resource.Id.txtColoniaFactura);
-            CodigoPostal = FindViewById<EditText>(Resource.Id.txtCodigoPostalFactura);
-            Calle = FindViewById<EditText>(Resource.Id.txtCalleFactura);
-            NumExterior = FindViewById<EditText>(Resource.Id.txtNumExteriorFactura);
-            NumInterior = FindViewById<EditText>(Resource.Id.txtNumInteriorFactura);
+            Email = FindViewById<EditText>(Resource.Id.txtCorreoElectronico);
+            RazonSocial = FindViewById<EditText>(Resource.Id.txtRazonSocial);
+            RFC = FindViewById<EditText>(Resource.Id.txtRFC);
+            Estado = FindViewById<EditText>(Resource.Id.txtEstado);
+            Municipio = FindViewById<EditText>(Resource.Id.txtMunicipio);
+            Colonia = FindViewById<Spinner>(Resource.Id.txtColonia);
+            CodigoPostal = FindViewById<EditText>(Resource.Id.txtCodigoPostal);
+            Calle = FindViewById<EditText>(Resource.Id.txtCalle);
+            NumExterior = FindViewById<EditText>(Resource.Id.txtNumExterior);
+            NumInterior = FindViewById<EditText>(Resource.Id.txtNumInterior);
 
             FillData();
             CodigoPostal.TextChanged += CodigoPostal_TextChanged;
@@ -97,7 +97,7 @@ namespace WorklabsMx.Droid
                 case Resource.Id.menu_save:
                     if (new EmpresaController().UpdateDatosFiscales(empresa_id, storage.Get("Usuario_Id"), territorio_id, Calle.Text, NumExterior.Text, NumInterior.Text, Email.Text))
                         Toast.MakeText(this, Resource.String.DatosGuardados,ToastLength.Short).Show();
-                    else Toast.MakeText(this, Resource.String.ErrorAlGuardar, ToastLength.Short).Show();
+                    else Toast.MakeText(this, Resource.String.str_general_save_error, ToastLength.Short).Show();
                     break;
                 default:
                     StartActivity(new Intent(this, typeof(MainActivity)));

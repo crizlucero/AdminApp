@@ -7,6 +7,7 @@ using Android.Support.V4.View;
 using Android.Widget;
 using com.refractored;
 using Newtonsoft.Json;
+using PerpetualEngine.Storage;
 using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
@@ -15,6 +16,13 @@ namespace WorklabsMx.Droid
     public class PerfilCardActivity : Activity
     {
         UsuarioModel miembro;
+        readonly SimpleStorage storage;
+
+        public PerfilCardActivity()
+        {
+            storage = SimpleStorage.EditGroup("Login");
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -38,8 +46,21 @@ namespace WorklabsMx.Droid
                 StartActivity(intent);
             };
 
+            if (miembro.Usuario_Id == storage.Get("Usuario_Id") && miembro.Usuario_Tipo == storage.Get("Usuario_Tipo"))
+            {
+                FindViewById<Button>(Resource.Id.btnSeguir).Visibility = Android.Views.ViewStates.Gone;
+                ImageView editar = FindViewById<ImageView>(Resource.Id.btnEditar);
+                editar.Visibility = Android.Views.ViewStates.Visible;
+                editar.Click += delegate
+                {
+                    Intent intent = new Intent(this, typeof(PerfilCardEditarActivity));
+                    intent.PutExtra("Miembro", Intent.GetStringExtra("Miembro"));
+                    StartActivity(intent);
+                };
+            }
+
             ViewPager _viewPager = FindViewById<ViewPager>(Resource.Id.vpPerfil);
-            _viewPager.Adapter = new PerfilPageAdapter(this, new List<string> { Resources.GetString(Resource.String.SobreMi), Resources.GetString(Resource.String.Social), Resources.GetString(Resource.String.Trabajo) }, miembro);
+            _viewPager.Adapter = new PerfilPageAdapter(this, new List<string> { Resources.GetString(Resource.String.str_profile_about_me), Resources.GetString(Resource.String.str_profile_social), Resources.GetString(Resource.String.str_profile_work) }, miembro);
 
             PagerSlidingTabStrip tabs = FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
             tabs.SetTextColorResource(Resource.Color.comment_pressed);

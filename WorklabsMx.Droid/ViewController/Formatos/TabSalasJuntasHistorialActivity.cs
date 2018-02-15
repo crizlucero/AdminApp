@@ -145,7 +145,7 @@ namespace WorklabsMx.Droid
                 ReservaView.FindViewById<ImageButton>(Resource.Id.btnCancelar).Click += delegate
                 {
                     if (controller.CancelarSalaJuntas("Baja", reservacion.Sala_Junta_Reservacion_Id)){
-                        Toast.MakeText(context, Resource.String.SalaCancelada, ToastLength.Short).Show();
+                        Toast.MakeText(context, Resource.String.str_meeting_room_canceled, ToastLength.Short).Show();
                         historico.Remove(reservacion);
                         HistorialValidation();
                     }else

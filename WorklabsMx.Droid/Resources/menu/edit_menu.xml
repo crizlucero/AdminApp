@@ -4,6 +4,6 @@
         android:id="@+id/menu_edit"
         android:icon="@mipmap/ic_create"
         android:showAsAction="ifRoom"
-        android:title="@string/Editar"
+        android:title="@string/str_general_edit"
     />
 </menu>

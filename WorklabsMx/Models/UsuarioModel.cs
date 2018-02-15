@@ -27,5 +27,7 @@ namespace WorklabsMx.Models
         public string Disponibilidad_Laboral_Descripcion { get; set; }
         public string Usuario_Empresa_Nombre { get; set; }
         public byte[] Usuario_Fotografia_Perfil { get; set;}
+        public EmpresaModel Empresa_Actual { get; set; }
+        public List<EmpresaModel> Empresas_Anteriores { get; set; }
     }
 }
