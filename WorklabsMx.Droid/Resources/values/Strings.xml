@@ -31,11 +31,11 @@
 	<string name="str_profile_name">Nombre</string>
 	<string name="str_profile_lastname">Apellidos</string>
 	<string name="str_general_subject">Asunto</string>
-	<string name="Fecha">Fecha</string>
-	<string name="HoraSalida">Hora de Salida</string>
-	<string name="HoraEntrada">Hora de Entrada</string>
-	<string name="GiroComercial">Giro Comercial</string>
-	<string name="Direccion">Dirección</string>
+	<string name="str_general_date">Fecha</string>
+	<string name="str_general_hour_final">Hora de Salida</string>
+	<string name="str_general_hour_start">Hora de Entrada</string>
+	<string name="str_company_commercial_bussines">Giro Comercial</string>
+	<string name="str_general_direction">Dirección</string>
 	<string name="DirectorioUsuario">Directorio de Usuarios</string>
 	<string name="DirectorioEmpresas">Directorio de Empresas</string>
 	<string name="Directorio">Directorio</string>
@@ -87,7 +87,7 @@
 	<string name="Subscripciones">Subscripciones</string>
 	<string name="Comentar">Comentar</string>
 	<string name="Comentarios">COMENTARIO(S)</string>
-	<string name="Reportes">Reportes</string>
+	<string name="str_general_report">Reportes</string>
 	<string name="MisColaboradores">Mis Colaboradores</string>
 	<string name="str_general_country">País</string>
 	<string name="Empresa">Empresa</string>
@@ -99,16 +99,15 @@
 	<string name="Modificar">Modificar</string>
 	<string name="OfflineApp">No tienes acceso a una conexión de Internet</string>
 	<string name="NoConnection">Sin Conexión</string>
-	<string name="ScanQR">SCAN QR CODE FOR ACCESS</string>
-	<string name="Publicar">Publicar</string>
-	<string name="Likes">LIKE(S)</string>
-	<string name="Postear">Escribe una publicación... :)</string>
-	<string name="NoComentarios">Sé el primero en comentar</string>
+	<string name="str_general_scan_qr">Revisa el código QR para acceder</string>
+	<string name="str_dashboard_publish">Publicar</string>
+	<string name="str_dashboard_likes">LIKE(S)</string>
+	<string name="str_dashboard_no_comments">Sé el primero en comentar</string>
 	<string name="BorrarComentario">Eliminar comentario</string>
 	<string name="MensajeBorrarComentario">Se eliminará el comentario</string>
 	<string name="ComentarioEliminado">Comentario eliminado</string>
 	<string name="ErrorIntento">Hubo un error, intente de nuevo</string>
-	<string name="Cancelar">Cancelar</string>
+	<string name="str_general_cancel">Cancelar</string>
 	<string name="ReportarComentario">Reportar comentario</string>
 	<string name="MensajeReportarComentario">¿Desea reportar el comentario?</string>
 	<string name="str_general_ok">OK</string>
@@ -144,7 +143,7 @@
 	<string name="EnviarInvitacion">Enviar Invitación</string>
 	<string name="str_social_network_follow">Seguir</string>
 	<string name="DetalleReserva">Detalle de Reservación</string>
-	<string name="Confirmar">Confirmar</string>
+	<string name="str_general_confirm">Confirmar</string>
 	<string name="AgregarInvitado">Añadir un invitado</string>
 	<string name="TuLlaveAcceso">ESTA ES TU LLAVE DE ACCESO</string>
 	<string name="TuLlaveAcceso_Qr">Lleva contigo este código QR.</string>
@@ -175,4 +174,5 @@
     <string name="str_general_add">Agregar</string>
     <string name="str_general_add_experience">+ Añadir experiencia laboral</string>
     <string name="str_general_delete">Eliminar</string>
+    <string name="str_dashboard_post">Publica algo</string>
 </resources>

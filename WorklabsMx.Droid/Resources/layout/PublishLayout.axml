@@ -42,7 +42,7 @@
             android:layout_row="3"
             android:layout_column="0"
             android:gravity="top|left"
-            android:hint="@string/Postear"
+            android:hint="@string/str_dashboard_post"
             android:background="@drawable/edittextstyle"
             android:padding="10dp"
             android:lines="6"
@@ -112,7 +112,7 @@
         <Button
             android:background="@drawable/buttonstyle"
             style="@style/ButtonApply"
-            android:text="@string/Publicar"
+            android:text="@string/str_dashboard_publish"
             android:id="@+id/btnPublishApply"
             android:layout_column="3"
             android:layout_gravity="right"

@@ -120,7 +120,7 @@ namespace WorklabsMx.Droid
             lblPost.Text = post.Publicacion_Contenido;
 
             TextView lblLike = FindViewById<TextView>(Resource.Id.lblLikes);
-            lblLike.Text = post.Publicacion_Me_Gustan_Cantidad + " " + Resources.GetString(Resource.String.Likes);
+            lblLike.Text = post.Publicacion_Me_Gustan_Cantidad + " " + Resources.GetString(Resource.String.str_dashboard_likes);
             lblLike.Click += delegate
             {
                 string transaccion = "ALTA";
@@ -130,7 +130,7 @@ namespace WorklabsMx.Droid
                     transaccion = "MODIFICAR";
                 if (new EscritorioController().PostLike(post.Publicacion_Id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), transaccion))
                 {
-                    lblLike.Text = new EscritorioController().GetLikesPublish(post.Publicacion_Id) + " " + Resources.GetString(Resource.String.Likes);
+                    lblLike.Text = new EscritorioController().GetLikesPublish(post.Publicacion_Id) + " " + Resources.GetString(Resource.String.str_dashboard_likes);
                     if (transaccion == "BAJA")
                     {
                         post.Publicacion_Me_Gusta_Usuario = "0";
@@ -197,7 +197,7 @@ namespace WorklabsMx.Droid
                 lblPost.Text = comentario.Comentario_Contenido;
 
                 TextView lblLike = CommentView.FindViewById<TextView>(Resource.Id.lblLikes);
-                lblLike.Text = comentario.Comentario_Me_Gustan_Cantidad + " " + Resources.GetString(Resource.String.Likes);
+                lblLike.Text = comentario.Comentario_Me_Gustan_Cantidad + " " + Resources.GetString(Resource.String.str_dashboard_likes);
                 lblLike.Click += delegate
                 {
                     string transaccion = "ALTA";
@@ -207,7 +207,7 @@ namespace WorklabsMx.Droid
                         transaccion = "MODIFICAR";
                     if (new EscritorioController().CommentLike(comentario.Comentario_Id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), transaccion))
                     {
-                        lblLike.Text = new EscritorioController().GetLikesComments(comentario.Comentario_Id) + " " + Resources.GetString(Resource.String.Likes);
+                        lblLike.Text = new EscritorioController().GetLikesComments(comentario.Comentario_Id) + " " + Resources.GetString(Resource.String.str_dashboard_likes);
                         if (transaccion == "BAJA")
                         {
 

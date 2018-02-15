@@ -1,14 +1,10 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/EmpresaModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/Helpers/PerfilEditarPageAdapter.cs">
     <Files>
-      <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="145" Column="41" />
-      <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="100" Column="82" />
+      <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="97" Column="85" />
       <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardActivity.cs" Line="52" Column="26" />
-      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardEditarActivity.cs" Line="46" Column="15" />
-      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/MisColaboradoresActivity.cs" Line="10" Column="26" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="163" Column="91" />
-      <File FileName="WorklabsMx/Models/UsuarioModel.cs" Line="30" Column="26" />
-      <File FileName="WorklabsMx/Models/EmpresaModel.cs" Line="25" Column="31" />
+      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardEditarActivity.cs" Line="52" Column="53" />
+      <File FileName="WorklabsMx.Droid/Helpers/PerfilEditarPageAdapter.cs" Line="81" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

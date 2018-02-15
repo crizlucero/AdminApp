@@ -37,7 +37,7 @@
         <Button
             android:background="@drawable/buttonstyle"
             style="@style/ButtonApply"
-            android:text="@string/Publicar"
+            android:text="@string/str_dashboard_publish"
             android:layout_column="1"
             android:layout_gravity="left"
             android:layout_height="20dp"

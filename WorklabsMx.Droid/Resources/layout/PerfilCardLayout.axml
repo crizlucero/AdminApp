@@ -129,7 +129,7 @@
                 android:layout_column="0"
                 android:layout_columnSpan="5"
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
+                android:layout_height="400dp"
                 android:background="#ff7f7f7f">
                 <com.refractored.PagerSlidingTabStrip
                     android:id="@+id/tabs"

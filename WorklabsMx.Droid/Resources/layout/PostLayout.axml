@@ -64,7 +64,7 @@
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblFecha"
-            android:text="@string/Fecha"
+            android:text="@string/str_general_date"
             android:textColor="#ff9e9e9e"
             android:layout_columnSpan="4"
             android:layout_width="wrap_content"
@@ -97,7 +97,7 @@
             android:visibility="gone" />
         <TextView
             android:id="@+id/lblLikes"
-            android:text="@string/Likes"
+            android:text="@string/str_dashboard_likes"
             android:textSize="8dp"
             android:textColor="#000"
             android:layout_gravity="center"
