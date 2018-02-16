@@ -1,27 +1,15 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Comentarios/comentarTableView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/PerfilesTableViewController.cs">
     <Files>
-      <File FileName="iOS/MenuTableViewController.cs" Line="155" Column="37" NotebookId="1" />
-      <File FileName="iOS/RedesSocialesTableViewCell.cs" Line="17" Column="12" NotebookId="1" />
-      <File FileName="iOS/InfoEmpresaTableViewController.cs" Line="44" Column="17" NotebookId="1" />
-      <File FileName="iOS/ColeccionTrabajosAnteriores.cs" Line="27" Column="43" NotebookId="1" />
-      <File FileName="iOS/CeldaTrabajosAnteriores.cs" Line="17" Column="10" NotebookId="1" />
-      <File FileName="iOS/PerfilesTableViewController.cs" Line="41" Column="54" NotebookId="1" />
-      <File FileName="iOS/PerfilRedesSociales.cs" Line="33" Column="32" NotebookId="1" />
-      <File FileName="iOS/Helpers/MenuHelper.cs" Line="50" Column="34" NotebookId="1" />
-      <File FileName="iOS/ComunidadTableViewController.cs" Line="164" Column="22" NotebookId="1" />
-      <File FileName="iOS/ComunidadTableViewCell.cs" Line="14" Column="47" NotebookId="1" />
-      <File FileName="iOS/FavoritosTableViewController.cs" Line="49" Column="37" NotebookId="1" />
-      <File FileName="iOS/FavoritosTableViewCell.cs" Line="29" Column="10" NotebookId="1" />
-      <File FileName="iOS/ComentariosBodyImageCell.cs" Line="129" Column="10" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="107" Column="14" NotebookId="1" />
-      <File FileName="iOS/InteresesCollectionView.cs" Line="32" Column="73" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/VistaSucursales/ColeccionSucursales.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="68" Column="12" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Servicios/Productos/CarritoProductos.cs" Line="131" Column="22" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="161" Column="10" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/MiCuenta/Membresias/MembresiasMiCuentaViewController.cs" Line="100" Column="22" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Comentarios/comentarTableView.cs" Line="179" Column="10" NotebookId="1" />
+      <File FileName="iOS/PerfilesTableViewController.cs" Line="207" Column="52" NotebookId="1" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="247" Column="42" NotebookId="1" />
+      <File FileName="WorklabsMx/Controllers/SuscripcionesController.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="304" Column="16" NotebookId="1" />
+      <File FileName="iOS/ViewElements/InfoPersonaCard.cs" Line="60" Column="62" NotebookId="1" />
+      <File FileName="iOS/Helpers/MenuHelper.cs" Line="96" Column="23" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="95" Column="27" NotebookId="1" />
+      <File FileName="iOS/ComunidadTableViewCell.cs" Line="34" Column="13" NotebookId="1" />
+      <File FileName="iOS/Helpers/KeyChainHelper.cs" Line="8" Column="18" NotebookId="1" />
     </Files>
     <FloatingWindows>
       <FloatingWindow WindowId="1" X="917" Y="23" Width="1102" Height="1026">
@@ -34,9 +22,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Comentarios/comentarTableView.cs" relfile="iOS/ViewControllers/Comentarios/comentarTableView.cs" line="203" column="32" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="456" column="29" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="448" column="26" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="455" column="29" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="447" column="26" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/ConfigurationsController.cs" relfile="WorklabsMx/Controllers/ConfigurationsController.cs" line="109" column="29" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
