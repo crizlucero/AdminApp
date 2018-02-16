@@ -735,6 +735,10 @@
     <ImageAsset Include="Assets.xcassets\EditarPerfil.imageset\EditarPerfil.png" />
     <ImageAsset Include="Assets.xcassets\EditarPerfil.imageset\EditarPerfil%402x.png" />
     <ImageAsset Include="Assets.xcassets\EditarPerfil.imageset\EditarPerfil%403x.png" />
+    <ImageAsset Include="Assets.xcassets\CamaraEditar.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\CamaraEditar.imageset\CamaEditar.png" />
+    <ImageAsset Include="Assets.xcassets\CamaraEditar.imageset\CamaEditar%402x.png" />
+    <ImageAsset Include="Assets.xcassets\CamaraEditar.imageset\CamaEditar%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1422,6 +1426,7 @@
     <Folder Include="Assets.xcassets\Sala6.imageset\" />
     <Folder Include="Assets.xcassets\Sala10.imageset\" />
     <Folder Include="Assets.xcassets\EditarPerfil.imageset\" />
+    <Folder Include="Assets.xcassets\CamaraEditar.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

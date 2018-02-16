@@ -13,7 +13,6 @@ namespace WorklabsMx.iOS
     public partial class FavoritosTableViewController : UITableViewController
     {
         UsuariosController Favorites = new UsuariosController();
-        List<UsuarioModel> Usuarios = new List<UsuarioModel>();
         List<UsuarioModel> UsuariosFavoritos = new List<UsuarioModel>();
 
         const string IdentificadorCeldaHeader = "HeaderBuscador";
@@ -71,16 +70,7 @@ namespace WorklabsMx.iOS
             {
                 if (InternetConectionHelper.VerificarConexion())
                 {
-                    this.Usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
-                    UsuariosFavoritos = new List<UsuarioModel>();
-                    foreach (UsuarioModel UsuarioFavorito in this.Usuarios)
-                    {
-                        var isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), UsuarioFavorito.Usuario_Id, UsuarioFavorito.Usuario_Tipo);
-                        if (isFavorite.Value)
-                        {
-                            this.UsuariosFavoritos.Add(UsuarioFavorito);
-                        }
-                    }
+                    this.UsuariosFavoritos = new UsuariosController().GetMiembrosFavoritos(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
                 }
                 else
                 {
