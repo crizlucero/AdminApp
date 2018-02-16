@@ -91,7 +91,6 @@ namespace WorklabsMx.Controllers
         /// <param name="page">Pagina del post.</param>
         public List<PostModel> GetPerfilPosts(string usuario_id, string tipo, int page = 0)
         {
-
             List<PostModel> posts = new List<PostModel>();
             string query = "select * FROM vw_pro_Red_Social_Publicaciones " +
                 "WHERE Publicacion_Estatus = 1 AND ";

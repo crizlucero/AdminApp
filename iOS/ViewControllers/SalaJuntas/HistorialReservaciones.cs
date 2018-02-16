@@ -41,7 +41,7 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             this.GetReservaciones((int)TiposReservacion.Activo);
-
+            BTProgressHUD.Dismiss();
         }
 
         public override void ViewWillAppear(bool animated)
@@ -108,7 +108,6 @@ namespace WorklabsMx.iOS
                 var current = Reservaciones[indexPath.Row];
                 var currentPostCell = (ReservacionesSalaCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
                 currentPostCell.UpdateCell(current, this.SeccionSeleccionada);
-                this.WillDisplay(indexPath.Row);
                 return currentPostCell;
             }
             else
@@ -157,12 +156,6 @@ namespace WorklabsMx.iOS
         {
             return "Cancelar";
         }
-
-        private void WillDisplay(int Row)
-        {
-            BTProgressHUD.Dismiss();
-        }
-
 
         private async void ActualizarTabla(int CampoSeleccionado)
         {

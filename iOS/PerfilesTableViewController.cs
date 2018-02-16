@@ -11,12 +11,14 @@ namespace WorklabsMx.iOS
 {
     public partial class PerfilesTableViewController : UITableViewController
     {
-        UsuariosController Favorites = new UsuariosController();
         public UsuarioModel Miembro = new UsuarioModel();
 
         bool FromMi = true, FromSocial = false, FromTrabajo = false;
 
         public bool InfoPersonal;
+
+        bool result;
+        KeyValuePair<int, bool> isFavorite;
 
         public PerfilesTableViewController (IntPtr handle) : base (handle)
         {
@@ -25,6 +27,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            this.PreguntarFavorito();
             if (InfoPersonal)
             {
                 this.btnSeguir.Hidden = true;
@@ -181,6 +184,43 @@ namespace WorklabsMx.iOS
 
         partial void btnSeguir_Touch(UIButton sender)
         {
+            this.AsignarFavorito();
+        }
+
+        private void AsignarFavorito()
+        {
+            if (isFavorite.Value)
+            {
+                result = new UsuariosController().RemoveMiembroFavorito(isFavorite);
+                if (result)
+                {
+                    this.btnSeguir.SetTitle("+SEGUIR", UIControlState.Normal);
+                }
+            }
+            else
+            {
+                result = new UsuariosController().AddMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Miembro.Usuario_Id, Miembro.Usuario_Tipo);
+                if (result)
+                {
+                    this.btnSeguir.SetTitle("-DEJAR DE SEGUIR", UIControlState.Normal);
+                }
+            }
+        }
+
+        private void PreguntarFavorito()
+        {
+            var Favorito = new UsuariosController();
+            isFavorite = Favorito.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Miembro.Usuario_Id, Miembro.Usuario_Tipo);
+
+            if (isFavorite.Value)
+            {
+                this.btnSeguir.SetTitle("-DEJAR DE SEGUIR", UIControlState.Normal);
+            }
+            else
+            {
+                this.btnSeguir.SetTitle("+SEGUIR", UIControlState.Normal);
+            }
+
         }
 
         partial void btnEnviarMensaje_Touch(UIButton sender)

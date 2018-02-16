@@ -55,7 +55,8 @@ namespace WorklabsMx.iOS
             this.TableView.ReloadData();
             TableView.BeginUpdates();
             TableView.EndUpdates();
-           
+            BTProgressHUD.Dismiss();
+          
         }
 
         void HandleValueChanged(object sender, EventArgs e)
@@ -144,7 +145,6 @@ namespace WorklabsMx.iOS
                 currentUser.EventosComunidadCellDelegate = this;
                 currentUser.UpdateCell(current);
                 tableView.EndUpdates();
-                this.WillDisplay(indexPath.Row);
                 return currentUser;
             }
             else
@@ -159,15 +159,6 @@ namespace WorklabsMx.iOS
         private void Tapped(UITapGestureRecognizer Recognizer)
         {
             this.View.EndEditing(true);
-        }
-
-        private void WillDisplay(int Row)
-        {
-            int LastRow = this.Usuarios.Count - 1;
-            if ((Row == LastRow) /*&& (LastRow < allPosts.Count)*/)
-            {
-                BTProgressHUD.Dismiss();
-            }
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)

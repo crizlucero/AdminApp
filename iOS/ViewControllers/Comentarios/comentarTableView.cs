@@ -53,18 +53,20 @@ namespace WorklabsMx.iOS
 
         public async override void ViewWillAppear(bool animated)
         {
+            BTProgressHUD.Show(status: "Cargando Comentarios");
             base.ViewWillAppear(animated);
             await FillData();
             this.TableView.ReloadData();
             this.TableView.BeginUpdates();
             this.TableView.EndUpdates();
+            BTProgressHUD.Dismiss();
         }
 
         public override void ViewWillDisappear(bool animated)
         {
             base.ViewWillDisappear(animated);
             //await Task.Delay(2000);
-            BTProgressHUD.Show(status: "Cargando Comentarios");
+          
         }
 
         public override UIView GetViewForHeader(UITableView tableView, nint section)
@@ -116,7 +118,6 @@ namespace WorklabsMx.iOS
                     var currentPostImageCell = (ComentarImageTableViewCell)tableView.DequeueReusableCell(IdentificadorImageCeldaPost, indexPath);
                     currentPostImageCell.UpdateCell(currentComment, currentImageProfile, currentImageComments);
                     currentPostImageCell.EventosImagenDel = this;
-                    this.WillDisplay(indexPath.Row);
                     return currentPostImageCell;
                 }
                 else
@@ -124,7 +125,6 @@ namespace WorklabsMx.iOS
                     var currentPostCell = (BodyComentarTableView)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
                     currentPostCell.UpdateCell(currentComment, currentImageProfile);
                     currentPostCell.EventosImagenComentarDel = this;
-                    this.WillDisplay(indexPath.Row);
                     return currentPostCell;
                 }
 
@@ -176,15 +176,6 @@ namespace WorklabsMx.iOS
                    isShowInformation = false;
                }
            });
-        }
-
-        private void WillDisplay(int Row)
-        {
-            int LastRow = this.comentarios.Count - 1;
-            if ((Row == LastRow) /*&& (LastRow < allPosts.Count)*/)
-            {
-                BTProgressHUD.Dismiss();
-            }
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
