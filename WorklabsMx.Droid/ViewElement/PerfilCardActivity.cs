@@ -8,16 +8,17 @@ using Android.Widget;
 using com.refractored;
 using Newtonsoft.Json;
 using PerpetualEngine.Storage;
+using WorklabsMx.Controllers;
 using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "PerfilCardActivity")]
+    [Activity(Label = "@string/app_name")]
     public class PerfilCardActivity : Activity
     {
         UsuarioModel miembro;
         readonly SimpleStorage storage;
-
+        KeyValuePair<int, bool> isFavorite;
         public PerfilCardActivity()
         {
             storage = SimpleStorage.EditGroup("Login");
@@ -33,6 +34,7 @@ namespace WorklabsMx.Droid
 
             FindViewById<TextView>(Resource.Id.lblNombre).Text = miembro.Usuario_Nombre + " " + miembro.Usuario_Apellidos;
             FindViewById<TextView>(Resource.Id.lblEmpresa).Text = miembro.Usuario_Empresa_Nombre;
+            Button btnSeguir = FindViewById<Button>(Resource.Id.btnSeguir);
             FindViewById<Button>(Resource.Id.btnSendMessage).Click += delegate
             {
                 Intent intent;
@@ -48,7 +50,8 @@ namespace WorklabsMx.Droid
 
             if (miembro.Usuario_Id == storage.Get("Usuario_Id") && miembro.Usuario_Tipo == storage.Get("Usuario_Tipo"))
             {
-                FindViewById<Button>(Resource.Id.btnSeguir).Visibility = Android.Views.ViewStates.Gone;
+                FindViewById<Button>(Resource.Id.btnSendMessage).Visibility = Android.Views.ViewStates.Gone;
+                btnSeguir.Visibility = Android.Views.ViewStates.Gone;
                 ImageView editar = FindViewById<ImageView>(Resource.Id.btnEditar);
                 editar.Visibility = Android.Views.ViewStates.Visible;
                 editar.Click += delegate
@@ -58,6 +61,19 @@ namespace WorklabsMx.Droid
                     StartActivity(intent);
                 };
             }
+            isFavorite = new UsuariosController().IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Usuario_Id, miembro.Usuario_Tipo);
+            if (!isFavorite.Value)
+                btnSeguir.Text = Resources.GetString(Resource.String.str_social_network_unfollow);
+            FindViewById<Button>(Resource.Id.btnSeguir).Click += delegate
+            {
+                if (isFavorite.Value)
+                {
+                    if (new UsuariosController().RemoveMiembroFavorito(isFavorite))
+                        btnSeguir.Text = Resources.GetString(Resource.String.str_social_network_follow);
+                    else
+                        btnSeguir.Text = Resources.GetString(Resource.String.str_social_network_unfollow);
+                }
+            };
 
             ViewPager _viewPager = FindViewById<ViewPager>(Resource.Id.vpPerfil);
             _viewPager.Adapter = new PerfilPageAdapter(this, new List<string> { Resources.GetString(Resource.String.str_profile_about_me), Resources.GetString(Resource.String.str_profile_social), Resources.GetString(Resource.String.str_profile_work) }, miembro);

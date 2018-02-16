@@ -64,7 +64,7 @@ namespace WorklabsMx.Controllers
             miembro.Red_Social_Publicaciones = contadores[0];
             miembro.Red_Social_Seguidores = contadores[1];
             miembro.Red_Social_Siguiendo = contadores[2];
-            miembro.Etiquetas = new PickerItemsController().GetEtiquetas(miembro.Usuario_Id, miembro.Usuario_Tipo);
+            miembro.Etiquetas = GetUsuarioEtiquetas(miembro.Usuario_Id, miembro.Usuario_Tipo);
             miembro.Redes_Sociales = new PickerItemsController().GetRedesSociales(miembro.Usuario_Id, miembro.Usuario_Tipo);
             return miembro;
         }
@@ -189,7 +189,7 @@ namespace WorklabsMx.Controllers
             usuarios.ForEach(usuario =>
             {
                 usuario.Redes_Sociales = new PickerItemsController().GetRedesSociales(usuario.Usuario_Id, usuario.Usuario_Tipo);
-                usuario.Etiquetas = new PickerItemsController().GetEtiquetas(usuario.Usuario_Id, usuario.Usuario_Tipo);
+                usuario.Etiquetas = GetUsuarioEtiquetas(usuario.Usuario_Id, usuario.Usuario_Tipo);
             });
             return usuarios;
         }
@@ -459,7 +459,7 @@ namespace WorklabsMx.Controllers
             }
             colaboradores.ForEach(colaborador =>
             {
-                colaborador.Etiquetas = new PickerItemsController().GetEtiquetas(colaborador.Usuario_Id, colaborador.Usuario_Tipo);
+                colaborador.Etiquetas = GetUsuarioEtiquetas(colaborador.Usuario_Id, colaborador.Usuario_Tipo);
                 colaborador.Redes_Sociales = new PickerItemsController().GetRedesSociales(colaborador.Usuario_Id, colaborador.Usuario_Tipo);
             });
             return colaboradores;
@@ -513,7 +513,7 @@ namespace WorklabsMx.Controllers
             {
                 conn.Close();
             }
-            colaborador.Etiquetas = new PickerItemsController().GetEtiquetas(colaborador.Usuario_Id, colaborador.Usuario_Tipo);
+            colaborador.Etiquetas = GetUsuarioEtiquetas(colaborador.Usuario_Id, colaborador.Usuario_Tipo);
             colaborador.Redes_Sociales = new PickerItemsController().GetRedesSociales(colaborador.Usuario_Id, colaborador.Usuario_Tipo);
             return colaborador;
         }
@@ -711,6 +711,86 @@ namespace WorklabsMx.Controllers
             }
 
             return contadores;
+        }
+
+        public int AddRemoveEtiquetas(string usuario_id, string usuario_tipo, string etiqueta_id, string etiqueta_nombre, TipoEtiquetas etiqueta_tipo, string miembro_etiqueta_id)
+        {
+
+            try
+            {
+
+                conn.Open();
+                transaction = conn.BeginTransaction();
+                command = CreateCommand();
+                command.Connection = conn;
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "sp_pro_Usuarios_Etiquetas";
+
+                command.Parameters.AddWithValue("@Trasaccion", string.IsNullOrEmpty(miembro_etiqueta_id) ? "ALTA" : "BAJA");
+
+                if (((int)TiposUsuarios.Miembro).ToString() == usuario_tipo)
+                {
+                    command.Parameters.AddWithValue("@Miembro_Id", usuario_id);
+                    command.Parameters.AddWithValue("@Colaborador_Id", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@Colaborador_Id", usuario_id);
+                    command.Parameters.AddWithValue("@Miembro_Id", DBNull.Value);
+                }
+                command.Parameters.AddWithValue("@Etiqueta_Nombre", etiqueta_nombre);
+                command.Parameters.AddWithValue("@Etiqueta_Tipo", etiqueta_tipo.ToString());
+                command.Parameters.AddWithValue("@Etiqueta_Id", etiqueta_id);
+                command.Parameters.AddWithValue("@Miembro_Etiqueta_Id", DBNull.Value);
+                command.Parameters.Add("@Miembro_Etiqueta_Id_Salida", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+                command.Transaction = transaction;
+                command.ExecuteNonQuery();
+                transaction.Commit();
+                return Convert.ToInt32(command.Parameters["@Miembro_Etiqueta_Id_Salida"].Value);
+            }
+            catch (Exception e)
+            {
+                //transaction.Rollback();
+                Console.WriteLine(e.Message);
+                SlackLogs.SendMessage(e.Message);
+                return -1;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public List<EtiquetaModel> GetUsuarioEtiquetas(string usuario_id, string usuario_tipo)
+        {
+            List<EtiquetaModel> etiquetas = new List<EtiquetaModel>();
+            try
+            {
+                command = CreateCommand("select Usuario_Etiqueta_Id, Etiqueta_Id, Usuario_Etiqueta_Estatus, Etiqueta_Nombre, Etiqueta_Tipo " +
+                                        "from vw_pro_Directorio_Usuarios Where Usuario_Id = @Usuario_Id and Usuario_Tipo = @Usuario_Tipo");
+                command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
+                command.Parameters.AddWithValue("@Usuario_Tipo", usuario_tipo);
+                conn.Open();
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    etiquetas.Add(new EtiquetaModel
+                    {
+
+                        Etiqueta_Id = reader["Etiqueta_Id"].ToString(),
+                        Etiqueta_Nombre = reader["Etiqueta_Nombre"].ToString(),
+                        Etiqueta_Tipo = reader["Etiqueta_Tipo"].ToString(),
+                        Usuario_Etiqueta_Estatus = reader["Usuario_Etiqueta_Estatus"].ToString(),
+                        Usuario_Etiqueta_Id = reader["Usuario_Etiqueta_Id"].ToString()
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message);
+            }
+            finally { conn.Close(); }
+            return etiquetas;
         }
     }
 }
