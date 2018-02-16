@@ -12,7 +12,7 @@ namespace WorklabsMx.iOS
     public interface EventosComentariosBody
     {
         void ComentarPosts(PostModel PostLocal);
-        void InfoUserPosts(List<String> listaUser);
+        void InfoUserPosts(UsuarioModel listaUser);
         void EnviarAction(UIAlertController actionSheetAlert);
         void ActualizarTabla();
     }
@@ -117,11 +117,7 @@ namespace WorklabsMx.iOS
 
         partial void btnImgPerfil_Touch(UIButton sender)
         {
-            List<String> listaUser = new List<string>();
-            listaUser.Add(PostLocal.Usuario.Usuario_Id);
-            listaUser.Add(PostLocal.Usuario.Usuario_Empresa_Nombre);
-            listaUser.Add(PostLocal.Usuario.Usuario_Tipo);
-            EventosComentariosBodyDel.InfoUserPosts(listaUser);
+            EventosComentariosBodyDel.InfoUserPosts(PostLocal.Usuario);
         }
 
         partial void btnOpciones_Touch(UIButton sender)

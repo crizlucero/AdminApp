@@ -10,8 +10,11 @@ namespace WorklabsMx.iOS
     {
 
         const string IDENTIFIER_HABILIDADES_CELL = "Habilidades";
+        const string IDENTIFIER_NOHABILIDADES_CELL = "NoHabilidades";
 
-        public List<EtiquetaModel> EtiquetasHabilidades;
+        public List<EtiquetaModel> EtiquetasHabilidades = new List<EtiquetaModel>();
+
+        bool HayHabilidades;
 
         public HabilidadesCollectionView (IntPtr handle) : base (handle)
         {
@@ -30,14 +33,28 @@ namespace WorklabsMx.iOS
 
         public override nint GetItemsCount(UICollectionView collectionView, nint section)
         {
-            return this.EtiquetasHabilidades.Count;
+            if (this.EtiquetasHabilidades.Count >= 1)
+            {
+                HayHabilidades = true;
+                return this.EtiquetasHabilidades.Count;
+            }
+            HayHabilidades = false;
+            return 1;
         }
 
         public override UICollectionViewCell GetCell(UICollectionView collectionView, NSIndexPath indexPath)
         {
-            var celdaHabilidades = (CeldaHabilidades)this.CollectionView.DequeueReusableCell(IDENTIFIER_HABILIDADES_CELL, indexPath);
-            celdaHabilidades.UpdateCell(this.EtiquetasHabilidades[indexPath.Row]);
-            return celdaHabilidades;
+            if (HayHabilidades)
+            {
+                var celdaHabilidades = (CeldaHabilidades)this.CollectionView.DequeueReusableCell(IDENTIFIER_HABILIDADES_CELL, indexPath);
+                celdaHabilidades.UpdateCell(this.EtiquetasHabilidades[indexPath.Row]);
+                return celdaHabilidades;
+            }
+            else
+            {
+                return (CeldaNoHabilidades)CollectionView.DequeueReusableCell(IDENTIFIER_NOHABILIDADES_CELL, indexPath);
+            }
+
         }
 
         [Export("collectionView:layout:insetForSectionAtIndex:")]

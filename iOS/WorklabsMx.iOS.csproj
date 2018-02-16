@@ -1181,10 +1181,6 @@
     <Compile Include="RedesSocialesTableViewCell.designer.cs">
       <DependentUpon>RedesSocialesTableViewCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="MiInfoViewController.cs" />
-    <Compile Include="MiInfoViewController.designer.cs">
-      <DependentUpon>MiInfoViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="DetalleInvitacionViewController.cs" />
     <Compile Include="DetalleInvitacionViewController.designer.cs">
       <DependentUpon>DetalleInvitacionViewController.cs</DependentUpon>
@@ -1258,6 +1254,18 @@
     <Compile Include="NoRedesCell.cs" />
     <Compile Include="NoRedesCell.designer.cs">
       <DependentUpon>NoRedesCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MiInfoView.cs" />
+    <Compile Include="MiInfoView.designer.cs">
+      <DependentUpon>MiInfoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaNoHabilidades.cs" />
+    <Compile Include="CeldaNoHabilidades.designer.cs">
+      <DependentUpon>CeldaNoHabilidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaNoIntereses.cs" />
+    <Compile Include="CeldaNoIntereses.designer.cs">
+      <DependentUpon>CeldaNoIntereses.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -11,7 +11,7 @@ namespace WorklabsMx.iOS
 
     public interface EventosComunidadCell
     {
-        void InfoUserPost(List<String> listaUser);
+        void InfoUserPost(UsuarioModel Miembro);
     }
 
     public partial class ComunidadTableViewCell : UITableViewCell
@@ -52,11 +52,7 @@ namespace WorklabsMx.iOS
 
         partial void btnImagenComu_Touch(UIButton sender)
         {
-            List<String> listaUser = new List<string>();
-            listaUser.Add(MiembroLocal.Usuario_Id);
-            listaUser.Add(MiembroLocal.Usuario_Empresa_Nombre);
-            listaUser.Add(MiembroLocal.Usuario_Tipo);
-            EventosComunidadCellDelegate.InfoUserPost(listaUser);
+            EventosComunidadCellDelegate.InfoUserPost(this.MiembroLocal);
         }
     }
 }

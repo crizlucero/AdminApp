@@ -1,3 +1,34 @@
+<<<<<<< HEAD
+﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/PerfilesTableViewController.cs">
+    <Files>
+      <File FileName="iOS/MenuTableViewController.cs" Line="155" Column="37" NotebookId="1" />
+      <File FileName="iOS/RedesSocialesTableViewCell.cs" Line="17" Column="12" NotebookId="1" />
+      <File FileName="iOS/InfoEmpresaTableViewController.cs" Line="44" Column="17" NotebookId="1" />
+      <File FileName="iOS/ColeccionTrabajosAnteriores.cs" Line="27" Column="43" NotebookId="1" />
+      <File FileName="iOS/CeldaTrabajosAnteriores.cs" Line="17" Column="10" NotebookId="1" />
+      <File FileName="iOS/PerfilesTableViewController.cs" Line="19" Column="33" NotebookId="1" />
+      <File FileName="iOS/PerfilRedesSociales.cs" Line="62" Column="55" NotebookId="1" />
+      <File FileName="iOS/Helpers/MenuHelper.cs" Line="50" Column="34" NotebookId="1" />
+      <File FileName="iOS/ComunidadTableViewController.cs" Line="253" Column="31" NotebookId="1" />
+      <File FileName="iOS/ComunidadTableViewCell.cs" Line="14" Column="47" NotebookId="1" />
+      <File FileName="iOS/FavoritosTableViewController.cs" Line="154" Column="10" NotebookId="1" />
+      <File FileName="iOS/FavoritosTableViewCell.cs" Line="29" Column="10" NotebookId="1" />
+      <File FileName="iOS/ComentariosBodyImageCell.cs" Line="129" Column="10" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="107" Column="14" NotebookId="1" />
+      <File FileName="iOS/MiInfoView.cs" Line="60" Column="49" NotebookId="1" />
+      <File FileName="iOS/InteresesCollectionView.cs" Line="32" Column="73" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/VistaSucursales/ColeccionSucursales.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="191" Column="41" NotebookId="1" />
+    </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="917" Y="23" Width="1102" Height="1026">
+        <Files>
+          <File FileName="iOS/HabilidadesCollectionView.cs" Line="16" Column="9" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
+=======
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/DataBaseModel.cs">
     <Files>
@@ -12,6 +43,7 @@
       <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="153" Column="100" />
       <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="14" Column="18" />
     </Files>
+>>>>>>> 201fe214df2bbab698093ca76f6fde8392c42e57
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -21,6 +53,10 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+<<<<<<< HEAD
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" />
+=======
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
+>>>>>>> 201fe214df2bbab698093ca76f6fde8392c42e57
   <MultiItemStartupConfigurations />
 </Properties>

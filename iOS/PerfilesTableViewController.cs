@@ -11,22 +11,40 @@ namespace WorklabsMx.iOS
 {
     public partial class PerfilesTableViewController : UITableViewController
     {
-        public List<string> ListUser = new List<string>();
         UsuariosController Favorites = new UsuariosController();
         public UsuarioModel Miembro = new UsuarioModel();
 
         bool FromMi = true, FromSocial = false, FromTrabajo = false;
 
+        public bool InfoPersonal;
+
         public PerfilesTableViewController (IntPtr handle) : base (handle)
         {
         }
 
-
-
         public override void ViewDidLoad()
-
         {
             base.ViewDidLoad();
+            if (InfoPersonal)
+            {
+                this.btnSeguir.Hidden = true;
+                this.btnEnviarMensaje.Hidden = true;
+                this.btnEditarPerfil.Hidden = false;
+
+                this.btnSeguir.Enabled = false;
+                this.btnEnviarMensaje.Enabled = false;
+                this.btnEditarPerfil.Enabled = true;
+            }
+            else
+            {
+                this.btnSeguir.Hidden = false;
+                this.btnEnviarMensaje.Hidden = false;
+                this.btnEditarPerfil.Hidden = true;
+
+                this.btnSeguir.Enabled = true;
+                this.btnEnviarMensaje.Enabled = true;
+                this.btnEditarPerfil.Enabled = false;
+            }
             this.CargarInfo();
             this.cvwMi.Hidden = false;
             this.cvwSocial.Hidden = true;
@@ -129,7 +147,7 @@ namespace WorklabsMx.iOS
         {
             if (segue.Identifier == "SobreMi")
             {
-                var InfoPeril = (MiInfoViewController)segue.DestinationViewController;
+                var InfoPeril = (MiInfoView)segue.DestinationViewController;
                 InfoPeril.Miembro = this.Miembro;
             }
             else if(segue.Identifier == "Social")
@@ -159,6 +177,14 @@ namespace WorklabsMx.iOS
         partial void btnCerrar_Touch(UIButton sender)
         {
             this.DismissViewController(true, null);
+        }
+
+        partial void btnSeguir_Touch(UIButton sender)
+        {
+        }
+
+        partial void btnEnviarMensaje_Touch(UIButton sender)
+        {
         }
     }
 }

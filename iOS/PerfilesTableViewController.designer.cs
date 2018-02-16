@@ -24,11 +24,19 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnEnviarMensaje { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnImageBackGround { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnProfileImage { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnSeguir { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -86,6 +94,14 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnEditarPerfil_Touch (UIKit.UIButton sender);
 
+        [Action ("btnEnviarMensaje_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnEnviarMensaje_Touch (UIKit.UIButton sender);
+
+        [Action ("btnSeguir_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnSeguir_Touch (UIKit.UIButton sender);
+
         [Action ("btnSobreMi_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnSobreMi_Touch (UIKit.UIButton sender);
@@ -114,6 +130,11 @@ namespace WorklabsMx.iOS
                 btnEditarPerfil = null;
             }
 
+            if (btnEnviarMensaje != null) {
+                btnEnviarMensaje.Dispose ();
+                btnEnviarMensaje = null;
+            }
+
             if (btnImageBackGround != null) {
                 btnImageBackGround.Dispose ();
                 btnImageBackGround = null;
@@ -122,6 +143,11 @@ namespace WorklabsMx.iOS
             if (btnProfileImage != null) {
                 btnProfileImage.Dispose ();
                 btnProfileImage = null;
+            }
+
+            if (btnSeguir != null) {
+                btnSeguir.Dispose ();
+                btnSeguir = null;
             }
 
             if (btnSobreMi != null) {

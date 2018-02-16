@@ -27,7 +27,7 @@ namespace WorklabsMx.iOS
         bool isShowInformation = false;
         bool existeConeccion = true;
 
-        List<string> ListUser = new List<string>();
+        UsuarioModel ListUser = new UsuarioModel();
 
         public FavoritosTableViewController (IntPtr handle) : base (handle)
         {
@@ -152,7 +152,6 @@ namespace WorklabsMx.iOS
 
         async void GetData()
         {
-            
             RefreshControl.BeginRefreshing();
             await FillData();
             TableView.ReloadData();
@@ -160,7 +159,6 @@ namespace WorklabsMx.iOS
             TableView.EndUpdates();
             if (RefreshControl != null && RefreshControl.Refreshing)
                 RefreshControl.EndRefreshing();
-
         }
 
         private void Tapped(UITapGestureRecognizer Recognizer)
@@ -168,13 +166,13 @@ namespace WorklabsMx.iOS
             this.View.EndEditing(true);
         }
 
-
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             if (segue.Identifier == "DetallarPerfil")
             {
                 var PerfilView = (PerfilesTableViewController)segue.DestinationViewController;
-                PerfilView.ListUser = ListUser;
+                PerfilView.Miembro = ListUser;
+                PerfilView.InfoPersonal = false;
             }
         }
 
@@ -183,10 +181,10 @@ namespace WorklabsMx.iOS
 
     public partial class FavoritosTableViewController : EventosFavoritosCell
     {
-        public void InfoUserPost(List<String> listaUser)
+        public void InfoUserPost(UsuarioModel listaUser)
         {
             ListUser = listaUser;
-            //this.PerformSegue("DetallarPerfil", null);
+            this.PerformSegue("DetallarPerfil", null);
         }
 
     }

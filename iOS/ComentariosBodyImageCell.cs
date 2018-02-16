@@ -14,7 +14,7 @@ namespace WorklabsMx.iOS
     {
         void MostrarImagenEnGrande(UIImageView imgPublicacion);
         void ComentarPost(PostModel PostLocal);
-        void InfoUserPost(List<String> listaUser);
+        void InfoUserPost(UsuarioModel listaUser);
         void EnviarActions(UIAlertController actionSheetAlert);
         void ActualizaTabla();
     }
@@ -39,6 +39,7 @@ namespace WorklabsMx.iOS
             var Tap = new UITapGestureRecognizer(this.ImageTapped);
             imgPublicacion.UserInteractionEnabled = true;
             imgPublicacion.AddGestureRecognizer(Tap);
+
             if (post.Usuario.Usuario_Id == KeyChainHelper.GetKey("Usuario_Id") && post.Usuario.Usuario_Tipo == KeyChainHelper.GetKey("Usuario_Tipo"))
             {
                 this.btnOpciones.Hidden = false;
@@ -124,12 +125,7 @@ namespace WorklabsMx.iOS
 
         partial void btnImagePerfil_Touch(UIButton sender)
         {
-
-            List<String> listaUser = new List<string>();
-            listaUser.Add(PostLocal.Usuario.Usuario_Id);
-            listaUser.Add(PostLocal.Usuario.Usuario_Empresa_Nombre);
-            listaUser.Add(PostLocal.Usuario.Usuario_Tipo);
-            EventosComentariosDelegate.InfoUserPost(listaUser);
+            EventosComentariosDelegate.InfoUserPost(PostLocal.Usuario);
         }
 
         partial void btnComentarios_Touch(UIButton sender)
