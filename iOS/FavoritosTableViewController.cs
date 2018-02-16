@@ -46,6 +46,7 @@ namespace WorklabsMx.iOS
             this.TableView.ReloadData();
             TableView.BeginUpdates();
             TableView.EndUpdates();
+            BTProgressHUD.Dismiss();
         }
 
         public  override void ViewWillAppear(bool animated)
@@ -125,7 +126,6 @@ namespace WorklabsMx.iOS
                 currentUser.EventosFavoritosCellDelegate = this;
                 currentUser.UpdateCell(current);
                 tableView.EndUpdates();
-                WillDisplay(indexPath.Row);
                 return currentUser;
             }
             else
@@ -133,15 +133,6 @@ namespace WorklabsMx.iOS
                 var noPostCell = (FavoritosNoInfo)tableView.DequeueReusableCell(IdentificadorCeldaNoInfo, indexPath);
                 noPostCell.UpdateCell(this.existeConeccion);
                 return noPostCell;
-            }
-        }
-
-        private void WillDisplay(int Row)
-        {
-            int LastRow = UsuariosFavoritos.Count - 1;
-            if ((Row == LastRow))
-            {
-                BTProgressHUD.Dismiss();
             }
         }
 
