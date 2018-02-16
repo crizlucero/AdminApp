@@ -30,7 +30,7 @@ namespace WorklabsMx.iOS
 
         UITableViewCell Header = new UITableViewCell();
 
-        List<string> ListUser = new List<string>();
+        UsuarioModel ListUser = new UsuarioModel();
 
         public ComunidadTableViewController (IntPtr handle) : base (handle)
         {
@@ -175,7 +175,8 @@ namespace WorklabsMx.iOS
             if (segue.Identifier == "DetallarPerfil")
             {
                 var PerfilView = (PerfilesTableViewController)segue.DestinationViewController;
-                PerfilView.ListUser = ListUser;
+                PerfilView.Miembro = ListUser;
+                PerfilView.InfoPersonal = false;
             }
         }
 
@@ -247,10 +248,10 @@ namespace WorklabsMx.iOS
 
     partial class ComunidadTableViewController : EventosComunidadCell
     {
-        public void InfoUserPost(List<String> listaUser)
+        public void InfoUserPost(UsuarioModel Miembro)
         {
-            ListUser = listaUser;
-            //this.PerformSegue("DetallarPerfil", null);
+            ListUser = Miembro;
+            this.PerformSegue("DetallarPerfil", null);
         }
     }
 

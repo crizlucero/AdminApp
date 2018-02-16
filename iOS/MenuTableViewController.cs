@@ -156,6 +156,7 @@ namespace WorklabsMx.iOS
             {
                 var PerfilView = (PerfilesTableViewController)segue.DestinationViewController;
                 PerfilView.Miembro = MenuHelper.Usuario;
+                PerfilView.InfoPersonal = true;
 
             }
             var segueReveal = segue as SWRevealViewControllerSegueSetController;

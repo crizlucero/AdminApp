@@ -11,8 +11,8 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
-    [Register ("MiInfoViewController")]
-    partial class MiInfoViewController
+    [Register ("MiInfoView")]
+    partial class MiInfoView
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -24,11 +24,7 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblSobreMi { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextView txtSobreMi { get; set; }
+        UIKit.UILabel lblMidescripcion { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -42,14 +38,9 @@ namespace WorklabsMx.iOS
                 cvwIntereses = null;
             }
 
-            if (lblSobreMi != null) {
-                lblSobreMi.Dispose ();
-                lblSobreMi = null;
-            }
-
-            if (txtSobreMi != null) {
-                txtSobreMi.Dispose ();
-                txtSobreMi = null;
+            if (lblMidescripcion != null) {
+                lblMidescripcion.Dispose ();
+                lblMidescripcion = null;
             }
         }
     }

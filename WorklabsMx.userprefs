@@ -1,39 +1,32 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.storyboard">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/PerfilesTableViewController.cs">
     <Files>
-      <File FileName="iOS/MiInfoViewController.cs" Line="27" Column="81" NotebookId="1" />
-      <File FileName="iOS/MenuTableViewController.cs" Line="19" Column="9" NotebookId="1" />
+      <File FileName="iOS/MenuTableViewController.cs" Line="155" Column="37" NotebookId="1" />
       <File FileName="iOS/RedesSocialesTableViewCell.cs" Line="17" Column="12" NotebookId="1" />
       <File FileName="iOS/InfoEmpresaTableViewController.cs" Line="44" Column="17" NotebookId="1" />
       <File FileName="iOS/ColeccionTrabajosAnteriores.cs" Line="27" Column="43" NotebookId="1" />
       <File FileName="iOS/CeldaTrabajosAnteriores.cs" Line="17" Column="10" NotebookId="1" />
-      <File FileName="iOS/PerfilesTableViewController.cs" Line="22" Column="10" NotebookId="1" />
-      <File FileName="iOS/PerfilRedesSociales.cs" Line="62" Column="54" NotebookId="1" />
-      <File FileName="iOS/InteresesCollectionView.cs" Line="37" Column="49" NotebookId="1" />
-      <File FileName="iOS/CeldaHabilidades.cs" Line="8" Column="26" NotebookId="1" />
-      <File FileName="iOS/coleccionColaboradores.cs" Line="9" Column="26" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="65" Column="45" NotebookId="1" />
-      <File FileName="iOS/Helpers/MenuHelper.cs" Line="101" Column="24" NotebookId="1" />
-      <File FileName="iOS/HeaderMenulCell.cs" Line="24" Column="42" NotebookId="1" />
-      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="19" Column="42" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/MiPerfil/AboutMeController.cs" Line="20" Column="13" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/MiPerfil/PerfilController.cs" Line="46" Column="52" NotebookId="1" />
-      <File FileName="iOS/Main.storyboard" NotebookId="1" />
+      <File FileName="iOS/PerfilesTableViewController.cs" Line="19" Column="33" NotebookId="1" />
+      <File FileName="iOS/PerfilRedesSociales.cs" Line="62" Column="55" NotebookId="1" />
+      <File FileName="iOS/Helpers/MenuHelper.cs" Line="50" Column="34" NotebookId="1" />
+      <File FileName="iOS/ComunidadTableViewController.cs" Line="253" Column="31" NotebookId="1" />
+      <File FileName="iOS/ComunidadTableViewCell.cs" Line="14" Column="47" NotebookId="1" />
+      <File FileName="iOS/FavoritosTableViewController.cs" Line="154" Column="10" NotebookId="1" />
+      <File FileName="iOS/FavoritosTableViewCell.cs" Line="29" Column="10" NotebookId="1" />
+      <File FileName="iOS/ComentariosBodyImageCell.cs" Line="129" Column="10" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="107" Column="14" NotebookId="1" />
+      <File FileName="iOS/MiInfoView.cs" Line="60" Column="49" NotebookId="1" />
+      <File FileName="iOS/InteresesCollectionView.cs" Line="32" Column="73" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/VistaSucursales/ColeccionSucursales.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="191" Column="41" NotebookId="1" />
     </Files>
     <FloatingWindows>
-      <FloatingWindow WindowId="1" X="917" Y="64" Width="1102" Height="1026">
+      <FloatingWindow WindowId="1" X="917" Y="23" Width="1102" Height="1026">
         <Files>
-          <File FileName="iOS/HabilidadesCollectionView.cs" Line="38" Column="46" />
+          <File FileName="iOS/HabilidadesCollectionView.cs" Line="16" Column="9" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>(PerfilesTableViewController)segue.DestinationViewController</Value>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -45,8 +38,6 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" automaticSigning="False">
-    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
-  </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" />
   <MultiItemStartupConfigurations />
 </Properties>
