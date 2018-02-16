@@ -31,7 +31,7 @@ namespace WorklabsMx.Droid
             LayoutInflater liView = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
             switch (position)
             {
-                case 1: profileView = liView.Inflate(Resource.Layout.SobreMiSocialLayout, null, true); break;
+                case 1: profileView = liView.Inflate(Resource.Layout.SobreMiSocialLayout, null, true); FillSocial(); break;
                 case 2: profileView = liView.Inflate(Resource.Layout.SobreMiTrabajoLayout, null, true); FillTrabajo(); break;
                 default: profileView = liView.Inflate(Resource.Layout.SobreMiLayout, null, true); FillSobreMi(); break;
             }
@@ -68,12 +68,9 @@ namespace WorklabsMx.Droid
 
         void FillSocial()
         {
-            Drawable icon = ContextCompat.GetDrawable(context, context.Resources.GetIdentifier("", "mipmap", context.PackageName));
-            icon.SetTintList(context.GetColorStateList(Resource.Color.comment_pressed));
-            icon.SetBounds(0, 0, 50, 50);
-            TextView lblRedSocial = new TextView(context);
-
-            lblRedSocial.SetCompoundDrawables(icon, null, null, null);
+            profileView.FindViewById<TextView>(Resource.Id.lblTotalPublicaciones).Text = miembro.Red_Social_Publicaciones;
+            profileView.FindViewById<TextView>(Resource.Id.lblTotalSiguiendo).Text = miembro.Red_Social_Siguiendo;
+            profileView.FindViewById<TextView>(Resource.Id.lblTotalSeguidores).Text = miembro.Red_Social_Seguidores;
         }
 
         void FillTrabajo()
