@@ -55,7 +55,10 @@ namespace WorklabsMx.Droid
             {
                 if (habilidad.Etiqueta_Tipo == "Habilidad")
                     FillEtiqueta(habilidad.Etiqueta_Nombre, profileView.FindViewById<RelativeLayout>(Resource.Id.rlHabilidades));
+                else if (habilidad.Etiqueta_Tipo == "Interes")
+                    FillEtiqueta(habilidad.Etiqueta_Nombre, profileView.FindViewById<RelativeLayout>(Resource.Id.rlIntereses));
             });
+
         }
 
         void FillEtiqueta(string etiqueta, RelativeLayout rlEtiqueta)
