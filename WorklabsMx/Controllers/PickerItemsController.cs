@@ -607,7 +607,7 @@ namespace WorklabsMx.Controllers
             {
                 command = CreateCommand("select Usuario_Red_Social_Id, Red_Social_Id, Red_Social_Nombre, Red_Social_Icono_Android, Red_Social_Icono_iOS, Red_Social_Icono_Web " +
                                        "from vw_pro_Directorio_Usuarios Where Usuario_Id = @Usuario_Id and Usuario_Tipo = @Usuario_Tipo");
-                command.Parameters.AddWithValue("@Usuario_Id",usuario_id);
+                command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
                 command.Parameters.AddWithValue("@Usuario_Tipo", usuario_tipo);
                 conn.Open();
                 reader = command.ExecuteReader();
@@ -632,27 +632,21 @@ namespace WorklabsMx.Controllers
             return redesSociales;
         }
 
-        public List<EtiquetaModel> GetEtiquetas(string usuario_id, string usuario_tipo)
+        public List<EtiquetaModel> GetEtiquetas()
         {
             List<EtiquetaModel> etiquetas = new List<EtiquetaModel>();
             try
             {
-                command = CreateCommand("select Usuario_Etiqueta_Id, Etiqueta_Id, Usuario_Etiqueta_Estatus, Etiqueta_Nombre, Etiqueta_Tipo " +
-                                        "from vw_pro_Directorio_Usuarios Where Usuario_Id = @Usuario_Id and Usuario_Tipo = @Usuario_Tipo");
-                command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
-                command.Parameters.AddWithValue("@Usuario_Tipo", usuario_tipo);
+                command = CreateCommand("select * from cat_Etiquetas");
                 conn.Open();
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     etiquetas.Add(new EtiquetaModel
                     {
-                        
                         Etiqueta_Id = reader["Etiqueta_Id"].ToString(),
                         Etiqueta_Nombre = reader["Etiqueta_Nombre"].ToString(),
-                        Etiqueta_Tipo = reader["Etiqueta_Tipo"].ToString(),
-                        Usuario_Etiqueta_Estatus = reader["Usuario_Etiqueta_Estatus"].ToString(),
-                        Usuario_Etiqueta_Id = reader["Usuario_Etiqueta_Id"].ToString()
+                        Etiqueta_Tipo = reader["Etiqueta_Tipo"].ToString()
                     });
                 }
             }

@@ -175,4 +175,6 @@
     <string name="str_general_add_experience">+ Añadir experiencia laboral</string>
     <string name="str_general_delete">Eliminar</string>
     <string name="str_dashboard_post">Publica algo</string>
+    <string name="str_social_network_unfollow">Dejar de seguir</string>
+    
 </resources>

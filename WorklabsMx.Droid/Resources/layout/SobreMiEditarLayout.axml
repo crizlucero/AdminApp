@@ -30,14 +30,14 @@
                 android:id="@+id/txtSobreMi"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:hint="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
                 android:translationZ="2dp"
                 android:elevation="2dp"
                 android:textColorHint="#ffbdbdbd"
                 android:textColor="#343434"
                 android:background="@drawable/border_shadow_style"
                 android:paddingRight="10dp"
-                android:paddingLeft="10dp" />
+                android:paddingLeft="10dp"
+                android:hint="@string/str_profile_about_me" />
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -65,7 +65,9 @@
                 android:id="@+id/txtHabilidades"
                 android:background="@drawable/border_shadow_style"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp" />
+                android:layout_marginRight="20dp"
+                android:inputType="textPersonName"
+                android:imeOptions="actionDone" />
             <RelativeLayout
                 android:minWidth="25px"
                 android:minHeight="25px"
@@ -102,8 +104,10 @@
                 android:id="@+id/txtIntereses"
                 android:background="@drawable/border_shadow_style"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp" />
-            <RelativeLayout
+                android:layout_marginRight="20dp"
+                android:inputType="textPersonName"
+                android:imeOptions="actionDone" />
+            <LinearLayout
                 android:minWidth="25px"
                 android:minHeight="25px"
                 android:layout_width="match_parent"

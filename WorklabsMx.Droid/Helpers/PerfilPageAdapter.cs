@@ -50,7 +50,7 @@ namespace WorklabsMx.Droid
 
         void FillSobreMi()
         {
-            profileView.FindViewById<TextView>(Resource.Id.lblSobreMi);
+            profileView.FindViewById<TextView>(Resource.Id.lblSobreMi).Text = miembro.Usuario_Descripcion;
             miembro.Etiquetas.ToList().ForEach(habilidad =>
             {
                 if (habilidad.Etiqueta_Tipo == "Habilidad")
