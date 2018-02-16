@@ -9,7 +9,7 @@ namespace WorklabsMx.Controllers
 {
     public class UsuariosController : DataBaseModel
     {
-        readonly string usuario_imagen_path = (new ConfigurationsController().GetListConfiguraciones() != null) ? new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1 :  "";
+        readonly string usuario_imagen_path = (new ConfigurationsController().GetListConfiguraciones() != null) ? new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1 : "";
 
         /// <summary>
         /// Obtiene la información del miembro
@@ -59,6 +59,10 @@ namespace WorklabsMx.Controllers
                 SlackLogs.SendMessage(e.Message);
             }
             finally { conn.Close(); }
+            List<string> contadores = GetContadoresSocial(miembro_id, tipo);
+            miembro.Red_Social_Publicaciones = contadores[0];
+            miembro.Red_Social_Seguidores = contadores[1];
+            miembro.Red_Social_Siguiendo = contadores[2];
             miembro.Etiquetas = new PickerItemsController().GetEtiquetas(miembro.Usuario_Id, miembro.Usuario_Tipo);
             miembro.Redes_Sociales = new PickerItemsController().GetRedesSociales(miembro.Usuario_Id, miembro.Usuario_Tipo);
             return miembro;
@@ -625,6 +629,87 @@ namespace WorklabsMx.Controllers
             }
             //new Emails().SendMail(mail, nombre + " " + apellidos, pwd);
             return true;
+        }
+
+        public List<RedSocialModel> GetRedesSocialesUsuario(string usuario_id, string usuario_tipo)
+        {
+            List<RedSocialModel> rs = new List<RedSocialModel>();
+
+            string query = "SELECT * FROM vw_pro_Usuarios_Redes_Sociales where Usuario_Id = @usuario_id AND Usuario_Tipo = @usuario_tipo";
+            command = CreateCommand(query);
+            command.Parameters.AddWithValue("@usuario_id", usuario_id);
+            command.Parameters.AddWithValue("@usuario_tipo", usuario_tipo);
+            try
+            {
+                conn.Open();
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    rs.Add(new RedSocialModel
+                    {
+                        Red_Social_Id = reader["Red_Social_Id"].ToString(),
+                        Red_Social_Nombre = reader["Red_Social_Nombre"].ToString(),
+                        Usuario_Red_Social_Id = reader["Red_Social_Nombre"].ToString(),
+                        Red_Social_Icono_Android = reader["Red_Social_Icono_Android"].ToString(),
+                        Red_Social_Icono_iOS = reader["Red_Social_Icono_iOS"].ToString(),
+                        Red_Social_Icono_Web = reader["Red_Social_Icono_Web"].ToString(),
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                SlackLogs.SendMessage(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return rs;
+        }
+
+        public List<string> GetContadoresSocial(string usuario_id, string usuario_tipo)
+        {
+            List<string> contadores = new List<string>();
+
+            try
+            {
+                conn.Open();
+                transaction = conn.BeginTransaction();
+                command = CreateCommand();
+                command.Connection = conn;
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "sp_pro_Redes_Sociales_Contadores";
+
+                command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
+
+                command.Parameters.AddWithValue("@Usuario_Tipo", usuario_tipo);
+                command.Transaction = transaction;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    contadores.Add(reader.GetInt32(0).ToString());
+                    contadores.Add(reader.GetInt32(1).ToString());
+                    contadores.Add(reader.GetInt32(2).ToString());
+                }
+
+                //command.Transaction = transaction;
+                //command.ExecuteNonQuery();
+                //transaction.Commit();
+            }
+            catch (Exception e)
+            {
+                //transaction.Rollback();
+                Console.WriteLine(e.Message);
+                SlackLogs.SendMessage(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return contadores;
         }
     }
 }

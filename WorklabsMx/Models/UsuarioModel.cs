@@ -21,6 +21,9 @@ namespace WorklabsMx.Models
         public string Usuario_Estatus{ get; set; }
         public string Usuario_Descripcion{ get; set; }
         public List<RedSocialModel> Redes_Sociales { get; set; }
+        public string Red_Social_Publicaciones { get; set; }
+        public string Red_Social_Siguiendo { get; set; }
+        public string Red_Social_Seguidores { get; set; }
         public GeneroModel Genero { get; set; }
         public List<EtiquetaModel> Etiquetas { get; set; }
         public string Disponibilidad_Laboral_Id { get; set; }

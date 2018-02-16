@@ -153,7 +153,6 @@
     <Compile Include="ViewController\Formatos\InvitadosActivity.cs" />
     <Compile Include="ViewController\Servicios\ShoppingCartActivity.cs" />
     <Compile Include="ViewController\Servicios\PaymentActivity.cs" />
-    <Compile Include="ViewController\MiPerfil\EditEmpresaActivity.cs" />
     <Compile Include="ViewController\MyMembershipActivity.cs" />
     <Compile Include="ViewController\MiPerfil\MisColaboradoresActivity.cs" />
     <Compile Include="ViewController\MiPerfil\TabColaboradoresActivity.cs" />
@@ -250,7 +249,6 @@
     <AndroidResource Include="Resources\menu\search_menu.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_search.png" />
     <AndroidResource Include="Resources\layout\TabsLayout.axml" />
-    <AndroidResource Include="Resources\layout\EditCompanyLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_save.png" />
     <AndroidResource Include="Resources\menu\save_menu.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_email.png" />

@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:minWidth="25px"
     android:minHeight="25px"
-    android:background="#EEE">
+    android:background="#FFF">
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
                 android:layout_marginBottom="15dp" />
         </LinearLayout>
     </GridLayout>
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
@@ -325,5 +325,5 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp" />
         </LinearLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

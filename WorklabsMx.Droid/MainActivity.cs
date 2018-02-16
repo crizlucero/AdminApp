@@ -170,13 +170,13 @@ namespace WorklabsMx.Droid
 
                 TextView lblLike = PostView.FindViewById<TextView>(Resource.Id.lblLikes);
                 Drawable icLike = ContextCompat.GetDrawable(this, Resource.Mipmap.ic_like);
-                if (Build.VERSION.SdkInt > BuildVersionCodes.Lollipop)
+                if ((int)Build.VERSION.SdkInt > 22)
                     icLike.SetTintList(GetColorStateList(Resource.Color.button_unpressed));
                 else
                     icLike.SetTint(Resource.Color.button_unpressed);
                 icLike.SetBounds(0, 0, 50, 50);
                 lblLike.SetCompoundDrawables(icLike, null, null, null);
-                lblLike.Text = post.Publicacion_Me_Gustan_Cantidad + " " + Resources.GetString(Resource.String.Likes);
+                lblLike.Text = post.Publicacion_Me_Gustan_Cantidad + " " + Resources.GetString(Resource.String.str_dashboard_likes);
                 lblLike.Click += delegate
                 {
                     string transaccion = "ALTA";
@@ -186,12 +186,12 @@ namespace WorklabsMx.Droid
                         transaccion = "MODIFICAR";
                     if (new EscritorioController().PostLike(post.Publicacion_Id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), transaccion))
                     {
-                        lblLike.Text = new EscritorioController().GetLikesPublish(post.Publicacion_Id) + " " + Resources.GetString(Resource.String.Likes);
+                        lblLike.Text = new EscritorioController().GetLikesPublish(post.Publicacion_Id) + " " + Resources.GetString(Resource.String.str_dashboard_likes);
                         if (transaccion == "BAJA")
                         {
                             post.Publicacion_Me_Gusta_Usuario = "0";
                             lblLike.SetTextColor(Color.Black);
-                            if (Build.VERSION.SdkInt > BuildVersionCodes.Lollipop)
+                            if ((int)Build.VERSION.SdkInt > 22)
                                 icLike.SetTintList(GetColorStateList(Resource.Color.button_unpressed));
                             else
                                 icLike.SetTint(Resource.Color.button_unpressed);
@@ -199,7 +199,7 @@ namespace WorklabsMx.Droid
                         else
                         {
                             post.Publicacion_Me_Gusta_Usuario = "1";
-                            if (Build.VERSION.SdkInt > BuildVersionCodes.Lollipop)
+                            if ((int)Build.VERSION.SdkInt > 22)
                                 icLike.SetTintList(GetColorStateList(Resource.Color.like_heart_pressed));
                             else
                                 icLike.SetTint(Resource.Color.like_heart_pressed);
@@ -208,7 +208,7 @@ namespace WorklabsMx.Droid
                     }
                 };
                 if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
-                    if (Build.VERSION.SdkInt > BuildVersionCodes.Lollipop)
+                    if ((int)Build.VERSION.SdkInt > 22)
                         icLike.SetTintList(GetColorStateList(Resource.Color.like_heart_pressed));
                     else
                         icLike.SetTint(Resource.Color.like_heart_pressed);
@@ -220,7 +220,7 @@ namespace WorklabsMx.Droid
                     if (photo != null)
                     {
                         imgPost.Visibility = ViewStates.Visible;
-                        imgPost.SetImageBitmap(BitmapFactory.DecodeByteArray(photo, 0, photo.Length));//SetImageURI(Android.Net.Uri.Parse("http://desarrolloworklabs.com/Dashboard_Client/" + post.Publicacion_Imagen_Ruta));
+                        imgPost.SetImageBitmap(BitmapFactory.DecodeByteArray(photo, 0, photo.Length));
                         imgPost.Click += delegate
                         {
                             //AndHUD.Shared.ShowImage(this, Drawable.CreateFromStream());
@@ -231,10 +231,10 @@ namespace WorklabsMx.Droid
                 lblComentario.Text = post.Publicacion_Comentarios_Cantidad + " " + Resources.GetString(Resource.String.Comentarios);
 
                 Drawable icComentario = ContextCompat.GetDrawable(this, Resource.Mipmap.ic_mode_comment);
-                if (Build.VERSION.SdkInt > BuildVersionCodes.Lollipop)
-                    icLike.SetTintList(GetColorStateList(Resource.Color.button_unpressed));
+                if ((int)Build.VERSION.SdkInt > 22)
+                    icComentario.SetTintList(GetColorStateList(Resource.Color.button_unpressed));
                 else
-                    icLike.SetTint(Resource.Color.button_unpressed);
+                    icComentario.SetTint(Resource.Color.button_unpressed);
                 icComentario.SetBounds(0, 0, 50, 50);
                 lblComentario.SetCompoundDrawables(icComentario, null, null, null);
 
@@ -247,10 +247,10 @@ namespace WorklabsMx.Droid
                 };
                 if (post.Publicacion_Comentarios_Cantidad != "0")
                 {
-                    if (Build.VERSION.SdkInt > BuildVersionCodes.Lollipop)
-                        icLike.SetTintList(GetColorStateList(Resource.Color.comment_pressed));
+                    if ((int)Build.VERSION.SdkInt > 22)
+                        icComentario.SetTintList(GetColorStateList(Resource.Color.comment_pressed));
                     else
-                        icLike.SetTint(Resource.Color.comment_pressed);
+                        icComentario.SetTint(Resource.Color.comment_pressed);
                 }
                 if (localStorage.Get("Usuario_id") == post.Usuario.Usuario_Id && localStorage.Get("Usuario_Tipo") == post.Usuario.Usuario_Tipo)
                 {
@@ -288,12 +288,12 @@ namespace WorklabsMx.Droid
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            try
+            /*try
             {
                 bool isOnline = ((ConnectivityManager)GetSystemService(ConnectivityService)).ActiveNetworkInfo.IsConnected;
                 MenuInflater.Inflate(Resource.Menu.top_menus, menu);
             }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message); }*/
 
             return base.OnCreateOptionsMenu(menu);
         }

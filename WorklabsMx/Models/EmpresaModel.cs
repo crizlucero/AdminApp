@@ -17,10 +17,6 @@
         public string Empresa_Miembro_Id { get; set; }
         public string Empresa_Miembro_Logotipo { get; set; }
         public TerritorioModel Territorio { get; set; }
-        /*public string Territorio_Estado_Descripcion { get; set; }
-        public string Territorio_Municipio_Descripcion { get; set; }
-        public string Territorio_Colonia_Descripcion { get; set; }
-        public string Territorio_Cp { get; set; }*/
         public string Giro_Descripcion { get; set; }
     }
 }

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#FFF">
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
@@ -86,5 +86,5 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp" />
         </LinearLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

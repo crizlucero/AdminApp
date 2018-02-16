@@ -8,7 +8,6 @@ using Android.Support.V4.View;
 using Android.Views;
 using Android.Widget;
 using Java.Lang;
-using WorklabsMx.Controllers;
 using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
@@ -31,7 +30,7 @@ namespace WorklabsMx.Droid
             LayoutInflater liView = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
             switch (position)
             {
-                case 1: profileView = liView.Inflate(Resource.Layout.SobreMiSocialEditarLayout, null, true); break;
+                case 1: profileView = liView.Inflate(Resource.Layout.SobreMiSocialEditarLayout, null, true); FillSocial(); break;
                 case 2: profileView = liView.Inflate(Resource.Layout.SobreMiTrabajoEditarLayout, null, true); FillTrabajo(); break;
                 default: profileView = liView.Inflate(Resource.Layout.SobreMiEditarLayout, null, true); FillSobreMi(); break;
             }
@@ -68,22 +67,15 @@ namespace WorklabsMx.Droid
 
         void FillSocial()
         {
-            Drawable icon = ContextCompat.GetDrawable(context, context.Resources.GetIdentifier("", "mipmap", context.PackageName));
-            icon.SetTintList(context.GetColorStateList(Resource.Color.comment_pressed));
-            icon.SetBounds(0, 0, 50, 50);
-            TextView lblRedSocial = new TextView(context);
-
-            lblRedSocial.SetCompoundDrawables(icon, null, null, null);
+            profileView.FindViewById<TextView>(Resource.Id.lblTotalPublicaciones).Text = miembro.Red_Social_Publicaciones;
+            profileView.FindViewById<TextView>(Resource.Id.lblTotalSiguiendo).Text = miembro.Red_Social_Siguiendo;
+            profileView.FindViewById<TextView>(Resource.Id.lblTotalSeguidores).Text = miembro.Red_Social_Seguidores;
         }
 
         void FillTrabajo()
         {
-            EmpresaModel empresa = new EmpresaController().GetEmpresaMiembro(miembro.Usuario_Id);
-            LayoutInflater liView = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
-            View empresaView = liView.Inflate(Resource.Layout.TituloEmpresaLayout, null, true);
-            empresaView.FindViewById<TextView>(Resource.Id.lblNombre).Text = empresa.Empresa_Miembro_Nombre;
-            empresaView.FindViewById<TextView>(Resource.Id.lblPais).Text = empresa.Territorio.Pais;
-            profileView.FindViewById<LinearLayout>(Resource.Id.llEmpleoActual).AddView(empresaView);
+            profileView.FindViewById<TextView>(Resource.Id.lblAgregarExperiencia).Click += (sender, e) => profileView.FindViewById<GridLayout>(Resource.Id.glNuevoEmpleo).Visibility = ViewStates.Visible;
+            profileView.FindViewById<Button>(Resource.Id.btnAgregar).Click += (sender, e) => profileView.FindViewById<GridLayout>(Resource.Id.glNuevoEmpleo).Visibility = ViewStates.Gone;
         }
 
     }

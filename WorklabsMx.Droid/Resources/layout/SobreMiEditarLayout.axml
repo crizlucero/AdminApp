@@ -4,9 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#FFF">
-    <ScrollView
-        android:minWidth="25px"
-        android:minHeight="25px"
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
@@ -24,7 +22,8 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold" />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -36,10 +35,6 @@
                 android:elevation="2dp"
                 android:textColorHint="#ffbdbdbd"
                 android:textColor="#343434"
-                android:shadowDx="5"
-                android:shadowDy="5"
-                android:shadowColor="#ff757575"
-                android:shadowRadius="5"
                 android:background="@drawable/border_shadow_style"
                 android:paddingRight="10dp"
                 android:paddingLeft="10dp" />
@@ -59,7 +54,8 @@
                 android:text="@string/str_profile_hability"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold" />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -95,7 +91,8 @@
                 android:text="@string/str_profile_interest"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold" />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -116,5 +113,5 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp" />
         </LinearLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>
