@@ -39,8 +39,18 @@ namespace WorklabsMx.Droid
                 System.IO.MemoryStream stream = new System.IO.MemoryStream();
                 bitmap?.Compress(Bitmap.CompressFormat.Png, 0, stream);
                 byte[] bitmapData = stream?.ToArray();
-                if (new UsuariosController().UpdateDataMiembros(miembro.Usuario_Id, FindViewById<EditText>(Resource.Id.txtNombre).Text, FindViewById<EditText>(Resource.Id.txtApellidos).Text, "", "","", DateTime.Now, bitmapData)){
-                    
+                if (new UsuariosController().UpdateDataMiembros(miembro.Usuario_Id, FindViewById<EditText>(Resource.Id.txtNombre).Text,
+                                                                FindViewById<EditText>(Resource.Id.txtApellidos).Text, miembro.Usuario_Correo_Electronico, miembro.Usuario_Telefono,
+                                                                miembro.Usuario_Celular, miembro.Usuario_Descripcion, DateTime.Parse(miembro.Usuario_Fecha_Nacimiento), bitmapData))
+                {
+                    miembro.Redes_Sociales.ForEach(red =>
+                    {
+                        new RedesSocialesController().SetRedSocial(miembro.Usuario_Id, miembro.Usuario_Tipo, red.Red_Social_Id, red.Red_Social_Enlace, red.Usuario_Red_Social_Id);
+                    });
+                }
+                else
+                {
+                    Toast.MakeText(this, Resource.String.str_general_save_error, ToastLength.Short).Show();
                 }
             };
 
@@ -59,7 +69,7 @@ namespace WorklabsMx.Droid
             FindViewById<TextView>(Resource.Id.lblEmpresa).Text = miembro.Usuario_Empresa_Nombre;
 
             ViewPager _viewPager = FindViewById<ViewPager>(Resource.Id.vpPerfil);
-            _viewPager.Adapter = new PerfilEditarPageAdapter(this, new List<string> { Resources.GetString(Resource.String.str_profile_about_me), Resources.GetString(Resource.String.str_profile_social), Resources.GetString(Resource.String.str_profile_work) }, miembro);
+            _viewPager.Adapter = new PerfilEditarPageAdapter(this, new List<string> { Resources.GetString(Resource.String.str_profile_about_me), Resources.GetString(Resource.String.str_profile_social), Resources.GetString(Resource.String.str_profile_work) }, ref miembro);
 
             PagerSlidingTabStrip tabs = FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
             tabs.SetTextColorResource(Resource.Color.comment_pressed);
