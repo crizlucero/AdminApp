@@ -51,9 +51,6 @@
     <Reference Include="System.Net" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.IO.Compression" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Configuration.ConfigurationManager">
       <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.0\lib\netstandard2.0\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
@@ -141,6 +138,9 @@
     </Reference>
     <Reference Include="Google.Apis">
       <HintPath>..\packages\Google.Apis.1.32.2\lib\netstandard1.3\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -378,6 +378,11 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\ic_menu_white.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\ic_menu_white.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_menu_white.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_cake.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_cake.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_cake.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_cake.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_cake.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

@@ -250,35 +250,42 @@ namespace WorklabsMx.Controllers
         /// <param name="correo">Correo del usuario</param>
         /// <param name="telefono">Telefono del usuario</param>
         /// <param name="celular">Celular del usuario</param>
-        /// <param name="profesion">Profesion del usuario</param>
-        /// <param name="puesto">Puesto del usuario</param>
-        /// <param name="habilidades">Habilidades del usuario</param>
         /// <param name="fechaNacimiento">Fecha nacimiento del usuario</param>
-        /// <param name="foto">Foto del usuario</param>
-        public bool UpdateDataMiembros(int usuario_id, string nombre, string apellido, string correo, string telefono, string celular,
-                                       string profesion, string puesto, string habilidades, DateTime fechaNacimiento, string foto)
+        public bool UpdateDataMiembros(string usuario_id, string nombre, string apellido, string correo, string telefono, string celular, string descripcion, DateTime fechaNacimiento, byte[] fotografia)
         {
+            string fotoNombre = null;
             try
             {
+                if (fotografia.Length != 0)
+                {
+                    fotoNombre = Guid.NewGuid().ToString() + ".png";
+                    var result = new UploadImages().UploadBitmapAsync(fotoNombre, fotografia, usuario_imagen_path);
+                    if (!result)
+                    {
+                        return false;
+                    }
+
+                }
                 conn.Open();
                 transaction = conn.BeginTransaction();
                 command = CreateCommand();
                 command.Connection = conn;
                 command.Transaction = transaction;
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "sp_Perfil_Miembros";
+                command.CommandText = "sp_cat_Miembros_General";
 
                 command.Parameters.AddWithValue("@Miembro_Id", usuario_id);
                 command.Parameters.AddWithValue("@Miembro_Nombre", nombre);
                 command.Parameters.AddWithValue("@Miembro_Apellidos", apellido);
+                command.Parameters.AddWithValue("@Miembro_Fecha_Nacimiento", fechaNacimiento);
                 command.Parameters.AddWithValue("@Miembro_Correo_Electronico", correo);
                 command.Parameters.AddWithValue("@Miembro_Telefono", telefono);
                 command.Parameters.AddWithValue("@Miembro_Celular", celular);
-                command.Parameters.AddWithValue("@Miembro_Profesion", profesion);
-                command.Parameters.AddWithValue("@Miembro_Puesto", puesto);
-                //command.Parameters.AddWithValue("@Miembro_Habilidades", habilidades);
-                command.Parameters.AddWithValue("@Miembro_Fecha_Nacimiento", fechaNacimiento);
-                command.Parameters.AddWithValue("@Miembro_Fotografia", foto);
+                command.Parameters.AddWithValue("@Miembro_Fotografia", fotoNombre);
+                command.Parameters.AddWithValue("@Miembro_Descripcion", descripcion);
+                command.Parameters.AddWithValue("@Miembro_Estatus", DBNull.Value);
+
+                command.Parameters.Add("@Miembro_Id_Salida",SqlDbType.Int).Direction = ParameterDirection.Output;
 
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();

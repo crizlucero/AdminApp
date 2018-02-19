@@ -11,6 +11,7 @@ using Android.Widget;
 using com.refractored;
 using Java.IO;
 using Newtonsoft.Json;
+using WorklabsMx.Controllers;
 using WorklabsMx.Droid.Helpers;
 using WorklabsMx.Models;
 using static Android.Provider.MediaStore.Images;
@@ -33,7 +34,15 @@ namespace WorklabsMx.Droid
             miembro = JsonConvert.DeserializeObject<UsuarioModel>(Intent.GetStringExtra("Miembro"));
             FindViewById<ImageButton>(Resource.Id.ibCerrar).Click += (sender, e) => OnBackPressed();
 
-            FindViewById<Button>(Resource.Id.btnGuardar);
+            FindViewById<Button>(Resource.Id.btnGuardar).Click += delegate
+            {
+                System.IO.MemoryStream stream = new System.IO.MemoryStream();
+                bitmap?.Compress(Bitmap.CompressFormat.Png, 0, stream);
+                byte[] bitmapData = stream?.ToArray();
+                if (new UsuariosController().UpdateDataMiembros(miembro.Usuario_Id, FindViewById<EditText>(Resource.Id.txtNombre).Text, FindViewById<EditText>(Resource.Id.txtApellidos).Text, "", "","", DateTime.Now, bitmapData)){
+                    
+                }
+            };
 
             FindViewById<ImageView>(Resource.Id.btnCamara).Click += delegate
             {
@@ -45,7 +54,8 @@ namespace WorklabsMx.Droid
                 StartActivityForResult(intent, TakePicture);
             };
 
-            FindViewById<EditText>(Resource.Id.txtNombre).Text = miembro.Usuario_Nombre + " " + miembro.Usuario_Apellidos;
+            FindViewById<EditText>(Resource.Id.txtNombre).Text = miembro.Usuario_Nombre;
+            FindViewById<EditText>(Resource.Id.txtApellidos).Text = miembro.Usuario_Apellidos;
             FindViewById<TextView>(Resource.Id.lblEmpresa).Text = miembro.Usuario_Empresa_Nombre;
 
             ViewPager _viewPager = FindViewById<ViewPager>(Resource.Id.vpPerfil);
