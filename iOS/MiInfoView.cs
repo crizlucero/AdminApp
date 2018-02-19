@@ -26,6 +26,11 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
 
             this.lblMidescripcion.Text = (Miembro.Usuario_Descripcion != "" && Miembro.Usuario_Descripcion != null) ? Miembro.Usuario_Descripcion : "Sin Info";
+            this.lblEmail.Text = (Miembro.Usuario_Correo_Electronico != "" && Miembro.Usuario_Correo_Electronico != null) ? Miembro.Usuario_Correo_Electronico : "Sin Info";
+            this.lblCelular.Text = (Miembro.Usuario_Celular != "" && Miembro.Usuario_Celular != null) ? Miembro.Usuario_Celular : "Sin Info";
+            this.lblTelefono.Text = (Miembro.Usuario_Telefono != "" && Miembro.Usuario_Telefono != null) ? Miembro.Usuario_Telefono : "Sin Info";
+            this.lblFechaNacimiento.Text = (Miembro.Usuario_Fecha_Nacimiento != "" && Miembro.Usuario_Fecha_Nacimiento != null) ? Miembro.Usuario_Fecha_Nacimiento : "Sin Info";
+
             this.Etiquetas = Miembro.Etiquetas;
             if (this.Etiquetas != null)
             {

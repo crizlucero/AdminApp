@@ -456,9 +456,6 @@
     <ImageAsset Include="Assets.xcassets\Mail.imageset\icons8-message-filled-60.png" />
     <ImageAsset Include="Assets.xcassets\Mail.imageset\icons8-message-filled-90.png" />
     <ImageAsset Include="Assets.xcassets\Phone.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Phone.imageset\icons8-phone-filled-30.png" />
-    <ImageAsset Include="Assets.xcassets\Phone.imageset\icons8-phone-filled-60.png" />
-    <ImageAsset Include="Assets.xcassets\Phone.imageset\icons8-phone-filled-90.png" />
     <ImageAsset Include="Assets.xcassets\Apellidos.imageset\icons8-account-filled-30.png" />
     <ImageAsset Include="Assets.xcassets\Apellidos.imageset\icons8-account-filled-60.png" />
     <ImageAsset Include="Assets.xcassets\Apellidos.imageset\icons8-account-filled-90.png" />
@@ -739,6 +736,21 @@
     <ImageAsset Include="Assets.xcassets\CamaraEditar.imageset\CamaEditar.png" />
     <ImageAsset Include="Assets.xcassets\CamaraEditar.imageset\CamaEditar%402x.png" />
     <ImageAsset Include="Assets.xcassets\CamaraEditar.imageset\CamaEditar%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Phone.imageset\icons8-phone-filled-25.png" />
+    <ImageAsset Include="Assets.xcassets\Phone.imageset\icons8-phone-filled-50.png" />
+    <ImageAsset Include="Assets.xcassets\Phone.imageset\icons8-phone-filled-75.png" />
+    <ImageAsset Include="Assets.xcassets\CellPhone.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\CellPhone.imageset\icons8-iphone-filled-25.png" />
+    <ImageAsset Include="Assets.xcassets\CellPhone.imageset\icons8-iphone-filled-50.png" />
+    <ImageAsset Include="Assets.xcassets\CellPhone.imageset\icons8-iphone-filled-75.png" />
+    <ImageAsset Include="Assets.xcassets\Email.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Email.imageset\icons8-secured-letter-filled-25.png" />
+    <ImageAsset Include="Assets.xcassets\Email.imageset\icons8-secured-letter-filled-50.png" />
+    <ImageAsset Include="Assets.xcassets\Email.imageset\icons8-secured-letter-filled-75.png" />
+    <ImageAsset Include="Assets.xcassets\Cake.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Cake.imageset\icons8-birthday-cake-filled-25.png" />
+    <ImageAsset Include="Assets.xcassets\Cake.imageset\icons8-birthday-cake-filled-50.png" />
+    <ImageAsset Include="Assets.xcassets\Cake.imageset\icons8-birthday-cake-filled-75.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1447,6 +1459,9 @@
     <Folder Include="Assets.xcassets\Sala10.imageset\" />
     <Folder Include="Assets.xcassets\EditarPerfil.imageset\" />
     <Folder Include="Assets.xcassets\CamaraEditar.imageset\" />
+    <Folder Include="Assets.xcassets\CellPhone.imageset\" />
+    <Folder Include="Assets.xcassets\Email.imageset\" />
+    <Folder Include="Assets.xcassets\Cake.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />
