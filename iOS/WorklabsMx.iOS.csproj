@@ -1271,6 +1271,26 @@
     <Compile Include="CeldaNoIntereses.designer.cs">
       <DependentUpon>CeldaNoIntereses.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditarMiInfoPerfilViewController.cs" />
+    <Compile Include="EditarMiInfoPerfilViewController.designer.cs">
+      <DependentUpon>EditarMiInfoPerfilViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColeccionEditarIntereses.cs" />
+    <Compile Include="ColeccionEditarIntereses.designer.cs">
+      <DependentUpon>ColeccionEditarIntereses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColeccionEditarHabilidades.cs" />
+    <Compile Include="ColeccionEditarHabilidades.designer.cs">
+      <DependentUpon>ColeccionEditarHabilidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VistaEditarRedesSociales.cs" />
+    <Compile Include="VistaEditarRedesSociales.designer.cs">
+      <DependentUpon>VistaEditarRedesSociales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarRedesSociales.cs" />
+    <Compile Include="EditarRedesSociales.designer.cs">
+      <DependentUpon>EditarRedesSociales.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

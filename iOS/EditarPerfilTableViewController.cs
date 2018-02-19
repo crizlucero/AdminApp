@@ -1,12 +1,14 @@
 using System;
 using UIKit;
-using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Helpers;
-using WorklabsMx.Enum;
 using Foundation;
 using Photos;
 using AVFoundation;
 using WorklabsMx.Helpers;
+using WorklabsMx.Models;
+using WorklabsMx.Controllers;
+using System.Collections.Generic;
+using System.Globalization;
 
 namespace WorklabsMx.iOS
 {
@@ -18,6 +20,10 @@ namespace WorklabsMx.iOS
 
         bool FromMi = true, FromSocial = false, FromTrabajo = false;
 
+        public UsuarioModel InfoPerifl;
+
+        public UsuarioModel NewInfoPerfil = new UsuarioModel();
+
         public EditarPerfilTableViewController (IntPtr handle) : base (handle)
         {
         }
@@ -27,26 +33,27 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
             imgPicker = new UIImagePickerController();
             imgPicker.Delegate = this;
-
+            var Tap = new UITapGestureRecognizer(this.Tapped);
+            this.View.AddGestureRecognizer(Tap);
             UIView statusBar = UIApplication.SharedApplication.ValueForKey(new NSString("statusBar")) as UIView;
             if (statusBar.RespondsToSelector(new ObjCRuntime.Selector("setBackgroundColor:")))
             {
                 statusBar.BackgroundColor = UIColor.Black;
             }
             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;
-            this.txtNombre.AttributedPlaceholder = new NSAttributedString("  Nombre", null, UIColor.Clear.FromHex(0xFFFFFF));
-            this.txtProfesion.AttributedPlaceholder = new NSAttributedString("   Puesto", null, UIColor.Clear.FromHex(0xFFFFFF));
-            var miembro = new UsuariosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
-            if (miembro != null)
-            {
-                if (miembro.Count > 0)
-                {
-                    txtNombre.Text = miembro[(int)CamposMiembro.Usuario_Nombre];
-                    txtProfesion.Text = miembro[(int)CamposMiembro.Usuario_Puesto];
-                    btnImagen.SetBackgroundImage(ImageGallery.LoadImage(miembro[(int)CamposMiembro.Usuario_Fotografia]) ?? UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
-                }
 
-            }
+            this.txtNombre.AttributedPlaceholder = new NSAttributedString("  Nombre", null, UIColor.Clear.FromHex(0x767676));
+            txtNombre.Text = InfoPerifl.Usuario_Nombre;// + " " + InfoPerifl.Usuario_Apellidos;
+
+            this.txtApellidos.AttributedPlaceholder = new NSAttributedString("  Nombre", null, UIColor.Clear.FromHex(0x767676));
+            txtApellidos.Text = InfoPerifl.Usuario_Apellidos;
+
+            lblEmpresa.Text = (InfoPerifl.Usuario_Empresa_Nombre != "" && InfoPerifl.Usuario_Empresa_Nombre != null) ? InfoPerifl.Usuario_Empresa_Nombre : "Sin Info";
+            NewInfoPerfil.Usuario_Empresa_Nombre = lblEmpresa.Text;
+            btnImagen.SetBackgroundImage(ImageGallery.LoadImage(InfoPerifl.Usuario_Fotografia) ?? UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
+            this.vwVistaMi.Hidden = false;
+            this.vwSocial.Hidden = true;
+            this.vwTrabajo.Hidden = true;
         }
 
         partial void FondoImagen_Touch(UIButton sender)
@@ -207,6 +214,9 @@ namespace WorklabsMx.iOS
 
         partial void btnSocial_Touch(UIButton sender)
         {
+            this.vwVistaMi.Hidden = true;
+            this.vwSocial.Hidden = false;
+            this.vwTrabajo.Hidden = true;
             this.btnSocial.BackgroundColor = UIColor.Clear.FromHex(0xFFFFFF);
             this.btnSocial.SetTitleColor(UIColor.Clear.FromHex(0x63B4EA), UIControlState.Normal);
             this.vwSocial.BackgroundColor = UIColor.Clear.FromHex(0xFFFFFF);
@@ -229,6 +239,9 @@ namespace WorklabsMx.iOS
 
         partial void btnSobreMi_Touch(UIButton sender)
         {
+            this.vwVistaMi.Hidden = false;
+            this.vwSocial.Hidden = true;
+            this.vwTrabajo.Hidden = true;
             this.btnSobreMi.BackgroundColor = UIColor.Clear.FromHex(0xFFFFFF);
             this.btnSobreMi.SetTitleColor(UIColor.Clear.FromHex(0x63B4EA), UIControlState.Normal);
             this.vwVistaMi.BackgroundColor = UIColor.Clear.FromHex(0xFFFFFF);
@@ -251,6 +264,9 @@ namespace WorklabsMx.iOS
 
         partial void btnTrabajo_Touch(UIButton sender)
         {
+            this.vwVistaMi.Hidden = true;
+            this.vwSocial.Hidden = true;
+            this.vwTrabajo.Hidden = false;
             this.btnTrabajo.BackgroundColor = UIColor.Clear.FromHex(0xFFFFFF);
             this.btnTrabajo.SetTitleColor(UIColor.Clear.FromHex(0x63B4EA), UIControlState.Normal);
             this.vwTrabajo.BackgroundColor = UIColor.Clear.FromHex(0xFFFFFF);
@@ -271,6 +287,55 @@ namespace WorklabsMx.iOS
             this.FromTrabajo = true;
         }
 
+        partial void btnGuardar_Touch(UIButton sender)
+        {
+            NewInfoPerfil.Usuario_Nombre = txtNombre.Text;
+            NewInfoPerfil.Usuario_Apellidos = txtApellidos.Text;
+            DateTime fechaNacimiento = new DateTime();
+            fechaNacimiento = DateTime.ParseExact(NewInfoPerfil.Usuario_Fecha_Nacimiento, "dd/MM/yyyy", CultureInfo.CurrentCulture);
+            if (new UsuariosController().UpdateDataMiembros(int.Parse(KeyChainHelper.GetKey("Usuario_Id")), NewInfoPerfil.Usuario_Nombre, NewInfoPerfil.Usuario_Apellidos, NewInfoPerfil.Usuario_Correo_Electronico, 
+                                                            NewInfoPerfil.Usuario_Telefono, NewInfoPerfil.Usuario_Celular ,NewInfoPerfil.Usuario_Profesion, NewInfoPerfil.Usuario_Puesto, "", fechaNacimiento, ""))
+            {
+                
+            }
+        }
 
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            if (segue.Identifier == "EditarMiInfo")
+            {
+                var VistaHabilidades = (EditarMiInfoPerfilViewController)segue.DestinationViewController;
+                VistaHabilidades.EditarInfoDelegate = this;
+                VistaHabilidades.Miembro = InfoPerifl;
+            }
+            else if (segue.Identifier == "EditarSociales")
+            {
+                var VistaRedesSociales = (VistaEditarRedesSociales)segue.DestinationViewController;
+                VistaRedesSociales.Redes_Sociales = InfoPerifl.Redes_Sociales;
+                VistaRedesSociales.Miembro = InfoPerifl;
+                VistaRedesSociales.VistaRedesSocialesDelegate = this;
+            }
+        }
+
+        private void Tapped(UITapGestureRecognizer Recognizer)
+        {
+            this.View.EndEditing(true);
+        }
+    }
+
+    public partial class EditarPerfilTableViewController : EventosActualizarInfoPerfil
+    {
+        public void InfoSobreMi(UsuarioModel InfoActualizar)
+        {
+            NewInfoPerfil = InfoActualizar;
+        }
+    }
+
+    public partial class EditarPerfilTableViewController : EventosVistaRedesSociales
+    {
+        public void RedesSociales(List<RedSocialModel> Redes_Sociales)
+        {
+            
+        }
     }
 }

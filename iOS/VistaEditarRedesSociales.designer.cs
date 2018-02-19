@@ -14,5 +14,52 @@ namespace WorklabsMx.iOS
     [Register ("VistaEditarRedesSociales")]
     partial class VistaEditarRedesSociales
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView cvwTablaRedesSociales { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblCantidadPublicaciones { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblPublicaciones { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblSeguidores { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblSiguiendo { get; set; }
+
+        void ReleaseDesignerOutlets ()
+        {
+            if (cvwTablaRedesSociales != null) {
+                cvwTablaRedesSociales.Dispose ();
+                cvwTablaRedesSociales = null;
+            }
+
+            if (lblCantidadPublicaciones != null) {
+                lblCantidadPublicaciones.Dispose ();
+                lblCantidadPublicaciones = null;
+            }
+
+            if (lblPublicaciones != null) {
+                lblPublicaciones.Dispose ();
+                lblPublicaciones = null;
+            }
+
+            if (lblSeguidores != null) {
+                lblSeguidores.Dispose ();
+                lblSeguidores = null;
+            }
+
+            if (lblSiguiendo != null) {
+                lblSiguiendo.Dispose ();
+                lblSiguiendo = null;
+            }
+        }
     }
 }

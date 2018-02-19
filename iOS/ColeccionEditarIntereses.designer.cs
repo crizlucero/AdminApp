@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("ColeccionEditarIntereses")]
     partial class ColeccionEditarIntereses
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

@@ -157,11 +157,17 @@ namespace WorklabsMx.iOS
             {
                 var InfoSocial = (PerfilSocialTableViewController)segue.DestinationViewController;
                 InfoSocial.Redes_Sociales = this.Miembro.Redes_Sociales;
+                InfoSocial.Miembro = this.Miembro;
             }
             else if (segue.Identifier == "Trabajo")
             {
                 var InfoPeril = (InfoEmpresaTableViewController)segue.DestinationViewController;
                 InfoPeril.Miembro = this.Miembro;
+            }
+            else if (segue.Identifier == "EditarPerfil")
+            {
+                var EditarPerfil = (EditarPerfilTableViewController)segue.DestinationViewController;
+                EditarPerfil.InfoPerifl = this.Miembro;
             }
         }
 
@@ -174,7 +180,7 @@ namespace WorklabsMx.iOS
 
         partial void btnEditarPerfil_Touch(UIButton sender)
         {
-            
+            this.PerformSegue("EditarPerfil", null);
         }
 
         partial void btnCerrar_Touch(UIButton sender)
