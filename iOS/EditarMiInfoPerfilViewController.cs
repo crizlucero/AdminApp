@@ -38,6 +38,10 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
 
+            txtEmail.Text = Miembro.Usuario_Correo_Electronico;
+            txtTelefono.Text = Miembro.Usuario_Telefono;
+            txtCelular.Text = Miembro.Usuario_Celular;
+
             txtMiInfo.Changed += (sender, e) =>
             {
                 MiembroActualizar.Usuario_Descripcion = txtMiInfo.Text;

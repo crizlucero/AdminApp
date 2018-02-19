@@ -24,7 +24,23 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblCelular { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblEmail { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblFechaNacimiento { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblMidescripcion { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblTelefono { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -38,9 +54,29 @@ namespace WorklabsMx.iOS
                 cvwIntereses = null;
             }
 
+            if (lblCelular != null) {
+                lblCelular.Dispose ();
+                lblCelular = null;
+            }
+
+            if (lblEmail != null) {
+                lblEmail.Dispose ();
+                lblEmail = null;
+            }
+
+            if (lblFechaNacimiento != null) {
+                lblFechaNacimiento.Dispose ();
+                lblFechaNacimiento = null;
+            }
+
             if (lblMidescripcion != null) {
                 lblMidescripcion.Dispose ();
                 lblMidescripcion = null;
+            }
+
+            if (lblTelefono != null) {
+                lblTelefono.Dispose ();
+                lblTelefono = null;
             }
         }
     }
