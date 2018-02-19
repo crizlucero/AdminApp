@@ -9,5 +9,6 @@ namespace WorklabsMx.Models
         public string Red_Social_Icono_iOS { get; set; }
         public string Red_Social_Icono_Web { get; set; }
         public string Usuario_Red_Social_Id { get; set; }
+        public string Red_Social_Enlace { get; set;  }
     }
 }
