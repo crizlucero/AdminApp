@@ -274,6 +274,7 @@ namespace WorklabsMx.Controllers
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = "sp_cat_Miembros_General";
 
+                command.Parameters.AddWithValue("@Trasaccion", "MODIFICAR");
                 command.Parameters.AddWithValue("@Miembro_Id", usuario_id);
                 command.Parameters.AddWithValue("@Miembro_Nombre", nombre);
                 command.Parameters.AddWithValue("@Miembro_Apellidos", apellido);

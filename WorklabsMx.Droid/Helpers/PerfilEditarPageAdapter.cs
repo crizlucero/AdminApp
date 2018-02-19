@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Android.App;
 using Android.Content;
 using Android.Runtime;
 using Android.Support.V4.View;
@@ -8,6 +9,7 @@ using Android.Views.InputMethods;
 using Android.Widget;
 using Java.Lang;
 using WorklabsMx.Controllers;
+using WorklabsMx.Droid.Helpers;
 using WorklabsMx.Enum;
 using WorklabsMx.Models;
 
@@ -15,12 +17,12 @@ namespace WorklabsMx.Droid
 {
     public class PerfilEditarPageAdapter : PagerAdapter
     {
-        readonly Context context;
+        readonly Activity context;
         List<string> titulos;
         List<EtiquetaModel> etiquetas;
         readonly UsuarioModel miembro;
         View profileView;
-        public PerfilEditarPageAdapter(Context context, List<string> titulos, UsuarioModel miembro)
+        public PerfilEditarPageAdapter(Activity context, List<string> titulos, ref UsuarioModel miembro)
         {
             this.context = context;
             this.titulos = titulos;
@@ -52,17 +54,47 @@ namespace WorklabsMx.Droid
 
         void FillSobreMi()
         {
-            profileView.FindViewById<TextView>(Resource.Id.txtSobreMi).Text = miembro.Usuario_Descripcion;
+            EditText sobremi = profileView.FindViewById<EditText>(Resource.Id.txtSobreMi);
+            sobremi.Text = miembro.Usuario_Descripcion;
+            sobremi.TextChanged += (sender, e) =>
+                miembro.Usuario_Descripcion = ((TextView)sender).Text;
+
+            EditText telefono = profileView.FindViewById<EditText>(Resource.Id.txtTelefono);
+            telefono.Text = miembro.Usuario_Telefono;
+            telefono.TextChanged += (sender, e) =>
+                miembro.Usuario_Telefono = ((EditText)sender).Text;
+
+            EditText celular = profileView.FindViewById<EditText>(Resource.Id.txtCelular);
+            celular.Text = miembro.Usuario_Celular;
+            celular.TextChanged += (sender, e) =>
+                miembro.Usuario_Celular = ((EditText)sender).Text;
+
+            EditText correo = profileView.FindViewById<EditText>(Resource.Id.txtCorreo);
+            correo.Text = miembro.Usuario_Correo_Electronico;
+            correo.TextChanged += (sender, e) =>
+                miembro.Usuario_Correo_Electronico = ((EditText)sender).Text;
+
+            profileView.FindViewById<EditText>(Resource.Id.txtFechaNacimiento).Click += (sender, e) =>
+            {
+                DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (System.DateTime time)
+                {
+                    profileView.FindViewById<EditText>(Resource.Id.txtFechaNacimiento).Text = time.ToString("MMMM dd, yyyy ").ToUpper();
+                    miembro.Usuario_Fecha_Nacimiento = time.ToString("d");
+                });
+                frag.Show(context.FragmentManager, context.Resources.GetString(Resource.String.ReservaSala));
+            };
+
+
             EditText txtHabilidades = profileView.FindViewById<EditText>(Resource.Id.txtHabilidades);
-            //txtHabilidades.Adapter = FillAdapterEtiquetas(TipoEtiquetas.Habilidad);
             txtHabilidades.EditorAction += Etiqueta_KeyPress;
             EditText txtIntereses = profileView.FindViewById<EditText>(Resource.Id.txtIntereses);
-            //txtHabilidades.Adapter = FillAdapterEtiquetas(TipoEtiquetas.Interes);
             txtIntereses.EditorAction += Etiqueta_KeyPress;
             miembro.Etiquetas.ToList().ForEach(habilidad =>
             {
                 if (habilidad.Etiqueta_Tipo == "Habilidad")
                     FillEtiqueta(habilidad.Etiqueta_Nombre, profileView.FindViewById<RelativeLayout>(Resource.Id.rlHabilidades));
+                else
+                    FillEtiqueta(habilidad.Etiqueta_Nombre, profileView.FindViewById<RelativeLayout>(Resource.Id.rlIntereses));
             });
         }
 
@@ -79,12 +111,18 @@ namespace WorklabsMx.Droid
                 try
                 {
                     etiqueta_id = etiquetas.Find(etiqueta => etiqueta.Etiqueta_Nombre.Equals(((EditText)sender).Text)).Etiqueta_Id;
-                }catch{
+                }
+                catch
+                {
                     etiqueta_id = null;
                 }
                 new UsuariosController().AddRemoveEtiquetas(miembro.Usuario_Id, miembro.Usuario_Tipo,
                                                             !string.IsNullOrEmpty(etiqueta_id) ? etiqueta_id : null,
                                                             ((EditText)sender).Text, etiqueta_tipo, null);
+                if (etiqueta_tipo == TipoEtiquetas.Habilidad)
+                    FillEtiqueta(etiqueta_tipo.ToString(), profileView.FindViewById<RelativeLayout>(Resource.Id.rlHabilidades));
+                else
+                    FillEtiqueta(etiqueta_tipo.ToString(), profileView.FindViewById<RelativeLayout>(Resource.Id.rlIntereses));
             }
 
         }
@@ -105,6 +143,51 @@ namespace WorklabsMx.Droid
             profileView.FindViewById<TextView>(Resource.Id.lblTotalPublicaciones).Text = miembro.Red_Social_Publicaciones;
             profileView.FindViewById<TextView>(Resource.Id.lblTotalSiguiendo).Text = miembro.Red_Social_Siguiendo;
             profileView.FindViewById<TextView>(Resource.Id.lblTotalSeguidores).Text = miembro.Red_Social_Seguidores;
+            miembro.Redes_Sociales.ForEach(red =>
+            {
+                if (red.Red_Social_Nombre.Contains("Web"))
+                {
+                    EditText enlace = profileView.FindViewById<EditText>(Resource.Id.txtPaginaWeb);
+                    enlace.Text = red.Red_Social_Enlace;
+                    enlace.TextChanged += (sender, e) => red.Red_Social_Enlace = ((EditText)sender).Text;
+                }
+                else if (red.Red_Social_Nombre.Contains("Facebook"))
+                {
+                    EditText enlace = profileView.FindViewById<EditText>(Resource.Id.txtFacebook);
+                    enlace.Text = red.Red_Social_Enlace;
+                    enlace.TextChanged += (sender, e) => red.Red_Social_Enlace = ((EditText)sender).Text;
+                }
+                else if (red.Red_Social_Nombre.Contains("Instagram"))
+                {
+                    EditText enlace = profileView.FindViewById<EditText>(Resource.Id.txtInstagram);
+                    enlace.Text = red.Red_Social_Enlace;
+                    enlace.TextChanged += (sender, e) => red.Red_Social_Enlace = ((EditText)sender).Text;
+                }
+                else if (red.Red_Social_Nombre.Contains("Twitter"))
+                {
+                    EditText enlace = profileView.FindViewById<EditText>(Resource.Id.txtTwitter);
+                    enlace.Text = red.Red_Social_Enlace;
+                    enlace.TextChanged += (sender, e) => red.Red_Social_Enlace = ((EditText)sender).Text;
+                }
+                else if (red.Red_Social_Nombre.Contains("YouTube"))
+                {
+                    EditText enlace = profileView.FindViewById<EditText>(Resource.Id.txtYoutube);
+                    enlace.Text = red.Red_Social_Enlace;
+                    enlace.TextChanged += (sender, e) => red.Red_Social_Enlace = ((EditText)sender).Text;
+                }
+                else if (red.Red_Social_Nombre.Contains("LinkedIn"))
+                {
+                    EditText enlace = profileView.FindViewById<EditText>(Resource.Id.txtLinkedin);
+                    enlace.Text = red.Red_Social_Enlace;
+                    enlace.TextChanged += (sender, e) => red.Red_Social_Enlace = ((EditText)sender).Text;
+                }
+                else if (red.Red_Social_Nombre.Contains("Skype"))
+                {
+                    EditText enlace = profileView.FindViewById<EditText>(Resource.Id.txtSkype);
+                    enlace.Text = red.Red_Social_Enlace;
+                    enlace.TextChanged += (sender, e) => red.Red_Social_Enlace = ((EditText)sender).Text;
+                }
+            });
         }
 
         void FillTrabajo()

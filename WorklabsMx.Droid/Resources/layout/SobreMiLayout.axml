@@ -115,7 +115,8 @@
                     android:drawableLeft="@mipmap/ic_call"
                     android:gravity="center_vertical"
                     android:id="@+id/lblTelefono"
-                    android:layout_marginRight="20dp" />
+                    android:layout_marginRight="20dp"
+                    android:drawableTint="#343434" />
                 <TextView
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:layout_width="150dp"
@@ -127,7 +128,8 @@
                     android:textColorHint="#AAA"
                     android:drawableLeft="@mipmap/ic_cellphone"
                     android:gravity="center_vertical"
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:drawableTint="#343434" />
             </RelativeLayout>
             <TextView
                 android:layout_width="match_parent"
@@ -140,7 +142,8 @@
                 android:textColorHint="#AAA"
                 android:id="@+id/lblCorreo"
                 android:drawableLeft="@mipmap/ic_email"
-                android:gravity="center_vertical" />
+                android:gravity="center_vertical"
+                android:drawableTint="#343434" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -152,7 +155,8 @@
                 android:textColorHint="#AAA"
                 android:id="@+id/lblFechaNacimiento"
                 android:drawableLeft="@mipmap/ic_cake"
-                android:gravity="center_vertical" />
+                android:gravity="center_vertical"
+                android:drawableTint="#343434" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </LinearLayout>
