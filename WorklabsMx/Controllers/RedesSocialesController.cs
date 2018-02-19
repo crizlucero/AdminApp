@@ -67,9 +67,9 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Red_Social_Id", red_social_id);
                 command.Parameters.AddWithValue("@Miembro_Red_Social_Enlace", red_social_enlace);
                 if (string.IsNullOrEmpty(usuario_red_social_id))
-                    command.Parameters.AddWithValue("@Miembro_Etiqueta_Id", DBNull.Value);
+                    command.Parameters.AddWithValue("@Miembro_Red_Social_Id", DBNull.Value);
                 else
-                    command.Parameters.AddWithValue("@Miembro_Etiqueta_Id", usuario_red_social_id);
+                    command.Parameters.AddWithValue("@Miembro_Red_Social_Id", usuario_red_social_id);
                 command.Parameters.Add("@Miembro_Red_Social_Id_Salida", SqlDbType.Int).Direction = ParameterDirection.Output;
 
                 command.Transaction = transaction;
@@ -86,6 +86,8 @@ namespace WorklabsMx.Controllers
             }
             finally
             {
+                command.Dispose();
+                transaction.Dispose();
                 conn.Close();
             }
         }

@@ -46,7 +46,7 @@ namespace WorklabsMx.Droid
             lblFecha.Text = DateTime.Now.ToString("MMMM dd, yyyy hh:mm tt").ToUpper();
             FindViewById<Button>(Resource.Id.btnFecha).Click += (sender, e) =>
             {
-                DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
+                DatePickerMinFragment frag = DatePickerMinFragment.NewInstance(delegate (DateTime time)
                 {
                     TimePickerFragment timeFrag = TimePickerFragment.NewInstance(delegate (DateTime hour)
                     {
