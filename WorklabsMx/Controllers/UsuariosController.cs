@@ -276,7 +276,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Miembro_Celular", celular);
                 command.Parameters.AddWithValue("@Miembro_Profesion", profesion);
                 command.Parameters.AddWithValue("@Miembro_Puesto", puesto);
-                command.Parameters.AddWithValue("@Miembro_Habilidades", habilidades);
+                //command.Parameters.AddWithValue("@Miembro_Habilidades", habilidades);
                 command.Parameters.AddWithValue("@Miembro_Fecha_Nacimiento", fechaNacimiento);
                 command.Parameters.AddWithValue("@Miembro_Fotografia", foto);
 

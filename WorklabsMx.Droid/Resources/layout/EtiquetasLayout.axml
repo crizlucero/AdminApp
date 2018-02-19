@@ -4,8 +4,6 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="#D8A96E"
-    android:minWidth="25px"
-    android:minHeight="25px"
     android:paddingRight="20dp">
     <ImageView
         android:id="@+id/imgDot"
