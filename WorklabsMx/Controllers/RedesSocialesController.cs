@@ -50,7 +50,7 @@ namespace WorklabsMx.Controllers
                 command = CreateCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "sp_pro_Usuarios_Etiquetas";
+                command.CommandText = "sp_pro_Miembros_Redes_Sociales";
 
                 command.Parameters.AddWithValue("@Trasaccion", string.IsNullOrEmpty(usuario_red_social_id) ? "ALTA" : !string.IsNullOrEmpty(red_social_enlace) ? "MODIFICAR" : "BAJA");
 

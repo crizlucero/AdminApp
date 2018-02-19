@@ -13,7 +13,8 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/linearLayout1">
+            android:id="@+id/linearLayout1"
+            android:layout_marginBottom="10dp">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -116,6 +117,114 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#767676"
+                android:text="@string/str_profile_contact"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/str_profile_telephone"
+                    android:textColorHint="#ffbdbdbd"
+                    android:textColor="#343434"
+                    android:id="@+id/txtTelefono"
+                    android:background="@drawable/border_shadow_style"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:inputType="phone"
+                    android:imeOptions="actionDone"
+                    android:phoneNumber="true" />
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/str_profile_cellphone"
+                    android:textColorHint="#ffbdbdbd"
+                    android:textColor="#343434"
+                    android:id="@+id/txtCelular"
+                    android:background="@drawable/border_shadow_style"
+                    android:layout_marginRight="20dp"
+                    android:inputType="phone"
+                    android:layout_toRightOf="@id/txtTelefono"
+                    android:layout_marginLeft="20dp"
+                    android:phoneNumber="true" />
+            </RelativeLayout>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/str_general_email"
+                android:textColorHint="#ffbdbdbd"
+                android:textColor="#343434"
+                android:id="@+id/txtCorreo"
+                android:background="@drawable/border_shadow_style"
+                android:layout_marginRight="20dp"
+                android:inputType="textEmailAddress"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/str_profile_birthdate"
+                android:textColorHint="#ffbdbdbd"
+                android:textColor="#343434"
+                android:id="@+id/txtFechaNacimiento"
+                android:background="@drawable/border_shadow_style"
+                android:layout_marginRight="20dp"
+                android:inputType="date"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:drawableRight="@mipmap/ic_arrow_down"
+                android:layout_marginBottom="10dp" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#95989A"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#767676"
+                android:text="@string/str_profile_password_update"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/str_profile_password_new"
+                android:textColorHint="#ffbdbdbd"
+                android:textColor="#343434"
+                android:id="@+id/txtIntereses"
+                android:background="@drawable/border_shadow_style"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:inputType="textPersonName"
+                android:imeOptions="actionDone" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/str_profile_password_repeat"
+                android:textColorHint="#ffbdbdbd"
+                android:textColor="#343434"
+                android:id="@+id/txtIntereses"
+                android:background="@drawable/border_shadow_style"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:inputType="textPersonName"
+                android:imeOptions="actionDone"
+                android:layout_marginTop="10dp" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

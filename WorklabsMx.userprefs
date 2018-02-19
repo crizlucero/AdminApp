@@ -1,8 +1,15 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/RedesSocialesController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/EscritorioController.cs">
     <Files>
-      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Controllers/RedesSocialesController.cs" Line="15" Column="13" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="252" Column="62" />
+      <File FileName="WorklabsMx/Controllers/RedesSocialesController.cs" Line="43" Column="42" />
+      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardEditarActivity.cs" Line="67" Column="20" />
+      <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="182" Column="46" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="38" Column="47" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MainActivity.cs" Line="95" Column="21" />
+      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardActivity.cs" Line="45" Column="56" />
+      <File FileName="WorklabsMx.Droid/Helpers/PerfilPageAdapter.cs" Line="79" Column="72" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

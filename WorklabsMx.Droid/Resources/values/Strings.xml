@@ -176,5 +176,8 @@
     <string name="str_general_delete">Eliminar</string>
     <string name="str_dashboard_post">Publica algo</string>
     <string name="str_social_network_unfollow">Dejar de seguir</string>
-    
+    <string name="str_profile_contact">Contacto</string>
+    <string name="str_profile_password_update">Actualizar contraseña</string>
+    <string name="str_profile_password_new">Nueva contraseña</string>
+    <string name="str_profile_password_repeat">Escriba de nuevo la contraseña</string>
 </resources>

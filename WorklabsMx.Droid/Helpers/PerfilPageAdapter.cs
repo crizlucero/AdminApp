@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Android.Content;
+using Android.Content.PM;
 using Android.Graphics.Drawables;
+using Android.Net;
 using Android.Runtime;
 using Android.Support.V4.Content;
 using Android.Support.V4.View;
@@ -51,6 +53,37 @@ namespace WorklabsMx.Droid
         void FillSobreMi()
         {
             profileView.FindViewById<TextView>(Resource.Id.lblSobreMi).Text = miembro.Usuario_Descripcion;
+            if (!string.IsNullOrEmpty(miembro.Usuario_Telefono))
+            {
+                TextView telefono = profileView.FindViewById<TextView>(Resource.Id.lblTelefono);
+                telefono.Text = miembro.Usuario_Telefono;
+                telefono.Click += Telefono_Click;
+            }
+
+            if (!string.IsNullOrEmpty(miembro.Usuario_Celular))
+            {
+                TextView celular = profileView.FindViewById<TextView>(Resource.Id.lblCelular);
+                celular.Text = miembro.Usuario_Celular;
+                celular.Click += Telefono_Click;
+            }
+
+            if (!string.IsNullOrEmpty(miembro.Usuario_Correo_Electronico))
+            {
+                TextView correo = profileView.FindViewById<TextView>(Resource.Id.lblCorreo);
+                correo.Text = miembro.Usuario_Correo_Electronico;
+                correo.Click += (sender, e) =>
+                {
+                    var email = new Intent(Intent.ActionSend);
+                    email.PutExtra(Intent.ExtraEmail, new string[] { miembro.Usuario_Correo_Electronico });
+
+                    email.PutExtra(Intent.ExtraSubject, "Contacto desde Worklabs");
+
+                    email.PutExtra(Intent.ExtraText, "");
+                    email.SetType("message/rfc822");
+                    context.StartActivity(email);
+                };
+            }
+
             miembro.Etiquetas.ToList().ForEach(habilidad =>
             {
                 if (habilidad.Etiqueta_Tipo == "Habilidad")
@@ -59,6 +92,19 @@ namespace WorklabsMx.Droid
                     FillEtiqueta(habilidad.Etiqueta_Nombre, profileView.FindViewById<RelativeLayout>(Resource.Id.rlIntereses));
             });
 
+        }
+
+        void Telefono_Click(object sender, System.EventArgs e)
+        {
+            Intent intent;
+            try { intent = context.PackageManager.GetLaunchIntentForPackage("mx.worklabs"); }
+            catch
+            {
+                intent = new Intent(Intent.ActionView, Uri.Parse("market://details?id=mx.worklabs"));
+                intent.AddFlags(ActivityFlags.NewTask);
+            }
+
+            context.StartActivity(intent);
         }
 
         void FillEtiqueta(string etiqueta, RelativeLayout rlEtiqueta)

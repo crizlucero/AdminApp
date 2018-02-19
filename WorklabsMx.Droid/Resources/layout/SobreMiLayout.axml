@@ -81,6 +81,78 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#95989A"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#767676"
+                android:text="@string/str_profile_contact"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rlIntereses"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#343434"
+                    android:textColorHint="#AAA"
+                    android:hint="@string/str_profile_telephone"
+                    android:layout_marginBottom="5dp"
+                    android:drawableLeft="@mipmap/ic_call"
+                    android:gravity="center_vertical"
+                    android:id="@+id/lblTelefono"
+                    android:layout_marginRight="20dp" />
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#343434"
+                    android:layout_toRightOf="@id/lblTelefono"
+                    android:id="@+id/lblCelular"
+                    android:hint="@string/str_profile_cellphone"
+                    android:textColorHint="#AAA"
+                    android:drawableLeft="@mipmap/ic_cellphone"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="20dp" />
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#343434"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"
+                android:hint="@string/str_general_email"
+                android:textColorHint="#AAA"
+                android:id="@+id/lblCorreo"
+                android:drawableLeft="@mipmap/ic_email"
+                android:gravity="center_vertical" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#343434"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"
+                android:hint="@string/str_profile_birthdate"
+                android:textColorHint="#AAA"
+                android:id="@+id/lblFechaNacimiento"
+                android:drawableLeft="@mipmap/ic_cake"
+                android:gravity="center_vertical" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </LinearLayout>
