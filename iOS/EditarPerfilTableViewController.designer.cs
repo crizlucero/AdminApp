@@ -24,6 +24,10 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnGuardarInfoPerfil { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnImagen { get; set; }
 
         [Outlet]
@@ -40,11 +44,23 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField txtNombre { get; set; }
+        UIKit.UIImageView imgFotoBackPerfil { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField txtProfesion { get; set; }
+        UIKit.UIImageView imgFotoperfil { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblEmpresa { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtApellidos { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtNombre { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -65,6 +81,10 @@ namespace WorklabsMx.iOS
         [Action ("btnClose_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnClose_Touch (UIKit.UIButton sender);
+
+        [Action ("btnGuardar_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnGuardar_Touch (UIKit.UIButton sender);
 
         [Action ("btnImagen_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -98,6 +118,11 @@ namespace WorklabsMx.iOS
                 btnFondoImagen = null;
             }
 
+            if (btnGuardarInfoPerfil != null) {
+                btnGuardarInfoPerfil.Dispose ();
+                btnGuardarInfoPerfil = null;
+            }
+
             if (btnImagen != null) {
                 btnImagen.Dispose ();
                 btnImagen = null;
@@ -118,14 +143,29 @@ namespace WorklabsMx.iOS
                 btnTrabajo = null;
             }
 
+            if (imgFotoBackPerfil != null) {
+                imgFotoBackPerfil.Dispose ();
+                imgFotoBackPerfil = null;
+            }
+
+            if (imgFotoperfil != null) {
+                imgFotoperfil.Dispose ();
+                imgFotoperfil = null;
+            }
+
+            if (lblEmpresa != null) {
+                lblEmpresa.Dispose ();
+                lblEmpresa = null;
+            }
+
+            if (txtApellidos != null) {
+                txtApellidos.Dispose ();
+                txtApellidos = null;
+            }
+
             if (txtNombre != null) {
                 txtNombre.Dispose ();
                 txtNombre = null;
-            }
-
-            if (txtProfesion != null) {
-                txtProfesion.Dispose ();
-                txtProfesion = null;
             }
 
             if (vwImagenPerfil != null) {
