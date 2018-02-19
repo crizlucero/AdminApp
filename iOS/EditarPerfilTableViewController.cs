@@ -12,6 +12,9 @@ using System.Globalization;
 
 namespace WorklabsMx.iOS
 {
+
+
+
     public partial class EditarPerfilTableViewController : UITableViewController
     {
         UIImagePickerController imgPicker;
@@ -24,6 +27,8 @@ namespace WorklabsMx.iOS
 
         public UsuarioModel NewInfoPerfil = new UsuarioModel();
 
+        List<RedSocialModel> NewRedesSociales = new List<RedSocialModel>();
+
         public EditarPerfilTableViewController (IntPtr handle) : base (handle)
         {
         }
@@ -31,6 +36,8 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            NewRedesSociales = InfoPerifl.Redes_Sociales;
+            NewInfoPerfil = InfoPerifl;
             imgPicker = new UIImagePickerController();
             imgPicker.Delegate = this;
             var Tap = new UITapGestureRecognizer(this.Tapped);
@@ -292,11 +299,29 @@ namespace WorklabsMx.iOS
             NewInfoPerfil.Usuario_Nombre = txtNombre.Text;
             NewInfoPerfil.Usuario_Apellidos = txtApellidos.Text;
             DateTime fechaNacimiento = new DateTime();
-            fechaNacimiento = DateTime.ParseExact(NewInfoPerfil.Usuario_Fecha_Nacimiento, "dd/MM/yyyy", CultureInfo.CurrentCulture);
-            if (new UsuariosController().UpdateDataMiembros(int.Parse(KeyChainHelper.GetKey("Usuario_Id")), NewInfoPerfil.Usuario_Nombre, NewInfoPerfil.Usuario_Apellidos, NewInfoPerfil.Usuario_Correo_Electronico, 
-                                                            NewInfoPerfil.Usuario_Telefono, NewInfoPerfil.Usuario_Celular ,NewInfoPerfil.Usuario_Profesion, NewInfoPerfil.Usuario_Puesto, "", fechaNacimiento, ""))
+            fechaNacimiento = DateTime.Parse(NewInfoPerfil.Usuario_Fecha_Nacimiento);
+            int result = -1;
+            foreach(RedSocialModel RedSocial in NewRedesSociales)
             {
-                
+                if ((RedSocial.Red_Social_Id != null && RedSocial.Red_Social_Id != ""))
+                {
+                    result = new RedesSocialesController().SetRedSocial(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), RedSocial.Red_Social_Id, RedSocial.Red_Social_Enlace, RedSocial.Usuario_Red_Social_Id);
+                }
+                else
+                {
+                    result = 1;
+                }
+            }
+
+            if (new UsuariosController().UpdateDataMiembros(KeyChainHelper.GetKey("Usuario_Id"), NewInfoPerfil.Usuario_Nombre, NewInfoPerfil.Usuario_Apellidos, NewInfoPerfil.Usuario_Correo_Electronico, 
+                                                            NewInfoPerfil.Usuario_Telefono, NewInfoPerfil.Usuario_Celular, NewInfoPerfil.Usuario_Descripcion,fechaNacimiento, null) && result != -1)
+            {
+                new MessageDialog().SendToast("Información actualizada con éxito");
+                this.DismissViewController(true, null);
+            }
+            else
+            {
+                new MessageDialog().SendToast("Error al intentar actualizar la información");
             }
         }
 
@@ -335,7 +360,7 @@ namespace WorklabsMx.iOS
     {
         public void RedesSociales(List<RedSocialModel> Redes_Sociales)
         {
-            
+            NewRedesSociales = Redes_Sociales;
         }
     }
 }
