@@ -96,11 +96,11 @@ namespace WorklabsMx.iOS
 
                 this.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Actualizar", UIBarButtonItemStyle.Plain, (sender, e) =>
                 {
-                    if (new UsuariosController().UpdateDataMiembros(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Id")), txtNombre.Text, txtApellidos.Text, txtEmail.Text,
+                    /*if (new UsuariosController().UpdateDataMiembros(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Id")), txtNombre.Text, txtApellidos.Text, txtEmail.Text,
                                                                    txtTelefono.Text, txtCelular.Text, txtProfesion.Text, txtPuesto.Text, txtHabilidades.Text, (DateTime)dpFechaNacimiento.Date, ""))
                         new MessageDialog().SendToast("Datos guardados");
                     else
-                        new MessageDialog().SendToast("Hubo un error\nIntente de nuevo");
+                        new MessageDialog().SendToast("Hubo un error\nIntente de nuevo");*/
                 }), true);
                 scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, 940);
                 Add(scrollView);

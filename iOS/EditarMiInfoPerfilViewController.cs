@@ -37,7 +37,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
+            MiembroActualizar = Miembro;
             txtEmail.Text = Miembro.Usuario_Correo_Electronico;
             txtTelefono.Text = Miembro.Usuario_Telefono;
             txtCelular.Text = Miembro.Usuario_Celular;

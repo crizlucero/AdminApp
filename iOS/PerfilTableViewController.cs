@@ -263,11 +263,11 @@ namespace WorklabsMx.iOS
                 if (this.lblFechaNacimiento.Text != "")
                 {
                     fechaNacimiento = DateTime.ParseExact(this.lblFechaNacimiento.Text, "dd/MM/yyyy", CultureInfo.CurrentCulture);
-                    if (new UsuariosController().UpdateDataMiembros(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Id")), txtNombre.Text, txtApellido.Text, txtEmail.Text,
+                    /*if (new UsuariosController().UpdateDataMiembros(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Id")), txtNombre.Text, txtApellido.Text, txtEmail.Text,
                                                                     txtTelefono.Text, txtTelefono.Text, txtProfesion.Text, txtProfesion.Text, txtHabilidades.Text, fechaNacimiento, ""))
                         new MessageDialog().SendToast("Datos guardados");
                     else
-                        new MessageDialog().SendToast("Hubo un error\nIntente de nuevo");
+                        new MessageDialog().SendToast("Hubo un error\nIntente de nuevo");*/
                 }
 
             }
