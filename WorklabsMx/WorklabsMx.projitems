@@ -70,6 +70,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\UsuariosController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ConfiguracionesHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enum\TipoEtiquetas.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\RedesSocialesController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />
