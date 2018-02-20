@@ -179,6 +179,7 @@
     <Compile Include="ViewElement\PerfilCardActivity.cs" />
     <Compile Include="ViewElement\PerfilCardEditarActivity.cs" />
     <Compile Include="Helpers\PerfilEditarPageAdapter.cs" />
+    <Compile Include="Helpers\DatePickerMinFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -383,6 +384,9 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\ic_cake.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\ic_cake.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_cake.png" />
+    <AndroidResource Include="Resources\layout\ComprasLayout.axml" />
+    <AndroidResource Include="Resources\layout\CompraCardLayout.axml" />
+    <AndroidResource Include="Resources\drawable\border_rect_style.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

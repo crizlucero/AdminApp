@@ -73,12 +73,13 @@ namespace WorklabsMx.Droid
             correo.Text = miembro.Usuario_Correo_Electronico;
             correo.TextChanged += (sender, e) =>
                 miembro.Usuario_Correo_Electronico = ((EditText)sender).Text;
-
-            profileView.FindViewById<EditText>(Resource.Id.txtFechaNacimiento).Click += (sender, e) =>
+            EditText nacimiento = profileView.FindViewById<EditText>(Resource.Id.txtFechaNacimiento);
+            nacimiento.ShowSoftInputOnFocus = false;
+            nacimiento.Click += (sender, e) =>
             {
                 DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (System.DateTime time)
                 {
-                    profileView.FindViewById<EditText>(Resource.Id.txtFechaNacimiento).Text = time.ToString("MMMM dd, yyyy ").ToUpper();
+                    ((EditText)sender).Text = time.ToString("d");
                     miembro.Usuario_Fecha_Nacimiento = time.ToString("d");
                 });
                 frag.Show(context.FragmentManager, context.Resources.GetString(Resource.String.ReservaSala));

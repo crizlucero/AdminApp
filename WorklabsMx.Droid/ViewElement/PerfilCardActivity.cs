@@ -59,6 +59,7 @@ namespace WorklabsMx.Droid
                     Intent intent = new Intent(this, typeof(PerfilCardEditarActivity));
                     intent.PutExtra("Miembro", Intent.GetStringExtra("Miembro"));
                     StartActivity(intent);
+                    Finish();
                 };
             }
             isFavorite = new UsuariosController().IsMiembroFavorito(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), miembro.Usuario_Id, miembro.Usuario_Tipo);

@@ -63,7 +63,7 @@ namespace WorklabsMx.Droid
             Horarios[salas[_viewPager.CurrentItem].Sala_Id].Add(fecha_seleccionada, new List<double>());
             FindViewById<LinearLayout>(Resource.Id.llSeleccionarFecha).Click += (sender, e) =>
             {
-                DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
+                DatePickerMinFragment frag = DatePickerMinFragment.NewInstance(delegate (DateTime time)
                 {
                     FindViewById<TextView>(Resource.Id.lblDiaFecha).Text = time.DayOfWeek.ToString().Substring(0, 3);
                     FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = time.Day.ToString();

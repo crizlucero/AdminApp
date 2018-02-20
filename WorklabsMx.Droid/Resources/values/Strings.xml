@@ -48,8 +48,8 @@
 	<string name="Actualizar">Actualizar</string>
 	<string name="LlenarDatos">Llene todos los datos</string>
 	<string name="ReservaSala">Reservar sala de juntas</string>
-	<string name="Productos">Productos</string>
-	<string name="Membresias">Membresías</string>
+	<string name="str_shop_products">Productos</string>
+	<string name="str_shop_memberships">Membresías</string>
 	<string name="str_general_edit">Editar</string>
 	<string name="Comprar">Comprar</string>
 	<string name="ConfirmacionPago">Confirmación de Pago</string>
@@ -180,4 +180,8 @@
     <string name="str_profile_password_update">Actualizar contraseña</string>
     <string name="str_profile_password_new">Nueva contraseña</string>
     <string name="str_profile_password_repeat">Escriba de nuevo la contraseña</string>
+    <string name="str_shop_cost">Costo por unidad</string>
+    <string name="str_shop_office_select">Seleccionar Sucursal</string>
+    <string name="str_shop_detail">Detalle</string>
+    <string name="str_shop_cart_add">Añadir al carrito</string>
 </resources>

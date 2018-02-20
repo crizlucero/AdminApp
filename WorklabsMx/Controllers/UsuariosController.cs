@@ -256,6 +256,8 @@ namespace WorklabsMx.Controllers
             string fotoNombre = null;
             try
             {
+                conn.Open();
+                transaction = conn.BeginTransaction();
                 if (fotografia.Length != 0)
                 {
                     fotoNombre = Guid.NewGuid().ToString() + ".png";
@@ -266,8 +268,6 @@ namespace WorklabsMx.Controllers
                     }
 
                 }
-                conn.Open();
-                transaction = conn.BeginTransaction();
                 command = CreateCommand();
                 command.Connection = conn;
                 command.Transaction = transaction;

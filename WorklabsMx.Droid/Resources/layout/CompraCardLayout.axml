@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:background="#FFF">
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:rowCount="8"
+        android:columnCount="4"
+        android:background="#FFF"
+        android:layout_margin="20dp">
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:id="@+id/imgProducto"
+            android:background="@drawable/perfilimagenstyle"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_columnSpan="4" />
+        <TextView
+            android:id="@+id/lblNombre"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_columnSpan="4"
+            android:text="Equipo teléfonico"
+            android:textSize="14dp" />
+        <TextView
+            android:text="@string/str_shop_cost"
+            android:textColor="#767676"
+            android:layout_columnSpan="4"
+            android:layout_gravity="center" />
+        <TextView
+            android:id="@+id/lblPrecio"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:text="$350 / MN"
+            android:layout_columnSpan="4"
+            android:layout_gravity="center" />
+        <TextView
+            android:id="@+id/lblSucursal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_shop_office_select"
+            android:drawableRight="@mipmap/ic_arrow_down"
+            android:background="@drawable/cornerborderline"
+            android:paddingLeft="2dp"
+            android:paddingTop="2dp"
+            android:textSize="12dp"
+            android:textColor="#000"
+            android:layout_columnSpan="4"
+            android:layout_gravity="center" />
+        <TextView
+            android:textColor="#767676"
+            android:text="@string/str_shop_detail"
+            android:textSize="12dp"
+            android:layout_columnSpan="4" />
+        <TextView
+            android:text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            android:id="@+id/lblDescripcion"
+            android:textColor="#767676"
+            android:textSize="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="4"
+            android:layout_gravity="center" />
+        <ImageView
+            android:src="@mipmap/ic_remove"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:id="@+id/imgMenos"
+            android:tint="#95D6FF"
+            android:background="@drawable/border_rect_style" />
+        <EditText
+            android:layout_height="wrap_content"
+            android:width="30dp"
+            android:textColor="#767676"
+            android:text="1000"
+            android:id="@+id/txtCantidad"
+            android:textSize="12dp"
+            android:gravity="center"
+            android:layout_width="50dp" />
+        <ImageView
+            android:src="@mipmap/ic_add"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:id="@+id/imgMas"
+            android:tint="#95D6FF"
+            android:background="@drawable/border_rect_style" />
+        <Button
+            android:id="@+id/btnAdd"
+            android:background="@drawable/buttonstyle"
+            android:layout_gravity="right"
+            android:text="@string/str_shop_cart_add"
+            android:textSize="12dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center" />
+    </GridLayout>
+</LinearLayout>

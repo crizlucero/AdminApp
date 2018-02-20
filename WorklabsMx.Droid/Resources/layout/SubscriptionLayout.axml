@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView1"
-            android:text="@string/Membresias" />
+            android:text="@string/str_shop_memberships" />
     </LinearLayout>
     <TableLayout
         android:minWidth="25px"
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView11"
-            android:text="@string/Productos" />
+            android:text="@string/str_shop_products" />
     </LinearLayout>
     <TableLayout
         android:minWidth="25px"

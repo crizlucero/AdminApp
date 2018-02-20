@@ -38,7 +38,7 @@ namespace WorklabsMx.Droid
 
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
-            ActionBar.Title = Resources.GetString(Resource.String.Productos);
+            ActionBar.Title = Resources.GetString(Resource.String.str_shop_products);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
             _viewPager = FindViewById<ViewPager>(Resource.Id.vpSucursal);
