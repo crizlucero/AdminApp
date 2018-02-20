@@ -41,6 +41,7 @@ namespace WorklabsMx.iOS
             txtEmail.Text = Miembro.Usuario_Correo_Electronico;
             txtTelefono.Text = Miembro.Usuario_Telefono;
             txtCelular.Text = Miembro.Usuario_Celular;
+            txtMiInfo.Text = Miembro.Usuario_Descripcion;
 
             txtMiInfo.Changed += (sender, e) =>
             {
@@ -48,19 +49,19 @@ namespace WorklabsMx.iOS
                 EditarInfoDelegate.InfoSobreMi(MiembroActualizar);
             };
 
-            txtEmail.ValueChanged += (sender, e) =>
+            txtEmail.EditingChanged += (sender, e) =>
             {
                 MiembroActualizar.Usuario_Correo_Electronico = txtEmail.Text;
                 EditarInfoDelegate.InfoSobreMi(MiembroActualizar);
             };
 
-            txtCelular.ValueChanged += (sender, e) =>
+            txtCelular.EditingChanged += (sender, e) =>
             {
                 MiembroActualizar.Usuario_Celular = txtCelular.Text;
                 EditarInfoDelegate.InfoSobreMi(MiembroActualizar);
             };
 
-            txtTelefono.ValueChanged += (sender, e) =>
+            txtTelefono.EditingChanged += (sender, e) =>
             {
                 MiembroActualizar.Usuario_Telefono = txtTelefono.Text;
                 EditarInfoDelegate.InfoSobreMi(MiembroActualizar);

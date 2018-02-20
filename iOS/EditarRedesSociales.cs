@@ -26,58 +26,60 @@ namespace WorklabsMx.iOS
 
         public List<RedSocialModel> Redes_Sociales = new List<RedSocialModel>();
 
-        public List<RedSocialModel> New_Redes_Sociales = new List<RedSocialModel>();
+        List<RedSocialModel> New_Redes_Sociales;
 
         RedSocialModel RedSocial = new RedSocialModel();
 
-
         static string[] RedeSocialNombre = new string[]
         {
-            "WEB",
-            "FACEBOOK",
-            "INSTAGRAM",
-            "TWITTER",
-            "YOUTUBE",
-            "LINKEDIN",
-            "SKYPE"
+            "Web",
+            "Facebook",
+            "Instagram",
+            "Twitter",
+            "YouTube",
+            "LinkEdin",
+            "Skype"
         };
 
         public EditarRedesSociales (IntPtr handle) : base (handle)
         {
+            
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            New_Redes_Sociales = new List<RedSocialModel>();
+
             if (Redes_Sociales != null)
             {
                 foreach (RedSocialModel RSocial in Redes_Sociales)
                 {
-                    if (RSocial.Red_Social_Nombre == RedeSocialNombre[0])
+                    if (RSocial.Red_Social_Nombre.Contains(RedeSocialNombre[0]))
                     {
                         txtWeb.Text = RSocial.Red_Social_Enlace;
                     }
-                    if (RSocial.Red_Social_Nombre == RedeSocialNombre[1])
+                    if (RSocial.Red_Social_Nombre.Contains(RedeSocialNombre[1]))
                     {
                         txtFacebook.Text = RSocial.Red_Social_Enlace;
                     }
-                    if (RSocial.Red_Social_Nombre == RedeSocialNombre[2])
+                    if (RSocial.Red_Social_Nombre.Contains(RedeSocialNombre[2]))
                     {
                         txtInstagram.Text = RSocial.Red_Social_Enlace;
                     }
-                    if (RSocial.Red_Social_Nombre == RedeSocialNombre[3])
+                    if (RSocial.Red_Social_Nombre.Contains(RedeSocialNombre[3]))
                     {
                         txtTwitter.Text = RSocial.Red_Social_Enlace;
                     }
-                    if (RSocial.Red_Social_Nombre == RedeSocialNombre[4])
+                    if (RSocial.Red_Social_Nombre.Contains(RedeSocialNombre[4]))
                     {
                         txtYoutube.Text = RSocial.Red_Social_Enlace;
                     }
-                    if (RSocial.Red_Social_Nombre == RedeSocialNombre[5])
+                    if (RSocial.Red_Social_Nombre.Contains(RedeSocialNombre[5]))
                     {
                         txtLinkedin.Text = RSocial.Red_Social_Enlace;
                     }
-                    if (RSocial.Red_Social_Nombre == RedeSocialNombre[6])
+                    if (RSocial.Red_Social_Nombre.Contains(RedeSocialNombre[6]))
                     {
                         txtSkype.Text = RSocial.Red_Social_Enlace;
                     }
@@ -87,48 +89,56 @@ namespace WorklabsMx.iOS
 
             for (int indice = 0; indice < RedeSocialNombre.Length ; indice ++)
             {
+                RedSocial = new RedSocialModel();
+                RedSocial.Red_Social_Nombre = RedeSocialNombre[indice];
                 New_Redes_Sociales.Add(RedSocial);
-                New_Redes_Sociales[indice].Red_Social_Nombre = RedeSocialNombre[indice];
+                if(Redes_Sociales != null)
+                {
+                    if(Redes_Sociales.Count > 0)
+                    {
+                        New_Redes_Sociales[indice] = Redes_Sociales[indice];
+                    }
+                }
+                //New_Redes_Sociales[indice].Red_Social_Nombre = RedeSocialNombre[indice];
             }
 
-
-            txtWeb.ValueChanged += (sender, e) =>
+            txtWeb.EditingChanged += (sender, e) =>
             {
                 New_Redes_Sociales[0].Red_Social_Enlace = txtWeb.Text;
                 RedesSocilesDelegate.RedesSociales(New_Redes_Sociales);
             };
 
-            txtFacebook.ValueChanged += (sender, e) =>
+            txtFacebook.EditingChanged += (sender, e) =>
             {
                 New_Redes_Sociales[1].Red_Social_Enlace = txtFacebook.Text;
                 RedesSocilesDelegate.RedesSociales(New_Redes_Sociales);
             };
 
-            txtInstagram.ValueChanged += (sender, e) =>
+            txtInstagram.EditingChanged += (sender, e) =>
             {
                 New_Redes_Sociales[2].Red_Social_Enlace = txtInstagram.Text;
                 RedesSocilesDelegate.RedesSociales(New_Redes_Sociales);
             };
 
-            txtTwitter.ValueChanged += (sender, e) =>
+            txtTwitter.EditingChanged += (sender, e) =>
             {
                 New_Redes_Sociales[3].Red_Social_Enlace = txtTwitter.Text;
                 RedesSocilesDelegate.RedesSociales(New_Redes_Sociales);
             };
 
-            txtYoutube.ValueChanged += (sender, e) =>
+            txtYoutube.EditingChanged += (sender, e) =>
             {
                 New_Redes_Sociales[4].Red_Social_Enlace = txtYoutube.Text;
                 RedesSocilesDelegate.RedesSociales(New_Redes_Sociales);
             };
 
-            txtLinkedin.ValueChanged += (sender, e) =>
+            txtLinkedin.EditingChanged += (sender, e) =>
             {
                 New_Redes_Sociales[5].Red_Social_Enlace = txtLinkedin.Text;
                 RedesSocilesDelegate.RedesSociales(New_Redes_Sociales);
             };
 
-            txtSkype.ValueChanged += (sender, e) =>
+            txtSkype.EditingChanged += (sender, e) =>
             {
                 New_Redes_Sociales[6].Red_Social_Enlace = txtSkype.Text;
                 RedesSocilesDelegate.RedesSociales(New_Redes_Sociales);

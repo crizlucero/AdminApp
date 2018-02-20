@@ -24,7 +24,7 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             this.dtpFechaNacimiento.MaximumDate = NSDate.Now;
-            dateFormat.DateFormat = "dd/MM/yyyy"; 
+            dateFormat.DateFormat = "yyyy-MM-dd"; 
             this.FechaNacimiento = dateFormat.ToString(this.dtpFechaNacimiento.Date);
         }
 

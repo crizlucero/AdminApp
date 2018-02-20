@@ -13,11 +13,16 @@ using System.Globalization;
 namespace WorklabsMx.iOS
 {
 
-
+    public interface EventosEditarPerfil
+    {
+        void MiInfo(UsuarioModel InfoActualizar);
+    }
 
     public partial class EditarPerfilTableViewController : UITableViewController
     {
         UIImagePickerController imgPicker;
+
+        public EventosEditarPerfil MiInfoDeleghate;
 
         bool TouchedBack = false, TouchedProfile = false;
 
@@ -303,7 +308,7 @@ namespace WorklabsMx.iOS
             int result = -1;
             foreach(RedSocialModel RedSocial in NewRedesSociales)
             {
-                if ((RedSocial.Red_Social_Id != null && RedSocial.Red_Social_Id != ""))
+                if ((RedSocial.Red_Social_Id != null && RedSocial.Red_Social_Id != "") && (RedSocial.Red_Social_Enlace != null && RedSocial.Red_Social_Enlace != ""))
                 {
                     result = new RedesSocialesController().SetRedSocial(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), RedSocial.Red_Social_Id, RedSocial.Red_Social_Enlace, RedSocial.Usuario_Red_Social_Id);
                 }
@@ -313,11 +318,17 @@ namespace WorklabsMx.iOS
                 }
             }
 
+            byte[] imagen = new byte[0];
+
             if (new UsuariosController().UpdateDataMiembros(KeyChainHelper.GetKey("Usuario_Id"), NewInfoPerfil.Usuario_Nombre, NewInfoPerfil.Usuario_Apellidos, NewInfoPerfil.Usuario_Correo_Electronico, 
-                                                            NewInfoPerfil.Usuario_Telefono, NewInfoPerfil.Usuario_Celular, NewInfoPerfil.Usuario_Descripcion,fechaNacimiento, null) && result != -1)
+                                                            NewInfoPerfil.Usuario_Telefono, NewInfoPerfil.Usuario_Celular, NewInfoPerfil.Usuario_Descripcion,fechaNacimiento, imagen) && result != -1)
             {
-                new MessageDialog().SendToast("Información actualizada con éxito");
-                this.DismissViewController(true, null);
+                
+                this.DismissViewController(true, () =>
+                {
+                    this.MiInfoDeleghate.MiInfo(NewInfoPerfil);
+                });
+               
             }
             else
             {
@@ -352,7 +363,15 @@ namespace WorklabsMx.iOS
     {
         public void InfoSobreMi(UsuarioModel InfoActualizar)
         {
+            //InfoPerifl = InfoActualizar;
             NewInfoPerfil = InfoActualizar;
+            //this.MiInfoDeleghate.MiInfo(InfoActualizar);
+            //this.TableView.ReloadData();
+            /*NewInfoPerfil = InfoActualizar;
+            this.lblEmpresa.Text = NewInfoPerfil.Usuario_Empresa_Nombre;
+            this.txtNombre.Text = NewInfoPerfil.Usuario_Nombre;
+            this.txtApellidos.Text = NewInfoPerfil.Usuario_Apellidos;*/
+
         }
     }
 

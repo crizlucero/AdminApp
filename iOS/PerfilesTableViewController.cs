@@ -24,9 +24,11 @@ namespace WorklabsMx.iOS
         {
         }
 
-        public override void ViewDidLoad()
+        public override async void ViewDidLoad()
         {
             base.ViewDidLoad();
+            await MenuHelper.GetUsuarioInfo();
+            Miembro = MenuHelper.Usuario;
             this.PreguntarFavorito();
             if (InfoPersonal)
             {
@@ -168,6 +170,7 @@ namespace WorklabsMx.iOS
             {
                 var EditarPerfil = (EditarPerfilTableViewController)segue.DestinationViewController;
                 EditarPerfil.InfoPerifl = this.Miembro;
+                EditarPerfil.MiInfoDeleghate = this;
             }
         }
 
@@ -233,4 +236,18 @@ namespace WorklabsMx.iOS
         {
         }
     }
+
+    public partial class PerfilesTableViewController : EventosEditarPerfil
+    {
+        public void MiInfo(UsuarioModel InfoActualizar)
+        {
+            this.Miembro = InfoActualizar;
+            new MessageDialog().SendToast("Información actualizada con éxito");
+            this.DismissViewController(true, null);
+            /*this.lblNombre.Text = Miembro.Usuario_Nombre;
+            this.lblEmpresa.Text = Miembro.Usuario_Empresa_Nombre;
+            this.PerformSegue("SobreMi", null);*/
+        }
+    }
+
 }
