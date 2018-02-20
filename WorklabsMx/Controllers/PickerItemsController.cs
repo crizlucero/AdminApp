@@ -600,22 +600,19 @@ namespace WorklabsMx.Controllers
             return carrito;
         }
 
-        public List<RedSocialModel> GetRedesSociales(string usuario_id, string usuario_tipo)
+        public List<RedSocialModel> GetRedesSociales()
         {
             List<RedSocialModel> redesSociales = new List<RedSocialModel>();
             try
             {
-                command = CreateCommand("select Usuario_Red_Social_Id, Red_Social_Id, Red_Social_Nombre, Red_Social_Icono_Android, Red_Social_Icono_iOS, Red_Social_Icono_Web " +
-                                       "from vw_pro_Directorio_Usuarios Where Usuario_Id = @Usuario_Id and Usuario_Tipo = @Usuario_Tipo");
-                command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
-                command.Parameters.AddWithValue("@Usuario_Tipo", usuario_tipo);
+                command = CreateCommand("select Red_Social_Id, Red_Social_Nombre, Red_Social_Icono_Android, Red_Social_Icono_iOS, Red_Social_Icono_Web " +
+                                        "from cat_Redes_Sociales");
                 conn.Open();
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     redesSociales.Add(new RedSocialModel
                     {
-                        Usuario_Red_Social_Id = reader["Usuario_Red_Social_Id"].ToString(),
                         Red_Social_Id = reader["Red_Social_Id"].ToString(),
                         Red_Social_Nombre = reader["Red_Social_Nombre"].ToString(),
                         Red_Social_Icono_Android = reader["Red_Social_Icono_Android"].ToString(),

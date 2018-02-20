@@ -184,4 +184,6 @@
     <string name="str_shop_office_select">Seleccionar Sucursal</string>
     <string name="str_shop_detail">Detalle</string>
     <string name="str_shop_cart_add">Añadir al carrito</string>
+    <string name="str_shop_print_black_white">Blanco y Negro</string>
+    <string name="str_shop_print_color">Color</string>
 </resources>

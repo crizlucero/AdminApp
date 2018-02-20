@@ -9,4 +9,6 @@
     <color name="button_unpressed">#C7C7C7</color>
     <color name="hour_selected">#A2DBFF</color>
     <color name="hour_unselected">#E1FCC3</color>
+    <color name="switch_selected">#95D6FF</color>
+    <color name="switch_unselected">#FFF</color>
 </resources>

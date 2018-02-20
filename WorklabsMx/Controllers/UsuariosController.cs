@@ -65,7 +65,7 @@ namespace WorklabsMx.Controllers
             miembro.Red_Social_Seguidores = contadores[1];
             miembro.Red_Social_Siguiendo = contadores[2];
             miembro.Etiquetas = GetUsuarioEtiquetas(miembro.Usuario_Id, miembro.Usuario_Tipo);
-            miembro.Redes_Sociales = new PickerItemsController().GetRedesSociales(miembro.Usuario_Id, miembro.Usuario_Tipo);
+            miembro.Redes_Sociales = GetUsuarioRedesSociales(miembro.Usuario_Id, miembro.Usuario_Tipo);
             return miembro;
         }
 
@@ -188,7 +188,7 @@ namespace WorklabsMx.Controllers
             finally { conn.Close(); }
             usuarios.ForEach(usuario =>
             {
-                usuario.Redes_Sociales = new PickerItemsController().GetRedesSociales(usuario.Usuario_Id, usuario.Usuario_Tipo);
+                usuario.Redes_Sociales = GetUsuarioRedesSociales(usuario.Usuario_Id, usuario.Usuario_Tipo);
                 usuario.Etiquetas = GetUsuarioEtiquetas(usuario.Usuario_Id, usuario.Usuario_Tipo);
             });
             return usuarios;
@@ -286,7 +286,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Miembro_Descripcion", descripcion);
                 command.Parameters.AddWithValue("@Miembro_Estatus", DBNull.Value);
 
-                command.Parameters.Add("@Miembro_Id_Salida",SqlDbType.Int).Direction = ParameterDirection.Output;
+                command.Parameters.Add("@Miembro_Id_Salida", SqlDbType.Int).Direction = ParameterDirection.Output;
 
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();
@@ -468,7 +468,7 @@ namespace WorklabsMx.Controllers
             colaboradores.ForEach(colaborador =>
             {
                 colaborador.Etiquetas = GetUsuarioEtiquetas(colaborador.Usuario_Id, colaborador.Usuario_Tipo);
-                colaborador.Redes_Sociales = new PickerItemsController().GetRedesSociales(colaborador.Usuario_Id, colaborador.Usuario_Tipo);
+                colaborador.Redes_Sociales = GetUsuarioRedesSociales(colaborador.Usuario_Id, colaborador.Usuario_Tipo);
             });
             return colaboradores;
         }
@@ -522,7 +522,7 @@ namespace WorklabsMx.Controllers
                 conn.Close();
             }
             colaborador.Etiquetas = GetUsuarioEtiquetas(colaborador.Usuario_Id, colaborador.Usuario_Tipo);
-            colaborador.Redes_Sociales = new PickerItemsController().GetRedesSociales(colaborador.Usuario_Id, colaborador.Usuario_Tipo);
+            colaborador.Redes_Sociales = GetUsuarioRedesSociales(colaborador.Usuario_Id, colaborador.Usuario_Tipo);
             return colaborador;
         }
         /// <summary>
@@ -799,6 +799,37 @@ namespace WorklabsMx.Controllers
             }
             finally { conn.Close(); }
             return etiquetas;
+        }
+
+        public List<RedSocialModel> GetUsuarioRedesSociales(string usuario_id, string usuario_tipo)
+        {
+            List<RedSocialModel> redesSociales = new PickerItemsController().GetRedesSociales();
+            try
+            {
+                command = CreateCommand("select Miembro_Red_Social_Id, Red_Social_Id, Miembro_Red_Social_Enlace " +
+                                        "from vw_pro_Usuarios_Redes_Sociales Where Usuario_Id = @Usuario_Id and Usuario_Tipo = @Usuario_Tipo");
+                command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
+                command.Parameters.AddWithValue("@Usuario_Tipo", usuario_tipo);
+                conn.Open();
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    redesSociales.ForEach(red =>
+                    {
+                        if (red.Red_Social_Id == reader["Red_Social_Id"].ToString())
+                        {
+                            red.Red_Social_Enlace = reader["Miembro_Red_Social_Enlace"].ToString();
+                            red.Usuario_Red_Social_Id = reader["Miembro_Red_Social_Id"].ToString();
+                        }
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message);
+            }
+            finally { conn.Close(); }
+            return redesSociales;
         }
     }
 }

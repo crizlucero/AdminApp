@@ -180,6 +180,7 @@
     <Compile Include="ViewElement\PerfilCardEditarActivity.cs" />
     <Compile Include="Helpers\PerfilEditarPageAdapter.cs" />
     <Compile Include="Helpers\DatePickerMinFragment.cs" />
+    <Compile Include="ViewController\Servicios\ComprasActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -387,6 +388,10 @@
     <AndroidResource Include="Resources\layout\ComprasLayout.axml" />
     <AndroidResource Include="Resources\layout\CompraCardLayout.axml" />
     <AndroidResource Include="Resources\drawable\border_rect_style.xml" />
+    <AndroidResource Include="Resources\drawable\switch_style_toggle.xml" />
+    <AndroidResource Include="Resources\drawable\switch_parent_style.xml" />
+    <AndroidResource Include="Resources\layout\CompraElementoLayout.axml" />
+    <AndroidResource Include="Resources\drawable\button_circle_filled.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
