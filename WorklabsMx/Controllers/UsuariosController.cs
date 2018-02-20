@@ -291,6 +291,7 @@ namespace WorklabsMx.Controllers
                 command.Transaction = transaction;
                 command.ExecuteNonQuery();
                 transaction.Commit();
+
             }
             catch (Exception e)
             {
