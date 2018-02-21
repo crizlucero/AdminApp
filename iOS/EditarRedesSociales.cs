@@ -86,11 +86,11 @@ namespace WorklabsMx.iOS
                 }
             }
 
-
             for (int indice = 0; indice < RedeSocialNombre.Length ; indice ++)
             {
                 RedSocial = new RedSocialModel();
                 RedSocial.Red_Social_Nombre = RedeSocialNombre[indice];
+                RedSocial.Red_Social_Id = (indice + 1).ToString();
                 New_Redes_Sociales.Add(RedSocial);
                 if(Redes_Sociales != null)
                 {
