@@ -6,6 +6,9 @@
     android:minWidth="25px"
     android:minHeight="25px"
     android:background="#FFF">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarlayout" />
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
