@@ -186,4 +186,5 @@
     <string name="str_shop_cart_add">Añadir al carrito</string>
     <string name="str_shop_print_black_white">Blanco y Negro</string>
     <string name="str_shop_print_color">Color</string>
+    <string name="str_shop">Compras</string>
 </resources>

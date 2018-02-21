@@ -45,7 +45,7 @@ namespace WorklabsMx.Droid
                 {
                     miembro.Redes_Sociales.ForEach(red =>
                     {
-                        if (!string.IsNullOrEmpty(red.Red_Social_Id))
+                        if (!string.IsNullOrEmpty(red.Usuario_Red_Social_Id) || !string.IsNullOrEmpty(red.Red_Social_Enlace))
                             new RedesSocialesController().SetRedSocial(miembro.Usuario_Id, miembro.Usuario_Tipo, red.Red_Social_Id, red.Red_Social_Enlace, red.Usuario_Red_Social_Id);
                     });
                     Toast.MakeText(this, Resource.String.str_general_save, ToastLength.Short).Show();

@@ -641,7 +641,7 @@ namespace WorklabsMx.Controllers
             return true;
         }
 
-        public List<RedSocialModel> GetRedesSocialesUsuario(string usuario_id, string usuario_tipo)
+        /*public List<RedSocialModel> GetRedesSocialesUsuario(string usuario_id, string usuario_tipo)
         {
             List<RedSocialModel> rs = new List<RedSocialModel>();
 
@@ -677,7 +677,7 @@ namespace WorklabsMx.Controllers
             }
 
             return rs;
-        }
+        }*/
 
         public List<string> GetContadoresSocial(string usuario_id, string usuario_tipo)
         {

@@ -8,9 +8,11 @@
     <Button
         android:layout_width="85dp"
         android:layout_height="85dp"
-        android:id="@+id/button1"
         android:background="@drawable/button_circle_filled"
         android:gravity="center"
         android:text="Equipo Teléfonico"
-        android:textSize="12dp" />
+        android:textSize="12dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="50dp"
+        android:id="@+id/btnElemento" />
 </LinearLayout>

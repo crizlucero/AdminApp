@@ -93,7 +93,7 @@ namespace WorklabsMx.Droid.ViewElement
                             context.StartActivity(new Intent(context, typeof(LoginActivity)));
                             context.Finish();
                             break;
-                        case "ColeccionProductosActivity": context.StartActivity(new Intent(context, typeof(ColeccionProductosActivity))); break;
+                        case "ColeccionProductosActivity": context.StartActivity(new Intent(context, typeof(ComprasActivity))); break;
                         case "ReservaSalaJuntasActivity": context.StartActivity(new Intent(context, typeof(TabSalasJuntasHistorialActivity))); break;
                         case "RegistroInvitadosActivity": context.StartActivity(new Intent(context, typeof(InvitadosActivity))); break;
                         case "PerfilActivity": 

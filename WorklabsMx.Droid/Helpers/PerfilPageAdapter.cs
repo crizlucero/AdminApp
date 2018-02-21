@@ -120,6 +120,10 @@ namespace WorklabsMx.Droid
             profileView.FindViewById<TextView>(Resource.Id.lblTotalPublicaciones).Text = miembro.Red_Social_Publicaciones;
             profileView.FindViewById<TextView>(Resource.Id.lblTotalSiguiendo).Text = miembro.Red_Social_Siguiendo;
             profileView.FindViewById<TextView>(Resource.Id.lblTotalSeguidores).Text = miembro.Red_Social_Seguidores;
+            miembro.Redes_Sociales.ForEach(red =>
+            {
+                Drawable icRedSocial = ContextCompat.GetDrawable(context, Resource.Mipmap.ic_mode_comment);
+            });
         }
 
         void FillTrabajo()

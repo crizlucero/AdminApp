@@ -6,6 +6,9 @@
     android:minWidth="25px"
     android:minHeight="25px"
     android:background="#FFF">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarlayout" />
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,13 +17,20 @@
         android:background="#FFF"
         android:layout_margin="20dp">
         <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/ic_clear"
+            android:id="@+id/btnClose" />
+        <ImageView
             android:src="@android:drawable/ic_menu_gallery"
             android:id="@+id/imgProducto"
             android:background="@drawable/perfilimagenstyle"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
-            android:layout_columnSpan="4" />
+            android:layout_columnSpan="4"
+            android:layout_column="0"
+            android:layout_row="0" />
         <TextView
             android:id="@+id/lblNombre"
             android:layout_gravity="center"
@@ -29,7 +39,7 @@
             android:layout_columnSpan="4"
             android:text="Equipo teléfonico"
             android:textSize="14dp" />
-        <RadioGroup
+        <RadioGroup xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:layout_marginBottom="10dp"
@@ -38,7 +48,8 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/switch_parent_style"
             android:orientation="horizontal"
-            android:layout_columnSpan="4">
+            android:layout_columnSpan="4"
+            tools:visibility="gone">
             <RadioButton
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="1dp"
@@ -80,19 +91,13 @@
             android:text="$350 / MN"
             android:layout_columnSpan="4"
             android:layout_gravity="center" />
-        <TextView
-            android:id="@+id/lblSucursal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/str_shop_office_select"
-            android:drawableRight="@mipmap/ic_arrow_down"
-            android:background="@drawable/cornerborderline"
-            android:paddingLeft="2dp"
-            android:paddingTop="2dp"
-            android:textSize="12dp"
-            android:textColor="#000"
+        <Spinner
+            android:id="@+id/spSucursal"
             android:layout_columnSpan="4"
-            android:layout_gravity="center" />
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:spinnerMode="dialog" />
         <TextView
             android:textColor="#767676"
             android:text="@string/str_shop_detail"
