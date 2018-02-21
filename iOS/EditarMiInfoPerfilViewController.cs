@@ -27,6 +27,8 @@ namespace WorklabsMx.iOS
 
         UIStoryboardSegue segueHabilidades;
 
+        UIStoryboardSegue segueIntereses;
+
         public EventosActualizarHabilidades HabilidadesDelegate;
 
         public EventosActualizarInfoPerfil EditarInfoDelegate;
@@ -46,6 +48,8 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            txtInteres.AttributedPlaceholder = new NSAttributedString("  Escriba un interes", null, UIColor.Clear.FromHex(0x767676));
+            txtHabilidad.AttributedPlaceholder = new NSAttributedString("  Escriba una habilidad", null, UIColor.Clear.FromHex(0x767676));
             MiembroActualizar = Miembro;
             txtEmail.Text = Miembro.Usuario_Correo_Electronico;
             txtTelefono.Text = Miembro.Usuario_Telefono;
@@ -107,16 +111,55 @@ namespace WorklabsMx.iOS
         {
             EtiquetaModel EtiquetaHabilidad = new EtiquetaModel();
             EtiquetaHabilidad.Etiqueta_Nombre = txtHabilidad.Text;
-            EtiquetasHabilidades.Add(EtiquetaHabilidad);
-            //HabilidadesDelegate.ActualizarHabilidades(EtiquetasHabilidades);
-            /*this.ViewDidLoad();
-            this.ViewWillAppear(true);
-            this.LoadView();*/
-            this.PrepareForSegue(this.segueHabilidades, null);
+            bool encontrada = false;
+            if (EtiquetasHabilidades.Count > 0)
+            {
+                foreach (EtiquetaModel Habilidad in EtiquetasHabilidades)
+                {
+                    if (EtiquetaHabilidad.Etiqueta_Nombre == Habilidad.Etiqueta_Nombre)
+                    {
+                        encontrada = true;
+                    }
+                }
+            }
+
+            if(!encontrada)
+            {
+                EtiquetasHabilidades.Add(EtiquetaHabilidad);
+                this.PrepareForSegue(this.segueHabilidades, null);
+            }
+            else
+            {
+                new MessageDialog().SendToast("La etiqueta ya existe");
+            }
+               
         }
 
         partial void btnAgregarInteres_Touch(UIButton sender)
         {
+            EtiquetaModel EtiquetaInteres = new EtiquetaModel();
+            EtiquetaInteres.Etiqueta_Nombre = txtInteres.Text;
+            bool encontrada = false;
+            if (EtiquetasIntereses.Count > 0)
+            {
+                foreach (EtiquetaModel Interes in EtiquetasIntereses)
+                {
+                    if (EtiquetaInteres.Etiqueta_Nombre == Interes.Etiqueta_Nombre)
+                    {
+                        encontrada = true;
+                    }
+                }
+            }
+
+            if (!encontrada)
+            {
+                EtiquetasIntereses.Add(EtiquetaInteres);
+                this.PrepareForSegue(this.segueIntereses, null);
+            }
+            else
+            {
+                new MessageDialog().SendToast("La etiqueta ya existe");
+            }
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
@@ -131,8 +174,10 @@ namespace WorklabsMx.iOS
             }
             else if (segue.Identifier == "EditarIntereses")
             {
+                this.segueIntereses = segue;
                 var VistaIntereses = (ColeccionEditarIntereses)segue.DestinationViewController;
                 VistaIntereses.EtiquetasIntereses = EtiquetasIntereses;
+                VistaIntereses.ViewDidLoad();
             }
             else if (segue.Identifier == "FechaNacimiento")
             {

@@ -12253,7 +12253,7 @@ COL. LADRON DE GUEVARA</string>
                                 <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aTV-r3-bak">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Escriba una habilidad" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aTV-r3-bak">
                                 <rect key="frame" x="126" y="214" width="165" height="22"/>
                                 <color key="backgroundColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.60392156862745094" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                 <nil key="textColor"/>
@@ -12301,7 +12301,7 @@ COL. LADRON DE GUEVARA</string>
                                     <action selector="btnAgregarInteres_Touch:" destination="sRU-h6-Nd4" eventType="touchUpInside" id="528676"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nsj-mU-lNt">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Escriba un interes" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nsj-mU-lNt">
                                 <rect key="frame" x="126" y="356" width="165" height="21"/>
                                 <color key="backgroundColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.60392156862745094" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                 <nil key="textColor"/>
@@ -12642,7 +12642,7 @@ COL. LADRON DE GUEVARA</string>
                                     <constraint firstItem="Fz5-6P-FWd" firstAttribute="top" secondItem="Z8j-N9-5CU" secondAttribute="top" constant="9" id="K4y-gD-2UJ"/>
                                     <constraint firstItem="Fz5-6P-FWd" firstAttribute="leading" secondItem="Z8j-N9-5CU" secondAttribute="leading" id="WJH-a9-qpX"/>
                                     <constraint firstAttribute="trailing" secondItem="Fz5-6P-FWd" secondAttribute="trailing" id="g3k-ac-yec"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="Fz5-6P-FWd" secondAttribute="bottom" constant="9" id="qod-LK-BdX"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="Fz5-6P-FWd" secondAttribute="bottom" constant="1" id="qod-LK-BdX"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="lblHabilidades" destination="Fz5-6P-FWd" id="iCi-SB-4pW"/>

@@ -45,7 +45,7 @@ namespace WorklabsMx.iOS
         [Export("collectionView:layout:insetForSectionAtIndex:")]
         public virtual UIEdgeInsets GetInsetForSection(UICollectionView collectionView, UICollectionViewLayout layout, Int32 section)
         {
-            var sectionInsets = new UIEdgeInsets(5, 0, 5, 0);
+            var sectionInsets = new UIEdgeInsets(5, 5, 5, 5);
             return sectionInsets;
         }
 

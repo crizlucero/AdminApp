@@ -24,6 +24,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            this.CollectionView.ReloadData();
         }
 
         public override nint NumberOfSections(UICollectionView collectionView)
@@ -46,10 +47,9 @@ namespace WorklabsMx.iOS
         [Export("collectionView:layout:insetForSectionAtIndex:")]
         public virtual UIEdgeInsets GetInsetForSection(UICollectionView collectionView, UICollectionViewLayout layout, Int32 section)
         {
-            var sectionInsets = new UIEdgeInsets(5, 0, 5, 0);
+            var sectionInsets = new UIEdgeInsets(5, 5, 5, 5);
             return sectionInsets;
         }
-
 
         [Export("collectionView:layout:minimumLineSpacingForSectionAtIndex:")]
         public nfloat GetMinimumLineSpacingForSection(UICollectionView collectionView, UICollectionViewLayout layout, nint section)
