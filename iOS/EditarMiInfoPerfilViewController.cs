@@ -12,14 +12,10 @@ using System.Collections.Generic;
 namespace WorklabsMx.iOS
 {
 
-    public interface EventosActualizarHabilidades
-    {
-        void ActualizarHabilidades(List<EtiquetaModel> EtiquetasHabilidades);
-    }
-
     public interface EventosActualizarInfoPerfil
     {
         void InfoSobreMi(UsuarioModel InfoActualizar);
+        void Etiquetas(EtiquetaModel Etiquetas);
     }
 
     public partial class EditarMiInfoPerfilViewController : UIViewController
@@ -28,8 +24,6 @@ namespace WorklabsMx.iOS
         UIStoryboardSegue segueHabilidades;
 
         UIStoryboardSegue segueIntereses;
-
-        public EventosActualizarHabilidades HabilidadesDelegate;
 
         public EventosActualizarInfoPerfil EditarInfoDelegate;
 
@@ -126,6 +120,7 @@ namespace WorklabsMx.iOS
             if(!encontrada)
             {
                 EtiquetasHabilidades.Add(EtiquetaHabilidad);
+                EditarInfoDelegate.Etiquetas(EtiquetaHabilidad);
                 this.PrepareForSegue(this.segueHabilidades, null);
             }
             else
@@ -154,6 +149,7 @@ namespace WorklabsMx.iOS
             if (!encontrada)
             {
                 EtiquetasIntereses.Add(EtiquetaInteres);
+                EditarInfoDelegate.Etiquetas(EtiquetaInteres);
                 this.PrepareForSegue(this.segueIntereses, null);
             }
             else

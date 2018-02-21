@@ -306,6 +306,9 @@ namespace WorklabsMx.iOS
             DateTime fechaNacimiento = new DateTime();
             fechaNacimiento = DateTime.Parse(NewInfoPerfil.Usuario_Fecha_Nacimiento);
             int result = -1;
+
+            //var result = new UsuariosController().AddRemoveEtiquetas(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), NewInfoPerfil.Etiquetas, string etiqueta_nombre, TipoEtiquetas etiqueta_tipo, string miembro_etiqueta_id);
+
             foreach(RedSocialModel RedSocial in NewRedesSociales)
             {
                 if ((RedSocial.Red_Social_Id != null && RedSocial.Red_Social_Id != "") && (RedSocial.Red_Social_Enlace != null && RedSocial.Red_Social_Enlace != ""))
@@ -363,15 +366,12 @@ namespace WorklabsMx.iOS
     {
         public void InfoSobreMi(UsuarioModel InfoActualizar)
         {
-            //InfoPerifl = InfoActualizar;
             NewInfoPerfil = InfoActualizar;
-            //this.MiInfoDeleghate.MiInfo(InfoActualizar);
-            //this.TableView.ReloadData();
-            /*NewInfoPerfil = InfoActualizar;
-            this.lblEmpresa.Text = NewInfoPerfil.Usuario_Empresa_Nombre;
-            this.txtNombre.Text = NewInfoPerfil.Usuario_Nombre;
-            this.txtApellidos.Text = NewInfoPerfil.Usuario_Apellidos;*/
+        }
 
+        public void Etiquetas(EtiquetaModel Etiquetas)
+        {
+            NewInfoPerfil.Etiquetas.Add(Etiquetas);
         }
     }
 
