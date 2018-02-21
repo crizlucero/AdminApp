@@ -1,71 +1,12 @@
-<<<<<<< HEAD
-﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/VistaEditarRedesSociales.cs">
-    <Files>
-      <File FileName="iOS/EditarRedesSociales.cs" Line="114" Column="1" NotebookId="1" />
-      <File FileName="iOS/VistaEditarRedesSociales.cs" Line="58" Column="1" NotebookId="1" />
-      <File FileName="iOS/EditarPerfilTableViewController.cs" Line="382" Column="47" NotebookId="1" />
-      <File FileName="iOS/EditarMiInfoPerfilViewController.cs" Line="15" Column="1" NotebookId="1" />
-      <File FileName="iOS/PerfilesTableViewController.cs" Line="246" Column="52" NotebookId="1" />
-      <File FileName="iOS/FechaNacimientoPickerViewController.cs" Line="25" Column="31" NotebookId="1" />
-      <File FileName="iOS/RegistrarTableViewController.cs" Line="212" Column="66" NotebookId="1" />
-      <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="21" Column="37" NotebookId="1" />
-      <File FileName="iOS/CeldaInvitadosAgregados.cs" Line="8" Column="26" NotebookId="1" />
-      <File FileName="iOS/CeldaInvitados.cs" Line="53" Column="39" NotebookId="1" />
-      <File FileName="iOS/GeneroViewController.cs" Line="52" Column="1" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/MiPerfil/AboutMeModificaController.cs" Line="103" Column="92" NotebookId="1" />
-      <File FileName="iOS/PerfilTableViewController.cs" Line="290" Column="38" NotebookId="1" />
-      <File FileName="iOS/MiInfoView.cs" Line="28" Column="1" NotebookId="1" />
-      <File FileName="iOS/MenuTableViewController.cs" Line="158" Column="53" NotebookId="1" />
-      <File FileName="iOS/Helpers/MenuHelper.cs" Line="100" Column="61" NotebookId="1" />
-      <File FileName="iOS/Main.cs" Line="12" Column="1" NotebookId="1" />
-    </Files>
-    <FloatingWindows>
-      <FloatingWindow WindowId="1" X="655" Y="23" Width="1102" Height="1026">
-        <Files>
-          <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="18" Column="1" />
-          <File FileName="WorklabsMx/Controllers/RedesSocialesController.cs" Line="49" Column="55" />
-        </Files>
-      </FloatingWindow>
-    </FloatingWindows>
-=======
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewElement/MenuView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/MainActivity.cs">
     <Files>
-      <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="187" Column="36" />
-      <File FileName="WorklabsMx.Droid/Resources/drawable/border_rect_style.xml" Line="5" Column="13" />
-      <File FileName="WorklabsMx.Droid/Resources/values/colors.xml" Line="13" Column="41" />
-      <File FileName="WorklabsMx.Droid/Resources/drawable/switch_style_toggle.xml" Line="9" Column="57" />
-      <File FileName="WorklabsMx.Droid/Resources/drawable/switch_parent_style.xml" Line="8" Column="39" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ComprasActivity.cs" Line="37" Column="34" />
-      <File FileName="WorklabsMx.Droid/Resources/drawable/button_circle_filled.xml" Line="9" Column="12" />
-      <File FileName="WorklabsMx.Droid/Resources/drawable/button_circle.xml" Line="2" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardEditarActivity.cs" Line="78" Column="53" />
-      <File FileName="WorklabsMx.Droid/Helpers/PerfilEditarPageAdapter.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="68" Column="61" />
-      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="607" Column="14" />
-      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardActivity.cs" Line="32" Column="77" />
-      <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/Helpers/PerfilPageAdapter.cs" Line="125" Column="17" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="69" Column="18" />
     </Files>
->>>>>>> 04f1709a5fbbe9390987dd8e852c59dd7a65d2fb
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-<<<<<<< HEAD
-    <BreakpointStore>
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="455" column="29" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="447" column="26" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/ConfigurationsController.cs" relfile="WorklabsMx/Controllers/ConfigurationsController.cs" line="109" column="29" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EditarPerfilTableViewController.cs" relfile="iOS/EditarPerfilTableViewController.cs" line="382" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EditarRedesSociales.cs" relfile="iOS/EditarRedesSociales.cs" line="114" column="37" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/VistaEditarRedesSociales.cs" relfile="iOS/VistaEditarRedesSociales.cs" line="58" column="39" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.0D184F42-6E16-43C3-B549-F1D9DA6E63D0" automaticSigning="False">
-    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
-  </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
-=======
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

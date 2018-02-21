@@ -77,8 +77,6 @@ namespace WorklabsMx.Droid
             }
             return base.OnOptionsItemSelected(item);
         }
-
-
     }
 
     class ComprasAdapter : PagerAdapter
@@ -87,7 +85,6 @@ namespace WorklabsMx.Droid
         List<string> compras;
         View TiposComprasView;
         public Dictionary<string, CarritoModel> Productos, Membresias;
-        SimpleStorage Storage;
         TableRow.LayoutParams param;
         ArrayAdapter adapter;
         AlertDialog dialog;
