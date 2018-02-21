@@ -1,21 +1,17 @@
-﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/UsuariosController.cs">
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="iOS/EditarMiInfoPerfilViewController.cs" Line="18" Column="9" />
-      <File FileName="iOS/EditarPerfilTableViewController.cs" Line="323" Column="49" />
-      <File FileName="iOS/Main.cs" Line="9" Column="10" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="1" Column="1" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="136" Column="114" />
-      <File FileName="iOS/ColeccionEditarHabilidades.cs" Line="48" Column="12" />
-      <File FileName="iOS/ColeccionEditarIntereses.cs" Line="34" Column="9" />
-      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="725" Column="37" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="8" Column="23" />
+      <File FileName="WorklabsMx/Helpers/SlackLogs.cs" Line="13" Column="114" />
+      <File FileName="WorklabsMx.Droid/Resources/drawable/switch_style_toggle.xml" Line="15" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C8F534E0-9C6A-4F53-A110-4E330B864317" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D3D00818-B828-45D1-ACAA-A06B2D1C1EA8" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>
