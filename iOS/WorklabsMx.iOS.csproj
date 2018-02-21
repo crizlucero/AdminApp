@@ -501,10 +501,6 @@
     <ImageAsset Include="Assets.xcassets\Facebook.imageset\icons8-facebook-filled-30.png" />
     <ImageAsset Include="Assets.xcassets\Facebook.imageset\icons8-facebook-filled-60.png" />
     <ImageAsset Include="Assets.xcassets\Facebook.imageset\icons8-facebook-filled-90.png" />
-    <ImageAsset Include="Assets.xcassets\Twitter.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Twitter.imageset\icons8-twitter-filled-30.png" />
-    <ImageAsset Include="Assets.xcassets\Twitter.imageset\icons8-twitter-filled-60.png" />
-    <ImageAsset Include="Assets.xcassets\Twitter.imageset\icons8-twitter-filled-90.png" />
     <ImageAsset Include="Assets.xcassets\Instagram.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Instagram.imageset\icons8-instagram-filled-30.png" />
     <ImageAsset Include="Assets.xcassets\Instagram.imageset\icons8-instagram-filled-60.png" />
@@ -711,13 +707,11 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\grande.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\chico.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\mediano.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 8%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 11.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 9%403x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 8%403x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 11%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 11%403x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 5.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 4%403x.png" />
     <ImageAsset Include="Assets.xcassets\Opciones.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Opciones.imageset\opciones.png" />
@@ -751,6 +745,40 @@
     <ImageAsset Include="Assets.xcassets\Cake.imageset\icons8-birthday-cake-filled-25.png" />
     <ImageAsset Include="Assets.xcassets\Cake.imageset\icons8-birthday-cake-filled-50.png" />
     <ImageAsset Include="Assets.xcassets\Cake.imageset\icons8-birthday-cake-filled-75.png" />
+    <ImageAsset Include="Assets.xcassets\Web.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Web.imageset\web.png" />
+    <ImageAsset Include="Assets.xcassets\Web.imageset\web%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Web.imageset\web%403x.png" />
+    <ImageAsset Include="Assets.xcassets\icTwitter.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\icTwitter.imageset\Twitter.png" />
+    <ImageAsset Include="Assets.xcassets\icTwitter.imageset\twitter%402x.png" />
+    <ImageAsset Include="Assets.xcassets\icTwitter.imageset\twitter%403x.png" />
+    <ImageAsset Include="Assets.xcassets\LinkEdin.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LinkEdin.imageset\icons8-linkedin-circled-filled-25.png" />
+    <ImageAsset Include="Assets.xcassets\LinkEdin.imageset\icons8-linkedin-circled-filled-50.png" />
+    <ImageAsset Include="Assets.xcassets\LinkEdin.imageset\icons8-linkedin-circled-filled-75.png" />
+    <ImageAsset Include="Assets.xcassets\Skype.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Skype.imageset\skype.png" />
+    <ImageAsset Include="Assets.xcassets\Skype.imageset\skype%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Skype.imageset\skype%403x.png" />
+    <ImageAsset Include="Assets.xcassets\google.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\google.imageset\google.png" />
+    <ImageAsset Include="Assets.xcassets\google.imageset\google%402x.png" />
+    <ImageAsset Include="Assets.xcassets\google.imageset\google%403x.png" />
+    <ImageAsset Include="Assets.xcassets\YouTube.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\YouTube.imageset\icons8-play-button-filled-25.png" />
+    <ImageAsset Include="Assets.xcassets\YouTube.imageset\icons8-play-button-filled-50.png" />
+    <ImageAsset Include="Assets.xcassets\YouTube.imageset\icons8-play-button-filled-75.png" />
+    <ImageAsset Include="Assets.xcassets\spotify.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\spotify.imageset\icons8-spotify-filled-25.png" />
+    <ImageAsset Include="Assets.xcassets\spotify.imageset\icons8-spotify-filled-50.png" />
+    <ImageAsset Include="Assets.xcassets\spotify.imageset\icons8-spotify-filled-75.png" />
+    <ImageAsset Include="Assets.xcassets\Quora.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Quora.imageset\icons8-quora-filled-25.png" />
+    <ImageAsset Include="Assets.xcassets\Quora.imageset\icons8-quora-filled-50.png" />
+    <ImageAsset Include="Assets.xcassets\Quora.imageset\icons8-quora-filled-75.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 10.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 7%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1462,6 +1490,14 @@
     <Folder Include="Assets.xcassets\CellPhone.imageset\" />
     <Folder Include="Assets.xcassets\Email.imageset\" />
     <Folder Include="Assets.xcassets\Cake.imageset\" />
+    <Folder Include="Assets.xcassets\Web.imageset\" />
+    <Folder Include="Assets.xcassets\icTwitter.imageset\" />
+    <Folder Include="Assets.xcassets\LinkEdin.imageset\" />
+    <Folder Include="Assets.xcassets\Skype.imageset\" />
+    <Folder Include="Assets.xcassets\google.imageset\" />
+    <Folder Include="Assets.xcassets\YouTube.imageset\" />
+    <Folder Include="Assets.xcassets\spotify.imageset\" />
+    <Folder Include="Assets.xcassets\Quora.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

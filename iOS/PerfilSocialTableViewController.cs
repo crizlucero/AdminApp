@@ -38,6 +38,11 @@ namespace WorklabsMx.iOS
                 var InfoPeril = (PerfilRedesSociales)segue.DestinationViewController;
                 InfoPeril.Redes_Sociales = Redes_Sociales;
             }
+            else if (segue.Identifier == "ListaRedesSociales")
+            {
+                var VistaListaRedesSocilales = (PerfilRedesSociales)segue.DestinationViewController;
+                VistaListaRedesSocilales.Redes_Sociales = Redes_Sociales;
+            } 
  
         }
 

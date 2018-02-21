@@ -8642,7 +8642,7 @@ COL. LADRON DE GUEVARA</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3q-CU-8Rh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7282" y="-5491"/>
+            <point key="canvasLocation" x="-7078" y="-5473"/>
         </scene>
         <!--No Conexion View Controller-->
         <scene sceneID="KZX-vD-uBy">
@@ -9995,7 +9995,7 @@ COL. LADRON DE GUEVARA</string>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nII-sR-AIp">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="277"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="277"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="277" id="C4A-ot-GbA"/>
@@ -10032,7 +10032,7 @@ COL. LADRON DE GUEVARA</string>
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDI-sD-Wg1">
-                                                    <rect key="frame" x="112" y="158" width="150" height="150"/>
+                                                    <rect key="frame" x="111.5" y="158" width="150" height="150"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kws-0B-4qU">
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -10080,7 +10080,7 @@ COL. LADRON DE GUEVARA</string>
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CamaraEditar" translatesAutoresizingMaskIntoConstraints="NO" id="882-js-GrK">
-                                                    <rect key="frame" x="252" y="221" width="25" height="24"/>
+                                                    <rect key="frame" x="251.5" y="221" width="25" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="nh0-wT-U81"/>
                                                         <constraint firstAttribute="height" constant="24" id="pwS-iz-w8x"/>
@@ -10107,8 +10107,8 @@ COL. LADRON DE GUEVARA</string>
                                                 <constraint firstItem="S9r-hm-ZTF" firstAttribute="top" secondItem="QJA-r4-3uO" secondAttribute="top" constant="11" id="WTv-TQ-EfW"/>
                                                 <constraint firstItem="1IF-Fw-eJe" firstAttribute="top" secondItem="tf9-gY-Yxt" secondAttribute="bottom" id="WXB-AO-LN2"/>
                                                 <constraint firstItem="dDI-sD-Wg1" firstAttribute="top" secondItem="QJA-r4-3uO" secondAttribute="top" constant="158" id="aTJ-U5-E1q"/>
-                                                <constraint firstItem="nII-sR-AIp" firstAttribute="trailing" secondItem="1IF-Fw-eJe" secondAttribute="trailing" constant="-1" id="ddf-db-cfR"/>
-                                                <constraint firstAttribute="trailing" secondItem="nII-sR-AIp" secondAttribute="trailing" constant="1" id="eyH-4q-cxm"/>
+                                                <constraint firstItem="nII-sR-AIp" firstAttribute="trailing" secondItem="1IF-Fw-eJe" secondAttribute="trailing" id="ddf-db-cfR"/>
+                                                <constraint firstAttribute="trailing" secondItem="nII-sR-AIp" secondAttribute="trailing" id="eyH-4q-cxm"/>
                                                 <constraint firstItem="S9r-hm-ZTF" firstAttribute="firstBaseline" secondItem="nII-sR-AIp" secondAttribute="firstBaseline" constant="11" id="gm8-wX-iBn"/>
                                                 <constraint firstItem="nII-sR-AIp" firstAttribute="firstBaseline" secondItem="S9r-hm-ZTF" secondAttribute="firstBaseline" constant="-11" id="kcm-Zd-ZJ3"/>
                                                 <constraint firstItem="nII-sR-AIp" firstAttribute="firstBaseline" secondItem="S9r-hm-ZTF" secondAttribute="firstBaseline" constant="-11" id="l54-cQ-4f6"/>
@@ -10117,7 +10117,7 @@ COL. LADRON DE GUEVARA</string>
                                                 <constraint firstAttribute="trailing" secondItem="VeR-v1-1aZ" secondAttribute="trailing" constant="16" id="oBH-yW-tzk"/>
                                                 <constraint firstItem="nII-sR-AIp" firstAttribute="bottom" secondItem="tf9-gY-Yxt" secondAttribute="bottom" id="pJl-vY-des"/>
                                                 <constraint firstItem="nII-sR-AIp" firstAttribute="baseline" secondItem="S9r-hm-ZTF" secondAttribute="baseline" constant="-11" id="poz-TF-wJq"/>
-                                                <constraint firstItem="nII-sR-AIp" firstAttribute="centerX" secondItem="dDI-sD-Wg1" secondAttribute="centerX" id="rej-dQ-fPc"/>
+                                                <constraint firstItem="nII-sR-AIp" firstAttribute="centerX" secondItem="dDI-sD-Wg1" secondAttribute="centerX" constant="1" id="rej-dQ-fPc"/>
                                                 <constraint firstItem="nII-sR-AIp" firstAttribute="firstBaseline" secondItem="S9r-hm-ZTF" secondAttribute="baseline" constant="7" id="tkW-0z-Xbv"/>
                                                 <constraint firstItem="nII-sR-AIp" firstAttribute="leading" secondItem="1IF-Fw-eJe" secondAttribute="leading" id="yKZ-vr-GHh"/>
                                             </constraints>
@@ -10298,7 +10298,7 @@ COL. LADRON DE GUEVARA</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YlX-MZ-CwL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10794.4" y="-6825.3370000000004"/>
+            <point key="canvasLocation" x="-10794.4" y="-6825.3373313343336"/>
         </scene>
         <!--Empresa-->
         <scene sceneID="Lhd-57-s7p">
@@ -11841,7 +11841,7 @@ COL. LADRON DE GUEVARA</string>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iNC-5N-rhG">
                                 <rect key="frame" x="0.0" y="102" width="375" height="612"/>
                                 <connections>
-                                    <segue destination="M7T-8d-Vvk" kind="embed" id="Y3t-eF-Znj"/>
+                                    <segue destination="M7T-8d-Vvk" kind="embed" identifier="ListaRedesSociales" id="Y3t-eF-Znj"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIq-uO-Wr1">
@@ -11939,30 +11939,30 @@ COL. LADRON DE GUEVARA</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="faccebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0W-Zx-Ljc">
-                                            <rect key="frame" x="46" y="8" width="313" height="22"/>
+                                            <rect key="frame" x="69" y="0.0" width="290" height="40"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="22" id="eWk-oM-bCB"/>
+                                                <constraint firstAttribute="height" constant="40" id="eWk-oM-bCB"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                             <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebookic" translatesAutoresizingMaskIntoConstraints="NO" id="QGI-bX-s4y">
-                                            <rect key="frame" x="16" y="8" width="22" height="22"/>
+                                            <rect key="frame" x="16" y="5" width="30" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="22" id="YXl-c9-lqs"/>
-                                                <constraint firstAttribute="width" constant="22" id="Zvx-yj-63B"/>
+                                                <constraint firstAttribute="height" constant="30" id="YXl-c9-lqs"/>
+                                                <constraint firstAttribute="width" constant="30" id="Zvx-yj-63B"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="QGI-bX-s4y" secondAttribute="bottom" constant="-1" id="8Ag-0I-4EI"/>
-                                        <constraint firstItem="u0W-Zx-Ljc" firstAttribute="leading" secondItem="QGI-bX-s4y" secondAttribute="trailing" constant="8" symbolic="YES" id="9M6-Rr-DM4"/>
-                                        <constraint firstItem="QGI-bX-s4y" firstAttribute="top" secondItem="u0W-Zx-Ljc" secondAttribute="top" id="AaQ-VI-T4o"/>
+                                        <constraint firstItem="u0W-Zx-Ljc" firstAttribute="leading" secondItem="QGI-bX-s4y" secondAttribute="trailing" constant="23" id="9M6-Rr-DM4"/>
+                                        <constraint firstAttribute="bottom" secondItem="QGI-bX-s4y" secondAttribute="bottom" constant="5" id="MRQ-F5-cx8"/>
                                         <constraint firstItem="QGI-bX-s4y" firstAttribute="leading" secondItem="9fJ-qn-Kfh" secondAttribute="leadingMargin" id="NSx-EC-wNF"/>
-                                        <constraint firstItem="QGI-bX-s4y" firstAttribute="top" secondItem="9fJ-qn-Kfh" secondAttribute="topMargin" constant="-3" id="QgA-mN-vhI"/>
-                                        <constraint firstItem="QGI-bX-s4y" firstAttribute="bottom" secondItem="u0W-Zx-Ljc" secondAttribute="bottom" id="Qvc-BV-niK"/>
+                                        <constraint firstItem="QGI-bX-s4y" firstAttribute="top" secondItem="9fJ-qn-Kfh" secondAttribute="top" constant="5" id="XIC-1i-2lV"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="u0W-Zx-Ljc" secondAttribute="trailing" id="gIY-6r-yLr"/>
+                                        <constraint firstItem="u0W-Zx-Ljc" firstAttribute="top" secondItem="9fJ-qn-Kfh" secondAttribute="top" id="mpg-YW-s4M"/>
+                                        <constraint firstAttribute="bottom" secondItem="u0W-Zx-Ljc" secondAttribute="bottom" id="tHQ-0r-R98"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -12004,7 +12004,7 @@ COL. LADRON DE GUEVARA</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uc9-en-BFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6458" y="-6555"/>
+            <point key="canvasLocation" x="-6458.3999999999996" y="-6555.0224887556224"/>
         </scene>
         <!--Habilidades Collection View-->
         <scene sceneID="bth-hV-0Of">
@@ -12614,22 +12614,22 @@ COL. LADRON DE GUEVARA</string>
                         <rect key="frame" x="0.0" y="0.0" width="357" height="93"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="72D-zt-7PH">
-                            <size key="itemSize" width="142" height="22"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="72D-zt-7PH">
+                            <size key="itemSize" width="163" height="41"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="Habilidades" id="Z8j-N9-5CU" customClass="CeldaHabilidades">
-                                <rect key="frame" x="0.0" y="37" width="142" height="22"/>
+                                <rect key="frame" x="0.0" y="5" width="163" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="142" height="22"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="163" height="41"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fz5-6P-FWd">
-                                            <rect key="frame" x="0.0" y="0.0" width="124" height="0.0"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Developer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fz5-6P-FWd">
+                                            <rect key="frame" x="0.0" y="9" width="163" height="23"/>
                                             <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -12638,34 +12638,14 @@ COL. LADRON DE GUEVARA</string>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="Fz5-6P-FWd" firstAttribute="leading" secondItem="Z8j-N9-5CU" secondAttribute="leading" id="2Pn-0d-f4j"/>
-                                    <constraint firstAttribute="bottom" secondItem="Fz5-6P-FWd" secondAttribute="bottom" id="DjL-3W-wMn"/>
-                                    <constraint firstAttribute="trailing" secondItem="Fz5-6P-FWd" secondAttribute="trailing" id="DmV-Y4-6or"/>
-                                    <constraint firstItem="Fz5-6P-FWd" firstAttribute="top" secondItem="Z8j-N9-5CU" secondAttribute="top" id="yfS-24-RAp"/>
+                                    <constraint firstItem="Fz5-6P-FWd" firstAttribute="centerY" secondItem="Z8j-N9-5CU" secondAttribute="centerY" id="6Pl-Q8-QQt"/>
+                                    <constraint firstItem="Fz5-6P-FWd" firstAttribute="top" secondItem="Z8j-N9-5CU" secondAttribute="top" constant="9" id="K4y-gD-2UJ"/>
+                                    <constraint firstItem="Fz5-6P-FWd" firstAttribute="leading" secondItem="Z8j-N9-5CU" secondAttribute="leading" id="WJH-a9-qpX"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fz5-6P-FWd" secondAttribute="trailing" id="g3k-ac-yec"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="Fz5-6P-FWd" secondAttribute="bottom" constant="9" id="qod-LK-BdX"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="lblHabilidades" destination="Fz5-6P-FWd" id="iCi-SB-4pW"/>
-                                </connections>
-                            </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="NoHabilidades" id="dQg-x4-X8r" customClass="CeldaNoHabilidades">
-                                <rect key="frame" x="152" y="0.0" width="202" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="202" height="96"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No hay habilidades" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEh-7P-PFH">
-                                            <rect key="frame" x="0.0" y="1" width="202" height="95"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                            <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </view>
-                                <size key="customSize" width="202" height="96"/>
-                                <connections>
-                                    <outlet property="lblNoInfo" destination="qEh-7P-PFH" id="woM-xR-Jst"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -12677,7 +12657,7 @@ COL. LADRON DE GUEVARA</string>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U81-MX-uss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-11372" y="-6417.3909999999996"/>
+            <point key="canvasLocation" x="-11708" y="-6260.4197901049483"/>
         </scene>
         <!--Coleccion Editar Intereses-->
         <scene sceneID="cQe-dP-JmM">
@@ -12687,43 +12667,22 @@ COL. LADRON DE GUEVARA</string>
                         <rect key="frame" x="0.0" y="0.0" width="357" height="93"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="K9m-dT-pr7">
-                            <size key="itemSize" width="142" height="23"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="K9m-dT-pr7">
+                            <size key="itemSize" width="163" height="35"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="NoIntereses" id="ZXJ-hY-2Aw" customClass="CeldaNoIntereses">
-                                <rect key="frame" x="0.0" y="0.0" width="202" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="202" height="96"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No hay intereses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZO-3w-MrL">
-                                            <rect key="frame" x="0.0" y="1" width="202" height="95"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                            <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </view>
-                                <size key="customSize" width="202" height="96"/>
-                                <connections>
-                                    <outlet property="lblNoInteres" destination="0ZO-3w-MrL" id="1b2-pG-MYv"/>
-                                </connections>
-                            </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="Intereses" id="Kge-hu-mlT" customClass="CeldaIntereses">
-                                <rect key="frame" x="212" y="36.5" width="142" height="23"/>
+                                <rect key="frame" x="0.0" y="0.0" width="163" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="142" height="23"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="163" height="35"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Videojuegos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlp-gT-Bx9">
-                                            <rect key="frame" x="0.0" y="0.0" width="124" height="0.0"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Videojuegos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlp-gT-Bx9">
+                                            <rect key="frame" x="0.0" y="6" width="163" height="23"/>
                                             <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -12732,8 +12691,8 @@ COL. LADRON DE GUEVARA</string>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="dlp-gT-Bx9" secondAttribute="bottom" id="5IU-Vv-EqI"/>
-                                    <constraint firstItem="dlp-gT-Bx9" firstAttribute="top" secondItem="Kge-hu-mlT" secondAttribute="top" id="H6M-EK-04N"/>
+                                    <constraint firstAttribute="bottom" secondItem="dlp-gT-Bx9" secondAttribute="bottom" constant="6" id="5IU-Vv-EqI"/>
+                                    <constraint firstItem="dlp-gT-Bx9" firstAttribute="top" secondItem="Kge-hu-mlT" secondAttribute="top" constant="6" id="H6M-EK-04N"/>
                                     <constraint firstItem="dlp-gT-Bx9" firstAttribute="leading" secondItem="Kge-hu-mlT" secondAttribute="leading" id="NkM-3j-oDa"/>
                                     <constraint firstAttribute="trailing" secondItem="dlp-gT-Bx9" secondAttribute="trailing" id="ims-h1-UWm"/>
                                 </constraints>
@@ -12750,7 +12709,7 @@ COL. LADRON DE GUEVARA</string>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Het-Tf-30t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12196" y="-6417.3909999999996"/>
+            <point key="canvasLocation" x="-12348" y="-6260.4197901049483"/>
         </scene>
         <!--Vista Editar Redes Sociales-->
         <scene sceneID="nbN-mV-Ybc">
@@ -13564,7 +13523,7 @@ COL. LADRON DE GUEVARA</string>
         <image name="worklabsLogo" width="983" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dWH-F8-bIl"/>
+        <segue reference="fcu-BZ-JOs"/>
         <segue reference="Tlx-3I-mcH"/>
         <segue reference="mo9-Of-trj"/>
         <segue reference="fLD-ZY-1hz"/>

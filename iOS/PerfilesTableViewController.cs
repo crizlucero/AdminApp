@@ -24,11 +24,9 @@ namespace WorklabsMx.iOS
         {
         }
 
-        public override async void ViewDidLoad()
+        public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            await MenuHelper.GetUsuarioInfo();
-            Miembro = MenuHelper.Usuario;
             this.PreguntarFavorito();
             if (InfoPersonal)
             {

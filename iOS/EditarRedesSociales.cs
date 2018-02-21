@@ -28,16 +28,18 @@ namespace WorklabsMx.iOS
 
         List<RedSocialModel> New_Redes_Sociales;
 
+        List<RedSocialModel> RedesSocialesBD;
+
         RedSocialModel RedSocial = new RedSocialModel();
 
         static string[] RedeSocialNombre = new string[]
         {
-            "Web",
+            "Página Web",
             "Facebook",
             "Instagram",
             "Twitter",
             "YouTube",
-            "LinkEdin",
+            "LinkedIn",
             "Skype"
         };
 
@@ -49,57 +51,64 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            RedesSocialesBD = new PickerItemsController().GetRedesSociales();
             New_Redes_Sociales = new List<RedSocialModel>();
+
 
             if (Redes_Sociales != null)
             {
-                foreach (RedSocialModel RSocial in Redes_Sociales)
+                if (Redes_Sociales.Count > 0)
                 {
-                    if (RSocial.Red_Social_Nombre.Contains(RedeSocialNombre[0]))
+                    
+                    foreach(RedSocialModel ActualRedSocial in Redes_Sociales)
                     {
-                        txtWeb.Text = RSocial.Red_Social_Enlace;
-                    }
-                    if (RSocial.Red_Social_Nombre.Contains(RedeSocialNombre[1]))
-                    {
-                        txtFacebook.Text = RSocial.Red_Social_Enlace;
-                    }
-                    if (RSocial.Red_Social_Nombre.Contains(RedeSocialNombre[2]))
-                    {
-                        txtInstagram.Text = RSocial.Red_Social_Enlace;
-                    }
-                    if (RSocial.Red_Social_Nombre.Contains(RedeSocialNombre[3]))
-                    {
-                        txtTwitter.Text = RSocial.Red_Social_Enlace;
-                    }
-                    if (RSocial.Red_Social_Nombre.Contains(RedeSocialNombre[4]))
-                    {
-                        txtYoutube.Text = RSocial.Red_Social_Enlace;
-                    }
-                    if (RSocial.Red_Social_Nombre.Contains(RedeSocialNombre[5]))
-                    {
-                        txtLinkedin.Text = RSocial.Red_Social_Enlace;
-                    }
-                    if (RSocial.Red_Social_Nombre.Contains(RedeSocialNombre[6]))
-                    {
-                        txtSkype.Text = RSocial.Red_Social_Enlace;
-                    }
-                }
-            }
+                        for (int indice = 0; indice < RedeSocialNombre.Length; indice ++)
+                        {
+                            if (ActualRedSocial.Red_Social_Nombre.Contains(RedeSocialNombre[indice]))
+                            {
+                                New_Redes_Sociales.Add(ActualRedSocial);
 
-            for (int indice = 0; indice < RedeSocialNombre.Length ; indice ++)
-            {
-                RedSocial = new RedSocialModel();
-                RedSocial.Red_Social_Nombre = RedeSocialNombre[indice];
-                RedSocial.Red_Social_Id = (indice + 1).ToString();
-                New_Redes_Sociales.Add(RedSocial);
-                if(Redes_Sociales != null)
-                {
-                    if(Redes_Sociales.Count > 0)
-                    {
-                        New_Redes_Sociales[indice] = Redes_Sociales[indice];
+                            }
+                        }
+                       
+
+                        if (ActualRedSocial.Red_Social_Enlace == "" || ActualRedSocial.Red_Social_Enlace == null)
+                        {
+                        }
+                        else
+                        {
+                            if (ActualRedSocial.Red_Social_Nombre.Contains(RedeSocialNombre[0]))
+                            {
+                                txtWeb.Text = ActualRedSocial.Red_Social_Enlace;
+                            }
+                            if (ActualRedSocial.Red_Social_Nombre.Contains(RedeSocialNombre[1]))
+                            {
+                                txtFacebook.Text = ActualRedSocial.Red_Social_Enlace;
+                            }
+                            if (ActualRedSocial.Red_Social_Nombre.Contains(RedeSocialNombre[2]))
+                            {
+                                txtInstagram.Text = ActualRedSocial.Red_Social_Enlace;
+                            }
+                            if (ActualRedSocial.Red_Social_Nombre.Contains(RedeSocialNombre[3]))
+                            {
+                                txtTwitter.Text = ActualRedSocial.Red_Social_Enlace;
+                            }
+                            if (ActualRedSocial.Red_Social_Nombre.Contains(RedeSocialNombre[4]))
+                            {
+                                txtYoutube.Text = ActualRedSocial.Red_Social_Enlace;
+                            }
+                            if (ActualRedSocial.Red_Social_Nombre.Contains(RedeSocialNombre[5]))
+                            {
+                                txtLinkedin.Text = ActualRedSocial.Red_Social_Enlace;
+                            }
+                            if (ActualRedSocial.Red_Social_Nombre.Contains(RedeSocialNombre[6]))
+                            {
+                                txtSkype.Text = ActualRedSocial.Red_Social_Enlace;
+                            }
+                        }
+
                     }
                 }
-                //New_Redes_Sociales[indice].Red_Social_Nombre = RedeSocialNombre[indice];
             }
 
             txtWeb.EditingChanged += (sender, e) =>

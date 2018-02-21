@@ -18,6 +18,7 @@ namespace WorklabsMx.iOS
         bool isShowInformation = false;
 
         public List<RedSocialModel> Redes_Sociales = new List<RedSocialModel>();
+        public List<RedSocialModel> Redes_Sociales_Usuario = new List<RedSocialModel>();
 
         public PerfilRedesSociales (IntPtr handle) : base (handle)
         {
@@ -31,15 +32,22 @@ namespace WorklabsMx.iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            foreach(RedSocialModel RedSocial in Redes_Sociales)
+            {
+                if(RedSocial.Red_Social_Enlace != null && RedSocial.Red_Social_Enlace != "")
+                {
+                    Redes_Sociales_Usuario.Add(RedSocial);
+                }
+            }
         }
 
 
         public override nint RowsInSection(UITableView tableView, nint section)
         {
-            if (Redes_Sociales.Count > 0)
+            if (Redes_Sociales_Usuario.Count > 0)
             {
                 isShowInformation = true;
-                return Redes_Sociales.Count;
+                return Redes_Sociales_Usuario.Count;
             }
             isShowInformation = false;
             return 1;
@@ -58,7 +66,7 @@ namespace WorklabsMx.iOS
         {
             if (isShowInformation)
             {
-                var currentSocial = Redes_Sociales[indexPath.Row];
+                var currentSocial = Redes_Sociales_Usuario[indexPath.Row];
                 var currentCell = (RedesSocialesTableViewCell)tableView.DequeueReusableCell(IdentificadorContenido, indexPath);
                 currentCell.UpdateCell(currentSocial);
                 return currentCell;

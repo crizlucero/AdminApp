@@ -12,6 +12,11 @@ using System.Collections.Generic;
 namespace WorklabsMx.iOS
 {
 
+    public interface EventosActualizarHabilidades
+    {
+        void ActualizarHabilidades(List<EtiquetaModel> EtiquetasHabilidades);
+    }
+
     public interface EventosActualizarInfoPerfil
     {
         void InfoSobreMi(UsuarioModel InfoActualizar);
@@ -19,6 +24,10 @@ namespace WorklabsMx.iOS
 
     public partial class EditarMiInfoPerfilViewController : UIViewController
     {
+
+        UIStoryboardSegue segueHabilidades;
+
+        public EventosActualizarHabilidades HabilidadesDelegate;
 
         public EventosActualizarInfoPerfil EditarInfoDelegate;
 
@@ -96,8 +105,14 @@ namespace WorklabsMx.iOS
 
         partial void btnAgregarHabilad_Touch(UIButton sender)
         {
-            ColeccionEditarHabilidades obj = new ColeccionEditarHabilidades(this.Handle);
-            obj.CollectionView.ReloadData();
+            EtiquetaModel EtiquetaHabilidad = new EtiquetaModel();
+            EtiquetaHabilidad.Etiqueta_Nombre = txtHabilidad.Text;
+            EtiquetasHabilidades.Add(EtiquetaHabilidad);
+            //HabilidadesDelegate.ActualizarHabilidades(EtiquetasHabilidades);
+            /*this.ViewDidLoad();
+            this.ViewWillAppear(true);
+            this.LoadView();*/
+            this.PrepareForSegue(this.segueHabilidades, null);
         }
 
         partial void btnAgregarInteres_Touch(UIButton sender)
@@ -106,10 +121,13 @@ namespace WorklabsMx.iOS
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
+            
             if (segue.Identifier == "EditarHabilidades")
             {
+                this.segueHabilidades = segue;
                 var VistaHabilidades = (ColeccionEditarHabilidades)segue.DestinationViewController;
                 VistaHabilidades.EtiquetasHabilidades = EtiquetasHabilidades;
+                VistaHabilidades.ViewDidLoad();
             }
             else if (segue.Identifier == "EditarIntereses")
             {
