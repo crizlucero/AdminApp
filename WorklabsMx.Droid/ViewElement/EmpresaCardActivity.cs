@@ -22,7 +22,7 @@ namespace WorklabsMx.Droid
             EmpresaModel empresa = JsonConvert.DeserializeObject<EmpresaModel>(Intent.GetStringExtra("Empresa"));
             FindViewById<ImageButton>(Resource.Id.ibCerrar).Click += (sender, e) => OnBackPressed();
 
-            FindViewById<TextView>(Resource.Id.lblNombre).Text = empresa.Empresa_Miembro_Nombre;
+            FindViewById<TextView>(Resource.Id.lblNombre).Text = empresa.Empresa_Nombre;
 
             ViewPager _viewPager = FindViewById<ViewPager>(Resource.Id.vpPerfil);
             _viewPager.Adapter = new EmpresaPageAdapter(this, new List<string> { Resources.GetString(Resource.String.str_profile_about_me), Resources.GetString(Resource.String.str_profile_social), Resources.GetString(Resource.String.str_profile_work) }, empresa);

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.Net;
 using Android.OS;
 using Android.Support.V4.View;
@@ -31,6 +32,13 @@ namespace WorklabsMx.Droid
             SetContentView(Resource.Layout.PerfilCardLayout);
             miembro = JsonConvert.DeserializeObject<UsuarioModel>(Intent.GetStringExtra("Miembro"));
             FindViewById<ImageButton>(Resource.Id.ibCerrar).Click += (sender, e) => OnBackPressed();
+
+            ImageView imgPerfil = FindViewById<ImageView>(Resource.Id.ivPerfil);
+            if (miembro.Usuario_Fotografia_Perfil != null)
+                imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length));
+            else
+                imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
+
 
             FindViewById<TextView>(Resource.Id.lblNombre).Text = miembro.Usuario_Nombre + " " + miembro.Usuario_Apellidos;
             FindViewById<TextView>(Resource.Id.lblEmpresa).Text = miembro.Usuario_Empresa_Nombre;

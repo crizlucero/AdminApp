@@ -8,6 +8,7 @@
         public double Membresia_Precio_Base { get; set; }
         public double Membresia_Precio_Base_Neto { get; set; }
         public string Membresia_Fecha_Inicio { get; set; }
+        public string Membresia_Especificacion { get; set; }
         //Inscripción
         public string Inscripcion_Descripcion { get; }
         public string Inscripcion_Espacios_Disponibles { get; set; }

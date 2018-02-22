@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/UsuarioModel.cs">
     <Files>
@@ -21,6 +22,21 @@
       <File FileName="iOS/Helpers/ImageHelper.cs" Line="9" Column="44" />
       <File FileName="iOS/Helpers/ImageGallery.cs" Line="70" Column="40" />
       <File FileName="WorklabsMx/Models/UsuarioModel.cs" Line="32" Column="48" />
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/UsuariosController.cs">
+    <Files>
+      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardActivity.cs" Line="36" Column="73" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="90" Column="78" />
+      <File FileName="WorklabsMx.Droid/ViewElement/EmpresaCardActivity.cs" Line="25" Column="74" />
+      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioActivity.cs" Line="51" Column="94" />
+      <File FileName="WorklabsMx.Droid/Helpers/EmpresaPageAdapter.cs" Line="32" Column="54" />
+      <File FileName="WorklabsMx.Droid/Helpers/PerfilPageAdapter.cs" Line="126" Column="16" />
+      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="161" Column="104" />
+      <File FileName="WorklabsMx/Models/EmpresaModel.cs" Line="3" Column="18" />
+      <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="14" Column="18" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="65" Column="54" />
+>>>>>>> 981457a27651ddb8b6785fec5417051c4959907a
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
@@ -30,13 +46,18 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+<<<<<<< HEAD
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C8F534E0-9C6A-4F53-A110-4E330B864317" automaticSigning="False">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
   </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
+=======
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D3D00818-B828-45D1-ACAA-A06B2D1C1EA8" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
+>>>>>>> 981457a27651ddb8b6785fec5417051c4959907a
   <MultiItemStartupConfigurations />
 </Properties>

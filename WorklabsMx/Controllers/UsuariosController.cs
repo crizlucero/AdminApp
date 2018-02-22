@@ -9,7 +9,15 @@ namespace WorklabsMx.Controllers
 {
     public class UsuariosController : DataBaseModel
     {
-        readonly string usuario_imagen_path = (new ConfigurationsController().GetListConfiguraciones() != null) ? new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1 : "";
+        UploadImages ImageHelper;
+        readonly string usuario_imagen_path, empresa_imagen_path;
+
+        public UsuariosController()
+        {
+            ImageHelper = new UploadImages();
+            usuario_imagen_path = (new ConfigurationsController().GetListConfiguraciones() != null) ? new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1 : "";
+            empresa_imagen_path = (new ConfigurationsController().GetListConfiguraciones() != null) ? new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE EMPRESAS").Parametro_Varchar_1 : "";
+        }
 
         /// <summary>
         /// Obtiene la información del miembro
@@ -49,7 +57,20 @@ namespace WorklabsMx.Controllers
                         Usuario_Fecha_Registro = reader["Usuario_Fecha_Registro"].ToString(),
                         Usuario_Estatus = reader["Usuario_Estatus"].ToString(),
                         Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
-                        Usuario_Descripcion = reader["Usuario_Descripcion"].ToString()
+                        Usuario_Descripcion = reader["Usuario_Descripcion"].ToString(),
+                        Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path),
+                        Empresa_Actual = new EmpresaModel
+                        {
+                            Empresa_Id = reader["Usuario_Empresa_Id"].ToString(),
+                            Empresa_Nombre = reader["Usuario_Empresa_Nombre"].ToString(),
+                            Empresa_Logotipo = reader["Usuario_Empresa_Logotipo"].ToString(),
+                            Empresa_Logotipo_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Empresa_Logotipo"].ToString(), usuario_imagen_path),
+                            Territorio = new TerritorioModel
+                            {
+                                Municipio = reader["Empresa_Municipio_Descripcion"].ToString(),
+                                Estado = reader["Empresa_Estado_Descripcion"].ToString()
+                            }
+                        }
 
                     };
                 }
@@ -66,6 +87,7 @@ namespace WorklabsMx.Controllers
             miembro.Red_Social_Siguiendo = contadores[2];
             miembro.Etiquetas = GetUsuarioEtiquetas(miembro.Usuario_Id, miembro.Usuario_Tipo);
             miembro.Redes_Sociales = GetUsuarioRedesSociales(miembro.Usuario_Id, miembro.Usuario_Tipo);
+
             return miembro;
         }
 
