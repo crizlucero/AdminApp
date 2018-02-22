@@ -433,12 +433,14 @@ namespace WorklabsMx.Controllers
             try
             {
                 conn.Open();
-                command = CreateCommand("select Colaborador_Empresa_Id, Colaborador_Empresa_Fotografia from vw_cat_Colaboradores_Directorio WHERE Empresa_Miembro_Id = @Usuario_Id");
+                command = CreateCommand("select Colaborador_Empresa_Nombre, Colaborador_Empresa_Apellidos, Colaborador_Empresa_Id, Colaborador_Empresa_Fotografia from vw_cat_Colaboradores_Directorio WHERE Empresa_Miembro_Id = @Usuario_Id");
                 command.Parameters.AddWithValue("@Usuario_Id",usuario_id);
                 reader = command.ExecuteReader();
                 while(reader.Read()){
                     colaboradores.Add( new UsuarioModel
                     {
+                        Usuario_Nombre = reader["Colaborador_Empresa_Nombre"].ToString(),
+                        Usuario_Apellidos = reader["Colaborador_Empresa_Apellidos"].ToString(),
                         Usuario_Id = reader["Colaborador_Empresa_Id"].ToString(),
                         Usuario_Fotografia = reader["Colaborador_Empresa_Fotografia"].ToString(),
                         Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Colaborador_Empresa_Fotografia"].ToString(), usuario_imagen_path),

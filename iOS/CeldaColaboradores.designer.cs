@@ -18,11 +18,29 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView imgColaboradores { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblApellidos { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblNombre { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (imgColaboradores != null) {
                 imgColaboradores.Dispose ();
                 imgColaboradores = null;
+            }
+
+            if (lblApellidos != null) {
+                lblApellidos.Dispose ();
+                lblApellidos = null;
+            }
+
+            if (lblNombre != null) {
+                lblNombre.Dispose ();
+                lblNombre = null;
             }
         }
     }
