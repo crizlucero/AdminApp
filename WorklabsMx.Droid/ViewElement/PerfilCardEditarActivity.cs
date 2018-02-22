@@ -54,6 +54,9 @@ namespace WorklabsMx.Droid
                         if (!string.IsNullOrEmpty(red.Usuario_Red_Social_Id) || !string.IsNullOrEmpty(red.Red_Social_Enlace))
                             new RedesSocialesController().SetRedSocial(miembro.Usuario_Id, miembro.Usuario_Tipo, red.Red_Social_Id, red.Red_Social_Enlace, red.Usuario_Red_Social_Id);
                     });
+                    new EmpresaController().UpdateUsuarioEmpresaPerfil(miembro.Empresa_Actual.Empresa_Id, miembro.Usuario_Id, "",
+                                                                       miembro.Empresa_Actual.Empresa_Nombre, miembro.Empresa_Actual.Empresa_Correo_Electronico,
+                                                                       miembro.Empresa_Actual.Empresa_Pagina_Web, miembro.Usuario_Puesto, miembro.Empresa_Actual.Empresa_Logotipo_Perfil);
                     Toast.MakeText(this, Resource.String.str_general_save, ToastLength.Short).Show();
                     Intent intent = new Intent(this, typeof(PerfilCardActivity));
                     intent.PutExtra("Miembro", JsonConvert.SerializeObject(new UsuariosController().GetMemberData(miembro.Usuario_Id, miembro.Usuario_Tipo)));

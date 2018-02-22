@@ -10,11 +10,11 @@
         android:id="@+id/lblNombre"
         android:textColor="#FFF"
         android:textStyle="bold"
-        android:text="JUAN PEDRO HERNANDEZ LOPEZ"
         android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:text="@string/str_profile_name" />
     <LinearLayout
         android:background="#FFF"
         android:layout_height="1dp"
