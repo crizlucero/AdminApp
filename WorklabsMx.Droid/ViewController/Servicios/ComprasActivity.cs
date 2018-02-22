@@ -15,13 +15,7 @@ namespace WorklabsMx.Droid
     {
         GridLayout gvElementos;
         ArrayAdapter adapter;
-        List<ProductoModel> productos;
-        List<MembresiaModel> membresias;
-        public ComprasActivity()
-        {
-            productos = new PickerItemsController().GetProductos();
-            membresias = new PickerItemsController().GetMembresias();
-        }
+        Dictionary<string, CarritoModel> Productos, Membresias;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -56,7 +50,7 @@ namespace WorklabsMx.Droid
         void FillProductos()
         {
             gvElementos.RemoveAllViews();
-            productos.ForEach(elemento =>
+            new PickerItemsController().GetProductos().ForEach(elemento =>
             {
                 LayoutInflater liView = LayoutInflater;
                 View view = liView.Inflate(Resource.Layout.CompraElementoLayout, null, true);
@@ -77,6 +71,10 @@ namespace WorklabsMx.Droid
                     {
                         OnCreate(null);
                     };
+                    FindViewById<ImageView>(Resource.Id.btnAdd).Click += delegate
+                    {
+                        OnCreate(null);
+                    };
                 };
                 gvElementos.AddView(view);
             });
@@ -84,7 +82,7 @@ namespace WorklabsMx.Droid
         void FillMembresias()
         {
             gvElementos.RemoveAllViews();
-            membresias.ForEach(elemento =>
+            new PickerItemsController().GetMembresias().ForEach(elemento =>
             {
                 LayoutInflater liView = LayoutInflater;
                 View view = liView.Inflate(Resource.Layout.CompraElementoLayout, null, true);
@@ -122,11 +120,11 @@ namespace WorklabsMx.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.menu_cart:
-                    if (productos.Count != 0 || membresias.Count != 0)
+                    if (Productos.Count != 0 || Membresias.Count != 0)
                     {
                         Intent intent = new Intent(this, typeof(ShoppingCartActivity));
-                        intent.PutExtra("Productos", JsonConvert.SerializeObject(productos));
-                        intent.PutExtra("Membresias", JsonConvert.SerializeObject(membresias));
+                        intent.PutExtra("Productos", JsonConvert.SerializeObject(Productos));
+                        intent.PutExtra("Membresias", JsonConvert.SerializeObject(Membresias));
                         StartActivity(intent);
                     }
                     else
@@ -138,6 +136,9 @@ namespace WorklabsMx.Droid
                     break;
             }
             return base.OnOptionsItemSelected(item);
+        }
+        void AddProductoCarrito(){
+            
         }
     }
 }

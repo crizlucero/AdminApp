@@ -29,12 +29,12 @@ namespace WorklabsMx.Droid
 
 
             TextView txtPhone = profileView.FindViewById<TextView>(Resource.Id.lblContacto);
-            txtPhone.Text = empresa.Empresa_Miembro_Telefono;
+            txtPhone.Text = empresa.Empresa_Telefono;
             txtPhone.Click += delegate
             {
                 try
                 {
-                    var uri = Android.Net.Uri.Parse("tel:" + empresa.Empresa_Miembro_Telefono);
+                    var uri = Android.Net.Uri.Parse("tel:" + empresa.Empresa_Telefono);
                     var intent = new Intent(Intent.ActionDial, uri);
                     context.StartActivity(intent);
                 }
@@ -45,14 +45,14 @@ namespace WorklabsMx.Droid
             };
 
             TextView txtEmail = profileView.FindViewById<TextView>(Resource.Id.lblCorreo);
-            txtEmail.Text = empresa.Empresa_Miembro_Correo_Electronico;
+            txtEmail.Text = empresa.Empresa_Correo_Electronico;
             txtEmail.Click += delegate
             {
                 try
                 {
                     Intent email = new Intent(Intent.ActionSend);
                     email.PutExtra(Intent.ExtraEmail,
-                                   new string[] { empresa.Empresa_Miembro_Correo_Electronico });
+                                   new string[] { empresa.Empresa_Correo_Electronico });
                     email.PutExtra(Intent.ExtraSubject, context.Resources.GetString(Resource.String.AsuntoCorreo));
                     email.SetType("message/rfc822");
                     context.StartActivity(email);

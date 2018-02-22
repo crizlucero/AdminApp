@@ -8,6 +8,7 @@
         public double Producto_Precio_Base { get; set; }
         public double Producto_Precio_Base_Neto { get; set; }
         public double Producto_Precio_Prorrateo { get; set; }
+        public string Producto_Especificacion { get; set; }
         //Datos Generales
         public int Lista_Precio_Id { get; set; }
         public int Moneda_Id { get; set; }

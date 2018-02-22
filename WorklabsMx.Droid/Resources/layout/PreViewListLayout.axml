@@ -24,12 +24,14 @@
         <TextView
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/lblTitle"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:textColor="#000" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblSubTitle"
             android:layout_row="1"
-            android:layout_column="1" />
+            android:layout_column="1"
+            android:textColor="#000" />
         <ImageView
             android:src="@mipmap/ic_star"
             android:id="@+id/imageView1"

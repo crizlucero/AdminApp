@@ -48,7 +48,7 @@ namespace WorklabsMx.Droid
             {
                 _viewPager.Adapter = new DirectorioAdapter(this, new List<string> { "Miembros", "Empresas", "Favoritos" },
                                                            usuarios.Where(usuario => usuario.Usuario_Nombre.IndexOf(((SearchView)sender).Query, StringComparison.OrdinalIgnoreCase) >= 0).ToList(),
-                                                           empresas.Where(empresa => empresa.Empresa_Miembro_Nombre.IndexOf(((SearchView)sender).Query, StringComparison.OrdinalIgnoreCase) >= 0).ToList(),
+                                                           empresas.Where(empresa => empresa.Empresa_Nombre.IndexOf(((SearchView)sender).Query, StringComparison.OrdinalIgnoreCase) >= 0).ToList(),
                                                            favoritos.Where(miembro => miembro.Usuario_Nombre.IndexOf(((SearchView)sender).Query, StringComparison.OrdinalIgnoreCase) >= 0).ToList());
             };
         }
@@ -179,7 +179,7 @@ namespace WorklabsMx.Droid
             string aux = "";
             empresas.ForEach((empresa) =>
             {
-                if (empresa.Empresa_Miembro_Nombre[0].ToString() != aux)
+                if (empresa.Empresa_Nombre[0].ToString() != aux)
                 {
                     LinearLayout llList = new LinearLayout(context);
                     llList.SetBackgroundColor(Color.Rgb(149, 214, 255));
@@ -189,7 +189,7 @@ namespace WorklabsMx.Droid
                         LeftMargin = 50
                     };
                     lblCapital.LayoutParameters = ll;
-                    aux = empresa.Empresa_Miembro_Nombre[0].ToString();
+                    aux = empresa.Empresa_Nombre[0].ToString();
                     lblCapital.Text = aux;
 
                     llList.AddView(lblCapital);
@@ -203,7 +203,7 @@ namespace WorklabsMx.Droid
 
                 TextView lblNombre = PersonaCard.FindViewById<TextView>(Resource.Id.lblTitle);
 
-                lblNombre.Text = empresa.Empresa_Miembro_Nombre;
+                lblNombre.Text = empresa.Empresa_Nombre;
                 lblNombre.Click += delegate
                 {
                     ShowEmpresaCard(empresa);
