@@ -779,6 +779,10 @@
     <ImageAsset Include="Assets.xcassets\Quora.imageset\icons8-quora-filled-75.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 10.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Custom Size – 7%403x.png" />
+    <ImageAsset Include="Assets.xcassets\NoLogoWork.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\NoLogoWork.imageset\Group 237.png" />
+    <ImageAsset Include="Assets.xcassets\NoLogoWork.imageset\Group 237%402x.png" />
+    <ImageAsset Include="Assets.xcassets\NoLogoWork.imageset\Group 237%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1331,6 +1335,14 @@
     <Compile Include="EditarRedesSociales.designer.cs">
       <DependentUpon>EditarRedesSociales.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrabajoViewController.cs" />
+    <Compile Include="TrabajoViewController.designer.cs">
+      <DependentUpon>TrabajoViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaisesViewController.cs" />
+    <Compile Include="PaisesViewController.designer.cs">
+      <DependentUpon>PaisesViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -1498,6 +1510,7 @@
     <Folder Include="Assets.xcassets\YouTube.imageset\" />
     <Folder Include="Assets.xcassets\spotify.imageset\" />
     <Folder Include="Assets.xcassets\Quora.imageset\" />
+    <Folder Include="Assets.xcassets\NoLogoWork.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

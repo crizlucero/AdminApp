@@ -1,31 +1,33 @@
+using Foundation;
 using System;
 using UIKit;
 using WorklabsMx.Controllers;
 
 namespace WorklabsMx.iOS
 {
-    public interface Sucursal
+
+    public interface Pais
     {
-        void SucursalSeleccionada(string Sucursal);
+        void PaisSeleccionado(string Pais);
     }
 
-    public partial class SucursalesViewController : UIViewController
+    public partial class PaisesViewController : UIViewController
     {
         
-        public Sucursal SucursalDelegate;
+        public Pais PaisDelegate;
 
         UILabel selectedLbl = new UILabel();
 
-        public SucursalesViewController (IntPtr handle) : base (handle)
+        public PaisesViewController(IntPtr handle) : base (handle)
         {
-            
+
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
             PickerItemsController items = new PickerItemsController();
-            string[] arrSucursales = items.GetSucursales().ToArray();
+            string[] arrSucursales = items.GetPaises().ToArray();
             selectedLbl.Text = arrSucursales[0];
             pcvSucursales.Model = new StackOverflowModel(arrSucursales, selectedLbl);
         }
@@ -35,14 +37,14 @@ namespace WorklabsMx.iOS
             base.ViewWillAppear(animated);
         }
 
-        partial void btnSeleccionar_Touch(UIButton sender)
+        partial void btnCancelar_Touch(UIButton sender)
         {
-            this.SucursalDelegate.SucursalSeleccionada(selectedLbl.Text);
             this.DismissViewController(true, null);
         }
 
-        partial void btnCancelar_Touch(UIButton sender)
+        partial void btnSeleccionar_Touch(UIButton sender)
         {
+            this.PaisDelegate.PaisSeleccionado(selectedLbl.Text);
             this.DismissViewController(true, null);
         }
 
@@ -78,8 +80,6 @@ namespace WorklabsMx.iOS
             }
 
         }
-
-
 
     }
 }

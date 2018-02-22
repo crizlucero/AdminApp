@@ -22,6 +22,8 @@ namespace WorklabsMx.iOS.Helpers
 
         public static string UploadImagePath;
 
+        public static string ProfileImagePath;
+
         public static UsuarioModel Usuario;
         
         public static async Task FillTable()
@@ -90,6 +92,24 @@ namespace WorklabsMx.iOS.Helpers
                     upload_image_path = "";
                 }
                 UploadImagePath = upload_image_path;
+            });
+        }
+
+
+        public static async Task GetProfileImagePath()
+        {
+            await Task.Run(() =>
+            {
+                string profile_image_path;
+                if (new ConfigurationsController().GetListConfiguraciones() != null)
+                {
+                    profile_image_path = new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1;
+                }
+                else
+                {
+                    profile_image_path = "";
+                }
+                ProfileImagePath = profile_image_path;
             });
         }
 

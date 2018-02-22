@@ -87,11 +87,11 @@ namespace WorklabsMx.iOS
             {
                 foreach (EtiquetaModel Etiqueta in Etiquetas)
                 {
-                    if (Etiqueta.Etiqueta_Tipo == "HABILIDAD")
+                    if (Etiqueta.Etiqueta_Tipo == "Habilidad")
                     {
                         EtiquetasHabilidades.Add(Etiqueta);
                     }
-                    else if (Etiqueta.Etiqueta_Tipo == "INTERES")
+                    else if (Etiqueta.Etiqueta_Tipo == "Interes")
                     {
                         EtiquetasIntereses.Add(Etiqueta);
                     }
@@ -103,59 +103,77 @@ namespace WorklabsMx.iOS
 
         partial void btnAgregarHabilad_Touch(UIButton sender)
         {
-            EtiquetaModel EtiquetaHabilidad = new EtiquetaModel();
-            EtiquetaHabilidad.Etiqueta_Nombre = txtHabilidad.Text;
-            bool encontrada = false;
-            if (EtiquetasHabilidades.Count > 0)
+            if (txtHabilidad.Text != "")
             {
-                foreach (EtiquetaModel Habilidad in EtiquetasHabilidades)
+                EtiquetaModel EtiquetaHabilidad = new EtiquetaModel();
+                EtiquetaHabilidad.Etiqueta_Nombre = txtHabilidad.Text;
+                EtiquetaHabilidad.Etiqueta_Tipo = "Habilidad";
+                bool encontrada = false;
+                if (EtiquetasHabilidades.Count > 0)
                 {
-                    if (EtiquetaHabilidad.Etiqueta_Nombre == Habilidad.Etiqueta_Nombre)
+                    foreach (EtiquetaModel Habilidad in EtiquetasHabilidades)
                     {
-                        encontrada = true;
+                        if (EtiquetaHabilidad.Etiqueta_Nombre == Habilidad.Etiqueta_Nombre)
+                        {
+                            encontrada = true;
+                        }
                     }
                 }
-            }
 
-            if(!encontrada)
-            {
-                EtiquetasHabilidades.Add(EtiquetaHabilidad);
-                EditarInfoDelegate.Etiquetas(EtiquetaHabilidad);
-                this.PrepareForSegue(this.segueHabilidades, null);
+                if (!encontrada)
+                {
+                    EtiquetasHabilidades.Add(EtiquetaHabilidad);
+                    EditarInfoDelegate.Etiquetas(EtiquetaHabilidad);
+                    this.PrepareForSegue(this.segueHabilidades, null);
+                }
+                else
+                {
+                    new MessageDialog().SendToast("La etiqueta ya existe");
+                }
             }
             else
             {
-                new MessageDialog().SendToast("La etiqueta ya existe");
+                
             }
+           
                
         }
 
         partial void btnAgregarInteres_Touch(UIButton sender)
         {
-            EtiquetaModel EtiquetaInteres = new EtiquetaModel();
-            EtiquetaInteres.Etiqueta_Nombre = txtInteres.Text;
-            bool encontrada = false;
-            if (EtiquetasIntereses.Count > 0)
+            if(txtInteres.Text != "")
             {
-                foreach (EtiquetaModel Interes in EtiquetasIntereses)
+                EtiquetaModel EtiquetaInteres = new EtiquetaModel();
+                EtiquetaInteres.Etiqueta_Nombre = txtInteres.Text;
+                EtiquetaInteres.Etiqueta_Tipo = "Interes";
+                bool encontrada = false;
+                if (EtiquetasIntereses.Count > 0)
                 {
-                    if (EtiquetaInteres.Etiqueta_Nombre == Interes.Etiqueta_Nombre)
+                    foreach (EtiquetaModel Interes in EtiquetasIntereses)
                     {
-                        encontrada = true;
+                        if (EtiquetaInteres.Etiqueta_Nombre == Interes.Etiqueta_Nombre)
+                        {
+                            encontrada = true;
+                        }
                     }
                 }
-            }
 
-            if (!encontrada)
-            {
-                EtiquetasIntereses.Add(EtiquetaInteres);
-                EditarInfoDelegate.Etiquetas(EtiquetaInteres);
-                this.PrepareForSegue(this.segueIntereses, null);
+                if (!encontrada)
+                {
+                    EtiquetasIntereses.Add(EtiquetaInteres);
+                    EditarInfoDelegate.Etiquetas(EtiquetaInteres);
+                    this.PrepareForSegue(this.segueIntereses, null);
+                }
+                else
+                {
+                    new MessageDialog().SendToast("La etiqueta ya existe");
+                }
             }
             else
             {
-                new MessageDialog().SendToast("La etiqueta ya existe");
+                
             }
+
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
