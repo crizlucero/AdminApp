@@ -1,14 +1,16 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/EmpresaController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/UsuariosController.cs">
     <Files>
-      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardActivity.cs" Line="38" Column="143" />
+      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardActivity.cs" Line="36" Column="73" />
       <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="90" Column="78" />
       <File FileName="WorklabsMx.Droid/ViewElement/EmpresaCardActivity.cs" Line="25" Column="74" />
       <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioActivity.cs" Line="51" Column="94" />
       <File FileName="WorklabsMx.Droid/Helpers/EmpresaPageAdapter.cs" Line="32" Column="54" />
       <File FileName="WorklabsMx.Droid/Helpers/PerfilPageAdapter.cs" Line="126" Column="16" />
-      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="52" Column="57" />
+      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="161" Column="104" />
       <File FileName="WorklabsMx/Models/EmpresaModel.cs" Line="3" Column="18" />
+      <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="14" Column="18" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="65" Column="54" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -17,6 +19,6 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D3D00818-B828-45D1-ACAA-A06B2D1C1EA8" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>

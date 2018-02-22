@@ -61,10 +61,10 @@ namespace WorklabsMx.Controllers
                         Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path),
                         Empresa_Actual = new EmpresaModel
                         {
-                            Empresa_Id = reader["Empresa_Id"].ToString(),
-                            Empresa_Nombre = reader["Empresa_Nombre"].ToString(),
-                            Empresa_Logotipo = reader["Empresa_Logotipo"].ToString(),
-                            Empresa_Logotipo_Perfil = ImageHelper.DownloadFileFTP(reader["Empresa_Logotipo"].ToString(), usuario_imagen_path),
+                            Empresa_Id = reader["Usuario_Empresa_Id"].ToString(),
+                            Empresa_Nombre = reader["Usuario_Empresa_Nombre"].ToString(),
+                            Empresa_Logotipo = reader["Usuario_Empresa_Logotipo"].ToString(),
+                            Empresa_Logotipo_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Empresa_Logotipo"].ToString(), usuario_imagen_path),
                             Territorio = new TerritorioModel
                             {
                                 Municipio = reader["Empresa_Municipio_Descripcion"].ToString(),
