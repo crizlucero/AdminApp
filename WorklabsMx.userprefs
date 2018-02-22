@@ -6,7 +6,41 @@
       <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="103" Column="48" />
       <File FileName="iOS/TrabajoViewController.cs" Line="76" Column="10" />
       <File FileName="iOS/EditarMiInfoPerfilViewController.cs" Line="31" Column="39" />
+<<<<<<< HEAD
       <File FileName="iOS/FechaNacimientoPickerViewController.cs" Line="33" Column="43" />
+=======
+      <File FileName="iOS/Main.cs" Line="9" Column="10" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="136" Column="114" />
+      <File FileName="iOS/SucursalesViewController.cs" Line="29" Column="48" />
+      <File FileName="iOS/PaisesViewController.cs" Line="15" Column="6" />
+      <File FileName="iOS/FechaNacimientoPickerViewController.cs" Line="30" Column="9" />
+      <File FileName="iOS/VistaEditarRedesSociales.cs" Line="17" Column="22" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="19" Column="42" />
+      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="250" Column="38" />
+      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="21" Column="26" />
+      <File FileName="iOS/Helpers/MenuHelper.cs" Line="112" Column="33" />
+      <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="70" Column="41" />
+      <File FileName="iOS/Helpers/ImageHelper.cs" Line="9" Column="44" />
+      <File FileName="iOS/Helpers/ImageGallery.cs" Line="70" Column="40" />
+      <File FileName="WorklabsMx/Models/UsuarioModel.cs" Line="32" Column="48" />
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardActivity.cs" Line="40" Column="72" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="157" Column="158" />
+      <File FileName="WorklabsMx.Droid/ViewElement/EmpresaCardActivity.cs" Line="25" Column="74" />
+      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioActivity.cs" Line="51" Column="94" />
+      <File FileName="WorklabsMx.Droid/Helpers/PerfilPageAdapter.cs" Line="152" Column="94" />
+      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="161" Column="104" />
+      <File FileName="WorklabsMx/Models/EmpresaModel.cs" Line="3" Column="18" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="449" Column="38" />
+      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardEditarActivity.cs" Line="41" Column="78" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="26" Column="32" />
+      <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="158" Column="62" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MainActivity.cs" Line="30" Column="9" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="34" Column="62" />
+>>>>>>> e8c92d57db45771040aa785195aa657c4f3d61e8
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
@@ -17,5 +51,11 @@
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.0D184F42-6E16-43C3-B549-F1D9DA6E63D0" automaticSigning="False">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
   </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
+<<<<<<< HEAD
+=======
+=======
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D3D00818-B828-45D1-ACAA-A06B2D1C1EA8" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
+>>>>>>> e8c92d57db45771040aa785195aa657c4f3d61e8
   <MultiItemStartupConfigurations />
 </Properties>
