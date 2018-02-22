@@ -34,6 +34,12 @@ namespace WorklabsMx.Droid
             miembro = JsonConvert.DeserializeObject<UsuarioModel>(Intent.GetStringExtra("Miembro"));
             FindViewById<ImageButton>(Resource.Id.ibCerrar).Click += (sender, e) => OnBackPressed();
 
+            ImageView imgPerfil = FindViewById<ImageView>(Resource.Id.ivPerfil);
+            if (miembro.Usuario_Fotografia_Perfil != null)
+                imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length));
+            else
+                imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
+
             FindViewById<Button>(Resource.Id.btnGuardar).Click += delegate
             {
                 System.IO.MemoryStream stream = new System.IO.MemoryStream();

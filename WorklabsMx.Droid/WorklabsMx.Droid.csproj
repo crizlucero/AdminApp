@@ -392,6 +392,7 @@
     <AndroidResource Include="Resources\drawable\switch_parent_style.xml" />
     <AndroidResource Include="Resources\layout\CompraElementoLayout.axml" />
     <AndroidResource Include="Resources\drawable\button_circle_filled.xml" />
+    <AndroidResource Include="Resources\layout\ColaboradorItemLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

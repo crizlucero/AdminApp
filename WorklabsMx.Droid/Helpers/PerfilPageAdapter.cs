@@ -2,6 +2,7 @@
 using System.Linq;
 using Android.Content;
 using Android.Content.PM;
+using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.Net;
 using Android.Runtime;
@@ -131,9 +132,33 @@ namespace WorklabsMx.Droid
             EmpresaModel empresa = new EmpresaController().GetEmpresaMiembro(miembro.Usuario_Id);
             LayoutInflater liView = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
             View empresaView = liView.Inflate(Resource.Layout.TituloEmpresaLayout, null, true);
+            ImageView imgPerfil = empresaView.FindViewById<ImageView>(Resource.Id.imgEmpresa);
+            if (miembro.Usuario_Fotografia_Perfil != null)
+                imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length));
+            else
+                imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
             empresaView.FindViewById<TextView>(Resource.Id.lblNombre).Text = empresa.Empresa_Nombre;
             empresaView.FindViewById<TextView>(Resource.Id.lblPais).Text = empresa.Territorio.Pais;
+
             profileView.FindViewById<LinearLayout>(Resource.Id.llEmpleoActual).AddView(empresaView);
+            FillColaboradores();
+        }
+
+        void FillColaboradores()
+        {
+            new UsuariosController().GetColaboradoresCard(miembro.Usuario_Id).ForEach(colaborador =>
+            {
+                LayoutInflater liView = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
+                View colaboradoresView = liView.Inflate(Resource.Layout.ColaboradorItemLayout, null, true);
+
+                ImageView pin = colaboradoresView.FindViewById<ImageView>(Resource.Id.imgColaborador);
+                if (colaborador.Usuario_Fotografia_Perfil != null)
+                    pin.SetImageBitmap(BitmapFactory.DecodeByteArray(colaborador.Usuario_Fotografia_Perfil, 0, colaborador.Usuario_Fotografia_Perfil.Length));
+                else
+                    pin.SetImageResource(Resource.Mipmap.ic_profile_empty);
+                profileView.FindViewById<GridLayout>(Resource.Id.glColaboradores).AddView(colaboradoresView);
+            });
+
         }
     }
 }

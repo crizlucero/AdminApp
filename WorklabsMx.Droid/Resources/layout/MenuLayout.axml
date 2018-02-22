@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:columnCount="2"
         android:rowCount="2"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="10dp"
+        android:id="@+id/glPerfil">
         <ImageView
             android:id="@+id/imgProfileMenu"
             android:layout_column="0"

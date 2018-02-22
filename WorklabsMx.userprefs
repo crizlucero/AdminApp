@@ -1,16 +1,19 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/UsuariosController.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardActivity.cs" Line="36" Column="73" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="90" Column="78" />
+      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardActivity.cs" Line="40" Column="72" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="157" Column="158" />
       <File FileName="WorklabsMx.Droid/ViewElement/EmpresaCardActivity.cs" Line="25" Column="74" />
       <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioActivity.cs" Line="51" Column="94" />
-      <File FileName="WorklabsMx.Droid/Helpers/EmpresaPageAdapter.cs" Line="32" Column="54" />
-      <File FileName="WorklabsMx.Droid/Helpers/PerfilPageAdapter.cs" Line="126" Column="16" />
+      <File FileName="WorklabsMx.Droid/Helpers/PerfilPageAdapter.cs" Line="152" Column="94" />
       <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="161" Column="104" />
       <File FileName="WorklabsMx/Models/EmpresaModel.cs" Line="3" Column="18" />
-      <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="14" Column="18" />
-      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="65" Column="54" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="449" Column="38" />
+      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardEditarActivity.cs" Line="41" Column="78" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="26" Column="32" />
+      <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="158" Column="62" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MainActivity.cs" Line="30" Column="9" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="34" Column="62" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -19,6 +22,6 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D3D00818-B828-45D1-ACAA-A06B2D1C1EA8" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>

@@ -50,6 +50,7 @@ namespace WorklabsMx.Droid.ViewElement
             NombreUsuario.Text = nombre;
             NombreUsuario.SetMaxWidth(context.Resources.DisplayMetrics.WidthPixels - 110);
             context.FindViewById<TextView>(Resource.Id.lblEmpresaMenu).Text = empresa;
+            context.FindViewById<GridLayout>(Resource.Id.glPerfil).Click += (sender, e) => ShowPerfilCard(new UsuariosController().GetMemberData(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")));
         }
 
         public void FillMenu()
@@ -109,6 +110,13 @@ namespace WorklabsMx.Droid.ViewElement
                 row.AddView(btnMenu);
                 menuLayout.AddView(row);
             });
+        }
+
+        void ShowPerfilCard(UsuarioModel miembro)
+        {
+            Intent intent = new Intent(context, typeof(PerfilCardActivity));
+            intent.PutExtra("Miembro", JsonConvert.SerializeObject(miembro));
+            context.StartActivity(intent);
         }
     }
 }

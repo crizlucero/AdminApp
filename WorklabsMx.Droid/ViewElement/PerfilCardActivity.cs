@@ -39,7 +39,6 @@ namespace WorklabsMx.Droid
             else
                 imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
 
-
             FindViewById<TextView>(Resource.Id.lblNombre).Text = miembro.Usuario_Nombre + " " + miembro.Usuario_Apellidos;
             FindViewById<TextView>(Resource.Id.lblEmpresa).Text = miembro.Usuario_Empresa_Nombre;
             Button btnSeguir = FindViewById<Button>(Resource.Id.btnSeguir);

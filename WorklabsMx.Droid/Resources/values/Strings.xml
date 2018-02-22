@@ -155,7 +155,7 @@
 	<string name="str_profile_following">Siguiendo</string>
 	<string name="str_profile_current">Actual</string>
 	<string name="str_profile_jobs_previous">Anteriores</string>
-	<string name="str_profile_jobs_collaborations">Colaboraciones</string>
+	<string name="str_profile_jobs_collaborations">Colaboradores</string>
 	<string name="str_meeting_room_canceled">La sala de juntas fue cancelada</string>
 	<string name="str_profile_about_me">Sobre Mi</string>
 	<string name="str_profile_social">Social</string>

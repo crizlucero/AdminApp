@@ -427,6 +427,29 @@ namespace WorklabsMx.Controllers
             return true;
         }
 
+        public List<UsuarioModel> GetColaboradoresCard(string usuario_id)
+        {
+            List<UsuarioModel> colaboradores = new List<UsuarioModel>();
+            try
+            {
+                conn.Open();
+                command = CreateCommand("select Colaborador_Empresa_Id, Colaborador_Empresa_Fotografia from vw_cat_Colaboradores_Directorio WHERE Empresa_Miembro_Id = @Usuario_Id");
+                command.Parameters.AddWithValue("@Usuario_Id",usuario_id);
+                reader = command.ExecuteReader();
+                while(reader.Read()){
+                    colaboradores.Add( new UsuarioModel
+                    {
+                        Usuario_Id = reader["Colaborador_Empresa_Id"].ToString(),
+                        Usuario_Fotografia = reader["Colaborador_Empresa_Fotografia"].ToString(),
+                        Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Colaborador_Empresa_Fotografia"].ToString(), usuario_imagen_path),
+                    });
+                }
+            }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            finally { conn.Close(); }
+            return colaboradores;
+        }
+
         /// <summary>
         /// Obtiene los colaboradores de un miembro
         /// </summary>
