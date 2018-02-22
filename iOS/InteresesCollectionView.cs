@@ -14,7 +14,6 @@ namespace WorklabsMx.iOS
     {
 
         const string IDENTIFIER_INTERESE_CELL = "Intereses";
-        const string IDENTIFIER_NOINTERESES_CELL = "NoIntereses";
 
         public List<EtiquetaModel> EtiquetasIntereses = new List<EtiquetaModel>();
 
@@ -36,54 +35,35 @@ namespace WorklabsMx.iOS
 
         public override nint GetItemsCount(UICollectionView collectionView, nint section)
         {
-            if(EtiquetasIntereses.Count >= 1)
-            {
-                HayIntereses = true;
-                return this.EtiquetasIntereses.Count;
-            }
-            else
-            {
-                HayIntereses = false;
-                return 1;
-            }
+            return this.EtiquetasIntereses.Count;
         }
 
         public override UICollectionViewCell GetCell(UICollectionView collectionView, NSIndexPath indexPath)
         {
-            if (HayIntereses)
-            {
-                var celdaHabilidades = (CeldaIntereses)this.CollectionView.DequeueReusableCell(IDENTIFIER_INTERESE_CELL, indexPath);
-                celdaHabilidades.UpdateCell(this.EtiquetasIntereses[indexPath.Row]);
-                return celdaHabilidades;
-            }
-            else
-            {
-                var NoIntereses = (CeldaNoIntereses)this.CollectionView.DequeueReusableCell(IDENTIFIER_NOINTERESES_CELL, indexPath);
-                NoIntereses.UpdateInfo();
-                return NoIntereses;
-            }
-
+            var celdaHabilidades = (CeldaIntereses)this.CollectionView.DequeueReusableCell(IDENTIFIER_INTERESE_CELL, indexPath);
+            celdaHabilidades.UpdateCell(this.EtiquetasIntereses[indexPath.Row]);
+            return celdaHabilidades;
         }
 
         [Export("collectionView:layout:insetForSectionAtIndex:")]
         public virtual UIEdgeInsets GetInsetForSection(UICollectionView collectionView, UICollectionViewLayout layout, Int32 section)
         {
-            var sectionInsets = new UIEdgeInsets(2, 2, 0, 2);
+            var sectionInsets = new UIEdgeInsets(5, 5, 5, 5);
             return sectionInsets;
         }
-
 
         [Export("collectionView:layout:minimumLineSpacingForSectionAtIndex:")]
         public nfloat GetMinimumLineSpacingForSection(UICollectionView collectionView, UICollectionViewLayout layout, nint section)
         {
-            return 2;
+            return 0;
         }
 
-        [Export("collectionView:layout:referenceSizeForHeaderInSection:")]
-        public virtual CGSize GetReferenceSizeForHeader(UICollectionView collectionView, UICollectionViewLayout layout, Int32 section)
+        [Export("collectionView:layout:minimumInteritemSpacingForSection:")]
+        public nfloat GetMinimumInteritemSpacingForSection(UICollectionView view, UICollectionViewLayout layout, nint section)
         {
-            return new CGSize(this.CollectionView.Frame.Size.Width, 60);
+            return 0;
         }
+
 
     }
 }

@@ -8,7 +8,7 @@ using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 using WorklabsMx.Controllers;
 using System.Collections.Generic;
-using System.Globalization;
+using WorklabsMx.Enum;
 
 namespace WorklabsMx.iOS
 {
@@ -32,6 +32,8 @@ namespace WorklabsMx.iOS
 
         public UsuarioModel NewInfoPerfil = new UsuarioModel();
 
+        EmpresaModel NuevosDatosEmpresa = new EmpresaModel();
+
         List<RedSocialModel> NewRedesSociales = new List<RedSocialModel>();
 
         public EditarPerfilTableViewController (IntPtr handle) : base (handle)
@@ -41,6 +43,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
             NewRedesSociales = InfoPerifl.Redes_Sociales;
             NewInfoPerfil = InfoPerifl;
             imgPicker = new UIImagePickerController();
@@ -62,10 +65,37 @@ namespace WorklabsMx.iOS
 
             lblEmpresa.Text = (InfoPerifl.Usuario_Empresa_Nombre != "" && InfoPerifl.Usuario_Empresa_Nombre != null) ? InfoPerifl.Usuario_Empresa_Nombre : "Sin Info";
             NewInfoPerfil.Usuario_Empresa_Nombre = lblEmpresa.Text;
-            btnImagen.SetBackgroundImage(ImageGallery.LoadImage(InfoPerifl.Usuario_Fotografia) ?? UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
+
+            var ImagenPerfil = this.GetImage(InfoPerifl.Usuario_Fotografia_Perfil);
+            if (ImagenPerfil != null)
+            {
+                this.btnImagen.SetBackgroundImage(ImagenPerfil, UIControlState.Normal);
+            }
+            else
+            {
+                this.btnImagen.SetBackgroundImage(UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
+            }
+
+            ImagenPerfil = this.GetImage(InfoPerifl.Usuario_Fotografia_FondoPerfil);
+            if (ImagenPerfil != null)
+            {
+                this.btnFondoImagen.SetBackgroundImage(ImagenPerfil, UIControlState.Normal);
+            }
+
             this.vwVistaMi.Hidden = false;
             this.vwSocial.Hidden = true;
             this.vwTrabajo.Hidden = true;
+        }
+
+        private UIImage GetImage(byte[] Imagen)
+        {
+            if (Imagen != null)
+            {
+                var data = NSData.FromArray(Imagen);
+                var uiimage = UIImage.LoadFromData(data);
+                return uiimage;
+            }
+            return null;
         }
 
         partial void FondoImagen_Touch(UIButton sender)
@@ -305,33 +335,84 @@ namespace WorklabsMx.iOS
             NewInfoPerfil.Usuario_Apellidos = txtApellidos.Text;
             DateTime fechaNacimiento = new DateTime();
             fechaNacimiento = DateTime.Parse(NewInfoPerfil.Usuario_Fecha_Nacimiento);
-            int result = -1;
+            int resultRedesSociales = -1;
+            int resultEtiquetas = -1;
+            bool resultDataMiembros = false;
 
-            //var result = new UsuariosController().AddRemoveEtiquetas(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), NewInfoPerfil.Etiquetas, string etiqueta_nombre, TipoEtiquetas etiqueta_tipo, string miembro_etiqueta_id);
-
-            foreach(RedSocialModel RedSocial in NewRedesSociales)
+            if(NewInfoPerfil.Etiquetas != null)
             {
-                if ((RedSocial.Red_Social_Id != null && RedSocial.Red_Social_Id != "") && (RedSocial.Red_Social_Enlace != null && RedSocial.Red_Social_Enlace != ""))
+                if(NewInfoPerfil.Etiquetas.Count > 0)
                 {
-                    result = new RedesSocialesController().SetRedSocial(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), RedSocial.Red_Social_Id, RedSocial.Red_Social_Enlace, RedSocial.Usuario_Red_Social_Id);
+                    foreach (EtiquetaModel Etiqueta in NewInfoPerfil.Etiquetas)
+                    {
+                        if ((Etiqueta.Etiqueta_Nombre != "" && Etiqueta.Etiqueta_Nombre != null) && (Etiqueta.Etiqueta_Id == "" || Etiqueta.Etiqueta_Id == null))
+                        {
+                            TipoEtiquetas etiqueta_tipo;
+                            if (Etiqueta.Etiqueta_Tipo == "Habilidad")
+                            {
+                                etiqueta_tipo = TipoEtiquetas.Habilidad;
+
+                            }
+                            else
+                            {
+                                etiqueta_tipo = TipoEtiquetas.Interes;
+                            }
+                            resultEtiquetas = new UsuariosController().AddRemoveEtiquetas(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Etiqueta.Etiqueta_Id, Etiqueta.Etiqueta_Nombre, etiqueta_tipo, Etiqueta.Usuario_Etiqueta_Id);
+                        }
+                    }
                 }
                 else
                 {
-                    result = 1;
+                    resultEtiquetas = 1;
+                }
+
+            }
+            else
+            {
+                resultEtiquetas = 1;
+            }
+
+            if (NewRedesSociales != null)
+            {
+                if(NewRedesSociales.Count > 0)
+                {
+                    foreach (RedSocialModel RedSocial in NewRedesSociales)
+                    {
+                        if ((RedSocial.Red_Social_Id != null && RedSocial.Red_Social_Id != "") && (RedSocial.Red_Social_Enlace != null && RedSocial.Red_Social_Enlace != ""))
+                        {
+                            resultRedesSociales = new RedesSocialesController().SetRedSocial(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), RedSocial.Red_Social_Id, RedSocial.Red_Social_Enlace, RedSocial.Usuario_Red_Social_Id);
+                        }
+                        else
+                        {
+                            resultRedesSociales = 1;
+                        }
+                    }
+                }
+                else
+                {
+                    resultRedesSociales = 1;
                 }
             }
+            else
+            {
+                resultRedesSociales = 1;
+            }
+
+
 
             byte[] imagen = new byte[0];
 
-            if (new UsuariosController().UpdateDataMiembros(KeyChainHelper.GetKey("Usuario_Id"), NewInfoPerfil.Usuario_Nombre, NewInfoPerfil.Usuario_Apellidos, NewInfoPerfil.Usuario_Correo_Electronico, 
-                                                            NewInfoPerfil.Usuario_Telefono, NewInfoPerfil.Usuario_Celular, NewInfoPerfil.Usuario_Descripcion,fechaNacimiento, imagen) && result != -1)
+            resultDataMiembros = new UsuariosController().UpdateDataMiembros(KeyChainHelper.GetKey("Usuario_Id"), NewInfoPerfil.Usuario_Nombre, NewInfoPerfil.Usuario_Apellidos, NewInfoPerfil.Usuario_Correo_Electronico,
+                                                                             NewInfoPerfil.Usuario_Telefono, NewInfoPerfil.Usuario_Celular, NewInfoPerfil.Usuario_Descripcion, fechaNacimiento, imagen);
+
+            if (resultDataMiembros && resultEtiquetas != -1 && resultRedesSociales != -1)
             {
-                
+
                 this.DismissViewController(true, () =>
                 {
                     this.MiInfoDeleghate.MiInfo(NewInfoPerfil);
                 });
-               
+
             }
             else
             {
@@ -353,6 +434,13 @@ namespace WorklabsMx.iOS
                 VistaRedesSociales.Redes_Sociales = InfoPerifl.Redes_Sociales;
                 VistaRedesSociales.Miembro = InfoPerifl;
                 VistaRedesSociales.VistaRedesSocialesDelegate = this;
+            }
+            else if (segue.Identifier == "EditarTrabajo")
+            {
+                var VsitaTrabajo = (TrabajoViewController)segue.DestinationViewController;
+                VsitaTrabajo.EmpresaActual = InfoPerifl.Empresa_Actual;
+                VsitaTrabajo.InfoPerifl = InfoPerifl;
+                VsitaTrabajo.EventosVistaTrabajoDelegate = this;
             }
         }
 
@@ -382,4 +470,13 @@ namespace WorklabsMx.iOS
             NewRedesSociales = Redes_Sociales;
         }
     }
+
+    public partial class EditarPerfilTableViewController : EventosVistaTrabajo
+    {
+        public void InfoEmpresa(EmpresaModel Empresa)
+        {
+            this.NuevosDatosEmpresa = Empresa;
+        }
+    }
+
 }

@@ -3,6 +3,7 @@ using UIKit;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Models;
+using WorklabsMx.Helpers;
 using System.Collections.Generic;
 using Foundation;
 using System.Threading.Tasks;
@@ -52,6 +53,18 @@ namespace WorklabsMx.iOS
             this.cvwMi.Hidden = false;
             this.cvwSocial.Hidden = true;
             this.cvwTrabajo.Hidden = true;
+
+        }
+
+        private UIImage GetImage(byte[] Imagen)
+        {
+            if (Imagen != null)
+            {
+                var data = NSData.FromArray(Imagen);
+                var uiimage = UIImage.LoadFromData(data);
+                return uiimage;
+            }
+            return null;
         }
 
         public override void ViewWillAppear(bool animated)
@@ -176,7 +189,22 @@ namespace WorklabsMx.iOS
         {
             this.lblNombre.Text = (Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos != "") ? Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos : "Sin Info";
             this.lblEmpresa.Text = (Miembro.Usuario_Empresa_Nombre != null) ? Miembro.Usuario_Empresa_Nombre : "Sin Info";
-            this.btnProfileImage.SetBackgroundImage(ImageGallery.LoadImage(Miembro.Usuario_Fotografia) ?? UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
+            var ImagenPerfil = this.GetImage(Miembro.Usuario_Fotografia_Perfil);
+            if (ImagenPerfil != null)
+            {
+                this.btnProfileImage.SetBackgroundImage(ImagenPerfil, UIControlState.Normal);
+            }
+            else
+            {
+                this.btnProfileImage.SetBackgroundImage(UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
+            }
+
+            ImagenPerfil = this.GetImage(Miembro.Usuario_Fotografia_FondoPerfil);
+            if (ImagenPerfil != null)
+            {
+                this.btnImageBackGround.SetBackgroundImage(ImagenPerfil, UIControlState.Normal);
+            }
+
         }
 
         partial void btnEditarPerfil_Touch(UIButton sender)

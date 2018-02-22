@@ -1,21 +1,42 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/UsuariosController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/UsuarioModel.cs">
     <Files>
-      <File FileName="iOS/EditarMiInfoPerfilViewController.cs" Line="18" Column="9" />
-      <File FileName="iOS/EditarPerfilTableViewController.cs" Line="323" Column="49" />
+      <File FileName="iOS/PerfilesTableViewController.cs" Line="193" Column="64" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="55" Column="82" />
+      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="6" Column="30" />
+      <File FileName="iOS/TrabajoViewController.cs" Line="53" Column="13" />
+      <File FileName="iOS/EditarPerfilTableViewController.cs" Line="66" Column="167" />
+      <File FileName="iOS/EditarMiInfoPerfilViewController.cs" Line="31" Column="39" />
       <File FileName="iOS/Main.cs" Line="9" Column="10" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="1" Column="1" />
       <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="136" Column="114" />
-      <File FileName="iOS/ColeccionEditarHabilidades.cs" Line="48" Column="12" />
-      <File FileName="iOS/ColeccionEditarIntereses.cs" Line="34" Column="9" />
-      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="725" Column="37" />
+      <File FileName="iOS/SucursalesViewController.cs" Line="29" Column="48" />
+      <File FileName="iOS/PaisesViewController.cs" Line="15" Column="6" />
+      <File FileName="iOS/FechaNacimientoPickerViewController.cs" Line="30" Column="9" />
+      <File FileName="iOS/VistaEditarRedesSociales.cs" Line="17" Column="22" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="19" Column="42" />
+      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="250" Column="38" />
+      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="21" Column="26" />
+      <File FileName="iOS/Helpers/MenuHelper.cs" Line="112" Column="33" />
+      <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="70" Column="41" />
+      <File FileName="iOS/Helpers/ImageHelper.cs" Line="9" Column="44" />
+      <File FileName="iOS/Helpers/ImageGallery.cs" Line="70" Column="40" />
+      <File FileName="WorklabsMx/Models/UsuarioModel.cs" Line="32" Column="48" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>command.Parameters["@Miembro_Etiqueta_Id_Salida"].Value</Value>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C8F534E0-9C6A-4F53-A110-4E330B864317" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C8F534E0-9C6A-4F53-A110-4E330B864317" automaticSigning="False">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
+  </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
   <MultiItemStartupConfigurations />
 </Properties>

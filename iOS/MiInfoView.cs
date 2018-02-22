@@ -36,11 +36,11 @@ namespace WorklabsMx.iOS
             {
                 foreach (EtiquetaModel Etiqueta in Etiquetas)
                 {
-                    if (Etiqueta.Etiqueta_Tipo == "HABILIDAD")
+                    if (Etiqueta.Etiqueta_Tipo == "Habilidad")
                     {
                         EtiquetasHabilidades.Add(Etiqueta);
                     }
-                    else if (Etiqueta.Etiqueta_Tipo == "INTERES")
+                    else if (Etiqueta.Etiqueta_Tipo == "Interes")
                     {
                         EtiquetasIntereses.Add(Etiqueta);
                     }
