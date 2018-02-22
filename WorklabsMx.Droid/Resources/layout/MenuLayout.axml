@@ -24,7 +24,6 @@
             android:layout_marginTop="10dp"
             android:scaleType="fitXY" />
         <TextView
-            android:text="Large Text"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/lblNombreMenu"
             android:layout_marginTop="10dp"
@@ -33,7 +32,6 @@
             android:layout_width="270dp"
             android:layout_marginRight="10dp" />
         <TextView
-            android:text="Small Text"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblEmpresaMenu"
             android:layout_marginLeft="20dp"

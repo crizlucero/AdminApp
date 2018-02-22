@@ -8,6 +8,10 @@ namespace WorklabsMx.Controllers
 {
     public class EmpresaController : DataBaseModel
     {
+        readonly string empresa_imagen_path;
+
+        public EmpresaController() => empresa_imagen_path = (new ConfigurationsController().GetListConfiguraciones() != null) ? new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE EMPRESAS").Parametro_Varchar_1 : "";
+
         /// <summary>
         /// Obtiene los datos de la empresa
         /// </summary>
@@ -279,6 +283,49 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Empresa_Miembro_Logotipo", logo);
                 command.Parameters.AddWithValue("@Empresa_Miembro_Estatus", 1);
                 command.Parameters.Add("@Empresa_Miembro_Id_Salida", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+                //command.Transaction = transaction;
+                command.ExecuteNonQuery();
+                //transaction.Commit();
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message);
+                //transaction.Rollback();
+                return false;
+            }
+            finally { conn.Close(); }
+            return true;
+        }
+
+        public bool UpdateUsuarioEmpresaPerfil(string empresa_id, string miembro_id, string territorio_id, string nombre, string correo, string web, string puesto, byte[] logo){
+            try
+            {
+                string fotoNombre = null;
+                if (logo.Length != 0)
+                {
+                    fotoNombre = Guid.NewGuid().ToString() + ".png";
+                    var result = new UploadImages().UploadBitmapAsync(fotoNombre, logo, empresa_imagen_path);
+                    if (!result)
+                    {
+                        return false;
+                    }
+
+                }
+                conn.Open();
+                //transaction = conn.BeginTransaction();
+                command = CreateCommand();
+                command.Connection = conn;
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "sp_cat_Usuarios_Empresas_Perfil";
+                command.Parameters.AddWithValue("@Empresa_Miembro_Id", empresa_id);
+                command.Parameters.AddWithValue("@Miembro_Id", miembro_id);
+                command.Parameters.AddWithValue("@Territorio_Id", territorio_id);
+                command.Parameters.AddWithValue("@Empresa_Miembro_Nombre", nombre);
+                command.Parameters.AddWithValue("@Empresa_Miembro_Correo_Electronico", correo);
+                command.Parameters.AddWithValue("@Empresa_Miembro_Pagina_Web", web);
+                command.Parameters.AddWithValue("@Empresa_Miembro_Logotipo", fotoNombre);
+                command.Parameters.AddWithValue("@Miembro_Puesto", puesto);
 
                 //command.Transaction = transaction;
                 command.ExecuteNonQuery();

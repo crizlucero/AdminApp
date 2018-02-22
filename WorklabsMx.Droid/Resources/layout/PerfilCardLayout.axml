@@ -86,7 +86,7 @@
                 android:layout_column="0"
                 android:layout_columnSpan="5"
                 android:autoText="true"
-                android:text="juan pedro hernandez lopez"
+                android:text="@string/str_profile_name"
                 android:textAllCaps="true"
                 android:layout_gravity="center"
                 android:gravity="center"
