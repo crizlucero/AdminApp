@@ -48,13 +48,13 @@ namespace WorklabsMx.iOS
             if(InternetConectionHelper.VerificarConexion())
             {
                 Empresa = new EmpresaController().GetEmpresaMiembro(KeyChainHelper.GetKey("Usuario_Id"));
-                this.txtRFC.Text = Empresa.Empresa_Miembro_Rfc;
-                this.txtTelefono.Text = Empresa.Empresa_Miembro_Telefono;
-                this.txtRazonSocial.Text = Empresa.Empresa_Miembro_Razon_Social;
+                this.txtRFC.Text = Empresa.Empresa_Rfc;
+                this.txtTelefono.Text = Empresa.Empresa_Telefono;
+                this.txtRazonSocial.Text = Empresa.Empresa_Razon_Social;
                 this.txtGiroComercial.Text = Empresa.Giro_Descripcion;
 
-                this.txtNombreEmpresa.Text = Empresa.Empresa_Miembro_Nombre;
-                this.txtCorreoElectronico.Text = Empresa.Empresa_Miembro_Correo_Electronico;
+                this.txtNombreEmpresa.Text = Empresa.Empresa_Nombre;
+                this.txtCorreoElectronico.Text = Empresa.Empresa_Correo_Electronico;
             }
             else 
             {
@@ -97,8 +97,8 @@ namespace WorklabsMx.iOS
             {
                 TerritorioId = new TerritorioController().GetTerritorioId(Empresa.Territorio.CP, Empresa.Territorio.Colonia);
                 GiroId = items.GetGiroId(txtGiroComercial.Text).ToString();
-                if (new EmpresaController().UpdateDataEmpresa(Empresa.Empresa_Miembro_Id, KeyChainHelper.GetKey("Usuario_Id"), GiroId, TerritorioId, txtRazonSocial.Text, txtRFC.Text,
-                                                                  txtNombreEmpresa.Text, Empresa.Empresa_Miembro_Calle, Empresa.Empresa_Miembro_Numero_Exterior, Empresa.Empresa_Miembro_Numero_Interior, txtCorreoElectronico.Text, txtTelefono.Text, Empresa.Empresa_Miembro_Pagina_Web, Empresa.Empresa_Miembro_Red_Social_1, Empresa.Empresa_Miembro_Red_Social_2, Empresa.Empresa_Miembro_Red_Social_3, Empresa.Empresa_Miembro_Logotipo))
+                if (new EmpresaController().UpdateDataEmpresa(Empresa.Empresa_Id, KeyChainHelper.GetKey("Usuario_Id"), GiroId, TerritorioId, txtRazonSocial.Text, txtRFC.Text,
+                                                                  txtNombreEmpresa.Text, Empresa.Empresa_Calle, Empresa.Empresa_Numero_Exterior, Empresa.Empresa_Numero_Interior, txtCorreoElectronico.Text, txtTelefono.Text, Empresa.Empresa_Pagina_Web, Empresa.Empresa_Red_Social_1, Empresa.Empresa_Red_Social_2, Empresa.Empresa_Red_Social_3, Empresa.Empresa_Logotipo))
                 {
                     new MessageDialog().SendToast("Datos guardados");
                     Empresa = new EmpresaController().GetEmpresaMiembro(KeyChainHelper.GetKey("Usuario_Id"));

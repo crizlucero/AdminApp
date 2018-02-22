@@ -13649,7 +13649,7 @@ COL. LADRON DE GUEVARA</string>
                         <outlet property="vwPais" destination="INg-mQ-xa5" id="name-outlet-INg-mQ-xa5"/>
                         <outlet property="vwPuesto" destination="J1m-wV-Z9v" id="name-outlet-J1m-wV-Z9v"/>
                         <outlet property="vwWebSite" destination="Qcq-f2-xmq" id="name-outlet-Qcq-f2-xmq"/>
-                        <segue destination="8qr-OJ-9ac" kind="presentation" identifier="Pais" id="Vla-Au-3Z0"/>
+                        <segue destination="8qr-OJ-9ac" kind="presentation" identifier="Pais" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="Vla-Au-3Z0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K4h-Mn-JrR" userLabel="First Responder" sceneMemberID="firstResponder"/>

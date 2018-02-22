@@ -26,7 +26,7 @@ namespace WorklabsMx.iOS
             //storageLocal = SimpleStorage.EditGroup("Login");
             empresa = new EmpresaController().GetEmpresaMiembro(KeyChainHelper.GetKey("Usuario_Id"));
             TerritorioModel territorio = new TerritorioController().GetTerritorio(empresa.Territorio.CP);
-            empresa_id = empresa.Empresa_Miembro_Id;
+            empresa_id = empresa.Empresa_Id;
             territorio_id = territorio.Territorio_Id;
             colonias = items.GetColonias(territorio.CP);
         }
@@ -42,7 +42,7 @@ namespace WorklabsMx.iOS
                 UIImageView imagen = new UIImageView
                 {
                     Frame = new CGRect(40, 65, 50, 50),
-                    Image = ImageGallery.LoadImage(empresa.Empresa_Miembro_Logotipo)
+                    Image = ImageGallery.LoadImage(empresa.Empresa_Logotipo)
                 };
                 imagen.Image.Scale(new CGSize(50, 50), 0);
                 scrollView.Add(imagen);
@@ -91,26 +91,26 @@ namespace WorklabsMx.iOS
                 scrollView.Add(txtCP);
 
                 scrollView.Add(new STLLabel("Calle", 440));
-                UITextField txtCalle = new STLTextField("Calle", 470, empresa.Empresa_Miembro_Calle);
+                UITextField txtCalle = new STLTextField("Calle", 470, empresa.Empresa_Calle);
                 scrollView.Add(txtCalle);
 
                 scrollView.Add(new STLLabel("Num. Exterior", 500));
-                UITextField txtNumExterior = new STLTextField("Num. Exterior", 530, empresa.Empresa_Miembro_Numero_Exterior);
+                UITextField txtNumExterior = new STLTextField("Num. Exterior", 530, empresa.Empresa_Numero_Exterior);
                 scrollView.Add(txtNumExterior);
 
                 scrollView.Add(new STLLabel("Num. Interior", 560));
-                UITextField txtNumInterior = new STLTextField("Num. Interior", 590, empresa.Empresa_Miembro_Numero_Interior);
+                UITextField txtNumInterior = new STLTextField("Num. Interior", 590, empresa.Empresa_Numero_Interior);
                 scrollView.Add(txtNumInterior);
 
                 scrollView.Add(new STLLabel("RFC", 620));
-                UITextField txtRFC = new STLTextField("RFC", 650, empresa.Empresa_Miembro_Rfc){
+                UITextField txtRFC = new STLTextField("RFC", 650, empresa.Empresa_Rfc){
 					Enabled = false,
 					TextColor = UIColor.Gray
                 };
                 scrollView.Add(txtRFC);
 
                 scrollView.Add(new STLLabel("Razón social", 680));
-                UITextField txtRazonSocial = new STLTextField("Razón Social", 710, empresa.Empresa_Miembro_Razon_Social){
+                UITextField txtRazonSocial = new STLTextField("Razón Social", 710, empresa.Empresa_Razon_Social){
 					Enabled = false,
 					TextColor = UIColor.Gray
                 };
@@ -120,7 +120,7 @@ namespace WorklabsMx.iOS
                 scrollView.Add(new STLLabel("Contacto", 750, 20));
 
                 scrollView.Add(new STLLabel("Nombre", 780));
-                UITextField txtNombre = new STLTextField("Nombre", 810, empresa.Empresa_Miembro_Nombre);
+                UITextField txtNombre = new STLTextField("Nombre", 810, empresa.Empresa_Nombre);
                 scrollView.Add(txtNombre);
 
                 scrollView.Add(new STLLabel("Giro Comercial", 840));
@@ -138,15 +138,15 @@ namespace WorklabsMx.iOS
                 scrollView.Add(txtGiroComercial);
 
                 scrollView.Add(new STLLabel("Teléfono", 900));
-                UITextField txtTelefono = new STLTextField("Teléfono", 930, empresa.Empresa_Miembro_Telefono, UIKeyboardType.PhonePad);
+                UITextField txtTelefono = new STLTextField("Teléfono", 930, empresa.Empresa_Telefono, UIKeyboardType.PhonePad);
                 scrollView.Add(txtTelefono);
 
                 scrollView.Add(new STLLabel("Correo Electrónico", 960));
-                UITextField txtCorreoElectronico = new STLTextField("Correo Electrónico", 990, empresa.Empresa_Miembro_Correo_Electronico, UIKeyboardType.EmailAddress);
+                UITextField txtCorreoElectronico = new STLTextField("Correo Electrónico", 990, empresa.Empresa_Correo_Electronico, UIKeyboardType.EmailAddress);
                 scrollView.Add(txtCorreoElectronico);
 
                 scrollView.Add(new STLLabel("Página Web", 1020));
-                UITextField txtPaginaWeb = new STLTextField("Página Web", 1050, empresa.Empresa_Miembro_Pagina_Web, UIKeyboardType.Url);
+                UITextField txtPaginaWeb = new STLTextField("Página Web", 1050, empresa.Empresa_Pagina_Web, UIKeyboardType.Url);
                 scrollView.Add(txtPaginaWeb);
                 #endregion
                 #region Redes Sociales
@@ -154,21 +154,21 @@ namespace WorklabsMx.iOS
 
                 new STLImageLabel(scrollView, "Facebook", 1110, "ic_facebook");
 
-                UITextField txtFacebook = new STLTextField("Facebook", 1140, empresa.Empresa_Miembro_Red_Social_1, UIKeyboardType.Url);
+                UITextField txtFacebook = new STLTextField("Facebook", 1140, empresa.Empresa_Red_Social_1, UIKeyboardType.Url);
                 scrollView.Add(txtFacebook);
 
                 new STLImageLabel(scrollView, "Twitter", 1170, "ic_twitter");
-                UITextField txtTwitter = new STLTextField("Twitter", 1200, empresa.Empresa_Miembro_Red_Social_2, UIKeyboardType.Url);
+                UITextField txtTwitter = new STLTextField("Twitter", 1200, empresa.Empresa_Red_Social_2, UIKeyboardType.Url);
                 scrollView.Add(txtTwitter);
 
                 new STLImageLabel(scrollView, "Instagram", 1230, "ic_instagram");
-                UITextField txtInstagram = new STLTextField("Instagram", 1260, empresa.Empresa_Miembro_Red_Social_3, UIKeyboardType.Url);
+                UITextField txtInstagram = new STLTextField("Instagram", 1260, empresa.Empresa_Red_Social_3, UIKeyboardType.Url);
                 scrollView.Add(txtInstagram);
                 #endregion
 
                 NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Actualizar", UIBarButtonItemStyle.Plain, (sender, e) =>
                 {
-                    if (new EmpresaController().UpdateDataEmpresa(empresa.Empresa_Miembro_Id, KeyChainHelper.GetKey("Usuario_Id"), giro_id, territorio_id, txtRazonSocial.Text, txtRFC.Text,
+                    if (new EmpresaController().UpdateDataEmpresa(empresa.Empresa_Id, KeyChainHelper.GetKey("Usuario_Id"), giro_id, territorio_id, txtRazonSocial.Text, txtRFC.Text,
                                                               txtNombre.Text, txtCalle.Text, txtNumExterior.Text, txtNumInterior.Text, txtCorreoElectronico.Text, txtTelefono.Text,
                                                                  txtPaginaWeb.Text, txtFacebook.Text, txtTwitter.Text, txtInstagram.Text, ""))
                         new MessageDialog().SendToast("Datos guardados");

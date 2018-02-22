@@ -31,7 +31,7 @@ namespace WorklabsMx.iOS
 
         public void UpdateCell(EmpresaModel Empresa)
         {
-            this.lblEmpresas.Text = Empresa.Empresa_Miembro_Nombre;
+            this.lblEmpresas.Text = Empresa.Empresa_Nombre;
             this.EmpresaLocal = Empresa;
         }
 

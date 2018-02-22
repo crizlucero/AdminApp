@@ -25,7 +25,7 @@ namespace WorklabsMx.iOS
             StyleHelper.Style(this.vwColaboradores.Layer);
             EmpresaModel empresa = new EmpresaController().GetEmpresaMiembro(Miembro.Usuario_Id);
             this.lblPais.Text = ((empresa.Territorio.Municipio + ", " + empresa.Territorio.Pais) != "") ? (empresa.Territorio.Municipio + ", " + empresa.Territorio.Pais) : "Sin Info";
-            this.lblEmpresa.Text = (empresa.Empresa_Miembro_Nombre != "") ? empresa.Empresa_Miembro_Nombre : "Sin Info";
+            this.lblEmpresa.Text = (empresa.Empresa_Nombre != "") ? empresa.Empresa_Nombre : "Sin Info";
             this.lblPuesto.Text = (Miembro.Usuario_Puesto != "") ? Miembro.Usuario_Puesto : "Sin Info";
             this.lblFechaInicioFin.Text = "Sin Info";//Miembro.Empresa_Actual.;
         }

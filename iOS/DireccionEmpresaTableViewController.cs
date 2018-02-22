@@ -33,14 +33,14 @@ namespace WorklabsMx.iOS
             this.View.AddGestureRecognizer(Tap);
             this.EventosTecladoTextfileds();
             Empresa = new EmpresaController().GetEmpresaMiembro(KeyChainHelper.GetKey("Usuario_Id"));
-            this.txtCalle.Text = Empresa.Empresa_Miembro_Calle;
+            this.txtCalle.Text = Empresa.Empresa_Calle;
             this.txtEstado.Text = Empresa.Territorio.Estado;
             this.txtMunicipio.Text = Empresa.Territorio.Municipio;
             this.txtColonia.Text = Empresa.Territorio.Colonia;
             this.txtCodigoPostal.Text = Empresa.Territorio.CP;
             this.LimiteCaracteresTextFields(this.txtCodigoPostal, 5);
-            this.txtNumeroExterior.Text = Empresa.Empresa_Miembro_Numero_Exterior;
-            this.txtNumeroInterior.Text = Empresa.Empresa_Miembro_Numero_Interior;
+            this.txtNumeroExterior.Text = Empresa.Empresa_Numero_Exterior;
+            this.txtNumeroInterior.Text = Empresa.Empresa_Numero_Interior;
             Colonias = Items.GetColonias(Empresa.Territorio.CP);
 
             if (txtCodigoPostal.Text == "")
@@ -106,8 +106,8 @@ namespace WorklabsMx.iOS
             if (InternetConectionHelper.VerificarConexion())
             {
                 //TerritorioId = new TerritorioController().GetTerritorioId(txtCodigoPostal.Text, txtColonia.Text);
-                if (new EmpresaController().UpdateDataEmpresa(Empresa.Empresa_Miembro_Id, KeyChainHelper.GetKey("Usuario_Id"), GiroId, TerritorioId, Empresa.Empresa_Miembro_Razon_Social, Empresa.Empresa_Miembro_Rfc,
-                                                                  Empresa.Empresa_Miembro_Nombre, txtCalle.Text, txtNumeroExterior.Text, txtNumeroInterior.Text, Empresa.Empresa_Miembro_Correo_Electronico, Empresa.Empresa_Miembro_Telefono, Empresa.Empresa_Miembro_Pagina_Web, Empresa.Empresa_Miembro_Red_Social_1, Empresa.Empresa_Miembro_Red_Social_2, Empresa.Empresa_Miembro_Red_Social_3, Empresa.Empresa_Miembro_Logotipo))
+                if (new EmpresaController().UpdateDataEmpresa(Empresa.Empresa_Id, KeyChainHelper.GetKey("Usuario_Id"), GiroId, TerritorioId, Empresa.Empresa_Razon_Social, Empresa.Empresa_Rfc,
+                                                                  Empresa.Empresa_Nombre, txtCalle.Text, txtNumeroExterior.Text, txtNumeroInterior.Text, Empresa.Empresa_Correo_Electronico, Empresa.Empresa_Telefono, Empresa.Empresa_Pagina_Web, Empresa.Empresa_Red_Social_1, Empresa.Empresa_Red_Social_2, Empresa.Empresa_Red_Social_3, Empresa.Empresa_Logotipo))
                 {
                     new MessageDialog().SendToast("Datos guardados");
                    

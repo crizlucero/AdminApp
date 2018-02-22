@@ -58,13 +58,14 @@ namespace WorklabsMx.iOS
                 if(EmpresaActual.Territorio != null)
                 {
                     this.txtCiudad.Text = EmpresaActual.Territorio.Municipio;
+                    this.lblPais.Text = EmpresaActual.Territorio.Pais;
                 }
-                this.txtWebSite.Text = EmpresaActual.Empresa_Miembro_Pagina_Web;
+                this.txtWebSite.Text = EmpresaActual.Empresa_Pagina_Web;
+                this.txtCompañia.Text = EmpresaActual.Empresa_Nombre;
             }
-            if(InfoPerifl != null)
+            if (InfoPerifl != null)
             {
                 this.txtPuesto.Text = InfoPerifl.Usuario_Puesto;
-                this.txtCompañia.Text = InfoPerifl.Usuario_Empresa_Nombre;
             }
 
         }

@@ -34,10 +34,10 @@ namespace WorklabsMx.iOS
             //StoregeLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
             //Empresa = new EmpresaController().GetEmpresaMiembro(StoregeLocal.Get("Usuario_Id"));
             Empresa = new EmpresaController().GetEmpresaMiembro(KeyChainHelper.GetKey("Usuario_Id"));
-            this.txtPaginaWeb.Text = Empresa.Empresa_Miembro_Pagina_Web;
-            this.txtUsuarioTwitter.Text = Empresa.Empresa_Miembro_Red_Social_1;
-            this.txtUsuarioInstagram.Text = Empresa.Empresa_Miembro_Red_Social_2;
-            this.txtUsuarioFacebook.Text = Empresa.Empresa_Miembro_Red_Social_3;
+            this.txtPaginaWeb.Text = Empresa.Empresa_Pagina_Web;
+            this.txtUsuarioTwitter.Text = Empresa.Empresa_Red_Social_1;
+            this.txtUsuarioInstagram.Text = Empresa.Empresa_Red_Social_2;
+            this.txtUsuarioFacebook.Text = Empresa.Empresa_Red_Social_3;
         }
 
         partial void btnGardar(UIBarButtonItem sender)
@@ -80,7 +80,7 @@ namespace WorklabsMx.iOS
         {
             if (InternetConectionHelper.VerificarConexion())
             {
-                if (new EmpresaController().UpdateDataEmpresa(Empresa.Empresa_Miembro_Id, KeyChainHelper.GetKey("Usuario_Id"), GiroId, TerritorioId, Empresa.Empresa_Miembro_Razon_Social, Empresa.Empresa_Miembro_Rfc,Empresa.Empresa_Miembro_Nombre, Empresa.Empresa_Miembro_Calle, Empresa.Empresa_Miembro_Numero_Exterior, Empresa.Empresa_Miembro_Numero_Interior, Empresa.Empresa_Miembro_Correo_Electronico, Empresa.Empresa_Miembro_Telefono, this.txtPaginaWeb.Text, this.txtUsuarioTwitter.Text, this.txtUsuarioInstagram.Text, this.txtUsuarioFacebook.Text, Empresa.Empresa_Miembro_Logotipo))
+                if (new EmpresaController().UpdateDataEmpresa(Empresa.Empresa_Id, KeyChainHelper.GetKey("Usuario_Id"), GiroId, TerritorioId, Empresa.Empresa_Razon_Social, Empresa.Empresa_Rfc,Empresa.Empresa_Nombre, Empresa.Empresa_Calle, Empresa.Empresa_Numero_Exterior, Empresa.Empresa_Numero_Interior, Empresa.Empresa_Correo_Electronico, Empresa.Empresa_Telefono, this.txtPaginaWeb.Text, this.txtUsuarioTwitter.Text, this.txtUsuarioInstagram.Text, this.txtUsuarioFacebook.Text, Empresa.Empresa_Logotipo))
                 {
                     new MessageDialog().SendToast("Datos guardados"); 
 

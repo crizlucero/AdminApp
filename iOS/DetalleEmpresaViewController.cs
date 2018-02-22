@@ -22,9 +22,9 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.lblNombreEmpresa.Text = Empresa.Empresa_Miembro_Nombre;
+            this.lblNombreEmpresa.Text = Empresa.Empresa_Nombre;
             this.lblDescripcion.Text = Empresa.Giro_Descripcion;
-            this.imgEmpresa.SetBackgroundImage(ImageGallery.LoadImage(Empresa.Empresa_Miembro_Logotipo) ?? UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
+            this.imgEmpresa.SetBackgroundImage(ImageGallery.LoadImage(Empresa.Empresa_Logotipo) ?? UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
         }
 
         public override void ViewWillAppear(bool animated)

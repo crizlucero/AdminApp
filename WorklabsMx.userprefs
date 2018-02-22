@@ -1,63 +1,21 @@
-<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/UsuarioModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/FechaNacimientoPickerViewController.cs">
     <Files>
-      <File FileName="iOS/PerfilesTableViewController.cs" Line="193" Column="64" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="55" Column="82" />
-      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="6" Column="30" />
-      <File FileName="iOS/TrabajoViewController.cs" Line="53" Column="13" />
-      <File FileName="iOS/EditarPerfilTableViewController.cs" Line="66" Column="167" />
+      <File FileName="iOS/EditarPerfilTableViewController.cs" Line="53" Column="9" />
+      <File FileName="iOS/PerfilesTableViewController.cs" Line="58" Column="9" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="103" Column="48" />
+      <File FileName="iOS/TrabajoViewController.cs" Line="76" Column="10" />
       <File FileName="iOS/EditarMiInfoPerfilViewController.cs" Line="31" Column="39" />
-      <File FileName="iOS/Main.cs" Line="9" Column="10" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="136" Column="114" />
-      <File FileName="iOS/SucursalesViewController.cs" Line="29" Column="48" />
-      <File FileName="iOS/PaisesViewController.cs" Line="15" Column="6" />
-      <File FileName="iOS/FechaNacimientoPickerViewController.cs" Line="30" Column="9" />
-      <File FileName="iOS/VistaEditarRedesSociales.cs" Line="17" Column="22" />
-      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="19" Column="42" />
-      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="250" Column="38" />
-      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="21" Column="26" />
-      <File FileName="iOS/Helpers/MenuHelper.cs" Line="112" Column="33" />
-      <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="70" Column="41" />
-      <File FileName="iOS/Helpers/ImageHelper.cs" Line="9" Column="44" />
-      <File FileName="iOS/Helpers/ImageGallery.cs" Line="70" Column="40" />
-      <File FileName="WorklabsMx/Models/UsuarioModel.cs" Line="32" Column="48" />
-=======
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/UsuariosController.cs">
-    <Files>
-      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardActivity.cs" Line="36" Column="73" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="90" Column="78" />
-      <File FileName="WorklabsMx.Droid/ViewElement/EmpresaCardActivity.cs" Line="25" Column="74" />
-      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioActivity.cs" Line="51" Column="94" />
-      <File FileName="WorklabsMx.Droid/Helpers/EmpresaPageAdapter.cs" Line="32" Column="54" />
-      <File FileName="WorklabsMx.Droid/Helpers/PerfilPageAdapter.cs" Line="126" Column="16" />
-      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="161" Column="104" />
-      <File FileName="WorklabsMx/Models/EmpresaModel.cs" Line="3" Column="18" />
-      <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="14" Column="18" />
-      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="65" Column="54" />
->>>>>>> 981457a27651ddb8b6785fec5417051c4959907a
+      <File FileName="iOS/FechaNacimientoPickerViewController.cs" Line="33" Column="43" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>command.Parameters["@Miembro_Etiqueta_Id_Salida"].Value</Value>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.C8F534E0-9C6A-4F53-A110-4E330B864317" automaticSigning="False">
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.0D184F42-6E16-43C3-B549-F1D9DA6E63D0" automaticSigning="False">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
   </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
-=======
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D3D00818-B828-45D1-ACAA-A06B2D1C1EA8" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
->>>>>>> 981457a27651ddb8b6785fec5417051c4959907a
   <MultiItemStartupConfigurations />
 </Properties>
