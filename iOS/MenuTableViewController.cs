@@ -145,6 +145,10 @@ namespace WorklabsMx.iOS
             }
             else if (indexPath.Row == 5)
             {
+                this.PerformSegue("AcercaDe", null);
+            }
+            else if (indexPath.Row == 6)
+            {
                  this.CerrarSesion();
             }
 

@@ -54,6 +54,20 @@ namespace WorklabsMx.iOS
                 EventosVistaTrabajoDelegate.InfoEmpresa(InfoPerifl);
             };
 
+            txtWebSite.EditingChanged += (sender, e) =>
+            {
+                InfoPerifl.Empresa_Actual.Empresa_Pagina_Web = txtWebSite.Text;
+                EventosVistaTrabajoDelegate.InfoEmpresa(InfoPerifl);
+
+            };
+
+            txtCorreo.EditingChanged += (sender, e) =>
+            {
+                InfoPerifl.Empresa_Actual.Empresa_Correo_Electronico = txtCorreo.Text;
+                EventosVistaTrabajoDelegate.InfoEmpresa(InfoPerifl);
+            };
+
+
             imgPicker = new UIImagePickerController();
             imgPicker.Delegate = this;
 
@@ -64,6 +78,7 @@ namespace WorklabsMx.iOS
             StyleHelper.Style(this.vwPuesto.Layer);
             StyleHelper.Style(this.vwWebSite.Layer);
             StyleHelper.Style(this.vwCompañia.Layer);
+            StyleHelper.Style(this.vwCorreo.Layer);
 
             imgPais.UserInteractionEnabled = true;
             UITapGestureRecognizer tapGestureImgPais = new UITapGestureRecognizer(imgPaisTouch);
@@ -81,6 +96,7 @@ namespace WorklabsMx.iOS
                     }
                     this.txtWebSite.Text = InfoPerifl.Empresa_Actual.Empresa_Pagina_Web;
                     this.txtCompañia.Text = InfoPerifl.Empresa_Actual.Empresa_Nombre;
+                    this.txtCorreo.Text = InfoPerifl.Empresa_Actual.Empresa_Correo_Electronico;
                 }
                 if (InfoPerifl != null)
                 {
@@ -114,7 +130,10 @@ namespace WorklabsMx.iOS
         [Foundation.Export("imagePickerController:didFinishPickingImage:editingInfo:")]
         public void FinishedPickingImage(UIKit.UIImagePickerController picker, UIKit.UIImage image, Foundation.NSDictionary editingInfo)
         {
-            this.btnSeleccionarImagen.SetBackgroundImage(image, UIControlState.Normal);
+            this.ImagenEmpresa.Image = image;
+            NSData imageData = image.AsPNG();
+            InfoPerifl.Empresa_Actual.Empresa_Logotipo_Perfil = new Byte[imageData.Length];
+            EventosVistaTrabajoDelegate.InfoEmpresa(InfoPerifl);
             picker.DismissViewController(true, null);
         }
 

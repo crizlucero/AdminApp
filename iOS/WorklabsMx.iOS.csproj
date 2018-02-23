@@ -105,9 +105,6 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.IO.Compression" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="MonoTouch.NUnitLite" />
@@ -156,6 +153,9 @@
     </Reference>
     <Reference Include="Plugin.Connectivity">
       <HintPath>..\packages\Xam.Plugin.Connectivity.3.1.1\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -783,6 +783,8 @@
     <ImageAsset Include="Assets.xcassets\NoLogoWork.imageset\Group 237.png" />
     <ImageAsset Include="Assets.xcassets\NoLogoWork.imageset\Group 237%402x.png" />
     <ImageAsset Include="Assets.xcassets\NoLogoWork.imageset\Group 237%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AcercaDe.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AcercaDe.imageset\Custom Size – 4%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1304,6 +1306,7 @@
       <DependentUpon>NoRedesCell.cs</DependentUpon>
     </Compile>
     <Compile Include="MiInfoView.cs" />
+    <Compile Include="TrabajoViewController.cs" />
     <Compile Include="MiInfoView.designer.cs">
       <DependentUpon>MiInfoView.cs</DependentUpon>
     </Compile>
@@ -1335,13 +1338,16 @@
     <Compile Include="EditarRedesSociales.designer.cs">
       <DependentUpon>EditarRedesSociales.cs</DependentUpon>
     </Compile>
-    <Compile Include="TrabajoViewController.cs" />
     <Compile Include="TrabajoViewController.designer.cs">
       <DependentUpon>TrabajoViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="PaisesViewController.cs" />
     <Compile Include="PaisesViewController.designer.cs">
       <DependentUpon>PaisesViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AcercaDeViewController.cs" />
+    <Compile Include="AcercaDeViewController.designer.cs">
+      <DependentUpon>AcercaDeViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1511,6 +1517,7 @@
     <Folder Include="Assets.xcassets\spotify.imageset\" />
     <Folder Include="Assets.xcassets\Quora.imageset\" />
     <Folder Include="Assets.xcassets\NoLogoWork.imageset\" />
+    <Folder Include="Assets.xcassets\AcercaDe.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

@@ -44,6 +44,10 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtCorreo { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtMes { get; set; }
 
         [Outlet]
@@ -65,6 +69,10 @@ namespace WorklabsMx.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwCompañia { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwCorreo { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -123,6 +131,11 @@ namespace WorklabsMx.iOS
                 txtCompañia = null;
             }
 
+            if (txtCorreo != null) {
+                txtCorreo.Dispose ();
+                txtCorreo = null;
+            }
+
             if (txtMes != null) {
                 txtMes.Dispose ();
                 txtMes = null;
@@ -151,6 +164,11 @@ namespace WorklabsMx.iOS
             if (vwCompañia != null) {
                 vwCompañia.Dispose ();
                 vwCompañia = null;
+            }
+
+            if (vwCorreo != null) {
+                vwCorreo.Dispose ();
+                vwCorreo = null;
             }
 
             if (vwMes != null) {

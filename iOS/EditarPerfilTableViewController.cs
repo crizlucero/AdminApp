@@ -336,6 +336,7 @@ namespace WorklabsMx.iOS
             fechaNacimiento = DateTime.Parse(NewInfoPerfil.Usuario_Fecha_Nacimiento);
             int resultRedesSociales = -1;
             int resultEtiquetas = -1;
+            bool resultadoTrabajo = false;
             bool resultDataMiembros = false;
 
             if(NewInfoPerfil.Etiquetas != null)
@@ -357,6 +358,10 @@ namespace WorklabsMx.iOS
                                 etiqueta_tipo = TipoEtiquetas.Interes;
                             }
                             resultEtiquetas = new UsuariosController().AddRemoveEtiquetas(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Etiqueta.Etiqueta_Id, Etiqueta.Etiqueta_Nombre, etiqueta_tipo, Etiqueta.Usuario_Etiqueta_Id);
+                        }
+                        else 
+                        {
+                            resultEtiquetas = 1;
                         }
                     }
                 }
@@ -397,26 +402,26 @@ namespace WorklabsMx.iOS
                 resultRedesSociales = 1;
             }
 
-
-
             byte[] imagen = new byte[0];
 
             resultDataMiembros = new UsuariosController().UpdateDataMiembros(KeyChainHelper.GetKey("Usuario_Id"), NewInfoPerfil.Usuario_Nombre, NewInfoPerfil.Usuario_Apellidos, NewInfoPerfil.Usuario_Correo_Electronico,
                                                                              NewInfoPerfil.Usuario_Telefono, NewInfoPerfil.Usuario_Celular, NewInfoPerfil.Usuario_Descripcion, fechaNacimiento, imagen);
+            byte[] LogoEmpresa = new byte[0];
+            resultadoTrabajo = new EmpresaController().UpdateUsuarioEmpresaPerfil(NewInfoPerfil.Empresa_Actual.Empresa_Id, NewInfoPerfil.Usuario_Id, "57802", NewInfoPerfil.Empresa_Actual.Empresa_Nombre, 
+                                                                                  NewInfoPerfil.Empresa_Actual.Empresa_Correo_Electronico, NewInfoPerfil.Empresa_Actual.Empresa_Pagina_Web, NewInfoPerfil.Usuario_Puesto, LogoEmpresa);
 
-            if (resultDataMiembros && resultEtiquetas != -1 && resultRedesSociales != -1)
+            if (resultDataMiembros && resultadoTrabajo && resultEtiquetas != -1 && resultRedesSociales != -1)
             {
-
                 this.DismissViewController(true, () =>
                 {
                     this.MiInfoDeleghate.MiInfo(NewInfoPerfil);
                 });
-
             }
             else
             {
                 new MessageDialog().SendToast("Error al intentar actualizar la información");
             }
+
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)

@@ -188,7 +188,14 @@ namespace WorklabsMx.iOS
         private void CargarInfo()
         {
             this.lblNombre.Text = (Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos != "") ? Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos : "Sin Info";
-            this.lblEmpresa.Text = (Miembro.Usuario_Empresa_Nombre != null) ? Miembro.Usuario_Empresa_Nombre : "Sin Info";
+            if (Miembro.Empresa_Actual != null)
+            {
+                this.lblEmpresa.Text = (Miembro.Empresa_Actual.Empresa_Nombre != null) ? Miembro.Empresa_Actual.Empresa_Nombre : "Sin Info";
+            }
+            else
+            {
+                this.lblEmpresa.Text = "Sin Info";
+            }
             var ImagenPerfil = this.GetImage(Miembro.Usuario_Fotografia_Perfil);
             if (ImagenPerfil != null)
             {
@@ -270,9 +277,6 @@ namespace WorklabsMx.iOS
             this.Miembro = InfoActualizar;
             new MessageDialog().SendToast("Información actualizada con éxito");
             this.DismissViewController(true, null);
-            /*this.lblNombre.Text = Miembro.Usuario_Nombre;
-            this.lblEmpresa.Text = Miembro.Usuario_Empresa_Nombre;
-            this.PerformSegue("SobreMi", null);*/
         }
     }
 

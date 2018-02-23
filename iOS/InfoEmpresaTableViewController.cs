@@ -27,7 +27,7 @@ namespace WorklabsMx.iOS
             this.lblPais.Text = ((empresa.Territorio.Municipio + ", " + empresa.Territorio.Pais) != "") ? (empresa.Territorio.Municipio + ", " + empresa.Territorio.Pais) : "Sin Info";
             this.lblEmpresa.Text = (empresa.Empresa_Nombre != "") ? empresa.Empresa_Nombre : "Sin Info";
             this.lblPuesto.Text = (Miembro.Usuario_Puesto != "") ? Miembro.Usuario_Puesto : "Sin Info";
-            this.lblFechaInicioFin.Text = "Sin Info";//Miembro.Empresa_Actual.;
+            //this.lblFechaInicioFin.Text = (Miembro.Usuario_Fecha_Nacimiento != "") ? Miembro.Usuario_Fecha_Nacimiento : "Sin Info";
         }
 
 
@@ -41,7 +41,7 @@ namespace WorklabsMx.iOS
             else if (segue.Identifier == "Colaboradores")
             {
                 var VistaColaboradores = (coleccionColaboradores)segue.DestinationViewController;
-
+                VistaColaboradores.Miembro = Miembro;
             }
         }
     }
