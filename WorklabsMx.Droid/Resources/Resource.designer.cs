@@ -6480,11 +6480,11 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0a00a1
 			public const int Animation_AppCompat_Tooltip = 2131361953;
 			
-			// aapt resource value: 0x7f0a0175
-			public const int AppTheme = 2131362165;
-			
 			// aapt resource value: 0x7f0a0176
-			public const int AppTheme_Base = 2131362166;
+			public const int AppTheme = 2131362166;
+			
+			// aapt resource value: 0x7f0a0177
+			public const int AppTheme_Base = 2131362167;
 			
 			// aapt resource value: 0x7f0a00a2
 			public const int Base_AlertDialog_AppCompat = 2131361954;
@@ -6963,29 +6963,29 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0a016d
 			public const int ButtonApply = 2131362157;
 			
+			// aapt resource value: 0x7f0a0170
+			public const int GridCard = 2131362160;
+			
 			// aapt resource value: 0x7f0a016f
-			public const int GridCard = 2131362159;
-			
-			// aapt resource value: 0x7f0a016e
-			public const int ImgPublish = 2131362158;
-			
-			// aapt resource value: 0x7f0a0178
-			public const int ListBackContent = 2131362168;
-			
-			// aapt resource value: 0x7f0a017d
-			public const int ListButtonAction = 2131362173;
-			
-			// aapt resource value: 0x7f0a017c
-			public const int ListDescription = 2131362172;
+			public const int ImgPublish = 2131362159;
 			
 			// aapt resource value: 0x7f0a0179
-			public const int ListFrontContent = 2131362169;
+			public const int ListBackContent = 2131362169;
+			
+			// aapt resource value: 0x7f0a017e
+			public const int ListButtonAction = 2131362174;
+			
+			// aapt resource value: 0x7f0a017d
+			public const int ListDescription = 2131362173;
 			
 			// aapt resource value: 0x7f0a017a
-			public const int ListImage = 2131362170;
+			public const int ListFrontContent = 2131362170;
 			
 			// aapt resource value: 0x7f0a017b
-			public const int ListTitle = 2131362171;
+			public const int ListImage = 2131362171;
+			
+			// aapt resource value: 0x7f0a017c
+			public const int ListTitle = 2131362172;
 			
 			// aapt resource value: 0x7f0a016c
 			public const int MyTheme = 2131362156;
@@ -7032,17 +7032,17 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0a0022
 			public const int Platform_Widget_AppCompat_Spinner = 2131361826;
 			
-			// aapt resource value: 0x7f0a0177
-			public const int PopupMenu = 2131362167;
-			
-			// aapt resource value: 0x7f0a0171
-			public const int PostDate = 2131362161;
+			// aapt resource value: 0x7f0a0178
+			public const int PopupMenu = 2131362168;
 			
 			// aapt resource value: 0x7f0a0172
-			public const int PostLikes = 2131362162;
+			public const int PostDate = 2131362162;
 			
-			// aapt resource value: 0x7f0a0170
-			public const int PostText = 2131362160;
+			// aapt resource value: 0x7f0a0173
+			public const int PostLikes = 2131362163;
+			
+			// aapt resource value: 0x7f0a0171
+			public const int PostText = 2131362161;
 			
 			// aapt resource value: 0x7f0a002b
 			public const int RtlOverlay_DialogWindowTitle_AppCompat = 2131361835;
@@ -7086,11 +7086,14 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0a0038
 			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131361848;
 			
-			// aapt resource value: 0x7f0a0173
-			public const int SplashTheme = 2131362163;
+			// aapt resource value: 0x7f0a016e
+			public const int SpinnerStyle = 2131362158;
 			
 			// aapt resource value: 0x7f0a0174
-			public const int SplashTheme_Base = 2131362164;
+			public const int SplashTheme = 2131362164;
+			
+			// aapt resource value: 0x7f0a0175
+			public const int SplashTheme_Base = 2131362165;
 			
 			// aapt resource value: 0x7f0a00cf
 			public const int TextAppearance_AppCompat = 2131361999;

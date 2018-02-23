@@ -1,15 +1,9 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewElement/PerfilCardEditarActivity.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardActivity.cs" Line="40" Column="72" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="157" Column="158" />
-      <File FileName="WorklabsMx.Droid/ViewElement/EmpresaCardActivity.cs" Line="25" Column="74" />
-      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioActivity.cs" Line="51" Column="94" />
-      <File FileName="WorklabsMx.Droid/Helpers/PerfilPageAdapter.cs" Line="152" Column="94" />
-      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="320" Column="71" />
-      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="67" Column="149" />
-      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardEditarActivity.cs" Line="58" Column="161" />
-      <File FileName="WorklabsMx/Controllers/TerritorioController.cs" Line="65" Column="10" />
+      <File FileName="WorklabsMx.Droid/Resources/drawable/spinner_style.xml" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/Resources/values/styles.xml" Line="11" Column="45" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ComprasActivity.cs" Line="61" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -17,6 +11,6 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>
