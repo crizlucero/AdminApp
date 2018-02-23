@@ -71,7 +71,7 @@ namespace WorklabsMx.Droid
                     {
                         OnCreate(null);
                     };
-                    FindViewById<ImageView>(Resource.Id.btnAdd).Click += delegate
+                    FindViewById<Button>(Resource.Id.btnAdd).Click += delegate
                     {
                         OnCreate(null);
                     };

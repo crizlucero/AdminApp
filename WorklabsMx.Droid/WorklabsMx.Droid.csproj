@@ -181,6 +181,7 @@
     <Compile Include="Helpers\PerfilEditarPageAdapter.cs" />
     <Compile Include="Helpers\DatePickerMinFragment.cs" />
     <Compile Include="ViewController\Servicios\ComprasActivity.cs" />
+    <Compile Include="ViewController\AboutUsActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -393,6 +394,7 @@
     <AndroidResource Include="Resources\layout\CompraElementoLayout.axml" />
     <AndroidResource Include="Resources\drawable\button_circle_filled.xml" />
     <AndroidResource Include="Resources\layout\ColaboradorItemLayout.axml" />
+    <AndroidResource Include="Resources\layout\AboutLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

@@ -187,4 +187,10 @@
     <string name="str_shop_print_black_white">Blanco y Negro</string>
     <string name="str_shop_print_color">Color</string>
     <string name="str_shop">Compras</string>
+    <string name="str_social">Social</string>
+    <string name="str_social_network_facebook_follow">Síguenos en Facebook</string>
+    <string name="str_social_network_instagram_follow">Síguenos en Instagram</string>
+    <string name="str_social_network_twitter_follow">Síguenos en Twitter</string>
+    <string name="str_version">Versión %1$s</string>
+    <string name="str_general_about_us">Acerca de</string>
 </resources>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarlayout" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:layout_margin="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/str_social"
+            android:textColor="#767676"
+            android:textSize="18dp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#767676" />
+        <TextView
+            android:text="@string/str_social_network_facebook_follow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#767676"
+            android:id="@+id/lblFacebook"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp" />
+        <TextView
+            android:text="@string/str_social_network_twitter_follow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#767676"
+            android:id="@+id/lblTwitter"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp" />
+        <TextView
+            android:text="@string/str_social_network_instagram_follow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#767676"
+            android:id="@+id/lblInstagram"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp" />
+    </LinearLayout>
+    <TextView
+        android:text="@string/str_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblVersion"
+        android:textColor="#767676"
+        android:textSize="10dp"
+        android:layout_margin="10dp" />
+</LinearLayout>
