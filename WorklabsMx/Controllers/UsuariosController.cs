@@ -68,7 +68,8 @@ namespace WorklabsMx.Controllers
                             Territorio = new TerritorioModel
                             {
                                 Municipio = reader["Empresa_Municipio_Descripcion"].ToString(),
-                                Estado = reader["Empresa_Estado_Descripcion"].ToString()
+                                Estado = reader["Empresa_Estado_Descripcion"].ToString(),
+                                Pais = reader["Empresa_Pais_Descripcion"].ToString()
                             }
                         }
 
