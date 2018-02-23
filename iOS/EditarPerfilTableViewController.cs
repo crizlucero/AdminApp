@@ -81,7 +81,6 @@ namespace WorklabsMx.iOS
             {
                 this.btnFondoImagen.SetBackgroundImage(ImagenPerfil, UIControlState.Normal);
             }
-
             this.vwVistaMi.Hidden = false;
             this.vwSocial.Hidden = true;
             this.vwTrabajo.Hidden = true;
@@ -438,7 +437,6 @@ namespace WorklabsMx.iOS
             else if (segue.Identifier == "EditarTrabajo")
             {
                 var VsitaTrabajo = (TrabajoViewController)segue.DestinationViewController;
-                VsitaTrabajo.EmpresaActual = InfoPerifl.Empresa_Actual;
                 VsitaTrabajo.InfoPerifl = InfoPerifl;
                 VsitaTrabajo.EventosVistaTrabajoDelegate = this;
             }
@@ -473,9 +471,9 @@ namespace WorklabsMx.iOS
 
     public partial class EditarPerfilTableViewController : EventosVistaTrabajo
     {
-        public void InfoEmpresa(EmpresaModel Empresa)
+        public void InfoEmpresa(UsuarioModel Empresa)
         {
-            this.NuevosDatosEmpresa = Empresa;
+            NewInfoPerfil = Empresa;
         }
     }
 

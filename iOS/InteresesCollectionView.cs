@@ -12,12 +12,9 @@ namespace WorklabsMx.iOS
 {
     public partial class InteresesCollectionView : UICollectionViewController
     {
-
         const string IDENTIFIER_INTERESE_CELL = "Intereses";
 
         public List<EtiquetaModel> EtiquetasIntereses = new List<EtiquetaModel>();
-
-        bool HayIntereses;
 
         public InteresesCollectionView (IntPtr handle) : base (handle)
         {

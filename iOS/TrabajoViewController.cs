@@ -16,15 +16,13 @@ namespace WorklabsMx.iOS
 
     public interface EventosVistaTrabajo
     {
-        void InfoEmpresa(EmpresaModel Empresa);
+        void InfoEmpresa(UsuarioModel Empresa);
     }
 
     public partial class TrabajoViewController : UIViewController
     {
 
         UIImagePickerController imgPicker;
-
-        public EmpresaModel EmpresaActual;
 
         public UsuarioModel InfoPerifl;
 
@@ -37,6 +35,25 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            txtCiudad.EditingChanged += (sender, e) =>
+            {
+                InfoPerifl.Empresa_Actual.Territorio.Municipio = txtCiudad.Text;
+                EventosVistaTrabajoDelegate.InfoEmpresa(InfoPerifl);
+            };
+
+            txtPuesto.EditingChanged += (sender, e) =>
+            {
+                InfoPerifl.Usuario_Puesto = txtPuesto.Text;
+                EventosVistaTrabajoDelegate.InfoEmpresa(InfoPerifl);
+            };
+
+            txtCompañia.EditingChanged += (sender, e) =>
+            {
+                InfoPerifl.Empresa_Actual.Empresa_Nombre = txtCompañia.Text;
+                EventosVistaTrabajoDelegate.InfoEmpresa(InfoPerifl);
+            };
+
             imgPicker = new UIImagePickerController();
             imgPicker.Delegate = this;
 
@@ -53,20 +70,24 @@ namespace WorklabsMx.iOS
 
             this.imgPais.AddGestureRecognizer(tapGestureImgPais);
 
-            if (EmpresaActual != null)
+            if(InfoPerifl != null)
             {
-                if(EmpresaActual.Territorio != null)
+                if (InfoPerifl.Empresa_Actual != null)
                 {
-                    this.txtCiudad.Text = EmpresaActual.Territorio.Municipio;
-                    this.lblPais.Text = EmpresaActual.Territorio.Pais;
+                    if (InfoPerifl.Empresa_Actual.Territorio != null)
+                    {
+                        this.txtCiudad.Text = InfoPerifl.Empresa_Actual.Territorio.Municipio;
+                        this.lblPais.Text = InfoPerifl.Empresa_Actual.Territorio.Pais;
+                    }
+                    this.txtWebSite.Text = InfoPerifl.Empresa_Actual.Empresa_Pagina_Web;
+                    this.txtCompañia.Text = InfoPerifl.Empresa_Actual.Empresa_Nombre;
                 }
-                this.txtWebSite.Text = EmpresaActual.Empresa_Pagina_Web;
-                this.txtCompañia.Text = EmpresaActual.Empresa_Nombre;
+                if (InfoPerifl != null)
+                {
+                    this.txtPuesto.Text = InfoPerifl.Usuario_Puesto;
+                }
             }
-            if (InfoPerifl != null)
-            {
-                this.txtPuesto.Text = InfoPerifl.Usuario_Puesto;
-            }
+           
 
         }
 
@@ -222,6 +243,8 @@ namespace WorklabsMx.iOS
         public void PaisSeleccionado(string Pais)
         {
             this.lblPais.Text = Pais;
+            InfoPerifl.Empresa_Actual.Territorio.Pais = this.lblPais.Text;
+            EventosVistaTrabajoDelegate.InfoEmpresa(InfoPerifl);
         }
     }
 }

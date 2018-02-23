@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/EditarPerfilTableViewController.cs">
+    <Files>
+      <File FileName="iOS/CeldaColaboradores.cs" Line="15" Column="56" />
+      <File FileName="iOS/TrabajoViewController.cs" Line="26" Column="9" />
+      <File FileName="iOS/EditarRedesSociales.cs" Line="118" Column="15" />
+      <File FileName="iOS/EditarPerfilTableViewController.cs" Line="21" Column="26" />
+=======
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
   <MonoDevelop.Ide.Workbench>
     <Files>
@@ -5,6 +14,13 @@
       <File FileName="WorklabsMx.Droid/Resources/values/styles.xml" Line="11" Column="45" />
       <File FileName="WorklabsMx.Droid/ViewController/Servicios/ComprasActivity.cs" Line="61" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>MiembrosId</Value>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
