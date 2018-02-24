@@ -1349,6 +1349,26 @@
     <Compile Include="AcercaDeViewController.designer.cs">
       <DependentUpon>AcercaDeViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComprasTableView.cs" />
+    <Compile Include="ComprasTableView.designer.cs">
+      <DependentUpon>ComprasTableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColeccionProductos_.cs" />
+    <Compile Include="ColeccionProductos_.designer.cs">
+      <DependentUpon>ColeccionProductos_.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaProductos.cs" />
+    <Compile Include="CeldaProductos.designer.cs">
+      <DependentUpon>CeldaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColeccionMembresias.cs" />
+    <Compile Include="ColeccionMembresias.designer.cs">
+      <DependentUpon>ColeccionMembresias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaMembresias.cs" />
+    <Compile Include="CeldaMembresias.designer.cs">
+      <DependentUpon>CeldaMembresias.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

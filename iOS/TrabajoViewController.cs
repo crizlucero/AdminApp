@@ -56,7 +56,7 @@ namespace WorklabsMx.iOS
 
             txtWebSite.EditingChanged += (sender, e) =>
             {
-                InfoPerifl.Empresa_Actual.Empresa_Pagina_Web = txtWebSite.Text;
+                InfoPerifl.Redes_Sociales[0].Red_Social_Enlace = txtWebSite.Text;
                 EventosVistaTrabajoDelegate.InfoEmpresa(InfoPerifl);
 
             };
@@ -87,6 +87,7 @@ namespace WorklabsMx.iOS
 
             if(InfoPerifl != null)
             {
+                this.txtWebSite.Text = InfoPerifl.Redes_Sociales[0].Red_Social_Enlace;
                 if (InfoPerifl.Empresa_Actual != null)
                 {
                     if (InfoPerifl.Empresa_Actual.Territorio != null)
@@ -94,7 +95,7 @@ namespace WorklabsMx.iOS
                         this.txtCiudad.Text = InfoPerifl.Empresa_Actual.Territorio.Municipio;
                         this.lblPais.Text = InfoPerifl.Empresa_Actual.Territorio.Pais;
                     }
-                    this.txtWebSite.Text = InfoPerifl.Empresa_Actual.Empresa_Pagina_Web;
+
                     this.txtCompañia.Text = InfoPerifl.Empresa_Actual.Empresa_Nombre;
                     this.txtCorreo.Text = InfoPerifl.Empresa_Actual.Empresa_Correo_Electronico;
                 }

@@ -25,6 +25,10 @@ namespace WorklabsMx.iOS.Helpers
         public static string ProfileImagePath;
 
         public static UsuarioModel Usuario;
+
+        public static List<ProductoModel> Productos;
+
+        public static List<MembresiaModel> Membresias;
         
         public static async Task FillTable()
         {
@@ -119,6 +123,25 @@ namespace WorklabsMx.iOS.Helpers
             {
                 var usuario = new UsuariosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
                 Usuario = usuario;
+            });
+        }
+
+        public static async Task GetProductos()
+        {
+            await Task.Run(() =>
+            {
+                var productos = new PickerItemsController().GetProductos();
+                Productos = productos;
+            });
+        }
+
+
+        public static async Task GetMembresias()
+        {
+            await Task.Run(() =>
+            {
+                var membresias = new PickerItemsController().GetMembresias();
+                Membresias = membresias;
             });
         }
 

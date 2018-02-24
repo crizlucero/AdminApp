@@ -33,13 +33,13 @@ namespace WorklabsMx.iOS
             
         }
 
-        public override void ViewDidLoad()
+        public override async void ViewDidLoad()
         {
             base.ViewDidLoad();
             tableItems = new List<ItemsMenu>();
             tableItems = MenuHelper.GeneralList;
-           
-            //await MenuHelper.FillData();
+            await MenuHelper.GetMembresias();
+            await MenuHelper.GetProductos();
         }
 
         public override void ViewWillAppear(bool animated)
@@ -143,11 +143,15 @@ namespace WorklabsMx.iOS
             {
                 this.PerformSegue("scanQR", null);
             }
-            else if (indexPath.Row == 5)
+            else if(indexPath.Row == 5)
+            {
+                this.PerformSegue("Compras", null);
+            }
+            else if (indexPath.Row == 6)
             {
                 this.PerformSegue("AcercaDe", null);
             }
-            else if (indexPath.Row == 6)
+            else if (indexPath.Row == 7)
             {
                  this.CerrarSesion();
             }

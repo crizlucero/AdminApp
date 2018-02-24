@@ -267,6 +267,14 @@ namespace WorklabsMx.iOS
 
         partial void btnEnviarMensaje_Touch(UIButton sender)
         {
+            this.LaunchApp("mx.worklabs.uc://");
+        }
+
+        public Task<bool> LaunchApp(string uri)
+        {
+            var canOpen = UIApplication.SharedApplication.CanOpenUrl(new NSUrl(uri));
+
+            return Task.FromResult(UIApplication.SharedApplication.OpenUrl(new NSUrl(uri)));
         }
     }
 

@@ -5566,6 +5566,88 @@
             </objects>
             <point key="canvasLocation" x="-5770" y="-1549"/>
         </scene>
+        <!--Compras-->
+        <scene sceneID="3tJ-mw-3KI">
+            <objects>
+                <tableViewController id="JAS-Na-dw8" customClass="ComprasTableView" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PJ3-Gc-wXJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="VXp-gX-JZd">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="90" id="VHL-7A-BrB">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VHL-7A-BrB" id="5JZ-co-C9R">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UXM-OR-soc">
+                                                    <rect key="frame" x="16" y="31" width="343" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <segments>
+                                                        <segment title="Productos"/>
+                                                        <segment title="Membresías"/>
+                                                    </segments>
+                                                    <color key="tintColor" red="0.38823529411764707" green="0.70588235294117641" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="sclCompras_Changed:" destination="JAS-Na-dw8" eventType="valueChanged" id="597871"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="533" id="lsD-yO-JDM">
+                                        <rect key="frame" x="0.0" y="90" width="375" height="533"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lsD-yO-JDM" id="AZr-ax-e6F">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="533"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhb-2Y-4UP">
+                                                    <rect key="frame" x="16" y="12" width="343" height="468"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                    <connections>
+                                                        <segue destination="WAa-rf-MUi" kind="embed" identifier="Productos" id="Yjs-2t-jqn"/>
+                                                    </connections>
+                                                </containerView>
+                                                <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i3Q-6C-M67">
+                                                    <rect key="frame" x="16" y="12" width="343" height="468"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                    <connections>
+                                                        <segue destination="ZNA-qb-8VG" kind="embed" identifier="Membresias" id="Min-0c-g2V"/>
+                                                    </connections>
+                                                </containerView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="JAS-Na-dw8" id="GZN-Bk-LLR"/>
+                            <outlet property="delegate" destination="JAS-Na-dw8" id="aBN-QK-jna"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Compras" id="yx8-bP-EkL">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="AvX-xG-4gP">
+                            <connections>
+                                <action selector="btnAtras_Touch:" destination="JAS-Na-dw8" id="589845"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cvMembresias" destination="i3Q-6C-M67" id="name-outlet-i3Q-6C-M67"/>
+                        <outlet property="cvProductos" destination="nhb-2Y-4UP" id="name-outlet-nhb-2Y-4UP"/>
+                        <outlet property="sclCompras" destination="UXM-OR-soc" id="name-outlet-UXM-OR-soc"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LY8-Ih-3Ne" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13423.200000000001" y="-1913.7929999999999"/>
+        </scene>
         <!--Acerca de-->
         <scene sceneID="lgi-YJ-Yvu">
             <objects>
@@ -5677,7 +5759,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cHa-Qk-dG9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12863.200000000001" y="-1864.318"/>
+            <point key="canvasLocation" x="-12258" y="-1877"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qIh-XE-vQ2">
@@ -5693,7 +5775,149 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSR-Tm-4pp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12863" y="-2696"/>
+            <point key="canvasLocation" x="-12258" y="-2711"/>
+        </scene>
+        <!--Coleccion Productos-->
+        <scene sceneID="OaM-Zk-CDy">
+            <objects>
+                <collectionViewController storyboardIdentifier="Compras" id="WAa-rf-MUi" customClass="ColeccionProductos" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="GHZ-qD-crd">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="468"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XTQ-Lp-e8B">
+                            <size key="itemSize" width="120" height="120"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="CeldaProductos" id="ogZ-Nj-whx" customClass="CeldaProductos">
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4g-fJ-ky3">
+                                            <rect key="frame" x="0.0" y="80" width="120" height="40"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ax-0k-Hdn">
+                                            <rect key="frame" x="20" y="0.0" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="epB-ZR-gj4"/>
+                                                <constraint firstAttribute="width" constant="80" id="rNe-M9-oWa"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="j4g-fJ-ky3" secondAttribute="trailing" id="7CK-LK-5bK"/>
+                                    <constraint firstItem="j4g-fJ-ky3" firstAttribute="leading" secondItem="ogZ-Nj-whx" secondAttribute="leading" id="U6y-8J-zSp"/>
+                                    <constraint firstItem="0Ax-0k-Hdn" firstAttribute="top" secondItem="ogZ-Nj-whx" secondAttribute="top" id="WNO-8B-SAO"/>
+                                    <constraint firstItem="0Ax-0k-Hdn" firstAttribute="centerX" secondItem="ogZ-Nj-whx" secondAttribute="centerX" id="ewZ-Y9-qTM"/>
+                                    <constraint firstItem="j4g-fJ-ky3" firstAttribute="top" secondItem="0Ax-0k-Hdn" secondAttribute="bottom" id="fIQ-S9-38F"/>
+                                    <constraint firstItem="j4g-fJ-ky3" firstAttribute="top" secondItem="0Ax-0k-Hdn" secondAttribute="bottom" id="oQZ-WY-seC"/>
+                                    <constraint firstItem="j4g-fJ-ky3" firstAttribute="centerX" secondItem="ogZ-Nj-whx" secondAttribute="centerX" id="yVf-D3-qWh"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imgProductos" destination="0Ax-0k-Hdn" id="name-outlet-0Ax-0k-Hdn"/>
+                                    <outlet property="lblNombreProducto" destination="j4g-fJ-ky3" id="name-outlet-j4g-fJ-ky3"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="WAa-rf-MUi" id="58q-iD-0dr"/>
+                            <outlet property="delegate" destination="WAa-rf-MUi" id="yUR-6h-usK"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="npo-qb-44V">
+                        <nil key="title"/>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jfp-Ix-z1n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13474.4" y="-1245.8770614692655"/>
+        </scene>
+        <!--Coleccion Membresias-->
+        <scene sceneID="VUm-hq-GZg">
+            <objects>
+                <collectionViewController id="ZNA-qb-8VG" customClass="ColeccionMembresias" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Kdf-3k-B8n">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="468"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CPa-pw-5x4">
+                            <size key="itemSize" width="120" height="120"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="CeldaMembresias" id="kf6-11-cuz" customClass="CeldaMembresias">
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ap-Uv-Awo">
+                                            <rect key="frame" x="0.0" y="81" width="120" height="39"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jzm-sv-HI4">
+                                            <rect key="frame" x="20" y="0.0" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="dVu-vL-FaW"/>
+                                                <constraint firstAttribute="width" constant="80" id="fgB-Pg-wjV"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="7Ap-Uv-Awo" firstAttribute="leading" secondItem="kf6-11-cuz" secondAttribute="leading" id="7un-WE-yPq"/>
+                                    <constraint firstItem="jzm-sv-HI4" firstAttribute="top" secondItem="kf6-11-cuz" secondAttribute="top" id="YT4-cc-SYS"/>
+                                    <constraint firstItem="7Ap-Uv-Awo" firstAttribute="centerX" secondItem="kf6-11-cuz" secondAttribute="centerX" id="abV-9a-4em"/>
+                                    <constraint firstItem="7Ap-Uv-Awo" firstAttribute="top" secondItem="jzm-sv-HI4" secondAttribute="bottom" constant="1" id="p1o-Js-W96"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Ap-Uv-Awo" secondAttribute="trailing" id="thr-ha-pEh"/>
+                                    <constraint firstItem="jzm-sv-HI4" firstAttribute="centerX" secondItem="kf6-11-cuz" secondAttribute="centerX" id="vVb-1B-2PA"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imgMembresias" destination="jzm-sv-HI4" id="name-outlet-jzm-sv-HI4"/>
+                                    <outlet property="lblNombreMembresia" destination="7Ap-Uv-Awo" id="name-outlet-7Ap-Uv-Awo"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="ZNA-qb-8VG" id="k6H-Hh-OT4"/>
+                            <outlet property="delegate" destination="ZNA-qb-8VG" id="3su-Cy-98O"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iHD-3a-mo8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-12754.4" y="-1245.8770614692655"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4Oe-zQ-hCV">
+            <objects>
+                <navigationController id="Z2h-m1-TDt" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OTL-Jv-ct1">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="JAS-Na-dw8" kind="relationship" relationship="rootViewController" id="PoQ-jN-zMo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="frs-Ek-xd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13423" y="-2712"/>
         </scene>
         <!--Menu Table View Controller-->
         <scene sceneID="ACe-yW-sFq">
@@ -5858,6 +6082,7 @@
                         <segue destination="TV9-dQ-U9m" kind="custom" identifier="RegistroInvitados" customClass="SWRevealViewControllerSegueSetController" id="yWo-lG-RwD"/>
                         <segue destination="9n5-Ds-NjJ" kind="custom" identifier="scanQR" customClass="SWRevealViewControllerSegueSetController" id="IOa-RC-6fY"/>
                         <segue destination="epX-Rg-W4h" kind="custom" identifier="AcercaDe" customClass="SWRevealViewControllerSegueSetController" id="gwM-Gc-mzo"/>
+                        <segue destination="Z2h-m1-TDt" kind="custom" identifier="Compras" customClass="SWRevealViewControllerSegueSetController" id="lyU-CR-O7h"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yev-UM-OH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -12387,7 +12612,7 @@ COL. LADRON DE GUEVARA</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N52-P1-5Bm">
-                                <rect key="frame" x="299" y="212" width="68" height="22"/>
+                                <rect key="frame" x="299" y="211.5" width="68" height="22"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="g9t-1m-vpI"/>
@@ -13985,7 +14210,7 @@ COL. LADRON DE GUEVARA</string>
         </scene>
     </scenes>
     <resources>
-        <image name="AcercaDe" width="60" height="60"/>
+        <image name="AcercaDe" width="341.33334350585938" height="341.33334350585938"/>
         <image name="Apellidos" width="30" height="30"/>
         <image name="Arrow" width="30" height="30"/>
         <image name="Atras" width="30" height="30"/>
