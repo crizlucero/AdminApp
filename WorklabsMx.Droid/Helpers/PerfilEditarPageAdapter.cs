@@ -193,8 +193,26 @@ namespace WorklabsMx.Droid
 
         void FillTrabajo()
         {
-            profileView.FindViewById<TextView>(Resource.Id.lblAgregarExperiencia).Click += (sender, e) => profileView.FindViewById<GridLayout>(Resource.Id.glNuevoEmpleo).Visibility = ViewStates.Visible;
-            profileView.FindViewById<Button>(Resource.Id.btnAgregar).Click += (sender, e) => profileView.FindViewById<GridLayout>(Resource.Id.glNuevoEmpleo).Visibility = ViewStates.Gone;
+            //profileView.FindViewById<TextView>(Resource.Id.lblAgregarExperiencia).Click += (sender, e) => profileView.FindViewById<GridLayout>(Resource.Id.glNuevoEmpleo).Visibility = ViewStates.Visible;
+            //profileView.FindViewById<Button>(Resource.Id.btnAgregar).Click += (sender, e) => profileView.FindViewById<GridLayout>(Resource.Id.glNuevoEmpleo).Visibility = ViewStates.Gone;
+            EditText nombre = profileView.FindViewById<EditText>(Resource.Id.txtNombre);
+            nombre.Text = miembro.Empresa_Actual.Empresa_Nombre;
+            nombre.TextChanged += (sender, e) => miembro.Empresa_Actual.Empresa_Nombre = ((EditText)sender).Text;
+            EditText web = profileView.FindViewById<EditText>(Resource.Id.txtPaginaWeb);
+            web.Text = miembro.Empresa_Actual.Empresa_Pagina_Web;
+            web.TextChanged += (sender, e) => miembro.Empresa_Actual.Empresa_Pagina_Web = ((EditText)sender).Text;
+            EditText pais = profileView.FindViewById<EditText>(Resource.Id.txtPais);
+            pais.Text = miembro.Empresa_Actual.Territorio.Pais;
+            pais.TextChanged += (sender, e) => miembro.Empresa_Actual.Territorio.Pais = ((EditText)sender).Text;
+            EditText municipio = profileView.FindViewById<EditText>(Resource.Id.txtMunicipio);
+            municipio.Text = miembro.Empresa_Actual.Territorio.Municipio;
+            municipio.TextChanged += (sender, e) => miembro.Empresa_Actual.Territorio.Municipio = ((EditText)sender).Text;
+            EditText puesto = profileView.FindViewById<EditText>(Resource.Id.txtPuesto);
+            puesto.Text = miembro.Usuario_Puesto;
+            puesto.TextChanged += (sender, e) => miembro.Usuario_Puesto = ((EditText)sender).Text;
+            EditText correo = profileView.FindViewById<EditText>(Resource.Id.txtPaginaWeb);
+            correo.Text = miembro.Empresa_Actual.Empresa_Correo_Electronico;
+            correo.TextChanged += (sender, e) => miembro.Empresa_Actual.Empresa_Correo_Electronico = ((EditText)sender).Text;
         }
 
     }

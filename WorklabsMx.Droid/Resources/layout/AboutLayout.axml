@@ -7,6 +7,12 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbarlayout" />
+    <ImageView
+        android:src="@mipmap/worklabs_title"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:tint="#000" />
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
