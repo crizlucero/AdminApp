@@ -45,14 +45,10 @@
 	<string>Se necesitan permisos para usar su camara fotográfica</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Se necesitan permisos para acceder a el calendario</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.3.8</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Se necesitan permisos para acceder a el microfono</string>
-	<key>CFBundleVersion</key>
-	<string>1.3.8</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
@@ -70,5 +66,9 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>CFBundleShortVersionString</key>
+	<string>1.4.1</string>
+	<key>CFBundleVersion</key>
+	<string>1.4.1</string>
 </dict>
 </plist>
