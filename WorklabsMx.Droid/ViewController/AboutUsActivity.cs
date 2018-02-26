@@ -27,28 +27,12 @@ namespace WorklabsMx.Droid
 
             FindViewById<TextView>(Resource.Id.lblFacebook).Click += delegate
             {
-                try
-                {
-                    PackageManager.GetPackageInfo("com.facebook.katana", 0);
-                    StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse("fb://page/worklabsmx")));
-                }
-                catch (Exception e)
-                {
                     StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse("https://www.facebook.com/worklabsmx")));
-                }
             };
 
             FindViewById<TextView>(Resource.Id.lblTwitter).Click += delegate
             {
-                try
-                {
-                    PackageManager.GetPackageInfo("com.twitter.android", 0);
-                    StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse("twitter://user?user_id=USERID")));
-                }
-                catch (Exception e)
-                {
                     StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse("https://twitter.com/worklabsmx")));
-                }
             };
 
             FindViewById<TextView>(Resource.Id.lblInstagram).Click += delegate

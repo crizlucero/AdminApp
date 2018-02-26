@@ -217,5 +217,24 @@ namespace WorklabsMx.Controllers
             finally { conn.Close(); }
             return niveles;
         }
+
+        public int GetCreditosDisponibles(string usuario_id)
+        {
+            try
+            {
+                command = CreateCommand("select Creditos_Disponibles, Creditos_Usados from vw_pro_Miembros_Creditos Where Miembro_Id = @Usuario_Id");
+                command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    return Convert.ToInt32(reader["Creditos_Disponibles"]) - Convert.ToInt32(reader["Creditos_Usados"]);
+                }
+            }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            finally { conn.Close(); }
+
+
+            return 0;
+        }
     }
 }
