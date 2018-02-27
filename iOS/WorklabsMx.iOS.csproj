@@ -1099,6 +1099,7 @@
     <Compile Include="ViewControllers\VistaSucursales\ColeccionSucursales.designer.cs">
       <DependentUpon>ColeccionSucursales.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetalleProductoTableViewController.cs" />
     <Compile Include="FechaReservacionPickerViewController.cs" />
     <Compile Include="FechaReservacionPickerViewController.designer.cs">
       <DependentUpon>FechaReservacionPickerViewController.cs</DependentUpon>
@@ -1345,11 +1346,11 @@
     <Compile Include="PaisesViewController.designer.cs">
       <DependentUpon>PaisesViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComprasTableView.cs" />
     <Compile Include="AcercaDeViewController.cs" />
     <Compile Include="AcercaDeViewController.designer.cs">
       <DependentUpon>AcercaDeViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ComprasTableView.cs" />
     <Compile Include="ComprasTableView.designer.cs">
       <DependentUpon>ComprasTableView.cs</DependentUpon>
     </Compile>
@@ -1368,6 +1369,13 @@
     <Compile Include="CeldaMembresias.cs" />
     <Compile Include="CeldaMembresias.designer.cs">
       <DependentUpon>CeldaMembresias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleMembresiaTableVieController.cs" />
+    <Compile Include="DetalleMembresiaTableVieController.designer.cs">
+      <DependentUpon>DetalleMembresiaTableVieController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleProductoTableViewController.designer.cs">
+      <DependentUpon>DetalleProductoTableViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

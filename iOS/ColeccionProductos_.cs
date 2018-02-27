@@ -11,11 +11,20 @@ using Foundation;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface ColeccionProductosInt
+    {
+        void ProductoSeleccionado(ProductoModel ProductoSeleccionado);
+    }
+
     public partial class ColeccionProductos : UICollectionViewController
     {
 
+        public ColeccionProductosInt ProductosDelegate;
 
         public List<ProductoModel> allProducts = new List<ProductoModel>();
+
+        private ProductoModel ProductoSeleccionado = new ProductoModel();
 
         public ColeccionProductos (IntPtr handle) : base (handle)
         {
@@ -24,7 +33,6 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
         }
 
         public override nint NumberOfSections(UICollectionView collectionView)
@@ -54,7 +62,7 @@ namespace WorklabsMx.iOS
         [Export("collectionView:layout:minimumLineSpacingForSectionAtIndex:")]
         public nfloat GetMinimumLineSpacingForSection(UICollectionView collectionView, UICollectionViewLayout layout, nint section)
         {
-            return 0;
+            return 5;
         }
 
         [Export("collectionView:layout:minimumInteritemSpacingForSection:")]
@@ -63,6 +71,10 @@ namespace WorklabsMx.iOS
             return 0;
         }
 
+        public override void ItemSelected(UICollectionView collectionView, NSIndexPath indexPath)
+        {
+            ProductosDelegate.ProductoSeleccionado(allProducts[indexPath.Row]);
+        }
 
     }
 }

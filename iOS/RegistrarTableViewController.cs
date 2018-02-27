@@ -40,7 +40,6 @@ namespace WorklabsMx.iOS
             Sucursal = sucursales[0].Sucursal_Descripcion;
         }
 
-
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);

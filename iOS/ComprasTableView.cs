@@ -13,6 +13,12 @@ namespace WorklabsMx.iOS
     public partial class ComprasTableView : UITableViewController
     {
 
+
+        MembresiaModel MemebresiaSelect = new MembresiaModel();
+        ProductoModel ProductoSelect = new ProductoModel();
+        UIBarButtonItem barButton = new UIBarButtonItem();
+        public List<CarritoCompras> PreordenProductos = new List<CarritoCompras>();
+
         public ComprasTableView (IntPtr handle) : base (handle)
         {
         }
@@ -20,6 +26,8 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            barButton.Enabled = false;
+           
             this.cvProductos.Hidden = false;
             this.cvMembresias.Hidden = true;
         }
@@ -49,11 +57,26 @@ namespace WorklabsMx.iOS
             {
                 var VistaColeccionProductos = (ColeccionProductos)segue.DestinationViewController;
                 VistaColeccionProductos.allProducts = MenuHelper.Productos;
+                VistaColeccionProductos.ProductosDelegate = this;
+
             }
             else if (segue.Identifier == "Membresias")
             {
                 var VistaColeccionMembresias = (ColeccionMembresias)segue.DestinationViewController;
                 VistaColeccionMembresias.allMembresias = MenuHelper.Membresias;
+                VistaColeccionMembresias.MembresiasDelegate = this;
+            }
+            else if (segue.Identifier == "VerProducto")
+            {
+                var VistaDetalleProducto = (DetalleProductoTableViewController)segue.DestinationViewController.ChildViewControllers[0];
+                VistaDetalleProducto.Prodcuto = this.ProductoSelect;
+                VistaDetalleProducto.ProductosDelegate = this;
+
+            }
+            else if (segue.Identifier == "VerMembresia")
+            {
+                var VistaDetalleMembresia = (DetalleMembresiaTableVieController)segue.DestinationViewController.ChildViewControllers[0];
+                VistaDetalleMembresia.Membresia = this.MemebresiaSelect;
             }
         }
 
@@ -62,5 +85,48 @@ namespace WorklabsMx.iOS
             this.RevealViewController().RevealToggleAnimated(true);
             View.AddGestureRecognizer(this.RevealViewController().PanGestureRecognizer);
         }
+
+        partial void btnCarrito_Touch(UIBarButtonItem sender)
+        {
+        }
     }
+
+    public partial class ComprasTableView : ColeccionProductosInt
+    {
+
+        public void ProductoSeleccionado(ProductoModel ProductoSeleccionado)
+        {
+            this.ProductoSelect = ProductoSeleccionado;
+            this.PerformSegue("VerProducto", null);
+        }
+    }
+
+
+    public partial class ComprasTableView : ColeccionMembresiasInt
+    {
+
+        public void MembresiaSeleccionada(MembresiaModel MembresiaSeleccionada)
+        {
+            this.MemebresiaSelect = MembresiaSeleccionada;
+            this.PerformSegue("VerMembresia", null);
+        }
+    }
+
+    public partial class ComprasTableView : DetalleProductoInterface
+    {
+        public void ProductoSeleccionado(CarritoCompras Preorden)
+        {
+            this.PreordenProductos.Add(Preorden);
+            int ContadorProductos = 0;
+            foreach(CarritoCompras Orden in PreordenProductos)
+            {
+                this.lblTotal.Text = Orden.TotalPagar;
+                ContadorProductos = ContadorProductos + Orden.Cantidad;
+            }
+            barButton.Title = ContadorProductos.ToString();
+
+        }
+    }
+            
+
 }

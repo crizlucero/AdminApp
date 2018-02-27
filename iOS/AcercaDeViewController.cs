@@ -14,7 +14,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.lblVersion.Text = "Worklabs 1.0.9";
+            this.lblVersion.Text = "Worklabs 1.1.0";
             this.lblAutor.Text = "Autor: Espacio Claro";
             this.lblCopyrigth.Text = "Copyright 2018";
         }

@@ -10,10 +10,19 @@ using Foundation;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface ColeccionMembresiasInt
+    {
+        void MembresiaSeleccionada(MembresiaModel MembresiaSeleccionada);
+    }
+
     public partial class ColeccionMembresias : UICollectionViewController
     {
-
         public List<MembresiaModel> allMembresias = new List<MembresiaModel>();
+
+        public ColeccionMembresiasInt MembresiasDelegate;
+
+        private MembresiaModel MembresiaSelecionada = new MembresiaModel();
 
         public ColeccionMembresias (IntPtr handle) : base (handle)
         {
@@ -22,7 +31,6 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
         }
 
         public override nint NumberOfSections(UICollectionView collectionView)
@@ -52,7 +60,7 @@ namespace WorklabsMx.iOS
         [Export("collectionView:layout:minimumLineSpacingForSectionAtIndex:")]
         public nfloat GetMinimumLineSpacingForSection(UICollectionView collectionView, UICollectionViewLayout layout, nint section)
         {
-            return 0;
+            return 5;
         }
 
         [Export("collectionView:layout:minimumInteritemSpacingForSection:")]
@@ -60,5 +68,12 @@ namespace WorklabsMx.iOS
         {
             return 0;
         }
+
+        public override void ItemSelected(UICollectionView collectionView, NSIndexPath indexPath)
+        {
+            MembresiasDelegate.MembresiaSeleccionada(allMembresias[indexPath.Row]);
+        }
+
+  
     }
 }

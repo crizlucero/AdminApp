@@ -57,11 +57,6 @@ namespace WorklabsMx.iOS
             base.ViewDidDisappear(animated);
         }
 
-        void RowSelected(NSIndexPath indexPath)
-        {
-            
-        }
-
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
             var headerCell = (HeaderMenulCell)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
@@ -127,25 +122,21 @@ namespace WorklabsMx.iOS
             {
                 this.PerformSegue("Directorio", null);
             }
-            /*else if (indexPath.Row == 2)
-            {
-                this.PerformSegue("Servicios", null);
-            }*/
             else if (indexPath.Row == 2)
             {
-                this.PerformSegue("ReservarSalaJuntas", this);
+                this.PerformSegue("Compras", null);
             }
             else if (indexPath.Row == 3)
             {
-                this.PerformSegue("RegistroInvitados", null);
+                this.PerformSegue("ReservarSalaJuntas", this);
             }
             else if (indexPath.Row == 4)
             {
-                this.PerformSegue("scanQR", null);
+                this.PerformSegue("RegistroInvitados", null);
             }
-            else if(indexPath.Row == 5)
+            else if (indexPath.Row == 5)
             {
-                this.PerformSegue("Compras", null);
+                this.PerformSegue("scanQR", null);
             }
             else if (indexPath.Row == 6)
             {

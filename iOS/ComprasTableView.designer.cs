@@ -24,11 +24,19 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblTotal { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISegmentedControl sclCompras { get; set; }
 
         [Action ("btnAtras_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnAtras_Touch (UIKit.UIBarButtonItem sender);
+
+        [Action ("btnCarrito_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnCarrito_Touch (UIKit.UIBarButtonItem sender);
 
         [Action ("sclCompras_Changed:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -44,6 +52,11 @@ namespace WorklabsMx.iOS
             if (cvProductos != null) {
                 cvProductos.Dispose ();
                 cvProductos = null;
+            }
+
+            if (lblTotal != null) {
+                lblTotal.Dispose ();
+                lblTotal = null;
             }
 
             if (sclCompras != null) {
