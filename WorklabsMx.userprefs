@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/LoginController.cs">
     <Files>
@@ -18,24 +19,42 @@
       <File FileName="iOS/NoConexionViewController.cs" Line="28" Column="143" NotebookId="1" />
       <File FileName="WorklabsMx.Droid/SplashActivity.cs" Line="19" Column="112" NotebookId="1" />
       <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="93" Column="120" NotebookId="1" />
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewElement/MenuView.cs">
+    <Files>
+      <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="6" Column="1" NotebookId="1" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="64" Column="50" NotebookId="1" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="60" Column="28" NotebookId="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/LoginActivity.cs" Line="14" Column="22" NotebookId="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/MiPerfil/MisColaboradoresCambiosActivity.cs" Line="103" Column="124" NotebookId="1" />
+      <File FileName="WorklabsMx.Droid/SplashActivity.cs" Line="19" Column="89" NotebookId="1" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="1" Column="1" NotebookId="1" />
+>>>>>>> 37290e81b1245c87d0611b289fd7591c2dcc1235
     </Files>
     <FloatingWindows>
-      <FloatingWindow WindowId="1" X="1206" Y="23" Width="842" Height="848">
+      <FloatingWindow WindowId="1" X="1206" Y="22" Width="842" Height="848">
         <Files>
           <File FileName="iOS/ViewControllers/Servicios/Productos/CeldaCarritoProductos.cs" Line="125" Column="13" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
+<<<<<<< HEAD
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/LoginController.cs" relfile="WorklabsMx/Controllers/LoginController.cs" line="38" column="26" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/LoginController.cs" relfile="WorklabsMx/Controllers/LoginController.cs" line="44" column="23" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/LoginController.cs" relfile="WorklabsMx/Controllers/LoginController.cs" line="42" column="1" />
+=======
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/LoginViewController.cs" relfile="iOS/ViewControllers/LoginViewController.cs" line="119" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/ViewControllers/LoginViewController.cs" relfile="iOS/ViewControllers/LoginViewController.cs" line="117" column="131" />
+>>>>>>> 37290e81b1245c87d0611b289fd7591c2dcc1235
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F745CA7A-709C-490F-AC38-17652B866A02" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D3D00818-B828-45D1-ACAA-A06B2D1C1EA8" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid PreferredExecutionTarget="Android.Andorid_Emulator" />
   <MultiItemStartupConfigurations />
 </Properties>

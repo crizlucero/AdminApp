@@ -16,7 +16,7 @@ namespace WorklabsMx.Droid
             SimpleStorage.SetContext(ApplicationContext);
             localStorage = SimpleStorage.EditGroup("Login");
             Intent newIntent;
-            if (localStorage.HasKey("Usuario_Id") && localStorage.HasKey("Usuario_Tipo") && localStorage.HasKey("Empresa_Id"))
+            if (localStorage.HasKey("Usuario_Id") && localStorage.HasKey("Usuario_Tipo"))
                 newIntent = new Intent(this, typeof(MainActivity));
             else
                 newIntent = new Intent(this, typeof(LoginActivity));
