@@ -90,7 +90,7 @@ namespace WorklabsMx.Droid.ViewElement
                             FillMenu();
                             break;
                         case "LogoutActivity":
-                            localStorage.Delete("Usuario_Id"); localStorage.Delete("Usuario_Tipo"); localStorage.Delete("Empresa_Id");
+                            localStorage.Delete("Usuario_Id"); localStorage.Delete("Usuario_Tipo");
                             context.StartActivity(new Intent(context, typeof(LoginActivity)));
                             context.Finish();
                             break;
