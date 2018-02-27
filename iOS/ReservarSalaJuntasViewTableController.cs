@@ -17,6 +17,8 @@ namespace WorklabsMx.iOS
     public partial class ReservarSalaJuntasViewTableController : UITableViewController
     {
 
+        float ValorCredito6Personas;
+        float ValorCredito10Personas;
 
         public string SucursalId;
         NSDateFormatter dateFormat = new NSDateFormatter();
@@ -41,6 +43,8 @@ namespace WorklabsMx.iOS
 
         int Nivel = 7;
 
+
+
         nfloat vwSalasJuntasResp;
         float withImage;
 
@@ -50,6 +54,13 @@ namespace WorklabsMx.iOS
 
         public override void ViewDidLoad()
         {
+
+            if(DateTime.Now.Hour >= 17 && DateTime.Now.Hour <= 23)
+            {
+                ValorCredito6Personas = 1;
+                ValorCredito10Personas = 1.5f;
+            }
+
             nfloat aux = this.vwSalasJuntas.Frame.Width;
             this.lblCreditosDisponibles.Text = new SalasJuntasController().GetCreditosDisponibles(KeyChainHelper.GetKey("Usuario_Id")).ToString();
 
