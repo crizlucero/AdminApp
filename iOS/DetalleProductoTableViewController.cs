@@ -51,7 +51,7 @@ namespace WorklabsMx.iOS
             {
                 this.btnSucursales.SetTitle(sucursales[0].Sucursal_Descripcion, UIControlState.Normal);
             }
-            this.lblDetalleDescripcion.Text = Prodcuto.Producto_Detalle;
+            this.lblDetalleDescripcion.Text = Prodcuto.Producto_Especificacion;
             this.btnDetalle.Hidden = false;
             this.btnDetalle.Enabled = false;
         }
@@ -63,7 +63,6 @@ namespace WorklabsMx.iOS
 
         partial void btnDetalle_Touch(UIButton sender)
         {
-            this.lblDetalleDescripcion.Text = Prodcuto.Producto_Detalle;
         }
 
         partial void btnQuitar_Touch(UIButton sender)

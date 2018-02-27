@@ -51,6 +51,8 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             nfloat aux = this.vwSalasJuntas.Frame.Width;
+            this.lblCreditosDisponibles.Text = new SalasJuntasController().GetCreditosDisponibles(KeyChainHelper.GetKey("Usuario_Id")).ToString();
+
             withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());
             vwSalasJuntasResp = withImage;
             base.ViewDidLoad();

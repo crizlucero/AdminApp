@@ -118,11 +118,13 @@ namespace WorklabsMx.iOS
         {
             this.PreordenProductos.Add(Preorden);
             int ContadorProductos = 0;
+            double TotalPagar = 0;
             foreach(CarritoCompras Orden in PreordenProductos)
             {
-                this.lblTotal.Text = Orden.TotalPagar;
+                TotalPagar = TotalPagar + double.Parse(Orden.TotalPagar.Remove(0, 1));
                 ContadorProductos = ContadorProductos + Orden.Cantidad;
             }
+            this.lblTotal.Text = "Total en carrito: $" + TotalPagar.ToString();
             barButton.Title = ContadorProductos.ToString();
 
         }
