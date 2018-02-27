@@ -17,8 +17,7 @@ namespace WorklabsMx.iOS
     public partial class ReservarSalaJuntasViewTableController : UITableViewController
     {
 
-        float ValorCredito6Personas;
-        float ValorCredito10Personas;
+        float CreditosAcumulados = 0;
 
         public string SucursalId;
         NSDateFormatter dateFormat = new NSDateFormatter();
@@ -43,9 +42,6 @@ namespace WorklabsMx.iOS
 
         int Nivel = 7;
 
-
-
-        nfloat vwSalasJuntasResp;
         float withImage;
 
         public ReservarSalaJuntasViewTableController(IntPtr handle) : base(handle)
@@ -54,18 +50,11 @@ namespace WorklabsMx.iOS
 
         public override void ViewDidLoad()
         {
-
-            if(DateTime.Now.Hour >= 17 && DateTime.Now.Hour <= 23)
-            {
-                ValorCredito6Personas = 1;
-                ValorCredito10Personas = 1.5f;
-            }
-
             nfloat aux = this.vwSalasJuntas.Frame.Width;
             this.lblCreditosDisponibles.Text = new SalasJuntasController().GetCreditosDisponibles(KeyChainHelper.GetKey("Usuario_Id")).ToString();
+            this.lblCreditosPorUsar.Text = "0";
 
             withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());
-            vwSalasJuntasResp = withImage;
             base.ViewDidLoad();
             this.GenerateRecornizes();
             this.LimpiarInfo();
@@ -77,7 +66,6 @@ namespace WorklabsMx.iOS
         {
             base.ViewWillAppear(animated);
         }
-
 
 
         private void UpdateInfo()
@@ -95,20 +83,20 @@ namespace WorklabsMx.iOS
             }
 
             nfloat WidthView = 0;
-            nfloat XImageView = 0;
+
             for (int indice = 0; indice < this.SalasJuntas.Count; indice++)
             {
-                WidthView = WidthView + vwSalasJuntasResp;
+                WidthView = WidthView + withImage;
             }
             this.pcSucursales.Pages = this.SalasJuntas.Count;
             CGRect newFrame = new CGRect(this.vwSalasJuntas.Frame.X, this.vwSalasJuntas.Frame.Y, WidthView, this.vwSalasJuntas.Frame.Height);
 
             this.vwSalasJuntas.Frame = newFrame;
-
+            nfloat XImageView = 0;
             for (int indice = 0; indice < this.SalasJuntas.Count ; indice++)
             {
                 UIImageView ImagenSalaJuntas = new UIImageView();
-                ImagenSalaJuntas.Frame = new CGRect(XImageView, this.imgSalasJuntas.Frame.Y, vwSalasJuntasResp, this.imgSalasJuntas.Frame.Height);
+                ImagenSalaJuntas.Frame = new CGRect(XImageView, this.imgSalasJuntas.Frame.Y, withImage, this.imgSalasJuntas.Frame.Height);
                 if (this.SalasJuntas[indice].Sala_Capacidad == "6")
                 {
                     ImagenSalaJuntas.Image = UIImage.FromBundle("Sala6");
@@ -119,7 +107,7 @@ namespace WorklabsMx.iOS
                 }
 
                 this.vwSalasJuntas.Add(ImagenSalaJuntas);
-                XImageView = XImageView + this.imgSalasJuntas.Frame.Width;
+                XImageView += withImage;
 
             }
             this.scvSalasJuntas.ContentSize = vwSalasJuntas.Frame.Size;
@@ -860,6 +848,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.FlagView2324 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.view2324.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView2324 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -875,10 +864,12 @@ namespace WorklabsMx.iOS
                     {
                         Reservaciones.Remove(itemToRemove);
                         this.HorasReservadas = this.HorasReservadas - 0.5f;
+                        CreditosAcumulados = CreditosAcumulados - 1;
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
 
         }
 
@@ -890,6 +881,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.FlagView2324_2 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.view2324_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView2324_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -905,11 +897,12 @@ namespace WorklabsMx.iOS
                     {
                         Reservaciones.Remove(itemToRemove);
                         this.HorasReservadas = this.HorasReservadas - 0.5f;
+                        CreditosAcumulados = CreditosAcumulados - 1;
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
-
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
         }
 
 
@@ -919,6 +912,14 @@ namespace WorklabsMx.iOS
             {
                 if (this.FlagView2223 == false)
                 {
+                    if (this.SalaActual.Sala_Capacidad == "6")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1;
+                    }
+                    else if ( this.SalaActual.Sala_Capacidad == "10")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1.5f;
+                    }
                     this.vw2223.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView2223 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -929,16 +930,25 @@ namespace WorklabsMx.iOS
                 {
                     this.vw2223.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                     this.FlagView2223 = false;
-                    this.HorasReservadas = this.HorasReservadas - 0.5f;
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "01:30");
                     if (itemToRemove != null)
                     {
                         Reservaciones.Remove(itemToRemove);
+                        this.HorasReservadas = this.HorasReservadas - 0.5f;
+                        if (this.SalaActual.Sala_Capacidad == "6")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1;
+                        }
+                        else if (this.SalaActual.Sala_Capacidad == "10")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1.5f;
+                        }
                     }
+                   
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
-
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
         }
 
 
@@ -948,6 +958,14 @@ namespace WorklabsMx.iOS
             {
                 if (this.FlagView2223_2 == false)
                 {
+                    if (this.SalaActual.Sala_Capacidad == "6")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1;
+                    }
+                    else if (this.SalaActual.Sala_Capacidad == "10")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1.5f;
+                    }
                     this.vw2223_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView2223_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -958,15 +976,25 @@ namespace WorklabsMx.iOS
                 {
                     this.vw2223_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                     this.FlagView2223_2 = false;
-                    this.HorasReservadas = this.HorasReservadas - 0.5f;
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "02:00");
                     if (itemToRemove != null)
                     {
+                        this.HorasReservadas = this.HorasReservadas - 0.5f;
+                        if (this.SalaActual.Sala_Capacidad == "6")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1;
+                        }
+                        else if (this.SalaActual.Sala_Capacidad == "10")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1.5f;
+                        }
+                        this.HorasReservadas = this.HorasReservadas - 0.5f;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
 
         }
 
@@ -977,25 +1005,42 @@ namespace WorklabsMx.iOS
             {
                 if (this.FlagView2122 == false)
                 {
+                    if (this.SalaActual.Sala_Capacidad == "6")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1;
+                    }
+                    else if (this.SalaActual.Sala_Capacidad == "10")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1.5f;
+                    }
                     this.vw2122.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView2122 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
                     this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "02:00", "02:30", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f));
-
                 }
                 else
                 {
                     this.vw2122.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                     this.FlagView2122 = false;
-                    this.HorasReservadas = this.HorasReservadas - 0.5f;
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "02:30");
                     if (itemToRemove != null)
                     {
+                        this.HorasReservadas = this.HorasReservadas - 0.5f;
+                        if (this.SalaActual.Sala_Capacidad == "6")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1;
+                        }
+                        else if (this.SalaActual.Sala_Capacidad == "10")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1.5f;
+                        }
+                        this.HorasReservadas = this.HorasReservadas - 0.5f;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
         }
 
 
@@ -1005,6 +1050,14 @@ namespace WorklabsMx.iOS
             {
                 if (this.FlagView2122_2 == false)
                 {
+                    if (this.SalaActual.Sala_Capacidad == "6")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1;
+                    }
+                    else if (this.SalaActual.Sala_Capacidad == "10")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1.5f;
+                    }
                     this.vw2122_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView2122_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1015,15 +1068,25 @@ namespace WorklabsMx.iOS
                 {
                     this.vw2122_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                     this.FlagView2122_2 = false;
-                    this.HorasReservadas = this.HorasReservadas - 0.5f;
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "03:00");
                     if (itemToRemove != null)
                     {
+                        if (this.SalaActual.Sala_Capacidad == "6")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1;
+                        }
+                        else if (this.SalaActual.Sala_Capacidad == "10")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1.5f;
+                        }
+                        this.HorasReservadas = this.HorasReservadas - 0.5f;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw2021Touch(UITapGestureRecognizer Recognizer)
@@ -1032,6 +1095,14 @@ namespace WorklabsMx.iOS
             {
                 if (this.FlagView2021 == false)
                 {
+                    if (this.SalaActual.Sala_Capacidad == "6")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1;
+                    }
+                    else if (this.SalaActual.Sala_Capacidad == "10")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1.5f;
+                    }
                     this.vw2021.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView2021 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1042,16 +1113,26 @@ namespace WorklabsMx.iOS
                 {
                     this.vw2021.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                     this.FlagView2021 = false;
-                    this.HorasReservadas = this.HorasReservadas - 0.5f;
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "03:30");
                     if (itemToRemove != null)
                     {
+                        if (this.SalaActual.Sala_Capacidad == "6")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1;
+                        }
+                        else if (this.SalaActual.Sala_Capacidad == "10")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1.5f;
+                        }
+                        this.HorasReservadas = this.HorasReservadas - 0.5f;
                         Reservaciones.Remove(itemToRemove);
                     }
 
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw2021Touch_2(UITapGestureRecognizer Recognizer)
@@ -1060,26 +1141,43 @@ namespace WorklabsMx.iOS
             {
                 if (this.FlagView2021_2 == false)
                 {
+                    if (this.SalaActual.Sala_Capacidad == "6")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1;
+                    }
+                    else if (this.SalaActual.Sala_Capacidad == "10")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1.5f;
+                    }
                     this.vw2021.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView2021_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
                     this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "03:30", "04:00", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f));
-
                 }
                 else
                 {
                     this.vw2021_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                     this.FlagView2021_2 = false;
-                    this.HorasReservadas = this.HorasReservadas - 0.5f;
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "04:00");
                     if (itemToRemove != null)
                     {
+                        if (this.SalaActual.Sala_Capacidad == "6")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1;
+                        }
+                        else if (this.SalaActual.Sala_Capacidad == "10")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1.5f;
+                        }
+                        this.HorasReservadas = this.HorasReservadas - 0.5f;
                         Reservaciones.Remove(itemToRemove);
                     }
 
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw1920Touch(UITapGestureRecognizer Recognizer)
@@ -1088,6 +1186,14 @@ namespace WorklabsMx.iOS
             {
                 if (this.FlagView1920 == false)
                 {
+                    if (this.SalaActual.Sala_Capacidad == "6")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1;
+                    }
+                    else if (this.SalaActual.Sala_Capacidad == "10")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1.5f;
+                    }
                     this.vw1920.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView1920 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1098,16 +1204,26 @@ namespace WorklabsMx.iOS
                 {
                     this.vw1920.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                     this.FlagView1920 = false;
-                    this.HorasReservadas = this.HorasReservadas - 0.5f;
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "04:30");
                     if (itemToRemove != null)
                     {
+                        if (this.SalaActual.Sala_Capacidad == "6")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1;
+                        }
+                        else if (this.SalaActual.Sala_Capacidad == "10")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1.5f;
+                        }
+                        this.HorasReservadas = this.HorasReservadas - 0.5f;
                         Reservaciones.Remove(itemToRemove);
                     }
 
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
 
@@ -1117,6 +1233,14 @@ namespace WorklabsMx.iOS
             {
                 if (this.FlagView1920_2 == false)
                 {
+                    if (this.SalaActual.Sala_Capacidad == "6")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1;
+                    }
+                    else if (this.SalaActual.Sala_Capacidad == "10")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1.5f;
+                    }
                     this.vw1920.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView1920_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1127,16 +1251,26 @@ namespace WorklabsMx.iOS
                 {
                     this.vw1920_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                     this.FlagView1920_2 = false;
-                    this.HorasReservadas = this.HorasReservadas - 0.5f;
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "05:00");
                     if (itemToRemove != null)
                     {
+                        if (this.SalaActual.Sala_Capacidad == "6")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1;
+                        }
+                        else if (this.SalaActual.Sala_Capacidad == "10")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1.5f;
+                        }
+                        this.HorasReservadas = this.HorasReservadas - 0.5f;
                         Reservaciones.Remove(itemToRemove);
                     }
 
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw1819Touch(UITapGestureRecognizer Recognizer)
@@ -1145,6 +1279,14 @@ namespace WorklabsMx.iOS
             {
                 if (this.FlagView1819 == false)
                 {
+                    if (this.SalaActual.Sala_Capacidad == "6")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1;
+                    }
+                    else if (this.SalaActual.Sala_Capacidad == "10")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1.5f;
+                    }
                     this.vw1819.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView1819 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1154,15 +1296,25 @@ namespace WorklabsMx.iOS
                 {
                     this.vw1819.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                     this.FlagView1819 = false;
-                    this.HorasReservadas = this.HorasReservadas - 0.5f;
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "05:30");
                     if (itemToRemove != null)
                     {
+                        if (this.SalaActual.Sala_Capacidad == "6")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1;
+                        }
+                        else if (this.SalaActual.Sala_Capacidad == "10")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1.5f;
+                        }
+                        this.HorasReservadas = this.HorasReservadas - 0.5f;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw1819Touch_2(UITapGestureRecognizer Recognizer)
@@ -1171,6 +1323,14 @@ namespace WorklabsMx.iOS
             {
                 if (this.FlagView1819_2 == false)
                 {
+                    if (this.SalaActual.Sala_Capacidad == "6")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1;
+                    }
+                    else if (this.SalaActual.Sala_Capacidad == "10")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1.5f;
+                    }
                     this.vw1819_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView1819_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1180,15 +1340,25 @@ namespace WorklabsMx.iOS
                 {
                     this.vw1819_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                     this.FlagView1819_2 = false;
-                    this.HorasReservadas = this.HorasReservadas - 0.5f;
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "06:00");
                     if (itemToRemove != null)
                     {
+                        if (this.SalaActual.Sala_Capacidad == "6")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1;
+                        }
+                        else if (this.SalaActual.Sala_Capacidad == "10")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1.5f;
+                        }
+                        this.HorasReservadas = this.HorasReservadas - 0.5f;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw1718Touch(UITapGestureRecognizer Recognizer)
@@ -1197,6 +1367,14 @@ namespace WorklabsMx.iOS
             {
                 if (this.FlagView1718 == false)
                 {
+                    if (this.SalaActual.Sala_Capacidad == "6")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1;
+                    }
+                    else if (this.SalaActual.Sala_Capacidad == "10")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1.5f;
+                    }
                     this.vw1718.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView1718 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1206,16 +1384,26 @@ namespace WorklabsMx.iOS
                 {
                     this.vw1718.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                     this.FlagView1718 = false;
-                    this.HorasReservadas = this.HorasReservadas - 0.5f;
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "06:30");
                     if (itemToRemove != null)
                     {
-                        Reservaciones.Remove(itemToRemove);
+                        if (this.SalaActual.Sala_Capacidad == "6")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1;
+                        }
+                        else if (this.SalaActual.Sala_Capacidad == "10")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1.5f;
+                        }
+                        this.HorasReservadas = this.HorasReservadas - 0.5f;
+                        Reservaciones.Remove(itemToRemove);                    
                     }
 
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw1718Touch_2(UITapGestureRecognizer Recognizer)
@@ -1224,6 +1412,14 @@ namespace WorklabsMx.iOS
             {
                 if (this.FlagView1718_2 == false)
                 {
+                    if (this.SalaActual.Sala_Capacidad == "6")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1;
+                    }
+                    else if (this.SalaActual.Sala_Capacidad == "10")
+                    {
+                        CreditosAcumulados = CreditosAcumulados + 1.5f;
+                    }
                     this.vw1718_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView1718_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1233,16 +1429,26 @@ namespace WorklabsMx.iOS
                 {
                     this.vw1718_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                     this.FlagView1718_2 = false;
-                    this.HorasReservadas = this.HorasReservadas - 0.5f;
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "07:00");
                     if (itemToRemove != null)
                     {
-                        Reservaciones.Remove(itemToRemove);
+                        if (this.SalaActual.Sala_Capacidad == "6")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1;
+                        }
+                        else if (this.SalaActual.Sala_Capacidad == "10")
+                        {
+                            CreditosAcumulados = CreditosAcumulados - 1.5f;
+                        }
+                        this.HorasReservadas = this.HorasReservadas - 0.5f;
+                        Reservaciones.Remove(itemToRemove);  
                     }
 
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
 
@@ -1252,6 +1458,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.FlagView1617 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw1617.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView1617 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1267,10 +1474,13 @@ namespace WorklabsMx.iOS
                     if (itemToRemove != null)
                     {
                         Reservaciones.Remove(itemToRemove);
+                        CreditosAcumulados = CreditosAcumulados - 1;
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw1617Touch_2(UITapGestureRecognizer Recognizer)
@@ -1279,6 +1489,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.FlagView1617_2 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw1617_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView1617_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1294,10 +1505,14 @@ namespace WorklabsMx.iOS
                     if (itemToRemove != null)
                     {
                         Reservaciones.Remove(itemToRemove);
+                        CreditosAcumulados = CreditosAcumulados - 1;
+
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw1516Touch(UITapGestureRecognizer Recognizer)
@@ -1306,6 +1521,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag1516 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw1516.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1516 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1320,11 +1536,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "08:30");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw1516Touch_2(UITapGestureRecognizer Recognizer)
@@ -1333,6 +1552,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag1516_2 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw1516_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1516_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1347,11 +1567,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "09:00");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw1415Touch(UITapGestureRecognizer Recognizer)
@@ -1360,11 +1583,12 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag1415 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw1415.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1415 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
                     this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "09:00", "09:30", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f));
-
+                   
                 }
                 else
                 {
@@ -1375,10 +1599,13 @@ namespace WorklabsMx.iOS
                     if (itemToRemove != null)
                     {
                         Reservaciones.Remove(itemToRemove);
+                        CreditosAcumulados = CreditosAcumulados - 1;
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw1415Touch_2(UITapGestureRecognizer Recognizer)
@@ -1387,6 +1614,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag1415_2 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw1415_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1415_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1401,11 +1629,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "10:00");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw1314Touch(UITapGestureRecognizer Recognizer)
@@ -1414,6 +1645,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag1314 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw1314.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1314 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1428,11 +1660,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "10:30");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw1314Touch_2(UITapGestureRecognizer Recognizer)
@@ -1441,6 +1676,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag1314_2 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw1314_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1314_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1454,11 +1690,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "11");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw1213Touch(UITapGestureRecognizer Recognizer)
@@ -1467,6 +1706,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag1213 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw1213.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1213 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1481,11 +1721,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "11:30");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw1213Touch_2(UITapGestureRecognizer Recognizer)
@@ -1494,6 +1737,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag1213_2 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw1213_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1213_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1508,11 +1752,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "12:00");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw1112Touch(UITapGestureRecognizer Recognizer)
@@ -1521,6 +1768,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag1112 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw1112.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1112 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1535,11 +1783,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "12:30");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
 
@@ -1549,6 +1800,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag1112_2 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw1112_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1112_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1563,11 +1815,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "01:00");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw1011Touch(UITapGestureRecognizer Recognizer)
@@ -1576,11 +1831,11 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag1011 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw1011.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1011 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
                     this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "13:00","13:30", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f));
-
                 }
                 else
                 {
@@ -1590,11 +1845,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "13:30");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw1011Touch_2(UITapGestureRecognizer Recognizer)
@@ -1603,11 +1861,11 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag1011_2 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw1011_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag1011_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
                     this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "13:30", "14:00", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f));
-
                 }
                 else
                 {
@@ -1617,11 +1875,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "14");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw0910Touch(UITapGestureRecognizer Recognizer)
@@ -1630,6 +1891,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0910 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw0910.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0910 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1644,11 +1906,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "14:30");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw0910Touch_2(UITapGestureRecognizer Recognizer)
@@ -1657,6 +1922,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0910_2 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw0910_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0910_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1671,11 +1937,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "15:00");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
 
@@ -1685,11 +1954,11 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0809 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw0809.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0809 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
                     this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "15:00", "15:30", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f));
-
                 }
                 else
                 {
@@ -1699,11 +1968,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "15:30");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
 
@@ -1713,11 +1985,11 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0809_2 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw0809_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0809_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
                     this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "15:30", "16:00", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f));
-
                 }
                 else
                 {
@@ -1727,11 +1999,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "16:00");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw0708Touch(UITapGestureRecognizer Recognizer)
@@ -1740,6 +2015,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0708 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw0708.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0708 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1754,11 +2030,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "16:30");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw0708Touch_2(UITapGestureRecognizer Recognizer)
@@ -1767,6 +2046,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0708_2 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw0708_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0708_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1781,11 +2061,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "17:00");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw0607Touch(UITapGestureRecognizer Recognizer)
@@ -1794,6 +2077,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0607 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw0607.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0607 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1808,11 +2092,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "17:30");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw0607Touch_2(UITapGestureRecognizer Recognizer)
@@ -1821,6 +2108,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0607_2 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw0607_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0607_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1835,11 +2123,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "18:00");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
 
@@ -1849,6 +2140,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0506 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw0506.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0607 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1863,11 +2155,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "19:00");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
 
@@ -1877,6 +2172,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0506_2 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw0506_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0607_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1891,11 +2187,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "19:00");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw0405Touch(UITapGestureRecognizer Recognizer)
@@ -1904,6 +2203,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0405 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw0405.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0405 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1918,11 +2218,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "19:30");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw0405Touch_2(UITapGestureRecognizer Recognizer)
@@ -1931,6 +2234,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0405_2 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw0405_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0405_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1945,11 +2249,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "20:00");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw0304Touch(UITapGestureRecognizer Recognizer)
@@ -1958,6 +2265,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0304 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw0304.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0304 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1972,11 +2280,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "20:30");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw0304Touch_2(UITapGestureRecognizer Recognizer)
@@ -1985,6 +2296,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0304_2 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw0304_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0304_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -1999,11 +2311,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "21:00");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw0203Touch(UITapGestureRecognizer Recognizer)
@@ -2012,6 +2327,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0203 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw0203.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0203 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -2025,11 +2341,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "21:30");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
 
@@ -2039,6 +2358,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0203_2 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw0203_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0203_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -2052,11 +2372,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "22:00");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
 
@@ -2066,6 +2389,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0102 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw0102.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0102 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -2080,11 +2404,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "22:30");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
 
@@ -2095,6 +2422,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0102_2 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw0102_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0102_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -2108,11 +2436,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "23:00");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         private void vw0124Touch(UITapGestureRecognizer Recognizer)
@@ -2121,6 +2452,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0124 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw2401.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0124 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -2134,11 +2466,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "23:30");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
 
@@ -2148,6 +2483,7 @@ namespace WorklabsMx.iOS
             {
                 if (this.Flag0124_2 == false)
                 {
+                    CreditosAcumulados = CreditosAcumulados + 1;
                     this.vw2401_2.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.Flag0124_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
@@ -2161,11 +2497,14 @@ namespace WorklabsMx.iOS
                     var itemToRemove = Reservaciones.Find(x => x.Sala_Hora_Fin == "24:00");
                     if (itemToRemove != null)
                     {
+                        CreditosAcumulados = CreditosAcumulados - 1;
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
+
         }
 
         partial void btnSeleccionarFecha_Touch(UIButton sender)
@@ -2202,14 +2541,22 @@ namespace WorklabsMx.iOS
 
         partial void btnAgendar_Touch(UIButton sender)
         {
-            if (this.Reservaciones.Count > 0)
+            if (CreditosAcumulados <= float.Parse(this.lblCreditosDisponibles.Text))
             {
-                this.PerformSegue("confirmarCompra", null);
+                if (this.Reservaciones.Count > 0)
+                {
+                    this.PerformSegue("confirmarCompra", null);
+                }
+                else
+                {
+                    new MessageDialog().SendToast("No has seleccionado un horario");
+                }
             }
             else
             {
-                new MessageDialog().SendToast("No has seleccionado un horario");
+                new MessageDialog().SendToast("No tienes suficientes créditos");
             }
+
         }
 
         partial void btnNivel_Touch(UIButton sender)

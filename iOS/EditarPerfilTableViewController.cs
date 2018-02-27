@@ -66,21 +66,28 @@ namespace WorklabsMx.iOS
             lblEmpresa.Text = (InfoPerifl.Usuario_Empresa_Nombre != "" && InfoPerifl.Usuario_Empresa_Nombre != null) ? InfoPerifl.Usuario_Empresa_Nombre : "Sin Info";
             NewInfoPerfil.Usuario_Empresa_Nombre = lblEmpresa.Text;
 
-            var ImagenPerfil = this.GetImage(InfoPerifl.Usuario_Fotografia_Perfil);
-            if (ImagenPerfil != null)
+            byte[] imageBytes = new UploadImages().DownloadFileFTP(InfoPerifl.Usuario_Fotografia, MenuHelper.ProfileImagePath);
+            if (imageBytes != null)
             {
-                this.btnImagen.SetBackgroundImage(ImagenPerfil, UIControlState.Normal);
+                var data = NSData.FromArray(imageBytes);
+                this.btnImagen.SetBackgroundImage(UIImage.LoadFromData(data), UIControlState.Normal);
             }
             else
             {
                 this.btnImagen.SetBackgroundImage(UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
             }
 
-            ImagenPerfil = this.GetImage(InfoPerifl.Usuario_Fotografia_FondoPerfil);
-            if (ImagenPerfil != null)
+            imageBytes = new UploadImages().DownloadFileFTP(InfoPerifl.Usuario_Fotografia_Fondo, MenuHelper.ProfileImagePath);
+            if (imageBytes != null)
             {
-                this.btnFondoImagen.SetBackgroundImage(ImagenPerfil, UIControlState.Normal);
+                var data = NSData.FromArray(imageBytes);
+                this.btnFondoImagen.SetBackgroundImage(UIImage.LoadFromData(data), UIControlState.Normal);
             }
+            else
+            {
+                this.btnFondoImagen.BackgroundColor = UIColor.Black;
+            }
+
             this.vwVistaMi.Hidden = false;
             this.vwSocial.Hidden = true;
             this.vwTrabajo.Hidden = true;
@@ -139,10 +146,12 @@ namespace WorklabsMx.iOS
             if (this.TouchedBack)
             {
                 this.btnFondoImagen.SetBackgroundImage(image, UIControlState.Normal);
+                NewInfoPerfil.Usuario_Fotografia_FondoPerfil = new Byte[image.AsPNG().Length];
             }
             else if (this.TouchedProfile)
             {
                 this.btnImagen.SetBackgroundImage(image, UIControlState.Normal);
+                NewInfoPerfil.Usuario_Fotografia_Perfil = new Byte[image.AsPNG().Length];
             }
 
             this.TouchedBack = false;
@@ -402,13 +411,12 @@ namespace WorklabsMx.iOS
                 resultRedesSociales = 1;
             }
 
-            byte[] imagen = new byte[0];
+           
 
             resultDataMiembros = new UsuariosController().UpdateDataMiembros(KeyChainHelper.GetKey("Usuario_Id"), NewInfoPerfil.Usuario_Nombre, NewInfoPerfil.Usuario_Apellidos, NewInfoPerfil.Usuario_Correo_Electronico,
-                                                                             NewInfoPerfil.Usuario_Telefono, NewInfoPerfil.Usuario_Celular, NewInfoPerfil.Usuario_Descripcion, fechaNacimiento, imagen);
-            byte[] LogoEmpresa = new byte[0];
+                                                                             NewInfoPerfil.Usuario_Telefono, NewInfoPerfil.Usuario_Celular, NewInfoPerfil.Usuario_Descripcion, fechaNacimiento, NewInfoPerfil.Usuario_Fotografia_Perfil);
             resultadoTrabajo = new EmpresaController().UpdateUsuarioEmpresaPerfil(NewInfoPerfil.Empresa_Actual.Empresa_Id, NewInfoPerfil.Usuario_Id, "57802", NewInfoPerfil.Empresa_Actual.Empresa_Nombre, 
-                                                                                  NewInfoPerfil.Empresa_Actual.Empresa_Correo_Electronico, NewInfoPerfil.Empresa_Actual.Empresa_Pagina_Web, NewInfoPerfil.Usuario_Puesto, LogoEmpresa);
+                                                                                  NewInfoPerfil.Empresa_Actual.Empresa_Correo_Electronico, NewInfoPerfil.Empresa_Actual.Empresa_Pagina_Web, NewInfoPerfil.Usuario_Puesto, NewInfoPerfil.Empresa_Actual.Empresa_Logotipo_Perfil);
 
             if (resultDataMiembros && resultadoTrabajo && resultEtiquetas != -1 && resultRedesSociales != -1)
             {

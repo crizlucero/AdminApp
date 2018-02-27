@@ -65,7 +65,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <MtouchI18n>cjk,mideast,other,rare,west</MtouchI18n>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <CodesignProvision>WorkLabsDist</CodesignProvision>
+    <CodesignProvision></CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -720,7 +720,6 @@
     <ImageAsset Include="Assets.xcassets\ImagenSucursal.imageset\314ce393-195b-4212-893a-69d13d0fe025.jpg" />
     <ImageAsset Include="Assets.xcassets\Sala6.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Sala10.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Sala10.imageset\5dfd3326-815a-4398-a759-c219f590949e 2.jpg" />
     <ImageAsset Include="Assets.xcassets\Sala6.imageset\b65a18b6-80b2-4573-946c-abb1690ec202.jpg" />
     <ImageAsset Include="Assets.xcassets\EditarPerfil.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\EditarPerfil.imageset\EditarPerfil.png" />
@@ -785,6 +784,7 @@
     <ImageAsset Include="Assets.xcassets\NoLogoWork.imageset\Group 237%403x.png" />
     <ImageAsset Include="Assets.xcassets\AcercaDe.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\AcercaDe.imageset\Custom Size – 4%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Sala10.imageset\IMG_4123.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
