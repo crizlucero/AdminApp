@@ -61,6 +61,7 @@ namespace WorklabsMx.Droid
             _viewPager.Adapter = new SalaJuntasAdapter(this, salas);
             Horarios.Add(salas[_viewPager.CurrentItem].Sala_Id, new Dictionary<string, List<double>>());
             Horarios[salas[_viewPager.CurrentItem].Sala_Id].Add(fecha_seleccionada, new List<double>());
+            FindViewById<TextView>(Resource.Id.lblCreditosDisponibles).Text = SalasController.GetCreditosDisponibles(storage.Get("Usuario_Id")).ToString();
             FindViewById<LinearLayout>(Resource.Id.llSeleccionarFecha).Click += (sender, e) =>
             {
                 DatePickerMinFragment frag = DatePickerMinFragment.NewInstance(delegate (DateTime time)
@@ -222,9 +223,11 @@ namespace WorklabsMx.Droid
 
         void PutZeroHour()
         {
-            GridLayout glZero = new GridLayout(this);
-            glZero.ColumnCount = 3;
-            glZero.RowCount = 1;
+            GridLayout glZero = new GridLayout(this)
+            {
+                ColumnCount = 3,
+                RowCount = 1
+            };
             glZero.SetBackgroundColor(Color.White);
             glZero.AddView(new TextView(this)
             {

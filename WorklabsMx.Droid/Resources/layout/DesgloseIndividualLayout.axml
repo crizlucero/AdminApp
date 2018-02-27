@@ -3,183 +3,94 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FFF">
-    <LinearLayout
-        android:orientation="vertical"
-        android:minWidth="25px"
-        android:minHeight="25px"
+    android:background="#FFF"
+    android:padding="10dp">
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
-        <LinearLayout
-            android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/lblDespliegue"
-                android:text="Producto / Membresía"
-                android:layout_gravity="center" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/lblCantidad"
-                android:text="@string/Cantidad" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/txtCantidad"
-                android:text="0" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/lblMesesAdelantados"
-                android:text="@string/MesesAdelantados" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/txtMesesAdelantados"
-                android:text="0" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/lblPeriodo"
-                android:text="@string/Periodo" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/txtPeriodo"
-                android:text="0" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/lblSubtotal"
-                android:text="@string/ImporteSinIva" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/txtSubtotal"
-                android:text="0" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/lblIva"
-                android:text="@string/IVA" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/txtIva"
-                android:text="0" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/lblTotal"
-                android:text="@string/Total" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/txtTotal"
-                android:text="0" />
-        </LinearLayout>
-    </LinearLayout>
+        android:id="@+id/lblDespliegue"
+        android:text="Producto / Membresía"
+        android:textColor="#767676"
+        android:layout_gravity="center" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#767676"
+        android:text="@string/str_general_quantity" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#767676"
+        android:id="@+id/txtCantidad"
+        android:text="0" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#767676"
+        android:text="@string/MesesAdelantados"
+        android:id="@+id/lblMesesAdelantados" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtMesesAdelantados"
+        android:textColor="#767676"
+        android:text="0" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#767676"
+        android:text="@string/Periodo"
+        android:id="@+id/lblPeriodo" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#767676"
+        android:id="@+id/txtPeriodo"
+        android:text="0" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#767676"
+        android:text="@string/ImporteSinIva" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:textColor="#767676"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtSubtotal"
+        android:text="0" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#767676"
+        android:text="@string/str_shop_IVA" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#767676"
+        android:id="@+id/txtIva"
+        android:text="0" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#767676"
+        android:text="@string/str_shop_total" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#767676"
+        android:id="@+id/txtTotal"
+        android:text="0" />
 </LinearLayout>

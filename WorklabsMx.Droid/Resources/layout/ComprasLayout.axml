@@ -49,15 +49,43 @@
     </RadioGroup>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"
+        android:elevation="10dp"
+        android:translationZ="10dp">
         <LinearLayout
-            android:layout_height="match_parent"
-            android:layout_width="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:columnCount="3"
                 android:id="@+id/glCompras" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout1" />
         </LinearLayout>
     </ScrollView>
+    <GridLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-60dp"
+        android:columnCount="2">
+        <TextView
+            android:textColor="#000"
+            android:text="@string/str_shop_total"
+            android:layout_width="250dp"
+            android:gravity="right"
+            android:paddingRight="10dp" />
+        <TextView
+            android:id="@+id/lblTotal"
+            android:text="@string/str_shop_numeric"
+            android:textColor="#000" />
+    </GridLayout>
 </LinearLayout>
