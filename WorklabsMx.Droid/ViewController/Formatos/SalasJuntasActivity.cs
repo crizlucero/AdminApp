@@ -223,9 +223,11 @@ namespace WorklabsMx.Droid
 
         void PutZeroHour()
         {
-            GridLayout glZero = new GridLayout(this);
-            glZero.ColumnCount = 3;
-            glZero.RowCount = 1;
+            GridLayout glZero = new GridLayout(this)
+            {
+                ColumnCount = 3,
+                RowCount = 1
+            };
             glZero.SetBackgroundColor(Color.White);
             glZero.AddView(new TextView(this)
             {

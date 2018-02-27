@@ -3,8 +3,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minWidth="25px"
-    android:minHeight="25px"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
     android:background="#FFF">
@@ -12,89 +10,86 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbarlayout" />
     <TableLayout
-        android:minWidth="25px"
-        android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TableRow
-            android:id="@+id/tableRow1"
             android:layout_width="match_parent"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp">
             <TextView
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_column="0"
-                android:id="@+id/textView26"
-                android:text="@string/Cupon"
+                android:textColor="#767676"
+                android:text="@string/str_shop_coupon"
                 android:layout_width="66.0dp" />
             <EditText
                 android:layout_column="1"
                 android:id="@+id/txtCupon"
                 android:layout_width="266.0dp"
-                android:hint="@string/Cupon" />
+                android:textColor="#767676"
+                android:hint="@string/str_shop_coupon"
+                android:textColorHint="#CCC" />
             <ImageButton
                 android:src="@mipmap/ic_check"
                 android:layout_column="2"
                 android:id="@+id/btnApply"
                 android:background="#ffffffff"
+                android:textColor="#767676"
                 android:layout_height="25.0dp"
-                android:layout_width="25.0dp" />
+                android:layout_width="25.0dp"
+                android:layout_gravity="center" />
         </TableRow>
     </TableLayout>
     <TableLayout
-        android:minWidth="25px"
-        android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tlCupones" />
     <TableLayout
-        android:minWidth="25px"
-        android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tableLayout4">
-        <TableRow
-            android:id="@+id/tableRow2">
+        android:layout_height="wrap_content">
+        <TableRow>
             <TextView
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_column="1"
-                android:id="@+id/textView36"
-                android:text="@string/Subtotal"
-                android:layout_width="175.0dp" />
+                android:text="@string/str_shop_subtotal"
+                android:layout_width="175.0dp"
+                android:textColor="#767676" />
             <TextView
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/tvSubtotal"
                 android:layout_column="2"
                 android:text="$0.00"
                 android:layout_width="128.0dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#767676" />
         </TableRow>
-        <TableRow
-            android:id="@+id/tableRow3">
+        <TableRow>
             <TextView
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_column="1"
-                android:id="@+id/textView37"
-                android:text="@string/Descuento" />
+                android:text="@string/str_shop_descount"
+                android:textColor="#767676" />
             <TextView
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_column="2"
                 android:id="@+id/tvDescuento"
                 android:text="$0.00"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#767676" />
         </TableRow>
         <TableRow
             android:id="@+id/tableRow4">
             <TextView
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_column="1"
-                android:id="@+id/textView38"
-                android:text="@string/IVA" />
+                android:textColor="#767676"
+                android:text="@string/str_shop_IVA" />
             <TextView
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_column="2"
                 android:id="@+id/tvIVA"
                 android:text="$0.00"
+                android:textColor="#767676"
                 android:textStyle="bold" />
         </TableRow>
         <TableRow
@@ -102,13 +97,14 @@
             <TextView
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_column="1"
-                android:id="@+id/textView39"
-                android:text="@string/Total" />
+                android:textColor="#767676"
+                android:text="@string/str_shop_total" />
             <TextView
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_column="2"
                 android:id="@+id/tvTotal"
                 android:text="$0.00"
+                android:textColor="#767676"
                 android:textStyle="bold" />
         </TableRow>
     </TableLayout>
@@ -120,10 +116,11 @@
         <Switch
             android:layout_height="wrap_content"
             android:id="@+id/swCondiciones"
-            android:text="@string/AceptoTerminos"
+            android:text="@string/str_shop_accept_terms"
             android:layout_marginLeft="5dp"
             android:layout_width="match_parent"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"
+            android:textColor="#767676" />
     </RelativeLayout>
     <ScrollView
         android:layout_width="match_parent"
@@ -141,15 +138,15 @@
                 <TextView
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:layout_column="0"
-                    android:id="@+id/textView10"
-                    android:text="@string/Cantidad"
+                    android:textColor="#767676"
+                    android:text="@string/str_general_quantity"
                     android:layout_width="57.5dp"
                     android:drawableBottom="#ff373333" />
                 <TextView
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:layout_column="1"
-                    android:id="@+id/textView11"
-                    android:text="@string/Descripcion"
+                    android:textColor="#767676"
+                    android:text="@string/str_general_description"
                     android:layout_width="170.0dp"
                     android:drawableBottom="#ff373333"
                     android:layout_marginRight="0.0dp"
@@ -158,8 +155,8 @@
                 <TextView
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:layout_column="2"
-                    android:id="@+id/textView14"
-                    android:text="@string/Total"
+                    android:textColor="#767676"
+                    android:text="@string/str_shop_total"
                     android:layout_width="114.0dp"
                     android:drawableBottom="#ff373333"
                     android:minWidth="114.0dp"

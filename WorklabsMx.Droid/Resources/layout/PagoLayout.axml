@@ -12,19 +12,18 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbarlayout" />
     <TableLayout
-        android:minWidth="25px"
-        android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TableRow>
             <TextView
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:layout_column="0"
-                android:id="@+id/textView10"
+                android:textColor="#767676"
                 android:text="@string/str_profile_name" />
             <EditText
                 android:layout_column="1"
                 android:id="@+id/txtNombreTarjeta"
+                android:textColor="#767676"
                 android:layout_width="231.0dp"
                 android:hint="@string/NombreTarjetaHabiente" />
         </TableRow>
@@ -32,20 +31,21 @@
             <TextView
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:layout_column="0"
-                android:id="@+id/textView11"
-                android:text="@string/NumeroTarjeta" />
+                android:text="@string/NumeroTarjeta"
+                android:textColor="#767676" />
             <EditText
                 android:layout_column="1"
                 android:id="@+id/txtNumeroTarjeta"
                 android:hint="@string/NumeroTarjeta"
                 android:numeric="integer"
+                android:textColor="#767676"
                 android:inputType="number" />
         </TableRow>
         <TableRow>
             <TextView
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:layout_column="0"
-                android:id="@+id/textView12"
+                android:textColor="#767676"
                 android:text="@string/TarjetaCCV" />
             <EditText
                 android:layout_column="1"
@@ -55,13 +55,14 @@
                 android:numeric="integer"
                 android:maxLength="3"
                 android:inputType="numberPassword"
+                android:textColor="#767676"
                 android:phoneNumber="false" />
         </TableRow>
         <TableRow>
             <TextView
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:layout_column="0"
-                android:id="@+id/textView17"
+                android:textColor="#767676"
                 android:text="@string/str_general_month" />
             <EditText
                 android:layout_column="1"
@@ -69,35 +70,34 @@
                 android:hint="@string/TarjetaMesMM"
                 android:maxLength="2"
                 android:numeric="integer"
+                android:textColor="#767676"
                 android:inputType="number" />
         </TableRow>
         <TableRow>
             <TextView
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:layout_column="0"
-                android:id="@+id/textView18"
+                android:textColor="#767676"
                 android:text="@string/str_general_year" />
             <EditText
                 android:layout_column="1"
                 android:id="@+id/txtAnioTarjeta"
                 android:hint="@string/TarjetaAnioYY"
                 android:numeric="integer"
+                android:textColor="#767676"
                 android:inputType="number" />
         </TableRow>
     </TableLayout>
     <TableLayout
-        android:minWidth="25px"
-        android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tableLayout4">
+        android:layout_height="wrap_content">
         <TableRow
             android:id="@+id/tableRow2">
             <TextView
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_column="1"
-                android:id="@+id/textView36"
-                android:text="@string/Subtotal"
+                android:textColor="#767676"
+                android:text="@string/str_shop_subtotal"
                 android:layout_width="175.0dp" />
             <TextView
                 android:textAppearance="?android:attr/textAppearanceMedium"
@@ -105,6 +105,7 @@
                 android:layout_column="2"
                 android:text="$0.00"
                 android:layout_width="128.0dp"
+                android:textColor="#767676"
                 android:textStyle="bold" />
         </TableRow>
         <TableRow
@@ -112,13 +113,14 @@
             <TextView
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_column="1"
-                android:id="@+id/textView37"
-                android:text="@string/Descuento" />
+                android:textColor="#767676"
+                android:text="@string/str_shop_descount" />
             <TextView
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_column="2"
                 android:id="@+id/tvDescuento"
                 android:text="$0.00"
+                android:textColor="#767676"
                 android:textStyle="bold" />
         </TableRow>
         <TableRow
@@ -126,13 +128,14 @@
             <TextView
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_column="1"
-                android:id="@+id/textView38"
-                android:text="@string/IVA" />
+                android:textColor="#767676"
+                android:text="@string/str_shop_IVA" />
             <TextView
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_column="2"
                 android:id="@+id/tvIVA"
                 android:text="$0.00"
+                android:textColor="#767676"
                 android:textStyle="bold" />
         </TableRow>
         <TableRow
@@ -140,13 +143,14 @@
             <TextView
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_column="1"
-                android:id="@+id/textView39"
-                android:text="@string/Total" />
+                android:textColor="#767676"
+                android:text="@string/str_shop_total" />
             <TextView
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_column="2"
                 android:id="@+id/tvTotal"
                 android:text="$0.00"
+                android:textColor="#767676"
                 android:textStyle="bold" />
         </TableRow>
     </TableLayout>

@@ -72,21 +72,24 @@ namespace WorklabsMx.Droid
                 {
                     Text = precio.Carrito_Compras_Detalle_Cantidad
                 };
+                lblCantidad.SetTextColor(Color.ParseColor("#767676"));
                 trDescripcion.AddView(lblCantidad, 0);
 
                 TextView lblDescripcion = new TextView(this)
                 {
                     Text = precio.Carrito_Compras_Detalle_Descripcion
                 };
+                lblDescripcion.SetTextColor(Color.ParseColor("#767676"));
                 lblDescripcion.SetWidth(120);
                 lblDescripcion.Click += (sender, e) => ShowDesglose(precio);
                 trDescripcion.AddView(lblDescripcion, 1);
                 TextView lblTotal = new TextView(this)
                 {
-                    Text = Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Suma) != 0 
-                                  ? precio.Carrito_Compras_Detalle_Importe_Suma_Texto : 
+                    Text = Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Suma) != 0
+                                  ? precio.Carrito_Compras_Detalle_Importe_Suma_Texto :
                                   Convert.ToDecimal(precio.Carrito_Compras_Detalle_Importe_Prorrateo).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx")) + "MXN"
                 };
+                lblTotal.SetTextColor(Color.ParseColor("#767676"));
                 trDescripcion.AddView(lblTotal, 2);
                 tlCarrito.AddView(trDescripcion);
 
@@ -162,7 +165,7 @@ namespace WorklabsMx.Droid
                 };
                 trCupon.AddView(tvPromoDescripcion, 1);
                 FindViewById<TableLayout>(Resource.Id.tlCupones).AddView(trCupon);
-                Toast.MakeText(this, Resource.String.CodigoIngresado, ToastLength.Short).Show();
+                Toast.MakeText(this, Resource.String.str_shop_code_used_error, ToastLength.Short).Show();
                 ((ImageButton)sender).Enabled = false;
                 FindViewById<EditText>(Resource.Id.txtCupon).Text = "";
                 FindViewById<EditText>(Resource.Id.txtCupon).Hint = "Cupón Agregado";
@@ -195,7 +198,7 @@ namespace WorklabsMx.Droid
                         StartActivity(intent);
                     }
                     else
-                        Toast.MakeText(this, Resource.String.NoAceptoTerminos, ToastLength.Short).Show();
+                        Toast.MakeText(this, Resource.String.str_shop_no_accepted_terms, ToastLength.Short).Show();
                     break;
                 default:
                     StartActivity(new Intent(this, typeof(ColeccionProductosActivity)));

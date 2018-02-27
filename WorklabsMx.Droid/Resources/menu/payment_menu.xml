@@ -4,6 +4,6 @@
         android:id="@+id/menu_payment"
         android:icon="@mipmap/ic_credit_card"
         android:showAsAction="ifRoom"
-        android:title="@string/Pagar"
+        android:title="@string/str_shop_pay"
     />
 </menu>

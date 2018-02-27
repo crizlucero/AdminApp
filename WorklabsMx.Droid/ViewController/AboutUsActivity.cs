@@ -42,7 +42,7 @@ namespace WorklabsMx.Droid
                     PackageManager.GetPackageInfo("com.instagram.android", 0);
                     StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse("http://instagram.com/_u/worklabs.mx")));
                 }
-                catch (Exception e)
+                catch
                 {
                     StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse("http://instagram.com/worklabs.mx")));
                 }

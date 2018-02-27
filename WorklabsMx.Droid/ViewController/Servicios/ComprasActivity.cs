@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -15,11 +16,54 @@ namespace WorklabsMx.Droid
     {
         GridLayout gvElementos;
         ArrayAdapter adapter;
+        List<ProductoModel> productosLista;
+        List<MembresiaModel> membresiasLista;
         Dictionary<string, CarritoModel> Productos, Membresias;
+        TextView lblTotal;
+        double totalCompra;
+
+        public ComprasActivity()
+        {
+            productosLista = new PickerItemsController().GetProductos();
+            membresiasLista = new PickerItemsController().GetMembresias();
+            Productos = new Dictionary<string, CarritoModel>();
+            Membresias = new Dictionary<string, CarritoModel>();
+            productosLista.ForEach(producto =>
+            {
+                if (!Productos.ContainsKey(producto.Producto_Id))
+                    Productos.Add(producto.Producto_Id, new CarritoModel
+                    {
+                        Producto_Cantidad = 0,
+                        Sucursal_Id = 1,
+                        Membresia_Fecha_Inicio = DateTime.Now.ToString("d"),
+                        Meses_Adelantados = 1,
+                        Lista_Precio_Id = producto.Lista_Precio_Id,
+                        Impuesto_Id = producto.Moneda_Id,
+                        Moneda_Id = producto.Moneda_Id,
+                        Tipo = producto.Producto_Disponibilidad,
+                        Precio_Base = producto.Producto_Precio_Base_Neto.ToString()
+                    });
+            });
+            membresiasLista.ForEach(membresia =>
+            {
+                if (!Membresias.ContainsKey(membresia.Membresia_Id))
+                    Membresias.Add(membresia.Membresia_Id, new CarritoModel
+                    {
+                        Membresia_Cantidad = 0,
+                        Sucursal_Id = 0,
+                        Meses_Adelantados = 1,
+                        Membresia_Fecha_Inicio = DateTime.Now.ToString("d"),
+                        Lista_Precio_Id = membresia.Lista_Precio_Id,
+                        Moneda_Id = membresia.Moneda_Id,
+                        Impuesto_Id = membresia.Impuesto_Id,
+                        Precio_Base = membresia.Membresia_Precio_Base_Neto.ToString()
+                    });
+            });
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
             SetContentView(Resource.Layout.ComprasLayout);
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
@@ -28,10 +72,21 @@ namespace WorklabsMx.Droid
             gvElementos = FindViewById<GridLayout>(Resource.Id.glCompras);
             RadioButton rbProductos = FindViewById<RadioButton>(Resource.Id.btnProductos);
             RadioButton rbMembresias = FindViewById<RadioButton>(Resource.Id.btnMembresias);
+            productosLista.ForEach(producto =>
+            {
+                totalCompra += producto.Producto_Precio_Base_Neto * Productos[producto.Producto_Id].Producto_Cantidad;
+            });
+            membresiasLista.ForEach(membresia =>
+            {
+                totalCompra += (membresia.Membresia_Precio_Base_Neto * Membresias[membresia.Membresia_Id].Membresia_Cantidad) +
+                    (membresia.Inscripcion_Precio_Base_Neto * Membresias[membresia.Membresia_Id].Membresia_Cantidad);
+            });
+            lblTotal = FindViewById<TextView>(Resource.Id.lblTotal);
+            lblTotal.Text = totalCompra.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
+
             adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, new SucursalController().GetSucursalNombres().ToArray());
             if (rbProductos.Checked)
             {
-                //rbProductos.SetBackgroundResource(Resource.Color.switch_selected);//.SetBackgroundResource(Resource.Drawable.switch_style_toggle);
                 FillProductos();
             }
             else
@@ -60,11 +115,28 @@ namespace WorklabsMx.Droid
                 {
                     SetContentView(Resource.Layout.CompraCardLayout);
                     Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+                    int cantidad = 1;
                     SetActionBar(toolbar);
                     ActionBar.Title = elemento.Producto_Descripcion;
                     ActionBar.SetDisplayHomeAsUpEnabled(true);
                     FindViewById<TextView>(Resource.Id.lblNombre).Text = elemento.Producto_Descripcion;
-                    FindViewById<TextView>(Resource.Id.lblPrecio).Text = "$ " + elemento.Producto_Precio_Base.ToString() + " M/N";
+                    FindViewById<TextView>(Resource.Id.lblPrecio).Text = GetString(Resource.String.str_shop_numeric_mn, elemento.Producto_Precio_Base.ToString());
+
+                    EditText ProductoCantidad = FindViewById<EditText>(Resource.Id.txtCantidad);
+                    FindViewById<ImageView>(Resource.Id.imgMas).Click += delegate
+                    {
+                        cantidad++;
+                        ProductoCantidad.Text = cantidad.ToString();
+                    };
+                    FindViewById<ImageView>(Resource.Id.imgMenos).Click += delegate
+                    {
+                        if (cantidad != 0)
+                        {
+                            cantidad--;
+                            ProductoCantidad.Text = cantidad.ToString();
+                        }
+                    };
+
                     Spinner spSucursales = FindViewById<Spinner>(Resource.Id.spSucursal);
                     spSucursales.Adapter = adapter;
                     FindViewById<ImageView>(Resource.Id.btnClose).Click += delegate
@@ -73,6 +145,7 @@ namespace WorklabsMx.Droid
                     };
                     FindViewById<Button>(Resource.Id.btnAdd).Click += delegate
                     {
+                        Productos[elemento.Producto_Id].Producto_Cantidad = cantidad;
                         OnCreate(null);
                     };
                 };
@@ -91,17 +164,36 @@ namespace WorklabsMx.Droid
                 btnElemento.Click += delegate
                 {
                     SetContentView(Resource.Layout.CompraCardLayout);
-                    SetContentView(Resource.Layout.CompraCardLayout);
                     Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
                     SetActionBar(toolbar);
+                    int cantidad = 1;
                     ActionBar.Title = elemento.Membresia_Descripcion;
                     ActionBar.SetDisplayHomeAsUpEnabled(true);
                     FindViewById<TextView>(Resource.Id.lblNombre).Text = elemento.Membresia_Descripcion;
-                    FindViewById<TextView>(Resource.Id.lblPrecio).Text = "$ " + elemento.Membresia_Precio_Base.ToString() + " M/N";
+                    FindViewById<TextView>(Resource.Id.lblPrecio).Text = GetString(Resource.String.str_shop_numeric_mn, elemento.Membresia_Precio_Base.ToString());
+                    EditText MembresiaCantidad = FindViewById<EditText>(Resource.Id.txtCantidad);
+                    FindViewById<ImageView>(Resource.Id.imgMas).Click += delegate
+                    {
+                        cantidad++;
+                        MembresiaCantidad.Text = cantidad.ToString();
+                    };
+                    FindViewById<ImageView>(Resource.Id.imgMenos).Click += delegate
+                    {
+                        if (cantidad != 0)
+                        {
+                            cantidad--;
+                            MembresiaCantidad.Text = cantidad.ToString();
+                        }
+                    };
                     Spinner spSucursales = FindViewById<Spinner>(Resource.Id.spSucursal);
                     spSucursales.Adapter = adapter;
                     FindViewById<ImageView>(Resource.Id.btnClose).Click += delegate
                     {
+                        OnCreate(null);
+                    };
+                    FindViewById<Button>(Resource.Id.btnAdd).Click += delegate
+                    {
+                        Membresias[elemento.Membresia_Id].Membresia_Cantidad = cantidad;
                         OnCreate(null);
                     };
                 };
@@ -137,8 +229,9 @@ namespace WorklabsMx.Droid
             }
             return base.OnOptionsItemSelected(item);
         }
-        void AddProductoCarrito(){
-            
+        void AddProductoCarrito()
+        {
+
         }
     }
 }
