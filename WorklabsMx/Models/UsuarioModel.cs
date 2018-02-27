@@ -17,6 +17,7 @@ namespace WorklabsMx.Models
         public string Usuario_Puesto{ get; set; }
         public string Usuario_Identificacion{ get; set; }
         public string Usuario_Fotografia{ get; set; }
+        public string Usuario_Fotografia_Fondo { get; set; }
         public string Usuario_Fecha_Registro{ get; set; }
         public string Usuario_Estatus{ get; set; }
         public string Usuario_Descripcion{ get; set; }
