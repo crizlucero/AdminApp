@@ -64,6 +64,7 @@ namespace WorklabsMx.Controllers
                         Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
                         Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),
                         Publicacion_Imagen_Ruta = reader["Publicacion_Imagen_Ruta"].ToString(),
+                        Publicacion_Imagen_Post = ImageHelper.DownloadFileFTP(reader["Publicacion_Imagen"].ToString(), publicaciones_imagen_path),
                         Publicacion_Fecha = reader["Publicacion_Fecha"].ToString(),
                         Publicacion_Comentarios_Cantidad = reader["Publicacion_Comentarios_Cantidad"].ToString(),
                         Publicacion_Me_Gustan_Cantidad = reader["Publicacion_Me_Gustan_Cantidad"].ToString(),

@@ -214,18 +214,14 @@ namespace WorklabsMx.Droid
                         icLike.SetTint(Resource.Color.like_heart_pressed);
 
                 ImageView imgPost = PostView.FindViewById<ImageView>(Resource.Id.imgPost);
-                if (!string.IsNullOrEmpty(post.Publicacion_Imagen_Ruta))
+                if (post.Publicacion_Imagen_Post != null)
                 {
-                    byte[] photo = new UploadImages().DownloadFileFTP(post.Publicacion_Imagen, upload_image_path);
-                    if (photo != null)
+                    imgPost.Visibility = ViewStates.Visible;
+                    imgPost.SetImageBitmap(BitmapFactory.DecodeByteArray(post.Publicacion_Imagen_Post, 0, post.Publicacion_Imagen_Post.Length));
+                    imgPost.Click += delegate
                     {
-                        imgPost.Visibility = ViewStates.Visible;
-                        imgPost.SetImageBitmap(BitmapFactory.DecodeByteArray(photo, 0, photo.Length));
-                        imgPost.Click += delegate
-                        {
                             //AndHUD.Shared.ShowImage(this, Drawable.CreateFromStream());
                         };
-                    }
                 }
                 TextView lblComentario = PostView.FindViewById<TextView>(Resource.Id.lblComments);
                 lblComentario.Text = post.Publicacion_Comentarios_Cantidad + " " + Resources.GetString(Resource.String.Comentarios);

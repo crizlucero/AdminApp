@@ -395,6 +395,7 @@
     <AndroidResource Include="Resources\drawable\button_circle_filled.xml" />
     <AndroidResource Include="Resources\layout\ColaboradorItemLayout.axml" />
     <AndroidResource Include="Resources\layout\AboutLayout.axml" />
+    <AndroidResource Include="Resources\drawable\shadow_radius_dark_black.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
