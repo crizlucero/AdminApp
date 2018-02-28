@@ -24,7 +24,7 @@ namespace WorklabsMx.Droid
         UsuarioModel miembro;
         File _dir, _file;
         readonly int PickImageId = 1000, TakePicture = 500;
-        Bitmap bitmap;
+        Bitmap bitmap, photo, background;
         string imgPublish, imagePath;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -43,11 +43,13 @@ namespace WorklabsMx.Droid
             FindViewById<Button>(Resource.Id.btnGuardar).Click += delegate
             {
                 System.IO.MemoryStream stream = new System.IO.MemoryStream();
-                bitmap?.Compress(Bitmap.CompressFormat.Png, 0, stream);
-                byte[] bitmapData = stream?.ToArray();
+                photo?.Compress(Bitmap.CompressFormat.Png, 0, stream);
+                byte[] bitmapDataPhoto = stream?.ToArray();
+                background?.Compress(Bitmap.CompressFormat.Png, 0, stream);
+                byte[] bitmapDatabackground = stream?.ToArray();
                 if (new UsuariosController().UpdateDataMiembros(miembro.Usuario_Id, FindViewById<EditText>(Resource.Id.txtNombre).Text,
                                                                 FindViewById<EditText>(Resource.Id.txtApellidos).Text, miembro.Usuario_Correo_Electronico, miembro.Usuario_Telefono,
-                                                                miembro.Usuario_Celular, miembro.Usuario_Descripcion, DateTime.Parse(miembro.Usuario_Fecha_Nacimiento), bitmapData))
+                                                                miembro.Usuario_Celular, miembro.Usuario_Descripcion, DateTime.Parse(miembro.Usuario_Fecha_Nacimiento), bitmapDataPhoto, bitmapDatabackground))
                 {
                     miembro.Redes_Sociales.ForEach(red =>
                     {
@@ -77,6 +79,20 @@ namespace WorklabsMx.Droid
                 _file = new File(_dir, String.Format("{0}.png", Guid.NewGuid()));
                 intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(_file));
                 StartActivityForResult(intent, TakePicture);
+                photo = bitmap;
+                FindViewById<ImageView>(Resource.Id.ivPerfil).SetImageBitmap(photo);
+            };
+
+            FindViewById<ImageView>(Resource.Id.btnCamaraFondo).Click += delegate
+            {
+                CreateDirectoryForPictures();
+                IsThereAnAppToTakePictures();
+                Intent intent = new Intent(MediaStore.ActionImageCapture);
+                _file = new File(_dir, String.Format("{0}.png", Guid.NewGuid()));
+                intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(_file));
+                StartActivityForResult(intent, TakePicture);
+                background = bitmap;
+                FindViewById<ImageView>(Resource.Id.imgFondo).SetImageBitmap(background);
             };
 
             FindViewById<EditText>(Resource.Id.txtNombre).Text = miembro.Usuario_Nombre;

@@ -220,8 +220,8 @@ namespace WorklabsMx.Droid
                     imgPost.SetImageBitmap(BitmapFactory.DecodeByteArray(post.Publicacion_Imagen_Post, 0, post.Publicacion_Imagen_Post.Length));
                     imgPost.Click += delegate
                     {
-                            //AndHUD.Shared.ShowImage(this, Drawable.CreateFromStream());
-                        };
+                        //AndHUD.Shared.ShowImage(this, Drawable.CreateFromStream());
+                    };
                 }
                 TextView lblComentario = PostView.FindViewById<TextView>(Resource.Id.lblComments);
                 lblComentario.Text = post.Publicacion_Comentarios_Cantidad + " " + Resources.GetString(Resource.String.Comentarios);
