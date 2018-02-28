@@ -50,6 +50,9 @@ namespace WorklabsMx.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+            var headerCell = (HeaderMenulCell)this.TableView.DequeueReusableCell(IdentificadorCeldaHeader);
+            headerCell.UpdateCell();
+
         }
 
         public override void ViewDidDisappear(bool animated)
@@ -156,7 +159,8 @@ namespace WorklabsMx.iOS
                 var PerfilView = (PerfilesTableViewController)segue.DestinationViewController;
                 PerfilView.Miembro = MenuHelper.Usuario;
                 PerfilView.InfoPersonal = true;
-
+                //PerfilView.CargarInfo();
+                PerfilView.PerfilesDelegate = this;
             }
             var segueReveal = segue as SWRevealViewControllerSegueSetController;
             if (segueReveal == null)
@@ -182,6 +186,14 @@ namespace WorklabsMx.iOS
         }
 
 
+    }
+    public partial class MenuTableViewController : Perfilesint
+    {
+        public void InfoActualizar()
+        {
+            var headerCell = (HeaderMenulCell)this.TableView.DequeueReusableCell(IdentificadorCeldaHeader);
+            headerCell.UpdateCell();
+        }
     }
 
 }

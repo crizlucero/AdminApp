@@ -28,9 +28,15 @@ namespace WorklabsMx.iOS
                 lblPuesto.Text = Usuario.Usuario_Puesto;
                 if (Usuario.Usuario_Fotografia_Perfil != null)
                 {
-
                     var data = NSData.FromArray(Usuario.Usuario_Fotografia_Perfil);
-                    this.btnImagenPerfil.SetBackgroundImage(UIImage.LoadFromData(data), UIControlState.Normal);
+                    if (UIImage.LoadFromData(data) == null)
+                    {
+                        this.btnImagenPerfil.SetBackgroundImage(UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
+                    }
+                    else
+                    {
+                        this.btnImagenPerfil.SetBackgroundImage(UIImage.LoadFromData(data), UIControlState.Normal);
+                    }
                 }
                 else
                 {

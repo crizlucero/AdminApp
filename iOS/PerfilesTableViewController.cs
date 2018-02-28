@@ -10,9 +10,17 @@ using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
+
+    public interface Perfilesint
+    {
+        void InfoActualizar();
+    }
+
     public partial class PerfilesTableViewController : UITableViewController
     {
         public UsuarioModel Miembro = new UsuarioModel();
+
+        public Perfilesint PerfilesDelegate;
 
         bool FromMi = true, FromSocial = false, FromTrabajo = false;
 
@@ -76,6 +84,13 @@ namespace WorklabsMx.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+        }
+
+
+        public override void LoadView()
+        {
+            base.LoadView();
+            this.CargarInfo();
         }
 
 
@@ -185,7 +200,7 @@ namespace WorklabsMx.iOS
             }
         }
 
-        private void CargarInfo()
+        public void CargarInfo()
         {
             this.lblNombre.Text = (Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos != "") ? Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos : "Sin Info";
             if (Miembro.Empresa_Actual != null)
@@ -196,21 +211,35 @@ namespace WorklabsMx.iOS
             {
                 this.lblEmpresa.Text = "Sin Info";
             }
-            var ImagenPerfil = this.GetImage(Miembro.Usuario_Fotografia_Perfil);
-            if (ImagenPerfil != null)
+
+            if (Miembro.Usuario_Fotografia_Perfil != null)
             {
-                this.btnProfileImage.SetBackgroundImage(ImagenPerfil, UIControlState.Normal);
+                var data = NSData.FromArray(Miembro.Usuario_Fotografia_Perfil);
+                if (UIImage.LoadFromData(data) == null)
+                {
+                    this.btnProfileImage.SetBackgroundImage(UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
+                }
+                else
+                {
+                    this.btnProfileImage.SetBackgroundImage(UIImage.LoadFromData(data), UIControlState.Normal);
+                }
             }
             else
             {
-                this.btnProfileImage.SetBackgroundImage(UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
+                this.btnProfileImage.SetBackgroundImage(UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);            
             }
 
-            ImagenPerfil = this.GetImage(Miembro.Usuario_Fotografia_FondoPerfil);
-            if (ImagenPerfil != null)
+
+            if (Miembro.Usuario_Fotografia_FondoPerfil != null)
             {
-                this.btnImageBackGround.SetBackgroundImage(ImagenPerfil, UIControlState.Normal);
+                var data = NSData.FromArray(Miembro.Usuario_Fotografia_FondoPerfil);
+                if (UIImage.LoadFromData(data) != null)
+                {
+                    this.btnImageBackGround.SetBackgroundImage(UIImage.LoadFromData(data), UIControlState.Normal);
+                }
+               
             }
+
 
         }
 
@@ -283,7 +312,9 @@ namespace WorklabsMx.iOS
         public void MiInfo(UsuarioModel InfoActualizar)
         {
             this.Miembro = InfoActualizar;
+
             new MessageDialog().SendToast("Información actualizada con éxito");
+            this.PerfilesDelegate.InfoActualizar();
             this.DismissViewController(true, null);
         }
     }

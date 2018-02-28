@@ -41,7 +41,14 @@ namespace WorklabsMx.iOS
                 if (Usuario.Usuario_Fotografia_Perfil != null)
                 {
                     var data = NSData.FromArray(Usuario.Usuario_Fotografia_Perfil);
-                    impPublicar.Image = UIImage.LoadFromData(data);
+                    if(UIImage.LoadFromData(data) == null)
+                    {
+                        impPublicar.Image = UIImage.FromBundle("ProfileImageBig");
+                    }
+                    else
+                    {
+                        impPublicar.Image = UIImage.LoadFromData(data);
+                    }
                 }
                 else
                 {

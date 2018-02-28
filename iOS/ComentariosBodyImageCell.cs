@@ -51,6 +51,7 @@ namespace WorklabsMx.iOS
                 this.btnOpciones.Enabled = false;
             }
             lblNombre.Text = post.Usuario.Usuario_Nombre;
+            lblOcupacion.Text = post.Usuario.Usuario_Puesto;
             lblLikes.Text = post.Publicacion_Me_Gustan_Cantidad + " LIKES";
             if (int.Parse(post.Publicacion_Me_Gustan_Cantidad) == 0)
             {

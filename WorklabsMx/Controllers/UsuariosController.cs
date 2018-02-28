@@ -319,7 +319,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Miembro_Fotografia", fotoNombre);
                 command.Parameters.AddWithValue("@Miembro_Descripcion", descripcion);
                 command.Parameters.AddWithValue("@Miembro_Estatus", DBNull.Value);
-                command.Parameters.AddWithValue("@Miembro_Imagen_Fondo", foto_fondo);
+                //command.Parameters.AddWithValue("@Miembro_Imagen_Fondo", foto_fondo);
 
                 command.Parameters.Add("@Miembro_Id_Salida", SqlDbType.Int).Direction = ParameterDirection.Output;
 
