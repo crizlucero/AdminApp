@@ -43,22 +43,21 @@ namespace WorklabsMx.iOS
             imgPicker.Delegate = this;
         }
 
-        public void setInfoPublicacion(List<string> miembro)
-        {
-            if (miembro != null)
-            {
-                this.ImagenPerfil = miembro[(int)CamposMiembro.Usuario_Fotografia];
-                this.Nombre = miembro[(int)CamposMiembro.Usuario_Nombre];
-                this.Ocupacion = miembro[(int)CamposMiembro.Usuario_Puesto];
-            }
-
-        }
-
         public override void ViewWillAppear(bool animated)
         {
+            var Usuario = MenuHelper.Usuario;
             base.ViewWillAppear(animated);
-            this.lblNombre.Text = Nombre;
-            this.lblOcupacion.Text = Ocupacion;
+            this.lblNombre.Text = Usuario.Usuario_Nombre;
+            this.lblOcupacion.Text = Usuario.Usuario_Puesto;
+            if (Usuario.Usuario_Fotografia_Perfil != null)
+            {
+                var data = NSData.FromArray(Usuario.Usuario_Fotografia_Perfil);
+                imgPerfil.Image = UIImage.LoadFromData(data);
+            }
+            else
+            {
+                imgPerfil.Image = UIImage.FromBundle("ProfileImageBig");
+            }
             var color = new UIColor(0, 0.55f);
             this.View.BackgroundColor = color;
             StyleHelper.Style(btnPublicar.Layer);
@@ -66,7 +65,6 @@ namespace WorklabsMx.iOS
             this.txtPublicacion.Changed += HandleTextMessageChanged;
             FechaActual = DateTime.Now;
             lblFechaPublicacion.Text = String.Format("{0:dddd, d MMMM, yyyy}", FechaActual);
-            imgPerfil.Image = ImageGallery.LoadImage(this.ImagenPerfil) ?? UIImage.FromBundle("PerfilEscritorio");
         }
 
 

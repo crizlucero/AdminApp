@@ -541,7 +541,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Info" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paW-15-rEY">
-                                            <rect key="frame" x="16" y="11" width="382" height="378"/>
+                                            <rect key="frame" x="16" y="11" width="343" height="378"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                             <color key="textColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -5615,13 +5615,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="533"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhb-2Y-4UP">
+                                                <containerView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhb-2Y-4UP">
                                                     <rect key="frame" x="16" y="12" width="343" height="468"/>
                                                     <connections>
                                                         <segue destination="WAa-rf-MUi" kind="embed" identifier="Productos" id="Yjs-2t-jqn"/>
                                                     </connections>
                                                 </containerView>
-                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3Q-6C-M67">
+                                                <containerView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3Q-6C-M67">
                                                     <rect key="frame" x="16" y="12" width="343" height="468"/>
                                                     <connections>
                                                         <segue destination="ZNA-qb-8VG" kind="embed" identifier="Membresias" id="Min-0c-g2V"/>
@@ -6116,7 +6116,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="euj-il-VI7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14383.200000000001" y="-353.9730134932534"/>
+            <point key="canvasLocation" x="-14383.200000000001" y="-353.97300000000001"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xdc-67-bkk">
@@ -8235,10 +8235,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7f-J6-Do0">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="328"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="328"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14159">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="328"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="328"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                                     <color key="textColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -11371,7 +11371,7 @@ COL. LADRON DE GUEVARA</string>
         <scene sceneID="98Q-dj-ZiL">
             <objects>
                 <tableViewController id="zc2-Ny-IDt" customClass="DetalleMembresiaTableVieController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kiq-3d-7f0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kiq-3d-7f0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -11382,7 +11382,7 @@ COL. LADRON DE GUEVARA</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A5X-GW-c4P" id="fkY-Zm-mTL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -11390,7 +11390,7 @@ COL. LADRON DE GUEVARA</string>
                                         <rect key="frame" x="0.0" y="200" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9r2-g0-diE" id="lM4-yQ-wSA">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -11398,7 +11398,7 @@ COL. LADRON DE GUEVARA</string>
                                         <rect key="frame" x="0.0" y="400" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M6R-gA-GNk" id="Zaf-dI-beq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -11410,7 +11410,18 @@ COL. LADRON DE GUEVARA</string>
                             <outlet property="delegate" destination="zc2-Ny-IDt" id="eUA-PC-Zby"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="wTQ-WU-yUT"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="wTQ-WU-yUT">
+                        <barButtonItem key="leftBarButtonItem" image="CerrarBlanco" id="aZj-rd-3Da">
+                            <connections>
+                                <action selector="btnCarrito_Touch:" destination="zc2-Ny-IDt" id="638685"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="shopping" id="GSJ-cu-Gpf">
+                            <connections>
+                                <action selector="btnCerrar_Touch:" destination="zc2-Ny-IDt" id="638684"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EbT-BR-sHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -11979,10 +11990,10 @@ COL. LADRON DE GUEVARA</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ua3-nC-dqZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="139"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actual:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwO-Su-JM2">
-                                                            <rect key="frame" x="8" y="8" width="402" height="26"/>
+                                                            <rect key="frame" x="8" y="8" width="363" height="26"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="26" id="zCa-af-AWS"/>
                                                             </constraints>
@@ -11991,7 +12002,7 @@ COL. LADRON DE GUEVARA</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sin Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZa-O2-Uc5">
-                                                            <rect key="frame" x="66" y="41" width="340" height="26"/>
+                                                            <rect key="frame" x="66" y="41" width="301" height="26"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="26" id="c4h-cR-AC2"/>
                                                             </constraints>
@@ -12000,7 +12011,7 @@ COL. LADRON DE GUEVARA</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sin Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqS-cc-B8M">
-                                                            <rect key="frame" x="66" y="68" width="344" height="20"/>
+                                                            <rect key="frame" x="66" y="68" width="305" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="6dK-s8-Dps"/>
                                                             </constraints>
@@ -12009,7 +12020,7 @@ COL. LADRON DE GUEVARA</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sin Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYK-3v-lna">
-                                                            <rect key="frame" x="66" y="89" width="344" height="20"/>
+                                                            <rect key="frame" x="66" y="89" width="305" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="zW1-8Z-cez"/>
                                                             </constraints>
@@ -12018,7 +12029,7 @@ COL. LADRON DE GUEVARA</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyO-f0-qjU">
-                                                            <rect key="frame" x="66" y="111" width="344" height="20"/>
+                                                            <rect key="frame" x="66" y="111" width="305" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="MHI-q9-wI3"/>
                                                             </constraints>
@@ -12084,10 +12095,10 @@ COL. LADRON DE GUEVARA</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djL-yy-6SQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="174"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="174"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anterior:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cK-Ve-8O1">
-                                                            <rect key="frame" x="8" y="8" width="398" height="18"/>
+                                                            <rect key="frame" x="8" y="8" width="359" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="18" id="hsr-Qu-PPR"/>
                                                             </constraints>
@@ -12096,7 +12107,7 @@ COL. LADRON DE GUEVARA</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="268-hD-M3E">
-                                                            <rect key="frame" x="8" y="34" width="398" height="132"/>
+                                                            <rect key="frame" x="8" y="34" width="359" height="132"/>
                                                             <connections>
                                                                 <segue destination="3my-gd-RdG" kind="embed" identifier="EmpresasAnteriores" id="o60-lx-bFB"/>
                                                             </connections>
@@ -12135,16 +12146,16 @@ COL. LADRON DE GUEVARA</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WG2-zO-g2E">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="174"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="174"/>
                                                     <subviews>
                                                         <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duY-LV-pc1">
-                                                            <rect key="frame" x="8" y="42" width="398" height="124"/>
+                                                            <rect key="frame" x="8" y="42" width="359" height="124"/>
                                                             <connections>
                                                                 <segue destination="OR1-oJ-sj5" kind="embed" identifier="Colaboradores" id="flK-Tp-3Er"/>
                                                             </connections>
                                                         </containerView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colaboradores:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yX6-hu-l7F">
-                                                            <rect key="frame" x="8" y="8" width="398" height="26"/>
+                                                            <rect key="frame" x="8" y="8" width="359" height="26"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="26" id="0M1-7A-DM2"/>
                                                             </constraints>
@@ -12200,7 +12211,7 @@ COL. LADRON DE GUEVARA</string>
             <objects>
                 <collectionViewController id="3my-gd-RdG" customClass="ColeccionTrabajosAnteriores" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="G4N-g2-tOk">
-                        <rect key="frame" x="0.0" y="0.0" width="398" height="132"/>
+                        <rect key="frame" x="0.0" y="0.0" width="359" height="132"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gXG-a1-Bso">
@@ -12210,15 +12221,15 @@ COL. LADRON DE GUEVARA</string>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5gI-Or-1rN" customClass="CeldaTrabajosAnteriores">
-                                <rect key="frame" x="90.5" y="0.0" width="217" height="79"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="5gI-Or-1rN" customClass="CeldaTrabajosAnteriores">
+                                <rect key="frame" x="71" y="0.0" width="217" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="217" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sin Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBt-KW-y4g">
-                                            <rect key="frame" x="58" y="0.0" width="136" height="18"/>
+                                            <rect key="frame" x="58" y="0.0" width="120" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18" id="Kgc-VN-6Ef"/>
                                             </constraints>
@@ -12227,7 +12238,7 @@ COL. LADRON DE GUEVARA</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sin Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGr-Om-742">
-                                            <rect key="frame" x="58" y="22" width="136" height="13"/>
+                                            <rect key="frame" x="58" y="22" width="120" height="13"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="13" id="CG5-hF-xJp"/>
                                             </constraints>
@@ -12243,7 +12254,7 @@ COL. LADRON DE GUEVARA</string>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sin Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYu-m0-2HO">
-                                            <rect key="frame" x="58" y="40" width="136" height="13"/>
+                                            <rect key="frame" x="58" y="40" width="120" height="13"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="13" id="1fP-nk-54A"/>
                                             </constraints>
@@ -12252,7 +12263,7 @@ COL. LADRON DE GUEVARA</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sin Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDf-Xm-xHs">
-                                            <rect key="frame" x="56" y="58" width="138" height="13.5"/>
+                                            <rect key="frame" x="56" y="58" width="122" height="13.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="13" id="0Gi-JM-3rE"/>
                                             </constraints>
@@ -12260,8 +12271,8 @@ COL. LADRON DE GUEVARA</string>
                                             <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ur-Cj-DAx">
-                                            <rect key="frame" x="216" y="5" width="1" height="70"/>
+                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ur-Cj-DAx">
+                                            <rect key="frame" x="200" y="5" width="1" height="0.0"/>
                                             <color key="backgroundColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="1" id="ZWG-5e-hzh"/>
@@ -12737,7 +12748,7 @@ COL. LADRON DE GUEVARA</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="faccebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0W-Zx-Ljc">
-                                            <rect key="frame" x="69" y="0.0" width="282" height="40"/>
+                                            <rect key="frame" x="69" y="0.0" width="290" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="eWk-oM-bCB"/>
                                             </constraints>
@@ -12776,7 +12787,7 @@ COL. LADRON DE GUEVARA</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sin redes sociales" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvr-J4-7oL">
-                                            <rect key="frame" x="16" y="11" width="335" height="293"/>
+                                            <rect key="frame" x="16" y="11" width="343" height="293"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="31"/>
                                             <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -12827,7 +12838,7 @@ COL. LADRON DE GUEVARA</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvJ-AL-wmR">
-                                            <rect key="frame" x="0.0" y="7" width="177" height="18"/>
+                                            <rect key="frame" x="0.0" y="7" width="146" height="18"/>
                                             <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -12885,7 +12896,7 @@ COL. LADRON DE GUEVARA</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Videojuegos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCc-bH-NJe">
-                                            <rect key="frame" x="0.0" y="10" width="181" height="18"/>
+                                            <rect key="frame" x="0.0" y="10" width="150" height="18"/>
                                             <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -12925,7 +12936,7 @@ COL. LADRON DE GUEVARA</string>
             <objects>
                 <collectionViewController id="OR1-oJ-sj5" customClass="coleccionColaboradores" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Rip-rG-vm8">
-                        <rect key="frame" x="0.0" y="0.0" width="398" height="124"/>
+                        <rect key="frame" x="0.0" y="0.0" width="359" height="124"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KWN-kf-IbK">
@@ -13049,7 +13060,7 @@ COL. LADRON DE GUEVARA</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N52-P1-5Bm">
-                                <rect key="frame" x="299" y="211.5" width="68" height="22"/>
+                                <rect key="frame" x="299" y="212" width="68" height="22"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="g9t-1m-vpI"/>
@@ -13412,7 +13423,7 @@ COL. LADRON DE GUEVARA</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fz5-6P-FWd">
-                                            <rect key="frame" x="0.0" y="9" width="185" height="18"/>
+                                            <rect key="frame" x="0.0" y="9" width="146" height="18"/>
                                             <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -13471,7 +13482,7 @@ COL. LADRON DE GUEVARA</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Videojuegos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlp-gT-Bx9">
-                                            <rect key="frame" x="0.0" y="6" width="185" height="18"/>
+                                            <rect key="frame" x="0.0" y="6" width="146" height="18"/>
                                             <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -13696,7 +13707,7 @@ COL. LADRON DE GUEVARA</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WEB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPo-rt-LRB">
-                                                    <rect key="frame" x="16" y="11" width="382" height="21"/>
+                                                    <rect key="frame" x="16" y="11" width="343" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="g5x-GE-nuE"/>
                                                     </constraints>
@@ -13705,10 +13716,10 @@ COL. LADRON DE GUEVARA</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qiJ-1X-CB8">
-                                                    <rect key="frame" x="41" y="35" width="356" height="29"/>
+                                                    <rect key="frame" x="41" y="35" width="317" height="29"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1aw-WX-Bqs">
-                                                            <rect key="frame" x="0.5" y="0.5" width="355" height="28"/>
+                                                            <rect key="frame" x="0.5" y="0.5" width="316" height="28"/>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="28" id="uXe-Nn-h0m"/>
@@ -13728,7 +13739,7 @@ COL. LADRON DE GUEVARA</string>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="475-Gw-FEF">
-                                                    <rect key="frame" x="5" y="78" width="403" height="0.5"/>
+                                                    <rect key="frame" x="5" y="78" width="364" height="0.5"/>
                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="ER4-NM-zzR"/>
@@ -13759,7 +13770,7 @@ COL. LADRON DE GUEVARA</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FACEBOOK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trf-pb-4AJ">
-                                                    <rect key="frame" x="16" y="11" width="382" height="21"/>
+                                                    <rect key="frame" x="16" y="11" width="343" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="wdO-uw-9jC"/>
                                                     </constraints>
@@ -13768,10 +13779,10 @@ COL. LADRON DE GUEVARA</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLc-vv-fls">
-                                                    <rect key="frame" x="41" y="35" width="356" height="29"/>
+                                                    <rect key="frame" x="41" y="35" width="317" height="29"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tqZ-Uc-yag">
-                                                            <rect key="frame" x="0.5" y="0.5" width="355" height="28"/>
+                                                            <rect key="frame" x="0.5" y="0.5" width="316" height="28"/>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="28" id="Su5-ht-vx8"/>
@@ -13791,7 +13802,7 @@ COL. LADRON DE GUEVARA</string>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xr-Dv-dJD">
-                                                    <rect key="frame" x="5" y="78" width="403" height="0.5"/>
+                                                    <rect key="frame" x="5" y="78" width="364" height="0.5"/>
                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="EPn-Jx-RSL"/>
@@ -13821,7 +13832,7 @@ COL. LADRON DE GUEVARA</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSTAGRAM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4W-ZD-Wdn">
-                                                    <rect key="frame" x="16" y="11" width="382" height="21"/>
+                                                    <rect key="frame" x="16" y="11" width="343" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="hjf-8j-1Ob"/>
                                                     </constraints>
@@ -13830,10 +13841,10 @@ COL. LADRON DE GUEVARA</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WIA-uB-Obz">
-                                                    <rect key="frame" x="41" y="35" width="356" height="29"/>
+                                                    <rect key="frame" x="41" y="35" width="317" height="29"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gW5-hU-xqH">
-                                                            <rect key="frame" x="0.5" y="0.5" width="355" height="28"/>
+                                                            <rect key="frame" x="0.5" y="0.5" width="316" height="28"/>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="28" id="68M-Nh-OHP"/>
@@ -13853,7 +13864,7 @@ COL. LADRON DE GUEVARA</string>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kEs-dD-aV1">
-                                                    <rect key="frame" x="5" y="78" width="403" height="0.5"/>
+                                                    <rect key="frame" x="5" y="78" width="364" height="0.5"/>
                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="tBv-Pg-nfK"/>
@@ -13883,7 +13894,7 @@ COL. LADRON DE GUEVARA</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TWITTER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZJ-Ml-Ng9">
-                                                    <rect key="frame" x="16" y="11" width="382" height="21"/>
+                                                    <rect key="frame" x="16" y="11" width="343" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="NTW-5e-Tp0"/>
                                                     </constraints>
@@ -13892,10 +13903,10 @@ COL. LADRON DE GUEVARA</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERN-jc-Sqj">
-                                                    <rect key="frame" x="41" y="35" width="356" height="29"/>
+                                                    <rect key="frame" x="41" y="35" width="317" height="29"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ES3-hQ-feB">
-                                                            <rect key="frame" x="0.5" y="0.5" width="355" height="28"/>
+                                                            <rect key="frame" x="0.5" y="0.5" width="316" height="28"/>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="28" id="6yY-MW-AzC"/>
@@ -13915,7 +13926,7 @@ COL. LADRON DE GUEVARA</string>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1x-0s-BbE">
-                                                    <rect key="frame" x="6" y="78" width="403" height="0.5"/>
+                                                    <rect key="frame" x="6" y="78" width="364" height="0.5"/>
                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="N3b-UA-ab6"/>
@@ -13945,7 +13956,7 @@ COL. LADRON DE GUEVARA</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUTUBE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xh-If-HRH">
-                                                    <rect key="frame" x="16" y="11" width="382" height="21"/>
+                                                    <rect key="frame" x="16" y="11" width="343" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="j31-J0-JSI"/>
                                                     </constraints>
@@ -13954,10 +13965,10 @@ COL. LADRON DE GUEVARA</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iI9-Zh-j6g">
-                                                    <rect key="frame" x="41" y="35" width="356" height="29"/>
+                                                    <rect key="frame" x="41" y="35" width="317" height="29"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Isd-Os-W8A">
-                                                            <rect key="frame" x="0.5" y="0.5" width="355" height="28"/>
+                                                            <rect key="frame" x="0.5" y="0.5" width="316" height="28"/>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -13974,7 +13985,7 @@ COL. LADRON DE GUEVARA</string>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vT4-bJ-TFK">
-                                                    <rect key="frame" x="5" y="78" width="403" height="0.5"/>
+                                                    <rect key="frame" x="5" y="78" width="364" height="0.5"/>
                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="Not-dS-wRe"/>
@@ -14003,7 +14014,7 @@ COL. LADRON DE GUEVARA</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LINKEDIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rA9-iB-ng9">
-                                                    <rect key="frame" x="16" y="11" width="382" height="21"/>
+                                                    <rect key="frame" x="16" y="11" width="343" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="ngE-KF-TsX"/>
                                                     </constraints>
@@ -14012,10 +14023,10 @@ COL. LADRON DE GUEVARA</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imK-xS-hp9">
-                                                    <rect key="frame" x="41" y="35" width="356" height="29"/>
+                                                    <rect key="frame" x="41" y="35" width="317" height="29"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RCx-pI-ZJ9">
-                                                            <rect key="frame" x="0.5" y="0.5" width="355" height="28"/>
+                                                            <rect key="frame" x="0.5" y="0.5" width="316" height="28"/>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -14032,7 +14043,7 @@ COL. LADRON DE GUEVARA</string>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejL-Ak-Uaf">
-                                                    <rect key="frame" x="5" y="78" width="403" height="0.5"/>
+                                                    <rect key="frame" x="5" y="78" width="364" height="0.5"/>
                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="yyt-yN-J6D"/>
@@ -14061,7 +14072,7 @@ COL. LADRON DE GUEVARA</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKYPE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvK-X4-qaN">
-                                                    <rect key="frame" x="16" y="11" width="382" height="21"/>
+                                                    <rect key="frame" x="16" y="11" width="343" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="A5q-Bo-ZQB"/>
                                                     </constraints>
@@ -14070,10 +14081,10 @@ COL. LADRON DE GUEVARA</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqz-JZ-uBf">
-                                                    <rect key="frame" x="41" y="35" width="356" height="29"/>
+                                                    <rect key="frame" x="41" y="35" width="317" height="29"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adZ-RR-eyw">
-                                                            <rect key="frame" x="0.5" y="0.5" width="355" height="28"/>
+                                                            <rect key="frame" x="0.5" y="0.5" width="316" height="28"/>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -14732,7 +14743,7 @@ COL. LADRON DE GUEVARA</string>
         <image name="worklabsLogo" width="983" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dWH-F8-bIl"/>
+        <segue reference="l8u-9u-D6k"/>
         <segue reference="KAP-pi-ckG"/>
         <segue reference="Tlx-3I-mcH"/>
         <segue reference="Hoa-iV-Mgh"/>

@@ -28,17 +28,25 @@ namespace WorklabsMx.iOS
 
 		}
 
-        internal void UpdateCell(List<string> miembro)
+        internal async void UpdateCell()
         {
-            if (miembro != null)
+            await MenuHelper.GetUsuarioInfo();
+
+            var Usuario = MenuHelper.Usuario;
+            if (Usuario != null)
             {
-                if (miembro.Count > 0)
+
+                lblNombre.Text = Usuario.Usuario_Nombre;
+                lblProfesion.Text = Usuario.Usuario_Puesto;
+                if (Usuario.Usuario_Fotografia_Perfil != null)
                 {
-                    lblNombre.Text = miembro[(int)CamposMiembro.Usuario_Nombre];
-                    lblProfesion.Text = miembro[(int)CamposMiembro.Usuario_Puesto];
-                    impPublicar.Image = ImageGallery.LoadImage(miembro[(int)CamposMiembro.Usuario_Fotografia]) ?? UIImage.FromBundle("PerfilEscritorio");
+                    var data = NSData.FromArray(Usuario.Usuario_Fotografia_Perfil);
+                    impPublicar.Image = UIImage.LoadFromData(data);
                 }
-         
+                else
+                {
+                    impPublicar.Image = UIImage.FromBundle("ProfileImageBig");
+                }
             }
 
             srbBuscarComunidad.TextChanged += (sender, e) => {

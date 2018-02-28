@@ -66,10 +66,10 @@ namespace WorklabsMx.iOS
             lblEmpresa.Text = (InfoPerifl.Usuario_Empresa_Nombre != "" && InfoPerifl.Usuario_Empresa_Nombre != null) ? InfoPerifl.Usuario_Empresa_Nombre : "Sin Info";
             NewInfoPerfil.Usuario_Empresa_Nombre = lblEmpresa.Text;
 
-            byte[] imageBytes = new UploadImages().DownloadFileFTP(InfoPerifl.Usuario_Fotografia, MenuHelper.ProfileImagePath);
-            if (imageBytes != null)
+            //byte[] imageBytes = new UploadImages().DownloadFileFTP(InfoPerifl.Usuario_Fotografia, MenuHelper.ProfileImagePath);
+            if (InfoPerifl.Usuario_Fotografia_Perfil != null)
             {
-                var data = NSData.FromArray(imageBytes);
+                var data = NSData.FromArray(InfoPerifl.Usuario_Fotografia_Perfil);
                 this.btnImagen.SetBackgroundImage(UIImage.LoadFromData(data), UIControlState.Normal);
             }
             else
@@ -77,10 +77,10 @@ namespace WorklabsMx.iOS
                 this.btnImagen.SetBackgroundImage(UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
             }
 
-            imageBytes = new UploadImages().DownloadFileFTP(InfoPerifl.Usuario_Fotografia_Fondo, MenuHelper.ProfileImagePath);
-            if (imageBytes != null)
+            //imageBytes = new UploadImages().DownloadFileFTP(InfoPerifl.Usuario_Fotografia_Fondo, MenuHelper.ProfileImagePath);
+            if (InfoPerifl.Usuario_Fotografia_FondoPerfil != null)
             {
-                var data = NSData.FromArray(imageBytes);
+                var data = NSData.FromArray(InfoPerifl.Usuario_Fotografia_FondoPerfil);
                 this.btnFondoImagen.SetBackgroundImage(UIImage.LoadFromData(data), UIControlState.Normal);
             }
             else
@@ -143,15 +143,16 @@ namespace WorklabsMx.iOS
         [Foundation.Export("imagePickerController:didFinishPickingImage:editingInfo:")]
         public void FinishedPickingImage(UIKit.UIImagePickerController picker, UIKit.UIImage image, Foundation.NSDictionary editingInfo)
         {
+            NSData imageData = image.AsPNG();
             if (this.TouchedBack)
             {
                 this.btnFondoImagen.SetBackgroundImage(image, UIControlState.Normal);
-                NewInfoPerfil.Usuario_Fotografia_FondoPerfil = new Byte[image.AsPNG().Length];
+                NewInfoPerfil.Usuario_Fotografia_FondoPerfil = new Byte[imageData.Length];
             }
             else if (this.TouchedProfile)
             {
                 this.btnImagen.SetBackgroundImage(image, UIControlState.Normal);
-                NewInfoPerfil.Usuario_Fotografia_Perfil = new Byte[image.AsPNG().Length];
+                NewInfoPerfil.Usuario_Fotografia_Perfil = new Byte[imageData.Length];
             }
 
             this.TouchedBack = false;
@@ -410,8 +411,6 @@ namespace WorklabsMx.iOS
             {
                 resultRedesSociales = 1;
             }
-
-           
 
             resultDataMiembros = new UsuariosController().UpdateDataMiembros(KeyChainHelper.GetKey("Usuario_Id"), NewInfoPerfil.Usuario_Nombre, NewInfoPerfil.Usuario_Apellidos, NewInfoPerfil.Usuario_Correo_Electronico,
                                                                              NewInfoPerfil.Usuario_Telefono, NewInfoPerfil.Usuario_Celular, NewInfoPerfil.Usuario_Descripcion, fechaNacimiento, NewInfoPerfil.Usuario_Fotografia_Perfil);

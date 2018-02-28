@@ -17,5 +17,20 @@ namespace WorklabsMx.iOS
         public DetalleMembresiaTableVieController (IntPtr handle) : base (handle)
         {
         }
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+        } 
+
+        partial void btnCerrar_Touch(UIBarButtonItem sender)
+        {
+            
+        }
+
+        partial void btnCarrito_Touch(UIBarButtonItem sender)
+        {
+            this.DismissViewController(true, null);
+        }
     }
 }

@@ -35,9 +35,7 @@ namespace WorklabsMx.iOS
             dateFormat.DateFormat = "dd/MM/yyyy";
             NavigationItem.Title = Prodcuto.Producto_Descripcion;
 
-           
-
-
+          
             StyleHelper.Style(this.vwSucursales.Layer);
             StyleHelper.Style(this.btnAñadir.Layer);
             this.lblLeyenda.Text = "Costo por unidad";

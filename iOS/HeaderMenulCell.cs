@@ -21,16 +21,21 @@ namespace WorklabsMx.iOS
 
         public void UpdateCell()
         {
-            var miembro = MenuHelper.UserInfo;
-            if (miembro != null)
+            var Usuario = MenuHelper.Usuario;
+            if (Usuario != null)
             {
-                if (miembro.Count > 0)
+                lblNombre.Text = Usuario.Usuario_Nombre;
+                lblPuesto.Text = Usuario.Usuario_Puesto;
+                if (Usuario.Usuario_Fotografia_Perfil != null)
                 {
-                    lblNombre.Text = miembro[(int)CamposMiembro.Usuario_Nombre];
-                    lblPuesto.Text = miembro[(int)CamposMiembro.Usuario_Puesto];
-                    btnImagenPerfil.SetBackgroundImage(ImageGallery.LoadImage(miembro[(int)CamposMiembro.Usuario_Fotografia]) ?? UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
-                }
 
+                    var data = NSData.FromArray(Usuario.Usuario_Fotografia_Perfil);
+                    this.btnImagenPerfil.SetBackgroundImage(UIImage.LoadFromData(data), UIControlState.Normal);
+                }
+                else
+                {
+                    this.btnImagenPerfil.SetBackgroundImage(UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
+                }
             }
         }
 
