@@ -1,19 +1,20 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/MainActivity.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="WorklabsMx.Droid/ViewController/LoginActivity.cs" Line="56" Column="77" />
-      <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="25" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="76" Column="72" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="125" Column="10" />
       <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="67" Column="145" />
       <File FileName="WorklabsMx/Models/PostModel.cs" Line="18" Column="22" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="87" Column="21" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="234" Column="54" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="301" Column="38" />
+      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardEditarActivity.cs" Line="52" Column="206" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>

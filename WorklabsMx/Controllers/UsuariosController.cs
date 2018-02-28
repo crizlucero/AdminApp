@@ -275,9 +275,9 @@ namespace WorklabsMx.Controllers
         /// <param name="telefono">Telefono del usuario</param>
         /// <param name="celular">Celular del usuario</param>
         /// <param name="fechaNacimiento">Fecha nacimiento del usuario</param>
-        public bool UpdateDataMiembros(string usuario_id, string nombre, string apellido, string correo, string telefono, string celular, string descripcion, DateTime fechaNacimiento, byte[] fotografia)
+        public bool UpdateDataMiembros(string usuario_id, string nombre, string apellido, string correo, string telefono, string celular, string descripcion, DateTime fechaNacimiento, byte[] fotografia, byte[] foto_fondo)
         {
-            string fotoNombre = null;
+            string fotoNombre = null, fotoFondoNombre = null;
             try
             {
                 conn.Open();
@@ -286,6 +286,16 @@ namespace WorklabsMx.Controllers
                 {
                     fotoNombre = Guid.NewGuid().ToString() + ".png";
                     var result = new UploadImages().UploadBitmapAsync(fotoNombre, fotografia, usuario_imagen_path);
+                    if (!result)
+                    {
+                        return false;
+                    }
+
+                }
+                if (foto_fondo.Length != 0)
+                {
+                    fotoFondoNombre = Guid.NewGuid().ToString() + ".png";
+                    var result = new UploadImages().UploadBitmapAsync(fotoFondoNombre, foto_fondo, usuario_imagen_path);
                     if (!result)
                     {
                         return false;
@@ -309,6 +319,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Miembro_Fotografia", fotoNombre);
                 command.Parameters.AddWithValue("@Miembro_Descripcion", descripcion);
                 command.Parameters.AddWithValue("@Miembro_Estatus", DBNull.Value);
+                command.Parameters.AddWithValue("@Miembro_Imagen_Fondo", foto_fondo);
 
                 command.Parameters.Add("@Miembro_Id_Salida", SqlDbType.Int).Direction = ParameterDirection.Output;
 

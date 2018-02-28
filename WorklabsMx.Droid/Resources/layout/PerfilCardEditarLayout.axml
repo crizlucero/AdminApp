@@ -23,7 +23,25 @@
                 android:layout_column="0"
                 android:layout_columnSpan="5"
                 android:layout_gravity="top"
-                android:adjustViewBounds="true" />
+                android:adjustViewBounds="true"
+                android:id="@+id/imgFondo" />
+            <ImageView
+                android:id="@+id/btnCamaraFondo"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_columnSpan="5"
+                android:layout_gravity="center|bottom|right"
+                android:src="@mipmap/ic_photo_camera"
+                android:textSize="10dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/blue_round_button"
+                android:textStyle="bold"
+                android:textColor="#FFF"
+                android:tint="#FFF"
+                android:padding="5dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginRight="10dp" />
             <ImageButton
                 android:src="@mipmap/ic_clear"
                 android:id="@+id/ibCerrar"
