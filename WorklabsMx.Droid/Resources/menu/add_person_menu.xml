@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item 
         android:id="@+id/menu_add_person"
-        android:icon="@mipmap/ic_person_add"
+        android:icon="@mipmap/ic_person_add_white"
         android:showAsAction="ifRoom"
         android:title="Agregar Colaborador"
     />

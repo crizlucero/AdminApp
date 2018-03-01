@@ -18,8 +18,8 @@
     <item
         android:left="30dp"
         android:right="30dp"
-        android:top="270dp"
-        android:bottom="270dp">
+        android:top="275dp"
+        android:bottom="275dp">
         <bitmap 
         android:gravity="fill_horizontal|center|fill_vertical"
         android:src="@mipmap/worklabs_title"/>

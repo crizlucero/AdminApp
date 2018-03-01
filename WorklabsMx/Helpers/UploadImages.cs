@@ -44,7 +44,7 @@ namespace WorklabsMx.Helpers
                     FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://worklabs.mx/" + path + imgNombre.Replace("\\", "/"));
                     client.Method = WebRequestMethods.Ftp.DownloadFile;
                     client.UsePassive = false;
-                    client.Credentials = new NetworkCredential(@"worklabscloud", @"Worklabscloud!");
+                    client.Credentials = new NetworkCredential(@"WLSRVHOSTING\worklabscloud", @"Worklabscloud!");
                     client.Timeout = 3000;
                     Stream responseStream = ((FtpWebResponse)client.GetResponse()).GetResponseStream();
                     MemoryStream ms = new MemoryStream();
@@ -60,5 +60,7 @@ namespace WorklabsMx.Helpers
             }
             return null;
         }
+
+
     }
 }

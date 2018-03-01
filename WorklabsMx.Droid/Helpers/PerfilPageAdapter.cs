@@ -84,7 +84,6 @@ namespace WorklabsMx.Droid
                     context.StartActivity(email);
                 };
             }
-
             miembro.Etiquetas.ToList().ForEach(habilidad =>
             {
                 if (habilidad.Etiqueta_Tipo == "Habilidad")

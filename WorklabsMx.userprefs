@@ -1,37 +1,34 @@
-﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/PerfilesTableViewController.cs">
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/UsuariosController.cs">
     <Files>
-      <File FileName="iOS/PerfilesTableViewController.cs" Line="316" Column="39" />
-      <File FileName="iOS/MenuTableViewController.cs" Line="53" Column="1" />
-      <File FileName="iOS/HeaderMenulCell.cs" Line="29" Column="1" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="64" Column="13" />
-      <File FileName="iOS/EditarPerfilTableViewController.cs" Line="492" Column="26" />
-      <File FileName="iOS/ComentariosBodyImageCell.cs" Line="37" Column="23" />
-      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="78" Column="66" />
-      <File FileName="iOS/Helpers/MenuHelper.cs" Line="125" Column="24" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="90" Column="78" />
+      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="100" Column="41" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MainActivity.cs" Line="28" Column="25" />
+      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="63" Column="9" />
+      <File FileName="WorklabsMx/Models/ComentarioModel.cs" Line="10" Column="64" />
+      <File FileName="WorklabsMx/Models/PostModel.cs" Line="3" Column="18" />
+      <File FileName="WorklabsMx/Models/UsuarioModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/SucursalModel.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/Resources/drawable/ImageStyle.xml" Line="2" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="46" Column="116" />
+      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioActivity.cs" Line="39" Column="78" />
+      <File FileName="WorklabsMx.Droid/Helpers/PerfilPageAdapter.cs" Line="93" Column="16" />
+      <File FileName="WorklabsMx.Droid/Helpers/ImagesHelper.cs" Line="70" Column="23" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="45" Column="13" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="248" Column="25" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>data</Value>
-          <Value>UIImage.LoadFromData(data)</Value>
-          <Value>UIImage.LoadFromData(data)</Value>
-          <Value>UIImage.LoadFromData(data)</Value>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/UsuariosController.cs" relfile="WorklabsMx/Controllers/UsuariosController.cs" line="334" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/MenuTableViewController.cs" relfile="iOS/MenuTableViewController.cs" line="53" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/HeaderMenulCell.cs" relfile="iOS/HeaderMenulCell.cs" line="29" column="28" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/UsuariosController.cs" relfile="WorklabsMx/Controllers/UsuariosController.cs" line="346" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/MenuTableViewController.cs" relfile="iOS/MenuTableViewController.cs" line="53" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/HeaderMenulCell.cs" relfile="iOS/HeaderMenulCell.cs" line="29" column="28" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/ViewController/CommentsActivity.cs" relfile="WorklabsMx.Droid/ViewController/CommentsActivity.cs" line="365" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/ViewController/CommentsActivity.cs" relfile="WorklabsMx.Droid/ViewController/CommentsActivity.cs" line="99" column="55" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.0D184F42-6E16-43C3-B549-F1D9DA6E63D0" automaticSigning="False">
-    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="2UE9KBTD45" TeamId="3VMPS2N2KS" />
-  </MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS>
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>

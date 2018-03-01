@@ -191,6 +191,7 @@ namespace WorklabsMx.Controllers
                             Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
                             Usuario_Fotografia = reader["Usuario_Fotografia"].ToString(),
                             Usuario_Correo_Electronico = reader["Usuario_Correo_Electronico"].ToString(),
+                            Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path),
                             Usuario_Telefono = reader["Usuario_Telefono"].ToString(),
                             Usuario_Celular = reader["Usuario_Celular"].ToString(),
                             Usuario_Fecha_Nacimiento = reader["Usuario_Fecha_Nacimiento"].ToString(),
@@ -244,6 +245,7 @@ namespace WorklabsMx.Controllers
                         Usuario_Profesion = reader["Usuario_Profesion"].ToString(),
                         Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
                         Usuario_Fotografia = reader["Usuario_Fotografia"].ToString(),
+                        Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path),
                         Usuario_Correo_Electronico = reader["Usuario_Correo_Electronico"].ToString(),
                         Usuario_Telefono = reader["Usuario_Telefono"].ToString(),
                         Usuario_Celular = reader["Usuario_Celular"].ToString(),
@@ -261,6 +263,16 @@ namespace WorklabsMx.Controllers
                 SlackLogs.SendMessage(e.Message);
             }
             finally { conn.Close(); }
+            usuarios.ForEach(usuario =>
+            {
+                List<string> contadores = GetContadoresSocial(usuario.Usuario_Id, usuario.Usuario_Tipo);
+                usuario.Red_Social_Publicaciones = contadores[0];
+                usuario.Red_Social_Seguidores = contadores[1];
+                usuario.Red_Social_Siguiendo = contadores[2];
+                usuario.Etiquetas = GetUsuarioEtiquetas(usuario.Usuario_Id, usuario.Usuario_Tipo);
+                usuario.Redes_Sociales = GetUsuarioRedesSociales(usuario.Usuario_Id, usuario.Usuario_Tipo);
+            });
+
             return usuarios;
         }
 
@@ -447,10 +459,11 @@ namespace WorklabsMx.Controllers
             {
                 conn.Open();
                 command = CreateCommand("select Colaborador_Empresa_Nombre, Colaborador_Empresa_Apellidos, Colaborador_Empresa_Id, Colaborador_Empresa_Fotografia from vw_cat_Colaboradores_Directorio WHERE Empresa_Miembro_Id = @Usuario_Id");
-                command.Parameters.AddWithValue("@Usuario_Id",usuario_id);
+                command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
                 reader = command.ExecuteReader();
-                while(reader.Read()){
-                    colaboradores.Add( new UsuarioModel
+                while (reader.Read())
+                {
+                    colaboradores.Add(new UsuarioModel
                     {
                         Usuario_Nombre = reader["Colaborador_Empresa_Nombre"].ToString(),
                         Usuario_Apellidos = reader["Colaborador_Empresa_Apellidos"].ToString(),

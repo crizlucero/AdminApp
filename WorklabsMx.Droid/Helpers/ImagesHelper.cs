@@ -29,7 +29,7 @@ namespace WorklabsMx.Droid.Helpers
                             imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
                         }
                     }
-                    catch 
+                    catch
                     {
                         return null;
                     }

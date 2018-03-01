@@ -106,6 +106,7 @@ namespace WorklabsMx.Droid.ViewElement
                         case "DirectorioActivity": context.StartActivity(new Intent(context, typeof(DirectorioActivity))); break;
                         case "AccesoActivity": context.StartActivity(new Intent(context, typeof(AccesoActivity))); break;
                         case "AboutUsActivity": context.StartActivity(new Intent(context, typeof(AboutUsActivity))); break;
+                        default: break;
                     }
                 };
                 row.AddView(btnMenu);

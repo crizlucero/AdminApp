@@ -34,7 +34,7 @@ namespace WorklabsMx.Droid
         List<ComentarioModel> comentarios;
         File _file, _dir;
         Bitmap bitmap;
-        Android.Support.V7.App.AlertDialog dialog;
+        AlertDialog dialog;
         View customView;
         readonly int sizePage = 10, PickImageId = 1000, TakePicture = 500;
         int page;
@@ -176,8 +176,8 @@ namespace WorklabsMx.Droid
                 //string Usuario_Id = !string.IsNullOrEmpty(comentario.Miembro_Id) ? comentario.Miembro_Id : comentario.Colaborador_Empresa_Id;
 
                 ImageButton imgPerfil = CommentView.FindViewById<ImageButton>(Resource.Id.imgPerfil);
-                if (post.Usuario.Usuario_Fotografia_Perfil != null)
-                    imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(post.Usuario.Usuario_Fotografia_Perfil, 0, post.Usuario.Usuario_Fotografia_Perfil.Length));
+                if (comentario.Usuario.Usuario_Fotografia_Perfil != null)
+                    imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(comentario.Usuario.Usuario_Fotografia_Perfil, 0, comentario.Usuario.Usuario_Fotografia_Perfil.Length));
                 else
                     imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
                 imgPerfil.Click += (sender, e) => ShowPerfilCard(new UsuariosController().GetMemberData(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo));
@@ -296,14 +296,20 @@ namespace WorklabsMx.Droid
         void ShowPublish()
         {
 
-            Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
             LayoutInflater liView = LayoutInflater;
 
             customView = liView.Inflate(Resource.Layout.PublishLayout, null, true);
 
+            ImageView imgPerfil = customView.FindViewById<ImageView>(Resource.Id.imgPerfil);
+            if (post.Usuario.Usuario_Fotografia_Perfil != null)
+                imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(post.Usuario.Usuario_Fotografia_Perfil, 0, post.Usuario.Usuario_Fotografia_Perfil.Length));
+            else
+                imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
             customView.FindViewById<TextView>(Resource.Id.lblNombre).Text = post.Usuario.Usuario_Nombre;
             customView.FindViewById<TextView>(Resource.Id.lblPuesto).Text = post.Usuario.Usuario_Puesto;
+
             customView.FindViewById<TextView>(Resource.Id.lblFecha).Text = DateTime.Now.ToString("d");
             customView.FindViewById<ImageButton>(Resource.Id.imgPicture).Visibility = ViewStates.Gone;
             customView.FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Gone;
@@ -354,12 +360,12 @@ namespace WorklabsMx.Droid
                 System.IO.MemoryStream stream = new System.IO.MemoryStream();
                 bitmap?.Compress(Bitmap.CompressFormat.Png, 0, stream);
                 byte[] bitmapData = stream?.ToArray();
-                if (bitmap != null || FindViewById<EditText>(Resource.Id.txtPublicacion).Text.Trim().Length != 0)
+                if (bitmapData.Length != 0 || customView.FindViewById<EditText>(Resource.Id.txtPublicacion).Text.Trim().Length != 0)
                 {
-                    if (DashboardController.CommentPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), FindViewById<EditText>(Resource.Id.txtPublicacion).Text, bitmapData))
+                    if (DashboardController.CommentPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), customView.FindViewById<EditText>(Resource.Id.txtPublicacion).Text, bitmapData))
                     {
-                        FindViewById<EditText>(Resource.Id.txtPublicacion).Text = "";
-                        FindViewById<EditText>(Resource.Id.txtPublicacion).ClearFocus();
+                        customView.FindViewById<EditText>(Resource.Id.txtPublicacion).Text = "";
+                        customView.FindViewById<EditText>(Resource.Id.txtPublicacion).ClearFocus();
                         comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
                         FillCommentsAsync();
                         svComentarios.ScrollY = svComentarios.Height;

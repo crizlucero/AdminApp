@@ -191,6 +191,8 @@ namespace WorklabsMx.Controllers
         public List<ComentarioModel> GetComentariosPost(string post_id, string usuario_id, string usuario_tipo)
         {
             List<ComentarioModel> comentarios = new List<ComentarioModel>();
+            List<UsuarioModel> usuarios = new List<UsuarioModel>();
+            string post_user_id = string.Empty;
             command = CreateCommand();
             command.Connection = conn;
             command.CommandType = CommandType.StoredProcedure;
@@ -204,27 +206,30 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
+                    post_user_id = !string.IsNullOrEmpty(reader["Miembro_Id"].ToString()) ? reader["Miembro_Id"].ToString() : reader["Colaborador_Empresa_Id"].ToString();
+                    UsuarioModel usuario = usuarios.Find(user => user.Usuario_Id == post_user_id && user.Usuario_Tipo == reader["Usuario_Tipo"].ToString());
+                    if (usuario == null)
+                    {
+                        usuario = new UsuarioModel
+                        {
+                            Usuario_Id = !string.IsNullOrEmpty(reader["Miembro_Id"].ToString()) ? reader["Miembro_Id"].ToString() : reader["Colaborador_Empresa_Id"].ToString(),
+                            Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
+                            Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
+                            Usuario_Fotografia = reader["Usuario_Fotografia_Ruta"].ToString(),
+                            Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
+                            Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path)
+                        };
+                        usuarios.Add(usuario);
+                    }
+
                     comentarios.Add(new ComentarioModel
                     {
                         Comentario_Id = reader["Comentario_Id"].ToString(),
                         Publicacion_Id = reader["Publicacion_Id"].ToString(),
-                        Usuario = new UsuarioModel
-                        {
-                            Usuario_Id = reader["Usuario_Tipo"].ToString() == "1" ? reader["Miembro_Id"].ToString() : reader["Colaborador_Empresa_Id"].ToString(),
-                            Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
-                            Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
-                            Usuario_Fotografia = reader["Usuario_Fotografia_Ruta"].ToString(),
-                            Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
-                            Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(reader["Usuario_Fotografia_Ruta"].ToString(), new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1)
-                        },
-                        /*Miembro_Id = reader["Miembro_Id"].ToString(),
-                        Colaborador_Empresa_Id = reader["Colaborador_Empresa_Id"].ToString(),
-                        Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
-                        Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
-                        Usuario_Fotografia_Ruta = reader["Usuario_Fotografia_Ruta"].ToString(),
-                        Usuario_Puesto = reader["Usuario_Puesto"].ToString(),*/
+                        Usuario = usuario,
                         Comentario_Contenido = reader["Comentario_Contenido"].ToString(),
                         Comentario_Imagen = reader["Comentario_Imagen"].ToString(),
+                        Comentario_Imagen_Comentario = ImageHelper.DownloadFileFTP(reader["Comentario_Imagen"].ToString(), publicaciones_imagen_path),
                         Comentario_Imagen_Ruta = reader["Comentario_Imagen_Ruta"].ToString(),
                         Comentario_Fecha = reader["Comentario_Fecha"].ToString(),
                         Comentario_Me_Gustan_Cantidad = reader["Comentario_Me_Gustan_Cantidad"].ToString(),
@@ -591,7 +596,8 @@ namespace WorklabsMx.Controllers
                             Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
                             Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
                             Usuario_Fotografia = reader["Usuario_Fotografia_Ruta"].ToString(),
-                            Usuario_Puesto = reader["Usuario_Puesto"].ToString()
+                            Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
+                            Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path)
                         },
                         Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
                         Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),

@@ -41,14 +41,13 @@
         android:background="#FFF"
         android:translationZ="3dp">
         <ImageView
-            android:src="@mipmap/ic_profile_empty"
+            android:src="@mipmap/icono"
             android:id="@+id/imgPerfil"
             android:layout_rowSpan="3"
             android:background="@drawable/imagestyle"
             android:layout_gravity="center"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:scaleType="fitXY"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp" />
