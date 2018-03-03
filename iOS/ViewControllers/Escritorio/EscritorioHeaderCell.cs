@@ -28,14 +28,11 @@ namespace WorklabsMx.iOS
 
 		}
 
-        internal async void UpdateCell()
+        internal void UpdateCell()
         {
-            await MenuHelper.GetUsuarioInfo();
-
             var Usuario = MenuHelper.Usuario;
             if (Usuario != null)
             {
-
                 lblNombre.Text = Usuario.Usuario_Nombre;
                 lblProfesion.Text = Usuario.Usuario_Puesto;
                 if (Usuario.Usuario_Fotografia_Perfil != null)

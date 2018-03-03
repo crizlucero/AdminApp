@@ -33,18 +33,20 @@ namespace WorklabsMx.iOS
             
         }
 
-        public override async void ViewDidLoad()
+        public override void ViewDidLoad()
         {
             base.ViewDidLoad();
             tableItems = new List<ItemsMenu>();
             tableItems = MenuHelper.GeneralList;
-            await MenuHelper.GetMembresias();
-            await MenuHelper.GetProductos();
+
         }
 
-        public override void ViewWillAppear(bool animated)
+        public override async void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            await MenuHelper.GetSucursales();
+            await MenuHelper.GetMembresias();
+            await MenuHelper.GetProductos();
         }
 
         public override void ViewDidAppear(bool animated)
@@ -74,13 +76,18 @@ namespace WorklabsMx.iOS
 
         public override nint RowsInSection(UITableView tableView, nint section)
         {
-            if (tableItems.Count > 0)
+            if (tableItems != null)
             {
-                isShowInformation = true;
-                return tableItems.Count;
+                if (tableItems.Count > 0)
+                {
+                    isShowInformation = true;
+                    return tableItems.Count;
+                }
+                isShowInformation = false;
+                return 1;
             }
-            isShowInformation = false;
             return 1;
+
         }
 
 
@@ -115,7 +122,7 @@ namespace WorklabsMx.iOS
 
         }
 
-        public override void RowSelected(UITableView tableView, Foundation.NSIndexPath indexPath)
+        public  override void RowSelected(UITableView tableView, Foundation.NSIndexPath indexPath)
         {
             if (indexPath.Row == 0)
             {
@@ -130,7 +137,7 @@ namespace WorklabsMx.iOS
                 this.PerformSegue("Compras", null);
             }
             else if (indexPath.Row == 3)
-            {
+            { 
                 this.PerformSegue("ReservarSalaJuntas", this);
             }
             else if (indexPath.Row == 4)
@@ -157,9 +164,7 @@ namespace WorklabsMx.iOS
             if (segue.Identifier == "DetallePerfil")
             {
                 var PerfilView = (PerfilesTableViewController)segue.DestinationViewController;
-                PerfilView.Miembro = MenuHelper.Usuario;
                 PerfilView.InfoPersonal = true;
-                //PerfilView.CargarInfo();
                 PerfilView.PerfilesDelegate = this;
             }
             var segueReveal = segue as SWRevealViewControllerSegueSetController;
@@ -189,8 +194,9 @@ namespace WorklabsMx.iOS
     }
     public partial class MenuTableViewController : Perfilesint
     {
-        public void InfoActualizar()
+        public async void InfoActualizar()
         {
+            await MenuHelper.GetUsuarioInfo();
             var headerCell = (HeaderMenulCell)this.TableView.DequeueReusableCell(IdentificadorCeldaHeader);
             headerCell.UpdateCell();
         }

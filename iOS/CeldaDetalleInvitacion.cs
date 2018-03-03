@@ -8,6 +8,7 @@ using WorklabsMx.iOS.Helpers;
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Threading.Tasks;
+using BigTed;
 
 namespace WorklabsMx.iOS
 {
@@ -25,13 +26,13 @@ namespace WorklabsMx.iOS
     public partial class CeldaDetalleInvitacion : UITableViewCell
     {
         string DomicilioInvitacion = "";
-        List<UsuarioModel> invitadosLocal;
+        List<UsuarioModel> invitadosLocal = new List<UsuarioModel>();
 
         public EventosDetalleInvitacion EventosDetalleInvitacionDel;
 
         NSIndexPath indexPathLocal;
 
-        List<SucursalModel> sucursales = new SucursalController().GetSucursales();
+        List<SucursalModel> sucursales = new List<SucursalModel>();
 
         string correoInvitacion;
 
@@ -41,8 +42,10 @@ namespace WorklabsMx.iOS
 
         public void UpdateCell(List<UsuarioModel> invitados, string FechaReservacion, string Sucursal, NSIndexPath indexPath)
         {
+            sucursales = MenuHelper.ListaSucursales;
             this.lblFecha.Text = FechaReservacion;
             this.lblUbicacion.Text = Sucursal;
+            invitadosLocal = new List<UsuarioModel>();
             invitadosLocal = invitados;
             indexPathLocal = indexPath;
             correoInvitacion = System.IO.File.ReadAllText("HTML/Invitacion.html");
@@ -77,72 +80,36 @@ namespace WorklabsMx.iOS
         async partial void btnInvitar_Touch(UIButton sender)
         {
             var ErrorInvitar = false;
-            var EmailValido = true;
-            var CamposVacios = false;
             foreach (UsuarioModel invitado in invitadosLocal)
             {
-
-                if (invitado.Usuario_Apellidos != "" && invitado.Usuario_Apellidos != null && invitado.Usuario_Nombre != "" && invitado.Usuario_Nombre != null && invitado.Usuario_Correo_Electronico != "" && invitado.Usuario_Correo_Electronico != null)
+                
+                var Sucursal = sucursales.Find(x => x.Sucursal_Descripcion == lblUbicacion.Text);
+                if (InternetConectionHelper.VerificarConexion())
                 {
-                    String EmailRegex = "";
-                    EmailRegex = KeyChainHelper.GetKey("EmailRegex");
-                    bool EmailEsValido = false;
-                    if (invitado.Usuario_Correo_Electronico != null)
+                    if (new InvitadosController().RegistraInvitado(invitado.Usuario_Nombre, invitado.Usuario_Apellidos, invitado.Usuario_Correo_Electronico, txtAsunto.Text, DateTime.Parse(lblFecha.Text), Sucursal.Sucursal_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo")) != -1)
                     {
-                        EmailEsValido = this.ElTextoEsValido(invitado.Usuario_Correo_Electronico, EmailRegex);
-                    }
-                    if (EmailEsValido)
-                    {
-                        var Sucursal = sucursales.Find(x => x.Sucursal_Descripcion == lblUbicacion.Text);
-                        if (InternetConectionHelper.VerificarConexion())
-                        {
-                            if (new InvitadosController().RegistraInvitado(invitado.Usuario_Nombre, invitado.Usuario_Apellidos, invitado.Usuario_Correo_Electronico, txtAsunto.Text, DateTime.Parse(lblFecha.Text), Sucursal.Sucursal_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo")) != -1)
-                            {
-                                ErrorInvitar = false;
-                                this.DomicilioInvitacion = Sucursal.Sucursal_Descripcion + " " + Sucursal.Sucursal_Domicilio;
-                                await EnviarMail(invitado, Sucursal);
-                            }
-                            else
-                            {
-                                ErrorInvitar = true;
-                                break;
-                            }
-                        }
-                        else
-                        {
-                            ErrorInvitar = true;
-                            break;
-                        } 
+                        ErrorInvitar = false;
+                        this.DomicilioInvitacion = Sucursal.Sucursal_Descripcion + " " + Sucursal.Sucursal_Domicilio;
+                        BTProgressHUD.Show(status: "Enviando Correo de Invitación");
+                        await EnviarMail(invitado, Sucursal);
                     }
                     else
                     {
-                        EmailValido = false;
+                        ErrorInvitar = true;
                         break;
                     }
-
-
                 }
                 else
                 {
-                    CamposVacios = true;
+                    ErrorInvitar = true;
                     break;
                 }
+
             }
+            BTProgressHUD.Dismiss();
             if (ErrorInvitar)
             {
                 new MessageDialog().SendToast("No se pudieron enviar las invitaciones, intente de nuevo");
-            }
-            else if (EmailValido == false)
-            {
-                new MessageDialog().SendToast("El Email no es válido");
-            }
-            else if (invitadosLocal.Count == 0)
-            {
-                new MessageDialog().SendToast("Favor de agregar a un invitado");
-            }
-            else if (CamposVacios)
-            {
-                new MessageDialog().SendToast("Algunos campos estan vacíos");
             }
             else
             {

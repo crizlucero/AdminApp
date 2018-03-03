@@ -30,7 +30,7 @@ namespace WorklabsMx.iOS
         const string IdentificadorCeldaNoInfo = "NoInfo";
 
         const int TamañoMensajeNoInfo = 400;
-        const int TamañoHeader = 185;
+        const int TamañoHeader = 150;
 
         bool isShowInformation = false;
         bool existeConeccion = true;
@@ -150,12 +150,9 @@ namespace WorklabsMx.iOS
                    this.comentarios = new Controllers.EscritorioController().GetComentariosPost(currentPost.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
                    foreach (ComentarioModel comentario in this.comentarios)
                    {
-                       var upload_image_path = MenuHelper.UploadImagePath;
-                       byte[] imageBytes = new UploadImages().DownloadFileFTP(currentPost.Publicacion_Imagen, upload_image_path);
-
-                       if (imageBytes != null)
+                       if (currentPost.Publicacion_Imagen_Post != null)
                        {
-                           var data = NSData.FromArray(imageBytes);
+                           var data = NSData.FromArray(currentPost.Publicacion_Imagen_Post);
                            var uiimage = UIImage.LoadFromData(data);
                            var porcentajeWith = ((withImage * 100) / uiimage.CGImage.Height);
                            var HeightImage = uiimage.CGImage.Height * (porcentajeWith / 100);
@@ -231,6 +228,7 @@ namespace WorklabsMx.iOS
 
         public async void ActualizaTabla()
         {
+            await MenuHelper.GetMuroPosts();
             await FillData();
             TableView.ReloadData();
             this.TableView.BeginUpdates();

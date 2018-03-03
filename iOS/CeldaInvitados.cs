@@ -21,19 +21,17 @@ namespace WorklabsMx.iOS
 
     public partial class CeldaInvitados : UITableViewCell
     {
-        
         public CeldaInvitados (IntPtr handle) : base (handle)
         {
-            
         }
-
         public EventosCeldaInvitados EventosCeldaInvitadosDelegate;
         List<bool> TextFilled = new List<bool> { false, false, false };
         UsuarioModel invitado = new UsuarioModel();
 
         public void UpdateCell()
         {
-
+            invitado = null;
+            invitado = new UsuarioModel();
             this.txtNombre.ShouldReturn += (textField) => {
                 this.txtApellido.BecomeFirstResponder();
                 return true;
@@ -78,10 +76,5 @@ namespace WorklabsMx.iOS
             EventosCeldaInvitadosDelegate.EventTextFiled(invitado);
         }
 
-        private Boolean ElTextoEsValido(string TextField, String RegularExpr)
-        {
-            bool EsValido = Regex.IsMatch(TextField, RegularExpr);
-            return EsValido;
-        }
     }
 }

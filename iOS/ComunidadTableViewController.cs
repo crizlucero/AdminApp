@@ -16,6 +16,7 @@ namespace WorklabsMx.iOS
     public partial class ComunidadTableViewController : UITableViewController
     {
         List<UsuarioModel> Usuarios = new List<UsuarioModel>();
+        List<UsuarioModel> UsuariosAux = new List<UsuarioModel>();
 
         const string IdentificadorCeldaHeader = "HeaderBuscador";
         const string IdentificadorCeldaUsuarios = "CeldaUsuarios";
@@ -68,7 +69,6 @@ namespace WorklabsMx.iOS
         {
             RefreshControl.BeginRefreshing();
             await FillData();
-          
             TableView.ReloadData();
             TableView.BeginUpdates();
             TableView.EndUpdates();
@@ -87,7 +87,7 @@ namespace WorklabsMx.iOS
             await Task.Run(() =>
             {
                 this.Usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
-
+                this.UsuariosAux = this.Usuarios;
                 if (Usuarios.Count == 0)
                 {
                     isShowInformation = false;
@@ -187,61 +187,62 @@ namespace WorklabsMx.iOS
     {
         public async void Buscando(string Texto)
         {
-            await Task.Delay(50);
-            string TextoBuscar = Texto;
-            List<UsuarioModel> SearchPost = new List<UsuarioModel>();
-            if (InternetConectionHelper.VerificarConexion())
+            await Task.Run(() =>
             {
-                await FillData("", "", "", "", "", true, "", "", "");
-            }
-            if (TextoBuscar != "")
-            {
-                if (Usuarios.FindAll(x => x.Usuario_Nombre.Contains(TextoBuscar)) != null)
-                {
-                    foreach (UsuarioModel post in Usuarios.FindAll(x => x.Usuario_Nombre.Contains(TextoBuscar)))
-                    {
-                        if (SearchPost.Contains(post) == false)
-                        {
-                            SearchPost.Add(post);
-                        }
+                string TextoBuscar = Texto;
+                List<UsuarioModel> SearchPost = new List<UsuarioModel>();
 
-                    }
-                }
-                if (Usuarios.FindAll(x => x.Usuario_Apellidos.Contains(TextoBuscar)) != null)
-                {
-                    foreach (UsuarioModel post in Usuarios.FindAll(x => x.Usuario_Apellidos.Contains(TextoBuscar)))
-                    {
-                        if (SearchPost.Contains(post) == false)
-                        {
-                            SearchPost.Add(post);
-                        }
+                this.Usuarios = this.UsuariosAux;
 
-                    }
-                }
-                if (Usuarios.FindAll(x => x.Usuario_Puesto.Contains(TextoBuscar)) != null)
+                if (TextoBuscar != "")
                 {
-                    foreach (UsuarioModel post in Usuarios.FindAll(x => x.Usuario_Puesto.Contains(TextoBuscar)))
+                    if (Usuarios.FindAll(x => x.Usuario_Nombre.Contains(TextoBuscar)) != null)
                     {
-                        if (SearchPost.Contains(post) == false)
+                        foreach (UsuarioModel post in Usuarios.FindAll(x => x.Usuario_Nombre.Contains(TextoBuscar)))
                         {
-                            SearchPost.Add(post);
-                        }
+                            if (SearchPost.Contains(post) == false)
+                            {
+                                SearchPost.Add(post);
+                            }
 
+                        }
                     }
-                }
-                if (Usuarios.FindAll(x => x.Usuario_Profesion.Contains(TextoBuscar)) != null)
-                {
-                    foreach (UsuarioModel post in Usuarios.FindAll(x => x.Usuario_Profesion.Contains(TextoBuscar)))
+                    if (Usuarios.FindAll(x => x.Usuario_Apellidos.Contains(TextoBuscar)) != null)
                     {
-                        if (SearchPost.Contains(post) == false)
+                        foreach (UsuarioModel post in Usuarios.FindAll(x => x.Usuario_Apellidos.Contains(TextoBuscar)))
                         {
-                            SearchPost.Add(post);
-                        }
+                            if (SearchPost.Contains(post) == false)
+                            {
+                                SearchPost.Add(post);
+                            }
 
+                        }
                     }
+                    if (Usuarios.FindAll(x => x.Usuario_Puesto.Contains(TextoBuscar)) != null)
+                    {
+                        foreach (UsuarioModel post in Usuarios.FindAll(x => x.Usuario_Puesto.Contains(TextoBuscar)))
+                        {
+                            if (SearchPost.Contains(post) == false)
+                            {
+                                SearchPost.Add(post);
+                            }
+
+                        }
+                    }
+                    if (Usuarios.FindAll(x => x.Usuario_Profesion.Contains(TextoBuscar)) != null)
+                    {
+                        foreach (UsuarioModel post in Usuarios.FindAll(x => x.Usuario_Profesion.Contains(TextoBuscar)))
+                        {
+                            if (SearchPost.Contains(post) == false)
+                            {
+                                SearchPost.Add(post);
+                            }
+
+                        }
+                    }
+                    this.Usuarios = SearchPost;
                 }
-                this.Usuarios = SearchPost;
-            }
+            });
             this.TableView.ReloadData();
         }
                            

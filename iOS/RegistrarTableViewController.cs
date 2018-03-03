@@ -4,9 +4,8 @@ using UIKit;
 using SWRevealViewControllerBinding;
 using System.Collections.Generic;
 using WorklabsMx.Models;
-using WorklabsMx.Controllers;
-
-
+using WorklabsMx.iOS.Helpers;
+using System.Text.RegularExpressions;
 
 namespace WorklabsMx.iOS
 {
@@ -17,11 +16,11 @@ namespace WorklabsMx.iOS
         const string IdentificadorCeldaDetalle = "DetalleInvitacion";
         List<int> NumeroCeldas = new List<int>();
 
-        List<UsuarioModel> invitados = new List<UsuarioModel>();
-        List<SucursalModel> sucursales = new SucursalController().GetSucursales();
+        List<UsuarioModel> invitados; 
+        //List<SucursalModel> sucursales = new SucursalController().GetSucursales();
         string FechaReservacion = "", Sucursal = "", AsuntoInv = "";
         UsuarioModel invitadoGeneral = new UsuarioModel();
-        int CantidadInvitadosAgregados = 0;
+        int CantidadInvitadosAgregados;
 
         public RegistrarTableViewController(IntPtr handle) : base(handle)
         {
@@ -30,6 +29,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            invitados = new List<UsuarioModel>();
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
             NumeroCeldas.Add(-1);
@@ -37,13 +37,13 @@ namespace WorklabsMx.iOS
             NSDateFormatter dateFormat = new NSDateFormatter();
             dateFormat.DateFormat = "E, d MMM yyyy HH:mm";
             FechaReservacion = dateFormat.ToString((NSDate)DateTime.Now);
-            Sucursal = sucursales[0].Sucursal_Descripcion;
+            Sucursal = MenuHelper.ListaSucursales[0].Sucursal_Descripcion; //sucursales[0].Sucursal_Descripcion;
         }
 
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            CantidadInvitadosAgregados = 0;
+            CantidadInvitadosAgregados = -1;
         }
 
         public override void ViewDidAppear(bool animated)
@@ -85,8 +85,10 @@ namespace WorklabsMx.iOS
             if (current == 0)
             {
                 var CeldaInvitados = (CeldaInvitadosAgregados)tableView.DequeueReusableCell(IdentificadorInvitadosAgregados, indexPath);
-                CeldaInvitados.UpdateCell(invitadoGeneral);
-                CantidadInvitadosAgregados++;
+                UsuarioModel invitado = new UsuarioModel();
+                invitado = this.invitados[CantidadInvitadosAgregados];
+                CeldaInvitados.UpdateCell(invitado);
+                invitado = null;
                 return CeldaInvitados;
             }
             else if (current == -1)
@@ -99,7 +101,7 @@ namespace WorklabsMx.iOS
             else
             {
                 var CeldaDetalleInvitacion = (CeldaDetalleInvitacion)tableView.DequeueReusableCell(IdentificadorCeldaDetalle, indexPath);
-                CeldaDetalleInvitacion.UpdateCell(invitados, FechaReservacion, Sucursal, indexPath);
+                CeldaDetalleInvitacion.UpdateCell(this.invitados, FechaReservacion, Sucursal, indexPath);
                 CeldaDetalleInvitacion.EventosDetalleInvitacionDel = this;
                 return CeldaDetalleInvitacion;
             }
@@ -123,7 +125,7 @@ namespace WorklabsMx.iOS
             {
                 var GenderView = (DetalleInvitacionViewController)segue.DestinationViewController;
                 GenderView.Invitados = this.invitados;
-                var ObjSucursal = sucursales.Find(x => x.Sucursal_Descripcion == Sucursal);
+                var ObjSucursal = MenuHelper.ListaSucursales.Find(x => x.Sucursal_Descripcion == Sucursal);
                 GenderView.SucursalModel = ObjSucursal;
                 GenderView.Asunto = AsuntoInv;
                 GenderView.FechaReservacion = this.FechaReservacion;
@@ -133,6 +135,12 @@ namespace WorklabsMx.iOS
         private void Tapped(UITapGestureRecognizer Recognizer)
         {
             this.View.EndEditing(true);
+        }
+
+        private Boolean ElTextoEsValido(string TextField, String RegularExpr)
+        {
+            bool EsValido = Regex.IsMatch(TextField, RegularExpr);
+            return EsValido;
         }
 
     }
@@ -160,13 +168,35 @@ namespace WorklabsMx.iOS
     {
         public void AgregarCeldas()
         {
+                  
             if (!((invitadoGeneral.Usuario_Nombre == "" || invitadoGeneral.Usuario_Nombre == null) || (invitadoGeneral.Usuario_Apellidos == "" || invitadoGeneral.Usuario_Apellidos == null) || (invitadoGeneral.Usuario_Correo_Electronico == "" || invitadoGeneral.Usuario_Correo_Electronico == null)))
             {
-                NumeroCeldas.Add(0);
-                NumeroCeldas.Sort((x, y) => x.CompareTo(y));
-                TableView.BeginUpdates();
-                TableView.InsertRows(new[] { NSIndexPath.Create(0, 1) }, UITableViewRowAnimation.Bottom);
-                TableView.EndUpdates();
+                String EmailRegex = "";
+                EmailRegex = KeyChainHelper.GetKey("EmailRegex");
+                if (this.ElTextoEsValido(invitadoGeneral.Usuario_Correo_Electronico, EmailRegex))
+                {
+                    if (invitados.FindAll(x => x.Usuario_Correo_Electronico.Contains(invitadoGeneral.Usuario_Correo_Electronico)).Count > 0)
+                    {
+                        new MessageDialog().SendToast("Ya agregaste ese correo");
+                    }
+                    else
+                    {
+                        NumeroCeldas.Add(0);
+                        this.invitados.Add(invitadoGeneral);
+                        invitadoGeneral = null;
+                        NumeroCeldas.Sort((x, y) => x.CompareTo(y));
+                        CantidadInvitadosAgregados++;
+                        TableView.BeginUpdates();
+                        TableView.InsertRows(new[] { NSIndexPath.Create(0, 1) }, UITableViewRowAnimation.Bottom);
+                        TableView.EndUpdates();
+                    }
+
+                }
+                else
+                {
+                    new MessageDialog().SendToast("Formato de correo invalido");
+                }
+
             }
             else 
             {
@@ -180,6 +210,8 @@ namespace WorklabsMx.iOS
             {
                 TableView.BeginUpdates();
                 NumeroCeldas.RemoveAt(1);
+                this.invitados.RemoveAt(CantidadInvitadosAgregados);
+                CantidadInvitadosAgregados--;
                 TableView.DeleteRows(new NSIndexPath[] { NSIndexPath.Create(0, 1) }, UITableViewRowAnimation.Left);
                 TableView.EndUpdates();
             }
@@ -211,15 +243,13 @@ namespace WorklabsMx.iOS
     {
         public void EventTextFiled(UsuarioModel invitado)
         {
-            if (invitados.Contains(invitado) == false)
-            {
-                invitadoGeneral = invitado;
-                invitados.Add(invitado);
-                this.TableView.ReloadData();
-            }
+            invitadoGeneral = null;
+            invitadoGeneral = new UsuarioModel();
+            invitadoGeneral.Usuario_Nombre = invitado.Usuario_Nombre;
+            invitadoGeneral.Usuario_Correo_Electronico = invitado.Usuario_Correo_Electronico;
+            invitadoGeneral.Usuario_Apellidos = invitado.Usuario_Apellidos;
+            invitado = null;
         }
     }
-
-
 
 }

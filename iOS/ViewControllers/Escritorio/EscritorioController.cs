@@ -14,21 +14,19 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         public EscritorioController(IntPtr handle) : base(handle)         {
         }
 
-        public override async void ViewDidLoad()
+        public async override void ViewDidLoad()
         {
-            base.ViewDidLoad();             withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());             BTProgressHUD.Show("Cargando publicaciones");             await MenuHelper.GetListConfiguraciones();              RefreshControl = new UIRefreshControl();             RefreshControl.AddTarget(HandleValueChanged, UIControlEvent.ValueChanged);             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;             var Tap = new UITapGestureRecognizer(this.Tapped);             this.View.AddGestureRecognizer(Tap);             await MenuHelper.FillTable();             await MenuHelper.FillUserInfo();             await MenuHelper.GetSucursales();             await MenuHelper.GetUsuarioInfo();             BTProgressHUD.Dismiss();
-		}
+            base.ViewDidLoad();             withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());             await MenuHelper.GetListConfiguraciones();             await MenuHelper.FillTable();             RefreshControl = new UIRefreshControl();             RefreshControl.AddTarget(HandleValueChanged, UIControlEvent.ValueChanged);             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;             var Tap = new UITapGestureRecognizer(this.Tapped);             this.View.AddGestureRecognizer(Tap);  		}
 
         public override async void ViewWillAppear(bool animated)
-        {             base.ViewWillAppear(animated);             await CargarInfo();             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();
+        {             base.ViewWillAppear(animated);             await CargarInfo();             await CargarImagenes();             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();
         }          void HandleValueChanged(object sender, EventArgs e)         {             this.GetData();         }          public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
         }          public override void ViewDidDisappear(bool animated)
         {
             base.ViewDidDisappear(animated);
-        }          async void GetData()         {             RefreshControl.BeginRefreshing();
-            await CargarInfo();             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();
+        }          async void GetData()         {             RefreshControl.BeginRefreshing();             await CargarInfo();             await CargarImagenes();             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();
             if (RefreshControl != null && RefreshControl.Refreshing)
                 RefreshControl.EndRefreshing();
         }          public override UIView GetViewForHeader(UITableView tableView, nint section)
@@ -43,7 +41,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
          
         public override nint RowsInSection(UITableView tableView, nint section)
         {
-			if (allPosts.Count > 0)
+            if (allPosts.Count > 0 /*&& allProfileImages.Count > 0 && allPostImages.Count > 0*/)
 			{
 			    isShowInformation = true;
 				return allPosts.Count;
@@ -72,47 +70,32 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
                 CommentView.currentPost = CurrentPost;                 CommentView.currentPostImage = currentPostImage;                 CommentView.currentProfileImage = currentProfileImage;             }             else if(segue.Identifier == "toShowImageFromPost")             {                 var ImageView = (DetailCommentImage)segue.DestinationViewController;                 ImageView.ImagenPost = (UIImageView)sender;             }              else if(segue.Identifier == "DetallarPerfil")             {                 var PerfilView = (PerfilesTableViewController)segue.DestinationViewController;                 if (MenuHelper.Usuario.Usuario_Id == ListUser.Usuario_Id && MenuHelper.Usuario.Usuario_Tipo == ListUser.Usuario_Tipo)                 {                     PerfilView.InfoPersonal = true;                 }                 else                 {                     PerfilView.InfoPersonal = false;                 }                 var usuario = new UsuariosController().GetMemberData(ListUser.Usuario_Id, ListUser.Usuario_Tipo);                 PerfilView.Miembro = usuario;             }
         }           async Task CargarInfo()         {
 
-            await Task.Run(() =>             {
-                try
-                {
-                    if (InternetConectionHelper.VerificarConexion())
-                    {
-
-                        allPosts = new Controllers.EscritorioController().GetMuroPosts(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
-                         if (allPosts != null)                         {                             if (allPosts.Count == 0)                             {                                 isShowInformation = false;                                 existeConeccion = true;                             }                             else                             {                                 allPostImages = new List<UIImage>();                                 allProfileImages = new List<UIImage>();                                 foreach (PostModel currentPost in allPosts)                                 {                                     if (currentPost.Publicacion_Imagen_Post != null)                                     {                                         var data = NSData.FromArray(currentPost.Publicacion_Imagen_Post);                                         var uiimage = UIImage.LoadFromData(data);                                         var porcentajeWith = ((withImage * 100) / uiimage.CGImage.Height);                                         var HeightImage = uiimage.CGImage.Height * (porcentajeWith / 100);                                         var ReescalImage = ImageHelper.ResizeUIImage(uiimage, withImage, HeightImage);                                         allPostImages.Add(ReescalImage);                                     }                                     else                                     {                                         allPostImages.Add(null);                                     }                                      if (currentPost.Usuario.Usuario_Fotografia_Perfil != null)                                     {                                         var data = NSData.FromArray(currentPost.Usuario.Usuario_Fotografia_Perfil);                                         var uiimage = UIImage.LoadFromData(data);                                         allProfileImages.Add(uiimage);                                     }                                     else                                     {                                         allProfileImages.Add(UIImage.FromBundle("ProfileImage"));                                     }                                 }                             }                         }                         else                         {                             isShowInformation = false;                             existeConeccion = true;                         }
-
-
-                    }
-                    else
-                    {
-                        isShowInformation = false;
-                        existeConeccion = false;
-                    }
-                }
-                catch (Exception e)
-                {
-                    SlackLogs.SendMessage(e.Message);
-                }             });         }
+            try
+            {
+                await MenuHelper.GetMuroPosts();
+                allPosts = MenuHelper.AllPost;
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message);
+            }          }          async Task CargarImagenes()         {             await Task.Run(() => {                 if (allPosts != null)                 {                     if (allPosts.Count == 0)                     {                         isShowInformation = false;                         existeConeccion = true;                     }                     else                     {                         allPostImages = new List<UIImage>();                         allProfileImages = new List<UIImage>();                         foreach (PostModel currentPost in allPosts)                         {                             if (currentPost.Publicacion_Imagen_Post != null)                             {                                 var data = NSData.FromArray(currentPost.Publicacion_Imagen_Post);                                 var uiimage = UIImage.LoadFromData(data);                                 var porcentajeWith = ((withImage * 100) / uiimage.CGImage.Height);                                 var HeightImage = uiimage.CGImage.Height * (porcentajeWith / 100);                                 var ReescalImage = ImageHelper.ResizeUIImage(uiimage, withImage, HeightImage);                                 allPostImages.Add(ReescalImage);                             }                             else                             {                                 allPostImages.Add(null);                             }                              if (currentPost.Usuario.Usuario_Fotografia_Perfil != null)                             {                                 var data = NSData.FromArray(currentPost.Usuario.Usuario_Fotografia_Perfil);                                 var uiimage = UIImage.LoadFromData(data);                                 allProfileImages.Add(uiimage);                             }                             else                             {                                 allProfileImages.Add(UIImage.FromBundle("ProfileImage"));                             }                         }                     }                 }                 else                 {                     isShowInformation = false;                     existeConeccion = true;                 }             });         }
 
         partial void Menu_Touch(UIBarButtonItem sender)
         {             this.View.EndEditing(true);
             this.RevealViewController().RevealToggleAnimated(true);             View.AddGestureRecognizer(this.RevealViewController().PanGestureRecognizer);
-        }          private void Tapped(UITapGestureRecognizer Recognizer)         {             this.View.EndEditing(true);         }     }      partial class EscritorioController: PostPublicadoDel     {         public async void PostPublicado()         {             BTProgressHUD.Show("Cargando Comentarios");             await CargarInfo();             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();             BTProgressHUD.Dismiss();          }     }       partial class EscritorioController: EventosComentarios     {         public void MostrarImagenEnGrande(UIImageView imgPublicacion)         {             PerformSegue("toShowImageFromPost", imgPublicacion);         }         public async void ComentarPost(PostModel PostLocal)         {             CurrentPost = PostLocal;
-            BTProgressHUD.Show(status: "Cargando Comentarios");
+        }          private void Tapped(UITapGestureRecognizer Recognizer)         {             this.View.EndEditing(true);         }     }      partial class EscritorioController: PostPublicadoDel     {         public async void PostPublicado()         {             BTProgressHUD.Show("");             await CargarInfo();             await CargarImagenes();             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();             BTProgressHUD.Dismiss();         }     }       partial class EscritorioController: EventosComentarios     {         public void MostrarImagenEnGrande(UIImageView imgPublicacion)         {             PerformSegue("toShowImageFromPost", imgPublicacion);         }         public async void ComentarPost(PostModel PostLocal)         {             CurrentPost = PostLocal;
+            BTProgressHUD.Show("");
             await Task.Run(() =>             {
                 currentProfileImage = ImageGallery.LoadImage(CurrentPost.Usuario.Usuario_Fotografia);
                 currentPostImage = ImageGallery.LoadImage(CurrentPost.Publicacion_Imagen_Ruta);
                 this.PerformSegue("comentar", null);             });         }         public void InfoUserPost(UsuarioModel listaUser)         {             ListUser = listaUser;
-            this.PerformSegue("DetallarPerfil", null);         }          public void EnviarActions(UIAlertController actionSheetAlert)         {             UIPopoverPresentationController presentationPopover = actionSheetAlert.PopoverPresentationController;             if (presentationPopover != null)             {                 presentationPopover.SourceView = this.View;                 presentationPopover.PermittedArrowDirections = UIPopoverArrowDirection.Up;             }             this.PresentViewController(actionSheetAlert, true, null);         }          public async void ActualizaTabla()         {             await CargarInfo();             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();         }     }      partial class EscritorioController : EventosComentariosBody     {         public async void ComentarPosts(PostModel PostLocal)         {             CurrentPost = PostLocal;             BTProgressHUD.Show(status: "Cargando Comentarios");             await Task.Run(() =>             {
+            this.PerformSegue("DetallarPerfil", null);         }          public void EnviarActions(UIAlertController actionSheetAlert)         {             UIPopoverPresentationController presentationPopover = actionSheetAlert.PopoverPresentationController;             if (presentationPopover != null)             {                 presentationPopover.SourceView = this.View;                 presentationPopover.PermittedArrowDirections = UIPopoverArrowDirection.Up;             }             this.PresentViewController(actionSheetAlert, true, null);         }          public async void ActualizaTabla()         {             await CargarInfo();             await CargarImagenes();             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();         }     }      partial class EscritorioController : EventosComentariosBody     {         public async void ComentarPosts(PostModel PostLocal)         {             CurrentPost = PostLocal;             BTProgressHUD.Show("");             await Task.Run(() =>             {
                 currentProfileImage = ImageGallery.LoadImage(CurrentPost.Usuario.Usuario_Fotografia);
-                currentPostImage = ImageGallery.LoadImage(CurrentPost.Publicacion_Imagen_Ruta);             });             this.PerformSegue("comentar", null);             BTProgressHUD.Dismiss();         }         public void InfoUserPosts(UsuarioModel listaUser)         {             ListUser = listaUser;             this.PerformSegue("DetallarPerfil", null);                     }          public void EnviarAction(UIAlertController actionSheetAlert)         {             UIPopoverPresentationController presentationPopover = actionSheetAlert.PopoverPresentationController;             if (presentationPopover != null)             {                 presentationPopover.SourceView = this.View;                 presentationPopover.PermittedArrowDirections = UIPopoverArrowDirection.Up;             }             this.PresentViewController(actionSheetAlert, true, null);         }          public async void ActualizarTabla()         {             await CargarInfo();             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();          }       }      partial class EscritorioController : EventosHeader     {         public async void Buscando(string Texto)         {             await Task.Run(() =>             {
+                currentPostImage = ImageGallery.LoadImage(CurrentPost.Publicacion_Imagen_Ruta);             });             this.PerformSegue("comentar", null);             BTProgressHUD.Dismiss();         }         public void InfoUserPosts(UsuarioModel listaUser)         {             ListUser = listaUser;             this.PerformSegue("DetallarPerfil", null);                     }          public void EnviarAction(UIAlertController actionSheetAlert)         {             UIPopoverPresentationController presentationPopover = actionSheetAlert.PopoverPresentationController;             if (presentationPopover != null)             {                 presentationPopover.SourceView = this.View;                 presentationPopover.PermittedArrowDirections = UIPopoverArrowDirection.Up;             }             this.PresentViewController(actionSheetAlert, true, null);         }          public async void ActualizarTabla()         {             await CargarInfo();             await CargarImagenes();             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();          }       }      partial class EscritorioController : EventosHeader     {         public async void Buscando(string Texto)         {             await Task.Run(() =>             {
                 string TextoBuscar = Texto;
                 List<PostModel> SearchPost = new List<PostModel>();
-
-                if (InternetConectionHelper.VerificarConexion())
-                {
-                    allPosts = new Controllers.EscritorioController().GetMuroPosts(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
-                }
+                 allPosts = MenuHelper.AllPost;
+               
 
                 if (TextoBuscar != "")
                 {

@@ -3,8 +3,8 @@ using UIKit;
 using WorklabsMx.Controllers;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Models;
-using System.Collections.Generic;
 using Foundation;
+using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
@@ -12,18 +12,19 @@ namespace WorklabsMx.iOS
     {
 
         public UsuarioModel Miembro = new UsuarioModel();
-
+        EmpresaModel empresa;
         public InfoEmpresaTableViewController(IntPtr handle) : base(handle)
         {
         }
 
-        public override void ViewDidLoad()
+        public override async void ViewDidLoad()
         {
             base.ViewDidLoad();
             StyleHelper.Style(this.vwEmpresa.Layer);
             StyleHelper.Style(this.vwEmpresasAnteriores.Layer);
             StyleHelper.Style(this.vwColaboradores.Layer);
-            EmpresaModel empresa = new EmpresaController().GetEmpresaMiembro(Miembro.Usuario_Id);
+            await GetEmpresa();
+            empresa = new EmpresaController().GetEmpresaMiembro(Miembro.Usuario_Id);
             this.lblPais.Text = ((empresa.Territorio.Municipio + ", " + empresa.Territorio.Pais) != "") ? (empresa.Territorio.Municipio + ", " + empresa.Territorio.Pais) : "Sin Info";
             this.lblEmpresa.Text = (empresa.Empresa_Nombre != "") ? empresa.Empresa_Nombre : "Sin Info";
             this.lblPuesto.Text = (Miembro.Usuario_Puesto != "") ? Miembro.Usuario_Puesto : "Sin Info";
@@ -43,6 +44,14 @@ namespace WorklabsMx.iOS
                 var VistaColaboradores = (coleccionColaboradores)segue.DestinationViewController;
                 VistaColaboradores.Miembro = Miembro;
             }
+        }
+
+         async Task GetEmpresa()
+        {
+            await Task.Run(() =>
+            {
+                empresa = new EmpresaController().GetEmpresaMiembro(Miembro.Usuario_Id);
+            });
         }
     }
 }

@@ -29,6 +29,8 @@ namespace WorklabsMx.iOS.Helpers
         public static List<ProductoModel> Productos;
 
         public static List<MembresiaModel> Membresias;
+
+        public static List<PostModel> AllPost = new List<PostModel>();
         
         public static async Task FillTable()
         {
@@ -53,14 +55,14 @@ namespace WorklabsMx.iOS.Helpers
             });
         }
 
-        public static async Task FillUserInfo()
+       /* public static async Task FillUserInfo()
         {
             await Task.Run(() =>
             {
                 var userinfo = new UsuariosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
                 UserInfo = userinfo;
             });
-        }
+        }*/
 
         public static async Task FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "", bool disponibilidad = true, string pais = "", string estado = "", string municipio = "")
         {
@@ -70,7 +72,6 @@ namespace WorklabsMx.iOS.Helpers
                 Comunidad = usuarios;
             });
         }
-
 
         public static async Task GetSucursales()
         {
@@ -99,7 +100,6 @@ namespace WorklabsMx.iOS.Helpers
             });
         }
 
-
         public static async Task GetProfileImagePath()
         {
             await Task.Run(() =>
@@ -121,8 +121,7 @@ namespace WorklabsMx.iOS.Helpers
         {
             await Task.Run(() => 
             {
-                var usuario = new UsuariosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
-                Usuario = usuario;
+                Usuario = new UsuariosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
             });
         }
 
@@ -130,18 +129,23 @@ namespace WorklabsMx.iOS.Helpers
         {
             await Task.Run(() =>
             {
-                var productos = new PickerItemsController().GetProductos();
-                Productos = productos;
+                Productos = new PickerItemsController().GetProductos();
             });
         }
-
 
         public static async Task GetMembresias()
         {
             await Task.Run(() =>
             {
-                var membresias = new PickerItemsController().GetMembresias();
-                Membresias = membresias;
+                Membresias = new PickerItemsController().GetMembresias();
+            });
+        }
+
+        public static async Task GetMuroPosts()
+        {
+            await Task.Run(() =>
+            {
+                AllPost = new Controllers.EscritorioController().GetMuroPosts(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
             });
         }
 

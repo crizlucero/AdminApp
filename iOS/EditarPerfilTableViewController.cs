@@ -317,7 +317,7 @@ namespace WorklabsMx.iOS
             this.FromTrabajo = false;
         }
 
-        partial void btnTrabajo_Touch(UIButton sender)
+         partial  void btnTrabajo_Touch(UIButton sender)
         {
             this.vwVistaMi.Hidden = true;
             this.vwSocial.Hidden = true;

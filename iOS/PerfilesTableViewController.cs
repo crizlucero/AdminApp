@@ -31,12 +31,13 @@ namespace WorklabsMx.iOS
 
         public PerfilesTableViewController (IntPtr handle) : base (handle)
         {
+            this.Miembro = MenuHelper.Usuario;
         }
 
-        public override void ViewDidLoad()
+        public override async void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.PreguntarFavorito();
+            await PreguntarFavorito();
             if (InfoPersonal)
             {
                 this.btnSeguir.Hidden = true;
@@ -278,11 +279,13 @@ namespace WorklabsMx.iOS
             }
         }
 
-        private void PreguntarFavorito()
+        private async Task PreguntarFavorito()
         {
-            var Favorito = new UsuariosController();
-            isFavorite = Favorito.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Miembro.Usuario_Id, Miembro.Usuario_Tipo);
-
+            await Task.Run(() =>
+            {
+                var Favorito = new UsuariosController();
+                isFavorite = Favorito.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Miembro.Usuario_Id, Miembro.Usuario_Tipo);
+            });
             if (isFavorite.Value)
             {
                 this.btnSeguir.SetTitle("-DEJAR DE SEGUIR", UIControlState.Normal);
@@ -291,7 +294,6 @@ namespace WorklabsMx.iOS
             {
                 this.btnSeguir.SetTitle("+SEGUIR", UIControlState.Normal);
             }
-
         }
 
         partial void btnEnviarMensaje_Touch(UIButton sender)

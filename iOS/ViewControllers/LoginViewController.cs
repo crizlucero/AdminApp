@@ -11,8 +11,7 @@
                     if (MiembrosId.Count > 0)
                     {
                         KeyChainHelper.SetKey("Usuario_Id", MiembrosId[0]);
-                        KeyChainHelper.SetKey("Usuario_Tipo", MiembrosId[1]);
-                        BTProgressHUD.Dismiss();
+                        KeyChainHelper.SetKey("Usuario_Tipo", MiembrosId[1]);                         await MenuHelper.GetUsuarioInfo();                         BTProgressHUD.Dismiss();
                         NavigateToTabbed();
                     }
                     else

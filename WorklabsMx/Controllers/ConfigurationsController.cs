@@ -52,7 +52,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                 Console.WriteLine(e.Message);
+                Console.WriteLine(e.Message);
                 SlackLogs.SendMessage(e.Message);
                 return null;
             }

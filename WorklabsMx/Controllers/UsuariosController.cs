@@ -58,14 +58,14 @@ namespace WorklabsMx.Controllers
                         Usuario_Estatus = reader["Usuario_Estatus"].ToString(),
                         Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
                         Usuario_Descripcion = reader["Usuario_Descripcion"].ToString(),
-                        Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path),
+                        Usuario_Fotografia_Perfil = null,//ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path),
                         Empresa_Actual = new EmpresaModel
                         {
                             Empresa_Id = reader["Usuario_Empresa_Id"].ToString(),
                             Empresa_Nombre = reader["Usuario_Empresa_Nombre"].ToString(),
                             Empresa_Logotipo = reader["Usuario_Empresa_Logotipo"].ToString(),
                             Empresa_Correo_Electronico = reader["Empresa_Miembro_Correo_Electronico"].ToString(),
-                            Empresa_Logotipo_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Empresa_Logotipo"].ToString(), empresa_imagen_path),
+                            Empresa_Logotipo_Perfil = null,//ImageHelper.DownloadFileFTP(reader["Usuario_Empresa_Logotipo"].ToString(), empresa_imagen_path),
                             Territorio = new TerritorioModel
                             {
                                 Municipio = reader["Empresa_Municipio_Descripcion"].ToString(),
@@ -456,7 +456,7 @@ namespace WorklabsMx.Controllers
                         Usuario_Apellidos = reader["Colaborador_Empresa_Apellidos"].ToString(),
                         Usuario_Id = reader["Colaborador_Empresa_Id"].ToString(),
                         Usuario_Fotografia = reader["Colaborador_Empresa_Fotografia"].ToString(),
-                        Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Colaborador_Empresa_Fotografia"].ToString(), usuario_imagen_path),
+                        Usuario_Fotografia_Perfil = null, //ImageHelper.DownloadFileFTP(reader["Colaborador_Empresa_Fotografia"].ToString(), usuario_imagen_path),
                     });
                 }
             }

@@ -52,7 +52,7 @@ namespace WorklabsMx.Controllers
                             Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
                             Usuario_Fotografia = reader["Usuario_Fotografia_Ruta"].ToString(),
                             Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
-                            Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path)
+                            Usuario_Fotografia_Perfil = null//ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path)
                         };
                         usuarios.Add(usuario);
                     }
@@ -64,7 +64,7 @@ namespace WorklabsMx.Controllers
                         Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
                         Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),
                         Publicacion_Imagen_Ruta = reader["Publicacion_Imagen_Ruta"].ToString(),
-                        Publicacion_Imagen_Post = ImageHelper.DownloadFileFTP(reader["Publicacion_Imagen"].ToString(), publicaciones_imagen_path),
+                        Publicacion_Imagen_Post = null, //ImageHelper.DownloadFileFTP(reader["Publicacion_Imagen"].ToString(), publicaciones_imagen_path),
                         Publicacion_Fecha = reader["Publicacion_Fecha"].ToString(),
                         Publicacion_Comentarios_Cantidad = reader["Publicacion_Comentarios_Cantidad"].ToString(),
                         Publicacion_Me_Gustan_Cantidad = reader["Publicacion_Me_Gustan_Cantidad"].ToString(),
@@ -215,7 +215,7 @@ namespace WorklabsMx.Controllers
                             Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
                             Usuario_Fotografia = reader["Usuario_Fotografia_Ruta"].ToString(),
                             Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
-                            Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(reader["Usuario_Fotografia_Ruta"].ToString(), new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1)
+                            Usuario_Fotografia_Perfil = null //new UploadImages().DownloadFileFTP(reader["Usuario_Fotografia_Ruta"].ToString(), new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1)
                         },
                         /*Miembro_Id = reader["Miembro_Id"].ToString(),
                         Colaborador_Empresa_Id = reader["Colaborador_Empresa_Id"].ToString(),
