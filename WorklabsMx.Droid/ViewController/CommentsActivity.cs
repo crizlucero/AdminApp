@@ -21,6 +21,7 @@ using Android.Content.PM;
 using Android.Provider;
 using static Android.Provider.MediaStore.Images;
 using Newtonsoft.Json;
+using WorklabsMx.Helpers;
 
 namespace WorklabsMx.Droid
 {
@@ -40,9 +41,15 @@ namespace WorklabsMx.Droid
         int page;
         string post_id, imgPublish, imagePath;
         PostModel post;
+        Dictionary<KeyValuePair<string, string>, byte[]> Usuario_Fotos_Perfil;
+        readonly string usuario_imagen_path, publicaciones_imagen_path;
         public CommentsActivity()
         {
             localStorage = SimpleStorage.EditGroup("Login");
+            Usuario_Fotos_Perfil = new Dictionary<KeyValuePair<string, string>, byte[]>();
+            List<ConfiguracionesModel> config = new ConfigurationsController().GetListConfiguraciones();
+            usuario_imagen_path = config.Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1;
+            publicaciones_imagen_path = config.Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PUBLICACIONES").Parametro_Varchar_1;
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -66,7 +73,7 @@ namespace WorklabsMx.Droid
             if (Convert.ToInt32(Intent.GetStringExtra("comments_total")) > 0)
             {
                 tlComentarios.RemoveAllViews();
-                FillCommentsAsync();
+                FillComments();
             }
             SwipeRefreshLayout refresher = FindViewById<SwipeRefreshLayout>(Resource.Id.swipe_container);
             refresher.SetColorSchemeColors(Color.Gray, Color.LightGray, Color.Gray, Color.DarkGray, Color.Black, Color.DarkGray);
@@ -76,7 +83,7 @@ namespace WorklabsMx.Droid
                 if (comentarios.Count != 0)
                 {
                     tlComentarios.RemoveAllViews();
-                    FillCommentsAsync();
+                    FillComments();
                 }
                 ((SwipeRefreshLayout)sender).Refreshing = false;
             };
@@ -86,7 +93,7 @@ namespace WorklabsMx.Droid
                     if ((((ScrollView)sender).ScrollY / (page + 1)) > ((svComentarios.Height) * .4))
                     {
                         ++page;
-                        FillCommentsAsync();
+                        FillComments();
                     }
             };
         }
@@ -96,11 +103,29 @@ namespace WorklabsMx.Droid
             //string Usuario_Id = !string.IsNullOrEmpty(post.Usuario.Usuario_Id.Miembro_Id) ? post.Miembro_Id : post.Colaborador_Empresa_Id;
 
             ImageButton imgPerfil = FindViewById<ImageButton>(Resource.Id.imgPerfil);
-            if (post.Usuario.Usuario_Fotografia_Perfil != null)
+            KeyValuePair<string, string> current = new KeyValuePair<string, string>(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo);
+            if (Usuario_Fotos_Perfil.ContainsKey(current))
+            {
+                if (Usuario_Fotos_Perfil[current] != null)
+                    imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(Usuario_Fotos_Perfil[current], 0, Usuario_Fotos_Perfil[current].Length));
+                else
+                    imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
+            }
+            else
+            {
+                post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, usuario_imagen_path);
+                Usuario_Fotos_Perfil.Add(current, post.Usuario.Usuario_Fotografia_Perfil);
+                if (post.Usuario.Usuario_Fotografia_Perfil != null)
+                    imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(post.Usuario.Usuario_Fotografia_Perfil, 0, post.Usuario.Usuario_Fotografia_Perfil.Length));
+                else
+                    imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
+            }
+
+            /*if (post.Usuario.Usuario_Fotografia_Perfil != null)
                 imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(post.Usuario.Usuario_Fotografia_Perfil, 0, post.Usuario.Usuario_Fotografia_Perfil.Length));
             else
                 imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
-            imgPerfil.Click += (sender, e) => AndHUD.Shared.ShowImage(this, Resources.GetDrawable(Resource.Mipmap.ic_work, null), null, MaskType.Black);
+            imgPerfil.Click += (sender, e) => AndHUD.Shared.ShowImage(this, Resources.GetDrawable(Resource.Mipmap.ic_work, null), null, MaskType.Black);*/
 
             TextView lblNombre = FindViewById<TextView>(Resource.Id.lblNombre);
             lblNombre.Text = post.Usuario.Usuario_Nombre;
@@ -163,7 +188,7 @@ namespace WorklabsMx.Droid
             btnComentar.Click += (sender, e) => ShowPublish();
         }
 
-        async Task FillCommentsAsync()
+        async void FillComments()
         {
             AndHUD.Shared.Show(this, null, -1, MaskType.Black);
             await Task.Delay(500);
@@ -174,13 +199,31 @@ namespace WorklabsMx.Droid
                 View CommentView = liView.Inflate(Resource.Layout.PostLayout, null, true);
                 CommentView.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels);
                 //string Usuario_Id = !string.IsNullOrEmpty(comentario.Miembro_Id) ? comentario.Miembro_Id : comentario.Colaborador_Empresa_Id;
-
+                KeyValuePair<string, string> current = new KeyValuePair<string, string>(comentario.Usuario.Usuario_Id, comentario.Usuario.Usuario_Tipo);
                 ImageButton imgPerfil = CommentView.FindViewById<ImageButton>(Resource.Id.imgPerfil);
-                if (comentario.Usuario.Usuario_Fotografia_Perfil != null)
+
+                if (Usuario_Fotos_Perfil.ContainsKey(current))
+                {
+                    if (Usuario_Fotos_Perfil[current] != null)
+                        imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(Usuario_Fotos_Perfil[current], 0, Usuario_Fotos_Perfil[current].Length));
+                    else
+                        imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
+                }
+                else
+                {
+                    comentario.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(comentario.Usuario.Usuario_Fotografia, usuario_imagen_path);
+                    Usuario_Fotos_Perfil.Add(current, comentario.Usuario.Usuario_Fotografia_Perfil);
+                    if (comentario.Usuario.Usuario_Fotografia_Perfil != null)
+                        imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(comentario.Usuario.Usuario_Fotografia_Perfil, 0, comentario.Usuario.Usuario_Fotografia_Perfil.Length));
+                    else
+                        imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
+                }
+
+                /*if (comentario.Usuario.Usuario_Fotografia_Perfil != null)
                     imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(comentario.Usuario.Usuario_Fotografia_Perfil, 0, comentario.Usuario.Usuario_Fotografia_Perfil.Length));
                 else
                     imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
-                imgPerfil.Click += (sender, e) => ShowPerfilCard(new UsuariosController().GetMemberData(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo));
+                imgPerfil.Click += (sender, e) => ShowPerfilCard(new UsuariosController().GetMemberData(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo));*/
 
                 TextView lblNombre = CommentView.FindViewById<TextView>(Resource.Id.lblNombre);
                 lblNombre.Text = comentario.Usuario.Usuario_Nombre;
@@ -232,22 +275,22 @@ namespace WorklabsMx.Droid
                     using (PopupMenu menuPost = new PopupMenu(this, CommentView.FindViewById<ImageView>(Resource.Id.imgMore)))
                     {
                         menuPost.Inflate(Resource.Menu.post_reporte_menu);
-                        menuPost.MenuItemClick += async delegate
-                        {
-                            if (DashboardController.OcultarComment(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo, comentario.Publicacion_Id, comentario.Comentario_Id))
-                            {
-                                Toast.MakeText(this, "Comentario eliminado", ToastLength.Short).Show();
-                                page = 0;
-                                comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
-                                if (comentarios.Count != 0)
-                                {
-                                    tlComentarios.RemoveAllViews();
-                                    await FillCommentsAsync();
-                                }
-                            }
-                            else
-                                Toast.MakeText(this, "Existió un error al eliminar el comentario", ToastLength.Short).Show();
-                        };
+                        menuPost.MenuItemClick += delegate
+                       {
+                           if (DashboardController.OcultarComment(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo, comentario.Publicacion_Id, comentario.Comentario_Id))
+                           {
+                               Toast.MakeText(this, "Comentario eliminado", ToastLength.Short).Show();
+                               page = 0;
+                               comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+                               if (comentarios.Count != 0)
+                               {
+                                   tlComentarios.RemoveAllViews();
+                                   FillComments();
+                               }
+                           }
+                           else
+                               Toast.MakeText(this, "Existió un error al eliminar el comentario", ToastLength.Short).Show();
+                       };
                         menuPost.Show();
                     }
                 };
@@ -367,7 +410,7 @@ namespace WorklabsMx.Droid
                         customView.FindViewById<EditText>(Resource.Id.txtPublicacion).Text = "";
                         customView.FindViewById<EditText>(Resource.Id.txtPublicacion).ClearFocus();
                         comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
-                        FillCommentsAsync();
+                        FillComments();
                         svComentarios.ScrollY = svComentarios.Height;
                     }
                     else

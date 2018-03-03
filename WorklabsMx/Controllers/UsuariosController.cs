@@ -191,7 +191,7 @@ namespace WorklabsMx.Controllers
                             Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
                             Usuario_Fotografia = reader["Usuario_Fotografia"].ToString(),
                             Usuario_Correo_Electronico = reader["Usuario_Correo_Electronico"].ToString(),
-                            Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path),
+                            //Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path),
                             Usuario_Telefono = reader["Usuario_Telefono"].ToString(),
                             Usuario_Celular = reader["Usuario_Celular"].ToString(),
                             Usuario_Fecha_Nacimiento = reader["Usuario_Fecha_Nacimiento"].ToString(),
@@ -245,7 +245,7 @@ namespace WorklabsMx.Controllers
                         Usuario_Profesion = reader["Usuario_Profesion"].ToString(),
                         Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
                         Usuario_Fotografia = reader["Usuario_Fotografia"].ToString(),
-                        Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path),
+                        //Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path),
                         Usuario_Correo_Electronico = reader["Usuario_Correo_Electronico"].ToString(),
                         Usuario_Telefono = reader["Usuario_Telefono"].ToString(),
                         Usuario_Celular = reader["Usuario_Celular"].ToString(),
@@ -331,7 +331,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Miembro_Fotografia", fotoNombre);
                 command.Parameters.AddWithValue("@Miembro_Descripcion", descripcion);
                 command.Parameters.AddWithValue("@Miembro_Estatus", DBNull.Value);
-                //command.Parameters.AddWithValue("@Miembro_Imagen_Fondo", foto_fondo);
+                command.Parameters.AddWithValue("@Miembro_Imagen_Fondo", foto_fondo);
 
                 command.Parameters.Add("@Miembro_Id_Salida", SqlDbType.Int).Direction = ParameterDirection.Output;
 
@@ -469,7 +469,7 @@ namespace WorklabsMx.Controllers
                         Usuario_Apellidos = reader["Colaborador_Empresa_Apellidos"].ToString(),
                         Usuario_Id = reader["Colaborador_Empresa_Id"].ToString(),
                         Usuario_Fotografia = reader["Colaborador_Empresa_Fotografia"].ToString(),
-                        Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Colaborador_Empresa_Fotografia"].ToString(), usuario_imagen_path),
+                        //Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Colaborador_Empresa_Fotografia"].ToString(), usuario_imagen_path),
                     });
                 }
             }

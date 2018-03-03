@@ -182,6 +182,7 @@
     <Compile Include="Helpers\DatePickerMinFragment.cs" />
     <Compile Include="ViewController\Servicios\ComprasActivity.cs" />
     <Compile Include="ViewController\AboutUsActivity.cs" />
+    <Compile Include="ViewController\Servicios\ResultActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -423,6 +424,7 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_create_white.png" />
     <AndroidResource Include="Resources\drawable\image_rectangle.xml" />
     <AndroidResource Include="Resources\drawable\image_circle.xml" />
+    <AndroidResource Include="Resources\layout\ResultPaymentLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

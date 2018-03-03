@@ -1,8 +1,5 @@
-﻿using System;
-using System.Net;
-using Android.Content.Res;
+﻿using System.Net;
 using Android.Graphics;
-using WorklabsMx.Helpers;
 
 namespace WorklabsMx.Droid.Helpers
 {

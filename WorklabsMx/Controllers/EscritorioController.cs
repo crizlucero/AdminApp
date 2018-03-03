@@ -50,9 +50,8 @@ namespace WorklabsMx.Controllers
                             Usuario_Id = !string.IsNullOrEmpty(reader["Miembro_Id"].ToString()) ? reader["Miembro_Id"].ToString() : reader["Colaborador_Empresa_Id"].ToString(),
                             Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
                             Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
-                            Usuario_Fotografia = reader["Usuario_Fotografia_Ruta"].ToString(),
+                            Usuario_Fotografia = reader["Usuario_Fotografia"].ToString(),
                             Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
-                            Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path)
                         };
                         usuarios.Add(usuario);
                     }
@@ -64,7 +63,6 @@ namespace WorklabsMx.Controllers
                         Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
                         Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),
                         Publicacion_Imagen_Ruta = reader["Publicacion_Imagen_Ruta"].ToString(),
-                        Publicacion_Imagen_Post = ImageHelper.DownloadFileFTP(reader["Publicacion_Imagen"].ToString(), publicaciones_imagen_path),
                         Publicacion_Fecha = reader["Publicacion_Fecha"].ToString(),
                         Publicacion_Comentarios_Cantidad = reader["Publicacion_Comentarios_Cantidad"].ToString(),
                         Publicacion_Me_Gustan_Cantidad = reader["Publicacion_Me_Gustan_Cantidad"].ToString(),
@@ -117,7 +115,7 @@ namespace WorklabsMx.Controllers
                             Usuario_Id = reader["Miembro_Id"].ToString() == "" ? reader["Miembro_Id"].ToString() : reader["Colaborador_Empresa_Id"].ToString(),
                             Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
                             Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
-                            Usuario_Fotografia = reader["Usuario_Fotografia_Ruta"].ToString(),
+                            Usuario_Fotografia = reader["Usuario_Fotografia"].ToString(),
                             Usuario_Puesto = reader["Usuario_Puesto"].ToString()
                         },
                         Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
@@ -215,9 +213,9 @@ namespace WorklabsMx.Controllers
                             Usuario_Id = !string.IsNullOrEmpty(reader["Miembro_Id"].ToString()) ? reader["Miembro_Id"].ToString() : reader["Colaborador_Empresa_Id"].ToString(),
                             Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
                             Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
-                            Usuario_Fotografia = reader["Usuario_Fotografia_Ruta"].ToString(),
+                            Usuario_Fotografia = reader["Usuario_Fotografia"].ToString(),
                             Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
-                            Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path)
+                            //Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path)
                         };
                         usuarios.Add(usuario);
                     }
@@ -229,7 +227,7 @@ namespace WorklabsMx.Controllers
                         Usuario = usuario,
                         Comentario_Contenido = reader["Comentario_Contenido"].ToString(),
                         Comentario_Imagen = reader["Comentario_Imagen"].ToString(),
-                        Comentario_Imagen_Comentario = ImageHelper.DownloadFileFTP(reader["Comentario_Imagen"].ToString(), publicaciones_imagen_path),
+                        //Comentario_Imagen_Comentario = ImageHelper.DownloadFileFTP(reader["Comentario_Imagen"].ToString(), publicaciones_imagen_path),
                         Comentario_Imagen_Ruta = reader["Comentario_Imagen_Ruta"].ToString(),
                         Comentario_Fecha = reader["Comentario_Fecha"].ToString(),
                         Comentario_Me_Gustan_Cantidad = reader["Comentario_Me_Gustan_Cantidad"].ToString(),
@@ -595,9 +593,9 @@ namespace WorklabsMx.Controllers
                             Usuario_Id = reader["Miembro_Id"].ToString() == "" ? reader["Miembro_Id"].ToString() : reader["Colaborador_Empresa_Id"].ToString(),
                             Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
                             Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
-                            Usuario_Fotografia = reader["Usuario_Fotografia_Ruta"].ToString(),
+                            Usuario_Fotografia = reader["Usuario_Fotografia"].ToString(),
                             Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
-                            Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path)
+                            //Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path)
                         },
                         Publicacion_Contenido = reader["Publicacion_Contenido"].ToString(),
                         Publicacion_Imagen = reader["Publicacion_Imagen"].ToString(),

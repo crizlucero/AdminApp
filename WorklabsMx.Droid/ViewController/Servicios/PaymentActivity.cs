@@ -7,6 +7,8 @@ using Android.Views;
 using Android.Widget;
 using Com.Mitec.Suitemcommerce.Beans;
 using Com.Mitec.Suitemcommerce.Controller;
+using Com.Mitec.Suitemcommerce.Utilities;
+using Java.Lang;
 using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
@@ -16,7 +18,7 @@ using WorklabsMx.Models;
 namespace WorklabsMx.Droid
 {
     [Activity(Label = "@string/app_name")]
-    public class PaymentActivity : Activity
+    public class PaymentActivity : Activity, ISuiteControllerDelegate
     {
         List<CarritoComprasDetalle> membresias, productos;
         decimal Descuento, Descuento_Porcentaje, Subtotal, Total, IVATotal;
@@ -24,6 +26,13 @@ namespace WorklabsMx.Droid
         readonly SimpleStorage storage;
 
         int Descuento_Id;
+        AlertDialog.Builder dialog;
+        static ProgressDialog progressDialog;
+
+        SuiteController suiteController;
+        Bean3DS bean3DS;
+        BeanTokenization beanTokenization;
+
         public PaymentActivity()
         {
             membresias = new List<CarritoComprasDetalle>();
@@ -43,8 +52,8 @@ namespace WorklabsMx.Droid
             ActionBar.Title = Resources.GetString(Resource.String.RealizaPago);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            SuiteController sc = new SuiteController(Com.Mitec.Suitemcommerce.Utilities.Environment.Dev, this, null);
-            BeanTokenization bt = new BeanTokenization
+            suiteController = new SuiteController(Com.Mitec.Suitemcommerce.Utilities.Environment.Sandbox, this, this);
+            beanTokenization = new BeanTokenization
             {
                 Branch = "0001",
                 Company = "SX001",
@@ -52,12 +61,12 @@ namespace WorklabsMx.Droid
                 User = "SNDBXUS3R",
                 Password = "SNDBXP44S",
                 Merchant = "123456",
-                Currency = Com.Mitec.Suitemcommerce.Utilities.Currency.Mxn,
+                Currency = Currency.Mxn,
                 OperationType = "6",
                 Reference = "REFERENCIA SNDBX001"
 
             };
-            Bean3DS b3ds = new Bean3DS
+            bean3DS = new Bean3DS
             {
                 Branch = "0001",
                 Company = "SX001",
@@ -65,12 +74,12 @@ namespace WorklabsMx.Droid
                 User = "SNDBXUS3R",
                 Password = "SNDBXP44S",
                 Merchant = "123456",
-                Currency = Com.Mitec.Suitemcommerce.Utilities.Currency.Mxn,
+                Currency = Currency.Mxn,
                 Reference = "REFERENCIA SNDBX001",
                 AuthKey = "516883575148515057485348"
             };
-            sc.Authenticate(bt, b3ds);
-            sc.SndPayWithToken(bt,b3ds);
+            suiteController.Authenticate(beanTokenization, bean3DS);
+            suiteController.SndPayWithToken(beanTokenization, bean3DS);
 
             membresias = JsonConvert.DeserializeObject<List<CarritoComprasDetalle>>(Intent.GetStringExtra("Membresias"));
             productos = JsonConvert.DeserializeObject<List<CarritoComprasDetalle>>(Intent.GetStringExtra("Productos"));
@@ -139,6 +148,65 @@ namespace WorklabsMx.Droid
                     break;
             }
             return base.OnOptionsItemSelected(item);
+        }
+
+        public void CanceledProcessByUser()
+        {
+
+        }
+
+        public void DidFinishAuthenticationProcess(BeanTokenizeResponse beanTokenizeResponse, SuiteError suiteError)
+        {
+
+            progressDialog.Dismiss();
+            if (beanTokenizeResponse != null)
+            {
+                Intent intent = new Intent(this, typeof(ResultActivity));
+                intent.PutExtra("beanTokenizeResponse", beanTokenizeResponse);
+                StartActivity(intent);
+            }
+            if (suiteError != null)
+            {
+                Utilities.Println("didFinishAuthenticationProcess " + suiteError.ToString());
+                DialogAlert("Error", suiteError.Error);
+            }
+        }
+
+        void DialogAlert(string title, string message)
+        {
+            dialog.SetTitle(title);
+            dialog.SetMessage(message);
+
+            dialog.Show();
+        }
+
+        public void DidFinishPayProcess(string p0, SuiteError p1)
+        {
+            progressDialog.Dismiss();
+            DialogAlert("Operación", "Operación cancelada por el usuario");
+        }
+
+        public void DidFinishTokenizeTransaction(BeanPaymentWithToken p0, SuiteError p1)
+        {
+        }
+
+        class Authenticate : AsyncTask<Java.Lang.Void, Java.Lang.Void, Java.Lang.Void>
+        {
+            SuiteController suiteController;
+            BeanTokenization beanTokenization;
+            Bean3DS bean3DS;
+            public Authenticate(SuiteController suiteController, BeanTokenization beanTokenization, Bean3DS bean3DS)
+            {
+                this.suiteController = suiteController;
+                this.beanTokenization = beanTokenization;
+                this.bean3DS = bean3DS;
+            }
+
+            protected override Java.Lang.Void RunInBackground(params Java.Lang.Void[] @params)
+            {
+                suiteController.Authenticate(beanTokenization, bean3DS);
+                return null;
+            }
         }
     }
 }

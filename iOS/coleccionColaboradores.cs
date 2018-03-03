@@ -23,7 +23,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            Colaboradores = new UsuariosController().GetColaboradoresCard(Miembro.Usuario_Id);
+            Colaboradores = new UsuariosController().GetColaboradoresCardAsync(Miembro.Usuario_Id);
         }
 
         public override nint NumberOfSections(UICollectionView collectionView)
