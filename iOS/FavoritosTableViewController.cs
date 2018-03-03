@@ -70,7 +70,7 @@ namespace WorklabsMx.iOS
             {
                 if (InternetConectionHelper.VerificarConexion())
                 {
-                    this.UsuariosFavoritos = new UsuariosController().GetMiembrosFavoritos(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+                    this.UsuariosFavoritos = new UsuariosController().GetMiembrosFavoritosAsync(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
                 }
                 else
                 {
@@ -160,7 +160,7 @@ namespace WorklabsMx.iOS
                 {
                     PerfilView.InfoPersonal = false;
                 }
-                var usuario = new UsuariosController().GetMemberData(ListUser.Usuario_Id, ListUser.Usuario_Tipo);
+                var usuario = new UsuariosController().GetMemberDataAsync(ListUser.Usuario_Id, ListUser.Usuario_Tipo);
 
                 PerfilView.Miembro = usuario;
             }

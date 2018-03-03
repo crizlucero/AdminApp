@@ -144,6 +144,10 @@ namespace WorklabsMx.Droid
                 View PersonaCard = liView.Inflate(Resource.Layout.PreViewListLayout, null, true);
 
                 ImageButton ibProfile = PersonaCard.FindViewById<ImageButton>(Resource.Id.ibProfile);
+                if (miembro.Usuario_Fotografia_Perfil != null)
+                    ibProfile.SetImageBitmap(BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length));
+                else
+                    ibProfile.SetImageResource(Resource.Mipmap.ic_profile_empty);
 
                 TextView lblNombre = PersonaCard.FindViewById<TextView>(Resource.Id.lblTitle);
 
@@ -200,6 +204,11 @@ namespace WorklabsMx.Droid
                 View PersonaCard = liView.Inflate(Resource.Layout.PreViewListLayout, null, true);
 
                 ImageButton ibProfile = PersonaCard.FindViewById<ImageButton>(Resource.Id.ibProfile);
+                //if (empresa.Usuario_Fotografia_Perfil != null)
+                //    ibProfile.SetImageBitmap(BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length));
+                //else
+                //    ibProfile.SetImageResource(Resource.Mipmap.ic_profile_empty);
+
 
                 TextView lblNombre = PersonaCard.FindViewById<TextView>(Resource.Id.lblTitle);
 

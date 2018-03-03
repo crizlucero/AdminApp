@@ -44,12 +44,12 @@ namespace WorklabsMx.Droid
             {
                 System.IO.MemoryStream stream = new System.IO.MemoryStream();
                 photo?.Compress(Bitmap.CompressFormat.Png, 0, stream);
-                byte[] bitmapDataPhoto = stream?.ToArray();
+                miembro.Usuario_Fotografia_Perfil = stream?.ToArray();
                 background?.Compress(Bitmap.CompressFormat.Png, 0, stream);
-                byte[] bitmapDatabackground = stream?.ToArray();
+                miembro.Usuario_Fotografia_FondoPerfil = stream?.ToArray(); 
                 if (new UsuariosController().UpdateDataMiembros(miembro.Usuario_Id, FindViewById<EditText>(Resource.Id.txtNombre).Text,
                                                                 FindViewById<EditText>(Resource.Id.txtApellidos).Text, miembro.Usuario_Correo_Electronico, miembro.Usuario_Telefono,
-                                                                miembro.Usuario_Celular, miembro.Usuario_Descripcion, DateTime.Parse(miembro.Usuario_Fecha_Nacimiento), bitmapDataPhoto, bitmapDatabackground))
+                                                                miembro.Usuario_Celular, miembro.Usuario_Descripcion, DateTime.Parse(miembro.Usuario_Fecha_Nacimiento), miembro.Usuario_Fotografia_Perfil, miembro.Usuario_Fotografia_FondoPerfil))
                 {
                     miembro.Redes_Sociales.ForEach(red =>
                     {

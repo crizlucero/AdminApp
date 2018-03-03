@@ -21,6 +21,7 @@ using System.Linq;
 using Android.Support.V7.App;
 using Android.App;
 using WorklabsMx.Droid.ViewElement;
+using Newtonsoft.Json;
 
 namespace WorklabsMx.Droid
 {
@@ -35,13 +36,19 @@ namespace WorklabsMx.Droid
         SimpleStorage localStorage;
         EscritorioController DashboardController;
         TableLayout tlPost;
-        string nombre, puesto, empresa, upload_image_path;
+        string nombre, puesto, empresa;
         byte[] foto;
         List<PostModel> posts;
         MenuView menu;
+        Dictionary<KeyValuePair<string, string>, byte[]> Usuario_Fotos_Perfil;
+        readonly string usuario_imagen_path, publicaciones_imagen_path;
         public MainActivity()
         {
             DashboardController = new EscritorioController();
+            Usuario_Fotos_Perfil = new Dictionary<KeyValuePair<string, string>, byte[]>();
+            List<ConfiguracionesModel> config = new ConfigurationsController().GetListConfiguraciones();
+            usuario_imagen_path = config.Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1;
+            publicaciones_imagen_path = config.Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PUBLICACIONES").Parametro_Varchar_1;
         }
 
         protected override void OnPause()
@@ -58,7 +65,6 @@ namespace WorklabsMx.Droid
                 menu = new MenuView(this);
                 localStorage = SimpleStorage.EditGroup("Login");
                 localStorage.Delete("Parent");
-                upload_image_path = new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PUBLICACIONES").Parametro_Varchar_1;
                 OpenDashboard();
             }
             catch (Exception e)
@@ -80,6 +86,7 @@ namespace WorklabsMx.Droid
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu_white);
             menu.FillMemberCard(ref nombre, ref foto, ref puesto, ref empresa);
+            Usuario_Fotos_Perfil.Add(new KeyValuePair<string, string>(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")), foto);
             menu.FillMenu();
             FindViewById<TextView>(Resource.Id.lblNombre).Text = nombre;
             FindViewById<TextView>(Resource.Id.lblPuesto).Text = puesto;
@@ -143,13 +150,29 @@ namespace WorklabsMx.Droid
             {
                 LayoutInflater liView = LayoutInflater;
                 View PostView = liView.Inflate(Resource.Layout.PostLayout, null, true);
+
+                KeyValuePair<string, string> current = new KeyValuePair<string, string>(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo);
+
                 PostView.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels);
 
                 ImageButton imgPerfil = PostView.FindViewById<ImageButton>(Resource.Id.imgPerfil);
-                if (post.Usuario.Usuario_Fotografia_Perfil != null)
-                    imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(post.Usuario.Usuario_Fotografia_Perfil, 0, post.Usuario.Usuario_Fotografia_Perfil.Length));
+
+                if (Usuario_Fotos_Perfil.ContainsKey(current))
+                {
+                    if (Usuario_Fotos_Perfil[current] != null)
+                        imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(Usuario_Fotos_Perfil[current], 0, Usuario_Fotos_Perfil[current].Length));
+                    else
+                        imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
+                }
                 else
-                    imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
+                {
+                    post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, usuario_imagen_path);
+                    Usuario_Fotos_Perfil.Add(current, post.Usuario.Usuario_Fotografia_Perfil);
+                    if (post.Usuario.Usuario_Fotografia_Perfil != null)
+                        imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(post.Usuario.Usuario_Fotografia_Perfil, 0, post.Usuario.Usuario_Fotografia_Perfil.Length));
+                    else
+                        imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
+                }
                 imgPerfil.Click += (sender, e) => ShowPerfilCard(new UsuariosController().GetMemberData(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo));
 
                 TextView lblNombre = PostView.FindViewById<TextView>(Resource.Id.lblNombre);
@@ -214,14 +237,18 @@ namespace WorklabsMx.Droid
                         icLike.SetTint(Resource.Color.like_heart_pressed);
 
                 ImageView imgPost = PostView.FindViewById<ImageView>(Resource.Id.imgPost);
-                if (post.Publicacion_Imagen_Post != null)
+                if (!string.IsNullOrEmpty(post.Publicacion_Imagen))
                 {
-                    imgPost.Visibility = ViewStates.Visible;
-                    imgPost.SetImageBitmap(BitmapFactory.DecodeByteArray(post.Publicacion_Imagen_Post, 0, post.Publicacion_Imagen_Post.Length));
-                    imgPost.Click += delegate
+                    post.Publicacion_Imagen_Post = new UploadImages().DownloadFileFTP(post.Publicacion_Imagen, publicaciones_imagen_path);
+                    if (post.Publicacion_Imagen_Post != null && post.Publicacion_Imagen_Post.Length != 0)
                     {
-                        //AndHUD.Shared.ShowImage(this, Drawable.CreateFromStream());
-                    };
+                        imgPost.Visibility = ViewStates.Visible;
+                        imgPost.SetImageBitmap(BitmapFactory.DecodeByteArray(post.Publicacion_Imagen_Post, 0, post.Publicacion_Imagen_Post.Length));
+                        imgPost.Click += delegate
+                        {
+                            //AndHUD.Shared.ShowImage(this, Drawable.CreateFromStream());
+                        };
+                    }
                 }
                 TextView lblComentario = PostView.FindViewById<TextView>(Resource.Id.lblComments);
                 lblComentario.Text = post.Publicacion_Comentarios_Cantidad + " " + Resources.GetString(Resource.String.Comentarios);

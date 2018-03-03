@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!--
+    <include android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+-->
+<!--    <ImageView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/mit"
+        android:contentDescription="Image description"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#CCFFFFFF" >
+
+        <ImageView
+            android:id="@+id/imageResponse"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_failure"
+            android:contentDescription="Image description"/>
+
+        <LinearLayout
+            android:id="@+id/layoutResponse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/labelResponse"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:layout_marginLeft="30dp"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp"
+                android:text="Response"/>
+
+            <TextView
+                android:id="@+id/response"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:hint="Response"
+                android:textColor="@color/md_black_1000_50"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textIsSelectable="true"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutReference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/labelReference"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:layout_marginLeft="30dp"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp"
+                android:text="Reference"/>
+
+            <TextView
+                android:id="@+id/reference"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:hint="Reference"
+                android:textColor="@color/md_black_1000_50"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textIsSelectable="true"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutAuth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/labelAuth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:layout_marginLeft="30dp"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp"
+                android:text="Auth"/>
+
+            <TextView
+                android:id="@+id/auth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:hint="Auth"
+                android:textColor="@color/md_black_1000_50"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/labelError"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:layout_marginLeft="30dp"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp"
+                android:text="Error"/>
+
+            <TextView
+                android:id="@+id/error"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:hint="Error"
+                android:textColor="@color/md_black_1000_50"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/labelName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:layout_marginLeft="30dp"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp"
+                android:text="Name"/>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:hint="Name"
+                android:textColor="@color/md_black_1000_50"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/labelNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:layout_marginLeft="30dp"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp"
+                android:text="Number"/>
+
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:hint="Number"
+                android:textColor="@color/md_black_1000_50"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/labelAmount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:layout_marginLeft="30dp"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp"
+                android:text="Amount"/>
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:hint="Amount"
+                android:textColor="@color/md_black_1000_50"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/labelType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:layout_marginLeft="30dp"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp"
+                android:text="Type"/>
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:gravity="left"
+                android:layout_marginRight="5dp"
+                android:hint="Type"
+                android:textColor="@color/md_black_1000_50"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="bottom" >
+            <Button
+                android:id="@+id/btnAccepResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/textColorPrimary"
+                android:text="Accept"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+
+    </LinearLayout>-->
+</RelativeLayout>

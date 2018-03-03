@@ -41,9 +41,9 @@ namespace WorklabsMx.iOS
             base.ViewDidLoad();
 
             if (string.IsNullOrEmpty(Usuario))
-                miembro = new UsuariosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+                miembro = new UsuariosController().GetMemberDataAsync(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
             else
-                miembro = new UsuariosController().GetMemberData(Usuario, Tipo);
+                miembro = new UsuariosController().GetMemberDataAsync(Usuario, Tipo);
             new InfoPersonaCard(miembro, View);
 
             UIToolbar tbNav = new UIToolbar
@@ -266,7 +266,7 @@ namespace WorklabsMx.iOS
             using (UIScrollView scrollView = new UIScrollView(new CGRect(0, 100, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)))
             {
                 int position = 0;
-                foreach (UsuarioModel usuario in new UsuariosController().GetMiembrosFavoritos(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo")))
+                foreach (UsuarioModel usuario in new UsuariosController().GetMiembrosFavoritosAsync(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo")))
                 {
                     InfoPersonaCard personaCard = new InfoPersonaCard(usuario, scrollView, position);
                     personaCard.lblMail.TouchUpInside += (sender, e) =>

@@ -182,6 +182,7 @@
     <Compile Include="Helpers\DatePickerMinFragment.cs" />
     <Compile Include="ViewController\Servicios\ComprasActivity.cs" />
     <Compile Include="ViewController\AboutUsActivity.cs" />
+    <Compile Include="ViewController\Servicios\ResultActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -396,6 +397,34 @@
     <AndroidResource Include="Resources\layout\ColaboradorItemLayout.axml" />
     <AndroidResource Include="Resources\layout\AboutLayout.axml" />
     <AndroidResource Include="Resources\drawable\shadow_radius_dark_black.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_arrow_up.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_arrow_up.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_arrow_up.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_arrow_up.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_arrow_up.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_add_white.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_add_white.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_add_white.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_add_white.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_add_white.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_refresh_white.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_refresh_white.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_refresh_white.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_refresh_white.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_refresh_white.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_person_add_white.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_person_add_white.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_person_add_white.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_person_add_white.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_person_add_white.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_create_white.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_create_white.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_create_white.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_create_white.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_create_white.png" />
+    <AndroidResource Include="Resources\drawable\image_rectangle.xml" />
+    <AndroidResource Include="Resources\drawable\image_circle.xml" />
+    <AndroidResource Include="Resources\layout\ResultPaymentLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

@@ -68,7 +68,7 @@ namespace WorklabsMx.iOS.Helpers
         {
             await Task.Run(() =>
             {
-                var usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
+                var usuarios = new UsuariosController().GetDirectorioUsuariosAsync(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
                 Comunidad = usuarios;
             });
         }
@@ -121,7 +121,12 @@ namespace WorklabsMx.iOS.Helpers
         {
             await Task.Run(() => 
             {
+<<<<<<< HEAD
                 Usuario = new UsuariosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+=======
+                var usuario = new UsuariosController().GetMemberDataAsync(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+                Usuario = usuario;
+>>>>>>> e26f38019e7e906a19d5715cbf95ae902cbb5656
             });
         }
 

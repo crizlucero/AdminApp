@@ -71,12 +71,18 @@
         </LinearLayout>
     </ScrollView>
     <GridLayout
-        android:minWidth="25px"
-        android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="-60dp"
         android:columnCount="2">
+        <TextView
+            android:id="@+id/lblAccion"
+            android:textColor="#777"
+            android:text="@string/str_general_see_more"
+            android:layout_columnSpan="2"
+            android:layout_gravity="center_horizontal"
+            android:drawableTop="@mipmap/ic_arrow_up"
+            android:textSize="10dp" />
         <TextView
             android:textColor="#000"
             android:text="@string/str_shop_total"

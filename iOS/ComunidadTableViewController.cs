@@ -86,8 +86,13 @@ namespace WorklabsMx.iOS
         {
             await Task.Run(() =>
             {
+<<<<<<< HEAD
                 this.Usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
                 this.UsuariosAux = this.Usuarios;
+=======
+                this.Usuarios = new UsuariosController().GetDirectorioUsuariosAsync(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
+
+>>>>>>> e26f38019e7e906a19d5715cbf95ae902cbb5656
                 if (Usuarios.Count == 0)
                 {
                     isShowInformation = false;
@@ -174,7 +179,7 @@ namespace WorklabsMx.iOS
                 {
                     PerfilView.InfoPersonal = false;
                 }
-                var usuario = new UsuariosController().GetMemberData(ListUser.Usuario_Id, ListUser.Usuario_Tipo);
+                var usuario = new UsuariosController().GetMemberDataAsync(ListUser.Usuario_Id, ListUser.Usuario_Tipo);
 
                 PerfilView.Miembro = usuario;
             

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Net;
-using Android.Content.Res;
+﻿using System.Net;
 using Android.Graphics;
-using WorklabsMx.Helpers;
 
 namespace WorklabsMx.Droid.Helpers
 {
@@ -29,7 +26,7 @@ namespace WorklabsMx.Droid.Helpers
                             imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
                         }
                     }
-                    catch 
+                    catch
                     {
                         return null;
                     }
