@@ -68,7 +68,7 @@
             android:layout_columnSpan="2"
             android:layout_width="wrap_content" />
         <TextView
-            android:text="@string/Contacto"
+            android:text="@string/str_general_contact"
             android:textColor="@android:color/white"
             android:layout_marginLeft="20dp"
             android:layout_width="wrap_content"

@@ -42,7 +42,7 @@ namespace WorklabsMx.Droid.Helpers
         /// <param name="fileName">Nombre del archivo</param>
         /// <param name="width">Ancho</param>
         /// <param name="height">Alto</param>
-        public static Bitmap LoadAndResizeBitmap(this string fileName, int width, int height)
+        public static Bitmap LoadAndResizeBitmap(this string fileName, int width , int height )
         {
             // First we get the the dimensions of the file on disk
             BitmapFactory.Options options = new BitmapFactory.Options { InJustDecodeBounds = true };

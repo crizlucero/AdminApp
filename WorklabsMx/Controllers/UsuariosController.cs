@@ -331,7 +331,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Miembro_Fotografia", fotoNombre);
                 command.Parameters.AddWithValue("@Miembro_Descripcion", descripcion);
                 command.Parameters.AddWithValue("@Miembro_Estatus", DBNull.Value);
-                command.Parameters.AddWithValue("@Miembro_Imagen_Fondo", foto_fondo);
+                command.Parameters.AddWithValue("@Miembro_Fotografia_Fondo", fotoFondoNombre);
 
                 command.Parameters.Add("@Miembro_Id_Salida", SqlDbType.Int).Direction = ParameterDirection.Output;
 
@@ -469,11 +469,7 @@ namespace WorklabsMx.Controllers
                         Usuario_Apellidos = reader["Colaborador_Empresa_Apellidos"].ToString(),
                         Usuario_Id = reader["Colaborador_Empresa_Id"].ToString(),
                         Usuario_Fotografia = reader["Colaborador_Empresa_Fotografia"].ToString(),
-<<<<<<< HEAD
                         Usuario_Fotografia_Perfil = null, //ImageHelper.DownloadFileFTP(reader["Colaborador_Empresa_Fotografia"].ToString(), usuario_imagen_path),
-=======
-                        //Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Colaborador_Empresa_Fotografia"].ToString(), usuario_imagen_path),
->>>>>>> e26f38019e7e906a19d5715cbf95ae902cbb5656
                     });
                 }
             }

@@ -22,7 +22,7 @@ namespace WorklabsMx.Droid
             SetContentView(Resource.Layout.AccesoLayout);
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
-            ActionBar.Title = Resources.GetString(Resource.String.Acceso);
+            ActionBar.Title = Resources.GetString(Resource.String.str_general_access);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
             storageLocal = SimpleStorage.EditGroup("Login");

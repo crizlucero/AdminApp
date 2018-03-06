@@ -8,21 +8,31 @@
     <shape>
         <gradient
             android:type="linear"
-            android:centerX="73%"
-            android:startColor="#FF919191"
-            android:centerColor="#FF000000"
-            android:endColor="#FF000000"
+            android:centerX="10%"
+            android:startColor="#626161"
+            android:centerColor="#3E3D3D"
+            android:endColor="#030303"
             android:angle="225"/>
     </shape>
   </item>
     <item
+        android:drawable="@mipmap/worklabs_title"
+        android:left="30dp"
+        android:right="30dp"
+        android:top="250dp"
+        android:bottom="250dp"
+        android:width="275dp"
+        android:height="30dp"
+        android:gravity="center">
+    </item>
+    <!--<item
         android:left="30dp"
         android:right="30dp"
         android:top="275dp"
         android:bottom="275dp">
         <bitmap 
-        android:gravity="fill_horizontal|center|fill_vertical"
-        android:src="@mipmap/worklabs_title"/>
-    </item>
+            android:gravity="fill_horizontal|center|fill_vertical"
+            android:src="@mipmap/worklabs_title"/>
+    </item>-->
 
 </layer-list>

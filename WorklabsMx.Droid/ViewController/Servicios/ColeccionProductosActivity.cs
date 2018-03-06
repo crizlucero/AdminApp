@@ -199,7 +199,7 @@ namespace WorklabsMx.Droid
                                           * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                     }
                     else
-                        Toast.MakeText(context, Resource.String.NumeroInferior, ToastLength.Short).Show();
+                        Toast.MakeText(context, Resource.String.str_general_number_inferior, ToastLength.Short).Show();
                 };
 
                 CarritoView.FindViewById<TextView>(Resource.Id.lblTarifaMensual).Text = membresia.Membresia_Precio_Base_Neto.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
@@ -251,7 +251,7 @@ namespace WorklabsMx.Droid
                                               * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                         }
                         else
-                            Toast.MakeText(context, Resource.String.NumeroInferior, ToastLength.Short).Show();
+                        Toast.MakeText(context, Resource.String.str_general_number_inferior, ToastLength.Short).Show();
                 };
 
                 ImageButton btnMesesPlus = CarritoView.FindViewById<ImageButton>(Resource.Id.btnAddMeses);
@@ -285,7 +285,7 @@ namespace WorklabsMx.Droid
                                           * Convert.ToDouble(txtCantidadMembresias.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                     }
                     else
-                        Toast.MakeText(context, Resource.String.NumeroInferior, ToastLength.Short).Show();
+                        Toast.MakeText(context, Resource.String.str_general_number_inferior, ToastLength.Short).Show();
                 };
                 subtotal = (membresia.Membresia_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
                             (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));
@@ -436,7 +436,7 @@ namespace WorklabsMx.Droid
                                                   * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                             }
                             else
-                                Toast.MakeText(context, Resource.String.NumeroInferior, ToastLength.Short).Show();
+                            Toast.MakeText(context, Resource.String.str_general_number_inferior, ToastLength.Short).Show();
                     };
 
                     ImageButton btnMesesPlus = CarritoView.FindViewById<ImageButton>(Resource.Id.btnAddMeses);
@@ -467,7 +467,7 @@ namespace WorklabsMx.Droid
                                               * Convert.ToDouble(txtCantidadProductos.Text))).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
                         }
                         else
-                            Toast.MakeText(context, Resource.String.NumeroInferior, ToastLength.Short).Show();
+                            Toast.MakeText(context, Resource.String.str_general_number_inferior, ToastLength.Short).Show();
                     };
                     subtotal = (producto.Producto_Precio_Base_Neto / DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) *
                                 (DateHelper.GetMonthsDays(DateTime.Parse(dtFechaInicio.Text)) - DateTime.Parse(dtFechaInicio.Text).Day + 1));

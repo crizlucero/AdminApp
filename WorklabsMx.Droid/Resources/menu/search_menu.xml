@@ -4,6 +4,6 @@
         android:id="@+id/menu_search"
         android:icon="@mipmap/ic_search"
         android:showAsAction="ifRoom"
-        android:title="@string/Buscar"
+        android:title="@string/str_general_search"
     />
 </menu>

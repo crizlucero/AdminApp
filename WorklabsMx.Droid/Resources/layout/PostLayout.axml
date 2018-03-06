@@ -89,7 +89,7 @@
             android:layout_columnSpan="5"
             android:layout_column="0"
             android:layout_row="4"
-            android:src="@mipmap/ic_profile_empty"
+            android:src="@android:drawable/ic_menu_gallery"
             android:id="@+id/imgPost"
             android:adjustViewBounds="false"
             android:layout_columnWeight="5"
@@ -111,7 +111,7 @@
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblComments"
-            android:text="@string/Comentarios"
+            android:text="@string/str_social_network_comments"
             android:textSize="8dp"
             android:drawableLeft="@mipmap/ic_mode_comment"
             android:textColor="#000"
@@ -124,14 +124,15 @@
         <Button
             android:id="@+id/btnComentar"
             android:layout_column="4"
-            android:text="@string/Comentar"
+            android:text="@string/str_social_network_comment"
             android:textColor="@android:color/white"
-            android:background="#95D6FF"
+            android:background="@drawable/blue_round_button"
             android:layout_gravity="right"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
-            android:visibility="invisible" />
+            android:visibility="invisible"
+            android:layout_marginTop="5dp" />
     </GridLayout>
 </LinearLayout>

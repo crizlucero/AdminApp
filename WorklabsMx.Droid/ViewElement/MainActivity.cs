@@ -45,6 +45,11 @@ namespace WorklabsMx.Droid
 
             customView.FindViewById<TextView>(Resource.Id.lblNombre).Text = nombre;
             customView.FindViewById<TextView>(Resource.Id.lblPuesto).Text = puesto;
+            ImageView imgPerfil = customView.FindViewById<ImageView>(Resource.Id.imgPerfil);
+            if (foto != null)
+                imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(foto, 0, foto.Length));
+            else
+                imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
             customView.FindViewById<TextView>(Resource.Id.lblFecha).Text = DateTime.Now.ToString("d");
             customView.FindViewById<ImageButton>(Resource.Id.imgPicture).Visibility = ViewStates.Gone;
             customView.FindViewById<ImageButton>(Resource.Id.btnDeleteImage).Visibility = ViewStates.Gone;
@@ -141,16 +146,14 @@ namespace WorklabsMx.Droid
             if (resultCode == Result.Ok)
             {
                 if (requestCode == TakePicture && resultCode == Result.Ok)
-                {    
+                {
                     Intent mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
                     Android.Net.Uri contentUri = Android.Net.Uri.FromFile(_file);
                     mediaScanIntent.SetData(contentUri);
                     SendBroadcast(mediaScanIntent);
 
-                    int height = Resources.DisplayMetrics.HeightPixels;
-                    int width = 900;
                     imagePath = _file.Path;
-                    bitmap = _file.Path.LoadAndResizeBitmap(width, height);
+                    bitmap = _file.Path.LoadAndResizeBitmap(440, 220);
                     if (bitmap != null)
                         imgPicture.SetImageBitmap(bitmap);
                     GC.Collect();

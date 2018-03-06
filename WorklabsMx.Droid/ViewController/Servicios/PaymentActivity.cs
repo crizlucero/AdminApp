@@ -8,8 +8,6 @@ using Android.Widget;
 using Com.Mitec.Suitemcommerce.Beans;
 using Com.Mitec.Suitemcommerce.Controller;
 using Com.Mitec.Suitemcommerce.Utilities;
-using Java.Lang;
-using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Enum;
@@ -47,10 +45,14 @@ namespace WorklabsMx.Droid
 
             SetContentView(Resource.Layout.PagoLayout);
 
-            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-            SetActionBar(toolbar);
-            ActionBar.Title = Resources.GetString(Resource.String.RealizaPago);
-            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            dialog = new AlertDialog.Builder(this);
+            dialog.SetPositiveButton("Aceptar",delegate {
+                
+            });
+            dialog.SetCancelable(false);
+
+            progressDialog = new ProgressDialog(this);
+            progressDialog.SetMessage("Procesando operación");
 
             suiteController = new SuiteController(Com.Mitec.Suitemcommerce.Utilities.Environment.Sandbox, this, this);
             beanTokenization = new BeanTokenization
@@ -81,23 +83,6 @@ namespace WorklabsMx.Droid
             suiteController.Authenticate(beanTokenization, bean3DS);
             suiteController.SndPayWithToken(beanTokenization, bean3DS);
 
-            membresias = JsonConvert.DeserializeObject<List<CarritoComprasDetalle>>(Intent.GetStringExtra("Membresias"));
-            productos = JsonConvert.DeserializeObject<List<CarritoComprasDetalle>>(Intent.GetStringExtra("Productos"));
-            Descuento_Id = Convert.ToInt32(Intent.GetStringExtra("Descuento_Id"));
-            Descuento_Porcentaje = Convert.ToDecimal(Intent.GetStringExtra("Descuento_Porcentaje"));
-            Descuento = Convert.ToDecimal(Intent.GetStringExtra("Descuento"));
-            Subtotal = Convert.ToDecimal(Intent.GetStringExtra("Subtotal"));
-            IVATotal = Convert.ToDecimal(Intent.GetStringExtra("IVA"));
-            Total = Convert.ToDecimal(Intent.GetStringExtra("Total"));
-            FillPrices();
-        }
-
-        void FillPrices()
-        {
-            FindViewById<TextView>(Resource.Id.tvSubtotal).Text = Subtotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
-            FindViewById<TextView>(Resource.Id.tvDescuento).Text = Descuento.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
-            FindViewById<TextView>(Resource.Id.tvIVA).Text = IVATotal.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
-            FindViewById<TextView>(Resource.Id.tvTotal).Text = Total.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("es-mx"));
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -167,7 +152,7 @@ namespace WorklabsMx.Droid
             }
             if (suiteError != null)
             {
-                Utilities.Println("didFinishAuthenticationProcess " + suiteError.ToString());
+                Utilities.Println("didFinishAuthenticationProcess " + suiteError);
                 DialogAlert("Error", suiteError.Error);
             }
         }

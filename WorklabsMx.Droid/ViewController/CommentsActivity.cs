@@ -62,7 +62,7 @@ namespace WorklabsMx.Droid
 
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
-            ActionBar.Title = Resources.GetString(Resource.String.Comentarios);
+            ActionBar.Title = Intent.GetStringExtra("Titulo");
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             DashboardController = new EscritorioController();
             post = DashboardController.GetSinglePost(post_id);
@@ -174,7 +174,7 @@ namespace WorklabsMx.Droid
             }
 
             TextView lblComentario = FindViewById<TextView>(Resource.Id.lblComments);
-            lblComentario.Text = post.Publicacion_Comentarios_Cantidad + " " + Resources.GetString(Resource.String.Comentarios);
+            lblComentario.Text = post.Publicacion_Comentarios_Cantidad + " " + Resources.GetString(Resource.String.str_social_network_comments);
             lblComentario.Click += delegate
             {
                 Intent intent = new Intent(this, typeof(CommentsActivity));
@@ -182,6 +182,21 @@ namespace WorklabsMx.Droid
                 intent.PutExtra("comments_total", post.Publicacion_Comentarios_Cantidad);
                 StartActivity(intent);
             };
+
+            ImageView imgPost = FindViewById<ImageView>(Resource.Id.imgPost);
+            if (!string.IsNullOrEmpty(post.Publicacion_Imagen))
+            {
+                post.Publicacion_Imagen_Post = new UploadImages().DownloadFileFTP(post.Publicacion_Imagen, publicaciones_imagen_path);
+                if (post.Publicacion_Imagen_Post != null && post.Publicacion_Imagen_Post.Length != 0)
+                {
+                    imgPost.Visibility = ViewStates.Visible;
+                    imgPost.SetImageBitmap(BitmapFactory.DecodeByteArray(post.Publicacion_Imagen_Post, 0, post.Publicacion_Imagen_Post.Length));
+                    imgPost.Click += delegate
+                    {
+                        //AndHUD.Shared.ShowImage(this, Drawable.CreateFromStream());
+                    };
+                }
+            }
 
             Button btnComentar = FindViewById<Button>(Resource.Id.btnComentar);
             btnComentar.Visibility = ViewStates.Visible;
