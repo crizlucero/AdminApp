@@ -13,6 +13,7 @@ using Android.Widget;
 using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
+using WorklabsMx.Droid.Helpers;
 using WorklabsMx.Enum;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
@@ -43,7 +44,7 @@ namespace WorklabsMx.Droid.ViewElement
             empresa = DataUsuario[(int)CamposMiembro.Usuario_Empresa_Nombre];
             ImageView imgFoto = context.FindViewById<ImageView>(Resource.Id.imgProfileMenu);
             if (foto.Length != 0)
-                imgFoto.SetImageBitmap(BitmapFactory.DecodeByteArray(foto, 0, foto.Length));
+                imgFoto.SetImageBitmap(ImagesHelper.GetRoundedShape(BitmapFactory.DecodeByteArray(foto, 0, foto.Length)));
             else
                 imgFoto.SetImageResource(Resource.Mipmap.ic_profile_empty);
             TextView NombreUsuario = context.FindViewById<TextView>(Resource.Id.lblNombreMenu);
@@ -115,7 +116,9 @@ namespace WorklabsMx.Droid.ViewElement
                             intent = new Intent(context, typeof(PerfilCardActivity));
                             intent.PutExtra("Titulo", menu.Label);
                             intent.PutExtra("Miembro", JsonConvert.SerializeObject(new UsuariosController().GetMemberData(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"))));
-                            context.StartActivity(intent); break;
+                            context.StartActivity(intent);
+                            context.Finish();
+                            break;
                         case "DatosFacturacionActivity":
                             intent = new Intent(context, typeof(DatosFacturacionActivity));
                             intent.PutExtra("Titulo", menu.Label);

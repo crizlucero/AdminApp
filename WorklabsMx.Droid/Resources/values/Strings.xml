@@ -42,7 +42,7 @@
 	<string name="Perfil">Perfil</string>
 	<string name="AsuntoCorreo">Contacto desde Worklabs</string>
 	<string name="AplicationNotFound">No tiene la aplicación instalada necesaria</string>
-	<string name="DatosGuardados">Datos guardados exitosamente</string>
+	<string name="str_general_data_saved">Datos guardados exitosamente</string>
 	<string name="str_general_save_error">Existió un error en la petición</string>
 	<string name="RegistroInvitados">Registro de invitados</string>
 	<string name="Actualizar">Actualizar</string>

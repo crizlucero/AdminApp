@@ -10,6 +10,8 @@ using com.refractored;
 using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
+using WorklabsMx.Droid.Helpers;
+using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
@@ -20,23 +22,26 @@ namespace WorklabsMx.Droid
         UsuarioModel miembro;
         readonly SimpleStorage storage;
         KeyValuePair<int, bool> isFavorite;
+        readonly string usuario_imagen_path;
         public PerfilCardActivity()
         {
             storage = SimpleStorage.EditGroup("Login");
+            usuario_imagen_path = new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1;
         }
 
-        protected override void OnCreate(Bundle savedInstanceState)
+		protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.PerfilCardLayout);
             miembro = JsonConvert.DeserializeObject<UsuarioModel>(Intent.GetStringExtra("Miembro"));
-            FindViewById<ImageButton>(Resource.Id.ibCerrar).Click += (sender, e) => OnBackPressed();
+            FindViewById<ImageButton>(Resource.Id.ibCerrar).Click += (sender, e) => base.OnBackPressed();
 
             ImageView imgPerfil = FindViewById<ImageView>(Resource.Id.ivPerfil);
-            if (miembro.Usuario_Fotografia_Perfil != null)
-                imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length));
-            else
+            if (!string.IsNullOrEmpty(miembro.Usuario_Fotografia) ){
+                miembro.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(miembro.Usuario_Fotografia,usuario_imagen_path);
+                imgPerfil.SetImageBitmap(ImagesHelper.GetRoundedShape(BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length)));
+            }else
                 imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
 
             FindViewById<TextView>(Resource.Id.lblNombre).Text = miembro.Usuario_Nombre + " " + miembro.Usuario_Apellidos;

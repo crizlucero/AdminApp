@@ -96,7 +96,7 @@ namespace WorklabsMx.Droid
             {
                 case Resource.Id.menu_save:
                     if (new EmpresaController().UpdateDatosFiscales(empresa_id, storage.Get("Usuario_Id"), territorio_id, Calle.Text, NumExterior.Text, NumInterior.Text, Email.Text))
-                        Toast.MakeText(this, Resource.String.DatosGuardados,ToastLength.Short).Show();
+                        Toast.MakeText(this, Resource.String.str_general_data_saved,ToastLength.Short).Show();
                     else Toast.MakeText(this, Resource.String.str_general_save_error, ToastLength.Short).Show();
                     break;
                 default:

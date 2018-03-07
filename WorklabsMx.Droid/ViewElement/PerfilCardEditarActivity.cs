@@ -13,6 +13,7 @@ using Java.IO;
 using Newtonsoft.Json;
 using WorklabsMx.Controllers;
 using WorklabsMx.Droid.Helpers;
+using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 using static Android.Provider.MediaStore.Images;
 
@@ -29,6 +30,13 @@ namespace WorklabsMx.Droid
         int Height, Width;
         bool flag;
         ImageView imgPerfil, imgFondo;
+        readonly string usuario_imagen_path;
+
+        public PerfilCardEditarActivity()
+        {
+            usuario_imagen_path = new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1;
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -37,18 +45,20 @@ namespace WorklabsMx.Droid
             miembro = JsonConvert.DeserializeObject<UsuarioModel>(Intent.GetStringExtra("Miembro"));
             FindViewById<ImageButton>(Resource.Id.ibCerrar).Click += (sender, e) => OnBackPressed();
 
-             imgPerfil = FindViewById<ImageView>(Resource.Id.ivPerfil);
-            if (miembro.Usuario_Fotografia_Perfil != null)
+            imgPerfil = FindViewById<ImageView>(Resource.Id.ivPerfil);
+            if (!string.IsNullOrEmpty(miembro.Usuario_Fotografia))
             {
+                miembro.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(miembro.Usuario_Fotografia, usuario_imagen_path);
                 photo = BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length);
-                imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length));
+                imgPerfil.SetImageBitmap(ImagesHelper.GetRoundedShape(BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length)));
             }
             else
                 imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
             imgFondo = FindViewById<ImageView>(Resource.Id.imgFondo);
-            if (miembro.Usuario_Fotografia_FondoPerfil != null)
+            if (!string.IsNullOrEmpty(miembro.Usuario_Fotografia_Fondo))
             {
-                background = BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length);
+                miembro.Usuario_Fotografia_FondoPerfil = new UploadImages().DownloadFileFTP(miembro.Usuario_Fotografia_Fondo, usuario_imagen_path);
+                background = BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_FondoPerfil, 0, miembro.Usuario_Fotografia_FondoPerfil.Length);
                 imgFondo.SetImageBitmap(background);
             }
 

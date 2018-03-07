@@ -92,7 +92,7 @@ namespace WorklabsMx.Droid
                                        .Replace("{{CALLE}}",sucursal.Sucursal_Domicilio)
                                        .Replace("{{COLONIA}}",sucursal.Territorio.Colonia)
                                        .Replace("{{QR}}","INVITADO"), "Sala de juntas");
-                        Toast.MakeText(this, Resource.String.DatosGuardados, ToastLength.Short).Show();
+                        Toast.MakeText(this, Resource.String.str_general_data_saved, ToastLength.Short).Show();
 
                     }
                     catch (Exception e)
