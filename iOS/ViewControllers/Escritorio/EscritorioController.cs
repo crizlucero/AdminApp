@@ -14,12 +14,12 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         public EscritorioController(IntPtr handle) : base(handle)         {
         }
 
-        public async override void ViewDidLoad()
+        public override void ViewDidLoad()
         {
-            base.ViewDidLoad();             withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());             await MenuHelper.GetListConfiguraciones();             await MenuHelper.FillTable();             RefreshControl = new UIRefreshControl();             RefreshControl.AddTarget(HandleValueChanged, UIControlEvent.ValueChanged);             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;             var Tap = new UITapGestureRecognizer(this.Tapped);             this.View.AddGestureRecognizer(Tap);  		}
+            base.ViewDidLoad();             withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());             RefreshControl = new UIRefreshControl();             RefreshControl.AddTarget(HandleValueChanged, UIControlEvent.ValueChanged);             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;             var Tap = new UITapGestureRecognizer(this.Tapped);             this.View.AddGestureRecognizer(Tap);  		}
 
         public override async void ViewWillAppear(bool animated)
-        {             base.ViewWillAppear(animated);             await CargarInfo();             await CargarImagenes();             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();
+        {             base.ViewWillAppear(animated);             await CargarInfo();             await CargarImagenes();             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();             await MenuHelper.FillTable();
         }          void HandleValueChanged(object sender, EventArgs e)         {             this.GetData();         }          public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);

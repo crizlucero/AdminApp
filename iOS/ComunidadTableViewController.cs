@@ -82,23 +82,15 @@ namespace WorklabsMx.iOS
             base.ViewWillAppear(animated);
         }
 
-        async Task FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "", bool disponibilidad = true, string pais = "", string estado = "", string municipio = "")
+        void FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "", bool disponibilidad = true, string pais = "", string estado = "", string municipio = "")
         {
-            await Task.Run(() =>
+            this.Usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
+            this.UsuariosAux = this.Usuarios;
+            if (Usuarios.Count == 0)
             {
-<<<<<<< HEAD
-                this.Usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
-                this.UsuariosAux = this.Usuarios;
-=======
-                this.Usuarios = new UsuariosController().GetDirectorioUsuariosAsync(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
-
->>>>>>> e26f38019e7e906a19d5715cbf95ae902cbb5656
-                if (Usuarios.Count == 0)
-                {
-                    isShowInformation = false;
-                    BTProgressHUD.Dismiss();
-                }
-            });
+                isShowInformation = false;
+                BTProgressHUD.Dismiss();
+            }
         }
 
 
@@ -174,14 +166,13 @@ namespace WorklabsMx.iOS
                 if (MenuHelper.Usuario.Usuario_Id == ListUser.Usuario_Id && MenuHelper.Usuario.Usuario_Tipo == ListUser.Usuario_Tipo)
                 {
                     PerfilView.InfoPersonal = true;
+                    PerfilView.Miembro = MenuHelper.Usuario;
                 }
                 else
                 {
                     PerfilView.InfoPersonal = false;
+                    PerfilView.Miembro = new UsuariosController().GetMemberData(ListUser.Usuario_Id, ListUser.Usuario_Tipo);
                 }
-                var usuario = new UsuariosController().GetMemberDataAsync(ListUser.Usuario_Id, ListUser.Usuario_Tipo);
-
-                PerfilView.Miembro = usuario;
             
             }
         }

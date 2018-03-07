@@ -31,6 +31,9 @@ namespace WorklabsMx.iOS.Helpers
         public static List<MembresiaModel> Membresias;
 
         public static List<PostModel> AllPost = new List<PostModel>();
+
+        public static List<ConfiguracionesModel> Configuraciones = new List<ConfiguracionesModel>();
+
         
         public static async Task FillTable()
         {
@@ -55,20 +58,12 @@ namespace WorklabsMx.iOS.Helpers
             });
         }
 
-       /* public static async Task FillUserInfo()
-        {
-            await Task.Run(() =>
-            {
-                var userinfo = new UsuariosController().GetMemberName(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
-                UserInfo = userinfo;
-            });
-        }*/
 
         public static async Task FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "", bool disponibilidad = true, string pais = "", string estado = "", string municipio = "")
         {
             await Task.Run(() =>
             {
-                var usuarios = new UsuariosController().GetDirectorioUsuariosAsync(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
+                var usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
                 Comunidad = usuarios;
             });
         }
@@ -80,53 +75,18 @@ namespace WorklabsMx.iOS.Helpers
                 var sucursales = new SucursalController().GetSucursales();
                 ListaSucursales = sucursales;
             });
-
         }
 
-        public static async Task GetListConfiguraciones()
+        public static void GetListConfiguraciones()
         {
-            await Task.Run(() =>
-            {
-                string upload_image_path;
-                if (new ConfigurationsController().GetListConfiguraciones() != null)
-                {
-                    upload_image_path = new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PUBLICACIONES").Parametro_Varchar_1;
-                }
-                else
-                {
-                    upload_image_path = "";
-                }
-                UploadImagePath = upload_image_path;
-            });
-        }
-
-        public static async Task GetProfileImagePath()
-        {
-            await Task.Run(() =>
-            {
-                string profile_image_path;
-                if (new ConfigurationsController().GetListConfiguraciones() != null)
-                {
-                    profile_image_path = new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1;
-                }
-                else
-                {
-                    profile_image_path = "";
-                }
-                ProfileImagePath = profile_image_path;
-            });
+            Configuraciones = new ConfigurationsController().GetListConfiguraciones();
         }
 
         public static async Task GetUsuarioInfo()
         {
-            await Task.Run(() => 
+            await Task.Run(() =>
             {
-<<<<<<< HEAD
                 Usuario = new UsuariosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
-=======
-                var usuario = new UsuariosController().GetMemberDataAsync(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
-                Usuario = usuario;
->>>>>>> e26f38019e7e906a19d5715cbf95ae902cbb5656
             });
         }
 
