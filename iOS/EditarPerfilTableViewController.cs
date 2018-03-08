@@ -150,11 +150,14 @@ namespace WorklabsMx.iOS
         {
             if (this.TouchedBack)
             {
+
+                image = ImageHelper.ReescalProfileBackImage(image);
                 this.btnFondoImagen.SetBackgroundImage(image, UIControlState.Normal);
                 NewInfoPerfil.Usuario_Fotografia_FondoPerfil = image?.AsPNG().ToArray();
             }
             else if (this.TouchedProfile)
             {
+                image = ImageHelper.ReescalProfileImage(image);
                 this.btnImagen.SetBackgroundImage(image, UIControlState.Normal);
                 NewInfoPerfil.Usuario_Fotografia_Perfil = image?.AsPNG().ToArray();
             }

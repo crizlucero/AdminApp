@@ -21,18 +21,9 @@ namespace WorklabsMx.iOS.Helpers
         }
 
 
-        public static UIImage ReescalImage(UIImage ImagenOrigen,nfloat newWith, nfloat newHeight)
+        public static UIImage ReescalImage(UIImage ImagenOrigen)
         {
-            if (newWith == 0)
-            {
-                newWith = ImagenOrigen.Size.Width;
-            }
-
-            if (newHeight == 0)
-            {
-                newHeight = ImagenOrigen.Size.Height;
-            }
-
+  
             var withImage = ImagenOrigen.Size.Width;
             var heightImage = ImagenOrigen.Size.Height;
             if (withImage > 440)
@@ -40,6 +31,32 @@ namespace WorklabsMx.iOS.Helpers
                 var newWithScale = (440 * 100) / withImage;
                 var newHeigth = (newWithScale * heightImage) / 100;
                 CGSize newSizeImage = new CGSize(440, newHeigth);
+                ImagenOrigen = ImagenOrigen.Scale(newSizeImage);
+            }
+            return ImagenOrigen;
+        }
+
+        public static UIImage ReescalProfileImage(UIImage ImagenOrigen)
+        {
+            var withImage = ImagenOrigen.Size.Width;
+            var heightImage = ImagenOrigen.Size.Height;
+            if (withImage > 400)
+            {
+                CGSize newSizeImage = new CGSize(400, 400);
+                ImagenOrigen = ImagenOrigen.Scale(newSizeImage);
+            }
+            return ImagenOrigen;
+        }
+
+        public static UIImage ReescalProfileBackImage(UIImage ImagenOrigen)
+        {
+            var withImage = ImagenOrigen.Size.Width;
+            var heightImage = ImagenOrigen.Size.Height;
+            if (withImage > 1500)
+            {
+                var newWithScale = (1500 * 100) / withImage;
+                var newHeigth = (newWithScale * heightImage) / 100;
+                CGSize newSizeImage = new CGSize(1500, newHeigth);
                 ImagenOrigen = ImagenOrigen.Scale(newSizeImage);
             }
             return ImagenOrigen;

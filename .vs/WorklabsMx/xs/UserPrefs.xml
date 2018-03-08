@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Helpers/ImageHelper.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/EditarPerfilTableViewController.cs">
     <Files>
       <File FileName="iOS/ViewControllers/Escritorio/EscritorioHeaderCell.cs" Line="63" Column="50" />
       <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="148" Column="42" />
@@ -12,7 +12,8 @@
       <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="59" Column="14" />
       <File FileName="iOS/Helpers/MenuHelper.cs" Line="66" Column="78" />
       <File FileName="iOS/PerfilRedesSociales.cs" Line="16" Column="43" />
-      <File FileName="iOS/Helpers/ImageHelper.cs" Line="24" Column="31" />
+      <File FileName="iOS/Helpers/ImageHelper.cs" Line="52" Column="10" />
+      <File FileName="iOS/EditarPerfilTableViewController.cs" Line="154" Column="24" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
