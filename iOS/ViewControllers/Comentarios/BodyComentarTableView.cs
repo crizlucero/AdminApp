@@ -3,7 +3,12 @@ using UIKit;
 using WorklabsMx.Models;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Enum;
-using CoreGraphics;
+using System.Threading.Tasks;
+using WorklabsMx.Controllers;
+using BigTed;
+using WorklabsMx.Helpers;
+using Foundation;
+using SWRevealViewControllerBinding;
 
 namespace WorklabsMx.iOS
 {
@@ -28,7 +33,7 @@ namespace WorklabsMx.iOS
         }
 
 
-        internal void UpdateCell(ComentarioModel comentario, UIImage currentImageProfile)
+        internal void UpdateCell(ComentarioModel comentario)
         {
 
 
@@ -60,11 +65,36 @@ namespace WorklabsMx.iOS
             txtComentario.ScrollEnabled = false;
             txtComentario.Text = comentario.Comentario_Contenido;
 
-            imgPerfil.Image = currentImageProfile ?? UIImage.FromBundle("PerfilEscritorio");
-
             comentarioLocal = comentario;
 
         }
+
+
+        async Task GetImagenesComment(ComentarioModel comentario)
+        {
+ 
+            UIImage ReescalImageUsr = new UIImage();
+
+            if ((comentario.Usuario.Usuario_Fotografia != "" && comentario.Usuario.Usuario_Fotografia != null))
+            {
+                await Task.Run(() =>
+                {
+                    if (comentario.Usuario.Usuario_Fotografia_Perfil == null)
+                    {
+                        if (comentario.Usuario.Usuario_Fotografia != "user_male.png")
+                        {
+                            comentario.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(comentario.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
+                        }
+
+                    }
+                    var data = NSData.FromArray(comentario.Usuario.Usuario_Fotografia_Perfil);
+                    var uiimage = UIImage.LoadFromData(data);
+                    ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
+                });
+            }
+            imgPerfil.Image = ReescalImageUsr;
+        }
+
 
         partial void btnImagen_TouchUpInside(UIButton sender)
         {

@@ -55,7 +55,8 @@ namespace WorklabsMx.iOS
         {
             BTProgressHUD.Show(status: "Cargando Comentarios");
             base.ViewWillAppear(animated);
-            await FillData();
+            await MenuHelper.GetCommentPost(currentPost);
+            this.comentarios = MenuHelper.Comentarios;
             this.TableView.ReloadData();
             this.TableView.BeginUpdates();
             this.TableView.EndUpdates();
@@ -65,8 +66,6 @@ namespace WorklabsMx.iOS
         public override void ViewWillDisappear(bool animated)
         {
             base.ViewWillDisappear(animated);
-            //await Task.Delay(2000);
-          
         }
 
         public override UIView GetViewForHeader(UITableView tableView, nint section)
@@ -110,20 +109,17 @@ namespace WorklabsMx.iOS
             {
                 var currentComment = comentarios[indexPath.Row];
 
-                var currentImageProfile = allProfileImages[indexPath.Row];
-                var currentImageComments = allCommentImages[indexPath.Row];
-
-                if(currentImageComments != null)
+                if((currentComment.Comentario_Imagen_Ruta != null && currentComment.Comentario_Imagen_Ruta != "") && (currentComment.Comentario_Imagen != null && currentComment.Comentario_Imagen != ""))
                 {
                     var currentPostImageCell = (ComentarImageTableViewCell)tableView.DequeueReusableCell(IdentificadorImageCeldaPost, indexPath);
-                    currentPostImageCell.UpdateCell(currentComment, currentImageProfile, currentImageComments);
+                    currentPostImageCell.UpdateCell(currentComment);
                     currentPostImageCell.EventosImagenDel = this;
                     return currentPostImageCell;
                 }
                 else
                 {
                     var currentPostCell = (BodyComentarTableView)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
-                    currentPostCell.UpdateCell(currentComment, currentImageProfile);
+                    currentPostCell.UpdateCell(currentComment);
                     currentPostCell.EventosImagenComentarDel = this;
                     return currentPostCell;
                 }
@@ -137,42 +133,6 @@ namespace WorklabsMx.iOS
                 return noPostCell;
             }
 
-        }
-
-        async Task FillData()
-        {
-            await Task.Run(() =>
-           {
-               allCommentImages = new List<UIImage>();
-               allProfileImages = new List<UIImage>();
-               if (InternetConectionHelper.VerificarConexion())
-               {
-                   this.comentarios = new Controllers.EscritorioController().GetComentariosPost(currentPost.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
-                   foreach (ComentarioModel comentario in this.comentarios)
-                   {
-                       if (currentPost.Publicacion_Imagen_Post != null)
-                       {
-                           var data = NSData.FromArray(currentPost.Publicacion_Imagen_Post);
-                           var uiimage = UIImage.LoadFromData(data);
-                           var porcentajeWith = ((withImage * 100) / uiimage.CGImage.Height);
-                           var HeightImage = uiimage.CGImage.Height * (porcentajeWith / 100);
-                           var ReescalImage = ImageHelper.ResizeUIImage(uiimage, withImage, HeightImage);
-                           allCommentImages.Add(ReescalImage);
-                       }
-                       else
-                       {
-                            allCommentImages.Add(null);
-                       }
-                       allProfileImages.Add(ImageGallery.LoadImage(currentPost.Usuario.Usuario_Fotografia) ?? UIImage.FromBundle("ProfileImage"));
-
-                   }
-               }
-               else
-               {
-                   existeConeccion = false;
-                   isShowInformation = false;
-               }
-           });
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
@@ -199,7 +159,8 @@ namespace WorklabsMx.iOS
 
             if (new Controllers.EscritorioController().CommentPost(currentPost.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Comentario, Fotografia))
             {
-                await FillData();
+                await MenuHelper.GetCommentPost(currentPost);
+                this.comentarios = MenuHelper.Comentarios;
                 TableView.ReloadData();
                 this.TableView.BeginUpdates();
                 this.TableView.EndUpdates();
@@ -228,8 +189,9 @@ namespace WorklabsMx.iOS
 
         public async void ActualizaTabla()
         {
-            await MenuHelper.GetMuroPosts();
-            await FillData();
+            //await MenuHelper.GetMuroPosts();
+            await MenuHelper.GetCommentPost(currentPost);
+            this.comentarios = MenuHelper.Comentarios;
             TableView.ReloadData();
             this.TableView.BeginUpdates();
             this.TableView.EndUpdates();
@@ -257,7 +219,8 @@ namespace WorklabsMx.iOS
 
         public async void ActualizarTabla()
         {
-            await FillData();
+            await MenuHelper.GetCommentPost(currentPost);
+            this.comentarios = MenuHelper.Comentarios;
             TableView.ReloadData();
             this.TableView.BeginUpdates();
             this.TableView.EndUpdates();

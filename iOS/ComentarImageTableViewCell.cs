@@ -3,8 +3,12 @@ using UIKit;
 using WorklabsMx.Models;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Enum;
-using CoreGraphics;
-
+using System.Threading.Tasks;
+using WorklabsMx.Controllers;
+using BigTed;
+using WorklabsMx.Helpers;
+using Foundation;
+using SWRevealViewControllerBinding;
 
 namespace WorklabsMx.iOS
 {
@@ -25,7 +29,7 @@ namespace WorklabsMx.iOS
         {
         }
 
-        internal void UpdateCell(ComentarioModel comentario, UIImage currentImageProfile, UIImage currentImageComments)
+        async internal void UpdateCell(ComentarioModel comentario)
         {
             var Tap = new UITapGestureRecognizer(this.ImageTapped);
             imgPublicacion.UserInteractionEnabled = true;
@@ -56,18 +60,59 @@ namespace WorklabsMx.iOS
             txtComentario.ScrollEnabled = false;
             txtComentario.Text = comentario.Comentario_Contenido;
 
-            imgPerfil.Image = currentImageProfile ?? UIImage.FromBundle("PerfilEscritorio");
-
-            imgPublicacion.Image = currentImageComments;
+            await GetImagenesComment(comentario);
 
             comentarioLocal = comentario;
 
         }
 
+
+        async Task GetImagenesComment(ComentarioModel comentario)
+        {
+            UIImage ReescalImage = new UIImage();
+
+            await Task.Run(() =>
+            {
+                if (comentario.Comentario_Imagen_Comentario == null)
+                {
+                    comentario.Comentario_Imagen_Comentario = new UploadImages().DownloadFileFTP(comentario.Comentario_Imagen, MenuHelper.UploadImagePath);
+                }
+                var data = NSData.FromArray(comentario.Comentario_Imagen_Comentario);
+                var uiimage = UIImage.LoadFromData(data);
+                ReescalImage = ImageHelper.ReescalImage(uiimage);
+            });
+            imgPublicacion.Image = ReescalImage;
+
+            UIImage ReescalImageUsr = new UIImage();
+
+            if ((comentario.Usuario.Usuario_Fotografia != "" && comentario.Usuario.Usuario_Fotografia != null))
+            {
+                await Task.Run(() =>
+                {
+                    if (comentario.Usuario.Usuario_Fotografia_Perfil == null)
+                    {
+                        if (comentario.Usuario.Usuario_Fotografia != "user_male.png")
+                        {
+                            comentario.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(comentario.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
+                        }
+
+                    }
+                    var data = NSData.FromArray(comentario.Usuario.Usuario_Fotografia_Perfil);
+                    var uiimage = UIImage.LoadFromData(data);
+                    ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
+                });
+            }
+            imgPerfil.Image = ReescalImageUsr;
+
+        }
+
+
+
         private void ImageTapped(UITapGestureRecognizer Recognizer)
         {
             EventosImagenDel.MostrarImagenEnGrandes(imgPublicacion);
         }
+
 
         partial void btnLikes_TouchUpInside(UIButton sender)
         {

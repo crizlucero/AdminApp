@@ -1,31 +1,25 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/EditarPerfilTableViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Comentarios/comentarTableView.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioHeaderCell.cs" Line="63" Column="50" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="148" Column="42" />
+      <File FileName="iOS/ViewControllers/Comentarios/comentarTableView.cs" Line="79" Column="10" />
       <File FileName="iOS/ComprasTableView.cs" Line="90" Column="10" />
       <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="144" Column="13" />
       <File FileName="iOS/ComunidadTableViewController.cs" Line="180" Column="30" />
       <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="128" Column="46" />
-      <File FileName="iOS/ComentariosBodyImageCell.cs" Line="100" Column="52" />
-      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="90" Column="22" />
+      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="90" Column="1" />
       <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="59" Column="14" />
-      <File FileName="iOS/Helpers/MenuHelper.cs" Line="66" Column="78" />
+      <File FileName="iOS/Helpers/MenuHelper.cs" Line="107" Column="34" />
       <File FileName="iOS/PerfilRedesSociales.cs" Line="16" Column="43" />
       <File FileName="iOS/Helpers/ImageHelper.cs" Line="52" Column="10" />
-      <File FileName="iOS/EditarPerfilTableViewController.cs" Line="154" Column="24" />
+      <File FileName="iOS/EditarPerfilTableViewController.cs" Line="149" Column="36" />
+      <File FileName="iOS/ViewControllers/Comentarios/ComentarviewController.cs" Line="22" Column="6" />
+      <File FileName="iOS/ComentarImageTableViewCell.cs" Line="20" Column="28" />
+      <File FileName="iOS/ViewControllers/Comentarios/HeaderComentarTableView.cs" Line="21" Column="23" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="206" Column="10" NotebookId="1" />
+      <File FileName="iOS/ComentariosBodyImageCell.cs" Line="105" Column="23" NotebookId="1" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>ReescalImage.Size</Value>
-          <Value>post.Publicacion_Imagen</Value>
-          <Value>post.Usuario.Usuario_Fotografia</Value>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/RegistrarTableViewController.cs" relfile="iOS/RegistrarTableViewController.cs" line="127" column="1" />
@@ -39,6 +33,7 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.SuiteMCommerceBinding FirstBuild="True" />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F745CA7A-709C-490F-AC38-17652B866A02" automaticSigning="False" />
   <MultiItemStartupConfigurations />
 </Properties>
