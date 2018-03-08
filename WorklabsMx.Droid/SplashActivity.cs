@@ -6,7 +6,7 @@ using PerpetualEngine.Storage;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/SplashTheme", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/SplashTheme", MainLauncher = true, Icon = "@mipmap/icon")]
     public class SplashActivity : AppCompatActivity
     {
         SimpleStorage localStorage;

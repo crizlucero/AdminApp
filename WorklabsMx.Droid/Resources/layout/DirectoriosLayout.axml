@@ -12,18 +12,13 @@
         layout="@layout/toolbarlayout" />
     <LinearLayout
         android:orientation="vertical"
-        android:minWidth="25px"
-        android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1">
+        android:layout_height="wrap_content">
         <SearchView
-            android:minWidth="25px"
-            android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/svBuscar"
-            android:queryHint="@string/Buscar"
+            android:queryHint="@string/str_general_search"
             android:iconifiedByDefault="false" />
     </LinearLayout>
     <com.refractored.PagerSlidingTabStrip

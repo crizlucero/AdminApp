@@ -1,7 +1,6 @@
-﻿
-using System;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
+using Android.Net;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
@@ -21,31 +20,55 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.str_general_about_us);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            ActionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu_white);
 
             FindViewById<TextView>(Resource.Id.lblVersion).Text = GetString(Resource.String.str_version, PackageManager.GetPackageInfo(PackageName, 0).VersionName);
 
             FindViewById<TextView>(Resource.Id.lblFacebook).Click += delegate
             {
-                    StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse("https://www.facebook.com/worklabsmx")));
+                Intent intent;
+                try
+                {
+                    PackageManager.GetPackageInfo("com.facebook.katana", 0);
+                    intent = new Intent(Intent.ActionView, Uri.Parse("fb://page/1214192658624957"));
+                }
+                catch
+                {
+                    intent = new Intent(Intent.ActionView, Uri.Parse("https://www.facebook.com/worklabsmx"));
+                }
+                intent.AddFlags(ActivityFlags.NewTask);
+                StartActivity(intent);
             };
 
             FindViewById<TextView>(Resource.Id.lblTwitter).Click += delegate
             {
-                    StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse("https://twitter.com/worklabsmx")));
+                Intent intent;
+                try
+                {
+                    PackageManager.GetPackageInfo("com.twitter.android", 0);
+                    intent = new Intent(Intent.ActionView, Uri.Parse("twitter://user?user_id=3519294614"));
+                }
+                catch
+                {
+                    intent = new Intent(Intent.ActionView, Uri.Parse("https://twitter.com/worklabsmx"));
+                }
+                intent.AddFlags(ActivityFlags.NewTask);
+                StartActivity(intent);
             };
 
             FindViewById<TextView>(Resource.Id.lblInstagram).Click += delegate
             {
+                Intent intent;
                 try
                 {
                     PackageManager.GetPackageInfo("com.instagram.android", 0);
-                    StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse("http://instagram.com/_u/worklabs.mx")));
+                    intent = new Intent(Intent.ActionView, Uri.Parse("http://instagram.com/_u/worklabs.mx"));
                 }
                 catch
                 {
-                    StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse("http://instagram.com/worklabs.mx")));
+                    intent = new Intent(Intent.ActionView, Uri.Parse("http://instagram.com/worklabs.mx"));
                 }
+                intent.AddFlags(ActivityFlags.NewTask);
+                StartActivity(intent);
             };
         }
         public override bool OnCreateOptionsMenu(IMenu menu) => base.OnCreateOptionsMenu(menu);

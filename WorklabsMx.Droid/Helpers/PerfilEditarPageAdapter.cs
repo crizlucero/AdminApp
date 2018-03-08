@@ -90,7 +90,7 @@ namespace WorklabsMx.Droid
             txtHabilidades.EditorAction += Etiqueta_KeyPress;
             EditText txtIntereses = profileView.FindViewById<EditText>(Resource.Id.txtIntereses);
             txtIntereses.EditorAction += Etiqueta_KeyPress;
-            miembro.Etiquetas.ToList().ForEach(habilidad =>
+            miembro.Etiquetas.AsParallel().ToList().ForEach(habilidad =>
             {
                 if (habilidad.Etiqueta_Tipo == "Habilidad")
                     FillEtiqueta(habilidad.Etiqueta_Nombre, profileView.FindViewById<RelativeLayout>(Resource.Id.rlHabilidades));

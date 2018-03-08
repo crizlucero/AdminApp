@@ -201,7 +201,7 @@ namespace WorklabsMx.Droid
                         Toast.MakeText(this, Resource.String.str_shop_no_accepted_terms, ToastLength.Short).Show();
                     break;
                 default:
-                    StartActivity(new Intent(this, typeof(ColeccionProductosActivity)));
+                    StartActivity(new Intent(this, typeof(ComprasActivity)));
                     Finish();
                     break;
             }

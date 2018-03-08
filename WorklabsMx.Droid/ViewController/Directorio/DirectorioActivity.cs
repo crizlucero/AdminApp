@@ -15,6 +15,7 @@ using Java.Lang;
 using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
+using WorklabsMx.Droid.Helpers;
 using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
@@ -145,7 +146,7 @@ namespace WorklabsMx.Droid
 
                 ImageButton ibProfile = PersonaCard.FindViewById<ImageButton>(Resource.Id.ibProfile);
                 if (miembro.Usuario_Fotografia_Perfil != null)
-                    ibProfile.SetImageBitmap(BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length));
+                    ibProfile.SetImageBitmap(ImagesHelper.GetRoundedShape(BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length)));
                 else
                     ibProfile.SetImageResource(Resource.Mipmap.ic_profile_empty);
 

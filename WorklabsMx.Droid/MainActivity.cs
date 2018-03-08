@@ -21,7 +21,7 @@ using System.Linq;
 using Android.Support.V7.App;
 using Android.App;
 using WorklabsMx.Droid.ViewElement;
-using Newtonsoft.Json;
+using WorklabsMx.Droid.Helpers;
 
 namespace WorklabsMx.Droid
 {
@@ -51,12 +51,15 @@ namespace WorklabsMx.Droid
             publicaciones_imagen_path = config.Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PUBLICACIONES").Parametro_Varchar_1;
         }
 
-        protected override void OnPause()
+        protected override void OnRestart()
         {
-            base.OnPause();
+            base.OnRestart();
+            Usuario_Fotos_Perfil.Clear();
+            localStorage.Delete("Parent");
+            OpenDashboard();
         }
 
-        protected override void OnCreate(Bundle savedInstanceState)
+		protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             try
@@ -91,8 +94,10 @@ namespace WorklabsMx.Droid
             FindViewById<TextView>(Resource.Id.lblNombre).Text = nombre;
             FindViewById<TextView>(Resource.Id.lblPuesto).Text = puesto;
             ImageView imgPerfil = FindViewById<ImageView>(Resource.Id.imgPerfil);
-            if (foto != null)
-                imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(foto, 0, foto.Length));
+            if (foto.Length != 0)
+            {
+                imgPerfil.SetImageBitmap(ImagesHelper.GetRoundedShape(BitmapFactory.DecodeByteArray(foto, 0, foto.Length)));
+            }
             else
                 imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
             scroll = FindViewById<ScrollView>(Resource.Id.post_scroll);
@@ -144,9 +149,9 @@ namespace WorklabsMx.Droid
         async Task FillPosts()
         {
             AndHUD.Shared.Show(this, null, -1, MaskType.Black);
-            await Task.Delay(500);
             if (page == 0) tlPost.RemoveAllViews();
-            posts.Skip(page * sizePage).Take(sizePage).ToList().ForEach(post =>
+            await Task.Delay(500);
+            posts.Skip(page * sizePage).Take(sizePage).AsParallel().ToList().ForEach(post =>
             {
                 LayoutInflater liView = LayoutInflater;
                 View PostView = liView.Inflate(Resource.Layout.PostLayout, null, true);
@@ -160,7 +165,7 @@ namespace WorklabsMx.Droid
                 if (Usuario_Fotos_Perfil.ContainsKey(current))
                 {
                     if (Usuario_Fotos_Perfil[current] != null)
-                        imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(Usuario_Fotos_Perfil[current], 0, Usuario_Fotos_Perfil[current].Length));
+                        imgPerfil.SetImageBitmap(ImagesHelper.GetRoundedShape(BitmapFactory.DecodeByteArray(Usuario_Fotos_Perfil[current], 0, Usuario_Fotos_Perfil[current].Length)));
                     else
                         imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
                 }
@@ -169,7 +174,7 @@ namespace WorklabsMx.Droid
                     post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, usuario_imagen_path);
                     Usuario_Fotos_Perfil.Add(current, post.Usuario.Usuario_Fotografia_Perfil);
                     if (post.Usuario.Usuario_Fotografia_Perfil != null)
-                        imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(post.Usuario.Usuario_Fotografia_Perfil, 0, post.Usuario.Usuario_Fotografia_Perfil.Length));
+                        imgPerfil.SetImageBitmap(ImagesHelper.GetRoundedShape(BitmapFactory.DecodeByteArray(post.Usuario.Usuario_Fotografia_Perfil, 0, post.Usuario.Usuario_Fotografia_Perfil.Length)));
                     else
                         imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
                 }
@@ -188,7 +193,7 @@ namespace WorklabsMx.Droid
                 lblFecha.Click += (sender, e) => ShowPerfilCard(new UsuariosController().GetMemberData(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo));
 
                 TextView lblPost = PostView.FindViewById<TextView>(Resource.Id.lblPost);
-                lblPost.SetMaxWidth(Convert.ToInt32(Resources.DisplayMetrics.WidthPixels * .911));
+                //lblPost.SetMaxWidth(Convert.ToInt32(Resources.DisplayMetrics.WidthPixels * .911));
                 lblPost.Text = post.Publicacion_Contenido;
 
                 TextView lblLike = PostView.FindViewById<TextView>(Resource.Id.lblLikes);
@@ -237,6 +242,7 @@ namespace WorklabsMx.Droid
                         icLike.SetTint(Resource.Color.like_heart_pressed);
 
                 ImageView imgPost = PostView.FindViewById<ImageView>(Resource.Id.imgPost);
+
                 if (!string.IsNullOrEmpty(post.Publicacion_Imagen))
                 {
                     post.Publicacion_Imagen_Post = new UploadImages().DownloadFileFTP(post.Publicacion_Imagen, publicaciones_imagen_path);
@@ -251,7 +257,7 @@ namespace WorklabsMx.Droid
                     }
                 }
                 TextView lblComentario = PostView.FindViewById<TextView>(Resource.Id.lblComments);
-                lblComentario.Text = post.Publicacion_Comentarios_Cantidad + " " + Resources.GetString(Resource.String.Comentarios);
+                lblComentario.Text = post.Publicacion_Comentarios_Cantidad + " " + Resources.GetString(Resource.String.str_social_network_comments);
 
                 Drawable icComentario = ContextCompat.GetDrawable(this, Resource.Mipmap.ic_mode_comment);
                 if ((int)Build.VERSION.SdkInt > 22)

@@ -212,7 +212,7 @@ namespace WorklabsMx.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.menu_cart:
-                    if (Productos.Count != 0 || Membresias.Count != 0)
+                    if (Math.Abs(totalCompra) > 0)
                     {
                         Intent intent = new Intent(this, typeof(ShoppingCartActivity));
                         intent.PutExtra("Productos", JsonConvert.SerializeObject(Productos));
@@ -220,7 +220,7 @@ namespace WorklabsMx.Droid
                         StartActivity(intent);
                     }
                     else
-                        Toast.MakeText(this, "Debe seleccionar algún producto o membresía", ToastLength.Short).Show();
+                        Toast.MakeText(this, Resources.GetString(Resource.String.str_shop_products_selected_error), ToastLength.Short).Show();
                     break;
                 default:
                     StartActivity(new Intent(this, typeof(MainActivity)));

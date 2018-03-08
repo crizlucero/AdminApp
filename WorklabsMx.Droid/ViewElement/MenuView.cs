@@ -13,6 +13,7 @@ using Android.Widget;
 using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
+using WorklabsMx.Droid.Helpers;
 using WorklabsMx.Enum;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
@@ -42,8 +43,8 @@ namespace WorklabsMx.Droid.ViewElement
             puesto = DataUsuario[(int)CamposMiembro.Usuario_Puesto];
             empresa = DataUsuario[(int)CamposMiembro.Usuario_Empresa_Nombre];
             ImageView imgFoto = context.FindViewById<ImageView>(Resource.Id.imgProfileMenu);
-            if (foto != null)
-                imgFoto.SetImageBitmap(BitmapFactory.DecodeByteArray(foto, 0, foto.Length));
+            if (foto.Length != 0)
+                imgFoto.SetImageBitmap(ImagesHelper.GetRoundedShape(BitmapFactory.DecodeByteArray(foto, 0, foto.Length)));
             else
                 imgFoto.SetImageResource(Resource.Mipmap.ic_profile_empty);
             TextView NombreUsuario = context.FindViewById<TextView>(Resource.Id.lblNombreMenu);
@@ -82,9 +83,14 @@ namespace WorklabsMx.Droid.ViewElement
                 btnMenu.SetCompoundDrawables(icon, null, null, null);
                 btnMenu.Click += delegate
                 {
+                    Intent intent;
                     switch (menu.Controller)
                     {
-                        case "MyMembershipActivity": context.StartActivity(new Intent(context, typeof(MyMembershipActivity))); break;
+                        case "MyMembershipActivity":
+                            intent = new Intent(context, typeof(MyMembershipActivity));
+                            intent.PutExtra("Titulo", menu.Label);
+                            context.StartActivity(intent);
+                            break;
                         case "SubMenuActivity":
                             localStorage.Put("Parent", menu.Menu_Id);
                             FillMenu();
@@ -94,20 +100,46 @@ namespace WorklabsMx.Droid.ViewElement
                             context.StartActivity(new Intent(context, typeof(LoginActivity)));
                             context.Finish();
                             break;
-                        case "ComprasActivity": context.StartActivity(new Intent(context, typeof(ComprasActivity))); break;
-                        case "ReservaSalaJuntasActivity": context.StartActivity(new Intent(context, typeof(TabSalasJuntasHistorialActivity))); break;
-                        case "RegistroInvitadosActivity": context.StartActivity(new Intent(context, typeof(InvitadosActivity))); break;
-                        case "PerfilActivity": 
-                            Intent intent = new Intent(context, typeof(PerfilCardActivity));
-                            intent.PutExtra("Miembro", JsonConvert.SerializeObject(new UsuariosController().GetMemberData(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"))));
+                        case "ComprasActivity":
+                            intent = new Intent(context, typeof(ComprasActivity));
+                            intent.PutExtra("Titulo", menu.Label);
                             context.StartActivity(intent); break;
-                        case "DatosFacturacionActivity": context.StartActivity(new Intent(context, typeof(DatosFacturacionActivity))); break;
-                        case "MisColaboradoresActivity": context.StartActivity(new Intent(context, typeof(TabColaboradoresActivity))); break;
-                        case "DirectorioActivity": context.StartActivity(new Intent(context, typeof(DirectorioActivity))); break;
-                        case "AccesoActivity": context.StartActivity(new Intent(context, typeof(AccesoActivity))); break;
-                        case "AboutUsActivity": context.StartActivity(new Intent(context, typeof(AboutUsActivity))); break;
+                        case "ReservaSalaJuntasActivity":
+                            intent = new Intent(context, typeof(TabSalasJuntasHistorialActivity));
+                            intent.PutExtra("Titulo", menu.Label);
+                            context.StartActivity(intent); break;
+                        case "RegistroInvitadosActivity":
+                            intent = new Intent(context, typeof(InvitadosActivity));
+                            intent.PutExtra("Titulo", menu.Label);
+                            context.StartActivity(intent); break;
+                        case "PerfilActivity":
+                            intent = new Intent(context, typeof(PerfilCardActivity));
+                            intent.PutExtra("Titulo", menu.Label);
+                            intent.PutExtra("Miembro", JsonConvert.SerializeObject(new UsuariosController().GetMemberData(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"))));
+                            context.StartActivity(intent);
+                            context.Finish();
+                            break;
+                        case "DatosFacturacionActivity":
+                            intent = new Intent(context, typeof(DatosFacturacionActivity));
+                            intent.PutExtra("Titulo", menu.Label);
+                            context.StartActivity(intent); break;
+                        case "MisColaboradoresActivity":
+                            intent = new Intent(context, typeof(TabColaboradoresActivity));
+                            intent.PutExtra("Titulo", menu.Label);
+                            context.StartActivity(intent);
+                            intent.PutExtra("Titulo", menu.Label);
+                            context.StartActivity(intent); break;
+                        case "AccesoActivity":
+                            intent = new Intent(context, typeof(AccesoActivity));
+                            intent.PutExtra("Titulo", menu.Label);
+                            context.StartActivity(intent); break;
+                        case "AboutUsActivity":
+                            intent = new Intent(context, typeof(AboutUsActivity));
+                            intent.PutExtra("Titulo", menu.Label);
+                            context.StartActivity(intent); break;
                         default: break;
                     }
+
                 };
                 row.AddView(btnMenu);
                 menuLayout.AddView(row);

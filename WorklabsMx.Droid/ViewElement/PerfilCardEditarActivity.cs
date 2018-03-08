@@ -13,6 +13,7 @@ using Java.IO;
 using Newtonsoft.Json;
 using WorklabsMx.Controllers;
 using WorklabsMx.Droid.Helpers;
+using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 using static Android.Provider.MediaStore.Images;
 
@@ -26,6 +27,16 @@ namespace WorklabsMx.Droid
         readonly int PickImageId = 1000, TakePicture = 500;
         Bitmap bitmap, photo, background;
         string imgPublish, imagePath;
+        int Height, Width;
+        bool flag;
+        ImageView imgPerfil, imgFondo;
+        readonly string usuario_imagen_path;
+
+        public PerfilCardEditarActivity()
+        {
+            usuario_imagen_path = new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1;
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -34,19 +45,31 @@ namespace WorklabsMx.Droid
             miembro = JsonConvert.DeserializeObject<UsuarioModel>(Intent.GetStringExtra("Miembro"));
             FindViewById<ImageButton>(Resource.Id.ibCerrar).Click += (sender, e) => OnBackPressed();
 
-            ImageView imgPerfil = FindViewById<ImageView>(Resource.Id.ivPerfil);
-            if (miembro.Usuario_Fotografia_Perfil != null)
-                imgPerfil.SetImageBitmap(BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length));
+            imgPerfil = FindViewById<ImageView>(Resource.Id.ivPerfil);
+            if (!string.IsNullOrEmpty(miembro.Usuario_Fotografia))
+            {
+                miembro.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(miembro.Usuario_Fotografia, usuario_imagen_path);
+                photo = BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length);
+                imgPerfil.SetImageBitmap(ImagesHelper.GetRoundedShape(BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length)));
+            }
             else
                 imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
+            imgFondo = FindViewById<ImageView>(Resource.Id.imgFondo);
+            if (!string.IsNullOrEmpty(miembro.Usuario_Fotografia_Fondo))
+            {
+                miembro.Usuario_Fotografia_FondoPerfil = new UploadImages().DownloadFileFTP(miembro.Usuario_Fotografia_Fondo, usuario_imagen_path);
+                background = BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_FondoPerfil, 0, miembro.Usuario_Fotografia_FondoPerfil.Length);
+                imgFondo.SetImageBitmap(background);
+            }
 
             FindViewById<Button>(Resource.Id.btnGuardar).Click += delegate
             {
                 System.IO.MemoryStream stream = new System.IO.MemoryStream();
                 photo?.Compress(Bitmap.CompressFormat.Png, 0, stream);
                 miembro.Usuario_Fotografia_Perfil = stream?.ToArray();
+                stream = new System.IO.MemoryStream();
                 background?.Compress(Bitmap.CompressFormat.Png, 0, stream);
-                miembro.Usuario_Fotografia_FondoPerfil = stream?.ToArray(); 
+                miembro.Usuario_Fotografia_FondoPerfil = stream?.ToArray();
                 if (new UsuariosController().UpdateDataMiembros(miembro.Usuario_Id, FindViewById<EditText>(Resource.Id.txtNombre).Text,
                                                                 FindViewById<EditText>(Resource.Id.txtApellidos).Text, miembro.Usuario_Correo_Electronico, miembro.Usuario_Telefono,
                                                                 miembro.Usuario_Celular, miembro.Usuario_Descripcion, DateTime.Parse(miembro.Usuario_Fecha_Nacimiento), miembro.Usuario_Fotografia_Perfil, miembro.Usuario_Fotografia_FondoPerfil))
@@ -73,26 +96,27 @@ namespace WorklabsMx.Droid
 
             FindViewById<ImageView>(Resource.Id.btnCamara).Click += delegate
             {
+                Width = Height = 400;
                 CreateDirectoryForPictures();
                 IsThereAnAppToTakePictures();
                 Intent intent = new Intent(MediaStore.ActionImageCapture);
                 _file = new File(_dir, String.Format("{0}.png", Guid.NewGuid()));
                 intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(_file));
                 StartActivityForResult(intent, TakePicture);
-                photo = bitmap;
-                FindViewById<ImageView>(Resource.Id.ivPerfil).SetImageBitmap(photo);
+                flag = true;
             };
 
             FindViewById<ImageView>(Resource.Id.btnCamaraFondo).Click += delegate
             {
+                Width = 1500;
+                Height = 500;
                 CreateDirectoryForPictures();
                 IsThereAnAppToTakePictures();
                 Intent intent = new Intent(MediaStore.ActionImageCapture);
                 _file = new File(_dir, String.Format("{0}.png", Guid.NewGuid()));
                 intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(_file));
                 StartActivityForResult(intent, TakePicture);
-                background = bitmap;
-                FindViewById<ImageView>(Resource.Id.imgFondo).SetImageBitmap(background);
+                flag = false;
             };
 
             FindViewById<EditText>(Resource.Id.txtNombre).Text = miembro.Usuario_Nombre;
@@ -127,7 +151,6 @@ namespace WorklabsMx.Droid
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
-            ImageButton imgPicture = FindViewById<ImageButton>(Resource.Id.ivPerfil);
             if (resultCode == Result.Ok)
             {
                 if (requestCode == TakePicture && resultCode == Result.Ok)
@@ -137,19 +160,26 @@ namespace WorklabsMx.Droid
                     mediaScanIntent.SetData(contentUri);
                     SendBroadcast(mediaScanIntent);
 
-                    int height = Resources.DisplayMetrics.HeightPixels;
-                    int width = 900;
+
                     imagePath = _file.Path;
-                    bitmap = _file.Path.LoadAndResizeBitmap(width, height);
-                    if (bitmap != null)
-                        imgPicture.SetImageBitmap(bitmap);
+                    bitmap = _file.Path.LoadAndResizeBitmap(Width, Height);
+                    if (flag)
+                    {
+                        imgPerfil.SetImageBitmap(bitmap);
+                        photo = bitmap;
+                    }
+                    else
+                    {
+                        imgFondo.SetImageBitmap(bitmap);
+                        background = bitmap;
+                    }
                     GC.Collect();
                 }
                 if (requestCode == PickImageId && resultCode == Result.Ok && data != null)
                 {
                     imagePath = (string)data.Data;
                     bitmap = Media.GetBitmap(ContentResolver, data.Data);
-                    imgPicture.SetImageURI(data.Data);
+                    //imgPicture.SetImageURI(data.Data);
                     imgPublish = Uri.EscapeUriString(data.Data.LastPathSegment);
                 }
             }

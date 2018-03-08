@@ -108,7 +108,7 @@
                 android:layout_marginRight="20dp"
                 android:inputType="textPersonName"
                 android:imeOptions="actionDone" />
-            <LinearLayout
+            <RelativeLayout
                 android:minWidth="25px"
                 android:minHeight="25px"
                 android:layout_width="match_parent"

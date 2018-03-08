@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using Android.Graphics;
 
 namespace WorklabsMx.Droid.Helpers
@@ -42,7 +43,7 @@ namespace WorklabsMx.Droid.Helpers
         /// <param name="fileName">Nombre del archivo</param>
         /// <param name="width">Ancho</param>
         /// <param name="height">Alto</param>
-        public static Bitmap LoadAndResizeBitmap(this string fileName, int width, int height)
+        public static Bitmap LoadAndResizeBitmap(this string fileName, int width , int height )
         {
             // First we get the the dimensions of the file on disk
             BitmapFactory.Options options = new BitmapFactory.Options { InJustDecodeBounds = true };
@@ -67,6 +68,30 @@ namespace WorklabsMx.Droid.Helpers
             Bitmap resizedBitmap = BitmapFactory.DecodeFile(fileName, options);
 
             return resizedBitmap;
+        }
+
+        public static Bitmap GetRoundedShape(Bitmap scaleBitmapImage)
+        {
+            int targetWidth = scaleBitmapImage.Width/2;
+            int targetHeight = scaleBitmapImage.Width/2;
+            Bitmap targetBitmap = Bitmap.CreateBitmap(targetWidth,
+                targetHeight, Bitmap.Config.Argb8888);
+
+            Canvas canvas = new Canvas(targetBitmap);
+            Path path = new Path();
+            path.AddCircle(((float)targetWidth - 1) / 2,
+                ((float)targetHeight - 1) / 2,
+                (Math.Min(((float)targetWidth),
+                    ((float)targetHeight)) / 2),
+                Path.Direction.Ccw);
+
+            canvas.ClipPath(path);
+            Bitmap sourceBitmap = scaleBitmapImage;
+            canvas.DrawBitmap(sourceBitmap,
+                new Rect(0, 0, sourceBitmap.Width,
+                    sourceBitmap.Height),
+                new Rect(0, 0, targetWidth, targetHeight), null);
+            return targetBitmap;
         }
     }
 }

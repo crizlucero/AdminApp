@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item 
         android:id="@+id/menu_cart"
-        android:icon="@mipmap/ic_shopping_cart"
+        android:icon="@mipmap/ic_shopping_cart_white"
         android:showAsAction="ifRoom"
         android:title="@string/Comprar"
     />
