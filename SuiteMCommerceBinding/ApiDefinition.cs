@@ -8,6 +8,24 @@ using CoreGraphics;
 namespace SuiteMCommerceBinding
 {
 
+
+    [BaseType(typeof(NSObject))]
+    [Model]
+    partial interface SuiteControllerDelegate
+    {
+        [Export("didFinishPayProcess:error:")]
+        void DidFinishPayProcess(string response, SuiteError error);
+
+        [Export("didFinishAuthenticationProcess:error:")]
+        void DidFinishAuthenticationProcess(BeanTokenizeResponse tokenizeResponse, SuiteError error);
+
+        [Export("didFinishTokenizeTransantion:error:")]
+        void DidFinishTokenizeTransantion(BeanPaymentWithToken beanPaymentWithToken, SuiteError error);
+
+        [Export("operationCanceledByUser")]
+        void OperationCanceledByUser();
+    }
+
     [BaseType(typeof(NSObject))]
     interface Bean3DS
     {
@@ -28,6 +46,9 @@ namespace SuiteMCommerceBinding
 
         [Export("merchant")]
         String Merchant { get; set; }
+
+        [Export("currency")]
+        Currency currency { get; set; }
 
         [Export("authKey")]
         String AuthKey { get; set; }
@@ -122,6 +143,9 @@ namespace SuiteMCommerceBinding
         [Export("merchant")]
         String Merchant { get; set; }
 
+        [Export("currency")]
+        Currency currency { get; set; }
+
         [Export("operationType")]
         String OperationType { get; set; }
 
@@ -140,6 +164,36 @@ namespace SuiteMCommerceBinding
     {
         [Export("token")]
         String Token { get; set; }
+    }
+
+    [BaseType(typeof(NSObject))]
+    interface SuiteController
+    {
+
+        [Export ("initOnEnvironment:currentViewController:delegate:")]
+        IntPtr InitOnEnvironment(Environment environment, UIViewController viewController,SuiteControllerDelegate Delegate);
+
+        [Export("sndPayWithCompany:xmlA:xmlM:")]
+        void SndPayWithCompany(string company, string xmlA, string xmlM);
+
+        [Export("AuthenticateWithBeanTokenization:bean3DS:")]
+        void AuthenticateWithBeanTokenization(BeanTokenization beanTokenization, Bean3DS bean3DS);
+
+        [Export("sndPayWithTokenWithBeanTokenization:bean3DS:")]
+        void SndPayWithTokenWithBeanTokenization(BeanTokenization beanTokenization, Bean3DS bean3DS);
+    }
+
+    [BaseType(typeof(NSObject))]
+    interface SuiteError
+    {
+        [Export("initWithCode:description:")]
+        IntPtr InitWithCode(string code, string description);
+
+        [Export("getCode")]
+        String GetCode { get; set; }
+
+        [Export("getDescription")]
+        String GetDescription { get; set; }
     }
 
     // The first step to creating a binding is to add your native library ("libNativeLibrary.a")
