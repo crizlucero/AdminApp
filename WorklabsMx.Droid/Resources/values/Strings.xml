@@ -2,9 +2,11 @@
 <resources>
 	<string name="app_name">Worklabs</string>
 	<string name="str_general_email">Correo Electrónico</string>
+    <string name="str_general_email_text">Ingresa tu correo electrónico</string>
 	<string name="str_login_password">Contraseña</string>
+    <string name="str_login_password_text">Ingresa tu contraseña</string>
 	<string name="str_login">Iniciar Sesión</string>
-	<string name="str_login_recovery">Recuperar Contraseña</string>
+	<string name="str_login_recovery"><u>Olvidé mi contraseña</u></string>
 	<string name="str_login_register">Registrarse</string>
 	<string name="str_login_error">Correo Electrónico y/o Constraseña incorrectos</string>
 	<string name="str_profile_my_profile">Mi Perfil</string>

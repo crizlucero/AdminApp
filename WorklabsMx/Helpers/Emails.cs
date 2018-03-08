@@ -21,7 +21,7 @@ namespace WorklabsMx
         /// <param name="name">Nombre de la persona que se le enviará el correo</param>
         /// <param name="html">Texto html para el correo</param>
         /// <param name="subject">Asunto del correo</param>
-        public async Task SendMail(string email, string name, string html, string subject)
+        public async void SendMail(string email, string name, string html, string subject)
         {
             await Task.Run(() =>
             {
@@ -36,7 +36,7 @@ namespace WorklabsMx
                         }
                     };
                     msg.From.Add(new MailboxAddress("Worklabs", "desarrollo@worklabs.mx"));
-                    msg.To.Add(new MailboxAddress(name, email));
+                    msg.To.Add(new MailboxAddress(name, "christian.lucero@worklabs.mx"));//email));
 
                     using (SmtpClient client = new SmtpClient())
                     {
