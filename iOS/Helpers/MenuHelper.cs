@@ -31,6 +31,7 @@ namespace WorklabsMx.iOS.Helpers
         public static List<MembresiaModel> Membresias;
 
         public static List<PostModel> AllPost = new List<PostModel>();
+        public static List<ComentarioModel> Comentarios = new List<ComentarioModel>();
 
         public static List<ConfiguracionesModel> Configuraciones = new List<ConfiguracionesModel>();
 
@@ -108,6 +109,14 @@ namespace WorklabsMx.iOS.Helpers
             await Task.Run(() =>
             {
                 AllPost = new Controllers.EscritorioController().GetMuroPosts(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+            });
+        }
+
+        public static async Task GetCommentPost(PostModel Post)
+        {
+            await Task.Run(() =>
+            {
+                Comentarios = new Controllers.EscritorioController().GetComentariosPost(Post.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
             });
         }
 

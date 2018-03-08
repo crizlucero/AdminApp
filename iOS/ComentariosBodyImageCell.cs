@@ -86,7 +86,6 @@ namespace WorklabsMx.iOS
 
         async Task GetImagenesPost(PostModel post)
         {
-
             UIImage ReescalImage = new UIImage();
 
             await Task.Run(() =>
@@ -117,7 +116,7 @@ namespace WorklabsMx.iOS
                     }
                     var data = NSData.FromArray(post.Usuario.Usuario_Fotografia_Perfil);
                     var uiimage = UIImage.LoadFromData(data);
-                    ReescalImageUsr = uiimage;
+                    ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
                 });
             }
 
