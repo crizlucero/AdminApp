@@ -21,8 +21,18 @@ namespace WorklabsMx.iOS.Helpers
         }
 
 
-        public static UIImage ReescalImage(UIImage ImagenOrigen)
+        public static UIImage ReescalImage(UIImage ImagenOrigen,nfloat newWith, nfloat newHeight)
         {
+            if (newWith == 0)
+            {
+                newWith = ImagenOrigen.Size.Width;
+            }
+
+            if (newHeight == 0)
+            {
+                newHeight = ImagenOrigen.Size.Height;
+            }
+
             var withImage = ImagenOrigen.Size.Width;
             var heightImage = ImagenOrigen.Size.Height;
             if (withImage > 440)

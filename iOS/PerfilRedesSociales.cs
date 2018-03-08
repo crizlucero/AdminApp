@@ -32,13 +32,19 @@ namespace WorklabsMx.iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            foreach(RedSocialModel RedSocial in Redes_Sociales)
+
+            if (Redes_Sociales != null)
             {
-                if(RedSocial.Red_Social_Enlace != null && RedSocial.Red_Social_Enlace != "")
+                foreach (RedSocialModel RedSocial in Redes_Sociales)
                 {
-                    Redes_Sociales_Usuario.Add(RedSocial);
+                    if (RedSocial.Red_Social_Enlace != null && RedSocial.Red_Social_Enlace != "")
+                    {
+                        Redes_Sociales_Usuario.Add(RedSocial);
+                    }
                 }
             }
+
+
         }
 
 
