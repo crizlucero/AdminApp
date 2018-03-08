@@ -7,6 +7,141 @@ using CoreGraphics;
 
 namespace SuiteMCommerceBinding
 {
+
+    [BaseType(typeof(NSObject))]
+    interface Bean3DS
+    {
+        [Export("branch")]
+        String Branch { get; set; }
+
+        [Export("company")]
+        String Company { get; set; }
+
+        [Export("country")]
+        String Country { get; set; }
+
+        [Export("user")]
+        String User { get; set; }
+
+        [Export("password")]
+        String Password { get; set; }
+
+        [Export("merchant")]
+        String Merchant { get; set; }
+
+        [Export("authKey")]
+        String AuthKey { get; set; }
+
+        [Export("reference")]
+        String Reference { get; set; }
+    }
+
+    [BaseType(typeof(NSObject))]
+    interface BeanPaymentResponse
+    {
+        [Export("response")]
+        String Response { get; set; }
+    }
+
+    [BaseType(typeof(NSObject))]
+    interface BeanPaymentWithToken
+    {
+        [Export("reference")]
+        String Reference { get; set; }
+
+        [Export("response")]
+        String Response { get; set; }
+
+        [Export("folio")]
+        String Folio { get; set; }
+
+        [Export("auth")]
+        String Auth { get; set; }
+
+        [Export("cdResponse")]
+        String CdResponse { get; set; }
+
+        [Export("cdError")]
+        String CdError { get; set; }
+
+        [Export("nbError")]
+        String NbError { get; set; }
+
+        [Export("company")]
+        String Company { get; set; }
+
+        [Export("merchant")]
+        String Merchant { get; set; }
+
+        [Export("street")]
+        String Street { get; set; }
+
+        [Export("ccType")]
+        String CcType { get; set; }
+
+        [Export("tpOperation")]
+        String TpOperation { get; set; }
+
+        [Export("ccName")]
+        String CcName { get; set; }
+
+        [Export("ccNumber")]
+        String CcNumber { get; set; }
+
+        [Export("ccExpMonth")]
+        String CcExpMonth { get; set; }
+
+        [Export("ccExpYear")]
+        String CcExpYear { get; set; }
+
+        [Export("amount")]
+        String Amount { get; set; }
+
+        [Export("voucher")]
+        String Voucher { get; set; }
+    }
+
+    [BaseType(typeof(NSObject))]
+    interface BeanTokenization
+    {
+        [Export("branch")]
+        String Branch { get; set; }
+
+        [Export("company")]
+        String Company { get; set; }
+
+        [Export("country")]
+        String Country { get; set; }
+
+        [Export("user")]
+        String User { get; set; }
+
+        [Export("password")]
+        String Password { get; set; }
+
+        [Export("merchant")]
+        String Merchant { get; set; }
+
+        [Export("operationType")]
+        String OperationType { get; set; }
+
+        [Export("token")]
+        String Token { get; set; }
+
+        [Export("amount")]
+        String Amount { get; set; }
+
+        [Export("reference")]
+        String Reference { get; set; }
+    }
+
+    [BaseType(typeof(NSObject))]
+    interface BeanTokenizeResponse
+    {
+        [Export("token")]
+        String Token { get; set; }
+    }
+
     // The first step to creating a binding is to add your native library ("libNativeLibrary.a")
     // to the project by right-clicking (or Control-clicking) the folder containing this source
     // file and clicking "Add files..." and then simply select the native library (or libraries)
