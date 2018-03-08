@@ -31,7 +31,7 @@ namespace WorklabsMx.iOS
 
         public PerfilesTableViewController (IntPtr handle) : base (handle)
         {
-            this.Miembro = MenuHelper.Usuario;
+            //this.Miembro = MenuHelper.Usuario;
         }
 
         public override async void ViewDidLoad()

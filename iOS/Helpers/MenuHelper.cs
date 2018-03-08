@@ -82,12 +82,9 @@ namespace WorklabsMx.iOS.Helpers
             Configuraciones = new ConfigurationsController().GetListConfiguraciones();
         }
 
-        public static async Task GetUsuarioInfo()
+        public static void GetUsuarioInfo()
         {
-            await Task.Run(() =>
-            {
-                Usuario = new UsuariosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
-            });
+            Usuario = new UsuariosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
         }
 
         public static async Task GetProductos()

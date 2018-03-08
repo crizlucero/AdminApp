@@ -19,5 +19,21 @@ namespace WorklabsMx.iOS.Helpers
             UIGraphics.EndImageContext();
             return resultImage;
         }
+
+
+        public static UIImage ReescalImage(UIImage ImagenOrigen)
+        {
+            var withImage = ImagenOrigen.Size.Width;
+            var heightImage = ImagenOrigen.Size.Height;
+            if (withImage > 440)
+            {
+                var newWithScale = (440 * 100) / withImage;
+                var newHeigth = (newWithScale * heightImage) / 100;
+                CGSize newSizeImage = new CGSize(440, newHeigth);
+                ImagenOrigen = ImagenOrigen.Scale(newSizeImage);
+            }
+            return ImagenOrigen;
+        }
+
     }
 }

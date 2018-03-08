@@ -17,7 +17,7 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             //var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
-            miembro = new UsuariosController().GetMemberDataAsync(KeyChainHelper.GetKey("Usuario_Id"),KeyChainHelper.GetKey("Usuario_Tipo"));
+            miembro = new UsuariosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"),KeyChainHelper.GetKey("Usuario_Tipo"));
             FillData();
             btnEditar.BackgroundColor = UIColor.FromRGB(101, 216, 250);
             btnEditar.SetTitleColor(UIColor.Black, UIControlState.Normal);

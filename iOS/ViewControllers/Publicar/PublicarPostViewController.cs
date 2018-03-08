@@ -148,17 +148,15 @@ namespace WorklabsMx.iOS
             var CloseAction = UIAlertAction.Create("Cancelar", UIAlertActionStyle.Cancel, null);
             ShowGalleryAlert.AddAction(CloseAction);
             return ShowGalleryAlert;
-
         }
 
         [Foundation.Export("imagePickerController:didFinishPickingImage:editingInfo:")]
         public void FinishedPickingImage(UIKit.UIImagePickerController picker, UIKit.UIImage image, Foundation.NSDictionary editingInfo)
         {
-            ImagenPublicacion = image;
+            ImagenPublicacion = ImageHelper.ReescalImage(image);
             this.btnImageComment.SetImage(image, UIControlState.Normal);
             this.btnDeleteImge.Hidden = false;
             this.btnPublicar.Enabled = true;
-            //opacity = 1f;
             this.btnImageComment.ContentMode = UIViewContentMode.ScaleAspectFit;
             this.btnImageComment.Enabled = true;
             picker.DismissViewController(true, null);

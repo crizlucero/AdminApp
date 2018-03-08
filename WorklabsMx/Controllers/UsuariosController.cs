@@ -469,11 +469,7 @@ namespace WorklabsMx.Controllers
                         Usuario_Apellidos = reader["Colaborador_Empresa_Apellidos"].ToString(),
                         Usuario_Id = reader["Colaborador_Empresa_Id"].ToString(),
                         Usuario_Fotografia = reader["Colaborador_Empresa_Fotografia"].ToString(),
-<<<<<<< HEAD
                         Usuario_Fotografia_Perfil = null, //ImageHelper.DownloadFileFTP(reader["Colaborador_Empresa_Fotografia"].ToString(), usuario_imagen_path),
-=======
-                        //Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Colaborador_Empresa_Fotografia"].ToString(), usuario_imagen_path),
->>>>>>> e26f38019e7e906a19d5715cbf95ae902cbb5656
                     });
                 }
             }

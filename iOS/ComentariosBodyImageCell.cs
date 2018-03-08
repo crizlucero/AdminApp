@@ -3,8 +3,12 @@ using UIKit;
 using WorklabsMx.Models;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Enum;
-using CoreGraphics;
-using System.Collections.Generic;
+using System.Threading.Tasks;
+using WorklabsMx.Controllers;
+using BigTed;
+using WorklabsMx.Helpers;
+using Foundation;
+using SWRevealViewControllerBinding;
 
 
 namespace WorklabsMx.iOS
@@ -34,7 +38,7 @@ namespace WorklabsMx.iOS
         {
         }
 
-        internal void UpdateCell(PostModel post, UIImage currentImageProfile, UIImage CurrentImagePost)
+        async internal void UpdateCell(PostModel post)
         {
             var Tap = new UITapGestureRecognizer(this.ImageTapped);
             imgPublicacion.UserInteractionEnabled = true;
@@ -72,14 +76,50 @@ namespace WorklabsMx.iOS
             {
                 this.imgComentarios.Image = UIImage.FromBundle("Comments");
             }
-            imgPublicacion.Image = CurrentImagePost;
+            await GetImagenesPost(post);
             txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
             txtComentario.ScrollEnabled = false;
             txtComentario.Text = post.Publicacion_Contenido;
             StyleHelper.Style(vwVistaComentario.Layer);
-            btnImgPerfil.SetBackgroundImage(currentImageProfile ?? UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
             PostLocal = post;
         }
+
+        async Task GetImagenesPost(PostModel post)
+        {
+
+            UIImage ReescalImage = new UIImage();
+
+            await Task.Run(() =>
+            {
+                if (post.Publicacion_Imagen_Post == null)
+                {
+                    post.Publicacion_Imagen_Post = new UploadImages().DownloadFileFTP(post.Publicacion_Imagen, MenuHelper.UploadImagePath);
+                }
+                var data = NSData.FromArray(post.Publicacion_Imagen_Post);
+                var uiimage = UIImage.LoadFromData(data);
+                ReescalImage = ImageHelper.ReescalImage(uiimage);
+            });
+            imgPublicacion.Image = ReescalImage;
+            UIImage ReescalImageUsr = new UIImage();
+
+            if ((post.Usuario.Usuario_Fotografia != "" && post.Usuario.Usuario_Fotografia != null))
+            {
+                await Task.Run(() =>
+                {
+                    if (post.Usuario.Usuario_Fotografia_Perfil == null)
+                    {
+                        post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
+                    }
+                    var data = NSData.FromArray(post.Publicacion_Imagen_Post);
+                    var uiimage = UIImage.LoadFromData(data);
+                    ReescalImageUsr = uiimage;
+                });
+            }
+
+            btnImgPerfil.SetBackgroundImage(ReescalImageUsr ?? UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
+
+        }
+
 
         private void ImageTapped(UITapGestureRecognizer Recognizer)
         {

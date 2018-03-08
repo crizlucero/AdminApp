@@ -51,7 +51,7 @@ namespace WorklabsMx.iOS
             }
             else
             {
-                await FillData();  
+                await MenuHelper.FillData();  
             }
             this.TableView.ReloadData();
             TableView.BeginUpdates();
@@ -68,7 +68,7 @@ namespace WorklabsMx.iOS
         async void GetData()
         {
             RefreshControl.BeginRefreshing();
-            await FillData();
+            await MenuHelper.FillData();
             TableView.ReloadData();
             TableView.BeginUpdates();
             TableView.EndUpdates();
@@ -80,17 +80,6 @@ namespace WorklabsMx.iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-        }
-
-        void FillData(string nombre = "", string apellido = "", string puesto = "", string profesion = "", string habilidades = "", bool disponibilidad = true, string pais = "", string estado = "", string municipio = "")
-        {
-            this.Usuarios = new UsuariosController().GetDirectorioUsuarios(nombre, apellido, puesto, profesion, habilidades, disponibilidad, pais, estado, municipio);
-            this.UsuariosAux = this.Usuarios;
-            if (Usuarios.Count == 0)
-            {
-                isShowInformation = false;
-                BTProgressHUD.Dismiss();
-            }
         }
 
 

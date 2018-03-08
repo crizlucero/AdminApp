@@ -21,7 +21,7 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             //var storageLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
-            miembro = new UsuariosController().GetMemberDataAsync(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+            miembro = new UsuariosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
             Title = "Mi Perfil";
 
             using (UIScrollView scrollView = new UIScrollView(new CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height)))

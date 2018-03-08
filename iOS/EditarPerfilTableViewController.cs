@@ -158,10 +158,8 @@ namespace WorklabsMx.iOS
                 this.btnImagen.SetBackgroundImage(image, UIControlState.Normal);
                 NewInfoPerfil.Usuario_Fotografia_Perfil = image?.AsPNG().ToArray();
             }
-
             this.TouchedBack = false;
             this.TouchedProfile = false;
-
             picker.DismissViewController(true, null);
         }
 

@@ -38,7 +38,7 @@ namespace WorklabsMx.iOS
             if (InternetConectionHelper.VerificarConexion())
             {
                 //StoregeLocal = PerpetualEngine.Storage.SimpleStorage.EditGroup("Login");
-                Miembro = new UsuariosController().GetMemberDataAsync(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+                Miembro = new UsuariosController().GetMemberData(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
                 this.txtEmail.Text = Miembro.Usuario_Correo_Electronico;
                 this.txtNombre.Text = Miembro.Usuario_Nombre;
                 this.txtApellido.Text = Miembro.Usuario_Apellidos;

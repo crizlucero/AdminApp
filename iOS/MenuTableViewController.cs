@@ -194,9 +194,9 @@ namespace WorklabsMx.iOS
     }
     public partial class MenuTableViewController : Perfilesint
     {
-        public async void InfoActualizar()
+        public void InfoActualizar()
         {
-            await MenuHelper.GetUsuarioInfo();
+            MenuHelper.GetUsuarioInfo();
             var headerCell = (HeaderMenulCell)this.TableView.DequeueReusableCell(IdentificadorCeldaHeader);
             headerCell.UpdateCell();
         }

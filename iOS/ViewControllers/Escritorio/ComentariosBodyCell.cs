@@ -3,8 +3,12 @@ using UIKit;
 using WorklabsMx.Models;
 using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Enum;
-using CoreGraphics;
-using System.Collections.Generic;
+using System.Threading.Tasks;
+using WorklabsMx.Controllers;
+using BigTed;
+using WorklabsMx.Helpers;
+using Foundation;
+using SWRevealViewControllerBinding;
 
 namespace WorklabsMx.iOS
 {
@@ -30,7 +34,7 @@ namespace WorklabsMx.iOS
             
         }
 
-        internal void UpdateCell(PostModel post, UIImage currentImageProfile)
+        async internal void UpdateCell(PostModel post)
         {
             lblNombre.Text = post.Usuario.Usuario_Nombre;
             lblLikes.Text = post.Publicacion_Me_Gustan_Cantidad + " LIKES";
@@ -62,13 +66,37 @@ namespace WorklabsMx.iOS
             {
                 this.imgComentarios.Image = UIImage.FromBundle("Comments");
             }
+
+            await GetImagenesPost(post);
             txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
             txtComentario.ScrollEnabled = false;
             txtComentario.Text = post.Publicacion_Contenido;
             StyleHelper.Style(vwVistaComentario.Layer);
-            btnImgPerfil.SetBackgroundImage(currentImageProfile ?? UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
             PostLocal = post;
         }
+
+
+        async Task GetImagenesPost(PostModel post)
+        {
+
+            UIImage ReescalImage = new UIImage();
+            if ((post.Usuario.Usuario_Fotografia != "" && post.Usuario.Usuario_Fotografia != null))
+            {
+                await Task.Run(() =>
+                {
+                    if (post.Usuario.Usuario_Fotografia_Perfil == null)
+                    {
+                        post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
+                    }
+                    var data = NSData.FromArray(post.Usuario.Usuario_Fotografia_Perfil);
+                    var uiimage = UIImage.LoadFromData(data);
+                    ReescalImage = uiimage;
+                });
+            }
+            btnImgPerfil.SetBackgroundImage(ReescalImage ?? UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
+
+        }
+
 
         partial void btnLikes_TouchUpInside(UIButton sender)
         {
