@@ -4,6 +4,11 @@ using WorklabsMx.iOS.Helpers;
 using WorklabsMx.Models;
 using CoreGraphics;
 using WorklabsMx.Enum;
+using System.Threading.Tasks;
+using WorklabsMx.Controllers;
+using BigTed;
+using WorklabsMx.Helpers;
+using Foundation;
 
 namespace WorklabsMx.iOS
 {
@@ -18,7 +23,7 @@ namespace WorklabsMx.iOS
 
         }
 
-        internal void UpdateCell(PostModel Publicacion, UIImage currentImageProfile, UIImage currentImagePost) 
+        async internal void UpdateCell(PostModel Publicacion) 
         {
 
             lblLikes.Text = Publicacion.Publicacion_Me_Gustan_Cantidad + " LIKES";
@@ -48,18 +53,52 @@ namespace WorklabsMx.iOS
             txtComentario.ScrollEnabled = true;
 
             txtComentario.Text = Publicacion.Publicacion_Contenido;
-
-            imgPerfil.Image = currentImageProfile ?? UIImage.FromBundle("PerfilEscritorio");
-            if (Publicacion.Publicacion_Imagen_Ruta != "")
-            {
-                btnImagenComentario.SetBackgroundImage(currentImagePost, UIControlState.Normal);
-            }
-            else
-            {
-                btnImagenComentario = new UIButton(new CGRect(0, 0, 0, 0));
-            }
-
+            await GetImagenesPost(Publicacion);
             PostLocal = Publicacion;
+        }
+
+
+        async Task GetImagenesPost(PostModel post)
+        {
+            UIImage ReescalImage = new UIImage();
+            UIImage ReescalImageUsr = new UIImage();
+            await Task.Run(() =>
+            {
+
+                if(post.Publicacion_Imagen_Ruta != "" && post.Publicacion_Imagen_Ruta != null)
+                {
+                    if (post.Publicacion_Imagen_Post == null)
+                    {
+                        post.Publicacion_Imagen_Post = new UploadImages().DownloadFileFTP(post.Publicacion_Imagen, MenuHelper.UploadImagePath);
+                    }
+                    else if (post.Publicacion_Imagen_Post.Length == 0)
+                    {
+                        post.Publicacion_Imagen_Post = new UploadImages().DownloadFileFTP(post.Publicacion_Imagen, MenuHelper.UploadImagePath);
+                    }
+                    var data = NSData.FromArray(post.Publicacion_Imagen_Post);
+                    var uiimage = UIImage.LoadFromData(data);
+                    ReescalImage = ImageHelper.ReescalImage(uiimage);
+                }
+            
+
+                if ((post.Usuario.Usuario_Fotografia != "" && post.Usuario.Usuario_Fotografia != null))
+                {
+                    if (post.Usuario.Usuario_Fotografia_Perfil == null)
+                    {
+                        if (post.Usuario.Usuario_Fotografia != "user_male.png")
+                        {
+                            post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
+                        }
+
+                    }
+                    var data = NSData.FromArray(post.Usuario.Usuario_Fotografia_Perfil);
+                    var uiimage = UIImage.LoadFromData(data);
+                    ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
+                }
+
+            });
+            btnImagenComentario.SetBackgroundImage(ReescalImage, UIControlState.Normal);
+            imgPerfil.Image = ReescalImageUsr;
         }
 
         partial void btnLikes_TouchUpInSide(UIButton sender)

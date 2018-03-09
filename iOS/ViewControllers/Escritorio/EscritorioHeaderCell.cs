@@ -72,6 +72,10 @@ namespace WorklabsMx.iOS
                     ReescalImage = uiimage;
                 });
             }
+            else
+            {
+                ReescalImage = UIImage.FromBundle("PerfilEscritorio");
+            }
             impPublicar.Image = ReescalImage;
         }
 

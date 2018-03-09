@@ -30,7 +30,7 @@ namespace WorklabsMx.iOS
         const string IdentificadorCeldaNoInfo = "NoInfo";
 
         const int TamañoMensajeNoInfo = 400;
-        const int TamañoHeader = 150;
+        const int TamañoHeader = 186;
 
         bool isShowInformation = false;
         bool existeConeccion = true;
@@ -71,7 +71,7 @@ namespace WorklabsMx.iOS
         public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
             var headerCell = (HeaderComentarTableView)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
-            headerCell.UpdateCell(currentPost, currentProfileImage, currentPostImage);
+            headerCell.UpdateCell(currentPost);
             return headerCell;
         }
 

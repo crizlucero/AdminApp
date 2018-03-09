@@ -37,7 +37,7 @@ namespace WorklabsMx.iOS
         {
         }
 
-        public override async void ViewDidLoad()
+        public override void ViewDidLoad()
         {
             base.ViewDidLoad();
             BTProgressHUD.Show();
@@ -45,17 +45,7 @@ namespace WorklabsMx.iOS
             RefreshControl.AddTarget(HandleValueChanged, UIControlEvent.ValueChanged);
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
-            if (MenuHelper.Comunidad != null)
-            {
-                Usuarios = MenuHelper.Comunidad; 
-            }
-            else
-            {
-                await MenuHelper.FillData();  
-            }
-            this.TableView.ReloadData();
-            TableView.BeginUpdates();
-            TableView.EndUpdates();
+
             BTProgressHUD.Dismiss();
           
         }
@@ -69,6 +59,7 @@ namespace WorklabsMx.iOS
         {
             RefreshControl.BeginRefreshing();
             await MenuHelper.FillData();
+            Usuarios = MenuHelper.Comunidad;
             TableView.ReloadData();
             TableView.BeginUpdates();
             TableView.EndUpdates();
@@ -77,9 +68,14 @@ namespace WorklabsMx.iOS
 
         }
 
-        public override void ViewWillAppear(bool animated)
+        public override async void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            await MenuHelper.FillData();
+            Usuarios = MenuHelper.Comunidad;
+            this.TableView.ReloadData();
+            TableView.BeginUpdates();
+            TableView.EndUpdates();
         }
 
 

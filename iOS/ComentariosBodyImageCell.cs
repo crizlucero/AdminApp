@@ -8,8 +8,6 @@ using WorklabsMx.Controllers;
 using BigTed;
 using WorklabsMx.Helpers;
 using Foundation;
-using SWRevealViewControllerBinding;
-
 
 namespace WorklabsMx.iOS
 {
@@ -87,24 +85,21 @@ namespace WorklabsMx.iOS
         async Task GetImagenesPost(PostModel post)
         {
             UIImage ReescalImage = new UIImage();
-
+            UIImage ReescalImageUsr = new UIImage();
             await Task.Run(() =>
             {
                 if (post.Publicacion_Imagen_Post == null)
                 {
                     post.Publicacion_Imagen_Post = new UploadImages().DownloadFileFTP(post.Publicacion_Imagen, MenuHelper.UploadImagePath);
                 }
+                else if (post.Publicacion_Imagen_Post.Length == 0)
+                {
+                    post.Publicacion_Imagen_Post = new UploadImages().DownloadFileFTP(post.Publicacion_Imagen, MenuHelper.UploadImagePath);
+                }
                 var data = NSData.FromArray(post.Publicacion_Imagen_Post);
                 var uiimage = UIImage.LoadFromData(data);
                 ReescalImage = ImageHelper.ReescalImage(uiimage);
-            });
-            imgPublicacion.Image = ReescalImage;
-
-            UIImage ReescalImageUsr = new UIImage();
-
-            if ((post.Usuario.Usuario_Fotografia != "" && post.Usuario.Usuario_Fotografia != null))
-            {
-                await Task.Run(() =>
+                if ((post.Usuario.Usuario_Fotografia != "" && post.Usuario.Usuario_Fotografia != null))
                 {
                     if (post.Usuario.Usuario_Fotografia_Perfil == null)
                     {
@@ -112,16 +107,15 @@ namespace WorklabsMx.iOS
                         {
                             post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
                         }
-
                     }
-                    var data = NSData.FromArray(post.Usuario.Usuario_Fotografia_Perfil);
-                    var uiimage = UIImage.LoadFromData(data);
+                    data = NSData.FromArray(post.Usuario.Usuario_Fotografia_Perfil);
+                    uiimage = UIImage.LoadFromData(data);
                     ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
-                });
-            }
+                }
 
+            });
+            imgPublicacion.Image = ReescalImage;
             btnImgPerfil.SetBackgroundImage(ReescalImageUsr ?? UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
-
         }
 
 

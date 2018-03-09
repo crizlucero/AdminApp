@@ -628,9 +628,6 @@
     <ImageAsset Include="Assets.xcassets\BackGround.imageset\BackGround.png" />
     <ImageAsset Include="Assets.xcassets\BackGround.imageset\BackGround%402x.png" />
     <ImageAsset Include="Assets.xcassets\BackGround.imageset\BackGround%403x.png" />
-    <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\worklabsLogo.png" />
-    <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\worklabsLogo%402x.png" />
-    <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\worklabsLogo%403x.png" />
     <ImageAsset Include="Assets.xcassets\perfilbackimage.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\perfilbackimage.imageset\perfilbackimage.png" />
     <ImageAsset Include="Assets.xcassets\perfilbackimage.imageset\perfilbackimage%402x.png" />
@@ -784,6 +781,13 @@
     <ImageAsset Include="Assets.xcassets\AcercaDe.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\AcercaDe.imageset\Custom Size – 4%403x.png" />
     <ImageAsset Include="Assets.xcassets\Sala10.imageset\IMG_4123.jpg" />
+    <ImageAsset Include="Assets.xcassets\fondoLogin.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\Logo.png" />
+    <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\Logo%402x.png" />
+    <ImageAsset Include="Assets.xcassets\worklabsLogo.imageset\Logo%403x.png" />
+    <ImageAsset Include="Assets.xcassets\fondoLogin.imageset\login.png" />
+    <ImageAsset Include="Assets.xcassets\fondoLogin.imageset\login%402x.png" />
+    <ImageAsset Include="Assets.xcassets\fondoLogin.imageset\login%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1376,6 +1380,10 @@
     <Compile Include="DetalleProductoTableViewController.designer.cs">
       <DependentUpon>DetalleProductoTableViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="PagosTableViewController.cs" />
+    <Compile Include="PagosTableViewController.designer.cs">
+      <DependentUpon>PagosTableViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -1545,6 +1553,7 @@
     <Folder Include="Assets.xcassets\Quora.imageset\" />
     <Folder Include="Assets.xcassets\NoLogoWork.imageset\" />
     <Folder Include="Assets.xcassets\AcercaDe.imageset\" />
+    <Folder Include="Assets.xcassets\fondoLogin.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

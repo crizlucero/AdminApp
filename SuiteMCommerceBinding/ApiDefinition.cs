@@ -10,7 +10,7 @@ namespace SuiteMCommerceBinding
 
 
     [BaseType(typeof(NSObject))]
-    [Model]
+    [Model, Protocol]
     partial interface SuiteControllerDelegate
     {
         [Export("didFinishPayProcess:error:")]

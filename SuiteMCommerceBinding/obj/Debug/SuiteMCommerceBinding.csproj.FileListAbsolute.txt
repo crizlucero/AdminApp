@@ -1,0 +1,6 @@
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/SuiteMCommerceBinding/bin/Debug/SuiteMCommerceBinding.dll
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/SuiteMCommerceBinding/bin/Debug/SuiteMCommerceBinding.pdb
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/SuiteMCommerceBinding/obj/Debug/SuiteMCommerceBinding.csproj.CoreCompileInputs.cache
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/SuiteMCommerceBinding/obj/Debug/SuiteMCommerceBinding.dll
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/SuiteMCommerceBinding/obj/Debug/SuiteMCommerceBinding.pdb
+/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/SuiteMCommerceBinding/obj/Debug/SuiteMCommerceBinding.csprojResolveAssemblyReference.cache

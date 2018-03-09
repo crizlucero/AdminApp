@@ -26,8 +26,6 @@ namespace WorklabsMx.iOS
 
         public static List<ItemsMenu> tableItems = new List<ItemsMenu>();
 
-        UsuarioModel Usuario = new UsuarioModel();
-
         public MenuTableViewController (IntPtr handle) : base (handle)
         {
             
@@ -166,6 +164,8 @@ namespace WorklabsMx.iOS
                 var PerfilView = (PerfilesTableViewController)segue.DestinationViewController;
                 PerfilView.InfoPersonal = true;
                 PerfilView.PerfilesDelegate = this;
+                PerfilView.Miembro = MenuHelper.Usuario;
+
             }
             var segueReveal = segue as SWRevealViewControllerSegueSetController;
             if (segueReveal == null)

@@ -24,10 +24,7 @@ namespace WorklabsMx.iOS
             StyleHelper.Style(this.vwEmpresasAnteriores.Layer);
             StyleHelper.Style(this.vwColaboradores.Layer);
             await GetEmpresa();
-            empresa = new EmpresaController().GetEmpresaMiembro(Miembro.Usuario_Id);
-            this.lblPais.Text = ((empresa.Territorio.Municipio + ", " + empresa.Territorio.Pais) != "") ? (empresa.Territorio.Municipio + ", " + empresa.Territorio.Pais) : "Sin Info";
-            this.lblEmpresa.Text = (empresa.Empresa_Nombre != "") ? empresa.Empresa_Nombre : "Sin Info";
-            this.lblPuesto.Text = (Miembro.Usuario_Puesto != "") ? Miembro.Usuario_Puesto : "Sin Info";
+           
             //this.lblFechaInicioFin.Text = (Miembro.Usuario_Fecha_Nacimiento != "") ? Miembro.Usuario_Fecha_Nacimiento : "Sin Info";
         }
 
@@ -52,6 +49,26 @@ namespace WorklabsMx.iOS
             {
                 empresa = new EmpresaController().GetEmpresaMiembro(Miembro.Usuario_Id);
             });
+            if (empresa != null)
+            {
+                if (empresa.Territorio != null)
+                {
+                    this.lblPais.Text = ((empresa.Territorio.Municipio + ", " + empresa.Territorio.Pais) != "") ? (empresa.Territorio.Municipio + ", " + empresa.Territorio.Pais) : "Sin Info";
+                }
+                else
+                {
+                    this.lblPais.Text = "Sin Info";
+                }
+                this.lblEmpresa.Text = (empresa.Empresa_Nombre != "") ? empresa.Empresa_Nombre : "Sin Info";
+                this.lblPuesto.Text = (Miembro.Usuario_Puesto != "") ? Miembro.Usuario_Puesto : "Sin Info";
+            }
+            else
+            {
+                this.lblPais.Text = "Sin Info";
+                this.lblEmpresa.Text = "Sin Info";
+                this.lblPuesto.Text = "Sin Info";
+            }
+
         }
     }
 }

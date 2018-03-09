@@ -35,6 +35,7 @@ namespace WorklabsMx.iOS
                 }
                 else
                 {
+                    MenuHelper.GetUsuarioInfo();
                     MenuHelper.UploadImagePath = MenuHelper.Configuraciones.Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PUBLICACIONES").Parametro_Varchar_1;
                     MenuHelper.ProfileImagePath = MenuHelper.Configuraciones.Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1;
                     result = KeyChainHelper.SetKey("EmailRegex", configuracionCorreo.Parametro_Varchar_1);

@@ -70,7 +70,7 @@ namespace WorklabsMx.iOS
         async Task GetImagenesComment(ComentarioModel comentario)
         {
             UIImage ReescalImage = new UIImage();
-
+            UIImage ReescalImageUsr = new UIImage();
             await Task.Run(() =>
             {
                 if (comentario.Comentario_Imagen_Comentario == null)
@@ -80,15 +80,11 @@ namespace WorklabsMx.iOS
                 var data = NSData.FromArray(comentario.Comentario_Imagen_Comentario);
                 var uiimage = UIImage.LoadFromData(data);
                 ReescalImage = ImageHelper.ReescalImage(uiimage);
-            });
-            imgPublicacion.Image = ReescalImage;
 
-            UIImage ReescalImageUsr = new UIImage();
 
-            if ((comentario.Usuario.Usuario_Fotografia != "" && comentario.Usuario.Usuario_Fotografia != null))
-            {
-                await Task.Run(() =>
+                if ((comentario.Usuario.Usuario_Fotografia != "" && comentario.Usuario.Usuario_Fotografia != null))
                 {
+
                     if (comentario.Usuario.Usuario_Fotografia_Perfil == null)
                     {
                         if (comentario.Usuario.Usuario_Fotografia != "user_male.png")
@@ -97,15 +93,15 @@ namespace WorklabsMx.iOS
                         }
 
                     }
-                    var data = NSData.FromArray(comentario.Usuario.Usuario_Fotografia_Perfil);
-                    var uiimage = UIImage.LoadFromData(data);
+                    data = NSData.FromArray(comentario.Usuario.Usuario_Fotografia_Perfil);
+                    uiimage = UIImage.LoadFromData(data);
                     ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
-                });
-            }
+                }
+
+            });
+            imgPublicacion.Image = ReescalImage;
             imgPerfil.Image = ReescalImageUsr;
-
         }
-
 
 
         private void ImageTapped(UITapGestureRecognizer Recognizer)

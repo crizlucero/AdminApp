@@ -1,41 +1,28 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SWRevealViewControllerBinding/ApiDefinition.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/MenuTableViewController.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/Comentarios/comentarTableView.cs" Line="29" Column="64" />
-      <File FileName="iOS/ComprasTableView.cs" Line="90" Column="10" />
-      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="144" Column="13" />
-      <File FileName="iOS/ComunidadTableViewController.cs" Line="180" Column="30" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="128" Column="46" />
-      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="90" Column="1" />
-      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="59" Column="14" />
-      <File FileName="iOS/Helpers/MenuHelper.cs" Line="107" Column="34" />
-      <File FileName="iOS/PerfilRedesSociales.cs" Line="16" Column="43" />
-      <File FileName="iOS/Helpers/ImageHelper.cs" Line="52" Column="10" />
-      <File FileName="iOS/EditarPerfilTableViewController.cs" Line="149" Column="36" />
-      <File FileName="iOS/ViewControllers/Comentarios/ComentarviewController.cs" Line="22" Column="6" />
-      <File FileName="iOS/ComentarImageTableViewCell.cs" Line="20" Column="28" />
-      <File FileName="iOS/ViewControllers/Comentarios/HeaderComentarTableView.cs" Line="21" Column="23" />
-      <File FileName="SuiteMCommerceBinding/ApiDefinition.cs" Line="48" Column="32" />
-      <File FileName="SuiteMCommerceBinding/StructsAndEnums.cs" Line="17" Column="25" />
-      <File FileName="SWRevealViewControllerBinding/StructsAndEnums.cs" Line="5" Column="31" />
-      <File FileName="SWRevealViewControllerBinding/ApiDefinition.cs" Line="122" Column="86" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="290" Column="221" />
+      <File FileName="iOS/EditarPerfilTableViewController.cs" Line="429" Column="45" />
+      <File FileName="iOS/MenuTableViewController.cs" Line="199" Column="40" />
+      <File FileName="iOS/PerfilesTableViewController.cs" Line="319" Column="49" />
+      <File FileName="iOS/Helpers/MenuHelper.cs" Line="27" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/RegistrarTableViewController.cs" relfile="iOS/RegistrarTableViewController.cs" line="127" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/RegistrarTableViewController.cs" relfile="iOS/RegistrarTableViewController.cs" line="89" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/CeldaDetalleInvitacion.cs" relfile="iOS/CeldaDetalleInvitacion.cs" line="86" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/UsuariosController.cs" relfile="WorklabsMx/Controllers/UsuariosController.cs" line="342" column="25" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/UsuariosController.cs" relfile="WorklabsMx/Controllers/UsuariosController.cs" line="346" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/PaymentsTableview.cs" relfile="iOS/PaymentsTableview.cs" line="64" column="24" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/PaymentsTableview.cs" relfile="iOS/PaymentsTableview.cs" line="44" column="21" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" relfile="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" line="64" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EditarPerfilTableViewController.cs" relfile="iOS/EditarPerfilTableViewController.cs" line="156" column="61" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EditarPerfilTableViewController.cs" relfile="iOS/EditarPerfilTableViewController.cs" line="425" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EditarPerfilTableViewController.cs" relfile="iOS/EditarPerfilTableViewController.cs" line="430" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/PerfilesTableViewController.cs" relfile="iOS/PerfilesTableViewController.cs" line="316" column="25" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.SuiteMCommerceBinding FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F745CA7A-709C-490F-AC38-17652B866A02" automaticSigning="False" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" automaticSigning="False" />
   <MultiItemStartupConfigurations />
 </Properties>
