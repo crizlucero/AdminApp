@@ -77,7 +77,7 @@ namespace WorklabsMx.iOS
             EventosDetalleInvitacionDel.SucursalSeleccionada();
         }
 
-        async partial void btnInvitar_Touch(UIButton sender)
+        partial void btnInvitar_Touch(UIButton sender)
         {
             var ErrorInvitar = false;
             foreach (UsuarioModel invitado in invitadosLocal)
@@ -91,7 +91,7 @@ namespace WorklabsMx.iOS
                         ErrorInvitar = false;
                         this.DomicilioInvitacion = Sucursal.Sucursal_Descripcion + " " + Sucursal.Sucursal_Domicilio;
                         BTProgressHUD.Show(status: "Enviando Correo de Invitación");
-                        await EnviarMail(invitado, Sucursal);
+                        this.EnviarMail(invitado, Sucursal);
                     }
                     else
                     {
@@ -125,10 +125,10 @@ namespace WorklabsMx.iOS
             return EsValido;
         }
 
-        async Task EnviarMail(UsuarioModel invitado, SucursalModel sucursal)
+        void EnviarMail(UsuarioModel invitado, SucursalModel sucursal)
         {
             Emails email = new Emails();
-            await email.SendMail(invitado.Usuario_Correo_Electronico, invitado.Usuario_Nombre + " " + invitado.Usuario_Apellidos,
+            email.SendMail(invitado.Usuario_Correo_Electronico, invitado.Usuario_Nombre + " " + invitado.Usuario_Apellidos,
                                        correoInvitacion.Replace("{{NOMBRE}}", invitado.Usuario_Nombre + " " + invitado.Usuario_Apellidos)
                                        .Replace("{{FECHA}}", lblFecha.Text)
                                        .Replace("{{SUCURSAL}}", sucursal.Sucursal_Descripcion)

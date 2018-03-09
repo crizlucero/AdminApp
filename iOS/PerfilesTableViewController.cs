@@ -201,7 +201,7 @@ namespace WorklabsMx.iOS
             }
         }
 
-        public void CargarInfo()
+        public async void CargarInfo()
         {
             this.lblNombre.Text = (Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos != "") ? Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos : "Sin Info";
             if (Miembro.Empresa_Actual != null)
@@ -213,35 +213,61 @@ namespace WorklabsMx.iOS
                 this.lblEmpresa.Text = "Sin Info";
             }
 
-            if (Miembro.Usuario_Fotografia_Perfil != null)
-            {
-                var data = NSData.FromArray(Miembro.Usuario_Fotografia_Perfil);
-                if (UIImage.LoadFromData(data) == null)
-                {
-                    this.btnProfileImage.SetBackgroundImage(UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
-                }
-                else
-                {
-                    this.btnProfileImage.SetBackgroundImage(UIImage.LoadFromData(data), UIControlState.Normal);
-                }
-            }
-            else
-            {
-                this.btnProfileImage.SetBackgroundImage(UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);            
-            }
+            await GetImages(Miembro);
 
 
-            if (Miembro.Usuario_Fotografia_FondoPerfil != null)
+        }
+
+        async Task GetImages(UsuarioModel Miembro)
+        {
+            UIImage ReescalImageBack = new UIImage();
+            UIImage ReescalImageUsr = new UIImage();
+            await Task.Run(() =>
             {
-                var data = NSData.FromArray(Miembro.Usuario_Fotografia_FondoPerfil);
-                if (UIImage.LoadFromData(data) != null)
+                
+                if ((Miembro.Usuario_Fotografia != "" && Miembro.Usuario_Fotografia != null))
                 {
-                    this.btnImageBackGround.SetBackgroundImage(UIImage.LoadFromData(data), UIControlState.Normal);
+                    if (Miembro.Usuario_Fotografia_Perfil == null)
+                    {
+                        if (Miembro.Usuario_Fotografia != "user_male.png")
+                        {
+                            Miembro.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(Miembro.Usuario_Fotografia, MenuHelper.ProfileImagePath);
+                        }
+                    }
+                    if (Miembro.Usuario_Fotografia_Perfil.Length == 0)
+                    {
+                        ReescalImageUsr = UIImage.FromBundle("ProfileImageBig");
+                    }
+                    else
+                    {
+                        var data = NSData.FromArray(Miembro.Usuario_Fotografia_Perfil);
+                        var uiimage = UIImage.LoadFromData(data);
+                        ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
+                    }
+
                 }
+
                
-            }
+                if (Miembro.Usuario_Fotografia_Fondo != null && Miembro.Usuario_Fotografia_Fondo != "")
+                {
+                    if (Miembro.Usuario_Fotografia_FondoPerfil == null)
+                    {
 
+                        Miembro.Usuario_Fotografia_FondoPerfil = new UploadImages().DownloadFileFTP(Miembro.Usuario_Fotografia_Fondo, MenuHelper.ProfileImagePath);
 
+                    }
+                    if (Miembro.Usuario_Fotografia_FondoPerfil.Length != 0)
+                    {
+                        var data = NSData.FromArray(Miembro.Usuario_Fotografia_FondoPerfil);
+                        var uiimage = UIImage.LoadFromData(data);
+                        ReescalImageBack = ImageHelper.ReescalProfileImage(uiimage);
+                    }
+
+                }
+
+            });
+            this.btnProfileImage.SetBackgroundImage(ReescalImageUsr, UIControlState.Normal);
+            this.btnImageBackGround.SetBackgroundImage(ReescalImageBack, UIControlState.Normal);
         }
 
         partial void btnEditarPerfil_Touch(UIButton sender)
