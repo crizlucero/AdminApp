@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using Android.App;
 using Android.Content;
+using Android.Content.Res;
 using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
@@ -117,11 +120,9 @@ namespace WorklabsMx.Droid
         void UpdateHorasNoDisponibles()
         {
             if (DateTime.Parse(fecha_seleccionada).ToString("d") == DateTime.Now.ToString("d"))
-            {
                 for (double i = 0; i <= DateTime.Now.Hour; i += .5)
                     if (!HorasNoDisponibles.Contains(i))
                         HorasNoDisponibles.Add(i);
-            }
         }
 
         void FillHorario()
@@ -251,7 +252,7 @@ namespace WorklabsMx.Droid
             return base.OnOptionsItemSelected(item);
         }
 
-        async void ShowConfirmacion()
+        void ShowConfirmacion()
         {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -298,8 +299,16 @@ namespace WorklabsMx.Droid
                 row.AddView(detalleView);
                 tlReservaciones.AddView(row);
             }
-
-            await new Emails().SendMail(usuario.Usuario_Correo_Electronico, usuario.Usuario_Nombre + " " + usuario.Usuario_Apellidos, "", "Sala de juntas");
+            AssetManager asset = Assets;
+            string correoInvitacion = new StreamReader(asset.Open("SalaJuntasReserva.html")).ReadToEnd();
+            new Emails().SendMail(usuario.Usuario_Correo_Electronico, usuario.Usuario_Nombre + " " + usuario.Usuario_Apellidos,
+                                       correoInvitacion.Replace("{{NOMBRE}}", usuario.Usuario_Nombre + " " + usuario.Usuario_Apellidos)
+                                        .Replace("{{NOMBRESALA}}", salas[_viewPager.CurrentItem].Sala_Descripcion)
+                                  .Replace("{{CAPACIDADSALA}}", salas[_viewPager.CurrentItem].Sala_Capacidad)
+                                  .Replace("{{DIALETRA}}", new CultureInfo("es-MX").DateTimeFormat.GetDayName(DateTime.Parse(fecha_seleccionada).DayOfWeek).Substring(0, 3))
+                                  .Replace("{{DIANUMERO}}", DateTime.Parse(fecha_seleccionada).Day.ToString())
+                                  .Replace("{{HORARIO}}", TimeSpan.FromHours(Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0]).ToString().Substring(0, 5) + " - " + TimeSpan.FromHours(Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0] + .5).ToString().Substring(0, 5)),
+                                  "Worklabs - Confirmación de sala de junta");
             customView.FindViewById<Button>(Resource.Id.btnCancelar).Click += (sender, e) => dialog.Dismiss();
             customView.FindViewById<Button>(Resource.Id.btnConfirmar).Click += delegate
             {
@@ -315,7 +324,7 @@ namespace WorklabsMx.Droid
                 dialog.Dismiss();
                 SetContentView(Resource.Layout.SalasJuntasConfirmacionLayout);
 
-                FindViewById<TextView>(Resource.Id.lblDiaSemana).Text = DateTime.Parse(fecha_seleccionada).DayOfWeek.ToString().Substring(0, 3);
+                FindViewById<TextView>(Resource.Id.lblDiaSemana).Text = new CultureInfo("es-MX").DateTimeFormat.GetDayName(DateTime.Parse(fecha_seleccionada).DayOfWeek).Substring(0, 3);
                 FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = DateTime.Parse(fecha_seleccionada).Day.ToString();
                 FindViewById<TextView>(Resource.Id.lblHorario).Text = TimeSpan.FromHours(Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0]).ToString().Substring(0, 5) + " - " + TimeSpan.FromHours(Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0] + .5).ToString().Substring(0, 5);
                 FindViewById<Button>(Resource.Id.btnContinuar).Click += delegate

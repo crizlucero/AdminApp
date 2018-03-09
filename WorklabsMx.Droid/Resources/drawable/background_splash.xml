@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-  <item
-      android:drawable="@mipmap/ic_log_background"/>
+  <!--<item
+      android:drawable="@mipmap/ic_log_background2"/>-->
 
   <item>
     <shape>
@@ -25,14 +25,4 @@
         android:height="30dp"
         android:gravity="center">
     </item>
-    <!--<item
-        android:left="30dp"
-        android:right="30dp"
-        android:top="275dp"
-        android:bottom="275dp">
-        <bitmap 
-            android:gravity="fill_horizontal|center|fill_vertical"
-            android:src="@mipmap/worklabs_title"/>
-    </item>-->
-
 </layer-list>

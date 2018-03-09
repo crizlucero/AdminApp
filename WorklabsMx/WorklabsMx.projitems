@@ -82,6 +82,7 @@
     <None Include="$(MSBuildThisFileDirectory)HTMLTemplates\PlantillaNotificacionRegistroDataCenter.html" />
     <None Include="$(MSBuildThisFileDirectory)HTMLTemplates\PlantillaNotificacionRegistroUbicaciones.html" />
     <None Include="$(MSBuildThisFileDirectory)HTMLTemplates\Invitacion.html" />
+    <None Include="$(MSBuildThisFileDirectory)HTMLTemplates\SalaJuntasReserva.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Controllers\" />

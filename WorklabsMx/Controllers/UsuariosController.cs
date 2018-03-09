@@ -59,6 +59,7 @@ namespace WorklabsMx.Controllers
                         Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
                         Usuario_Descripcion = reader["Usuario_Descripcion"].ToString(),
                         Usuario_Fotografia_Perfil = null,//ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path),
+                        Usuario_Fotografia_Fondo = reader["Usuario_Fotografia_Fondo"].ToString(),
                         Empresa_Actual = new EmpresaModel
                         {
                             Empresa_Id = reader["Usuario_Empresa_Id"].ToString(),

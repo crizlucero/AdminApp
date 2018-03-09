@@ -51,9 +51,6 @@
     <Reference Include="System.Net" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.IO.Compression" />
-    <Reference Include="System.Configuration.ConfigurationManager">
-      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.0\lib\netstandard2.0\System.Configuration.ConfigurationManager.dll</HintPath>
-    </Reference>
     <Reference Include="AndHUD">
       <HintPath>..\packages\AndHUD.1.2.0\lib\MonoAndroid\AndHUD.dll</HintPath>
     </Reference>
@@ -150,6 +147,9 @@
     </Reference>
     <Reference Include="Xamarin.Android.Support.Design">
       <HintPath>..\packages\Xamarin.Android.Support.Design.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.ConfigurationManager">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\netstandard2.0\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -283,7 +283,6 @@
     <AndroidResource Include="Resources\layout\ColaboradorCambioLayout.axml" />
     <AndroidResource Include="Resources\layout\OfflineAppLayout.axml" />
     <AndroidResource Include="Resources\menu\refresh_menu.xml" />
-    <AndroidResource Include="Resources\mipmap-hdpi\ic_log_background.png" />
     <AndroidResource Include="Resources\layout\LoginLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_worklabs_title.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_logo_mini.png" />
@@ -319,7 +318,6 @@
     <AndroidResource Include="Resources\layout\CalendarioLayout.axml" />
     <AndroidResource Include="Resources\layout\HorarioPickerLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\worklabs_title.png" />
-    <AndroidResource Include="Resources\mipmap-hdpi\ic_log_background.png" />
     <AndroidResource Include="Resources\layout\SplashLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_like.png" />
     <AndroidResource Include="Resources\layout\PreViewListLayout.axml" />
@@ -445,6 +443,12 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\ic_shopping_cart_white.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\ic_shopping_cart_white.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_shopping_cart_white.png" />
+    <AndroidResource Include="Resources\drawable\shadow_radius_light_white.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\login.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\login.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\login.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\login.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\login.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -473,6 +477,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Invitacion.html" />
+    <AndroidAsset Include="Assets\SalaJuntasReserva.html" />
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

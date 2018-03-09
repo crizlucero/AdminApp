@@ -208,7 +208,7 @@ namespace WorklabsMx.Droid
             AndHUD.Shared.Show(this, null, -1, MaskType.Black);
             await Task.Delay(500);
 
-            comentarios.Skip(page * sizePage).Take(sizePage).ToList().ForEach(comentario =>
+            comentarios.Skip(page * sizePage).Take(sizePage).AsParallel().ToList().ForEach(comentario =>
             {
                 LayoutInflater liView = LayoutInflater;
                 View CommentView = liView.Inflate(Resource.Layout.PostLayout, null, true);
