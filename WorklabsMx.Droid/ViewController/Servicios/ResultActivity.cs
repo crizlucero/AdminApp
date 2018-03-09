@@ -51,7 +51,7 @@ namespace WorklabsMx.Droid
             {
                 if (beanPaymentResponse.getResponse().Equals("approved"))
                 {
-                    imageResult.SetImageDrawable(Resources.GetDrawable(Resource.Mipmap.ic_like));
+                    imageResult.SetImageResource(Resource.Mipmap.ic_like);
                     linearLayoutError.Visibility = ViewStates.Gone;
                 }
                 else
@@ -77,7 +77,7 @@ namespace WorklabsMx.Droid
             {
                 if (beanTokenizeResponse.NbResponse.Equals("success"))
                 {
-                    imageResult.SetImageDrawable(Resources.GetDrawable(Resource.Mipmap.ic_like));
+                    imageResult.SetImageResource(Resource.Mipmap.ic_like);
                     linearLayoutError.Visibility = ViewStates.Gone;
                 }
                 else
@@ -102,7 +102,7 @@ namespace WorklabsMx.Droid
             {
                 if (beanPaymentWithToken.Response.Equals("approved"))
                 {
-                    imageResult.SetImageDrawable(Resources.GetDrawable(Resource.Mipmap.ic_like));
+                    imageResult.SetImageResource(Resource.Mipmap.ic_like);
                     linearLayoutError.Visibility = ViewStates.Gone;
                     linearLayoutName.Visibility = ViewStates.Gone;
                     linearLayoutNumber.Visibility = ViewStates.Gone;

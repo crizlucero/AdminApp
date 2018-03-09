@@ -21,9 +21,9 @@ namespace WorklabsMx
         /// <param name="name">Nombre de la persona que se le enviará el correo</param>
         /// <param name="html">Texto html para el correo</param>
         /// <param name="subject">Asunto del correo</param>
-        public async void SendMail(string email, string name, string html, string subject)
+        public void SendMail(string email, string name, string html, string subject)
         {
-            await Task.Run(() =>
+            Task.Run(() =>
             {
                 try
                 {
@@ -36,7 +36,7 @@ namespace WorklabsMx
                         }
                     };
                     msg.From.Add(new MailboxAddress("Worklabs", "desarrollo@worklabs.mx"));
-                    msg.To.Add(new MailboxAddress(name, "christian.lucero@worklabs.mx"));//email));
+                    msg.To.Add(new MailboxAddress(name, email));
 
                     using (SmtpClient client = new SmtpClient())
                     {
@@ -53,11 +53,6 @@ namespace WorklabsMx
                 }
             });
 
-        }
-
-        internal object SendMail(string text, string miembro, string v)
-        {
-            throw new NotImplementedException();
         }
     }
 }

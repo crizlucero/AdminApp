@@ -443,8 +443,12 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\ic_shopping_cart_white.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\ic_shopping_cart_white.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_shopping_cart_white.png" />
-    <AndroidResource Include="Resources\mipmap-hdpi\ic_log_background2.png" />
     <AndroidResource Include="Resources\drawable\shadow_radius_light_white.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\login.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\login.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\login.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\login.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\login.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

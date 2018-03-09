@@ -6159,145 +6159,145 @@ namespace WorklabsMx.Droid
 			public const int ic_like = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int ic_log_background2 = 2130903079;
+			public const int ic_logo_mini = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int ic_logo_mini = 2130903080;
+			public const int ic_menu = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int ic_menu = 2130903081;
+			public const int ic_menu_white = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int ic_menu_white = 2130903082;
+			public const int ic_mode_comment = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int ic_mode_comment = 2130903083;
+			public const int ic_more = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int ic_more = 2130903084;
+			public const int ic_more_horiz = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int ic_more_horiz = 2130903085;
+			public const int ic_open_book = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int ic_open_book = 2130903086;
+			public const int ic_people_outline = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int ic_people_outline = 2130903087;
+			public const int ic_perfil_background = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int ic_perfil_background = 2130903088;
+			public const int ic_person = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public const int ic_person = 2130903089;
+			public const int ic_person_add = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public const int ic_person_add = 2130903090;
+			public const int ic_person_add_white = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int ic_person_add_white = 2130903091;
+			public const int ic_photo_camera = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int ic_photo_camera = 2130903092;
+			public const int ic_place = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int ic_place = 2130903093;
+			public const int ic_power_settings_new = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int ic_power_settings_new = 2130903094;
+			public const int ic_profile = 2130903094;
 			
 			// aapt resource value: 0x7f030037
-			public const int ic_profile = 2130903095;
+			public const int ic_profile_empty = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public const int ic_profile_empty = 2130903096;
+			public const int ic_public = 2130903096;
 			
 			// aapt resource value: 0x7f030039
-			public const int ic_public = 2130903097;
+			public const int ic_qrcode = 2130903097;
 			
 			// aapt resource value: 0x7f03003a
-			public const int ic_qrcode = 2130903098;
+			public const int ic_receipt = 2130903098;
 			
 			// aapt resource value: 0x7f03003b
-			public const int ic_receipt = 2130903099;
+			public const int ic_refresh = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int ic_refresh = 2130903100;
+			public const int ic_refresh_white = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int ic_refresh_white = 2130903101;
+			public const int ic_remove = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int ic_remove = 2130903102;
+			public const int ic_sala_prueba = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int ic_sala_prueba = 2130903103;
+			public const int ic_save = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int ic_save = 2130903104;
+			public const int ic_school = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int ic_school = 2130903105;
+			public const int ic_search = 2130903105;
 			
 			// aapt resource value: 0x7f030042
-			public const int ic_search = 2130903106;
+			public const int ic_send = 2130903106;
 			
 			// aapt resource value: 0x7f030043
-			public const int ic_send = 2130903107;
+			public const int ic_share = 2130903107;
 			
 			// aapt resource value: 0x7f030044
-			public const int ic_share = 2130903108;
+			public const int ic_shopping_cart = 2130903108;
 			
 			// aapt resource value: 0x7f030045
-			public const int ic_shopping_cart = 2130903109;
+			public const int ic_shopping_cart_white = 2130903109;
 			
 			// aapt resource value: 0x7f030046
-			public const int ic_shopping_cart_white = 2130903110;
+			public const int ic_square = 2130903110;
 			
 			// aapt resource value: 0x7f030047
-			public const int ic_square = 2130903111;
+			public const int ic_star = 2130903111;
 			
 			// aapt resource value: 0x7f030048
-			public const int ic_star = 2130903112;
+			public const int ic_star_border = 2130903112;
 			
 			// aapt resource value: 0x7f030049
-			public const int ic_star_border = 2130903113;
+			public const int ic_star_like = 2130903113;
 			
 			// aapt resource value: 0x7f03004a
-			public const int ic_star_like = 2130903114;
+			public const int ic_store = 2130903114;
 			
 			// aapt resource value: 0x7f03004b
-			public const int ic_store = 2130903115;
+			public const int ic_thumb_up = 2130903115;
 			
 			// aapt resource value: 0x7f03004c
-			public const int ic_thumb_up = 2130903116;
+			public const int ic_today = 2130903116;
 			
 			// aapt resource value: 0x7f03004d
-			public const int ic_today = 2130903117;
+			public const int ic_twitter = 2130903117;
 			
 			// aapt resource value: 0x7f03004e
-			public const int ic_twitter = 2130903118;
+			public const int ic_ubicacion_background = 2130903118;
 			
 			// aapt resource value: 0x7f03004f
-			public const int ic_ubicacion_background = 2130903119;
+			public const int ic_view_list = 2130903119;
 			
 			// aapt resource value: 0x7f030050
-			public const int ic_view_list = 2130903120;
+			public const int ic_work = 2130903120;
 			
 			// aapt resource value: 0x7f030051
-			public const int ic_work = 2130903121;
+			public const int ic_worklabs_title = 2130903121;
 			
 			// aapt resource value: 0x7f030052
-			public const int ic_worklabs_title = 2130903122;
+			public const int Icon = 2130903122;
 			
 			// aapt resource value: 0x7f030053
-			public const int Icon = 2130903123;
+			public const int Icon2 = 2130903123;
 			
 			// aapt resource value: 0x7f030054
-			public const int Icon2 = 2130903124;
+			public const int Icono = 2130903124;
 			
 			// aapt resource value: 0x7f030055
-			public const int Icono = 2130903125;
+			public const int login = 2130903125;
 			
 			// aapt resource value: 0x7f030056
 			public const int suc_hidalgo_prueba = 2130903126;
