@@ -51,9 +51,6 @@
     <Reference Include="System.Net" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.IO.Compression" />
-    <Reference Include="System.Configuration.ConfigurationManager">
-      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.0\lib\netstandard2.0\System.Configuration.ConfigurationManager.dll</HintPath>
-    </Reference>
     <Reference Include="AndHUD">
       <HintPath>..\packages\AndHUD.1.2.0\lib\MonoAndroid\AndHUD.dll</HintPath>
     </Reference>
@@ -150,6 +147,9 @@
     </Reference>
     <Reference Include="Xamarin.Android.Support.Design">
       <HintPath>..\packages\Xamarin.Android.Support.Design.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.ConfigurationManager">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\netstandard2.0\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
