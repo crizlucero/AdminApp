@@ -110,12 +110,11 @@ namespace WorklabsMx.iOS
         {
             if (isShowInformation)
             {
-                tableView.BeginUpdates();
                 var current = UsuariosFavoritos[indexPath.Row];
                 var currentUser = (FavoritosTableViewCell)tableView.DequeueReusableCell(IdentificadorCeldaUsuarios, indexPath);
                 currentUser.EventosFavoritosCellDelegate = this;
                 currentUser.UpdateCell(current);
-                tableView.EndUpdates();
+              
                 return currentUser;
             }
             else

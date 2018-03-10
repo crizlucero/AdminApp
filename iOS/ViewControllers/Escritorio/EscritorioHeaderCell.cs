@@ -56,16 +56,13 @@ namespace WorklabsMx.iOS
         async Task GetImagenesPost(UsuarioModel Usuario)
         {
             UIImage ReescalImage = new UIImage();
-            if ((Usuario.Usuario_Fotografia != "" && Usuario.Usuario_Fotografia != null))
+            if ((Usuario.Usuario_Fotografia != "" && Usuario.Usuario_Fotografia != null && Usuario.Usuario_Fotografia != "user_male.png"))
             {
                 await Task.Run(() =>
                 {
-                    if (Usuario.Usuario_Fotografia_Perfil == null)
+                    if (Usuario.Usuario_Fotografia_Perfil == null )
                     {
-                        if (Usuario.Usuario_Fotografia != "user_male.png")
-                        {
-                            Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
-                        }
+                        Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
                     }
                     var data = NSData.FromArray(Usuario.Usuario_Fotografia_Perfil);
                     var uiimage = UIImage.LoadFromData(data);

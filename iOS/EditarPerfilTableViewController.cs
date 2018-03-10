@@ -83,21 +83,17 @@ namespace WorklabsMx.iOS
             await Task.Run(() =>
             {
 
-                if ((NewInfoPerfil.Usuario_Fotografia != "" && NewInfoPerfil.Usuario_Fotografia != null))
+                if ((NewInfoPerfil.Usuario_Fotografia != "" && NewInfoPerfil.Usuario_Fotografia != null && NewInfoPerfil.Usuario_Fotografia != "user_male.png"))
                 {
                     if (NewInfoPerfil.Usuario_Fotografia_Perfil == null)
                     {
-                        if (NewInfoPerfil.Usuario_Fotografia != "user_male.png")
-                        {
                             NewInfoPerfil.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(NewInfoPerfil.Usuario_Fotografia, MenuHelper.ProfileImagePath);
-                        }
+                       
                     }
                     else if (NewInfoPerfil.Usuario_Fotografia_Perfil.Length == 0)
                     {
-                        if (NewInfoPerfil.Usuario_Fotografia != "user_male.png")
-                        {
+   
                             NewInfoPerfil.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(NewInfoPerfil.Usuario_Fotografia, MenuHelper.ProfileImagePath);
-                        }
                     }
                     var data = NSData.FromArray(NewInfoPerfil.Usuario_Fotografia_Perfil);
                     var uiimage = UIImage.LoadFromData(data);

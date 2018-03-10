@@ -225,14 +225,11 @@ namespace WorklabsMx.iOS
             await Task.Run(() =>
             {
                 
-                if ((Miembro.Usuario_Fotografia != "" && Miembro.Usuario_Fotografia != null))
+                if ((Miembro.Usuario_Fotografia != "" && Miembro.Usuario_Fotografia != null  && Miembro.Usuario_Fotografia != "user_male.png"))
                 {
                     if (Miembro.Usuario_Fotografia_Perfil == null)
                     {
-                        if (Miembro.Usuario_Fotografia != "user_male.png")
-                        {
-                            Miembro.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(Miembro.Usuario_Fotografia, MenuHelper.ProfileImagePath);
-                        }
+                        Miembro.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(Miembro.Usuario_Fotografia, MenuHelper.ProfileImagePath);
                     }
                     if (Miembro.Usuario_Fotografia_Perfil.Length == 0)
                     {
@@ -245,6 +242,10 @@ namespace WorklabsMx.iOS
                         ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
                     }
 
+                }
+                else
+                {
+                    ReescalImageUsr = UIImage.FromBundle("ProfileImageBig");
                 }
 
                

@@ -9373,7 +9373,7 @@ COL. LADRON DE GUEVARA</string>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="7"/>
+                                                    <real key="value" value="20.5"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
@@ -9598,7 +9598,7 @@ COL. LADRON DE GUEVARA</string>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="7"/>
+                                                    <real key="value" value="20.5"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
@@ -14880,7 +14880,7 @@ COL. LADRON DE GUEVARA</string>
         <image name="worklabsLogo" width="983" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dWH-F8-bIl"/>
+        <segue reference="BTo-Ke-LaG"/>
         <segue reference="Yh6-Me-7cI"/>
         <segue reference="xcs-tN-OVG"/>
         <segue reference="Hoa-iV-Mgh"/>

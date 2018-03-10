@@ -82,20 +82,21 @@ namespace WorklabsMx.iOS
                 ReescalImage = ImageHelper.ReescalImage(uiimage);
 
 
-                if ((comentario.Usuario.Usuario_Fotografia != "" && comentario.Usuario.Usuario_Fotografia != null))
+                if ((comentario.Usuario.Usuario_Fotografia != "" && comentario.Usuario.Usuario_Fotografia != null && comentario.Usuario.Usuario_Fotografia != "user_male.png"))
                 {
 
                     if (comentario.Usuario.Usuario_Fotografia_Perfil == null)
                     {
-                        if (comentario.Usuario.Usuario_Fotografia != "user_male.png")
-                        {
-                            comentario.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(comentario.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
-                        }
 
+                        comentario.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(comentario.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
                     }
                     data = NSData.FromArray(comentario.Usuario.Usuario_Fotografia_Perfil);
                     uiimage = UIImage.LoadFromData(data);
                     ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
+                }
+                else
+                {
+                    ReescalImageUsr = UIImage.FromBundle("PerfilEscritorio");
                 }
 
             });

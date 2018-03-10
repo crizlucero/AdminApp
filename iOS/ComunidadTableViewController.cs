@@ -121,12 +121,10 @@ namespace WorklabsMx.iOS
         {
             if (isShowInformation)
             {
-                tableView.BeginUpdates();
                 var current = Usuarios[indexPath.Row];
                 var currentUser = (ComunidadTableViewCell)tableView.DequeueReusableCell(IdentificadorCeldaUsuarios, indexPath);
                 currentUser.EventosComunidadCellDelegate = this;
                 currentUser.UpdateCell(current);
-                tableView.EndUpdates();
                 return currentUser;
             }
             else
