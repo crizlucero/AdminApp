@@ -31,7 +31,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetGeneros");
             }
             finally
             {
@@ -63,7 +63,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetPaises");
             }
             finally
             {
@@ -98,7 +98,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetEstados");
             }
             finally
             {
@@ -133,7 +133,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetMunicipios");
             }
             finally
             {
@@ -165,7 +165,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetGiros");
             }
             finally
             {
@@ -193,7 +193,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetGiroId");
             }
             finally
             {
@@ -227,7 +227,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetColonias");
             }
             finally
             {
@@ -254,7 +254,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetColonia");
             }
             finally { conn.Close(); }
             return -1;
@@ -282,7 +282,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetSucursales");
             }
             finally
             {
@@ -336,7 +336,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetMembresias");
             }
             finally
             {
@@ -388,7 +388,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetMembresiasPrecios");
             }
             finally
             {
@@ -436,7 +436,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetProductos");
             }
             finally
             {
@@ -485,7 +485,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetProductosPrecios");
             }
             finally
             {
@@ -515,7 +515,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetCodigosPostales");
             }
             finally { conn.Close(); }
             return CPs;
@@ -593,7 +593,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetProductosMembresias");
                 transaction.Rollback();
             }
             finally { conn.Close(); }
@@ -623,7 +623,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetRedesSociales");
             }
             finally { conn.Close(); }
             return redesSociales;
@@ -649,7 +649,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetEtiquetas");
             }
             finally { conn.Close(); }
             return etiquetas;

@@ -35,7 +35,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name,"GetRedSocial");
             }
             return redes;
         }
@@ -81,7 +81,7 @@ namespace WorklabsMx.Controllers
             {
                 transaction.Rollback();
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name,"SetRedSocial");
                 return -1;
             }
             finally

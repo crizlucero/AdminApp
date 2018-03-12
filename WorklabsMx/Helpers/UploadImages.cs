@@ -30,7 +30,7 @@ namespace WorklabsMx.Helpers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "UploadBitmapAsync");
                 return false;
             }
         }
@@ -51,10 +51,10 @@ namespace WorklabsMx.Helpers
 
                     responseStream.CopyTo(ms);
                 }
-                catch
+                catch (Exception e)
                 {
                     return ms.ToArray();
-                    //SlackLogs.SendMessage(e.Message);
+                    SlackLogs.SendMessage(e.Message, GetType().Name, "DownloadFileFTP");
                 }
             }
             return ms.ToArray();

@@ -36,7 +36,7 @@ namespace WorklabsMx.Controllers
                     };
                 }
             }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetTerritorio"); }
             finally { conn.Close(); }
             return territorio;
         }
@@ -59,7 +59,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@colonia", colonia);
                 return command.ExecuteScalar().ToString();
             }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetTerritorioId"); }
             finally { conn.Close(); }
             return "";
         }

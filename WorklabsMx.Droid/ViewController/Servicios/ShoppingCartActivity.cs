@@ -244,7 +244,7 @@ namespace WorklabsMx.Droid
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "CalculaPrecios");
             }
             if (productos.Count > 0)
                 AddProductosDescripcion();

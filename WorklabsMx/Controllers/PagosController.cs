@@ -42,7 +42,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "AplicarCupon");
             }
             finally
             {
@@ -72,7 +72,7 @@ namespace WorklabsMx.Controllers
                     });
                 }
             }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetRenovaciones"); }
             finally { conn.Close(); }
 
             return renovaciones;
@@ -139,7 +139,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 transaction.Rollback();
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "AddOrdenVentaEncabezado");
                 return -1;
             }
             finally { conn.Close(); }
@@ -217,7 +217,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 transaction.Rollback();
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "AddOrdenVentaDetalle");
                 return -1;
             }
             finally { conn.Close(); }
@@ -282,7 +282,7 @@ namespace WorklabsMx.Controllers
                 response = new HttpRequest().POST("https://qa5.mitec.com.mx/p/gen", PostToSend);
 
             }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetUrlPayment"); }
             return response;
 
         }

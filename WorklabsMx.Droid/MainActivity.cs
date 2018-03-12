@@ -59,7 +59,7 @@ namespace WorklabsMx.Droid
             OpenDashboard();
         }
 
-		protected override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             try
@@ -72,7 +72,7 @@ namespace WorklabsMx.Droid
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "OnCreate");
                 SetContentView(Resource.Layout.OfflineAppLayout);
                 Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
                 SetActionBar(toolbar);
@@ -193,7 +193,6 @@ namespace WorklabsMx.Droid
                 lblFecha.Click += (sender, e) => ShowPerfilCard(new UsuariosController().GetMemberData(post.Usuario.Usuario_Id, post.Usuario.Usuario_Tipo));
 
                 TextView lblPost = PostView.FindViewById<TextView>(Resource.Id.lblPost);
-                //lblPost.SetMaxWidth(Convert.ToInt32(Resources.DisplayMetrics.WidthPixels * .911));
                 lblPost.Text = post.Publicacion_Contenido;
 
                 TextView lblLike = PostView.FindViewById<TextView>(Resource.Id.lblLikes);

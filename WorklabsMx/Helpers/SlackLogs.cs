@@ -7,16 +7,12 @@ namespace WorklabsMx.Helpers
 {
     public static class SlackLogs
     {
-        public static void SendMessage(string msg)
+        public static void SendMessage(string msg, string sourceClass, string sourceMethod)
         {
-<<<<<<< HEAD
 #if DEBUG
-=======
-#if DEBUG
->>>>>>> 023c2250e7eb9582db1583bc3bbdfeef8fb41902
             try
             {
-                string data = "token=xoxp-213367599047-211854966112-319762779383-04e001237fc72d6f672c626661c12160&channel=logs&text=" + msg;
+                string data = "token=xoxp-213367599047-211854966112-319762779383-04e001237fc72d6f672c626661c12160&channel=logs&text=" + sourceClass + "." + sourceMethod + ": " + msg;
                 var post = Encoding.ASCII.GetBytes(data);
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://slack.com/api/chat.postMessage");
                 request.Method = "POST";

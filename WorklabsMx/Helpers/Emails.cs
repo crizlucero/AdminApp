@@ -49,7 +49,7 @@ namespace WorklabsMx
                 }
                 catch (Exception e)
                 {
-                    SlackLogs.SendMessage(e.Message);
+                    SlackLogs.SendMessage(e.Message, GetType().Name, "SendMail");
                 }
             });
 

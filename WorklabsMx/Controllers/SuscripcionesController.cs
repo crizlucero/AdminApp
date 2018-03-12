@@ -21,11 +21,11 @@ namespace WorklabsMx.Controllers
                     membresias.Add(new MembresiaModel
                     {
                         Membresia_Id = reader["Membresia_Id"].ToString(),
-                        Membresia_Descripcion = reader["Membresia_Descriocion"].ToString()    
+                        Membresia_Descripcion = reader["Membresia_Descriocion"].ToString()
                     });
                 }
             }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetMembresiasContratadas"); }
             finally { conn.Close(); }
             return membresias;
         }
@@ -48,7 +48,7 @@ namespace WorklabsMx.Controllers
                     });
                 }
             }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetProductosContratados"); }
             finally { conn.Close(); }
             return productos;
         }

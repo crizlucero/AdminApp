@@ -38,9 +38,9 @@ namespace WorklabsMx.Droid
                     var intent = new Intent(Intent.ActionDial, uri);
                     context.StartActivity(intent);
                 }
-                catch (System.Exception ex)
+                catch (System.Exception e)
                 {
-                    SlackLogs.SendMessage(ex.Message);
+                    SlackLogs.SendMessage(e.Message, GetType().Name, "InstantiateItem - Phone");
                 }
             };
 
@@ -57,9 +57,9 @@ namespace WorklabsMx.Droid
                     email.SetType("message/rfc822");
                     context.StartActivity(email);
                 }
-                catch (System.Exception ex)
+                catch (System.Exception e)
                 {
-                    SlackLogs.SendMessage(ex.Message);
+                    SlackLogs.SendMessage(e.Message, GetType().Name, "InstantiateItem - Mail");
                 }
             };
             profileView.FindViewById<TextView>(Resource.Id.lblFacebook).Text = "";

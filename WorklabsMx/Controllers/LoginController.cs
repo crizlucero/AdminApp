@@ -34,7 +34,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage("Inicio de sesión: "+ e);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "MemberLogin");
             }
             finally
             {
@@ -62,7 +62,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "ValidateMember");
             }
             finally
             {
@@ -95,11 +95,11 @@ namespace WorklabsMx.Controllers
                 command.ExecuteNonQuery();
                 transaction.Commit();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(e.Message);
                 transaction.Rollback();
-                SlackLogs.SendMessage(ex.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "Registrarenbd");
                 return false;
             }
             finally

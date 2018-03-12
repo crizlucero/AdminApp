@@ -65,7 +65,9 @@ namespace WorklabsMx.Droid
                 Merchant = "123456",
                 Currency = Currency.Mxn,
                 OperationType = "6",
-                Reference = "REFERENCIA SNDBX001"
+                Reference = "REFERENCIA SNDBX001", 
+                Amount = "100.00",
+                Token = "1234567890124242"
 
             };
             bean3DS = new Bean3DS
@@ -123,9 +125,7 @@ namespace WorklabsMx.Droid
                         });
                     }
                     else
-                    {
                         Toast.MakeText(this, Resource.String.str_general_save_error, ToastLength.Short);
-                    }
                     break;
                 default:
                     base.OnBackPressed();
@@ -137,7 +137,7 @@ namespace WorklabsMx.Droid
 
         public void CanceledProcessByUser()
         {
-
+            OnBackPressed();
         }
 
         public void DidFinishAuthenticationProcess(BeanTokenizeResponse beanTokenizeResponse, SuiteError suiteError)
