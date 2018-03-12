@@ -196,7 +196,7 @@ namespace WorklabsMx.iOS
     {
         public void InfoActualizar()
         {
-            MenuHelper.GetUsuarioInfo();
+            //MenuHelper.GetUsuarioInfo();
             var headerCell = (HeaderMenulCell)this.TableView.DequeueReusableCell(IdentificadorCeldaHeader);
             headerCell.UpdateCell();
         }

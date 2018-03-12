@@ -99,18 +99,19 @@ namespace WorklabsMx.iOS
                 var data = NSData.FromArray(post.Publicacion_Imagen_Post);
                 var uiimage = UIImage.LoadFromData(data);
                 ReescalImage = ImageHelper.ReescalImage(uiimage);
-                if ((post.Usuario.Usuario_Fotografia != "" && post.Usuario.Usuario_Fotografia != null))
+                if ((post.Usuario.Usuario_Fotografia != "" && post.Usuario.Usuario_Fotografia != null && post.Usuario.Usuario_Fotografia != "user_male.png"))
                 {
                     if (post.Usuario.Usuario_Fotografia_Perfil == null)
                     {
-                        if (post.Usuario.Usuario_Fotografia != "user_male.png")
-                        {
-                            post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
-                        }
+                        post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
                     }
                     data = NSData.FromArray(post.Usuario.Usuario_Fotografia_Perfil);
                     uiimage = UIImage.LoadFromData(data);
                     ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
+                }
+                else
+                {
+                    ReescalImageUsr = UIImage.FromBundle("ProfileImageBig");
                 }
 
             });

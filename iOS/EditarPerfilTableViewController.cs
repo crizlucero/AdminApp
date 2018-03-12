@@ -9,6 +9,7 @@ using WorklabsMx.Models;
 using WorklabsMx.Controllers;
 using System.Collections.Generic;
 using WorklabsMx.Enum;
+using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
@@ -40,7 +41,7 @@ namespace WorklabsMx.iOS
         {
         }
 
-        public override void ViewDidLoad()
+        public override async void ViewDidLoad()
         {
             base.ViewDidLoad();
 
@@ -66,36 +67,63 @@ namespace WorklabsMx.iOS
             lblEmpresa.Text = (InfoPerifl.Usuario_Empresa_Nombre != "" && InfoPerifl.Usuario_Empresa_Nombre != null) ? InfoPerifl.Usuario_Empresa_Nombre : "Sin Info";
             NewInfoPerfil.Usuario_Empresa_Nombre = lblEmpresa.Text;
 
-            if (InfoPerifl.Usuario_Fotografia_Perfil != null)
-            {
-                var data = NSData.FromArray(InfoPerifl.Usuario_Fotografia_Perfil);
-                if(UIImage.LoadFromData(data) != null)
-                {
-                    this.btnImagen.SetBackgroundImage(UIImage.LoadFromData(data), UIControlState.Normal);
-                }
-                else
-                {
-                    this.btnImagen.SetBackgroundImage(UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
-                }
-            }
-            else
-            {
-                this.btnImagen.SetBackgroundImage(UIImage.FromBundle("ProfileImageBig"), UIControlState.Normal);
-            }
 
-            if (InfoPerifl.Usuario_Fotografia_FondoPerfil != null)
-            {
-                var data = NSData.FromArray(InfoPerifl.Usuario_Fotografia_FondoPerfil);
-                this.btnFondoImagen.SetBackgroundImage(UIImage.LoadFromData(data), UIControlState.Normal);
-            }
+            await GetImages();
 
-            NewInfoPerfil.Usuario_Fotografia_Perfil = new byte[0];
-            NewInfoPerfil.Usuario_Fotografia_FondoPerfil = new byte[0];
-            NewInfoPerfil.Empresa_Actual.Empresa_Logotipo_Perfil = new byte[0];
- 
             this.vwVistaMi.Hidden = false;
             this.vwSocial.Hidden = true;
             this.vwTrabajo.Hidden = true;
+        }
+
+
+        async Task GetImages()
+        {
+            UIImage ReescalImageBack = new UIImage();
+            UIImage ReescalImageUsr = new UIImage();
+            await Task.Run(() =>
+            {
+
+                if ((NewInfoPerfil.Usuario_Fotografia != "" && NewInfoPerfil.Usuario_Fotografia != null && NewInfoPerfil.Usuario_Fotografia != "user_male.png"))
+                {
+                    if (NewInfoPerfil.Usuario_Fotografia_Perfil == null)
+                    {
+                            NewInfoPerfil.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(NewInfoPerfil.Usuario_Fotografia, MenuHelper.ProfileImagePath);
+                       
+                    }
+                    else if (NewInfoPerfil.Usuario_Fotografia_Perfil.Length == 0)
+                    {
+   
+                            NewInfoPerfil.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(NewInfoPerfil.Usuario_Fotografia, MenuHelper.ProfileImagePath);
+                    }
+                    var data = NSData.FromArray(NewInfoPerfil.Usuario_Fotografia_Perfil);
+                    var uiimage = UIImage.LoadFromData(data);
+                    ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
+
+                }
+                else
+                {
+                    ReescalImageUsr = UIImage.FromBundle("ProfileImageBig");
+                }
+
+
+                if (NewInfoPerfil.Usuario_Fotografia_Fondo != null && NewInfoPerfil.Usuario_Fotografia_Fondo != "")
+                {
+                    if (NewInfoPerfil.Usuario_Fotografia_FondoPerfil == null)
+                    {
+                        NewInfoPerfil.Usuario_Fotografia_FondoPerfil = new UploadImages().DownloadFileFTP(NewInfoPerfil.Usuario_Fotografia_Fondo, MenuHelper.ProfileImagePath);
+                    }
+                    else if (NewInfoPerfil.Usuario_Fotografia_FondoPerfil.Length == 0)
+                    {
+                        NewInfoPerfil.Usuario_Fotografia_FondoPerfil = new UploadImages().DownloadFileFTP(NewInfoPerfil.Usuario_Fotografia_Fondo, MenuHelper.ProfileImagePath);
+                    }
+                    var data = NSData.FromArray(NewInfoPerfil.Usuario_Fotografia_FondoPerfil);
+                    var uiimage = UIImage.LoadFromData(data);
+                    ReescalImageBack = ImageHelper.ReescalProfileImage(uiimage);
+                }
+
+            });
+            this.btnImagen.SetBackgroundImage(ReescalImageUsr, UIControlState.Normal);
+            this.btnFondoImagen.SetBackgroundImage(ReescalImageBack, UIControlState.Normal);
         }
 
         private UIImage GetImage(byte[] Imagen)
@@ -419,6 +447,12 @@ namespace WorklabsMx.iOS
 
             resultDataMiembros = new UsuariosController().UpdateDataMiembros(KeyChainHelper.GetKey("Usuario_Id"), NewInfoPerfil.Usuario_Nombre, NewInfoPerfil.Usuario_Apellidos, NewInfoPerfil.Usuario_Correo_Electronico,
                                                                              NewInfoPerfil.Usuario_Telefono, NewInfoPerfil.Usuario_Celular, NewInfoPerfil.Usuario_Descripcion, fechaNacimiento, NewInfoPerfil.Usuario_Fotografia_Perfil, NewInfoPerfil.Usuario_Fotografia_FondoPerfil);
+
+            if (NewInfoPerfil.Empresa_Actual.Empresa_Logotipo_Perfil == null)
+            {
+                NewInfoPerfil.Empresa_Actual.Empresa_Logotipo_Perfil = new byte[0]; 
+            }
+
             resultadoTrabajo = new EmpresaController().UpdateUsuarioEmpresaPerfil(NewInfoPerfil.Empresa_Actual.Empresa_Id, NewInfoPerfil.Usuario_Id, "57802", NewInfoPerfil.Empresa_Actual.Empresa_Nombre, 
                                                                                   NewInfoPerfil.Empresa_Actual.Empresa_Correo_Electronico, NewInfoPerfil.Empresa_Actual.Empresa_Pagina_Web, NewInfoPerfil.Usuario_Puesto, NewInfoPerfil.Empresa_Actual.Empresa_Logotipo_Perfil);
 
@@ -427,7 +461,7 @@ namespace WorklabsMx.iOS
                 this.DismissViewController(true, () =>
                 {
                     MenuHelper.GetUsuarioInfo();
-                    this.MiInfoDeleghate.MiInfo(NewInfoPerfil);
+                    this.MiInfoDeleghate.MiInfo(MenuHelper.Usuario);
                 });
             }
             else

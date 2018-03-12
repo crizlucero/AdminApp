@@ -81,19 +81,19 @@ namespace WorklabsMx.iOS
                 }
             
 
-                if ((post.Usuario.Usuario_Fotografia != "" && post.Usuario.Usuario_Fotografia != null))
+                if ((post.Usuario.Usuario_Fotografia != "" && post.Usuario.Usuario_Fotografia != null && post.Usuario.Usuario_Fotografia != "user_male.png"))
                 {
                     if (post.Usuario.Usuario_Fotografia_Perfil == null)
                     {
-                        if (post.Usuario.Usuario_Fotografia != "user_male.png")
-                        {
-                            post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
-                        }
-
+                        post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
                     }
                     var data = NSData.FromArray(post.Usuario.Usuario_Fotografia_Perfil);
                     var uiimage = UIImage.LoadFromData(data);
                     ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
+                }
+                else
+                {
+                    ReescalImageUsr = UIImage.FromBundle("PerfilEscritorio");
                 }
 
             });
