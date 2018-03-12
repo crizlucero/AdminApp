@@ -53,8 +53,8 @@ namespace WorklabsMx.Helpers
                 }
                 catch (Exception e)
                 {
-                    return ms.ToArray();
                     SlackLogs.SendMessage(e.Message, GetType().Name, "DownloadFileFTP");
+                    return ms.ToArray();
                 }
             }
             return ms.ToArray();

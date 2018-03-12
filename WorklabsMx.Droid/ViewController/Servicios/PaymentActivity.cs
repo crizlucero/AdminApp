@@ -8,6 +8,7 @@ using Android.Widget;
 using Com.Mitec.Suitemcommerce.Beans;
 using Com.Mitec.Suitemcommerce.Controller;
 using Com.Mitec.Suitemcommerce.Utilities;
+using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Enum;
@@ -45,9 +46,21 @@ namespace WorklabsMx.Droid
 
             SetContentView(Resource.Layout.PagoLayout);
 
+            membresias = JsonConvert.DeserializeObject<List<CarritoComprasDetalle>>(Intent.GetStringExtra("Membresias"));
+            productos = JsonConvert.DeserializeObject<List<CarritoComprasDetalle>>(Intent.GetStringExtra("Productos"));
+            Descuento_Id = Convert.ToInt32(Intent.GetStringExtra("Descuento_Id"));
+            Descuento_Porcentaje = Convert.ToDecimal(Intent.GetStringExtra("Descuento_Procentaje"));
+            Descuento = Convert.ToDecimal(Intent.GetStringExtra("Descuento"));
+            Subtotal = Convert.ToDecimal(Intent.GetStringExtra("Subtotal"));
+            IVATotal = Convert.ToDecimal(Intent.GetStringExtra("IVA"));
+            Total = Convert.ToDecimal(Intent.GetStringExtra("Total"));
+
+
+
             dialog = new AlertDialog.Builder(this);
-            dialog.SetPositiveButton("Aceptar",delegate {
-                
+            dialog.SetPositiveButton("Aceptar", delegate
+            {
+
             });
             dialog.SetCancelable(false);
 
@@ -65,7 +78,7 @@ namespace WorklabsMx.Droid
                 Merchant = "123456",
                 Currency = Currency.Mxn,
                 OperationType = "6",
-                Reference = "REFERENCIA SNDBX001", 
+                Reference = "REFERENCIA SNDBX001",
                 Amount = "100.00",
                 Token = "1234567890124242"
 
@@ -177,9 +190,9 @@ namespace WorklabsMx.Droid
 
         class Authenticate : AsyncTask<Java.Lang.Void, Java.Lang.Void, Java.Lang.Void>
         {
-            SuiteController suiteController;
-            BeanTokenization beanTokenization;
-            Bean3DS bean3DS;
+            readonly SuiteController suiteController;
+            readonly BeanTokenization beanTokenization;
+            readonly Bean3DS bean3DS;
             public Authenticate(SuiteController suiteController, BeanTokenization beanTokenization, Bean3DS bean3DS)
             {
                 this.suiteController = suiteController;
