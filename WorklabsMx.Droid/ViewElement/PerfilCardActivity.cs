@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
@@ -51,9 +52,8 @@ namespace WorklabsMx.Droid
             Button btnSeguir = FindViewById<Button>(Resource.Id.btnSeguir);
             FindViewById<Button>(Resource.Id.btnSendMessage).Click += delegate
             {
-                Intent intent;
-                try { intent = PackageManager.GetLaunchIntentForPackage("mx.worklabs"); }
-                catch { intent = new Intent(Intent.ActionView, Uri.Parse("market://details?id=mx.worklabs")); }
+                Intent intent = PackageManager.GetLaunchIntentForPackage("mx.worklabs");
+                if (intent == null) intent = new Intent(Intent.ActionView, Android.Net.Uri.Parse("https://play.google.com/store/apps/details?id=mx.worklabs"));
                 intent.AddFlags(ActivityFlags.NewTask);
                 StartActivity(intent);
             };

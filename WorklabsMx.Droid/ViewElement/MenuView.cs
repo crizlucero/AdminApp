@@ -7,7 +7,9 @@ using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.Graphics.Drawables;
+using Android.OS;
 using Android.Support.V4.Content;
+using Android.Support.V4.Graphics.Drawable;
 using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
@@ -70,8 +72,11 @@ namespace WorklabsMx.Droid.ViewElement
                 menuLayout.AddView(row);
                 row = new TableRow(context);
                 Drawable icon = ContextCompat.GetDrawable(context, context.Resources.GetIdentifier(menu.Image, "mipmap", context.PackageName));
-                icon.SetTintList(context.GetColorStateList(Resource.Color.comment_pressed));
-                icon.SetBounds(0, 0, 50, 50);
+                if ((int)Build.VERSION.SdkInt > 22)
+                    icon.SetTintList(context.GetColorStateList(Resource.Color.comment_pressed));
+                else
+                    DrawableCompat.SetTint(icon, ContextCompat.GetColor(context, Resource.Color.comment_pressed));
+                icon.SetBounds(0, 0, 30, 30);
                 Button btnMenu = new Button(context)
                 {
                     Text = menu.Label,

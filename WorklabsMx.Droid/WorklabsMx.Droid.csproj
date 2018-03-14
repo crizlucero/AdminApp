@@ -149,6 +149,9 @@
     <Reference Include="System.Configuration.ConfigurationManager">
       <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\netstandard2.0\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.Palette">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.Palette.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.v7.Palette.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -447,6 +450,26 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\login.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\login.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\login.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_comment_selected.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_comment_unselected.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_like_selected.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_like_unselected.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_comment_selected.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_comment_unselected.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_like_selected.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_like_unselected.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_comment_selected.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_comment_unselected.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_like_selected.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_like_unselected.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_comment_selected.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_comment_unselected.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_like_selected.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_like_unselected.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_comment_selected.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_comment_unselected.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_like_selected.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_like_unselected.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -503,4 +526,5 @@
   <Import Project="..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Animated.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Animated.Vector.Drawable.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.v7.AppCompat.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.v7.AppCompat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.AppCompat.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.v7.AppCompat.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.Design.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Design.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Design.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.Design.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.Palette.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.v7.Palette.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.Palette.27.0.2\build\MonoAndroid81\Xamarin.Android.Support.v7.Palette.targets')" />
 </Project>
