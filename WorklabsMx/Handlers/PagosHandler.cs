@@ -8,7 +8,7 @@ namespace WorklabsMx.Handlers
 {
     public class PagosHandler
     {
-        private SQLiteConnection connection;
+        readonly SQLiteConnection connection;
         public PagosHandler()
         {
             try
