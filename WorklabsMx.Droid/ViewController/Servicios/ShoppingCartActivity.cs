@@ -12,6 +12,7 @@ using WorklabsMx.Controllers;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 using WorklabsMx.Enum;
+using WorklabsMx.Handlers;
 
 namespace WorklabsMx.Droid
 {
@@ -186,16 +187,84 @@ namespace WorklabsMx.Droid
                     if (FindViewById<Switch>(Resource.Id.swCondiciones).Checked)
                     {
                         //Console.WriteLine(new PagosController().GetUrlPayment(Total.ToString("F")));
-                        Intent intent = new Intent(this, typeof(PaymentActivity));
-                        intent.PutExtra("Membresias", JsonConvert.SerializeObject(membresias));
-                        intent.PutExtra("Productos", JsonConvert.SerializeObject(productos));
-                        intent.PutExtra("Descuento_Id", descuento_id);
-                        intent.PutExtra("Descuento_Procentaje", Descuento_Porcentaje.ToString());
-                        intent.PutExtra("Descuento", Descuento.ToString());
-                        intent.PutExtra("Subtotal", Subtotal.ToString());
-                        intent.PutExtra("IVA", IVATotal.ToString());
-                        intent.PutExtra("Total", Total.ToString());
-                        StartActivity(intent);
+                        OrdenVentaEncabezado encabezado = new OrdenVentaEncabezado
+                        {
+                            Usuario = new UsuarioModel
+                            {
+                                Usuario_Id = Storage.Get("Usuario_Id")
+                            },
+                            Moneda_Id = 1,
+                            Impuesto_Id = 1,
+                            Descuento_Id = Convert.ToInt32(descuento_id),
+                            Folio = "OWL-",
+                            Importe_Suma = Subtotal - Descuento,
+                            Porcentaje_Descuento = Descuento_Porcentaje,
+                            Importe_Descuento = Descuento,
+                            Importe_Subtotal = Subtotal,
+                            Importe_Impuesto = IVATotal,
+                            Importe_Total = Total,
+                            Importe_Pagado = 0,
+                            Importe_Facturado = 0,
+                            Promocion_Id = Convert.ToInt32(descuento_id)
+                        };
+
+                        List<OrdenVentaDetalle> detalles = new List<OrdenVentaDetalle>();
+
+                        membresias.ForEach(membresia =>
+                        {
+                            if (membresia.Carrito_Compras_Detalle_Cantidad != "0")
+                            {
+                                detalles.Add(new OrdenVentaDetalle
+                                {
+                                    Orden_Venta_Encabezado_Id = encabezado.Orden_Venta_Encabezado_Id,
+                                    Membresia_Id = membresia.Membresia_Id,
+                                    Inscripcion_Membresia_Id = membresia.Inscripcion_Membresia_Id,
+                                    Lista_Precio_Membresia_Id = membresia.Lista_Precio_Membresia_Id,
+                                    Producto_Id = membresia.Producto_Id,
+                                    Lista_Precio_Producto_Id = membresia.Lista_Precio_Producto_Id,
+                                    Orden_Venta_Detalle_Descripcion = membresia.Carrito_Compras_Detalle_Descripcion,
+                                    Orden_Venta_Detalle_Cantidad = Convert.ToInt32(membresia.Carrito_Compras_Detalle_Cantidad),
+                                    Orden_Venta_Detalle_Importe_Precio = Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Precio),
+                                    Orden_Venta_Detalle_Importe_Prorrateo = Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Prorrateo),
+                                    Orden_Venta_Detalle_Importe_Suma = Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Suma),
+                                    Orden_Venta_Detalle_Importe_Descuento = Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Descuento),
+                                    Orden_Venta_Detalle_Importe_Subtotal = Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Subtotal),
+                                    Orden_Venta_Detalle_Importe_Impuesto = Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Impuesto),
+                                    Orden_Venta_Detalle_Importe_Total = Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Total),
+                                    Tipos_Servicios = TiposServicios.Membresia
+                                });
+                            }
+                        });
+
+                        productos.ForEach(producto =>
+                        {
+                            if (producto.Carrito_Compras_Detalle_Cantidad != "0")
+                            {
+                                detalles.Add(new OrdenVentaDetalle
+                                {
+                                    Orden_Venta_Encabezado_Id = encabezado.Orden_Venta_Encabezado_Id,
+                                    Membresia_Id = producto.Membresia_Id,
+                                    Inscripcion_Membresia_Id = producto.Inscripcion_Membresia_Id,
+                                    Lista_Precio_Membresia_Id = producto.Lista_Precio_Membresia_Id,
+                                    Producto_Id = producto.Producto_Id,
+                                    Lista_Precio_Producto_Id = producto.Lista_Precio_Producto_Id,
+                                    Orden_Venta_Detalle_Descripcion = producto.Carrito_Compras_Detalle_Descripcion,
+                                    Orden_Venta_Detalle_Cantidad = Convert.ToInt32(producto.Carrito_Compras_Detalle_Cantidad),
+                                    Orden_Venta_Detalle_Importe_Precio = Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Precio),
+                                    Orden_Venta_Detalle_Importe_Prorrateo = Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Prorrateo),
+                                    Orden_Venta_Detalle_Importe_Suma = Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Suma),
+                                    Orden_Venta_Detalle_Importe_Descuento = Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Descuento),
+                                    Orden_Venta_Detalle_Importe_Subtotal = Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Subtotal),
+                                    Orden_Venta_Detalle_Importe_Impuesto = Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Impuesto),
+                                    Orden_Venta_Detalle_Importe_Total = Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Total),
+                                    Tipos_Servicios = TiposServicios.Producto
+                                });
+                            }
+                        });
+
+                        new PagosHandler().InsertData(encabezado, detalles);
+
+                        StartActivity(new Intent(this, typeof(PaymentActivity)));
                     }
                     else
                         Toast.MakeText(this, Resource.String.str_shop_no_accepted_terms, ToastLength.Short).Show();
