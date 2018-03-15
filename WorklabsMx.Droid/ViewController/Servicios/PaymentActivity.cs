@@ -70,30 +70,30 @@ namespace WorklabsMx.Droid
             suiteController = new SuiteController(Com.Mitec.Suitemcommerce.Utilities.Environment.Qa, this, this);
             beanTokenization = new BeanTokenization
             {
-                Branch = "0001",
-                Company = "SX001",
-                Country = "MX",
-                User = "SNDBXUS3R",
-                Password = "SNDBXP44S",
-                Merchant = "123456",
+                Branch = "000025",
+                Company = "Z703",
+                Country = "MEX",
+                User = "Z703CSES0",
+                Password = "OOMYO17MS7",
+                Merchant = "158198",
                 Currency = Currency.Mxn,
                 OperationType = "6",
-                Reference = "REFERENCIA SNDBX001",
+                Reference = "Referencia dada por el usuario",
                 Amount = "100.00",
                 Token = "1234567890124242"
 
             };
             bean3DS = new Bean3DS
             {
-                Branch = "0001",
-                Company = "SX001",
+                Branch = "000025",
+                Company = "Z703",
                 Country = "MX",
-                User = "SNDBXUS3R",
-                Password = "SNDBXP44S",
-                Merchant = "123456",
+                User = "Z703CSES0",
+                Password = "OOMYO17MS7",
+                Merchant = "158128",
                 Currency = Currency.Mxn,
-                Reference = "REFERENCIA SNDBX001",
-                AuthKey = "516883575148515057485348"
+                Reference = "Referencia dada por el usuario",
+                AuthKey = "516883685552545048505454"
             };
             suiteController.Authenticate(beanTokenization, bean3DS);
             suiteController.SndPayWithToken(beanTokenization, bean3DS);

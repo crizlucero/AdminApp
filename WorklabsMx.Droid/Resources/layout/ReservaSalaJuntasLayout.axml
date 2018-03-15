@@ -60,12 +60,16 @@
             android:textSize="12dp" />
     </LinearLayout>
     <HorizontalScrollView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="75dp"
-        android:id="@+id/hsvHorario">
+        android:id="@+id/hsvHorario"
+        android:measureAllChildren="false"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:fadeScrollbars="true">
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/llhHorario" />
     </HorizontalScrollView>
@@ -128,17 +132,15 @@
             android:background="@drawable/cornerborderline">
             <GridLayout
                 android:layout_column="0"
-                android:minWidth="25px"
-                android:minHeight="25px"
                 android:id="@+id/gridLayout2"
                 android:rowCount="3"
                 android:columnCount="2"
                 android:paddingRight="10dp"
                 android:paddingLeft="5dp"
-                android:paddingBottom="5dp"
                 android:paddingTop="5dp"
-                android:layout_height="62dp"
-                android:background="@drawable/stroke_style">
+                android:layout_height="match_parent"
+                android:background="@drawable/stroke_style"
+                android:paddingBottom="21dp">
                 <ImageView
                     android:layout_width="10dp"
                     android:layout_gravity="top"

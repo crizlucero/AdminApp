@@ -180,7 +180,7 @@ namespace WorklabsMx.Controllers
                     "WHERE Sala_id = @sala_id AND Sala_Junta_Reservacion_Estatus = 1 AND Sala_Junta_Fecha = @fecha";
                 command = CreateCommand(query);
                 command.Parameters.AddWithValue("@sala_id", sala_id);
-                command.Parameters.AddWithValue("@fecha", fecha);
+                command.Parameters.AddWithValue("@fecha", DateTime.Parse(fecha));
                 reader = command.ExecuteReader();
                 while (reader.Read())
                     salas.Add(new SalaJuntasReservacionModel
@@ -222,6 +222,7 @@ namespace WorklabsMx.Controllers
         {
             try
             {
+                conn.Open();
                 command = CreateCommand("select Creditos_Disponibles, Creditos_Usados from vw_pro_Miembros_Creditos Where Miembro_Id = @Usuario_Id");
                 command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
                 reader = command.ExecuteReader();

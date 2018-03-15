@@ -113,8 +113,11 @@ namespace WorklabsMx.Droid
             UpdateHorasNoDisponibles();
             FillHorario();
             HorizontalScrollView scrollHoras = FindViewById<HorizontalScrollView>(Resource.Id.hsvHorario);
+            scrollHoras.PostDelayed(delegate
+            {
+                scrollHoras.ScrollTo(DateTime.Now.Hour * 200, 0);
+            }, 100);
 
-            scrollHoras.SmoothScrollBy(scrollHoras.Width, 0);
         }
 
         void UpdateHorasNoDisponibles()
@@ -131,8 +134,7 @@ namespace WorklabsMx.Droid
             PutZeroHour();
             horas.ForEach(hora =>
             {
-                LayoutInflater liView = LayoutInflater;
-                View HorarioView = liView.Inflate(Resource.Layout.HorarioItemLayout, null, true);
+                View HorarioView = LayoutInflater.Inflate(Resource.Layout.HorarioItemLayout, null, true);
                 if (hora < 24)
                     HorarioView.FindViewById<TextView>(Resource.Id.lblHora).Text = hora.ToString();
                 else
@@ -238,7 +240,8 @@ namespace WorklabsMx.Droid
             line.SetBackgroundColor(Color.Rgb(149, 152, 154));
             line.SetMinimumWidth(1);
             line.SetMinimumHeight(60);
-            line.SetForegroundGravity(GravityFlags.Right);
+            if ((int)Build.VERSION.SdkInt > 22)
+                line.SetForegroundGravity(GravityFlags.Right);
             glZero.AddView(line);
             llhHorario.AddView(glZero);
         }
