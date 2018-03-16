@@ -1,9 +1,14 @@
-﻿using Android.App;
+﻿using System;
+using System.Collections.Generic;
+using Android.App;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Com.Mitec.Suitemcommerce.Beans;
+using WorklabsMx.Controllers;
 using WorklabsMx.Droid.Models;
+using WorklabsMx.Handlers;
+using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
@@ -127,6 +132,36 @@ namespace WorklabsMx.Droid
                 amount.Text = (beanPaymentWithToken.Amount);
                 reference.Text = (beanPaymentWithToken.Reference);
                 auth.Text = (beanPaymentWithToken.Auth);
+            }
+        }
+
+        void AgregarRegistro(bool pagado)
+        {
+            PagosController controller = new PagosController();
+            PagosHandler pagos = new PagosHandler();
+            OrdenVentaEncabezado encabezado = pagos.GetEncabezado();
+            List<OrdenVentaDetalle> detalles = pagos.GetDetalles();
+            if (pagado)
+            {
+                encabezado.Importe_Pagado = encabezado.Importe_Total;
+                pagos.InsertData(encabezado, detalles);
+            }
+
+            int Encabezado_Id = controller.AddOrdenVentaEncabezado(Convert.ToInt32(encabezado.Usuario.Usuario_Id), encabezado.Moneda_Id, encabezado.Impuesto_Id, encabezado.Descuento_Id, encabezado.Descuento_Id, encabezado.Folio,
+                                                                   encabezado.Importe_Suma, encabezado.Porcentaje_Descuento, encabezado.Importe_Descuento, encabezado.Importe_Subtotal, encabezado.Importe_Impuesto,
+                                                                   encabezado.Importe_Total, encabezado.Importe_Pagado, 0);
+            if (Encabezado_Id != -1)
+            {
+                detalles.ForEach(detalle =>
+                {
+                    controller.AddOrdenVentaDetalle(Encabezado_Id, detalle.Membresia_Id, detalle.Inscripcion_Membresia_Id,
+                                                    detalle.Lista_Precio_Membresia_Id, detalle.Producto_Id, detalle.Lista_Precio_Producto_Id,
+                                                    detalle.Orden_Venta_Detalle_Descripcion, detalle.Orden_Venta_Detalle_Cantidad,
+                                                    detalle.Orden_Venta_Detalle_Importe_Precio, detalle.Orden_Venta_Detalle_Importe_Prorrateo,
+                                                    detalle.Orden_Venta_Detalle_Importe_Suma, detalle.Orden_Venta_Detalle_Importe_Descuento,
+                                                    detalle.Orden_Venta_Detalle_Importe_Subtotal, detalle.Orden_Venta_Detalle_Importe_Impuesto,
+                                                    detalle.Orden_Venta_Detalle_Importe_Total, detalle.Tipos_Servicios);
+                });
             }
         }
     }

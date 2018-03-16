@@ -84,7 +84,7 @@
             android:layout_width="match_parent"
             android:layout_margin="10dp" />
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_columnSpan="5"
             android:layout_column="0"
@@ -98,7 +98,7 @@
         <TextView
             android:id="@+id/lblLikes"
             android:text="@string/str_dashboard_likes"
-            android:textSize="8dp"
+            android:textSize="10dp"
             android:textColor="#000"
             android:layout_gravity="center"
             android:gravity="center"
@@ -107,20 +107,22 @@
             android:layout_marginLeft="10dp"
             android:layout_columnSpan="2"
             android:layout_marginBottom="10dp"
-            android:drawableLeft="@mipmap/ic_like" />
+            android:drawableLeft="@mipmap/ic_like_unselected"
+            android:layout_marginTop="10dp" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblComments"
             android:text="@string/str_social_network_comments"
-            android:textSize="8dp"
-            android:drawableLeft="@mipmap/ic_mode_comment"
+            android:textSize="10dp"
+            android:drawableLeft="@mipmap/ic_comment_unselected"
             android:textColor="#000"
             android:gravity="center"
             android:layout_column="2"
             android:layout_marginLeft="20dp"
             android:layout_gravity="left"
             android:layout_columnSpan="2"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp" />
         <Button
             android:id="@+id/btnComentar"
             android:layout_column="4"

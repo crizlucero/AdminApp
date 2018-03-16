@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/PagosTableViewController.cs">
     <Files>
@@ -9,6 +10,27 @@
       <File FileName="SuitemCommerceBinding/Structs.cs" Line="17" Column="11" />
       <File FileName="SuitemCommerceBinding/obj/Debug/ios/SuitemCommerce/SuiteController.g.cs" Line="84" Column="1" />
       <File FileName="SuitemCommerceBinding/obj/Debug/ios/SuitemCommerce/BeanTokenization.g.cs" Line="63" Column="22" />
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs">
+    <Files>
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="277" Column="31" />
+      <File FileName="WorklabsMx.Droid/SplashActivity.cs" Line="20" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="142" Column="68" />
+      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardActivity.cs" Line="53" Column="79" />
+      <File FileName="WorklabsMx.Droid/Helpers/PerfilPageAdapter.cs" Line="110" Column="46" />
+      <File FileName="WorklabsMx.Droid/Resources/values/colors.xml" Line="8" Column="42" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/TabSalasJuntasHistorialActivity.cs" Line="141" Column="93" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="269" Column="38" />
+      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="228" Column="38" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="88" Column="9" />
+      <File FileName="WorklabsMx/Controllers/PagosController.cs" Line="218" Column="40" />
+      <File FileName="WorklabsMx/Handlers/PagosHandler.cs" Line="34" Column="94" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ResultActivity.cs" Line="157" Column="119" />
+      <File FileName="WorklabsMx/Models/OrdenVentaDetalle.cs" Line="17" Column="19" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="226" Column="52" />
+>>>>>>> 437f5686f75d45b0efbdb33756d63edd230fe927
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,15 +44,23 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
+<<<<<<< HEAD
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/PaymentsTableview.cs" relfile="iOS/PaymentsTableview.cs" line="64" column="24" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/PaymentsTableview.cs" relfile="iOS/PaymentsTableview.cs" line="44" column="21" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/InvitadosController.cs" relfile="WorklabsMx/Controllers/InvitadosController.cs" line="69" column="32" />
+=======
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/RegistrarTableViewController.cs" relfile="iOS/RegistrarTableViewController.cs" line="127" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/RegistrarTableViewController.cs" relfile="iOS/RegistrarTableViewController.cs" line="89" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/CeldaDetalleInvitacion.cs" relfile="iOS/CeldaDetalleInvitacion.cs" line="86" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/PaymentsTableview.cs" relfile="iOS/PaymentsTableview.cs" line="64" column="24" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/PaymentsTableview.cs" relfile="iOS/PaymentsTableview.cs" line="44" column="21" />
+>>>>>>> 437f5686f75d45b0efbdb33756d63edd230fe927
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.DB462123-12A0-4935-B180-CC2A80E75493" automaticSigning="False" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.android_accelerated_lollipop" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>

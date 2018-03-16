@@ -85,20 +85,20 @@ namespace WorklabsMx.Droid
                                                                        txtAsunto.Text, DateTime.Parse(lblFecha.Text), sucursales[ubicacion.SelectedItem.ToString()],
                                                                                   storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo")));
 
-                        email.SendMail(invitado.Usuario_Correo_Electronico, invitado.Usuario_Nombre + " " + invitado.Usuario_Apellidos, 
-                                       correoInvitacion.Replace("{{NOMBRE}}",invitado.Usuario_Nombre + " " + invitado.Usuario_Apellidos)
-                                       .Replace("{{FECHA}}",lblFecha.Text)
-                                       .Replace("{{SUCURSAL}}",sucursal.Sucursal_Descripcion)
-                                       .Replace("{{CALLE}}",sucursal.Sucursal_Domicilio)
-                                       .Replace("{{COLONIA}}",sucursal.Territorio.Colonia)
-                                       .Replace("{{QR}}","INVITADO"), "Tiene una invitación");
+                        email.SendMail(invitado.Usuario_Correo_Electronico, invitado.Usuario_Nombre + " " + invitado.Usuario_Apellidos,
+                                       correoInvitacion.Replace("{{NOMBRE}}", invitado.Usuario_Nombre + " " + invitado.Usuario_Apellidos)
+                                       .Replace("{{FECHA}}", lblFecha.Text)
+                                       .Replace("{{SUCURSAL}}", sucursal.Sucursal_Descripcion)
+                                       .Replace("{{CALLE}}", sucursal.Sucursal_Domicilio)
+                                       .Replace("{{COLONIA}}", sucursal.Territorio.Colonia)
+                                       .Replace("{{QR}}", "INVITADO"), "Tiene una invitación");
                         Toast.MakeText(this, Resource.String.str_general_data_saved, ToastLength.Short).Show();
 
                     }
                     catch (Exception e)
                     {
                         Toast.MakeText(this, Resource.String.str_general_save_error, ToastLength.Short).Show();
-                        SlackLogs.SendMessage(e.Message);
+                        SlackLogs.SendMessage(e.Message, GetType().Name, "OnCreate");
                     }
                 });
                 if (invitados_id.Count != 0)

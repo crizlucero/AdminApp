@@ -45,7 +45,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "AsignarSalaJuntas");
                 return -1;
             }
             finally { conn.Close(); }
@@ -76,7 +76,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "CancelarSalaJuntas");
                 return false;
             }
             finally { conn.Close(); }
@@ -112,7 +112,7 @@ namespace WorklabsMx.Controllers
                         Sucursal_Estatus = reader["Sucursal_Estatus"].ToString()
                     });
             }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetSalaJuntas"); }
             finally { conn.Close(); }
             return salas;
         }
@@ -159,7 +159,7 @@ namespace WorklabsMx.Controllers
                         Sala_Junta_Reservacion_Id = reader["Sala_Junta_Reservacion_Id"].ToString()
                     });
             }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetReservaciones"); }
             finally { conn.Close(); }
             return salas;
         }
@@ -180,7 +180,7 @@ namespace WorklabsMx.Controllers
                     "WHERE Sala_id = @sala_id AND Sala_Junta_Reservacion_Estatus = 1 AND Sala_Junta_Fecha = @fecha";
                 command = CreateCommand(query);
                 command.Parameters.AddWithValue("@sala_id", sala_id);
-                command.Parameters.AddWithValue("@fecha", fecha);
+                command.Parameters.AddWithValue("@fecha", DateTime.Parse(fecha));
                 reader = command.ExecuteReader();
                 while (reader.Read())
                     salas.Add(new SalaJuntasReservacionModel
@@ -193,7 +193,7 @@ namespace WorklabsMx.Controllers
                     });
 
             }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetHorasNoDisponibles"); }
             finally { conn.Close(); }
             return salas;
         }
@@ -210,10 +210,10 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    niveles.Add("Nivel " + reader["Sala_Nivel"].ToString(), reader["Sala_Nivel"].ToString());
+                    niveles.Add("Nivel " + reader["Sala_Nivel"], reader["Sala_Nivel"].ToString());
                 }
             }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetNivelesSucursal"); }
             finally { conn.Close(); }
             return niveles;
         }
@@ -222,6 +222,7 @@ namespace WorklabsMx.Controllers
         {
             try
             {
+                conn.Open();
                 command = CreateCommand("select Creditos_Disponibles, Creditos_Usados from vw_pro_Miembros_Creditos Where Miembro_Id = @Usuario_Id");
                 command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
                 reader = command.ExecuteReader();
@@ -230,7 +231,7 @@ namespace WorklabsMx.Controllers
                     return Convert.ToInt32(reader["Creditos_Disponibles"]) - Convert.ToInt32(reader["Creditos_Usados"]);
                 }
             }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetCreditosDisponibles"); }
             finally { conn.Close(); }
 
 

@@ -69,7 +69,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetCarrito");
             }
             finally { conn.Close(); }
             return carrito;
@@ -111,7 +111,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "UpdateCarrito");
                 transaction.Rollback();
             }
             finally
@@ -177,7 +177,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GenerarOrdenVentaEncabezado");
                 transaction.Rollback();
             }
             finally { conn.Close(); }
@@ -243,7 +243,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GenerarOrdenVentaDetalle");
                 transaction.Rollback();
             }
             finally { conn.Close(); }
@@ -294,7 +294,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "AddCarritoCompras");
                 transaction.Rollback();
                 return false;
             }
@@ -324,7 +324,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "CheckQuantity");
                 return false;
             }
             finally { conn.Close(); }

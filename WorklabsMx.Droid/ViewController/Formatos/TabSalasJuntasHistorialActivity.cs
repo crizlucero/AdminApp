@@ -138,6 +138,7 @@ namespace WorklabsMx.Droid
             {
                 LayoutInflater inflater = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
                 View ReservaView = inflater.Inflate(Resource.Layout.ReservacionElementoLayout, null, true);
+                ReservaView.FindViewById<GridLayout>(Resource.Id.glReservacion).SetMinimumWidth(context.Resources.DisplayMetrics.WidthPixels);
                 ReservaView.FindViewById<TextView>(Resource.Id.lblSalaJunta).Text = reservacion.Sala_Descripcion;
                 ReservaView.FindViewById<TextView>(Resource.Id.lblDiaSemana).Text = DateTime.Parse(reservacion.Sala_Fecha).Day.ToString();
                 ReservaView.FindViewById<TextView>(Resource.Id.lblDia).Text = DateTime.Parse(reservacion.Sala_Fecha).DayOfWeek.ToString();

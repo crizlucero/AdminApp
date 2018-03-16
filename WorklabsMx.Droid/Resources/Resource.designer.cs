@@ -2626,44 +2626,44 @@ namespace WorklabsMx.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f09005b
-			public const int abc_background_cache_hint_selector_material_dark = 2131296347;
-			
-			// aapt resource value: 0x7f09005c
-			public const int abc_background_cache_hint_selector_material_light = 2131296348;
-			
-			// aapt resource value: 0x7f09005d
-			public const int abc_btn_colored_borderless_text_material = 2131296349;
-			
-			// aapt resource value: 0x7f09005e
-			public const int abc_btn_colored_text_material = 2131296350;
-			
-			// aapt resource value: 0x7f09005f
-			public const int abc_color_highlight_material = 2131296351;
-			
 			// aapt resource value: 0x7f090060
-			public const int abc_hint_foreground_material_dark = 2131296352;
+			public const int abc_background_cache_hint_selector_material_dark = 2131296352;
 			
 			// aapt resource value: 0x7f090061
-			public const int abc_hint_foreground_material_light = 2131296353;
+			public const int abc_background_cache_hint_selector_material_light = 2131296353;
+			
+			// aapt resource value: 0x7f090062
+			public const int abc_btn_colored_borderless_text_material = 2131296354;
+			
+			// aapt resource value: 0x7f090063
+			public const int abc_btn_colored_text_material = 2131296355;
+			
+			// aapt resource value: 0x7f090064
+			public const int abc_color_highlight_material = 2131296356;
+			
+			// aapt resource value: 0x7f090065
+			public const int abc_hint_foreground_material_dark = 2131296357;
+			
+			// aapt resource value: 0x7f090066
+			public const int abc_hint_foreground_material_light = 2131296358;
 			
 			// aapt resource value: 0x7f090008
 			public const int abc_input_method_navigation_guard = 2131296264;
 			
-			// aapt resource value: 0x7f090062
-			public const int abc_primary_text_disable_only_material_dark = 2131296354;
+			// aapt resource value: 0x7f090067
+			public const int abc_primary_text_disable_only_material_dark = 2131296359;
 			
-			// aapt resource value: 0x7f090063
-			public const int abc_primary_text_disable_only_material_light = 2131296355;
+			// aapt resource value: 0x7f090068
+			public const int abc_primary_text_disable_only_material_light = 2131296360;
 			
-			// aapt resource value: 0x7f090064
-			public const int abc_primary_text_material_dark = 2131296356;
+			// aapt resource value: 0x7f090069
+			public const int abc_primary_text_material_dark = 2131296361;
 			
-			// aapt resource value: 0x7f090065
-			public const int abc_primary_text_material_light = 2131296357;
+			// aapt resource value: 0x7f09006a
+			public const int abc_primary_text_material_light = 2131296362;
 			
-			// aapt resource value: 0x7f090066
-			public const int abc_search_url_text = 2131296358;
+			// aapt resource value: 0x7f09006b
+			public const int abc_search_url_text = 2131296363;
 			
 			// aapt resource value: 0x7f090009
 			public const int abc_search_url_text_normal = 2131296265;
@@ -2674,29 +2674,29 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f09000b
 			public const int abc_search_url_text_selected = 2131296267;
 			
-			// aapt resource value: 0x7f090067
-			public const int abc_secondary_text_material_dark = 2131296359;
-			
-			// aapt resource value: 0x7f090068
-			public const int abc_secondary_text_material_light = 2131296360;
-			
-			// aapt resource value: 0x7f090069
-			public const int abc_tint_btn_checkable = 2131296361;
-			
-			// aapt resource value: 0x7f09006a
-			public const int abc_tint_default = 2131296362;
-			
-			// aapt resource value: 0x7f09006b
-			public const int abc_tint_edittext = 2131296363;
-			
 			// aapt resource value: 0x7f09006c
-			public const int abc_tint_seek_thumb = 2131296364;
+			public const int abc_secondary_text_material_dark = 2131296364;
 			
 			// aapt resource value: 0x7f09006d
-			public const int abc_tint_spinner = 2131296365;
+			public const int abc_secondary_text_material_light = 2131296365;
 			
 			// aapt resource value: 0x7f09006e
-			public const int abc_tint_switch_track = 2131296366;
+			public const int abc_tint_btn_checkable = 2131296366;
+			
+			// aapt resource value: 0x7f09006f
+			public const int abc_tint_default = 2131296367;
+			
+			// aapt resource value: 0x7f090070
+			public const int abc_tint_edittext = 2131296368;
+			
+			// aapt resource value: 0x7f090071
+			public const int abc_tint_seek_thumb = 2131296369;
+			
+			// aapt resource value: 0x7f090072
+			public const int abc_tint_spinner = 2131296370;
+			
+			// aapt resource value: 0x7f090073
+			public const int abc_tint_switch_track = 2131296371;
 			
 			// aapt resource value: 0x7f090052
 			public const int accent = 2131296338;
@@ -2746,11 +2746,23 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f090056
 			public const int button_unpressed = 2131296342;
 			
+			// aapt resource value: 0x7f09005d
+			public const int colorAccent = 2131296349;
+			
+			// aapt resource value: 0x7f09005e
+			public const int colorAccent2 = 2131296350;
+			
+			// aapt resource value: 0x7f09005b
+			public const int colorPrimary = 2131296347;
+			
+			// aapt resource value: 0x7f09005c
+			public const int colorPrimaryDark = 2131296348;
+			
 			// aapt resource value: 0x7f090055
 			public const int comment_pressed = 2131296341;
 			
-			// aapt resource value: 0x7f09006f
-			public const int common_google_signin_btn_text_dark = 2131296367;
+			// aapt resource value: 0x7f090074
+			public const int common_google_signin_btn_text_dark = 2131296372;
 			
 			// aapt resource value: 0x7f090000
 			public const int common_google_signin_btn_text_dark_default = 2131296256;
@@ -2764,8 +2776,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f090003
 			public const int common_google_signin_btn_text_dark_pressed = 2131296259;
 			
-			// aapt resource value: 0x7f090070
-			public const int common_google_signin_btn_text_light = 2131296368;
+			// aapt resource value: 0x7f090075
+			public const int common_google_signin_btn_text_light = 2131296373;
 			
 			// aapt resource value: 0x7f090004
 			public const int common_google_signin_btn_text_light_default = 2131296260;
@@ -2779,14 +2791,14 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f090007
 			public const int common_google_signin_btn_text_light_pressed = 2131296263;
 			
-			// aapt resource value: 0x7f090071
-			public const int common_google_signin_btn_tint = 2131296369;
+			// aapt resource value: 0x7f090076
+			public const int common_google_signin_btn_tint = 2131296374;
 			
 			// aapt resource value: 0x7f090044
 			public const int design_bottom_navigation_shadow_color = 2131296324;
 			
-			// aapt resource value: 0x7f090072
-			public const int design_error = 2131296370;
+			// aapt resource value: 0x7f090077
+			public const int design_error = 2131296375;
 			
 			// aapt resource value: 0x7f090045
 			public const int design_fab_shadow_end_color = 2131296325;
@@ -2812,8 +2824,8 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f09004c
 			public const int design_snackbar_background_color = 2131296332;
 			
-			// aapt resource value: 0x7f090073
-			public const int design_tint_password_toggle = 2131296371;
+			// aapt resource value: 0x7f090078
+			public const int design_tint_password_toggle = 2131296376;
 			
 			// aapt resource value: 0x7f09001a
 			public const int dim_foreground_disabled_material_dark = 2131296282;
@@ -2887,6 +2899,9 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f09002e
 			public const int material_grey_900 = 2131296302;
 			
+			// aapt resource value: 0x7f09005f
+			public const int noColor = 2131296351;
+			
 			// aapt resource value: 0x7f09004d
 			public const int notification_action_color_filter = 2131296333;
 			
@@ -2956,11 +2971,11 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f09003e
 			public const int switch_thumb_disabled_material_light = 2131296318;
 			
-			// aapt resource value: 0x7f090074
-			public const int switch_thumb_material_dark = 2131296372;
+			// aapt resource value: 0x7f090079
+			public const int switch_thumb_material_dark = 2131296377;
 			
-			// aapt resource value: 0x7f090075
-			public const int switch_thumb_material_light = 2131296373;
+			// aapt resource value: 0x7f09007a
+			public const int switch_thumb_material_light = 2131296378;
 			
 			// aapt resource value: 0x7f09003f
 			public const int switch_thumb_normal_material_dark = 2131296319;
@@ -6099,214 +6114,229 @@ namespace WorklabsMx.Droid
 			public const int ic_cloud = 2130903058;
 			
 			// aapt resource value: 0x7f030013
-			public const int ic_create = 2130903059;
+			public const int ic_comment_selected = 2130903059;
 			
 			// aapt resource value: 0x7f030014
-			public const int ic_create_white = 2130903060;
+			public const int ic_comment_unselected = 2130903060;
 			
 			// aapt resource value: 0x7f030015
-			public const int ic_credit_card = 2130903061;
+			public const int ic_create = 2130903061;
 			
 			// aapt resource value: 0x7f030016
-			public const int ic_credit_card_white = 2130903062;
+			public const int ic_create_white = 2130903062;
 			
 			// aapt resource value: 0x7f030017
-			public const int ic_creditos = 2130903063;
+			public const int ic_credit_card = 2130903063;
 			
 			// aapt resource value: 0x7f030018
-			public const int ic_dashboard = 2130903064;
+			public const int ic_credit_card_white = 2130903064;
 			
 			// aapt resource value: 0x7f030019
-			public const int ic_delete = 2130903065;
+			public const int ic_creditos = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public const int ic_description = 2130903066;
+			public const int ic_dashboard = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int ic_diagonal_lines = 2130903067;
+			public const int ic_delete = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public const int ic_dns = 2130903068;
+			public const int ic_description = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public const int ic_domain = 2130903069;
+			public const int ic_diagonal_lines = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
-			public const int ic_dot = 2130903070;
+			public const int ic_dns = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public const int ic_email = 2130903071;
+			public const int ic_domain = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int ic_facebook = 2130903072;
+			public const int ic_dot = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public const int ic_format_list_bulleted = 2130903073;
+			public const int ic_email = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int ic_fullscreen = 2130903074;
+			public const int ic_facebook = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public const int ic_group = 2130903075;
+			public const int ic_format_list_bulleted = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public const int ic_instagram = 2130903076;
+			public const int ic_fullscreen = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int ic_label = 2130903077;
+			public const int ic_group = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int ic_like = 2130903078;
+			public const int ic_info_white = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int ic_logo_mini = 2130903079;
+			public const int ic_instagram = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int ic_menu = 2130903080;
+			public const int ic_label = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int ic_menu_white = 2130903081;
+			public const int ic_like = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int ic_mode_comment = 2130903082;
+			public const int ic_like_selected = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int ic_more = 2130903083;
+			public const int ic_like_unselected = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int ic_more_horiz = 2130903084;
+			public const int ic_logo_mini = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int ic_open_book = 2130903085;
+			public const int ic_menu = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int ic_people_outline = 2130903086;
+			public const int ic_menu_white = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int ic_perfil_background = 2130903087;
+			public const int ic_mode_comment = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int ic_person = 2130903088;
+			public const int ic_more = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public const int ic_person_add = 2130903089;
+			public const int ic_more_horiz = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public const int ic_person_add_white = 2130903090;
+			public const int ic_open_book = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int ic_photo_camera = 2130903091;
+			public const int ic_people_outline = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int ic_place = 2130903092;
+			public const int ic_perfil_background = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int ic_power_settings_new = 2130903093;
+			public const int ic_person = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int ic_profile = 2130903094;
+			public const int ic_person_add = 2130903094;
 			
 			// aapt resource value: 0x7f030037
-			public const int ic_profile_empty = 2130903095;
+			public const int ic_person_add_white = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public const int ic_public = 2130903096;
+			public const int ic_photo_camera = 2130903096;
 			
 			// aapt resource value: 0x7f030039
-			public const int ic_qrcode = 2130903097;
+			public const int ic_place = 2130903097;
 			
 			// aapt resource value: 0x7f03003a
-			public const int ic_receipt = 2130903098;
+			public const int ic_power_settings_new = 2130903098;
 			
 			// aapt resource value: 0x7f03003b
-			public const int ic_refresh = 2130903099;
+			public const int ic_profile = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int ic_refresh_white = 2130903100;
+			public const int ic_profile_empty = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int ic_remove = 2130903101;
+			public const int ic_public = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int ic_sala_prueba = 2130903102;
+			public const int ic_qrcode = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int ic_save = 2130903103;
+			public const int ic_receipt = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int ic_school = 2130903104;
+			public const int ic_refresh = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int ic_search = 2130903105;
+			public const int ic_refresh_white = 2130903105;
 			
 			// aapt resource value: 0x7f030042
-			public const int ic_send = 2130903106;
+			public const int ic_remove = 2130903106;
 			
 			// aapt resource value: 0x7f030043
-			public const int ic_share = 2130903107;
+			public const int ic_sala_prueba = 2130903107;
 			
 			// aapt resource value: 0x7f030044
-			public const int ic_shopping_cart = 2130903108;
+			public const int ic_save = 2130903108;
 			
 			// aapt resource value: 0x7f030045
-			public const int ic_shopping_cart_white = 2130903109;
+			public const int ic_school = 2130903109;
 			
 			// aapt resource value: 0x7f030046
-			public const int ic_square = 2130903110;
+			public const int ic_search = 2130903110;
 			
 			// aapt resource value: 0x7f030047
-			public const int ic_star = 2130903111;
+			public const int ic_send = 2130903111;
 			
 			// aapt resource value: 0x7f030048
-			public const int ic_star_border = 2130903112;
+			public const int ic_share = 2130903112;
 			
 			// aapt resource value: 0x7f030049
-			public const int ic_star_like = 2130903113;
+			public const int ic_shopping_cart = 2130903113;
 			
 			// aapt resource value: 0x7f03004a
-			public const int ic_store = 2130903114;
+			public const int ic_shopping_cart_white = 2130903114;
 			
 			// aapt resource value: 0x7f03004b
-			public const int ic_thumb_up = 2130903115;
+			public const int ic_square = 2130903115;
 			
 			// aapt resource value: 0x7f03004c
-			public const int ic_today = 2130903116;
+			public const int ic_star = 2130903116;
 			
 			// aapt resource value: 0x7f03004d
-			public const int ic_twitter = 2130903117;
+			public const int ic_star_border = 2130903117;
 			
 			// aapt resource value: 0x7f03004e
-			public const int ic_ubicacion_background = 2130903118;
+			public const int ic_star_like = 2130903118;
 			
 			// aapt resource value: 0x7f03004f
-			public const int ic_view_list = 2130903119;
+			public const int ic_store = 2130903119;
 			
 			// aapt resource value: 0x7f030050
-			public const int ic_work = 2130903120;
+			public const int ic_thumb_up = 2130903120;
 			
 			// aapt resource value: 0x7f030051
-			public const int ic_worklabs_title = 2130903121;
+			public const int ic_today = 2130903121;
 			
 			// aapt resource value: 0x7f030052
-			public const int Icon = 2130903122;
+			public const int ic_twitter = 2130903122;
 			
 			// aapt resource value: 0x7f030053
-			public const int Icon2 = 2130903123;
+			public const int ic_ubicacion_background = 2130903123;
 			
 			// aapt resource value: 0x7f030054
-			public const int Icono = 2130903124;
+			public const int ic_view_list = 2130903124;
 			
 			// aapt resource value: 0x7f030055
-			public const int login = 2130903125;
+			public const int ic_work = 2130903125;
 			
 			// aapt resource value: 0x7f030056
-			public const int suc_hidalgo_prueba = 2130903126;
+			public const int ic_worklabs_title = 2130903126;
 			
 			// aapt resource value: 0x7f030057
-			public const int suc_metropark_prueba = 2130903127;
+			public const int Icon = 2130903127;
 			
 			// aapt resource value: 0x7f030058
-			public const int worklabs_title = 2130903128;
+			public const int Icon2 = 2130903128;
+			
+			// aapt resource value: 0x7f030059
+			public const int Icono = 2130903129;
+			
+			// aapt resource value: 0x7f03005a
+			public const int login = 2130903130;
+			
+			// aapt resource value: 0x7f03005b
+			public const int suc_hidalgo_prueba = 2130903131;
+			
+			// aapt resource value: 0x7f03005c
+			public const int suc_metropark_prueba = 2130903132;
+			
+			// aapt resource value: 0x7f03005d
+			public const int worklabs_title = 2130903133;
 			
 			static Mipmap()
 			{

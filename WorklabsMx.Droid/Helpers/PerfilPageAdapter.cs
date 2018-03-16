@@ -96,9 +96,8 @@ namespace WorklabsMx.Droid
 
         void Telefono_Click(object sender, System.EventArgs e)
         {
-            Intent intent;
-            try { intent = context.PackageManager.GetLaunchIntentForPackage("mx.worklabs"); }
-            catch { intent = new Intent(Intent.ActionView, Uri.Parse("market://details?id=mx.worklabs")); }
+            Intent intent = context.PackageManager.GetLaunchIntentForPackage("mx.worklabs");
+            if (intent == null) intent = new Intent(Intent.ActionView, Uri.Parse("market://details?id=mx.worklabs"));
             intent.AddFlags(ActivityFlags.NewTask);
             context.StartActivity(intent);
         }

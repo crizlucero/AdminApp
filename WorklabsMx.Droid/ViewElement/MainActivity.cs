@@ -114,7 +114,7 @@ namespace WorklabsMx.Droid
                     else
                         Toast.MakeText(this, Resource.String.str_general_save_error, ToastLength.Short);
                 }
-                catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+                catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "ShowPublish"); }
             };
 
             builder.SetView(customView);

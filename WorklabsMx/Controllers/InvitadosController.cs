@@ -64,11 +64,11 @@ namespace WorklabsMx.Controllers
                 return Convert.ToInt32(command.Parameters["@Visita_Id"].Value);
             }
 
-            catch (Exception ex)
+            catch (Exception e)
             {
-                SlackLogs.SendMessage(ex.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "RegistraInvitado");
                 transaction.Rollback();
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(e.Message);
                 return -1;
             }
             finally
@@ -128,7 +128,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetInvitados");
             }
             finally
             {

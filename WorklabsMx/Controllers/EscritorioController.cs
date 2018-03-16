@@ -74,7 +74,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetMuroPosts");
                 return null;
             }
             finally
@@ -132,7 +132,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetPerfilPosts");
             }
             finally { conn.Close(); }
             return posts;
@@ -155,7 +155,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetLikesPublish");
             }
             finally { conn.Close(); }
             return "";
@@ -178,7 +178,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetLikesComments");
             }
             finally { conn.Close(); }
             return "";
@@ -240,7 +240,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetComentariosPost");
             }
             finally { conn.Close(); }
             return comentarios;
@@ -282,7 +282,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetMenuiOS");
             }
             finally
             {
@@ -329,7 +329,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetMenuAndroid");
             }
             finally
             {
@@ -375,7 +375,7 @@ namespace WorklabsMx.Controllers
             {
                 Console.WriteLine(e.Message);
                 transaction.Rollback();
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "PostLike");
                 return false;
             }
             finally
@@ -422,7 +422,7 @@ namespace WorklabsMx.Controllers
             {
                 Console.WriteLine(e.Message);
                 transaction.Rollback();
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "CommentLike");
                 return false;
             }
             finally
@@ -488,7 +488,7 @@ namespace WorklabsMx.Controllers
             {
                 Console.WriteLine(e.Message);
                 transaction.Rollback();
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "CommentPost");
                 return false;
             }
             finally
@@ -559,7 +559,7 @@ namespace WorklabsMx.Controllers
             {
                 Console.WriteLine(e.Message);
                 transaction.Rollback();
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "SetPost");
                 return false;
             }
             finally
@@ -610,7 +610,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetSinglePost");
             }
             finally { conn.Close(); }
             return post;
@@ -655,7 +655,7 @@ namespace WorklabsMx.Controllers
             {
                 Console.WriteLine(e.Message);
                 transaction.Rollback();
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "OcultarPost");
                 return false;
             }
             finally
@@ -702,7 +702,7 @@ namespace WorklabsMx.Controllers
             {
                 Console.WriteLine(e.Message);
                 transaction.Rollback();
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "OcultarPost");
                 return false;
             }
             finally
@@ -731,7 +731,7 @@ namespace WorklabsMx.Controllers
                     reportes.Add(Convert.ToInt32(reader["Post_Reporte_Id"]), reader["Reporte_Mensaje_Descripcion"].ToString());
                 }
             }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetMensajesReporte"); }
             finally { conn.Close(); }
 
             return reportes;
@@ -777,7 +777,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 transaction.Rollback();
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "ReportarPost");
                 return false;
             }
             finally { conn.Close(); }
@@ -807,7 +807,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 transaction.Rollback();
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "ReportarComment");
                 return false;
             }
             finally { conn.Close(); }
@@ -837,7 +837,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetMuroPostID");
             }
             finally
             {
@@ -863,7 +863,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "TotalComments");
             }
             finally
             {

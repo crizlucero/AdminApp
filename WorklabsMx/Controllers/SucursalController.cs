@@ -25,7 +25,7 @@ namespace WorklabsMx.Controllers
                     sucursales.Add(reader.GetString(0));
                 }
             }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetSucursalNombres"); }
             finally { conn.Close(); }
             return sucursales;
         }
@@ -46,7 +46,7 @@ namespace WorklabsMx.Controllers
                     sucursales.Add(reader["Sucursal_Descripcion"].ToString(), reader["Sucursal_Id"].ToString());
                 }
             }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetSucursalInfo"); }
             finally { conn.Close(); }
             return sucursales;
         }
@@ -75,7 +75,7 @@ namespace WorklabsMx.Controllers
                     };
                 }
             }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetSucursalInfo"); }
 
             return sucursal;
         }
@@ -96,7 +96,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetSucursalId");
             }
             finally { conn.Close(); }
             return -1;
@@ -130,7 +130,7 @@ namespace WorklabsMx.Controllers
                     });
                 }
             }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetSucursales"); }
             finally { conn.Close(); }
             return sucursales;
         }

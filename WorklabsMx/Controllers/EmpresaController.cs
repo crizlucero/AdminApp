@@ -8,9 +8,6 @@ namespace WorklabsMx.Controllers
 {
     public class EmpresaController : DataBaseModel
     {
-        readonly string empresa_imagen_path;
-
-        public EmpresaController() => empresa_imagen_path = (new ConfigurationsController().GetListConfiguraciones() != null) ? new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE EMPRESAS").Parametro_Varchar_1 : "";
 
         /// <summary>
         /// Obtiene los datos de la empresa
@@ -56,7 +53,7 @@ namespace WorklabsMx.Controllers
                         Territorio = new TerritorioModel
                         {
                             Pais = reader["Territorio_Pais_Descripcion"].ToString(),
-                            Estado =  reader["Territorio_Estado_Descripcion"].ToString(),
+                            Estado = reader["Territorio_Estado_Descripcion"].ToString(),
                             Municipio = reader["Territorio_Municipio_Descripcion"].ToString(),
                             Colonia = reader["Territorio_Colonia_Descripcion"].ToString(),
                             CP = reader["Territorio_Cp"].ToString()
@@ -67,7 +64,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetEmpresaMiembro");
             }
             finally { conn.Close(); }
 
@@ -113,7 +110,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetDatosFiscales");
             }
             finally { conn.Close(); }
             return datosfiscales;
@@ -183,7 +180,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetDirectorioEmpresas");
             }
             finally { conn.Close(); }
             return empresas;
@@ -222,7 +219,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "UpdateDatosFiscales");
                 transaction.Rollback();
                 return false;
             }
@@ -290,7 +287,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "UpdateDataEmpresa");
                 //transaction.Rollback();
                 return false;
             }
@@ -298,13 +295,15 @@ namespace WorklabsMx.Controllers
             return true;
         }
 
-        public bool UpdateUsuarioEmpresaPerfil(string empresa_id, string miembro_id, string territorio_id, string nombre, string correo, string web, string puesto, byte[] logo){
+        public bool UpdateUsuarioEmpresaPerfil(string empresa_id, string miembro_id, string territorio_id, string nombre, string correo, string web, string puesto, byte[] logo)
+        {
             try
             {
                 string fotoNombre = null;
                 if (logo.Length != 0)
                 {
                     fotoNombre = Guid.NewGuid().ToString() + ".png";
+                    string empresa_imagen_path = (new ConfigurationsController().GetListConfiguraciones() != null) ? new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE EMPRESAS").Parametro_Varchar_1 : "";
                     var result = new UploadImages().UploadBitmapAsync(fotoNombre, logo, empresa_imagen_path);
                     if (!result)
                     {
@@ -333,7 +332,7 @@ namespace WorklabsMx.Controllers
             }
             catch (Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "UpdateUsuarioEmpresaPerfil");
                 //transaction.Rollback();
                 return false;
             }

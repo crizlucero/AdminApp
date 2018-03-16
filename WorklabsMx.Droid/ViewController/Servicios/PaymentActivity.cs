@@ -8,6 +8,7 @@ using Android.Widget;
 using Com.Mitec.Suitemcommerce.Beans;
 using Com.Mitec.Suitemcommerce.Controller;
 using Com.Mitec.Suitemcommerce.Utilities;
+using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Enum;
@@ -18,12 +19,9 @@ namespace WorklabsMx.Droid
     [Activity(Label = "@string/app_name")]
     public class PaymentActivity : Activity, ISuiteControllerDelegate
     {
-        List<CarritoComprasDetalle> membresias, productos;
-        decimal Descuento, Descuento_Porcentaje, Subtotal, Total, IVATotal;
         readonly PagosController controller;
         readonly SimpleStorage storage;
 
-        int Descuento_Id;
         AlertDialog.Builder dialog;
         static ProgressDialog progressDialog;
 
@@ -33,8 +31,6 @@ namespace WorklabsMx.Droid
 
         public PaymentActivity()
         {
-            membresias = new List<CarritoComprasDetalle>();
-            productos = new List<CarritoComprasDetalle>();
             controller = new PagosController();
             storage = SimpleStorage.EditGroup("Login");
         }
@@ -45,9 +41,12 @@ namespace WorklabsMx.Droid
 
             SetContentView(Resource.Layout.PagoLayout);
 
+
+
             dialog = new AlertDialog.Builder(this);
-            dialog.SetPositiveButton("Aceptar",delegate {
-                
+            dialog.SetPositiveButton("Aceptar", delegate
+            {
+
             });
             dialog.SetCancelable(false);
 
@@ -57,28 +56,30 @@ namespace WorklabsMx.Droid
             suiteController = new SuiteController(Com.Mitec.Suitemcommerce.Utilities.Environment.Qa, this, this);
             beanTokenization = new BeanTokenization
             {
-                Branch = "0001",
-                Company = "SX001",
-                Country = "MX",
-                User = "SNDBXUS3R",
-                Password = "SNDBXP44S",
-                Merchant = "123456",
+                Branch = "000025",
+                Company = "Z703",
+                Country = "MEX",
+                User = "Z703CSES0",
+                Password = "OOMYO17MS7",
+                Merchant = "158198",
                 Currency = Currency.Mxn,
                 OperationType = "6",
-                Reference = "REFERENCIA SNDBX001"
+                Reference = "Referencia dada por el usuario",
+                Amount = "100.00",
+                Token = "1234567890124242"
 
             };
             bean3DS = new Bean3DS
             {
-                Branch = "0001",
-                Company = "SX001",
+                Branch = "000025",
+                Company = "Z703",
                 Country = "MX",
-                User = "SNDBXUS3R",
-                Password = "SNDBXP44S",
-                Merchant = "123456",
+                User = "Z703CSES0",
+                Password = "OOMYO17MS7",
+                Merchant = "158128",
                 Currency = Currency.Mxn,
-                Reference = "REFERENCIA SNDBX001",
-                AuthKey = "516883575148515057485348"
+                Reference = "Referencia dada por el usuario",
+                AuthKey = "516883685552545048505454"
             };
             suiteController.Authenticate(beanTokenization, bean3DS);
             suiteController.SndPayWithToken(beanTokenization, bean3DS);
@@ -93,51 +94,14 @@ namespace WorklabsMx.Droid
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            switch (item.ItemId)
-            {
-                case Resource.Id.menu_payment:
-                    int Encabezado_Id = controller.AddOrdenVentaEncabezado(Convert.ToInt32(storage.Get("Usuario_Id")), 1, 1, Descuento_Id, Descuento_Id, "OWL-", Subtotal - Descuento,
-                                                                           Descuento_Porcentaje, Descuento, Subtotal, IVATotal, Total, Total, 0);
-                    if (Encabezado_Id != -1)
-                    {
-                        membresias.ForEach(membresia =>
-                        {
-                            if (controller.AddOrdenVentaDetalle(Encabezado_Id, membresia.Membresia_Id, membresia.Inscripcion_Membresia_Id,
-                                                            membresia.Lista_Precio_Membresia_Id, membresia.Producto_Id, membresia.Lista_Precio_Producto_Id,
-                                                            membresia.Carrito_Compras_Detalle_Descripcion, Convert.ToInt32(membresia.Carrito_Compras_Detalle_Cantidad),
-                                                            Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Precio), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Prorrateo),
-                                                            Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Suma), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Descuento),
-                                                            Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Subtotal), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Impuesto),
-                                                               Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Total), TiposServicios.Membresia) != -1)
-                                Console.WriteLine("");
-                        });
-                        productos.ForEach(producto =>
-                        {
-                            controller.AddOrdenVentaDetalle(Encabezado_Id, producto.Membresia_Id, producto.Inscripcion_Membresia_Id,
-                                                            producto.Lista_Precio_Membresia_Id, producto.Producto_Id, producto.Lista_Precio_Producto_Id,
-                                                            producto.Carrito_Compras_Detalle_Descripcion, Convert.ToInt32(producto.Carrito_Compras_Detalle_Cantidad),
-                                                            Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Precio), Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Prorrateo),
-                                                            Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Suma), Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Descuento),
-                                                            Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Subtotal), Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Impuesto),
-                                                            Convert.ToDecimal(producto.Carrito_Compras_Detalle_Importe_Total), TiposServicios.Producto);
-                        });
-                    }
-                    else
-                    {
-                        Toast.MakeText(this, Resource.String.str_general_save_error, ToastLength.Short);
-                    }
-                    break;
-                default:
-                    base.OnBackPressed();
-                    Finish();
-                    break;
-            }
+            base.OnBackPressed();
+            Finish();
             return base.OnOptionsItemSelected(item);
         }
 
         public void CanceledProcessByUser()
         {
-
+            OnBackPressed();
         }
 
         public void DidFinishAuthenticationProcess(BeanTokenizeResponse beanTokenizeResponse, SuiteError suiteError)
@@ -177,9 +141,9 @@ namespace WorklabsMx.Droid
 
         class Authenticate : AsyncTask<Java.Lang.Void, Java.Lang.Void, Java.Lang.Void>
         {
-            SuiteController suiteController;
-            BeanTokenization beanTokenization;
-            Bean3DS bean3DS;
+            readonly SuiteController suiteController;
+            readonly BeanTokenization beanTokenization;
+            readonly Bean3DS bean3DS;
             public Authenticate(SuiteController suiteController, BeanTokenization beanTokenization, Bean3DS bean3DS)
             {
                 this.suiteController = suiteController;

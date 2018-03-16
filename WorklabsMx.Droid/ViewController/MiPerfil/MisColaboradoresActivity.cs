@@ -97,7 +97,7 @@ namespace WorklabsMx.Droid
                     }
                     catch (Exception ex)
                     {
-                        SlackLogs.SendMessage(ex.Message);
+                        SlackLogs.SendMessage(ex.Message, GetType().Name, "FillDirectorioColaboradores - Mail");
                     }
                 };
                 llEmail.AddView(txtEmail);

@@ -158,7 +158,7 @@ namespace WorklabsMx.Helpers
                     wbrRespuesta.Close();
                 }
             }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GenerarPago"); }
         }
     }
 }
