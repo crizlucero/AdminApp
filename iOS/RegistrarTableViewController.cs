@@ -22,6 +22,8 @@ namespace WorklabsMx.iOS
         UsuarioModel invitadoGeneral = new UsuarioModel();
         int CantidadInvitadosAgregados;
 
+        bool fromAgregar = false;
+
         public RegistrarTableViewController(IntPtr handle) : base(handle)
         {
         }
@@ -86,7 +88,16 @@ namespace WorklabsMx.iOS
             {
                 var CeldaInvitados = (CeldaInvitadosAgregados)tableView.DequeueReusableCell(IdentificadorInvitadosAgregados, indexPath);
                 UsuarioModel invitado = new UsuarioModel();
-                invitado = this.invitados[CantidadInvitadosAgregados];
+
+                if (fromAgregar)
+                {
+                    invitado = this.invitados[0];
+                    fromAgregar = false;
+                }
+                else
+                {
+                    invitado = this.invitados[indexPath.Row - 1];
+                }
                 CeldaInvitados.UpdateCell(invitado);
                 invitado = null;
                 return CeldaInvitados;
@@ -182,12 +193,13 @@ namespace WorklabsMx.iOS
                     else
                     {
                         NumeroCeldas.Add(0);
-                        this.invitados.Add(invitadoGeneral);
-                        invitadoGeneral = null;
+                        //this.invitados.Add(invitadoGeneral);
+                        this.invitados.Insert(0, invitadoGeneral);
                         NumeroCeldas.Sort((x, y) => x.CompareTo(y));
                         CantidadInvitadosAgregados++;
+                        fromAgregar = true;
                         TableView.BeginUpdates();
-                        TableView.InsertRows(new[] { NSIndexPath.Create(0, 1) }, UITableViewRowAnimation.Bottom);
+                        TableView.InsertRows(new[] { NSIndexPath.Create(0, 1) }, UITableViewRowAnimation.Top);
                         TableView.EndUpdates();
                     }
 

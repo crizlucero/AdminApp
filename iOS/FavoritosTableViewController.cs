@@ -159,8 +159,6 @@ namespace WorklabsMx.iOS
                 PerfilView.Miembro = usuario;
             }
         }
-
-
     }
 
     public partial class FavoritosTableViewController : EventosFavoritosCell

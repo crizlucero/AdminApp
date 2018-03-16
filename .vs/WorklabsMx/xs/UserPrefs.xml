@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/PagosTableViewController.cs">
+    <Files>
+      <File FileName="iOS/PagosTableViewController.cs" Line="4" Column="23" />
+      <File FileName="iOS/ComentariosBodyImageCell.cs" Line="95" Column="64" />
+      <File FileName="iOS/ComentarImageTableViewCell.cs" Line="18" Column="55" />
+      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="38" Column="9" />
+      <File FileName="iOS/ComprasTableView.cs" Line="27" Column="39" />
+      <File FileName="SuitemCommerceBinding/Structs.cs" Line="17" Column="11" />
+      <File FileName="SuitemCommerceBinding/obj/Debug/ios/SuitemCommerce/SuiteController.g.cs" Line="84" Column="1" />
+      <File FileName="SuitemCommerceBinding/obj/Debug/ios/SuitemCommerce/BeanTokenization.g.cs" Line="63" Column="22" />
+=======
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/OrdenVentaEncabezado.cs">
     <Files>
@@ -19,15 +32,32 @@
       <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="226" Column="52" />
       <File FileName="WorklabsMx/Models/OrdenVentaEncabezado.cs" Line="10" Column="20" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WorklabsMx" expanded="True">
+            <Node name="WorklabsMx.iOS" expanded="True" selected="True">
+              <Node name="NativeReferenceFolder" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
+<<<<<<< HEAD
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/PaymentsTableview.cs" relfile="iOS/PaymentsTableview.cs" line="64" column="24" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/PaymentsTableview.cs" relfile="iOS/PaymentsTableview.cs" line="44" column="21" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/InvitadosController.cs" relfile="WorklabsMx/Controllers/InvitadosController.cs" line="69" column="32" />
+=======
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/RegistrarTableViewController.cs" relfile="iOS/RegistrarTableViewController.cs" line="127" column="1" />
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/RegistrarTableViewController.cs" relfile="iOS/RegistrarTableViewController.cs" line="89" column="1" />
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/CeldaDetalleInvitacion.cs" relfile="iOS/CeldaDetalleInvitacion.cs" line="86" column="1" />
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/PaymentsTableview.cs" relfile="iOS/PaymentsTableview.cs" line="64" column="24" />
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/PaymentsTableview.cs" relfile="iOS/PaymentsTableview.cs" line="44" column="21" />
+>>>>>>> 437f5686f75d45b0efbdb33756d63edd230fe927
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

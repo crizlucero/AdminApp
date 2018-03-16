@@ -1598,7 +1598,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrb-4s-Sea">
-                                                    <rect key="frame" x="0.0" y="75" width="375" height="48"/>
+                                                    <rect key="frame" x="0.0" y="75" width="371" height="48"/>
                                                     <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <color key="tintColor" red="0.84705882349999995" green="0.66274509800000003" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1616,24 +1616,24 @@
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7O-b2-dRc">
-                                                    <rect key="frame" x="3" y="11" width="370" height="54"/>
+                                                    <rect key="frame" x="3" y="11" width="366" height="54"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzI-en-TgW">
-                                                            <rect key="frame" x="55.5" y="1" width="15" height="52"/>
+                                                            <rect key="frame" x="51.5" y="1" width="15" height="52"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="15" id="Tsy-M5-IaB"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QJ-45-QFp">
-                                                            <rect key="frame" x="273" y="1" width="8" height="52"/>
+                                                            <rect key="frame" x="269" y="1" width="8" height="52"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="8" id="MLu-13-yJa"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gh8-j7-sMk">
-                                                            <rect key="frame" x="1" y="1" width="69.5" height="52"/>
+                                                            <rect key="frame" x="1" y="1" width="65.5" height="52"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calendar" translatesAutoresizingMaskIntoConstraints="NO" id="NgQ-Me-95i">
                                                                     <rect key="frame" x="3" y="5" width="10" height="10"/>
@@ -1643,7 +1643,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udi-aT-gwp">
-                                                                    <rect key="frame" x="15" y="27" width="39.5" height="18"/>
+                                                                    <rect key="frame" x="15" y="27" width="35.5" height="18"/>
                                                                     <color key="backgroundColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="1JN-7I-BOC"/>
@@ -1659,7 +1659,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9U7-OM-oZD">
-                                                                    <rect key="frame" x="15" y="5" width="39.5" height="22"/>
+                                                                    <rect key="frame" x="15" y="5" width="35.5" height="22"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1686,7 +1686,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLO-A5-X99">
-                                                            <rect key="frame" x="71.5" y="1" width="100" height="52"/>
+                                                            <rect key="frame" x="67.5" y="1" width="100" height="52"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock" translatesAutoresizingMaskIntoConstraints="NO" id="fyz-rY-Rp8">
                                                                     <rect key="frame" x="8" y="5" width="10" height="10"/>
@@ -1739,7 +1739,7 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDc-l0-FjJ">
-                                                            <rect key="frame" x="172.5" y="1" width="99.5" height="52"/>
+                                                            <rect key="frame" x="168.5" y="1" width="99.5" height="52"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WL" translatesAutoresizingMaskIntoConstraints="NO" id="Man-ht-GIv">
                                                                     <rect key="frame" x="8" y="4" width="10" height="10"/>
@@ -1787,7 +1787,7 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sx7-Iu-Q0x">
-                                                            <rect key="frame" x="273" y="1" width="96" height="52"/>
+                                                            <rect key="frame" x="269" y="1" width="96" height="52"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WL" translatesAutoresizingMaskIntoConstraints="NO" id="5fH-uv-ux3">
                                                                     <rect key="frame" x="8" y="4" width="10" height="10"/>
@@ -3188,7 +3188,7 @@
                             <outlet property="delegate" destination="Urz-q0-yGF" id="CrA-fK-Vf2"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="RESUMEN" image="ResumenReservacion" id="2MD-fX-dxM"/>
+                    <tabBarItem key="tabBarItem" title="Resumen" image="ResumenReservacion" id="2MD-fX-dxM"/>
                     <navigationItem key="navigationItem" title="Reservaciones" id="K1p-GR-GT6">
                         <barButtonItem key="leftBarButtonItem" image="Menu" id="ML5-wl-3ES">
                             <connections>
@@ -3228,7 +3228,7 @@
             </objects>
             <point key="canvasLocation" x="-2638" y="-2506"/>
         </scene>
-        <!--Ubicaciones-->
+        <!--Sucursales-->
         <scene sceneID="KgC-BC-GiP">
             <objects>
                 <collectionViewController id="5oa-AU-zJ0" customClass="ColeccionSucursales" sceneMemberID="viewController">
@@ -3334,8 +3334,8 @@
                             <outlet property="delegate" destination="5oa-AU-zJ0" id="P4V-Nb-h4p"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="RESERVAR" image="ReservarSalaJuntas" id="tEa-jP-OTv"/>
-                    <navigationItem key="navigationItem" title="Ubicaciones" id="EDJ-qz-Dif">
+                    <tabBarItem key="tabBarItem" title="Reservar" image="ReservarSalaJuntas" id="tEa-jP-OTv"/>
+                    <navigationItem key="navigationItem" title="Sucursales" id="EDJ-qz-Dif">
                         <barButtonItem key="leftBarButtonItem" image="Atras" id="wfp-Jn-RPp">
                             <connections>
                                 <action selector="btnBack_Touch:" destination="5oa-AU-zJ0" id="211663"/>
@@ -5649,7 +5649,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="533" id="lsD-yO-JDM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="533" id="lsD-yO-JDM">
                                         <rect key="frame" x="0.0" y="90" width="375" height="533"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lsD-yO-JDM" id="AZr-ax-e6F">
@@ -6883,6 +6883,12 @@
                                             <constraint firstAttribute="width" constant="63" id="OKw-D6-g05"/>
                                             <constraint firstAttribute="height" constant="63" id="zKf-z7-892"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="31.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Andrea Alcantar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbJ-tq-f0W">
                                         <rect key="frame" x="80" y="41" width="287" height="26"/>
@@ -7850,7 +7856,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="btnPublicar_TouchUpInside:" destination="aZt-5R-5gd" eventType="touchUpInside" id="71814"/>
-                                                        <segue destination="lv3-U7-Dnb" kind="presentation" identifier="toShowPostView" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="xCh-du-wWb"/>
+                                                        <segue destination="lv3-U7-Dnb" kind="presentation" identifier="toShowPostView" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="xCh-du-wWb"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -8834,7 +8840,7 @@ COL. LADRON DE GUEVARA</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="k8M-ji-cab">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.10588235294117647" green="0.10588235294117647" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Invitados" rowHeight="164" id="cDZ-jO-qIo" customClass="CeldaInvitados">
                                 <rect key="frame" x="0.0" y="28" width="375" height="164"/>
@@ -13196,7 +13202,7 @@ COL. LADRON DE GUEVARA</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N52-P1-5Bm">
-                                <rect key="frame" x="299" y="211.5" width="68" height="22"/>
+                                <rect key="frame" x="299" y="212" width="68" height="22"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="g9t-1m-vpI"/>
@@ -14880,11 +14886,11 @@ COL. LADRON DE GUEVARA</string>
         <image name="worklabsLogo" width="983" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BTo-Ke-LaG"/>
+        <segue reference="l8u-9u-D6k"/>
         <segue reference="Yh6-Me-7cI"/>
-        <segue reference="xcs-tN-OVG"/>
+        <segue reference="teg-hU-Dz2"/>
         <segue reference="Hoa-iV-Mgh"/>
-        <segue reference="fLD-ZY-1hz"/>
+        <segue reference="wV9-2A-ApY"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.10980392156862745" green="0.52941176470588236" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

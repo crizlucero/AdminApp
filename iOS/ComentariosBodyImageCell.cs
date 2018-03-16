@@ -96,18 +96,29 @@ namespace WorklabsMx.iOS
                 {
                     post.Publicacion_Imagen_Post = new UploadImages().DownloadFileFTP(post.Publicacion_Imagen, MenuHelper.UploadImagePath);
                 }
-                var data = NSData.FromArray(post.Publicacion_Imagen_Post);
-                var uiimage = UIImage.LoadFromData(data);
-                ReescalImage = ImageHelper.ReescalImage(uiimage);
+                if (post.Publicacion_Imagen_Post.Length > 0)
+                {
+                    var data = NSData.FromArray(post.Publicacion_Imagen_Post);
+                    var uiimage = UIImage.LoadFromData(data);
+                    ReescalImage = ImageHelper.ReescalImage(uiimage);
+                }
+
                 if ((post.Usuario.Usuario_Fotografia != "" && post.Usuario.Usuario_Fotografia != null && post.Usuario.Usuario_Fotografia != "user_male.png"))
                 {
                     if (post.Usuario.Usuario_Fotografia_Perfil == null)
                     {
                         post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
                     }
-                    data = NSData.FromArray(post.Usuario.Usuario_Fotografia_Perfil);
-                    uiimage = UIImage.LoadFromData(data);
-                    ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
+                    if (post.Publicacion_Imagen_Post.Length > 0)
+                    {
+                        var data = NSData.FromArray(post.Usuario.Usuario_Fotografia_Perfil);
+                        var uiimage = UIImage.LoadFromData(data);
+                        ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
+                    }
+                    else
+                    {
+                        ReescalImageUsr = UIImage.FromBundle("ProfileImageBig");
+                    }
                 }
                 else
                 {

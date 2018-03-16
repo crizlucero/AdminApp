@@ -95,9 +95,17 @@ namespace WorklabsMx.iOS
    
                             NewInfoPerfil.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(NewInfoPerfil.Usuario_Fotografia, MenuHelper.ProfileImagePath);
                     }
-                    var data = NSData.FromArray(NewInfoPerfil.Usuario_Fotografia_Perfil);
-                    var uiimage = UIImage.LoadFromData(data);
-                    ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
+
+                    if (NewInfoPerfil.Usuario_Fotografia_Perfil.Length > 0)
+                    {
+                        var data = NSData.FromArray(NewInfoPerfil.Usuario_Fotografia_Perfil);
+                        var uiimage = UIImage.LoadFromData(data);
+                        ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
+                    }
+                    else
+                    {
+                        ReescalImageUsr = UIImage.FromBundle("ProfileImageBig");
+                    }
 
                 }
                 else
@@ -116,9 +124,14 @@ namespace WorklabsMx.iOS
                     {
                         NewInfoPerfil.Usuario_Fotografia_FondoPerfil = new UploadImages().DownloadFileFTP(NewInfoPerfil.Usuario_Fotografia_Fondo, MenuHelper.ProfileImagePath);
                     }
-                    var data = NSData.FromArray(NewInfoPerfil.Usuario_Fotografia_FondoPerfil);
-                    var uiimage = UIImage.LoadFromData(data);
-                    ReescalImageBack = ImageHelper.ReescalProfileImage(uiimage);
+
+                    if (NewInfoPerfil.Usuario_Fotografia_FondoPerfil.Length > 0)
+                    {
+                        var data = NSData.FromArray(NewInfoPerfil.Usuario_Fotografia_FondoPerfil);
+                        var uiimage = UIImage.LoadFromData(data);
+                        ReescalImageBack = ImageHelper.ReescalProfileImage(uiimage);
+                    }
+
                 }
 
             });

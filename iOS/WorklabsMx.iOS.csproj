@@ -75,7 +75,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: Tomas Peterson (Q7BW62ZW3L)</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -89,6 +89,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <MtouchI18n>west</MtouchI18n>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <CodesignProvision>VS: com.WorklabsMx.WorklabsMx Development</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -1384,6 +1385,7 @@
     <Compile Include="PagosTableViewController.designer.cs">
       <DependentUpon>PagosTableViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pagos\PagosClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -1554,6 +1556,7 @@
     <Folder Include="Assets.xcassets\NoLogoWork.imageset\" />
     <Folder Include="Assets.xcassets\AcercaDe.imageset\" />
     <Folder Include="Assets.xcassets\fondoLogin.imageset\" />
+    <Folder Include="Pagos\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />
@@ -1565,13 +1568,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\..\..\Pagos\SuiteMCommerce.framework">
-      <Kind>Framework</Kind>
-      <SmartLink>False</SmartLink>
-    </NativeReference>
+    <BundleResource Include="HTML\Invitacion.html" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="HTML\Invitacion.html" />
+    <NativeReference Include="..\..\..\Suite-mCommerce-iOS\SuiteMCommerce.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
