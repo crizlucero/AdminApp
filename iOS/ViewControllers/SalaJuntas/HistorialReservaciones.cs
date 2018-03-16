@@ -163,6 +163,7 @@ namespace WorklabsMx.iOS
             await Task.Delay(500);
             this.SeccionSeleccionada = CampoSeleccionado;
             this.TableView.ReloadData();
+            BTProgressHUD.Dismiss();
         }
 
         partial void btnBack_Touch(UIBarButtonItem sender)

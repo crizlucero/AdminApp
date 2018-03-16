@@ -53,7 +53,6 @@ namespace WorklabsMx.iOS
             nfloat aux = this.vwSalasJuntas.Frame.Width;
             this.lblCreditosDisponibles.Text = new SalasJuntasController().GetCreditosDisponibles(KeyChainHelper.GetKey("Usuario_Id")).ToString();
             this.lblCreditosPorUsar.Text = "0";
-
             withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());
             base.ViewDidLoad();
             this.GenerateRecornizes();
@@ -67,11 +66,9 @@ namespace WorklabsMx.iOS
             base.ViewWillAppear(animated);
         }
 
-
         private void UpdateInfo()
         {
             this.scvSalasJuntas.Frame = new CGRect(this.scvSalasJuntas.Frame.X, this.scvSalasJuntas.Frame.Y, withImage, this.scvSalasJuntas.Frame.Height);
-
             if (this.SalasJuntas.Count > 0)
             {
                 this.SalaActual = this.SalasJuntas[0];
@@ -252,6 +249,8 @@ namespace WorklabsMx.iOS
 
             if (date >= 0)
             {
+                CGPoint recta = new CGPoint(view2324.Frame.X, view2324.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 view2324.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
@@ -263,6 +262,8 @@ namespace WorklabsMx.iOS
             }
             if (date >= 1)
             {
+                CGPoint recta = new CGPoint(vw2223.Frame.X, vw2223.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw2223.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
@@ -273,6 +274,8 @@ namespace WorklabsMx.iOS
             }
             if (date >= 2)
             {
+                CGPoint recta = new CGPoint(vw2122.Frame.X, vw2122.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw2122.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
@@ -283,6 +286,8 @@ namespace WorklabsMx.iOS
             }
             if (date >= 3)
             {
+                CGPoint recta = new CGPoint(vw2021.Frame.X, vw2021.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw2021.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
@@ -293,6 +298,8 @@ namespace WorklabsMx.iOS
             }
             if (date >= 4)
             {
+                CGPoint recta = new CGPoint(vw1920.Frame.X, vw1920.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1920.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
@@ -303,6 +310,8 @@ namespace WorklabsMx.iOS
             }
             if (date >= 5)
             {
+                CGPoint recta = new CGPoint(vw1819.Frame.X, vw1819.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1819.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
@@ -313,8 +322,9 @@ namespace WorklabsMx.iOS
             }
             if (date >= 6)
             {
+                CGPoint recta = new CGPoint(vw1718.Frame.X, vw1718.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1718.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 //vw1819.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
@@ -325,8 +335,9 @@ namespace WorklabsMx.iOS
             }
             if (date >= 7)
             {
+                CGPoint recta = new CGPoint(vw1617.Frame.X, vw1617.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1617.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 //vw1718.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
@@ -337,8 +348,9 @@ namespace WorklabsMx.iOS
             }
             if (date > 8)
             {
+                CGPoint recta = new CGPoint(vw1516.Frame.X, vw1516.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1516.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 //vw1617.BackgroundColor = UIColor.Clear.FromHex(0x404040);
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
@@ -349,8 +361,9 @@ namespace WorklabsMx.iOS
             }
             if (date >= 9)
             {
+                CGPoint recta = new CGPoint(vw1415.Frame.X, vw1415.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1415.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
@@ -360,8 +373,9 @@ namespace WorklabsMx.iOS
             }
             if (date >= 10)
             {
+                CGPoint recta = new CGPoint(vw1314.Frame.X, vw1314.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1314.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
@@ -371,8 +385,9 @@ namespace WorklabsMx.iOS
             }
             if (date >= 11)
             {
+                CGPoint recta = new CGPoint(vw1213.Frame.X, vw1213.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1213.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
@@ -382,8 +397,9 @@ namespace WorklabsMx.iOS
             }
             if (date >= 12)
             {
+                CGPoint recta = new CGPoint(vw1112.Frame.X, vw1112.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1112.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
@@ -393,8 +409,9 @@ namespace WorklabsMx.iOS
             }
             if (date >= 13)
             {
+                CGPoint recta = new CGPoint(vw1011.Frame.X, vw1011.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1011.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
@@ -404,8 +421,9 @@ namespace WorklabsMx.iOS
             }
             if (date >= 14)
             {
+                CGPoint recta = new CGPoint(vw0910.Frame.X, vw0910.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw0910.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
@@ -415,8 +433,9 @@ namespace WorklabsMx.iOS
             }
             if (date >= 15)
             {
+                CGPoint recta = new CGPoint(vw0809.Frame.X, vw0809.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw0809.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
@@ -426,8 +445,9 @@ namespace WorklabsMx.iOS
             }
             if (date >= 16)
             {
+                CGPoint recta = new CGPoint(vw0708.Frame.X, vw0708.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw0708.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
@@ -437,8 +457,9 @@ namespace WorklabsMx.iOS
             }
             if (date >= 17)
             {
+                CGPoint recta = new CGPoint(vw0607.Frame.X, vw0607.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw0607.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
@@ -448,8 +469,9 @@ namespace WorklabsMx.iOS
             }
             if (date >= 18)
             {
+                CGPoint recta = new CGPoint(vw0506.Frame.X, vw0506.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw0506.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
@@ -459,8 +481,9 @@ namespace WorklabsMx.iOS
             }
             if (date >= 19)
             {
+                CGPoint recta = new CGPoint(vw0405.Frame.X, vw0405.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw0405.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
@@ -470,8 +493,9 @@ namespace WorklabsMx.iOS
             }
             if (date >= 20)
             {
+                CGPoint recta = new CGPoint(vw0304.Frame.X, vw0304.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw0304.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
@@ -483,8 +507,9 @@ namespace WorklabsMx.iOS
 
             if (date >= 21)
             {
+                CGPoint recta = new CGPoint(vw0203.Frame.X, vw0203.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw0203.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
@@ -494,8 +519,9 @@ namespace WorklabsMx.iOS
             }
             if (date >= 22)
             {
+                CGPoint recta = new CGPoint(vw0102.Frame.X, vw0102.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw0102.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {
@@ -505,8 +531,9 @@ namespace WorklabsMx.iOS
             }
             if (date >= 23)
             {
+                CGPoint recta = new CGPoint(vw2401.Frame.X, vw2401.Frame.Y);
+                this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw2401.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
                 {

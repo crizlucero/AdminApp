@@ -218,26 +218,26 @@ namespace WorklabsMx.iOS
 
         }
 
-        async Task GetImages(UsuarioModel Miembro)
+        async Task GetImages(UsuarioModel MiembroLocal)
         {
             UIImage ReescalImageBack = new UIImage();
             UIImage ReescalImageUsr = new UIImage();
             await Task.Run(() =>
             {
                 
-                if ((Miembro.Usuario_Fotografia != "" && Miembro.Usuario_Fotografia != null  && Miembro.Usuario_Fotografia != "user_male.png"))
+                if ((MiembroLocal.Usuario_Fotografia != "" && MiembroLocal.Usuario_Fotografia != null  && MiembroLocal.Usuario_Fotografia != "user_male.png"))
                 {
-                    if (Miembro.Usuario_Fotografia_Perfil == null)
+                    if (MiembroLocal.Usuario_Fotografia_Perfil == null)
                     {
-                        Miembro.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(Miembro.Usuario_Fotografia, MenuHelper.ProfileImagePath);
+                        MiembroLocal.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(MiembroLocal.Usuario_Fotografia, MenuHelper.ProfileImagePath);
                     }
-                    if (Miembro.Usuario_Fotografia_Perfil.Length == 0)
+                    if (MiembroLocal.Usuario_Fotografia_Perfil.Length == 0)
                     {
                         ReescalImageUsr = UIImage.FromBundle("ProfileImageBig");
                     }
                     else
                     {
-                        var data = NSData.FromArray(Miembro.Usuario_Fotografia_Perfil);
+                        var data = NSData.FromArray(MiembroLocal.Usuario_Fotografia_Perfil);
                         var uiimage = UIImage.LoadFromData(data);
                         ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
                     }
@@ -249,17 +249,17 @@ namespace WorklabsMx.iOS
                 }
 
                
-                if (Miembro.Usuario_Fotografia_Fondo != null && Miembro.Usuario_Fotografia_Fondo != "")
+                if (MiembroLocal.Usuario_Fotografia_Fondo != null && MiembroLocal.Usuario_Fotografia_Fondo != "")
                 {
-                    if (Miembro.Usuario_Fotografia_FondoPerfil == null)
+                    if (MiembroLocal.Usuario_Fotografia_FondoPerfil == null)
                     {
 
-                        Miembro.Usuario_Fotografia_FondoPerfil = new UploadImages().DownloadFileFTP(Miembro.Usuario_Fotografia_Fondo, MenuHelper.ProfileImagePath);
+                        MiembroLocal.Usuario_Fotografia_FondoPerfil = new UploadImages().DownloadFileFTP(MiembroLocal.Usuario_Fotografia_Fondo, MenuHelper.ProfileImagePath);
 
                     }
-                    if (Miembro.Usuario_Fotografia_FondoPerfil.Length != 0)
+                    if (MiembroLocal.Usuario_Fotografia_FondoPerfil.Length > 0)
                     {
-                        var data = NSData.FromArray(Miembro.Usuario_Fotografia_FondoPerfil);
+                        var data = NSData.FromArray(MiembroLocal.Usuario_Fotografia_FondoPerfil);
                         var uiimage = UIImage.LoadFromData(data);
                         ReescalImageBack = ImageHelper.ReescalProfileImage(uiimage);
                     }

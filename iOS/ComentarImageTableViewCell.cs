@@ -77,22 +77,32 @@ namespace WorklabsMx.iOS
                 {
                     comentario.Comentario_Imagen_Comentario = new UploadImages().DownloadFileFTP(comentario.Comentario_Imagen, MenuHelper.UploadImagePath);
                 }
-                var data = NSData.FromArray(comentario.Comentario_Imagen_Comentario);
-                var uiimage = UIImage.LoadFromData(data);
-                ReescalImage = ImageHelper.ReescalImage(uiimage);
 
+                if (comentario.Comentario_Imagen_Comentario.Length > 0)
+                {
+                    var data = NSData.FromArray(comentario.Comentario_Imagen_Comentario);
+                    var uiimage = UIImage.LoadFromData(data);
+                    ReescalImage = ImageHelper.ReescalImage(uiimage);
+                }
 
                 if ((comentario.Usuario.Usuario_Fotografia != "" && comentario.Usuario.Usuario_Fotografia != null && comentario.Usuario.Usuario_Fotografia != "user_male.png"))
                 {
 
                     if (comentario.Usuario.Usuario_Fotografia_Perfil == null)
                     {
-
                         comentario.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(comentario.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
                     }
-                    data = NSData.FromArray(comentario.Usuario.Usuario_Fotografia_Perfil);
-                    uiimage = UIImage.LoadFromData(data);
-                    ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
+                    else if (comentario.Usuario.Usuario_Fotografia_Perfil.Length == 0)
+                    {
+                        ReescalImageUsr = UIImage.FromBundle("PerfilEscritorio");
+                    }
+                    else
+                    {
+                        var data = NSData.FromArray(comentario.Usuario.Usuario_Fotografia_Perfil);
+                        var uiimage = UIImage.LoadFromData(data);
+                        ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
+                    }
+                   
                 }
                 else
                 {

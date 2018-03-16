@@ -12,8 +12,6 @@ namespace WorklabsMx.iOS
 {
     public partial class ComprasTableView : UITableViewController
     {
-
-
         MembresiaModel MemebresiaSelect = new MembresiaModel();
         ProductoModel ProductoSelect = new ProductoModel();
         UIBarButtonItem barButton = new UIBarButtonItem();
@@ -27,7 +25,6 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             barButton.Enabled = false;
-           
             this.cvProductos.Hidden = false;
             this.cvMembresias.Hidden = true;
         }
