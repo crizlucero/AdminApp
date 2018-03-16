@@ -147,7 +147,7 @@ namespace WorklabsMx.Droid
                 pagos.InsertData(encabezado, detalles);
             }
 
-            int Encabezado_Id = controller.AddOrdenVentaEncabezado(Convert.ToInt32(encabezado.Usuario.Usuario_Id), encabezado.Moneda_Id, encabezado.Impuesto_Id, encabezado.Descuento_Id, encabezado.Descuento_Id, encabezado.Folio,
+            int Encabezado_Id = controller.AddOrdenVentaEncabezado(Convert.ToInt32(encabezado.Usuario_Id), encabezado.Moneda_Id, encabezado.Impuesto_Id, encabezado.Descuento_Id, encabezado.Descuento_Id, encabezado.Folio,
                                                                    encabezado.Importe_Suma, encabezado.Porcentaje_Descuento, encabezado.Importe_Descuento, encabezado.Importe_Subtotal, encabezado.Importe_Impuesto,
                                                                    encabezado.Importe_Total, encabezado.Importe_Pagado, 0);
             if (Encabezado_Id != -1)

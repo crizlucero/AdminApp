@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/OrdenVentaEncabezado.cs">
     <Files>
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="277" Column="31" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="316" Column="9" />
       <File FileName="WorklabsMx.Droid/SplashActivity.cs" Line="20" Column="1" />
       <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="142" Column="68" />
       <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardActivity.cs" Line="53" Column="79" />
@@ -12,11 +12,12 @@
       <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="228" Column="38" />
       <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="88" Column="9" />
       <File FileName="WorklabsMx/Controllers/PagosController.cs" Line="218" Column="40" />
-      <File FileName="WorklabsMx/Handlers/PagosHandler.cs" Line="34" Column="94" />
+      <File FileName="WorklabsMx/Handlers/PagosHandler.cs" Line="17" Column="43" />
       <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ResultActivity.cs" Line="157" Column="119" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ResultActivity.cs" Line="166" Column="10" />
       <File FileName="WorklabsMx/Models/OrdenVentaDetalle.cs" Line="17" Column="19" />
       <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="226" Column="52" />
+      <File FileName="WorklabsMx/Models/OrdenVentaEncabezado.cs" Line="10" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -30,6 +31,6 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.android_accelerated_lollipop" AndroidDesignerPreferredTheme="AppTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>

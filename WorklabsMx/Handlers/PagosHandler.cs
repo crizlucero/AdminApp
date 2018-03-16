@@ -13,7 +13,7 @@ namespace WorklabsMx.Handlers
         {
             try
             {
-                connection = new SQLiteConnection(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
+                connection = new SQLiteConnection(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+ "worklabs.db");
                 connection.CreateTable<OrdenVentaEncabezado>();
                 connection.CreateTable<OrdenVentaDetalle>();
             }
