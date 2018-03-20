@@ -5548,7 +5548,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2050" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1434.4000000000001" y="1644.8275862068967"/>
+            <point key="canvasLocation" x="1434.4000000000001" y="1644.828"/>
         </scene>
         <!--Restaurar Contraseña-->
         <scene sceneID="2529">
@@ -5722,7 +5722,7 @@
                         <barButtonItem key="rightBarButtonItem" image="shopping" id="U2k-gT-XFx">
                             <connections>
                                 <action selector="btnCarrito_Touch:" destination="JAS-Na-dw8" id="630452"/>
-                                <segue destination="CJf-TK-aM1" kind="show" id="UKM-B1-CdQ"/>
+                                <segue destination="CJf-TK-aM1" kind="showDetail" id="UKM-B1-CdQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -11563,59 +11563,66 @@ COL. LADRON DE GUEVARA</string>
             </objects>
             <point key="canvasLocation" x="-16162" y="-1574"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Detalle de pago-->
         <scene sceneID="6OK-ad-vjq">
             <objects>
                 <tableViewController id="Uky-qh-gJJ" customClass="PagosTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7de-T1-xNg">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7de-T1-xNg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <sections>
-                            <tableViewSection id="O2Z-S3-4cS">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="178" id="tr1-lK-H3n">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tr1-lK-H3n" id="v7s-6o-e8f">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="177.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="195" id="7ec-r5-Rin">
-                                        <rect key="frame" x="0.0" y="178" width="375" height="195"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7ec-r5-Rin" id="PVK-tx-vGc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="194.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="228" id="wkc-aP-iTE">
-                                        <rect key="frame" x="0.0" y="373" width="375" height="228"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wkc-aP-iTE" id="vYH-Jt-f2j">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="227.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="178" id="tr1-lK-H3n">
+                                <rect key="frame" x="0.0" y="28" width="375" height="178"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tr1-lK-H3n" id="v7s-6o-e8f">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="195" id="7ec-r5-Rin">
+                                <rect key="frame" x="0.0" y="206" width="375" height="195"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7ec-r5-Rin" id="PVK-tx-vGc">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="195"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="228" id="wkc-aP-iTE">
+                                <rect key="frame" x="0.0" y="401" width="375" height="228"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wkc-aP-iTE" id="vYH-Jt-f2j">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="Uky-qh-gJJ" id="QwF-nd-7I0"/>
                             <outlet property="delegate" destination="Uky-qh-gJJ" id="awH-ae-iUL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="70y-XD-TTw"/>
+                    <navigationItem key="navigationItem" title="Detalle de pago" id="70y-XD-TTw">
+                        <barButtonItem key="rightBarButtonItem" title="Pagar" id="OpO-JP-Tey">
+                            <connections>
+                                <action selector="btnPagar_Touch:" destination="Uky-qh-gJJ" id="663741"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnPagar" destination="OpO-JP-Tey" id="name-outlet-OpO-JP-Tey"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9O-wF-k8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-13872" y="-2713"/>
+            <point key="canvasLocation" x="-14298" y="-2761"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4U3-VC-9N9">
             <objects>
                 <navigationController id="CJf-TK-aM1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2nl-KQ-cPn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vkp-OI-Cxm">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -11626,7 +11633,7 @@ COL. LADRON DE GUEVARA</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jnx-GW-z0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14704" y="-2766"/>
+            <point key="canvasLocation" x="-15292" y="-2761"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RsN-YZ-oqC">
@@ -14896,7 +14903,7 @@ COL. LADRON DE GUEVARA</string>
         <image name="ImagenSala" width="1246" height="321"/>
         <image name="ImagenSucursal" width="853" height="1280"/>
         <image name="Instagram" width="30" height="30"/>
-        <image name="Launch" width="16" height="16"/>
+        <image name="Launch" width="415" height="736"/>
         <image name="Likes" width="15" height="14"/>
         <image name="Mail" width="30" height="30"/>
         <image name="Menu" width="25" height="10"/>
@@ -14928,7 +14935,7 @@ COL. LADRON DE GUEVARA</string>
         <image name="Ubicaciones" width="1244" height="2208"/>
         <image name="User" width="10" height="15"/>
         <image name="WL" width="10" height="10"/>
-        <image name="WorklabsBlanco" width="16" height="16"/>
+        <image name="WorklabsBlanco" width="328" height="36"/>
         <image name="back" width="30" height="30"/>
         <image name="delete-image" width="60" height="60"/>
         <image name="facebookic" width="22" height="22"/>

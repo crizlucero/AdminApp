@@ -14,11 +14,19 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+        }
+
+		public override void ViewWillAppear(bool animated)
+		{
+			base.ViewWillAppear(animated);
+		}
+
+
+		partial void btnPagar_Touch(UIBarButtonItem sender)
+        {
             EjemploPagos objPagos = new EjemploPagos();
             objPagos.Pagar(this);
         }
-
-
     }
 
 

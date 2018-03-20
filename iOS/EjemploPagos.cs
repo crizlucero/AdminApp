@@ -52,22 +52,22 @@ namespace WorklabsMx.iOS
 
         public override void DidFinishAuthenticationProcess(BeanTokenizeResponse tokenizeResponse, SuiteError error)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public override void DidFinishPayProcess(string response, SuiteError error)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public override void DidFinishTokenizeTransantion(BeanPaymentWithToken beanPaymentWithToken, SuiteError error)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public override void OperationCanceledByUser()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 
