@@ -28,6 +28,10 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnFecha { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnQuitar { get; set; }
 
         [Outlet]
@@ -78,6 +82,10 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnDetalle_Touch (UIKit.UIButton sender);
 
+        [Action ("btnFecha_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnFecha_Touch (UIKit.UIButton sender);
+
         [Action ("btnQuitar_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnQuitar_Touch (UIKit.UIButton sender);
@@ -101,6 +109,11 @@ namespace WorklabsMx.iOS
             if (btnDetalle != null) {
                 btnDetalle.Dispose ();
                 btnDetalle = null;
+            }
+
+            if (btnFecha != null) {
+                btnFecha.Dispose ();
+                btnFecha = null;
             }
 
             if (btnQuitar != null) {

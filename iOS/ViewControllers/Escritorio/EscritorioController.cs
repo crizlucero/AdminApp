@@ -16,10 +16,10 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 
         public override async void ViewDidLoad()
         {
-            base.ViewDidLoad();              await MenuHelper.GetMuroPosts();             allPosts = MenuHelper.AllPost;             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();              withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());             RefreshControl = new UIRefreshControl();             RefreshControl.AddTarget(HandleValueChanged, UIControlEvent.ValueChanged);             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;             var Tap = new UITapGestureRecognizer(this.Tapped);             this.View.AddGestureRecognizer(Tap); 		}
+            base.ViewDidLoad();             await MenuHelper.GetMuroPosts();             allPosts = MenuHelper.AllPost;             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();             withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());             RefreshControl = new UIRefreshControl();             RefreshControl.AddTarget(HandleValueChanged, UIControlEvent.ValueChanged);             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;             var Tap = new UITapGestureRecognizer(this.Tapped);             this.View.AddGestureRecognizer(Tap); 		}
 
         public override async void ViewWillAppear(bool animated)
-        {             base.ViewWillAppear(animated);              await MenuHelper.FillTable();
+        {             base.ViewWillAppear(animated);             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();             await MenuHelper.FillTable();
         }          void HandleValueChanged(object sender, EventArgs e)         {             this.GetData();         }          public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);

@@ -75,12 +75,11 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: Tomas Peterson (Q7BW62ZW3L)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchFastDev>true</MtouchFastDev>
-    <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <IOSDebuggerPort>58788</IOSDebuggerPort>
     <MtouchLink>SdkOnly</MtouchLink>
@@ -89,7 +88,6 @@
     <PlatformTarget>x86</PlatformTarget>
     <MtouchI18n>west</MtouchI18n>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <CodesignProvision>VS: com.WorklabsMx.WorklabsMx Development</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -139,15 +137,6 @@
     <Reference Include="Xamarin.SimplePing.iOS">
       <HintPath>..\packages\Xamarin.SimplePing.1.4.0\lib\XamariniOS10\Xamarin.SimplePing.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="BouncyCastle">
-      <HintPath>..\packages\MimeKit.2.0.1\lib\xamarinios\BouncyCastle.dll</HintPath>
-    </Reference>
-    <Reference Include="MimeKit">
-      <HintPath>..\packages\MimeKit.2.0.1\lib\xamarinios\MimeKit.dll</HintPath>
-    </Reference>
-    <Reference Include="MailKit">
-      <HintPath>..\packages\MailKit.2.0.1\lib\xamarinios\MailKit.dll</HintPath>
-    </Reference>
     <Reference Include="Plugin.Connectivity.Abstractions">
       <HintPath>..\packages\Xam.Plugin.Connectivity.3.1.1\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
     </Reference>
@@ -156,6 +145,15 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle">
+      <HintPath>..\packages\MimeKit.2.0.2\lib\xamarinios\BouncyCastle.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit">
+      <HintPath>..\packages\MimeKit.2.0.2\lib\xamarinios\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit">
+      <HintPath>..\packages\MailKit.2.0.2\lib\xamarinios\MailKit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -398,7 +396,6 @@
     <ImageAsset Include="Assets.xcassets\shopping.imageset\shopping%402x.png" />
     <ImageAsset Include="Assets.xcassets\shopping.imageset\shopping%403x.png" />
     <ImageAsset Include="Assets.xcassets\Launch.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Launch.imageset\Load.jpg" />
     <ImageAsset Include="Assets.xcassets\back.imageset\Artboard 21.png" />
     <ImageAsset Include="Assets.xcassets\back.imageset\Artboard 22.png" />
     <ImageAsset Include="Assets.xcassets\back.imageset\Artboard 23.png" />
@@ -789,6 +786,17 @@
     <ImageAsset Include="Assets.xcassets\fondoLogin.imageset\login.png" />
     <ImageAsset Include="Assets.xcassets\fondoLogin.imageset\login%402x.png" />
     <ImageAsset Include="Assets.xcassets\fondoLogin.imageset\login%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Launch.imageset\splash.png" />
+    <ImageAsset Include="Assets.xcassets\Launch.imageset\splash%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Launch.imageset\splash%403x.png" />
+    <ImageAsset Include="Assets.xcassets\WorklabsBlanco.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\WorklabsBlanco.imageset\WorklabsBlanco.png" />
+    <ImageAsset Include="Assets.xcassets\WorklabsBlanco.imageset\WorklabsBlanco%402x.png" />
+    <ImageAsset Include="Assets.xcassets\WorklabsBlanco.imageset\WorklabsBlanco%403x.png" />
+    <ImageAsset Include="Assets.xcassets\WorklabsNegro.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\WorklabsNegro.imageset\WorklabsNegro.png" />
+    <ImageAsset Include="Assets.xcassets\WorklabsNegro.imageset\WorklabsNegro%402x.png" />
+    <ImageAsset Include="Assets.xcassets\WorklabsNegro.imageset\WorklabsNegro%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1016,7 +1024,6 @@
     <Compile Include="ViewControllers\Telefonia\TelefoniaTableView.designer.cs">
       <DependentUpon>TelefoniaTableView.cs</DependentUpon>
     </Compile>
-    <Compile Include="PerfilTableViewController.cs" />
     <Compile Include="PerfilTableViewController.designer.cs">
       <DependentUpon>PerfilTableViewController.cs</DependentUpon>
     </Compile>
@@ -1307,6 +1314,7 @@
       <DependentUpon>CeldaColaboradores.cs</DependentUpon>
     </Compile>
     <Compile Include="NoRedesCell.cs" />
+    <Compile Include="PerfilTableViewController.cs" />
     <Compile Include="NoRedesCell.designer.cs">
       <DependentUpon>NoRedesCell.cs</DependentUpon>
     </Compile>
@@ -1386,6 +1394,9 @@
       <DependentUpon>PagosTableViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Pagos\PagosClass.cs" />
+    <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="EjemploPagos.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -1557,6 +1568,8 @@
     <Folder Include="Assets.xcassets\AcercaDe.imageset\" />
     <Folder Include="Assets.xcassets\fondoLogin.imageset\" />
     <Folder Include="Pagos\" />
+    <Folder Include="Assets.xcassets\WorklabsBlanco.imageset\" />
+    <Folder Include="Assets.xcassets\WorklabsNegro.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />
@@ -1566,6 +1579,10 @@
       <Project>{896BABD5-06E7-41CE-B5F7-27D849F3BC6B}</Project>
       <Name>SWRevealViewControllerBinding</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SuitemCommerceBinding\SuitemCommerceBinding.csproj">
+      <Project>{716D0E78-E785-4CCD-B5EA-64BE45AB7FE7}</Project>
+      <Name>SuitemCommerceBinding</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="HTML\Invitacion.html" />
@@ -1573,7 +1590,7 @@
   <ItemGroup>
     <NativeReference Include="..\..\..\Suite-mCommerce-iOS\SuiteMCommerce.framework">
       <Kind>Framework</Kind>
-      <ForceLoad>True</ForceLoad>
+      <SmartLink>False</SmartLink>
     </NativeReference>
   </ItemGroup>
   <Import Project="..\WorklabsMx\WorklabsMx.projitems" Label="Shared" Condition="Exists('..\WorklabsMx\WorklabsMx.projitems')" />

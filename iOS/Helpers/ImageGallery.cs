@@ -6,6 +6,7 @@ using WorklabsMx.iOS.Styles;
 using System.Net;
 using System.IO;
 using Plugin.Connectivity;
+using System.Collections.Generic;
 
 namespace WorklabsMx.iOS.Helpers
 {
@@ -107,7 +108,7 @@ namespace WorklabsMx.iOS.Helpers
                     }
                     catch (Exception e)
                     {
-                        SlackLogs.SendMessage(e.Message);
+                        SlackLogs.SendMessage(e.Message, null, "LoadImageUrl");
                     }
                 }
             }
@@ -143,7 +144,7 @@ namespace WorklabsMx.iOS.Helpers
             }
             catch(Exception e)
             {
-                SlackLogs.SendMessage(e.Message);
+                SlackLogs.SendMessage(e.Message, null, "UpLoadImageFTP");
                 return false;
             }
         }

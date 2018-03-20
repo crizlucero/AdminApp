@@ -166,7 +166,7 @@ namespace WorklabsMx.iOS
                             }
                             catch (Exception ex)
                             {
-                                SlackLogs.SendMessage(ex.Message);
+                                SlackLogs.SendMessage(ex.Message, "", "AddPostsAsync");
                             }
                         };
                         totalSize += AllPost[postNumber].totalSize;
@@ -205,7 +205,7 @@ namespace WorklabsMx.iOS
                     }
                     catch (Exception e)
                     {
-                        SlackLogs.SendMessage(e.Message);
+                        SlackLogs.SendMessage(e.Message, "", "AddPostsAsync");
                     }
                 }
                 scrollView.ContentSize = new CGSize(UIScreen.MainScreen.Bounds.Width, totalSize);

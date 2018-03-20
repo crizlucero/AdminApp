@@ -230,7 +230,7 @@ namespace WorklabsMx.iOS
                         }
                         catch (Exception e)
                         {
-                            SlackLogs.SendMessage(e.Message);
+                            SlackLogs.SendMessage(e.Message, "", "AbrirCamara");
                         }
 
                     });

@@ -22,10 +22,10 @@ namespace WorklabsMx.iOS
         public ProductoModel Prodcuto = new ProductoModel();
         int ContadorProductos = 1;
         string Sucursal;
-        List<SucursalModel> sucursales; 
+        List<SucursalModel> sucursales;
         NSDateFormatter dateFormat = new NSDateFormatter();
-       
-        public DetalleProductoTableViewController (IntPtr handle) : base (handle)
+
+        public DetalleProductoTableViewController(IntPtr handle) : base(handle)
         {
         }
 
@@ -35,10 +35,19 @@ namespace WorklabsMx.iOS
             dateFormat.DateFormat = "dd/MM/yyyy";
             NavigationItem.Title = Prodcuto.Producto_Descripcion;
 
-          
+
             StyleHelper.Style(this.vwSucursales.Layer);
             StyleHelper.Style(this.btnAñadir.Layer);
-            this.lblLeyenda.Text = "Costo por unidad";
+
+            if (Prodcuto.Producto_Disponibilidad.Contains("RECURRENTE"))
+            {
+                this.lblLeyenda.Text = "Tarifa Mensual";
+            }
+            else
+            {
+                this.lblLeyenda.Text = "Costo por unidad";
+            }
+
             this.lblPrecio.Text = "$" + Prodcuto.Producto_Precio_Base_Neto.ToString() + " / MN";
 
             ContadorProductos = 1;
@@ -114,7 +123,10 @@ namespace WorklabsMx.iOS
 
         partial void btnAgregarACarrito_Touch(UIBarButtonItem sender)
         {
-            
+        }
+
+        partial void btnFecha_Touch(UIButton sender)
+        {
         }
     }
 
@@ -124,7 +136,6 @@ namespace WorklabsMx.iOS
         {
             this.Sucursal = Sucursal;
             this.btnSucursales.SetTitle(Sucursal, UIControlState.Normal);
-
         }
     }
 }
