@@ -189,10 +189,7 @@ namespace WorklabsMx.Droid
                         //Console.WriteLine(new PagosController().GetUrlPayment(Total.ToString("F")));
                         OrdenVentaEncabezado encabezado = new OrdenVentaEncabezado
                         {
-                            Usuario = new UsuarioModel
-                            {
-                                Usuario_Id = Storage.Get("Usuario_Id")
-                            },
+                            Usuario_Id = Convert.ToInt32(Storage.Get("Usuario_Id")),
                             Moneda_Id = 1,
                             Impuesto_Id = 1,
                             Descuento_Id = Convert.ToInt32(descuento_id),

@@ -101,7 +101,8 @@ namespace WorklabsMx.Droid
 
         public void CanceledProcessByUser()
         {
-            OnBackPressed();
+            base.OnBackPressed();
+            Finish();
         }
 
         public void DidFinishAuthenticationProcess(BeanTokenizeResponse beanTokenizeResponse, SuiteError suiteError)

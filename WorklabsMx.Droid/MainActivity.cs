@@ -313,17 +313,8 @@ namespace WorklabsMx.Droid
             AndHUD.Shared.Dismiss(this);
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            /*try
-            {
-                bool isOnline = ((ConnectivityManager)GetSystemService(ConnectivityService)).ActiveNetworkInfo.IsConnected;
-                MenuInflater.Inflate(Resource.Menu.top_menus, menu);
-            }
-            catch (Exception e) { SlackLogs.SendMessage(e.Message); }*/
-
-            return base.OnCreateOptionsMenu(menu);
-        }
+        public override bool OnCreateOptionsMenu(IMenu menu) =>
+            base.OnCreateOptionsMenu(menu);
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
