@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("PagosTableViewController")]
     partial class PagosTableViewController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

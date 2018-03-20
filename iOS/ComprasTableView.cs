@@ -90,7 +90,6 @@ namespace WorklabsMx.iOS
 
     public partial class ComprasTableView : ColeccionProductosInt
     {
-
         public void ProductoSeleccionado(ProductoModel ProductoSeleccionado)
         {
             this.ProductoSelect = ProductoSeleccionado;
