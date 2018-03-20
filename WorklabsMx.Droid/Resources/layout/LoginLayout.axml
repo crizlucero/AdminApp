@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
-    android:background="@mipmap/login">
+    android:background="@drawable/background_login">
     <ImageView
         android:src="@mipmap/worklabs_title"
         android:layout_width="match_parent"
@@ -30,15 +30,16 @@
         android:id="@+id/txtEmail"
         android:hint="@string/str_general_email"
         android:layout_gravity="center"
-        android:paddingLeft="10dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
         android:layout_marginBottom="20dp"
         android:textAllCaps="false"
-        android:textColorHint="#C3C3C3"
-        android:textColor="#FFF"
+        android:textColorHint="#FEEC64"
+        android:textColor="#FEEC64"
         android:textSize="12dp"
-        android:backgroundTint="#FFF" />
+        android:backgroundTint="#FFF"
+        android:layout_columnSpan="2"
+        android:layout_marginRight="30dp"
+        android:paddingLeft="10dp"
+        android:layout_marginLeft="25dp" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,15 +56,15 @@
         android:hint="@string/str_login_password_text"
         android:maxLength="8"
         android:layout_gravity="center"
-        android:paddingLeft="10dp"
-        android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="20dp"
         android:textAllCaps="false"
         android:textSize="12dp"
-        android:textColorHint="#C3C3C3"
-        android:textColor="#FFF"
-        android:backgroundTint="#FFF" />
+        android:textColorHint="#FEEC64"
+        android:textColor="#FEEC64"
+        android:backgroundTint="#FFF"
+        android:paddingLeft="10dp"
+        android:layout_marginLeft="25dp" />
     <Button
         android:layout_width="185dp"
         android:layout_height="40dp"
@@ -71,18 +72,19 @@
         android:text="@string/str_login"
         android:layout_gravity="center"
         android:textAllCaps="false"
-        android:textColor="#95D6FF"
+        android:textColor="#000"
         android:background="@drawable/shadow_radius_light_white"
-        android:layout_marginTop="130dp" />
+        android:layout_marginTop="50dp" />
     <Button
         android:layout_width="185dp"
         android:layout_height="wrap_content"
         android:id="@+id/btnForget"
         android:text="@string/str_login_recovery"
-        android:textColor="#95D6FF"
+        android:textColor="#00E2FF"
         android:background="#00000000"
         android:layout_gravity="center"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        android:layout_marginLeft="10dp" />
     <Button
         android:layout_width="185dp"
         android:layout_height="30dp"
@@ -92,5 +94,6 @@
         android:textColor="#FFF"
         android:background="#00000000"
         android:textAllCaps="false"
-        android:linksClickable="true" />
+        android:linksClickable="true"
+        android:layout_marginRight="10dp" />
 </LinearLayout>

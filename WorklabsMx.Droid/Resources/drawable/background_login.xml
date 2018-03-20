@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+        android:drawable="@mipmap/background_login">
+  </item>
+    <item>
+        <shape>
+        <gradient
+            android:type="linear"
+            android:startColor="#DD8BD7FF"
+            android:endColor="#DD3D94FF"
+            android:angle="225"/>
+    </shape>
+    </item>
+</layer-list>

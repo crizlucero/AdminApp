@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Views;
-using Android.Widget;
 using Com.Mitec.Suitemcommerce.Beans;
 using Com.Mitec.Suitemcommerce.Controller;
 using Com.Mitec.Suitemcommerce.Utilities;
-using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
-using WorklabsMx.Enum;
-using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
