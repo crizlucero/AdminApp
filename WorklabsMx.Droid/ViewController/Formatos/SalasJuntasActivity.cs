@@ -250,8 +250,7 @@ namespace WorklabsMx.Droid
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            StartActivity(new Intent(this, typeof(SalasJuntasSucursalActivity)));
-            Finish();
+            OnBackPressed();
             return base.OnOptionsItemSelected(item);
         }
 
@@ -345,6 +344,12 @@ namespace WorklabsMx.Droid
         void SelecccionarNivel()
         {
 
+        }
+
+        public override void OnBackPressed()
+        {
+            StartActivity(new Intent(this, typeof(SalasJuntasSucursalActivity)));
+            Finish();
         }
     }
 

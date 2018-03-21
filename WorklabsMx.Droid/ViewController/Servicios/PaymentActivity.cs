@@ -88,15 +88,14 @@ namespace WorklabsMx.Droid
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            base.OnBackPressed();
+            OnBackPressed();
             Finish();
             return base.OnOptionsItemSelected(item);
         }
 
         public void CanceledProcessByUser()
         {
-            base.OnBackPressed();
-            Finish();
+            OnBackPressed();
         }
 
         public void DidFinishAuthenticationProcess(BeanTokenizeResponse beanTokenizeResponse, SuiteError suiteError)
@@ -134,7 +133,13 @@ namespace WorklabsMx.Droid
         {
         }
 
-        class Authenticate : AsyncTask<Java.Lang.Void, Java.Lang.Void, Java.Lang.Void>
+		public override void OnBackPressed()
+		{
+            StartActivity(new Intent(this, typeof(ComprasActivity)));
+            Finish();
+		}
+
+		class Authenticate : AsyncTask<Java.Lang.Void, Java.Lang.Void, Java.Lang.Void>
         {
             readonly SuiteController suiteController;
             readonly BeanTokenization beanTokenization;

@@ -46,8 +46,7 @@ namespace WorklabsMx.Droid
                     RefreshAccess();
                     break;
                 default:
-                    StartActivity(new Intent(this, typeof(MainActivity)));
-                    Finish();
+                    OnBackPressed();
                     break;
             }
 
@@ -64,5 +63,11 @@ namespace WorklabsMx.Droid
             else
                 Console.WriteLine(newAcceso);
         }
-    }
+
+		public override void OnBackPressed()
+		{
+            StartActivity(new Intent(this, typeof(MainActivity)));
+            Finish();
+		}
+	}
 }

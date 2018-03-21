@@ -21,8 +21,6 @@ namespace WorklabsMx.Droid
     [Activity(Label = "@string/app_name")]
     public class TabSalasJuntasHistorialActivity : FragmentActivity
     {
-
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -57,11 +55,16 @@ namespace WorklabsMx.Droid
                     StartActivity(new Intent(this, typeof(SalasJuntasSucursalActivity)));
                     break;
                 default:
-                    StartActivity(new Intent(this, typeof(MainActivity)));
-                    Finish();
+                    OnBackPressed();
                     break;
             }
             return base.OnOptionsItemSelected(item);
+        }
+
+        public override void OnBackPressed()
+        {
+            StartActivity(new Intent(this, typeof(MainActivity)));
+            Finish();
         }
     }
     class HistorialesAdapter : PagerAdapter

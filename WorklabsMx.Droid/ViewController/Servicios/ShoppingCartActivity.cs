@@ -351,5 +351,11 @@ namespace WorklabsMx.Droid
             dialog = builder.Show();
             dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
         }
+
+        public override void OnBackPressed()
+        {
+            StartActivity(new Intent(this, typeof(ComprasActivity)));
+            Finish();
+        }
     }
 }

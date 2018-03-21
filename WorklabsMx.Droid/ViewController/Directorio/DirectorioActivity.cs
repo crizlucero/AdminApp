@@ -62,6 +62,12 @@ namespace WorklabsMx.Droid
             Finish();
             return base.OnOptionsItemSelected(item);
         }
+
+        public override void OnBackPressed()
+        {
+            StartActivity(new Intent(this, typeof(MainActivity)));
+            Finish();
+        }
     }
 
     public class DirectorioAdapter : PagerAdapter

@@ -31,9 +31,13 @@ namespace WorklabsMx.Droid
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
+            OnBackPressed();
+            return base.OnOptionsItemSelected(item);
+        }
+        public override void OnBackPressed()
+        {
             StartActivity(new Intent(this, typeof(TabSalasJuntasHistorialActivity)));
             Finish();
-            return base.OnOptionsItemSelected(item);
         }
     }
 
@@ -74,5 +78,7 @@ namespace WorklabsMx.Droid
             SucursalView.FindViewById<TextView>(Resource.Id.lblColonia).Text = sucursales[position].Territorio.Colonia;
             return SucursalView;
         }
+
+
     }
 }
