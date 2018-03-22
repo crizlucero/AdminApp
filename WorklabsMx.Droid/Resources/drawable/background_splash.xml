@@ -18,12 +18,12 @@
   </item>
     <item
         android:drawable="@mipmap/logo_black"
-        android:left="30dp"
-        android:right="30dp"
-        android:top="75dp"
-        android:bottom="400dp"
-        android:width="275dp"
-        android:height="30dp"
-        android:gravity="top">
+        android:top="100dp"
+        android:bottom="700dp"
+        android:left="50dp"
+        android:right="50dp"
+        android:width="290dp"
+        android:height="36dp"
+        android:gravity="center_horizontal|top">
     </item>
 </layer-list>

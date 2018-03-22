@@ -186,7 +186,6 @@ namespace WorklabsMx.Droid
                 case Resource.Id.menu_payment:
                     if (FindViewById<Switch>(Resource.Id.swCondiciones).Checked)
                     {
-                        //Console.WriteLine(new PagosController().GetUrlPayment(Total.ToString("F")));
                         OrdenVentaEncabezado encabezado = new OrdenVentaEncabezado
                         {
                             Usuario_Id = Convert.ToInt32(Storage.Get("Usuario_Id")),
