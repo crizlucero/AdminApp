@@ -205,11 +205,9 @@ namespace WorklabsMx.iOS
             {
                 var Encabezado = this.CrearEncabezado();
                 var VentaDetalle = CrearVentaDetalle(Encabezado);
-
                 new PagosHandler().InsertData(Encabezado, VentaDetalle);
-
                 EjemploPagos objPagos = new EjemploPagos();
-                objPagos.Pagar(this, ordenventa, ProductosMembresias);
+                objPagos.Pagar(this, Encabezado.Importe_Total.ToString());
             })));
             ConfirmarCompra.AddAction(UIAlertAction.Create("Cancelar", UIAlertActionStyle.Default, null));
             this.PresentViewController(ConfirmarCompra, true, null);
