@@ -1,9 +1,8 @@
-<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleTableViewController.cs">
     <Files>
-      <File FileName="iOS/EjemploPagos.cs" Line="118" Column="58" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleTableViewController.cs" Line="210" Column="28" NotebookId="1" />
+      <File FileName="iOS/EjemploPagos.cs" Line="101" Column="14" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleTableViewController.cs" Line="200" Column="9" NotebookId="1" />
       <File FileName="iOS/ComprasTableView.cs" Line="27" Column="56" NotebookId="1" />
       <File FileName="iOS/Helpers/MenuHelper.cs" Line="88" Column="62" NotebookId="1" />
       <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/CanjearCuponController.cs" Line="20" Column="31" NotebookId="1" />
@@ -14,11 +13,12 @@
       <FloatingWindow WindowId="1" X="1089" Y="23" Width="959" Height="1026">
         <Files>
           <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="16" Column="1" />
-          <File FileName="WorklabsMx/Handlers/PagosHandler.cs" Line="9" Column="18" />
+          <File FileName="WorklabsMx/Handlers/PagosHandler.cs" Line="32" Column="1" />
           <File FileName="WorklabsMx/Models/OrdenVentaEncabezado.cs" Line="30" Column="6" />
           <File FileName="WorklabsMx/Models/OrdenVentaDetalle.cs" Line="20" Column="45" />
           <File FileName="WorklabsMx.Droid/ViewController/Servicios/ResultActivity.cs" Line="158" Column="70" />
           <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="126" Column="40" />
+          <File FileName="iOS/SQLite.cs" Line="1311" Column="14" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
@@ -30,10 +30,15 @@
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="113" column="10" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="119" column="10" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleTableViewController.cs" relfile="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleTableViewController.cs" line="206" column="31" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Handlers/PagosHandler.cs" relfile="WorklabsMx/Handlers/PagosHandler.cs" line="30" column="31" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Handlers/PagosHandler.cs" relfile="WorklabsMx/Handlers/PagosHandler.cs" line="16" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Handlers/PagosHandler.cs" relfile="WorklabsMx/Handlers/PagosHandler.cs" line="22" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" />
+<<<<<<< HEAD
+=======
 =======
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Handlers/PagosHandler.cs">
@@ -60,5 +65,6 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
+>>>>>>> e149e17b43d95afe4e721f49e92f9d7c1b96dd74
   <MultiItemStartupConfigurations />
 </Properties>
