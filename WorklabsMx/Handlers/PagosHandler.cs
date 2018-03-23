@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using SQLite;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
@@ -39,6 +40,7 @@ namespace WorklabsMx.Handlers
             catch (Exception e)
             {
                 SlackLogs.SendMessage(e.Message, GetType().Name, "InsertData");
+                DeleteRecords();
             }
         }
 
@@ -47,11 +49,12 @@ namespace WorklabsMx.Handlers
             OrdenVentaEncabezado encabezado = new OrdenVentaEncabezado();
             try
             {
-                encabezado = connection.ExecuteScalar<OrdenVentaEncabezado>("SELECT * FROM OrdenVentaEncabezado");
+                encabezado = connection.Table<OrdenVentaEncabezado>().First();
             }
             catch (Exception e)
             {
                 SlackLogs.SendMessage(e.Message, GetType().Name, "GetEncabezado");
+                DeleteRecords();
             }
             return encabezado;
         }
@@ -61,11 +64,12 @@ namespace WorklabsMx.Handlers
             List<OrdenVentaDetalle> detalles = new List<OrdenVentaDetalle>();
             try
             {
-                detalles = connection.ExecuteScalar<List<OrdenVentaDetalle>>("SELECT * FROM OrdenVentaDetalle");
+                detalles = connection.Table<OrdenVentaDetalle>().ToList();
             }
             catch (Exception e)
             {
                 SlackLogs.SendMessage(e.Message, GetType().Name, "GetDetalles");
+                DeleteRecords();
             }
             return detalles;
         }
@@ -74,8 +78,8 @@ namespace WorklabsMx.Handlers
         {
             try
             {
-                connection.DropTable<OrdenVentaEncabezado>();
-                connection.DropTable<OrdenVentaDetalle>();
+                connection.DeleteAll<OrdenVentaEncabezado>();
+                connection.DeleteAll<OrdenVentaDetalle>();
             }
             catch (Exception e)
             {
