@@ -7,6 +7,7 @@ using Com.Mitec.Suitemcommerce.Controller;
 using Com.Mitec.Suitemcommerce.Utilities;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
+using WorklabsMx.Handlers;
 
 namespace WorklabsMx.Droid
 {
@@ -35,8 +36,9 @@ namespace WorklabsMx.Droid
 
             SetContentView(Resource.Layout.PagoLayout);
 
-
-
+            var handler = new PagosHandler();
+            var encabezado = handler.GetEncabezado();
+            var detalles = handler.GetDetalles();
             dialog = new AlertDialog.Builder(this);
             dialog.SetPositiveButton("Aceptar", delegate
             {
