@@ -31,5 +31,10 @@ namespace WorklabsMx.Droid
             tabs.SetTextColorResource(Resource.Color.comment_pressed);
             tabs.SetViewPager(_viewPager);
         }
+
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
+        }
     }
 }
