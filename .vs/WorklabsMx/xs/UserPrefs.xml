@@ -1,22 +1,23 @@
-<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Models/OrdenVentaDetalle.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs">
     <Files>
-      <File FileName="iOS/EjemploPagos.cs" Line="23" Column="52" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleTableViewController.cs" Line="230" Column="9" NotebookId="1" />
+      <File FileName="iOS/EjemploPagos.cs" Line="118" Column="58" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleTableViewController.cs" Line="210" Column="28" NotebookId="1" />
       <File FileName="iOS/ComprasTableView.cs" Line="27" Column="56" NotebookId="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="94" Column="9" NotebookId="1" />
       <File FileName="iOS/Helpers/MenuHelper.cs" Line="88" Column="62" NotebookId="1" />
       <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/CanjearCuponController.cs" Line="20" Column="31" NotebookId="1" />
-      <File FileName="iOS/Models/OrdenVentaDetalle.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="iOS/Models/OrdenVentaDetalle.cs" Line="4" Column="2" NotebookId="1" />
+      <File FileName="iOS/DetalleProductoTableViewController.cs" Line="92" Column="1" NotebookId="1" />
     </Files>
     <FloatingWindows>
       <FloatingWindow WindowId="1" X="1089" Y="23" Width="959" Height="1026">
         <Files>
-          <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="208" Column="39" />
-          <File FileName="WorklabsMx/Handlers/PagosHandler.cs" Line="26" Column="44" />
+          <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="16" Column="1" />
+          <File FileName="WorklabsMx/Handlers/PagosHandler.cs" Line="9" Column="18" />
           <File FileName="WorklabsMx/Models/OrdenVentaEncabezado.cs" Line="30" Column="6" />
-          <File FileName="WorklabsMx/Models/OrdenVentaDetalle.cs" Line="18" Column="64" />
+          <File FileName="WorklabsMx/Models/OrdenVentaDetalle.cs" Line="20" Column="45" />
+          <File FileName="WorklabsMx.Droid/ViewController/Servicios/ResultActivity.cs" Line="158" Column="70" />
+          <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="126" Column="40" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
@@ -24,28 +25,13 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="115" column="10" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="121" column="10" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="127" column="10" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="31" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/DetalleProductoTableViewController.cs" relfile="iOS/DetalleProductoTableViewController.cs" line="92" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/DetalleProductoTableViewController.cs" relfile="iOS/DetalleProductoTableViewController.cs" line="104" column="21" />
-=======
-﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/RegistrarTableViewController.cs" relfile="iOS/RegistrarTableViewController.cs" line="127" column="1" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/RegistrarTableViewController.cs" relfile="iOS/RegistrarTableViewController.cs" line="89" column="1" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/CeldaDetalleInvitacion.cs" relfile="iOS/CeldaDetalleInvitacion.cs" line="86" column="1" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/PaymentsTableview.cs" relfile="iOS/PaymentsTableview.cs" line="64" column="24" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/PaymentsTableview.cs" relfile="iOS/PaymentsTableview.cs" line="44" column="21" />
->>>>>>> f4a5465fb77a53840538a1407a4260a0c2261e31
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="107" column="10" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="113" column="10" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="119" column="10" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleTableViewController.cs" relfile="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleTableViewController.cs" line="206" column="31" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_Nougat" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>
