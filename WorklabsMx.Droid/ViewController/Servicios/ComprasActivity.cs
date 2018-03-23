@@ -21,7 +21,7 @@ namespace WorklabsMx.Droid
         Dictionary<string, CarritoModel> Productos, Membresias;
         TextView lblTotal;
         double totalCompra;
-
+        bool flag;
         public ComprasActivity()
         {
             productosLista = new PickerItemsController().GetProductos();
@@ -65,6 +65,7 @@ namespace WorklabsMx.Droid
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ComprasLayout);
+            flag = false;
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.str_shop);
@@ -164,6 +165,7 @@ namespace WorklabsMx.Droid
                 btnElemento.Click += delegate
                 {
                     SetContentView(Resource.Layout.CompraCardLayout);
+                    flag = true;
                     Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
                     SetActionBar(toolbar);
                     int cantidad = 1;
@@ -233,5 +235,16 @@ namespace WorklabsMx.Droid
         {
 
         }
-    }
+
+		public override void OnBackPressed()
+		{
+            if (flag)
+                OnCreate(null);
+            else
+            {
+                StartActivity(new Intent(this, typeof(MainActivity)));
+                Finish();
+            }
+		}
+	}
 }

@@ -329,8 +329,7 @@ namespace WorklabsMx.Droid
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            StartActivity(new Intent(this, typeof(MainActivity)));
-            Finish();
+            OnBackPressed();
             return base.OnOptionsItemSelected(item);
         }
 
@@ -478,6 +477,11 @@ namespace WorklabsMx.Droid
                 customView.FindViewById<Button>(Resource.Id.btnPublishApply).Enabled = true;
                 customView.FindViewById<GridLayout>(Resource.Id.gvPublish).SetMinimumHeight(440);
             }
+        }
+        public override void OnBackPressed()
+        {
+            StartActivity(new Intent(this, typeof(MainActivity)));
+            Finish();
         }
     }
 }

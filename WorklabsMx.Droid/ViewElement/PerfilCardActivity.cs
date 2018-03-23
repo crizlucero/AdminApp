@@ -36,7 +36,7 @@ namespace WorklabsMx.Droid
 
             SetContentView(Resource.Layout.PerfilCardLayout);
             miembro = JsonConvert.DeserializeObject<UsuarioModel>(Intent.GetStringExtra("Miembro"));
-            FindViewById<ImageButton>(Resource.Id.ibCerrar).Click += (sender, e) => base.OnBackPressed();
+            FindViewById<ImageButton>(Resource.Id.ibCerrar).Click += (sender, e) => OnBackPressed();
 
             ImageView imgPerfil = FindViewById<ImageView>(Resource.Id.ivPerfil);
             if (!string.IsNullOrEmpty(miembro.Usuario_Fotografia))
@@ -93,6 +93,10 @@ namespace WorklabsMx.Droid
             tabs.SetTextColorResource(Resource.Color.comment_pressed);
             tabs.SetViewPager(_viewPager);
 
+        }
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
         }
     }
 }

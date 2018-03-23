@@ -326,27 +326,31 @@ namespace WorklabsMx.Droid
                     break;
 
                 default:
-                    if (!localStorage.HasKey("Parent"))
-                    {
-                        LinearLayout menu_scroll = FindViewById<LinearLayout>(Resource.Id.menu);
-                        menu_scroll.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels * 3 / 4);
-                        if (menu_scroll.Visibility == ViewStates.Gone)
-                        {
-                            menu_scroll.LayoutParameters.Height = Window.Attributes.Height;
-                            menu_scroll.Visibility = ViewStates.Visible;
-                        }
-                        else
-                            menu_scroll.Visibility = ViewStates.Gone;
-                    }
-                    else
-                    {
-                        localStorage.Delete("Parent");
-                        menu.FillMenu();
-                    }
-
+                    OnBackPressed();
                     break;
             }
             return base.OnOptionsItemSelected(item);
+        }
+
+        public override void OnBackPressed()
+        {
+            if (!localStorage.HasKey("Parent"))
+            {
+                LinearLayout menu_scroll = FindViewById<LinearLayout>(Resource.Id.menu);
+                menu_scroll.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels * 3 / 4);
+                if (menu_scroll.Visibility == ViewStates.Gone)
+                {
+                    menu_scroll.LayoutParameters.Height = Window.Attributes.Height;
+                    menu_scroll.Visibility = ViewStates.Visible;
+                }
+                else
+                    menu_scroll.Visibility = ViewStates.Gone;
+            }
+            else
+            {
+                localStorage.Delete("Parent");
+                menu.FillMenu();
+            }
         }
     }
 }

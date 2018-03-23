@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Views;
-using Android.Widget;
 using Com.Mitec.Suitemcommerce.Beans;
 using Com.Mitec.Suitemcommerce.Controller;
 using Com.Mitec.Suitemcommerce.Utilities;
-using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
-using WorklabsMx.Enum;
-using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
@@ -94,15 +88,14 @@ namespace WorklabsMx.Droid
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            base.OnBackPressed();
+            OnBackPressed();
             Finish();
             return base.OnOptionsItemSelected(item);
         }
 
         public void CanceledProcessByUser()
         {
-            base.OnBackPressed();
-            Finish();
+            OnBackPressed();
         }
 
         public void DidFinishAuthenticationProcess(BeanTokenizeResponse beanTokenizeResponse, SuiteError suiteError)
@@ -140,7 +133,13 @@ namespace WorklabsMx.Droid
         {
         }
 
-        class Authenticate : AsyncTask<Java.Lang.Void, Java.Lang.Void, Java.Lang.Void>
+		public override void OnBackPressed()
+		{
+            StartActivity(new Intent(this, typeof(ComprasActivity)));
+            Finish();
+		}
+
+		class Authenticate : AsyncTask<Java.Lang.Void, Java.Lang.Void, Java.Lang.Void>
         {
             readonly SuiteController suiteController;
             readonly BeanTokenization beanTokenization;

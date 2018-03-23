@@ -4,8 +4,9 @@
   <!--<item
       android:drawable="@mipmap/ic_log_background2"/>-->
 
-  <item>
-    <shape>
+  <item
+        android:drawable="@mipmap/background_login">
+    <!--<shape>
         <gradient
             android:type="linear"
             android:centerX="10%"
@@ -13,16 +14,16 @@
             android:centerColor="#3E3D3D"
             android:endColor="#030303"
             android:angle="225"/>
-    </shape>
+    </shape>-->
   </item>
     <item
-        android:drawable="@mipmap/worklabs_title"
-        android:left="30dp"
-        android:right="30dp"
-        android:top="250dp"
-        android:bottom="250dp"
-        android:width="275dp"
-        android:height="30dp"
-        android:gravity="center">
+        android:drawable="@mipmap/logo_black"
+        android:top="100dp"
+        android:bottom="700dp"
+        android:left="50dp"
+        android:right="50dp"
+        android:width="290dp"
+        android:height="36dp"
+        android:gravity="center_horizontal|top">
     </item>
 </layer-list>
