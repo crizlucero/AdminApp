@@ -24,8 +24,8 @@ namespace WorklabsMx.iOS
 
 		partial void btnPagar_Touch(UIBarButtonItem sender)
         {
-            EjemploPagos objPagos = new EjemploPagos();
-            objPagos.Pagar(this);
+            /*EjemploPagos objPagos = new EjemploPagos();
+            objPagos.Pagar(this);*/
         }
     }
 

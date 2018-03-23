@@ -287,10 +287,10 @@ namespace WorklabsMx.iOS
         {
             if (segue.Identifier == "EditarRedesSociales")
             {
-                var SocialView = (EditarRedesSocialesTableViewController)segue.DestinationViewController;
+                /*var SocialView = (EditarRedesSocialesTableViewController)segue.DestinationViewController;
                 SocialView.Empresa = this.Empresa;
                 SocialView.TerritorioId = this.TerritorioId;
-                SocialView.GiroId = this.GiroId;
+                SocialView.GiroId = this.GiroId;*/
             }
             else if (segue.Identifier == "EditarDIreccion")
             {

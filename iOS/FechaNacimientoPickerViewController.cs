@@ -14,6 +14,7 @@ namespace WorklabsMx.iOS
     {
         NSDateFormatter dateFormat = new NSDateFormatter();
         public FechaNacimientoSeleccionada FechaSeleccionadaDelegate;
+        public bool EsFechaNacimiento = true;
         string FechaNacimiento;
 
         public FechaNacimientoPickerViewController (IntPtr handle) : base (handle)
@@ -23,7 +24,14 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.dtpFechaNacimiento.MaximumDate = NSDate.Now;
+            if (EsFechaNacimiento)
+            {
+                this.dtpFechaNacimiento.MaximumDate = NSDate.Now;
+            }
+            else
+            {
+                this.dtpFechaNacimiento.MinimumDate = NSDate.Now;
+            }
             dateFormat.DateFormat = "yyyy-MM-dd"; 
             this.FechaNacimiento = dateFormat.ToString(this.dtpFechaNacimiento.Date);
         }

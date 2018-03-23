@@ -24,19 +24,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WorklabsNegro" translatesAutoresizingMaskIntoConstraints="NO" id="OVH-4O-dMP">
-                                <rect key="frame" x="27" y="54" width="320" height="40"/>
+                                <rect key="frame" x="17" y="54" width="340" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Mei-k6-KvQ"/>
+                                    <constraint firstAttribute="height" constant="36" id="8jr-cc-rd0"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="OVH-4O-dMP" firstAttribute="top" secondItem="Y8P-hJ-Z43" secondAttribute="bottom" constant="34" id="1Jv-Lr-PIo"/>
-                            <constraint firstAttribute="trailing" secondItem="OVH-4O-dMP" secondAttribute="trailing" constant="28" id="7Pi-ya-xjh"/>
+                            <constraint firstAttribute="trailing" secondItem="OVH-4O-dMP" secondAttribute="trailing" constant="18" id="7Pi-ya-xjh"/>
                             <constraint firstAttribute="trailing" secondItem="25A-DZ-oOe" secondAttribute="trailing" id="JYS-0g-Z0r"/>
                             <constraint firstItem="25A-DZ-oOe" firstAttribute="top" secondItem="yd7-JS-zBw" secondAttribute="top" id="Yeh-qY-MAv"/>
-                            <constraint firstItem="OVH-4O-dMP" firstAttribute="leading" secondItem="yd7-JS-zBw" secondAttribute="leading" constant="27" id="mq5-Fi-fwU"/>
+                            <constraint firstItem="OVH-4O-dMP" firstAttribute="leading" secondItem="yd7-JS-zBw" secondAttribute="leading" constant="17" id="mq5-Fi-fwU"/>
                             <constraint firstItem="9ZL-r4-8FZ" firstAttribute="top" secondItem="25A-DZ-oOe" secondAttribute="bottom" id="sxS-iF-PuF"/>
                             <constraint firstItem="25A-DZ-oOe" firstAttribute="leading" secondItem="yd7-JS-zBw" secondAttribute="leading" id="yHn-3l-SJk"/>
                         </constraints>

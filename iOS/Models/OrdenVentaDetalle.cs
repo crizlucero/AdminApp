@@ -2,7 +2,7 @@
 
 namespace WorklabsMx.iOS.Models
 {
-    public class OrdenVentaDetalle: NSObject
+    /*public class OrdenVentaDetalle: NSObject
     {
         public string detalle_id { get; set; }
         public string encabezado_id { get; set; }
@@ -20,5 +20,5 @@ namespace WorklabsMx.iOS.Models
         public string importe_impuesto { get; set; }
         public string importe_total { get; set; }
         public string status { get; set; }
-    }
+    }*/
 }

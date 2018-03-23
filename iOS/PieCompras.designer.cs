@@ -11,8 +11,8 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
-    [Register ("TabBarColaboradorController")]
-    partial class TabBarColaboradorController
+    [Register ("PieCompras")]
+    partial class PieCompras
     {
         void ReleaseDesignerOutlets ()
         {

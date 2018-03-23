@@ -13,15 +13,33 @@ namespace WorklabsMx.iOS
     [Register ("VentaDetalleTableViewController")]
     partial class VentaDetalleTableViewController
     {
-        [Action ("btnAtras:")]
-        partial void btnAtras (UIKit.UIBarButtonItem sender);
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem btnAtras { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem btnPagar { get; set; }
 
-        [Action ("btnPagar:")]
-        partial void btnPagar (UIKit.UIBarButtonItem sender);
+        [Action ("btnAtras_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnAtras_Touch (UIKit.UIBarButtonItem sender);
+
+        [Action ("btnPagar_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnPagar_Touch (UIKit.UIBarButtonItem sender);
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnAtras != null) {
+                btnAtras.Dispose ();
+                btnAtras = null;
+            }
+
+            if (btnPagar != null) {
+                btnPagar.Dispose ();
+                btnPagar = null;
+            }
         }
     }
 }

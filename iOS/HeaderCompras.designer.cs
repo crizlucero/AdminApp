@@ -11,11 +11,8 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
-    [Register ("MisColaboradoresBajaController")]
-    partial class MisColaboradoresBajaController
+    [Register ("HeaderCompras")]
+    partial class HeaderCompras
     {
-        void ReleaseDesignerOutlets ()
-        {
-        }
     }
 }

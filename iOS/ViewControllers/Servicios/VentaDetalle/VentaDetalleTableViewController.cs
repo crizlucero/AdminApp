@@ -11,6 +11,8 @@ using Foundation;
 using System.Threading.Tasks;
 //using PerpetualEngine.Storage;
 using WorklabsMx.iOS.Helpers;
+using WorklabsMx.Enum;
+using WorklabsMx.Handlers;
 
 namespace WorklabsMx.iOS
 {
@@ -23,7 +25,7 @@ namespace WorklabsMx.iOS
 
         public List<CarritoCompras> PreordenProductos = new List<CarritoCompras>();
         PickerItemsController controller;
-        List<CarritoComprasDetalle> membresias = null;
+        List<CarritoComprasDetalle> ProductosMembresias = null;
 
         NSMutableArray PreordenProducto = new NSMutableArray();
 
@@ -59,12 +61,13 @@ namespace WorklabsMx.iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            this.NavigationController.NavigationBarHidden = false;
             if (Helpers.InternetConectionHelper.VerificarConexion())
             {
-                membresias = new List<CarritoComprasDetalle>();
+                ProductosMembresias = new List<CarritoComprasDetalle>();
                 foreach (CarritoCompras currentProduct in PreordenProductos)
                 {
-                    membresias.AddRange(controller.GetProductosMembresias(currentProduct.Tipo, currentProduct.Id, currentProduct.Cantidad, currentProduct.Meses, currentProduct.FechaInicio, currentProduct.ListaPrecioId, currentProduct.MonedaId, currentProduct.ImpuestoId, currentProduct.DescuentoId));
+                    ProductosMembresias.AddRange(controller.GetProductosMembresias(currentProduct.Tipo, currentProduct.Id, currentProduct.Cantidad, currentProduct.Meses, currentProduct.FechaInicio, currentProduct.ListaPrecioId, currentProduct.MonedaId, currentProduct.ImpuestoId, currentProduct.DescuentoId));
                 }
 
             }
@@ -84,11 +87,11 @@ namespace WorklabsMx.iOS
             ordenventa.moneda_id = "1";
             ordenventa.impuesto_id = "1";
             ordenventa.folio = "FWL-38";
-            foreach(CarritoComprasDetalle membresia in membresias)
+            foreach(CarritoComprasDetalle ProductoMembresia in ProductosMembresias)
             {
-                this.Subtotal = this.Subtotal + double.Parse(membresia.Carrito_Compras_Detalle_Importe_Suma);
-                this.Total = this.Total + double.Parse(membresia.Carrito_Compras_Detalle_Importe_Suma) * 1.16;
-                ordenventa.suma = ordenventa.suma + int.Parse(membresia.Carrito_Compras_Detalle_Cantidad);
+                this.Subtotal = this.Subtotal + double.Parse(ProductoMembresia.Carrito_Compras_Detalle_Importe_Suma);
+                this.Total = this.Total + double.Parse(ProductoMembresia.Carrito_Compras_Detalle_Importe_Suma) * 1.16;
+                ordenventa.suma = ordenventa.suma + int.Parse(ProductoMembresia.Carrito_Compras_Detalle_Cantidad);
             }
             this.Impuesto = Subtotal * 0.16;
             if (this.datosDescuento.Descuento_Id != null)
@@ -194,58 +197,84 @@ namespace WorklabsMx.iOS
             }
         }
 
-        partial void btnAtras(UIBarButtonItem sender)
-        {
-            this.NavigationController.PopViewController(true);
-        }
 
-        partial void btnPagar(UIBarButtonItem sender)
+        partial void btnAtras_Touch(UIBarButtonItem sender)
         {
             var ConfirmarCompra = UIAlertController.Create("Confirmar compra", "¿Proceder a pagar?", UIAlertControllerStyle.Alert);
-            ConfirmarCompra.AddAction(UIAlertAction.Create("Aceptar", UIAlertActionStyle.Default, ((UIAlertAction obj) => 
+            ConfirmarCompra.AddAction(UIAlertAction.Create("Aceptar", UIAlertActionStyle.Default, ((UIAlertAction obj) =>
             {
-                if (ordenventa.promocion_id == null)
-                {
-                    ordenventa.promocion_id = "0";
-                }
+                var Encabezado = this.CrearEncabezado();
+                var VentaDetalle = CrearVentaDetalle(Encabezado);
 
-                if (Helpers.InternetConectionHelper.VerificarConexion())
-                {
-                    int ValorEncabezado = new PagosController().AddOrdenVentaEncabezado(int.Parse(ordenventa.moneda_id), int.Parse(ordenventa.moneda_id), int.Parse(ordenventa.impuesto_id), int.Parse(ordenventa.promocion_id), int.Parse(ordenventa.descuento_id), ordenventa.folio, Convert.ToDecimal(ordenventa.suma), Convert.ToDecimal(ordenventa.porcentajeDecuento), Convert.ToDecimal(ordenventa.descuento), Convert.ToDecimal(ordenventa.subTotal), Convert.ToDecimal(ordenventa.impuesto), Convert.ToDecimal(ordenventa.total), Convert.ToDecimal(ordenventa.pagado), Convert.ToDecimal(ordenventa.facturado));
-                    if (ValorEncabezado >= 0)
-                    {
-                        foreach (CarritoComprasDetalle membresia in membresias)
-                        {
-                            int ValorDetalle = new PagosController().AddOrdenVentaDetalle(ValorEncabezado, membresia.Membresia_Id, membresia.Inscripcion_Membresia_Id, membresia.Lista_Precio_Membresia_Id, membresia.Producto_Id, membresia.Lista_Precio_Producto_Id, membresia.Carrito_Compras_Detalle_Descripcion, int.Parse(membresia.Carrito_Compras_Detalle_Cantidad), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Precio), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Prorrateo), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Suma), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Descuento), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Subtotal), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Impuesto), Convert.ToDecimal(membresia.Carrito_Compras_Detalle_Importe_Total), membresia.Tipo);
-                            if (ValorDetalle >= 0)
-                            {
-                                VentaRealizada = true;
-                            }
-                            else
-                            {
-                                VentaRealizada = false;
-                            }
-                        }
-                        if (VentaRealizada)
-                        {
-                            new MessageDialog().SendToast("El pago fue realizado exitosamente");
+                new PagosHandler().InsertData(Encabezado, VentaDetalle);
 
-                        }
-                    }
-                    else
-                    {
-                        new MessageDialog().SendToast("No se pudo realizar el pago");
-                    }
-                }
-                else
-                {
-                    new MessageDialog().SendToast("No tienes conexión a internet, intenta mas tarde");
-                }
-
-
+                EjemploPagos objPagos = new EjemploPagos();
+                objPagos.Pagar(this, ordenventa, ProductosMembresias);
             })));
             ConfirmarCompra.AddAction(UIAlertAction.Create("Cancelar", UIAlertActionStyle.Default, null));
             this.PresentViewController(ConfirmarCompra, true, null);
+        }
+
+
+        private OrdenVentaEncabezado CrearEncabezado()
+        {
+            OrdenVentaEncabezado encabezado = new OrdenVentaEncabezado
+            {
+                Usuario_Id = Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Id")),
+                Moneda_Id = 1,
+                Impuesto_Id = 1,
+                Descuento_Id = Convert.ToInt32(ordenventa.descuento_id),
+                Folio = "OWL-",
+                Importe_Suma = decimal.Parse(Subtotal.ToString()) - decimal.Parse(ordenventa.descuento),
+                Porcentaje_Descuento = this.datosDescuento.Descuento_Porcentaje,
+                Importe_Descuento = decimal.Parse(ordenventa.descuento),
+                Importe_Subtotal = decimal.Parse(ordenventa.subTotal),
+                Importe_Impuesto = decimal.Parse(ordenventa.total) - (decimal.Parse(ordenventa.subTotal) - decimal.Parse(ordenventa.descuento)), //IVATotal,
+                Importe_Total = decimal.Parse(ordenventa.total),
+                Importe_Pagado = 0,
+                Importe_Facturado = 0,
+                Promocion_Id = Convert.ToInt32(ordenventa.descuento_id)
+            };
+            return encabezado;
+        }
+
+        private List<OrdenVentaDetalle> CrearVentaDetalle(OrdenVentaEncabezado encabezado)
+        {
+            List<OrdenVentaDetalle> detalles = new List<OrdenVentaDetalle>();
+
+            ProductosMembresias.ForEach(ProductoMembresia =>
+            {
+                if (ProductoMembresia.Carrito_Compras_Detalle_Cantidad != "0")
+                {
+                    detalles.Add(new OrdenVentaDetalle
+                    {
+                        Orden_Venta_Encabezado_Id = encabezado.Orden_Venta_Encabezado_Id,
+                        Membresia_Id = ProductoMembresia.Membresia_Id,
+                        Inscripcion_Membresia_Id = ProductoMembresia.Inscripcion_Membresia_Id,
+                        Lista_Precio_Membresia_Id = ProductoMembresia.Lista_Precio_Membresia_Id,
+                        Producto_Id = ProductoMembresia.Producto_Id,
+                        Lista_Precio_Producto_Id = ProductoMembresia.Lista_Precio_Producto_Id,
+                        Orden_Venta_Detalle_Descripcion = ProductoMembresia.Carrito_Compras_Detalle_Descripcion,
+                        Orden_Venta_Detalle_Cantidad = Convert.ToInt32(ProductoMembresia.Carrito_Compras_Detalle_Cantidad),
+                        Orden_Venta_Detalle_Importe_Precio = Convert.ToDecimal(ProductoMembresia.Carrito_Compras_Detalle_Importe_Precio),
+                        Orden_Venta_Detalle_Importe_Prorrateo = Convert.ToDecimal(ProductoMembresia.Carrito_Compras_Detalle_Importe_Prorrateo),
+                        Orden_Venta_Detalle_Importe_Suma = Convert.ToDecimal(ProductoMembresia.Carrito_Compras_Detalle_Importe_Suma),
+                        Orden_Venta_Detalle_Importe_Descuento = Convert.ToDecimal(ProductoMembresia.Carrito_Compras_Detalle_Importe_Descuento),
+                        Orden_Venta_Detalle_Importe_Subtotal = Convert.ToDecimal(ProductoMembresia.Carrito_Compras_Detalle_Importe_Subtotal),
+                        Orden_Venta_Detalle_Importe_Impuesto = Convert.ToDecimal(ProductoMembresia.Carrito_Compras_Detalle_Importe_Impuesto),
+                        Orden_Venta_Detalle_Importe_Total = Convert.ToDecimal(ProductoMembresia.Carrito_Compras_Detalle_Importe_Total),
+                        Tipos_Servicios = ProductoMembresia.Tipo 
+                    });
+                }
+            });
+
+            return detalles;
+
+        }
+
+        partial void btnPagar_Touch(UIBarButtonItem sender)
+        {
+            this.NavigationController.PopViewController(true);
         }
     }
 
@@ -257,7 +286,7 @@ namespace WorklabsMx.iOS
             BTProgressHUD.Show("Aplicando descuento");
             await Task.Delay(500);
             this.datosDescuento = datosDescuento;
-            membresias = new List<CarritoComprasDetalle>();
+            ProductosMembresias = new List<CarritoComprasDetalle>();
             this.TableView.ReloadData();
         }
     }

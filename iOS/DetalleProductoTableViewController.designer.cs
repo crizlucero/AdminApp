@@ -44,10 +44,6 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblCantidadProductos { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblDetalleDescripcion { get; set; }
 
         [Outlet]
@@ -57,6 +53,10 @@ namespace WorklabsMx.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblPrecio { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtCantidad { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -77,6 +77,10 @@ namespace WorklabsMx.iOS
         [Action ("btnCerrar_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnCerrar_Touch (UIKit.UIBarButtonItem sender);
+
+        [Action ("btnDeatlle_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnDeatlle_Touch (UIKit.UIButton sender);
 
         [Action ("btnDetalle_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -131,11 +135,6 @@ namespace WorklabsMx.iOS
                 imgProducto = null;
             }
 
-            if (lblCantidadProductos != null) {
-                lblCantidadProductos.Dispose ();
-                lblCantidadProductos = null;
-            }
-
             if (lblDetalleDescripcion != null) {
                 lblDetalleDescripcion.Dispose ();
                 lblDetalleDescripcion = null;
@@ -149,6 +148,11 @@ namespace WorklabsMx.iOS
             if (lblPrecio != null) {
                 lblPrecio.Dispose ();
                 lblPrecio = null;
+            }
+
+            if (txtCantidad != null) {
+                txtCantidad.Dispose ();
+                txtCantidad = null;
             }
 
             if (vwSucursales != null) {

@@ -11,17 +11,14 @@ using WorklabsMx.iOS.Models;
 namespace WorklabsMx.iOS
 {
 
-    public interface DetalleProductoInterface
-    {
-        void ProductoSeleccionado(CarritoCompras Preorden);
-    }
 
     public partial class DetalleProductoTableViewController : UITableViewController
     {
-        public DetalleProductoInterface ProductosDelegate;
+        public DetalleCompraInterface ProductosDelegate;
         public ProductoModel Prodcuto = new ProductoModel();
         int ContadorProductos = 1;
         string Sucursal;
+        string FechaInicio;
         List<SucursalModel> sucursales;
         NSDateFormatter dateFormat = new NSDateFormatter();
 
@@ -33,26 +30,26 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             dateFormat.DateFormat = "dd/MM/yyyy";
+
             NavigationItem.Title = Prodcuto.Producto_Descripcion;
-
-
             StyleHelper.Style(this.vwSucursales.Layer);
             StyleHelper.Style(this.btnAñadir.Layer);
-
+            FechaInicio = dateFormat.ToString((NSDate)DateTime.Now);
             if (Prodcuto.Producto_Disponibilidad.Contains("RECURRENTE"))
             {
                 this.lblLeyenda.Text = "Tarifa Mensual";
+                this.btnFecha.Enabled = true;
+                this.btnFecha.Hidden = false;
             }
             else
             {
+                this.btnFecha.Enabled = false;
+                this.btnFecha.Hidden = true;
                 this.lblLeyenda.Text = "Costo por unidad";
             }
-
             this.lblPrecio.Text = "$" + Prodcuto.Producto_Precio_Base_Neto.ToString() + " / MN";
-
             ContadorProductos = 1;
-            this.lblCantidadProductos.Text = this.ContadorProductos.ToString();
-
+            this.txtCantidad.Text = this.ContadorProductos.ToString();
             sucursales = new SucursalController().GetSucursales();
             if (sucursales.Count > 0)
             {
@@ -77,33 +74,33 @@ namespace WorklabsMx.iOS
             if (ContadorProductos > 1)
             {
                 ContadorProductos = ContadorProductos - 1;
-                this.lblCantidadProductos.Text = ContadorProductos.ToString();
+                this.txtCantidad.Text = ContadorProductos.ToString();
             }
         }
 
         partial void btnAgregar_Touch(UIButton sender)
         {
             ContadorProductos = ContadorProductos + 1;
-            this.lblCantidadProductos.Text = ContadorProductos.ToString();
+            this.txtCantidad.Text = ContadorProductos.ToString();
         }
 
         partial void btnAñadir_Touch(UIButton sender)
         {
-            var FechaInicio = dateFormat.ToString((NSDate)DateTime.Now);
+            //var FechaInicio = dateFormat.ToString((NSDate)DateTime.Now);
             CarritoCompras Preorden = new CarritoCompras();
 
             Preorden.Tipo = Enum.TiposServicios.Producto;
             Preorden.Id = int.Parse(Prodcuto.Producto_Id);
-            Preorden.Cantidad = int.Parse(this.lblCantidadProductos.Text);
+            Preorden.Cantidad = int.Parse(this.txtCantidad.Text);
             Preorden.Meses = 0;
             Preorden.FechaInicio = FechaInicio;
             Preorden.ListaPrecioId = this.Prodcuto.Lista_Precio_Id;
             Preorden.MonedaId = this.Prodcuto.Moneda_Id;
             Preorden.ImpuestoId = this.Prodcuto.Impuesto_Id;
             Preorden.DescuentoId = 0;
-            Preorden.TotalPagar = ((this.Prodcuto.Producto_Precio_Base_Neto) * Convert.ToDouble(lblCantidadProductos.Text)).ToString("C");
+            Preorden.TotalPagar = ((this.Prodcuto.Producto_Precio_Base_Neto) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
             Preorden.Nombre = this.Prodcuto.Producto_Descripcion;
-            this.ProductosDelegate.ProductoSeleccionado(Preorden);
+            this.ProductosDelegate.ArticuloSeleccionado(Preorden);
             this.DismissViewController(true, null);
         }
 
@@ -111,8 +108,14 @@ namespace WorklabsMx.iOS
         {
             if (segue.Identifier == "Sucursales")
             {
-                var GenderView = (SucursalesViewController)segue.DestinationViewController;
-                GenderView.SucursalDelegate = this;
+                var SucursalesView = (SucursalesViewController)segue.DestinationViewController;
+                SucursalesView.SucursalDelegate = this;
+            }
+            else if (segue.Identifier == "FechaInicio")
+            {
+                var FechaView = (FechaNacimientoPickerViewController)segue.DestinationViewController;
+                FechaView.EsFechaNacimiento = false;
+                FechaView.FechaSeleccionadaDelegate = this;
             }
         }
 
@@ -127,7 +130,13 @@ namespace WorklabsMx.iOS
 
         partial void btnFecha_Touch(UIButton sender)
         {
+            
         }
+
+        partial void btnDeatlle_Touch(UIButton sender)
+        {
+        }
+
     }
 
     partial class DetalleProductoTableViewController : Sucursal
@@ -138,4 +147,15 @@ namespace WorklabsMx.iOS
             this.btnSucursales.SetTitle(Sucursal, UIControlState.Normal);
         }
     }
+
+    partial class DetalleProductoTableViewController : FechaNacimientoSeleccionada
+    {
+        public void FechaSeleccionada(String FechaNacimiento)
+        {
+            FechaInicio = FechaNacimiento;
+            this.btnFecha.SetTitle(FechaNacimiento, UIControlState.Normal);
+        }
+    }
 }
+
+
