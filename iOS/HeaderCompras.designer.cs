@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("HeaderCompras")]
     partial class HeaderCompras
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

@@ -68,11 +68,6 @@ namespace WorklabsMx.iOS
 
         } 
 
-        partial void btnCerrar_Touch(UIBarButtonItem sender)
-        {
-            
-        }
-
         partial void btnCarrito_Touch(UIBarButtonItem sender)
         {
             this.DismissViewController(true, null);
@@ -85,6 +80,7 @@ namespace WorklabsMx.iOS
 
         partial void btnFecha_Touch(UIButton sender)
         {
+            this.PerformSegue("FechaInicio", null);
         }
 
         partial void btnAñadir_Touch(UIButton sender)

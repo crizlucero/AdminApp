@@ -30,9 +30,10 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             dateFormat.DateFormat = "dd/MM/yyyy";
-
+           
             NavigationItem.Title = Prodcuto.Producto_Descripcion;
             StyleHelper.Style(this.vwSucursales.Layer);
+            StyleHelper.Style(this.vwFecha.Layer);
             StyleHelper.Style(this.btnAñadir.Layer);
             FechaInicio = dateFormat.ToString((NSDate)DateTime.Now);
             if (Prodcuto.Producto_Disponibilidad.Contains("RECURRENTE"))
@@ -124,13 +125,10 @@ namespace WorklabsMx.iOS
             this.DismissViewController(true, null);
         }
 
-        partial void btnAgregarACarrito_Touch(UIBarButtonItem sender)
-        {
-        }
 
         partial void btnFecha_Touch(UIButton sender)
         {
-            
+            this.PerformSegue("FechaInicio", null);
         }
 
         partial void btnDeatlle_Touch(UIButton sender)

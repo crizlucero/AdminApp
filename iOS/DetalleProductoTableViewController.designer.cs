@@ -60,15 +60,15 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwFecha { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwSucursales { get; set; }
 
         [Action ("btnAgregar_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnAgregar_Touch (UIKit.UIButton sender);
-
-        [Action ("btnAgregarACarrito_Touch:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnAgregarACarrito_Touch (UIKit.UIBarButtonItem sender);
 
         [Action ("btnAñadir_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -153,6 +153,11 @@ namespace WorklabsMx.iOS
             if (txtCantidad != null) {
                 txtCantidad.Dispose ();
                 txtCantidad = null;
+            }
+
+            if (vwFecha != null) {
+                vwFecha.Dispose ();
+                vwFecha = null;
             }
 
             if (vwSucursales != null) {

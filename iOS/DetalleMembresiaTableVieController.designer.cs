@@ -28,10 +28,6 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIBarButtonItem btnClose { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UINavigationItem btnComprar { get; set; }
 
         [Outlet]
@@ -90,10 +86,6 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnCarrito_Touch (UIKit.UIBarButtonItem sender);
 
-        [Action ("btnCerrar_Touch:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnCerrar_Touch (UIKit.UIBarButtonItem sender);
-
         [Action ("btnDetalle_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnDetalle_Touch (UIKit.UIButton sender);
@@ -125,11 +117,6 @@ namespace WorklabsMx.iOS
             if (btnCarrito != null) {
                 btnCarrito.Dispose ();
                 btnCarrito = null;
-            }
-
-            if (btnClose != null) {
-                btnClose.Dispose ();
-                btnClose = null;
             }
 
             if (btnComprar != null) {

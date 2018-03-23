@@ -3840,7 +3840,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2050" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1618.4000000000001" y="-931.48425787106453"/>
+            <point key="canvasLocation" x="-1618.4000000000001" y="-931.48429999999996"/>
         </scene>
         <!--Restaurar Contraseña-->
         <scene sceneID="2529">
@@ -4524,6 +4524,7 @@
                         <outlet property="lblLeyenda" destination="wXf-Er-wqp" id="name-outlet-wXf-Er-wqp"/>
                         <outlet property="lblPrecio" destination="NUZ-bZ-Crh" id="name-outlet-NUZ-bZ-Crh"/>
                         <outlet property="txtCantidad" destination="mc5-O3-iJ1" id="name-outlet-mc5-O3-iJ1"/>
+                        <outlet property="vwFecha" destination="X9c-G8-2RH" id="name-outlet-X9c-G8-2RH"/>
                         <outlet property="vwSucursales" destination="DzP-5j-MyU" id="name-outlet-DzP-5j-MyU"/>
                         <segue destination="AFg-lY-9ba" kind="presentation" identifier="Sucursales" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="KAP-pi-ckG"/>
                         <segue destination="zu6-Ni-idm" kind="presentation" identifier="FechaInicio" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="WuU-1q-Hfc"/>
@@ -5850,7 +5851,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QpU-T9-lgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-19362.400000000001" y="-2287.1064467766118"/>
+            <point key="canvasLocation" x="-19362.400000000001" y="-2287.1060000000002"/>
         </scene>
         <!--Canjear Cupon Controller-->
         <scene sceneID="LXX-AM-GDF">
@@ -11573,7 +11574,7 @@ COL. LADRON DE GUEVARA</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N52-P1-5Bm">
-                                <rect key="frame" x="299" y="212" width="68" height="22"/>
+                                <rect key="frame" x="299" y="211.5" width="68" height="22"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="g9t-1m-vpI"/>

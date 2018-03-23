@@ -47,11 +47,12 @@ namespace WorklabsMx.Handlers
             OrdenVentaEncabezado encabezado = new OrdenVentaEncabezado();
             try
             {
-                encabezado = connection.ExecuteScalar<OrdenVentaEncabezado>("SELECT * FROM OrdenVentaEncabezado");
+                encabezado = connection.Get<OrdenVentaEncabezado>("SELECT * FROM OrdenVentaEncabezado");
             }
             catch (Exception e)
             {
                 SlackLogs.SendMessage(e.Message, GetType().Name, "GetEncabezado");
+                this.DeleteRecords();
             }
             return encabezado;
         }
@@ -61,11 +62,12 @@ namespace WorklabsMx.Handlers
             List<OrdenVentaDetalle> detalles = new List<OrdenVentaDetalle>();
             try
             {
-                detalles = connection.ExecuteScalar<List<OrdenVentaDetalle>>("SELECT * FROM OrdenVentaDetalle");
+                detalles = connection.Get<List<OrdenVentaDetalle>>("SELECT * FROM OrdenVentaDetalle");
             }
             catch (Exception e)
             {
                 SlackLogs.SendMessage(e.Message, GetType().Name, "GetDetalles");
+                this.DeleteRecords();
             }
             return detalles;
         }
