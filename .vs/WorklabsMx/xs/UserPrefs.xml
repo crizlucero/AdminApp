@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/Servicios/ComprasActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Handlers/PagosHandler.cs">
     <Files>
       <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="356" Column="2" />
       <File FileName="WorklabsMx.Droid/ViewElement/MainActivity.cs" Line="1" Column="1" />
       <File FileName="WorklabsMx.Droid/ViewElement/EmpresaCardActivity.cs" Line="37" Column="34" />
       <File FileName="WorklabsMx.Droid/ViewController/LoginActivity.cs" Line="51" Column="35" />
-      <File FileName="WorklabsMx/Handlers/PagosHandler.cs" Line="34" Column="94" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Handlers/PagosHandler.cs" Line="26" Column="42" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="50" Column="114" />
       <File FileName="WorklabsMx.Droid/ViewController/Servicios/ShoppingCartActivity.cs" Line="1" Column="1" />
       <File FileName="WorklabsMx.Droid/ViewController/Servicios/ComprasActivity.cs" Line="1" Column="1" />
     </Files>
@@ -22,6 +22,6 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_Nougat" AndroidDesignerPreferredTheme="AppTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>

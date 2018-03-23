@@ -5,7 +5,7 @@ namespace WorklabsMx.Models
 {
     public class OrdenVentaDetalle
     {
-        [PrimaryKey]
+        [PrimaryKey, AutoIncrement]
         public int Orden_Venta_Detalle_Id { get; set; }
         public int Orden_Venta_Encabezado_Id { get; set; }
         public string Membresia_Id { get; set; }
