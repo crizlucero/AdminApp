@@ -39,7 +39,7 @@ namespace WorklabsMx.iOS
             if (Usuario != null)
             {
                 lblNombre.Text = Usuario.Usuario_Nombre + " " + Usuario.Usuario_Apellidos;
-                lblProfesion.Text = Usuario.Usuario_Profesion;
+                lblProfesion.Text = Usuario.Usuario_Puesto;
  
 
                await GetImagenesPost(Usuario);
@@ -50,7 +50,6 @@ namespace WorklabsMx.iOS
             };
 
         }
-
 
 
         async Task GetImagenesPost(UsuarioModel Usuario)

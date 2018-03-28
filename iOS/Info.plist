@@ -67,8 +67,16 @@
 		</dict>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>1.5.6</string>
+	<string>1.5.9</string>
 	<key>CFBundleVersion</key>
-	<string>1.5.6</string>
+	<string>1.5.9</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
+	<key>Custom Property</key>
+	<string></string>
 </dict>
 </plist>
