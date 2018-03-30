@@ -1,19 +1,21 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ReservacionesTableView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Publicar/PublicarPostViewController.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="110" Column="38" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/SalaJuntas/ReservacionesSalaCell.cs" Line="27" Column="14" NotebookId="1" />
-      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="1047" Column="18" NotebookId="1" />
-      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="183" Column="1" NotebookId="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="305" Column="1" NotebookId="1" />
-      <File FileName="iOS/CeldaDetalleInvitacion.cs" Line="51" Column="29" NotebookId="1" />
-      <File FileName="iOS/ReservacionesTableView.cs" Line="52" Column="37" NotebookId="1" />
-      <File FileName="iOS/ReservacionTableViewCell.cs" Line="19" Column="53" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="132" Column="18" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="136" Column="48" NotebookId="1" />
+      <File FileName="iOS/Helpers/MenuHelper.cs" Line="39" Column="34" NotebookId="1" />
+      <File FileName="iOS/MenuTableViewController.cs" Line="32" Column="10" NotebookId="1" />
+      <File FileName="iOS/ComentariosBodyImageCell.cs" Line="93" Column="78" NotebookId="1" />
+      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="14" Column="38" NotebookId="1" />
+      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="307" Column="70" NotebookId="1" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="456" Column="45" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="87" Column="36" NotebookId="1" />
     </Files>
     <FloatingWindows>
       <FloatingWindow WindowId="1" X="1010" Y="23" Width="1038" Height="908">
         <Files>
-          <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="131" Column="39" />
+          <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="155" Column="69" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
@@ -24,6 +26,7 @@
           <Value>fechaSeleccionada</Value>
           <Value>DateTime.Now.ToString("dd/MM/yyyy")</Value>
           <Value>DateTime.Parse(fecha)</Value>
+          <Value>"ftp://38.122.16.212/" + path + imgNombre.Replace("\\", "/")</Value>
         </State>
       </Pad>
     </Pads>
@@ -33,11 +36,14 @@
     <BreakpointStore>
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="107" column="10" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Handlers/PagosHandler.cs" relfile="WorklabsMx/Handlers/PagosHandler.cs" line="57" column="25" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="2628" column="92" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="2626" column="92" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/LoginController.cs" relfile="WorklabsMx/Controllers/LoginController.cs" line="25" column="21" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="2783" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="2775" column="17" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/SalasJuntasController.cs" relfile="WorklabsMx/Controllers/SalasJuntasController.cs" line="183" column="82" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Helpers/UploadImages.cs" relfile="WorklabsMx/Helpers/UploadImages.cs" line="56" column="35" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Helpers/UploadImages.cs" relfile="WorklabsMx/Helpers/UploadImages.cs" line="18" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Helpers/UploadImages.cs" relfile="WorklabsMx/Helpers/UploadImages.cs" line="33" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>

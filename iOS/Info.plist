@@ -67,9 +67,9 @@
 		</dict>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>1.5.9</string>
+	<string>1.6.1</string>
 	<key>CFBundleVersion</key>
-	<string>1.5.9</string>
+	<string>1.6.1</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
