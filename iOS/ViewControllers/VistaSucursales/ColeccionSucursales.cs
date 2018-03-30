@@ -37,7 +37,15 @@ namespace WorklabsMx.iOS
 
         public override nint GetItemsCount(UICollectionView collectionView, nint section)
         {
-            return this.products.Count;
+            if (this.products == null)
+            {
+                return 0;
+            }
+            else
+            {
+                return this.products.Count;
+            }
+
         }
 
         partial void btnBack_Touch(UIBarButtonItem sender)

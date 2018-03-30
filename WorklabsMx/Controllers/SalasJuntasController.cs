@@ -228,7 +228,25 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    return Convert.ToInt32(reader["Creditos_Disponibles"]) - Convert.ToInt32(reader["Creditos_Usados"]);
+                    int CreditosUsados;
+                    int CreditosDisponibles; 
+                    if (reader["Creditos_Usados"] == System.DBNull.Value)
+                    {
+                        CreditosUsados = 0;
+                    }
+                    else
+                    {
+                        CreditosUsados = Convert.ToInt32(reader["Creditos_Usados"]);
+                    }
+                    if (reader["Creditos_Disponibles"] == System.DBNull.Value)
+                    {
+                        CreditosDisponibles = 0;
+                    }
+                    else
+                    {
+                        CreditosDisponibles = Convert.ToInt32(reader["Creditos_Disponibles"]);
+                    }
+                    return Convert.ToInt32(CreditosDisponibles - CreditosUsados);
                 }
             }
             catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetCreditosDisponibles"); }

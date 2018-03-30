@@ -16,6 +16,14 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnCancelacion { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnPrivacidad { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView imgEmpresa { get; set; }
 
         [Outlet]
@@ -34,8 +42,26 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnAtras (UIKit.UIBarButtonItem sender);
 
+        [Action ("btnCancelacion_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnCancelacion_Touch (UIKit.UIButton sender);
+
+        [Action ("btnPrivacidad_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnPrivacidad_Touch (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
+            if (btnCancelacion != null) {
+                btnCancelacion.Dispose ();
+                btnCancelacion = null;
+            }
+
+            if (btnPrivacidad != null) {
+                btnPrivacidad.Dispose ();
+                btnPrivacidad = null;
+            }
+
             if (imgEmpresa != null) {
                 imgEmpresa.Dispose ();
                 imgEmpresa = null;

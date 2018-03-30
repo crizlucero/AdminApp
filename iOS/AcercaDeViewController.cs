@@ -7,14 +7,14 @@ namespace WorklabsMx.iOS
 {
     public partial class AcercaDeViewController : UITableViewController
     {
-        public AcercaDeViewController (IntPtr handle) : base (handle)
-        { 
+        public AcercaDeViewController(IntPtr handle) : base(handle)
+        {
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.lblVersion.Text = "Worklabs 1.1.4";
+            this.lblVersion.Text = "Worklabs 1.1.7";
             this.lblAutor.Text = "Autor: Espacio Claro";
             this.lblCopyrigth.Text = "Copyright 2018";
         }
@@ -23,6 +23,16 @@ namespace WorklabsMx.iOS
         {
             this.RevealViewController().RevealToggleAnimated(true);
             View.AddGestureRecognizer(this.RevealViewController().PanGestureRecognizer);
+        }
+
+        partial void btnPrivacidad_Touch(UIButton sender)
+        {
+            UIApplication.SharedApplication.OpenUrl(new NSUrl("https://worklabs.mx/politica-privacidad"));
+        }
+
+        partial void btnCancelacion_Touch(UIButton sender)
+        {
+            UIApplication.SharedApplication.OpenUrl(new NSUrl("https://worklabs.mx/politica-cancelacion"));
         }
     }
 }

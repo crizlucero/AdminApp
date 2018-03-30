@@ -26,33 +26,33 @@ namespace WorklabsMx.iOS
 
         private void MostrarVistaTarjeta(VentaDetalleTableViewController VistaPagos, string total)
         {
-            suiteController = new SuiteController(SuitemCommerce.Environment.Sandbox, VistaPagos, this);
+            suiteController = new SuiteController(SuitemCommerce.Environment.Qa, VistaPagos, this);
             beanTokenization = new BeanTokenization
             {
-                Branch = "0001",
-                Company = "SX001",
+                Branch = "000025",
+                Company = "Z703",
                 Country = "MX",
-                User = "SNDBXUS3R",
-                Password = "SNDBXP44S",
-                Merchant = "123456",
+                User = "Z703CSES0",
+                Password = "OOMYO17MS7",
+                Merchant = "158198",
                 Currency = Currency.Mxn,
                 OperationType = "6",
-                Token = "1234567890124242",
-                Reference = "REFERENCIA SNDBX001",
+                Token = "158128",
+                Reference = "Referencia dada por el usuario",
                 Amount = total
             };
 
             bean3DS = new Bean3DS
             {
-                Branch = "0001",
-                Company = "SX001",
+                Branch = "000025",
+                Company = "Z703",
                 Country = "MX",
-                User = "SNDBXUS3R",
-                Password = "SNDBXP44S",
-                Merchant = "123456",
+                User = "Z703CSES0",
+                Password = "OOMYO17MS7",
+                Merchant = "158198",
                 Currency = Currency.Mxn,
-                Reference = "REFERENCIA SNDBX001",
-                AuthKey = "516883575148515057485348"
+                Reference = "Referencia dada por el usuario",
+                AuthKey = "516883685552545048505454"
             };
             suiteController.AuthenticateWithBeanTokenization(beanTokenization, bean3DS);
             suiteController.SndPayWithTokenWithBeanTokenization(beanTokenization, bean3DS);

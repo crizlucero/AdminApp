@@ -30,7 +30,7 @@ namespace WorklabsMx.iOS
         public async void UpdateCell(UsuarioModel Miembro)
         {
             this.lblNombre.Text = Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos;
-            this.lblProfesion.Text = Miembro.Usuario_Profesion;
+            this.lblProfesion.Text = Miembro.Usuario_Empresa_Nombre;
             this.MiembroLocal = Miembro;
             await GetImagenesPost(Miembro);
         }

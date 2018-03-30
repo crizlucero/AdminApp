@@ -15,6 +15,8 @@ namespace WorklabsMx.iOS
     {
         public bool FromRegister = false;
 
+        public bool FromSalaJuntas = false;
+
         NSDateFormatter dateFormat = new NSDateFormatter();
         public FechaReservacion FechaSeleccionDelegate;
         string FechaReservacion;
@@ -40,6 +42,10 @@ namespace WorklabsMx.iOS
             {
                 dateFormat.DateFormat = "dd/MM/yyyy";
 
+            }
+            if(FromSalaJuntas)
+            {
+                dateFormat.DateFormat = "yyyy-MM-dd";
             }
             this.FechaReservacion = dateFormat.ToString(this.dtpFechaReservacion.Date);
         }

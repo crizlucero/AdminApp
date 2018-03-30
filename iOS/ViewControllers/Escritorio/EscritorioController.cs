@@ -26,7 +26,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         }          public override void ViewDidDisappear(bool animated)
         {
             base.ViewDidDisappear(animated);
-        }          async void GetData()         {             RefreshControl.BeginRefreshing();              await MenuHelper.GetMuroPosts();             allPosts = MenuHelper.AllPost;              TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();
+        }          async void GetData()         {             RefreshControl.BeginRefreshing();              await MenuHelper.GetMuroPosts();             allPosts = MenuHelper.AllPost;             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();             await MenuHelper.FillTable();
             if (RefreshControl != null && RefreshControl.Refreshing)
                 RefreshControl.EndRefreshing();
         }          public override UIView GetViewForHeader(UITableView tableView, nint section)

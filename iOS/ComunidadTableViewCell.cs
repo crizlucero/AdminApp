@@ -33,7 +33,7 @@ namespace WorklabsMx.iOS
         {
             Favorites = new UsuariosController();
             this.lblNombre.Text = Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos;
-            this.lblProfesion.Text = Miembro.Usuario_Profesion;
+            this.lblProfesion.Text = Miembro.Usuario_Empresa_Nombre;
             var isFavorite = Favorites.IsMiembroFavorito(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Miembro.Usuario_Id, Miembro.Usuario_Tipo);
             if(isFavorite.Value)
             {
