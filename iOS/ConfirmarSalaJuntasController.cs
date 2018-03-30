@@ -21,10 +21,12 @@ namespace WorklabsMx.iOS
     public partial class ConfirmarSalaJuntasController : UIViewController
     {
 
+        public SalaJuntasModel SalaActual;
         public List<SalaJuntasReservacionModel> Reservaciones = new List<SalaJuntasReservacionModel>();
         public List<SalaJuntasReservacionModel> ReservacionesConcat = new List<SalaJuntasReservacionModel>();
 
         public EventosReservaciones EventosReservacionesDelegate;
+        public string FechaReservacion;
 
         public ConfirmarSalaJuntasController (IntPtr handle) : base (handle)
         {
@@ -108,6 +110,12 @@ namespace WorklabsMx.iOS
                         this.GenerarEvento(ReservacionConcat);
                     }
 
+                    NSDateFormatter dateFormat = new NSDateFormatter();
+                    dateFormat.DateFormat = "yyyy-MM-dd";
+                    NSDate newFormatDate = dateFormat.Parse(FechaReservacion);
+
+                    this.EnviarMail(MenuHelper.Usuario, SalaActual, newFormatDate, ReservacionesConcat);
+
                     this.EventosReservacionesDelegate.ReservacionConfirmada(this.ReservacionesConcat);
 
                 });
@@ -120,6 +128,32 @@ namespace WorklabsMx.iOS
             {
                 this.EventosReservacionesDelegate.ReservacionCancelada(this.Reservaciones);
             });
+        }
+
+        private void EnviarMail(UsuarioModel usuario, SalaJuntasModel Sala, NSDate Fecha, List<SalaJuntasReservacionModel> Reservas)
+        {
+            string Horarios = "";
+            foreach(SalaJuntasReservacionModel reservacion in Reservas)
+            {
+                Horarios = Horarios + reservacion.Sala_Hora_Inicio + " - " + reservacion.Sala_Hora_Fin + " ";
+            }
+
+            NSDateFormatter dateFormat = new NSDateFormatter();
+            dateFormat.DateFormat = "dd";
+            var DiaSeleccionado = dateFormat.ToString(Fecha);
+
+            dateFormat.DateFormat = "dd/MM/yyyy";
+            var fecha = dateFormat.ToString(Fecha);
+
+            string correoInvitacion = System.IO.File.ReadAllText("HTML/SalaJuntasReserva.html");
+            new Emails().SendMail(usuario.Usuario_Correo_Electronico, usuario.Usuario_Nombre + " " + usuario.Usuario_Apellidos,
+                                       correoInvitacion.Replace("{{NOMBRE}}", usuario.Usuario_Nombre + " " + usuario.Usuario_Apellidos)
+                                  .Replace("{{NOMBRESALA}}", Sala.Sala_Descripcion)
+                                  .Replace("{{CAPACIDADSALA}}", Sala.Sala_Capacidad)
+                                  .Replace("{{DIALETRA}}", fecha)
+                                  .Replace("{{DIANUMERO}}", DiaSeleccionado)
+                                  .Replace("{{HORARIO}}", Horarios),
+                                  "Worklabs - Confirmación de sala de junta");
         }
 
         private void GenerarEvento(SalaJuntasReservacionModel Reservacion)

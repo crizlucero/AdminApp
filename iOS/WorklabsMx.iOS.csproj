@@ -1465,6 +1465,7 @@
   <ItemGroup>
     <BundleResource Include="HTML\Invitacion.html" />
     <BundleResource Include="GoogleService-Info.plist" />
+    <BundleResource Include="HTML\SalaJuntasReserva.html" />
   </ItemGroup>
   <ItemGroup>
     <NativeReference Include="..\..\..\Suite-mCommerce-iOS\SuiteMCommerce.framework">

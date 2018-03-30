@@ -20,9 +20,7 @@ namespace WorklabsMx.iOS
 
     public partial class ReservarSalaJuntasViewTableController : UITableViewController
     {
-
         float CreditosAcumulados = 0;
-
         public string SucursalId;
         NSDateFormatter dateFormat = new NSDateFormatter();
         bool FlagView2324 = false, FlagView2324_2 = false, FlagView2223 = false, FlagView2223_2 = false, FlagView2122 = false, FlagView2122_2 = false, FlagView2021 = false, FlagView2021_2 = false, FlagView1920 = false, FlagView1920_2 = false, FlagView1819 = false, FlagView1819_2 = false, FlagView1718 = false, FlagView1718_2 = false, FlagView1617 = false,
@@ -2713,6 +2711,8 @@ namespace WorklabsMx.iOS
             {
                 var VistaConfirmacion = (ConfirmarSalaJuntasController)segue.DestinationViewController;
                 VistaConfirmacion.Reservaciones = this.Reservaciones;
+                VistaConfirmacion.SalaActual = this.SalaActual;
+                VistaConfirmacion.FechaReservacion = this.fechaSeleccionada;
                 VistaConfirmacion.EventosReservacionesDelegate = this;
             }
             else if(segue.Identifier == "DetalleReservacion")
