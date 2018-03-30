@@ -70,6 +70,20 @@ namespace WorklabsMx.Droid
                 intent.AddFlags(ActivityFlags.NewTask);
                 StartActivity(intent);
             };
+
+            FindViewById<TextView>(Resource.Id.lblPrivacidad).Click += delegate
+            {
+                Intent intent= new Intent(Intent.ActionView, Uri.Parse("https://worklabs.mx/politica-privacidad"));
+                intent.AddFlags(ActivityFlags.NewTask);
+                StartActivity(intent);
+            };
+
+            FindViewById<TextView>(Resource.Id.lblCancelacion).Click += delegate
+            {
+                Intent intent = new Intent(Intent.ActionView, Uri.Parse("https://worklabs.mx/politica-cancelacion"));
+                intent.AddFlags(ActivityFlags.NewTask);
+                StartActivity(intent);
+            };
         }
         public override bool OnCreateOptionsMenu(IMenu menu) => base.OnCreateOptionsMenu(menu);
 

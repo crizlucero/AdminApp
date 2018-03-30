@@ -49,20 +49,12 @@ namespace WorklabsMx.Handlers
             OrdenVentaEncabezado encabezado = new OrdenVentaEncabezado();
             try
             {
-<<<<<<< HEAD
-                encabezado = connection.Get<OrdenVentaEncabezado>("SELECT * FROM OrdenVentaEncabezado");
-=======
                 encabezado = connection.Table<OrdenVentaEncabezado>().First();
->>>>>>> 4ddbc7ed5c2fe7a7fa43f8e21beecc39549495e7
             }
             catch (Exception e)
             {
                 SlackLogs.SendMessage(e.Message, GetType().Name, "GetEncabezado");
-<<<<<<< HEAD
-                this.DeleteRecords();
-=======
                 DeleteRecords();
->>>>>>> 4ddbc7ed5c2fe7a7fa43f8e21beecc39549495e7
             }
             return encabezado;
         }
@@ -72,20 +64,12 @@ namespace WorklabsMx.Handlers
             List<OrdenVentaDetalle> detalles = new List<OrdenVentaDetalle>();
             try
             {
-<<<<<<< HEAD
-                detalles = connection.Get<List<OrdenVentaDetalle>>("SELECT * FROM OrdenVentaDetalle");
-=======
                 detalles = connection.Table<OrdenVentaDetalle>().ToList();
->>>>>>> 4ddbc7ed5c2fe7a7fa43f8e21beecc39549495e7
             }
             catch (Exception e)
             {
                 SlackLogs.SendMessage(e.Message, GetType().Name, "GetDetalles");
-<<<<<<< HEAD
-                this.DeleteRecords();
-=======
                 DeleteRecords();
->>>>>>> 4ddbc7ed5c2fe7a7fa43f8e21beecc39549495e7
             }
             return detalles;
         }

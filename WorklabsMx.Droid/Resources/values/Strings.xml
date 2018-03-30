@@ -187,6 +187,7 @@
     <string name="str_shop_print_color">Color</string>
     <string name="str_shop">Compras</string>
     <string name="str_social">Social</string>
+    <string name="str_legal">Legal</string>
     <string name="str_social_network_facebook_follow">Síguenos en Facebook</string>
     <string name="str_social_network_instagram_follow">Síguenos en Instagram</string>
     <string name="str_social_network_twitter_follow">Síguenos en Twitter</string>
@@ -194,4 +195,8 @@
     <string name="str_general_about_us">Acerca de</string>
     <string name="str_general_see_more">Ver Más</string>
     <string name="str_shop_products_selected_error">Debe seleccionar algún producto o membresía</string>
+    <string name="str_about_privacy">Políticas de privacidad</string>
+    <string name="str_about_cancel">Políticas de cancelación</string>
+    <string name="str_about_copyright">Copyright 2018</string>
+    <string name="str_about_author">Autor: Espacio Claro</string>
 </resources>

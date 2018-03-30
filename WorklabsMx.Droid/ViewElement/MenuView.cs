@@ -105,6 +105,10 @@ namespace WorklabsMx.Droid.ViewElement
                             context.StartActivity(new Intent(context, typeof(LoginActivity)));
                             context.Finish();
                             break;
+                        case "DirectorioActivity":
+                            intent = new Intent(context, typeof(DirectorioActivity));
+                            intent.PutExtra("Titulo", menu.Label);
+                            context.StartActivity(intent); break;
                         case "ComprasActivity":
                             intent = new Intent(context, typeof(ComprasActivity));
                             intent.PutExtra("Titulo", menu.Label);

@@ -175,7 +175,7 @@ namespace WorklabsMx.Droid
                 {
                     post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, usuario_imagen_path);
                     Usuario_Fotos_Perfil.Add(current, post.Usuario.Usuario_Fotografia_Perfil);
-                    if (post.Usuario.Usuario_Fotografia_Perfil != null)
+                    if (post.Usuario.Usuario_Fotografia_Perfil != null && post.Usuario.Usuario_Fotografia_Perfil.Length != 0)
                         imgPerfil.SetImageBitmap(ImagesHelper.GetRoundedShape(BitmapFactory.DecodeByteArray(post.Usuario.Usuario_Fotografia_Perfil, 0, post.Usuario.Usuario_Fotografia_Perfil.Length)));
                     else
                         imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);

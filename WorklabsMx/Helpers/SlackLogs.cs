@@ -9,7 +9,6 @@ namespace WorklabsMx.Helpers
     {
         public static void SendMessage(string msg, string sourceClass, string sourceMethod)
         {
-#if DEBUG
             try
             {
                 string data = "token=xoxp-213367599047-211854966112-319762779383-04e001237fc72d6f672c626661c12160&channel=logs&text=" + sourceClass + "." + sourceMethod + ": " + msg;
@@ -31,7 +30,6 @@ namespace WorklabsMx.Helpers
             {
                 Console.WriteLine(e.Message);
             }
-#endif
         }
     }
 }

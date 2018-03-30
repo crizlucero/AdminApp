@@ -17,7 +17,6 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1"
         android:layout_margin="10dp">
         <TextView
             android:layout_width="match_parent"
@@ -54,6 +53,52 @@
             android:id="@+id/lblInstagram"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/str_legal"
+            android:textColor="#767676"
+            android:textSize="18dp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#767676" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblPrivacidad"
+            android:textColor="#767676"
+            android:text="@string/str_about_privacy"
+            android:gravity="left" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblCancelacion"
+            android:textColor="#767676"
+            android:text="@string/str_about_cancel"
+            android:layout_marginTop="10dp"
+            android:gravity="left" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#767676"
+            android:text="@string/str_about_copyright"
+            android:layout_marginTop="20dp"
+            android:gravity="center" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#767676"
+            android:text="@string/str_about_author"
+            android:gravity="center"
+            android:layout_marginTop="20dp" />
     </LinearLayout>
     <TextView
         android:text="@string/str_version"
