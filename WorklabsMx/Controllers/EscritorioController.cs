@@ -14,10 +14,10 @@ namespace WorklabsMx.Controllers
         readonly string usuario_imagen_path, publicaciones_imagen_path;
         public EscritorioController()
         {
-            /*ImageHelper = new UploadImages();
+            ImageHelper = new UploadImages();
             List<ConfiguracionesModel> config = new ConfigurationsController().GetListConfiguraciones();
             usuario_imagen_path = config.Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1;
-            publicaciones_imagen_path = config.Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PUBLICACIONES").Parametro_Varchar_1;*/
+            publicaciones_imagen_path = config.Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PUBLICACIONES").Parametro_Varchar_1;
         }
         /// <summary>
         /// Obtiene los posts del muro

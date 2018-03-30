@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/Resources/drawable/background_login.xml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/EscritorioController.cs">
     <Files>
-      <File FileName="WorklabsMx.Droid/Resources/drawable/background_login.xml" Line="10" Column="34" />
+      <File FileName="WorklabsMx.Droid/Resources/drawable/background_login.xml" Line="15" Column="14" />
       <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="47" Column="23" />
       <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="190" Column="28" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="20" Column="159" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" relfile="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" line="37" column="1" />
