@@ -60,6 +60,26 @@ namespace WorklabsMx.Helpers
             return ms.ToArray();
         }
 
-
+        public bool DeleteFileFTP(string imgNombre, string path)
+        {
+            if (!string.IsNullOrEmpty(imgNombre))
+            {
+                try
+                {
+                    FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://38.122.16.212/" + path + imgNombre.Replace("\\", "/"));
+                    client.Method = WebRequestMethods.Ftp.DeleteFile;
+                    client.UsePassive = true;
+                    client.Credentials = new NetworkCredential(@"worklabscloud", @"Worklabscloud!");
+                    client.Timeout = 2500;
+                    Console.WriteLine(((FtpWebResponse)client.GetResponse()).StatusDescription);
+                }
+                catch (Exception e)
+                {
+                    SlackLogs.SendMessage(e.Message, GetType().Name, "DeleteFileFTP");
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

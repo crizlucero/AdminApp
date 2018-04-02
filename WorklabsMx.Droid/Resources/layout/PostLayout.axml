@@ -76,12 +76,11 @@
             android:textColor="#000"
             android:layout_column="0"
             android:layout_row="3"
-            android:layout_columnWeight="5"
             android:text="este es un texto sin sentido... bla bla bla bla este es un texto sin sentido... bla bla bla bla este es un texto sin sentido... bla bla bla bla este es un texto sin sentido... bla bla bla bla"
             android:autoText="true"
             android:linksClickable="true"
             android:textAlignment="inherit"
-            android:layout_width="match_parent"
+            android:layout_width="365dp"
             android:layout_margin="10dp" />
         <ImageView
             android:layout_width="match_parent"

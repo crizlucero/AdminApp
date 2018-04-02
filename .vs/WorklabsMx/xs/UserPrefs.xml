@@ -1,10 +1,9 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/EscritorioController.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="WorklabsMx.Droid/Resources/drawable/background_login.xml" Line="15" Column="14" />
-      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="47" Column="23" />
-      <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="190" Column="28" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="20" Column="159" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="12" Column="6" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="132" Column="59" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -14,7 +13,6 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.172F6CF6-2178-4F78-B567-B603788BBCB6" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_Nougat" AndroidDesignerPreferredTheme="AppTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>
