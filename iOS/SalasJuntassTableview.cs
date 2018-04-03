@@ -20,6 +20,10 @@ namespace WorklabsMx.iOS
     {
         List<SalaJuntasModel> SalasJuntas = new List<SalaJuntasModel>();
         public string SucursalId;
+        public string FechaSeleccionada;
+        public List<SalaJuntasReservacionModel> Reservaciones = new List<SalaJuntasReservacionModel>();
+
+
         public EventosSalaJuntas SalaJuntasDelegate;
         bool isShowInformation = false;
         public bool existeConeccion = true;
@@ -41,6 +45,10 @@ namespace WorklabsMx.iOS
             this.SalasJuntas = MenuHelper.SalasJuntas;
 		}
 
+		public override void ViewWillAppear(bool animated)
+		{
+			base.ViewWillAppear(animated);
+		}
 
 		public override nfloat GetHeightForRow(UITableView tableView, Foundation.NSIndexPath indexPath)
         {

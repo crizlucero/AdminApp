@@ -20,11 +20,13 @@ namespace WorklabsMx.iOS
 
     public partial class ReservarSalaJuntasViewTableController : UITableViewController
     {
+
+        UIStoryboardSegue segueSalasJuntas;
+
         float CreditosAcumulados = 0;
         public string SucursalId;
         NSDateFormatter dateFormat = new NSDateFormatter();
         bool FlagView2324 = false, FlagView2324_2 = false, FlagView2223 = false, FlagView2223_2 = false, FlagView2122 = false, FlagView2122_2 = false, FlagView2021 = false, FlagView2021_2 = false, FlagView1920 = false, FlagView1920_2 = false, FlagView1819 = false, FlagView1819_2 = false, FlagView1718 = false, FlagView1718_2 = false, FlagView1617 = false,
-
 
         FlagView1617_2 = false, Flag1516 = false, Flag1516_2 = false, Flag1415 = false, Flag1415_2 = false, Flag1314 = false, Flag1314_2 = false, Flag1213 = false, Flag1213_2 = false, Flag1112 = false, Flag1112_2 = false, Flag1011 = false, Flag1011_2 = false, Flag0910 = false, Flag0910_2 = false, Flag0809 = false, Flag0809_2 = false, Flag0708 = false, Flag0708_2 = false, Flag0607 = false, Flag0607_2 = false, Flag0506 = false, Flag0506_2 = false, Flag0405 = false, Flag0405_2 = false, Flag0304 = false, Flag0304_2 = false, Flag0203 = false, Flag0203_2 = false, Flag0102 = false, Flag0102_2 = false, Flag0124 = false, Flag0124_2 = false;
 
@@ -213,7 +215,6 @@ namespace WorklabsMx.iOS
         {
             int date = DateTime.Now.Hour - 1;
             int minutes = DateTime.Now.Minute;
-
             if (date >= 23)
             {
                 CGPoint recta = new CGPoint(view2324.Frame.X, 0);
@@ -982,6 +983,7 @@ namespace WorklabsMx.iOS
                         CreditosAcumulados = CreditosAcumulados - 1;
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1013,6 +1015,7 @@ namespace WorklabsMx.iOS
                         CreditosAcumulados = CreditosAcumulados - 1;
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1057,8 +1060,8 @@ namespace WorklabsMx.iOS
                             CreditosAcumulados = CreditosAcumulados - 1.5f;
                         }
                     }
-                   
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1105,6 +1108,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1151,6 +1155,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1196,6 +1201,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1240,8 +1246,8 @@ namespace WorklabsMx.iOS
                         this.HorasReservadas = this.HorasReservadas - 0.5f;
                         Reservaciones.Remove(itemToRemove);
                     }
-
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1285,8 +1291,8 @@ namespace WorklabsMx.iOS
                         this.HorasReservadas = this.HorasReservadas - 0.5f;
                         Reservaciones.Remove(itemToRemove);
                     }
-
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1333,6 +1339,7 @@ namespace WorklabsMx.iOS
                     }
 
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1380,6 +1387,7 @@ namespace WorklabsMx.iOS
                     }
 
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1424,6 +1432,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1468,6 +1477,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1513,6 +1523,7 @@ namespace WorklabsMx.iOS
                     }
 
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1558,6 +1569,7 @@ namespace WorklabsMx.iOS
                     }
 
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1590,6 +1602,7 @@ namespace WorklabsMx.iOS
                         CreditosAcumulados = CreditosAcumulados - 1;
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1621,6 +1634,7 @@ namespace WorklabsMx.iOS
 
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1651,6 +1665,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1682,6 +1697,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1712,6 +1728,7 @@ namespace WorklabsMx.iOS
                         CreditosAcumulados = CreditosAcumulados - 1;
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1743,6 +1760,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1773,6 +1791,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1803,6 +1822,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1834,6 +1854,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1851,7 +1872,6 @@ namespace WorklabsMx.iOS
                     this.Flag1213_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
                     this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "11:30", "12:00", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f));
-
                 }
                 else
                 {
@@ -1865,6 +1885,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1896,6 +1917,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1927,6 +1949,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1957,6 +1980,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1987,6 +2011,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2017,6 +2042,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2047,6 +2073,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2078,6 +2105,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2109,6 +2137,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2140,6 +2169,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2157,7 +2187,6 @@ namespace WorklabsMx.iOS
                     this.Flag0708_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
                     this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "16:30", "17:00", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f));
-
                 }
                 else
                 {
@@ -2171,6 +2200,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2202,6 +2232,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2233,6 +2264,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2265,10 +2297,10 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
-
         }
 
 
@@ -2297,6 +2329,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2328,6 +2361,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2359,6 +2393,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2390,6 +2425,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2420,6 +2456,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2450,6 +2487,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2481,6 +2519,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2513,6 +2552,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2545,6 +2585,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2575,6 +2616,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2606,6 +2648,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2641,8 +2684,11 @@ namespace WorklabsMx.iOS
             }
             else if(segue.Identifier == "SalasJuntas")
             {
+                this.segueSalasJuntas = segue;
                 var VistaTablaSalas = (SalasJuntassTableview)segue.DestinationViewController;
                 VistaTablaSalas.SalaJuntasDelegate = this;
+                VistaTablaSalas.Reservaciones = Reservaciones;
+                VistaTablaSalas.FechaSeleccionada = fechaSeleccionada;
                 VistaTablaSalas.SucursalId = this.SucursalId;
             }
 
@@ -2696,10 +2742,9 @@ namespace WorklabsMx.iOS
             {
                 MenuHelper.GetSalas(SucursalId);
                 SalasJuntas = MenuHelper.SalasJuntas;
-
                 this.HorasNoDisponibles = new SalasJuntasController().GetHorasNoDisponibles(FechaReservacion, MenuHelper.SalasJuntas[0].Sala_Id);
             }
-            this.GetHorasNoDisponibles(this.SalaActual.Sala_Id);
+            this.GetHorasNoDisponibles(MenuHelper.SalasJuntas[0].Sala_Id);
             if (FechaReservacion == DateTime.Now.ToString("yyyy-MM-dd"))
             {
                 this.ValidateHour();
@@ -2707,6 +2752,8 @@ namespace WorklabsMx.iOS
             dateFormat.DateFormat = "yyyy-MM-dd";
             NSDate newFormatDate = dateFormat.Parse(FechaReservacion);
             this.FormatoDiaSeleccionado(newFormatDate);
+
+            this.PrepareForSegue(this.segueSalasJuntas, null);
         }
     }
 

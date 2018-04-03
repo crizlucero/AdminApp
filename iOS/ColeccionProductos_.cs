@@ -42,7 +42,11 @@ namespace WorklabsMx.iOS
 
         public override nint GetItemsCount(UICollectionView collectionView, nint section)
         {
-            return this.allProducts.Count;
+            if (this.allProducts != null)
+            {
+                return this.allProducts.Count;
+            }
+            return 0;
         }
 
         public override UICollectionViewCell GetCell(UICollectionView collectionView, NSIndexPath indexPath)
