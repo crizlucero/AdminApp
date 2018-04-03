@@ -135,7 +135,6 @@ namespace WorklabsMx.iOS
                     tableView.DeleteRows(new NSIndexPath[] { indexPath }, UITableViewRowAnimation.Automatic);
                     tableView.EndUpdates();
                 }
-               
             }
         }
 

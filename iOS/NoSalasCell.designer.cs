@@ -11,18 +11,18 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
-    [Register ("NoInfoCell")]
-    partial class NoInfoCell
+    [Register ("NoSalasCell")]
+    partial class NoSalasCell
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblNoInfo { get; set; }
+        UIKit.UILabel lblNoSalas { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (lblNoInfo != null) {
-                lblNoInfo.Dispose ();
-                lblNoInfo = null;
+            if (lblNoSalas != null) {
+                lblNoSalas.Dispose ();
+                lblNoSalas = null;
             }
         }
     }

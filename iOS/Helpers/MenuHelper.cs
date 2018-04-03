@@ -26,15 +26,15 @@ namespace WorklabsMx.iOS.Helpers
 
         public static UsuarioModel Usuario;
 
+        public static List<SalaJuntasModel> SalasJuntas;
+
         public static List<ProductoModel> Productos;
 
         public static List<MembresiaModel> Membresias;
 
         public static List<PostModel> AllPost = new List<PostModel>();
         public static List<ComentarioModel> Comentarios = new List<ComentarioModel>();
-
         public static List<ConfiguracionesModel> Configuraciones = new List<ConfiguracionesModel>();
-
         
         public static async Task FillTable()
         {
@@ -118,6 +118,11 @@ namespace WorklabsMx.iOS.Helpers
             {
                 Comentarios = new Controllers.EscritorioController().GetComentariosPost(Post.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
             });
+        }
+
+        public static void GetSalas(string SucursalId)
+        {
+            SalasJuntas = new SalasJuntasController().GetSalaJuntas(SucursalId);
         }
 
     }
