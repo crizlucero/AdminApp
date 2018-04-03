@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ReservarSalaJuntasViewTableController.cs">
     <Files>
@@ -18,6 +19,14 @@
       <File FileName="iOS/MenuTableViewController.cs" Line="90" Column="1" />
       <File FileName="iOS/EditarPerfilTableViewController.cs" Line="495" Column="57" />
       <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="91" Column="36" />
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="12" Column="6" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="132" Column="59" />
+>>>>>>> f9005ac3731f9cf1321e0643d78151ce0c84d4d9
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
@@ -31,9 +40,14 @@
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="456" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+<<<<<<< HEAD
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../../WorklabsMx/Handlers/PagosHandler.cs" line="41" offsetX="632" offsetY="600" expression="e.StackTrace" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" automaticSigning="False" />
+=======
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
+>>>>>>> f9005ac3731f9cf1321e0643d78151ce0c84d4d9
   <MultiItemStartupConfigurations />
 </Properties>

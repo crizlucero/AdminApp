@@ -10,6 +10,7 @@ using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V4.View;
+using Android.Support.V4.Widget;
 using Android.Views;
 using Android.Widget;
 using Java.Lang;
@@ -33,6 +34,7 @@ namespace WorklabsMx.Droid
         readonly SalasJuntasController SalasController;
         readonly UsuarioModel usuario;
         LinearLayout llhHorario;
+        TableLayout tlSalasJuntas;
         double creditos;
         readonly Dictionary<string, Dictionary<string, List<double>>> Horarios;
         Dictionary<string, string> niveles;
@@ -58,12 +60,24 @@ namespace WorklabsMx.Droid
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.ReservaSala);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            _viewPager = FindViewById<ViewPager>(Resource.Id.vpSucursal);
+            /*_viewPager = FindViewById<ViewPager>(Resource.Id.vpSucursal);*/
             salas = SalasController.GetSalaJuntas(Intent.GetStringExtra("sucursal_id"));
-            niveles = SalasController.GetNivelesSucursal(Intent.GetStringExtra("sucursal_id"));
-            _viewPager.Adapter = new SalaJuntasAdapter(this, salas);
-            Horarios.Add(salas[_viewPager.CurrentItem].Sala_Id, new Dictionary<string, List<double>>());
-            Horarios[salas[_viewPager.CurrentItem].Sala_Id].Add(fecha_seleccionada, new List<double>());
+            /*niveles = SalasController.GetNivelesSucursal(Intent.GetStringExtra("sucursal_id"));
+            _viewPager.Adapter = new SalaJuntasAdapter(this, salas);*/
+            tlSalasJuntas = FindViewById<TableLayout>(Resource.Id.tlSalasJuntas);
+            salas.ForEach(sala =>
+            {
+                Horarios.Add(sala.Sala_Id, new Dictionary<string, List<double>>());
+                Horarios[sala.Sala_Id].Add(fecha_seleccionada, new List<double>());
+                LayoutInflater liView = LayoutInflater;
+                View SucursalView = liView.Inflate(Resource.Layout.SalasJuntasLayout, null, true);
+                SucursalView.FindViewById<TextView>(Resource.Id.lblSalaJunta).Text = sala.Sala_Descripcion;
+                SucursalView.FindViewById<TextView>(Resource.Id.tvCapacidad).Text = sala.Sala_Capacidad + "-" + (Convert.ToInt32(sala.Sala_Capacidad) + 2).ToString();
+                SucursalView.FindViewById<TextView>(Resource.Id.tvNivel).Text = "Nivel " + Convert.ToInt32(sala.Sala_Nivel).ToString("00");
+                TableRow row = new TableRow(this);
+                row.AddView(SucursalView);
+                tlSalasJuntas.AddView(row);
+            });
             FindViewById<TextView>(Resource.Id.lblCreditosDisponibles).Text = SalasController.GetCreditosDisponibles(storage.Get("Usuario_Id")).ToString();
             FindViewById<LinearLayout>(Resource.Id.llSeleccionarFecha).Click += (sender, e) =>
             {
@@ -78,24 +92,24 @@ namespace WorklabsMx.Droid
             };
             FindViewById<TextView>(Resource.Id.lblDiaFecha).Text = DateTime.Parse(fecha_seleccionada).DayOfWeek.ToString().Substring(0, 3);
             FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = DateTime.Parse(fecha_seleccionada).Day.ToString();
-            FindViewById<TextView>(Resource.Id.lblHorasTotal).Text = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Count.ToString();
+            //FindViewById<TextView>(Resource.Id.lblHorasTotal).Text = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Count.ToString();
             FindViewById<TextView>(Resource.Id.lblCreditosUsados).Text = creditos.ToString();
-            Spinner spNivel = FindViewById<Spinner>(Resource.Id.spNivel);
+            /*Spinner spNivel = FindViewById<Spinner>(Resource.Id.spNivel);
             spNivel.Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, niveles.Keys.ToList());
             spNivel.SetSelection(niveles.Count - 1);
             spNivel.ItemSelected += (sender, e) =>
             {
                 salas = SalasController.GetSalaJuntas(Intent.GetStringExtra("sucursal_id"), niveles[((Spinner)sender).SelectedItem.ToString()]);
                 _viewPager.Adapter = new SalaJuntasAdapter(this, salas);
-            };
+            };*/
             llhHorario = FindViewById<LinearLayout>(Resource.Id.llhHorario);
-            SalasController.GetHorasNoDisponibles(fecha_seleccionada, salas[_viewPager.CurrentItem].Sala_Id).ForEach(horas =>
+            /*SalasController.GetHorasNoDisponibles(fecha_seleccionada, salas[_viewPager.CurrentItem].Sala_Id).ForEach(horas =>
             {
                 HorasNoDisponibles.Add(DateTime.Parse(horas.Sala_Hora_Fin).Hour);
                 UpdateHorasNoDisponibles();
-            });
+            });*/
 
-            _viewPager.PageSelected += (sender, e) =>
+            /*_viewPager.PageSelected += (sender, e) =>
             {
                 HorasNoDisponibles.Clear();
                 SalasController.GetHorasNoDisponibles(fecha_seleccionada, salas[_viewPager.CurrentItem].Sala_Id).ForEach(horas =>
@@ -108,16 +122,15 @@ namespace WorklabsMx.Droid
                     Horarios[salas[_viewPager.CurrentItem].Sala_Id].Add(fecha_seleccionada, new List<double>());
                 UpdateHorasNoDisponibles();
                 FillHorario();
-            };
+            };*/
             FindViewById<RelativeLayout>(Resource.Id.rlAgendar).Click += (sender, e) => ShowConfirmacion();
             UpdateHorasNoDisponibles();
             FillHorario();
             HorizontalScrollView scrollHoras = FindViewById<HorizontalScrollView>(Resource.Id.hsvHorario);
             scrollHoras.PostDelayed(delegate
             {
-                scrollHoras.ScrollTo(DateTime.Now.Hour * 200, 0);
+                scrollHoras.ScrollTo(DateTime.Now.Hour * 500, 0);
             }, 100);
-
         }
 
         void UpdateHorasNoDisponibles()
@@ -152,14 +165,14 @@ namespace WorklabsMx.Droid
                     horarioSup.SetBackgroundColor(Color.Rgb(85, 85, 85));
                     horarioSup.SetImageResource(Resource.Mipmap.ic_diagonal_lines);
                 }
-                if (Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Contains(hora))
+                /*if (Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Contains(hora))
                 {
                     horarioInf.SetBackgroundColor(Color.Rgb(162, 219, 255));
                 }
                 if (Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Contains(hora - .5))
                 {
                     horarioSup.SetBackgroundColor(Color.Rgb(162, 219, 255));
-                }
+                }*/
                 horarioInf.Click += delegate
                 {
                     if (!HorasNoDisponibles.Contains(hora - 1))
@@ -182,7 +195,7 @@ namespace WorklabsMx.Droid
                 {
                     if (!HorasNoDisponibles.Contains(hora - .5))
                     {
-                        if (!Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Contains(hora - .5))
+                        /*if (!Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Contains(hora - .5))
                         {
                             horarioSup.SetBackgroundColor(Color.Rgb(162, 219, 255));
                             Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Add(hora - .5);
@@ -191,7 +204,7 @@ namespace WorklabsMx.Droid
                         {
                             horarioSup.SetBackgroundColor(Color.Rgb(225, 252, 195));
                             Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Remove(hora - .5);
-                        }
+                        }*/
                         CalculoCreditos();
                     }
                 };
@@ -263,30 +276,30 @@ namespace WorklabsMx.Droid
 
             View customView = liView.Inflate(Resource.Layout.DetallesReservacionLayout, null, true);
             Dictionary<double, double> aux = new Dictionary<double, double>();
-            Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Sort();
-            double aux2 = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0];
-            aux.Add(aux2, aux2 + .5);
+            //Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Sort();
+            //double aux2 = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0];
+            //aux.Add(aux2, aux2 + .5);
 
-            for (int i = 1; i < Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Count; i++)
+            /*for (int i = 1; i < Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Count; i++)
             {
                 /*if (Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i] - .5 < 0)
                 {
 
                 }*/
-                Console.WriteLine(Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i]);
-                if (aux[aux2] == Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i])
-                    aux[aux2] = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i] + .5;
-                else
-                {
-                    aux2 = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i];
-                    aux.Add(aux2, aux2 + .5);
-                }
+            /*Console.WriteLine(Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i]);
+            if (aux[aux2] == Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i])
+                aux[aux2] = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i] + .5;
+            else
+            {
+                aux2 = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i];
+                aux.Add(aux2, aux2 + .5);
             }
+        }*/
 
 
             TableLayout tlReservaciones = customView.FindViewById<TableLayout>(Resource.Id.tlReservaciones);
 
-            foreach (KeyValuePair<double, double> hora in aux)
+            /*foreach (KeyValuePair<double, double> hora in aux)
             {
                 LayoutInflater li = LayoutInflater;
 
@@ -300,10 +313,10 @@ namespace WorklabsMx.Droid
                 TableRow row = new TableRow(this);
                 row.AddView(detalleView);
                 tlReservaciones.AddView(row);
-            }
+            }*/
             AssetManager asset = Assets;
             string correoInvitacion = new StreamReader(asset.Open("SalaJuntasReserva.html")).ReadToEnd();
-            new Emails().SendMail(usuario.Usuario_Correo_Electronico, usuario.Usuario_Nombre + " " + usuario.Usuario_Apellidos,
+            /*new Emails().SendMail(usuario.Usuario_Correo_Electronico, usuario.Usuario_Nombre + " " + usuario.Usuario_Apellidos,
                                        correoInvitacion.Replace("{{NOMBRE}}", usuario.Usuario_Nombre + " " + usuario.Usuario_Apellidos)
                                         .Replace("{{NOMBRESALA}}", salas[_viewPager.CurrentItem].Sala_Descripcion)
                                   .Replace("{{CAPACIDADSALA}}", salas[_viewPager.CurrentItem].Sala_Capacidad)
@@ -334,7 +347,7 @@ namespace WorklabsMx.Droid
                     StartActivity(new Intent(this, typeof(TabSalasJuntasHistorialActivity)));
                     Finish();
                 };
-            };
+            };*/
             builder.SetView(customView);
             builder.Create();
             dialog = builder.Show();
