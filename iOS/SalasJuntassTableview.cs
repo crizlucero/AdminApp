@@ -43,6 +43,7 @@ namespace WorklabsMx.iOS
 			base.ViewDidLoad();
             MenuHelper.GetSalas(SucursalId);
             this.SalasJuntas = MenuHelper.SalasJuntas;
+            TableView.ReloadData();
 		}
 
 		public override void ViewWillAppear(bool animated)

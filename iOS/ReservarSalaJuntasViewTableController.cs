@@ -968,7 +968,6 @@ namespace WorklabsMx.iOS
                     VistasHorarios[44].Horarios.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView2324 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
-
                     this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "24:00", "24:30", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f));
                 }
                 else
@@ -2589,7 +2588,6 @@ namespace WorklabsMx.iOS
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
-
         }
 
         private void vw0124Touch(UITapGestureRecognizer Recognizer)
@@ -2690,6 +2688,7 @@ namespace WorklabsMx.iOS
                 VistaTablaSalas.Reservaciones = Reservaciones;
                 VistaTablaSalas.FechaSeleccionada = fechaSeleccionada;
                 VistaTablaSalas.SucursalId = this.SucursalId;
+                VistaTablaSalas.ViewDidLoad();
             }
 
             /*else if (segue.Identifier == "SeleccionarNivel")
