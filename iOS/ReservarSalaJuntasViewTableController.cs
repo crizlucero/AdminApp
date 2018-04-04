@@ -46,6 +46,8 @@ namespace WorklabsMx.iOS
 
         float withImage;
 
+        string CantidadPersonas = "6";
+
         string fechaSeleccionada = DateTime.Now.ToString("yyyy-MM-dd");
 
         public ReservarSalaJuntasViewTableController(IntPtr handle) : base(handle)
@@ -2701,12 +2703,14 @@ namespace WorklabsMx.iOS
 
         partial void btnDiezPersonas_Touch(UIButton sender)
         {
-            
+            this.CantidadPersonas = "10";
+            this.PrepareForSegue(this.segueSalasJuntas, null);
         }
 
         partial void btnSeisPersonas_Touch(UIButton sender)
         {
-            
+            this.CantidadPersonas = "6";
+            this.PrepareForSegue(this.segueSalasJuntas, null);
         }
 
         partial void btnAgendar_Touch(UIButton sender)
@@ -2797,6 +2801,18 @@ namespace WorklabsMx.iOS
         public void SalaSeleccionada(SalaJuntasModel SalaSeleccionada)
         {
             this.SalaActual = SalaSeleccionada;
+            var NewReservaciones = this.Reservaciones;
+            this.Reservaciones = new List<SalaJuntasReservacionModel>();
+            foreach(SalaJuntasReservacionModel reservacion in NewReservaciones)
+            {
+                reservacion.Sala_Id = this.SalaActual.Sala_Id;
+                reservacion.Sala_Estatus = this.SalaActual.Sala_Estatus;
+                reservacion.Sala_Descripcion = this.SalaActual.Sala_Descripcion;
+                reservacion.Sala_Capacidad = this.SalaActual.Sala_Capacidad;
+                reservacion.Sala_Nivel = this.SalaActual.Sala_Nivel;
+                this.Reservaciones.Add(reservacion);
+
+            }
         }
     }
 

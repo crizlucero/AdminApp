@@ -14292,7 +14292,7 @@ COL. LADRON DE GUEVARA</string>
                                                         <segue destination="RFJ-zu-MH6" kind="embed" identifier="SalasJuntas" id="N8H-sO-vxe"/>
                                                     </connections>
                                                 </containerView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salas disponibles en el edificio para esa hora" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teX-jj-eYL">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salas disponibles en el edificio para ese día y hora" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teX-jj-eYL">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                     <nil key="textColor"/>

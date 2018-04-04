@@ -21,6 +21,7 @@ namespace WorklabsMx.iOS
         List<SalaJuntasModel> SalasJuntas = new List<SalaJuntasModel>();
         public string SucursalId;
         public string FechaSeleccionada;
+        public string CantidadUsuarios;
         public List<SalaJuntasReservacionModel> Reservaciones = new List<SalaJuntasReservacionModel>();
 
 
@@ -100,7 +101,7 @@ namespace WorklabsMx.iOS
             else
             {
                 var CeldaNoInfo = (NoSalasCell)tableView.DequeueReusableCell(IndentificadorCeldaNoInfo, indexPath);
-                if(!existeConeccion)
+                if (!existeConeccion)
                 {
                     CeldaNoInfo.UpdateCell("No hay conexión a internet");
                 }
