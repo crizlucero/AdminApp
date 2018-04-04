@@ -2805,6 +2805,7 @@ namespace WorklabsMx.iOS
             this.Reservaciones = new List<SalaJuntasReservacionModel>();
             foreach(SalaJuntasReservacionModel reservacion in NewReservaciones)
             {
+                reservacion.Sucursal_Descripcion = this.SalaActual.Sucursal_Descripcion;
                 reservacion.Sala_Id = this.SalaActual.Sala_Id;
                 reservacion.Sala_Estatus = this.SalaActual.Sala_Estatus;
                 reservacion.Sala_Descripcion = this.SalaActual.Sala_Descripcion;
