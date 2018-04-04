@@ -10,8 +10,7 @@ using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
-
-
+    
     public class ListaViews
     {
         public UIView Horarios { get; set; }
@@ -56,6 +55,8 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            StyleHelper.Style(btnDiezPersonas.Layer);
+            StyleHelper.Style(btnSeisPersonas.Layer);
             if (InternetConectionHelper.VerificarConexion())
             {
                 this.LimpiarInfo();
@@ -2696,6 +2697,16 @@ namespace WorklabsMx.iOS
                 var VistaNivel = (NivelesViewController)segue.DestinationViewController;
                 VistaNivel.NivelSeleccionadoDel = this;
             }*/
+        }
+
+        partial void btnDiezPersonas_Touch(UIButton sender)
+        {
+            
+        }
+
+        partial void btnSeisPersonas_Touch(UIButton sender)
+        {
+            
         }
 
         partial void btnAgendar_Touch(UIButton sender)

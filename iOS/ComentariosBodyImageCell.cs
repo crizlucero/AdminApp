@@ -92,15 +92,14 @@ namespace WorklabsMx.iOS
                 {
                     post.Publicacion_Imagen_Post = new UploadImages().DownloadFileFTP(post.Publicacion_Imagen, MenuHelper.UploadImagePath);
                 }
-                else if (post.Publicacion_Imagen_Post.Length == 0)
-                {
-                    post.Publicacion_Imagen_Post = new UploadImages().DownloadFileFTP(post.Publicacion_Imagen, MenuHelper.UploadImagePath);
-                }
                 if (post.Publicacion_Imagen_Post.Length > 0)
                 {
-                    var data = NSData.FromArray(post.Publicacion_Imagen_Post);
-                    var uiimage = UIImage.LoadFromData(data);
+                    var uiimage = DataToImage(post.Publicacion_Imagen_Post);
                     ReescalImage = ImageHelper.ReescalImage(uiimage);
+                }
+                else
+                {
+                    ReescalImage = null;
                 }
 
                 if ((post.Usuario.Usuario_Fotografia != "" && post.Usuario.Usuario_Fotografia != null && post.Usuario.Usuario_Fotografia != "user_male.png"))
@@ -109,11 +108,9 @@ namespace WorklabsMx.iOS
                     {
                         post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
                     }
-                    if (post.Publicacion_Imagen_Post.Length > 0)
+                    if (post.Usuario.Usuario_Fotografia_Perfil.Length > 0)
                     {
-                        var data = NSData.FromArray(post.Usuario.Usuario_Fotografia_Perfil);
-                        var uiimage = UIImage.LoadFromData(data);
-                        ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
+                        ReescalImageUsr = DataToImage(post.Usuario.Usuario_Fotografia_Perfil);
                     }
                     else
                     {
@@ -130,6 +127,12 @@ namespace WorklabsMx.iOS
             btnImgPerfil.SetBackgroundImage(ReescalImageUsr ?? UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
         }
 
+        private UIImage DataToImage(byte[] Fotografia_Perfil)
+        {
+            var data = NSData.FromArray(Fotografia_Perfil);
+            var uiimage = UIImage.LoadFromData(data);
+            return uiimage;
+        }
 
         private void ImageTapped(UITapGestureRecognizer Recognizer)
         {

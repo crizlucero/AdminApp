@@ -86,7 +86,6 @@ namespace WorklabsMx.iOS
                 var SalaJuntasSeleccionada = SalasJuntas[indexPath.Row];
                 this.SalaJuntasDelegate.SalaSeleccionada(SalaJuntasSeleccionada);   
             }
-           
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)

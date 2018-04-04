@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/SalasJuntassTableview.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="119" Column="14" />
-      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="2691" Column="1" />
-      <File FileName="iOS/EditarMiInfoPerfilViewController.cs" Line="194" Column="39" />
-      <File FileName="iOS/SalasJuntassTableview.cs" Line="46" Column="13" />
       <File FileName="iOS/ColeccionEditarIntereses.cs" Line="27" Column="32" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="143" Column="42" />
+      <File FileName="iOS/ComentariosBodyImageCell.cs" Line="130" Column="25" />
+      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="89" Column="52" />
+      <File FileName="iOS/Main.cs" Line="12" Column="1" />
+      <File FileName="WorklabsMx/Models/UsuarioModel.cs" Line="33" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
@@ -15,7 +16,11 @@
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Handlers/PagosHandler.cs" relfile="WorklabsMx/Handlers/PagosHandler.cs" line="57" column="25" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/LoginController.cs" relfile="WorklabsMx/Controllers/LoginController.cs" line="25" column="21" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="456" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/SalasJuntassTableview.cs" relfile="iOS/SalasJuntassTableview.cs" line="94" column="27" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" relfile="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" line="39" column="22" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" relfile="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" line="104" column="25" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" relfile="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" line="93" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" relfile="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" line="99" column="30" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" relfile="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" line="89" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
