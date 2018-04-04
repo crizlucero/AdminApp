@@ -78,7 +78,6 @@ namespace WorklabsMx.iOS
 
         async Task GetImagenesPost(PostModel post)
         {
-
             UIImage ReescalImage = new UIImage();
             if ((post.Usuario.Usuario_Fotografia != "" && post.Usuario.Usuario_Fotografia != null))
             {
@@ -88,23 +87,27 @@ namespace WorklabsMx.iOS
                     {
                         post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
                     }
-                    else if (post.Usuario.Usuario_Fotografia_Perfil.Length == 0)
+                    if (post.Usuario.Usuario_Fotografia_Perfil.Length == 0)
                     {
                         ReescalImage = UIImage.FromBundle("PerfilEscritorio");
                     }
                     else
                     {
-                        var data = NSData.FromArray(post.Usuario.Usuario_Fotografia_Perfil);
-                        var uiimage = UIImage.LoadFromData(data);
-                        ReescalImage = uiimage;
+                        ReescalImage = DataToImage(post.Usuario.Usuario_Fotografia_Perfil);
                     }
-                   
+
                 });
             }
             btnImgPerfil.SetBackgroundImage(ReescalImage ?? UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
 
         }
 
+        private UIImage DataToImage(byte[] Fotografia_Perfil)
+        {
+            var data = NSData.FromArray(Fotografia_Perfil);
+            var uiimage = UIImage.LoadFromData(data);
+            return uiimage;
+        }
 
         partial void btnLikes_TouchUpInside(UIButton sender)
         {

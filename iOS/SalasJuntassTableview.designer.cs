@@ -11,19 +11,11 @@ using UIKit;
 
 namespace WorklabsMx.iOS
 {
-    [Register ("NoInfoCell")]
-    partial class NoInfoCell
+    [Register ("SalasJuntassTableview")]
+    partial class SalasJuntassTableview
     {
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblNoInfo { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
-            if (lblNoInfo != null) {
-                lblNoInfo.Dispose ();
-                lblNoInfo = null;
-            }
         }
     }
 }

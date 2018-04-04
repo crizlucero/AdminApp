@@ -16,7 +16,15 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnDiezPersonas { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnNivel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnSeisPersonas { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -286,9 +294,17 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnAgendar_Touch (UIKit.UIButton sender);
 
+        [Action ("btnDiezPersonas_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnDiezPersonas_Touch (UIKit.UIButton sender);
+
         [Action ("btnNivel_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnNivel_Touch (UIKit.UIButton sender);
+
+        [Action ("btnSeisPersonas_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnSeisPersonas_Touch (UIKit.UIButton sender);
 
         [Action ("btnSeleccionarFecha_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -296,9 +312,19 @@ namespace WorklabsMx.iOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnDiezPersonas != null) {
+                btnDiezPersonas.Dispose ();
+                btnDiezPersonas = null;
+            }
+
             if (btnNivel != null) {
                 btnNivel.Dispose ();
                 btnNivel = null;
+            }
+
+            if (btnSeisPersonas != null) {
+                btnSeisPersonas.Dispose ();
+                btnSeisPersonas = null;
             }
 
             if (btnSeleccionFecha != null) {

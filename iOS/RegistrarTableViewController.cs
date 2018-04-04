@@ -39,7 +39,22 @@ namespace WorklabsMx.iOS
             NSDateFormatter dateFormat = new NSDateFormatter();
             dateFormat.DateFormat = "E, d MMM yyyy HH:mm";
             FechaReservacion = dateFormat.ToString((NSDate)DateTime.Now);
-            Sucursal = MenuHelper.ListaSucursales[0].Sucursal_Descripcion; //sucursales[0].Sucursal_Descripcion;
+            if (MenuHelper.ListaSucursales != null)
+            {
+                if(MenuHelper.ListaSucursales.Count > 0)
+                {
+                    Sucursal = MenuHelper.ListaSucursales[0].Sucursal_Descripcion;
+                }
+                else
+                {
+                    Sucursal = "";
+                }
+            }
+            else 
+            {
+                Sucursal = "";
+            }
+             //sucursales[0].Sucursal_Descripcion;
         }
 
         public override void ViewWillAppear(bool animated)

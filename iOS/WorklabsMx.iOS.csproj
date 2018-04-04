@@ -1274,6 +1274,18 @@
     <Compile Include="PieCompras.designer.cs">
       <DependentUpon>PieCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalasJuntassTableview.cs" />
+    <Compile Include="SalasJuntassTableview.designer.cs">
+      <DependentUpon>SalasJuntassTableview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalasJuntasCelda.cs" />
+    <Compile Include="SalasJuntasCelda.designer.cs">
+      <DependentUpon>SalasJuntasCelda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoSalasCell.cs" />
+    <Compile Include="NoSalasCell.designer.cs">
+      <DependentUpon>NoSalasCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

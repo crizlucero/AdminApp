@@ -10,8 +10,7 @@ using System.Threading.Tasks;
 
 namespace WorklabsMx.iOS
 {
-
-
+    
     public class ListaViews
     {
         public UIView Horarios { get; set; }
@@ -20,11 +19,13 @@ namespace WorklabsMx.iOS
 
     public partial class ReservarSalaJuntasViewTableController : UITableViewController
     {
+
+        UIStoryboardSegue segueSalasJuntas;
+
         float CreditosAcumulados = 0;
         public string SucursalId;
         NSDateFormatter dateFormat = new NSDateFormatter();
         bool FlagView2324 = false, FlagView2324_2 = false, FlagView2223 = false, FlagView2223_2 = false, FlagView2122 = false, FlagView2122_2 = false, FlagView2021 = false, FlagView2021_2 = false, FlagView1920 = false, FlagView1920_2 = false, FlagView1819 = false, FlagView1819_2 = false, FlagView1718 = false, FlagView1718_2 = false, FlagView1617 = false,
-
 
         FlagView1617_2 = false, Flag1516 = false, Flag1516_2 = false, Flag1415 = false, Flag1415_2 = false, Flag1314 = false, Flag1314_2 = false, Flag1213 = false, Flag1213_2 = false, Flag1112 = false, Flag1112_2 = false, Flag1011 = false, Flag1011_2 = false, Flag0910 = false, Flag0910_2 = false, Flag0809 = false, Flag0809_2 = false, Flag0708 = false, Flag0708_2 = false, Flag0607 = false, Flag0607_2 = false, Flag0506 = false, Flag0506_2 = false, Flag0405 = false, Flag0405_2 = false, Flag0304 = false, Flag0304_2 = false, Flag0203 = false, Flag0203_2 = false, Flag0102 = false, Flag0102_2 = false, Flag0124 = false, Flag0124_2 = false;
 
@@ -43,9 +44,9 @@ namespace WorklabsMx.iOS
 
         string SalaId = "";
 
-        int Nivel = 7;
-
         float withImage;
+
+        string CantidadPersonas = "6";
 
         string fechaSeleccionada = DateTime.Now.ToString("yyyy-MM-dd");
 
@@ -56,7 +57,8 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            nfloat aux = this.vwSalasJuntas.Frame.Width;
+            StyleHelper.Style(btnDiezPersonas.Layer);
+            StyleHelper.Style(btnSeisPersonas.Layer);
             if (InternetConectionHelper.VerificarConexion())
             {
                 this.LimpiarInfo();
@@ -64,14 +66,12 @@ namespace WorklabsMx.iOS
                 this.lblCreditosPorUsar.Text = "0";
                 withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());
                 this.GenerateRecornizes();
-                this.GetSalas(this.Nivel);
                 NSDateFormatter dateFormate = new NSDateFormatter();
                 dateFormate.DateFormat = "yyyy-MM-dd";
                 dateFormate.ToString(NSDate.Now);
                 this.HorasNoDisponibles = new SalasJuntasController().GetHorasNoDisponibles(dateFormate.ToString(NSDate.Now), this.SalaActual.Sala_Id);
-                this.GetHorasNoDisponibles(this.SalaActual.Sala_Id);
+                this.UpdateInfo();
                 this.ValidateHour();
-                this.btnNivel.SetTitle("NIVEL 7", UIControlState.Normal);
             }
             else
             {
@@ -88,169 +88,122 @@ namespace WorklabsMx.iOS
 
         private void UpdateInfo()
         {
-            this.scvSalasJuntas.Frame = new CGRect(this.scvSalasJuntas.Frame.X, this.scvSalasJuntas.Frame.Y, withImage, this.scvSalasJuntas.Frame.Height);
             if (this.SalasJuntas.Count > 0)
             {
                 this.SalaActual = this.SalasJuntas[0];
-
                 this.GetHorasNoDisponibles(SalaActual.Sala_Id);
-                this.lblPiso.Text = "NIVEL " + this.SalaActual.Sala_Nivel;
-                this.lblNombre.Text = this.SalaActual.Sala_Descripcion;
-                this.lblCapacidad.Text = this.SalaActual.Sala_Capacidad + " PERSONAS";
             }
 
-            nfloat WidthView = 0;
+            SalaId = SalaActual.Sala_Id;
 
-            for (int indice = 0; indice < this.SalasJuntas.Count; indice++)
-            {
-                WidthView = WidthView + withImage;
-            }
-            this.pcSucursales.Pages = this.SalasJuntas.Count;
-            CGRect newFrame = new CGRect(this.vwSalasJuntas.Frame.X, this.vwSalasJuntas.Frame.Y, WidthView, this.vwSalasJuntas.Frame.Height);
+            this.HorasNoDisponibles = new SalasJuntasController().GetHorasNoDisponibles(fechaSeleccionada, this.SalaActual.Sala_Id);
+            this.GetHorasNoDisponibles(this.SalaActual.Sala_Id);
+            this.ValidateHour();
 
-            this.vwSalasJuntas.Frame = newFrame;
-            nfloat XImageView = 0;
-            for (int indice = 0; indice < this.SalasJuntas.Count ; indice++)
-            {
-                UIImageView ImagenSalaJuntas = new UIImageView();
-                ImagenSalaJuntas.Frame = new CGRect(XImageView, this.imgSalasJuntas.Frame.Y, withImage, this.imgSalasJuntas.Frame.Height);
-                if (this.SalasJuntas[indice].Sala_Capacidad == "6")
-                {
-                    ImagenSalaJuntas.Image = UIImage.FromBundle("Sala6");
-                }
-                else if (this.SalasJuntas[indice].Sala_Capacidad == "10")
-                {
-                    ImagenSalaJuntas.Image = UIImage.FromBundle("Sala10");
-                }
-
-                this.vwSalasJuntas.Add(ImagenSalaJuntas);
-                XImageView += withImage;
-
-            }
-            this.scvSalasJuntas.ContentSize = vwSalasJuntas.Frame.Size;
-            this.scvSalasJuntas.Scrolled += (sender, e) =>
-            {
-                
-                this.pcSucursales.CurrentPage = (nint)(scvSalasJuntas.ContentOffset.X / scvSalasJuntas.Frame.Width);
-                this.SalaActual = this.SalasJuntas[int.Parse(this.pcSucursales.CurrentPage.ToString())];
-                SalaId = SalaActual.Sala_Id;
-                this.lblPiso.Text = "NIVEL " + SalaActual.Sala_Nivel;
-                this.lblNombre.Text = SalaActual.Sala_Descripcion;
-                this.lblCapacidad.Text = SalaActual.Sala_Capacidad + " PERSONAS";
-                /*if (InternetConectionHelper.VerificarConexion())
-                {
-                    this.HorasNoDisponibles = new SalasJuntasController().GetHorasNoDisponibles(fechaSeleccionada, this.SalaActual.Sala_Id);
-                    this.GetHorasNoDisponibles(this.SalaActual.Sala_Id);
-                }*/
-                this.HorasNoDisponibles = new SalasJuntasController().GetHorasNoDisponibles(fechaSeleccionada, this.SalaActual.Sala_Id);
-                this.GetHorasNoDisponibles(this.SalaActual.Sala_Id);
-                this.ValidateHour();
-            };
             this.GetHorasNoDisponibles(this.SalaActual.Sala_Id);
             CGRect FrameHorarios = new CGRect(this.vwHorarios.Frame.X, this.vwHorarios.Frame.Y, this.vwHorarios.Frame.Width + 50, this.vwHorarios.Frame.Height);
             this.scvScrollHorarios.ContentSize = FrameHorarios.Size;
             StyleHelper.Style(this.vwBotonFecha.Layer);
             StyleHelper.Style(this.vwInfoReservacion.Layer);
-            StyleHelper.Style(this.vwNivel.Layer);
             this.ValidateHour();
         }
 
         private void PintarMinutos()
         {
             int date = DateTime.Now.Hour - 1;
-            if (date >= 0)
+            if (date >= 23)
             {
                 view2324_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 1)
+            if (date >= 0)
             {
                 vw2223_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 2)
+            if (date >= 1)
             {
                 vw2122_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 3)
+            if (date >= 2)
             {
                 vw2021_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 4)
+            if (date >= 3)
             {
                 vw1920_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 5)
+            if (date >= 4)
             {
                 vw1819_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 6)
+            if (date >= 5)
             {
                 vw1718_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 7)
+            if (date >= 6)
             {
                 vw1617_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 8)
+            if (date >= 7)
             {
                 vw1516_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 9)
+            if (date >= 8)
             {
                 vw1415_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 10)
+            if (date >= 9)
             {
                 vw1314_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 11)
+            if (date >= 10)
             {
                 vw1213_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 12)
+            if (date >= 11)
             {
                 vw1112_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 13)
+            if (date >= 12)
             {
                 vw1011_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 14)
+            if (date >= 13)
             {
                 vw0910_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 15)
+            if (date >= 14)
             {
                 vw0809_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 16)
+            if (date >= 15)
             {
                 vw0708_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 17)
+            if (date >= 16)
             {
                 vw0607_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 18)
+            if (date >= 17)
             {
                 vw0506_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 19)
+            if (date >= 18)
             {
                 vw0405_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 20)
+            if (date >= 19)
             {
                 vw0304_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 21)
+            if (date >= 20)
             {
                 vw0203_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 22)
+            if (date >= 21)
             {
                 vw0102_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
-            if (date >= 23)
+            if (date >= 22)
             {
                 vw2401_2.BackgroundColor = UIColor.Clear.FromHex(0x404040);
             }
@@ -265,302 +218,273 @@ namespace WorklabsMx.iOS
         {
             int date = DateTime.Now.Hour - 1;
             int minutes = DateTime.Now.Minute;
-
-            var BanderaMin = false;
-            var BanderaHoras = false;
-
-            if (date >= 0)
+            if (date >= 23)
             {
                 CGPoint recta = new CGPoint(view2324.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 view2324.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 23)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    view2324_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
-                BanderaHoras = true;
-
+ 
             }
-            if (date >= 1)
+            if (date >= 0)
             {
                 CGPoint recta = new CGPoint(vw2223.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw2223.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 0)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw2223_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date >= 2)
+            if (date >= 1)
             {
                 CGPoint recta = new CGPoint(vw2122.Frame.X,0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw2122.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 1)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw2122_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date >= 3)
+            if (date >= 2)
             {
                 CGPoint recta = new CGPoint(vw2021.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw2021.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 2)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw2021_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date >= 4)
+            if (date >= 3)
             {
                 CGPoint recta = new CGPoint(vw1920.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1920.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 3)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw1920_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
+
             }
-            if (date >= 5)
+            if (date >= 4)
             {
                 CGPoint recta = new CGPoint(vw1819.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1819.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 4)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw1819_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date >= 6)
+            if (date >= 5)
             {
                 CGPoint recta = new CGPoint(vw1718.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1718.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                //vw1819.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 5)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw1718_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date >= 7)
+            if (date >= 6)
             {
                 CGPoint recta = new CGPoint(vw1617.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1617.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                //vw1718.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 6)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw1617_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date > 8)
+            if (date >= 7)
             {
                 CGPoint recta = new CGPoint(vw1516.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1516.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                //vw1617.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 7)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw1516_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date >= 9)
+            if (date >= 8)
             {
                 CGPoint recta = new CGPoint(vw1415.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1415.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 8)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw1415_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date >= 10)
+            if (date >= 9)
             {
                 CGPoint recta = new CGPoint(vw1314.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1314.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 9)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw1314_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date >= 11)
+            if (date >= 10)
             {
                 CGPoint recta = new CGPoint(vw1213.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1213.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 10)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw1213_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date >= 12)
+            if (date >= 11)
             {
                 CGPoint recta = new CGPoint(vw1112.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1112.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 11)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw1112_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date >= 13)
+            if (date >= 12)
             {
                 CGPoint recta = new CGPoint(vw1011.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw1011.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 12)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw1011_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date >= 14)
+            if (date >= 13)
             {
                 CGPoint recta = new CGPoint(vw0910.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw0910.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 13)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw0910_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date >= 15)
+            if (date >= 14)
             {
                 CGPoint recta = new CGPoint(vw0809.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw0809.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 14)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw0809_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date >= 16)
+            if (date >= 15)
             {
                 CGPoint recta = new CGPoint(vw0708.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw0708.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 15)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw0708_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date >= 17)
+            if (date >= 16)
             {
                 CGPoint recta = new CGPoint(vw0607.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw0607.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 16)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw0607_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
+
             }
-            if (date >= 18)
+            if (date >= 17)
             {
                 CGPoint recta = new CGPoint(vw0506.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw0506.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 17)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw0506_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date >= 19)
+            if (date >= 18)
             {
                 CGPoint recta = new CGPoint(vw0405.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw0405.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 18)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw0405_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date >= 20)
+            if (date >= 19)
             {
                 CGPoint recta = new CGPoint(vw0304.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw0304.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 19)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw0304_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
 
 
-            if (date >= 21)
+            if (date >= 20)
             {
                 CGPoint recta = new CGPoint(vw0203.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw0203.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 20)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw0203_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date >= 22)
+            if (date >= 21)
             {
                 CGPoint recta = new CGPoint(vw0102.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw0102.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 21)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw0102_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            if (date >= 23)
+            if (date >= 22)
             {
                 CGPoint recta = new CGPoint(vw2401.Frame.X, 0);
                 this.scvScrollHorarios.SetContentOffset(recta, true);
                 vw2401.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-                BanderaHoras = true;
-                if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
+                this.PintarMinutos();
+                if (minutes < 30 && date == 22)
                 {
-                    this.PintarMinutos();
-                    BanderaMin = true;
+                    vw2401_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
             /*if (date >= 24)
@@ -1047,7 +971,6 @@ namespace WorklabsMx.iOS
                     VistasHorarios[44].Horarios.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF);
                     this.FlagView2324 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
-
                     this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "24:00", "24:30", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f));
                 }
                 else
@@ -1062,6 +985,7 @@ namespace WorklabsMx.iOS
                         CreditosAcumulados = CreditosAcumulados - 1;
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1093,6 +1017,7 @@ namespace WorklabsMx.iOS
                         CreditosAcumulados = CreditosAcumulados - 1;
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1137,8 +1062,8 @@ namespace WorklabsMx.iOS
                             CreditosAcumulados = CreditosAcumulados - 1.5f;
                         }
                     }
-                   
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1185,6 +1110,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1231,6 +1157,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1276,6 +1203,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1320,8 +1248,8 @@ namespace WorklabsMx.iOS
                         this.HorasReservadas = this.HorasReservadas - 0.5f;
                         Reservaciones.Remove(itemToRemove);
                     }
-
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1365,8 +1293,8 @@ namespace WorklabsMx.iOS
                         this.HorasReservadas = this.HorasReservadas - 0.5f;
                         Reservaciones.Remove(itemToRemove);
                     }
-
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1413,6 +1341,7 @@ namespace WorklabsMx.iOS
                     }
 
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1460,6 +1389,7 @@ namespace WorklabsMx.iOS
                     }
 
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1504,6 +1434,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1548,6 +1479,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1593,6 +1525,7 @@ namespace WorklabsMx.iOS
                     }
 
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1638,6 +1571,7 @@ namespace WorklabsMx.iOS
                     }
 
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1670,6 +1604,7 @@ namespace WorklabsMx.iOS
                         CreditosAcumulados = CreditosAcumulados - 1;
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1701,6 +1636,7 @@ namespace WorklabsMx.iOS
 
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1718,7 +1654,6 @@ namespace WorklabsMx.iOS
                     this.Flag1516 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
                     this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "08:00", "08:30", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f));
-
                 }
                 else
                 {
@@ -1732,6 +1667,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1763,6 +1699,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1780,7 +1717,6 @@ namespace WorklabsMx.iOS
                     this.Flag1415 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
                     this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "09:00", "09:30", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f));
-                   
                 }
                 else
                 {
@@ -1794,6 +1730,7 @@ namespace WorklabsMx.iOS
                         CreditosAcumulados = CreditosAcumulados - 1;
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1825,6 +1762,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1855,6 +1793,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1885,6 +1824,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1916,6 +1856,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1933,7 +1874,6 @@ namespace WorklabsMx.iOS
                     this.Flag1213_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
                     this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "11:30", "12:00", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f));
-
                 }
                 else
                 {
@@ -1947,6 +1887,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -1978,6 +1919,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2009,6 +1951,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2039,6 +1982,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2069,6 +2013,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2099,6 +2044,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2129,6 +2075,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2160,6 +2107,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2191,6 +2139,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2222,6 +2171,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2239,7 +2189,6 @@ namespace WorklabsMx.iOS
                     this.Flag0708_2 = true;
                     this.HorasReservadas = this.HorasReservadas + 0.5f;
                     this.Reservaciones.Add(new SalaJuntasReservacionModel(SalaActual.Sala_Id, "16:30", "17:00", this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f));
-
                 }
                 else
                 {
@@ -2253,6 +2202,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2284,6 +2234,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2315,6 +2266,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2347,10 +2299,10 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
-
         }
 
 
@@ -2379,6 +2331,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2410,6 +2363,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2441,6 +2395,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2472,6 +2427,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2502,6 +2458,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2532,6 +2489,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2563,6 +2521,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2595,6 +2554,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2627,10 +2587,10 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
-
         }
 
         private void vw0124Touch(UITapGestureRecognizer Recognizer)
@@ -2657,6 +2617,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2688,6 +2649,7 @@ namespace WorklabsMx.iOS
                         Reservaciones.Remove(itemToRemove);
                     }
                 }
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
             this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
             this.lblCreditosPorUsar.Text = CreditosAcumulados.ToString();
@@ -2721,12 +2683,34 @@ namespace WorklabsMx.iOS
                 VistaInfoReservacion.Reservaciones = this.ReservacionesConcat;
                 VistaInfoReservacion.ConfirmacionRealizadaDel = this;
             }
+            else if(segue.Identifier == "SalasJuntas")
+            {
+                this.segueSalasJuntas = segue;
+                var VistaTablaSalas = (SalasJuntassTableview)segue.DestinationViewController;
+                VistaTablaSalas.SalaJuntasDelegate = this;
+                VistaTablaSalas.Reservaciones = Reservaciones;
+                VistaTablaSalas.FechaSeleccionada = fechaSeleccionada;
+                VistaTablaSalas.SucursalId = this.SucursalId;
+                VistaTablaSalas.ViewDidLoad();
+            }
 
-            else if (segue.Identifier == "SeleccionarNivel")
+            /*else if (segue.Identifier == "SeleccionarNivel")
             {
                 var VistaNivel = (NivelesViewController)segue.DestinationViewController;
                 VistaNivel.NivelSeleccionadoDel = this;
-            }
+            }*/
+        }
+
+        partial void btnDiezPersonas_Touch(UIButton sender)
+        {
+            this.CantidadPersonas = "10";
+            this.PrepareForSegue(this.segueSalasJuntas, null);
+        }
+
+        partial void btnSeisPersonas_Touch(UIButton sender)
+        {
+            this.CantidadPersonas = "6";
+            this.PrepareForSegue(this.segueSalasJuntas, null);
         }
 
         partial void btnAgendar_Touch(UIButton sender)
@@ -2749,21 +2733,15 @@ namespace WorklabsMx.iOS
 
         }
 
-        partial void btnNivel_Touch(UIButton sender)
+       /* partial void btnNivel_Touch(UIButton sender)
         {
             this.PerformSegue("SeleccionarNivel", null);
-        }
+        }*/
 
         public void GetSalas(int Nivel)
         {
-
-            if (InternetConectionHelper.VerificarConexion())
-            {
-                this.SalasJuntas = new SalasJuntasController().GetSalaJuntas(SucursalId, Nivel.ToString());
-
-                this.UpdateInfo();
-            }
-
+            this.SalasJuntas = MenuHelper.SalasJuntas;
+            this.UpdateInfo();
         }
     }
 
@@ -2773,13 +2751,14 @@ namespace WorklabsMx.iOS
         public void FechaReservaSeleccionada(String FechaReservacion)
         {
             fechaSeleccionada = FechaReservacion;
-            //fechaSeleccionada = FechaReservacion;
             this.btnSeleccionFecha.SetTitle(FechaReservacion, UIControlState.Normal);
             if(InternetConectionHelper.VerificarConexion())
             {
-                this.HorasNoDisponibles = new SalasJuntasController().GetHorasNoDisponibles(FechaReservacion, SalaActual.Sala_Id);
+                MenuHelper.GetSalas(SucursalId);
+                SalasJuntas = MenuHelper.SalasJuntas;
+                this.HorasNoDisponibles = new SalasJuntasController().GetHorasNoDisponibles(FechaReservacion, MenuHelper.SalasJuntas[0].Sala_Id);
             }
-            this.GetHorasNoDisponibles(this.SalaActual.Sala_Id);
+            this.GetHorasNoDisponibles(MenuHelper.SalasJuntas[0].Sala_Id);
             if (FechaReservacion == DateTime.Now.ToString("yyyy-MM-dd"))
             {
                 this.ValidateHour();
@@ -2787,28 +2766,8 @@ namespace WorklabsMx.iOS
             dateFormat.DateFormat = "yyyy-MM-dd";
             NSDate newFormatDate = dateFormat.Parse(FechaReservacion);
             this.FormatoDiaSeleccionado(newFormatDate);
-        }
-    }
 
-    partial class ReservarSalaJuntasViewTableController: NivelSeleccionado
-    {
-        public void NivelSeleccionado(string Nivel)
-        {
-            this.lblPiso.Text = Nivel;
-            this.btnNivel.SetTitle(Nivel, UIControlState.Normal);
-            this.Nivel = int.Parse(Nivel.Replace("NIVEL ", ""));
-
-            if (InternetConectionHelper.VerificarConexion())
-            {
-                this.HorasNoDisponibles = new SalasJuntasController().GetHorasNoDisponibles(fechaSeleccionada, SalaActual.Sala_Id);
-            }
-            this.GetHorasNoDisponibles(this.SalaActual.Sala_Id);
-            if (fechaSeleccionada == DateTime.Now.ToString("yyyy-MM-dd"))
-            {
-                this.ValidateHour();
-            }
-
-            this.GetSalas(this.Nivel);
+            this.PrepareForSegue(this.segueSalasJuntas, null);
         }
     }
 
@@ -2833,6 +2792,27 @@ namespace WorklabsMx.iOS
         public void ConfirmacionRealizada()
         {
             this.NavigationController.PopViewController(true);
+        }
+    }
+
+
+    partial class ReservarSalaJuntasViewTableController : EventosSalaJuntas
+    {
+        public void SalaSeleccionada(SalaJuntasModel SalaSeleccionada)
+        {
+            this.SalaActual = SalaSeleccionada;
+            var NewReservaciones = this.Reservaciones;
+            this.Reservaciones = new List<SalaJuntasReservacionModel>();
+            foreach(SalaJuntasReservacionModel reservacion in NewReservaciones)
+            {
+                reservacion.Sala_Id = this.SalaActual.Sala_Id;
+                reservacion.Sala_Estatus = this.SalaActual.Sala_Estatus;
+                reservacion.Sala_Descripcion = this.SalaActual.Sala_Descripcion;
+                reservacion.Sala_Capacidad = this.SalaActual.Sala_Capacidad;
+                reservacion.Sala_Nivel = this.SalaActual.Sala_Nivel;
+                this.Reservaciones.Add(reservacion);
+
+            }
         }
     }
 

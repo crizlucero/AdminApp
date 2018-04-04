@@ -86,7 +86,6 @@ namespace WorklabsMx.iOS
 
         }
 
-
         public override nfloat GetHeightForRow(UITableView tableView, Foundation.NSIndexPath indexPath)
         {
             if (isShowInformation)
@@ -98,7 +97,6 @@ namespace WorklabsMx.iOS
                 return TamañoMensajeNoInfo;
             }
         }
-
 
         public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
         {

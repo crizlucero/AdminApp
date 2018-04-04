@@ -2,6 +2,7 @@ using Foundation;
 using System;
 using UIKit;
 using WorklabsMx.Models;
+using WorklabsMx.iOS.Helpers;
 
 namespace WorklabsMx.iOS
 {
@@ -31,6 +32,8 @@ namespace WorklabsMx.iOS
         partial void btnSucursal_Touch(UIButton sender)
         {
             EventosCeldasSucursalesDelegate.SucursalSeleccionada(SucursalId);
+            //await MenuHelper.GetSalas(SucursalId);
         }
+
     }
 }
