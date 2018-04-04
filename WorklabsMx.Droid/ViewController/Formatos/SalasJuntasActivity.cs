@@ -9,6 +9,7 @@ using Android.Content.Res;
 using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.Content;
 using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Views;
@@ -24,7 +25,7 @@ namespace WorklabsMx.Droid
     [Activity(Label = "@string/app_name")]
     public class SalasJuntasActivity : Activity
     {
-        ViewPager _viewPager;
+        //ViewPager _viewPager;
         List<int> horas;
         List<double> HorasNoDisponibles;
         string fecha_seleccionada;
@@ -34,17 +35,17 @@ namespace WorklabsMx.Droid
         readonly SalasJuntasController SalasController;
         readonly UsuarioModel usuario;
         LinearLayout llhHorario;
-        TableLayout tlSalasJuntas;
         double creditos;
-        readonly Dictionary<string, Dictionary<string, List<double>>> Horarios;
-        Dictionary<string, string> niveles;
+        readonly Dictionary<string, List<double>> Horarios;
+        //Dictionary<string, string> niveles;
+        int SalaSeleccionada = 0;
         public SalasJuntasActivity()
         {
             HorasNoDisponibles = new List<double>();
             storage = SimpleStorage.EditGroup("Login");
             fecha_seleccionada = DateTime.Now.ToString("d");
             SalasController = new SalasJuntasController();
-            Horarios = new Dictionary<string, Dictionary<string, List<double>>>();
+            Horarios = new Dictionary<string, List<double>>();
             horas = new List<int>();
             for (int i = 1; i < 25; i++)
                 horas.Add(i);
@@ -64,20 +65,30 @@ namespace WorklabsMx.Droid
             salas = SalasController.GetSalaJuntas(Intent.GetStringExtra("sucursal_id"));
             /*niveles = SalasController.GetNivelesSucursal(Intent.GetStringExtra("sucursal_id"));
             _viewPager.Adapter = new SalaJuntasAdapter(this, salas);*/
-            tlSalasJuntas = FindViewById<TableLayout>(Resource.Id.tlSalasJuntas);
-            salas.ForEach(sala =>
+            //tlSalasJuntas = FindViewById<TableLayout>(Resource.Id.tlSalasJuntas);
+            Horarios.Add(fecha_seleccionada, new List<double>());
+            ListView lvSalasJuntas = FindViewById<ListView>(Resource.Id.lvSalasJuntas);
+            lvSalasJuntas.Adapter = new SalasJuntasListAdapter(salas);
+            lvSalasJuntas.ChoiceMode = ChoiceMode.Single;
+            lvSalasJuntas.ItemSelected += (sender, e) =>
             {
-                Horarios.Add(sala.Sala_Id, new Dictionary<string, List<double>>());
-                Horarios[sala.Sala_Id].Add(fecha_seleccionada, new List<double>());
+                Console.WriteLine(((ListView)sender).ChildCount);
+            };
+            /*salas.ForEach(sala =>
+            {
                 LayoutInflater liView = LayoutInflater;
                 View SucursalView = liView.Inflate(Resource.Layout.SalasJuntasLayout, null, true);
+                SucursalView.FindViewById<LinearLayout>(Resource.Id.llSalaJunta).Click += delegate
+                {
+                    SucursalView.FindViewById<LinearLayout>(Resource.Id.llReserva).Visibility = ViewStates.Visible;
+                };
                 SucursalView.FindViewById<TextView>(Resource.Id.lblSalaJunta).Text = sala.Sala_Descripcion;
                 SucursalView.FindViewById<TextView>(Resource.Id.tvCapacidad).Text = sala.Sala_Capacidad + "-" + (Convert.ToInt32(sala.Sala_Capacidad) + 2).ToString();
                 SucursalView.FindViewById<TextView>(Resource.Id.tvNivel).Text = "Nivel " + Convert.ToInt32(sala.Sala_Nivel).ToString("00");
                 TableRow row = new TableRow(this);
                 row.AddView(SucursalView);
                 tlSalasJuntas.AddView(row);
-            });
+            });*/
             FindViewById<TextView>(Resource.Id.lblCreditosDisponibles).Text = SalasController.GetCreditosDisponibles(storage.Get("Usuario_Id")).ToString();
             FindViewById<LinearLayout>(Resource.Id.llSeleccionarFecha).Click += (sender, e) =>
             {
@@ -86,13 +97,15 @@ namespace WorklabsMx.Droid
                     FindViewById<TextView>(Resource.Id.lblDiaFecha).Text = time.DayOfWeek.ToString().Substring(0, 3);
                     FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = time.Day.ToString();
                     fecha_seleccionada = time.ToString("d");
+                    Horarios.Clear();
+                    Horarios.Add(fecha_seleccionada, new List<double>());
                     UpdateHorasNoDisponibles();
                 });
                 frag.Show(FragmentManager, Resources.GetString(Resource.String.ReservaSala));
             };
             FindViewById<TextView>(Resource.Id.lblDiaFecha).Text = DateTime.Parse(fecha_seleccionada).DayOfWeek.ToString().Substring(0, 3);
             FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = DateTime.Parse(fecha_seleccionada).Day.ToString();
-            //FindViewById<TextView>(Resource.Id.lblHorasTotal).Text = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Count.ToString();
+            FindViewById<TextView>(Resource.Id.lblHorasTotal).Text = Horarios[fecha_seleccionada].Count.ToString();
             FindViewById<TextView>(Resource.Id.lblCreditosUsados).Text = creditos.ToString();
             /*Spinner spNivel = FindViewById<Spinner>(Resource.Id.spNivel);
             spNivel.Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, niveles.Keys.ToList());
@@ -103,11 +116,11 @@ namespace WorklabsMx.Droid
                 _viewPager.Adapter = new SalaJuntasAdapter(this, salas);
             };*/
             llhHorario = FindViewById<LinearLayout>(Resource.Id.llhHorario);
-            /*SalasController.GetHorasNoDisponibles(fecha_seleccionada, salas[_viewPager.CurrentItem].Sala_Id).ForEach(horas =>
+            SalasController.GetHorasNoDisponibles(fecha_seleccionada, salas[SalaSeleccionada].Sala_Id).ForEach(horas =>
             {
                 HorasNoDisponibles.Add(DateTime.Parse(horas.Sala_Hora_Fin).Hour);
                 UpdateHorasNoDisponibles();
-            });*/
+            });
 
             /*_viewPager.PageSelected += (sender, e) =>
             {
@@ -129,7 +142,10 @@ namespace WorklabsMx.Droid
             HorizontalScrollView scrollHoras = FindViewById<HorizontalScrollView>(Resource.Id.hsvHorario);
             scrollHoras.PostDelayed(delegate
             {
-                scrollHoras.ScrollTo(DateTime.Now.Hour * 500, 0);
+                if (Convert.ToInt32(Build.VERSION.Sdk) < 23)
+                    scrollHoras.ScrollTo(DateTime.Now.Hour * 200, 0);
+                else
+                    scrollHoras.ScrollTo(DateTime.Now.Hour * 400, 0);
             }, 100);
         }
 
@@ -165,27 +181,27 @@ namespace WorklabsMx.Droid
                     horarioSup.SetBackgroundColor(Color.Rgb(85, 85, 85));
                     horarioSup.SetImageResource(Resource.Mipmap.ic_diagonal_lines);
                 }
-                /*if (Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Contains(hora))
+                if (Horarios[fecha_seleccionada].Contains(hora))
                 {
                     horarioInf.SetBackgroundColor(Color.Rgb(162, 219, 255));
                 }
-                if (Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Contains(hora - .5))
+                if (Horarios[fecha_seleccionada].Contains(hora - .5))
                 {
                     horarioSup.SetBackgroundColor(Color.Rgb(162, 219, 255));
-                }*/
+                }
                 horarioInf.Click += delegate
                 {
                     if (!HorasNoDisponibles.Contains(hora - 1))
                     {
-                        if (!Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Contains(hora - 1))
+                        if (!Horarios[fecha_seleccionada].Contains(hora - 1))
                         {
                             horarioInf.SetBackgroundColor(Color.Rgb(162, 219, 255));
-                            Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Add(hora - 1);
+                            Horarios[fecha_seleccionada].Add(hora - 1);
                         }
                         else
                         {
                             horarioInf.SetBackgroundColor(Color.Rgb(225, 252, 195));
-                            Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Remove(hora - 1);
+                            Horarios[fecha_seleccionada].Remove(hora - 1);
                         }
                         CalculoCreditos();
                     }
@@ -195,16 +211,16 @@ namespace WorklabsMx.Droid
                 {
                     if (!HorasNoDisponibles.Contains(hora - .5))
                     {
-                        /*if (!Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Contains(hora - .5))
+                        if (!Horarios[fecha_seleccionada].Contains(hora - .5))
                         {
                             horarioSup.SetBackgroundColor(Color.Rgb(162, 219, 255));
-                            Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Add(hora - .5);
+                            Horarios[fecha_seleccionada].Add(hora - .5);
                         }
                         else
                         {
                             horarioSup.SetBackgroundColor(Color.Rgb(225, 252, 195));
-                            Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Remove(hora - .5);
-                        }*/
+                            Horarios[fecha_seleccionada].Remove(hora - .5);
+                        }
                         CalculoCreditos();
                     }
                 };
@@ -221,7 +237,7 @@ namespace WorklabsMx.Droid
             {
                 if (Horarios.ContainsKey(sala.Sala_Id))
                 {
-                    foreach (KeyValuePair<string, List<double>> fechaHorario in Horarios[sala.Sala_Id])
+                    foreach (KeyValuePair<string, List<double>> fechaHorario in Horarios)
                     {
                         totalHoras += fechaHorario.Value.Count / 2;
                         fechaHorario.Value.ForEach(time =>
@@ -276,36 +292,36 @@ namespace WorklabsMx.Droid
 
             View customView = liView.Inflate(Resource.Layout.DetallesReservacionLayout, null, true);
             Dictionary<double, double> aux = new Dictionary<double, double>();
-            //Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Sort();
-            //double aux2 = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0];
-            //aux.Add(aux2, aux2 + .5);
+            Horarios[fecha_seleccionada].Sort();
+            double aux2 = Horarios[fecha_seleccionada][0];
+            aux.Add(aux2, aux2 + .5);
 
-            /*for (int i = 1; i < Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].Count; i++)
+            for (int i = 1; i < Horarios[fecha_seleccionada].Count; i++)
             {
-                /*if (Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i] - .5 < 0)
+                if (Horarios[fecha_seleccionada][i] - .5 < 0)
                 {
 
-                }*/
-            /*Console.WriteLine(Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i]);
-            if (aux[aux2] == Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i])
-                aux[aux2] = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i] + .5;
-            else
-            {
-                aux2 = Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][i];
-                aux.Add(aux2, aux2 + .5);
+                }
+                Console.WriteLine(Horarios[fecha_seleccionada][i]);
+                if (aux[aux2] == Horarios[fecha_seleccionada][i])
+                    aux[aux2] = Horarios[fecha_seleccionada][i] + .5;
+                else
+                {
+                    aux2 = Horarios[fecha_seleccionada][i];
+                    aux.Add(aux2, aux2 + .5);
+                }
             }
-        }*/
 
 
             TableLayout tlReservaciones = customView.FindViewById<TableLayout>(Resource.Id.tlReservaciones);
 
-            /*foreach (KeyValuePair<double, double> hora in aux)
+            foreach (KeyValuePair<double, double> hora in aux)
             {
                 LayoutInflater li = LayoutInflater;
 
                 View detalleView = li.Inflate(Resource.Layout.DetallesReservacionSalaJuntaLayout, null, true);
-                detalleView.FindViewById<TextView>(Resource.Id.lblSalasJuntas).Text = salas[_viewPager.CurrentItem].Sala_Descripcion;
-                detalleView.FindViewById<TextView>(Resource.Id.lblPiso).Text = "Nivel " + salas[_viewPager.CurrentItem].Sala_Nivel;
+                detalleView.FindViewById<TextView>(Resource.Id.lblSalasJuntas).Text = salas[SalaSeleccionada].Sala_Descripcion;
+                detalleView.FindViewById<TextView>(Resource.Id.lblPiso).Text = "Nivel " + salas[SalaSeleccionada].Sala_Nivel;
                 detalleView.FindViewById<TextView>(Resource.Id.lblFechaNumero).Text = DateTime.Parse(fecha_seleccionada).ToString("M");
 
                 detalleView.FindViewById<TextView>(Resource.Id.lblHorario).Text = TimeSpan.FromHours(hora.Key).ToString().Substring(0, 5) + " - " + TimeSpan.FromHours(hora.Value).ToString().Substring(0, 5);//hora.Value.ToString("00") + ":00";
@@ -313,23 +329,23 @@ namespace WorklabsMx.Droid
                 TableRow row = new TableRow(this);
                 row.AddView(detalleView);
                 tlReservaciones.AddView(row);
-            }*/
+            }
             AssetManager asset = Assets;
             string correoInvitacion = new StreamReader(asset.Open("SalaJuntasReserva.html")).ReadToEnd();
-            /*new Emails().SendMail(usuario.Usuario_Correo_Electronico, usuario.Usuario_Nombre + " " + usuario.Usuario_Apellidos,
+            new Emails().SendMail(usuario.Usuario_Correo_Electronico, usuario.Usuario_Nombre + " " + usuario.Usuario_Apellidos,
                                        correoInvitacion.Replace("{{NOMBRE}}", usuario.Usuario_Nombre + " " + usuario.Usuario_Apellidos)
-                                        .Replace("{{NOMBRESALA}}", salas[_viewPager.CurrentItem].Sala_Descripcion)
-                                  .Replace("{{CAPACIDADSALA}}", salas[_viewPager.CurrentItem].Sala_Capacidad)
+                                  .Replace("{{NOMBRESALA}}", salas[SalaSeleccionada].Sala_Descripcion)
+                                  .Replace("{{CAPACIDADSALA}}", salas[SalaSeleccionada].Sala_Capacidad)
                                   .Replace("{{DIALETRA}}", new CultureInfo("es-MX").DateTimeFormat.GetDayName(DateTime.Parse(fecha_seleccionada).DayOfWeek).Substring(0, 3))
                                   .Replace("{{DIANUMERO}}", DateTime.Parse(fecha_seleccionada).Day.ToString())
-                                  .Replace("{{HORARIO}}", TimeSpan.FromHours(Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0]).ToString().Substring(0, 5) + " - " + TimeSpan.FromHours(Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0] + .5).ToString().Substring(0, 5)),
+                                  .Replace("{{HORARIO}}", TimeSpan.FromHours(Horarios[fecha_seleccionada][0]).ToString().Substring(0, 5) + " - " + TimeSpan.FromHours(Horarios[fecha_seleccionada][0] + .5).ToString().Substring(0, 5)),
                                   "Worklabs - Confirmación de sala de junta");
             customView.FindViewById<Button>(Resource.Id.btnCancelar).Click += (sender, e) => dialog.Dismiss();
             customView.FindViewById<Button>(Resource.Id.btnConfirmar).Click += delegate
             {
-                Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada].ForEach(hora =>
+                Horarios[fecha_seleccionada].ForEach(hora =>
                 {
-                    if (SalasController.AsignarSalaJuntas("ALTA", salas[_viewPager.CurrentItem].Sala_Id, storage.Get("Usuario_Id"),
+                    if (SalasController.AsignarSalaJuntas("ALTA", salas[SalaSeleccionada].Sala_Id, storage.Get("Usuario_Id"),
                                                       storage.Get("Usuario_Tipo"), DateTime.Parse(fecha_seleccionada),
                                                          TimeSpan.FromHours(hora).ToString().Substring(0, 5), TimeSpan.FromHours(hora + .5).ToString().Substring(0, 5)) == -1)
                         WorklabsMx.Helpers.SlackLogs.SendMessage("ERROR: Registro de sala de junta " + TimeSpan.FromHours(hora).ToString().Substring(0, 5) + " - " + TimeSpan.FromHours(hora + .5).ToString().Substring(0, 5), GetType().Name, "ShowConfirmacion");
@@ -341,13 +357,13 @@ namespace WorklabsMx.Droid
 
                 FindViewById<TextView>(Resource.Id.lblDiaSemana).Text = new CultureInfo("es-MX").DateTimeFormat.GetDayName(DateTime.Parse(fecha_seleccionada).DayOfWeek).Substring(0, 3);
                 FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = DateTime.Parse(fecha_seleccionada).Day.ToString();
-                FindViewById<TextView>(Resource.Id.lblHorario).Text = TimeSpan.FromHours(Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0]).ToString().Substring(0, 5) + " - " + TimeSpan.FromHours(Horarios[salas[_viewPager.CurrentItem].Sala_Id][fecha_seleccionada][0] + .5).ToString().Substring(0, 5);
+                FindViewById<TextView>(Resource.Id.lblHorario).Text = TimeSpan.FromHours(Horarios[fecha_seleccionada][0]).ToString().Substring(0, 5) + " - " + TimeSpan.FromHours(Horarios[fecha_seleccionada][0] + .5).ToString().Substring(0, 5);
                 FindViewById<Button>(Resource.Id.btnContinuar).Click += delegate
                 {
                     StartActivity(new Intent(this, typeof(TabSalasJuntasHistorialActivity)));
                     Finish();
                 };
-            };*/
+            };
             builder.SetView(customView);
             builder.Create();
             dialog = builder.Show();

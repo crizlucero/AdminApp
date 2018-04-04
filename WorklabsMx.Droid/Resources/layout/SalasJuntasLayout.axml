@@ -4,20 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#DDD"
-    android:paddingBottom="10dp">
-    <LinearLayout
-        android:orientation="vertical"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1">
-        <ImageView
-            android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="385dp"
-            android:layout_height="75dp"
-            android:id="@+id/ivSalaJunta" />
-    </LinearLayout>
+    android:paddingBottom="10dp"
+    android:id="@+id/llSalaJunta">
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="385dp"
+        android:layout_height="75dp"
+        android:id="@+id/ivSalaJunta" />
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -58,4 +51,11 @@
             android:text="Nivel 07"
             android:textSize="8dp" />
     </GridLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#4495D6FF"
+        android:layout_marginTop="-118dp"
+        android:id="@+id/llReserva"
+        android:visibility="invisible" />
 </LinearLayout>

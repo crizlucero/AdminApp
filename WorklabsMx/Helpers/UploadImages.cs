@@ -15,7 +15,7 @@ namespace WorklabsMx.Helpers
         {
             try
             {
-                FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://38.122.16.212/" + path + imgNombre);
+                FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://cloud.worklabs.mx/" + path + imgNombre);
                 client.Method = WebRequestMethods.Ftp.UploadFile;
                 client.UsePassive = true;
                 client.Credentials = new NetworkCredential(@"worklabscloud", @"Worklabscloud!");
@@ -42,7 +42,7 @@ namespace WorklabsMx.Helpers
             {
                 try
                 {
-                    FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://38.122.16.212/" + path + imgNombre.Replace("\\", "/"));
+                    FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://cloud.worklabs.mx/" + path + imgNombre.Replace("\\", "/"));
                     client.Method = WebRequestMethods.Ftp.DownloadFile;
                     client.UsePassive = true;
                     client.Credentials = new NetworkCredential(@"worklabscloud", @"Worklabscloud!");
@@ -66,7 +66,7 @@ namespace WorklabsMx.Helpers
             {
                 try
                 {
-                    FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://38.122.16.212/" + path + imgNombre.Replace("\\", "/"));
+                    FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://cloud.worklabs.mx/" + path + imgNombre.Replace("\\", "/"));
                     client.Method = WebRequestMethods.Ftp.DeleteFile;
                     client.UsePassive = true;
                     client.Credentials = new NetworkCredential(@"worklabscloud", @"Worklabscloud!");

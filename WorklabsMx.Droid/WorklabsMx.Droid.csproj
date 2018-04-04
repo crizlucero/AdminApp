@@ -198,6 +198,10 @@
     <Compile Include="Models\BeanResponse.cs" />
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="SQLite.cs" />
+    <Compile Include="Helpers\SalasJuntasListAdapter.cs" />
+    <Compile Include="ViewHolders\SalasJuntasHolder.cs" />
+    <Compile Include="ViewHolders\PostHolder.cs" />
+    <Compile Include="Helpers\PostListAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -517,6 +521,7 @@
     <Folder Include="ViewController\Directorio\" />
     <Folder Include="ViewController\Formatos\" />
     <Folder Include="Models\" />
+    <Folder Include="ViewHolders\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="xamandroidsupportv7appcompat">

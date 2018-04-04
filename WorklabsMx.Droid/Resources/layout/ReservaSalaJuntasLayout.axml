@@ -116,7 +116,13 @@
             android:layout_gravity="center"
             android:textColor="#000" />
     </GridLayout>
-    <android.support.v4.widget.NestedScrollView
+    <ListView
+        android:id="@+id/lvSalasJuntas"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="10dp"
+        android:listSelector="#000" />
+<!--<android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginBottom="10dp">
@@ -129,7 +135,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tlSalasJuntas" />
         </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </android.support.v4.widget.NestedScrollView>-->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
