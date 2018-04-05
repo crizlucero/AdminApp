@@ -34,9 +34,9 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnSeleccionar_Touch (UIKit.UIButton sender);
 
-        [Action ("dtpFechaReservacion_ValueChanged:")]
+        [Action ("dtpHoraInicio_Changed:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void dtpFechaReservacion_ValueChanged (UIKit.UIDatePicker sender);
+        partial void dtpHoraInicio_Changed (UIKit.UIDatePicker sender);
 
         void ReleaseDesignerOutlets ()
         {

@@ -41,5 +41,9 @@ namespace WorklabsMx.iOS
             HoraSeleccionadadaDelegate.HoraFinSeleccionada(hora);
             this.DismissViewController(true, null);
         }
+
+        partial void dtpHoraFin_Changed(UIDatePicker sender)
+        {
+        }
     }
 }
