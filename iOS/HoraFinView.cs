@@ -14,7 +14,7 @@ namespace WorklabsMx.iOS
     {
         public EventosHoraFinSeleccionada HoraSeleccionadadaDelegate;
         public string MinDate;
-        DateTime MiniDate;
+        DateTime MiniDate = new DateTime();
 
         public HoraFinView (IntPtr handle) : base (handle)
         {
@@ -23,8 +23,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            //var MiniDate = DateTime.ParseExact(MinDate, "hh:mm a", CultureInfo.InvariantCulture);
-            dtpHoraFin.MinimumDate = this.CambiarFormato();
+            dtpHoraFin.MinimumDate = CambiarFormato();
         }
 
         public override void ViewWillAppear(bool animated)
@@ -48,11 +47,11 @@ namespace WorklabsMx.iOS
         {
         }
 
-        private string CambiarFormato()
+        private NSDate CambiarFormato()
         {
             NSDateFormatter dateFormat = new NSDateFormatter();
             dateFormat.DateFormat = "hh:mm a";
-            return dateFormat.ToString((NSDate)MiniDate.AddMinutes(30));
+            return dateFormat.Parse(MinDate);
         }
     }
 }
