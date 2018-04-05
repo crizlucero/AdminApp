@@ -1009,7 +1009,6 @@
     </Compile>
     <Compile Include="ComunidadTableViewController.cs" />
     <Compile Include="InfoEmpresaTableViewController.cs" />
-    <Compile Include="ReservarSalaJuntasViewTableController.cs" />
     <Compile Include="ComunidadTableViewController.designer.cs">
       <DependentUpon>ComunidadTableViewController.cs</DependentUpon>
     </Compile>
@@ -1287,6 +1286,7 @@
       <DependentUpon>NoSalasCell.cs</DependentUpon>
     </Compile>
     <Compile Include="HoraInicioView.cs" />
+    <Compile Include="ReservarSalaJuntasViewTableController.cs" />
     <Compile Include="HoraInicioView.designer.cs">
       <DependentUpon>HoraInicioView.cs</DependentUpon>
     </Compile>

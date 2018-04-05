@@ -40,6 +40,10 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView cvwSalasJuntas { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView imgSalasJuntas { get; set; }
 
         [Outlet]
@@ -364,6 +368,11 @@ namespace WorklabsMx.iOS
             if (btnSeleccionFecha != null) {
                 btnSeleccionFecha.Dispose ();
                 btnSeleccionFecha = null;
+            }
+
+            if (cvwSalasJuntas != null) {
+                cvwSalasJuntas.Dispose ();
+                cvwSalasJuntas = null;
             }
 
             if (imgSalasJuntas != null) {

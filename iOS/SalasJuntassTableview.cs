@@ -18,7 +18,7 @@ namespace WorklabsMx.iOS
 
     public partial class SalasJuntassTableview : UITableViewController
     {
-        List<SalaJuntasModel> SalasJuntas = new List<SalaJuntasModel>();
+        public List<SalaJuntasModel> SalasJuntas = new List<SalaJuntasModel>();
         public string SucursalId;
         public string FechaSeleccionada;
         public string CantidadUsuarios;
@@ -29,7 +29,7 @@ namespace WorklabsMx.iOS
         bool isShowInformation = false;
         public bool existeConeccion = true;
 
-        const int TamañoCeldaSalas = 218;
+        const int TamañoCeldaSalas = 220;
         const int TamañoCeldaNoInfo = 300;
 
         const string IndentificadorCeldaSalas = "CeldaSalas";
@@ -42,8 +42,7 @@ namespace WorklabsMx.iOS
 		public override  void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-            MenuHelper.GetSalas(SucursalId);
-            this.SalasJuntas = MenuHelper.SalasJuntas;
+           
             TableView.ReloadData();
 		}
 

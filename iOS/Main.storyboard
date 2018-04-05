@@ -584,8 +584,8 @@
         <scene sceneID="Ac2-3w-pYD">
             <objects>
                 <tableViewController id="RFJ-zu-MH6" customClass="SalasJuntassTableview" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gGZ-U3-MOy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gGZ-U3-MOy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="329"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
@@ -630,9 +630,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2o-io-lUj">
-                                            <rect key="frame" x="258" y="169.5" width="117" height="20"/>
+                                            <rect key="frame" x="266" y="170" width="109" height="20"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="117" id="1yA-0o-1Vj"/>
+                                                <constraint firstAttribute="width" constant="109" id="1yA-0o-1Vj"/>
                                                 <constraint firstAttribute="height" constant="20" id="JMH-ms-ry7"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -660,7 +660,7 @@
                                         <constraint firstAttribute="trailing" secondItem="IEv-tC-eAU" secondAttribute="trailing" id="Png-JH-zV4"/>
                                         <constraint firstItem="Y2o-io-lUj" firstAttribute="firstBaseline" secondItem="u1E-ud-sZK" secondAttribute="baseline" constant="-4" id="QVm-NP-BqS"/>
                                         <constraint firstItem="Fbh-Na-URc" firstAttribute="leading" secondItem="a1B-Dx-5f7" secondAttribute="leading" id="XRF-G0-Hq0"/>
-                                        <constraint firstItem="Y2o-io-lUj" firstAttribute="leading" secondItem="nyk-zU-LZG" secondAttribute="trailing" id="eoI-Dz-lBs"/>
+                                        <constraint firstItem="Y2o-io-lUj" firstAttribute="leading" secondItem="nyk-zU-LZG" secondAttribute="trailing" constant="8" id="eoI-Dz-lBs"/>
                                         <constraint firstItem="u1E-ud-sZK" firstAttribute="top" secondItem="IEv-tC-eAU" secondAttribute="bottom" constant="8" id="kLL-V1-yK5"/>
                                         <constraint firstItem="Fbh-Na-URc" firstAttribute="leading" secondItem="a1B-Dx-5f7" secondAttribute="leading" id="mjT-KK-3ny"/>
                                         <constraint firstItem="IEv-tC-eAU" firstAttribute="top" secondItem="a1B-Dx-5f7" secondAttribute="top" id="smO-Qr-KjE"/>
@@ -712,7 +712,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qch-yl-Y2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-415.19999999999999" y="-3561.319"/>
+            <point key="canvasLocation" x="-415.19999999999999" y="-3561.7691154422791"/>
         </scene>
         <!--Reservar-->
         <scene sceneID="LVh-1A-N5V">
@@ -11748,7 +11748,7 @@ COL. LADRON DE GUEVARA</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N52-P1-5Bm">
-                                <rect key="frame" x="299" y="212" width="68" height="22"/>
+                                <rect key="frame" x="299" y="211.5" width="68" height="22"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="g9t-1m-vpI"/>
@@ -14458,16 +14458,13 @@ COL. LADRON DE GUEVARA</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8HE-6U-OWw">
-                                                    <rect key="frame" x="0.0" y="54" width="375" height="300"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="300" id="ljP-dv-ChG"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="0.0" y="25" width="375" height="329"/>
                                                     <connections>
                                                         <segue destination="RFJ-zu-MH6" kind="embed" identifier="SalasJuntas" id="N8H-sO-vxe"/>
                                                     </connections>
                                                 </containerView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salas disponibles en el edificio para ese día y hora" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teX-jj-eYL">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="46"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -14479,7 +14476,6 @@ COL. LADRON DE GUEVARA</string>
                                                 <constraint firstAttribute="trailing" secondItem="8HE-6U-OWw" secondAttribute="trailing" id="GND-4V-1Me"/>
                                                 <constraint firstAttribute="trailing" secondItem="teX-jj-eYL" secondAttribute="trailing" constant="16" id="NlI-vb-XjB"/>
                                                 <constraint firstItem="teX-jj-eYL" firstAttribute="leading" secondItem="cKz-F6-K4q" secondAttribute="leading" constant="16" id="U7F-Af-q2e"/>
-                                                <constraint firstItem="teX-jj-eYL" firstAttribute="centerX" secondItem="8HE-6U-OWw" secondAttribute="centerX" id="cEa-tW-U8T"/>
                                                 <constraint firstItem="teX-jj-eYL" firstAttribute="top" secondItem="cKz-F6-K4q" secondAttribute="top" id="jH8-me-vRt"/>
                                                 <constraint firstAttribute="bottom" secondItem="8HE-6U-OWw" secondAttribute="bottom" id="ncN-zx-uMW"/>
                                             </constraints>
@@ -14796,6 +14792,7 @@ COL. LADRON DE GUEVARA</string>
                         <outlet property="btnHoraInicio" destination="rlA-nf-f2j" id="name-outlet-rlA-nf-f2j"/>
                         <outlet property="btnSeisPersonas" destination="ISo-2v-i2e" id="name-outlet-ISo-2v-i2e"/>
                         <outlet property="btnSeleccionFecha" destination="l0I-KK-eSs" id="LHB-Qb-a6h"/>
+                        <outlet property="cvwSalasJuntas" destination="8HE-6U-OWw" id="name-outlet-8HE-6U-OWw"/>
                         <outlet property="lblCreditosDisponibles" destination="V78-gD-RJg" id="TEm-aL-V3K"/>
                         <outlet property="lblCreditosPorUsar" destination="pQH-6t-DpK" id="iUJ-8z-St7"/>
                         <outlet property="lblDiaLetra" destination="63r-Ig-7Uq" id="YJA-or-Ghh"/>
@@ -14864,7 +14861,7 @@ COL. LADRON DE GUEVARA</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFU-uc-23g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1247.2" y="-3561.7689999999998"/>
+            <point key="canvasLocation" x="-1247.2" y="-3561.7691154422791"/>
         </scene>
         <!--Hora Inicio View-->
         <scene sceneID="Lyr-uw-kcF">
@@ -14888,7 +14885,7 @@ COL. LADRON DE GUEVARA</string>
                                         </date>
                                         <locale key="locale" localeIdentifier="es_MX"/>
                                         <connections>
-                                            <action selector="dtpFechaReservacion_ValueChanged:" destination="BCS-pB-3z5" eventType="valueChanged" id="elD-3e-p6u"/>
+                                            <action selector="dtpHoraInicio_Changed:" destination="BCS-pB-3z5" eventType="valueChanged" id="794330"/>
                                         </connections>
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbv-6u-1Nw">
@@ -14972,7 +14969,7 @@ COL. LADRON DE GUEVARA</string>
                                         </date>
                                         <locale key="locale" localeIdentifier="es_MX"/>
                                         <connections>
-                                            <action selector="dtpFechaReservacion_ValueChanged:" destination="fSm-xc-Wqg" eventType="valueChanged" id="2Lk-7H-8N3"/>
+                                            <action selector="dtpHoraFin_Changed:" destination="fSm-xc-Wqg" eventType="valueChanged" id="794331"/>
                                         </connections>
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lc-Im-qyM">
@@ -15058,10 +15055,10 @@ COL. LADRON DE GUEVARA</string>
         <image name="EditarPerfil" width="22" height="22"/>
         <image name="Email" width="25" height="25"/>
         <image name="Empresas" width="20" height="20"/>
-        <image name="Estado" width="30" height="30"/>
+        <image name="Estado" width="16" height="16"/>
         <image name="FavoritoUsuario" width="10" height="10"/>
         <image name="FlechaAbajo" width="25" height="12"/>
-        <image name="GiroComercial" width="30" height="30"/>
+        <image name="GiroComercial" width="16" height="16"/>
         <image name="GrupoFavoritos" width="20" height="20"/>
         <image name="ImageExample" width="528" height="528"/>
         <image name="ImagenSala" width="1246" height="321"/>

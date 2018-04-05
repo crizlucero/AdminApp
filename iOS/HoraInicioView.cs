@@ -16,14 +16,16 @@ namespace WorklabsMx.iOS
 
         public EventosHoraInicioSeleccionada HoraSeleccionadadaDelegate;
 
+
         public HoraInicioView (IntPtr handle) : base (handle)
         {
         }
 
-
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+
+            dtpHoraInicio.MinimumDate = (NSDate)DateTime.Now.AddMinutes(30);
 		}
 
 		public override void ViewWillAppear(bool animated)
@@ -38,7 +40,7 @@ namespace WorklabsMx.iOS
 
         partial void btnSeleccionar_Touch(UIButton sender)
         {
-            var hora = dtpHoraInicio.Date.ToString();
+            var hora = this.CambiarFormato();
             HoraSeleccionadadaDelegate.HoraInicioSeleccionada(hora);
             this.DismissViewController(true, null);
         }
@@ -46,6 +48,13 @@ namespace WorklabsMx.iOS
         partial void dtpHoraInicio_Changed(UIDatePicker sender)
         {
             
+        }
+
+        private string CambiarFormato()
+        {
+            NSDateFormatter dateFormat = new NSDateFormatter();
+            dateFormat.DateFormat = "hh:mm a";
+            return dateFormat.ToString(dtpHoraInicio.Date);
         }
     }
 }
