@@ -24,7 +24,7 @@ namespace WorklabsMx.Droid
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
             GridView gvSucursales = FindViewById<GridView>(Resource.Id.gvSucursales);
-            gvSucursales.Adapter = new SucursalAdapter(this, new SucursalController().GetSucursales());
+            gvSucursales.Adapter = new SucursalAdapter(new SucursalController().GetSucursales());
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu) => base.OnCreateOptionsMenu(menu);
@@ -41,27 +41,23 @@ namespace WorklabsMx.Droid
         }
     }
 
-    class SucursalAdapter : BaseAdapter
+    class SucursalAdapter : BaseAdapter<SucursalModel>
     {
-        readonly Context context;
         readonly List<SucursalModel> sucursales;
 
-        public SucursalAdapter(Context context, List<SucursalModel> sucursales)
+        public SucursalAdapter(List<SucursalModel> sucursales)
         {
-            this.context = context;
             this.sucursales = sucursales;
         }
 
+        public override SucursalModel this[int position] => sucursales[position];
 
         public override int Count => sucursales.Count;
-
-        public override Java.Lang.Object GetItem(int position) => null;
 
         public override long GetItemId(int position) => 0;
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            LayoutInflater inflater = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
             View SucursalView;
             if (convertView == null)
                 SucursalView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.SucursalInfoLayout, parent, false);
@@ -69,9 +65,9 @@ namespace WorklabsMx.Droid
                 SucursalView = convertView;
             SucursalView.Click += delegate
             {
-                Intent intent = new Intent(context, typeof(SalasJuntasActivity));
+                Intent intent = new Intent(parent.Context, typeof(ReservaSalaJuntasActivity));
                 intent.PutExtra("sucursal_id", sucursales[position].Sucursal_Id);
-                context.StartActivity(intent);
+                parent.Context.StartActivity(intent);
             };
             SucursalView.FindViewById<TextView>(Resource.Id.lblNombre).Text = sucursales[position].Sucursal_Descripcion;
             SucursalView.FindViewById<TextView>(Resource.Id.lblCalle).Text = sucursales[position].Sucursal_Domicilio;

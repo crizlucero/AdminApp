@@ -3,9 +3,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#DDD"
     android:paddingBottom="10dp"
-    android:id="@+id/llSalaJunta">
+    android:id="@+id/llSalaJunta"
+    android:background="#FFF">
     <ImageView
         android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="385dp"
@@ -24,7 +24,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="15dp"
             android:textStyle="bold"
-            android:textSize="12dp" />
+            android:textSize="12dp"
+            android:textColor="#000" />
         <ImageView
             android:src="@mipmap/ic_people_outline"
             android:id="@+id/imageView1"
@@ -41,7 +42,8 @@
             android:textStyle="bold"
             android:textSize="12dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#000" />
         <TextView
             android:id="@+id/tvNivel"
             android:layout_row="1"
@@ -55,7 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="#4495D6FF"
-        android:layout_marginTop="-118dp"
         android:id="@+id/llReserva"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:layout_marginTop="-117dp" />
 </LinearLayout>

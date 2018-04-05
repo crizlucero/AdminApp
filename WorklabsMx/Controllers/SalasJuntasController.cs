@@ -117,6 +117,44 @@ namespace WorklabsMx.Controllers
             return salas;
         }
 
+        public List<SalaJuntasModel> GetSalaJuntas(string sucursal_id, string fecha, string hora_inicio, string hora_fin, string capacidad = null)
+        {
+            List<SalaJuntasModel> salas = new List<SalaJuntasModel>();
+            string fecha_inicio = fecha + " " + hora_inicio;
+            string fecha_fin = fecha + " " + hora_fin;
+            try
+            {
+                conn.Open();
+                string query = "SELECT distinct csj.* FROM vw_cat_Salas_Juntas as csj left join vw_pro_Salas_Juntas_Reservaciones as psjr on csj.Sala_Id = psjr.Sala_Id " +
+                    "Where CONVERT(Datetime, concat(psjr.Sala_Junta_Fecha, ' ',Convert(time(0),psjr.Sala_Junta_Hora_Inicio)),120) " +
+                    "NOT BETWEEN Convert(datetime,'2018-02-07 22:30')  AND Convert(datetime,'2018-02-07 23:00') AND " +
+                    "CONVERT(Datetime, concat(psjr.Sala_Junta_Fecha, ' ',Convert(time(0),psjr.Sala_Junta_Hora_Fin)),120) " +
+                    "NOT BETWEEN Convert(datetime,'2018-02-07 22:30')  AND Convert(datetime,'2018-02-07 23:00') " +
+                    "AND (csj.sala_capacidad = @capacidad or @capacidad is null)";
+                command = CreateCommand(query);
+                command.Parameters.AddWithValue("@sucursal_id", sucursal_id);
+                command.Parameters.AddWithValue("@fecha_inicio", fecha_inicio);
+                command.Parameters.AddWithValue("@fecha_fin", fecha_fin);
+                command.Parameters.AddWithValue("@capacidad", capacidad);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                    salas.Add(new SalaJuntasModel
+                    {
+                        Sala_Descripcion = reader["Sala_Descripcion"].ToString(),
+                        Sala_Id = reader["Sala_Id"].ToString(),
+                        Sala_Estatus = reader["Sala_Estatus"].ToString(),
+                        Sala_Capacidad = reader["Sala_Capacidad"].ToString(),
+                        Sala_Nivel = reader["Sala_Nivel"].ToString(),
+                        Sucursal_Id = reader["Sucursal_Id"].ToString(),
+                        Sucursal_Descripcion = reader["Sucursal_Descripcion"].ToString(),
+                        Sucursal_Estatus = reader["Sucursal_Estatus"].ToString()
+                    });
+            }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetSalaJuntas"); }
+            finally { conn.Close(); }
+            return salas;
+        }
+
         /// <summary>
         /// Obtiene el historial de las reservaciones de las salas de juntas realizadas por el usuario
         /// </summary>
@@ -229,7 +267,7 @@ namespace WorklabsMx.Controllers
                 while (reader.Read())
                 {
                     int CreditosUsados;
-                    int CreditosDisponibles; 
+                    int CreditosDisponibles;
                     if (reader["Creditos_Usados"] == System.DBNull.Value)
                     {
                         CreditosUsados = 0;

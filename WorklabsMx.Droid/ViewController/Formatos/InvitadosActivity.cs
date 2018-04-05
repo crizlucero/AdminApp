@@ -52,7 +52,6 @@ namespace WorklabsMx.Droid
                     {
                         lblFecha.Text = time.ToString("MMMM dd, yyyy ").ToUpper() + hour.ToString("hh:mm tt");
                     });
-
                     timeFrag.Show(FragmentManager, Resources.GetString(Resource.String.ReservaSala));
                 });
                 frag.Show(FragmentManager, Resources.GetString(Resource.String.ReservaSala));

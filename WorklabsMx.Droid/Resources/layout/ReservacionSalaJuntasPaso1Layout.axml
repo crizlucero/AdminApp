@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <DatePicker
+        android:layout_width="match_parent"
+        android:layout_height="140.5dp"
+        android:id="@+id/dpFecha"
+        android:datePickerMode="spinner"
+        android:spinnersShown="true"
+        android:calendarViewShown="false"
+        android:minWidth="25px"
+        android:minHeight="25px">
+        <TextView
+            android:text="Fecha"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </DatePicker>
+    <TimePicker
+        android:layout_width="match_parent"
+        android:layout_height="132.5dp"
+        android:id="@+id/tpHoraInicio"
+        android:timePickerMode="spinner">
+        <TextView
+            android:text="Hora de inicio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TimePicker>
+    <TimePicker
+        android:layout_width="match_parent"
+        android:layout_height="132.5dp"
+        android:id="@+id/tpHoraFin"
+        android:timePickerMode="spinner">
+        <TextView
+            android:text="Hora de termino"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="0.0dp" />
+    </TimePicker>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cantidad de asistentes" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rgCapacidad"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6 Personas"
+            android:id="@+id/rbMin"
+            android:hint="6" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8 Personas"
+            android:id="@+id/rbMax"
+            android:hint="8" />
+    </RadioGroup>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnAceptar"
+        android:text="Aceptar" />
+</LinearLayout>
