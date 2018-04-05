@@ -1286,6 +1286,14 @@
     <Compile Include="NoSalasCell.designer.cs">
       <DependentUpon>NoSalasCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoraInicioView.cs" />
+    <Compile Include="HoraInicioView.designer.cs">
+      <DependentUpon>HoraInicioView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoraFinView.cs" />
+    <Compile Include="HoraFinView.designer.cs">
+      <DependentUpon>HoraFinView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

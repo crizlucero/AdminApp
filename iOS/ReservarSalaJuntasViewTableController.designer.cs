@@ -20,6 +20,14 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnHoraFin { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnHoraInicio { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnNivel { get; set; }
 
         [Outlet]
@@ -276,6 +284,14 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwFechaFin { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwFechaInicio { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwHorarios { get; set; }
 
         [Outlet]
@@ -298,6 +314,14 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnDiezPersonas_Touch (UIKit.UIButton sender);
 
+        [Action ("btnHoraFin_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnHoraFin_Touch (UIKit.UIButton sender);
+
+        [Action ("btnHoraInicio_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnHoraInicio_Touch (UIKit.UIButton sender);
+
         [Action ("btnNivel_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnNivel_Touch (UIKit.UIButton sender);
@@ -315,6 +339,16 @@ namespace WorklabsMx.iOS
             if (btnDiezPersonas != null) {
                 btnDiezPersonas.Dispose ();
                 btnDiezPersonas = null;
+            }
+
+            if (btnHoraFin != null) {
+                btnHoraFin.Dispose ();
+                btnHoraFin = null;
+            }
+
+            if (btnHoraInicio != null) {
+                btnHoraInicio.Dispose ();
+                btnHoraInicio = null;
             }
 
             if (btnNivel != null) {
@@ -635,6 +669,16 @@ namespace WorklabsMx.iOS
             if (vwBotonFecha != null) {
                 vwBotonFecha.Dispose ();
                 vwBotonFecha = null;
+            }
+
+            if (vwFechaFin != null) {
+                vwFechaFin.Dispose ();
+                vwFechaFin = null;
+            }
+
+            if (vwFechaInicio != null) {
+                vwFechaInicio.Dispose ();
+                vwFechaInicio = null;
             }
 
             if (vwHorarios != null) {
