@@ -199,4 +199,10 @@
     <string name="str_about_cancel">Políticas de cancelación</string>
     <string name="str_about_copyright">Copyright 2018</string>
     <string name="str_about_author">Autor: Espacio Claro</string>
+    <string name="str_label_select_date">Selecciona la fecha</string>
+    <string name="str_label_select_hour_initial">Selecciona la hora de inicio</string>
+    <string name="str_label_select_hour_final">Selecciona la hora de termino</string>
+    <string name="str_label_select_capacity">¿Para cuantas personas quieres tu sala de reuniones?</string>
+    <string name="str_label_select_meeting_room">Salas disponibles para tu selección</string>
+    
 </resources>

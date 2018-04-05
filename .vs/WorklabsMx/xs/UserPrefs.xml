@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Escritorio/EscritorioController.cs">
     <Files>
@@ -14,6 +15,16 @@
       <File FileName="iOS/SalasJuntasCelda.cs" Line="1" Column="1" />
       <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="76" Column="17" />
       <File FileName="iOS/ReservacionesTableView.cs" Line="20" Column="62" />
+=======
+﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/Formatos/InvitadosActivity.cs">
+    <Files>
+      <File FileName="WorklabsMx.Droid/Helpers/TimePickerIntervalFragment.cs" Line="42" Column="34" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="57" Column="13" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/ReservaSalaJuntasActivity.cs" Line="60" Column="93" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasSucursalActivity.cs" Line="69" Column="69" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/InvitadosActivity.cs" Line="53" Column="92" />
+>>>>>>> 8085122d2f9f68565e09e9f87f6553eaade151be
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
@@ -25,9 +36,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
+<<<<<<< HEAD
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="107" column="10" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Handlers/PagosHandler.cs" relfile="WorklabsMx/Handlers/PagosHandler.cs" line="57" column="25" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/LoginController.cs" relfile="WorklabsMx/Controllers/LoginController.cs" line="25" column="21" />
@@ -43,5 +55,13 @@
     <Watch file="../../../WorklabsMx/Handlers/PagosHandler.cs" line="41" offsetX="632" offsetY="600" expression="e.StackTrace" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" />
+=======
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" relfile="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" line="37" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" relfile="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" line="72" column="64" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.android_accelerated_lollipop" AndroidDesignerPreferredTheme="AppTheme" />
+>>>>>>> 8085122d2f9f68565e09e9f87f6553eaade151be
   <MultiItemStartupConfigurations />
 </Properties>

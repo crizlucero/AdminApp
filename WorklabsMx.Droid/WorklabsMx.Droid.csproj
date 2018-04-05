@@ -202,6 +202,10 @@
     <Compile Include="ViewHolders\SalasJuntasHolder.cs" />
     <Compile Include="ViewHolders\PostHolder.cs" />
     <Compile Include="Helpers\PostListAdapter.cs" />
+    <Compile Include="Helpers\TimePickerIntervalFragment.cs" />
+    <Compile Include="ViewController\Formatos\ReservaSalaPasoUnoActivity.cs" />
+    <Compile Include="ViewController\Formatos\ReservaSalaPasoDosActivity.cs" />
+    <Compile Include="ViewController\Formatos\ReservaSalaJuntasActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -508,6 +512,14 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\logo_black.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\logo_white.png" />
     <AndroidResource Include="Resources\drawable\background_login.xml" />
+    <AndroidResource Include="Resources\layout\ReservacionSalaJuntasPaso1Layout.axml" />
+    <AndroidResource Include="Resources\layout\ReservacionSalaJuntasPaso2Layout.axml" />
+    <AndroidResource Include="Resources\layout\ReservacionSalaJuntasLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_arrow_right_white.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_arrow_right_white.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_arrow_right_white.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_arrow_right_white.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_arrow_right_white.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
