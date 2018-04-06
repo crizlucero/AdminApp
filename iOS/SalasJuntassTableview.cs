@@ -106,7 +106,15 @@ namespace WorklabsMx.iOS
                 }
                 else
                 {
-                    CeldaNoInfo.UpdateCell("No hay salas disponibles");
+                    if (SalasJuntas.Count == 0)
+                    {
+                        CeldaNoInfo.UpdateCell("No hay salas disponibles con esa fecha y hora");
+                    }
+                    else
+                    {
+                        CeldaNoInfo.UpdateCell("No hay salas disponibles"); 
+                    }
+
                 }
                 return CeldaNoInfo;
             }
