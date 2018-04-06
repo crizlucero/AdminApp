@@ -82,7 +82,7 @@ namespace WorklabsMx.Droid
                     ((EditText)sender).Text = time.ToString("d");
                     miembro.Usuario_Fecha_Nacimiento = time.ToString("d");
                 });
-                frag.Show(context.FragmentManager, context.Resources.GetString(Resource.String.ReservaSala));
+                frag.Show(context.FragmentManager, context.Resources.GetString(Resource.String.str_meeting_room_reservation));
             };
 
 

@@ -35,8 +35,8 @@
                 android:layout_marginTop="10dp">
                 <TextView
                     android:id="@+id/txtSeleccionarFecha"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
                     android:drawableRight="@mipmap/ic_arrow_down"
                     android:background="@drawable/cornerborderline"
                     android:paddingLeft="2dp"
@@ -62,8 +62,8 @@
                 android:layout_marginTop="10dp">
                 <TextView
                     android:id="@+id/txtSeleccionarHoraInicio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
                     android:drawableRight="@mipmap/ic_arrow_down"
                     android:background="@drawable/cornerborderline"
                     android:paddingLeft="2dp"
@@ -89,8 +89,8 @@
                 android:layout_marginTop="10dp">
                 <TextView
                     android:id="@+id/txtSeleccionarHoraFin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
                     android:drawableRight="@mipmap/ic_arrow_down"
                     android:background="@drawable/cornerborderline"
                     android:paddingLeft="2dp"
@@ -105,27 +105,6 @@
                 android:text="@string/str_label_select_capacity"
                 android:textColor="#000"
                 android:gravity="center" />
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:id="@+id/llSeleccionarHoraFin"
-                android:background="@drawable/button_shadow_radius_dark"
-                android:paddingBottom="2dp"
-                android:paddingRight="2dp"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:id="@+id/txtSeleccionarHoraFin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableRight="@mipmap/ic_arrow_down"
-                    android:background="@drawable/cornerborderline"
-                    android:paddingLeft="2dp"
-                    android:paddingTop="2dp"
-                    android:textColor="#000"
-                    android:textSize="12dp"
-                    android:gravity="center" />
-            </LinearLayout>
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -152,9 +131,13 @@
             <ListView
                 android:id="@+id/lvSalasJuntas"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="300dp"
                 android:layout_marginBottom="10dp"
-                android:listSelector="#000" />
+                android:listSelector="@color/comment_pressed"
+                android:dividerHeight="5dp"
+                android:divider="#ff757575"
+                android:choiceMode="singleChoice"
+                android:background="@drawable/bg_key" />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -381,7 +364,6 @@
             </LinearLayout>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/lblAgendar"
                 android:text="Agendar"
                 android:paddingTop="5dp"
@@ -392,7 +374,10 @@
                 android:textAllCaps="true"
                 android:textColor="#FFF"
                 android:textStyle="bold"
-                android:drawableRight="@mipmap/ic_arrow_right_white" />
+                android:drawableRight="@mipmap/ic_arrow_right_white"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:drawablePadding="-73dp" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

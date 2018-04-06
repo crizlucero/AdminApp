@@ -56,7 +56,7 @@ namespace WorklabsMx.Droid
             SetContentView(Resource.Layout.ReservaSalaJuntasLayout);
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
-            ActionBar.Title = Resources.GetString(Resource.String.ReservaSala);
+            ActionBar.Title = Resources.GetString(Resource.String.str_meeting_room_reservation);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             /*_viewPager = FindViewById<ViewPager>(Resource.Id.vpSucursal);*/
             salas = SalasController.GetSalaJuntas(Intent.GetStringExtra("sucursal_id"));
@@ -98,7 +98,7 @@ namespace WorklabsMx.Droid
                     Horarios.Add(fecha_seleccionada, new List<double>());
                     UpdateHorasNoDisponibles();
                 });
-                frag.Show(FragmentManager, Resources.GetString(Resource.String.ReservaSala));
+                frag.Show(FragmentManager, Resources.GetString(Resource.String.str_meeting_room_reservation));
             };
             FindViewById<TextView>(Resource.Id.lblDiaFecha).Text = DateTime.Parse(fecha_seleccionada).DayOfWeek.ToString().Substring(0, 3);
             FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = DateTime.Parse(fecha_seleccionada).Day.ToString();
