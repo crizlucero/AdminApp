@@ -120,9 +120,11 @@ namespace WorklabsMx.iOS.Helpers
             });
         }
 
-        public static void GetSalas(string SucursalId)
+        public static void GetSalas(string SucursalId, string fecha, string hora_inicio, string hora_fin, string capacidad = null)
         {
-            SalasJuntas = new SalasJuntasController().GetSalaJuntas(SucursalId);
+            //SalasJuntas = new SalasJuntasController().GetSalaJuntas(SucursalId);
+
+            SalasJuntas = new SalasJuntasController().GetSalaJuntas(SucursalId, fecha, hora_inicio, hora_fin, capacidad);
         }
 
     }

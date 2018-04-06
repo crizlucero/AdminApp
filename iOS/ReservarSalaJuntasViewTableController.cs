@@ -2785,7 +2785,7 @@ namespace WorklabsMx.iOS
             else if(segue.Identifier == "SalasJuntas")
             {
                 this.segueSalasJuntas = segue;
-                MenuHelper.GetSalas(SucursalId);
+                MenuHelper.GetSalas(SucursalId, this.fechaSeleccionada, this.HoraInicio, this.HoraFin, this.CantidadPersonas);
                 this.SalasJuntas = MenuHelper.SalasJuntas;
                 var VistaTablaSalas = (SalasJuntassTableview)segue.DestinationViewController;
                 VistaTablaSalas.SalaJuntasDelegate = this;
@@ -2964,6 +2964,26 @@ namespace WorklabsMx.iOS
             this.pintarSalas();
             this.TableView.ReloadData();
             this.btnHoraInicio.SetTitle(HoraSeleccionada, UIControlState.Normal);
+
+            var lstHora = HoraSeleccionada.Split(':');
+            var hora = int.Parse(lstHora[0]);
+            var min = int.Parse(lstHora[1]);
+
+            string minutosstr = hora.ToString();
+
+            if(min == 30)
+            {
+                minutosstr = "00";
+                hora = hora + 1;
+            }
+            if (min == 0)
+            {
+                minutosstr = "30";
+            }
+
+            var horario = hora.ToString() + ":" + minutosstr;
+            this.HoraFin = horario;
+            this.btnHoraFin.SetTitle(horario, UIControlState.Normal);
         }
     }
 
