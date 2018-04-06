@@ -295,26 +295,35 @@ namespace WorklabsMx.Controllers
             {
                 conn.Open();
                 transaction = conn.BeginTransaction();
-                if (fotografia.Length != 0)
-                {
-                    fotoNombre = Guid.NewGuid().ToString() + ".png";
-                    var result = new UploadImages().UploadBitmapAsync(fotoNombre, fotografia, usuario_imagen_path);
-                    if (!result)
-                    {
-                        return false;
-                    }
 
-                }
-                if (foto_fondo.Length != 0)
+                if(fotografia != null)
                 {
-                    fotoFondoNombre = Guid.NewGuid().ToString() + ".png";
-                    var result = new UploadImages().UploadBitmapAsync(fotoFondoNombre, foto_fondo, usuario_imagen_path);
-                    if (!result)
+                    if (fotografia.Length != 0)
                     {
-                        return false;
-                    }
+                        fotoNombre = Guid.NewGuid().ToString() + ".png";
+                        var result = new UploadImages().UploadBitmapAsync(fotoNombre, fotografia, usuario_imagen_path);
+                        if (!result)
+                        {
+                            return false;
+                        }
 
+                    }
                 }
+
+                if (foto_fondo != null)
+                {
+                    if (foto_fondo.Length != 0)
+                    {
+                        fotoFondoNombre = Guid.NewGuid().ToString() + ".png";
+                        var result = new UploadImages().UploadBitmapAsync(fotoFondoNombre, foto_fondo, usuario_imagen_path);
+                        if (!result)
+                        {
+                            return false;
+                        }
+
+                    }
+                }
+
                 command = CreateCommand();
                 command.Connection = conn;
                 command.Transaction = transaction;
