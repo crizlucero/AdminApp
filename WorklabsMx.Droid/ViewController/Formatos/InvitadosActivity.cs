@@ -52,9 +52,9 @@ namespace WorklabsMx.Droid
                     {
                         lblFecha.Text = time.ToString("MMMM dd, yyyy ").ToUpper() + hour.ToString("hh:mm tt");
                     });
-                    timeFrag.Show(FragmentManager, Resources.GetString(Resource.String.ReservaSala));
+                    timeFrag.Show(FragmentManager, Resources.GetString(Resource.String.str_meeting_room_reservation));
                 });
-                frag.Show(FragmentManager, Resources.GetString(Resource.String.ReservaSala));
+                frag.Show(FragmentManager, Resources.GetString(Resource.String.str_meeting_room_reservation));
             };
             Nombre = FindViewById<EditText>(Resource.Id.txtNombre);
             Apellidos = FindViewById<EditText>(Resource.Id.txtApellidos);

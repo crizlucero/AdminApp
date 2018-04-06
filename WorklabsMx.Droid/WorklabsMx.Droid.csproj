@@ -520,6 +520,7 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\ic_arrow_right_white.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\ic_arrow_right_white.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_arrow_right_white.png" />
+    <AndroidResource Include="Resources\drawable\bg_key.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

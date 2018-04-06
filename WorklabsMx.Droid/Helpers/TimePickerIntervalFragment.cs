@@ -30,8 +30,7 @@ namespace WorklabsMx.Droid.Helpers
             int minute = calendar.Get(CalendarField.Minute) / 30;
             minute = (minute > 2) ? 0 : 30;
 
-            TimePickerDialog tpd = new TimePickerDialog(Activity, this, DateTime.Now.Hour, DateTime.Now.Minute, DateFormat.Is24HourFormat(Activity));
-
+            TimePickerDialog tpd = new TimePickerDialog(Activity, this, hour, minute, true);
             //tpd.SetOnShowListener(new DialogInterface.OnShowListener(){});
 
             return tpd;
@@ -39,7 +38,16 @@ namespace WorklabsMx.Droid.Helpers
 
         public void OnTimeSet(TimePicker view, int hourOfDay, int minute)
         {
-            minute = minute * 30;
+            if (minute > 30)
+            {
+                minute = 0;
+                if (hourOfDay < 23)
+                    ++hourOfDay;
+                else
+                    hourOfDay = 0;
+            }
+            else
+                minute = 30;
             timeSelectedHandler(new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hourOfDay, minute, 0));
         }
     }

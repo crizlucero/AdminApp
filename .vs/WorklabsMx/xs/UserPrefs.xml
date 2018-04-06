@@ -1,18 +1,24 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/Formatos/InvitadosActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/Formatos/ReservaSalaJuntasActivity.cs">
     <Files>
-      <File FileName="WorklabsMx.Droid/Helpers/TimePickerIntervalFragment.cs" Line="42" Column="34" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="57" Column="13" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/ReservaSalaJuntasActivity.cs" Line="60" Column="93" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasSucursalActivity.cs" Line="69" Column="69" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/InvitadosActivity.cs" Line="53" Column="92" />
+      <File FileName="WorklabsMx.Droid/Helpers/TimePickerIntervalFragment.cs" Line="24" Column="9" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="30" Column="9" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasSucursalActivity.cs" Line="23" Column="71" />
+      <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="52" Column="32" />
+      <File FileName="WorklabsMx.Droid/Helpers/PerfilEditarPageAdapter.cs" Line="85" Column="124" />
+      <File FileName="WorklabsMx.Droid/Helpers/CalendarHelper.cs" Line="18" Column="35" />
+      <File FileName="WorklabsMx.Droid/Helpers/SalasJuntasListAdapter.cs" Line="23" Column="37" />
+      <File FileName="WorklabsMx.Droid/Resources/drawable/bg_key.xml" Line="7" Column="51" />
+      <File FileName="WorklabsMx.Droid/Resources/values/colors.xml" Line="18" Column="42" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/ReservaSalaPasoUnoActivity.cs" Line="36" Column="13" />
+      <File FileName="WorklabsMx/Models/SalaJuntasModel.cs" Line="15" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/ReservaSalaJuntasActivity.cs" Line="141" Column="108" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" relfile="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" line="37" column="1" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" relfile="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" line="72" column="64" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

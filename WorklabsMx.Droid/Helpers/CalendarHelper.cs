@@ -1,12 +1,13 @@
-﻿using Java.Util;
+﻿using System;
+using Java.Util;
 
 namespace WorklabsMx.Droid.Helpers
 {
-    public class CalendarHelper 
+    public class CalendarHelper
     {
         public long GetDateTimeMS(int year, int month, int day, int hr, int min)
         {
-            Calendar c = Calendar.GetInstance(TimeZone.Default);
+            Calendar c = Calendar.GetInstance(Java.Util.TimeZone.Default);
 
             c.Set(CalendarField.DayOfMonth, day);
             c.Set(CalendarField.HourOfDay, hr);
@@ -16,5 +17,7 @@ namespace WorklabsMx.Droid.Helpers
 
             return c.TimeInMillis;
         }
+
+        public static DateTime RoundUp(DateTime dt, TimeSpan d) => new DateTime(((dt.Ticks + d.Ticks - 1) / d.Ticks) * d.Ticks);
     }
 }
