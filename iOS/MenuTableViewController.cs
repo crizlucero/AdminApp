@@ -39,8 +39,11 @@ namespace WorklabsMx.iOS
         public override async void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            //var headerCell = (HeaderMenulCell)this.TableView.DequeueReusableCell(IdentificadorCeldaHeader);
+            //headerCell.UpdateCell();
             tableItems = new List<ItemsMenu>();
             tableItems = MenuHelper.GeneralList;
+            TableView.ReloadData();
             await MenuHelper.GetSucursales();
             await MenuHelper.GetMembresias();
             await MenuHelper.GetProductos();
@@ -49,8 +52,7 @@ namespace WorklabsMx.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
-            var headerCell = (HeaderMenulCell)this.TableView.DequeueReusableCell(IdentificadorCeldaHeader);
-            headerCell.UpdateCell();
+
         }
 
         public override void ViewDidDisappear(bool animated)
@@ -193,8 +195,9 @@ namespace WorklabsMx.iOS
         public void InfoActualizar()
         {
             //MenuHelper.GetUsuarioInfo();
-            var headerCell = (HeaderMenulCell)this.TableView.DequeueReusableCell(IdentificadorCeldaHeader);
-            headerCell.UpdateCell();
+            //var headerCell = (HeaderMenulCell)this.TableView.DequeueReusableCell(IdentificadorCeldaHeader);
+            //headerCell.UpdateCell();
+            TableView.ReloadData();
         }
     }
 

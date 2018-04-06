@@ -50,6 +50,8 @@ namespace WorklabsMx.iOS
 
         string fechaSeleccionada = DateTime.Now.ToString("yyyy-MM-dd");
 
+        const int TamañoCeldaSalas = 230;
+
 
         SalaJuntasReservacionModel Reservacion = new SalaJuntasReservacionModel();
         string HoraInicio = "";
@@ -110,7 +112,7 @@ namespace WorklabsMx.iOS
             }
             else if(indexPath.Row == 1)
             {
-                return 354 + Size;
+                return Size;
             }
             else
             {
@@ -161,11 +163,33 @@ namespace WorklabsMx.iOS
                 HoraFin = HorasFin.ToString() + ":" + MinutosFin;
 
                 this.Reservacion = new SalaJuntasReservacionModel(SalaActual.Sala_Id, HoraInicio, HoraFin, this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f);
-                this.btnHoraInicio.SetTitle(HoraInicio, UIControlState.Normal);
-                this.btnHoraFin.SetTitle(HoraFin, UIControlState.Normal);
+                var horaInicioFormato = this.ChangeFormat(HoraActual.ToString(), strMinutosActuales);
+
+                this.btnHoraInicio.SetTitle(horaInicioFormato, UIControlState.Normal);
+
+                var horaFinFormato = this.ChangeFormat(HorasFin.ToString(), MinutosFin);
+
+                this.btnHoraFin.SetTitle(horaFinFormato, UIControlState.Normal);
             }
 
+        }
 
+        private string ChangeFormat(string Hora, string Minutos)
+        {
+            int HoraInt = int.Parse(Hora);
+            int MinutosInt = int.Parse(Minutos);
+            string NewHora = Hora;
+            string Meridianos;
+            if (HoraInt > 12)
+            {
+                NewHora = (HoraInt - 12).ToString();
+                Meridianos = "PM";
+            }
+            else
+            {
+                Meridianos = "AM";
+            }
+            return NewHora + ":" + Minutos + " " + Meridianos;
         }
 
         private void PintarMinutos()
@@ -2836,10 +2860,10 @@ namespace WorklabsMx.iOS
 
         void pintarSalas()
         {
-            var SizeViewX = this.SalasJuntas.Count * 230;
-            var currentsizeX = this.cvwSalasJuntas.Frame.Height;
+            var SizeViewX = this.SalasJuntas.Count * TamañoCeldaSalas + 20; 
+            //var currentsizeX = this.cvwSalasJuntas.Frame.Height;
 
-            Size = SizeViewX - currentsizeX;
+           Size = SizeViewX;
 
             newFrame = new CGRect(this.cvwSalasJuntas.Frame.X, this.cvwSalasJuntas.Frame.Y, this.cvwSalasJuntas.Frame.Width, SizeViewX);
             this.cvwSalasJuntas.Frame = newFrame;
@@ -2925,9 +2949,8 @@ namespace WorklabsMx.iOS
         public void HoraFinSeleccionada(string HoraSeleccionada)
         {
             this.HoraFin = HoraSeleccionada;
-
             this.pintarSalas();
-
+            this.TableView.ReloadData();
             this.btnHoraFin.SetTitle(HoraSeleccionada, UIControlState.Normal);
         }
     }
@@ -2938,9 +2961,8 @@ namespace WorklabsMx.iOS
         public void HoraInicioSeleccionada(string HoraSeleccionada)
         {
             this.HoraInicio = HoraSeleccionada;
-
             this.pintarSalas();
-
+            this.TableView.ReloadData();
             this.btnHoraInicio.SetTitle(HoraSeleccionada, UIControlState.Normal);
         }
     }
