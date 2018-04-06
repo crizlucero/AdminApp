@@ -52,6 +52,8 @@ namespace WorklabsMx.iOS
 
         const int TamañoCeldaSalas = 230;
 
+        bool seisPersonasSeleccionado = false, diezPersonasSeleccionado = false;
+
 
         SalaJuntasReservacionModel Reservacion = new SalaJuntasReservacionModel();
         string HoraInicio = "";
@@ -77,9 +79,6 @@ namespace WorklabsMx.iOS
             {
                 this.LimpiarInfo();
                 this.SalasJuntas = MenuHelper.SalasJuntas;
-
-                this.pintarSalas();
-
                 this.lblCreditosDisponibles.Text = new SalasJuntasController().GetCreditosDisponibles(KeyChainHelper.GetKey("Usuario_Id")).ToString();
                 this.lblCreditosPorUsar.Text = "0";
                 withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());
@@ -108,7 +107,7 @@ namespace WorklabsMx.iOS
         {
             if(indexPath.Row == 0)
             {
-                return 513;
+                return 361;
             }
             else if(indexPath.Row == 1)
             {
@@ -2789,6 +2788,7 @@ namespace WorklabsMx.iOS
                 this.segueSalasJuntas = segue;
                 MenuHelper.GetSalas(SucursalId, this.fechaSeleccionada, this.HoraInicio, this.HoraFin, this.CantidadPersonas);
                 this.SalasJuntas = MenuHelper.SalasJuntas;
+                this.pintarSalas();
                 var VistaTablaSalas = (SalasJuntassTableview)segue.DestinationViewController;
                 VistaTablaSalas.SalaJuntasDelegate = this;
                 VistaTablaSalas.SalasJuntas = this.SalasJuntas;
@@ -2807,16 +2807,20 @@ namespace WorklabsMx.iOS
 
         partial void btnDiezPersonas_Touch(UIButton sender)
         {
+            this.btnDiezPersonas.BackgroundColor = UIColor.Red;
+            this.btnSeisPersonas.BackgroundColor = UIColor.Clear.FromHex(0x95D6FF);
             this.CantidadPersonas = "10";
-            this.pintarSalas();
             this.PrepareForSegue(this.segueSalasJuntas, null);
+            TableView.ReloadData();
         }
 
         partial void btnSeisPersonas_Touch(UIButton sender)
         {
+            this.btnDiezPersonas.BackgroundColor = UIColor.Clear.FromHex(0x95D6FF);
+            this.btnSeisPersonas.BackgroundColor = UIColor.Red;
             this.CantidadPersonas = "6";
-            this.pintarSalas();
             this.PrepareForSegue(this.segueSalasJuntas, null);
+            TableView.ReloadData();
         }
 
         partial void btnAgendar_Touch(UIButton sender)
@@ -2892,10 +2896,6 @@ namespace WorklabsMx.iOS
             NSDate newFormatDate = dateFormat.Parse(FechaReservacion);
             this.FormatoDiaSeleccionado(newFormatDate);
 
-
-            this.pintarSalas();
-
-
             this.PrepareForSegue(this.segueSalasJuntas, null);
         }
     }
@@ -2952,7 +2952,6 @@ namespace WorklabsMx.iOS
         {
             this.HoraFin = HoraSeleccionada;
             this.PrepareForSegue(this.segueSalasJuntas, null);
-            this.pintarSalas();
             this.TableView.ReloadData();
             this.btnHoraFin.SetTitle(HoraSeleccionada, UIControlState.Normal);
         }
@@ -2984,8 +2983,6 @@ namespace WorklabsMx.iOS
 
             var horario = hora.ToString() + ":" + minutosstr;
             this.HoraFin = horario;
-
-            this.pintarSalas();
             this.TableView.ReloadData();
             this.btnHoraInicio.SetTitle(HoraSeleccionada, UIControlState.Normal);
             this.btnHoraFin.SetTitle(horario, UIControlState.Normal);
