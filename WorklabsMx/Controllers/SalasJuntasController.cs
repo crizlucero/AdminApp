@@ -127,9 +127,9 @@ namespace WorklabsMx.Controllers
                 conn.Open();
                 string query = "SELECT distinct csj.* FROM vw_cat_Salas_Juntas as csj left join vw_pro_Salas_Juntas_Reservaciones as psjr on csj.Sala_Id = psjr.Sala_Id " +
                     "Where CONVERT(Datetime, concat(psjr.Sala_Junta_Fecha, ' ',Convert(time(0),psjr.Sala_Junta_Hora_Inicio)),120) " +
-                    "NOT BETWEEN Convert(datetime,'2018-02-07 22:30')  AND Convert(datetime,'2018-02-07 23:00') AND " +
+                    "NOT BETWEEN Convert(datetime,@fecha_inicio)  AND Convert(datetime,@fecha_fin) AND " +
                     "CONVERT(Datetime, concat(psjr.Sala_Junta_Fecha, ' ',Convert(time(0),psjr.Sala_Junta_Hora_Fin)),120) " +
-                    "NOT BETWEEN Convert(datetime,'2018-02-07 22:30')  AND Convert(datetime,'2018-02-07 23:00') " +
+                    "NOT BETWEEN Convert(datetime,@fecha_inicio)  AND Convert(datetime,@fecha_fin) " +
                     "AND (csj.sala_capacidad = @capacidad or @capacidad is null)";
                 command = CreateCommand(query);
                 command.Parameters.AddWithValue("@sucursal_id", sucursal_id);
