@@ -46,7 +46,7 @@ namespace WorklabsMx.iOS
 
         float withImage;
 
-        string CantidadPersonas = "6";
+        string CantidadPersonas = null;
 
         string fechaSeleccionada = DateTime.Now.ToString("yyyy-MM-dd");
 
@@ -170,6 +170,8 @@ namespace WorklabsMx.iOS
                 var horaFinFormato = this.ChangeFormat(HorasFin.ToString(), MinutosFin);
 
                 this.btnHoraFin.SetTitle(horaFinFormato, UIControlState.Normal);
+
+                this.PrepareForSegue(this.segueSalasJuntas, null);
             }
 
         }
@@ -2949,6 +2951,7 @@ namespace WorklabsMx.iOS
         public void HoraFinSeleccionada(string HoraSeleccionada)
         {
             this.HoraFin = HoraSeleccionada;
+            this.PrepareForSegue(this.segueSalasJuntas, null);
             this.pintarSalas();
             this.TableView.ReloadData();
             this.btnHoraFin.SetTitle(HoraSeleccionada, UIControlState.Normal);
@@ -2961,9 +2964,7 @@ namespace WorklabsMx.iOS
         public void HoraInicioSeleccionada(string HoraSeleccionada)
         {
             this.HoraInicio = HoraSeleccionada;
-            this.pintarSalas();
-            this.TableView.ReloadData();
-            this.btnHoraInicio.SetTitle(HoraSeleccionada, UIControlState.Normal);
+            this.PrepareForSegue(this.segueSalasJuntas, null);
 
             var lstHora = HoraSeleccionada.Split(':');
             var hora = int.Parse(lstHora[0]);
@@ -2971,7 +2972,7 @@ namespace WorklabsMx.iOS
 
             string minutosstr = hora.ToString();
 
-            if(min == 30)
+            if (min == 30)
             {
                 minutosstr = "00";
                 hora = hora + 1;
@@ -2983,6 +2984,10 @@ namespace WorklabsMx.iOS
 
             var horario = hora.ToString() + ":" + minutosstr;
             this.HoraFin = horario;
+
+            this.pintarSalas();
+            this.TableView.ReloadData();
+            this.btnHoraInicio.SetTitle(HoraSeleccionada, UIControlState.Normal);
             this.btnHoraFin.SetTitle(horario, UIControlState.Normal);
         }
     }

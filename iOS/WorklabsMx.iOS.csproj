@@ -693,7 +693,6 @@
     <ImageAsset Include="Assets.xcassets\ImagenSucursal.imageset\314ce393-195b-4212-893a-69d13d0fe025.jpg" />
     <ImageAsset Include="Assets.xcassets\Sala6.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Sala10.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Sala6.imageset\b65a18b6-80b2-4573-946c-abb1690ec202.jpg" />
     <ImageAsset Include="Assets.xcassets\EditarPerfil.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\EditarPerfil.imageset\EditarPerfil.png" />
     <ImageAsset Include="Assets.xcassets\EditarPerfil.imageset\EditarPerfil%402x.png" />
@@ -780,6 +779,7 @@
     <ImageAsset Include="Assets.xcassets\GradienteLogin.imageset\Fondo.png" />
     <ImageAsset Include="Assets.xcassets\GradienteLogin.imageset\Fondo%402x.png" />
     <ImageAsset Include="Assets.xcassets\GradienteLogin.imageset\Fondo%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Sala6.imageset\IMG_4501.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
