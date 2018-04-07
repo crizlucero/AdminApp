@@ -2826,7 +2826,7 @@ namespace WorklabsMx.iOS
         {
             if (CreditosAcumulados <= float.Parse(this.lblCreditosDisponibles.Text))
             {
-                if (this.Reservacion != null)
+                if (this.Reservacion.Sala_Id != "")
                 {
                     this.PerformSegue("confirmarCompra", null);
                 }
