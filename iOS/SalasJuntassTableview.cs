@@ -22,8 +22,6 @@ namespace WorklabsMx.iOS
         public string SucursalId;
         public string FechaSeleccionada;
         public string CantidadUsuarios;
-        public List<SalaJuntasReservacionModel> Reservaciones = new List<SalaJuntasReservacionModel>();
-
 
         public EventosSalaJuntas SalaJuntasDelegate;
         bool isShowInformation = false;

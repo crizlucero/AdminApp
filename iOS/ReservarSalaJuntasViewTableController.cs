@@ -25,9 +25,9 @@ namespace WorklabsMx.iOS
         float CreditosAcumulados = 0;
         public string SucursalId;
         NSDateFormatter dateFormat = new NSDateFormatter();
-        bool FlagView2324 = false, FlagView2324_2 = false, FlagView2223 = false, FlagView2223_2 = false, FlagView2122 = false, FlagView2122_2 = false, FlagView2021 = false, FlagView2021_2 = false, FlagView1920 = false, FlagView1920_2 = false, FlagView1819 = false, FlagView1819_2 = false, FlagView1718 = false, FlagView1718_2 = false, FlagView1617 = false,
+        //bool FlagView2324 = false, FlagView2324_2 = false, FlagView2223 = false, FlagView2223_2 = false, FlagView2122 = false, FlagView2122_2 = false, FlagView2021 = false, FlagView2021_2 = false, FlagView1920 = false, FlagView1920_2 = false, FlagView1819 = false, FlagView1819_2 = false, FlagView1718 = false, FlagView1718_2 = false, FlagView1617 = false,
 
-        FlagView1617_2 = false, Flag1516 = false, Flag1516_2 = false, Flag1415 = false, Flag1415_2 = false, Flag1314 = false, Flag1314_2 = false, Flag1213 = false, Flag1213_2 = false, Flag1112 = false, Flag1112_2 = false, Flag1011 = false, Flag1011_2 = false, Flag0910 = false, Flag0910_2 = false, Flag0809 = false, Flag0809_2 = false, Flag0708 = false, Flag0708_2 = false, Flag0607 = false, Flag0607_2 = false, Flag0506 = false, Flag0506_2 = false, Flag0405 = false, Flag0405_2 = false, Flag0304 = false, Flag0304_2 = false, Flag0203 = false, Flag0203_2 = false, Flag0102 = false, Flag0102_2 = false, Flag0124 = false, Flag0124_2 = false;
+        //FlagView1617_2 = false, Flag1516 = false, Flag1516_2 = false, Flag1415 = false, Flag1415_2 = false, Flag1314 = false, Flag1314_2 = false, Flag1213 = false, Flag1213_2 = false, Flag1112 = false, Flag1112_2 = false, Flag1011 = false, Flag1011_2 = false, Flag0910 = false, Flag0910_2 = false, Flag0809 = false, Flag0809_2 = false, Flag0708 = false, Flag0708_2 = false, Flag0607 = false, Flag0607_2 = false, Flag0506 = false, Flag0506_2 = false, Flag0405 = false, Flag0405_2 = false, Flag0304 = false, Flag0304_2 = false, Flag0203 = false, Flag0203_2 = false, Flag0102 = false, Flag0102_2 = false, Flag0124 = false, Flag0124_2 = false;
 
         List<SalaJuntasReservacionModel> HorasNoDisponibles = new List<SalaJuntasReservacionModel>();
         List<SalaJuntasModel> SalasJuntas = new List<SalaJuntasModel>();
@@ -35,8 +35,8 @@ namespace WorklabsMx.iOS
 
         List<ListaViews> VistasHorarios = new List<ListaViews>();
 
-        List<SalaJuntasReservacionModel> Reservaciones = new List<SalaJuntasReservacionModel>();
-        List<SalaJuntasReservacionModel> ReservacionesConcat = new List<SalaJuntasReservacionModel>();
+        //List<SalaJuntasReservacionModel> Reservaciones = new List<SalaJuntasReservacionModel>();
+        //List<SalaJuntasReservacionModel> ReservacionesConcat = new List<SalaJuntasReservacionModel>();
 
         float HorasReservadas = 0;
 
@@ -86,7 +86,7 @@ namespace WorklabsMx.iOS
                 NSDateFormatter dateFormate = new NSDateFormatter();
                 dateFormate.DateFormat = "yyyy-MM-dd";
                 dateFormate.ToString(NSDate.Now);
-                this.HorasNoDisponibles = new SalasJuntasController().GetHorasNoDisponibles(dateFormate.ToString(NSDate.Now), this.SalaActual.Sala_Id);
+                //this.HorasNoDisponibles = new SalasJuntasController().GetHorasNoDisponibles(dateFormate.ToString(NSDate.Now), this.SalaActual.Sala_Id);
                 this.UpdateInfo();
             }
             else
@@ -125,13 +125,13 @@ namespace WorklabsMx.iOS
             if (this.SalasJuntas.Count > 0)
             {
                 this.SalaActual = this.SalasJuntas[0];
-                this.GetHorasNoDisponibles(SalaActual.Sala_Id);
+                //this.GetHorasNoDisponibles(SalaActual.Sala_Id);
 
                 SalaId = SalaActual.Sala_Id;
 
                 this.HorasNoDisponibles = new SalasJuntasController().GetHorasNoDisponibles(fechaSeleccionada, this.SalaActual.Sala_Id);
 
-                this.GetHorasNoDisponibles(this.SalaActual.Sala_Id);
+                //this.GetHorasNoDisponibles(this.SalaActual.Sala_Id);
                 CGRect FrameHorarios = new CGRect(this.vwHorarios.Frame.X, this.vwHorarios.Frame.Y, this.vwHorarios.Frame.Width + 50, this.vwHorarios.Frame.Height);
                 this.scvScrollHorarios.ContentSize = FrameHorarios.Size;
 
@@ -161,7 +161,7 @@ namespace WorklabsMx.iOS
                 HoraInicio = HoraActual.ToString() + ":" + strMinutosActuales;
                 HoraFin = HorasFin.ToString() + ":" + MinutosFin;
 
-                this.Reservacion = new SalaJuntasReservacionModel(SalaActual.Sala_Id, HoraInicio, HoraFin, this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f);
+                //this.Reservacion = new SalaJuntasReservacionModel(SalaActual.Sala_Id, HoraInicio, HoraFin, this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f);
                 var horaInicioFormato = this.ChangeFormat(HoraActual.ToString(), strMinutosActuales);
 
                 this.btnHoraInicio.SetTitle(horaInicioFormato, UIControlState.Normal);
@@ -605,7 +605,7 @@ namespace WorklabsMx.iOS
         private void GetHorasNoDisponibles(string SalaId)
         {
 
-            if (fechaSeleccionada != DateTime.Now.ToString("dd/MM/yyyy"))
+           /* if (fechaSeleccionada != DateTime.Now.ToString("dd/MM/yyyy"))
             {
                 for (int indice = 0; indice < 48; indice++)
                 {
@@ -622,7 +622,7 @@ namespace WorklabsMx.iOS
                 var VistaHorario = this.VistasHorarios.Find(parametro => parametro.HoraInicio == HoraInicio.Replace(":00.0000000", ""));
 
                 VistaHorario.Horarios.BackgroundColor = UIColor.Clear.FromHex(0x404040);
-            }
+            }*/
 
         }
 
@@ -2772,7 +2772,7 @@ namespace WorklabsMx.iOS
             else if(segue.Identifier == "confirmarCompra")
             {
                 var VistaConfirmacion = (ConfirmarSalaJuntasController)segue.DestinationViewController;
-                VistaConfirmacion.Reservaciones = this.Reservaciones;
+                VistaConfirmacion.Reservacion = this.Reservacion;
                 VistaConfirmacion.SalaActual = this.SalaActual;
                 VistaConfirmacion.FechaReservacion = this.fechaSeleccionada;
                 VistaConfirmacion.EventosReservacionesDelegate = this;
@@ -2780,7 +2780,7 @@ namespace WorklabsMx.iOS
             else if(segue.Identifier == "DetalleReservacion")
             {
                 var VistaInfoReservacion = (InfoConfirmacionViewController)segue.DestinationViewController;
-                VistaInfoReservacion.Reservaciones = this.ReservacionesConcat;
+                VistaInfoReservacion.Reservaciones = this.Reservacion;
                 VistaInfoReservacion.ConfirmacionRealizadaDel = this;
             }
             else if(segue.Identifier == "SalasJuntas")
@@ -2792,7 +2792,6 @@ namespace WorklabsMx.iOS
                 var VistaTablaSalas = (SalasJuntassTableview)segue.DestinationViewController;
                 VistaTablaSalas.SalaJuntasDelegate = this;
                 VistaTablaSalas.SalasJuntas = this.SalasJuntas;
-                VistaTablaSalas.Reservaciones = Reservaciones;
                 VistaTablaSalas.FechaSeleccionada = fechaSeleccionada;
                 VistaTablaSalas.SucursalId = this.SucursalId;
                 VistaTablaSalas.ViewDidLoad();
@@ -2827,13 +2826,13 @@ namespace WorklabsMx.iOS
         {
             if (CreditosAcumulados <= float.Parse(this.lblCreditosDisponibles.Text))
             {
-                if (this.Reservaciones.Count > 0)
+                if (this.Reservacion != null)
                 {
                     this.PerformSegue("confirmarCompra", null);
                 }
                 else
                 {
-                    new MessageDialog().SendToast("No has seleccionado un horario");
+                    new MessageDialog().SendToast("No has seleccionado una sala");
                 }
             }
             else
@@ -2887,7 +2886,7 @@ namespace WorklabsMx.iOS
             {
                 this.HorasNoDisponibles = new SalasJuntasController().GetHorasNoDisponibles(FechaReservacion, MenuHelper.SalasJuntas[0].Sala_Id);
             }
-            this.GetHorasNoDisponibles(MenuHelper.SalasJuntas[0].Sala_Id);
+            //this.GetHorasNoDisponibles(MenuHelper.SalasJuntas[0].Sala_Id);
             if (FechaReservacion == DateTime.Now.ToString("yyyy-MM-dd"))
             {
                 this.ValidateHour();
@@ -2902,16 +2901,16 @@ namespace WorklabsMx.iOS
 
     partial class ReservarSalaJuntasViewTableController: EventosReservaciones
     {
-        public async void ReservacionConfirmada(List<SalaJuntasReservacionModel> ReservacionesConcat)
+        public async void ReservacionConfirmada(SalaJuntasReservacionModel ReservacionesConcat)
         {
             await Task.Delay(100);
-            this.ReservacionesConcat = ReservacionesConcat;
+            this.Reservacion = ReservacionesConcat;
             this.PerformSegue("DetalleReservacion", null);
         }
 
-        public void ReservacionCancelada(List<SalaJuntasReservacionModel> Reservciones)
+        public void ReservacionCancelada(SalaJuntasReservacionModel Reservciones)
         {
-            this.Reservaciones = Reservciones;
+            this.Reservacion = Reservciones;
         }
     }
 
@@ -2930,19 +2929,7 @@ namespace WorklabsMx.iOS
         public void SalaSeleccionada(SalaJuntasModel SalaSeleccionada)
         {
             this.SalaActual = SalaSeleccionada;
-            var NewReservaciones = this.Reservaciones;
-            this.Reservaciones = new List<SalaJuntasReservacionModel>();
-            foreach(SalaJuntasReservacionModel reservacion in NewReservaciones)
-            {
-                reservacion.Sucursal_Descripcion = this.SalaActual.Sucursal_Descripcion;
-                reservacion.Sala_Id = this.SalaActual.Sala_Id;
-                reservacion.Sala_Estatus = this.SalaActual.Sala_Estatus;
-                reservacion.Sala_Descripcion = this.SalaActual.Sala_Descripcion;
-                reservacion.Sala_Capacidad = this.SalaActual.Sala_Capacidad;
-                reservacion.Sala_Nivel = this.SalaActual.Sala_Nivel;
-                this.Reservaciones.Add(reservacion);
-
-            }
+            this.Reservacion = new SalaJuntasReservacionModel(SalaActual.Sala_Id, HoraInicio, HoraFin, this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f);
         }
     }
 

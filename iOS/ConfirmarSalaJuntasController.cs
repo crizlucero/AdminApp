@@ -13,8 +13,8 @@ namespace WorklabsMx.iOS
 
     public interface EventosReservaciones
     {
-        void ReservacionCancelada(List<SalaJuntasReservacionModel> Reservaciones);
-        void ReservacionConfirmada(List<SalaJuntasReservacionModel> ReservacionesConcat);
+        void ReservacionCancelada(SalaJuntasReservacionModel Reservaciones);
+        void ReservacionConfirmada(SalaJuntasReservacionModel ReservacionesConcat);
     }
 
 
@@ -22,8 +22,10 @@ namespace WorklabsMx.iOS
     {
 
         public SalaJuntasModel SalaActual;
-        public List<SalaJuntasReservacionModel> Reservaciones = new List<SalaJuntasReservacionModel>();
-        public List<SalaJuntasReservacionModel> ReservacionesConcat = new List<SalaJuntasReservacionModel>();
+        //public List<SalaJuntasReservacionModel> Reservaciones = new List<SalaJuntasReservacionModel>();
+        //public List<SalaJuntasReservacionModel> ReservacionesConcat = new List<SalaJuntasReservacionModel>();
+
+        public SalaJuntasReservacionModel Reservacion = new SalaJuntasReservacionModel();
 
         public EventosReservaciones EventosReservacionesDelegate;
         public string FechaReservacion;
@@ -43,7 +45,7 @@ namespace WorklabsMx.iOS
         {
             base.ViewWillAppear(animated);
             StyleHelper.StyleBlack(this.vwVsitaConfirmar.Layer);
-            var indiceReservacionesConcat = 0;
+            /*var indiceReservacionesConcat = 0;
             this.Reservaciones.Sort((p, q) => p.Sala_Hora_Inicio.CompareTo(q.Sala_Hora_Inicio));
             SalaJuntasReservacionModel Reservacion = new SalaJuntasReservacionModel();
             Reservacion = Reservaciones[indiceReservacionesConcat];
@@ -62,42 +64,39 @@ namespace WorklabsMx.iOS
                     indiceReservacionesConcat++;
                    
                 }
-            }
+            }*/
 
         }
 
         partial void btnConfirmar_Touch(UIButton sender)
         {
             var OperacionTerminada = false;
-           
-            foreach (SalaJuntasReservacionModel Reservacion in Reservaciones)
+
+            if (InternetConectionHelper.VerificarConexion())
             {
-
-                if(InternetConectionHelper.VerificarConexion())
+                DateTime myDate = DateTime.ParseExact(Reservacion.Sala_Fecha, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                if (Reservacion.Sala_Hora_Inicio == "24:00")
                 {
-                    DateTime myDate = DateTime.ParseExact(Reservacion.Sala_Fecha, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-                    if (Reservacion.Sala_Hora_Inicio == "24:00")
-                    {
-                        Reservacion.Sala_Hora_Inicio = "00:00";
-                    }
-
-                    if (Reservacion.Sala_Hora_Fin == "24:00")
-                    {
-                        Reservacion.Sala_Hora_Fin = "00:00";
-                    }
-                    var asignacion = new SalasJuntasController().AsignarSalaJuntas("ALTA", Reservacion.Sala_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), myDate, Reservacion.Sala_Hora_Inicio , Reservacion.Sala_Hora_Fin);
-                    if (asignacion != -1)
-                    {
-                        OperacionTerminada = true;
-
-                    }
-                    else
-                    {
-                        OperacionTerminada = false;
-                        break;
-                    }
+                    Reservacion.Sala_Hora_Inicio = "00:00";
                 }
-               
+
+                if (Reservacion.Sala_Hora_Fin == "24:00")
+                {
+                    Reservacion.Sala_Hora_Fin = "00:00";
+                }
+                var asignacion = new SalasJuntasController().AsignarSalaJuntas("ALTA", Reservacion.Sala_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), myDate, Reservacion.Sala_Hora_Inicio, Reservacion.Sala_Hora_Fin);
+                if (asignacion != -1)
+                {
+                    OperacionTerminada = true;
+
+                }
+                else
+                {
+                    OperacionTerminada = false;
+
+                }
+
+
             }
 
             if (OperacionTerminada)
@@ -105,18 +104,17 @@ namespace WorklabsMx.iOS
                 this.DismissViewController(true, () =>
                 {
 
-                    foreach (SalaJuntasReservacionModel ReservacionConcat in ReservacionesConcat)
-                    {
-                        this.GenerarEvento(ReservacionConcat);
-                    }
+                 
+                    this.GenerarEvento(Reservacion);
+
 
                     NSDateFormatter dateFormat = new NSDateFormatter();
                     dateFormat.DateFormat = "yyyy-MM-dd";
                     NSDate newFormatDate = dateFormat.Parse(FechaReservacion);
 
-                    this.EnviarMail(MenuHelper.Usuario, SalaActual, newFormatDate, ReservacionesConcat);
+                    this.EnviarMail(MenuHelper.Usuario, SalaActual, newFormatDate, Reservacion);
 
-                    this.EventosReservacionesDelegate.ReservacionConfirmada(this.ReservacionesConcat);
+                    this.EventosReservacionesDelegate.ReservacionConfirmada(this.Reservacion);
 
                 });
             }
@@ -126,17 +124,16 @@ namespace WorklabsMx.iOS
         {
             this.DismissViewController(true,() => 
             {
-                this.EventosReservacionesDelegate.ReservacionCancelada(this.Reservaciones);
+                this.EventosReservacionesDelegate.ReservacionCancelada(this.Reservacion);
             });
         }
 
-        private void EnviarMail(UsuarioModel usuario, SalaJuntasModel Sala, NSDate Fecha, List<SalaJuntasReservacionModel> Reservas)
+        private void EnviarMail(UsuarioModel usuario, SalaJuntasModel Sala, NSDate Fecha, SalaJuntasReservacionModel Reservas)
         {
             string Horarios = "";
-            foreach(SalaJuntasReservacionModel reservacion in Reservas)
-            {
-                Horarios = Horarios + reservacion.Sala_Hora_Inicio + " - " + reservacion.Sala_Hora_Fin + " ";
-            }
+
+            Horarios = Horarios + Reservas.Sala_Hora_Inicio + " - " + Reservas.Sala_Hora_Fin + " ";
+
 
             NSDateFormatter dateFormat = new NSDateFormatter();
             dateFormat.DateFormat = "dd";
@@ -247,7 +244,7 @@ namespace WorklabsMx.iOS
             if(segue.Identifier == "HorariosTable")
             {
                 var VistaReservaciones = (ReservacionesTableView)segue.DestinationViewController;
-                VistaReservaciones.Reservaciones = this.ReservacionesConcat;
+                VistaReservaciones.Reservaciones = this.Reservacion;
             }
         }
 

@@ -17,7 +17,7 @@ namespace WorklabsMx.iOS
     public partial class ReservacionesTableView : UITableViewController
     {
 
-        public List<SalaJuntasReservacionModel> Reservaciones = new List<SalaJuntasReservacionModel>();
+        public SalaJuntasReservacionModel Reservaciones = new SalaJuntasReservacionModel();
 
         const string IdentificadorReservaciones = "Reservaciones";
 
@@ -41,13 +41,13 @@ namespace WorklabsMx.iOS
 
         public override nint RowsInSection(UITableView tableView, nint section)
         {
-           return this.Reservaciones.Count;
+           return 1;
         }
 
 
         public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
         {
-            var current = Reservaciones[indexPath.Row];
+            var current = Reservaciones;
             var currentPostCell = (ReservacionTableViewCell)tableView.DequeueReusableCell(IdentificadorReservaciones, indexPath);
             currentPostCell.UpdateCell(current);
             return currentPostCell;

@@ -18,7 +18,7 @@ namespace WorklabsMx.iOS
     {
         public ConfirmacionRealizada ConfirmacionRealizadaDel;
 
-        public List<SalaJuntasReservacionModel> Reservaciones = new List<SalaJuntasReservacionModel>();
+        public SalaJuntasReservacionModel Reservaciones = new SalaJuntasReservacionModel();
         NSDateFormatter dateFormat = new NSDateFormatter();
 
         public InfoConfirmacionViewController (IntPtr handle) : base (handle)
@@ -38,24 +38,22 @@ namespace WorklabsMx.iOS
             nfloat XLabelHoraInicioFin = 0;
             nfloat XVistaDianNumero = 0;
 
-            for (int indice = 0; indice < this.Reservaciones.Count; indice++)
-            {
-                WidthView = WidthView + this.vwVistaInfoReservacion.Frame.Width;
-            }
+            /* for (int indice = 0; indice < this.Reservaciones.Count; indice++)
+             {
+                 WidthView = WidthView + this.vwVistaInfoReservacion.Frame.Width;
+             }*/
+            
+            this.btnAtras.Hidden = true;
+            this.btnAtras.Enabled = false;
+            this.btnAdelante.Hidden = true;
+            this.btnAdelante.Enabled = false;
 
-            if (this.Reservaciones.Count == 1)
-            {
-                this.btnAtras.Hidden = true;
-                this.btnAtras.Enabled = false;
-                this.btnAdelante.Hidden = true;
-                this.btnAdelante.Enabled = false;
-            }
 
             CGRect newFrame = new CGRect(this.vwInfoConfirmacion.Frame.X, this.vwInfoConfirmacion.Frame.Y, WidthView, this.vwInfoConfirmacion.Frame.Height);
 
             this.vwInfoConfirmacion.Frame = newFrame;
 
-            var PrimeraReservacion = Reservaciones[0];
+            var PrimeraReservacion = Reservaciones;
             dateFormat.DateFormat = "dd/MM/yyyy";
             NSDate newFormatDate = dateFormat.Parse(PrimeraReservacion.Sala_Fecha);
             this.lblDia.Text = this.FormatoDiaSeleccionado(newFormatDate);
@@ -67,9 +65,8 @@ namespace WorklabsMx.iOS
             this.lblNombreSala.Text = "SALA " + PrimeraReservacion.Sala_Descripcion;
             this.lblHoraInicioFin.Text = PrimeraReservacion.Sala_Hora_Inicio + ":00" + " - " + PrimeraReservacion.Sala_Hora_Fin + ":00";
 
-            Reservaciones.Remove(PrimeraReservacion);
 
-            foreach (SalaJuntasReservacionModel Reservacion in Reservaciones)
+            /*foreach (SalaJuntasReservacionModel Reservacion in Reservaciones)
             {
                 XLabelDia = XLabelDia + this.lblDia.Frame.Width;
                 UILabel LabelDia = new UILabel();
@@ -127,7 +124,7 @@ namespace WorklabsMx.iOS
                 this.vwInfoConfirmacion.Add(LabelNivel);
                 this.vwInfoConfirmacion.Add(LabelNombreSala);
                 this.vwInfoConfirmacion.Add(LabelHoraInicoFin);
-            }
+            }*/
 
             this.svwInfoConfirmacion.ContentSize = vwInfoConfirmacion.Frame.Size;
         }
