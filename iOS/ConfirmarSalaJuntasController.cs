@@ -88,14 +88,11 @@ namespace WorklabsMx.iOS
                 if (asignacion != -1)
                 {
                     OperacionTerminada = true;
-
                 }
                 else
                 {
                     OperacionTerminada = false;
-
                 }
-
 
             }
 
