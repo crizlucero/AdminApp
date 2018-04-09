@@ -61,6 +61,9 @@ namespace WorklabsMx.iOS
 
         nfloat Size;
         CGRect newFrame;
+
+        DateTime MinDateHoraFin;
+
         public ReservarSalaJuntasViewTableController(IntPtr handle) : base(handle)
         {
         }
@@ -98,6 +101,14 @@ namespace WorklabsMx.iOS
                 NavigationController.PopViewController(true);
             }
          
+        }
+
+
+        private DateTime HoraFinMinima(string Date, string HoraFechaInicio)
+        {
+            var fecha = Date + " " + HoraFechaInicio;
+            DateTime myDate = DateTime.ParseExact(fecha, "yyyy-MM-dd HH:mm", System.Globalization.CultureInfo.CurrentCulture);
+            return myDate;
         }
 
         public override void ViewWillAppear(bool animated)
@@ -165,8 +176,10 @@ namespace WorklabsMx.iOS
                 MinutosFin = "00";
             }
 
-            HoraInicio = HoraActual.ToString() + ":" + strMinutosActuales;
-            HoraFin = HorasFin.ToString() + ":" + MinutosFin;
+            this.HoraInicio = HoraActual.ToString() + ":" + strMinutosActuales;
+            this.HoraFin = HorasFin.ToString() + ":" + MinutosFin;
+
+            MinDateHoraFin = this.HoraFinMinima(this.fechaSeleccionada, this.HoraInicio);
 
             //this.Reservacion = new SalaJuntasReservacionModel(SalaActual.Sala_Id, HoraInicio, HoraFin, this.btnSeleccionFecha.Title(UIControlState.Normal), "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f);
             var horaInicioFormato = this.ChangeFormat(HoraActual.ToString(), strMinutosActuales);
@@ -181,7 +194,6 @@ namespace WorklabsMx.iOS
 
             HorasReservadas = 0.5f;
             this.lblHorasReservadas.Text = HorasReservadas.ToString();
-
 
         }
 
@@ -2776,7 +2788,7 @@ namespace WorklabsMx.iOS
             else if (segue.Identifier == "HoraFin")
             {
                 var HoraFinView = (HoraFinView)segue.DestinationViewController;
-                HoraFinView.MinDate = HoraInicio;
+                HoraFinView.MiniDate = MinDateHoraFin;
                 HoraFinView.HoraSeleccionadadaDelegate = this;
             }
             else if (segue.Identifier == "SelectDate")
@@ -2807,6 +2819,7 @@ namespace WorklabsMx.iOS
                     MenuHelper.GetSalas(SucursalId, this.fechaSeleccionada, this.HoraInicio, this.HoraFin, this.CantidadPersonas);
                     this.SalasJuntas = MenuHelper.SalasJuntas;
                     this.pintarSalas();
+                    this.TableView.ReloadData();
                 }
                 var VistaTablaSalas = (SalasJuntassTableview)segue.DestinationViewController;
                 VistaTablaSalas.SalaJuntasDelegate = this;
@@ -2829,7 +2842,6 @@ namespace WorklabsMx.iOS
             this.btnSeisPersonas.BackgroundColor = UIColor.Clear.FromHex(0x95D6FF);
             this.CantidadPersonas = "10";
             this.PrepareForSegue(this.segueSalasJuntas, null);
-            TableView.ReloadData();
         }
 
         partial void btnSeisPersonas_Touch(UIButton sender)
@@ -2838,7 +2850,6 @@ namespace WorklabsMx.iOS
             this.btnSeisPersonas.BackgroundColor = UIColor.Red;
             this.CantidadPersonas = "6";
             this.PrepareForSegue(this.segueSalasJuntas, null);
-            TableView.ReloadData();
         }
 
         partial void btnAgendar_Touch(UIButton sender)
@@ -2969,8 +2980,6 @@ namespace WorklabsMx.iOS
         {
             this.HoraFin = HoraSeleccionada;
             this.PrepareForSegue(this.segueSalasJuntas, null);
-
-            this.TableView.ReloadData();
             this.btnHoraFin.SetTitle(HoraSeleccionada, UIControlState.Normal);
         }
     }
@@ -2978,30 +2987,45 @@ namespace WorklabsMx.iOS
 
     partial class ReservarSalaJuntasViewTableController : EventosHoraInicioSeleccionada
     {
-        public void HoraInicioSeleccionada(string HoraSeleccionada)
+        public void HoraInicioSeleccionada(string HoraSeleccionada, string HoraInicio)
         {
-            this.HoraInicio = HoraSeleccionada;
-            this.PrepareForSegue(this.segueSalasJuntas, null);
+            this.HoraInicio = HoraInicio;
 
             var lstHora = HoraSeleccionada.Split(':');
             var hora = int.Parse(lstHora[0]);
             var min = int.Parse(lstHora[1].Remove(2,3));
 
-            var horaInicio = int.Parse(lstHora[0]);
-            var minInicio = int.Parse(lstHora[1].Remove(2, 3));
+            var HoraCompletaFin = HoraInicio.Split(':');
+            var HorasFin = int.Parse(HoraCompletaFin[0]);
+            var MinutosFin = HoraCompletaFin[1];
+            if (HoraCompletaFin[1] == "00")
+            {
+                MinutosFin = "30";
+            }
+            if (HoraCompletaFin[1] == "30")
+            {
+                MinutosFin = "00";
+                HorasFin = HorasFin + 1;
+            }
+            var newHoraFin = HorasFin.ToString();
+            if(newHoraFin.Length == 1)
+            {
+                newHoraFin = newHoraFin.Insert(0, "0");
+            }
 
-            string minutosstr = hora.ToString();
+            this.HoraFin = newHoraFin + ":" + MinutosFin;
+
+            string minutosstr = min.ToString();
 
             if (min >= 30)
             {
                 minutosstr = "00";
                 hora = hora + 1;
             }
-            if (min <= 0)
+            if (min <= 30)
             {
                 minutosstr = "30";
             }
-
 
             var Meridiano = HoraSeleccionada.Substring(6);
             var newHora = hora.ToString();
@@ -3011,8 +3035,10 @@ namespace WorklabsMx.iOS
             }
 
             var horario = newHora + ":" + minutosstr + " " + Meridiano;
-            this.HoraFin = horario;
-            this.TableView.ReloadData();
+
+            MinDateHoraFin = this.HoraFinMinima(this.fechaSeleccionada, this.HoraInicio);
+
+            this.PrepareForSegue(this.segueSalasJuntas, null);
             this.btnHoraInicio.SetTitle(HoraSeleccionada, UIControlState.Normal);
             this.btnHoraFin.SetTitle(horario, UIControlState.Normal);
         }
