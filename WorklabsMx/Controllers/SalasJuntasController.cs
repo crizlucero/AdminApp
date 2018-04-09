@@ -125,13 +125,10 @@ namespace WorklabsMx.Controllers
             try
             {
                 conn.Open();
-                string query = "SELECT distinct csj.* FROM vw_cat_Salas_Juntas as csj left join vw_pro_Salas_Juntas_Reservaciones as psjr on csj.Sala_Id = psjr.Sala_Id " +
-                    "Where CONVERT(Datetime, concat(psjr.Sala_Junta_Fecha, ' ',Convert(time(0),psjr.Sala_Junta_Hora_Inicio)),120) " +
-                    "NOT BETWEEN Convert(datetime,@fecha_inicio)  AND Convert(datetime,@fecha_fin) AND " +
-                    "CONVERT(Datetime, concat(psjr.Sala_Junta_Fecha, ' ',Convert(time(0),psjr.Sala_Junta_Hora_Fin)),120) " +
-                    "NOT BETWEEN Convert(datetime,@fecha_inicio)  AND Convert(datetime,@fecha_fin) " +
-                    "AND (csj.sala_capacidad = @capacidad or @capacidad is null)";
-                command = CreateCommand(query);
+                command = CreateCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "sp_vw_pro_Salas_Juntas_Disponibles";
+                command.Connection = conn;
                 command.Parameters.AddWithValue("@sucursal_id", sucursal_id);
                 command.Parameters.AddWithValue("@fecha_inicio", fecha_inicio);
                 command.Parameters.AddWithValue("@fecha_fin", fecha_fin);
@@ -268,7 +265,7 @@ namespace WorklabsMx.Controllers
                 {
                     int CreditosUsados;
                     int CreditosDisponibles;
-                    if (reader["Creditos_Usados"] == System.DBNull.Value)
+                    if (reader["Creditos_Usados"] == DBNull.Value)
                     {
                         CreditosUsados = 0;
                     }
@@ -276,7 +273,7 @@ namespace WorklabsMx.Controllers
                     {
                         CreditosUsados = Convert.ToInt32(reader["Creditos_Usados"]);
                     }
-                    if (reader["Creditos_Disponibles"] == System.DBNull.Value)
+                    if (reader["Creditos_Disponibles"] == DBNull.Value)
                     {
                         CreditosDisponibles = 0;
                     }
