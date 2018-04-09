@@ -21,7 +21,7 @@ namespace WorklabsMx.iOS
 
         const string IdentificadorReservaciones = "Reservaciones";
 
-        const int TamañoReservaciones = 117;
+        const int TamañoReservaciones = 186;
 
 
         public ReservacionesTableView (IntPtr handle) : base (handle)
@@ -38,6 +38,11 @@ namespace WorklabsMx.iOS
             base.ViewWillAppear(animated);
         }
 
+       
+        public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+        {
+            return TamañoReservaciones;
+        }
 
         public override nint RowsInSection(UITableView tableView, nint section)
         {

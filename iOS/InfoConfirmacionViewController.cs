@@ -54,7 +54,7 @@ namespace WorklabsMx.iOS
             this.vwInfoConfirmacion.Frame = newFrame;
 
             var PrimeraReservacion = Reservaciones;
-            dateFormat.DateFormat = "dd/MM/yyyy";
+            dateFormat.DateFormat = "yyyy-MM-dd";
             NSDate newFormatDate = dateFormat.Parse(PrimeraReservacion.Sala_Fecha);
             this.lblDia.Text = this.FormatoDiaSeleccionado(newFormatDate);
             this.lblNivel.Text = "NIVEL " + PrimeraReservacion.Sala_Nivel;

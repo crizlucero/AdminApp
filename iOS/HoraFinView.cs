@@ -38,7 +38,7 @@ namespace WorklabsMx.iOS
 
         partial void btnSeleccionar_Touch(UIButton sender)
         {
-            var hora = dtpHoraFin.Date.ToString();
+            var hora = this.CambiarFormatoString();
             HoraSeleccionadadaDelegate.HoraFinSeleccionada(hora);
             this.DismissViewController(true, null);
         }
@@ -52,6 +52,13 @@ namespace WorklabsMx.iOS
             NSDateFormatter dateFormat = new NSDateFormatter();
             dateFormat.DateFormat = "hh:mm a";
             return dateFormat.Parse(MinDate);
+        }
+
+        private string CambiarFormatoString()
+        {
+            NSDateFormatter dateFormat = new NSDateFormatter();
+            dateFormat.DateFormat = "hh:mm a";
+            return dateFormat.ToString(dtpHoraFin.Date);
         }
     }
 }

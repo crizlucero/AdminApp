@@ -26,7 +26,7 @@ namespace WorklabsMx.iOS.Helpers
 
         public static UsuarioModel Usuario;
 
-        public static List<SalaJuntasModel> SalasJuntas;
+        public static List<SalaJuntasModel> SalasJuntas = new List<SalaJuntasModel>();
 
         public static List<ProductoModel> Productos;
 
