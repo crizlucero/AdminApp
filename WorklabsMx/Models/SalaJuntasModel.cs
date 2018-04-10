@@ -9,5 +9,7 @@ namespace WorklabsMx.Models
         public string Sala_Estatus { get; set; }
         public string Sala_Capacidad { get; set; }
         public string Sala_Nivel { get; set; }
-	}
+        public string Sala_Fotografia { get; set; }
+        public byte[] Sala_Fotografia_Imagen { get; set; }
+    }
 }

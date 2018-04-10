@@ -37,9 +37,11 @@
             android:text="@string/str_profile_name"
             android:layout_columnSpan="3"
             android:textColor="#000"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="40dp"
             android:layout_width="wrap_content"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left" />
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -47,11 +49,11 @@
             android:id="@+id/imgMore"
             android:layout_row="0"
             android:layout_column="4"
-            android:layout_gravity="right"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="65dp"
             android:layout_rowSpan="2"
-            android:tint="#000" />
+            android:tint="#000"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblPuesto"
@@ -91,8 +93,6 @@
             android:layout_row="4"
             android:src="@android:drawable/ic_menu_gallery"
             android:id="@+id/imgPost"
-            android:adjustViewBounds="false"
-            android:layout_columnWeight="5"
             android:scaleType="fitXY"
             android:visibility="gone" />
         <TextView
@@ -108,7 +108,8 @@
             android:layout_columnSpan="2"
             android:layout_marginBottom="10dp"
             android:drawableLeft="@mipmap/ic_like_unselected"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/lblComments"
@@ -122,7 +123,9 @@
             android:layout_gravity="left"
             android:layout_columnSpan="2"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
         <Button
             android:id="@+id/btnComentar"
             android:layout_column="4"

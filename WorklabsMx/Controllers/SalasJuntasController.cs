@@ -144,7 +144,8 @@ namespace WorklabsMx.Controllers
                         Sala_Nivel = reader["Sala_Nivel"].ToString(),
                         Sucursal_Id = reader["Sucursal_Id"].ToString(),
                         Sucursal_Descripcion = reader["Sucursal_Descripcion"].ToString(),
-                        Sucursal_Estatus = reader["Sucursal_Estatus"].ToString()
+                        Sucursal_Estatus = reader["Sucursal_Estatus"].ToString(),
+                        Sala_Fotografia = reader["Sala_Fotografia"].ToString()
                     });
             }
             catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetSalaJuntas"); }
