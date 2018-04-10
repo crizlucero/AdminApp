@@ -1,69 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <DatePicker
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="140.5dp"
-        android:id="@+id/dpFecha"
-        android:datePickerMode="spinner"
-        android:spinnersShown="true"
-        android:calendarViewShown="false"
-        android:minWidth="25px"
-        android:minHeight="25px">
-        <TextView
-            android:text="Fecha"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </DatePicker>
-    <TimePicker
-        android:layout_width="match_parent"
-        android:layout_height="132.5dp"
-        android:id="@+id/tpHoraInicio"
-        android:timePickerMode="spinner">
-        <TextView
-            android:text="Hora de inicio"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </TimePicker>
-    <TimePicker
-        android:layout_width="match_parent"
-        android:layout_height="132.5dp"
-        android:id="@+id/tpHoraFin"
-        android:timePickerMode="spinner">
-        <TextView
-            android:text="Hora de termino"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="0.0dp" />
-    </TimePicker>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cantidad de asistentes" />
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rgCapacidad"
-        android:orientation="horizontal"
-        android:gravity="center">
-        <RadioButton
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="6 Personas"
-            android:id="@+id/rbMin"
-            android:hint="6" />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="8 Personas"
-            android:id="@+id/rbMax"
-            android:hint="8" />
-    </RadioGroup>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnAceptar"
-        android:text="Aceptar" />
+            android:minWidth="25px"
+            android:minHeight="25px">
+            <RelativeLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="107.0dp"
+                android:id="@+id/linearLayout1">
+                <ImageView
+                    android:src="@mipmap/bg_meeting_room_dates"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#AA000000" />
+            </RelativeLayout>
+            <xamarin.rangeslider.RangeSliderControl
+                android:id="@+id/rscHorarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                local:absoluteMinValue="0"
+                local:absoluteMaxValue="48"
+                local:showRangeLabels="false"
+                local:barHeight="1dp" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

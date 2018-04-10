@@ -7,9 +7,10 @@
     android:id="@+id/llSalaJunta">
     <ImageView
         android:src="@android:drawable/ic_menu_gallery"
-        android:layout_width="385dp"
+        android:layout_width="wrap_content"
         android:layout_height="75dp"
-        android:id="@+id/ivSalaJunta" />
+        android:id="@+id/ivSalaJunta"
+        android:scaleType="centerCrop" />
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

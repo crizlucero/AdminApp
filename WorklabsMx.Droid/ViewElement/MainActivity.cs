@@ -80,7 +80,7 @@ namespace WorklabsMx.Droid
                 CreateDirectoryForPictures();
                 IsThereAnAppToTakePictures();
                 Intent intent = new Intent(MediaStore.ActionImageCapture);
-                _file = new File(_dir, String.Format("{0}.png", Guid.NewGuid()));
+                _file = new File(_dir, String.Format("{0}.jpg", Guid.NewGuid()));
                 intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(_file));
                 StartActivityForResult(intent, TakePicture);
             };
@@ -98,7 +98,7 @@ namespace WorklabsMx.Droid
                 try
                 {
                     System.IO.MemoryStream stream = new System.IO.MemoryStream();
-                    bitmap?.Compress(Bitmap.CompressFormat.Png, 0, stream);
+                    bitmap?.Compress(Bitmap.CompressFormat.Jpeg, 0, stream);
                     byte[] bitmapData = stream?.ToArray();
                     if (new EscritorioController().SetPost(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"),
                                                            customView.FindViewById<EditText>(Resource.Id.txtPublicacion).Text,
@@ -153,7 +153,7 @@ namespace WorklabsMx.Droid
                     SendBroadcast(mediaScanIntent);
 
                     imagePath = _file.Path;
-                    bitmap = _file.Path.LoadAndResizeBitmap(440, 220);
+                    bitmap = _file.Path.LoadAndResizeBitmap(646, 646);
                     if (bitmap != null)
                         imgPicture.SetImageBitmap(bitmap);
                     GC.Collect();

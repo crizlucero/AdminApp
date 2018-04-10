@@ -11,6 +11,7 @@ using Android.Widget;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Droid.Helpers;
+using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
@@ -24,14 +25,18 @@ namespace WorklabsMx.Droid
         string fecha_seleccionada, hora_inicio_seleccionada, hora_fin_seleccionada;
         readonly SimpleStorage storage;
         readonly UsuarioModel usuario;
+        readonly string salas_imagen_path;
         ListView lvSalasJuntas;
         AlertDialog dialog;
+        Dictionary<string, byte[]> imagenes;
 
         public ReservaSalaJuntasActivity()
         {
             storage = SimpleStorage.EditGroup("Login");
             SalasController = new SalasJuntasController();
             usuario = new UsuariosController().GetMemberData(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"));
+            salas_imagen_path = new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE SALAS DE REUNIONES").Parametro_Varchar_1;
+            imagenes = new Dictionary<string, byte[]>();
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -44,7 +49,7 @@ namespace WorklabsMx.Droid
             ActionBar.Title = Resources.GetString(Resource.String.str_meeting_room_reservation);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            FindViewById<TextView>(Resource.Id.txtSeleccionarFecha).Text = fecha_seleccionada = DateTime.Now.ToString("d");
+            FindViewById<TextView>(Resource.Id.txtSeleccionarFecha).Text = fecha_seleccionada = DateTime.Now.ToString("yyyy-MM-dd");
             FindViewById<TextView>(Resource.Id.txtSeleccionarHoraInicio).Text = hora_inicio_seleccionada = CalendarHelper.RoundUp(DateTime.Now, TimeSpan.FromMinutes(30)).ToString("HH:mm");
             FindViewById<TextView>(Resource.Id.txtSeleccionarHoraFin).Text = hora_fin_seleccionada = CalendarHelper.RoundUp(DateTime.Now.AddMinutes(30), TimeSpan.FromMinutes(30)).ToString("HH:mm");
 
@@ -55,7 +60,7 @@ namespace WorklabsMx.Droid
                 {
                     FindViewById<TextView>(Resource.Id.lblDiaFecha).Text = time.DayOfWeek.ToString().Substring(0, 3);
                     FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = time.Day.ToString();
-                    FindViewById<TextView>(Resource.Id.txtSeleccionarFecha).Text = fecha_seleccionada = time.ToString("d");
+                    FindViewById<TextView>(Resource.Id.txtSeleccionarFecha).Text = fecha_seleccionada = time.ToString("yyyy-MM-dd");
                     SeleccionElemento();
                 });
                 frag.Show(FragmentManager, Resources.GetString(Resource.String.str_label_select_date));
@@ -91,6 +96,7 @@ namespace WorklabsMx.Droid
             };
 
             salas = SalasController.GetSalaJuntas(Intent.GetStringExtra("sucursal_id"), fecha_seleccionada, hora_inicio_seleccionada, hora_fin_seleccionada);
+            FillImagenes();
             lvSalasJuntas = FindViewById<ListView>(Resource.Id.lvSalasJuntas);
             lvSalasJuntas.SetMinimumHeight(salas.Count * 200);
             lvSalasJuntas.Adapter = new SalasJuntasListAdapter(salas);
@@ -124,8 +130,22 @@ namespace WorklabsMx.Droid
         void SeleccionElemento()
         {
             salas = SalasController.GetSalaJuntas(Intent.GetStringExtra("sucursal_id"), fecha_seleccionada, hora_inicio_seleccionada, hora_fin_seleccionada);
+            FillImagenes();
             lvSalasJuntas.Adapter = new SalasJuntasListAdapter(salas);
             sala_seleccionada = null;
+        }
+
+        void FillImagenes()
+        {
+            salas.ForEach(sala =>
+            {
+                if (!imagenes.ContainsKey(sala.Sala_Id) && !string.IsNullOrEmpty(sala.Sala_Fotografia))
+                {
+                    imagenes.Add(sala.Sala_Id, new UploadImages().DownloadFileFTP(sala.Sala_Fotografia, salas_imagen_path));
+                    sala.Sala_Fotografia_Imagen = imagenes[sala.Sala_Id];
+                }
+
+            });
         }
 
         void ShowConfirmacion()
@@ -163,7 +183,7 @@ namespace WorklabsMx.Droid
                                       "Worklabs - Confirmación de sala de junta");
                 if (SalasController.AsignarSalaJuntas("ALTA", sala_seleccionada.Sala_Id, storage.Get("Usuario_Id"),
                                                       storage.Get("Usuario_Tipo"), DateTime.Parse(fecha_seleccionada), hora_inicio_seleccionada, hora_fin_seleccionada) == -1)
-                    WorklabsMx.Helpers.SlackLogs.SendMessage("ERROR: Registro de sala de junta", GetType().Name, "ShowConfirmacion");
+                    SlackLogs.SendMessage("ERROR: Registro de sala de junta", GetType().Name, "ShowConfirmacion");
                 dialog.Dismiss();
                 SetContentView(Resource.Layout.SalasJuntasConfirmacionLayout);
 
@@ -180,6 +200,19 @@ namespace WorklabsMx.Droid
             builder.Create();
             dialog = builder.Show();
             dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
+        }
+        public override bool OnCreateOptionsMenu(IMenu menu) => base.OnCreateOptionsMenu(menu);
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            OnBackPressed();
+            return base.OnOptionsItemSelected(item);
+        }
+
+        public override void OnBackPressed()
+        {
+            StartActivity(new Intent(this, typeof(SalasJuntasSucursalActivity)));
+            Finish();
         }
     }
 }

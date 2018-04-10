@@ -26,7 +26,7 @@ namespace WorklabsMx.Droid
         File _dir, _file;
         readonly int PickImageId = 1000, TakePicture = 500;
         Bitmap bitmap, photo, background;
-        string imgPublish, imagePath;
+        string imagePath;
         int Height, Width;
         bool flag;
         ImageView imgPerfil, imgFondo;
@@ -65,10 +65,10 @@ namespace WorklabsMx.Droid
             FindViewById<Button>(Resource.Id.btnGuardar).Click += delegate
             {
                 System.IO.MemoryStream stream = new System.IO.MemoryStream();
-                photo?.Compress(Bitmap.CompressFormat.Png, 0, stream);
+                photo?.Compress(Bitmap.CompressFormat.Jpeg, 0, stream);
                 miembro.Usuario_Fotografia_Perfil = stream?.ToArray();
                 stream = new System.IO.MemoryStream();
-                background?.Compress(Bitmap.CompressFormat.Png, 0, stream);
+                background?.Compress(Bitmap.CompressFormat.Jpeg, 0, stream);
                 miembro.Usuario_Fotografia_FondoPerfil = stream?.ToArray();
                 if (new UsuariosController().UpdateDataMiembros(miembro.Usuario_Id, FindViewById<EditText>(Resource.Id.txtNombre).Text,
                                                                 FindViewById<EditText>(Resource.Id.txtApellidos).Text, miembro.Usuario_Correo_Electronico, miembro.Usuario_Telefono,
@@ -100,7 +100,7 @@ namespace WorklabsMx.Droid
                 CreateDirectoryForPictures();
                 IsThereAnAppToTakePictures();
                 Intent intent = new Intent(MediaStore.ActionImageCapture);
-                _file = new File(_dir, String.Format("{0}.png", Guid.NewGuid()));
+                _file = new File(_dir, String.Format("{0}.jpg", Guid.NewGuid()));
                 intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(_file));
                 StartActivityForResult(intent, TakePicture);
                 flag = true;
@@ -113,7 +113,7 @@ namespace WorklabsMx.Droid
                 CreateDirectoryForPictures();
                 IsThereAnAppToTakePictures();
                 Intent intent = new Intent(MediaStore.ActionImageCapture);
-                _file = new File(_dir, String.Format("{0}.png", Guid.NewGuid()));
+                _file = new File(_dir, String.Format("{0}.jpg", Guid.NewGuid()));
                 intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(_file));
                 StartActivityForResult(intent, TakePicture);
                 flag = false;
@@ -160,7 +160,6 @@ namespace WorklabsMx.Droid
                     mediaScanIntent.SetData(contentUri);
                     SendBroadcast(mediaScanIntent);
 
-
                     imagePath = _file.Path;
                     bitmap = _file.Path.LoadAndResizeBitmap(Width, Height);
                     if (flag)
@@ -179,8 +178,16 @@ namespace WorklabsMx.Droid
                 {
                     imagePath = (string)data.Data;
                     bitmap = Media.GetBitmap(ContentResolver, data.Data);
-                    //imgPicture.SetImageURI(data.Data);
-                    imgPublish = Uri.EscapeUriString(data.Data.LastPathSegment);
+                    if (flag)
+                    {
+                        imgPerfil.SetImageBitmap(bitmap);
+                        photo = bitmap;
+                    }
+                    else
+                    {
+                        imgFondo.SetImageBitmap(bitmap);
+                        background = bitmap;
+                    }
                 }
             }
         }

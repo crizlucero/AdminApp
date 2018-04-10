@@ -22,7 +22,7 @@ namespace WorklabsMx.Droid
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ReservacionSalaJuntasPaso1Layout);
 
-            DatePicker dpFecha = FindViewById<DatePicker>(Resource.Id.dpFecha);
+            /*DatePicker dpFecha = FindViewById<DatePicker>(Resource.Id.dpFecha);
             dpFecha.MinDate = new Java.Util.Date().Time;
             TimePicker tpHoraInicio = FindViewById<TimePicker>(Resource.Id.tpHoraInicio);
             tpHoraInicio.SetIs24HourView(Java.Lang.Boolean.True);
@@ -48,7 +48,7 @@ namespace WorklabsMx.Droid
                         }
                     }
                 }
-            };
+            };*/
         }
     }
 }
