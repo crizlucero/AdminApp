@@ -23,7 +23,12 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            dtpHoraFin.MinimumDate = (NSDate)MiniDate.ToLocalTime().AddMinutes(30);//CambiarFormato();
+            var currentTime = MiniDate.AddMinutes(30);
+            if (currentTime.Kind == DateTimeKind.Unspecified)
+            {
+                currentTime = DateTime.SpecifyKind(currentTime, DateTimeKind.Local);
+            }
+            dtpHoraFin.MinimumDate = (NSDate)currentTime;//CambiarFormato();
         }
 
         public override void ViewWillAppear(bool animated)
