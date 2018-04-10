@@ -135,6 +135,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@capacidad", capacidad);
                 reader = command.ExecuteReader();
                 while (reader.Read())
+                {
                     salas.Add(new SalaJuntasModel
                     {
                         Sala_Descripcion = reader["Sala_Descripcion"].ToString(),
@@ -147,9 +148,10 @@ namespace WorklabsMx.Controllers
                         Sucursal_Estatus = reader["Sucursal_Estatus"].ToString(),
                         Sala_Fotografia = reader["Sala_Fotografia"].ToString()
                     });
+                }
             }
             catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetSalaJuntas"); }
-            finally { conn.Close(); }
+            finally { conn.Close(); } 
             return salas;
         }
 

@@ -51,6 +51,7 @@ namespace WorklabsMx.Droid
             List<ConfiguracionesModel> config = new ConfigurationsController().GetListConfiguraciones();
             usuario_imagen_path = config.Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1;
             publicaciones_imagen_path = config.Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PUBLICACIONES").Parametro_Varchar_1;
+            localStorage = SimpleStorage.EditGroup("Login");
         }
 
         protected override void OnRestart()
@@ -68,7 +69,6 @@ namespace WorklabsMx.Droid
             {
                 bool isOnline = ((ConnectivityManager)GetSystemService(ConnectivityService)).ActiveNetworkInfo.IsConnected;
                 menu = new MenuView(this);
-                localStorage = SimpleStorage.EditGroup("Login");
                 localStorage.Delete("Parent");
                 OpenDashboard();
             }
@@ -334,23 +334,27 @@ namespace WorklabsMx.Droid
 
         public override void OnBackPressed()
         {
-            if (!localStorage.HasKey("Parent"))
+            try
             {
-                LinearLayout menu_scroll = FindViewById<LinearLayout>(Resource.Id.menu);
-                menu_scroll.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels * 3 / 4);
-                if (menu_scroll.Visibility == ViewStates.Gone)
+                if (!localStorage.HasKey("Parent"))
                 {
-                    menu_scroll.LayoutParameters.Height = Window.Attributes.Height;
-                    menu_scroll.Visibility = ViewStates.Visible;
+                    LinearLayout menu_scroll = FindViewById<LinearLayout>(Resource.Id.menu);
+                    menu_scroll.SetMinimumWidth(Resources.DisplayMetrics.WidthPixels * 3 / 4);
+                    if (menu_scroll.Visibility == ViewStates.Gone)
+                    {
+                        menu_scroll.LayoutParameters.Height = Window.Attributes.Height;
+                        menu_scroll.Visibility = ViewStates.Visible;
+                    }
+                    else
+                        menu_scroll.Visibility = ViewStates.Gone;
                 }
                 else
-                    menu_scroll.Visibility = ViewStates.Gone;
+                {
+                    localStorage.Delete("Parent");
+                    menu.FillMenu();
+                }
             }
-            else
-            {
-                localStorage.Delete("Parent");
-                menu.FillMenu();
-            }
+            catch { }
         }
     }
 }

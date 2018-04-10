@@ -40,13 +40,13 @@ namespace WorklabsMx.Droid
             {
                 if (e.ActionId == ImeAction.Done)
                 {
-                    btnLogin.CallOnClick();
+                    BtnLogin_Touch();
                 }
             };
-            btnLogin.Touch += BtnLogin_Touch;
+            btnLogin.Touch += (sender, e) => BtnLogin_Touch();
         }
 
-        void BtnLogin_Touch(object sender, View.TouchEventArgs e)
+        void BtnLogin_Touch()
         {
             txtEmail.Text = txtEmail.Text.Trim();
             if (Android.Util.Patterns.EmailAddress.Matcher(txtEmail.Text).Matches())
