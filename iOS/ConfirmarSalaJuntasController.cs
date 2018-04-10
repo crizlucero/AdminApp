@@ -74,7 +74,7 @@ namespace WorklabsMx.iOS
 
             if (InternetConectionHelper.VerificarConexion())
             {
-                DateTime myDate = DateTime.ParseExact(Reservacion.Sala_Fecha, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                DateTime myDate = DateTime.ParseExact(Reservacion.Sala_Fecha, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
                 if (Reservacion.Sala_Hora_Inicio == "24:00")
                 {
                     Reservacion.Sala_Hora_Inicio = "00:00";
@@ -150,12 +150,12 @@ namespace WorklabsMx.iOS
                                   "Worklabs - Confirmación de sala de junta");
         }
 
-        private void GenerarEvento(SalaJuntasReservacionModel Reservacion)
+        private void GenerarEvento(SalaJuntasReservacionModel Reservaciones)
         {
-            RequestAccess(EKEntityType.Event, () =>
+         /*   RequestAccess(EKEntityType.Event, () =>
             {
                 CLLocation location = new CLLocation();
-                if (Reservacion.Sucursal_Id == "1")
+                if (Reservaciones.Sucursal_Id == "1")
                 {
                     location = new CLLocation(20.6766, -103.3812);
                 }
@@ -164,18 +164,18 @@ namespace WorklabsMx.iOS
                     location = new CLLocation(20.6766, -103.3812);
                 }
                 var structuredLocation = new EKStructuredLocation();
-                structuredLocation.Title = Reservacion.Sucursal_Domicilio;
+                structuredLocation.Title = Reservaciones.Sucursal_Domicilio;
                 structuredLocation.GeoLocation = location;
 
                 NSDateFormatter dateFormat = new NSDateFormatter();
                 dateFormat.DateFormat = "dd/MM/yyyy";
-                NSDate newFormatDate = dateFormat.Parse(Reservacion.Sala_Fecha);
+                NSDate newFormatDate = dateFormat.Parse(Reservaciones.Sala_Fecha);
 
                 EKEvent newEvent = EKEvent.FromStore(AppHelper.Current.EventStore);
 
-                DateTime myDate = DateTime.ParseExact(Reservacion.Sala_Fecha, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                DateTime myDate = DateTime.ParseExact(Reservaciones.Sala_Fecha, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
 
-                var arrTime = Reservacion.Sala_Hora_Inicio.Split(':');
+                var arrTime = Reservaciones.Sala_Hora_Inicio.Split(':');
                 var hora = (double.Parse(arrTime[0]) - 1);
                 var minutos = double.Parse(arrTime[1]);
                 myDate.AddHours(hora);
@@ -190,21 +190,21 @@ namespace WorklabsMx.iOS
                     myDate.AddMinutes(minutos);
                     var HoraInicio = this.DateTimeToNSDate(myDate);
                     newEvent.StartDate = HoraInicio;
-                    arrTime = Reservacion.Sala_Hora_Fin.Split(':');
+                    arrTime = Reservaciones.Sala_Hora_Fin.Split(':');
                     hora = double.Parse(arrTime[0]);
                     minutos = double.Parse(arrTime[1]);
                     myDate.AddHours(hora);
                     myDate.AddMinutes(minutos);
                     newEvent.EndDate = this.DateTimeToNSDate(myDate);
                 }
-                newEvent.Title = "Reservación de sala de juntas en " + Reservacion.Sucursal_Descripcion;
+                newEvent.Title = "Reservación de sala de juntas en " + Reservaciones.Sucursal_Descripcion;
                 newEvent.Notes = "Se recomienda presentarse 5 minutos antes de su hora de reservación";
                 newEvent.Calendar = AppHelper.Current.EventStore.DefaultCalendarForNewEvents;
-                newEvent.Location = Reservacion.Sucursal_Domicilio;
+                newEvent.Location = Reservaciones.Sucursal_Domicilio;
                 newEvent.StructuredLocation = structuredLocation;
                 NSError e;
                 AppHelper.Current.EventStore.SaveEvent(newEvent, EKSpan.ThisEvent, out e);
-            });
+            });*/
 
         }
 
