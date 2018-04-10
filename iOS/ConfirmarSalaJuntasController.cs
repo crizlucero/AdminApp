@@ -152,7 +152,7 @@ namespace WorklabsMx.iOS
 
         private void GenerarEvento(SalaJuntasReservacionModel Reservaciones)
         {
-         /*   RequestAccess(EKEntityType.Event, () =>
+          RequestAccess(EKEntityType.Event, () =>
             {
                 CLLocation location = new CLLocation();
                 if (Reservaciones.Sucursal_Id == "1")
@@ -178,24 +178,25 @@ namespace WorklabsMx.iOS
                 var arrTime = Reservaciones.Sala_Hora_Inicio.Split(':');
                 var hora = (double.Parse(arrTime[0]) - 1);
                 var minutos = double.Parse(arrTime[1]);
-                myDate.AddHours(hora);
-                myDate.AddMinutes(minutos);
-                var HoraAntesReunion = myDate;
+                var newDate = myDate.AddHours(hora);
+                var newDate2 = newDate.AddMinutes(minutos);
+                var HoraAntesReunion = newDate2;
                 newEvent.AddAlarm(EKAlarm.FromDate(DateTimeToNSDate(HoraAntesReunion.AddMinutes(30))));
                 newEvent.AddAlarm(EKAlarm.FromDate(DateTimeToNSDate(HoraAntesReunion.AddMinutes(45))));
-                if (myDate != null)
+                if (newDate2 != null)
                 {
                     hora = hora + 1;
-                    myDate.AddHours(hora);
-                    myDate.AddMinutes(minutos);
-                    var HoraInicio = this.DateTimeToNSDate(myDate);
+                    var newDate3 = myDate.AddHours(hora);
+                    var newDate4 = newDate3.AddMinutes(minutos);
+                  
+                    var HoraInicio = this.DateTimeToNSDate(newDate4);
                     newEvent.StartDate = HoraInicio;
                     arrTime = Reservaciones.Sala_Hora_Fin.Split(':');
                     hora = double.Parse(arrTime[0]);
                     minutos = double.Parse(arrTime[1]);
-                    myDate.AddHours(hora);
-                    myDate.AddMinutes(minutos);
-                    newEvent.EndDate = this.DateTimeToNSDate(myDate);
+                    var newDate5 = myDate.AddHours(hora);
+                    var newDate6 = newDate5.AddMinutes(minutos);
+                    newEvent.EndDate = this.DateTimeToNSDate(newDate6);
                 }
                 newEvent.Title = "Reservación de sala de juntas en " + Reservaciones.Sucursal_Descripcion;
                 newEvent.Notes = "Se recomienda presentarse 5 minutos antes de su hora de reservación";
@@ -204,7 +205,7 @@ namespace WorklabsMx.iOS
                 newEvent.StructuredLocation = structuredLocation;
                 NSError e;
                 AppHelper.Current.EventStore.SaveEvent(newEvent, EKSpan.ThisEvent, out e);
-            });*/
+            });
 
         }
 

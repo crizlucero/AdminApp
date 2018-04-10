@@ -17,7 +17,7 @@ namespace WorklabsMx.iOS
             this.lblNivel.Text = Reservacion.Sala_Nivel;
             this.lblDiaMes.Text = Reservacion.Sala_Fecha;
             this.lblHoraInicioFin.Text = Reservacion.Sala_Hora_Inicio + " - " + Reservacion.Sala_Hora_Fin;
-            this.lblCreditos.Text = Reservacion.Creditos_Usados.ToString();
+            this.lblCreditos.Text = Reservacion.Creditos_Usados.ToString() + " Créditos";
             this.lblCantidadHoras.Text = Reservacion.Horas_Reservadas.ToString() + " HRS.";
         }
     }

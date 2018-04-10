@@ -26,7 +26,7 @@ namespace WorklabsMx.iOS.Helpers
   
             var withImage = ImagenOrigen.Size.Width;
             var heightImage = ImagenOrigen.Size.Height;
-            if (withImage > 440)
+            if (withImage > 646)
             {
                 var newWithScale = (440 * 100) / withImage;
                 var newHeigth = (newWithScale * heightImage) / 100;

@@ -22,7 +22,7 @@ namespace WorklabsMx.iOS
 
         UIStoryboardSegue segueSalasJuntas;
 
-        float CreditosAcumulados = 0;
+
         public string SucursalId;
         NSDateFormatter dateFormat = new NSDateFormatter();
         //bool FlagView2324 = false, FlagView2324_2 = false, FlagView2223 = false, FlagView2223_2 = false, FlagView2122 = false, FlagView2122_2 = false, FlagView2021 = false, FlagView2021_2 = false, FlagView1920 = false, FlagView1920_2 = false, FlagView1819 = false, FlagView1819_2 = false, FlagView1718 = false, FlagView1718_2 = false, FlagView1617 = false,
@@ -39,6 +39,7 @@ namespace WorklabsMx.iOS
         //List<SalaJuntasReservacionModel> ReservacionesConcat = new List<SalaJuntasReservacionModel>();
 
         float HorasReservadas = 0;
+        float CreditosAcumulados = 0;
 
         string DiaSeleccionado;
 
@@ -134,9 +135,43 @@ namespace WorklabsMx.iOS
 
         }
 
-        private float CreditosSeleccionados(string HoraInicio, string HoraFin)
+        private void CreditosSeleccionados(string HInicio, string HFin)
         {
-            return 0;
+
+            var intHoraInicio = float.Parse(HInicio.Split(':')[0]);
+            var intHoraFin = float.Parse(HFin.Split(':')[0]);
+
+            var minutosInicio = int.Parse(HInicio.Split(':')[1]);
+            var minutosFin = int.Parse(HFin.Split(':')[1]);
+
+            this.HorasReservadas = intHoraFin - intHoraInicio;
+            if (minutosInicio == 30)
+            {
+                intHoraInicio = intHoraInicio + 0.5f;
+                this.HorasReservadas = this.HorasReservadas - 0.5f;
+            }
+            if (minutosFin == 30)
+            {
+                intHoraFin = intHoraFin + 0.5f;
+                this.HorasReservadas = this.HorasReservadas + 0.5f;
+            }
+
+            if (this.SalaActual.Sala_Id != null && this.SalaActual.Sala_Id != "")
+            {
+                for (float Hora = intHoraInicio; Hora < intHoraFin; Hora = Hora + 0.5f)
+                {
+                    if (Hora >= 11 && Hora <= 17 && this.SalaActual.Sala_Capacidad == "10")
+                    {
+                        this.CreditosAcumulados = this.CreditosAcumulados + 1.5f;
+                    }
+                    else
+                    {
+                        this.CreditosAcumulados = this.CreditosAcumulados + 1;
+                    }
+                }
+            }
+            this.lblHorasReservadas.Text = this.HorasReservadas.ToString();
+            this.lblCreditosPorUsar.Text = this.CreditosAcumulados.ToString();
         }
 
         private void UpdateInfo()
@@ -2968,17 +3003,18 @@ namespace WorklabsMx.iOS
         public void SalaSeleccionada(SalaJuntasModel SalaSeleccionada)
         {
             this.SalaActual = SalaSeleccionada;
-            this.Reservacion = new SalaJuntasReservacionModel(SalaActual.Sala_Id, HoraInicio, HoraFin, this.fechaSeleccionada, "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, 0.5f);
-            this.lblHorasReservadas.Text = this.Reservacion.Horas_Reservadas.ToString();
-            this.lblCreditosPorUsar.Text = this.Reservacion.Creditos_Usados.ToString();
+            this.CreditosSeleccionados(this.HoraInicio, this.HoraFin);
+            this.Reservacion = new SalaJuntasReservacionModel(SalaActual.Sala_Id, HoraInicio, HoraFin, this.fechaSeleccionada, "1", KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), this.SalaActual.Sala_Descripcion, this.SalaActual.Sala_Capacidad, this.SalaActual.Sala_Nivel, this.SalaActual.Sucursal_Descripcion, this.SalaActual.Sucursal_Id, this.SalaActual.Sala_Id, this.HorasReservadas, this.CreditosAcumulados);
+
         }
     }
 
     partial class ReservarSalaJuntasViewTableController: EventosHoraFinSeleccionada
     {
-        public void HoraFinSeleccionada(string HoraSeleccionada)
+        public void HoraFinSeleccionada(string HoraSeleccionada, string HoraFin)
         {
-            this.HoraFin = HoraSeleccionada;
+            this.HoraFin = HoraFin;
+            this.CreditosSeleccionados(this.HoraInicio, this.HoraFin);
             this.PrepareForSegue(this.segueSalasJuntas, null);
             this.btnHoraFin.SetTitle(HoraSeleccionada, UIControlState.Normal);
         }
@@ -2990,7 +3026,7 @@ namespace WorklabsMx.iOS
         public void HoraInicioSeleccionada(string HoraSeleccionada, string HoraInicio)
         {
             this.HoraInicio = HoraInicio;
-
+            this.CreditosSeleccionados(this.HoraInicio, this.HoraFin);
             var lstHora = HoraSeleccionada.Split(':');
             var hora = int.Parse(lstHora[0]);
             var min = int.Parse(lstHora[1].Remove(2,3));
