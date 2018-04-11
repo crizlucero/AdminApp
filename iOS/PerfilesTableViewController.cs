@@ -294,7 +294,10 @@ namespace WorklabsMx.iOS
 
         partial void btnCerrar_Touch(UIButton sender)
         {
-            this.PerfilesDelegate.InfoActualizar();
+            if (InfoPersonal)
+            {
+                this.PerfilesDelegate.InfoActualizar();
+            }
             this.DismissViewController(true, null);
         }
 

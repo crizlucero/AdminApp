@@ -1,17 +1,20 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/SalasJuntassTableview.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/CeldaLike.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="144" Column="42" />
-      <File FileName="iOS/Helpers/MenuHelper.cs" Line="57" Column="32" />
-      <File FileName="iOS/MenuTableViewController.cs" Line="195" Column="35" />
-      <File FileName="iOS/PerfilesTableViewController.cs" Line="293" Column="10" />
-      <File FileName="iOS/ReservacionesTableView.cs" Line="24" Column="45" />
-      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="2562" Column="66" />
-      <File FileName="iOS/ConfirmarSalaJuntasController.cs" Line="91" Column="18" />
-      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="1" Column="1" />
-      <File FileName="iOS/ComentariosBodyImageCell.cs" Line="80" Column="70" />
-      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="71" Column="14" />
-      <File FileName="iOS/SalasJuntassTableview.cs" Line="72" Column="18" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="280" Column="10" />
+      <File FileName="iOS/ComprasTableView.cs" Line="115" Column="43" />
+      <File FileName="iOS/AccionesCompras.cs" Line="15" Column="14" />
+      <File FileName="iOS/DetalleMembresiaTableVieController.cs" Line="102" Column="36" />
+      <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleTableViewController.cs" Line="95" Column="14" />
+      <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/CeldaVentaDetalle.cs" Line="1" Column="1" />
+      <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/DetalleVentaViewController.cs" Line="1" Column="1" />
+      <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleHeader.cs" Line="1" Column="1" />
+      <File FileName="SuitemCommerceBinding/ApiDefinition.cs" Line="10" Column="15" />
+      <File FileName="iOS/EjemploPagos.cs" Line="102" Column="1" />
+      <File FileName="iOS/PerfilesTableViewController.cs" Line="284" Column="17" />
+      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="12" Column="34" />
+      <File FileName="iOS/ComentariosBodyImageCell.cs" Line="12" Column="34" />
+      <File FileName="iOS/CeldaLike.cs" Line="4" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
@@ -23,6 +26,9 @@
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EditarPerfilTableViewController.cs" relfile="iOS/EditarPerfilTableViewController.cs" line="398" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EditarPerfilTableViewController.cs" relfile="iOS/EditarPerfilTableViewController.cs" line="476" column="49" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ReservarSalaJuntasViewTableController.cs" relfile="iOS/ReservarSalaJuntasViewTableController.cs" line="3017" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="113" column="10" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="125" column="10" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="119" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>

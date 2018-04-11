@@ -9,6 +9,7 @@ using BigTed;
 using WorklabsMx.Helpers;
 using Foundation;
 using SWRevealViewControllerBinding;
+using System.Collections.Generic;
 
 namespace WorklabsMx.iOS
 {
@@ -19,6 +20,7 @@ namespace WorklabsMx.iOS
         void InfoUserPosts(UsuarioModel listaUser);
         void EnviarAction(UIAlertController actionSheetAlert);
         void ActualizarTabla();
+        void LikeImagenPresionado(List<UsuarioModel> UsuariosLikes);
     }
 
     public partial class ComentariosBodyCell : UITableViewCell
@@ -73,6 +75,14 @@ namespace WorklabsMx.iOS
             txtComentario.Text = post.Publicacion_Contenido;
             StyleHelper.Style(vwVistaComentario.Layer);
             PostLocal = post;
+
+            UITapGestureRecognizer labelTap = new UITapGestureRecognizer(() => {
+                // Do something in here
+            });
+
+            lblLikes.UserInteractionEnabled = true;
+            lblLikes.AddGestureRecognizer(labelTap);
+
         }
 
 

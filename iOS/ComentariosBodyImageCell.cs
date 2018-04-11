@@ -9,6 +9,7 @@ using BigTed;
 using WorklabsMx.Helpers;
 using Foundation;
 using CoreGraphics;
+using System.Collections.Generic;
 
 namespace WorklabsMx.iOS
 {
@@ -21,6 +22,7 @@ namespace WorklabsMx.iOS
         void EnviarActions(UIAlertController actionSheetAlert);
         void ActualizaTabla();
         void UpdateRows();
+        void LikePresionado(List<UsuarioModel> UsuariosLikes);
     }
 
 
@@ -88,6 +90,14 @@ namespace WorklabsMx.iOS
             }
             StyleHelper.Style(vwVistaComentario.Layer);
             PostLocal = post;
+
+            UITapGestureRecognizer labelTap = new UITapGestureRecognizer(() => {
+                // Do something in here
+            });
+
+            lblLikes.UserInteractionEnabled = true;
+            lblLikes.AddGestureRecognizer(labelTap);
+
         }
 
         async Task GetImagenesPost(PostModel post)

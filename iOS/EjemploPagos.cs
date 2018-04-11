@@ -31,7 +31,7 @@ namespace WorklabsMx.iOS
             {
                 Branch = "000025",
                 Company = "Z703",
-                Country = "MX",
+                Country = "MEX",
                 User = "Z703CSES0",
                 Password = "OOMYO17MS7",
                 Merchant = "158198",
@@ -46,7 +46,7 @@ namespace WorklabsMx.iOS
             {
                 Branch = "000025",
                 Company = "Z703",
-                Country = "MX",
+                Country = "MEX",
                 User = "Z703CSES0",
                 Password = "OOMYO17MS7",
                 Merchant = "158198",

@@ -1294,6 +1294,18 @@
     <Compile Include="HoraFinView.designer.cs">
       <DependentUpon>HoraFinView.cs</DependentUpon>
     </Compile>
+    <Compile Include="VistaLikes.cs" />
+    <Compile Include="VistaLikes.designer.cs">
+      <DependentUpon>VistaLikes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableViewLikes.cs" />
+    <Compile Include="TableViewLikes.designer.cs">
+      <DependentUpon>TableViewLikes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaLike.cs" />
+    <Compile Include="CeldaLike.designer.cs">
+      <DependentUpon>CeldaLike.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
