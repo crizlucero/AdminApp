@@ -7,6 +7,8 @@ using WorklabsMx.Helpers;
 using System.Collections.Generic;
 using Foundation;
 using System.Threading.Tasks;
+using Photos;
+using AVFoundation;
 
 namespace WorklabsMx.iOS
 {
@@ -29,6 +31,10 @@ namespace WorklabsMx.iOS
         bool result;
         KeyValuePair<int, bool> isFavorite;
 
+        UIImagePickerController imgPicker;
+
+        bool TouchedBack = false, TouchedProfile = false;
+
         public PerfilesTableViewController (IntPtr handle) : base (handle)
         {
             //this.Miembro = MenuHelper.Usuario;
@@ -37,26 +43,36 @@ namespace WorklabsMx.iOS
         public override async void ViewDidLoad()
         {
             base.ViewDidLoad();
+            imgPicker = new UIImagePickerController();
+            imgPicker.Delegate = this;
             await PreguntarFavorito();
             if (InfoPersonal)
             {
                 this.btnSeguir.Hidden = true;
                 this.btnEnviarMensaje.Hidden = true;
                 this.btnEditarPerfil.Hidden = false;
+                this.btnEditarFoto.Hidden = false;
+                this.btnEditarFotoFondo.Hidden = false;
 
                 this.btnSeguir.Enabled = false;
                 this.btnEnviarMensaje.Enabled = false;
                 this.btnEditarPerfil.Enabled = true;
+                this.btnEditarFoto.Enabled = true;
+                this.btnEditarFotoFondo.Enabled = true;
             }
             else
             {
                 this.btnSeguir.Hidden = false;
                 this.btnEnviarMensaje.Hidden = false;
                 this.btnEditarPerfil.Hidden = true;
+                this.btnEditarFoto.Hidden = true;
+                this.btnEditarFotoFondo.Hidden = true;
 
                 this.btnSeguir.Enabled = true;
                 this.btnEnviarMensaje.Enabled = true;
                 this.btnEditarPerfil.Enabled = false;
+                this.btnEditarFoto.Enabled = false;
+                this.btnEditarFotoFondo.Enabled = false;
             }
             this.CargarInfo();
             this.cvwMi.Hidden = false;
@@ -278,6 +294,7 @@ namespace WorklabsMx.iOS
 
         partial void btnCerrar_Touch(UIButton sender)
         {
+            this.PerfilesDelegate.InfoActualizar();
             this.DismissViewController(true, null);
         }
 
@@ -334,6 +351,172 @@ namespace WorklabsMx.iOS
 
             return Task.FromResult(UIApplication.SharedApplication.OpenUrl(new NSUrl(uri)));
         }
+
+        partial void btnEditarFotoFondo_Touch(UIButton sender)
+        {
+            TouchedBack = true;
+            PresentViewController(CrearActionSheet(), true, null);
+        }
+
+        partial void btnEditarFotoPerfil_Touch(UIButton sender)
+        {
+            TouchedProfile = true;
+            PresentViewController(CrearActionSheet(), true, null);
+        }
+
+
+        private UIAlertController CrearActionSheet()
+        {
+            var ShowGalleryAlert = UIAlertController.Create(null, null, UIAlertControllerStyle.ActionSheet);
+
+            ShowGalleryAlert.AddAction(this.AbrirGaleria(this.imgPicker));
+            ShowGalleryAlert.AddAction(this.AbrirCamara(this.imgPicker));
+
+            var CloseAction = UIAlertAction.Create("Cancelar", UIAlertActionStyle.Cancel, (action) =>
+            {
+                this.TouchedBack = false;
+                this.TouchedProfile = false;
+            });
+            ShowGalleryAlert.AddAction(CloseAction);
+            return ShowGalleryAlert;
+
+        }
+
+        [Foundation.Export("imagePickerController:didFinishPickingImage:editingInfo:")]
+        public void FinishedPickingImage(UIKit.UIImagePickerController picker, UIKit.UIImage image, Foundation.NSDictionary editingInfo)
+        {
+            if (this.TouchedBack)
+            {
+
+                image = ImageHelper.ReescalProfileBackImage(image);
+                this.btnImageBackGround.SetBackgroundImage(image, UIControlState.Normal);
+                Miembro.Usuario_Fotografia_FondoPerfil = image?.AsPNG().ToArray();
+                this.GuardarInfo();
+            }
+            else if (this.TouchedProfile)
+            {
+                image = ImageHelper.ReescalProfileImage(image);
+                this.btnProfileImage.SetBackgroundImage(image, UIControlState.Normal);
+                Miembro.Usuario_Fotografia_Perfil = image?.AsPNG().ToArray();
+                this.GuardarInfo();
+            }
+            this.TouchedBack = false;
+            this.TouchedProfile = false;
+            picker.DismissViewController(true, null);
+        }
+
+        [Foundation.Export("imagePickerControllerDidCancel:")]
+        public void Canceled(UIKit.UIImagePickerController picker)
+        {
+            picker.DismissViewController(true, null);
+        }
+
+        private UIImagePickerController SelectImage(UIImagePickerController ImagePicker)
+        {
+            ImagePicker.AllowsEditing = false;
+            ImagePicker.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+            ImagePicker.AllowsEditing = true;
+            return ImagePicker;
+        }
+
+        private UIAlertAction AbrirCamara(UIImagePickerController ImagePicker)
+        {
+            const String HeaderMessage = "Se necesita acceso a la camara";
+            const String BodyMessage = "Habilita el acceso de Worklabs a la camara en la configuración de tu iPhone";
+
+            UIAlertAction openCamera = UIAlertAction.Create("Tomar fotografia", UIAlertActionStyle.Default, (action) =>
+            {
+                AVCaptureDevice.RequestAccessForMediaType(AVMediaType.Video, (bool isAccessGranted) =>
+                {
+                    InvokeOnMainThread(() =>
+                    {
+                        try
+                        {
+                            if (isAccessGranted)
+                            {
+                                ImagePicker.SourceType = UIImagePickerControllerSourceType.Camera;
+                                ImagePicker.CameraDevice = UIImagePickerControllerCameraDevice.Rear;
+                                ImagePicker.AllowsEditing = true;
+                                this.PresentViewController(ImagePicker, true, null);
+                            }
+                            else
+                            {
+                                this.PresentViewController(this.PermisosDispositivo(HeaderMessage, BodyMessage), true, null);
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            SlackLogs.SendMessage(e.Message, "", "AbrirCamara");
+                        }
+
+                    });
+                });
+
+            });
+
+            return openCamera;
+        }
+
+
+
+        private UIAlertAction AbrirGaleria(UIImagePickerController ImagePicker)
+        {
+            const String HeaderMessage = "Se necesita acceso a la galería";
+            const String BodyMessage = "Habilita el acceso de Worklabs a la galería en la configuración de tu iPhone";
+            UIAlertAction openGalery = UIAlertAction.Create("Selecciona una foto", UIAlertActionStyle.Default, (action) =>
+            {
+                var photos = PHPhotoLibrary.AuthorizationStatus;
+                if (photos != PHAuthorizationStatus.NotDetermined)
+                {
+                    this.PresentViewController(this.SelectImage(ImagePicker), true, null);
+                }
+                else
+                {
+                    PHPhotoLibrary.RequestAuthorization(handler: (obj) =>
+                    {
+                        InvokeOnMainThread(() =>
+                        {
+                            if (obj != PHAuthorizationStatus.Authorized)
+                            {
+                                this.PresentViewController(this.PermisosDispositivo(HeaderMessage, BodyMessage), true, null);
+                            }
+                            else
+                            {
+                                this.PresentViewController(this.SelectImage(ImagePicker), true, null);
+                            }
+                        });
+                    });
+                }
+            });
+            return openGalery;
+        }
+
+        private UIAlertController PermisosDispositivo(String headerMessage, String BodyMessage)
+        {
+            var alert = UIAlertController.Create(headerMessage, BodyMessage, UIAlertControllerStyle.Alert);
+            alert.AddAction(UIAlertAction.Create("Aceptar", UIAlertActionStyle.Default, (Action) =>
+            {
+                this.openSettings();
+            }));
+            alert.AddAction(UIAlertAction.Create("Cancelar", UIAlertActionStyle.Default, null));
+            return alert;
+        }
+
+        private void openSettings()
+        {
+            UIApplication.SharedApplication.OpenUrl(new NSUrl(UIApplication.OpenSettingsUrlString));
+        }
+
+        private void GuardarInfo()
+        {
+            bool resultDataMiembros = false;
+            DateTime fechaNacimiento = new DateTime();
+            fechaNacimiento = DateTime.Parse(Miembro.Usuario_Fecha_Nacimiento);
+            resultDataMiembros = new UsuariosController().UpdateDataMiembros(KeyChainHelper.GetKey("Usuario_Id"), Miembro.Usuario_Nombre, Miembro.Usuario_Apellidos, Miembro.Usuario_Correo_Electronico,
+                                                                             Miembro.Usuario_Telefono, Miembro.Usuario_Celular, Miembro.Usuario_Descripcion, fechaNacimiento, Miembro.Usuario_Fotografia_Perfil, Miembro.Usuario_Fotografia_FondoPerfil);
+        }
+
+
     }
 
     public partial class PerfilesTableViewController : EventosEditarPerfil

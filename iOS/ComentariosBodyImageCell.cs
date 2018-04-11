@@ -8,6 +8,7 @@ using WorklabsMx.Controllers;
 using BigTed;
 using WorklabsMx.Helpers;
 using Foundation;
+using CoreGraphics;
 
 namespace WorklabsMx.iOS
 {
@@ -19,6 +20,7 @@ namespace WorklabsMx.iOS
         void InfoUserPost(UsuarioModel listaUser);
         void EnviarActions(UIAlertController actionSheetAlert);
         void ActualizaTabla();
+        void UpdateRows();
     }
 
 
@@ -78,6 +80,12 @@ namespace WorklabsMx.iOS
             txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
             txtComentario.ScrollEnabled = false;
             txtComentario.Text = post.Publicacion_Contenido;
+
+            if (this.txtComentario.Text == "")
+            {
+                CGRect frameRect = new CGRect(this.txtComentario.Frame.X, this.txtComentario.Frame.Y, this.txtComentario.Frame.Width, 0);//txtComentario.Frame;
+                txtComentario.Frame = frameRect;
+            }
             StyleHelper.Style(vwVistaComentario.Layer);
             PostLocal = post;
         }
@@ -125,6 +133,11 @@ namespace WorklabsMx.iOS
             });
             imgPublicacion.Image = ReescalImage;
             btnImgPerfil.SetBackgroundImage(ReescalImageUsr ?? UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
+            if (imgPublicacion.Image != null)
+            {
+                EventosComentariosDelegate.UpdateRows();
+            }
+
         }
 
         private UIImage DataToImage(byte[] Fotografia_Perfil)

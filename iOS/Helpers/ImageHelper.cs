@@ -33,6 +33,13 @@ namespace WorklabsMx.iOS.Helpers
                 CGSize newSizeImage = new CGSize(440, newHeigth);
                 ImagenOrigen = ImagenOrigen.Scale(newSizeImage);
             }
+            else if(heightImage > 646)
+            {
+                var newHeightScale = (440 * 100) / heightImage;
+                var newWith = (newHeightScale * withImage) / 100;
+                CGSize newSizeImage = new CGSize(newWith, 440);
+                ImagenOrigen = ImagenOrigen.Scale(newSizeImage);
+            }
             return ImagenOrigen;
         }
 

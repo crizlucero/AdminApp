@@ -40,15 +40,15 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Se necesitan permisos para usar su galería fotográfica</string>
+	<string>Necesitamos acceder a tu galería fotográfica para que puedas publicar fotos dentro de nuestra App</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Se necesitan permisos para usar su camara fotográfica</string>
+	<string>Necesitamos permisos a tu cámara fotográfica que puedas publicar fotos dentro de nuestra App</string>
 	<key>NSCalendarsUsageDescription</key>
-	<string>Se necesitan permisos para acceder a el calendario</string>
+	<string>Necesitamos permisos para acceder a tu calendario y así agendarte reuniones y visitas</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Se necesitan permisos para acceder a el microfono</string>
+	<string>Se necesitan permisos para acceder a el micrófono</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
@@ -67,9 +67,9 @@
 		</dict>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>1.6.7</string>
+	<string>1.7.3</string>
 	<key>CFBundleVersion</key>
-	<string>1.6.7</string>
+	<string>1.7.3</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

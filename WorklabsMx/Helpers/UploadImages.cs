@@ -22,9 +22,12 @@ namespace WorklabsMx.Helpers
                 Stream requestStream = client.GetRequestStream();
                 requestStream.Write(image, 0, image.Length);
                 requestStream.Close();
-
                 FtpWebResponse response = (FtpWebResponse)client.GetResponse();
                 response.Close();
+                response.Dispose();
+                client = null;
+                GC.Collect();
+                //client.Abort();
                 return true;
 
             }
@@ -48,14 +51,18 @@ namespace WorklabsMx.Helpers
                     client.Credentials = new NetworkCredential(@"worklabscloud", @"Worklabscloud!");
                     client.Timeout = 2500;
                     Stream responseStream = ((FtpWebResponse)client.GetResponse()).GetResponseStream();
-
                     responseStream.CopyTo(ms);
+                    responseStream.Close();
+                    responseStream.Dispose();
+                    client = null;
+                    GC.Collect();
                 }
                 catch (Exception e)
                 {
                     SlackLogs.SendMessage(e.Message, GetType().Name, "DownloadFileFTP");
                     return ms.ToArray();
                 }
+
             }
             return ms.ToArray();
         }

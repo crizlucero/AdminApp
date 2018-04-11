@@ -25,6 +25,7 @@ namespace WorklabsMx.iOS
 		public override void ViewDidLoad()
 		{
             base.ViewDidLoad();
+            dtpHoraInicio.Locale = new NSLocale("en_US");
             dtpHoraInicio.MinimumDate = (NSDate)DateTime.Now.AddMinutes(30);
 		}
 

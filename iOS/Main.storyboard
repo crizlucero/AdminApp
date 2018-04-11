@@ -630,7 +630,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2o-io-lUj">
-                                            <rect key="frame" x="266" y="170" width="109" height="20"/>
+                                            <rect key="frame" x="266" y="169" width="109" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="109" id="1yA-0o-1Vj"/>
                                                 <constraint firstAttribute="height" constant="20" id="JMH-ms-ry7"/>
@@ -712,7 +712,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qch-yl-Y2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-415.19999999999999" y="-3561.7691154422791"/>
+            <point key="canvasLocation" x="-415.19999999999999" y="-3561.7689999999998"/>
         </scene>
         <!--Reservar-->
         <scene sceneID="LVh-1A-N5V">
@@ -8571,7 +8571,7 @@ COL. LADRON DE GUEVARA</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPf-us-j6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2576.8000000000002" y="-2899.7001499250377"/>
+            <point key="canvasLocation" x="2576.8000000000002" y="-2899.6999999999998"/>
         </scene>
         <!--Reservaciones Table View-->
         <scene sceneID="GeR-zB-85b">
@@ -8741,7 +8741,7 @@ COL. LADRON DE GUEVARA</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BbV-8u-tHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3544.8000000000002" y="-2900.1499250374814"/>
+            <point key="canvasLocation" x="3544.8000000000002" y="-2900.1500000000001"/>
         </scene>
         <!--Info Confirmacion View Controller-->
         <scene sceneID="OIb-Lx-fKZ">
@@ -8980,7 +8980,7 @@ COL. LADRON DE GUEVARA</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l6Q-Aq-f2H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1156" y="-1732.0839580209897"/>
+            <point key="canvasLocation" x="1156" y="-1732.0840000000001"/>
         </scene>
         <!--Editar Perfil-->
         <scene sceneID="dKK-Ik-Ctl">
@@ -10465,7 +10465,7 @@ COL. LADRON DE GUEVARA</string>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Tl-QL-ux8">
-                                                    <rect key="frame" x="112" y="251" width="151" height="25"/>
+                                                    <rect key="frame" x="112" y="251" width="150" height="25"/>
                                                     <color key="backgroundColor" red="0.38823529410000002" green="0.70588235290000001" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="c3b-Yt-7uw"/>
@@ -10484,22 +10484,52 @@ COL. LADRON DE GUEVARA</string>
                                                         <action selector="btnSeguir_Touch:" destination="mdy-sd-2ky" eventType="touchUpInside" id="511733"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4I-q6-QY8">
+                                                    <rect key="frame" x="334" y="224" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="LjS-1o-UpA"/>
+                                                        <constraint firstAttribute="height" constant="25" id="oDT-fx-y0b"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="CamaraEditar"/>
+                                                    <connections>
+                                                        <action selector="btnEditarFotoFondo_Touch:" destination="mdy-sd-2ky" eventType="touchUpInside" id="802692"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBl-pW-bEx">
+                                                    <rect key="frame" x="250" y="184" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="YqZ-Lt-uaA"/>
+                                                        <constraint firstAttribute="width" constant="25" id="esA-fZ-wiX"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="CamaraEditar"/>
+                                                    <connections>
+                                                        <action selector="btnEditarFotoPerfil_Touch:" destination="mdy-sd-2ky" eventType="touchUpInside" id="806729"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="JkS-o2-MHv" firstAttribute="centerX" secondItem="cFE-gv-CKu" secondAttribute="centerX" id="6wQ-mw-9rp"/>
+                                                <constraint firstItem="gG8-8B-IQD" firstAttribute="firstBaseline" secondItem="wk0-Y7-uYB" secondAttribute="firstBaseline" id="771-gm-FW7"/>
                                                 <constraint firstItem="wk0-Y7-uYB" firstAttribute="top" secondItem="Vhr-nc-YNQ" secondAttribute="top" constant="11" id="HfQ-qB-Gww"/>
-                                                <constraint firstItem="gG8-8B-IQD" firstAttribute="firstBaseline" secondItem="wk0-Y7-uYB" secondAttribute="baseline" id="Khx-KL-6TH"/>
-                                                <constraint firstItem="0Tl-QL-ux8" firstAttribute="centerX" secondItem="JkS-o2-MHv" secondAttribute="centerX" id="Lmf-Vj-QVy"/>
+                                                <constraint firstItem="BBl-pW-bEx" firstAttribute="centerY" secondItem="JkS-o2-MHv" secondAttribute="centerY" id="JGT-iX-NAk"/>
+                                                <constraint firstItem="gG8-8B-IQD" firstAttribute="firstBaseline" secondItem="wk0-Y7-uYB" secondAttribute="baseline" constant="18" id="Khx-KL-6TH"/>
+                                                <constraint firstItem="gG8-8B-IQD" firstAttribute="baseline" secondItem="wk0-Y7-uYB" secondAttribute="baseline" id="SXZ-sm-mEN"/>
                                                 <constraint firstAttribute="bottom" secondItem="0Tl-QL-ux8" secondAttribute="bottom" constant="195" id="WRi-Qa-MbO"/>
                                                 <constraint firstItem="TpB-jb-cCD" firstAttribute="top" secondItem="Vhr-nc-YNQ" secondAttribute="top" constant="-20" id="YWY-0i-UEO"/>
                                                 <constraint firstItem="JkS-o2-MHv" firstAttribute="top" secondItem="Vhr-nc-YNQ" secondAttribute="top" constant="121" id="aEj-kY-pSa"/>
+                                                <constraint firstItem="gG8-8B-IQD" firstAttribute="trailing" secondItem="M4I-q6-QY8" secondAttribute="trailing" id="cgy-fF-FmS"/>
+                                                <constraint firstItem="M4I-q6-QY8" firstAttribute="bottom" secondItem="TpB-jb-cCD" secondAttribute="bottom" constant="-8" id="cj4-yV-3uO"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="cFE-gv-CKu" secondAttribute="bottom" constant="-13" id="fYd-Mh-Gv6"/>
                                                 <constraint firstAttribute="trailing" secondItem="cFE-gv-CKu" secondAttribute="trailing" id="fuX-Ek-KuH"/>
                                                 <constraint firstItem="TpB-jb-cCD" firstAttribute="centerX" secondItem="JkS-o2-MHv" secondAttribute="centerX" id="gmf-Cx-Uc3"/>
+                                                <constraint firstAttribute="trailing" secondItem="TpB-jb-cCD" secondAttribute="trailing" id="hiC-T6-Ih0"/>
+                                                <constraint firstItem="BBl-pW-bEx" firstAttribute="leading" secondItem="JkS-o2-MHv" secondAttribute="leading" constant="138" id="ksT-9r-Ddi"/>
                                                 <constraint firstItem="0Tl-QL-ux8" firstAttribute="leading" secondItem="Vhr-nc-YNQ" secondAttribute="leadingMargin" constant="96" id="lMi-jl-R4I"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="0Tl-QL-ux8" secondAttribute="trailing" constant="97" id="mJA-L6-Lxr"/>
+                                                <constraint firstItem="gG8-8B-IQD" firstAttribute="baseline" secondItem="wk0-Y7-uYB" secondAttribute="firstBaseline" constant="-18" id="mXG-hb-eCl"/>
                                                 <constraint firstItem="TpB-jb-cCD" firstAttribute="leading" secondItem="Vhr-nc-YNQ" secondAttribute="leading" id="mcB-RS-alf"/>
                                                 <constraint firstItem="cFE-gv-CKu" firstAttribute="top" secondItem="TpB-jb-cCD" secondAttribute="bottom" id="qj9-te-9K9"/>
+                                                <constraint firstItem="gG8-8B-IQD" firstAttribute="firstBaseline" secondItem="wk0-Y7-uYB" secondAttribute="baseline" constant="18" id="sNW-9t-y6X"/>
                                                 <constraint firstItem="gG8-8B-IQD" firstAttribute="top" secondItem="Vhr-nc-YNQ" secondAttribute="topMargin" id="vgV-XA-6pg"/>
                                                 <constraint firstItem="wk0-Y7-uYB" firstAttribute="leading" secondItem="Vhr-nc-YNQ" secondAttribute="leading" constant="16" id="w53-Yz-t4k"/>
                                                 <constraint firstItem="gG8-8B-IQD" firstAttribute="trailing" secondItem="Vhr-nc-YNQ" secondAttribute="trailingMargin" id="xjt-ax-Ffp"/>
@@ -10666,6 +10696,8 @@ COL. LADRON DE GUEVARA</string>
                     <navigationItem key="navigationItem" title="Perfil" id="R1i-pB-4Xf"/>
                     <connections>
                         <outlet property="btnCerrar" destination="wk0-Y7-uYB" id="name-outlet-wk0-Y7-uYB"/>
+                        <outlet property="btnEditarFoto" destination="BBl-pW-bEx" id="name-outlet-BBl-pW-bEx"/>
+                        <outlet property="btnEditarFotoFondo" destination="M4I-q6-QY8" id="name-outlet-M4I-q6-QY8"/>
                         <outlet property="btnEditarPerfil" destination="gG8-8B-IQD" id="name-outlet-gG8-8B-IQD"/>
                         <outlet property="btnEnviarMensaje" destination="lz0-74-BEI" id="name-outlet-lz0-74-BEI"/>
                         <outlet property="btnImageBackGround" destination="TpB-jb-cCD" id="xSL-oU-OHL"/>
@@ -11779,7 +11811,7 @@ COL. LADRON DE GUEVARA</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N52-P1-5Bm">
-                                <rect key="frame" x="299" y="211.5" width="68" height="22"/>
+                                <rect key="frame" x="299" y="212" width="68" height="22"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.63137254899999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="g9t-1m-vpI"/>
@@ -14892,7 +14924,7 @@ COL. LADRON DE GUEVARA</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFU-uc-23g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1247.2" y="-3561.7691154422791"/>
+            <point key="canvasLocation" x="-1247.2" y="-3561.7689999999998"/>
         </scene>
         <!--Hora Inicio View-->
         <scene sceneID="Lyr-uw-kcF">
@@ -15135,7 +15167,7 @@ COL. LADRON DE GUEVARA</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WuU-1q-Hfc"/>
-        <segue reference="dWH-F8-bIl"/>
+        <segue reference="l8u-9u-D6k"/>
         <segue reference="KAP-pi-ckG"/>
         <segue reference="w0b-D9-xaG"/>
         <segue reference="Wst-3m-SKf"/>

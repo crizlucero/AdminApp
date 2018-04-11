@@ -20,6 +20,14 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnEditarFoto { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnEditarFotoFondo { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnEditarPerfil { get; set; }
 
         [Outlet]
@@ -90,6 +98,14 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnCerrar_Touch (UIKit.UIButton sender);
 
+        [Action ("btnEditarFotoFondo_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnEditarFotoFondo_Touch (UIKit.UIButton sender);
+
+        [Action ("btnEditarFotoPerfil_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnEditarFotoPerfil_Touch (UIKit.UIButton sender);
+
         [Action ("btnEditarPerfil_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnEditarPerfil_Touch (UIKit.UIButton sender);
@@ -123,6 +139,16 @@ namespace WorklabsMx.iOS
             if (btnCerrar != null) {
                 btnCerrar.Dispose ();
                 btnCerrar = null;
+            }
+
+            if (btnEditarFoto != null) {
+                btnEditarFoto.Dispose ();
+                btnEditarFoto = null;
+            }
+
+            if (btnEditarFotoFondo != null) {
+                btnEditarFotoFondo.Dispose ();
+                btnEditarFotoFondo = null;
             }
 
             if (btnEditarPerfil != null) {
