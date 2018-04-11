@@ -19,7 +19,7 @@ namespace WorklabsMx.Controllers
         /// <param name="fecha">Fecha seleccionada.</param>
         /// <param name="hora_inicio">Hora de inicio.</param>
         /// <param name="hora_fin">Hora de fin.</param>
-        public int AsignarSalaJuntas(string transaccion, string sala_id, string usuario_id, string usuario_tipo, DateTime fecha, string hora_inicio, string hora_fin)
+        public int AsignarSalaJuntas(string transaccion, string sala_id, string usuario_id, string usuario_tipo, DateTime fecha, string hora_inicio, string hora_fin, string creditos)
         {
             try
             {
@@ -36,6 +36,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Sala_Junta_Fecha", fecha);
                 command.Parameters.AddWithValue("@Sala_Junta_Hora_Inicio", hora_inicio);
                 command.Parameters.AddWithValue("@Sala_Junta_Hora_Fin", hora_fin);
+                command.Parameters.AddWithValue("@Cantidad_Creditos", creditos);
                 command.Parameters.Add("@Sala_Junta_Reservacion_Id", SqlDbType.Int).Direction = ParameterDirection.Output;
 
                 command.Transaction = transaction;

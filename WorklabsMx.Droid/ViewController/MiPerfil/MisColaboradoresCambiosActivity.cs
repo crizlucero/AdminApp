@@ -106,7 +106,7 @@ namespace WorklabsMx.Droid
                                                                        colaborador_id, (spGenero.SelectedItemId + 1).ToString(), bitmapData);
                     break;
                 default:
-                    StartActivity(new Intent(this, typeof(TabColaboradoresActivity)));
+                    //StartActivity(new Intent(this, typeof(TabColaboradoresActivity)));
                     Finish();
                     break;
             }

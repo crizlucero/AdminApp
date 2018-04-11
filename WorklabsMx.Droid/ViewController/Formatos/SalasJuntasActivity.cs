@@ -344,7 +344,7 @@ namespace WorklabsMx.Droid
                 {
                     if (SalasController.AsignarSalaJuntas("ALTA", salas[SalaSeleccionada].Sala_Id, storage.Get("Usuario_Id"),
                                                       storage.Get("Usuario_Tipo"), DateTime.Parse(fecha_seleccionada),
-                                                         TimeSpan.FromHours(hora).ToString().Substring(0, 5), TimeSpan.FromHours(hora + .5).ToString().Substring(0, 5)) == -1)
+                                                         TimeSpan.FromHours(hora).ToString().Substring(0, 5), TimeSpan.FromHours(hora + .5).ToString().Substring(0, 5), "0") == -1)
                         WorklabsMx.Helpers.SlackLogs.SendMessage("ERROR: Registro de sala de junta " + TimeSpan.FromHours(hora).ToString().Substring(0, 5) + " - " + TimeSpan.FromHours(hora + .5).ToString().Substring(0, 5), GetType().Name, "ShowConfirmacion");
 
                 }

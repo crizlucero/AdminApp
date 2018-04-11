@@ -146,7 +146,7 @@ namespace WorklabsMx.Droid
                     }
                     else break;
                 }
-                    else break;
+                else break;
             }
             return horas + tiempo;
         }
@@ -205,7 +205,7 @@ namespace WorklabsMx.Droid
                                       .Replace("{{HORARIO}}", hora_inicio_seleccionada + " - " + hora_fin_seleccionada),
                                       "Worklabs - Confirmación de sala de junta");
                 if (SalasController.AsignarSalaJuntas("ALTA", sala_seleccionada.Sala_Id, storage.Get("Usuario_Id"),
-                                                      storage.Get("Usuario_Tipo"), DateTime.Parse(fecha_seleccionada), hora_inicio_seleccionada, hora_fin_seleccionada) == -1)
+                                                      storage.Get("Usuario_Tipo"), DateTime.Parse(fecha_seleccionada), hora_inicio_seleccionada, hora_fin_seleccionada, CalcularCreditos().ToString()) == -1)
                     SlackLogs.SendMessage("ERROR: Registro de sala de junta", GetType().Name, "ShowConfirmacion");
                 dialog.Dismiss();
                 SetContentView(Resource.Layout.SalasJuntasConfirmacionLayout);
