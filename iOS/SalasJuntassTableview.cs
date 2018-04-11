@@ -93,6 +93,13 @@ namespace WorklabsMx.iOS
                 var SalaJuntas = SalasJuntas[indexPath.Row];
                 var currentSalaCell = (SalasJuntasCelda)tableView.DequeueReusableCell(IndentificadorCeldaSalas, indexPath);
                 currentSalaCell.UpdateCell(SalaJuntas);
+
+
+                UIView BGViewColor = new UIView();
+                BGViewColor.BackgroundColor = UIColor.Clear.FromHex(0xA2DBFF); //or whatever color you want.
+                BGViewColor.Layer.MasksToBounds = true;
+                currentSalaCell.SelectedBackgroundView = BGViewColor;
+
                 return currentSalaCell;
             }
             else

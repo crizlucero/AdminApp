@@ -77,7 +77,7 @@ namespace WorklabsMx.iOS
                 this.imgComentarios.Image = UIImage.FromBundle("Comments");
             }
             await GetImagenesPost(post);
-            txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
+            //txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
             txtComentario.ScrollEnabled = false;
             txtComentario.Text = post.Publicacion_Contenido;
 
