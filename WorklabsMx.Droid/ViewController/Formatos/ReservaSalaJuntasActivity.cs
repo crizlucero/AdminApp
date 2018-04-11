@@ -71,10 +71,11 @@ namespace WorklabsMx.Droid
                 TimePickerIntervalFragment frag = TimePickerIntervalFragment.NewInstance(delegate (DateTime time)
                 {
                     FindViewById<TextView>(Resource.Id.txtSeleccionarHoraInicio).Text = hora_inicio_seleccionada = time.ToString("HH:mm");
-                    if (DateTime.Parse(hora_fin_seleccionada).Subtract(DateTime.Parse(hora_inicio_seleccionada)).TotalHours > 0)
+                    if (DateTime.Parse(hora_fin_seleccionada).Subtract(DateTime.Parse(hora_inicio_seleccionada)).TotalHours < 0)
                         FindViewById<TextView>(Resource.Id.txtSeleccionarHoraFin).Text = hora_fin_seleccionada = time.AddMinutes(30).ToString("HH:mm");
                     SeleccionElemento();
                     FindViewById<TextView>(Resource.Id.lblHorasTotal).Text = DateTime.Parse(hora_fin_seleccionada).Subtract(DateTime.Parse(hora_inicio_seleccionada)).TotalHours.ToString();
+                    FindViewById<TextView>(Resource.Id.lblCreditosUsados).Text = CalcularCreditos().ToString();
                 });
                 frag.Show(FragmentManager, Resources.GetString(Resource.String.str_label_select_hour_initial));
             };
@@ -88,6 +89,7 @@ namespace WorklabsMx.Droid
                         FindViewById<TextView>(Resource.Id.txtSeleccionarHoraFin).Text = hora_fin_seleccionada = time.ToString("HH:mm");
                         SeleccionElemento();
                         FindViewById<TextView>(Resource.Id.lblHorasTotal).Text = DateTime.Parse(hora_fin_seleccionada).Subtract(DateTime.Parse(hora_inicio_seleccionada)).TotalHours.ToString();
+                        FindViewById<TextView>(Resource.Id.lblCreditosUsados).Text = CalcularCreditos().ToString();
                     }
                     else
                         Toast.MakeText(this, "Su hora de termino debe ser mayor a la hora de inicio", ToastLength.Short).Show();
@@ -115,7 +117,7 @@ namespace WorklabsMx.Droid
             FindViewById<TextView>(Resource.Id.lblDiaFecha).Text = DateTime.Parse(fecha_seleccionada).DayOfWeek.ToString().Substring(0, 3);
             FindViewById<TextView>(Resource.Id.lblDiaNumero).Text = DateTime.Parse(fecha_seleccionada).Day.ToString();
             FindViewById<TextView>(Resource.Id.lblHorasTotal).Text = DateTime.Parse(hora_fin_seleccionada).Subtract(DateTime.Parse(hora_inicio_seleccionada)).TotalHours.ToString();
-            FindViewById<TextView>(Resource.Id.lblCreditosUsados).Text = DateTime.Parse(hora_fin_seleccionada).Subtract(DateTime.Parse(hora_inicio_seleccionada)).TotalHours.ToString();
+            FindViewById<TextView>(Resource.Id.lblCreditosUsados).Text = CalcularCreditos().ToString();//DateTime.Parse(hora_fin_seleccionada).Subtract(DateTime.Parse(hora_inicio_seleccionada)).TotalHours.ToString();
 
 
             FindViewById<TextView>(Resource.Id.lblAgendar).Click += delegate
@@ -125,6 +127,28 @@ namespace WorklabsMx.Droid
                 else
                     Toast.MakeText(this, "Seleccione una sala de reunión", ToastLength.Short).Show();
             };
+        }
+
+        double CalcularCreditos()
+        {
+            double horas = DateTime.Parse(hora_fin_seleccionada).Subtract(DateTime.Parse(hora_inicio_seleccionada)).TotalHours * 2;
+            DateTime hora_inicio = DateTime.Parse(hora_inicio_seleccionada);
+            DateTime hora_fin = DateTime.Parse(hora_fin_seleccionada);
+            double tiempo = 0;
+            for (double i = 0; i < horas; i += .5)
+            {
+                if (hora_inicio.Hour > 11 && hora_inicio.Hour < 17)
+                {
+                    if (hora_fin != hora_inicio)
+                    {
+                        tiempo += .5;
+                        hora_inicio = hora_inicio.AddMinutes(30);
+                    }
+                    else break;
+                }
+                else break;
+            }
+            return horas + tiempo;
         }
 
         void SeleccionElemento()
@@ -150,7 +174,6 @@ namespace WorklabsMx.Droid
 
         void ShowConfirmacion()
         {
-
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
             View customView = LayoutInflater.Inflate(Resource.Layout.DetallesReservacionLayout, null, true);
@@ -182,7 +205,7 @@ namespace WorklabsMx.Droid
                                       .Replace("{{HORARIO}}", hora_inicio_seleccionada + " - " + hora_fin_seleccionada),
                                       "Worklabs - Confirmación de sala de junta");
                 if (SalasController.AsignarSalaJuntas("ALTA", sala_seleccionada.Sala_Id, storage.Get("Usuario_Id"),
-                                                      storage.Get("Usuario_Tipo"), DateTime.Parse(fecha_seleccionada), hora_inicio_seleccionada, hora_fin_seleccionada) == -1)
+                                                      storage.Get("Usuario_Tipo"), DateTime.Parse(fecha_seleccionada), hora_inicio_seleccionada, hora_fin_seleccionada, CalcularCreditos().ToString()) == -1)
                     SlackLogs.SendMessage("ERROR: Registro de sala de junta", GetType().Name, "ShowConfirmacion");
                 dialog.Dismiss();
                 SetContentView(Resource.Layout.SalasJuntasConfirmacionLayout);

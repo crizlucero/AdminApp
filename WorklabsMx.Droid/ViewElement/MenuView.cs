@@ -91,11 +91,6 @@ namespace WorklabsMx.Droid.ViewElement
                     Intent intent;
                     switch (menu.Controller)
                     {
-                        case "MyMembershipActivity":
-                            intent = new Intent(context, typeof(MyMembershipActivity));
-                            intent.PutExtra("Titulo", menu.Label);
-                            context.StartActivity(intent);
-                            break;
                         case "SubMenuActivity":
                             localStorage.Put("Parent", menu.Menu_Id);
                             FillMenu();
@@ -130,12 +125,6 @@ namespace WorklabsMx.Droid.ViewElement
                             break;
                         case "DatosFacturacionActivity":
                             intent = new Intent(context, typeof(DatosFacturacionActivity));
-                            intent.PutExtra("Titulo", menu.Label);
-                            context.StartActivity(intent); break;
-                        case "MisColaboradoresActivity":
-                            intent = new Intent(context, typeof(TabColaboradoresActivity));
-                            intent.PutExtra("Titulo", menu.Label);
-                            context.StartActivity(intent);
                             intent.PutExtra("Titulo", menu.Label);
                             context.StartActivity(intent); break;
                         case "AccesoActivity":
