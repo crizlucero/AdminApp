@@ -49,7 +49,7 @@ namespace WorklabsMx.Droid
             progressDialog = new ProgressDialog(this);
             progressDialog.SetMessage("Procesando operación");
 
-            suiteController = new SuiteController(Com.Mitec.Suitemcommerce.Utilities.Environment.Sandbox, this, this);
+            suiteController = new SuiteController(Com.Mitec.Suitemcommerce.Utilities.Environment.Qa, this, this);
             beanTokenization = new BeanTokenization
             {
                 Branch = "000025",
@@ -62,8 +62,7 @@ namespace WorklabsMx.Droid
                 OperationType = "6",
                 Reference = "Referencia dada por el usuario",
                 Amount = "100.00",
-                Token = "1234567890124242"
-
+                Token = "158128"
             };
             bean3DS = new Bean3DS
             {
@@ -72,7 +71,7 @@ namespace WorklabsMx.Droid
                 Country = "MX",
                 User = "Z703CSES0",
                 Password = "OOMYO17MS7",
-                Merchant = "158128",
+                Merchant = "158198",
                 Currency = Currency.Mxn,
                 Reference = "Referencia dada por el usuario",
                 AuthKey = "516883685552545048505454"
