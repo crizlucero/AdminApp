@@ -68,7 +68,7 @@ namespace WorklabsMx.iOS
             }
 
             await GetImagenesPost(post);
-            txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
+           // txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
             txtComentario.ScrollEnabled = false;
             txtComentario.Text = post.Publicacion_Contenido;
             StyleHelper.Style(vwVistaComentario.Layer);

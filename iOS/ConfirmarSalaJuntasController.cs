@@ -84,7 +84,7 @@ namespace WorklabsMx.iOS
                 {
                     Reservacion.Sala_Hora_Fin = "00:00";
                 }
-                var asignacion = new SalasJuntasController().AsignarSalaJuntas("ALTA", Reservacion.Sala_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), myDate, Reservacion.Sala_Hora_Inicio, Reservacion.Sala_Hora_Fin);
+                var asignacion = new SalasJuntasController().AsignarSalaJuntas("ALTA", Reservacion.Sala_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), myDate, Reservacion.Sala_Hora_Inicio, Reservacion.Sala_Hora_Fin, Reservacion.Creditos_Usados.ToString());
                 if (asignacion != -1)
                 {
                     OperacionTerminada = true;
