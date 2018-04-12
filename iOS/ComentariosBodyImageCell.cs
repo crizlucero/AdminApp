@@ -28,8 +28,6 @@ namespace WorklabsMx.iOS
 
     public partial class ComentariosBodyImageCell : UITableViewCell
     {
- 
-
         public EventosComentarios EventosComentariosDelegate;
 
         PostModel PostLocal;

@@ -24,10 +24,6 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.NSLayoutConstraint lblNombre { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblNombre { get; set; }
 
         [Outlet]
@@ -48,11 +44,6 @@ namespace WorklabsMx.iOS
             if (btnSeguir != null) {
                 btnSeguir.Dispose ();
                 btnSeguir = null;
-            }
-
-            if (lblNombre != null) {
-                lblNombre.Dispose ();
-                lblNombre = null;
             }
 
             if (lblNombre != null) {
