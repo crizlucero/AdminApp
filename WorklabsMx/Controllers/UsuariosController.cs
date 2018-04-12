@@ -181,7 +181,6 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    if (!usuarios.Exists(usuario => usuario.Usuario_Id == reader["Usuario_Id"].ToString() && usuario.Usuario_Tipo == reader["Usuario_Tipo"].ToString()))
                         usuarios.Add(new UsuarioModel
                         {
                             Usuario_Id = reader["Usuario_Id"].ToString(),
@@ -296,7 +295,7 @@ namespace WorklabsMx.Controllers
                 conn.Open();
                 transaction = conn.BeginTransaction();
 
-                if(fotografia != null)
+                if (fotografia != null)
                 {
                     if (fotografia.Length != 0)
                     {
@@ -807,10 +806,8 @@ namespace WorklabsMx.Controllers
 
         public int AddRemoveEtiquetas(string usuario_id, string usuario_tipo, string etiqueta_id, string etiqueta_nombre, TipoEtiquetas etiqueta_tipo, string miembro_etiqueta_id)
         {
-
             try
             {
-
                 conn.Open();
                 transaction = conn.BeginTransaction();
                 command = CreateCommand();
@@ -914,6 +911,56 @@ namespace WorklabsMx.Controllers
             }
             finally { conn.Close(); }
             return redesSociales;
+        }
+
+        public List<UsuarioModel> GetUsuariosPublicacionMeGusta(string post_id)
+        {
+            List<UsuarioModel> usuarios = new List<UsuarioModel>();
+
+            command = CreateCommand("select * from vw_pro_Red_Social_Usuarios_Me_Gusta WHERE Publicacion_Id = @post_id ORDER BY Usuario_Nombre, Usuario_Apellidos");
+            command.Parameters.AddWithValue("@post_id", post_id);
+            try
+            {
+                conn.Open();
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                        usuarios.Add(new UsuarioModel
+                        {
+                            Usuario_Id = reader["Usuario_Id"].ToString(),
+                            Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
+                            Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
+                            Usuario_Apellidos = reader["Usuario_Apellidos"].ToString(),
+                            Usuario_Profesion = reader["Usuario_Profesion"].ToString(),
+                            Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
+                            Usuario_Fotografia = reader["Usuario_Fotografia"].ToString(),
+                            Usuario_Correo_Electronico = reader["Usuario_Correo_Electronico"].ToString(),
+                            //Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path),
+                            Usuario_Telefono = reader["Usuario_Telefono"].ToString(),
+                            Usuario_Celular = reader["Usuario_Celular"].ToString(),
+                            Usuario_Fecha_Nacimiento = reader["Usuario_Fecha_Nacimiento"].ToString(),
+                            Usuario_Fecha_Registro = reader["Usuario_Fecha_Registro"].ToString(),
+                            Genero = new GeneroModel
+                            {
+                                Genero_Id = reader["Genero_Id"].ToString(),
+                                Genero_Descripcion = reader["Genero_Descripcion"].ToString()
+                            },
+                            Usuario_Empresa_Nombre = reader["Usuario_Empresa_Nombre"].ToString()
+                        });
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetDirectorioUsuarios");
+            }
+            finally { conn.Close(); }
+            usuarios.ForEach(usuario =>
+            {
+                usuario.Redes_Sociales = GetUsuarioRedesSociales(usuario.Usuario_Id, usuario.Usuario_Tipo);
+                usuario.Etiquetas = GetUsuarioEtiquetas(usuario.Usuario_Id, usuario.Usuario_Tipo);
+            });
+            return usuarios;
         }
     }
 }
