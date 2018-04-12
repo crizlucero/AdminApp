@@ -45,9 +45,7 @@ namespace WorklabsMx.iOS
             RefreshControl.AddTarget(HandleValueChanged, UIControlEvent.ValueChanged);
             var Tap = new UITapGestureRecognizer(this.Tapped);
             this.View.AddGestureRecognizer(Tap);
-
             BTProgressHUD.Dismiss();
-          
         }
 
         void HandleValueChanged(object sender, EventArgs e)
@@ -77,7 +75,6 @@ namespace WorklabsMx.iOS
             TableView.BeginUpdates();
             TableView.EndUpdates();
         }
-
 
         private void AgregarBusqueda(string Parametro)
         {

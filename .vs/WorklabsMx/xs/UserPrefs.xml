@@ -1,7 +1,6 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/CeldaLike.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ComunidadTableViewCell.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="280" Column="10" />
       <File FileName="iOS/ComprasTableView.cs" Line="115" Column="43" />
       <File FileName="iOS/AccionesCompras.cs" Line="15" Column="14" />
       <File FileName="iOS/DetalleMembresiaTableVieController.cs" Line="102" Column="36" />
@@ -9,12 +8,18 @@
       <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/CeldaVentaDetalle.cs" Line="1" Column="1" />
       <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/DetalleVentaViewController.cs" Line="1" Column="1" />
       <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleHeader.cs" Line="1" Column="1" />
-      <File FileName="SuitemCommerceBinding/ApiDefinition.cs" Line="10" Column="15" />
       <File FileName="iOS/EjemploPagos.cs" Line="102" Column="1" />
-      <File FileName="iOS/PerfilesTableViewController.cs" Line="284" Column="17" />
-      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="12" Column="34" />
-      <File FileName="iOS/ComentariosBodyImageCell.cs" Line="12" Column="34" />
-      <File FileName="iOS/CeldaLike.cs" Line="4" Column="1" />
+      <File FileName="iOS/PerfilesTableViewController.cs" Line="327" Column="10" />
+      <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="39" Column="54" />
+      <File FileName="iOS/ComentariosBodyImageCell.cs" Line="17" Column="1" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="135" Column="16" />
+      <File FileName="iOS/VistaLikes.cs" Line="22" Column="9" />
+      <File FileName="iOS/TableViewLikes.cs" Line="30" Column="36" />
+      <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="36" Column="40" />
+      <File FileName="iOS/ComunidadTableViewController.cs" Line="122" Column="53" />
+      <File FileName="iOS/CeldaLike.cs" Line="28" Column="52" />
+      <File FileName="iOS/ComunidadTableViewCell.cs" Line="5" Column="1" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="370" Column="40" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
