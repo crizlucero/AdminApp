@@ -34,6 +34,8 @@ namespace WorklabsMx.iOS
 
         string transaccion = "ALTA";
 
+        List<UsuarioModel> UsuariosLikes;
+
         public ComentariosBodyImageCell (IntPtr handle) : base (handle)
         {
         }
@@ -90,7 +92,11 @@ namespace WorklabsMx.iOS
             PostLocal = post;
 
             UITapGestureRecognizer labelTap = new UITapGestureRecognizer(() => {
-                // Do something in here
+                UsuariosLikes = new UsuariosController().GetUsuariosPublicacionMeGusta(post.Publicacion_Id);
+                if(UsuariosLikes.Count > 0)
+                {
+                    EventosComentariosDelegate.LikePresionado(UsuariosLikes);
+                }
             });
 
             lblLikes.UserInteractionEnabled = true;

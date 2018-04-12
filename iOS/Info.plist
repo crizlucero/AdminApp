@@ -2,6 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>mx.worklabs.uc</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>testscheme</string>
+			</array>
+		</dict>
+	</array>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>CFBundleDisplayName</key>
@@ -67,9 +78,9 @@
 		</dict>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>1.7.3</string>
+	<string>1.7.4</string>
 	<key>CFBundleVersion</key>
-	<string>1.7.3</string>
+	<string>1.7.4</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

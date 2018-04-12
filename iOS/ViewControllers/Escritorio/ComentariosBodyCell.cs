@@ -31,6 +31,8 @@ namespace WorklabsMx.iOS
 
         public EventosComentariosBody EventosComentariosBodyDel;
 
+        List<UsuarioModel> UsuariosLikes;
+
         public ComentariosBodyCell (IntPtr handle) : base (handle)
         {
             
@@ -77,7 +79,11 @@ namespace WorklabsMx.iOS
             PostLocal = post;
 
             UITapGestureRecognizer labelTap = new UITapGestureRecognizer(() => {
-                // Do something in here
+                UsuariosLikes = new UsuariosController().GetUsuariosPublicacionMeGusta(post.Publicacion_Id);
+                if (UsuariosLikes.Count > 0)
+                {
+                    EventosComentariosBodyDel.LikeImagenPresionado(UsuariosLikes);
+                }
             });
 
             lblLikes.UserInteractionEnabled = true;

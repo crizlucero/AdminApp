@@ -28,5 +28,10 @@ namespace WorklabsMx.iOS
                 TableLikes.UsuariosLikes = UsuariosLikes;
             } 
 		}
-	}
+
+        partial void btnClose_Touch(UIButton sender)
+        {
+            this.DismissViewController(true, null);
+        }
+    }
 }

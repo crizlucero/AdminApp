@@ -345,14 +345,25 @@ namespace WorklabsMx.iOS
 
         partial void btnEnviarMensaje_Touch(UIButton sender)
         {
-            this.LaunchApp("mx.worklabs.uc://");
+            this.LaunchApp();
         }
 
-        public Task<bool> LaunchApp(string uri)
+        public void LaunchApp()
         {
-            var canOpen = UIApplication.SharedApplication.CanOpenUrl(new NSUrl(uri));
-
-            return Task.FromResult(UIApplication.SharedApplication.OpenUrl(new NSUrl(uri)));
+            try
+            {
+                var canOpen = UIApplication.SharedApplication.CanOpenUrl(NSUrl.FromString("testscheme://mx.worklabs.uc"));
+                if (canOpen)
+                {
+                    UIApplication.SharedApplication.OpenUrl(NSUrl.FromString("testscheme://mx.worklabs.uc"));
+                }
+                UIApplication.SharedApplication.OpenUrl(NSUrl.FromString("itms://itunes.apple.com/mx/app/worklabs-uc/id1343248277?mt=8"));
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message, GetType().Name, "Abri WorkLabs UC");
+            }
+           
         }
 
         partial void btnEditarFotoFondo_Touch(UIButton sender)

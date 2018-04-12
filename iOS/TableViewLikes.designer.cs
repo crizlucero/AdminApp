@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("TableViewLikes")]
     partial class TableViewLikes
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }
