@@ -157,6 +157,8 @@ namespace WorklabsMx.iOS
                 var usuario = new UsuariosController().GetMemberData(ListUser.Usuario_Id, ListUser.Usuario_Tipo);
 
                 PerfilView.Miembro = usuario;
+
+                PerfilView.FromMenu = false;
             }
         }
     }
