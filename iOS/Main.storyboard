@@ -6749,7 +6749,7 @@
                                     <outlet property="vwVistaComentario" destination="e7G-vt-80f" id="Wza-DJ-a8m"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NotificacionImagenPerfil" rowHeight="295" id="St9-qs-1MG" customClass="ComentarImageTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NotificacionImagenPerfil" rowHeight="295" id="St9-qs-1MG" customClass="CeldaImagenPerfil">
                                 <rect key="frame" x="0.0" y="641" width="375" height="295"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="St9-qs-1MG" id="yor-hU-2vL">
@@ -6799,6 +6799,9 @@
                                                 <constraint firstAttribute="height" constant="20" id="Yks-2I-opJ"/>
                                             </constraints>
                                             <state key="normal" image="Likes"/>
+                                            <connections>
+                                                <action selector="btnLikes_Touch:" destination="St9-qs-1MG" eventType="touchUpInside" id="836444"/>
+                                            </connections>
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yV4-sZ-4VY">
                                             <rect key="frame" x="0.0" y="71" width="375" height="152"/>
@@ -6823,6 +6826,9 @@
                                                 <constraint firstAttribute="width" constant="21" id="mb9-r2-JCD"/>
                                             </constraints>
                                             <state key="normal" backgroundImage="Opciones"/>
+                                            <connections>
+                                                <action selector="btnOpciones_Touch:" destination="St9-qs-1MG" eventType="touchUpInside" id="836445"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/10/2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIe-1J-hTW">
                                             <rect key="frame" x="253" y="266" width="114" height="20"/>
@@ -6840,6 +6846,9 @@
                                                 <constraint firstAttribute="height" constant="15" id="wpQ-XA-jbJ"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                            <connections>
+                                                <action selector="btnComentarios_Touch:" destination="St9-qs-1MG" eventType="touchUpInside" id="836446"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09 COMENTARIOS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dv4-5I-w4T">
                                             <rect key="frame" x="127" y="264" width="118" height="20"/>
@@ -6898,8 +6907,22 @@
                                         <constraint firstItem="OnQ-28-r1x" firstAttribute="top" secondItem="wtE-Ac-lFl" secondAttribute="top" id="yMI-Kv-yT0"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="PerfilEscritorio" destination="vaC-Ur-b6L" id="name-outlet-vaC-Ur-b6L"/>
+                                    <outlet property="btnComentarios" destination="U7j-Ii-zQC" id="name-outlet-U7j-Ii-zQC"/>
+                                    <outlet property="btnLikes" destination="OnQ-28-r1x" id="name-outlet-OnQ-28-r1x"/>
+                                    <outlet property="btnOpciones" destination="WQW-OR-fDR" id="name-outlet-WQW-OR-fDR"/>
+                                    <outlet property="imgBack" destination="yV4-sZ-4VY" id="name-outlet-yV4-sZ-4VY"/>
+                                    <outlet property="imgPerfil" destination="H23-z2-OHa" id="name-outlet-H23-z2-OHa"/>
+                                    <outlet property="imgcomentarios" destination="rQ6-kK-FHH" id="name-outlet-rQ6-kK-FHH"/>
+                                    <outlet property="lblComentarios" destination="dv4-5I-w4T" id="name-outlet-dv4-5I-w4T"/>
+                                    <outlet property="lblFechaPublicacion" destination="PIe-1J-hTW" id="name-outlet-PIe-1J-hTW"/>
+                                    <outlet property="lblLikes" destination="wtE-Ac-lFl" id="name-outlet-wtE-Ac-lFl"/>
+                                    <outlet property="lblNombre" destination="Ejc-Sh-L3G" id="name-outlet-Ejc-Sh-L3G"/>
+                                    <outlet property="vwVistaComentarios" destination="8nv-As-4Th" id="name-outlet-8nv-As-4Th"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NotificacionImagenFondo" rowHeight="251" id="JTs-sw-Uij" customClass="ComentarImageTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NotificacionImagenFondo" rowHeight="251" id="JTs-sw-Uij" customClass="NotificacionImagenFondo">
                                 <rect key="frame" x="0.0" y="936" width="375" height="251"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JTs-sw-Uij" id="3p9-cm-HlJ">
@@ -6947,6 +6970,9 @@
                                                 <constraint firstAttribute="height" constant="20" id="z5d-ng-dfc"/>
                                             </constraints>
                                             <state key="normal" image="Likes"/>
+                                            <connections>
+                                                <action selector="btnLikes_Touch:" destination="JTs-sw-Uij" eventType="touchUpInside" id="836447"/>
+                                            </connections>
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5nT-Fk-LHv">
                                             <rect key="frame" x="0.0" y="65" width="375" height="149"/>
@@ -6966,6 +6992,9 @@
                                                 <constraint firstAttribute="width" constant="118" id="qol-ib-RB5"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                            <connections>
+                                                <action selector="btnC:" destination="JTs-sw-Uij" eventType="touchUpInside" id="836448"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09 COMENTARIOS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCN-s4-5Lb">
                                             <rect key="frame" x="128" y="221" width="83" height="23"/>
@@ -6991,7 +7020,7 @@
                                             </constraints>
                                             <state key="normal" backgroundImage="Opciones"/>
                                             <connections>
-                                                <action selector="btnComentar_Touch:" destination="JTs-sw-Uij" eventType="touchUpInside" id="eCJ-YS-WBl"/>
+                                                <action selector="btnOpciones_Touch:" destination="JTs-sw-Uij" eventType="touchUpInside" id="836449"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -7039,7 +7068,17 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="btnComentar" destination="2Fx-gu-OOz" id="WGp-ww-C6M"/>
+                                    <outlet property="btnComentarios" destination="nzV-hv-HLR" id="name-outlet-nzV-hv-HLR"/>
+                                    <outlet property="btnLikes" destination="5UW-FZ-q9u" id="name-outlet-5UW-FZ-q9u"/>
+                                    <outlet property="btnOpciones" destination="2Fx-gu-OOz" id="name-outlet-2Fx-gu-OOz"/>
+                                    <outlet property="imgComentarios" destination="Qig-55-7Ly" id="name-outlet-Qig-55-7Ly"/>
+                                    <outlet property="imgFondo" destination="5nT-Fk-LHv" id="name-outlet-5nT-Fk-LHv"/>
+                                    <outlet property="imgPerfil" destination="xug-yu-4OR" id="name-outlet-xug-yu-4OR"/>
+                                    <outlet property="lblComentarios" destination="aCN-s4-5Lb" id="name-outlet-aCN-s4-5Lb"/>
+                                    <outlet property="lblFechaPublicacion" destination="5Ok-u7-1Wy" id="name-outlet-5Ok-u7-1Wy"/>
+                                    <outlet property="lblLikes" destination="BQf-4d-jhC" id="name-outlet-BQf-4d-jhC"/>
+                                    <outlet property="lblNombre" destination="KxF-9O-fHI" id="name-outlet-KxF-9O-fHI"/>
+                                    <outlet property="vwImagenFonde" destination="bUg-e8-kTk" id="name-outlet-bUg-e8-kTk"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoInfo" rowHeight="328" id="QrW-yg-lIs" customClass="NoComentsCell">

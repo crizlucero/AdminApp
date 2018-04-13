@@ -1306,6 +1306,14 @@
     <Compile Include="CeldaLike.designer.cs">
       <DependentUpon>CeldaLike.cs</DependentUpon>
     </Compile>
+    <Compile Include="CeldaImagenPerfil.cs" />
+    <Compile Include="CeldaImagenPerfil.designer.cs">
+      <DependentUpon>CeldaImagenPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotificacionImagenFondo.cs" />
+    <Compile Include="NotificacionImagenFondo.designer.cs">
+      <DependentUpon>NotificacionImagenFondo.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
