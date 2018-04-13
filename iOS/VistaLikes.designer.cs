@@ -16,10 +16,23 @@ namespace WorklabsMx.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnClose { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView ContenedorLikes { get; set; }
+
+        [Action ("btnClose_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnClose_Touch (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnClose != null) {
+                btnClose.Dispose ();
+                btnClose = null;
+            }
+
             if (ContenedorLikes != null) {
                 ContenedorLikes.Dispose ();
                 ContenedorLikes = null;
