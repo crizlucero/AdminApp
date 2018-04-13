@@ -16,6 +16,7 @@ using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Droid.Helpers;
+using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
@@ -78,6 +79,8 @@ namespace WorklabsMx.Droid
         SimpleStorage storage;
         readonly List<UsuarioModel> usuarios, favoritos;
         readonly List<EmpresaModel> empresas;
+        Dictionary<KeyValuePair<string, string>, byte[]> imagenes;
+        readonly string usuario_imagen_path;
         public DirectorioAdapter(Context context, List<string> directorios, List<UsuarioModel> usuarios, List<EmpresaModel> empresas, List<UsuarioModel> favoritos)
         {
             this.context = context;
@@ -86,6 +89,8 @@ namespace WorklabsMx.Droid
             this.empresas = empresas;
             this.favoritos = favoritos;
             storage = SimpleStorage.EditGroup("Login");
+            imagenes = new Dictionary<KeyValuePair<string, string>, byte[]>();
+            usuario_imagen_path = new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE USUARIOS").Parametro_Varchar_1;
         }
 
         public override Java.Lang.Object InstantiateItem(View container, int position)
@@ -130,6 +135,7 @@ namespace WorklabsMx.Droid
             string aux = "";
             miembros.ForEach((miembro) =>
             {
+                KeyValuePair<string, string> current = new KeyValuePair<string, string>(miembro.Usuario_Id, miembro.Usuario_Tipo);
                 if (miembro.Usuario_Nombre[0].ToString() != aux)
                 {
                     LinearLayout llList = new LinearLayout(context);
@@ -151,8 +157,15 @@ namespace WorklabsMx.Droid
                 View PersonaCard = liView.Inflate(Resource.Layout.PreViewListLayout, null, true);
 
                 ImageButton ibProfile = PersonaCard.FindViewById<ImageButton>(Resource.Id.ibProfile);
-                if (miembro.Usuario_Fotografia_Perfil != null)
-                    ibProfile.SetImageBitmap(ImagesHelper.GetRoundedShape(BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length)));
+                if (imagenes.ContainsKey(current))
+                {
+                    ibProfile.SetImageBitmap(ImagesHelper.GetRoundedShape(BitmapFactory.DecodeByteArray(imagenes[current], 0, imagenes[current].Length)));
+                }
+                else if (!string.IsNullOrEmpty(miembro.Usuario_Fotografia))
+                {
+                    imagenes.Add(current, new UploadImages().DownloadFileFTP(miembro.Usuario_Fotografia, usuario_imagen_path));
+                    ibProfile.SetImageBitmap(ImagesHelper.GetRoundedShape(BitmapFactory.DecodeByteArray(imagenes[current], 0, imagenes[current].Length)));
+                }
                 else
                     ibProfile.SetImageResource(Resource.Mipmap.ic_profile_empty);
 
@@ -230,6 +243,7 @@ namespace WorklabsMx.Droid
             });
             svDirectorio.AddView(llDirectorio);
         }
+
         void ShowEmpresaCard(EmpresaModel empresa)
         {
             Intent intent = new Intent(context, typeof(EmpresaCardActivity));

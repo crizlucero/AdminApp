@@ -197,13 +197,12 @@ namespace WorklabsMx.Droid
                 TextView lblPost = PostView.FindViewById<TextView>(Resource.Id.lblPost);
                 lblPost.Text = post.Publicacion_Contenido;
 
-                TextView lblLike = PostView.FindViewById<TextView>(Resource.Id.lblLikes);
-                Drawable icLike = ContextCompat.GetDrawable(this, Resource.Mipmap.ic_like_unselected);
-
-                icLike.SetBounds(0, 0, 30, 30);
-                lblLike.SetCompoundDrawables(icLike, null, null, null);
+                TextView lblLike = PostView.FindViewById<TextView>(Resource.Id.lblLikeText);
                 lblLike.Text = post.Publicacion_Me_Gustan_Cantidad + " " + Resources.GetString(Resource.String.str_dashboard_likes);
-                lblLike.Click += delegate
+
+                ImageView imgLike = PostView.FindViewById<ImageView>(Resource.Id.imgLikes);
+                imgLike.SetColorFilter(new Color(ContextCompat.GetColor(this, Resource.Color.button_unpressed)));
+                imgLike.Click += delegate
                 {
                     string transaccion = "ALTA";
                     if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
@@ -217,27 +216,18 @@ namespace WorklabsMx.Droid
                         {
                             post.Publicacion_Me_Gusta_Usuario = "0";
                             lblLike.SetTextColor(Color.Black);
-                            if ((int)Build.VERSION.SdkInt > 22)
-                                icLike.SetTintList(GetColorStateList(Resource.Color.button_unpressed));
-                            else
-                                DrawableCompat.SetTint(icLike, ContextCompat.GetColor(this, Resource.Color.button_unpressed));
+                            imgLike.SetColorFilter(Resources.GetColor(Resource.Color.button_unpressed));
                         }
                         else
                         {
                             post.Publicacion_Me_Gusta_Usuario = "1";
-                            if ((int)Build.VERSION.SdkInt > 22)
-                                icLike.SetTintList(GetColorStateList(Resource.Color.like_heart_pressed));
-                            else
-                                DrawableCompat.SetTint(icLike, ContextCompat.GetColor(this, Resource.Color.like_heart_pressed));
+                            imgLike.SetColorFilter(Resources.GetColor(Resource.Color.like_heart_pressed));
                             lblLike.SetTextColor(Color.Rgb(57, 87, 217));
                         }
                     }
                 };
                 if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
-                    if ((int)Build.VERSION.SdkInt > 22)
-                        icLike.SetTintList(ColorStateList.ValueOf(Color.Blue));
-                    else
-                        DrawableCompat.SetTint(icLike, ContextCompat.GetColor(this, Resource.Color.like_heart_pressed));
+                    imgLike.SetColorFilter(new Color(ContextCompat.GetColor(this, Resource.Color.like_heart_pressed)));
 
                 ImageView imgPost = PostView.FindViewById<ImageView>(Resource.Id.imgPost);
 
@@ -254,18 +244,13 @@ namespace WorklabsMx.Droid
                         };
                     }
                 }
-                TextView lblComentario = PostView.FindViewById<TextView>(Resource.Id.lblComments);
+                TextView lblComentario = PostView.FindViewById<TextView>(Resource.Id.lblComentariosText);
                 lblComentario.Text = post.Publicacion_Comentarios_Cantidad + " " + Resources.GetString(Resource.String.str_social_network_comments);
 
-                Drawable icComentario = ContextCompat.GetDrawable(this, Resource.Mipmap.ic_comment_unselected);
-                if ((int)Build.VERSION.SdkInt > 22)
-                    icComentario.SetTintList(GetColorStateList(Resource.Color.button_unpressed));
-                else
-                    DrawableCompat.SetTint(icComentario, ContextCompat.GetColor(this, Resource.Color.button_unpressed));
-                icComentario.SetBounds(0, 0, 30, 30);
-                lblComentario.SetCompoundDrawables(icComentario, null, null, null);
+                ImageView imgComentario = PostView.FindViewById<ImageView>(Resource.Id.imgComments);
+                imgComentario.SetColorFilter(Resources.GetColor(Resource.Color.button_unpressed));
 
-                lblComentario.Click += delegate
+                imgComentario.Click += delegate
                 {
                     Intent intent = new Intent(this, typeof(CommentsActivity));
                     intent.PutExtra("post_id", post.Publicacion_Id);
@@ -274,10 +259,7 @@ namespace WorklabsMx.Droid
                 };
                 if (post.Publicacion_Comentarios_Cantidad != "0")
                 {
-                    if ((int)Build.VERSION.SdkInt > 22)
-                        icComentario.SetTintList(GetColorStateList(Resource.Color.comment_pressed));
-                    else
-                        DrawableCompat.SetTint(icComentario, ContextCompat.GetColor(this, Resource.Color.comment_pressed));
+                    imgComentario.SetColorFilter(Resources.GetColor(Resource.Color.comment_pressed));
                 }
                 if (localStorage.Get("Usuario_id") == post.Usuario.Usuario_Id && localStorage.Get("Usuario_Tipo") == post.Usuario.Usuario_Tipo)
                 {

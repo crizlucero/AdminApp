@@ -144,8 +144,11 @@ namespace WorklabsMx.Droid
             lblPost.SetMaxWidth(Convert.ToInt32(Resources.DisplayMetrics.WidthPixels * .911));
             lblPost.Text = post.Publicacion_Contenido;
 
-            TextView lblLike = FindViewById<TextView>(Resource.Id.lblLikes);
+            TextView lblLike = FindViewById<TextView>(Resource.Id.lblLikeText);
             lblLike.Text = post.Publicacion_Me_Gustan_Cantidad + " " + Resources.GetString(Resource.String.str_dashboard_likes);
+
+            ImageView imgLike = FindViewById<ImageView>(Resource.Id.imgLikes);
+
             lblLike.Click += delegate
             {
                 string transaccion = "ALTA";
@@ -160,11 +163,13 @@ namespace WorklabsMx.Droid
                     {
                         post.Publicacion_Me_Gusta_Usuario = "0";
                         lblLike.SetTextColor(Color.Black);
+                        imgLike.SetColorFilter(Resources.GetColor(Resource.Color.button_unpressed));
                     }
                     else
                     {
                         post.Publicacion_Me_Gusta_Usuario = "1";
                         lblLike.SetTextColor(Color.Rgb(57, 87, 217));
+                        imgLike.SetColorFilter(Resources.GetColor(Resource.Color.like_heart_pressed));
                     }
                 }
             };
@@ -172,8 +177,9 @@ namespace WorklabsMx.Droid
             {
                 lblLike.SetTextColor(Color.Rgb(57, 87, 217));
             }
-
-            TextView lblComentario = FindViewById<TextView>(Resource.Id.lblComments);
+            if (post.Publicacion_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
+                imgLike.SetColorFilter(Resources.GetColor(Resource.Color.like_heart_pressed));
+            TextView lblComentario = FindViewById<TextView>(Resource.Id.lblComentariosText);
             lblComentario.Text = post.Publicacion_Comentarios_Cantidad + " " + Resources.GetString(Resource.String.str_social_network_comments);
             lblComentario.Click += delegate
             {
@@ -254,8 +260,9 @@ namespace WorklabsMx.Droid
                 lblPost.SetMaxWidth(Convert.ToInt32(Resources.DisplayMetrics.WidthPixels * .911));
                 lblPost.Text = comentario.Comentario_Contenido;
 
-                TextView lblLike = CommentView.FindViewById<TextView>(Resource.Id.lblLikes);
+                TextView lblLike = CommentView.FindViewById<TextView>(Resource.Id.lblLikeText);
                 lblLike.Text = comentario.Comentario_Me_Gustan_Cantidad + " " + Resources.GetString(Resource.String.str_dashboard_likes);
+                ImageView imgLike = CommentView.FindViewById<ImageView>(Resource.Id.imgLikes);
                 lblLike.Click += delegate
                 {
                     string transaccion = "ALTA";
@@ -271,19 +278,22 @@ namespace WorklabsMx.Droid
 
                             post.Publicacion_Me_Gusta_Usuario = "0";
                             lblLike.SetTextColor(Color.Black);
+                            imgLike.SetColorFilter(Resources.GetColor(Resource.Color.button_unpressed));
                         }
                         else
                         {
                             post.Publicacion_Me_Gusta_Usuario = "1";
                             lblLike.SetTextColor(Color.Rgb(57, 87, 217));
+                            imgLike.SetColorFilter(Resources.GetColor(Resource.Color.like_heart_pressed));
                         }
                     }
                 };
                 if (comentario.Comentario_Me_Gusta_Usuario == ((int)TiposMeGusta.Activo).ToString())
                 {
                     lblLike.SetTextColor(Color.Rgb(57, 87, 217));
+                    imgLike.SetColorFilter(Resources.GetColor(Resource.Color.like_heart_pressed));
                 }
-                CommentView.FindViewById<TextView>(Resource.Id.lblComments).Visibility = ViewStates.Invisible;
+                CommentView.FindViewById<TextView>(Resource.Id.lblComentariosText).Visibility = ViewStates.Invisible;
 
                 CommentView.FindViewById<ImageView>(Resource.Id.imgMore).Click += delegate
                 {
@@ -413,7 +423,6 @@ namespace WorklabsMx.Droid
             };
             customView.FindViewById<Button>(Resource.Id.btnPublishApply).Click += delegate
             {
-                AndHUD.Shared.Show(this, null, -1, MaskType.Black);
                 System.IO.MemoryStream stream = new System.IO.MemoryStream();
                 bitmap?.Compress(Bitmap.CompressFormat.Png, 0, stream);
                 byte[] bitmapData = stream?.ToArray();
@@ -432,7 +441,7 @@ namespace WorklabsMx.Droid
                 }
                 else
                     Toast.MakeText(this, "Escribe o envía una imagen", ToastLength.Short).Show();
-                AndHUD.Shared.Dismiss(this);
+                dialog.Dismiss();
             };
 
             builder.SetView(customView);
