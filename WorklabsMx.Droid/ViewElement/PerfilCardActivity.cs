@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.Graphics;
 using Android.Net;
 using Android.OS;
+using Android.Provider;
 using Android.Support.V4.View;
 using Android.Widget;
 using com.refractored;
+using Java.IO;
 using Newtonsoft.Json;
 using PerpetualEngine.Storage;
 using WorklabsMx.Controllers;
 using WorklabsMx.Droid.Helpers;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
+using static Android.Provider.MediaStore.Images;
 
 namespace WorklabsMx.Droid
 {
@@ -24,6 +28,14 @@ namespace WorklabsMx.Droid
         readonly SimpleStorage storage;
         KeyValuePair<int, bool> isFavorite;
         readonly string usuario_imagen_path;
+        File _dir, _file;
+        readonly int PickImageId = 1000, TakePicture = 500;
+        Bitmap bitmap, photo, background;
+        ImageView imgPerfil, imgFondo;
+        int Height, Width;
+        bool flag;
+        string imagePath;
+
         public PerfilCardActivity()
         {
             storage = SimpleStorage.EditGroup("Login");
@@ -38,14 +50,22 @@ namespace WorklabsMx.Droid
             miembro = JsonConvert.DeserializeObject<UsuarioModel>(Intent.GetStringExtra("Miembro"));
             FindViewById<ImageButton>(Resource.Id.ibCerrar).Click += (sender, e) => OnBackPressed();
 
-            ImageView imgPerfil = FindViewById<ImageView>(Resource.Id.ivPerfil);
+            imgPerfil = FindViewById<ImageView>(Resource.Id.ivPerfil);
             if (!string.IsNullOrEmpty(miembro.Usuario_Fotografia))
             {
                 miembro.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(miembro.Usuario_Fotografia, usuario_imagen_path);
+                photo = BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length);
                 imgPerfil.SetImageBitmap(ImagesHelper.GetRoundedShape(BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length)));
             }
             else
                 imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);
+            imgFondo = FindViewById<ImageView>(Resource.Id.imgFondo);
+            if (!string.IsNullOrEmpty(miembro.Usuario_Fotografia_Fondo))
+            {
+                miembro.Usuario_Fotografia_FondoPerfil = new UploadImages().DownloadFileFTP(miembro.Usuario_Fotografia_Fondo, usuario_imagen_path);
+                background = BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_FondoPerfil, 0, miembro.Usuario_Fotografia_FondoPerfil.Length);
+                imgFondo.SetImageBitmap(background);
+            }
 
             FindViewById<TextView>(Resource.Id.lblNombre).Text = miembro.Usuario_Nombre + " " + miembro.Usuario_Apellidos;
             FindViewById<TextView>(Resource.Id.lblEmpresa).Text = miembro.Usuario_Empresa_Nombre;
@@ -93,10 +113,93 @@ namespace WorklabsMx.Droid
             tabs.SetTextColorResource(Resource.Color.comment_pressed);
             tabs.SetViewPager(_viewPager);
 
+            imgPerfil.Click += delegate
+            {
+                Width = Height = 400;
+                CreateDirectoryForPictures();
+                IsThereAnAppToTakePictures();
+                Intent intent = new Intent(MediaStore.ActionImageCapture);
+                _file = new File(_dir, String.Format("{0}.jpg", Guid.NewGuid()));
+                intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(_file));
+                StartActivityForResult(intent, TakePicture);
+                flag = true;
+            };
+
+            imgFondo.Click += delegate
+            {
+                Width = 1500;
+                Height = 500;
+                CreateDirectoryForPictures();
+                IsThereAnAppToTakePictures();
+                Intent intent = new Intent(MediaStore.ActionImageCapture);
+                _file = new File(_dir, String.Format("{0}.jpg", Guid.NewGuid()));
+                intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(_file));
+                StartActivityForResult(intent, TakePicture);
+                flag = false;
+            };
+
         }
-        public override void OnBackPressed()
+
+        public override void OnBackPressed() => base.OnBackPressed();
+
+        void CreateDirectoryForPictures()
         {
-            base.OnBackPressed();
+            _dir = new File(
+                Android.OS.Environment.GetExternalStoragePublicDirectory(
+                    Android.OS.Environment.DirectoryPictures), "WorklabsMx");
+            if (!_dir.Exists())
+                _dir.Mkdirs();
+        }
+
+        bool IsThereAnAppToTakePictures()
+        {
+            IList<ResolveInfo> availableActivities =
+                PackageManager.QueryIntentActivities(new Intent(MediaStore.ActionImageCapture), PackageInfoFlags.MatchDefaultOnly);
+            return availableActivities != null && availableActivities.Count > 0;
+        }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            if (resultCode == Result.Ok)
+            {
+                if (requestCode == TakePicture && resultCode == Result.Ok)
+                {
+                    Intent mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
+                    Android.Net.Uri contentUri = Android.Net.Uri.FromFile(_file);
+                    mediaScanIntent.SetData(contentUri);
+                    SendBroadcast(mediaScanIntent);
+
+                    imagePath = _file.Path;
+                    bitmap = _file.Path.LoadAndResizeBitmap(Width, Height);
+                    if (flag)
+                    {
+                        imgPerfil.SetImageBitmap(bitmap);
+                        photo = bitmap;
+                    }
+                    else
+                    {
+                        imgFondo.SetImageBitmap(bitmap);
+                        background = bitmap;
+                    }
+                    GC.Collect();
+                }
+                if (requestCode == PickImageId && resultCode == Result.Ok && data != null)
+                {
+                    imagePath = (string)data.Data;
+                    bitmap = Media.GetBitmap(ContentResolver, data.Data);
+                    if (flag)
+                    {
+                        imgPerfil.SetImageBitmap(bitmap);
+                        photo = bitmap;
+                    }
+                    else
+                    {
+                        imgFondo.SetImageBitmap(bitmap);
+                        background = bitmap;
+                    }
+                }
+            }
         }
     }
 }

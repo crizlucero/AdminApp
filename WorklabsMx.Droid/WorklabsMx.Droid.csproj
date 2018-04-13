@@ -209,6 +209,7 @@
     <Compile Include="ViewController\Formatos\ReservaSalaPasoDosActivity.cs" />
     <Compile Include="ViewController\Formatos\ReservaSalaJuntasActivity.cs" />
     <Compile Include="ViewController\Formatos\ReservaSalaPasoUnoActivity.cs" />
+    <Compile Include="Helpers\MeGustaListFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

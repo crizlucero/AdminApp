@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
-    android:background="#CCC"
-    tools:gridSpec="1|8|#0093eeff|K:#ee8700ff:16,l:72,l:16,r|S:#83ee00ff:16,0,l:16,56,l:16,0,r">
+    android:background="#CCC">
     <GridLayout
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnCount="5"
-        android:rowCount="6"
+        android:rowCount="7"
         android:background="#EBEBEB"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
@@ -96,10 +94,27 @@
             android:scaleType="fitXY"
             android:visibility="gone" />
         <TextView
-            android:id="@+id/lblLikes"
-            android:text="@string/str_dashboard_likes"
-            android:textSize="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblLikeText"
+            android:text="0 me gusta"
             android:textColor="#000"
+            android:layout_marginLeft="10dp"
+            android:layout_columnSpan="3" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblComentariosText"
+            android:text="0 comentarios"
+            android:textColor="#000"
+            android:layout_marginLeft="10dp"
+            android:layout_columnSpan="2"
+            android:layout_gravity="right"
+            android:layout_row="2"
+            android:layout_marginRight="10dp" />
+        <ImageView
+            android:id="@+id/imgLikes"
+            android:textSize="10dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_height="wrap_content"
@@ -107,16 +122,15 @@
             android:layout_marginLeft="10dp"
             android:layout_columnSpan="2"
             android:layout_marginBottom="10dp"
-            android:drawableLeft="@mipmap/ic_like_unselected"
+            android:src="@mipmap/ic_like_unselected"
             android:layout_marginTop="10dp"
-            android:layout_width="wrap_content" />
-        <TextView
+            android:layout_width="wrap_content"
+            android:layout_row="6" />
+        <ImageView
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:id="@+id/lblComments"
-            android:text="@string/str_social_network_comments"
+            android:id="@+id/imgComments"
             android:textSize="10dp"
-            android:drawableLeft="@mipmap/ic_comment_unselected"
-            android:textColor="#000"
+            android:src="@mipmap/ic_comment_unselected"
             android:gravity="center"
             android:layout_column="2"
             android:layout_marginLeft="20dp"
@@ -125,7 +139,8 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_row="6" />
         <Button
             android:id="@+id/btnComentar"
             android:layout_column="4"
@@ -138,6 +153,7 @@
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:visibility="invisible"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:layout_row="6" />
     </GridLayout>
 </LinearLayout>
