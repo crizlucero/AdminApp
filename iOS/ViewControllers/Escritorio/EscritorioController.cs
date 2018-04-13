@@ -16,7 +16,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
 
         public override async void ViewDidLoad()
         {
-            base.ViewDidLoad();             Contador = 4;             RefreshControl = new UIRefreshControl();             RefreshControl.AddTarget(HandleValueChanged, UIControlEvent.ValueChanged);             await MenuHelper.GetMuroPosts();             allPosts = MenuHelper.AllPost;             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();             await MenuHelper.FillTable();              withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;             var Tap = new UITapGestureRecognizer(this.Tapped);             this.View.AddGestureRecognizer(Tap); 		}
+            base.ViewDidLoad();             Contador = 4;             RefreshControl = new UIRefreshControl();             RefreshControl.AddTarget(HandleValueChanged, UIControlEvent.ValueChanged);             await MenuHelper.GetMuroPosts();             allPosts = MenuHelper.AllPost;             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();             await MenuHelper.FillTable();              withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;             var Tap = new UITapGestureRecognizer(this.Tapped);             this.View.AddGestureRecognizer(Tap);         }
 
         public override void ViewWillAppear(bool animated)
         {             base.ViewWillAppear(animated);           
@@ -42,12 +42,12 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         public override nint RowsInSection(UITableView tableView, nint section)
         {
             if (allPosts.Count > 0 /*&& allProfileImages.Count > 0 && allPostImages.Count > 0*/)
-			{
-			    isShowInformation = true;
-				return allPosts.Count;
-			}
-			isShowInformation = false;
-			return 1;
+            {
+                isShowInformation = true;
+                return allPosts.Count;
+            }
+            isShowInformation = false;
+            return 1;
         } 
 
         public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
@@ -65,8 +65,8 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         }           public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
             if(segue.Identifier == "toShowPostView")             {                 var postCommentView = (PublicarPostViewController)segue.DestinationViewController;                 postCommentView.PostPublicadoDelegate = this;             }              else if(segue.Identifier == "comentar")             {
-				var CommentView = (comentarTableView)segue.DestinationViewController;
-                CommentView.currentPost = CurrentPost;             }             else if(segue.Identifier == "toShowImageFromPost")             {                 var ImageView = (DetailCommentImage)segue.DestinationViewController;                 ImageView.ImagenPost = (UIImageView)sender;             }              else if(segue.Identifier == "DetallarPerfil")             {                 var PerfilView = (PerfilesTableViewController)segue.DestinationViewController;                 if (MenuHelper.Usuario.Usuario_Id == ListUser.Usuario_Id && MenuHelper.Usuario.Usuario_Tipo == ListUser.Usuario_Tipo)                 {                     PerfilView.InfoPersonal = true;                 }                 else                 {                     PerfilView.InfoPersonal = false;                 }                 var usuario = new UsuariosController().GetMemberData(ListUser.Usuario_Id, ListUser.Usuario_Tipo);                 PerfilView.Miembro = usuario;             }             else if (segue.Identifier == "VistaLikes")             {                 var LikesView = (VistaLikes)segue.DestinationViewController;                 LikesView.UsuariosLikes = this.UsuariosLikes;             }
+                var CommentView = (comentarTableView)segue.DestinationViewController;
+                CommentView.currentPost = CurrentPost;             }             else if(segue.Identifier == "toShowImageFromPost")             {                 var ImageView = (DetailCommentImage)segue.DestinationViewController;                 ImageView.ImagenPost = (UIImageView)sender;             }              else if(segue.Identifier == "DetallarPerfil")             {                 var PerfilView = (PerfilesTableViewController)segue.DestinationViewController;                 PerfilView.FromMenu = false;                 if (MenuHelper.Usuario.Usuario_Id == ListUser.Usuario_Id && MenuHelper.Usuario.Usuario_Tipo == ListUser.Usuario_Tipo)                 {                     PerfilView.InfoPersonal = true;                 }                 else                 {                     PerfilView.InfoPersonal = false;                 }                 var usuario = new UsuariosController().GetMemberData(ListUser.Usuario_Id, ListUser.Usuario_Tipo);                 PerfilView.Miembro = usuario;             }             else if (segue.Identifier == "VistaLikes")             {                 var LikesView = (VistaLikes)segue.DestinationViewController;                 LikesView.UsuariosLikes = this.UsuariosLikes;             }
         }
 
         partial void Menu_Touch(UIBarButtonItem sender)

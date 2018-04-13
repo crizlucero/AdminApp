@@ -143,6 +143,7 @@ namespace WorklabsMx.iOS
             if (segue.Identifier == "DetallarPerfil")
             {
                 var PerfilView = (PerfilesTableViewController)segue.DestinationViewController;
+                PerfilView.FromMenu = false;
                 if (MenuHelper.Usuario.Usuario_Id == ListUser.Usuario_Id && MenuHelper.Usuario.Usuario_Tipo == ListUser.Usuario_Tipo)
                 {
                     PerfilView.InfoPersonal = true;

@@ -24,6 +24,8 @@ namespace WorklabsMx.iOS
 
         public Perfilesint PerfilesDelegate;
 
+        public bool FromMenu = false;
+
         bool FromMi = true, FromSocial = false, FromTrabajo = false;
 
         public bool InfoPersonal;
@@ -294,7 +296,7 @@ namespace WorklabsMx.iOS
 
         partial void btnCerrar_Touch(UIButton sender)
         {
-            if (InfoPersonal)
+            if (FromMenu)
             {
                 this.PerfilesDelegate.InfoActualizar();
             }
