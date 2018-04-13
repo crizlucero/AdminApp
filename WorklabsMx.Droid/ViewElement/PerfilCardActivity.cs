@@ -112,32 +112,33 @@ namespace WorklabsMx.Droid
             PagerSlidingTabStrip tabs = FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
             tabs.SetTextColorResource(Resource.Color.comment_pressed);
             tabs.SetViewPager(_viewPager);
-
-            imgPerfil.Click += delegate
+            if (storage.Get("Usuario_Id") == miembro.Usuario_Id && storage.Get("Usuario_Tipo") == miembro.Usuario_Tipo)
             {
-                Width = Height = 400;
-                CreateDirectoryForPictures();
-                IsThereAnAppToTakePictures();
-                Intent intent = new Intent(MediaStore.ActionImageCapture);
-                _file = new File(_dir, String.Format("{0}.jpg", Guid.NewGuid()));
-                intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(_file));
-                StartActivityForResult(intent, TakePicture);
-                flag = true;
-            };
+                imgPerfil.Click += delegate
+                {
+                    Width = Height = 400;
+                    CreateDirectoryForPictures();
+                    IsThereAnAppToTakePictures();
+                    Intent intent = new Intent(MediaStore.ActionImageCapture);
+                    _file = new File(_dir, String.Format("{0}.jpg", Guid.NewGuid()));
+                    intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(_file));
+                    StartActivityForResult(intent, TakePicture);
+                    flag = true;
+                };
 
-            imgFondo.Click += delegate
-            {
-                Width = 1500;
-                Height = 500;
-                CreateDirectoryForPictures();
-                IsThereAnAppToTakePictures();
-                Intent intent = new Intent(MediaStore.ActionImageCapture);
-                _file = new File(_dir, String.Format("{0}.jpg", Guid.NewGuid()));
-                intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(_file));
-                StartActivityForResult(intent, TakePicture);
-                flag = false;
-            };
-
+                imgFondo.Click += delegate
+                {
+                    Width = 1500;
+                    Height = 500;
+                    CreateDirectoryForPictures();
+                    IsThereAnAppToTakePictures();
+                    Intent intent = new Intent(MediaStore.ActionImageCapture);
+                    _file = new File(_dir, String.Format("{0}.jpg", Guid.NewGuid()));
+                    intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(_file));
+                    StartActivityForResult(intent, TakePicture);
+                    flag = false;
+                };
+            }
         }
 
         public override void OnBackPressed() => base.OnBackPressed();

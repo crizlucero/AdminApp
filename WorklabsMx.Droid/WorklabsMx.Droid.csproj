@@ -504,6 +504,7 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\bg_meeting_room_dates.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\bg_meeting_room_dates.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\bg_meeting_room_dates.png" />
+    <AndroidResource Include="Resources\layout\PublicacionMeGustanLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

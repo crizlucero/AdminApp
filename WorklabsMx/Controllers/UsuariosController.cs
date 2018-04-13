@@ -855,8 +855,8 @@ namespace WorklabsMx.Controllers
             List<EtiquetaModel> etiquetas = new List<EtiquetaModel>();
             try
             {
-                command = CreateCommand("select Usuario_Etiqueta_Id, Etiqueta_Id, Usuario_Etiqueta_Estatus, Etiqueta_Nombre, Etiqueta_Tipo " +
-                                        "from vw_pro_Directorio_Usuarios Where Usuario_Id = @Usuario_Id and Usuario_Tipo = @Usuario_Tipo");
+                command = CreateCommand("select * " +
+                                        "from vw_pro_Usuarios_Etiquetas Where Usuario_Id = @Usuario_Id and Usuario_Tipo = @Usuario_Tipo");
                 command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
                 command.Parameters.AddWithValue("@Usuario_Tipo", usuario_tipo);
                 conn.Open();
