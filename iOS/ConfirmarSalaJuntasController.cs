@@ -198,7 +198,7 @@ namespace WorklabsMx.iOS
                     var newDate6 = newDate5.AddMinutes(minutos);
                     newEvent.EndDate = this.DateTimeToNSDate(newDate6);
                 }
-                newEvent.Title = "Reservación de sala de juntas en " + Reservaciones.Sucursal_Descripcion;
+                newEvent.Title = "Reservación de sala de juntas en " + Reservaciones.Sucursal_Descripcion + ", en el piso " + Reservaciones.Sala_Nivel + ", en la sala " + Reservaciones.Sala_Descripcion;
                 newEvent.Notes = "Se recomienda presentarse 5 minutos antes de su hora de reservación";
                 newEvent.Calendar = AppHelper.Current.EventStore.DefaultCalendarForNewEvents;
                 newEvent.Location = Reservaciones.Sucursal_Domicilio;

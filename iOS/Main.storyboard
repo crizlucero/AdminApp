@@ -712,7 +712,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qch-yl-Y2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-415.19999999999999" y="-3561.7689999999998"/>
+            <point key="canvasLocation" x="-401" y="-3536"/>
         </scene>
         <!--Reservar-->
         <scene sceneID="LVh-1A-N5V">
@@ -3851,7 +3851,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="OQ6-V5-rAr"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.99607843137254903" green="0.92549019607843142" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -3867,7 +3867,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="Qrb-ZR-EVf"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.99607843137254903" green="0.92549019607843142" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                                 <userDefinedRuntimeAttributes>
@@ -15247,7 +15247,7 @@ COL. LADRON DE GUEVARA</string>
                             <outlet property="delegate" destination="suH-TL-FyG" id="TCB-7D-wWw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Reservar" id="LXo-jT-67f"/>
+                    <navigationItem key="navigationItem" title="Reservar sala de juntas" id="LXo-jT-67f"/>
                     <connections>
                         <outlet property="btnDiezPersonas" destination="NFU-AN-fSq" id="name-outlet-NFU-AN-fSq"/>
                         <outlet property="btnHoraFin" destination="n27-Yz-KHX" id="name-outlet-n27-Yz-KHX"/>
@@ -15682,9 +15682,9 @@ COL. LADRON DE GUEVARA</string>
         <segue reference="WuU-1q-Hfc"/>
         <segue reference="l8u-9u-D6k"/>
         <segue reference="KAP-pi-ckG"/>
-        <segue reference="gpi-IY-3Zm"/>
-        <segue reference="03a-qz-BAh"/>
-        <segue reference="Vey-JC-Spx"/>
+        <segue reference="w0b-D9-xaG"/>
+        <segue reference="Wst-3m-SKf"/>
+        <segue reference="0g4-cX-rHI"/>
         <segue reference="Tlx-3I-mcH"/>
         <segue reference="Hoa-iV-Mgh"/>
     </inferredMetricsTieBreakers>

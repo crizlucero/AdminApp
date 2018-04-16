@@ -164,7 +164,6 @@ namespace WorklabsMx.iOS
                 PerfilView.PerfilesDelegate = this;
                 PerfilView.Miembro = MenuHelper.Usuario;
                 PerfilView.FromMenu = true;
-
             }
             var segueReveal = segue as SWRevealViewControllerSegueSetController;
             if (segueReveal == null)

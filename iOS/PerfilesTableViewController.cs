@@ -9,6 +9,7 @@ using Foundation;
 using System.Threading.Tasks;
 using Photos;
 using AVFoundation;
+using BigTed;
 
 namespace WorklabsMx.iOS
 {
@@ -399,22 +400,31 @@ namespace WorklabsMx.iOS
         }
 
         [Foundation.Export("imagePickerController:didFinishPickingImage:editingInfo:")]
-        public void FinishedPickingImage(UIKit.UIImagePickerController picker, UIKit.UIImage image, Foundation.NSDictionary editingInfo)
+        public async void FinishedPickingImage(UIKit.UIImagePickerController picker, UIKit.UIImage image, Foundation.NSDictionary editingInfo)
         {
             if (this.TouchedBack)
             {
-
-                image = ImageHelper.ReescalProfileBackImage(image);
+                BTProgressHUD.Show("Guardando Imagen");
+                await Task.Run(() =>
+                {
+                    image = ImageHelper.ReescalProfileBackImage(image);
+                    Miembro.Usuario_Fotografia_FondoPerfil = image?.AsPNG().ToArray();
+                    this.GuardarInfo();
+                });
+                BTProgressHUD.Dismiss();
                 this.btnImageBackGround.SetBackgroundImage(image, UIControlState.Normal);
-                Miembro.Usuario_Fotografia_FondoPerfil = image?.AsPNG().ToArray();
-                this.GuardarInfo();
             }
             else if (this.TouchedProfile)
             {
-                image = ImageHelper.ReescalProfileImage(image);
+                BTProgressHUD.Show("Guardando Imagen");
+                await Task.Run(() =>
+                {
+                    image = ImageHelper.ReescalProfileImage(image);
+                    Miembro.Usuario_Fotografia_Perfil = image?.AsPNG().ToArray();
+                    this.GuardarInfo();
+                });
+                BTProgressHUD.Dismiss();
                 this.btnProfileImage.SetBackgroundImage(image, UIControlState.Normal);
-                Miembro.Usuario_Fotografia_Perfil = image?.AsPNG().ToArray();
-                this.GuardarInfo();
             }
             this.TouchedBack = false;
             this.TouchedProfile = false;

@@ -147,7 +147,7 @@ namespace WorklabsMx.iOS
                
             });
             imgPerfil.Image = ReescalImage;
-            imgBack.Image = ReescaleImageBack
+            imgBack.Image = ReescaleImageBack;
             PerfilEscritorio.Image = (ReescalImageUsr ?? UIImage.FromBundle("PerfilEscritorio"));
             if (imgPerfil.Image != null)
             {

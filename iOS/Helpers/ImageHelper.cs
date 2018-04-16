@@ -47,7 +47,7 @@ namespace WorklabsMx.iOS.Helpers
         {
             var withImage = ImagenOrigen.Size.Width;
             var heightImage = ImagenOrigen.Size.Height;
-            if (withImage > 400)
+            if (withImage > 400 || heightImage > 400)
             {
                 CGSize newSizeImage = new CGSize(400, 400);
                 ImagenOrigen = ImagenOrigen.Scale(newSizeImage);
