@@ -172,5 +172,43 @@ namespace WorklabsMx.Droid
                 customView.FindViewById<GridLayout>(Resource.Id.gvPublish).SetMinimumHeight(440);
             }
         }
+
+        void ShowMeGusta(string likeCantidad, string post_id)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            LayoutInflater liView = LayoutInflater;
+
+            customView = liView.Inflate(Resource.Layout.LikesListLayout, null, true);
+
+            customView.FindViewById<TextView>(Resource.Id.lblLikes).Text = likeCantidad;
+            ListView lvUsuarios = customView.FindViewById<ListView>(Resource.Id.lvUsuarios);
+            List<UsuarioModel> usuarios = new UsuariosController().GetUsuariosPublicacionMeGusta(post_id);
+            usuarios.ForEach(usuario =>
+            {
+                KeyValuePair<string, string> current = new KeyValuePair<string, string>(usuario.Usuario_Id, usuario.Usuario_Tipo);
+                if (!string.IsNullOrEmpty(usuario.Usuario_Fotografia))
+                {
+                    if (Usuario_Fotos_Perfil.ContainsKey(current))
+                    {
+                        usuario.Usuario_Fotografia_Perfil = Usuario_Fotos_Perfil[current];
+                    }
+                    else
+                    {
+                        usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(usuario.Usuario_Fotografia, usuario_imagen_path);
+                        Usuario_Fotos_Perfil.Add(current, usuario.Usuario_Fotografia_Perfil);
+                    }
+
+                }
+            });
+            lvUsuarios.Adapter = new MeGustaListAdapter(usuarios);
+
+            customView.FindViewById<ImageView>(Resource.Id.imgClose).Click += (sender, e) => { dialog.Dismiss(); };
+
+            builder.SetView(customView);
+            builder.Create();
+            dialog = builder.Show();
+            dialog.Window.SetGravity(GravityFlags.Top | GravityFlags.Center);
+        }
     }
 }

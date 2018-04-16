@@ -199,6 +199,7 @@ namespace WorklabsMx.Droid
 
                 TextView lblLike = PostView.FindViewById<TextView>(Resource.Id.lblLikeText);
                 lblLike.Text = post.Publicacion_Me_Gustan_Cantidad + " " + Resources.GetString(Resource.String.str_dashboard_likes);
+                lblLike.Click += (sender, e) => ShowMeGusta(lblLike.Text, post.Publicacion_Id);
 
                 ImageView imgLike = PostView.FindViewById<ImageView>(Resource.Id.imgLikes);
                 imgLike.SetColorFilter(new Color(ContextCompat.GetColor(this, Resource.Color.button_unpressed)));
