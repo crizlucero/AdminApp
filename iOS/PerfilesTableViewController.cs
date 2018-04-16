@@ -396,6 +396,26 @@ namespace WorklabsMx.iOS
             });
             ShowGalleryAlert.AddAction(CloseAction);
             return ShowGalleryAlert;
+        }
+
+
+        private void PublicarPost(string MensajePublicacion, byte[] fotografia)
+        {
+            if (InternetConectionHelper.VerificarConexion())
+            {
+                if (new Controllers.EscritorioController().SetPost(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), MensajePublicacion, fotografia))
+                {
+                   
+                }
+                else
+                {
+                   
+                }
+            }
+            else
+            {
+               
+            }
 
         }
 
@@ -409,7 +429,10 @@ namespace WorklabsMx.iOS
                 {
                     image = ImageHelper.ReescalProfileBackImage(image);
                     Miembro.Usuario_Fotografia_FondoPerfil = image?.AsPNG().ToArray();
-                    this.GuardarInfo();
+                    if (this.GuardarInfo())
+                    {
+                        this.PublicarPost(Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos + " actualizó su foto de fondo", Miembro.Usuario_Fotografia_FondoPerfil);
+                    }
                 });
                 BTProgressHUD.Dismiss();
                 this.btnImageBackGround.SetBackgroundImage(image, UIControlState.Normal);
@@ -421,7 +444,10 @@ namespace WorklabsMx.iOS
                 {
                     image = ImageHelper.ReescalProfileImage(image);
                     Miembro.Usuario_Fotografia_Perfil = image?.AsPNG().ToArray();
-                    this.GuardarInfo();
+                    if (this.GuardarInfo())
+                    {
+                        this.PublicarPost(Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos + " actualizó su foto de perfil", Miembro.Usuario_Fotografia_Perfil);
+                    }
                 });
                 BTProgressHUD.Dismiss();
                 this.btnProfileImage.SetBackgroundImage(image, UIControlState.Normal);
@@ -533,12 +559,12 @@ namespace WorklabsMx.iOS
             UIApplication.SharedApplication.OpenUrl(new NSUrl(UIApplication.OpenSettingsUrlString));
         }
 
-        private void GuardarInfo()
+        private bool GuardarInfo()
         {
             bool resultDataMiembros = false;
             DateTime fechaNacimiento = new DateTime();
             fechaNacimiento = DateTime.Parse(Miembro.Usuario_Fecha_Nacimiento);
-            resultDataMiembros = new UsuariosController().UpdateDataMiembros(KeyChainHelper.GetKey("Usuario_Id"), Miembro.Usuario_Nombre, Miembro.Usuario_Apellidos, Miembro.Usuario_Correo_Electronico,
+            return resultDataMiembros = new UsuariosController().UpdateDataMiembros(KeyChainHelper.GetKey("Usuario_Id"), Miembro.Usuario_Nombre, Miembro.Usuario_Apellidos, Miembro.Usuario_Correo_Electronico,
                                                                              Miembro.Usuario_Telefono, Miembro.Usuario_Celular, Miembro.Usuario_Descripcion, fechaNacimiento, Miembro.Usuario_Fotografia_Perfil, Miembro.Usuario_Fotografia_FondoPerfil);
         }
 
