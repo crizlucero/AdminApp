@@ -4,9 +4,10 @@
       <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="259" Column="36" NotebookId="1" />
       <File FileName="WorklabsMx/Models/PostModel.cs" Line="21" Column="20" NotebookId="1" />
       <File FileName="iOS/NotificacionImagenFondo.cs" Line="13" Column="1" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="84" Column="64" NotebookId="1" />
-      <File FileName="iOS/PerfilesTableViewController.cs" Line="403" Column="79" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="82" Column="58" NotebookId="1" />
+      <File FileName="iOS/PerfilesTableViewController.cs" Line="434" Column="153" NotebookId="1" />
       <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="509" Column="80" NotebookId="1" />
+      <File FileName="WorklabsMx/Models/UsuarioModel.cs" Line="34" Column="28" NotebookId="1" />
     </Files>
     <FloatingWindows>
       <FloatingWindow WindowId="1" X="1011" Y="23" Width="985" Height="1005">
