@@ -22,9 +22,6 @@ namespace WorklabsMx.iOS
     {
         
         DateTime FechaActual;
-        string Nombre;
-        string Ocupacion;
-        string ImagenPerfil;
 
         UIImagePickerController imgPicker;
 

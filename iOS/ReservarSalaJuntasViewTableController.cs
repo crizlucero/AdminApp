@@ -60,6 +60,8 @@ namespace WorklabsMx.iOS
         string HoraInicio = "";
         string HoraFin = "";
 
+        string HoraFinFormat = "";
+
         nfloat Size;
         CGRect newFrame;
 
@@ -3017,6 +3019,7 @@ namespace WorklabsMx.iOS
             this.CreditosSeleccionados(this.HoraInicio, this.HoraFin);
             this.PrepareForSegue(this.segueSalasJuntas, null);
             this.btnHoraFin.SetTitle(HoraSeleccionada, UIControlState.Normal);
+            this.HoraFinFormat = HoraSeleccionada;
         }
     }
 
@@ -3049,34 +3052,50 @@ namespace WorklabsMx.iOS
                 newHoraFin = newHoraFin.Insert(0, "0");
             }
 
-            this.HoraFin = newHoraFin + ":" + MinutosFin;
+            var HorarioInicio = HoraInicio.Split(':');
 
-            string minutosstr = min.ToString();
+            var HorarioInicioHora = int.Parse(HorarioInicio[0]);
+            var HorarioInicioMinutos = HorarioInicio[1];
 
-            if (min >= 30)
+            var HorarioFin = this.HoraFin.Split(':');
+            var HorarioFinHora = int.Parse(HorarioFin[0]);
+            var HorarioFinMinutos = HorarioFin[1];
+
+            string horarioFin = this.HoraFinFormat;
+
+            if(HorarioInicioHora >= HorarioFinHora)
             {
-                minutosstr = "00";
-                hora = hora + 1;
-            }
-            if (min <= 30)
-            {
-                minutosstr = "30";
-            }
+                if( (HorarioFinMinutos == "00" && HorarioInicioMinutos == "00") || HorarioInicioMinutos == "30")
+                {
+                    this.HoraFin = newHoraFin + ":" + MinutosFin;
+                    string minutosstr = min.ToString();
 
-            var Meridiano = HoraSeleccionada.Substring(6);
-            var newHora = hora.ToString();
-            if (hora.ToString().Length == 1)
-            {
-                newHora = newHora.Insert(0, "0");
-            }
+                    if (min >= 30)
+                    {
+                        minutosstr = "00";
+                        hora = hora + 1;
+                    }
+                    if (min <= 30)
+                    {
+                        minutosstr = "30";
+                    }
 
-            var horario = newHora + ":" + minutosstr + " " + Meridiano;
+                    var Meridiano = HoraSeleccionada.Substring(6);
+                    var newHorarioFin = hora.ToString();
+                    if (hora.ToString().Length == 1)
+                    {
+                        newHorarioFin = newHorarioFin.Insert(0, "0");
+                    }
+
+                    horarioFin = newHorarioFin + ":" + minutosstr + " " + Meridiano;
+                }
+            }
 
             MinDateHoraFin = this.HoraFinMinima(this.fechaSeleccionada, this.HoraInicio);
 
             this.PrepareForSegue(this.segueSalasJuntas, null);
             this.btnHoraInicio.SetTitle(HoraSeleccionada, UIControlState.Normal);
-            this.btnHoraFin.SetTitle(horario, UIControlState.Normal);
+            this.btnHoraFin.SetTitle(horarioFin, UIControlState.Normal);
         }
     }
 

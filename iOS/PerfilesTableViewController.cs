@@ -9,6 +9,7 @@ using Foundation;
 using System.Threading.Tasks;
 using Photos;
 using AVFoundation;
+using BigTed;
 
 namespace WorklabsMx.iOS
 {
@@ -395,26 +396,61 @@ namespace WorklabsMx.iOS
             });
             ShowGalleryAlert.AddAction(CloseAction);
             return ShowGalleryAlert;
+        }
+
+
+        private void PublicarPost(string MensajePublicacion, byte[] fotografia, int TipoPost)
+        {
+            if (InternetConectionHelper.VerificarConexion())
+            {
+                if (new Controllers.EscritorioController().SetPost(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), MensajePublicacion, fotografia))
+                {
+                   
+                }
+                else
+                {
+                   
+                }
+            }
+            else
+            {
+               
+            }
 
         }
 
         [Foundation.Export("imagePickerController:didFinishPickingImage:editingInfo:")]
-        public void FinishedPickingImage(UIKit.UIImagePickerController picker, UIKit.UIImage image, Foundation.NSDictionary editingInfo)
+        public async void FinishedPickingImage(UIKit.UIImagePickerController picker, UIKit.UIImage image, Foundation.NSDictionary editingInfo)
         {
             if (this.TouchedBack)
             {
-
-                image = ImageHelper.ReescalProfileBackImage(image);
+                BTProgressHUD.Show("Guardando Imagen");
+                await Task.Run(() =>
+                {
+                    image = ImageHelper.ReescalProfileBackImage(image);
+                    Miembro.Usuario_Fotografia_FondoPerfil = image?.AsPNG().ToArray();
+                    if (this.GuardarInfo())
+                    {
+                        this.PublicarPost(Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos + " actualizó su foto de fondo", Miembro.Usuario_Fotografia_FondoPerfil, 2);
+                    }
+                });
+                BTProgressHUD.Dismiss();
                 this.btnImageBackGround.SetBackgroundImage(image, UIControlState.Normal);
-                Miembro.Usuario_Fotografia_FondoPerfil = image?.AsPNG().ToArray();
-                this.GuardarInfo();
             }
             else if (this.TouchedProfile)
             {
-                image = ImageHelper.ReescalProfileImage(image);
+                BTProgressHUD.Show("Guardando Imagen");
+                await Task.Run(() =>
+                {
+                    image = ImageHelper.ReescalProfileImage(image);
+                    Miembro.Usuario_Fotografia_Perfil = image?.AsPNG().ToArray();
+                    if (this.GuardarInfo())
+                    {
+                        this.PublicarPost(Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos + " actualizó su foto de perfil", Miembro.Usuario_Fotografia_Perfil, 1);
+                    }
+                });
+                BTProgressHUD.Dismiss();
                 this.btnProfileImage.SetBackgroundImage(image, UIControlState.Normal);
-                Miembro.Usuario_Fotografia_Perfil = image?.AsPNG().ToArray();
-                this.GuardarInfo();
             }
             this.TouchedBack = false;
             this.TouchedProfile = false;
@@ -523,12 +559,12 @@ namespace WorklabsMx.iOS
             UIApplication.SharedApplication.OpenUrl(new NSUrl(UIApplication.OpenSettingsUrlString));
         }
 
-        private void GuardarInfo()
+        private bool GuardarInfo()
         {
             bool resultDataMiembros = false;
             DateTime fechaNacimiento = new DateTime();
             fechaNacimiento = DateTime.Parse(Miembro.Usuario_Fecha_Nacimiento);
-            resultDataMiembros = new UsuariosController().UpdateDataMiembros(KeyChainHelper.GetKey("Usuario_Id"), Miembro.Usuario_Nombre, Miembro.Usuario_Apellidos, Miembro.Usuario_Correo_Electronico,
+            return resultDataMiembros = new UsuariosController().UpdateDataMiembros(KeyChainHelper.GetKey("Usuario_Id"), Miembro.Usuario_Nombre, Miembro.Usuario_Apellidos, Miembro.Usuario_Correo_Electronico,
                                                                              Miembro.Usuario_Telefono, Miembro.Usuario_Celular, Miembro.Usuario_Descripcion, fechaNacimiento, Miembro.Usuario_Fotografia_Perfil, Miembro.Usuario_Fotografia_FondoPerfil);
         }
 
