@@ -246,7 +246,6 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_power_settings_new.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_label.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_send.png" />
-    <AndroidResource Include="Resources\layout\PerfilLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_profile.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_domain.png" />
     <AndroidResource Include="Resources\layout\MenuLayout.axml" />

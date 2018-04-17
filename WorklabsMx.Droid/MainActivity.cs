@@ -238,7 +238,8 @@ namespace WorklabsMx.Droid
                     if (post.Publicacion_Imagen_Post != null && post.Publicacion_Imagen_Post.Length != 0)
                     {
                         imgPost.Visibility = ViewStates.Visible;
-                        imgPost.SetImageBitmap(BitmapFactory.DecodeByteArray(post.Publicacion_Imagen_Post, 0, post.Publicacion_Imagen_Post.Length));
+                        Bitmap img = BitmapFactory.DecodeByteArray(post.Publicacion_Imagen_Post, 0, post.Publicacion_Imagen_Post.Length);
+                        imgPost.SetImageBitmap(Bitmap.CreateScaledBitmap(img, Resources.DisplayMetrics.WidthPixels, img.Height * Resources.DisplayMetrics.WidthPixels / img.Width, true));
                         imgPost.Click += delegate
                         {
                             //AndHUD.Shared.ShowImage(this, Drawable.CreateFromStream());
