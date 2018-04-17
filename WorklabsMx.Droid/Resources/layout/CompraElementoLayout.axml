@@ -8,8 +8,9 @@
         android:layout_height="wrap_content"
         android:background="@drawable/buttonstyle"
         android:orientation="vertical"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp">
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="50dp"
+        android:id="@+id/btnElemento">
         <ImageView
             android:layout_width="150dp"
             android:layout_height="50dp"
@@ -22,8 +23,8 @@
             android:text="Equipo Teléfonico"
             android:textSize="12dp"
             android:textColor="#000"
-            android:id="@+id/btnElemento"
             android:autoText="false"
+            android:id="@+id/btnElementoTexto"
             android:paddingLeft="10dp" />
     </LinearLayout>
 </LinearLayout>

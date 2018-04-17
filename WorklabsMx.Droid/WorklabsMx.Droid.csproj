@@ -507,6 +507,10 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\bg_meeting_room_dates.png" />
     <AndroidResource Include="Resources\layout\PublicacionMeGustanLayout.axml" />
     <AndroidResource Include="Resources\layout\LikesListLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\compra_background.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\compras_background_over.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_copia_bn.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_copia_color.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

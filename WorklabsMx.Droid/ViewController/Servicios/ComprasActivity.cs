@@ -110,8 +110,8 @@ namespace WorklabsMx.Droid
             {
                 LayoutInflater liView = LayoutInflater;
                 View view = liView.Inflate(Resource.Layout.CompraElementoLayout, null, true);
-                Button btnElemento = view.FindViewById<Button>(Resource.Id.btnElemento);
-                btnElemento.Text = elemento.Producto_Descripcion;
+                LinearLayout btnElemento = view.FindViewById<LinearLayout>(Resource.Id.btnElemento);
+                view.FindViewById<TextView>(Resource.Id.btnElementoTexto).Text = elemento.Producto_Descripcion;
                 btnElemento.Click += delegate
                 {
                     SetContentView(Resource.Layout.CompraCardLayout);

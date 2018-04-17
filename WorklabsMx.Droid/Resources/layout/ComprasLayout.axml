@@ -3,12 +3,20 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minWidth="25px"
-    android:minHeight="25px"
     android:background="#FFF">
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbarlayout" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@mipmap/compra_background">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/compras_background_over"
+            android:scaleType="fitXY" />
+    </LinearLayout>
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="30dp"
@@ -59,15 +67,8 @@
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:columnCount="3"
+                android:columnCount="2"
                 android:id="@+id/glCompras" />
-            <LinearLayout
-                android:orientation="vertical"
-                android:minWidth="25px"
-                android:minHeight="25px"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/linearLayout1" />
         </LinearLayout>
     </ScrollView>
     <GridLayout
