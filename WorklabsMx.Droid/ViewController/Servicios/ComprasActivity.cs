@@ -138,8 +138,8 @@ namespace WorklabsMx.Droid
                         }
                     };
 
-                    Spinner spSucursales = FindViewById<Spinner>(Resource.Id.spSucursal);
-                    spSucursales.Adapter = adapter;
+                    /*Spinner spSucursales = FindViewById<Spinner>(Resource.Id.spSucursal);
+                    spSucursales.Adapter = adapter;*/
                     FindViewById<ImageView>(Resource.Id.btnClose).Click += delegate
                     {
                         OnCreate(null);
@@ -187,8 +187,8 @@ namespace WorklabsMx.Droid
                             MembresiaCantidad.Text = cantidad.ToString();
                         }
                     };
-                    Spinner spSucursales = FindViewById<Spinner>(Resource.Id.spSucursal);
-                    spSucursales.Adapter = adapter;
+                    /*Spinner spSucursales = FindViewById<Spinner>(Resource.Id.spSucursal);
+                    spSucursales.Adapter = adapter;*/
                     FindViewById<ImageView>(Resource.Id.btnClose).Click += delegate
                     {
                         OnCreate(null);

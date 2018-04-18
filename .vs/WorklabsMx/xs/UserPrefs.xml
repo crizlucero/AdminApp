@@ -1,15 +1,18 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/MainActivity.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="301" Column="44" />
       <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioActivity.cs" Line="41" Column="85" />
       <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="496" Column="2" />
       <File FileName="WorklabsMx.Droid/ViewElement/MainActivity.cs" Line="96" Column="83" />
-      <File FileName="WorklabsMx.Droid/packages.config" Line="94" Column="88" />
-      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ComprasActivity.cs" Line="73" Column="20" />
+      <File FileName="WorklabsMx.Droid/packages.config" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/Servicios/ComprasActivity.cs" Line="191" Column="54" />
+      <File FileName="WorklabsMx.Droid/Resources/drawable/border_left_style.xml" Line="16" Column="31" />
+      <File FileName="WorklabsMx.Droid/Resources/drawable/border_right_style.xml" Line="16" Column="60" />
+      <File FileName="WorklabsMx.Droid/Resources/drawable/border_rect_style.xml" Line="5" Column="13" />
+      <File FileName="WorklabsMx.Droid/Resources/drawable/button_circle_filled_green.xml" Line="2" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="107" column="10" />
@@ -27,6 +30,6 @@
     <Watch file="../../../WorklabsMx/Handlers/PagosHandler.cs" line="41" offsetX="632" offsetY="600" expression="e.StackTrace" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.4F9D9D4A-E81D-482E-9194-93B1705A11B4" />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.android_accelerated_lollipop" AndroidDesignerPreferredTheme="AppTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.ZY32238MXJ" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>
