@@ -431,7 +431,7 @@ namespace WorklabsMx.iOS
                     Miembro.Usuario_Fotografia_FondoPerfil = image?.AsPNG().ToArray();
                     if (this.GuardarInfo())
                     {
-                        this.PublicarPost(Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos + " actualizó su foto de fondo", Miembro.Usuario_Fotografia_FondoPerfil, 2);
+                        //this.PublicarPost(Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos + " actualizó su foto de fondo", Miembro.Usuario_Fotografia_FondoPerfil, 2);
                     }
                 });
                 BTProgressHUD.Dismiss();
@@ -446,7 +446,7 @@ namespace WorklabsMx.iOS
                     Miembro.Usuario_Fotografia_Perfil = image?.AsPNG().ToArray();
                     if (this.GuardarInfo())
                     {
-                        this.PublicarPost(Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos + " actualizó su foto de perfil", Miembro.Usuario_Fotografia_Perfil, 1);
+                        //this.PublicarPost(Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos + " actualizó su foto de perfil", Miembro.Usuario_Fotografia_Perfil, 1);
                     }
                 });
                 BTProgressHUD.Dismiss();

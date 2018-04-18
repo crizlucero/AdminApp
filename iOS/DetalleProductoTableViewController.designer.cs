@@ -24,7 +24,7 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnDetalle { get; set; }
+        UIKit.UIButton btnComprar { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -33,10 +33,6 @@ namespace WorklabsMx.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnQuitar { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnSucursales { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -52,6 +48,10 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblNombre { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblPrecio { get; set; }
 
         [Outlet]
@@ -61,10 +61,6 @@ namespace WorklabsMx.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwFecha { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView vwSucursales { get; set; }
 
         [Action ("btnAgregar_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -78,9 +74,9 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnCerrar_Touch (UIKit.UIBarButtonItem sender);
 
-        [Action ("btnDeatlle_Touch:")]
+        [Action ("btnComprar_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnDeatlle_Touch (UIKit.UIButton sender);
+        partial void btnComprar_Touch (UIKit.UIButton sender);
 
         [Action ("btnDetalle_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -110,9 +106,9 @@ namespace WorklabsMx.iOS
                 btnAñadir = null;
             }
 
-            if (btnDetalle != null) {
-                btnDetalle.Dispose ();
-                btnDetalle = null;
+            if (btnComprar != null) {
+                btnComprar.Dispose ();
+                btnComprar = null;
             }
 
             if (btnFecha != null) {
@@ -123,11 +119,6 @@ namespace WorklabsMx.iOS
             if (btnQuitar != null) {
                 btnQuitar.Dispose ();
                 btnQuitar = null;
-            }
-
-            if (btnSucursales != null) {
-                btnSucursales.Dispose ();
-                btnSucursales = null;
             }
 
             if (imgProducto != null) {
@@ -145,6 +136,11 @@ namespace WorklabsMx.iOS
                 lblLeyenda = null;
             }
 
+            if (lblNombre != null) {
+                lblNombre.Dispose ();
+                lblNombre = null;
+            }
+
             if (lblPrecio != null) {
                 lblPrecio.Dispose ();
                 lblPrecio = null;
@@ -158,11 +154,6 @@ namespace WorklabsMx.iOS
             if (vwFecha != null) {
                 vwFecha.Dispose ();
                 vwFecha = null;
-            }
-
-            if (vwSucursales != null) {
-                vwSucursales.Dispose ();
-                vwSucursales = null;
             }
         }
     }

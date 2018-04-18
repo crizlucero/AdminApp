@@ -59,15 +59,15 @@ namespace WorklabsMx.iOS
         [Export("collectionView:layout:insetForSectionAtIndex:")]
         public virtual UIEdgeInsets GetInsetForSection(UICollectionView collectionView, UICollectionViewLayout layout, Int32 section)
         {
-            var sectionInsets = new UIEdgeInsets(5, 5, 5, 5);
+            var sectionInsets = new UIEdgeInsets(3, 1, 2, 1);
             return sectionInsets;
         }
 
-        [Export("collectionView:layout:minimumLineSpacingForSectionAtIndex:")]
+       /* [Export("collectionView:layout:minimumLineSpacingForSectionAtIndex:")]
         public nfloat GetMinimumLineSpacingForSection(UICollectionView collectionView, UICollectionViewLayout layout, nint section)
         {
             return 5;
-        }
+        }*/
 
         [Export("collectionView:layout:minimumInteritemSpacingForSection:")]
         public nfloat GetMinimumInteritemSpacingForSection(UICollectionView view, UICollectionViewLayout layout, nint section)

@@ -23,21 +23,19 @@ namespace WorklabsMx.iOS.Helpers
 
         public static UIImage ReescalImage(UIImage ImagenOrigen)
         {
-  
+            const float MaximunWithHeigth = 646;
             var withImage = ImagenOrigen.Size.Width;
             var heightImage = ImagenOrigen.Size.Height;
-            if (withImage > 646)
+            if (withImage > MaximunWithHeigth)
             {
-                var newWithScale = (440 * 100) / withImage;
-                var newHeigth = (newWithScale * heightImage) / 100;
-                CGSize newSizeImage = new CGSize(440, newHeigth);
+                var newHeigth = (heightImage * MaximunWithHeigth) / withImage;
+                CGSize newSizeImage = new CGSize(MaximunWithHeigth, newHeigth);
                 ImagenOrigen = ImagenOrigen.Scale(newSizeImage);
             }
-            else if(heightImage > 646)
+            else if(heightImage > MaximunWithHeigth)
             {
-                var newHeightScale = (440 * 100) / heightImage;
-                var newWith = (newHeightScale * withImage) / 100;
-                CGSize newSizeImage = new CGSize(newWith, 440);
+                var newWith = (MaximunWithHeigth * withImage) / heightImage;
+                CGSize newSizeImage = new CGSize(newWith, MaximunWithHeigth);
                 ImagenOrigen = ImagenOrigen.Scale(newSizeImage);
             }
             return ImagenOrigen;
@@ -57,13 +55,20 @@ namespace WorklabsMx.iOS.Helpers
 
         public static UIImage ReescalProfileBackImage(UIImage ImagenOrigen)
         {
+            const float MaximunWidth = 1500;
+            const float Maximunheight = 500;
             var withImage = ImagenOrigen.Size.Width;
             var heightImage = ImagenOrigen.Size.Height;
-            if (withImage > 1500)
+            if (withImage > MaximunWidth)
             {
-                var newWithScale = (1500 * 100) / withImage;
-                var newHeigth = (newWithScale * heightImage) / 100;
-                CGSize newSizeImage = new CGSize(1500, newHeigth);
+                var newHeigth = (heightImage * MaximunWidth) / withImage;
+                CGSize newSizeImage = new CGSize(MaximunWidth, newHeigth);
+                ImagenOrigen = ImagenOrigen.Scale(newSizeImage);
+            }
+            if (heightImage > Maximunheight)
+            {
+                var newWith = (Maximunheight * withImage) / heightImage;
+                CGSize newSizeImage = new CGSize(newWith, Maximunheight);
                 ImagenOrigen = ImagenOrigen.Scale(newSizeImage);
             }
             return ImagenOrigen;

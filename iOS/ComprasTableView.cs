@@ -21,9 +21,6 @@ namespace WorklabsMx.iOS
         nfloat TamañoHeader = 90;
         nfloat TamañoPie = 66;
 
-        string IdentificadorCeldaHeader = "Header";
-        string IdentificadorCeldaPie = "Pie";
-
         public ComprasTableView (IntPtr handle) : base (handle)
         {
         }
@@ -36,6 +33,9 @@ namespace WorklabsMx.iOS
             barButton.Enabled = false;
             this.cvProductos.Hidden = false;
             this.cvMembresias.Hidden = true;
+            this.vwProductos.Hidden = false;
+            this.vwMembresias.Hidden = true;
+            this.imgBanner.Image = UIImage.FromBundle("ImagenProductos");
         }
 
         public override void ViewWillAppear(bool animated)
@@ -45,7 +45,7 @@ namespace WorklabsMx.iOS
             //this.TableView.RegisterClassForCellReuse(typeof(PieCompras), IdentificadorCeldaPie);
         }
 
-        partial void sclCompras_Changed(UISegmentedControl sender)
+       /* partial void sclCompras_Changed(UISegmentedControl sender)
         {
             if (sclCompras.SelectedSegment == 0)
             {
@@ -58,9 +58,17 @@ namespace WorklabsMx.iOS
                 this.cvMembresias.Hidden = false;
 
             }
+        }*/
+
+        partial void btnProductos_Touch(UIButton sender)
+        {
+            this.cvProductos.Hidden = false;
+            this.cvMembresias.Hidden = true;
+            this.vwProductos.Hidden = false;
+            this.vwMembresias.Hidden = true;
         }
 
-       /*public override UIView GetViewForHeader(UITableView tableView, nint section)
+        /*public override UIView GetViewForHeader(UITableView tableView, nint section)
         {
             
             var headerCell = (HeaderCompras)tableView.DequeueReusableCell(IdentificadorCeldaHeader);
@@ -102,6 +110,7 @@ namespace WorklabsMx.iOS
                 var VistaDetalleProducto = (DetalleProductoTableViewController)segue.DestinationViewController.ChildViewControllers[0];
                 VistaDetalleProducto.Prodcuto = this.ProductoSelect;
                 VistaDetalleProducto.ProductosDelegate = this;
+                VistaDetalleProducto.CompraDelgate = this;
             }
             else if (segue.Identifier == "VerMembresia")
             {
@@ -125,6 +134,14 @@ namespace WorklabsMx.iOS
         partial void btnCarrito_Touch(UIBarButtonItem sender)
         {
             this.PerformSegue("DetalleCompra", null);
+        }
+
+        partial void btnMembresias(UIButton sender)
+        {
+            this.cvProductos.Hidden = true;
+            this.cvMembresias.Hidden = false;
+            this.vwProductos.Hidden = true;
+            this.vwMembresias.Hidden = false;
         }
     }
 
@@ -165,6 +182,17 @@ namespace WorklabsMx.iOS
 
         }
     }
+
+    public partial class ComprasTableView : DetalleProductoInterface
+    {
+        public void Comprar(CarritoCompras Preorden)
+        {
+            this.PreordenProductos.Add(Preorden);
+            this.PerformSegue("DetalleCompra", null);
+        }
+    }
+
+
             
 
 }
