@@ -39,7 +39,8 @@ namespace WorklabsMx.iOS
                 OperationType = "6",
                 Token = "158128",
                 Reference = "Referencia dada por el usuario",
-                Amount = total
+                Amount = total,
+
             };
 
             bean3DS = new Bean3DS

@@ -32,19 +32,15 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnDeatlle { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnFecha { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnQuitar { get; set; }
+        UIKit.UIButton btnPlazos { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnSucursal { get; set; }
+        UIKit.UIButton btnQuitar { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -70,10 +66,6 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwFecha { get; set; }
 
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView vwSucursales { get; set; }
-
         [Action ("btnAgregar_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnAgregar_Touch (UIKit.UIButton sender);
@@ -86,21 +78,21 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnCarrito_Touch (UIKit.UIBarButtonItem sender);
 
-        [Action ("btnDetalle_Touch:")]
+        [Action ("btnComprar_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnDetalle_Touch (UIKit.UIButton sender);
+        partial void btnComprar_Touch (UIKit.UIButton sender);
 
         [Action ("btnFecha_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnFecha_Touch (UIKit.UIButton sender);
 
+        [Action ("btnPlazos_Touch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnPlazos_Touch (UIKit.UIButton sender);
+
         [Action ("btnQuitar_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnQuitar_Touch (UIKit.UIButton sender);
-
-        [Action ("btnSucursal_Touch:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnSucursal_Touch (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -124,9 +116,9 @@ namespace WorklabsMx.iOS
                 btnComprar = null;
             }
 
-            if (btnDeatlle != null) {
-                btnDeatlle.Dispose ();
-                btnDeatlle = null;
+            if (btnComprar != null) {
+                btnComprar.Dispose ();
+                btnComprar = null;
             }
 
             if (btnFecha != null) {
@@ -134,14 +126,14 @@ namespace WorklabsMx.iOS
                 btnFecha = null;
             }
 
+            if (btnPlazos != null) {
+                btnPlazos.Dispose ();
+                btnPlazos = null;
+            }
+
             if (btnQuitar != null) {
                 btnQuitar.Dispose ();
                 btnQuitar = null;
-            }
-
-            if (btnSucursal != null) {
-                btnSucursal.Dispose ();
-                btnSucursal = null;
             }
 
             if (imgMembresia != null) {
@@ -172,11 +164,6 @@ namespace WorklabsMx.iOS
             if (vwFecha != null) {
                 vwFecha.Dispose ();
                 vwFecha = null;
-            }
-
-            if (vwSucursales != null) {
-                vwSucursales.Dispose ();
-                vwSucursales = null;
             }
         }
     }

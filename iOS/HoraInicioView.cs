@@ -1,6 +1,11 @@
 using Foundation;
 using System;
 using UIKit;
+using System.Collections.Generic;
+using System.Data;
+using WorklabsMx.Helpers;
+using WorklabsMx.Models;
+using WorklabsMx.Enum;
 
 namespace WorklabsMx.iOS
 {
@@ -15,19 +20,24 @@ namespace WorklabsMx.iOS
     {
         public EventosHoraInicioSeleccionada HoraSeleccionadadaDelegate;
 
-
-
         public HoraInicioView (IntPtr handle) : base (handle)
         {
             
         }
 
-		public override void ViewDidLoad()
-		{
+        public override void ViewDidLoad()
+        {
             base.ViewDidLoad();
-            dtpHoraInicio.Locale = new NSLocale("en_US");
-            dtpHoraInicio.MinimumDate = (NSDate)DateTime.Now.AddMinutes(30);
-		}
+            try
+            {
+                dtpHoraInicio.Locale = new NSLocale("en_US");
+                dtpHoraInicio.MinimumDate = (NSDate)DateTime.Now.AddMinutes(30);
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message, GetType().Name, "HoraInicioView");
+            }
+        }
 
 		public override void ViewWillAppear(bool animated)
 		{
@@ -68,8 +78,6 @@ namespace WorklabsMx.iOS
             {
                 newHora = newHora.Insert(0, "0");
             }
-
-
             if ((min >= 0 && min < 30))
             {
                 strMin = "00";
@@ -78,10 +86,8 @@ namespace WorklabsMx.iOS
             {
                 strMin = "30";
             }
-
             var Meridiano = dateFormat.ToString(dtpHoraInicio.Date).Substring(6);
             var horario = newHora + ":" + strMin + " " + Meridiano;
-
             return horario;
         }
 
@@ -89,7 +95,6 @@ namespace WorklabsMx.iOS
         private string Formato24()
         {
             DateTime dt = DateTime.SpecifyKind((DateTime)dtpHoraInicio.Date, DateTimeKind.Utc).ToLocalTime();
-
             var lstHora = dt.ToString("HH:mm").Split(':');
             var hora = int.Parse(lstHora[0]);
             var min = int.Parse(lstHora[1]);
@@ -107,10 +112,8 @@ namespace WorklabsMx.iOS
             {
                 strMin = "30";
             }
-
             var horario = newHora + ":" + strMin;
             return horario;
-
         }
     }
 }

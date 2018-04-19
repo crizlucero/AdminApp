@@ -46,8 +46,6 @@ namespace WorklabsMx.iOS
         //SimpleStorage Storage;
         OrdenVentaController ordenventa = new OrdenVentaController();
 
-        bool VentaRealizada = false;
-
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();

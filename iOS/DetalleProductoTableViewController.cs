@@ -11,15 +11,21 @@ using WorklabsMx.iOS.Models;
 namespace WorklabsMx.iOS
 {
 
+    public interface DetalleProductoInterface
+    {
+        void Comprar(CarritoCompras Preorden);
+    }
 
     public partial class DetalleProductoTableViewController : UITableViewController
     {
+        public DetalleProductoInterface CompraDelgate;
         public DetalleCompraInterface ProductosDelegate;
         public ProductoModel Prodcuto = new ProductoModel();
+        public UIImage ImagenProducto;
+
+        List<CarritoCompras> PreordenProductos = new List<CarritoCompras>();
         int ContadorProductos = 1;
-        string Sucursal;
         string FechaInicio;
-        List<SucursalModel> sucursales;
         NSDateFormatter dateFormat = new NSDateFormatter();
 
         public DetalleProductoTableViewController(IntPtr handle) : base(handle)
@@ -30,11 +36,8 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             dateFormat.DateFormat = "dd/MM/yyyy";
-           
-            NavigationItem.Title = Prodcuto.Producto_Descripcion;
-            StyleHelper.Style(this.vwSucursales.Layer);
-            StyleHelper.Style(this.vwFecha.Layer);
-            StyleHelper.Style(this.btnAñadir.Layer);
+            NavigationItem.Title = "Compras";
+            this.lblNombre.Text = Prodcuto.Producto_Descripcion;
             FechaInicio = dateFormat.ToString((NSDate)DateTime.Now);
             if (Prodcuto.Producto_Disponibilidad.Contains("RECURRENTE"))
             {
@@ -46,29 +49,27 @@ namespace WorklabsMx.iOS
             {
                 this.btnFecha.Enabled = false;
                 this.btnFecha.Hidden = true;
-                this.lblLeyenda.Text = "Costo por unidad";
+                this.lblLeyenda.Text = "Pago único";
             }
             this.lblPrecio.Text = "$" + Prodcuto.Producto_Precio_Base_Neto.ToString() + " / MN";
             ContadorProductos = 1;
             this.txtCantidad.Text = this.ContadorProductos.ToString();
-            sucursales = new SucursalController().GetSucursales();
-            if (sucursales.Count > 0)
-            {
-                this.btnSucursales.SetTitle(sucursales[0].Sucursal_Descripcion, UIControlState.Normal);
-            }
             this.lblDetalleDescripcion.Text = Prodcuto.Producto_Especificacion;
-            this.btnDetalle.Hidden = false;
-            this.btnDetalle.Enabled = false;
+            if (Prodcuto.Producto_Id == "2")
+            {
+                this.imgProducto.Image = UIImage.FromBundle("CopiaNegro");
+            }
+            if (Prodcuto.Producto_Id == "3")
+            {
+                this.imgProducto.Image = UIImage.FromBundle("CopiaColor");
+            }
+            if (Prodcuto.Producto_Id == "4")
+            {
+                this.imgProducto.Image = UIImage.FromBundle("Telefonia");
+            }
         }
 
-        partial void btnSucursales_Touch(UIButton sender)
-        {
-            this.PerformSegue("Sucursales", null);
-        }
-
-        partial void btnDetalle_Touch(UIButton sender)
-        {
-        }
+       
 
         partial void btnQuitar_Touch(UIButton sender)
         {
@@ -89,34 +90,22 @@ namespace WorklabsMx.iOS
         {
             //var FechaInicio = dateFormat.ToString((NSDate)DateTime.Now);
             CarritoCompras Preorden = new CarritoCompras();
-
-            Preorden.Tipo = Enum.TiposServicios.Producto;
-            Preorden.Id = int.Parse(Prodcuto.Producto_Id);
-            Preorden.Cantidad = int.Parse(this.txtCantidad.Text);
-            Preorden.Meses = 0;
-            Preorden.FechaInicio = FechaInicio;
-            Preorden.ListaPrecioId = this.Prodcuto.Lista_Precio_Id;
-            Preorden.MonedaId = this.Prodcuto.Moneda_Id;
-            Preorden.ImpuestoId = this.Prodcuto.Impuesto_Id;
-            Preorden.DescuentoId = 0;
-            Preorden.TotalPagar = ((this.Prodcuto.Producto_Precio_Base_Neto) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
-            Preorden.Nombre = this.Prodcuto.Producto_Descripcion;
-            this.ProductosDelegate.ArticuloSeleccionado(Preorden);
+            this.ProductosDelegate.ArticuloSeleccionado(this.CrearOrden());
             this.DismissViewController(true, null);
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, Foundation.NSObject sender)
         {
-            if (segue.Identifier == "Sucursales")
-            {
-                var SucursalesView = (SucursalesViewController)segue.DestinationViewController;
-                SucursalesView.SucursalDelegate = this;
-            }
-            else if (segue.Identifier == "FechaInicio")
+            if (segue.Identifier == "FechaInicio")
             {
                 var FechaView = (FechaNacimientoPickerViewController)segue.DestinationViewController;
                 FechaView.EsFechaNacimiento = false;
                 FechaView.FechaSeleccionadaDelegate = this;
+            }
+            else if (segue.Identifier == "Compra")
+            {
+                var VistaDetalleCompra = (VentaDetalleTableViewController)segue.DestinationViewController;
+                VistaDetalleCompra.PreordenProductos = this.PreordenProductos; 
             }
         }
 
@@ -131,18 +120,31 @@ namespace WorklabsMx.iOS
             this.PerformSegue("FechaInicio", null);
         }
 
-        partial void btnDeatlle_Touch(UIButton sender)
+
+        partial void btnComprar_Touch(UIButton sender)
         {
+            this.DismissViewController(true, () =>
+            {
+                this.CompraDelgate.Comprar(this.CrearOrden());
+            });
+
         }
 
-    }
-
-    partial class DetalleProductoTableViewController : Sucursal
-    {
-        public void SucursalSeleccionada(String Sucursal)
+        private CarritoCompras CrearOrden()
         {
-            this.Sucursal = Sucursal;
-            this.btnSucursales.SetTitle(Sucursal, UIControlState.Normal);
+            CarritoCompras Preorden = new CarritoCompras();
+            Preorden.Tipo = Enum.TiposServicios.Producto;
+            Preorden.Id = int.Parse(Prodcuto.Producto_Id);
+            Preorden.Cantidad = int.Parse(this.txtCantidad.Text);
+            Preorden.Meses = 0;
+            Preorden.FechaInicio = FechaInicio;
+            Preorden.ListaPrecioId = this.Prodcuto.Lista_Precio_Id;
+            Preorden.MonedaId = this.Prodcuto.Moneda_Id;
+            Preorden.ImpuestoId = this.Prodcuto.Impuesto_Id;
+            Preorden.DescuentoId = 0;
+            Preorden.TotalPagar = ((this.Prodcuto.Producto_Precio_Base_Neto) * Convert.ToDouble(txtCantidad.Text)).ToString("C");
+            Preorden.Nombre = this.Prodcuto.Producto_Descripcion;
+            return Preorden;
         }
     }
 

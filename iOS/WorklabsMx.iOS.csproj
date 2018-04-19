@@ -780,6 +780,30 @@
     <ImageAsset Include="Assets.xcassets\GradienteLogin.imageset\Fondo%402x.png" />
     <ImageAsset Include="Assets.xcassets\GradienteLogin.imageset\Fondo%403x.png" />
     <ImageAsset Include="Assets.xcassets\Sala6.imageset\IMG_4501.jpg" />
+    <ImageAsset Include="Assets.xcassets\CopiaColor.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\CopiaColor.imageset\copiacolor.png" />
+    <ImageAsset Include="Assets.xcassets\CopiaColor.imageset\copiacolor%402x.png" />
+    <ImageAsset Include="Assets.xcassets\CopiaColor.imageset\copiacolor%403x.png" />
+    <ImageAsset Include="Assets.xcassets\CopiaNegro.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\CopiaNegro.imageset\copianegro.png" />
+    <ImageAsset Include="Assets.xcassets\CopiaNegro.imageset\copianegro%402x.png" />
+    <ImageAsset Include="Assets.xcassets\CopiaNegro.imageset\copianegro%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ImpresionColor.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ImpresionColor.imageset\impresioncolor.png" />
+    <ImageAsset Include="Assets.xcassets\ImpresionColor.imageset\impresioncolor%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ImpresionColor.imageset\impresioncolor%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ImpresionNegro.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ImpresionNegro.imageset\impresionnegro.png" />
+    <ImageAsset Include="Assets.xcassets\ImpresionNegro.imageset\impresionnegro%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ImpresionNegro.imageset\impresionnegro%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Telefonia.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Telefonia.imageset\telefonia.png" />
+    <ImageAsset Include="Assets.xcassets\Telefonia.imageset\telefonia%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Telefonia.imageset\telefonia%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ImagenProductos.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ImagenProductos.imageset\imagenProductos.png" />
+    <ImageAsset Include="Assets.xcassets\ImagenProductos.imageset\imagenProductos%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ImagenProductos.imageset\imagenProductos%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1314,6 +1338,10 @@
     <Compile Include="NotificacionImagenFondo.designer.cs">
       <DependentUpon>NotificacionImagenFondo.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlazosViewController.cs" />
+    <Compile Include="PlazosViewController.designer.cs">
+      <DependentUpon>PlazosViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -1488,6 +1516,12 @@
     <Folder Include="Assets.xcassets\WorklabsBlanco.imageset\" />
     <Folder Include="Assets.xcassets\WorklabsNegro.imageset\" />
     <Folder Include="Assets.xcassets\GradienteLogin.imageset\" />
+    <Folder Include="Assets.xcassets\CopiaColor.imageset\" />
+    <Folder Include="Assets.xcassets\CopiaNegro.imageset\" />
+    <Folder Include="Assets.xcassets\ImpresionColor.imageset\" />
+    <Folder Include="Assets.xcassets\ImpresionNegro.imageset\" />
+    <Folder Include="Assets.xcassets\Telefonia.imageset\" />
+    <Folder Include="Assets.xcassets\ImagenProductos.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />
