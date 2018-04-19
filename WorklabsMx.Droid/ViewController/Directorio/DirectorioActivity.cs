@@ -177,6 +177,8 @@ namespace WorklabsMx.Droid
                     ShowPerfilCard(miembro);
                 };
 
+                PersonaCard.FindViewById<Button>(Resource.Id.btnSeguir).Visibility = ViewStates.Gone;
+
                 TextView lblEmpresa = PersonaCard.FindViewById<TextView>(Resource.Id.lblSubTitle);
                 lblEmpresa.Text = miembro.Usuario_Empresa_Nombre;
 

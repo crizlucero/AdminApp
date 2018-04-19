@@ -117,6 +117,7 @@ namespace WorklabsMx.iOS
                 var VistaDetalleMembresia = (DetalleMembresiaTableVieController)segue.DestinationViewController.ChildViewControllers[0];
                 VistaDetalleMembresia.Membresia = this.MemebresiaSelect;
                 VistaDetalleMembresia.MembresiaDelegate = this;
+                VistaDetalleMembresia.CompraDelgate = this;
             }
             else if (segue.Identifier == "DetalleCompra")
             {

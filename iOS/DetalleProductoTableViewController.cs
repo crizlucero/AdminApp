@@ -70,9 +70,6 @@ namespace WorklabsMx.iOS
         }
 
        
-        partial void btnDetalle_Touch(UIButton sender)
-        {
-        }
 
         partial void btnQuitar_Touch(UIButton sender)
         {

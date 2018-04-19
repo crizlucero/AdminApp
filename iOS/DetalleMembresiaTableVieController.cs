@@ -15,10 +15,12 @@ namespace WorklabsMx.iOS
     public partial class DetalleMembresiaTableVieController : UITableViewController
     {
         public DetalleCompraInterface MembresiaDelegate;
+        public DetalleProductoInterface CompraDelgate;
         public MembresiaModel Membresia = new MembresiaModel();
         int ContadorMembresias = 1;
         string Sucursal;
         string FechaInicio;
+        string Plazo;
         List<SucursalModel> sucursales;
         NSDateFormatter dateFormat = new NSDateFormatter();
 
@@ -50,21 +52,15 @@ namespace WorklabsMx.iOS
                 this.txtCantidadMembresias.Hidden = true;
             }
 
-            StyleHelper.Style(this.vwSucursales.Layer);
-            StyleHelper.Style(this.vwFecha.Layer);
-            StyleHelper.Style(this.btnAñadir.Layer);
+            //StyleHelper.Style(this.vwFecha.Layer);
+            //StyleHelper.Style(this.btnAñadir.Layer);
+            //StyleHelper.Style(this.btnPlazos.Layer);
             this.lblLeyenda.Text = "Tarifa Mensual";
             this.lblPrecio.Text = "$" + Membresia.Membresia_Precio_Base_Neto.ToString() + " / MN";
             this.ContadorMembresias = 1;
             this.txtCantidadMembresias.Text = this.ContadorMembresias.ToString();
-            sucursales = new SucursalController().GetSucursales();
-            if (sucursales.Count > 0)
-            {
-                this.btnSucursal.SetTitle(sucursales[0].Sucursal_Descripcion, UIControlState.Normal);
-            }
             this.lblDescripcion.Text = Membresia.Membresia_Especificacion;
-            this.btnDeatlle.Hidden = false;
-            this.btnDeatlle.Enabled = false;
+
 
         } 
 
@@ -73,17 +69,19 @@ namespace WorklabsMx.iOS
             this.DismissViewController(true, null);
         }
 
-        partial void btnSucursal_Touch(UIButton sender)
-        {
-            this.PerformSegue("Sucursales", null);
-        }
-
         partial void btnFecha_Touch(UIButton sender)
         {
             this.PerformSegue("FechaInicio", null);
         }
 
         partial void btnAñadir_Touch(UIButton sender)
+        {
+            this.MembresiaDelegate.ArticuloSeleccionado(CrearOrden());
+            this.DismissViewController(true, null);
+        }
+
+
+        private CarritoCompras CrearOrden()
         {
             var FechaInicio = dateFormat.ToString((NSDate)DateTime.Now);
             CarritoCompras Preorden = new CarritoCompras();
@@ -99,12 +97,7 @@ namespace WorklabsMx.iOS
             Preorden.DescuentoId = 0;
             Preorden.TotalPagar = ((this.Membresia.Membresia_Precio_Base_Neto) * Convert.ToDouble(txtCantidadMembresias.Text)).ToString("C");
             Preorden.Nombre = this.Membresia.Membresia_Descripcion;
-            this.MembresiaDelegate.ArticuloSeleccionado(Preorden);
-            this.DismissViewController(true, null);
-        }
-
-        partial void btnDetalle_Touch(UIButton sender)
-        {
+            return Preorden;
         }
 
         partial void btnQuitar_Touch(UIButton sender)
@@ -135,6 +128,24 @@ namespace WorklabsMx.iOS
                 FechaView.EsFechaNacimiento = false;
                 FechaView.FechaSeleccionadaDelegate = this;
             }
+            else if (segue.Identifier == "Plazos")
+            {
+                var VistaPlazos = (PlazosViewController)segue.DestinationViewController;
+                VistaPlazos.PlazosDelegate = this;
+            }
+        }
+
+        partial void btnComprar_Touch(UIButton sender)
+        {
+            this.DismissViewController(true, () =>
+            {
+                this.CompraDelgate.Comprar(this.CrearOrden());
+            });
+        }
+
+        partial void btnPlazos_Touch(UIButton sender)
+        {
+            this.PerformSegue("Plazos", null);
         }
     }
 
@@ -143,7 +154,6 @@ namespace WorklabsMx.iOS
         public void SucursalSeleccionada(String Sucursal)
         {
             this.Sucursal = Sucursal;
-            this.btnSucursal.SetTitle(Sucursal, UIControlState.Normal);
         }
     }
 
@@ -153,6 +163,15 @@ namespace WorklabsMx.iOS
         {
             FechaInicio = FechaNacimiento;
             this.btnFecha.SetTitle(FechaNacimiento, UIControlState.Normal);
+        }
+    }
+
+    partial class DetalleMembresiaTableVieController : PlazosInterface
+    {
+        public void PlazoSeleccionado(string Plazo)
+        {
+            this.Plazo = Plazo;
+            this.btnPlazos.SetTitle(Plazo, UIControlState.Normal);
         }
     }
 

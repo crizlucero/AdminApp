@@ -199,6 +199,7 @@ namespace WorklabsMx.Droid
 
                 TextView lblLike = PostView.FindViewById<TextView>(Resource.Id.lblLikeText);
                 lblLike.Text = post.Publicacion_Me_Gustan_Cantidad + " " + Resources.GetString(Resource.String.str_dashboard_likes);
+                lblLike.Click += (sender, e) => ShowMeGusta(lblLike.Text, post.Publicacion_Id);
 
                 ImageView imgLike = PostView.FindViewById<ImageView>(Resource.Id.imgLikes);
                 imgLike.SetColorFilter(new Color(ContextCompat.GetColor(this, Resource.Color.button_unpressed)));
@@ -237,7 +238,8 @@ namespace WorklabsMx.Droid
                     if (post.Publicacion_Imagen_Post != null && post.Publicacion_Imagen_Post.Length != 0)
                     {
                         imgPost.Visibility = ViewStates.Visible;
-                        imgPost.SetImageBitmap(BitmapFactory.DecodeByteArray(post.Publicacion_Imagen_Post, 0, post.Publicacion_Imagen_Post.Length));
+                        Bitmap img = BitmapFactory.DecodeByteArray(post.Publicacion_Imagen_Post, 0, post.Publicacion_Imagen_Post.Length);
+                        imgPost.SetImageBitmap(Bitmap.CreateScaledBitmap(img, Resources.DisplayMetrics.WidthPixels, img.Height * Resources.DisplayMetrics.WidthPixels / img.Width, true));
                         imgPost.Click += delegate
                         {
                             //AndHUD.Shared.ShowImage(this, Drawable.CreateFromStream());

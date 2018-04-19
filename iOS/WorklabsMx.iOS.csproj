@@ -1338,6 +1338,10 @@
     <Compile Include="NotificacionImagenFondo.designer.cs">
       <DependentUpon>NotificacionImagenFondo.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlazosViewController.cs" />
+    <Compile Include="PlazosViewController.designer.cs">
+      <DependentUpon>PlazosViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

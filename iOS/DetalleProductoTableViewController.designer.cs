@@ -78,10 +78,6 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnComprar_Touch (UIKit.UIButton sender);
 
-        [Action ("btnDetalle_Touch:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnDetalle_Touch (UIKit.UIButton sender);
-
         [Action ("btnFecha_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnFecha_Touch (UIKit.UIButton sender);
@@ -89,10 +85,6 @@ namespace WorklabsMx.iOS
         [Action ("btnQuitar_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnQuitar_Touch (UIKit.UIButton sender);
-
-        [Action ("btnSucursales_Touch:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnSucursales_Touch (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {

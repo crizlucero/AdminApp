@@ -1,12 +1,15 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleTableViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/NivelesViewController.cs">
     <Files>
-      <File FileName="iOS/DetalleProductoTableViewController.cs" Line="16" Column="35" NotebookId="1" />
-      <File FileName="iOS/Info.plist" NotebookId="1" />
-      <File FileName="iOS/Helpers/ImageHelper.cs" Line="61" Column="28" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleTableViewController.cs" Line="63" Column="43" NotebookId="1" />
-      <File FileName="iOS/AccionesCompras.cs" Line="13" Column="1" NotebookId="1" />
-      <File FileName="iOS/ComprasTableView.cs" Line="172" Column="41" NotebookId="2" />
+      <File FileName="iOS/Info.plist" NotebookId="2" />
+      <File FileName="iOS/Helpers/ImageHelper.cs" Line="61" Column="28" NotebookId="2" />
+      <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleTableViewController.cs" Line="48" Column="9" NotebookId="2" />
+      <File FileName="iOS/AccionesCompras.cs" Line="13" Column="1" NotebookId="2" />
+      <File FileName="iOS/PlazosViewController.cs" Line="29" Column="10" NotebookId="2" />
+      <File FileName="iOS/DetalleMembresiaTableVieController.cs" Line="32" Column="10" NotebookId="2" />
+      <File FileName="iOS/DetalleProductoTableViewController.cs" Line="115" Column="10" NotebookId="2" />
+      <File FileName="iOS/ComprasTableView.cs" Line="190" Column="10" NotebookId="2" />
+      <File FileName="iOS/SucursalesViewController.cs" Line="33" Column="1" NotebookId="2" />
     </Files>
     <FloatingWindows>
       <FloatingWindow WindowId="1" X="1010" Y="23" Width="985" Height="1005">
@@ -14,9 +17,14 @@
           <File FileName="iOS/ComentariosBodyImageCell.cs" Line="17" Column="40" />
         </Files>
       </FloatingWindow>
+      <FloatingWindow WindowId="2" X="2255" Y="23" Width="1097" Height="1035">
+        <Files>
+          <File FileName="iOS/NivelesViewController.cs" Line="24" Column="9" NotebookId="1" />
+        </Files>
+      </FloatingWindow>
     </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="108" column="10" />
@@ -33,6 +41,6 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../../WorklabsMx/Handlers/PagosHandler.cs" line="41" offsetX="632" offsetY="600" expression="e.StackTrace" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.DB462123-12A0-4935-B180-CC2A80E75493" />
   <MultiItemStartupConfigurations />
 </Properties>

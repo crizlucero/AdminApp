@@ -141,16 +141,7 @@
       <HintPath>..\packages\Xamarin.GooglePlayServices.Auth.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Auth.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Data.Sqlite" />
-    <Reference Include="BouncyCastle">
-      <HintPath>..\packages\MimeKit.2.0.2\lib\monoandroid\BouncyCastle.dll</HintPath>
-    </Reference>
-    <Reference Include="MimeKit">
-      <HintPath>..\packages\MimeKit.2.0.2\lib\monoandroid\MimeKit.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http" />
-    <Reference Include="MailKit">
-      <HintPath>..\packages\MailKit.2.0.2\lib\monoandroid\MailKit.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -159,6 +150,15 @@
     </Reference>
     <Reference Include="Xamarin.RangeSlider.Droid">
       <HintPath>..\packages\Xamarin.RangeSlider.0.7.33\lib\MonoAndroid10\Xamarin.RangeSlider.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle">
+      <HintPath>..\packages\MimeKit.2.0.3\lib\monoandroid\BouncyCastle.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit">
+      <HintPath>..\packages\MimeKit.2.0.3\lib\monoandroid\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit">
+      <HintPath>..\packages\MailKit.2.0.3\lib\monoandroid\MailKit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -210,6 +210,8 @@
     <Compile Include="ViewController\Formatos\ReservaSalaJuntasActivity.cs" />
     <Compile Include="ViewController\Formatos\ReservaSalaPasoUnoActivity.cs" />
     <Compile Include="Helpers\MeGustaListFragment.cs" />
+    <Compile Include="Helpers\MeGustaListAdapter.cs" />
+    <Compile Include="ViewHolders\UsuariosHolder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -244,7 +246,6 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_power_settings_new.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_label.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_send.png" />
-    <AndroidResource Include="Resources\layout\PerfilLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_profile.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_domain.png" />
     <AndroidResource Include="Resources\layout\MenuLayout.axml" />
@@ -505,6 +506,11 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\bg_meeting_room_dates.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\bg_meeting_room_dates.png" />
     <AndroidResource Include="Resources\layout\PublicacionMeGustanLayout.axml" />
+    <AndroidResource Include="Resources\layout\LikesListLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\compra_background.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\compras_background_over.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_copia_bn.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_copia_color.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
