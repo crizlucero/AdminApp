@@ -541,7 +541,6 @@ namespace WorklabsMx.Controllers
             try
             {
                 conn.Open();
-                transaction = conn.BeginTransaction();
                 command = CreateCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
@@ -556,7 +555,6 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Referencia_Impuesto_Id", impuesto_id);
                 if (descuento_id != 0)
                     command.Parameters.AddWithValue("@Referencia_Descuento_Id", descuento_id);
-                command.Transaction = transaction;
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
@@ -589,12 +587,10 @@ namespace WorklabsMx.Controllers
                         Carrito_Compras_Detalle_Importe_Total_Texto = reader["Carrito_Compras_Detalle_Importe_Total_Texto"].ToString()
                     });
                 }
-                transaction.Commit();
             }
             catch (Exception e)
             {
                 SlackLogs.SendMessage(e.Message, GetType().Name, "GetProductosMembresias");
-                transaction.Rollback();
             }
             finally { conn.Close(); }
             return carrito;

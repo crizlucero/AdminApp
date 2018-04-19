@@ -516,6 +516,8 @@
     <AndroidResource Include="Resources\drawable\border_right_style.xml" />
     <AndroidResource Include="Resources\drawable\button_circle_filled_green.xml" />
     <AndroidResource Include="Resources\drawable\button_circle_filled_clear.xml" />
+    <AndroidResource Include="Resources\layout\CompraRecurrenteCardLayout.axml" />
+    <AndroidResource Include="Resources\layout\CompraMembresiasLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
