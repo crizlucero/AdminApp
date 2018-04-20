@@ -186,7 +186,6 @@
     <Compile Include="Helpers\TimePickerFragment.cs" />
     <Compile Include="Helpers\PerfilPageAdapter.cs" />
     <Compile Include="Helpers\EmpresaPageAdapter.cs" />
-    <Compile Include="Helpers\PagosHelper.cs" />
     <Compile Include="ViewController\Formatos\InvitadosConfirmacionActivity.cs" />
     <Compile Include="ViewElement\MenuView.cs" />
     <Compile Include="ViewElement\MainActivity.cs" />
@@ -209,7 +208,6 @@
     <Compile Include="ViewController\Formatos\ReservaSalaPasoDosActivity.cs" />
     <Compile Include="ViewController\Formatos\ReservaSalaJuntasActivity.cs" />
     <Compile Include="ViewController\Formatos\ReservaSalaPasoUnoActivity.cs" />
-    <Compile Include="Helpers\MeGustaListFragment.cs" />
     <Compile Include="Helpers\MeGustaListAdapter.cs" />
     <Compile Include="ViewHolders\UsuariosHolder.cs" />
   </ItemGroup>

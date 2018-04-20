@@ -107,7 +107,7 @@ namespace WorklabsMx.Droid
         void FillProductos()
         {
             gvElementos.RemoveAllViews();
-            new PickerItemsController().GetProductos().ForEach(elemento =>
+            new PickerItemsController().GetProductos().AsParallel().ToList().ForEach(elemento =>
             {
                 LayoutInflater liView = LayoutInflater;
                 View view = liView.Inflate(Resource.Layout.CompraElementoLayout, null, true);

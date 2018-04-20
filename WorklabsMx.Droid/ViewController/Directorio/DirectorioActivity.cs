@@ -251,7 +251,6 @@ namespace WorklabsMx.Droid
             Intent intent = new Intent(context, typeof(EmpresaCardActivity));
             intent.PutExtra("Empresa", JsonConvert.SerializeObject(empresa));
             context.StartActivity(intent);
-
         }
     }
 }

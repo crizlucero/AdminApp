@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
@@ -74,7 +75,7 @@ namespace WorklabsMx.Droid
                                                                 FindViewById<EditText>(Resource.Id.txtApellidos).Text, miembro.Usuario_Correo_Electronico, miembro.Usuario_Telefono,
                                                                 miembro.Usuario_Celular, miembro.Usuario_Descripcion, DateTime.Parse(miembro.Usuario_Fecha_Nacimiento), miembro.Usuario_Fotografia_Perfil, miembro.Usuario_Fotografia_FondoPerfil))
                 {
-                    miembro.Redes_Sociales.ForEach(red =>
+                    miembro.Redes_Sociales.AsParallel().ToList().ForEach(red =>
                     {
                         if (!string.IsNullOrEmpty(red.Usuario_Red_Social_Id) || !string.IsNullOrEmpty(red.Red_Social_Enlace))
                             new RedesSocialesController().SetRedSocial(miembro.Usuario_Id, miembro.Usuario_Tipo, red.Red_Social_Id, red.Red_Social_Enlace, red.Usuario_Red_Social_Id);

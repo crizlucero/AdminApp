@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
@@ -137,7 +138,7 @@ namespace WorklabsMx.Droid
         {
             TableLayout table = SalasView.FindViewById<TableLayout>(Resource.Id.historial_table);
             table.RemoveAllViews();
-            historico.ForEach(reservacion =>
+            historico.AsParallel().ToList().ForEach(reservacion =>
             {
                 LayoutInflater inflater = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
                 View ReservaView = inflater.Inflate(Resource.Layout.ReservacionElementoLayout, null, true);

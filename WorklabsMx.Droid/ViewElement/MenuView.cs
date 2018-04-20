@@ -61,7 +61,7 @@ namespace WorklabsMx.Droid.ViewElement
             TableLayout menuLayout = context.FindViewById<TableLayout>(Resource.Id.menu_layout);
             menuLayout.RemoveAllViews();
             menuLayout.SetMinimumWidth(context.Resources.DisplayMetrics.WidthPixels);
-            ListMenu.Where((ItemsMenu arg) => arg.Menu_Padre_Id == (localStorage.Get("Parent") ?? "")).ToList().ForEach(menu =>
+            ListMenu.Where((ItemsMenu arg) => arg.Menu_Padre_Id == (localStorage.Get("Parent") ?? "")).AsParallel().ToList().ForEach(menu =>
             {
                 TableRow row = new TableRow(context);
                 View line = new View(context);

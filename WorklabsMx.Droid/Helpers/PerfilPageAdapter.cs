@@ -84,7 +84,7 @@ namespace WorklabsMx.Droid
                     context.StartActivity(email);
                 };
             }
-            miembro.Etiquetas.ToList().ForEach(habilidad =>
+            miembro.Etiquetas.AsParallel().ToList().ForEach(habilidad =>
             {
                 if (habilidad.Etiqueta_Tipo == "Habilidad")
                     FillEtiqueta(habilidad.Etiqueta_Nombre, profileView.FindViewById<RelativeLayout>(Resource.Id.rlHabilidades));
@@ -140,7 +140,7 @@ namespace WorklabsMx.Droid
 
         void FillColaboradores()
         {
-            new UsuariosController().GetColaboradoresCard(miembro.Usuario_Id).ForEach(colaborador =>
+            new UsuariosController().GetColaboradoresCard(miembro.Usuario_Id).AsParallel().ToList().ForEach(colaborador =>
             {
                 LayoutInflater liView = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
                 View colaboradoresView = liView.Inflate(Resource.Layout.ColaboradorItemLayout, null, true);
