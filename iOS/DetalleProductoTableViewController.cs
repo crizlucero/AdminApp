@@ -25,7 +25,7 @@ namespace WorklabsMx.iOS
 
         List<CarritoCompras> PreordenProductos = new List<CarritoCompras>();
         int ContadorProductos = 1;
-        string FechaInicio;
+        string FechaInicio = "";
         NSDateFormatter dateFormat = new NSDateFormatter();
 
         public DetalleProductoTableViewController(IntPtr handle) : base(handle)
@@ -35,21 +35,23 @@ namespace WorklabsMx.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            dateFormat.DateFormat = "dd/MM/yyyy";
+            dateFormat.DateFormat = "yyyy-MM-dd";
             NavigationItem.Title = "Compras";
             this.lblNombre.Text = Prodcuto.Producto_Descripcion;
-            FechaInicio = dateFormat.ToString((NSDate)DateTime.Now);
+
             if (Prodcuto.Producto_Disponibilidad.Contains("RECURRENTE"))
             {
                 this.lblLeyenda.Text = "Tarifa Mensual";
                 this.btnFecha.Enabled = true;
                 this.btnFecha.Hidden = false;
+                this.vwFecha.Hidden = false;
             }
             else
             {
                 this.btnFecha.Enabled = false;
                 this.btnFecha.Hidden = true;
                 this.lblLeyenda.Text = "Pago único";
+                this.vwFecha.Hidden = true;
             }
             this.lblPrecio.Text = "$" + Prodcuto.Producto_Precio_Base_Neto.ToString() + " / MN";
             ContadorProductos = 1;
@@ -67,9 +69,22 @@ namespace WorklabsMx.iOS
             {
                 this.imgProducto.Image = UIImage.FromBundle("Telefonia");
             }
+
+            var Tap = new UITapGestureRecognizer(this.ViewTapped);
+            this.View.UserInteractionEnabled = true;
+            this.View.AddGestureRecognizer(Tap);
         }
 
-       
+        private void ViewTapped(UITapGestureRecognizer Recognizer)
+        {
+            View.EndEditing(true);
+        }
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+        }
+      
 
         partial void btnQuitar_Touch(UIButton sender)
         {
@@ -137,6 +152,14 @@ namespace WorklabsMx.iOS
             Preorden.Id = int.Parse(Prodcuto.Producto_Id);
             Preorden.Cantidad = int.Parse(this.txtCantidad.Text);
             Preorden.Meses = 0;
+            if (this.FechaInicio != "")
+            {
+                Preorden.FechaInicio = FechaInicio;
+            }
+            else
+            {
+                FechaInicio = dateFormat.ToString((NSDate)DateTime.Now);
+            }
             Preorden.FechaInicio = FechaInicio;
             Preorden.ListaPrecioId = this.Prodcuto.Lista_Precio_Id;
             Preorden.MonedaId = this.Prodcuto.Moneda_Id;
@@ -153,6 +176,7 @@ namespace WorklabsMx.iOS
         public void FechaSeleccionada(String FechaNacimiento)
         {
             FechaInicio = FechaNacimiento;
+            this.CrearOrden();
             this.btnFecha.SetTitle(FechaNacimiento, UIControlState.Normal);
         }
     }

@@ -69,6 +69,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Handlers\PagosHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\OrdenVentaEncabezado.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\OrdenVentaDetalle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controllers\MembresiasController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />

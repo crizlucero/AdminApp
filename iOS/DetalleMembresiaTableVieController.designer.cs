@@ -28,7 +28,7 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UINavigationItem btnComprar { get; set; }
+        UIKit.UIButton btnComprar { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -56,11 +56,19 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblNombre { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblPrecio { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtCantidadMembresias { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIView vwCantidad { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -116,11 +124,6 @@ namespace WorklabsMx.iOS
                 btnComprar = null;
             }
 
-            if (btnComprar != null) {
-                btnComprar.Dispose ();
-                btnComprar = null;
-            }
-
             if (btnFecha != null) {
                 btnFecha.Dispose ();
                 btnFecha = null;
@@ -151,6 +154,11 @@ namespace WorklabsMx.iOS
                 lblLeyenda = null;
             }
 
+            if (lblNombre != null) {
+                lblNombre.Dispose ();
+                lblNombre = null;
+            }
+
             if (lblPrecio != null) {
                 lblPrecio.Dispose ();
                 lblPrecio = null;
@@ -159,6 +167,11 @@ namespace WorklabsMx.iOS
             if (txtCantidadMembresias != null) {
                 txtCantidadMembresias.Dispose ();
                 txtCantidadMembresias = null;
+            }
+
+            if (vwCantidad != null) {
+                vwCantidad.Dispose ();
+                vwCantidad = null;
             }
 
             if (vwFecha != null) {

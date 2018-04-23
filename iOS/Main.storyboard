@@ -4528,7 +4528,7 @@
                                                             </constraints>
                                                             <color key="textColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="done"/>
                                                         </textField>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJG-6G-nYW">
                                                             <rect key="frame" x="0.5" y="0.5" width="30" height="31"/>
@@ -4862,7 +4862,7 @@ Dimensiones a imprimir: Carta, Oficio.</string>
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="0.0"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ax-0k-Hdn">
-                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="0.0"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="90"/>
                                                     <color key="backgroundColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nombre producto" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4g-fJ-ky3">
@@ -4880,6 +4880,7 @@ Dimensiones a imprimir: Carta, Oficio.</string>
                                                 <constraint firstItem="0Ax-0k-Hdn" firstAttribute="top" secondItem="kHX-UC-EZs" secondAttribute="top" id="4rP-t9-2Pd"/>
                                                 <constraint firstAttribute="trailing" secondItem="0Ax-0k-Hdn" secondAttribute="trailing" id="F94-dY-Wza"/>
                                                 <constraint firstAttribute="bottom" secondItem="j4g-fJ-ky3" secondAttribute="bottom" id="GV0-f1-ifj"/>
+                                                <constraint firstAttribute="bottom" secondItem="0Ax-0k-Hdn" secondAttribute="bottom" constant="50" id="KXG-1M-0kK"/>
                                                 <constraint firstItem="j4g-fJ-ky3" firstAttribute="trailing" secondItem="0Ax-0k-Hdn" secondAttribute="trailing" id="gkA-Pw-Idx"/>
                                                 <constraint firstItem="0Ax-0k-Hdn" firstAttribute="leading" secondItem="kHX-UC-EZs" secondAttribute="leading" id="nAu-Ug-a45"/>
                                                 <constraint firstItem="j4g-fJ-ky3" firstAttribute="leading" secondItem="0Ax-0k-Hdn" secondAttribute="leading" id="pTf-rc-5xm"/>
@@ -4946,11 +4947,10 @@ Dimensiones a imprimir: Carta, Oficio.</string>
                                     <rect key="frame" x="0.0" y="0.0" width="151" height="151"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aeo-O4-rtM">
-                                            <rect key="frame" x="0.0" y="0.0" width="151" height="0.0"/>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aeo-O4-rtM">
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nombre membresia" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ap-Uv-Awo">
-                                                    <rect key="frame" x="0.0" y="102" width="151" height="49"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre membresia" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ap-Uv-Awo">
+                                                    <rect key="frame" x="0.0" y="-49" width="151" height="49"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="49" id="DYS-Jx-uxr"/>
                                                     </constraints>
@@ -4958,8 +4958,7 @@ Dimensiones a imprimir: Carta, Oficio.</string>
                                                     <color key="textColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jzm-sv-HI4">
-                                                    <rect key="frame" x="0.0" y="0.0" width="151" height="108"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jzm-sv-HI4">
                                                     <color key="backgroundColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                             </subviews>
@@ -10258,31 +10257,43 @@ COL. LADRON DE GUEVARA</string>
                         <sections>
                             <tableViewSection id="hiq-P1-U6G">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="185" id="9K4-EJ-TQq">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="214" id="9K4-EJ-TQq">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9K4-EJ-TQq" id="E1N-d9-r9N">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mhh-CW-bKm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
                                                     <color key="backgroundColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copias a Color" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7X-Qy-J2w">
+                                                    <rect key="frame" x="16" y="164" width="343" height="46"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="46" id="R5p-cD-jTT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Mhh-CW-bKm" firstAttribute="top" secondItem="E1N-d9-r9N" secondAttribute="top" id="BeL-kk-C63"/>
                                                 <constraint firstItem="Mhh-CW-bKm" firstAttribute="leading" secondItem="E1N-d9-r9N" secondAttribute="leading" id="Ebb-qz-nFB"/>
-                                                <constraint firstAttribute="bottom" secondItem="Mhh-CW-bKm" secondAttribute="bottom" constant="25" id="X6l-xF-YWI"/>
+                                                <constraint firstItem="p7X-Qy-J2w" firstAttribute="leading" secondItem="E1N-d9-r9N" secondAttribute="leading" constant="16" id="FlH-Ue-z3Q"/>
+                                                <constraint firstAttribute="bottom" secondItem="p7X-Qy-J2w" secondAttribute="bottom" constant="4" id="Hvw-uT-FKz"/>
+                                                <constraint firstAttribute="trailing" secondItem="p7X-Qy-J2w" secondAttribute="trailing" constant="16" id="meS-bQ-9rB"/>
+                                                <constraint firstItem="p7X-Qy-J2w" firstAttribute="top" secondItem="Mhh-CW-bKm" secondAttribute="bottom" constant="2" id="xtx-E4-ch0"/>
                                                 <constraint firstAttribute="trailing" secondItem="Mhh-CW-bKm" secondAttribute="trailing" id="y6o-Jn-c0M"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="178" id="etR-o4-OU5">
-                                        <rect key="frame" x="0.0" y="185" width="375" height="178"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="166" id="etR-o4-OU5">
+                                        <rect key="frame" x="0.0" y="214" width="375" height="166"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="etR-o4-OU5" id="bNZ-4L-en4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="166"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H3m-dF-ky5">
@@ -10455,14 +10466,13 @@ COL. LADRON DE GUEVARA</string>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="Rle-Er-Tt0" firstAttribute="leading" secondItem="ksZ-Tj-B4c" secondAttribute="leading" constant="1" id="3Ma-bu-PSn"/>
-                                                        <constraint firstAttribute="bottom" secondItem="1O1-ax-M5p" secondAttribute="bottom" constant="14" id="9kI-Ge-rk1"/>
-                                                        <constraint firstAttribute="height" constant="39" id="BSJ-A8-dRW"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Rle-Er-Tt0" secondAttribute="trailing" constant="1" id="BhF-km-e7L"/>
-                                                        <constraint firstItem="1O1-ax-M5p" firstAttribute="top" secondItem="ksZ-Tj-B4c" secondAttribute="top" constant="13" id="Dfh-xg-dGt"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Rle-Er-Tt0" secondAttribute="bottom" constant="1" id="PYL-r9-VS0"/>
-                                                        <constraint firstAttribute="trailing" secondItem="1O1-ax-M5p" secondAttribute="trailing" constant="8" id="V1a-W2-WDC"/>
-                                                        <constraint firstItem="Rle-Er-Tt0" firstAttribute="top" secondItem="ksZ-Tj-B4c" secondAttribute="top" constant="1" id="ama-Le-uth"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Rle-Er-Tt0" secondAttribute="trailing" constant="1" id="4LT-0q-2g1"/>
+                                                        <constraint firstAttribute="bottom" secondItem="1O1-ax-M5p" secondAttribute="bottom" constant="14" id="8x7-OF-YXA"/>
+                                                        <constraint firstAttribute="trailing" secondItem="1O1-ax-M5p" secondAttribute="trailing" constant="8" id="Btn-7r-u6D"/>
+                                                        <constraint firstItem="Rle-Er-Tt0" firstAttribute="leading" secondItem="ksZ-Tj-B4c" secondAttribute="leading" constant="1" id="CCK-Qi-Dmr"/>
+                                                        <constraint firstItem="Rle-Er-Tt0" firstAttribute="top" secondItem="ksZ-Tj-B4c" secondAttribute="top" constant="1" id="Eu7-gA-iKc"/>
+                                                        <constraint firstItem="1O1-ax-M5p" firstAttribute="top" secondItem="ksZ-Tj-B4c" secondAttribute="top" constant="13" id="XBU-jS-Fce"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Rle-Er-Tt0" secondAttribute="bottom" constant="1" id="g8i-IT-KcM"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -10484,22 +10494,21 @@ COL. LADRON DE GUEVARA</string>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="SDL-Kg-vJd" secondAttribute="trailing" constant="16" id="4yv-0A-1tL"/>
                                                 <constraint firstItem="H3m-dF-ky5" firstAttribute="top" secondItem="y20-HX-qtz" secondAttribute="bottom" constant="8" id="6OQ-aC-e2m"/>
-                                                <constraint firstItem="ksZ-Tj-B4c" firstAttribute="leading" secondItem="bNZ-4L-en4" secondAttribute="leading" constant="16" id="8KC-9d-tnE"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ksZ-Tj-B4c" secondAttribute="bottom" constant="-2" id="Bbe-cv-hyf"/>
                                                 <constraint firstAttribute="trailing" secondItem="H3m-dF-ky5" secondAttribute="trailing" constant="16" id="Jwi-Hy-Hd4"/>
-                                                <constraint firstItem="ksZ-Tj-B4c" firstAttribute="top" secondItem="H3m-dF-ky5" secondAttribute="bottom" constant="8" id="NnM-yJ-WEr"/>
-                                                <constraint firstItem="ksZ-Tj-B4c" firstAttribute="top" secondItem="H3m-dF-ky5" secondAttribute="bottom" constant="8" id="OlE-5R-B1O"/>
                                                 <constraint firstItem="H3m-dF-ky5" firstAttribute="leading" secondItem="bNZ-4L-en4" secondAttribute="leading" constant="16" id="WuG-yo-KxI"/>
                                                 <constraint firstItem="y20-HX-qtz" firstAttribute="top" secondItem="SDL-Kg-vJd" secondAttribute="bottom" constant="8" id="WzF-e0-iw1"/>
                                                 <constraint firstItem="SDL-Kg-vJd" firstAttribute="leading" secondItem="bNZ-4L-en4" secondAttribute="leading" constant="16" id="Zpv-G8-BDM"/>
-                                                <constraint firstAttribute="bottom" secondItem="ksZ-Tj-B4c" secondAttribute="bottom" constant="21" id="aTw-9v-Nle"/>
+                                                <constraint firstItem="ksZ-Tj-B4c" firstAttribute="top" secondItem="H3m-dF-ky5" secondAttribute="bottom" constant="8" symbolic="YES" id="fyy-Lm-EOE"/>
+                                                <constraint firstItem="ksZ-Tj-B4c" firstAttribute="trailing" secondItem="H3m-dF-ky5" secondAttribute="trailing" id="gD5-lR-5wZ"/>
                                                 <constraint firstItem="SDL-Kg-vJd" firstAttribute="top" secondItem="bNZ-4L-en4" secondAttribute="top" constant="2" id="iyD-9y-hvF"/>
-                                                <constraint firstAttribute="trailing" secondItem="ksZ-Tj-B4c" secondAttribute="trailing" constant="16" id="q63-1W-o5i"/>
+                                                <constraint firstItem="ksZ-Tj-B4c" firstAttribute="leading" secondItem="H3m-dF-ky5" secondAttribute="leading" id="rpp-px-PhP"/>
                                                 <constraint firstItem="y20-HX-qtz" firstAttribute="centerX" secondItem="bNZ-4L-en4" secondAttribute="centerX" id="sIw-EO-Css"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="232" id="28Q-52-0sI">
-                                        <rect key="frame" x="0.0" y="363" width="375" height="232"/>
+                                        <rect key="frame" x="0.0" y="380" width="375" height="232"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="28Q-52-0sI" id="gim-Hu-WgP">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="232"/>
@@ -10667,8 +10676,10 @@ COL. LADRON DE GUEVARA</string>
                         <outlet property="imgMembresia" destination="Mhh-CW-bKm" id="name-outlet-Mhh-CW-bKm"/>
                         <outlet property="lblDescripcion" destination="nd7-wX-Ndp" id="name-outlet-nd7-wX-Ndp"/>
                         <outlet property="lblLeyenda" destination="lvc-Bu-Imp" id="name-outlet-lvc-Bu-Imp"/>
+                        <outlet property="lblNombre" destination="p7X-Qy-J2w" id="name-outlet-p7X-Qy-J2w"/>
                         <outlet property="lblPrecio" destination="3eu-en-ZQY" id="name-outlet-3eu-en-ZQY"/>
                         <outlet property="txtCantidadMembresias" destination="fAz-hO-kxz" id="name-outlet-fAz-hO-kxz"/>
+                        <outlet property="vwCantidad" destination="y20-HX-qtz" id="name-outlet-y20-HX-qtz"/>
                         <outlet property="vwFecha" destination="H3m-dF-ky5" id="name-outlet-H3m-dF-ky5"/>
                         <segue destination="AFg-lY-9ba" kind="presentation" identifier="Sucursales" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="k9n-0M-hkC"/>
                         <segue destination="zu6-Ni-idm" kind="presentation" identifier="FechaInicio" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="UDv-YD-KTV"/>
