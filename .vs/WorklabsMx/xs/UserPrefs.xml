@@ -1,15 +1,16 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/MainActivity.cs">
     <Files>
-      <File FileName="WorklabsMx/Helpers/ConfiguracionesHelper.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Helpers/DateHelper.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Helpers/Emails.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Helpers/HttpRequest.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Helpers/Pagos.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Helpers/Pagos.cs" Line="49" Column="44" />
       <File FileName="WorklabsMx/Helpers/PassSecurity.cs" Line="1" Column="1" />
       <File FileName="WorklabsMx/Helpers/SlackLogs.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Helpers/XmlSerializador.cs" Line="27" Column="1" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="55" Column="61" />
+      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="30" Column="6" />
+      <File FileName="WorklabsMx.Droid/Properties/AndroidManifest.xml" Line="23" Column="12" />
+      <File FileName="WorklabsMx.Droid/Service/FirebaseIIDService.cs" Line="23" Column="10" />
+      <File FileName="WorklabsMx.Droid/Service/MyFirebaseMessagingService.cs" Line="35" Column="48" />
+      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardActivity.cs" Line="186" Column="34" />
+      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardEditarActivity.cs" Line="194" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -24,6 +25,7 @@
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="126" column="10" />
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="120" column="1" />
       <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/UsuariosController.cs" relfile="WorklabsMx/Controllers/UsuariosController.cs" line="553" column="21" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/Service/MyFirebaseMessagingService.cs" relfile="WorklabsMx.Droid/Service/MyFirebaseMessagingService.cs" line="19" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
