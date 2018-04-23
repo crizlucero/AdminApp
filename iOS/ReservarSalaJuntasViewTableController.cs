@@ -364,7 +364,7 @@ namespace WorklabsMx.iOS
 
         }
 
-        private void ValidateHour()
+        /*private void ValidateHour()
         {
             int date = DateTime.Now.Hour - 1;
             int minutes = DateTime.Now.Minute;
@@ -637,7 +637,7 @@ namespace WorklabsMx.iOS
                     vw2401_2.BackgroundColor = UIColor.Clear.FromHex(0xE1FCC3);
                 }
             }
-            /*if (date >= 24)
+            if (date >= 24)
             {
                 BanderaHoras = true;
                 if (minutes >= 30 || (BanderaMin == false && BanderaHoras == false))
@@ -645,9 +645,9 @@ namespace WorklabsMx.iOS
                     this.PintarMinutos();
                     BanderaMin = true;
                 }
-            }*/
+            }
 
-        }
+        }*/
 
 
 
@@ -2963,7 +2963,7 @@ namespace WorklabsMx.iOS
             //this.GetHorasNoDisponibles(MenuHelper.SalasJuntas[0].Sala_Id);
             if (FechaReservacion == DateTime.Now.ToString("yyyy-MM-dd"))
             {
-                this.ValidateHour();
+                //this.ValidateHour();
             }
             dateFormat.DateFormat = "yyyy-MM-dd";
             NSDate newFormatDate = dateFormat.Parse(FechaReservacion);

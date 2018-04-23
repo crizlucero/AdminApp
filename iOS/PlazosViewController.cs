@@ -49,7 +49,7 @@ namespace WorklabsMx.iOS
         {
             static string[] names = new string[]
             {
-                "6 MESES",
+                "06 MESES",
                 "12 MESES",
                 "24 MESES",
                 "36 MESES"
