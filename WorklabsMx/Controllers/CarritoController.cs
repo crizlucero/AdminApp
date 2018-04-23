@@ -346,13 +346,13 @@ namespace WorklabsMx.Controllers
                     {
                         if (element.Value.Sucursal_Id == 0)
                             return false;
-                        AddCarritoCompras(usuario_id, tipo, element.Key, (int)element.Value.Producto_Cantidad, element.Value.Sucursal_Id, (int)element.Value.Membresia_Cantidad, DateTime.SpecifyKind(DateTime.Parse(element.Value.Membresia_Fecha_Inicio), DateTimeKind.Utc));
+                        AddCarritoCompras(usuario_id, tipo, element.Key, element.Value.Producto_Cantidad, element.Value.Sucursal_Id, element.Value.Membresia_Cantidad, DateTime.SpecifyKind(DateTime.Parse(element.Value.Membresia_Fecha_Inicio), DateTimeKind.Utc));
                     }
                     else if (element.Value.Membresia_Cantidad > 0)
                     {
                         if (element.Value.Sucursal_Id == 0)
                             return false;
-                        AddCarritoCompras(usuario_id, tipo, element.Key, (int)element.Value.Membresia_Cantidad, element.Value.Sucursal_Id, (int)element.Value.Membresia_Cantidad, DateTime.SpecifyKind(DateTime.Parse(element.Value.Membresia_Fecha_Inicio), DateTimeKind.Utc));
+                        AddCarritoCompras(usuario_id, tipo, element.Key, element.Value.Membresia_Cantidad, element.Value.Sucursal_Id, element.Value.Membresia_Cantidad, DateTime.SpecifyKind(DateTime.Parse(element.Value.Membresia_Fecha_Inicio), DateTimeKind.Utc));
                     }
                 }
                 else

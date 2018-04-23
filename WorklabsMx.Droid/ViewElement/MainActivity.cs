@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
@@ -184,7 +185,7 @@ namespace WorklabsMx.Droid
             customView.FindViewById<TextView>(Resource.Id.lblLikes).Text = likeCantidad;
             ListView lvUsuarios = customView.FindViewById<ListView>(Resource.Id.lvUsuarios);
             List<UsuarioModel> usuarios = new UsuariosController().GetUsuariosPublicacionMeGusta(post_id);
-            usuarios.ForEach(usuario =>
+            usuarios.AsParallel().ToList().ForEach(usuario =>
             {
                 KeyValuePair<string, string> current = new KeyValuePair<string, string>(usuario.Usuario_Id, usuario.Usuario_Tipo);
                 if (!string.IsNullOrEmpty(usuario.Usuario_Fotografia))

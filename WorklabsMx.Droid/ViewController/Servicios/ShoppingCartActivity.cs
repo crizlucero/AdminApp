@@ -13,6 +13,7 @@ using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 using WorklabsMx.Enum;
 using WorklabsMx.Handlers;
+using System.Linq;
 
 namespace WorklabsMx.Droid
 {
@@ -65,7 +66,7 @@ namespace WorklabsMx.Droid
 
         void AddMembresiaDescripcion()
         {
-            membresias.ForEach(precio =>
+            membresias.AsParallel().ToList().ForEach(precio =>
             {
                 TableRow trDescripcion = new TableRow(this);
 
@@ -100,7 +101,7 @@ namespace WorklabsMx.Droid
 
         void AddProductosDescripcion()
         {
-            productos.ForEach(precio =>
+            productos.AsParallel().ToList().ForEach(precio =>
             {
                 TableRow trDescripcion = new TableRow(this);
 
@@ -206,7 +207,7 @@ namespace WorklabsMx.Droid
 
                         List<OrdenVentaDetalle> detalles = new List<OrdenVentaDetalle>();
 
-                        membresias.ForEach(membresia =>
+                        membresias.AsParallel().ToList().ForEach(membresia =>
                         {
                             if (membresia.Carrito_Compras_Detalle_Cantidad != "0")
                             {
@@ -232,7 +233,7 @@ namespace WorklabsMx.Droid
                             }
                         });
 
-                        productos.ForEach(producto =>
+                        productos.AsParallel().ToList().ForEach(producto =>
                         {
                             if (producto.Carrito_Compras_Detalle_Cantidad != "0")
                             {
@@ -278,7 +279,7 @@ namespace WorklabsMx.Droid
             try
             {
                 if (CarritoMembresia.Count > 0)
-                    controller.GetMembresias().ForEach(membresia =>
+                    controller.GetMembresias().AsParallel().ToList().ForEach(membresia =>
                     {
                         if (CarritoMembresia[membresia.Membresia_Id].Membresia_Cantidad > 0)
                         {
@@ -294,7 +295,7 @@ namespace WorklabsMx.Droid
                         }
                     });
                 if (CarritoProducto.Count > 0)
-                    controller.GetProductos().ForEach(producto =>
+                    controller.GetProductos().AsParallel().ToList().ForEach(producto =>
                     {
                         if (CarritoProducto[producto.Producto_Id].Producto_Cantidad > 0)
                             productos.AddRange(controller.GetProductosMembresias(TiposServicios.Producto, Convert.ToInt32(producto.Producto_Id),

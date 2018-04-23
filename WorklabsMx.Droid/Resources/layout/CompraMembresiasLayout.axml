@@ -41,9 +41,9 @@
                 android:textStyle="bold"
                 android:textColor="#000"
                 android:layout_columnSpan="4"
-                android:text="Equipo teléfonico"
                 android:textSize="14dp"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:text="Privados" />
         <!--<RadioGroup
             android:layout_width="match_parent"
             android:layout_height="20dp"
@@ -85,44 +85,76 @@
         </RadioGroup>-->
             <TextView
                 android:textColor="#767676"
-                android:layout_columnSpan="4"
                 android:layout_gravity="center"
                 android:text="@string/str_general_quantity"
                 android:textSize="12dp"
-                android:layout_marginTop="10dp" />
-            <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_columnSpan="2"
+                android:layout_marginLeft="30dp" />
+            <TextView
+                android:textColor="#767676"
+                android:layout_gravity="center"
+                android:text="@string/str_general_initial_date"
+                android:textSize="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_columnSpan="2"
+                android:layout_marginLeft="120dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_columnSpan="4"
-                android:layout_gravity="center_horizontal">
-                <ImageView
-                    android:src="@mipmap/ic_remove"
-                    android:layout_width="30dp"
-                    android:layout_height="40dp"
-                    android:id="@+id/imgMenos"
-                    android:tint="#aaa"
+                android:layout_columnSpan="4">
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
                     android:layout_gravity="center"
-                    android:background="@drawable/border_left_style" />
-                <EditText
-                    android:layout_height="40dp"
-                    android:textColor="#aaa"
-                    android:id="@+id/txtCantidad"
-                    android:textSize="12dp"
-                    android:gravity="center"
-                    android:layout_width="50dp"
-                    android:text="1"
-                    android:background="@drawable/border_rect_style"
-                    android:drawableTint="@android:color/transparent" />
-                <ImageView
-                    android:src="@mipmap/ic_add"
-                    android:layout_width="30dp"
-                    android:layout_height="40dp"
-                    android:id="@+id/imgMas"
-                    android:tint="#aaa"
+                    android:layout_width="wrap_content">
+                    <ImageView
+                        android:src="@mipmap/ic_remove"
+                        android:layout_width="30dp"
+                        android:layout_height="40dp"
+                        android:id="@+id/imgMenos"
+                        android:tint="#aaa"
+                        android:layout_gravity="center"
+                        android:background="@drawable/border_left_style" />
+                    <EditText
+                        android:layout_height="40dp"
+                        android:textColor="#aaa"
+                        android:id="@+id/txtCantidad"
+                        android:textSize="12dp"
+                        android:gravity="center"
+                        android:layout_width="50dp"
+                        android:text="3"
+                        android:background="@drawable/border_rect_style"
+                        android:drawableTint="@android:color/transparent" />
+                    <ImageView
+                        android:src="@mipmap/ic_add"
+                        android:layout_width="30dp"
+                        android:layout_height="40dp"
+                        android:id="@+id/imgMas"
+                        android:tint="#aaa"
+                        android:layout_gravity="center"
+                        android:background="@drawable/border_right_style" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
                     android:layout_gravity="center"
-                    android:background="@drawable/border_right_style" />
-            </LinearLayout>
+                    android:layout_alignParentRight="true">
+                    <TextView
+                        android:id="@+id/txtSeleccionarFecha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_meeting_room_select_date"
+                        android:drawableRight="@mipmap/ic_arrow_down"
+                        android:background="@drawable/cornerborderline"
+                        android:paddingTop="2dp"
+                        android:textColor="#aaa"
+                        android:textSize="12dp"
+                        android:gravity="center"
+                        android:paddingLeft="2dp" />
+                </LinearLayout>
+            </RelativeLayout>
         <!--<Spinner
             android:layout_width="match_parent"
             android:layout_height="20dp"
@@ -173,8 +205,8 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="20dp"
-                    android:paddingRight="10dp">
+                    android:paddingRight="10dp"
+                    android:layout_marginBottom="10dp">
                     <Button
                         android:id="@+id/btnBuy"
                         android:background="@drawable/button_circle_filled_green"
@@ -183,32 +215,13 @@
                         android:textSize="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
-                        android:gravity="center|left"
-                        android:layout_marginTop="10dp"
+                        android:gravity="center"
                         android:paddingTop="5dp"
                         android:paddingRight="30dp"
                         android:paddingBottom="5dp"
                         android:paddingLeft="30dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginRight="50dp"
-                        android:layout_marginLeft="10dp" />
-                    <Button
-                        android:id="@+id/btnAdd"
-                        android:background="@drawable/button_circle_filled_clear"
-                        android:layout_gravity="center|right"
-                        android:text="@string/str_shop_cart_add"
-                        android:textSize="12dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:gravity="center|right"
-                        android:layout_marginTop="10dp"
-                        android:textColor="#AAA"
-                        android:paddingTop="5dp"
-                        android:paddingRight="20dp"
-                        android:paddingBottom="5dp"
-                        android:paddingLeft="20dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_alignParentEnd="true" />
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
                 </RelativeLayout>
             </LinearLayout>
         </GridLayout>

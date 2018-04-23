@@ -76,7 +76,7 @@ namespace WorklabsMx.Droid
                 AssetManager asset = Assets;
                 correoInvitacion = new StreamReader(asset.Open("Invitacion.html")).ReadToEnd();
                 SucursalModel sucursal = new SucursalController().GetSucursalInfo(sucursales[ubicacion.SelectedItem.ToString()]);
-                invitados.ForEach(invitado =>
+                invitados.AsParallel().ToList().ForEach(invitado =>
                 {
                     try
                     {
