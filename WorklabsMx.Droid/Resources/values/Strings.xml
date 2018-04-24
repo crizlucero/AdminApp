@@ -120,7 +120,7 @@
 	<string name="str_shop_accept_terms">Acepto terminos y condiciones de uso</string>
 	<string name="str_shop_no_accepted_terms">No ha aceptado los terminos y condiciones</string>
 	<string name="TotalHoras">Total de horas</string>
-	<string name="PasswordIncorrecto">Escriba su password</string>
+	<string name="PasswordIncorrecto">Escriba su contraseña</string>
 	<string name="InfoGeneral">Información General</string>
 	<string name="TarifaMensual">Tarifa Mensual</string>
 	<string name="TarifaInscripcion">Tarifa de Inscripción</string>
