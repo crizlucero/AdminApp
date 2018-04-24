@@ -27,6 +27,12 @@ namespace WorklabsMx.iOS
         private void MostrarVistaTarjeta(VentaDetalleTableViewController VistaPagos, string total)
         {
             suiteController = new SuiteController(SuitemCommerce.Environment.Qa, VistaPagos, this);
+
+            if (total == "")
+            {
+                total = "1000";
+            }
+
             beanTokenization = new BeanTokenization
             {
                 Branch = "000025",
@@ -38,7 +44,7 @@ namespace WorklabsMx.iOS
                 Currency = Currency.Mxn,
                 OperationType = "6",
                 Token = "158128",
-                Reference = "Referencia dada por el usuario",
+                Reference = "",
                 Amount = total,
 
             };
@@ -52,7 +58,7 @@ namespace WorklabsMx.iOS
                 Password = "OOMYO17MS7",
                 Merchant = "158198",
                 Currency = Currency.Mxn,
-                Reference = "Referencia dada por el usuario",
+                Reference = "",
                 AuthKey = "516883685552545048505454"
             };
             suiteController.AuthenticateWithBeanTokenization(beanTokenization, bean3DS);
