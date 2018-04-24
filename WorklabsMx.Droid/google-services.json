@@ -1,0 +1,94 @@
+{
+  "project_info": {
+    "project_number": "139847759807",
+    "firebase_url": "https://worklabs-57281.firebaseio.com",
+    "project_id": "worklabs-57281",
+    "storage_bucket": "worklabs-57281.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:139847759807:android:f3fc4378a821dd7b",
+        "android_client_info": {
+          "package_name": "com.worklabs.WorklabsMx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "139847759807-7ukm8qf9s1olajlqp3r99th2oi2qpsjl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQ7j0FTB_fWpWp7sOMe1Ht-mVqdrcs8-g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:139847759807:android:ccda1371a3eec9f4",
+        "android_client_info": {
+          "package_name": "mx.worklabs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "139847759807-0clrdbt5hqd2ccsdvmkkl2bkrb5pv605.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.worklabs",
+            "certificate_hash": "12e098a3880e0d9e6b09da202a2457045aef3d1d"
+          }
+        },
+        {
+          "client_id": "139847759807-7ukm8qf9s1olajlqp3r99th2oi2qpsjl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQ7j0FTB_fWpWp7sOMe1Ht-mVqdrcs8-g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "139847759807-boo65msg9713jep7gsr3hd9ib19fsul5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.WorklabsMx.WorklabsMx",
+                "app_store_id": "1316105552"
+              }
+            },
+            {
+              "client_id": "139847759807-7ukm8qf9s1olajlqp3r99th2oi2qpsjl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

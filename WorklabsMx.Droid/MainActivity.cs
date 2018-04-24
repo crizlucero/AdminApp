@@ -6,7 +6,6 @@ using WorklabsMx.Controllers;
 using System;
 using Android.Views;
 using Android.Content;
-using Android.Graphics.Drawables;
 using Android.Support.V4.Content;
 using Android.Graphics;
 using Android.Net;
@@ -23,7 +22,9 @@ using Android.App;
 using WorklabsMx.Droid.ViewElement;
 using WorklabsMx.Droid.Helpers;
 using Android.Content.Res;
-using Android.Support.V4.Graphics.Drawable;
+using Firebase.Iid;
+using Android.Util;
+using WorklabsMx.Droid.Service;
 
 namespace WorklabsMx.Droid
 {
@@ -59,6 +60,7 @@ namespace WorklabsMx.Droid
             base.OnRestart();
             Usuario_Fotos_Perfil.Clear();
             localStorage.Delete("Parent");
+            page = 0;
             OpenDashboard();
         }
 
@@ -146,6 +148,7 @@ namespace WorklabsMx.Droid
                     await FillPosts();
                 }
             };
+            new MyFirebaseMessagingService();
         }
 
         async Task FillPosts()
