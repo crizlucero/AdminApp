@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/EscritorioController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/PickerItemsController.cs">
     <Files>
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="55" Column="61" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="97" Column="23" />
       <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="30" Column="6" />
       <File FileName="WorklabsMx.Droid/Properties/AndroidManifest.xml" Line="23" Column="12" />
       <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardEditarActivity.cs" Line="194" Column="10" />
@@ -10,7 +10,9 @@
       <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="18" Column="7" />
       <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="125" Column="54" />
       <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="22" Column="160" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="39" Column="20" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="24" Column="23" />
+      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
