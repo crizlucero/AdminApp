@@ -804,6 +804,8 @@
     <ImageAsset Include="Assets.xcassets\ImagenProductos.imageset\imagenProductos.png" />
     <ImageAsset Include="Assets.xcassets\ImagenProductos.imageset\imagenProductos%402x.png" />
     <ImageAsset Include="Assets.xcassets\ImagenProductos.imageset\imagenProductos%403x.png" />
+    <ImageAsset Include="Assets.xcassets\NoImagen.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\NoImagen.imageset\Captura de pantalla 2018-04-24 a la%28s%29 14.16.42.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -1523,6 +1525,7 @@
     <Folder Include="Assets.xcassets\ImpresionNegro.imageset\" />
     <Folder Include="Assets.xcassets\Telefonia.imageset\" />
     <Folder Include="Assets.xcassets\ImagenProductos.imageset\" />
+    <Folder Include="Assets.xcassets\NoImagen.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />

@@ -20,6 +20,7 @@ namespace WorklabsMx.iOS
         void InfoUserPosts(UsuarioModel listaUser);
         void EnviarAction(UIAlertController actionSheetAlert);
         void ActualizarTabla();
+        void UpdateRowsCom();
         void LikeImagenPresionado(List<UsuarioModel> UsuariosLikes);
     }
 
@@ -71,7 +72,6 @@ namespace WorklabsMx.iOS
                 this.imgComentarios.Image = UIImage.FromBundle("Comments");
             }
 
-            await GetImagenesPost(post);
            // txtComentario.TranslatesAutoresizingMaskIntoConstraints = false;
             txtComentario.ScrollEnabled = false;
             txtComentario.Text = post.Publicacion_Contenido;
@@ -88,7 +88,8 @@ namespace WorklabsMx.iOS
 
             lblLikes.UserInteractionEnabled = true;
             lblLikes.AddGestureRecognizer(labelTap);
-
+            btnImgPerfil.SetBackgroundImage(UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
+            await GetImagenesPost(post);
         }
 
 
@@ -101,21 +102,35 @@ namespace WorklabsMx.iOS
                 {
                     if (post.Usuario.Usuario_Fotografia_Perfil == null)
                     {
-                        post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
-                    }
-                    if (post.Usuario.Usuario_Fotografia_Perfil.Length == 0)
-                    {
-                        ReescalImage = UIImage.FromBundle("PerfilEscritorio");
+                        try
+                        {
+                            post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
+                        }
+                        catch
+                        {
+                            ReescalImage = UIImage.FromBundle("PerfilEscritorio");
+                        }
                     }
                     else
                     {
-                        ReescalImage = DataToImage(post.Usuario.Usuario_Fotografia_Perfil);
+                        if (post.Usuario.Usuario_Fotografia_Perfil.Length == 0)
+                        {
+                            ReescalImage = UIImage.FromBundle("PerfilEscritorio");
+                        }
+                        else
+                        {
+                            ReescalImage = DataToImage(post.Usuario.Usuario_Fotografia_Perfil);
+                        }
                     }
+
 
                 });
             }
             btnImgPerfil.SetBackgroundImage(ReescalImage ?? UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
-
+            //if (txtComentario.Text != "")
+            //{
+                //EventosComentariosBodyDel.UpdateRowsCom();
+            //}
         }
 
         private UIImage DataToImage(byte[] Fotografia_Perfil)

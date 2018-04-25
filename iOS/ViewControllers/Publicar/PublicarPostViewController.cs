@@ -9,6 +9,7 @@ using AVFoundation;
 using WorklabsMx.Helpers;
 using BigTed;
 using System.Threading.Tasks;
+using UserNotifications;
 
 namespace WorklabsMx.iOS
 {
@@ -84,6 +85,7 @@ namespace WorklabsMx.iOS
                 if (new Controllers.EscritorioController().SetPost(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), txtPublicacion.Text, Fotografia))
                 {
                     this.PostPublicadoDelegate.PostPublicado();
+                    this.SendMessage();
                     this.DismissViewController(true, null);
                     BTProgressHUD.Dismiss();
                 }
@@ -99,6 +101,26 @@ namespace WorklabsMx.iOS
                 new MessageDialog().SendToast("No tienes conexión a internet, intenta de nuevo");
             }
 
+        }
+
+        public void SendMessage()
+        {
+            var content = new UNMutableNotificationContent();
+            content.Title = "Notification Title";
+            content.Subtitle = "Notification Subtitle";
+            content.Body = "This is the message body of the notification.";
+            content.Badge = 1;
+
+            var trigger = UNTimeIntervalNotificationTrigger.CreateTrigger(5, false);
+
+            var requestID = "sampleRequest";
+            var request = UNNotificationRequest.FromIdentifier(requestID, content, trigger);
+            UNUserNotificationCenter.Current.AddNotificationRequest(request, (err) => {
+                if (err != null)
+                {
+                    // Do something with error...
+                }
+            });
         }
 
         partial void btnPublicar_TouchUpInside(UIButton sender)

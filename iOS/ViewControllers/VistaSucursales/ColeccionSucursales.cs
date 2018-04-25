@@ -46,7 +46,7 @@ namespace WorklabsMx.iOS
                 return this.products.Count;
             }
 
-        }
+        } 
 
         partial void btnBack_Touch(UIBarButtonItem sender)
         {
