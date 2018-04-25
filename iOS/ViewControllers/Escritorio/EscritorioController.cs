@@ -40,14 +40,8 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         }
          
         public override nint RowsInSection(UITableView tableView, nint section)
-        {
-            if (allPosts.Count > 0 /*&& allProfileImages.Count > 0 && allPostImages.Count > 0*/)
-            {
-                isShowInformation = true;
-                return allPosts.Count;
-            }
-            isShowInformation = false;
-            return 1;
+        {             if (allPosts != null)             {                 if (allPosts.Count > 0 /*&& allProfileImages.Count > 0 && allPostImages.Count > 0*/)                 {                     isShowInformation = true;                     return allPosts.Count;                 }                 isShowInformation = false;                 return 1;             }             isShowInformation = false;             return 1;
+           
         } 
 
         public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)

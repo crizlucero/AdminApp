@@ -1,42 +1,46 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/LoginViewController.cs">
     <Files>
-      <File FileName="iOS/DetalleMembresiaTableVieController.cs" Line="115" Column="14" />
+      <File FileName="iOS/DetalleMembresiaTableVieController.cs" Line="18" Column="55" />
       <File FileName="iOS/DetalleProductoTableViewController.cs" Line="133" Column="53" />
       <File FileName="iOS/ComprasTableView.cs" Line="21" Column="34" />
       <File FileName="iOS/SucursalesViewController.cs" Line="33" Column="1" />
       <File FileName="iOS/ColeccionProductos_.cs" Line="67" Column="54" />
       <File FileName="iOS/ColeccionMembresias.cs" Line="45" Column="42" />
-      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="87" Column="51" />
-      <File FileName="iOS/CeldaImagenPerfil.cs" Line="159" Column="62" />
+      <File FileName="iOS/ViewControllers/LoginViewController.cs" Line="149" Column="73" />
+      <File FileName="iOS/CeldaImagenPerfil.cs" Line="182" Column="60" />
       <File FileName="iOS/EjemploPagos.cs" Line="112" Column="60" />
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="143" Column="50" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="137" Column="9" />
       <File FileName="iOS/ComentariosBodyImageCell.cs" Line="165" Column="18" />
       <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="54" Column="43" />
       <File FileName="../../../../../Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/System/System.Net/FtpWebRequest.cs" Line="1246" Column="17" />
       <File FileName="iOS/ViewControllers/Escritorio/ComentariosBodyCell.cs" Line="124" Column="22" />
       <File FileName="iOS/Info.plist" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="356" Column="19" />
+      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="17" Column="89" />
+      <File FileName="iOS/Main.cs" Line="12" Column="1" />
+      <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="17" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Handlers/PagosHandler.cs" relfile="WorklabsMx/Handlers/PagosHandler.cs" line="57" column="25" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="456" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EditarPerfilTableViewController.cs" relfile="iOS/EditarPerfilTableViewController.cs" line="398" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EditarPerfilTableViewController.cs" relfile="iOS/EditarPerfilTableViewController.cs" line="476" column="49" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="119" column="10" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="131" column="10" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="125" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/UsuariosController.cs" relfile="WorklabsMx/Controllers/UsuariosController.cs" line="553" column="21" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="147" column="71" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Publicar/PublicarPostViewController.cs" relfile="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" line="74" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Publicar/PublicarPostViewController.cs" relfile="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" line="176" column="42" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMxMig/WorklabsMx/WorklabsMx/Handlers/PagosHandler.cs" relfile="WorklabsMx/Handlers/PagosHandler.cs" line="57" column="25" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMxMig/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="456" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMxMig/WorklabsMx/iOS/EditarPerfilTableViewController.cs" relfile="iOS/EditarPerfilTableViewController.cs" line="398" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMxMig/WorklabsMx/iOS/EditarPerfilTableViewController.cs" relfile="iOS/EditarPerfilTableViewController.cs" line="476" column="49" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMxMig/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="119" column="10" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMxMig/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="131" column="10" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMxMig/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="125" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMxMig/WorklabsMx/WorklabsMx/Controllers/UsuariosController.cs" relfile="WorklabsMx/Controllers/UsuariosController.cs" line="553" column="21" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMxMig/WorklabsMx/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="147" column="71" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMxMig/WorklabsMx/iOS/ViewControllers/Publicar/PublicarPostViewController.cs" relfile="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" line="74" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMxMig/WorklabsMx/iOS/ViewControllers/Publicar/PublicarPostViewController.cs" relfile="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" line="176" column="42" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../../WorklabsMx/Handlers/PagosHandler.cs" line="41" offsetX="632" offsetY="600" expression="e.StackTrace" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" />
   <MultiItemStartupConfigurations />
 </Properties>
