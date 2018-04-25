@@ -151,7 +151,7 @@ namespace WorklabsMx.iOS
             Preorden.Tipo = Enum.TiposServicios.Producto;
             Preorden.Id = int.Parse(Prodcuto.Producto_Id);
             Preorden.Cantidad = int.Parse(this.txtCantidad.Text);
-            Preorden.Meses = 0;
+            Preorden.Meses = 1;
             if (this.FechaInicio != "")
             {
                 Preorden.FechaInicio = FechaInicio;
