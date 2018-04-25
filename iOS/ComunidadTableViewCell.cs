@@ -59,23 +59,31 @@ namespace WorklabsMx.iOS
                 {
                     if (Usuario.Usuario_Fotografia_Perfil == null)
                     {
-                        Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
-                    }
-                    else if (Usuario.Usuario_Fotografia_Perfil.Length == 0)
-                    {
-                        Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
-                    }
-
-                    if (Usuario.Usuario_Fotografia_Perfil.Length == 0)
-                    {
-                        ReescalImage = UIImage.FromBundle("PerfilEscritorio");
+                        try
+                        {
+                            Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
+                            ReescalImage = DataToImage(Usuario.Usuario_Fotografia_Perfil);
+                        }
+                        catch
+                        {
+                            ReescalImage = UIImage.FromBundle("PerfilEscritorio");
+                        }
                     }
                     else
                     {
-                        var data = NSData.FromArray(Usuario.Usuario_Fotografia_Perfil);
-                        var uiimage = UIImage.LoadFromData(data);
-                        ReescalImage = uiimage; 
+
+                        if (Usuario.Usuario_Fotografia_Perfil.Length > 0)
+                        {
+                            ReescalImage = DataToImage(Usuario.Usuario_Fotografia_Perfil);
+
+                        }
+                        else
+                        {
+                            ReescalImage = UIImage.FromBundle("PerfilEscritorio");
+                        }
+
                     }
+
 
                 });
             }
@@ -89,6 +97,13 @@ namespace WorklabsMx.iOS
         partial void btnFavorito_Touch(UIButton sender)
         {
             
+        }
+
+        private UIImage DataToImage(byte[] Fotografia_Perfil)
+        {
+            var data = NSData.FromArray(Fotografia_Perfil);
+            var uiimage = UIImage.LoadFromData(data);
+            return uiimage;
         }
 
         partial void btnImagenComu_Touch(UIButton sender)

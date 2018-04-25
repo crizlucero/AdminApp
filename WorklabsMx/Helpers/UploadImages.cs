@@ -41,16 +41,18 @@ namespace WorklabsMx.Helpers
         public byte[] DownloadFileFTP(string imgNombre, string path)
         {
             MemoryStream ms = new MemoryStream();
+            Stream responseStream = null;
+            FtpWebRequest client = null;
             if (!string.IsNullOrEmpty(imgNombre))
             {
                 try
                 {
-                    FtpWebRequest client = (FtpWebRequest)WebRequest.Create("ftp://cloud.worklabs.mx/" + path + imgNombre.Replace("\\", "/"));
+                    client = (FtpWebRequest)WebRequest.Create("ftp://cloud.worklabs.mx/" + path + imgNombre.Replace("\\", "/"));
                     client.Method = WebRequestMethods.Ftp.DownloadFile;
                     client.UsePassive = true;
                     client.Credentials = new NetworkCredential(@"worklabscloud", @"Worklabscloud!");
-                    client.Timeout = 2500;
-                    Stream responseStream = ((FtpWebResponse)client.GetResponse()).GetResponseStream();
+                    client.Timeout = 3000;
+                    responseStream = ((FtpWebResponse)client.GetResponse()).GetResponseStream();
                     responseStream.CopyTo(ms);
                     responseStream.Close();
                     responseStream.Dispose();
@@ -61,6 +63,17 @@ namespace WorklabsMx.Helpers
                 {
                     SlackLogs.SendMessage(e.Message, GetType().Name, "DownloadFileFTP");
                     return ms.ToArray();
+                }
+                finally
+                {
+                    if (responseStream != null)
+                    {
+                        responseStream.Close();
+                        responseStream.Dispose();
+                    }
+                    if (client != null)
+                        client = null;
+                    GC.Collect();
                 }
 
             }

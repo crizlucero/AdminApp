@@ -40,10 +40,9 @@ namespace WorklabsMx.iOS
                 Country = "MEX",
                 User = "Z703CSES0",
                 Password = "OOMYO17MS7",
-                Merchant = "158198",
+                Merchant = "158128",
                 Currency = Currency.Mxn,
                 OperationType = "6",
-                Token = "158128",
                 Reference = "",
                 Amount = total,
 
@@ -59,7 +58,7 @@ namespace WorklabsMx.iOS
                 Merchant = "158198",
                 Currency = Currency.Mxn,
                 Reference = "",
-                AuthKey = "516883685552545048505454"
+                AuthKey = "516883905548514953564957"
             };
             suiteController.AuthenticateWithBeanTokenization(beanTokenization, bean3DS);
             suiteController.SndPayWithTokenWithBeanTokenization(beanTokenization, bean3DS);
