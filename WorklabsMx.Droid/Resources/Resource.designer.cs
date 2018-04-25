@@ -6996,6 +6996,9 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f070127
 			public const int str_general_add_experience = 2131165479;
 			
+			// aapt resource value: 0x7f070149
+			public const int str_general_birthdate_error = 2131165513;
+			
 			// aapt resource value: 0x7f0700e6
 			public const int str_general_cancel = 2131165414;
 			

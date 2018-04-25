@@ -1,18 +1,22 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/PickerItemsController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/EmpresaController.cs">
     <Files>
       <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="97" Column="23" />
       <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="30" Column="6" />
       <File FileName="WorklabsMx.Droid/Properties/AndroidManifest.xml" Line="23" Column="12" />
-      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardEditarActivity.cs" Line="194" Column="10" />
+      <File FileName="WorklabsMx.Droid/ViewElement/PerfilCardEditarActivity.cs" Line="83" Column="58" />
       <File FileName="WorklabsMx.Droid/ViewController/Servicios/ComprasActivity.cs" Line="1" Column="1" />
       <File FileName="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" Line="64" Column="35" />
       <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="18" Column="7" />
       <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="125" Column="54" />
       <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="22" Column="160" />
       <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="39" Column="20" />
-      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="24" Column="23" />
-      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="800" Column="20" />
+      <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="15" Column="39" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Controllers/RedesSocialesController.cs" Line="53" Column="67" />
+      <File FileName="WorklabsMx.Droid/Helpers/PerfilEditarPageAdapter.cs" Line="120" Column="51" />
+      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="298" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -26,7 +30,6 @@
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="114" column="10" />
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="126" column="10" />
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="120" column="1" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/UsuariosController.cs" relfile="WorklabsMx/Controllers/UsuariosController.cs" line="553" column="21" />
       <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/Service/MyFirebaseMessagingService.cs" relfile="WorklabsMx.Droid/Service/MyFirebaseMessagingService.cs" line="19" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

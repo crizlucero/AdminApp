@@ -32,6 +32,7 @@ namespace WorklabsMx.Droid
         bool flag;
         ImageView imgPerfil, imgFondo;
         readonly string usuario_imagen_path;
+        byte[] Usuario_Fotografia_Perfil, Usuario_Fotografia_FondoPerfil;
 
         public PerfilCardEditarActivity()
         {
@@ -50,7 +51,6 @@ namespace WorklabsMx.Droid
             if (!string.IsNullOrEmpty(miembro.Usuario_Fotografia))
             {
                 miembro.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(miembro.Usuario_Fotografia, usuario_imagen_path);
-                photo = BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length);
                 imgPerfil.SetImageBitmap(ImagesHelper.GetRoundedShape(BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_Perfil, 0, miembro.Usuario_Fotografia_Perfil.Length)));
             }
             else
@@ -59,21 +59,20 @@ namespace WorklabsMx.Droid
             if (!string.IsNullOrEmpty(miembro.Usuario_Fotografia_Fondo))
             {
                 miembro.Usuario_Fotografia_FondoPerfil = new UploadImages().DownloadFileFTP(miembro.Usuario_Fotografia_Fondo, usuario_imagen_path);
-                background = BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_FondoPerfil, 0, miembro.Usuario_Fotografia_FondoPerfil.Length);
-                imgFondo.SetImageBitmap(background);
+                imgFondo.SetImageBitmap(BitmapFactory.DecodeByteArray(miembro.Usuario_Fotografia_FondoPerfil, 0, miembro.Usuario_Fotografia_FondoPerfil.Length));
             }
 
             FindViewById<Button>(Resource.Id.btnGuardar).Click += delegate
             {
                 System.IO.MemoryStream stream = new System.IO.MemoryStream();
                 photo?.Compress(Bitmap.CompressFormat.Jpeg, 0, stream);
-                miembro.Usuario_Fotografia_Perfil = stream?.ToArray();
+                Usuario_Fotografia_Perfil = stream?.ToArray();
                 stream = new System.IO.MemoryStream();
                 background?.Compress(Bitmap.CompressFormat.Jpeg, 0, stream);
-                miembro.Usuario_Fotografia_FondoPerfil = stream?.ToArray();
+                Usuario_Fotografia_FondoPerfil = stream?.ToArray();
                 if (new UsuariosController().UpdateDataMiembros(miembro.Usuario_Id, FindViewById<EditText>(Resource.Id.txtNombre).Text,
                                                                 FindViewById<EditText>(Resource.Id.txtApellidos).Text, miembro.Usuario_Correo_Electronico, miembro.Usuario_Telefono,
-                                                                miembro.Usuario_Celular, miembro.Usuario_Descripcion, DateTime.Parse(miembro.Usuario_Fecha_Nacimiento), miembro.Usuario_Fotografia_Perfil, miembro.Usuario_Fotografia_FondoPerfil))
+                                                                miembro.Usuario_Celular, miembro.Usuario_Descripcion, miembro.Usuario_Fecha_Nacimiento, miembro.Usuario_Fotografia, Usuario_Fotografia_Perfil, miembro.Usuario_Fotografia_Fondo, Usuario_Fotografia_FondoPerfil))
                 {
                     miembro.Redes_Sociales.AsParallel().ToList().ForEach(red =>
                     {
