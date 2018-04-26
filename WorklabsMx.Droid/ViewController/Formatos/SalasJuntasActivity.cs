@@ -59,7 +59,7 @@ namespace WorklabsMx.Droid
             ActionBar.Title = Resources.GetString(Resource.String.str_meeting_room_reservation);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             /*_viewPager = FindViewById<ViewPager>(Resource.Id.vpSucursal);*/
-            salas = SalasController.GetSalaJuntas(Intent.GetStringExtra("sucursal_id"));
+            //salas = SalasController.GetSalaJuntas(Intent.GetStringExtra("sucursal_id"));
             /*niveles = SalasController.GetNivelesSucursal(Intent.GetStringExtra("sucursal_id"));
             _viewPager.Adapter = new SalaJuntasAdapter(this, salas);*/
             //tlSalasJuntas = FindViewById<TableLayout>(Resource.Id.tlSalasJuntas);
