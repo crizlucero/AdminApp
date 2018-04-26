@@ -105,9 +105,11 @@ namespace WorklabsMx.iOS
             if (isShowInformation)
             {
                 var current = tableItems[indexPath.Row];
+
                 var currentOptionCell = (MenuContenidoCell)tableView.DequeueReusableCell(IdentificadorCeldaPost, indexPath);
                 currentOptionCell.UpdateCell(current.Label);
                 return currentOptionCell;
+
             }
             else
             {
@@ -120,7 +122,22 @@ namespace WorklabsMx.iOS
 
         public  override void RowSelected(UITableView tableView, Foundation.NSIndexPath indexPath)
         {
-            if (indexPath.Row == 0)
+
+            var current = tableItems[indexPath.Row];
+            if (current.Controller == "CerrarSesion")
+            {
+                this.CerrarSesion();
+            }
+            else
+            {
+                if(current.Controller != "" && current.Controller != null)
+                {
+                    this.PerformSegue(current.Controller, this);
+                }
+            }
+
+
+            /*if (indexPath.Row == 0)
             {
                 this.PerformSegue("ToSocial", this);
             }
@@ -151,7 +168,7 @@ namespace WorklabsMx.iOS
             else if (indexPath.Row == 7)
             {
                  this.CerrarSesion();
-            }
+            }*/
 
         }
        

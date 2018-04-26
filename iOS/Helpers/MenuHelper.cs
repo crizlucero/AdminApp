@@ -45,10 +45,9 @@ namespace WorklabsMx.iOS.Helpers
                 {
                     foreach (ItemsMenu menu in new Controllers.EscritorioController().GetMenuiOS(Convert.ToInt32(KeyChainHelper.GetKey("Usuario_Tipo"))))
                     {
-                        if (menu.Menu_Id != "8" && menu.Menu_Id != "22")
-                        {
-                            tableItems.Add(menu);
-                        }
+
+                        tableItems.Add(menu);
+
                     }
                     GeneralList = tableItems;
                 }

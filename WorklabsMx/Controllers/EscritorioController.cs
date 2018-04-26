@@ -253,7 +253,7 @@ namespace WorklabsMx.Controllers
         public List<ItemsMenu> GetMenuiOS(int tipo, string menu_id = null)
         {
             List<ItemsMenu> menus = new List<ItemsMenu>();
-            string query = "SELECT * FROM vw_cat_Menu WHERE Menu_Padre_Id " + (string.IsNullOrEmpty(menu_id) ? " IS NULL " : " = @menu_id ") + " AND Menu_Estatus = 1 ORDER BY Menu_Orden_Aparicion ASC";
+            string query = "SELECT * FROM vw_cat_Menu WHERE Menu_Padre_Id " + (string.IsNullOrEmpty(menu_id) ? " IS NULL " : " = @menu_id ") + " AND Menu_Estatus = 1 AND Menu_Controller_iOS IS NOT NULL AND Menu_Controller_iOS != '' ORDER BY Menu_Orden_Aparicion ASC";
             if (tipo == (int)TiposUsuarios.Colaborador)
             {
                 query += " AND Menu_Solo_Admin = 0";

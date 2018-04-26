@@ -96,7 +96,7 @@ namespace WorklabsMx.iOS
 
             lblLikes.UserInteractionEnabled = true;
             lblLikes.AddGestureRecognizer(labelTap);
-            imgPublicacion.Image = UIImage.FromBundle("NoImagen");
+            //imgPublicacion.Image = UIImage.FromBundle("NoImagen");
             btnImgPerfil.SetBackgroundImage(UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
             await GetImagenesPost(post);
         }
