@@ -67,7 +67,7 @@ namespace WorklabsMx.Controllers
                     {
                         Sucursal_Correo = reader["Sucursal_Correo_1"].ToString(),
                         Sucursal_Descripcion = reader["Sucursal_Descripcion"].ToString(),
-                        Sucursal_Domicilio = reader["Sucursal_Domicilio"].ToString(),
+                        Sucursal_Domicilio = reader["Sucursal_Domicilio_1"].ToString(),
                         Territorio = new TerritorioModel
                         {
                             Colonia = reader["Territorio_Colonia_Descripcion"].ToString(),

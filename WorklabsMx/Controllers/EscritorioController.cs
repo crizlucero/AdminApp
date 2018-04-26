@@ -299,7 +299,7 @@ namespace WorklabsMx.Controllers
         public List<ItemsMenu> GetMenuAndroid(int tipo, string menu_id = null)
         {
             List<ItemsMenu> menus = new List<ItemsMenu>();
-            string query = "select * from vw_cat_Menu Where Menu_Estatus = 1 ORDER BY Menu_Orden_Aparicion";
+            string query = "select * from vw_cat_Menu Where Menu_Estatus = 1 AND Menu_Controller_Android IS NOT NULL ORDER BY Menu_Orden_Aparicion";
             if (tipo == (int)TiposUsuarios.Colaborador)
             {
                 query += " AND Menu_Solo_Admin = 0";
