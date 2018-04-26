@@ -26,7 +26,7 @@ namespace WorklabsMx.Droid
 
             SetContentView(Resource.Layout.ReservacionSalaJuntasPaso2Layout);
 
-            salas = new SalasJuntasController().GetSalaJuntas(Intent.GetStringExtra("sucursal_id"));
+            salas = new SalasJuntasController().GetSalaJuntas(Intent.GetStringExtra("sucursal_id"), DateTime.Now.ToString("d"), DateTime.Now.ToShortTimeString(), DateTime.Now.AddMinutes(30).ToShortTimeString());
 
             ListView lvSalasJuntas = FindViewById<ListView>(Resource.Id.lvSalasJuntas);
             lvSalasJuntas.Adapter = new SalasJuntasListAdapter(salas);
