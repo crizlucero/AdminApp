@@ -565,7 +565,7 @@ namespace WorklabsMx.iOS
             DateTime fechaNacimiento = new DateTime();
             fechaNacimiento = DateTime.Parse(Miembro.Usuario_Fecha_Nacimiento);
             return resultDataMiembros = new UsuariosController().UpdateDataMiembros(KeyChainHelper.GetKey("Usuario_Id"), Miembro.Usuario_Nombre, Miembro.Usuario_Apellidos, Miembro.Usuario_Correo_Electronico,
-                                                                             Miembro.Usuario_Telefono, Miembro.Usuario_Celular, Miembro.Usuario_Descripcion, fechaNacimiento, Miembro.Usuario_Fotografia_Perfil, Miembro.Usuario_Fotografia_FondoPerfil);
+                                                                                    Miembro.Usuario_Telefono, Miembro.Usuario_Celular, Miembro.Usuario_Descripcion, fechaNacimiento.ToString(), Miembro.Usuario_Fotografia, Miembro.Usuario_Fotografia_Perfil, Miembro.Usuario_Fotografia_Fondo,Miembro.Usuario_Fotografia_FondoPerfil);
         }
 
 

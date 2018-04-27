@@ -458,8 +458,12 @@ namespace WorklabsMx.iOS
                 resultRedesSociales = 1;
             }
 
+                  NSDateFormatter dateFormate = new NSDateFormatter();
+                dateFormate.DateFormat = "yyyy-MM-dd";
+                dateFormate.ToString(NSDate.Now);
+
             resultDataMiembros = new UsuariosController().UpdateDataMiembros(KeyChainHelper.GetKey("Usuario_Id"), NewInfoPerfil.Usuario_Nombre, NewInfoPerfil.Usuario_Apellidos, NewInfoPerfil.Usuario_Correo_Electronico,
-                                                                             NewInfoPerfil.Usuario_Telefono, NewInfoPerfil.Usuario_Celular, NewInfoPerfil.Usuario_Descripcion, fechaNacimiento, NewInfoPerfil.Usuario_Fotografia_Perfil, NewInfoPerfil.Usuario_Fotografia_FondoPerfil);
+                                                                             NewInfoPerfil.Usuario_Telefono, NewInfoPerfil.Usuario_Celular, NewInfoPerfil.Usuario_Descripcion, fechaNacimiento.ToString() , NewInfoPerfil.Usuario_Fotografia, NewInfoPerfil.Usuario_Fotografia_Perfil, NewInfoPerfil.Usuario_Fotografia_Fondo, NewInfoPerfil.Usuario_Fotografia_FondoPerfil);
 
             if (NewInfoPerfil.Empresa_Actual.Empresa_Logotipo_Perfil == null)
             {
