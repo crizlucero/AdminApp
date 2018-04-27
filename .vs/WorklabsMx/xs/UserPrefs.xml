@@ -1,16 +1,19 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Helpers/SlackLogs.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/EmpresaController.cs">
     <Files>
       <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="331" Column="74" />
-      <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="30" Column="59" />
+      <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="106" Column="82" />
       <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="201" Column="69" />
+      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="184" Column="82" />
       <File FileName="WorklabsMx/Controllers/SucursalController.cs" Line="70" Column="74" />
       <File FileName="WorklabsMx/Controllers/InvitadosController.cs" Line="94" Column="57" />
       <File FileName="WorklabsMx.Droid/ViewController/Formatos/InvitadosActivity.cs" Line="142" Column="23" />
       <File FileName="WorklabsMx.Droid/ViewController/Formatos/InvitadosConfirmacionActivity.cs" Line="46" Column="63" />
-      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="472" Column="42" />
-      <File FileName="WorklabsMx/Helpers/SlackLogs.cs" Line="31" Column="17" />
+      <File FileName="WorklabsMx/Controllers/UsuariosController.cs" Line="202" Column="66" />
+      <File FileName="WorklabsMx/Helpers/SlackLogs.cs" Line="37" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/TabSalasJuntasHistorialActivity.cs" Line="93" Column="48" />
+      <File FileName="WorklabsMx.Droid/ViewController/Directorio/DirectorioActivity.cs" Line="39" Column="74" />
+      <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="127" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

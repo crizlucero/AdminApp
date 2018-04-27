@@ -165,7 +165,7 @@ namespace WorklabsMx.Controllers
         {
             List<UsuarioModel> usuarios = new List<UsuarioModel>();
 
-            command = CreateCommand("select * from vw_pro_Directorio_Usuarios WHERE Usuario_Nombre IS NOT NULL AND Usuario_Estatus = 1 ORDER BY Usuario_Nombre, Usuario_Apellidos");
+            command = CreateCommand("select * from vw_pro_Usuarios_Directorio WHERE Usuario_Nombre IS NOT NULL AND Usuario_Estatus = 1 ORDER BY Usuario_Nombre, Usuario_Apellidos");
             command.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
             command.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
             command.Parameters.AddWithValue("@profesion", "%" + profesion + "%");
@@ -198,8 +198,8 @@ namespace WorklabsMx.Controllers
                         Usuario_Fecha_Registro = reader["Usuario_Fecha_Registro"].ToString(),
                         Genero = new GeneroModel
                         {
-                            Genero_Id = reader["Genero_Id"].ToString(),
-                            Genero_Descripcion = reader["Genero_Descripcion"].ToString()
+                            Genero_Id = reader["Usuario_Genero_Id"].ToString(),
+                            Genero_Descripcion = reader["Usuario_Genero_Descripcion"].ToString()
                         },
                         Usuario_Empresa_Nombre = reader["Usuario_Empresa_Nombre"].ToString()
                     });
