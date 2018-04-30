@@ -2937,10 +2937,7 @@ namespace WorklabsMx.iOS
         void pintarSalas()
         {
             var SizeViewX = this.SalasJuntas.Count * TamañoCeldaSalas + 20;
-            //var currentsizeX = this.cvwSalasJuntas.Frame.Height;
-
             Size = SizeViewX;
-
             newFrame = new CGRect(this.cvwSalasJuntas.Frame.X, this.cvwSalasJuntas.Frame.Y, this.cvwSalasJuntas.Frame.Width, SizeViewX);
             this.cvwSalasJuntas.Frame = newFrame;
         }
