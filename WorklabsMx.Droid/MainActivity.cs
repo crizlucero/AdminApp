@@ -119,7 +119,7 @@ namespace WorklabsMx.Droid
             scroll.ScrollChange += async (sender, e) =>
             {
                 if (posts.Count / (page + 1) > sizePage - 1)
-                    if ((((ScrollView)sender).ScrollY / (page + 1)) > ((scroll.Height) * .6))
+                    if ((((ScrollView)sender).ScrollY / (page + 1)) > ((scroll.Height) /2))
                     {
                         ++page;
                         posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), page, sizePage);
