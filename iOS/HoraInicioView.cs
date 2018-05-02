@@ -18,6 +18,7 @@ namespace WorklabsMx.iOS
 
     public partial class HoraInicioView : UIViewController
     {
+        public DateTime HoraPreseleccionada;
         public EventosHoraInicioSeleccionada HoraSeleccionadadaDelegate;
 
         public HoraInicioView (IntPtr handle) : base (handle)
@@ -29,9 +30,10 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             try
-            {
+            {                
                 dtpHoraInicio.Locale = new NSLocale("en_US");
                 dtpHoraInicio.MinimumDate = (NSDate)DateTime.Now.AddMinutes(30);
+
             }
             catch (Exception e)
             {

@@ -93,10 +93,9 @@ namespace WorklabsMx.iOS
                     EventosComentariosDelegate.LikePresionado(UsuariosLikes);
                 }
             });
-
             lblLikes.UserInteractionEnabled = true;
             lblLikes.AddGestureRecognizer(labelTap);
-            imgPublicacion.Image = UIImage.FromBundle("NoImagen");
+            //imgPublicacion.Image = ImageHelper.ReescalImage(UIImage.FromBundle("NoImagen"));
             btnImgPerfil.SetBackgroundImage(UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
             await GetImagenesPost(post);
         }
@@ -134,8 +133,6 @@ namespace WorklabsMx.iOS
                     }
                 }
 
-
-
                 if ((post.Usuario.Usuario_Fotografia != "" && post.Usuario.Usuario_Fotografia != null && post.Usuario.Usuario_Fotografia != "user_male.png"))
                 {
                     if (post.Usuario.Usuario_Fotografia_Perfil == null)
@@ -169,21 +166,20 @@ namespace WorklabsMx.iOS
                 }
 
             });
-            imgPublicacion.Image = ReescalImage;
+            imgPublicacion.Image = ReescalImage.Scale(DimencionesImagen(UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Width));
             btnImgPerfil.SetBackgroundImage(ReescalImageUsr ?? UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
-            //imgPublicacion.Layer.Bounds = new CGRect(imgPublicacion.Layer.Bounds.X, imgPublicacion.Layer.Bounds.Y, ReescalImage.Size.Width, ReescalImage.Size.Height); //this.DimencionesImagen(imgPublicacion.Layer.Bounds.Height, imgPublicacion.Layer.Bounds.Width, imgPublicacion.Layer.Bounds.X, imgPublicacion.Layer.Bounds.Y);
-            //if (imgPublicacion.Image != null)
-            //{
-                //EventosComentariosDelegate.UpdateRows();
-            //}
+            if (imgPublicacion.Image != null)
+            {
+                EventosComentariosDelegate.UpdateRows();
+            }
 
         }
 
-        private CGRect DimencionesImagen(nfloat Height, nfloat With, nfloat X, nfloat Y)
+        private CGSize DimencionesImagen(nfloat Height, nfloat With)
         {
             var newWith = UIScreen.MainScreen.Bounds.Width;
-            var newHeigth = UIScreen.MainScreen.Bounds.Width;
-            CGRect NewSize = new CGRect(X, Y, newWith, newHeigth);
+            var newHeigth = (Height * newWith) / With;
+            CGSize NewSize = new CGSize(newWith, newHeigth);
             return NewSize;
         }
 

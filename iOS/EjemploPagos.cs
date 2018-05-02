@@ -14,9 +14,9 @@ namespace WorklabsMx.iOS
         Bean3DS bean3DS;
         BeanTokenization beanTokenization;
 
-
         public EjemploPagos()
         {
+            
         }
 
         public void Pagar(VentaDetalleTableViewController VistaPagos, string Total)
@@ -30,7 +30,7 @@ namespace WorklabsMx.iOS
 
             if (total == "")
             {
-                total = "1000";
+                total = "100";
             }
 
             beanTokenization = new BeanTokenization
@@ -116,7 +116,7 @@ namespace WorklabsMx.iOS
         }
 
         public override void DidFinishPayProcess(string response, SuiteError error)
-        {
+         {
             //throw new NotImplementedException();
 
         }

@@ -121,8 +121,20 @@ namespace WorklabsMx.Controllers
         public List<SalaJuntasModel> GetSalaJuntas(string sucursal_id, string fecha, string hora_inicio, string hora_fin, string capacidad = null)
         {
             List<SalaJuntasModel> salas = new List<SalaJuntasModel>();
-            DateTime fecha_inicio = DateTime.Parse(fecha + " " + hora_inicio);
-            DateTime fecha_fin = DateTime.Parse(fecha + " " + hora_fin);
+            DateTime fecha_inicio;
+            DateTime fecha_fin;
+            fecha_inicio = DateTime.Parse(fecha + " " + hora_inicio);
+            int HoraFin = int.Parse(hora_fin.Split(':')[0]);
+            if (HoraFin == 24)
+            {
+                fecha_fin = DateTime.Parse(fecha).AddDays(1);
+            }
+            else
+            {
+                fecha_fin = DateTime.Parse(fecha + " " + hora_fin);
+            }
+
+
             try
             {
                 conn.Open();

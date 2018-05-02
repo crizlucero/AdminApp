@@ -19,8 +19,6 @@
 	<string>Worklabs</string>
 	<key>CFBundleName</key>
 	<string>Worklabs</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.WorklabsMx.WorklabsMx</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
@@ -78,9 +76,9 @@
 		</dict>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>1.8.1</string>
+	<string>1.8.4</string>
 	<key>CFBundleVersion</key>
-	<string>1.8.1</string>
+	<string>1.8.4</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
@@ -89,5 +87,7 @@
 	<false/>
 	<key>Custom Property</key>
 	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string>com.WorklabsMx.WorklabsMx</string>
 </dict>
 </plist>
