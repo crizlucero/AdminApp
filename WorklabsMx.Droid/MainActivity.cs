@@ -118,7 +118,7 @@ namespace WorklabsMx.Droid
             await FillPosts();
             scroll.ScrollChange += async (sender, e) =>
             {
-                if (posts.Count / (page + 1) > sizePage - 1) 
+                if (posts.Count / (page + 1) > sizePage - 1)
                     if ((((ScrollView)sender).ScrollY / (page + 1)) > ((scroll.Height) * .6))
                     {
                         ++page;
@@ -168,7 +168,7 @@ namespace WorklabsMx.Droid
 
                 if (Usuario_Fotos_Perfil.ContainsKey(current))
                 {
-                    if (Usuario_Fotos_Perfil[current] != null)
+                    if (Usuario_Fotos_Perfil[current] != null && Usuario_Fotos_Perfil[current].Length != 0)
                         imgPerfil.SetImageBitmap(ImagesHelper.GetRoundedShape(BitmapFactory.DecodeByteArray(Usuario_Fotos_Perfil[current], 0, Usuario_Fotos_Perfil[current].Length)));
                     else
                         imgPerfil.SetImageResource(Resource.Mipmap.ic_profile_empty);

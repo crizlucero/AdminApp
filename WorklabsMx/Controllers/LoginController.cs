@@ -108,5 +108,34 @@ namespace WorklabsMx.Controllers
             }
             return true;
         }
+
+        public bool MemberExist(string Usuario_Id, string Usuario_Tipo)
+        {
+
+            try
+            {
+                string query = "select count(*) from vw_pro_Usuarios_Directorio where Usuario_Id = @Usuario_Id and Usuario_Tipo = @Usuario_Tipo";
+                command = CreateCommand(query);
+                command.Parameters.AddWithValue("@Usuario_Id", Usuario_Id);
+                command.Parameters.AddWithValue("@Usuario_Tipo", Usuario_Tipo);
+                conn.Open();
+
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (reader.GetInt32(0) == 1)
+                        return true;
+                }
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message, GetType().Name, "MemberExist");
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
     }
 }

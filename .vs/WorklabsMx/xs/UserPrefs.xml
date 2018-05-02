@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/EscritorioController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/MainActivity.cs">
     <Files>
       <File FileName="WorklabsMx/Controllers/PickerItemsController.cs" Line="1" Column="1" />
       <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="193" Column="111" />
+      <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="225" Column="63" />
       <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="1" Column="1" />
       <File FileName="WorklabsMx/Controllers/SucursalController.cs" Line="1" Column="1" />
       <File FileName="WorklabsMx/Controllers/InvitadosController.cs" Line="94" Column="57" />
@@ -16,9 +16,9 @@
       <File FileName="WorklabsMx/Controllers/EmpresaController.cs" Line="1" Column="1" />
       <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="1" Column="1" />
       <File FileName="WorklabsMx.Droid/ViewController/Formatos/ReservaSalaJuntasActivity.cs" Line="235" Column="37" />
-      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="259" Column="66" />
+      <File FileName="WorklabsMx.Droid/MainActivity.cs" Line="172" Column="1" />
       <File FileName="WorklabsMx.Droid/ViewElement/MainActivity.cs" Line="25" Column="25" />
-      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="82" Column="56" />
+      <File FileName="WorklabsMx.Droid/ViewController/CommentsActivity.cs" Line="166" Column="48" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -26,7 +26,7 @@
     <BreakpointStore>
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="108" column="10" />
       <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Handlers/PagosHandler.cs" relfile="WorklabsMx/Handlers/PagosHandler.cs" line="57" column="25" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="458" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/EscritorioController.cs" relfile="WorklabsMx/Controllers/EscritorioController.cs" line="461" column="1" />
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/EditarPerfilTableViewController.cs" relfile="iOS/EditarPerfilTableViewController.cs" line="398" column="1" />
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/EditarPerfilTableViewController.cs" relfile="iOS/EditarPerfilTableViewController.cs" line="476" column="49" />
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="114" column="10" />
@@ -34,11 +34,12 @@
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="120" column="1" />
       <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/Service/MyFirebaseMessagingService.cs" relfile="WorklabsMx.Droid/Service/MyFirebaseMessagingService.cs" line="19" column="1" />
       <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx/Controllers/EmpresaController.cs" relfile="WorklabsMx/Controllers/EmpresaController.cs" line="186" column="1" />
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/MainActivity.cs" relfile="WorklabsMx.Droid/MainActivity.cs" line="171" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../../WorklabsMx/Handlers/PagosHandler.cs" line="41" offsetX="632" offsetY="600" expression="e.StackTrace" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.android_accelerated_lollipop" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>
