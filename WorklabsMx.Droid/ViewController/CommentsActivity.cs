@@ -37,7 +37,7 @@ namespace WorklabsMx.Droid
         Bitmap bitmap;
         AlertDialog dialog;
         View customView;
-        readonly int sizePage = 10, PickImageId = 1000, TakePicture = 500;
+        readonly int sizePage = 5, PickImageId = 1000, TakePicture = 500;
         int page;
         string post_id, imgPublish, imagePath;
         PostModel post;
@@ -69,7 +69,7 @@ namespace WorklabsMx.Droid
             FillPost();
             svComentarios = FindViewById<ScrollView>(Resource.Id.svComentarios);
             tlComentarios = FindViewById<TableLayout>(Resource.Id.comment_table);
-            comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+            comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), page, sizePage);
             if (Convert.ToInt32(Intent.GetStringExtra("comments_total")) > 0)
             {
                 tlComentarios.RemoveAllViews();
@@ -79,7 +79,7 @@ namespace WorklabsMx.Droid
             refresher.SetColorSchemeColors(Color.Gray, Color.LightGray, Color.Gray, Color.DarkGray, Color.Black, Color.DarkGray);
             refresher.Refresh += (sender, e) =>
             {
-                comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+                comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), page, sizePage);
                 if (comentarios.Count != 0)
                 {
                     tlComentarios.RemoveAllViews();
@@ -89,7 +89,7 @@ namespace WorklabsMx.Droid
             };
             svComentarios.ScrollChange += (sender, e) =>
             {
-                if ((comentarios.Count / (page + 1)) < 10)
+                if ((comentarios.Count / (page + 1)) < sizePage - 1)
                     if ((((ScrollView)sender).ScrollY / (page + 1)) > ((svComentarios.Height) * .4))
                     {
                         ++page;
@@ -306,7 +306,7 @@ namespace WorklabsMx.Droid
                            {
                                Toast.MakeText(this, "Comentario eliminado", ToastLength.Short).Show();
                                page = 0;
-                               comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+                                comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), page, sizePage);
                                if (comentarios.Count != 0)
                                {
                                    tlComentarios.RemoveAllViews();
@@ -432,7 +432,7 @@ namespace WorklabsMx.Droid
                     {
                         customView.FindViewById<EditText>(Resource.Id.txtPublicacion).Text = "";
                         customView.FindViewById<EditText>(Resource.Id.txtPublicacion).ClearFocus();
-                        comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+                        comentarios = DashboardController.GetComentariosPost(post_id, localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), page, sizePage);
                         FillComments();
                         svComentarios.ScrollY = svComentarios.Height;
                     }

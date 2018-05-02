@@ -3,6 +3,7 @@ using Android.Content;
 using Android.OS;
 using Android.Support.V7.App;
 using PerpetualEngine.Storage;
+using WorklabsMx.Controllers;
 
 namespace WorklabsMx.Droid
 {
@@ -15,11 +16,11 @@ namespace WorklabsMx.Droid
             base.OnCreate(savedInstanceState);
             SimpleStorage.SetContext(ApplicationContext);
             localStorage = SimpleStorage.EditGroup("Login");
-            Intent newIntent;
+            Intent newIntent = new Intent(this, typeof(LoginActivity));
             if (localStorage.HasKey("Usuario_Id") && localStorage.HasKey("Usuario_Tipo"))
-                newIntent = new Intent(this, typeof(MainActivity));
-            else
-                newIntent = new Intent(this, typeof(LoginActivity));
+                if (new LoginController().MemberExist(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo")))
+                    newIntent = new Intent(this, typeof(MainActivity));
+
             newIntent.AddFlags(ActivityFlags.ClearTop);
             newIntent.AddFlags(ActivityFlags.SingleTop);
             StartActivity(newIntent);

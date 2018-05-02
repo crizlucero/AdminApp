@@ -23,7 +23,7 @@ namespace WorklabsMx.Controllers
         /// Obtiene los posts del muro
         /// </summary>
         /// <returns>Posts</returns>
-        public List<PostModel> GetMuroPosts(string usuario_id, string usuario_tipo)
+        public List<PostModel> GetMuroPosts(string usuario_id, string usuario_tipo, int pagina_actual, int pagina_tamanio)
         {
             List<PostModel> posts = new List<PostModel>();
             List<UsuarioModel> usuarios = new List<UsuarioModel>();
@@ -34,9 +34,11 @@ namespace WorklabsMx.Controllers
                 command = CreateCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "sp_vw_pro_Red_Social_Publicaciones";
+                command.CommandText = "sp_vw_pro_Red_Social_Publicaciones_Paginacion";
                 command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
                 command.Parameters.AddWithValue("@Usuario_Tipo", usuario_tipo);
+                command.Parameters.AddWithValue("@Current_Page", pagina_actual);
+                command.Parameters.AddWithValue("@Total_Pages", pagina_tamanio);
 
                 reader = command.ExecuteReader();
                 while (reader.Read())
@@ -188,7 +190,7 @@ namespace WorklabsMx.Controllers
         /// </summary>
         /// <returns>Comentarios del post</returns>
         /// <param name="post_id">Identificador del post</param>
-        public List<ComentarioModel> GetComentariosPost(string post_id, string usuario_id, string usuario_tipo)
+        public List<ComentarioModel> GetComentariosPost(string post_id, string usuario_id, string usuario_tipo, int pagina_actual, int pagina_tamanio)
         {
             List<ComentarioModel> comentarios = new List<ComentarioModel>();
             List<UsuarioModel> usuarios = new List<UsuarioModel>();
@@ -196,10 +198,13 @@ namespace WorklabsMx.Controllers
             command = CreateCommand();
             command.Connection = conn;
             command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "sp_vw_pro_Red_Social_Publicaciones_Comentarios";
+            command.CommandText = "sp_vw_pro_Red_Social_Publicaciones_Comentarios_Paginacion";
             command.Parameters.AddWithValue("@Post_Id", post_id);
             command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
             command.Parameters.AddWithValue("@Usuario_Tipo", usuario_tipo);
+            command.Parameters.AddWithValue("@Current_Page", pagina_actual);
+            command.Parameters.AddWithValue("@Total_Pages", pagina_tamanio);
+
             try
             {
                 conn.Open();
