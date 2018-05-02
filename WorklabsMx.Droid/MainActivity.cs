@@ -22,8 +22,6 @@ using Android.App;
 using WorklabsMx.Droid.ViewElement;
 using WorklabsMx.Droid.Helpers;
 using Android.Content.Res;
-using Firebase.Iid;
-using Android.Util;
 using WorklabsMx.Droid.Service;
 
 namespace WorklabsMx.Droid
@@ -112,18 +110,19 @@ namespace WorklabsMx.Droid
             refresher.Refresh += async (sender, e) =>
             {
                 page = 0;
-                posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+                posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), page, sizePage);
                 await FillPosts();
                 ((SwipeRefreshLayout)sender).Refreshing = false;
             };
-            posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+            posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), page, sizePage);
             await FillPosts();
             scroll.ScrollChange += async (sender, e) =>
             {
-                if (posts.Count / (page + 1) > 10)
+                if (posts.Count / (page + 1) > sizePage - 1) 
                     if ((((ScrollView)sender).ScrollY / (page + 1)) > ((scroll.Height) * .6))
                     {
                         ++page;
+                        posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), page, sizePage);
                         await FillPosts();
                     }
             };
@@ -144,7 +143,7 @@ namespace WorklabsMx.Droid
                 {
                     ((SearchView)sender).ClearFocus();
                     page = 0;
-                    posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+                    posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), page, sizePage);
                     await FillPosts();
                 }
             };
@@ -156,7 +155,7 @@ namespace WorklabsMx.Droid
             AndHUD.Shared.Show(this, null, -1, MaskType.Black);
             if (page == 0) tlPost.RemoveAllViews();
             await Task.Delay(500);
-            posts.Skip(page * sizePage).Take(sizePage).AsParallel().ToList().ForEach(post =>
+            posts.AsParallel().ToList().ForEach(post =>
             {
                 LayoutInflater liView = LayoutInflater;
                 View PostView = liView.Inflate(Resource.Layout.PostLayout, null, true);
@@ -279,7 +278,7 @@ namespace WorklabsMx.Droid
                                 {
                                     Toast.MakeText(this, "Publicación eliminada", ToastLength.Short).Show();
                                     page = 0;
-                                    posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+                                    posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), page, sizePage);
                                     await FillPosts();
                                 }
                                 else

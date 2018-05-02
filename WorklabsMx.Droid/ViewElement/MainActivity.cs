@@ -24,7 +24,7 @@ namespace WorklabsMx.Droid
     {
         View customView;
         File _file, _dir;
-        readonly int sizePage = 10, PickImageId = 1000, TakePicture = 500;
+        readonly int sizePage = 5, PickImageId = 1000, TakePicture = 500;
         Bitmap bitmap;
         AlertDialog dialog;
         string imgPublish, imagePath;
@@ -106,7 +106,7 @@ namespace WorklabsMx.Droid
                                                            bitmapData))
                     {
                         page = 0;
-                        posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"));
+                        posts = DashboardController.GetMuroPosts(localStorage.Get("Usuario_Id"), localStorage.Get("Usuario_Tipo"), page, sizePage);
                         await FillPosts();
                         dialog.Dismiss();
                         customView.FindViewById<ImageView>(Resource.Id.imgPicture).Visibility = ViewStates.Gone;
