@@ -23,6 +23,8 @@ namespace WorklabsMx.iOS
         void ActualizaTabla();
         void UpdateRows();
         void LikePresionado(List<UsuarioModel> UsuariosLikes);
+        void ImagenPublicada(List<string> FotosId);
+        void ImagenPerfilPublicada(List<string> FotosPerfilId);
     }
 
 
@@ -40,7 +42,7 @@ namespace WorklabsMx.iOS
         {
         }
 
-        async internal void UpdateCell(PostModel post)
+        async internal void UpdateCell(PostModel post, List<string> FotosId, List<string> FotosPerfilId)
         {
             var Tap = new UITapGestureRecognizer(this.ImageTapped);
             imgPublicacion.UserInteractionEnabled = true;
@@ -97,10 +99,10 @@ namespace WorklabsMx.iOS
             lblLikes.AddGestureRecognizer(labelTap);
             //imgPublicacion.Image = ImageHelper.ReescalImage(UIImage.FromBundle("NoImagen"));
             btnImgPerfil.SetBackgroundImage(UIImage.FromBundle("PerfilEscritorio"), UIControlState.Normal);
-            await GetImagenesPost(post);
+            await GetImagenesPost(post, FotosId, FotosPerfilId);
         }
 
-        async Task GetImagenesPost(PostModel post)
+        async Task GetImagenesPost(PostModel post, List<string> FotosId, List<string> FotosPerfilId)
         {
             UIImage ReescalImage = new UIImage();
 
@@ -111,8 +113,19 @@ namespace WorklabsMx.iOS
                 {
                     try
                     {
-                        post.Publicacion_Imagen_Post = new UploadImages().DownloadFileFTP(post.Publicacion_Imagen, MenuHelper.UploadImagePath);
-                        ReescalImage = ImageHelper.ReescalImage(DataToImage(post.Publicacion_Imagen_Post));
+                        var result = FotosId.Find(x => x == post.Publicacion_Imagen);
+                        if (result == null || result == "")
+                        {
+                            post.Publicacion_Imagen_Post = new UploadImages().DownloadFileFTP(post.Publicacion_Imagen, MenuHelper.UploadImagePath);
+                            ReescalImage = ImageHelper.ReescalImage(DataToImage(post.Publicacion_Imagen_Post));
+                            FotosId.Add(post.Publicacion_Imagen);
+                            EventosComentariosDelegate.ImagenPublicada(FotosId);
+                        }
+                        else
+                        {
+                            ReescalImage = UIImage.FromBundle("NoImagen"); 
+                        }
+
                     }
                     catch
                     {
@@ -139,8 +152,19 @@ namespace WorklabsMx.iOS
                     {
                         try
                         {
-                            post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
-                            ReescalImageUsr = DataToImage(post.Usuario.Usuario_Fotografia_Perfil);
+                            var result = FotosPerfilId.Find(x => x == post.Usuario.Usuario_Fotografia);
+                            if (result == null || result == "")
+                            {
+                                post.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(post.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
+                                ReescalImageUsr = DataToImage(post.Usuario.Usuario_Fotografia_Perfil);
+                                FotosPerfilId.Add(post.Usuario.Usuario_Fotografia);
+                                EventosComentariosDelegate.ImagenPerfilPublicada(FotosPerfilId);
+                            }
+                            else
+                            {
+                                ReescalImageUsr = UIImage.FromBundle("ProfileImageBig");
+                            }
+
                         }
                         catch
                         {

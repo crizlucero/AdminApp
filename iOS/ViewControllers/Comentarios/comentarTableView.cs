@@ -40,6 +40,7 @@ namespace WorklabsMx.iOS
         List<UIImage> allCommentImages = new List<UIImage>();
 
         float withImage;
+        int ContPag = 0;
 
         public comentarTableView (IntPtr handle) : base (handle)
         {
@@ -55,7 +56,7 @@ namespace WorklabsMx.iOS
         {
             BTProgressHUD.Show(status: "Cargando Comentarios");
             base.ViewWillAppear(animated);
-            await MenuHelper.GetCommentPost(currentPost);
+            await MenuHelper.GetCommentPost(currentPost, ContPag, 5);
             this.comentarios = MenuHelper.Comentarios;
             this.TableView.ReloadData();
             this.TableView.BeginUpdates();
@@ -103,12 +104,28 @@ namespace WorklabsMx.iOS
             this.NavigationController.PopViewController(true);
         }
 
+        async void GetPost()
+        {
+            await MenuHelper.GetCommentPost(currentPost, ContPag, 5);
+            foreach (ComentarioModel cometario in MenuHelper.Comentarios)
+            {
+                this.comentarios.Add(cometario);
+            }
+            TableView.ReloadData();
+            this.TableView.BeginUpdates();
+            this.TableView.EndUpdates();
+        }
+
         public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
         {
             if (isShowInformation)
             {
+                if(indexPath.Row == comentarios.Count - 1)
+                {
+                    ContPag++;
+                    this.GetPost();
+                }
                 var currentComment = comentarios[indexPath.Row];
-
                 if((currentComment.Comentario_Imagen_Ruta != null && currentComment.Comentario_Imagen_Ruta != "") && (currentComment.Comentario_Imagen != null && currentComment.Comentario_Imagen != ""))
                 {
                     var currentPostImageCell = (ComentarImageTableViewCell)tableView.DequeueReusableCell(IdentificadorImageCeldaPost, indexPath);
@@ -159,7 +176,7 @@ namespace WorklabsMx.iOS
 
             if (new Controllers.EscritorioController().CommentPost(currentPost.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Comentario, Fotografia))
             {
-                await MenuHelper.GetCommentPost(currentPost);
+                await MenuHelper.GetCommentPost(currentPost, ContPag, 5);
                 this.comentarios = MenuHelper.Comentarios;
                 TableView.ReloadData();
                 this.TableView.BeginUpdates();
@@ -190,7 +207,7 @@ namespace WorklabsMx.iOS
         public async void ActualizaTabla()
         {
             //await MenuHelper.GetMuroPosts();
-            await MenuHelper.GetCommentPost(currentPost);
+            await MenuHelper.GetCommentPost(currentPost, ContPag, 5);
             this.comentarios = MenuHelper.Comentarios;
             TableView.ReloadData();
             this.TableView.BeginUpdates();
@@ -219,7 +236,7 @@ namespace WorklabsMx.iOS
 
         public async void ActualizarTabla()
         {
-            await MenuHelper.GetCommentPost(currentPost);
+            await MenuHelper.GetCommentPost(currentPost, ContPag, 5);
             this.comentarios = MenuHelper.Comentarios;
             TableView.ReloadData();
             this.TableView.BeginUpdates();

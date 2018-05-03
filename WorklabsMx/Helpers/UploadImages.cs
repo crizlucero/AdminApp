@@ -51,17 +51,18 @@ namespace WorklabsMx.Helpers
                     client.Method = WebRequestMethods.Ftp.DownloadFile;
                     client.UsePassive = true;
                     client.Credentials = new NetworkCredential(@"worklabscloud", @"Worklabscloud!");
-                    client.Timeout = 3000;
+                    client.Timeout = System.Threading.Timeout.Infinite;
                     responseStream = ((FtpWebResponse)client.GetResponse()).GetResponseStream();
                     responseStream.CopyTo(ms);
                     responseStream.Close();
-                    responseStream.Dispose();
+                    /*responseStream.Dispose();
                     client = null;
-                    GC.Collect();
+                    GC.Collect();*/
                 }
                 catch (Exception e)
                 {
                     SlackLogs.SendMessage(e.Message, GetType().Name, "DownloadFileFTP");
+                   
                     return ms.ToArray();
                 }
                 finally

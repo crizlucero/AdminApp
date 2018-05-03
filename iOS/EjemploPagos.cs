@@ -45,7 +45,6 @@ namespace WorklabsMx.iOS
                 OperationType = "6",
                 Reference = "",
                 Amount = total,
-
             };
 
             bean3DS = new Bean3DS
