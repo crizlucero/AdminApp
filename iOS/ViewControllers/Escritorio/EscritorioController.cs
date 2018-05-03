@@ -26,7 +26,7 @@ using System; using UIKit; using WorklabsMx.iOS.Helpers; using WorklabsMx.
         }          public override void ViewDidDisappear(bool animated)
         {
             base.ViewDidDisappear(animated);
-        }          async void GetData()         {             RefreshControl.BeginRefreshing();              await MenuHelper.GetMuroPosts(0, 5);             allPosts = MenuHelper.AllPost;             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();             await MenuHelper.FillTable();
+        }          async void GetData()         {             RefreshControl.BeginRefreshing();             ContPag = 0;             await MenuHelper.GetMuroPosts(ContPag, 5);             allPosts = MenuHelper.AllPost;             TableView.ReloadData();             this.TableView.BeginUpdates();             this.TableView.EndUpdates();             await MenuHelper.FillTable();
             if (RefreshControl != null && RefreshControl.Refreshing)
                 RefreshControl.EndRefreshing();
         }          async void GetPost(NSIndexPath indexPath)         {             await MenuHelper.GetMuroPosts(ContPag, 5);              foreach (PostModel post in MenuHelper.AllPost)             {                 TableView.BeginUpdates();                 allPosts.Add(post);                 TableView.InsertRows(new NSIndexPath[] { indexPath }, UITableViewRowAnimation.None);                 TableView.EndUpdates();
