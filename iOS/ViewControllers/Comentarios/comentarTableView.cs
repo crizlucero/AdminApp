@@ -40,8 +40,11 @@ namespace WorklabsMx.iOS
         List<UIImage> allCommentImages = new List<UIImage>();
 
         float withImage;
+        int ContPag = 0;
+        List<string> FotosId;
+        List<string> FotosPerfilId;
 
-        public comentarTableView (IntPtr handle) : base (handle)
+        public comentarTableView(IntPtr handle) : base(handle)
         {
         }
 
@@ -49,13 +52,15 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());
+            FotosId = new List<string>();
+            FotosPerfilId = new List<string>();
         }
 
         public async override void ViewWillAppear(bool animated)
         {
             BTProgressHUD.Show(status: "Cargando Comentarios");
             base.ViewWillAppear(animated);
-            await MenuHelper.GetCommentPost(currentPost);
+            await MenuHelper.GetCommentPost(currentPost, ContPag, 5);
             this.comentarios = MenuHelper.Comentarios;
             this.TableView.ReloadData();
             this.TableView.BeginUpdates();
@@ -103,16 +108,33 @@ namespace WorklabsMx.iOS
             this.NavigationController.PopViewController(true);
         }
 
+        async void GetPost(NSIndexPath indexPath)
+        {
+            await MenuHelper.GetCommentPost(currentPost, ContPag, 5);
+            foreach (ComentarioModel cometario in MenuHelper.Comentarios)
+            {
+                TableView.BeginUpdates();
+                this.comentarios.Add(cometario);
+                TableView.InsertRows(new NSIndexPath[] { indexPath }, UITableViewRowAnimation.None);
+                TableView.EndUpdates();
+            }
+
+        }
+
         public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
         {
             if (isShowInformation)
             {
+                if (indexPath.Row == comentarios.Count - 1)
+                {
+                    ContPag++;
+                    this.GetPost(indexPath);
+                }
                 var currentComment = comentarios[indexPath.Row];
-
-                if((currentComment.Comentario_Imagen_Ruta != null && currentComment.Comentario_Imagen_Ruta != "") && (currentComment.Comentario_Imagen != null && currentComment.Comentario_Imagen != ""))
+                if ((currentComment.Comentario_Imagen_Ruta != null && currentComment.Comentario_Imagen_Ruta != "") && (currentComment.Comentario_Imagen != null && currentComment.Comentario_Imagen != ""))
                 {
                     var currentPostImageCell = (ComentarImageTableViewCell)tableView.DequeueReusableCell(IdentificadorImageCeldaPost, indexPath);
-                    currentPostImageCell.UpdateCell(currentComment);
+                    currentPostImageCell.UpdateCell(currentComment, this.FotosId, this.FotosPerfilId);
                     currentPostImageCell.EventosImagenDel = this;
                     return currentPostImageCell;
                 }
@@ -123,8 +145,6 @@ namespace WorklabsMx.iOS
                     currentPostCell.EventosImagenComentarDel = this;
                     return currentPostCell;
                 }
-
-               
             }
             else
             {
@@ -151,15 +171,13 @@ namespace WorklabsMx.iOS
         public async void ComentarioRealizado(String Comentario, UIImage ImagenPublicacion)
         {
             byte[] Fotografia = new byte[0];
-
             if (ImagenPublicacion != null)
             {
                 Fotografia = ImagenPublicacion?.AsPNG().ToArray();
             }
-
             if (new Controllers.EscritorioController().CommentPost(currentPost.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), Comentario, Fotografia))
             {
-                await MenuHelper.GetCommentPost(currentPost);
+                await MenuHelper.GetCommentPost(currentPost, ContPag, 5);
                 this.comentarios = MenuHelper.Comentarios;
                 TableView.ReloadData();
                 this.TableView.BeginUpdates();
@@ -190,12 +208,23 @@ namespace WorklabsMx.iOS
         public async void ActualizaTabla()
         {
             //await MenuHelper.GetMuroPosts();
-            await MenuHelper.GetCommentPost(currentPost);
+            await MenuHelper.GetCommentPost(currentPost, ContPag, 5);
             this.comentarios = MenuHelper.Comentarios;
             TableView.ReloadData();
             this.TableView.BeginUpdates();
             this.TableView.EndUpdates();
         }
+
+        public void ImagenPublicada(List<string> FotosId)
+        {
+            this.FotosId = FotosId;
+        }
+
+        public void ImagenPerfilPublicada(List<string> FotosPerfilId)
+        {
+            this.FotosPerfilId = FotosPerfilId;
+        }
+
     }
 
     partial class comentarTableView : EventosImagenComentar
@@ -219,7 +248,7 @@ namespace WorklabsMx.iOS
 
         public async void ActualizarTabla()
         {
-            await MenuHelper.GetCommentPost(currentPost);
+            await MenuHelper.GetCommentPost(currentPost, ContPag, 5);
             this.comentarios = MenuHelper.Comentarios;
             TableView.ReloadData();
             this.TableView.BeginUpdates();

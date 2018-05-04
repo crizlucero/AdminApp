@@ -18,6 +18,14 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnConectar { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblMensaje { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblMensaje2 { get; set; }
+
         [Action ("btnConectar_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnConectar_Touch (UIKit.UIButton sender);
@@ -27,6 +35,16 @@ namespace WorklabsMx.iOS
             if (btnConectar != null) {
                 btnConectar.Dispose ();
                 btnConectar = null;
+            }
+
+            if (lblMensaje != null) {
+                lblMensaje.Dispose ();
+                lblMensaje = null;
+            }
+
+            if (lblMensaje2 != null) {
+                lblMensaje2.Dispose ();
+                lblMensaje2 = null;
             }
         }
     }

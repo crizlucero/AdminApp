@@ -103,19 +103,19 @@ namespace WorklabsMx.iOS.Helpers
             });
         }
 
-        public static async Task GetMuroPosts()
+        public static async Task GetMuroPosts(int PaginaActual, int PaginaTamanio)
         {
             await Task.Run(() =>
             {
-                AllPost = new Controllers.EscritorioController().GetMuroPosts(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+                AllPost = new Controllers.EscritorioController().GetMuroPosts(KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), PaginaActual, PaginaTamanio);
             });
         }
 
-        public static async Task GetCommentPost(PostModel Post)
+        public static async Task GetCommentPost(PostModel Post, int PaginaActual, int PaginaTamanio)
         {
             await Task.Run(() =>
             {
-                Comentarios = new Controllers.EscritorioController().GetComentariosPost(Post.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"));
+                Comentarios = new Controllers.EscritorioController().GetComentariosPost(Post.Publicacion_Id, KeyChainHelper.GetKey("Usuario_Id"), KeyChainHelper.GetKey("Usuario_Tipo"), PaginaActual, PaginaTamanio);
             });
         }
 

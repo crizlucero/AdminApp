@@ -1,13 +1,31 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/MenuTableViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/NoConexionViewController.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="150" Column="65" />
-      <File FileName="iOS/MenuTableViewController.cs" Line="136" Column="18" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="89" Column="58" />
+      <File FileName="iOS/MenuTableViewController.cs" Line="125" Column="13" />
+      <File FileName="iOS/EditarPerfilTableViewController.cs" Line="293" Column="31" />
+      <File FileName="iOS/ComprasTableView.cs" Line="125" Column="47" />
+      <File FileName="iOS/ViewControllers/Servicios/VentaDetalle/VentaDetalleTableViewController.cs" Line="25" Column="9" />
+      <File FileName="iOS/ComentariosBodyImageCell.cs" Line="155" Column="55" />
+      <File FileName="iOS/Helpers/MenuHelper.cs" Line="82" Column="28" />
+      <File FileName="iOS/ViewControllers/Comentarios/ComentarviewController.cs" Line="16" Column="22" />
+      <File FileName="iOS/ViewControllers/Comentarios/comentarTableView.cs" Line="137" Column="49" />
+      <File FileName="iOS/ComentarImageTableViewCell.cs" Line="90" Column="72" />
+      <File FileName="iOS/NoConexionViewController.cs" Line="36" Column="9" />
+      <File FileName="iOS/AppDelegate.cs" Line="81" Column="1" />
+      <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="70" Column="43" />
+      <File FileName="iOS/Helpers/InternetConectionHelper.cs" Line="7" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/gilberto/Documents/Adaptation/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="115" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/Adaptation/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="119" column="10" />
+      <Breakpoint file="/Users/gilberto/Documents/Adaptation/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="125" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/Adaptation/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="131" column="1" />
+      <Breakpoint file="/Users/gilberto/Documents/Adaptation/WorklabsMx/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="51" column="44" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" />
