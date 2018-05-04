@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ComentariosBodyImageCell.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Escritorio/EscritorioController.cs">
     <Files>
-      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="166" Column="67" />
+      <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="446" Column="47" />
       <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="13" Column="17" />
-      <File FileName="iOS/ComentariosBodyImageCell.cs" Line="103" Column="114" />
+      <File FileName="iOS/ComentariosBodyImageCell.cs" Line="162" Column="30" />
       <File FileName="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" Line="176" Column="73" />
       <File FileName="iOS/ViewControllers/VistaSucursales/ColeccionSucursales.cs" Line="80" Column="24" />
       <File FileName="iOS/Helpers/ImageHelper.cs" Line="31" Column="37" />
-      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="41" Column="23" />
+      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="49" Column="18" />
       <File FileName="iOS/Main.cs" Line="12" Column="1" />
       <File FileName="iOS/NoConexionViewController.cs" Line="28" Column="44" />
       <File FileName="iOS/Helpers/MenuHelper.cs" Line="111" Column="72" />
@@ -17,7 +17,7 @@
       <File FileName="iOS/HoraInicioView.cs" Line="10" Column="25" />
       <File FileName="iOS/HoraFinView.cs" Line="32" Column="23" />
       <File FileName="iOS/EjemploPagos.cs" Line="108" Column="10" />
-      <File FileName="../../../../../Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/System/System.Net/FtpWebRequest.cs" Line="1245" Column="36" />
+      <File FileName="../../../../../Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/System/System.Net/FtpWebRequest.cs" Line="1247" Column="1" />
       <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="134" Column="34" />
       <File FileName="iOS/ComentariosBodyImageCell.designer.cs" Line="15" Column="19" />
     </Files>
@@ -42,7 +42,6 @@
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/UsuariosController.cs" relfile="WorklabsMx/Controllers/UsuariosController.cs" line="553" column="21" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="147" column="71" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Publicar/PublicarPostViewController.cs" relfile="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" line="74" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Publicar/PublicarPostViewController.cs" relfile="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" line="176" column="42" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/ConfigurationsController.cs" relfile="WorklabsMx/Controllers/ConfigurationsController.cs" line="109" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="112" column="10" />
     </BreakpointStore>
