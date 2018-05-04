@@ -124,7 +124,7 @@ namespace WorklabsMx.iOS
         {
 
             var current = tableItems[indexPath.Row];
-            if (current.Controller == "CerrarSesion")
+            if (current.Controller == "LoginViewController")
             {
                 this.CerrarSesion();
             }
