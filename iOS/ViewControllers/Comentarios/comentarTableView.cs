@@ -41,6 +41,8 @@ namespace WorklabsMx.iOS
 
         float withImage;
         int ContPag = 0;
+        List<string> FotosId;
+        List<string> FotosPerfilId;
 
         public comentarTableView (IntPtr handle) : base (handle)
         {
@@ -50,6 +52,8 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             withImage = float.Parse(UIScreen.MainScreen.Bounds.Width.ToString());
+            FotosId = new List<string>();
+            FotosPerfilId = new List<string>();
         }
 
         public async override void ViewWillAppear(bool animated)
@@ -129,7 +133,7 @@ namespace WorklabsMx.iOS
                 if((currentComment.Comentario_Imagen_Ruta != null && currentComment.Comentario_Imagen_Ruta != "") && (currentComment.Comentario_Imagen != null && currentComment.Comentario_Imagen != ""))
                 {
                     var currentPostImageCell = (ComentarImageTableViewCell)tableView.DequeueReusableCell(IdentificadorImageCeldaPost, indexPath);
-                    currentPostImageCell.UpdateCell(currentComment);
+                    currentPostImageCell.UpdateCell(currentComment, this.FotosId, this.FotosPerfilId);
                     currentPostImageCell.EventosImagenDel = this;
                     return currentPostImageCell;
                 }
@@ -212,6 +216,16 @@ namespace WorklabsMx.iOS
             TableView.ReloadData();
             this.TableView.BeginUpdates();
             this.TableView.EndUpdates();
+        }
+
+        public void ImagenPublicada(List<string> FotosId)
+        {
+            this.FotosId = FotosId;
+        }
+
+        public void ImagenPerfilPublicada(List<string> FotosPerfilId)
+        {
+            this.FotosPerfilId = FotosPerfilId;
         }
     }
 

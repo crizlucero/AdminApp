@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/ViewControllers/Escritorio/EscritorioController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/NoConexionViewController.cs">
     <Files>
       <File FileName="WorklabsMx/Controllers/EscritorioController.cs" Line="193" Column="56" NotebookId="1" />
       <File FileName="iOS/ComentariosBodyImageCell.cs" Line="14" Column="25" NotebookId="1" />
@@ -8,9 +8,9 @@
       <File FileName="iOS/Helpers/ImageHelper.cs" Line="31" Column="37" NotebookId="1" />
       <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="107" Column="1" NotebookId="1" />
       <File FileName="iOS/Main.cs" Line="12" Column="1" NotebookId="1" />
-      <File FileName="iOS/NoConexionViewController.cs" Line="28" Column="44" NotebookId="1" />
+      <File FileName="iOS/NoConexionViewController.cs" Line="25" Column="25" NotebookId="1" />
       <File FileName="iOS/Helpers/MenuHelper.cs" Line="119" Column="80" NotebookId="1" />
-      <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="63" Column="13" NotebookId="1" />
+      <File FileName="WorklabsMx/Controllers/ConfigurationsController.cs" Line="95" Column="82" NotebookId="1" />
       <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="128" Column="1" NotebookId="1" />
       <File FileName="iOS/ReservarSalaJuntasViewTableController.cs" Line="3089" Column="51" NotebookId="1" />
       <File FileName="iOS/HoraInicioView.cs" Line="10" Column="25" NotebookId="1" />
@@ -18,13 +18,16 @@
       <File FileName="iOS/EjemploPagos.cs" Line="108" Column="10" NotebookId="1" />
       <File FileName="../../../../../Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/System/System.Net/FtpWebRequest.cs" Line="1247" Column="1" NotebookId="1" />
       <File FileName="iOS/ViewControllers/SalaJuntas/HistorialReservaciones.cs" Line="134" Column="34" NotebookId="1" />
-      <File FileName="iOS/ComentariosBodyImageCell.designer.cs" Line="15" Column="19" NotebookId="1" />
-      <File FileName="iOS/ViewControllers/Comentarios/comentarTableView.cs" Line="107" Column="27" NotebookId="1" />
+      <File FileName="iOS/ComentariosBodyImageCell.designer.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="iOS/ViewControllers/Comentarios/comentarTableView.cs" Line="118" Column="101" NotebookId="1" />
+      <File FileName="iOS/ComentarImageTableViewCell.cs" Line="6" Column="30" NotebookId="1" />
+      <File FileName="WorklabsMx/Models/ConfiguracionesModel.cs" Line="3" Column="18" NotebookId="1" />
+      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="8" Column="9" NotebookId="1" />
     </Files>
     <FloatingWindows>
-      <FloatingWindow WindowId="1" X="63" Y="81" Width="1285" Height="758">
+      <FloatingWindow WindowId="1" X="130" Y="42" Width="1482" Height="955">
         <Files>
-          <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="266" Column="40" />
+          <File FileName="iOS/ViewControllers/Escritorio/EscritorioController.cs" Line="112" Column="27" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
@@ -42,7 +45,6 @@
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/UsuariosController.cs" relfile="WorklabsMx/Controllers/UsuariosController.cs" line="553" column="21" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="147" column="71" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/ViewControllers/Publicar/PublicarPostViewController.cs" relfile="iOS/ViewControllers/Publicar/PublicarPostViewController.cs" line="74" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/WorklabsMx/Controllers/ConfigurationsController.cs" relfile="WorklabsMx/Controllers/ConfigurationsController.cs" line="109" column="1" />
       <Breakpoint file="/Users/gilberto/Documents/WorkLabsMx/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="112" column="10" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

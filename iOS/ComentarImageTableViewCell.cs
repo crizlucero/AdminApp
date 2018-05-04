@@ -8,7 +8,7 @@ using WorklabsMx.Controllers;
 using BigTed;
 using WorklabsMx.Helpers;
 using Foundation;
-using SWRevealViewControllerBinding;
+using System.Collections.Generic;
 
 namespace WorklabsMx.iOS
 {
@@ -18,6 +18,8 @@ namespace WorklabsMx.iOS
         void MostrarImagenEnGrandes(UIImageView Imagen);
         void EnviarActions(UIAlertController actionSheetAlert);
         void ActualizaTabla();
+        void ImagenPublicada(List<string> FotosId);
+        void ImagenPerfilPublicada(List<string> FotosPerfilId);
     }
 
     public partial class ComentarImageTableViewCell : UITableViewCell
@@ -29,7 +31,7 @@ namespace WorklabsMx.iOS
         {
         }
 
-        async internal void UpdateCell(ComentarioModel comentario)
+        async internal void UpdateCell(ComentarioModel comentario, List<string> FotosId, List<string> FotosPerfilId)
         {
             var Tap = new UITapGestureRecognizer(this.ImageTapped);
             imgPublicacion.UserInteractionEnabled = true;
@@ -60,14 +62,14 @@ namespace WorklabsMx.iOS
             txtComentario.ScrollEnabled = false;
             txtComentario.Text = comentario.Comentario_Contenido;
 
-            await GetImagenesComment(comentario);
+            await GetImagenesComment(comentario, FotosId, FotosPerfilId);
 
             comentarioLocal = comentario;
 
         }
 
 
-        async Task GetImagenesComment(ComentarioModel comentario)
+        async Task GetImagenesComment(ComentarioModel comentario, List<string> FotosId, List<string> FotosPerfilId)
         {
             UIImage ReescalImage = new UIImage();
             UIImage ReescalImageUsr = new UIImage();
@@ -75,7 +77,14 @@ namespace WorklabsMx.iOS
             {
                 if (comentario.Comentario_Imagen_Comentario == null)
                 {
-                    comentario.Comentario_Imagen_Comentario = new UploadImages().DownloadFileFTP(comentario.Comentario_Imagen, MenuHelper.UploadImagePath);
+                    var result = FotosId.Find(x => x == comentario.Comentario_Imagen);
+                    if (result == null || result == "")
+                    {
+                        comentario.Comentario_Imagen_Comentario = new UploadImages().DownloadFileFTP(comentario.Comentario_Imagen, MenuHelper.UploadImagePath);
+                        FotosId.Add(comentario.Comentario_Imagen);
+                        EventosImagenDel.ImagenPublicada(FotosId);
+                    }
+
                 }
 
                 if (comentario.Comentario_Imagen_Comentario.Length > 0)
@@ -87,10 +96,15 @@ namespace WorklabsMx.iOS
 
                 if ((comentario.Usuario.Usuario_Fotografia != "" && comentario.Usuario.Usuario_Fotografia != null && comentario.Usuario.Usuario_Fotografia != "user_male.png"))
                 {
-
                     if (comentario.Usuario.Usuario_Fotografia_Perfil == null)
                     {
-                        comentario.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(comentario.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
+                        var result = FotosPerfilId.Find(x => x == comentario.Usuario.Usuario_Fotografia);
+                        if (result == null || result == "")
+                        {
+                            comentario.Usuario.Usuario_Fotografia_Perfil = new UploadImages().DownloadFileFTP(comentario.Usuario.Usuario_Fotografia, MenuHelper.ProfileImagePath);
+                            FotosPerfilId.Add(comentario.Usuario.Usuario_Fotografia);
+                            EventosImagenDel.ImagenPerfilPublicada(FotosPerfilId);
+                        }
                     }
                     else if (comentario.Usuario.Usuario_Fotografia_Perfil.Length == 0)
                     {
@@ -102,7 +116,7 @@ namespace WorklabsMx.iOS
                         var uiimage = UIImage.LoadFromData(data);
                         ReescalImageUsr = ImageHelper.ReescalProfileImage(uiimage);
                     }
-                   
+
                 }
                 else
                 {

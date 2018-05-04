@@ -9,8 +9,15 @@ namespace WorklabsMx.iOS
 {
     public partial class NoConexionViewController : UIViewController
     {
-        public NoConexionViewController (IntPtr handle) : base (handle)
+        public NoConexionViewController(IntPtr handle) : base(handle)
         {
+        }
+
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            this.VerificarConn();
         }
 
         partial void btnConectar_Touch(UIButton sender)
@@ -26,14 +33,19 @@ namespace WorklabsMx.iOS
             if (InternetConectionHelper.VerificarConexion())
             {
                 MenuHelper.GetListConfiguraciones();
-                if(MenuHelper.Configuraciones != null)
+                if (MenuHelper.Configuraciones == null)
+                {
+                    this.lblMensaje.Text = "Estamos realizando manteniemiento a nuestro sistema";
+                    this.lblMensaje2.Text = "Por favor intenta mas tarde";
+                }
+                else
                 {
                     var configuracionCorreo = MenuHelper.Configuraciones.Find(parametro => parametro.Parametro_Descripcion == "REGEX Y LONGITUD DE CORREO ELECTRONICO DEL USUARIO");
                     var configuracionPassword = MenuHelper.Configuraciones.Find(parametro => parametro.Parametro_Descripcion == "REGEX Y LONGITUD DE CONTRASEÑA DEL USUARIO");
                     if ((configuracionCorreo == null || configuracionPassword == null))
                     {
                         BTProgressHUD.Dismiss();
-                        new MessageDialog().SendToast("No pudimos conectarte a nuestros servidores, intenta de nuevo");
+                        new MessageDialog().SendToast("No pudimos conectarte a nuestros servidores");
                     }
                     else
                     {
@@ -56,20 +68,11 @@ namespace WorklabsMx.iOS
                         }
                     }
                 }
-                else
-                {
-                    BTProgressHUD.Dismiss();
-                    new MessageDialog().SendToast("No pudimos conectarte a nuestros servidores, intenta de nuevo");
-                }
 
 
             }
-            else
-            {
-                BTProgressHUD.Dismiss();
-                new MessageDialog().SendToast("Aun no tienes conexión a internet");
-            }
-
+            BTProgressHUD.Dismiss();
+            new MessageDialog().SendToast("Aun no tienes conexión a internet");
         }
 
     }
