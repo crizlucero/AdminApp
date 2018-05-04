@@ -104,16 +104,16 @@ namespace WorklabsMx.iOS
             this.NavigationController.PopViewController(true);
         }
 
-        async void GetPost()
+        async void GetPost(NSIndexPath indexPath)
         {
             await MenuHelper.GetCommentPost(currentPost, ContPag, 5);
             foreach (ComentarioModel cometario in MenuHelper.Comentarios)
             {
+                TableView.BeginUpdates();
                 this.comentarios.Add(cometario);
+                TableView.InsertRows(new NSIndexPath[] { indexPath }, UITableViewRowAnimation.None);
+                TableView.EndUpdates();
             }
-            TableView.ReloadData();
-            this.TableView.BeginUpdates();
-            this.TableView.EndUpdates();
         }
 
         public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
@@ -123,7 +123,7 @@ namespace WorklabsMx.iOS
                 if(indexPath.Row == comentarios.Count - 1)
                 {
                     ContPag++;
-                    this.GetPost();
+                    this.GetPost(indexPath);
                 }
                 var currentComment = comentarios[indexPath.Row];
                 if((currentComment.Comentario_Imagen_Ruta != null && currentComment.Comentario_Imagen_Ruta != "") && (currentComment.Comentario_Imagen != null && currentComment.Comentario_Imagen != ""))
