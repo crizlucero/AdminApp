@@ -4426,9 +4426,6 @@ namespace WorklabsMx.Droid
 			// aapt resource value: 0x7f0b006f
 			public const int buttonPanel = 2131427439;
 			
-			// aapt resource value: 0x7f0b01c0
-			public const int calendarView1 = 2131427776;
-			
 			// aapt resource value: 0x7f0b0153
 			public const int cancel_action = 2131427667;
 			
@@ -4479,6 +4476,9 @@ namespace WorklabsMx.Droid
 			
 			// aapt resource value: 0x7f0b0078
 			public const int customPanel = 2131427448;
+			
+			// aapt resource value: 0x7f0b01c0
+			public const int cvFecha = 2131427776;
 			
 			// aapt resource value: 0x7f0b00a5
 			public const int cvv = 2131427493;

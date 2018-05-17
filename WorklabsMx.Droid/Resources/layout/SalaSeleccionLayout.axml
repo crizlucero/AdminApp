@@ -12,7 +12,7 @@
         android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="171.5dp"
         android:layout_height="194.0dp"
-        android:id="@+id/imageView1" />
+        android:id="@+id/ivSala" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

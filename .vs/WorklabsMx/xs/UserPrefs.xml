@@ -1,13 +1,12 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/Helpers/DatePickerMinFragment.cs">
     <Files>
       <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="216" Column="57" />
-      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionHorariosActivity.cs" Line="60" Column="17" />
-      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionSalasActivity.cs" Line="16" Column="40" />
-      <File FileName="WorklabsMx.Droid/ViewElement/MenuView.cs" Line="112" Column="72" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/ReservaSalaJuntasActivity.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="46" Column="13" />
-      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionReunionActivity.cs" Line="23" Column="13" />
+      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionHorariosActivity.cs" Line="74" Column="9" />
+      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionSalasActivity.cs" Line="40" Column="50" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/ReservaSalaJuntasActivity.cs" Line="100" Column="16" />
+      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionReunionActivity.cs" Line="2" Column="2" />
+      <File FileName="WorklabsMx.Droid/Helpers/DatePickerMinFragment.cs" Line="25" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

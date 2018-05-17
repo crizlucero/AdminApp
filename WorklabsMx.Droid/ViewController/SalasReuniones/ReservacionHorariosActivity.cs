@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using Android.App;
@@ -7,6 +8,7 @@ using Android.Graphics;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using WorklabsMx.Droid.Helpers;
 
 namespace WorklabsMx.Droid
 {
@@ -19,6 +21,7 @@ namespace WorklabsMx.Droid
         readonly List<int> horas, totalPersonas;
         string horaInicio, horaFin, CantidadPersonas;
         Color ColorSel = Color.Rgb(59, 219, 213), ColorUnSel = Color.Rgb(239, 239, 239);
+        CalendarView cvFecha;
 
         public ReservacionHorariosActivity()
         {
@@ -47,9 +50,17 @@ namespace WorklabsMx.Droid
             ActionBar.Title = Resources.GetString(Resource.String.str_meeting_room_reservation);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
+            string Tipo = Intent.GetStringExtra("Tipo");
+            string sala_seleccionada = Intent.GetStringExtra("sala_seleccionada");
+
             llhHoraInicio = FindViewById<LinearLayout>(Resource.Id.llhHoraInicio);
             llhHoraFin = FindViewById<LinearLayout>(Resource.Id.llhHoraFin);
             llhCantidad = FindViewById<LinearLayout>(Resource.Id.llhCantidad);
+            cvFecha = FindViewById<CalendarView>(Resource.Id.cvFecha);
+            DateTime currently = DateTime.Now;
+            cvFecha.MinDate = new CalendarHelper().GetDateTimeMS(currently.Year, currently.Month - 1, currently.Day, 0, 0);
+
+
             FillHorarioInicio();
             FillHorarioFin();
             FillCantidad();
@@ -57,11 +68,17 @@ namespace WorklabsMx.Droid
             FindViewById<Button>(Resource.Id.Avanzar).Click += delegate
             {
                 Intent intent = new Intent(this, typeof(ReservacionSalasActivity));
-
+                intent.PutExtra("Tipo", "horario");
+                intent.PutExtra("fecha_seleccionada", cvFecha.Date.ToString("d"));
+                intent.PutExtra("hora_inicio", horaInicio);
+                intent.PutExtra("hora_fin", horaFin);
+                intent.PutExtra("cantidad_personas", CantidadPersonas);
 
                 StartActivity(intent);
             };
         }
+
+
 
         void FillHorarioInicio()
         {
