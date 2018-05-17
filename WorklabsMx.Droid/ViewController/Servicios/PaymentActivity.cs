@@ -20,9 +20,9 @@ namespace WorklabsMx.Droid
         AlertDialog.Builder dialog;
         static ProgressDialog progressDialog;
 
-        SuiteController suiteController;
-        Bean3DS bean3DS;
-        BeanTokenization beanTokenization;
+        static SuiteController suiteController;
+        static Bean3DS bean3DS;
+        static BeanTokenization beanTokenization;
 
         public PaymentActivity()
         {
@@ -77,7 +77,7 @@ namespace WorklabsMx.Droid
                 AuthKey = "516883685552545048505454"
             };
             suiteController.Authenticate(beanTokenization, bean3DS);
-            suiteController.SndPayWithToken(beanTokenization, bean3DS);
+            //suiteController.SndPayWithToken(beanTokenization, bean3DS);
 
         }
 
@@ -142,16 +142,6 @@ namespace WorklabsMx.Droid
 
 		class Authenticate : AsyncTask<Java.Lang.Void, Java.Lang.Void, Java.Lang.Void>
         {
-            readonly SuiteController suiteController;
-            readonly BeanTokenization beanTokenization;
-            readonly Bean3DS bean3DS;
-            public Authenticate(SuiteController suiteController, BeanTokenization beanTokenization, Bean3DS bean3DS)
-            {
-                this.suiteController = suiteController;
-                this.beanTokenization = beanTokenization;
-                this.bean3DS = bean3DS;
-            }
-
             protected override Java.Lang.Void RunInBackground(params Java.Lang.Void[] @params)
             {
                 suiteController.Authenticate(beanTokenization, bean3DS);

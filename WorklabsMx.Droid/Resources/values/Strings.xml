@@ -205,5 +205,13 @@
     <string name="str_label_select_hour_final">Selecciona la hora de termino</string>
     <string name="str_label_select_capacity">¿Para cuantas personas quieres tu sala de reuniones?</string>
     <string name="str_label_select_meeting_room">Salas disponibles para tu selección</string>
-    
+    <string name="str_label_hello">¡Hola!</string>
+    <string name="str_label_meeting_room_welcome">Puedes reservar por horario o por la sala que más te guste.</string>
+    <string name="str_label_meeting_room_by_hours">Horario</string>
+    <string name="str_label_meeting_room_by_room">Sala</string>
+    <string name="str_label_return">Retroceder</string>
+    <string name="str_label_next">Avanzar</string>
+    <string name="str_label_meeting_room_select_date">selecciona fecha y hora</string>
+    <string name="str_label_meeting_room_select_hours">Selecciona el horario</string>
+    <string name="str_label_meeting_room_select_quantity">¿Para cuantas personas?</string>
 </resources>

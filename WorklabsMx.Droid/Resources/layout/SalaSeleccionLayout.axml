@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="#FFF"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp">
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="171.5dp"
+        android:layout_height="194.0dp"
+        android:id="@+id/imageView1" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblNombre"
+        android:text="Nombre de sala"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="15dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblNivel"
+        android:textColor="#777"
+        android:textStyle="bold"
+        android:text="Nivel 0X"
+        android:textSize="13dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblCreditos"
+        android:textColor="#15C834"
+        android:text="x Créditos" />
+</LinearLayout>

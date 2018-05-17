@@ -9,8 +9,8 @@ using Firebase.Messaging;
 
 namespace WorklabsMx.Droid.Service
 {
-    [Service(Label = "FirebaseMessagingService")]
-    [IntentFilter(new String[] { "com.google.firebase.MESSAGING_EVENT" })]
+    [Service]
+    [IntentFilter(new[] { "com.google.firebase.MESSAGING_EVENT" })]
     public class MyFirebaseMessagingService : FirebaseMessagingService
     {
         const string TAG = "MyFirebaseMsgService";
@@ -18,6 +18,7 @@ namespace WorklabsMx.Droid.Service
         {
             Log.Debug(TAG, "From: " + message.From);
             Log.Debug(TAG, "Notification Message Body: " + message.GetNotification().Body);
+			SendNotification(message.GetNotification().Body, message.Data);
         }
 
         void SendNotification(string messageBody, IDictionary<string, string> data)
@@ -31,7 +32,7 @@ namespace WorklabsMx.Droid.Service
             var pendingIntent = PendingIntent.GetActivity(this, 0, intent, PendingIntentFlags.OneShot);
 
             var notificationBuilder = new Notification.Builder(this)
-                .SetSmallIcon(Resource.Mipmap.ic_logo_mini)
+			                                          .SetSmallIcon(Resource.Mipmap.Icon)
                 .SetContentTitle("FCM Message")
                 .SetContentText(messageBody)
                 .SetAutoCancel(true)

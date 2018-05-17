@@ -109,7 +109,7 @@ namespace WorklabsMx.Droid.ViewElement
                             intent.PutExtra("Titulo", menu.Label);
                             context.StartActivity(intent); break;
                         case "ReservaSalaJuntasActivity":
-                            intent = new Intent(context, typeof(TabSalasJuntasHistorialActivity));
+                            intent = new Intent(context, typeof(ReservacionReunionActivity));
                             intent.PutExtra("Titulo", menu.Label);
                             context.StartActivity(intent); break;
                         case "RegistroInvitadosActivity":

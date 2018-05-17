@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarlayout" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="90.0dp"
+        android:background="@mipmap/fecha_seleccion"
+        android:minWidth="25px"
+        android:minHeight="25px">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/str_label_meeting_room_select_date"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:textColor="#FFF"
+            android:background="#AA000000" />
+    </LinearLayout>
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pbAvance"
+        android:progressTint="#3BDBD5"
+        android:background="#FFF"
+        android:max="3"
+        android:progress="1"
+        android:paddingVertical="0dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <CalendarView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/calendarView1"
+                android:layout_marginBottom="0.0dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_label_meeting_room_select_hours"
+                android:gravity="center" />
+            <HorizontalScrollView
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/hsvHoraInicio">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/llhHoraInicio" />
+            </HorizontalScrollView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_label_meeting_room_select_hours"
+                android:gravity="center" />
+            <HorizontalScrollView
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/hsvHoraFin">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/llhHoraFin" />
+            </HorizontalScrollView>
+            <TextView
+                android:text="@string/str_label_meeting_room_select_quantity"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+            <HorizontalScrollView
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/hsvCantidad">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/llhCantidad" />
+            </HorizontalScrollView>
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rowCount="1"
+                android:columnCount="2">
+                <Button
+                    android:text="@string/str_label_return"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnRetroceder"
+                    android:textColor="#626262"
+                    android:background="#F3F3F3"
+                    android:layout_column="0"
+                    android:layout_width="192dp"
+                    android:layout_row="0" />
+                <Button
+                    android:text="@string/str_label_next"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/btnRetroceder"
+                    android:id="@+id/Avanzar"
+                    android:background="#3BDBD5"
+                    android:layout_column="1"
+                    android:layout_row="0" />
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
