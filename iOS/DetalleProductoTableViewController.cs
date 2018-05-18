@@ -113,7 +113,7 @@ namespace WorklabsMx.iOS
         {
             if (segue.Identifier == "FechaInicio")
             {
-                var FechaView = (FechaNacimientoPickerViewController)segue.DestinationViewController;
+                var FechaView = (FechaNacimientoPickerView)segue.DestinationViewController;
                 FechaView.EsFechaNacimiento = false;
                 FechaView.FechaSeleccionadaDelegate = this;
             }

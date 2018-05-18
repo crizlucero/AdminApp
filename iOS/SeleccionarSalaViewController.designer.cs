@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("SeleccionarSalaViewController")]
     partial class SeleccionarSalaViewController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

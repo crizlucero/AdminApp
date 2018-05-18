@@ -144,7 +144,7 @@ namespace WorklabsMx.iOS
             }
             else if (segue.Identifier == "sucursales")
             {
-                var GenderView = (SucursalesViewController)segue.DestinationViewController;
+                var GenderView = (SucursalesView)segue.DestinationViewController;
                 GenderView.SucursalDelegate = this;
             }
             else if (segue.Identifier == "DetalleInvitacion")

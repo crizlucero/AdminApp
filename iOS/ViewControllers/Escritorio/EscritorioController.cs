@@ -93,7 +93,7 @@ namespace WorklabsMx.iOS
 
         public override void ViewDidDisappear(bool animated)
         {
-            base.ViewDidDisappear(animated);
+			base.ViewDidDisappear(animated);
         }
 
         async void GetData()
