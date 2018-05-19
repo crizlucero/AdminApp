@@ -10,9 +10,11 @@ namespace WorklabsMx.iOS
         
 		public HoraSeleccionada HoraFinDelegate;
 		public List<string> Horas = new List<string>();
+		private int SelectedCell = -1;
 
         public HoraFinCollectionView (IntPtr handle) : base (handle)
         {
+			
         }
 
 
@@ -40,7 +42,13 @@ namespace WorklabsMx.iOS
         public override UICollectionViewCell GetCell(UICollectionView collectionView, NSIndexPath indexPath)
         {
             var CeldaHoraInicio = (CeldaHoraFin)this.CollectionView.DequeueReusableCell("CeldaHoraFin", indexPath);
-            CeldaHoraInicio.UpdateCell(this.Horas[indexPath.Row]);
+            CeldaHoraInicio.UpdateCell(this.Horas[indexPath.Row], indexPath.Row);
+			CeldaHoraInicio.ReloadCells();
+			if (SelectedCell == indexPath.Row)
+            {
+				CeldaHoraInicio.PintarCeldas();
+            }
+			CeldaHoraInicio.HoraFinDelegate = this;
             return CeldaHoraInicio;
         }
 
@@ -61,7 +69,16 @@ namespace WorklabsMx.iOS
         {
 			HoraFinDelegate.SeleccionarHoraFin(Horas[indexPath.Row]);
         }
-
         
     }
+
+	public partial class HoraFinCollectionView: HoraFinSeleccionada
+	{
+		public void SeleccionarHoraFin(string HoraFin, int SelectedCell)
+		{
+			this.SelectedCell = SelectedCell;
+			CollectionView.ReloadData();
+			HoraFinDelegate.SeleccionarHoraFin(HoraFin);
+		}
+	}
 }

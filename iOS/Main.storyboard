@@ -15219,7 +15219,7 @@ COL. LADRON DE GUEVARA</string>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oly-UP-BEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2026.4000000000001" y="-3666.567"/>
+            <point key="canvasLocation" x="-2026" y="-3669"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="Qv2-O4-ynG">
@@ -15977,7 +15977,7 @@ nivel 07</string>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVg-RD-beb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-386.39999999999998" y="-3667.4659999999999"/>
+            <point key="canvasLocation" x="-303" y="-3669"/>
         </scene>
     </scenes>
     <resources>

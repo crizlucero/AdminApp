@@ -13,14 +13,14 @@ namespace WorklabsMx.iOS
 
     public partial class CantidadPersonasCollection : UICollectionViewController
     {
-
 		public CantidadPersonasSeleccionadas CantidadPersonasDelegate;
 		public List<string> CantidadPersonas = new List<string>();
+		private int SelectedCell = -1;
+		CeldaCantidadPersonas CeldaCantidadPersonas;
 
         public CantidadPersonasCollection (IntPtr handle) : base (handle)
         {
         }
-
 
 		public override void ViewDidLoad()
         {
@@ -45,8 +45,14 @@ namespace WorklabsMx.iOS
 
         public override UICollectionViewCell GetCell(UICollectionView collectionView, NSIndexPath indexPath)
         {
-			var CeldaCantidadPersonas = (CeldaCantidadPersonas)this.CollectionView.DequeueReusableCell("CeldaCantidadPersonas", indexPath);
-			CeldaCantidadPersonas.UpdateCell(this.CantidadPersonas[indexPath.Row]);
+			CeldaCantidadPersonas = (CeldaCantidadPersonas)this.CollectionView.DequeueReusableCell("CeldaCantidadPersonas", indexPath);
+			CeldaCantidadPersonas.UpdateCell(this.CantidadPersonas[indexPath.Row], indexPath.Row);
+			CeldaCantidadPersonas.ReloadCells();
+			if (SelectedCell == indexPath.Row)
+            {
+                CeldaCantidadPersonas.PintarCeldas();
+            }
+			CeldaCantidadPersonas.PersonasSeleccionadasDelegate = this;
 			return CeldaCantidadPersonas;
         }
 
@@ -62,11 +68,17 @@ namespace WorklabsMx.iOS
         {
             return 5;
         }
-
-        public override void ItemSelected(UICollectionView collectionView, NSIndexPath indexPath)
-        {
-			CantidadPersonasDelegate.SeleccionarCantidadPersonas(CantidadPersonas[indexPath.Row]);
-        }
-
+        
+      
     }
+	public partial class CantidadPersonasCollection : PersonasSeleccionadas
+	{
+		public void SeleccionarPersonas(string Personas, int SelectedCell)
+		{
+			this.SelectedCell = SelectedCell;
+			this.CollectionView.ReloadData();
+			CantidadPersonasDelegate.SeleccionarCantidadPersonas(Personas);
+		}
+	}
+    
 }
