@@ -10,7 +10,6 @@ namespace WorklabsMx.iOS
         public SalasCollectionCell (IntPtr handle) : base (handle)
         {
         }
-
        
 		public void UpdateCell(SalaJuntasModel SalaJuntas)
         {

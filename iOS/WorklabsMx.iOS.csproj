@@ -1067,6 +1067,10 @@
     </Compile>
     <Compile Include="InfoConfirmacionViewController.cs" />
     <Compile Include="NoConexionViewController.cs" />
+    <Compile Include="FechaHoraSalaViewController.cs" />
+    <Compile Include="FechaHoraSalaViewController.designer.cs">
+      <DependentUpon>FechaHoraSalaViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="NoConexionViewController.designer.cs">
       <DependentUpon>NoConexionViewController.cs</DependentUpon>
     </Compile>
@@ -1360,10 +1364,6 @@
     <Compile Include="FechaNacimientoPickerView.designer.cs">
       <DependentUpon>FechaNacimientoPickerView.cs</DependentUpon>
     </Compile>
-    <Compile Include="FechaHoraSalaViewController.cs" />
-    <Compile Include="FechaHoraSalaViewController.designer.cs">
-      <DependentUpon>FechaHoraSalaViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="SeleccionarSalaTableView.cs" />
     <Compile Include="SeleccionarSalaTableView.designer.cs">
       <DependentUpon>SeleccionarSalaTableView.cs</DependentUpon>
@@ -1375,6 +1375,34 @@
     <Compile Include="SalasCollectionCell.cs" />
     <Compile Include="SalasCollectionCell.designer.cs">
       <DependentUpon>SalasCollectionCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoraInicioCollectionView.cs" />
+    <Compile Include="HoraInicioCollectionView.designer.cs">
+      <DependentUpon>HoraInicioCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaHoraInicio.cs" />
+    <Compile Include="CeldaHoraInicio.designer.cs">
+      <DependentUpon>CeldaHoraInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoraFinCollectionView.cs" />
+    <Compile Include="HoraFinCollectionView.designer.cs">
+      <DependentUpon>HoraFinCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaHoraFin.cs" />
+    <Compile Include="CeldaHoraFin.designer.cs">
+      <DependentUpon>CeldaHoraFin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CantidadPersonasCollectionView.cs" />
+    <Compile Include="CantidadPersonasCollectionView.designer.cs">
+      <DependentUpon>CantidadPersonasCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaCantidadPersonas.cs" />
+    <Compile Include="CeldaCantidadPersonas.designer.cs">
+      <DependentUpon>CeldaCantidadPersonas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CantidadPersonasCollection.cs" />
+    <Compile Include="CantidadPersonasCollection.designer.cs">
+      <DependentUpon>CantidadPersonasCollection.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

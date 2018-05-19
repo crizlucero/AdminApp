@@ -1,58 +1,52 @@
 using Foundation;
 using System;
 using UIKit;
-using WorklabsMx.Models;
 using System.Collections.Generic;
 
 namespace WorklabsMx.iOS
 {
 
-    public interface SalaSeleccionada
+    public interface HoraSeleccionada
 	{
-		void SalaSeleccionada(SalaJuntasModel SalaSeleccionada);
+		void SeleccionarHoraInicio(string HoraInicioSeleccionada);
+		void SeleccionarHoraFin(string HoraFinSeleccionada);
 	}
 
-	public partial class SalasCollectionView : UICollectionViewController
+    public partial class HoraInicioCollectionView : UICollectionViewController
     {
+		public HoraSeleccionada HoraInicioDelegate;
+		public List<string> Horas = new List<string>();
 
-		public SalaSeleccionada SalaSeleccionadaDelegate;
-		public List<SalaJuntasModel> SalasJuntas = new List<SalaJuntasModel>();
-
-        public SalasCollectionView (IntPtr handle) : base (handle)
+        public HoraInicioCollectionView (IntPtr handle) : base (handle)
         {
         }
-
+       
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-            
+			this.CollectionView.PagingEnabled = true;
 		}
 
 		public override void ViewWillAppear(bool animated)
 		{
 			base.ViewWillAppear(animated);
 		}
-        
 
-        public override nint NumberOfSections(UICollectionView collectionView)
-        {
-            return 1;
-        }
 
-        public override nint GetItemsCount(UICollectionView collectionView, nint section)
+		public override nint GetItemsCount(UICollectionView collectionView, nint section)
         {
-			if (this.SalasJuntas != null)
+			if (this.Horas != null)
             {
-				return this.SalasJuntas.Count;
+				return this.Horas.Count;
             }
             return 0;
         }
 
-		public override UICollectionViewCell GetCell(UICollectionView collectionView, NSIndexPath indexPath)
+        public override UICollectionViewCell GetCell(UICollectionView collectionView, NSIndexPath indexPath)
         {
-			var CeldaSalas = (SalasCollectionCell)this.CollectionView.DequeueReusableCell("CeldaSala", indexPath);
-			CeldaSalas.UpdateCell(this.SalasJuntas[indexPath.Row]);
-			return CeldaSalas;
+			var CeldaHoraInicio = (CeldaHoraInicio)this.CollectionView.DequeueReusableCell("CeldaHoraInicio", indexPath);
+			CeldaHoraInicio.UpdateCell(this.Horas[indexPath.Row]);
+			return CeldaHoraInicio;
         }
 
         [Export("collectionView:layout:insetForSectionAtIndex:")]
@@ -70,7 +64,7 @@ namespace WorklabsMx.iOS
 
         public override void ItemSelected(UICollectionView collectionView, NSIndexPath indexPath)
         {
-			SalaSeleccionadaDelegate.SalaSeleccionada(SalasJuntas[indexPath.Row]);
+			HoraInicioDelegate.SeleccionarHoraInicio(Horas[indexPath.Row]);
         }
 
 

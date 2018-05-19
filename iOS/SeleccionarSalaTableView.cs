@@ -14,7 +14,7 @@ namespace WorklabsMx.iOS
 		
 		public List<SalaJuntasModel> SalasJuntas = new List<SalaJuntasModel>();
 
-		SalaJuntasModel SalaJuntasSeleccionada = new SalaJuntasModel;
+		SalaJuntasModel SalaJuntasSeleccionada = new SalaJuntasModel();
 
         public SeleccionarSalaTableView (IntPtr handle) : base (handle)
         {
@@ -39,10 +39,7 @@ namespace WorklabsMx.iOS
 				VistaSalas.SalaSeleccionadaDelegate = this;
 
 			}
-			else if (segue.Identifier == "DetalleSala")
-			{
-				
-			}
+
 		}
 
 		partial void btnRetroceder_Touch(UIButton sender)

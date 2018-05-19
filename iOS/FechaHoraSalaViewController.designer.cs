@@ -20,14 +20,6 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnHoraFin { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnHoraInicio { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnMinutosCero { get; set; }
 
         [Outlet]
@@ -50,22 +42,6 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIDatePicker dtpFecha { get; set; }
 
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIScrollView scvHoraFin { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIScrollView scvHoraInicio { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView vwHoraFin { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView vwHoraInicio { get; set; }
-
         [Action ("btnAvanzar_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnAvanzar_Touch (UIKit.UIButton sender);
@@ -73,10 +49,6 @@ namespace WorklabsMx.iOS
         [Action ("btnHoraFin_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnHoraFin_Touch (UIKit.UIButton sender);
-
-        [Action ("btnHoraInicio_Touch:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnHoraInicio_Touch (UIKit.UIButton sender);
 
         [Action ("btnRetroceder_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -109,16 +81,6 @@ namespace WorklabsMx.iOS
                 btnAvanzar = null;
             }
 
-            if (btnHoraFin != null) {
-                btnHoraFin.Dispose ();
-                btnHoraFin = null;
-            }
-
-            if (btnHoraInicio != null) {
-                btnHoraInicio.Dispose ();
-                btnHoraInicio = null;
-            }
-
             if (btnMinutosCero != null) {
                 btnMinutosCero.Dispose ();
                 btnMinutosCero = null;
@@ -147,26 +109,6 @@ namespace WorklabsMx.iOS
             if (dtpFecha != null) {
                 dtpFecha.Dispose ();
                 dtpFecha = null;
-            }
-
-            if (scvHoraFin != null) {
-                scvHoraFin.Dispose ();
-                scvHoraFin = null;
-            }
-
-            if (scvHoraInicio != null) {
-                scvHoraInicio.Dispose ();
-                scvHoraInicio = null;
-            }
-
-            if (vwHoraFin != null) {
-                vwHoraFin.Dispose ();
-                vwHoraFin = null;
-            }
-
-            if (vwHoraInicio != null) {
-                vwHoraInicio.Dispose ();
-                vwHoraInicio = null;
             }
         }
     }
