@@ -1,3 +1,38 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/sala_cancelada">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#77000000">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="70dp"
+                android:gravity="center"
+                android:layout_marginTop="65dp"
+                android:text="@string/str_label_cancel" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="@string/str_label_meeting_room_reservation_cancel" />
+            <ImageView
+                android:src="@mipmap/ic_finish_ok"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:id="@+id/ivContinuar"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="60dp" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
