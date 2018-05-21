@@ -37,6 +37,11 @@ namespace WorklabsMx.iOS
 				var VistaSalas = (SalasCollectionView)segue.DestinationViewController;
 				VistaSalas.SalasJuntas = this.SalasJuntas;
 				VistaSalas.SalaSeleccionadaDelegate = this;
+			}
+			else if(segue.Identifier == "DetalleReservacion")
+			{
+				var VistaDetalleReservacion = (DetalleReservacionViewController)segue.DestinationViewController.ChildViewControllers[0];
+				VistaDetalleReservacion.SalaJuntasSeleccionada = this.SalaJuntasSeleccionada;
 
 			}
 
@@ -54,7 +59,7 @@ namespace WorklabsMx.iOS
 		public void SalaSeleccionada(SalaJuntasModel SalaSeleccionada)
 		{
 			this.SalaJuntasSeleccionada = SalaSeleccionada;
-			this.PerformSegue("DetalleSala", null);
+			this.PerformSegue("DetalleReservacion", null);
 		}
 	}
 }

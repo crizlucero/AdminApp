@@ -14,5 +14,8 @@ namespace WorklabsMx.iOS
     [Register ("CantidadPersonasCollection")]
     partial class CantidadPersonasCollection
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

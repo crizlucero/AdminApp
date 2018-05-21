@@ -1186,6 +1186,10 @@
     <Compile Include="HabilidadesCollectionView.designer.cs">
       <DependentUpon>HabilidadesCollectionView.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalasCollectionView.cs" />
+    <Compile Include="SalasCollectionView.designer.cs">
+      <DependentUpon>SalasCollectionView.cs</DependentUpon>
+    </Compile>
     <Compile Include="InteresesCollectionView.cs" />
     <Compile Include="InteresesCollectionView.designer.cs">
       <DependentUpon>InteresesCollectionView.cs</DependentUpon>
@@ -1368,10 +1372,6 @@
     <Compile Include="SeleccionarSalaTableView.designer.cs">
       <DependentUpon>SeleccionarSalaTableView.cs</DependentUpon>
     </Compile>
-    <Compile Include="SalasCollectionView.cs" />
-    <Compile Include="SalasCollectionView.designer.cs">
-      <DependentUpon>SalasCollectionView.cs</DependentUpon>
-    </Compile>
     <Compile Include="SalasCollectionCell.cs" />
     <Compile Include="SalasCollectionCell.designer.cs">
       <DependentUpon>SalasCollectionCell.cs</DependentUpon>
@@ -1403,6 +1403,10 @@
     <Compile Include="CantidadPersonasCollection.cs" />
     <Compile Include="CantidadPersonasCollection.designer.cs">
       <DependentUpon>CantidadPersonasCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleReservacionViewController.cs" />
+    <Compile Include="DetalleReservacionViewController.designer.cs">
+      <DependentUpon>DetalleReservacionViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
