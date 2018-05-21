@@ -13,7 +13,7 @@ namespace WorklabsMx.Droid
     [Activity(Label = "@string/app_name")]
     public class SalasJuntasSucursalActivity : Activity
     {
-        protected override void OnCreate(Bundle savedInstanceState)
+        /*protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.SalasJuntasSucursalesLayout);
@@ -43,7 +43,7 @@ namespace WorklabsMx.Droid
 
     class SucursalAdapter : BaseAdapter<SucursalModel>
     {
-        readonly List<SucursalModel> sucursales;
+        /*readonly List<SucursalModel> sucursales;
 
         public SucursalAdapter(List<SucursalModel> sucursales)
         {
@@ -73,7 +73,7 @@ namespace WorklabsMx.Droid
             SucursalView.FindViewById<TextView>(Resource.Id.lblCalle).Text = sucursales[position].Sucursal_Domicilio;
             SucursalView.FindViewById<TextView>(Resource.Id.lblColonia).Text = sucursales[position].Territorio.Colonia;
             return SucursalView;
-        }
+        }*/
 
 
     }

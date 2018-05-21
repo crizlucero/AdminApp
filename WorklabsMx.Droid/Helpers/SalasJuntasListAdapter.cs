@@ -25,7 +25,7 @@ namespace WorklabsMx.Droid.Helpers
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             View view = convertView;
-            if (view == null)
+            /*if (view == null)
             {
                 view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.SalasJuntasLayout, parent, false);
                 LinearLayout Base = view.FindViewById<LinearLayout>(Resource.Id.llSalaJunta);
@@ -53,7 +53,7 @@ namespace WorklabsMx.Droid.Helpers
             holder.Nivel.Text = "Nivel " + Convert.ToInt32(salas[position].Sala_Nivel).ToString("00");
             if (salas[position].Sala_Fotografia_Imagen != null && salas[position].Sala_Fotografia_Imagen.Length > 0)
                 holder.imgSalaJuntas.SetImageBitmap(BitmapFactory.DecodeByteArray(salas[position].Sala_Fotografia_Imagen, 0, salas[position].Sala_Fotografia_Imagen.Length));
-
+*/
             return view;
         }
     }

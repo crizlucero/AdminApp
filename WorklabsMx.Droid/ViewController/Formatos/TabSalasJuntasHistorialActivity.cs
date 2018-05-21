@@ -19,7 +19,7 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "@string/app_name")]
+    /*[Activity(Label = "@string/app_name")]
     public class TabSalasJuntasHistorialActivity : FragmentActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -162,5 +162,5 @@ namespace WorklabsMx.Droid
                 table.AddView(row);
             });
         }
-    }
+    }*/
 }

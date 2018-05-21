@@ -19,7 +19,7 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "@string/app_name")]
+    /*[Activity(Label = "@string/app_name")]
     public class SalasJuntasActivity : Activity
     {
         //ViewPager _viewPager;
@@ -59,11 +59,11 @@ namespace WorklabsMx.Droid
             ActionBar.Title = Resources.GetString(Resource.String.str_meeting_room_reservation);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             /*_viewPager = FindViewById<ViewPager>(Resource.Id.vpSucursal);*/
-            salas = SalasController.GetSalaJuntas(Intent.GetStringExtra("sucursal_id"));
+            //salas = SalasController.GetSalaJuntas(Intent.GetStringExtra("sucursal_id"));
             /*niveles = SalasController.GetNivelesSucursal(Intent.GetStringExtra("sucursal_id"));
             _viewPager.Adapter = new SalaJuntasAdapter(this, salas);*/
             //tlSalasJuntas = FindViewById<TableLayout>(Resource.Id.tlSalasJuntas);
-            Horarios.Add(fecha_seleccionada, new List<double>());
+            /*Horarios.Add(fecha_seleccionada, new List<double>());
             ListView lvSalasJuntas = FindViewById<ListView>(Resource.Id.lvSalasJuntas);
             lvSalasJuntas.Adapter = new SalasJuntasListAdapter(salas);
             lvSalasJuntas.ChoiceMode = ChoiceMode.Single;
@@ -86,7 +86,7 @@ namespace WorklabsMx.Droid
                 row.AddView(SucursalView);
                 tlSalasJuntas.AddView(row);
             });*/
-            FindViewById<TextView>(Resource.Id.lblCreditosDisponibles).Text = SalasController.GetCreditosDisponibles(storage.Get("Usuario_Id")).ToString();
+            /*FindViewById<TextView>(Resource.Id.lblCreditosDisponibles).Text = SalasController.GetCreditosDisponibles(storage.Get("Usuario_Id")).ToString();
             FindViewById<LinearLayout>(Resource.Id.llSeleccionarFecha).Click += (sender, e) =>
             {
                 DatePickerMinFragment frag = DatePickerMinFragment.NewInstance(delegate (DateTime time)
@@ -112,7 +112,7 @@ namespace WorklabsMx.Droid
                 salas = SalasController.GetSalaJuntas(Intent.GetStringExtra("sucursal_id"), niveles[((Spinner)sender).SelectedItem.ToString()]);
                 _viewPager.Adapter = new SalaJuntasAdapter(this, salas);
             };*/
-            llhHorario = FindViewById<LinearLayout>(Resource.Id.llhHorario);
+            /*llhHorario = FindViewById<LinearLayout>(Resource.Id.llhHorario);
             SalasController.GetHorasNoDisponibles(fecha_seleccionada, salas[SalaSeleccionada].Sala_Id).ForEach(horas =>
             {
                 HorasNoDisponibles.Add(DateTime.Parse(horas.Sala_Hora_Fin).Hour);
@@ -133,7 +133,7 @@ namespace WorklabsMx.Droid
                 UpdateHorasNoDisponibles();
                 FillHorario();
             };*/
-            FindViewById<RelativeLayout>(Resource.Id.rlAgendar).Click += (sender, e) => ShowConfirmacion();
+            /*FindViewById<RelativeLayout>(Resource.Id.rlAgendar).Click += (sender, e) => ShowConfirmacion();
             UpdateHorasNoDisponibles();
             FillHorario();
             HorizontalScrollView scrollHoras = FindViewById<HorizontalScrollView>(Resource.Id.hsvHorario);
@@ -379,7 +379,7 @@ namespace WorklabsMx.Droid
         }
     }
 
-    class SalaJuntasAdapter : PagerAdapter
+    /*class SalaJuntasAdapter : PagerAdapter
     {
         Context context;
         List<SalaJuntasModel> salaJuntas;
@@ -408,5 +408,5 @@ namespace WorklabsMx.Droid
         public override ICharSequence GetPageTitleFormatted(int position) => new Java.Lang.String(salaJuntas[position].Sala_Descripcion);
 
         public override void DestroyItem(View container, int position, Java.Lang.Object @object) => container.JavaCast<ViewPager>().RemoveView(@object as View);
-    }
+    }*/
 }

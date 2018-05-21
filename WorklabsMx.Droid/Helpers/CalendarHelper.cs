@@ -18,6 +18,17 @@ namespace WorklabsMx.Droid.Helpers
             return c.TimeInMillis;
         }
 
+        public string GetDate(long millis)
+        {
+            Calendar c = Calendar.GetInstance(Java.Util.TimeZone.Default);
+            c.TimeInMillis = millis;
+            int dia = c.Get(CalendarField.DayOfMonth);
+            int mes = c.Get(CalendarField.Month);
+            int year = c.Get(CalendarField.Year);
+
+            return string.Format("{0:D2}/{1:D2}/{2}",mes,dia,year);
+        }
+
         public static DateTime RoundUp(DateTime dt, TimeSpan d) => new DateTime(((dt.Ticks + d.Ticks - 1) / d.Ticks) * d.Ticks);
     }
 }

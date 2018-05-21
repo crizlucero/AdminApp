@@ -17,7 +17,7 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "@string/app_name")]
+    /*[Activity(Label = "@string/app_name")]
     public class InvitadosActivity : Activity
     {
         SimpleStorage storage;
@@ -147,6 +147,6 @@ namespace WorklabsMx.Droid
             StartActivity(new Intent(this, typeof(MainActivity)));
             Finish();
         }
-    }
+    }*/
 
 }

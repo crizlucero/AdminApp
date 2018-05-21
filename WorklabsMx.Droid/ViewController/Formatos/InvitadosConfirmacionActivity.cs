@@ -14,7 +14,7 @@ using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
 {
-    [Activity(Label = "InvitadosConfirmacionActivity")]
+    /*[Activity(Label = "InvitadosConfirmacionActivity")]
     public class InvitadosConfirmacionActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -85,5 +85,5 @@ namespace WorklabsMx.Droid
         {
 
         }
-    }
+    }*/
 }

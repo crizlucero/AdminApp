@@ -213,5 +213,17 @@
     <string name="str_label_next">Avanzar</string>
     <string name="str_label_meeting_room_select_date">selecciona fecha y hora</string>
     <string name="str_label_meeting_room_select_hours">Selecciona el horario</string>
+    <string name="str_label_meeting_room_confirm_reservation">Confirma tú reserva</string>
     <string name="str_label_meeting_room_select_quantity">¿Para cuantas personas?</string>
+    <string name="str_label_meeting_room_credit_disponibility">Créditos Disponibles</string>
+    <string name="str_label_meeting_room_credit_necessary">Para tú reserva</string>
+    <string name="str_label_meeting_room_capacity">Sala para %1$s personas</string>
+    <string name="str_label_done">¡Listo!</string>
+    <string name="str_label_cancel">¡Cancelada!</string>
+    <string name="str_label_after">Próximas</string>
+    <string name="str_label_before">Anteriores</string>
+    <string name="str_label_see_all">Ver Todas</string>
+    <string name="str_label_meeting_room_reservation_done">Tú reserva está lista</string>
+    <string name="str_label_meeting_room_reservation_cancel">Gracias por cancelar tu reserva, esto le permite a la comunidad aprovechar el espacio.</string>
+    <string name="str_label_meeting_room_reservation_message">Recuerda que después de tu reunión alguien más estará esperando, por esto agradecemos tu puntualidad.</string>
 </resources>

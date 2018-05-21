@@ -139,12 +139,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Common">
-      <HintPath>..\packages\Xamarin.RangeSlider.0.7.33\lib\MonoAndroid10\Xamarin.RangeSlider.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.RangeSlider.Droid">
-      <HintPath>..\packages\Xamarin.RangeSlider.0.7.33\lib\MonoAndroid10\Xamarin.RangeSlider.Droid.dll</HintPath>
-    </Reference>
     <Reference Include="BouncyCastle">
       <HintPath>..\packages\MimeKit.2.0.3\lib\monoandroid\BouncyCastle.dll</HintPath>
     </Reference>
@@ -171,6 +165,12 @@
     </Reference>
     <Reference Include="Google.Apis">
       <HintPath>..\packages\Google.Apis.1.33.1\lib\netstandard1.3\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.RangeSlider.Common">
+      <HintPath>..\packages\Xamarin.RangeSlider.0.7.36\lib\MonoAndroid10\Xamarin.RangeSlider.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.RangeSlider.Droid">
+      <HintPath>..\packages\Xamarin.RangeSlider.0.7.36\lib\MonoAndroid10\Xamarin.RangeSlider.Droid.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -217,9 +217,7 @@
     <Compile Include="ViewHolders\PostHolder.cs" />
     <Compile Include="Helpers\PostListAdapter.cs" />
     <Compile Include="Helpers\TimePickerIntervalFragment.cs" />
-    <Compile Include="ViewController\Formatos\ReservaSalaPasoDosActivity.cs" />
     <Compile Include="ViewController\Formatos\ReservaSalaJuntasActivity.cs" />
-    <Compile Include="ViewController\Formatos\ReservaSalaPasoUnoActivity.cs" />
     <Compile Include="Helpers\MeGustaListAdapter.cs" />
     <Compile Include="ViewHolders\UsuariosHolder.cs" />
     <Compile Include="Service\FirebaseIIDService.cs" />
@@ -227,6 +225,7 @@
     <Compile Include="ViewController\SalasReuniones\ReservacionReunionActivity.cs" />
     <Compile Include="ViewController\SalasReuniones\ReservacionHorariosActivity.cs" />
     <Compile Include="ViewController\SalasReuniones\ReservacionSalasActivity.cs" />
+    <Compile Include="ViewController\SalasReuniones\ReservacionConfirmarActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -273,7 +272,6 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_work.png" />
     <AndroidResource Include="Resources\layout\DatosFacturacionLayout.axml" />
     <AndroidResource Include="Resources\layout\InvitadosLayout.axml" />
-    <AndroidResource Include="Resources\layout\ReservaSalaJuntasLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_place.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_share.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_facebook.png" />
@@ -345,11 +343,8 @@
     <AndroidResource Include="Resources\drawable\button_shadow_radius_dark.xml" />
     <AndroidResource Include="Resources\drawable\button_shadow_radius_clear.xml" />
     <AndroidResource Include="Resources\layout\LoginLayout.axml" />
-    <AndroidResource Include="Resources\layout\SalasJuntasLayout.axml" />
     <AndroidResource Include="Resources\layout\ListaReservacionesLayout.axml" />
-    <AndroidResource Include="Resources\layout\ReservacionElementoLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_arrow_right.png" />
-    <AndroidResource Include="Resources\layout\SalaJuntasHistorialLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_arrow_down.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_square.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_calendar.png" />
@@ -357,23 +352,18 @@
     <AndroidResource Include="Resources\layout\HorarioItemLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_diagonal_lines.png" />
     <AndroidResource Include="Resources\menu\add_element_menu.xml" />
-    <AndroidResource Include="Resources\layout\SalasJuntasSucursalesLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_ubicacion_background.png" />
     <AndroidResource Include="Resources\layout\SucursalInfoLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\suc_hidalgo_prueba.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\suc_metropark_prueba.png" />
-    <AndroidResource Include="Resources\layout\SalasJuntasConfirmacionLayout.axml" />
     <AndroidResource Include="Resources\drawable\stroke_style.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_profile_empty.png" />
     <AndroidResource Include="Resources\layout\DirectoriosLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_perfil_background.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_sala_prueba.png" />
-    <AndroidResource Include="Resources\layout\SalasJuntasHistorialesLayout.axml" />
     <AndroidResource Include="Resources\layout\DatosGeneralesLayout.axml" />
     <AndroidResource Include="Resources\layout\EmpresaCardLayout.axml" />
     <AndroidResource Include="Resources\drawable\PerfilImagenStyle.xml" />
-    <AndroidResource Include="Resources\layout\DetallesReservacionLayout.axml" />
-    <AndroidResource Include="Resources\layout\DetallesReservacionSalaJuntaLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_creditos.png" />
     <AndroidResource Include="Resources\layout\DatosBasicosLayout.axml" />
     <AndroidResource Include="Resources\layout\ConfirmacionInvitadoLayout.axml" />
@@ -506,9 +496,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\logo_black.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\logo_white.png" />
     <AndroidResource Include="Resources\drawable\background_login.xml" />
-    <AndroidResource Include="Resources\layout\ReservacionSalaJuntasPaso1Layout.axml" />
-    <AndroidResource Include="Resources\layout\ReservacionSalaJuntasPaso2Layout.axml" />
-    <AndroidResource Include="Resources\layout\ReservacionSalaJuntasLayout.axml" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_arrow_right_white.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\ic_arrow_right_white.png" />
     <AndroidResource Include="Resources\mipmap-xhdpi\ic_arrow_right_white.png" />
@@ -559,6 +546,32 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\sala_seleccion.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\sala_seleccion.png" />
     <AndroidResource Include="Resources\layout\SalaSeleccionLayout.axml" />
+    <AndroidResource Include="Resources\layout\SalasReunionConfirmarLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\sala_confirmar.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\sala_confirmar.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\sala_confirmar.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\sala_confirmar.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\sala_confirmar.png" />
+    <AndroidResource Include="Resources\layout\SalasReunionConfirmacionLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\sala_confirmacion.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\sala_confirmacion.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\sala_confirmacion.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\sala_confirmacion.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\sala_confirmacion.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_finish_ok.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_finish_ok.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_finish_ok.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_finish_ok.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_finish_ok.png" />
+    <AndroidResource Include="Resources\layout\SalasReunionCanceladoLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\sala_cancelada.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\sala_cancelada.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\sala_cancelada.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\sala_cancelada.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\sala_cancelada.png" />
+    <AndroidResource Include="Resources\layout\SalasReunionProgramaLayout.axml" />
+    <AndroidResource Include="Resources\layout\SalaReunionProximaLayout.axml" />
+    <AndroidResource Include="Resources\layout\SalaReunionCardLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

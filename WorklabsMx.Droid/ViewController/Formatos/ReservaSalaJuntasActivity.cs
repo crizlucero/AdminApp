@@ -30,7 +30,7 @@ namespace WorklabsMx.Droid
         AlertDialog dialog;
         Dictionary<string, byte[]> imagenes;
 
-        public ReservaSalaJuntasActivity()
+       /* public ReservaSalaJuntasActivity()
         {
             storage = SimpleStorage.EditGroup("Login");
             SalasController = new SalasJuntasController();
@@ -236,6 +236,6 @@ namespace WorklabsMx.Droid
         {
             StartActivity(new Intent(this, typeof(SalasJuntasSucursalActivity)));
             Finish();
-        }
+        }*/
     }
 }

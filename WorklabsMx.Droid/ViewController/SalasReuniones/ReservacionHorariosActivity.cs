@@ -67,14 +67,21 @@ namespace WorklabsMx.Droid
 
             FindViewById<Button>(Resource.Id.Avanzar).Click += delegate
             {
-                Intent intent = new Intent(this, typeof(ReservacionSalasActivity));
-                intent.PutExtra("Tipo", "horario");
-                intent.PutExtra("fecha_seleccionada", cvFecha.Date.ToString("d"));
-                intent.PutExtra("hora_inicio", horaInicio);
-                intent.PutExtra("hora_fin", horaFin);
-                intent.PutExtra("cantidad_personas", CantidadPersonas);
+                if (!string.IsNullOrEmpty(horaInicio) && !string.IsNullOrEmpty(horaFin) && !string.IsNullOrEmpty(CantidadPersonas))
+                {
+                    Intent intent = new Intent(this, typeof(ReservacionSalasActivity));
+                    intent.PutExtra("Tipo", "horario");
+                    intent.PutExtra("fecha_seleccionada", new CalendarHelper().GetDate(cvFecha.Date));
+                    intent.PutExtra("hora_inicio", horaInicio);
+                    intent.PutExtra("hora_fin", horaFin);
+                    intent.PutExtra("cantidad_personas", CantidadPersonas);
 
-                StartActivity(intent);
+                    StartActivity(intent);
+                }
+                else
+                {
+                    Toast.MakeText(this, "Debes de elegir todos los campos", ToastLength.Short).Show();
+                }
             };
         }
 
