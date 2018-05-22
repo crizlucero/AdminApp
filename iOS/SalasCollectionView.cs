@@ -17,6 +17,7 @@ namespace WorklabsMx.iOS
 
 		public SalaSeleccionada SalaSeleccionadaDelegate;
 		public List<SalaJuntasModel> SalasJuntas = new List<SalaJuntasModel>();
+		public SalaJuntasReservacionModel Reservaciones = new SalaJuntasReservacionModel();
 
         public SalasCollectionView (IntPtr handle) : base (handle)
         {

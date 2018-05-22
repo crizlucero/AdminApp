@@ -58,8 +58,6 @@ namespace WorklabsMx.iOS
             return currentPostCell;
            
         }
-
-
-
+       
     }
 }
