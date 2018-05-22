@@ -64,7 +64,7 @@ namespace WorklabsMx.iOS
 			}
 			else if(segue.Identifier == "DetalleReservacion")
 			{
-				var VistaDetalleReservacion = (DetalleReservacionViewController)segue.DestinationViewController.ChildViewControllers[0];
+				var VistaDetalleReservacion = (DetalleReservacionViewController)segue.DestinationViewController;
 				VistaDetalleReservacion.SalaJuntasSeleccionada = this.SalaJuntasSeleccionada;
 				VistaDetalleReservacion.HoraInicio = this.HoraInicio;
 				VistaDetalleReservacion.HoraFin = this.HoraFin;

@@ -49,7 +49,7 @@ namespace WorklabsMx.iOS
 		{
 			if(segue.Identifier == "Confirmacion")
 			{
-				var VistaConfirmacion = (ConfirmacionReservaSalaViewController)segue.DestinationViewController.ChildViewControllers[0];
+				var VistaConfirmacion = (ConfirmacionReservaSalaViewController)segue.DestinationViewController;
 				VistaConfirmacion.Fecha = this.lblFecha.Text;
 				VistaConfirmacion.Horas = this.lblHora.Text;
 				VistaConfirmacion.SalaNombre = this.lblNombre.Text;
