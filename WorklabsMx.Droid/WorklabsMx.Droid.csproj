@@ -139,12 +139,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="BouncyCastle">
-      <HintPath>..\packages\MimeKit.2.0.3\lib\monoandroid\BouncyCastle.dll</HintPath>
-    </Reference>
-    <Reference Include="MimeKit">
-      <HintPath>..\packages\MimeKit.2.0.3\lib\monoandroid\MimeKit.dll</HintPath>
-    </Reference>
     <Reference Include="MailKit">
       <HintPath>..\packages\MailKit.2.0.3\lib\monoandroid\MailKit.dll</HintPath>
     </Reference>
@@ -171,6 +165,12 @@
     </Reference>
     <Reference Include="Xamarin.RangeSlider.Droid">
       <HintPath>..\packages\Xamarin.RangeSlider.0.7.36\lib\MonoAndroid10\Xamarin.RangeSlider.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle">
+      <HintPath>..\packages\MimeKit.2.0.4\lib\monoandroid\BouncyCastle.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit">
+      <HintPath>..\packages\MimeKit.2.0.4\lib\monoandroid\MimeKit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -223,7 +223,6 @@
     <Compile Include="Service\FirebaseIIDService.cs" />
     <Compile Include="Service\MyFirebaseMessagingService.cs" />
     <Compile Include="ViewController\SalasReuniones\ReservacionReunionActivity.cs" />
-    <Compile Include="ViewController\SalasReuniones\ReservacionHorariosActivity.cs" />
     <Compile Include="ViewController\SalasReuniones\ReservacionSalasActivity.cs" />
     <Compile Include="ViewController\SalasReuniones\ReservacionConfirmarActivity.cs" />
   </ItemGroup>

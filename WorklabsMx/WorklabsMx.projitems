@@ -71,6 +71,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\OrdenVentaDetalle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\MembresiasController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\NotificacionController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ReservacionHorariosActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />

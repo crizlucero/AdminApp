@@ -1,11 +1,16 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionSalasActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/LoginController.cs">
     <Files>
       <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="109" Column="44" />
-      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionHorariosActivity.cs" Line="79" Column="43" />
-      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionSalasActivity.cs" Line="79" Column="93" />
+      <File FileName="WorklabsMx/Models/ReservacionHorariosActivity.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionSalasActivity.cs" Line="93" Column="25" />
       <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionReunionActivity.cs" Line="21" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionConfirmarActivity.cs" Line="14" Column="27" />
+      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionConfirmarActivity.cs" Line="50" Column="24" />
+      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="143" Column="74" />
+      <File FileName="WorklabsMx.Droid/Helpers/CalendarHelper.cs" Line="29" Column="46" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/ReservaSalaJuntasActivity.cs" Line="132" Column="9" />
+      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="22" Column="1" />
+      <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="29" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -19,13 +24,12 @@
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="114" column="10" />
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="126" column="10" />
       <Breakpoint file="/Users/worklabs/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="120" column="1" />
-      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/Service/FirebaseIIDService.cs" relfile="WorklabsMx.Droid/Service/FirebaseIIDService.cs" line="16" column="1" />
       <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/Service/MyFirebaseMessagingService.cs" relfile="WorklabsMx.Droid/Service/MyFirebaseMessagingService.cs" line="19" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../../WorklabsMx/Handlers/PagosHandler.cs" line="41" offsetX="632" offsetY="600" expression="e.StackTrace" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.android_accelerated_lollipop" AndroidDesignerPreferredTheme="AppTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
   <MultiItemStartupConfigurations />
 </Properties>
