@@ -300,10 +300,10 @@ namespace WorklabsMx.Controllers
             try
             {
                 string fotoNombre = null;
-                if (logo.Length != 0)
+                if (logo != null && logo.Length != 0)
                 {
                     fotoNombre = Guid.NewGuid().ToString() + ".png";
-                    string empresa_imagen_path = (new ConfigurationsController().GetListConfiguraciones() != null) ? new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE EMPRESAS").Parametro_Varchar_1 : "";
+                    string empresa_imagen_path = new ConfigurationsController().GetListConfiguraciones().Find(parametro => parametro.Parametro_Descripcion == "RUTA DE IMAGENES DE PERFILES DE EMPRESAS").Parametro_Varchar_1;
                     var result = new UploadImages().UploadBitmapAsync(fotoNombre, logo, empresa_imagen_path);
                     if (!result)
                     {

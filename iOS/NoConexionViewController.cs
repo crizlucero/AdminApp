@@ -69,7 +69,6 @@ namespace WorklabsMx.iOS
                     }
                 }
 
-
             }
             BTProgressHUD.Dismiss();
             new MessageDialog().SendToast("Aun no tienes conexión a internet");

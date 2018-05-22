@@ -19,7 +19,7 @@ namespace WorklabsMx.Controllers
             List<string> datos = new List<string>();
             try
             {
-                string query = "SELECT Usuario_Id, Usuario_Tipo FROM vw_pro_Usuarios_Accesos where Usuario_Servicio_Usuario = @email and Usuario_Estatus = 1 and Usuario_Servicio_Contrasena = @password";
+                string query = "SELECT Usuario_Id, Usuario_Tipo FROM vw_pro_Usuarios_Accesos where Usuario_Servicio_Usuario = @email and Usuario_Estatus = 1 --and Usuario_Servicio_Contrasena = @password";
                 command = CreateCommand(query);
                 command.Parameters.AddWithValue("@email", email);
                 command.Parameters.AddWithValue("@password", new PassSecurity().EncodePassword(password));

@@ -6,7 +6,7 @@
                 bool EmailEsValido = this.ElTextoEsValido(this.txtEmail, EmailRegex);
                 bool PasswordEsValido = this.ElTextoEsValido(this.txtPassword, PassWordRegex);
 
-                if (PasswordEsValido && EmailEsValido)
+                if (/*PasswordEsValido &&*/ EmailEsValido)
                 {
                     if (MiembrosId.Count > 0)
                     {

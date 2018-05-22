@@ -28,10 +28,6 @@ namespace WorklabsMx.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnNivel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnSeisPersonas { get; set; }
 
         [Outlet]
@@ -41,14 +37,6 @@ namespace WorklabsMx.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView cvwSalasJuntas { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIImageView imgSalasJuntas { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblCapacidad { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -69,22 +57,6 @@ namespace WorklabsMx.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblHorasReservadas { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblNombre { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblPiso { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIPageControl pcSucursales { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIScrollView scvSalasJuntas { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -302,14 +274,6 @@ namespace WorklabsMx.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView vwInfoReservacion { get; set; }
 
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView vwNivel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView vwSalasJuntas { get; set; }
-
         [Action ("btnAgendar_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnAgendar_Touch (UIKit.UIButton sender);
@@ -325,10 +289,6 @@ namespace WorklabsMx.iOS
         [Action ("btnHoraInicio_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void btnHoraInicio_Touch (UIKit.UIButton sender);
-
-        [Action ("btnNivel_Touch:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void btnNivel_Touch (UIKit.UIButton sender);
 
         [Action ("btnSeisPersonas_Touch:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -355,11 +315,6 @@ namespace WorklabsMx.iOS
                 btnHoraInicio = null;
             }
 
-            if (btnNivel != null) {
-                btnNivel.Dispose ();
-                btnNivel = null;
-            }
-
             if (btnSeisPersonas != null) {
                 btnSeisPersonas.Dispose ();
                 btnSeisPersonas = null;
@@ -373,16 +328,6 @@ namespace WorklabsMx.iOS
             if (cvwSalasJuntas != null) {
                 cvwSalasJuntas.Dispose ();
                 cvwSalasJuntas = null;
-            }
-
-            if (imgSalasJuntas != null) {
-                imgSalasJuntas.Dispose ();
-                imgSalasJuntas = null;
-            }
-
-            if (lblCapacidad != null) {
-                lblCapacidad.Dispose ();
-                lblCapacidad = null;
             }
 
             if (lblCreditosDisponibles != null) {
@@ -408,26 +353,6 @@ namespace WorklabsMx.iOS
             if (lblHorasReservadas != null) {
                 lblHorasReservadas.Dispose ();
                 lblHorasReservadas = null;
-            }
-
-            if (lblNombre != null) {
-                lblNombre.Dispose ();
-                lblNombre = null;
-            }
-
-            if (lblPiso != null) {
-                lblPiso.Dispose ();
-                lblPiso = null;
-            }
-
-            if (pcSucursales != null) {
-                pcSucursales.Dispose ();
-                pcSucursales = null;
-            }
-
-            if (scvSalasJuntas != null) {
-                scvSalasJuntas.Dispose ();
-                scvSalasJuntas = null;
             }
 
             if (scvScrollHorarios != null) {
@@ -698,16 +623,6 @@ namespace WorklabsMx.iOS
             if (vwInfoReservacion != null) {
                 vwInfoReservacion.Dispose ();
                 vwInfoReservacion = null;
-            }
-
-            if (vwNivel != null) {
-                vwNivel.Dispose ();
-                vwNivel = null;
-            }
-
-            if (vwSalasJuntas != null) {
-                vwSalasJuntas.Dispose ();
-                vwSalasJuntas = null;
             }
         }
     }

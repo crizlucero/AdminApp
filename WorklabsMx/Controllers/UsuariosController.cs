@@ -27,7 +27,7 @@ namespace WorklabsMx.Controllers
         public UsuarioModel GetMemberData(string miembro_id, string tipo)
         {
             UsuarioModel miembro = new UsuarioModel();
-            command = CreateCommand("select * from vw_pro_Directorio_Usuarios where Usuario_Id = @miembro_id AND Usuario_Tipo = @tipo");
+            command = CreateCommand("select * from vw_pro_Usuarios_Directorio where Usuario_Id = @miembro_id AND Usuario_Tipo = @tipo");
             command.Parameters.AddWithValue("@miembro_id", miembro_id);
             command.Parameters.AddWithValue("@tipo", tipo);
             try
@@ -44,17 +44,17 @@ namespace WorklabsMx.Controllers
                         Usuario_Fecha_Nacimiento = reader["Usuario_Fecha_Nacimiento"].ToString(),
                         Genero = new GeneroModel
                         {
-                            Genero_Id = reader["Genero_Id"].ToString(),
-                            Genero_Descripcion = reader["Genero_Descripcion"].ToString(),
+                            Genero_Id = reader["Usuario_Genero_Id"].ToString(),
+                            Genero_Descripcion = reader["Usuario_Genero_Descripcion"].ToString(),
                         },
                         Usuario_Correo_Electronico = reader["Usuario_Correo_Electronico"].ToString(),
                         Usuario_Telefono = reader["Usuario_Telefono"].ToString(),
                         Usuario_Celular = reader["Usuario_Celular"].ToString(),
                         Usuario_Profesion = reader["Usuario_Profesion"].ToString(),
                         Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
-                        Usuario_Identificacion = reader["Usuario_Identificacion"].ToString(),
+                        //Usuario_Identificacion = reader["Usuario_Identificacion"].ToString(),
                         Usuario_Fotografia = reader["Usuario_Fotografia"].ToString(),
-                        Usuario_Fecha_Registro = reader["Usuario_Fecha_Registro"].ToString(),
+                        //Usuario_Fecha_Registro = reader["Usuario_Fecha_Registro"].ToString(),
                         Usuario_Estatus = reader["Usuario_Estatus"].ToString(),
                         Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
                         Usuario_Descripcion = reader["Usuario_Descripcion"].ToString(),
@@ -63,15 +63,15 @@ namespace WorklabsMx.Controllers
                         Empresa_Actual = new EmpresaModel
                         {
                             Empresa_Id = reader["Usuario_Empresa_Id"].ToString(),
-                            Empresa_Nombre = reader["Usuario_Empresa_Nombre"].ToString(),
+                            Empresa_Nombre = reader["Usuario_Empresa_Razon_Social"].ToString(),
                             Empresa_Logotipo = reader["Usuario_Empresa_Logotipo"].ToString(),
-                            Empresa_Correo_Electronico = reader["Empresa_Miembro_Correo_Electronico"].ToString(),
+                            Empresa_Correo_Electronico = reader["Usuario_Empresa_Correo_Electronico"].ToString(),
                             Empresa_Logotipo_Perfil = null,//ImageHelper.DownloadFileFTP(reader["Usuario_Empresa_Logotipo"].ToString(), empresa_imagen_path),
                             Territorio = new TerritorioModel
                             {
-                                Municipio = reader["Empresa_Municipio_Descripcion"].ToString(),
-                                Estado = reader["Empresa_Estado_Descripcion"].ToString(),
-                                Pais = reader["Empresa_Pais_Descripcion"].ToString()
+                                Municipio = reader["Usuario_Empresa_Municipio_Descripcion"].ToString(),
+                                Estado = reader["Usuario_Empresa_Estado_Descripcion"].ToString(),
+                                Pais = reader["Usuario_Empresa_Pais_Descripcion"].ToString()
                             }
                         }
 
@@ -102,7 +102,7 @@ namespace WorklabsMx.Controllers
         public List<string> GetMemberName(string miembro_id, string tipo)
         {
             List<string> data = new List<string>();
-            command = CreateCommand("select Concat(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia, Usuario_Puesto, Usuario_Empresa_Nombre from vw_pro_Directorio_Usuarios " +
+            command = CreateCommand("select Concat(Usuario_Nombre, ' ', Usuario_Apellidos) as Nombre, Usuario_Fotografia, Usuario_Puesto, Usuario_Empresa_Nombre from vw_pro_Usuarios_Directorio " +
                 "where Usuario_Id = @miembro_id AND Usuario_Tipo = @tipo");
             command.Parameters.AddWithValue("@miembro_id", miembro_id);
             command.Parameters.AddWithValue("@tipo", tipo);
@@ -165,7 +165,7 @@ namespace WorklabsMx.Controllers
         {
             List<UsuarioModel> usuarios = new List<UsuarioModel>();
 
-            command = CreateCommand("select * from vw_pro_Directorio_Usuarios WHERE Usuario_Nombre IS NOT NULL AND Usuario_Estatus = 1 ORDER BY Usuario_Nombre, Usuario_Apellidos");
+            command = CreateCommand("select * from vw_pro_Usuarios_Directorio WHERE Usuario_Nombre IS NOT NULL AND Usuario_Estatus = 1 ORDER BY Usuario_Nombre, Usuario_Apellidos");
             command.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
             command.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
             command.Parameters.AddWithValue("@profesion", "%" + profesion + "%");
@@ -181,28 +181,28 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                        usuarios.Add(new UsuarioModel
+                    usuarios.Add(new UsuarioModel
+                    {
+                        Usuario_Id = reader["Usuario_Id"].ToString(),
+                        Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
+                        Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
+                        Usuario_Apellidos = reader["Usuario_Apellidos"].ToString(),
+                        Usuario_Profesion = reader["Usuario_Profesion"].ToString(),
+                        Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
+                        Usuario_Fotografia = reader["Usuario_Fotografia"].ToString(),
+                        Usuario_Correo_Electronico = reader["Usuario_Correo_Electronico"].ToString(),
+                        //Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path),
+                        Usuario_Telefono = reader["Usuario_Telefono"].ToString(),
+                        Usuario_Celular = reader["Usuario_Celular"].ToString(),
+                        Usuario_Fecha_Nacimiento = reader["Usuario_Fecha_Nacimiento"].ToString(),
+                        Usuario_Fecha_Registro = reader["Usuario_Fecha_Registro"].ToString(),
+                        Genero = new GeneroModel
                         {
-                            Usuario_Id = reader["Usuario_Id"].ToString(),
-                            Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
-                            Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
-                            Usuario_Apellidos = reader["Usuario_Apellidos"].ToString(),
-                            Usuario_Profesion = reader["Usuario_Profesion"].ToString(),
-                            Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
-                            Usuario_Fotografia = reader["Usuario_Fotografia"].ToString(),
-                            Usuario_Correo_Electronico = reader["Usuario_Correo_Electronico"].ToString(),
-                            //Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path),
-                            Usuario_Telefono = reader["Usuario_Telefono"].ToString(),
-                            Usuario_Celular = reader["Usuario_Celular"].ToString(),
-                            Usuario_Fecha_Nacimiento = reader["Usuario_Fecha_Nacimiento"].ToString(),
-                            Usuario_Fecha_Registro = reader["Usuario_Fecha_Registro"].ToString(),
-                            Genero = new GeneroModel
-                            {
-                                Genero_Id = reader["Genero_Id"].ToString(),
-                                Genero_Descripcion = reader["Genero_Descripcion"].ToString()
-                            },
-                            Usuario_Empresa_Nombre = reader["Usuario_Empresa_Nombre"].ToString()
-                        });
+                            Genero_Id = reader["Usuario_Genero_Id"].ToString(),
+                            Genero_Descripcion = reader["Usuario_Genero_Descripcion"].ToString()
+                        },
+                        Usuario_Empresa_Nombre = reader["Usuario_Empresa_Nombre"].ToString()
+                    });
                 }
             }
             catch (Exception e)
@@ -287,20 +287,19 @@ namespace WorklabsMx.Controllers
         /// <param name="telefono">Telefono del usuario</param>
         /// <param name="celular">Celular del usuario</param>
         /// <param name="fechaNacimiento">Fecha nacimiento del usuario</param>
-        public bool UpdateDataMiembros(string usuario_id, string nombre, string apellido, string correo, string telefono, string celular, string descripcion, DateTime fechaNacimiento, byte[] fotografia, byte[] foto_fondo)
+        public bool UpdateDataMiembros(string usuario_id, string nombre, string apellido, string correo, string telefono, string celular, string descripcion, string fechaNacimiento, string fotoNombre, byte[] fotografia_nueva, string fotoFondoNombre, byte[] foto_fondo_nuevo)
         {
-            string fotoNombre = null, fotoFondoNombre = null;
             try
             {
                 conn.Open();
                 transaction = conn.BeginTransaction();
 
-                if (fotografia != null)
+                if (fotografia_nueva != null)
                 {
-                    if (fotografia.Length != 0)
+                    if (fotografia_nueva.Length != 0)
                     {
                         fotoNombre = Guid.NewGuid().ToString() + ".png";
-                        var result = new UploadImages().UploadBitmapAsync(fotoNombre, fotografia, usuario_imagen_path);
+                        var result = new UploadImages().UploadBitmapAsync(fotoNombre, fotografia_nueva, usuario_imagen_path);
                         if (!result)
                         {
                             return false;
@@ -309,12 +308,12 @@ namespace WorklabsMx.Controllers
                     }
                 }
 
-                if (foto_fondo != null)
+                if (foto_fondo_nuevo != null)
                 {
-                    if (foto_fondo.Length != 0)
+                    if (foto_fondo_nuevo.Length != 0)
                     {
                         fotoFondoNombre = Guid.NewGuid().ToString() + ".png";
-                        var result = new UploadImages().UploadBitmapAsync(fotoFondoNombre, foto_fondo, usuario_imagen_path);
+                        var result = new UploadImages().UploadBitmapAsync(fotoFondoNombre, foto_fondo_nuevo, usuario_imagen_path);
                         if (!result)
                         {
                             return false;
@@ -333,14 +332,17 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Miembro_Id", usuario_id);
                 command.Parameters.AddWithValue("@Miembro_Nombre", nombre);
                 command.Parameters.AddWithValue("@Miembro_Apellidos", apellido);
-                command.Parameters.AddWithValue("@Miembro_Fecha_Nacimiento", fechaNacimiento);
+                if (!string.IsNullOrEmpty(fechaNacimiento))
+                    command.Parameters.AddWithValue("@Miembro_Fecha_Nacimiento", DateTime.Parse(fechaNacimiento));
+                else
+                    command.Parameters.AddWithValue("@Miembro_Fecha_Nacimiento", DBNull.Value);
                 command.Parameters.AddWithValue("@Miembro_Correo_Electronico", correo);
                 command.Parameters.AddWithValue("@Miembro_Telefono", telefono);
                 command.Parameters.AddWithValue("@Miembro_Celular", celular);
                 command.Parameters.AddWithValue("@Miembro_Fotografia", fotoNombre);
                 command.Parameters.AddWithValue("@Miembro_Descripcion", descripcion);
                 command.Parameters.AddWithValue("@Miembro_Estatus", DBNull.Value);
-                command.Parameters.AddWithValue("@Miembro_Fotografia_Fondo", fotoFondoNombre);
+                command.Parameters.AddWithValue("@Miembro_Imagen_Fondo", fotoFondoNombre);
 
                 command.Parameters.Add("@Miembro_Id_Salida", SqlDbType.Int).Direction = ParameterDirection.Output;
 
@@ -768,7 +770,6 @@ namespace WorklabsMx.Controllers
             try
             {
                 conn.Open();
-                transaction = conn.BeginTransaction();
                 command = CreateCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.StoredProcedure;
@@ -777,7 +778,6 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Usuario_Id", usuario_id);
 
                 command.Parameters.AddWithValue("@Usuario_Tipo", usuario_tipo);
-                command.Transaction = transaction;
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
@@ -785,14 +785,9 @@ namespace WorklabsMx.Controllers
                     contadores.Add(reader.GetInt32(1).ToString());
                     contadores.Add(reader.GetInt32(2).ToString());
                 }
-
-                //command.Transaction = transaction;
-                //command.ExecuteNonQuery();
-                //transaction.Commit();
             }
             catch (Exception e)
             {
-                //transaction.Rollback();
                 Console.WriteLine(e.Message);
                 SlackLogs.SendMessage(e.Message, GetType().Name, "GetContadoresSocial");
             }
@@ -925,28 +920,28 @@ namespace WorklabsMx.Controllers
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                        usuarios.Add(new UsuarioModel
+                    usuarios.Add(new UsuarioModel
+                    {
+                        Usuario_Id = reader["Usuario_Id"].ToString(),
+                        Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
+                        Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
+                        Usuario_Apellidos = reader["Usuario_Apellidos"].ToString(),
+                        Usuario_Profesion = reader["Usuario_Profesion"].ToString(),
+                        Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
+                        Usuario_Fotografia = reader["Usuario_Fotografia"].ToString(),
+                        Usuario_Correo_Electronico = reader["Usuario_Correo_Electronico"].ToString(),
+                        //Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path),
+                        Usuario_Telefono = reader["Usuario_Telefono"].ToString(),
+                        Usuario_Celular = reader["Usuario_Celular"].ToString(),
+                        Usuario_Fecha_Nacimiento = reader["Usuario_Fecha_Nacimiento"].ToString(),
+                        Usuario_Fecha_Registro = reader["Usuario_Fecha_Registro"].ToString(),
+                        Genero = new GeneroModel
                         {
-                            Usuario_Id = reader["Usuario_Id"].ToString(),
-                            Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
-                            Usuario_Nombre = reader["Usuario_Nombre"].ToString(),
-                            Usuario_Apellidos = reader["Usuario_Apellidos"].ToString(),
-                            Usuario_Profesion = reader["Usuario_Profesion"].ToString(),
-                            Usuario_Puesto = reader["Usuario_Puesto"].ToString(),
-                            Usuario_Fotografia = reader["Usuario_Fotografia"].ToString(),
-                            Usuario_Correo_Electronico = reader["Usuario_Correo_Electronico"].ToString(),
-                            //Usuario_Fotografia_Perfil = ImageHelper.DownloadFileFTP(reader["Usuario_Fotografia"].ToString(), usuario_imagen_path),
-                            Usuario_Telefono = reader["Usuario_Telefono"].ToString(),
-                            Usuario_Celular = reader["Usuario_Celular"].ToString(),
-                            Usuario_Fecha_Nacimiento = reader["Usuario_Fecha_Nacimiento"].ToString(),
-                            Usuario_Fecha_Registro = reader["Usuario_Fecha_Registro"].ToString(),
-                            Genero = new GeneroModel
-                            {
-                                Genero_Id = reader["Genero_Id"].ToString(),
-                                Genero_Descripcion = reader["Genero_Descripcion"].ToString()
-                            },
-                            Usuario_Empresa_Nombre = reader["Usuario_Empresa_Nombre"].ToString()
-                        });
+                            Genero_Id = reader["Genero_Id"].ToString(),
+                            Genero_Descripcion = reader["Genero_Descripcion"].ToString()
+                        },
+                        Usuario_Empresa_Nombre = reader["Usuario_Empresa_Nombre"].ToString()
+                    });
                 }
             }
             catch (Exception e)

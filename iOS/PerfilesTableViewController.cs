@@ -431,6 +431,8 @@ namespace WorklabsMx.iOS
                     Miembro.Usuario_Fotografia_FondoPerfil = image?.AsPNG().ToArray();
                     if (this.GuardarInfo())
                     {
+                        BTProgressHUD.Dismiss();
+                        BTProgressHUD.Show("Información guardada con éxito");
                         //this.PublicarPost(Miembro.Usuario_Nombre + " " + Miembro.Usuario_Apellidos + " actualizó su foto de fondo", Miembro.Usuario_Fotografia_FondoPerfil, 2);
                     }
                 });
@@ -562,10 +564,8 @@ namespace WorklabsMx.iOS
         private bool GuardarInfo()
         {
             bool resultDataMiembros = false;
-            DateTime fechaNacimiento = new DateTime();
-            fechaNacimiento = DateTime.Parse(Miembro.Usuario_Fecha_Nacimiento);
             return resultDataMiembros = new UsuariosController().UpdateDataMiembros(KeyChainHelper.GetKey("Usuario_Id"), Miembro.Usuario_Nombre, Miembro.Usuario_Apellidos, Miembro.Usuario_Correo_Electronico,
-                                                                             Miembro.Usuario_Telefono, Miembro.Usuario_Celular, Miembro.Usuario_Descripcion, fechaNacimiento, Miembro.Usuario_Fotografia_Perfil, Miembro.Usuario_Fotografia_FondoPerfil);
+                                                                                    Miembro.Usuario_Telefono, Miembro.Usuario_Celular, Miembro.Usuario_Descripcion, Miembro.Usuario_Fecha_Nacimiento, Miembro.Usuario_Fotografia, Miembro.Usuario_Fotografia_Perfil, Miembro.Usuario_Fotografia_Fondo,Miembro.Usuario_Fotografia_FondoPerfil);
         }
 
 

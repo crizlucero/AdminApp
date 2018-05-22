@@ -388,8 +388,6 @@ namespace WorklabsMx.iOS
         {
             NewInfoPerfil.Usuario_Nombre = txtNombre.Text;
             NewInfoPerfil.Usuario_Apellidos = txtApellidos.Text;
-            DateTime fechaNacimiento = new DateTime();
-            fechaNacimiento = DateTime.Parse(NewInfoPerfil.Usuario_Fecha_Nacimiento);
             int resultRedesSociales = -1;
             int resultEtiquetas = -1;
             bool resultadoTrabajo = false;
@@ -458,8 +456,12 @@ namespace WorklabsMx.iOS
                 resultRedesSociales = 1;
             }
 
+                  NSDateFormatter dateFormate = new NSDateFormatter();
+                dateFormate.DateFormat = "yyyy-MM-dd";
+                dateFormate.ToString(NSDate.Now);
+
             resultDataMiembros = new UsuariosController().UpdateDataMiembros(KeyChainHelper.GetKey("Usuario_Id"), NewInfoPerfil.Usuario_Nombre, NewInfoPerfil.Usuario_Apellidos, NewInfoPerfil.Usuario_Correo_Electronico,
-                                                                             NewInfoPerfil.Usuario_Telefono, NewInfoPerfil.Usuario_Celular, NewInfoPerfil.Usuario_Descripcion, fechaNacimiento, NewInfoPerfil.Usuario_Fotografia_Perfil, NewInfoPerfil.Usuario_Fotografia_FondoPerfil);
+                                                                             NewInfoPerfil.Usuario_Telefono, NewInfoPerfil.Usuario_Celular, NewInfoPerfil.Usuario_Descripcion, NewInfoPerfil.Usuario_Fecha_Nacimiento , NewInfoPerfil.Usuario_Fotografia, NewInfoPerfil.Usuario_Fotografia_Perfil, NewInfoPerfil.Usuario_Fotografia_Fondo, NewInfoPerfil.Usuario_Fotografia_FondoPerfil);
 
             if (NewInfoPerfil.Empresa_Actual.Empresa_Logotipo_Perfil == null)
             {

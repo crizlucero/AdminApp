@@ -172,6 +172,12 @@
       <HintPath>..\packages\Xam.Plugins.Settings.4.0.0.7\lib\xamarinios10\Plugin.Settings.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="Firebase.CrashReporting">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.CrashReporting.2.0.0.5\lib\Xamarin.iOS10\Firebase.CrashReporting.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.CrashReporting">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.CrashReporting.2.0.0.5\lib\Xamarin.iOS10\Firebase.CrashReporting.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -804,6 +810,30 @@
     <ImageAsset Include="Assets.xcassets\ImagenProductos.imageset\imagenProductos%403x.png" />
     <ImageAsset Include="Assets.xcassets\NoImagen.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\NoImagen.imageset\Captura de pantalla 2018-04-24 a la%28s%29 14.16.42.png" />
+    <ImageAsset Include="Assets.xcassets\HorarioSalaJuntas.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\HorarioSalaJuntas.imageset\luke-van-zyl-567816-unsplash.png" />
+    <ImageAsset Include="Assets.xcassets\HorarioSalaJuntas.imageset\luke-van-zyl-567816-unsplash%402x.png" />
+    <ImageAsset Include="Assets.xcassets\HorarioSalaJuntas.imageset\luke-van-zyl-567816-unsplash%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ImagenSalaJuntas.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ImagenSalaJuntas.imageset\IMG_0404.png" />
+    <ImageAsset Include="Assets.xcassets\ImagenSalaJuntas.imageset\IMG_0404%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ImagenSalaJuntas.imageset\IMG_0404%403x.png" />
+    <ImageAsset Include="Assets.xcassets\SeleccionFechaHora.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\SeleccionFechaHora.imageset\freestocks-org-229658-unsplash.png" />
+    <ImageAsset Include="Assets.xcassets\SeleccionFechaHora.imageset\freestocks-org-229658-unsplash%402x.png" />
+    <ImageAsset Include="Assets.xcassets\SeleccionFechaHora.imageset\freestocks-org-229658-unsplash%403x.png" />
+    <ImageAsset Include="Assets.xcassets\BannerSalaReuniones.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\BannerSalaReuniones.imageset\IMG_0402.png" />
+    <ImageAsset Include="Assets.xcassets\BannerSalaReuniones.imageset\IMG_0402%402x.png" />
+    <ImageAsset Include="Assets.xcassets\BannerSalaReuniones.imageset\IMG_0402%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ConfirmacionSala.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ConfirmacionSala.imageset\brooke-cagle-609880-unsplash.png" />
+    <ImageAsset Include="Assets.xcassets\ConfirmacionSala.imageset\brooke-cagle-609880-unsplash%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ConfirmacionSala.imageset\brooke-cagle-609880-unsplash%403x.png" />
+    <ImageAsset Include="Assets.xcassets\BotonSalaConfirmacion.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\BotonSalaConfirmacion.imageset\Path 329.png" />
+    <ImageAsset Include="Assets.xcassets\BotonSalaConfirmacion.imageset\Path 329%402x.png" />
+    <ImageAsset Include="Assets.xcassets\BotonSalaConfirmacion.imageset\Path 329%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\MessageDialog.cs" />
@@ -923,30 +953,6 @@
     <Compile Include="ViewControllers\Telefonia\TelefoniaTableView.designer.cs">
       <DependentUpon>TelefoniaTableView.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatosEmpresaTableViewController.cs" />
-    <Compile Include="DatosEmpresaTableViewController.designer.cs">
-      <DependentUpon>DatosEmpresaTableViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DireccionEmpresaTableViewController.cs" />
-    <Compile Include="DireccionEmpresaTableViewController.designer.cs">
-      <DependentUpon>DireccionEmpresaTableViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FechaNacimientoPickerViewController.cs" />
-    <Compile Include="FechaNacimientoPickerViewController.designer.cs">
-      <DependentUpon>FechaNacimientoPickerViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GeneroViewController.cs" />
-    <Compile Include="GeneroViewController.designer.cs">
-      <DependentUpon>GeneroViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ColoniaViewController.cs" />
-    <Compile Include="ColoniaViewController.designer.cs">
-      <DependentUpon>ColoniaViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SucursalesViewController.cs" />
-    <Compile Include="SucursalesViewController.designer.cs">
-      <DependentUpon>SucursalesViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helpers\KeyChainHelper.cs" />
     <Compile Include="ViewControllers\Comentarios\comentarTableView.cs" />
     <Compile Include="ViewControllers\Comentarios\comentarTableView.designer.cs">
@@ -1061,6 +1067,10 @@
     </Compile>
     <Compile Include="InfoConfirmacionViewController.cs" />
     <Compile Include="NoConexionViewController.cs" />
+    <Compile Include="FechaHoraSalaViewController.cs" />
+    <Compile Include="FechaHoraSalaViewController.designer.cs">
+      <DependentUpon>FechaHoraSalaViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="NoConexionViewController.designer.cs">
       <DependentUpon>NoConexionViewController.cs</DependentUpon>
     </Compile>
@@ -1176,6 +1186,10 @@
     <Compile Include="HabilidadesCollectionView.designer.cs">
       <DependentUpon>HabilidadesCollectionView.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalasCollectionView.cs" />
+    <Compile Include="SalasCollectionView.designer.cs">
+      <DependentUpon>SalasCollectionView.cs</DependentUpon>
+    </Compile>
     <Compile Include="InteresesCollectionView.cs" />
     <Compile Include="InteresesCollectionView.designer.cs">
       <DependentUpon>InteresesCollectionView.cs</DependentUpon>
@@ -1289,6 +1303,10 @@
     <Compile Include="EjemploPagos.cs" />
     <Compile Include="AccionesCompras.cs" />
     <Compile Include="HeaderCompras.cs" />
+    <Compile Include="InicioSalaJuntasView.cs" />
+    <Compile Include="InicioSalaJuntasView.designer.cs">
+      <DependentUpon>InicioSalaJuntasView.cs</DependentUpon>
+    </Compile>
     <Compile Include="HeaderCompras.designer.cs">
       <DependentUpon>HeaderCompras.cs</DependentUpon>
     </Compile>
@@ -1342,11 +1360,60 @@
       <DependentUpon>PlazosViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="FirebaseNotificationService.cs" />
+    <Compile Include="SucursalesView.cs" />
+    <Compile Include="SucursalesView.designer.cs">
+      <DependentUpon>SucursalesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FechaNacimientoPickerView.cs" />
+    <Compile Include="FechaNacimientoPickerView.designer.cs">
+      <DependentUpon>FechaNacimientoPickerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeleccionarSalaTableView.cs" />
+    <Compile Include="SeleccionarSalaTableView.designer.cs">
+      <DependentUpon>SeleccionarSalaTableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalasCollectionCell.cs" />
+    <Compile Include="SalasCollectionCell.designer.cs">
+      <DependentUpon>SalasCollectionCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoraInicioCollectionView.cs" />
+    <Compile Include="HoraInicioCollectionView.designer.cs">
+      <DependentUpon>HoraInicioCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaHoraInicio.cs" />
+    <Compile Include="CeldaHoraInicio.designer.cs">
+      <DependentUpon>CeldaHoraInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoraFinCollectionView.cs" />
+    <Compile Include="HoraFinCollectionView.designer.cs">
+      <DependentUpon>HoraFinCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaHoraFin.cs" />
+    <Compile Include="CeldaHoraFin.designer.cs">
+      <DependentUpon>CeldaHoraFin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CantidadPersonasCollectionView.cs" />
+    <Compile Include="CantidadPersonasCollectionView.designer.cs">
+      <DependentUpon>CantidadPersonasCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaCantidadPersonas.cs" />
+    <Compile Include="CeldaCantidadPersonas.designer.cs">
+      <DependentUpon>CeldaCantidadPersonas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CantidadPersonasCollection.cs" />
+    <Compile Include="CantidadPersonasCollection.designer.cs">
+      <DependentUpon>CantidadPersonasCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleReservacionViewController.cs" />
+    <Compile Include="DetalleReservacionViewController.designer.cs">
+      <DependentUpon>DetalleReservacionViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <None Include="packages.config" />
+    <None Include="xamarin_upload_symbols.sh" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -1523,6 +1590,12 @@
     <Folder Include="Assets.xcassets\Telefonia.imageset\" />
     <Folder Include="Assets.xcassets\ImagenProductos.imageset\" />
     <Folder Include="Assets.xcassets\NoImagen.imageset\" />
+    <Folder Include="Assets.xcassets\HorarioSalaJuntas.imageset\" />
+    <Folder Include="Assets.xcassets\ImagenSalaJuntas.imageset\" />
+    <Folder Include="Assets.xcassets\SeleccionFechaHora.imageset\" />
+    <Folder Include="Assets.xcassets\BannerSalaReuniones.imageset\" />
+    <Folder Include="Assets.xcassets\ConfirmacionSala.imageset\" />
+    <Folder Include="Assets.xcassets\BotonSalaConfirmacion.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />
@@ -1553,9 +1626,10 @@
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Import Project="..\packages\NETStandard.Library.2.0.0\build\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\NETStandard.Library.targets')" />
   <Import Project="..\packages\Xamarin.Firebase.iOS.InstanceID.2.0.8\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.InstanceID.2.0.8\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
-  <Import Project="..\packages\NETStandard.Library.2.0.2\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.2\build\netstandard2.0\NETStandard.Library.targets')" />
   <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" />
   <Import Project="..\packages\Xamarin.Firebase.iOS.Core.4.0.13.1\build\Xamarin.Firebase.iOS.Core.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.Core.4.0.13.1\build\Xamarin.Firebase.iOS.Core.targets')" />
   <Import Project="..\packages\Xamarin.Firebase.iOS.Analytics.4.0.5.1\build\Xamarin.Firebase.iOS.Analytics.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.Analytics.4.0.5.1\build\Xamarin.Firebase.iOS.Analytics.targets')" />
   <Import Project="..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.8.1\build\Xamarin.Firebase.iOS.CloudMessaging.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.8.1\build\Xamarin.Firebase.iOS.CloudMessaging.targets')" />
+  <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="..\packages\Xamarin.Firebase.iOS.CrashReporting.2.0.0.5\build\Xamarin.Firebase.iOS.CrashReporting.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.CrashReporting.2.0.0.5\build\Xamarin.Firebase.iOS.CrashReporting.targets')" />
 </Project>

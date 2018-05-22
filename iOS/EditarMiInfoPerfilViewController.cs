@@ -195,7 +195,7 @@ namespace WorklabsMx.iOS
             }
             else if (segue.Identifier == "FechaNacimiento")
             {
-                var BirthDateView = (FechaNacimientoPickerViewController)segue.DestinationViewController;
+                var BirthDateView = (FechaNacimientoPickerView)segue.DestinationViewController;
                 BirthDateView.FechaSeleccionadaDelegate = this;
             }
         }
@@ -219,5 +219,5 @@ namespace WorklabsMx.iOS
             EditarInfoDelegate.InfoSobreMi(MiembroActualizar);
             this.btnFechaNacimiento.SetTitle(FechaNacimiento, UIControlState.Normal);
         }
-    } 
+    }
 }

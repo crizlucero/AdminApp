@@ -67,7 +67,7 @@ namespace WorklabsMx.Controllers
                     {
                         Sucursal_Correo = reader["Sucursal_Correo_1"].ToString(),
                         Sucursal_Descripcion = reader["Sucursal_Descripcion"].ToString(),
-                        Sucursal_Domicilio = reader["Sucursal_Domicilio"].ToString(),
+                        Sucursal_Domicilio = reader["Sucursal_Domicilio_1"].ToString(),
                         Territorio = new TerritorioModel
                         {
                             Colonia = reader["Territorio_Colonia_Descripcion"].ToString(),
@@ -109,7 +109,7 @@ namespace WorklabsMx.Controllers
         public List<SucursalModel> GetSucursales()
         {
             List<SucursalModel> sucursales = new List<SucursalModel>();
-            string query = "SELECT Sucursal_Id, Sucursal_Domicilio, Sucursal_Descripcion, Territorio_Colonia_Descripcion FROM vw_cat_Sucursales WHERE Sucursal_Estatus = 1";
+            string query = "SELECT Sucursal_Id, Sucursal_Domicilio_1 as Sucursal_Domicilio, Sucursal_Descripcion, Sucursal_Domicilio_2 as Territorio_Colonia_Descripcion FROM vw_cat_Sucursales WHERE Sucursal_Estatus = 1";
             try
             {
                 conn.Open();
@@ -126,7 +126,7 @@ namespace WorklabsMx.Controllers
                         {
                             Colonia = reader["Territorio_Colonia_Descripcion"].ToString()
                         }
-                        //Sucursal_Imagen = reader["Sucursal_Imagen"].ToString()                                               
+                        //Sucursal_Imagen = reader["Sucursal_Imagen"].ToString()       
                     });
                 }
             }

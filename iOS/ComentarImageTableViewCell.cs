@@ -78,7 +78,7 @@ namespace WorklabsMx.iOS
                 if (comentario.Comentario_Imagen_Comentario == null)
                 {
                     var result = FotosId.Find(x => x == comentario.Comentario_Imagen);
-                    if (result == null || result == "")
+                    if(result == null || result == "")
                     {
                         comentario.Comentario_Imagen_Comentario = new UploadImages().DownloadFileFTP(comentario.Comentario_Imagen, MenuHelper.UploadImagePath);
                         FotosId.Add(comentario.Comentario_Imagen);

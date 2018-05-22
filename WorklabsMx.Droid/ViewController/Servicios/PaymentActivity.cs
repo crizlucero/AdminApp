@@ -60,7 +60,7 @@ namespace WorklabsMx.Droid
                 Merchant = "158198",
                 Currency = Currency.Mxn,
                 OperationType = "6",
-                Reference = "Referencia dada por el usuario",
+                Reference = "",
                 Amount = "100.00",
                 Token = "158128"
             };
@@ -73,7 +73,7 @@ namespace WorklabsMx.Droid
                 Password = "OOMYO17MS7",
                 Merchant = "158198",
                 Currency = Currency.Mxn,
-                Reference = "Referencia dada por el usuario",
+                Reference = "",
                 AuthKey = "516883685552545048505454"
             };
             suiteController.Authenticate(beanTokenization, bean3DS);
