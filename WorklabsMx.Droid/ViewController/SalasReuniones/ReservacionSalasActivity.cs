@@ -11,6 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using WorklabsMx.Controllers;
+using WorklabsMx.Enum;
 using WorklabsMx.Models;
 
 namespace WorklabsMx.Droid
@@ -19,7 +20,8 @@ namespace WorklabsMx.Droid
     public class ReservacionSalasActivity : Activity
     {
         List<SalaJuntasModel> salas;
-        string Tipo, fecha_seleccionada, hora_inicio, hora_fin, cantidad_personas, cantidad_creditos;
+        string fecha_seleccionada, hora_inicio, hora_fin, cantidad_personas, cantidad_creditos;
+        int Tipo;
         readonly SalasJuntasController SalasController;
 
         public ReservacionSalasActivity()
@@ -38,13 +40,13 @@ namespace WorklabsMx.Droid
             ActionBar.Title = Resources.GetString(Resource.String.str_meeting_room_reservation);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            Tipo = Intent.GetStringExtra("Tipo");
+            Tipo = Intent.GetIntExtra("Tipo", 0);
             fecha_seleccionada = Intent.GetStringExtra("fecha_seleccionada");
             hora_inicio = Intent.GetStringExtra("hora_inicio");
             hora_fin = Intent.GetStringExtra("hora_fin");
             cantidad_personas = Intent.GetStringExtra("cantidad_personas");
 
-            if (Tipo == "sala")
+            if (Tipo == (int)TipoSalaReunionFlujo.Sala)
             {
                 salas = SalasController.GetSalaJuntas("1");//Intent.GetStringExtra("sucursal_id"));//, fecha_seleccionada, hora_inicio_seleccionada, hora_fin_seleccionada);
             }
@@ -67,7 +69,7 @@ namespace WorklabsMx.Droid
                 ImageView ivSala = SalaView.FindViewById<ImageView>(Resource.Id.ivSala);
                 SalaView.FindViewById<TextView>(Resource.Id.lblNombre).Text = sala.Sala_Descripcion;
                 SalaView.FindViewById<TextView>(Resource.Id.lblNivel).Text = string.Format("Nivel {0}", sala.Sala_Nivel);
-                if (Tipo == "horario")
+                if (Tipo == (int)TipoSalaReunionFlujo.Horario)
                     SalaView.FindViewById<TextView>(Resource.Id.lblCreditos).Text = string.Format("{0} Créditos", cantidad_creditos);
                 else
                     SalaView.FindViewById<TextView>(Resource.Id.lblCreditos).Visibility = ViewStates.Gone;
@@ -75,17 +77,17 @@ namespace WorklabsMx.Droid
 
                 SalaView.Click += delegate
                 {
-                    if (Tipo == "sala")
+                    if (Tipo == (int)TipoSalaReunionFlujo.Sala)
                     {
                         Intent intent = new Intent(this, typeof(ReservacionHorariosActivity));
-                        intent.PutExtra("Tipo", "sala");
+                        intent.PutExtra("Tipo", (int)TipoSalaReunionFlujo.Sala);
                         intent.PutExtra("sala_id", sala.Sala_Id);
                         StartActivity(intent);
                     }
                     else
                     {
                         Intent intent = new Intent(this, typeof(ReservacionConfirmarActivity));
-                        intent.PutExtra("Tipo", "sala");
+                        intent.PutExtra("Tipo", (int)TipoSalaReunionFlujo.Sala);
                         intent.PutExtra("fecha_seleccionada", fecha_seleccionada);
                         intent.PutExtra("hora_inicio", hora_inicio);
                         intent.PutExtra("hora_fin", hora_fin);

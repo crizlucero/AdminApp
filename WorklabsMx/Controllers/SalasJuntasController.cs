@@ -89,7 +89,7 @@ namespace WorklabsMx.Controllers
         /// </summary>
         /// <returns>Listado de salas de juntas.</returns>
         /// <param name="sucursal_id">Identificador de la sucursal.</param>
-        /*public List<SalaJuntasModel> GetSalaJuntas(string sucursal_id, string nivel = "7")
+        public List<SalaJuntasModel> GetSalaJuntas(string sucursal_id, string nivel = "7")
         {
             List<SalaJuntasModel> salas = new List<SalaJuntasModel>();
             try
@@ -116,7 +116,7 @@ namespace WorklabsMx.Controllers
             catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetSalaJuntas"); }
             finally { conn.Close(); }
             return salas;
-        }*/
+        }
 
         public List<SalaJuntasModel> GetSalaJuntas(string sucursal_id, string fecha, string hora_inicio, string hora_fin, string capacidad = null)
         {

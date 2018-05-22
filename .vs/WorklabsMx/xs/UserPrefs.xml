@@ -1,43 +1,19 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Controllers/LoginController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionHorariosActivity.cs">
     <Files>
-      <File FileName="WorklabsMx.Droid/Resources/values/Strings.xml" Line="109" Column="44" />
-      <File FileName="WorklabsMx/Models/ReservacionHorariosActivity.cs" Line="1" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionSalasActivity.cs" Line="93" Column="25" />
-      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionReunionActivity.cs" Line="21" Column="1" />
-      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionConfirmarActivity.cs" Line="50" Column="24" />
-      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="143" Column="74" />
-      <File FileName="WorklabsMx.Droid/Helpers/CalendarHelper.cs" Line="29" Column="46" />
-      <File FileName="WorklabsMx.Droid/ViewController/Formatos/ReservaSalaJuntasActivity.cs" Line="132" Column="9" />
-      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="22" Column="1" />
-      <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="29" Column="38" />
+      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="133" Column="14" />
+      <File FileName="WorklabsMx.Droid/Helpers/CalendarHelper.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx/Models/DataBaseModel.cs" Line="8" Column="9" />
+      <File FileName="WorklabsMx/Controllers/LoginController.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionSalasActivity.cs" Line="95" Column="25" />
+      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/SalaReunionesProgramaActivity.cs" Line="27" Column="13" />
+      <File FileName="WorklabsMx/Enum/TipoSalaReunionFlujo.cs" Line="7" Column="20" />
+      <File FileName="WorklabsMx/Enum/TiposAccesosServicios.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionReunionActivity.cs" Line="21" Column="47" />
+      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionHorariosActivity.cs" Line="182" Column="72" />
+      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionConfirmarActivity.cs" Line="55" Column="84" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/ReservaSalaJuntasActivity.cs" Line="17" Column="27" />
     </Files>
-    <FloatingWindows>
-      <FloatingWindow WindowId="1" X="2263" Y="43" Width="1755" Height="791">
-        <Files>
-          <File FileName="iOS/CeldaHoraFin.cs" Line="47" Column="4" />
-          <File FileName="iOS/HoraInicioCollectionView.cs" Line="80" Column="41" NotebookId="1" />
-        </Files>
-      </FloatingWindow>
-      <FloatingWindow WindowId="2" X="2054" Y="23" Width="1035" Height="858">
-        <Files>
-          <File FileName="iOS/CantidadPersonasCollection.cs" Line="26" Column="3" NotebookId="2" />
-        </Files>
-      </FloatingWindow>
-      <FloatingWindow WindowId="3" X="3090" Y="23" Width="878" Height="1016">
-        <Files>
-          <File FileName="iOS/CeldaCantidadPersonas.cs" Line="42" Column="35" NotebookId="3" />
-        </Files>
-      </FloatingWindow>
-    </FloatingWindows>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>(DateTime)sender.Date</Value>
-          <Value>Horas[indexPath.Row]</Value>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -56,6 +32,6 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../../WorklabsMx/Handlers/PagosHandler.cs" line="41" offsetX="632" offsetY="600" expression="e.StackTrace" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Andorid_Emulator" AndroidDesignerPreferredTheme="AppTheme" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.Droid PreferredExecutionTarget="Android.ZY32238MXJ" />
   <MultiItemStartupConfigurations />
 </Properties>

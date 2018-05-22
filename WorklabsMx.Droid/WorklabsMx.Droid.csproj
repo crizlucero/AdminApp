@@ -225,6 +225,8 @@
     <Compile Include="ViewController\SalasReuniones\ReservacionReunionActivity.cs" />
     <Compile Include="ViewController\SalasReuniones\ReservacionSalasActivity.cs" />
     <Compile Include="ViewController\SalasReuniones\ReservacionConfirmarActivity.cs" />
+    <Compile Include="ViewController\SalasReuniones\SalaReunionesProgramaActivity.cs" />
+    <Compile Include="ViewController\SalasReuniones\ReservacionHorariosActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
