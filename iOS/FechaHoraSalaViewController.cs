@@ -25,7 +25,9 @@ namespace WorklabsMx.iOS
 		private List<string> HorasFin = new List<string>();
 		private List<string> Personas = new List<string>();
 		private int HoraActual = DateTime.Now.Hour;
-
+		private float HorasReservadas;
+		private UIStoryboardSegue segueSegueHoraInicio;
+		private UIStoryboardSegue segueSegueHoraFin;
 		NSDateFormatter dateFormat = new NSDateFormatter();
 
 		public FechaHoraSalaViewController (IntPtr handle) : base (handle)
@@ -49,11 +51,11 @@ namespace WorklabsMx.iOS
 		public override void ViewWillAppear(bool animated)
 		{
 			base.ViewWillAppear(animated);
-
 		}
 
         private void ListadoHoraInicio(int Hora)
 		{
+			this.HorasInicio = new List<string>();
 			for (int Indice = Hora + 1; Indice < 24; Indice++)
             {
                 HorasInicio.Add(Indice.ToString());
@@ -62,6 +64,7 @@ namespace WorklabsMx.iOS
 
 		private void ListadoHoraFin(int Hora)
         {
+			this.HorasFin = new List<string>();
 			for (int Indice = Hora + 1; Indice < 24; Indice++)
             {
                 HorasFin.Add(Indice.ToString());
@@ -74,9 +77,29 @@ namespace WorklabsMx.iOS
 			this.NavigationController.PushViewController(controller, true);
 		}
 
+        private bool ValidarHorasSeleccionadas()
+		{
+			int HoraIni = int.Parse(this.HoraInicio.Split(':')[0]);
+			int HoraFn = int.Parse(this.HoraFin.Split(':')[0]);
+
+			if(HoraIni == HoraFn)
+			{
+				if (this.MinutosFin == "00" || this.MinutosInicio == "30")
+				{
+					return true;
+				}
+				return false;
+			}
+
+			if (HoraIni > HoraFn)
+			{
+				return true;
+			}
+			return false;
+		}
+
 		partial void btnAvanzar_Touch(UIButton sender)
 		{
-
 			if (this.HoraInicio == "")
 			{
 				new MessageDialog().SendToast("Por favor selecciona una hora de inicio");
@@ -97,19 +120,40 @@ namespace WorklabsMx.iOS
 			{
 				new MessageDialog().SendToast("Por favor selecciona la cantidad de personas que necesitas para tu reunión");
 			}
+			else if(this.ValidarHorasSeleccionadas())
+			{
+				new MessageDialog().SendToast("Seleccionaste una hora inicial mayor a la hora fin");
+			}
 			else
 			{
 				this.SalasJuntas = new SalasJuntasController().GetSalaJuntas("1", this.FechaSeleccionada, this.HoraInicio, this.HoraFin, this.CantidadPersonas);
-				this.PerformSegue("SeleccionarSalaSegue", null);
+				if (this.SalasJuntas.Count == 0)
+				{
+					new MessageDialog().SendToast("No hay salas de reunios disponibles para esa fecha y horario");
+				}
+                else
+				{
+					this.PerformSegue("SeleccionarSalaSegue", null);
+				}
+
 			}
-
-
 		}
       
 
 		partial void dtpFecha_Cahnged(UIDatePicker sender)
 		{
 			this.FechaSeleccionada = dateFormat.ToString(sender.Date);
+			if (this.FechaSeleccionada != dateFormat.ToString(NSDate.Now))
+			{
+				this.HoraActual = 0;
+			}
+			else
+			{
+				this.HoraActual = DateTime.Now.Hour;
+			}
+			this.PrepareForSegue(segueSegueHoraFin, null);
+            this.PrepareForSegue(segueSegueHoraInicio, null);
+
 		}
 
 		partial void HoraInicioCero_Touch(UIButton sender)
@@ -118,6 +162,11 @@ namespace WorklabsMx.iOS
 			this.btnMinutosCero.BackgroundColor =UIColor.Clear.FromHex(0x3BDBD5);
 			this.btnMinutosTreinta.BackgroundColor = UIColor.Clear.FromHex(0x000000);
 			this.HoraInicio = this.HoraInicioSeleccionada + ":" + this.MinutosInicio;
+			if (this.HoraFinSeleccionada != "" && this.MinutosFin != "")
+			{
+				this.CalcularHorasReservadas(this.HoraInicio, this.HoraFin);
+			}
+
 		}
 
 		partial void HoraFinTreinta_Touch(UIButton sender)
@@ -126,6 +175,11 @@ namespace WorklabsMx.iOS
 			this.btnMinutosFinTr.BackgroundColor = UIColor.Clear.FromHex(0x3BDBD5);
 			this.btnMinutosFin.BackgroundColor = UIColor.Clear.FromHex(0x000000);
 			this.HoraFin = this.HoraFinSeleccionada + ":" + this.MinutosFin;
+
+			if (this.HoraFinSeleccionada != "" && this.MinutosInicio != "")
+			{
+				this.CalcularHorasReservadas(this.HoraInicio, this.HoraFin);
+			}
 		}
 
 		partial void HoraFinCero_Touch(UIButton sender)
@@ -134,6 +188,11 @@ namespace WorklabsMx.iOS
 			this.btnMinutosFin.BackgroundColor = UIColor.Clear.FromHex(0x3BDBD5);
 			this.btnMinutosFinTr.BackgroundColor = UIColor.Clear.FromHex(0x000000);
 			this.HoraFin = this.HoraFinSeleccionada + ":" + this.MinutosFin;
+
+			if (this.HoraFinSeleccionada != "" && this.MinutosInicio != "")
+            {
+				this.CalcularHorasReservadas(this.HoraInicio, this.HoraFin);
+            }
 		}
 
 		partial void HoraInicioTreinta_Touch(UIButton sender)
@@ -142,29 +201,67 @@ namespace WorklabsMx.iOS
 			this.btnMinutosTreinta.BackgroundColor = UIColor.Clear.FromHex(0x3BDBD5);
 			this.btnMinutosCero.BackgroundColor = UIColor.Clear.FromHex(0x000000);
 			this.HoraInicio = this.HoraInicioSeleccionada + ":" + this.MinutosInicio;
+			if (this.HoraFinSeleccionada != "" && this.MinutosFin != "")
+			{
+				this.CalcularHorasReservadas(this.HoraInicio, this.HoraFin);
+			}
+
 		}
+
+		private void CalcularHorasReservadas(string HInicio, string HFin)
+        {
+			if(HInicio != "" && HFin != "")
+			{
+				var intHoraInicio = float.Parse(HInicio.Split(':')[0]);
+                var intHoraFin = float.Parse(HFin.Split(':')[0]);
+
+                var minutosInicio = int.Parse(HInicio.Split(':')[1]);
+                var minutosFin = int.Parse(HFin.Split(':')[1]);
+
+                this.HorasReservadas = intHoraFin - intHoraInicio;
+                if (minutosInicio == 30)
+                {
+                    intHoraInicio = intHoraInicio + 0.5f;
+                    this.HorasReservadas = this.HorasReservadas - 0.5f;
+                }
+                if (minutosFin == 30)
+                {
+                    intHoraFin = intHoraFin + 0.5f;
+                    this.HorasReservadas = this.HorasReservadas + 0.5f;
+                }
+			}
+        }
 
 		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
 		{
 			if (segue.Identifier == "SeleccionarSalaSegue")
 			{
-				var VistaSalas = (SeleccionarSalaTableView)segue.DestinationViewController.ChildViewControllers[0];
+				var VistaSalas = (SeleccionarSalaTableView)segue.DestinationViewController;
 				VistaSalas.SalasJuntas = this.SalasJuntas;
+				VistaSalas.HoraInicio = this.HoraInicio;
+				VistaSalas.HoraFin = this.HoraFin;
+				VistaSalas.FechaSeleccionada = this.FechaSeleccionada;
+				VistaSalas.HorasReservadas = this.HorasReservadas;
+
 			}
 			else if (segue.Identifier == "HoraInicioReservacion")
 			{
-				var VistaHoraInicio = (HoraInicioCollectionView)segue.DestinationViewController;
+				this.segueSegueHoraInicio = segue;
 				this.ListadoHoraFin(this.HoraActual);
+				var VistaHoraInicio = (HoraInicioCollectionView)segue.DestinationViewController;
 				VistaHoraInicio.Horas = this.HorasFin;
 				VistaHoraInicio.HoraInicioDelegate = this;
+				VistaHoraInicio.ViewDidLoad();
 
 			}
 			else if (segue.Identifier == "HoraFinReservacion")
 			{
-				var VistaHoraFin = (HoraFinCollectionView)segue.DestinationViewController;
+				this.segueSegueHoraFin = segue;
 				this.ListadoHoraInicio(this.HoraActual);
+				var VistaHoraFin = (HoraFinCollectionView)segue.DestinationViewController;
 				VistaHoraFin.Horas = this.HorasInicio;
 				VistaHoraFin.HoraFinDelegate = this;
+				VistaHoraFin.ViewDidLoad();
 			}
             else if (segue.Identifier == "CantidadPersonas")
 			{
@@ -185,6 +282,10 @@ namespace WorklabsMx.iOS
 			}
 			this.HoraInicioSeleccionada = HoraInicioSeleccionada;
 			this.HoraInicio = this.HoraInicioSeleccionada + ":" + this.MinutosInicio;
+			if (this.HoraInicioSeleccionada != "" && this.MinutosInicio != "")
+			{
+				this.CalcularHorasReservadas(this.HoraInicio, this.HoraFin);
+			}
 		}
 
 		public void SeleccionarHoraFin(string HoraFinSeleccionada)
@@ -195,6 +296,11 @@ namespace WorklabsMx.iOS
             }
 			this.HoraFinSeleccionada = HoraFinSeleccionada;
 			this.HoraFin = this.HoraFinSeleccionada + ":" + this.MinutosFin;
+			if (this.HoraFinSeleccionada != "" && this.MinutosFin != "")
+			{
+				this.CalcularHorasReservadas(this.HoraInicio, this.HoraFin);
+			}
+
 		}
 	}
 

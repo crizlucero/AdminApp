@@ -1408,6 +1408,18 @@
     <Compile Include="DetalleReservacionViewController.designer.cs">
       <DependentUpon>DetalleReservacionViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImagenesSalaCollectionView.cs" />
+    <Compile Include="ImagenesSalaCollectionView.designer.cs">
+      <DependentUpon>ImagenesSalaCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CeldaImagenSala.cs" />
+    <Compile Include="CeldaImagenSala.designer.cs">
+      <DependentUpon>CeldaImagenSala.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmacionReservaSalaViewController.cs" />
+    <Compile Include="ConfirmacionReservaSalaViewController.designer.cs">
+      <DependentUpon>ConfirmacionReservaSalaViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

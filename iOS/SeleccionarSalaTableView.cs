@@ -11,10 +11,14 @@ namespace WorklabsMx.iOS
 {
     public partial class SeleccionarSalaTableView : UITableViewController
     {
-		
 		public List<SalaJuntasModel> SalasJuntas = new List<SalaJuntasModel>();
-
 		SalaJuntasModel SalaJuntasSeleccionada = new SalaJuntasModel();
+
+		public string HoraInicio;
+		public string HoraFin;
+		public string FechaSeleccionada;
+		public float HorasReservadas;
+		private float CreditosAcumulados;
 
         public SeleccionarSalaTableView (IntPtr handle) : base (handle)
         {
@@ -30,6 +34,26 @@ namespace WorklabsMx.iOS
 			base.ViewWillAppear(animated);
 		}
 
+		private void CalcularCreditosSeleccionados()
+		{
+			var intHoraInicio = float.Parse(this.HoraInicio.Split(':')[0]);
+			var intHoraFin = float.Parse(this.HoraFin.Split(':')[0]);
+			if (SalaJuntasSeleccionada.Sala_Id != null && SalaJuntasSeleccionada.Sala_Id != "")
+            {
+                for (float Hora = intHoraInicio; Hora < intHoraFin; Hora = Hora + 0.5f)
+                {
+					if (Hora >= 11 && Hora <= 17 && SalaJuntasSeleccionada.Sala_Capacidad == "10")
+                    {
+                        this.CreditosAcumulados = this.CreditosAcumulados + 1.5f;
+                    }
+                    else
+                    {
+                        this.CreditosAcumulados = this.CreditosAcumulados + 1;
+                    }
+                }
+            }
+		}
+
 		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
 		{
 			if(segue.Identifier == "VerSala")
@@ -40,9 +64,13 @@ namespace WorklabsMx.iOS
 			}
 			else if(segue.Identifier == "DetalleReservacion")
 			{
-				var VistaDetalleReservacion = (DetalleReservacionViewController)segue.DestinationViewController.ChildViewControllers[0];
+				var VistaDetalleReservacion = (DetalleReservacionViewController)segue.DestinationViewController;
 				VistaDetalleReservacion.SalaJuntasSeleccionada = this.SalaJuntasSeleccionada;
-
+				VistaDetalleReservacion.HoraInicio = this.HoraInicio;
+				VistaDetalleReservacion.HoraFin = this.HoraFin;
+				VistaDetalleReservacion.FechaSeleccionada = this.FechaSeleccionada;
+				VistaDetalleReservacion.HorasReservadas = this.HorasReservadas;
+				VistaDetalleReservacion.CreditosAcumulados = this.CreditosAcumulados;
 			}
 
 		}
@@ -59,6 +87,7 @@ namespace WorklabsMx.iOS
 		public void SalaSeleccionada(SalaJuntasModel SalaSeleccionada)
 		{
 			this.SalaJuntasSeleccionada = SalaSeleccionada;
+			this.CalcularCreditosSeleccionados();
 			this.PerformSegue("DetalleReservacion", null);
 		}
 	}

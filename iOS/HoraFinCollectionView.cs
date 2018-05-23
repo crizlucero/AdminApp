@@ -22,6 +22,7 @@ namespace WorklabsMx.iOS
         {
             base.ViewDidLoad();
             this.CollectionView.PagingEnabled = true;
+			this.CollectionView.ReloadData();
         }
 
         public override void ViewWillAppear(bool animated)
