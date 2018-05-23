@@ -43,7 +43,7 @@ namespace WorklabsMx.Droid
 
         public override void OnBackPressed()
         {
-            StartActivity(new Intent(this, typeof(TabSalasJuntasHistorialActivity)));
+            StartActivity(new Intent(this, typeof(MainActivity)));
             Finish();
         }
     }

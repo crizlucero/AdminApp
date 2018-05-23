@@ -1,53 +1,10 @@
 ﻿<Properties StartupConfiguration="{C5951AFB-48F0-408F-A6A9-6DED2E5C7202}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/FechaHoraSalaViewController.cs">
-    <Files>
-      <File FileName="iOS/HoraFinCollectionView.cs" Line="8" Column="26" NotebookId="4" />
-      <File FileName="iOS/InicioSalaJuntasView.cs" Line="32" Column="3" NotebookId="4" />
-      <File FileName="iOS/DetalleReservacionViewController.cs" Line="47" Column="3" NotebookId="4" />
-      <File FileName="iOS/ConfirmacionReservaSalaViewController.cs" Line="13" Column="23" NotebookId="4" />
-      <File FileName="iOS/ImagenesSalaCollectionView.cs" Line="19" Column="32" NotebookId="4" />
-      <File FileName="iOS/CeldaImagenSala.cs" Line="15" Column="35" NotebookId="4" />
-      <File FileName="iOS/FechaHoraSalaViewController.cs" Line="256" Column="5" NotebookId="4" />
-      <File FileName="iOS/EditarMiInfoPerfilViewController.cs" Line="127" Column="35" NotebookId="4" />
-      <File FileName="iOS/ColeccionEditarHabilidades.cs" Line="24" Column="29" NotebookId="4" />
-    </Files>
-    <FloatingWindows>
-      <FloatingWindow WindowId="1" X="2263" Y="43" Width="1755" Height="791">
-        <Files>
-          <File FileName="iOS/CeldaHoraFin.cs" Line="35" Column="44" />
-          <File FileName="iOS/HoraInicioCollectionView.cs" Line="25" Column="4" NotebookId="1" />
-        </Files>
-      </FloatingWindow>
-      <FloatingWindow WindowId="2" X="2059" Y="23" Width="1667" Height="988">
-        <Files>
-          <File FileName="iOS/CantidadPersonasCollection.cs" Line="21" Column="27" NotebookId="2" />
-          <File FileName="iOS/SeleccionarSalaTableView.cs" Line="68" Column="42" NotebookId="2" />
-        </Files>
-      </FloatingWindow>
-      <FloatingWindow WindowId="3" X="3090" Y="23" Width="878" Height="1016">
-        <Files>
-          <File FileName="iOS/CeldaCantidadPersonas.cs" Line="42" Column="35" NotebookId="3" />
-        </Files>
-      </FloatingWindow>
-    </FloatingWindows>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>DateTime.ParseExact(this.FechaSeleccionada, "yyyy-MM-dd", CultureInfo.InvariantCulture).ToString("d 'de' MMM, 'del' yyyy")</Value>
-        </State>
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/gilberto/Documents/Adaptation/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="115" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/Adaptation/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="119" column="10" />
-      <Breakpoint file="/Users/gilberto/Documents/Adaptation/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="125" column="1" />
-      <Breakpoint file="/Users/gilberto/Documents/Adaptation/WorklabsMx/iOS/EjemploPagos.cs" relfile="iOS/EjemploPagos.cs" line="131" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.6b935c2edb1c2a8f7e16145c1b573989fe3e475b" />
+  <MonoDevelop.Ide.ItemProperties.WorklabsMx.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A3B9007B-0A6C-4314-BD47-D7B287C0751C" />
   <MultiItemStartupConfigurations />
 </Properties>

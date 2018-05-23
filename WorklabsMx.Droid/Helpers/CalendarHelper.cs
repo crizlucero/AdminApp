@@ -26,7 +26,7 @@ namespace WorklabsMx.Droid.Helpers
             int mes = c.Get(CalendarField.Month);
             int year = c.Get(CalendarField.Year);
 
-            return string.Format("{0:D2}/{1:D2}/{2}",mes,dia,year);
+            return string.Format("{0:D2}/{1:D2}/{2}",dia,mes,year);
         }
 
         public static DateTime RoundUp(DateTime dt, TimeSpan d) => new DateTime(((dt.Ticks + d.Ticks - 1) / d.Ticks) * d.Ticks);

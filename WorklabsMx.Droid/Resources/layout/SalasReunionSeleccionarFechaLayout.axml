@@ -118,7 +118,7 @@
                     android:layout_width="192dp"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/btnRetroceder"
-                    android:id="@+id/Avanzar"
+                    android:id="@+id/btnAvanzar"
                     android:background="#3BDBD5"
                     android:layout_column="1"
                     android:layout_row="0" />

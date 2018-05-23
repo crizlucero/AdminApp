@@ -9,6 +9,7 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using WorklabsMx.Enum;
 
 namespace WorklabsMx.Droid
 {
@@ -17,7 +18,7 @@ namespace WorklabsMx.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(savedInstanceState); 
+            base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.SalasReunionesInicialLayout);
 
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
@@ -27,13 +28,17 @@ namespace WorklabsMx.Droid
 
             FindViewById<ImageView>(Resource.Id.btnHorario).Click += delegate
             {
-                StartActivity(new Intent(this, typeof(ReservacionHorariosActivity)));
+                Intent intent = new Intent(this, typeof(ReservacionHorariosActivity));
+                intent.PutExtra("Tipo", (int)TipoSalaReunionFlujo.Horario);
+                StartActivity(intent);
                 Finish();
             };
 
             FindViewById<ImageView>(Resource.Id.btnSala).Click += delegate
             {
-                StartActivity(new Intent(this, typeof(ReservacionSalasActivity)));
+                Intent intent = new Intent(this, typeof(ReservacionSalasActivity));
+                intent.PutExtra("Tipo", (int)TipoSalaReunionFlujo.Sala);
+                StartActivity(intent);
                 Finish();
             };
         }

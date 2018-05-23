@@ -70,7 +70,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\OrdenVentaEncabezado.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\OrdenVentaDetalle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controllers\MembresiasController.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Controllers\NotificacionController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enum\TipoSalaReunionFlujo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)app.config" />

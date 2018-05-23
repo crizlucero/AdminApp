@@ -120,7 +120,7 @@
 	<string name="str_shop_accept_terms">Acepto terminos y condiciones de uso</string>
 	<string name="str_shop_no_accepted_terms">No ha aceptado los terminos y condiciones</string>
 	<string name="TotalHoras">Total de horas</string>
-	<string name="PasswordIncorrecto">Escriba su password</string>
+	<string name="PasswordIncorrecto">Escriba su contraseña</string>
 	<string name="InfoGeneral">Información General</string>
 	<string name="TarifaMensual">Tarifa Mensual</string>
 	<string name="TarifaInscripcion">Tarifa de Inscripción</string>
@@ -226,4 +226,5 @@
     <string name="str_label_meeting_room_reservation_done">Tú reserva está lista</string>
     <string name="str_label_meeting_room_reservation_cancel">Gracias por cancelar tu reserva, esto le permite a la comunidad aprovechar el espacio.</string>
     <string name="str_label_meeting_room_reservation_message">Recuerda que después de tu reunión alguien más estará esperando, por esto agradecemos tu puntualidad.</string>
+    <string name="str_general_birthdate_error">Selecciona su fecha de nacimiento</string>
 </resources>

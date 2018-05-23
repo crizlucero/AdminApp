@@ -12,6 +12,7 @@ namespace WorklabsMx.Helpers
             try
             {
                 string data = string.Format("token=xoxp-213367599047-211854966112-347471631750-0b71e1d3a42c60f943266ef6ddf71a29&channel=logs&text={0}.{1}: {2}", sourceClass, sourceMethod, msg);
+                Console.WriteLine(string.Format("{0}.{1}: {2}", sourceClass, sourceMethod, msg));
                 var post = Encoding.ASCII.GetBytes(data);
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://slack.com/api/chat.postMessage");
                 request.Method = "POST";

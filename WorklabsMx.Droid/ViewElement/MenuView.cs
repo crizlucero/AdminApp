@@ -1,15 +1,9 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
-using Android.Graphics.Drawables;
-using Android.OS;
-using Android.Support.V4.Content;
-using Android.Support.V4.Graphics.Drawable;
 using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
@@ -71,12 +65,12 @@ namespace WorklabsMx.Droid.ViewElement
                 row.AddView(line);
                 menuLayout.AddView(row);
                 row = new TableRow(context);
-                Drawable icon = ContextCompat.GetDrawable(context, context.Resources.GetIdentifier(menu.Image, "mipmap", context.PackageName));
+                /*Drawable icon = ContextCompat.GetDrawable(context, context.Resources.GetIdentifier(menu.Image, "mipmap", context.PackageName));
                 if ((int)Build.VERSION.SdkInt > 22)
                     icon.SetTintList(context.GetColorStateList(Resource.Color.comment_pressed));
                 else
                     DrawableCompat.SetTint(icon, ContextCompat.GetColor(context, Resource.Color.comment_pressed));
-                icon.SetBounds(0, 0, 30, 30);
+                icon.SetBounds(0, 0, 30, 30);*/
                 Button btnMenu = new Button(context)
                 {
                     Text = menu.Label,
@@ -85,7 +79,7 @@ namespace WorklabsMx.Droid.ViewElement
                 btnMenu.SetTextColor(Color.White);
                 btnMenu.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
                 btnMenu.SetBackgroundColor(Color.Transparent);
-                btnMenu.SetCompoundDrawables(icon, null, null, null);
+                //btnMenu.SetCompoundDrawables(icon, null, null, null);
                 btnMenu.Click += delegate
                 {
                     Intent intent;

@@ -141,12 +141,12 @@ namespace WorklabsMx.iOS
         {
             if (segue.Identifier == "Sucursales")
             {
-                var SucursalesView = (SucursalesViewController)segue.DestinationViewController;
+                var SucursalesView = (SucursalesView)segue.DestinationViewController;
                 SucursalesView.SucursalDelegate = this;
             }
             else if (segue.Identifier == "FechaInicio")
             {
-                var FechaView = (FechaNacimientoPickerViewController)segue.DestinationViewController;
+                var FechaView = (FechaNacimientoPickerView)segue.DestinationViewController;
                 FechaView.EsFechaNacimiento = false;
                 FechaView.FechaSeleccionadaDelegate = this;
             }

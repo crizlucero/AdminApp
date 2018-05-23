@@ -38,7 +38,7 @@ namespace WorklabsMx.iOS
 
         List<UsuarioModel> UsuariosLikes;
 
-        public ComentariosBodyImageCell (IntPtr handle) : base (handle)
+        public ComentariosBodyImageCell(IntPtr handle) : base(handle)
         {
         }
 
@@ -90,7 +90,7 @@ namespace WorklabsMx.iOS
 
             UITapGestureRecognizer labelTap = new UITapGestureRecognizer(() => {
                 UsuariosLikes = new UsuariosController().GetUsuariosPublicacionMeGusta(post.Publicacion_Id);
-                if(UsuariosLikes.Count > 0)
+                if (UsuariosLikes.Count > 0)
                 {
                     EventosComentariosDelegate.LikePresionado(UsuariosLikes);
                 }
@@ -123,7 +123,7 @@ namespace WorklabsMx.iOS
                         }
                         else
                         {
-                            ReescalImage = UIImage.FromBundle("NoImagen"); 
+                            ReescalImage = UIImage.FromBundle("NoImagen");
                         }
 
                     }
@@ -131,7 +131,7 @@ namespace WorklabsMx.iOS
                     {
                         ReescalImage = UIImage.FromBundle("NoImagen");
                     }
-                   
+
                 }
                 else
                 {
@@ -182,7 +182,7 @@ namespace WorklabsMx.iOS
                             ReescalImageUsr = UIImage.FromBundle("ProfileImageBig");
                         }
                     }
-                
+
                 }
                 else
                 {
@@ -274,7 +274,7 @@ namespace WorklabsMx.iOS
             UIAlertController actionSheetAlert = UIAlertController.Create(null, null, UIAlertControllerStyle.ActionSheet);
             actionSheetAlert.AddAction(this.EliminarPublicacion());
             actionSheetAlert.AddAction(UIAlertAction.Create("Cancelar", UIAlertActionStyle.Cancel, null));
-            EventosComentariosDelegate.EnviarActions(actionSheetAlert);  
+            EventosComentariosDelegate.EnviarActions(actionSheetAlert);
         }
 
         private UIAlertAction EliminarPublicacion()

@@ -164,7 +164,7 @@ namespace WorklabsMx.Controllers
                 }
             }
             catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetSalaJuntas"); }
-            finally { conn.Close(); } 
+            finally { conn.Close(); }
             return salas;
         }
 
@@ -308,6 +308,36 @@ namespace WorklabsMx.Controllers
 
 
             return 0;
+        }
+
+        public SalaJuntasModel GetSalaJuntasInfo(string sala_id)
+        {
+            SalaJuntasModel sala = new SalaJuntasModel();
+
+            try
+            {
+                conn.Open();
+                string query = "SELECT * FROM vw_cat_Salas_Juntas WHERE Sala_Id = @sala_id";
+                command = CreateCommand(query);
+                command.Parameters.AddWithValue("@sala_id", sala_id);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    sala = new SalaJuntasModel
+                    {
+                        Sala_Descripcion = reader["Sala_Descripcion"].ToString(),
+                        Sala_Nivel = reader["Sala_Nivel"].ToString(),
+                        Sala_Capacidad = reader["Sala_Capacidad"].ToString()
+                    };
+                }
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message, GetType().Name, "GetSalaJuntas");
+            }
+            finally { conn.Close(); }
+
+            return sala;
         }
     }
 }
