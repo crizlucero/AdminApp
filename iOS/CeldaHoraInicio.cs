@@ -20,6 +20,7 @@ namespace WorklabsMx.iOS
 
         public CeldaHoraInicio (IntPtr handle) : base (handle)
         {
+			
         }
 
 		public void UpdateCell(string Hora, int Selectedcell)
