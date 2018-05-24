@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
+using System.Linq;
 using WorklabsMx.Helpers;
 using WorklabsMx.Models;
 
@@ -123,7 +125,7 @@ namespace WorklabsMx.Controllers
             List<SalaJuntasModel> salas = new List<SalaJuntasModel>();
             DateTime fecha_inicio;
             DateTime fecha_fin;
-            fecha_inicio = DateTime.Parse(fecha + " " + hora_inicio);
+            fecha_inicio = DateTime.Parse(fecha + " " + hora_inicio, new CultureInfo("es-MX"));
             int HoraFin = int.Parse(hora_fin.Split(':')[0]);
             if (HoraFin == 24)
             {
@@ -131,7 +133,7 @@ namespace WorklabsMx.Controllers
             }
             else
             {
-                fecha_fin = DateTime.Parse(fecha + " " + hora_fin);
+                fecha_fin = DateTime.Parse(fecha + " " + hora_fin, new CultureInfo("es-MX"));
             }
 
 
@@ -175,20 +177,24 @@ namespace WorklabsMx.Controllers
         /// <param name="usuario_id">Identificador del usuario.</param>
         /// <param name="usuario_tipo">Tipo de usuario.</param>
         /// <param name="reservacion_estatus">Estado de la reservación.</param>
-        public List<SalaJuntasReservacionModel> GetReservaciones(string usuario_id, string usuario_tipo, int reservacion_estatus)
+        public List<SalaJuntasReservacionModel> GetReservaciones(string usuario_id, string usuario_tipo, string reservacion_estatus)
         {
             List<SalaJuntasReservacionModel> salas = new List<SalaJuntasReservacionModel>();
             try
             {
                 conn.Open();
+                string estatus = string.Empty;
+                reservacion_estatus.Split(',').AsParallel().ToList().ForEach(estado =>
+                {
+                    estatus += estado + ",";
+                });
                 string query = "SELECT * FROM vw_pro_Salas_Juntas_Reservaciones " +
                     "WHERE Sala_Estatus = 1 AND Sucursal_Estatus = 1 AND Usuario_Id = @usuario_id " +
-                    "AND Usuario_Tipo = @usuario_tipo AND Sala_Junta_Reservacion_Estatus = @reservacion_estatus " +
+                    "AND Usuario_Tipo = @usuario_tipo AND Sala_Junta_Reservacion_Estatus in (" + estatus.Substring(0, estatus.Length - 1) + ") " +
                     "Order by Sala_Junta_Hora_Inicio";
                 command = CreateCommand(query);
                 command.Parameters.AddWithValue("@usuario_id", usuario_id);
                 command.Parameters.AddWithValue("@usuario_tipo", usuario_tipo);
-                command.Parameters.AddWithValue("@reservacion_estatus", reservacion_estatus);
                 reader = command.ExecuteReader();
                 while (reader.Read())
                     salas.Add(new SalaJuntasReservacionModel
@@ -337,6 +343,64 @@ namespace WorklabsMx.Controllers
             }
             finally { conn.Close(); }
 
+            return sala;
+        }
+
+        public int CountReservaciones(string usuario_id, string usuario_tipo)
+        {
+
+            try
+            {
+                conn.Open();
+                string query = "SELECT count(*) FROM vw_pro_Salas_Juntas_Reservaciones " +
+                    "WHERE Sala_Estatus = 1 AND Sucursal_Estatus = 1 AND Usuario_Id = @usuario_id " +
+                    "AND Usuario_Tipo = @usuario_tipo";
+                command = CreateCommand(query);
+                command.Parameters.AddWithValue("@usuario_id", usuario_id);
+                command.Parameters.AddWithValue("@usuario_tipo", usuario_tipo);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                    return reader.GetInt32(0);
+            }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetReservaciones"); }
+            finally { conn.Close(); }
+            return 0;
+        }
+
+        public SalaJuntasReservacionModel GetReservacion(string reservacion_id)
+        {
+            SalaJuntasReservacionModel sala = new SalaJuntasReservacionModel();
+            try
+            {
+                conn.Open();
+                string estatus = string.Empty;
+                string query = "SELECT * FROM vw_pro_Salas_Juntas_Reservaciones " +
+                    "WHERE Sala_Junta_Reservacion_Id = @reservacion_id";
+                command = CreateCommand(query);
+                command.Parameters.AddWithValue("@reservacion_id", reservacion_id);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                    sala = new SalaJuntasReservacionModel
+                    {
+                        Sala_Descripcion = reader["Sala_Descripcion"].ToString(),
+                        Sala_Id = reader["Sala_Id"].ToString(),
+                        Sala_Estatus = reader["Sala_Estatus"].ToString(),
+                        Sala_Capacidad = reader["Sala_Capacidad"].ToString(),
+                        Sala_Nivel = reader["Sala_Nivel"].ToString(),
+                        Sala_Fecha = reader["Sala_Junta_Fecha"].ToString(),
+                        Sala_Hora_Inicio = reader["Sala_Junta_Hora_Inicio"].ToString(),
+                        Sala_Hora_Fin = reader["Sala_Junta_Hora_Fin"].ToString(),
+                        Sucursal_Id = reader["Sucursal_Id"].ToString(),
+                        Sucursal_Descripcion = reader["Sucursal_Descripcion"].ToString(),
+                        Sucursal_Estatus = reader["Sucursal_Estatus"].ToString(),
+                        Usuario_Id = reader["Usuario_Id"].ToString(),
+                        Usuario_Tipo = reader["Usuario_Tipo"].ToString(),
+                        Sala_Reservacion_Estatus = reader["Sala_Junta_Reservacion_Estatus"].ToString(),
+                        Sala_Junta_Reservacion_Id = reader["Sala_Junta_Reservacion_Id"].ToString()
+                    };
+            }
+            catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetReservacion"); }
+            finally { conn.Close(); }
             return sala;
         }
     }

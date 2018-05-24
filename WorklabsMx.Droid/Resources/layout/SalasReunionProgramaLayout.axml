@@ -16,18 +16,23 @@
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#000"
-                android:text="@string/str_label_after" />
+                android:text="@string/str_label_after"
+                android:textSize="30dp"
+                android:textStyle="bold" />
             <HorizontalScrollView
                 android:minWidth="25px"
                 android:minHeight="25px"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/horizontalScrollView1">
+                android:id="@+id/hsvProximas">
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
@@ -38,13 +43,15 @@
                 android:text="@string/str_label_before"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#000" />
+                android:textColor="#000"
+                android:textSize="30dp"
+                android:textStyle="bold" />
             <HorizontalScrollView
                 android:minWidth="25px"
                 android:minHeight="25px"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/horizontalScrollView2">
+                android:id="@+id/hsvAnteriores">
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"

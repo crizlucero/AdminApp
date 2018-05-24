@@ -37,7 +37,7 @@ namespace WorklabsMx.Droid
 
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
-            ActionBar.Title = Resources.GetString(Resource.String.str_meeting_room_reservation);
+            ActionBar.Title = Resources.GetString(Resource.String.str_meeting_room);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
             Tipo = Intent.GetIntExtra("Tipo", 0);

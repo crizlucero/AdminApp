@@ -48,7 +48,7 @@ namespace WorklabsMx.Droid
 
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
-            ActionBar.Title = Resources.GetString(Resource.String.str_meeting_room_reservation);
+            ActionBar.Title = Resources.GetString(Resource.String.str_meeting_room);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
             int Tipo = Intent.GetIntExtra("Tipo", 1);
@@ -135,7 +135,7 @@ namespace WorklabsMx.Droid
         {
             llhHoraInicio.RemoveAllViews();
             //PutZeroHour();
-            int hora_actual = DateTime.Now.Hour;
+            int hora_actual = DateTime.Now.Hour+ 2;
             horas.AsParallel().ToList().ForEach(hora =>
             {
                 View HorarioView = LayoutInflater.Inflate(Resource.Layout.HorarioSeleccionLayout, null, true);
@@ -174,19 +174,19 @@ namespace WorklabsMx.Droid
                 llhHoraInicio.AddView(HorarioView);
             });
 
-            FindViewById<ScrollView>(Resource.Id.hsvHoraInicio).PostDelayed(delegate
+            FindViewById<HorizontalScrollView>(Resource.Id.hsvHoraInicio).PostDelayed(delegate
             {
                 if (Convert.ToInt32(Build.VERSION.Sdk) < 23)
-                    FindViewById<ScrollView>(Resource.Id.hsvHoraInicio).ScrollTo(hora_actual * 200, 0);
+                    FindViewById<HorizontalScrollView>(Resource.Id.hsvHoraInicio).ScrollTo(hora_actual * 75, 0);
                 else
-                    FindViewById<ScrollView>(Resource.Id.hsvHoraInicio).ScrollTo(hora_actual * 400, 0);
+                    FindViewById<HorizontalScrollView>(Resource.Id.hsvHoraInicio).ScrollTo(hora_actual * 120, 0);
             }, 100);
         }
         void FillHorarioFin()
         {
             llhHoraFin.RemoveAllViews();
             //PutZeroHour();
-            int hora_actual = DateTime.Now.Hour + 1;
+            int hora_actual = DateTime.Now.Hour + 2;
             horas.AsParallel().ToList().ForEach(hora =>
             {
                 View HorarioView = LayoutInflater.Inflate(Resource.Layout.HorarioSeleccionLayout, null, true);
@@ -223,12 +223,12 @@ namespace WorklabsMx.Droid
                 };
                 llhHoraFin.AddView(HorarioView);
             });
-            FindViewById<ScrollView>(Resource.Id.hsvHoraFin).PostDelayed(delegate
+            FindViewById<HorizontalScrollView>(Resource.Id.hsvHoraFin).PostDelayed(delegate
             {
                 if (Convert.ToInt32(Build.VERSION.Sdk) < 23)
-                    FindViewById<ScrollView>(Resource.Id.hsvHoraFin).ScrollTo(hora_actual * 200, 0);
+                    FindViewById<HorizontalScrollView>(Resource.Id.hsvHoraFin).ScrollTo(hora_actual * 80, 0);
                 else
-                    FindViewById<ScrollView>(Resource.Id.hsvHoraFin).ScrollTo(hora_actual * 400, 0);
+                    FindViewById<HorizontalScrollView>(Resource.Id.hsvHoraFin).ScrollTo(hora_actual * 130, 0);
             }, 100);
         }
         void FillCantidad()

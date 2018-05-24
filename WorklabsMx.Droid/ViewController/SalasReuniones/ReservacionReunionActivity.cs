@@ -9,6 +9,8 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using PerpetualEngine.Storage;
+using WorklabsMx.Controllers;
 using WorklabsMx.Enum;
 
 namespace WorklabsMx.Droid
@@ -16,6 +18,13 @@ namespace WorklabsMx.Droid
     [Activity(Label = "ReservacionSalaActivity")]
     public class ReservacionReunionActivity : Activity
     {
+        SimpleStorage storage;
+
+        public ReservacionReunionActivity()
+        {
+            storage = SimpleStorage.EditGroup("Login");
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -23,7 +32,7 @@ namespace WorklabsMx.Droid
 
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
-            ActionBar.Title = Resources.GetString(Resource.String.str_meeting_room_reservation);
+            ActionBar.Title = Resources.GetString(Resource.String.str_meeting_room);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
             FindViewById<ImageView>(Resource.Id.btnHorario).Click += delegate
@@ -53,7 +62,10 @@ namespace WorklabsMx.Droid
 
         public override void OnBackPressed()
         {
-            StartActivity(new Intent(this, typeof(MainActivity)));
+            if (new SalasJuntasController().CountReservaciones(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo")) > 0)
+                StartActivity(new Intent(this, typeof(SalaReunionesProgramaActivity)));
+            else
+                StartActivity(new Intent(this, typeof(MainActivity)));
             Finish();
         }
     }

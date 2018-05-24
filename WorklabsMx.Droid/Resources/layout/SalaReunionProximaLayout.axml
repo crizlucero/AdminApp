@@ -16,7 +16,7 @@
             android:layout_width="300dp"
             android:layout_columnSpan="3" />
         <TextView
-            android:id="@+id/lblSala"
+            android:id="@+id/lblNombre"
             android:layout_width="100dp"
             android:textSize="12dp"
             android:textStyle="bold"
