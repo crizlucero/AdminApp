@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minWidth="25px"
-    android:minHeight="25px">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp"
+    android:background="#FFF">
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rowCount="3"
-        android:columnCount="3"
-        android:background="#fff">
+        android:columnCount="3">
         <ImageView
             android:src="@android:drawable/ic_menu_gallery"
             android:layout_width="300dp"
-            android:layout_columnSpan="3" />
+            android:layout_columnSpan="3"
+            android:layout_height="150dp" />
         <TextView
             android:id="@+id/lblNombre"
             android:layout_width="100dp"
@@ -56,10 +59,22 @@
             android:textSize="11dp"
             android:textColor="#000" />
         <Button
-            android:id="@+id/btnCancel"
-            android:text="@string/str_general_cancel" />
+            android:id="@+id/btnCancelar"
+            android:text="@string/str_general_cancel"
+            android:textColor="#E64545"
+            android:background="@drawable/button_round_cancel"
+            android:textSize="10dp"
+            android:layout_width="75dp"
+            android:layout_height="20dp"
+            android:textAllCaps="false" />
         <Button
-            android:id="@+id/btnEdit"
-            android:text="@string/str_general_edit" />
+            android:id="@+id/btnEditar"
+            android:text="@string/str_general_edit"
+            android:textColor="#000"
+            android:background="@drawable/button_round_general"
+            android:layout_width="75dp"
+            android:layout_height="20dp"
+            android:textSize="12dp"
+            android:textAllCaps="false" />
     </GridLayout>
 </LinearLayout>

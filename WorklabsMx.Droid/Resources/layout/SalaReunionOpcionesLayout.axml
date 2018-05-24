@@ -1,3 +1,168 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblTipo"
+            android:textColor="#000"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:text="Cancelar" />
+        <ImageView
+            android:src="@mipmap/ic_clear"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/ivCancelar"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sala"
+            android:textColor="#000"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtNombre"
+            android:textColor="#8C8C8C"
+            android:layout_marginLeft="40dp"
+            android:drawableTint="#8C8C8C"
+            android:autoSizeTextType="none"
+            android:text="In to the wild." />
+        <ImageView
+            android:src="@mipmap/ic_create"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_toRightOf="@id/txtNombre"
+            android:id="@+id/ivEditarNombre"
+            android:tint="#8C8C8C"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#8C8C8C"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginRight="-10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:text="Fecha" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtFecha"
+            android:textColor="#8C8C8C"
+            android:layout_marginLeft="40dp"
+            android:drawableTint="#8C8C8C"
+            android:autoSizeTextType="none"
+            android:text="Viernes, 11/07/2018 16- 18 Hrs" />
+        <ImageView
+            android:src="@mipmap/ic_create"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_toRightOf="@id/txtFecha"
+            android:id="@+id/ivEditarFecha"
+            android:tint="#8C8C8C"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#8C8C8C"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginRight="-10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:text="Notas" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtNotas"
+            android:textColor="#8C8C8C"
+            android:drawableTint="#8C8C8C"
+            android:autoSizeTextType="none"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam maximus lectus ut sagittis sapien non, euismod diam."
+            android:layout_marginRight="15dp" />
+        <ImageView
+            android:src="@mipmap/ic_create"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_toRightOf="@id/txtNotas"
+            android:id="@+id/ivEditarFecha"
+            android:tint="#8C8C8C"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#8C8C8C"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginRight="-10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#E83C39"
+        android:textStyle="bold"
+        android:text="Aviso" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtAviso"
+        android:textColor="#8C8C8C"
+        android:drawableTint="#8C8C8C"
+        android:autoSizeTextType="none"
+        android:text="Aun puedes editar o cancelar tu reservación sin cargos. "
+        android:layout_marginRight="15dp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#8C8C8C"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginRight="-10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnConfirmar"
+        android:backgroundTint="#3BDB85"
+        android:text="Confirmar"
+        android:textAllCaps="false" />
 </LinearLayout>

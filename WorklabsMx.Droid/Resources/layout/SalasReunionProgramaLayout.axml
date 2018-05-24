@@ -6,6 +6,9 @@
     android:background="#FFF"
     android:minWidth="25px"
     android:minHeight="25px">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarlayout" />
     <ScrollView
         android:minWidth="25px"
         android:minHeight="25px"
@@ -39,13 +42,28 @@
                     android:layout_height="match_parent"
                     android:id="@+id/llhProximas" />
             </HorizontalScrollView>
-            <TextView
-                android:text="@string/str_label_before"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#000"
-                android:textSize="30dp"
-                android:textStyle="bold" />
+                android:layout_height="match_parent">
+                <TextView
+                    android:text="@string/str_label_before"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+                <Button
+                    android:id="@+id/btnSeeAll"
+                    android:text="@string/str_label_see_all"
+                    android:textColor="#000"
+                    android:background="@drawable/button_round_general"
+                    android:layout_width="75dp"
+                    android:layout_height="20dp"
+                    android:textSize="12dp"
+                    android:textAllCaps="false"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
             <HorizontalScrollView
                 android:minWidth="25px"
                 android:minHeight="25px"
