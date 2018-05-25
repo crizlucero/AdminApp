@@ -1,14 +1,21 @@
 ﻿<Properties StartupConfiguration="{9161A18F-0695-48A6-A746-484764D485EC}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorklabsMx/Helpers/DateHelper.cs">
     <Files>
-      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReserevacionSalaOpcionesActivity.cs" Line="41" Column="160" />
-      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="404" Column="24" />
-      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/SalaReunionesProgramaActivity.cs" Line="55" Column="70" />
+      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionSalaOpcionesActivity.cs" Line="120" Column="26" />
+      <File FileName="WorklabsMx/Controllers/SalasJuntasController.cs" Line="399" Column="83" />
+      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/SalaReunionesProgramaActivity.cs" Line="58" Column="92" />
+      <File FileName="WorklabsMx/Helpers/UploadImages.cs" Line="1" Column="1" />
+      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionSalasActivity.cs" Line="138" Column="10" />
+      <File FileName="WorklabsMx.Droid/ViewController/SalasReuniones/ReservacionHorariosActivity.cs" Line="105" Column="62" />
+      <File FileName="WorklabsMx.Droid/ViewController/Formatos/SalasJuntasActivity.cs" Line="116" Column="13" />
+      <File FileName="WorklabsMx/Helpers/DateHelper.cs" Line="25" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/worklabs/WorklabsMx/WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" relfile="WorklabsMx.Droid/ViewController/Servicios/PaymentActivity.cs" line="79" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../../WorklabsMx/Handlers/PagosHandler.cs" line="41" offsetX="632" offsetY="600" expression="e.StackTrace" liveUpdate="False" />

@@ -16,4 +16,5 @@
     <color name="colorAccent">#F9A825</color>
     <color name="colorAccent2">#e74c3c</color>
     <color name="noColor">#FFFFFF</color>
+    <color name="Cancel">#E83C39</color>
 </resources>

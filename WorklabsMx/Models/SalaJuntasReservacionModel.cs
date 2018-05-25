@@ -12,8 +12,9 @@ namespace WorklabsMx.Models
         public string Usuario_Tipo { get; set; }
         public float Horas_Reservadas { get; set; }
         public float Creditos_Usados { get; set; }
+        public string Cantidad_Personas { get; set; }
 
-        public SalaJuntasReservacionModel(string Sala_Junta_Reservacion_Id = "", string Sala_Hora_Inicio = "", string Sala_Hora_Fin = "", string Sala_Fecha = "", string Sala_Reservacion_Estatus = "", string Usuario_Id = "", string Usuario_Tipo = "", string Sala_Descripcion = "", string Sala_Capacidad = "", string Sala_Nivel = "", string Sucursal_Descripcion = "", string Sucursal_Id = "", string Sala_Id = "", float Horas_Reservadas = 0, float Creditos_Usados = 0)
+        public SalaJuntasReservacionModel(string Sala_Junta_Reservacion_Id = "", string Sala_Hora_Inicio = "", string Sala_Hora_Fin = "", string Sala_Fecha = "", string Sala_Reservacion_Estatus = "", string Usuario_Id = "", string Usuario_Tipo = "", string Sala_Descripcion = "", string Sala_Capacidad = "", string Sala_Nivel = "", string Sucursal_Descripcion = "", string Sucursal_Id = "", string Sala_Id = "", float Horas_Reservadas = 0, float Creditos_Usados = 0, string Cantidad_Personas = "")
         {
             this.Sala_Junta_Reservacion_Id = Sala_Junta_Reservacion_Id;
             this.Sala_Hora_Inicio = Sala_Hora_Inicio;
@@ -30,6 +31,7 @@ namespace WorklabsMx.Models
             this.Sala_Id = Sala_Id;
             this.Horas_Reservadas = Horas_Reservadas;
             this.Creditos_Usados = Creditos_Usados;
+            this.Cantidad_Personas = Cantidad_Personas;
         }
     }
 }

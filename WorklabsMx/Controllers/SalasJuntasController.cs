@@ -21,7 +21,7 @@ namespace WorklabsMx.Controllers
         /// <param name="fecha">Fecha seleccionada.</param>
         /// <param name="hora_inicio">Hora de inicio.</param>
         /// <param name="hora_fin">Hora de fin.</param>
-        public int AsignarSalaJuntas(string transaccion, string sala_id, string usuario_id, string usuario_tipo, DateTime fecha, string hora_inicio, string hora_fin, string creditos)
+        public int AsignarSalaJuntas(string transaccion, string sala_id, string usuario_id, string usuario_tipo, DateTime fecha, string hora_inicio, string hora_fin, string creditos, string personas)
         {
             try
             {
@@ -39,6 +39,7 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Sala_Junta_Hora_Inicio", hora_inicio);
                 command.Parameters.AddWithValue("@Sala_Junta_Hora_Fin", hora_fin);
                 command.Parameters.AddWithValue("@Cantidad_Creditos", creditos);
+                command.Parameters.AddWithValue("@Cantidad_Personas", personas);
                 command.Parameters.Add("@Sala_Junta_Reservacion_Id", SqlDbType.Int).Direction = ParameterDirection.Output;
 
                 command.Transaction = transaction;
@@ -402,6 +403,38 @@ namespace WorklabsMx.Controllers
             catch (Exception e) { SlackLogs.SendMessage(e.Message, GetType().Name, "GetReservacion"); }
             finally { conn.Close(); }
             return sala;
+        }
+
+        public int ModificarSalaJuntas(string transaccion, string sala_id, DateTime fecha, string hora_inicio, string hora_fin, string creditos, string personas)
+        {
+            try
+            {
+                conn.Open();
+                transaction = conn.BeginTransaction();
+                command = CreateCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "sp_pro_Salas_Juntas_Reservacion";
+                command.Connection = conn;
+                command.Parameters.AddWithValue("@Trasaccion", transaccion);
+                command.Parameters.AddWithValue("@Sala_Junta_Id", sala_id);
+                command.Parameters.AddWithValue("@Sala_Junta_Fecha", fecha);
+                command.Parameters.AddWithValue("@Sala_Junta_Hora_Inicio", hora_inicio);
+                command.Parameters.AddWithValue("@Sala_Junta_Hora_Fin", hora_fin);
+                command.Parameters.AddWithValue("@Cantidad_Creditos", creditos);
+                command.Parameters.AddWithValue("@Cantidad_Personas", personas);
+                command.Parameters.Add("@Sala_Junta_Reservacion_Id", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+                command.Transaction = transaction;
+                command.ExecuteNonQuery();
+                transaction.Commit();
+                return Convert.ToInt32(command.Parameters["@Sala_Junta_Reservacion_Id"].Value);
+            }
+            catch (Exception e)
+            {
+                SlackLogs.SendMessage(e.Message, GetType().Name, "ModificarSalaJuntas");
+                return -1;
+            }
+            finally { conn.Close(); }
         }
     }
 }

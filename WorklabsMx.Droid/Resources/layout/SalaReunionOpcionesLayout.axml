@@ -50,7 +50,7 @@
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_toRightOf="@id/txtNombre"
-            android:id="@+id/ivEditarNombre"
+            android:id="@+id/ivEditarSala"
             android:tint="#8C8C8C"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="3dp" />
@@ -162,7 +162,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnConfirmar"
-        android:backgroundTint="#3BDB85"
         android:text="Confirmar"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        android:background="#3BDB85" />
 </LinearLayout>

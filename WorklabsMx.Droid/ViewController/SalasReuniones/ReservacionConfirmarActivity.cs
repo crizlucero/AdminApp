@@ -57,7 +57,7 @@ namespace WorklabsMx.Droid
 
             FindViewById<Button>(Resource.Id.btnAvanzar).Click += delegate
             {
-                /*string correoInvitacion = new StreamReader(Assets.Open("SalaJuntasReserva.html")).ReadToEnd();
+                string correoInvitacion = new StreamReader(Assets.Open("SalaJuntasReserva.html")).ReadToEnd();
                 new Emails().SendMail(usuario.Usuario_Correo_Electronico, usuario.Usuario_Nombre + " " + usuario.Usuario_Apellidos,
                                            correoInvitacion.Replace("{{NOMBRE}}", usuario.Usuario_Nombre + " " + usuario.Usuario_Apellidos)
                                       .Replace("{{NOMBRESALA}}", sala.Sala_Descripcion)
@@ -67,16 +67,19 @@ namespace WorklabsMx.Droid
                                       .Replace("{{HORARIO}}", hora_inicio + " - " + hora_fin),
                                       "Worklabs - Confirmación de sala de junta");
                 if (new SalasJuntasController().AsignarSalaJuntas("ALTA", sala.Sala_Id, storage.Get("Usuario_Id"),
-                                                      storage.Get("Usuario_Tipo"), DateTime.Parse(fecha_seleccionada), hora_inicio, hora_fin, cantidad_creditos) == -1)
+                                                      storage.Get("Usuario_Tipo"), DateTime.Parse(fecha_seleccionada), hora_inicio, hora_fin, cantidad_creditos, cantidad_personas) == -1)
                     SlackLogs.SendMessage("ERROR: Registro de sala de junta", GetType().Name, "ShowConfirmacion");
-                    else*/
-                Intent intent = new Intent(this, typeof(ReservacionConfirmacionActivity));
-                intent.PutExtra("fecha_seleccionada", fecha_seleccionada);
-                intent.PutExtra("hora_inicio", hora_inicio);
-                intent.PutExtra("hora_fin", hora_fin);
-                intent.PutExtra("cantidad_personas", cantidad_personas);
-                intent.PutExtra("sala_id", sala.Sala_Id);
-                StartActivity(intent);
+                else
+                {
+                    Intent intent = new Intent(this, typeof(ReservacionConfirmacionActivity));
+                    intent.PutExtra("fecha_seleccionada", fecha_seleccionada);
+                    intent.PutExtra("hora_inicio", hora_inicio);
+                    intent.PutExtra("hora_fin", hora_fin);
+                    intent.PutExtra("cantidad_personas", cantidad_personas);
+                    intent.PutExtra("sala_id", sala.Sala_Id);
+                    StartActivity(intent);
+                    Finish();
+                }
             };
 
             FindViewById<Button>(Resource.Id.btnRetroceder).Click += delegate
