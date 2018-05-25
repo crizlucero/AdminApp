@@ -229,6 +229,7 @@
     <Compile Include="ViewController\SalasReuniones\ReservacionHorariosActivity.cs" />
     <Compile Include="ViewController\SalasReuniones\ReservacionConfirmacionActivity.cs" />
     <Compile Include="ViewController\SalasReuniones\ReservacionSalaOpcionesActivity.cs" />
+    <Compile Include="ViewController\SalasReuniones\SalasReunionesHistorialActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -579,6 +580,7 @@
     <AndroidResource Include="Resources\layout\SalaReunionOpcionesLayout.axml" />
     <AndroidResource Include="Resources\drawable\button_round_cancel.xml" />
     <AndroidResource Include="Resources\drawable\button_round_general.xml" />
+    <AndroidResource Include="Resources\layout\SalasReunionHistorialLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
