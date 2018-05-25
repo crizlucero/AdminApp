@@ -30,7 +30,7 @@ namespace WorklabsMx.Droid
         {
             base.OnCreate(savedInstanceState);
 
-            SetContentView(Resource.Layout.SalasReunionHistorial);
+            SetContentView(Resource.Layout.SalasReunionHistorialLayout);
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
             ActionBar.Title = Resources.GetString(Resource.String.str_meeting_room);
