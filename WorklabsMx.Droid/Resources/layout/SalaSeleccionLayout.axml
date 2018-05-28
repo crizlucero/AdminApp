@@ -9,10 +9,11 @@
     android:paddingBottom="10dp"
     android:paddingTop="10dp">
     <ImageView
-        android:src="@android:drawable/ic_menu_gallery"
+        android:src="@mipmap/s27"
         android:layout_width="171.5dp"
         android:layout_height="194.0dp"
-        android:id="@+id/ivSala" />
+        android:id="@+id/ivSala"
+        android:scaleType="fitXY" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

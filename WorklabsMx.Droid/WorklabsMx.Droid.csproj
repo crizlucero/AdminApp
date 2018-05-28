@@ -139,9 +139,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="MailKit">
-      <HintPath>..\packages\MailKit.2.0.3\lib\monoandroid\MailKit.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Firebase.Common">
       <HintPath>..\packages\Xamarin.Firebase.Common.60.1142.1\lib\MonoAndroid80\Xamarin.Firebase.Common.dll</HintPath>
     </Reference>
@@ -171,6 +168,9 @@
     </Reference>
     <Reference Include="MimeKit">
       <HintPath>..\packages\MimeKit.2.0.4\lib\monoandroid\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit">
+      <HintPath>..\packages\MailKit.2.0.4\lib\monoandroid\MailKit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -581,6 +581,22 @@
     <AndroidResource Include="Resources\drawable\button_round_cancel.xml" />
     <AndroidResource Include="Resources\drawable\button_round_general.xml" />
     <AndroidResource Include="Resources\layout\SalasReunionHistorialLayout.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\n630.JPG" />
+    <AndroidResource Include="Resources\mipmap-hdpi\n631.JPG" />
+    <AndroidResource Include="Resources\mipmap-hdpi\n632.JPG" />
+    <AndroidResource Include="Resources\mipmap-hdpi\n650.JPG" />
+    <AndroidResource Include="Resources\mipmap-hdpi\n651.JPG" />
+    <AndroidResource Include="Resources\mipmap-hdpi\n652.JPG" />
+    <AndroidResource Include="Resources\mipmap-hdpi\n720.JPG" />
+    <AndroidResource Include="Resources\mipmap-hdpi\n721.JPG" />
+    <AndroidResource Include="Resources\mipmap-hdpi\n722.JPG" />
+    <AndroidResource Include="Resources\mipmap-hdpi\n740.JPG" />
+    <AndroidResource Include="Resources\mipmap-hdpi\n741.JPG" />
+    <AndroidResource Include="Resources\mipmap-hdpi\n742.JPG" />
+    <AndroidResource Include="Resources\mipmap-hdpi\s27.JPG" />
+    <AndroidResource Include="Resources\mipmap-hdpi\s36.JPG" />
+    <AndroidResource Include="Resources\mipmap-hdpi\s47.JPG" />
+    <AndroidResource Include="Resources\mipmap-hdpi\s56.JPG" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

@@ -14,10 +14,12 @@
         android:rowCount="3"
         android:columnCount="3">
         <ImageView
-            android:src="@android:drawable/ic_menu_gallery"
+            android:src="@mipmap/s27"
             android:layout_width="300dp"
             android:layout_columnSpan="3"
-            android:layout_height="150dp" />
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:id="@+id/ivSala" />
         <TextView
             android:id="@+id/lblNombre"
             android:layout_width="100dp"

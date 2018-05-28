@@ -92,16 +92,15 @@ namespace WorklabsMx.Controllers
         /// </summary>
         /// <returns>Listado de salas de juntas.</returns>
         /// <param name="sucursal_id">Identificador de la sucursal.</param>
-        public List<SalaJuntasModel> GetSalaJuntas(string sucursal_id, string nivel = "7")
+        public List<SalaJuntasModel> GetSalaJuntas(string sucursal_id)
         {
             List<SalaJuntasModel> salas = new List<SalaJuntasModel>();
             try
             {
                 conn.Open();
-                string query = "SELECT * FROM vw_cat_Salas_Juntas WHERE Sala_Estatus = 1 AND Sucursal_Id = @sucursal_id AND Sala_Nivel = @nivel";
+                string query = "SELECT * FROM vw_cat_Salas_Juntas WHERE Sala_Estatus = 1 AND Sucursal_Id = @sucursal_id";
                 command = CreateCommand(query);
                 command.Parameters.AddWithValue("@sucursal_id", sucursal_id);
-                command.Parameters.AddWithValue("@nivel", nivel);
                 reader = command.ExecuteReader();
                 while (reader.Read())
                     salas.Add(new SalaJuntasModel
@@ -405,12 +404,12 @@ namespace WorklabsMx.Controllers
             return sala;
         }
 
-        public int ModificarSalaJuntas(string transaccion, string sala_id, DateTime fecha, string hora_inicio, string hora_fin, string creditos, string personas)
+        public bool ModificarSalaJuntas(string transaccion, string sala_id, DateTime fecha, string hora_inicio, string hora_fin, string creditos, string personas, string reservacion_id)
         {
             try
             {
                 conn.Open();
-                transaction = conn.BeginTransaction();
+                //transaction = conn.BeginTransaction();
                 command = CreateCommand();
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = "sp_pro_Salas_Juntas_Reservacion";
@@ -422,17 +421,17 @@ namespace WorklabsMx.Controllers
                 command.Parameters.AddWithValue("@Sala_Junta_Hora_Fin", hora_fin);
                 command.Parameters.AddWithValue("@Cantidad_Creditos", creditos);
                 command.Parameters.AddWithValue("@Cantidad_Personas", personas);
-                command.Parameters.Add("@Sala_Junta_Reservacion_Id", SqlDbType.Int).Direction = ParameterDirection.Output;
+                command.Parameters.AddWithValue("@Sala_Junta_Reservacion_Id", reservacion_id);
 
-                command.Transaction = transaction;
+                //command.Transaction = transaction;
                 command.ExecuteNonQuery();
-                transaction.Commit();
-                return Convert.ToInt32(command.Parameters["@Sala_Junta_Reservacion_Id"].Value);
+                //transaction.Commit();
+                return true;
             }
             catch (Exception e)
             {
                 SlackLogs.SendMessage(e.Message, GetType().Name, "ModificarSalaJuntas");
-                return -1;
+                return false;
             }
             finally { conn.Close(); }
         }

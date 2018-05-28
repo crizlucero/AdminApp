@@ -1,15 +1,11 @@
 ﻿
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 
 using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using WorklabsMx.Controllers;
@@ -54,20 +50,29 @@ namespace WorklabsMx.Droid
             Button confirmar = FindViewById<Button>(Resource.Id.btnConfirmar);
             if (opcion == "Cancelar")
             {
-                confirmar.SetBackgroundColor(Color.Rgb(232, 60, 57));
+                FindViewById<ImageView>(Resource.Id.ivEditarSala).Visibility = ViewStates.Gone;
+                FindViewById<ImageView>(Resource.Id.ivEditarFecha).Visibility = ViewStates.Gone;
+                confirmar.SetBackgroundColor(Color.DarkRed);
             }
 
             confirmar.Click += delegate
             {
                 if (opcion == "Cancelar")
-                    controller.CancelarSalaJuntas("Baja", sala_id);
+                    controller.CancelarSalaJuntas("Baja", Intent.GetStringExtra("Reservacion_Id"));
                 else
                 {
                     double creditos = DateHelper.CalcularCreditos(hora_inicio, hora_fin);
-                    if (penalizacion)
-                        --creditos;
-                    controller.ModificarSalaJuntas("Modificar", sala_id, DateTime.Parse(fecha_seleccionada, new CultureInfo("es-MX")), hora_inicio, hora_fin, creditos.ToString(), cantidad_personas);
+                    //if (penalizacion)
+                    //    --creditos;
+                    controller.ModificarSalaJuntas("Modificar", sala_id, DateTime.Parse(fecha_seleccionada, new CultureInfo("es-MX")), hora_inicio, hora_fin, creditos.ToString(), cantidad_personas, Intent.GetStringExtra("Reservacion_Id"));
                 }
+                Intent intent = new Intent(this, typeof(ReservacionConfirmacionActivity));
+                intent.PutExtra("Tipo", opcion);
+                intent.PutExtra("sala_id", sala_id);
+                intent.PutExtra("fecha_seleccionada", fecha_seleccionada);
+                intent.PutExtra("hora_inicio", hora_inicio);
+                intent.PutExtra("hora_fin", hora_fin);
+                intent.PutExtra("cantidad_personas", cantidad_personas);
             };
             FillData(opcion);
         }
@@ -75,7 +80,7 @@ namespace WorklabsMx.Droid
         void FillData(string opcion)
         {
             SalaJuntasReservacionModel sala = controller.GetReservacion(Intent.GetStringExtra("Reservacion_Id"));
-            sala.Sala_Fecha = DateTime.Parse(sala.Sala_Fecha, new CultureInfo("es-MX")).ToString("d");
+            sala.Sala_Fecha = sala.Sala_Fecha.Substring(0, 10);
             penalizacion = DateTime.Now.Hour + 2 >= TimeSpan.Parse(sala.Sala_Hora_Inicio).Hours;
             if (string.IsNullOrEmpty(sala_id))
             {

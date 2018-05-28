@@ -13,6 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TextView
+                android:id="@+id/lblTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="70dp"
@@ -20,6 +21,7 @@
                 android:layout_marginTop="65dp"
                 android:text="@string/str_label_done" />
             <TextView
+                android:id="@+id/lblSubTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
@@ -67,6 +69,7 @@
                 android:gravity="center"
                 android:text="nivel 07" />
             <TextView
+                android:id="@+id/lblMensaje"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14dp"

@@ -22,14 +22,16 @@ namespace WorklabsMx.Droid
         List<TextView> txtHorasInicio, txtHorasFin, txtCantidad;
         List<View> vHorasInicio, vHorasFin, vCantidades;
         readonly List<int> horas, totalPersonas;
-        string horaInicio, horaFin, CantidadPersonas;
+        int Tipo;
+        string horaInicio, horaFin, CantidadPersonas, reservacion_id;
         Color ColorSel = Color.Rgb(59, 219, 213), ColorUnSel = Color.Rgb(239, 239, 239), ColorBlock = Color.Rgb(235, 235, 235);
         CalendarView cvFecha;
-        List<double> HorasNoDisponibles;
+        List<double> HorasFinNoDisponibles, HorasInicioNoDisponibles;
 
         public ReservacionHorariosActivity()
         {
-            HorasNoDisponibles = new List<double>();
+            HorasFinNoDisponibles = new List<double>();
+            HorasInicioNoDisponibles = new List<double>();
             horas = new List<int>();
             for (int i = 0; i < 24; i++)
                 horas.Add(i);
@@ -55,12 +57,19 @@ namespace WorklabsMx.Droid
             ActionBar.Title = Resources.GetString(Resource.String.str_meeting_room);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            int Tipo = Intent.GetIntExtra("Tipo", 1);
+            Tipo = Intent.GetIntExtra("Tipo", 1);
+            if (Tipo == (int)TipoSalaReunionFlujo.Sala)
+            {
+                FindViewById<ProgressBar>(Resource.Id.pbAvance).Progress = 2;
+            }
             string sala_id = Intent.GetStringExtra("sala_id");
-            string reservacion_id = Intent.GetStringExtra("Reservacion_Id");
+            reservacion_id = Intent.GetStringExtra("Reservacion_Id");
             if (!string.IsNullOrEmpty(sala_id))
                 new SalasJuntasController().GetHorasNoDisponibles(Intent.GetStringExtra("fecha_seleccionada"), sala_id).AsParallel().ToList().ForEach(horas =>
-                    HorasNoDisponibles.Add(DateTime.Parse(horas.Sala_Hora_Fin).Hour));
+                {
+                    HorasFinNoDisponibles.Add(DateTime.Parse(horas.Sala_Hora_Fin).Hour);
+                    HorasInicioNoDisponibles.Add(DateTime.Parse(horas.Sala_Hora_Inicio).Hour);
+                });
 
             llhHoraInicio = FindViewById<LinearLayout>(Resource.Id.llhHoraInicio);
             llhHoraFin = FindViewById<LinearLayout>(Resource.Id.llhHoraFin);
@@ -121,7 +130,10 @@ namespace WorklabsMx.Droid
             {
                 if (Tipo != (int)TipoSalaReunionFlujo.Editar)
                 {
-                    OnBackPressed();
+                    if (Tipo == (int)TipoSalaReunionFlujo.Horario)
+                        StartActivity(new Intent(this, typeof(ReservacionReunionActivity)));
+                    else
+                        StartActivity(new Intent(this, typeof(ReservacionSalasActivity)));
                 }
                 else
                 {
@@ -158,7 +170,7 @@ namespace WorklabsMx.Droid
                     Horario.SetTextColor(ColorBlock);
                     Minutos.SetTextColor(ColorBlock);
                 }
-                if (Intent.GetStringExtra("hora_inicio").Contains(hora.ToString("D2")))
+                /*if (Intent.GetStringExtra("hora_inicio").Contains(hora.ToString("D2")))
                 {
                     if (Intent.GetStringExtra("hora_inicio").Contains("30"))
                     {
@@ -172,7 +184,7 @@ namespace WorklabsMx.Droid
                         vHora.SetBackgroundColor(ColorSel);
                         horaInicio = hora.ToString() + ":00";
                     }
-                }
+                }*/
 
                 Horario.Click += delegate
                 {
@@ -197,7 +209,7 @@ namespace WorklabsMx.Droid
                 if (Convert.ToInt32(Build.VERSION.Sdk) < 23)
                     FindViewById<HorizontalScrollView>(Resource.Id.hsvHoraInicio).ScrollTo(hora_actual * 75, 0);
                 else
-                    FindViewById<HorizontalScrollView>(Resource.Id.hsvHoraInicio).ScrollTo(hora_actual * 120, 0);
+                    FindViewById<HorizontalScrollView>(Resource.Id.hsvHoraInicio).ScrollTo(hora_actual * 150, 0);
             }, 100);
         }
         void FillHorarioFin()
@@ -225,7 +237,7 @@ namespace WorklabsMx.Droid
                     Minutos.SetTextColor(ColorBlock);
                 }
 
-                if (Intent.GetStringExtra("hora_fin").Contains(hora.ToString("D2")))
+                /*if (Intent.GetStringExtra("hora_fin").Contains(hora.ToString("D2")))
                 {
                     if (Intent.GetStringExtra("hora_fin").Contains("30"))
                     {
@@ -239,7 +251,7 @@ namespace WorklabsMx.Droid
                         vHora.SetBackgroundColor(ColorSel);
                         horaFin = hora.ToString() + ":00";
                     }
-                }
+                }*/
 
                 Horario.Click += delegate
                 {
@@ -260,9 +272,9 @@ namespace WorklabsMx.Droid
             FindViewById<HorizontalScrollView>(Resource.Id.hsvHoraFin).PostDelayed(delegate
             {
                 if (Convert.ToInt32(Build.VERSION.Sdk) < 23)
-                    FindViewById<HorizontalScrollView>(Resource.Id.hsvHoraFin).ScrollTo(hora_actual * 80, 0);
+                    FindViewById<HorizontalScrollView>(Resource.Id.hsvHoraFin).ScrollTo(hora_actual * 75, 0);
                 else
-                    FindViewById<HorizontalScrollView>(Resource.Id.hsvHoraFin).ScrollTo(hora_actual * 130, 0);
+                    FindViewById<HorizontalScrollView>(Resource.Id.hsvHoraFin).ScrollTo(hora_actual * 150, 0);
             }, 100);
         }
         void FillCantidad()
@@ -279,12 +291,12 @@ namespace WorklabsMx.Droid
                 txtCantidad.Add(Cantidad);
                 vCantidades.Add(vCantidad);
 
-                if (Intent.GetStringExtra("cantidad_personas").Contains(numero.ToString()))
+                /*if (Intent.GetStringExtra("cantidad_personas").Contains(numero.ToString()))
                 {
                     Cantidad.SetBackgroundColor(ColorSel);
                     vCantidad.SetBackgroundColor(ColorSel);
                     CantidadPersonas = numero.ToString();
-                }
+                }*/
 
                 Cantidad.Click += delegate
                 {
@@ -319,8 +331,23 @@ namespace WorklabsMx.Droid
 
         public override void OnBackPressed()
         {
-            StartActivity(new Intent(this, typeof(MainActivity)));
+
+            if (Tipo != (int)TipoSalaReunionFlujo.Editar)
+            {
+                if (Tipo == (int)TipoSalaReunionFlujo.Horario)
+                    StartActivity(new Intent(this, typeof(ReservacionReunionActivity)));
+                else
+                    StartActivity(new Intent(this, typeof(ReservacionSalasActivity)));
+            }
+            else
+            {
+                Intent intent = new Intent(this, typeof(ReservacionSalaOpcionesActivity));
+                intent.PutExtra("Opcion", "Editar");
+                intent.PutExtra("Reservacion_Id", reservacion_id);
+                intent.PutExtra("sala_id", Intent.GetStringExtra("sala_id"));
+            }
             Finish();
+
         }
     }
 }

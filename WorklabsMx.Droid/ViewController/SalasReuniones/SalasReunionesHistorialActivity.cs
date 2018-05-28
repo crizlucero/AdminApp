@@ -45,6 +45,7 @@ namespace WorklabsMx.Droid
             new SalasJuntasController().GetReservaciones(storage.Get("Usuario_Id"), storage.Get("Usuario_Tipo"), "0,2").AsParallel().ToList().ForEach(reserva =>
             {
                 View ProximasView = LayoutInflater.Inflate(Resource.Layout.SalaReunionCardLayout, null, true);
+                ProximasView.FindViewById<ImageView>(Resource.Id.ivSala).SetImageResource(Resources.GetIdentifier(string.Format("s{0}{1}", reserva.Sala_Id, reserva.Sala_Nivel), "mipmap", PackageName));
                 try
                 {
                     ProximasView.FindViewById<TextView>(Resource.Id.lblFecha).Text = DateTime.Parse(reserva.Sala_Fecha, new CultureInfo("es-MX")).ToLongDateString();

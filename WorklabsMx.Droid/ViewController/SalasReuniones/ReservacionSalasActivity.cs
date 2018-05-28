@@ -1,13 +1,9 @@
-﻿
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using WorklabsMx.Controllers;
@@ -49,6 +45,7 @@ namespace WorklabsMx.Droid
 
             if (Tipo == (int)TipoSalaReunionFlujo.Sala)
             {
+                FindViewById<ProgressBar>(Resource.Id.pbAvance).Progress = 1;
                 salas = SalasController.GetSalaJuntas("1");//Intent.GetStringExtra("sucursal_id"));//, fecha_seleccionada, hora_inicio_seleccionada, hora_fin_seleccionada);
             }
             else if (Tipo == (int)TipoSalaReunionFlujo.Horario)
@@ -66,7 +63,10 @@ namespace WorklabsMx.Droid
             {
                 if (Tipo != (int)TipoSalaReunionFlujo.Editar)
                 {
-                    OnBackPressed();
+                    if (Tipo == (int)TipoSalaReunionFlujo.Sala)
+                        StartActivity(new Intent(this, typeof(ReservacionReunionActivity)));
+                    else
+                        StartActivity(new Intent(this, typeof(ReservacionHorariosActivity)));
                 }
                 else
                 {
@@ -88,7 +88,7 @@ namespace WorklabsMx.Droid
             salas.AsParallel().ToList().ForEach(sala =>
             {
                 View SalaView = LayoutInflater.Inflate(Resource.Layout.SalaSeleccionLayout, null, true);
-                ImageView ivSala = SalaView.FindViewById<ImageView>(Resource.Id.ivSala);
+                SalaView.FindViewById<ImageView>(Resource.Id.ivSala).SetImageResource(Resources.GetIdentifier(string.Format("s{0}{1}", sala.Sala_Id, sala.Sala_Nivel), "mipmap", PackageName));
                 SalaView.FindViewById<TextView>(Resource.Id.lblNombre).Text = sala.Sala_Descripcion;
                 SalaView.FindViewById<TextView>(Resource.Id.lblNivel).Text = string.Format("Nivel {0}", sala.Sala_Nivel);
                 if (Tipo == (int)TipoSalaReunionFlujo.Horario)
@@ -135,6 +135,31 @@ namespace WorklabsMx.Droid
                 };
                 glSalas.AddView(SalaView);
             });
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            if (Tipo != (int)TipoSalaReunionFlujo.Editar)
+            {
+                if (Tipo == (int)TipoSalaReunionFlujo.Sala)
+                    StartActivity(new Intent(this, typeof(ReservacionReunionActivity)));
+                else
+                    StartActivity(new Intent(this, typeof(ReservacionHorariosActivity)));
+            }
+            else
+            {
+                Intent intent = new Intent(this, typeof(ReservacionSalaOpcionesActivity));
+                intent.PutExtra("Opcion", "Editar");
+                intent.PutExtra("Reservacion_Id", reservacion_id);
+                intent.PutExtra("sala_id", Intent.GetStringExtra("sala_id"));
+            }
+            Finish();
+            return base.OnOptionsItemSelected(item);
         }
     }
 }

@@ -116,12 +116,13 @@
                     android:paddingBottom="10dp"
                     android:textSize="12dp" />
                 <ImageView
-                    android:src="@android:drawable/ic_menu_gallery"
-                    android:id="@+id/imageView1"
+                    android:src="@mipmap/s27"
+                    android:id="@+id/ivSala"
                     android:layout_columnSpan="3"
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
-                    android:layout_marginBottom="10dp" />
+                    android:layout_marginBottom="10dp"
+                    android:scaleType="fitXY" />
                 <TextView
                     android:id="@+id/lblNombre"
                     android:textColor="#000"
@@ -178,12 +179,33 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp" />
                 <HorizontalScrollView
-                    android:minWidth="25px"
-                    android:minHeight="25px"
-                    android:id="@+id/horizontalScrollView1"
                     android:layout_columnSpan="3"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp" />
+                    android:layout_height="100dp">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:src="@mipmap/n720"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/ivSala1"
+                            android:layout_marginLeft="10dp" />
+                        <ImageView
+                            android:src="@mipmap/n721"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/ivSala2"
+                            android:layout_marginLeft="10dp" />
+                        <ImageView
+                            android:src="@mipmap/n722"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/ivSala3"
+                            android:layout_marginLeft="10dp" />
+                    </LinearLayout>
+                </HorizontalScrollView>
             </GridLayout>
             <GridLayout
                 android:layout_width="match_parent"
